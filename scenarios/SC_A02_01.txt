@@ -25,25 +25,25 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0196" )
-\CN["无黑色"]
+\CN["无黑"]
 “局长，您叫我吗？”
 
 //●読み：加津佐（かずさ）＝地名です。埼玉がモデル
 : DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0054" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，我想谈下一个任务
-资本家，{饭田隆盛，好高的蝙蝠}瞄准氏的生命的辈
-希望你能处理掉”
+ 资本家，饭田隆盛，瞄准他的生命的家伙，
+ 希望你能处理掉”
 
 加津佐在穿过帝都北路的地方
 是个不太繁华的城市。
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0055" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “饭田先生想以加津佐为据点做生意。
-背后有一个财阀家——住吉家”
+背后有一个财阀——住吉家”
 
 住吉家和幕府有很强的联系
 幕府的重臣中有住吉家的人。
@@ -72,15 +72,15 @@
 : DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo07_beb0026" )
 \CN["红美"]
-“阿萨米，我们采购了有趣的情报。”
+“爱彩弥，我们收到了有趣的情报。”
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0056" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 「这样啊。辛苦了。
-可以马上告诉我吗？”
+ 可以马上告诉我吗？”
 
 //●読み：大葉組（おおばぐみ）
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -103,13 +103,13 @@
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0057" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “嗯……。如果和反幕派联手的话
-有可能是想谋取饭田先生的性命啊……”
+ 是有可能想谋取饭田先生的性命啊……”
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0058" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “但是，还只是可能性而已。
 也许去加津佐的镇上去向镇上的人打听比较好”
 
@@ -121,21 +121,21 @@
 
 : DrawChara( "Azami", 24, 0)
 : PlayVoice( "Voices/vo05_aza0059" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，等一下。黄菜子还有别的任务
-请从那里着手”
+ 请从那里着手”
 
 : DrawChara( "Azami", 2, 0)
 : PlayVoice( "Voices/vo05_aza0060" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “护卫人员想让桃和银来做……
-无黑，你先调查一下大叶组吧”
+ 无黑，你先调查一下大叶组吧”
 
 //: DrawChara( "Mukuro", 17, 0, 0, 0.5, 0.0, 3, "RC" )
 //: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawFaceThumbnail( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk0197" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的，我明白了。”
 
 //＠立ち絵：消去
@@ -152,7 +152,7 @@
 //＠サイドエピソード解放：サムライになりたい！
 : SideEpisodeFlagUp( "episode07" )
 : SideEpisodeFlagUp( "episode10" )
-<^FF0000>侧面小故事更新了！</color>
+<^FF0000>支线内容更新了！</color>
 
 //＠マップ解放＆目的地：帝都北街道
 : FastTravelMapOn( "TeitoKitaKaido" )
@@ -192,9 +192,9 @@
 : Wait()
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0198" )
-\CN["无黑色"]
-“那么，现在开始打听了。
-即便如此——”
+\CN["无黑"]
+“那么，现在该开始打听了。
+ 即便如此——”
 
 \CN["男A"]
 「…………」
@@ -209,7 +209,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk0199" )
-\CN["无黑色"]
+\CN["无黑"]
 “要注意倾听啊。”
 
 说起探听，居酒屋很容易收集信息。
@@ -258,20 +258,20 @@
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0200" )
-\CN["无黑色"]
+\CN["无黑"]
 “店长，我想问一下，可以吗？”
 
 \CN["店长"]
-“没关系，你是美女，我能教你的话。”
+“没关系，美女的花有问题就问问吧，。”
 我来告诉你”
 
 \CN["店长"]
-“我穿着樱花印的外褂。
-不是普通的女人吧？”
+“我看你穿着樱花印的外褂。
+ 不是普通的女人吧？”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk0201" )
-\CN["无黑色"]
+\CN["无黑"]
 “我想问一下大叶组的事情。你知道什么吗？”
 
 \CN["店长"]
@@ -285,17 +285,16 @@
 
 \CN["店长"]
 “大叶组在上一代的时候是一个给人一种土气感觉的黑帮
-但是。到了儿子那一代之后就变了
-”
+但是。到了儿子那一代之后就变了”
 
 \CN["店长"]
-“怎么说呢，那个啊。比如大陆系的那些家伙，还有半格雷之类的。”
-收割吧，没什么礼仪，只是个流氓
-变成了集体”
+“怎么说呢，那个啊。比如大陆系的那些家伙，还有半格雷之类的。
+ 以前吧吧，也没什么礼仪，只是个流氓而已
+ 现在变成了集体”
 
 \CN["店长"]
 “有时下级会来店里，又会闹又会破坏店里的东西
-我也给你添麻烦了”
+也给我添了不少麻烦。”
 
 原来如此，所以大家都是这样的反应啊……。
 
@@ -315,10 +314,10 @@
 \CN["半格雷A"]
 “酒啊，酒啊，快给我把酒拿出来！”
 
-\CN["半灰色B"]
+\CN["半格雷B"]
 “别看了，好恐怖！”
 
-感觉怎么样的两个男人进来了。
+感觉不怎么样的两个男人进来了。
 
 : RpgCharaTurn( "Mobu01" "Right" )
 \CN["半格雷A"]
@@ -331,7 +330,7 @@
 
 : DrawChara( "Mukuro", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0202" )
-\CN["无黑色"]
+\CN["无黑"]
 “店长，有点吵……”
 
 \CN["店长"]
@@ -351,26 +350,26 @@
 : ShowWnd()
 \CN["半格雷A"]
 “……啊？你，什么，要拔刀？
-我们是天下大叶组的一员？”
+ 面对我们是天下大叶组的一员？”
 
-\CN["半灰色B"]
+\CN["半格雷B"]
 “如果我们有什么事情的话，这家店可能就不能营业了
-不知道啊。店长，这样也可以吗？”
+ 不知道啊。店长，这样也可以吗？”
 
-\CN["半灰色B"]
-“如果不好的话，那个女人会怎么想呢？”
+\CN["半格雷B"]
+“如果不好好弄的的话，那个女人会怎么想呢？”
 
 : PlayVoice( "Voices/vo00_muk0203" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈~……真是一群没出息的男人啊……”
 
 \CN["半格雷A"]
 “啊？你说了什么？”
 
-\CN["半灰色B"]
+\CN["半格雷B"]
 “嘿嘿，我不讨厌强势的女人。
-只有这样被侵犯的时候才可爱
-因为会说出来啊……”
+ 只有这样被侵犯的时候才可爱
+ 因为会说出来啊……”
 
 //※●演出：斬撃エフェクト（無黒）
 //●ＣＧ消去
@@ -387,24 +386,24 @@
 : ResetLayer(8)
 : AutoFaceThumbnail( true )
 : ShowWnd()
-\CN["半格雷他们"]
+\CN["半格雷们"]
 「「…………」」
 
 \CN["店长"]
-“哇，好厉害……一瞬间就做完了……。
-那些身体不好的家伙们”
+“哇，好厉害……一瞬间就做掉了……。
+那些不好的家伙们”
 
 \CN["酒馆的客人A"]
 “姐姐，好厉害！哈哈哈，快看啊。”
 
 : DrawChara( "Mukuro", 35, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk0204" )
-\CN["无黑色"]
+\CN["无黑"]
 “店长，让你这么吵真是对不起……”
 
 \CN["店长"]
 “不，没关系。
-因为我给这两个人添了麻烦”
+ 因为我给这两个人添了麻烦”
 
 //●演出：暗転
 : HideWnd()
@@ -412,8 +411,8 @@
 : DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
 : Wait()
 : ShowWnd()
-然后和镇上的派出所联系，两个人昏厥了
-领回了。
+然后和镇上的派出所联系，
+让把昏厥了两个人领回去。
 
 //●場所：加津佐・外
 : FadeOut( 1.0 )
@@ -430,10 +429,10 @@
 : Wait()
 : DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0205" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，接下来怎么办呢……？”
 
-总之，大叶组还是想办法牵制一下。
+总之，大叶组还是得想办法牵制一下。
 
 如果刚才那两个人是真的大叶组的组员的话
 一定会来小酒馆报复的。
@@ -444,21 +443,21 @@
 : PlaySe("SE/Se_Device01")
 : Sleep(1.0)
 : ShowWnd()
-“神八代先生，担当任务中得到了新的情报——”
+“神八代君，担当任务中得到了新的情报——”
 
 “威胁饭田隆盛的对象是贵族、永井家户主
-指永井和男。永井先生给大叶组提供了巨额援助
-证据也出来了”
+ 指永井和男。永井先生给大叶组提供了巨额援助
+ 证据也出来了”
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk0206" )
-\CN["无黑色"]
+\CN["无黑"]
 “——接下来是进入大叶组的宅邸吗？”
 
-再次对大叶组进行御用
-房子的地方也一起送来了。
+再次对大叶组进行搜查
+房子的所在地也一起送来了。
 
-决定去宅邸吗。
+决定去宅邸进发。
 
 //＠マップ解放：無黒、大葉組の屋敷
 : FastTravelMapOn( "Oobagumi" )
@@ -487,7 +486,7 @@
 : ShowWnd()
 : DrawChara( "Mukuro", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["大叶组组长"]
-“哇，你是来打我的鬼灯女吗……”
+“哇，你是来打我的鬼灯的女人吗……”
 
 \CN["大叶组组长"]
 “就算是武士，也要让女人来这里啊
@@ -495,22 +494,22 @@
 
 : DrawChara( "Mukuro", 24, 0, 2)
 : PlayVoice( "Voices/vo00_muk0207" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果是黑社会的话，还是告诉他们黑社会的矜持比较好。
-要是你知道那件事就好了」
+ 要是你知道那件事就好了」
 
 \CN["大叶组组长"]
 “哼……太无聊了。
-并不是因为矜持就能吃饭”
+并不是因为矜持蔡能吃饭”
 
 \CN["大叶组组长"]
-“嘛，总之，既然是来打我的，那就一定要打我一顿
-必须要给我开个问号啊。你说的
-是矜持的家伙吧？”
+“嘛，总之，既然是来打我的，那就一定要花上
+ 一些代价啊。按你说的
+ 你应该是矜持的家伙吧？”
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk0208" )
-\CN["无黑色"]
+\CN["无黑"]
 “哼，真无聊。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -568,15 +567,15 @@
 : ShowWnd()
 \CN["大叶组组长"]
 “算了……哦，是我不好……！
-我道歉，请原谅我！成！”
+ 我道歉，请原谅我！”
 
 \CN["大叶组组长"]
 “你想要的东西，我什么都给你。
-鬼灯是幕府的狗，反正工资很低吧？
-那我就给你钱。我会花一辈子的钱玩”
+ 鬼灯是幕府的狗，反正工资很低吧？
+ 那我就给你钱。一辈子都花不完的钱”
 
-组长刚才的劲头在哪里
-一边哭一边低头。
+组长刚才的劲头消失不见了。
+一边哭一边低着头。
 
 : HideWnd()
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -590,7 +589,7 @@
 : DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0210" )
-\CN["无黑色"]
+\CN["无黑"]
 （即使对方失去了斗志也不能让对方看到自己的破绽……）
 
 顺便说一下，没有杀。
@@ -598,7 +597,7 @@
 
 : DrawChara( "Mukuro", 23, 0 )
 : PlayVoice( "Voices/vo00_muk0209" )
-\CN["无黑色"]
+\CN["无黑"]
 “——任务完成”
 
 //●演出：無黒　退場させながら暗転

@@ -21,9 +21,9 @@
 : Call( "Scenarios/Common*FgLarge" )
 : ShowWnd()
 ——新渡户龙。
-鬼灯的副局长，高千穗痣的右臂。
+鬼灯的副局长，高千穗爱彩弥的右臂。
 
-他也是被称为八重樱流的流派的师范。
+他也是被称为八重樱流的流派的大师。
 
 //●※演出：無黒やレオの斬撃エフェクトを交互に
 : HideWnd()
@@ -51,7 +51,7 @@
 : Call( "Scenarios/Common*FgLarge" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0185" )
-\CN["无黑色"]
+\CN["无黑"]
 “呜……！”
 
 \CN["雷欧"]
@@ -63,7 +63,7 @@
 恐怕是古代剑术的一种。
 
 虽然有人说可以将其升华
-我下定决心从1开始学习八重樱流。
+但我下定决心从1开始学习八重樱流。
 
 : EraseChara( "Mukuro", 0.5 )
 : EraseChara( "Leo", 0.5 )
@@ -78,7 +78,7 @@
 : DrawChara( "Ryu", 10, 0)
 \CN["龙"]
 “还有，雷欧。就算再怎么练习也不能放松啊。
-你打算杀了我！”
+ 你打算杀了我！”
 
 //: DrawChara( "Leo", 17, 0)
 : HideWnd()
@@ -88,7 +88,7 @@
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
 \CN["雷欧"]
-“哇，我给你看我的认真！”
+“哇，给你看看我的真本事！”
 
 //: DrawChara( "Leo", 19, 0)
 : HideWnd()
@@ -115,7 +115,7 @@
 : Wait()
 : ShowWnd()
 \CN["龙"]
-“还没呢！”
+“还没结束！”
 
 : HideWnd()
 : effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
@@ -131,7 +131,7 @@
 : Call( "Scenarios/Common*FgLarge" )
 \CN["龙"]
 “你不是一直在说吗？”？
-你一次又一次的追求过多”
+ 你一次又一次的追求过多”
 
 //: DrawChara( "Leo", 4, 0)
 : DrawChara( "Leo", 4, 0, 0, 0.0, 0.0, 4, "R" )
@@ -139,7 +139,7 @@
 : Call( "Scenarios/Common*FgLarge" )
 \CN["雷欧"]
 “啊，对不起。
-这种时候，哪个都取的是我”
+ 这种时候，哪个都取的是我”
 
 //●演出：レオ　移動する
 : HideWnd()
@@ -194,8 +194,8 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0186" )
-\CN["无黑色"]
-“龙先生，觉悟！”
+\CN["无黑"]
+“龙先生，做好觉悟！”
 
 //●演出：斬撃エフェクト（無黒）
 : HideWnd()
@@ -233,7 +233,7 @@
 : EraseAllImage( 9, 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0187" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈哈——”
 
 //: DrawChara( "Leo", 4, 0, 1, 0.5, 0.0, 2, "LC" )
@@ -244,7 +244,7 @@
 //: EraseChara( "Leo", 0.5 )
 //: DrawChara( "Ryu", 10, 0, 0, 0.5, 0.0, 4, "C" )
 \CN["龙"]
-“首先要担心自己。”
+“首先要担心自己吧。”
 
 //●ＳＥ：叩きつけられる音
 //●演出：斬撃エフェクト（龍）
@@ -265,14 +265,14 @@
 : DrawChara( "Mukuro", 31, 2, 5, 0.5, 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0188" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈，哈，哈……哇！哇！哇！
 嘛，还差得远……”
 
 : DrawChara( "Leo", 8, 0, 1, 0.5, 0.0, 2, "LC" )
 \CN["雷欧"]
-“哈哈哈，真是的，师傅，真是不可原谅啊……。
-没大人样啊……”
+“哈哈哈，真是的，师傅，真是毫不留情啊……。
+ 一点没大人物的样子啊……”
 
 : EraseChara( "Mukuro", 0.5 )
 : EraseChara( "Leo", 0.5 )
@@ -281,8 +281,8 @@
 \CN["龙"]
 “真是的。两个人都显示出了毅力。”
 
-进入鬼灯后的第一年要彻底
-被迫进行了基础训练。
+进入鬼灯后的第一年被迫
+进行了彻底的基础训练。
 
 : EraseChara( "Ryu", 0.5 )
 : Wait()
@@ -292,7 +292,7 @@
 
 : DrawChara( "Mukuro", 39, 0, 2, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0189" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，是啊。”
 
 : EraseChara( "Mukuro", 0.5 )
@@ -327,32 +327,32 @@
 \CN["贵族"]
 「…………」
 
-第一次的任务在{高浜，高马}方面
+第一次的任务在高浜方面
 这是对某位贵族的御用。
 
 接到了有关违法药物交易的通报
 调查的结果是黑色。
 
 \CN["鬼灯队士·男F"]
-“给我死主意！”
+“给我放弃吧！”
 
 \CN["鬼灯队士・女D"]
 “……呵呵。你的坏事我看出来了。”
 
 跟随三位前辈。
 
-我和Leo是以支援的形式参加的。
+我和雷欧是以支援的形式参加的。
 
 //●演技：心の声です
 : DrawChara( "Mukuro", 17, 0, 2, 0.0, 0.0, 3, "RC" )
 : lay = 3; type = "WR";
 : Call( "Scenarios/Common*FgEff")
 : PlayVoice( "Voices/vo00_muk0190" )
-\CN["无黑色"]
+\CN["无黑"]
 （奇怪……为什么能这么悠闲呢？）
 
-对方好像知道我们要来似的
-异常沉着。
+对方好像知道我们要来似的。
+感觉异常沉着。
 
 : DrawChara( "Leo", 17, 0, 1, 0.5, 0.0, 2, "LC" )
 : lay = 2; type = "WL";
@@ -387,7 +387,7 @@
 “……不，刚才的……？”
 
 : PlayVoice( "Voices/vo00_muk0191" )
-\CN["无黑色"]
+\CN["无黑"]
 “好像有什么东西穿过了……？”
 
 //●演出：みどり　登場する
@@ -415,7 +415,7 @@
 : DrawChara( "Midori", 27, 0)
 : PlayVoice( "Voices/vo10_mid0008" )
 \CN["九一"]
-“如果不这样做的话，也许会弄错{杀，时候}呢……”
+“如果不这样做的话，也许会弄错（杀掉）呢……”
 
 : EraseChara( "Midori", 0.5 )
 : Wait()
@@ -503,7 +503,7 @@
 : DrawChara( "Leo", 0, 0, 1, 0.5, 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 15, 0, 2, 0.5, 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk0192" )
-\CN["无黑色"]
+\CN["无黑"]
 “……啊…啊…啊…啊啊……”
 
 : DrawChara( "Leo", 4, 0,)
@@ -526,7 +526,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0012" )
 \CN["九一"]
-“之后你们两个人{结束，结束}怎么样？
+“之后再结果你们两个怎么样？
 怎么说呢，今天的鬼灯真是没味道啊……”
 
 //: DrawChara( "Leo", 17, 0,)
@@ -537,7 +537,7 @@
 : PlayVoice( "Voices/vo10_mid0013" )
 \CN["九一"]
 “啊，虽然不知道怎么回事，但是天花板里面或者下面的是
-因为全员都杀了，玫瑰了”
+因为全员都被杀了了”
 
 //: DrawChara( "Midori", 10, 0)
 : PlayVoice( "Voices/vo10_mid0014" )
@@ -547,7 +547,7 @@
 //: EraseChara( "Mukuro", 0.5 )
 //: DrawChara( "Mukuro", 18, 0, 5, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0193" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯，骗人的……那就是…”
 
 参加这个任务的谍报队一共有五个人。
@@ -563,7 +563,7 @@
 : Call( "Scenarios/Common*FgLarge" )
 : ShowWnd()
 \CN["雷欧"]
-“真的吗……真的，真的是很冷淡呢……哈哈……”
+“真的吗……真的，真的是无情呢……哈哈……”
 
 : EraseChara( "Leo", 0.5 )
 : Wait()
@@ -579,8 +579,8 @@
 : DrawChara( "Midori", 14, 0)
 : PlayVoice( "Voices/vo10_mid0016" )
 \CN["九一"]
-“我的爱好是能被欺负
-因为他是我最喜欢的超级M猪男”
+“我的爱好是欺负他人
+ 因为他是我最喜欢的超级M猪男”
 
 : EraseChara( "Midori", 0.5 )
 : Wait()
@@ -590,13 +590,13 @@
 : Call( "Scenarios/Common*FgLarge" )
 \CN["雷欧"]
 “我啊，是那里一心一意的纯情少年
-不管你喜欢什么，都无所谓”
+ 不管你喜欢什么，都无所谓”
 
 : DrawChara( "Mukuro", 6, 0, 2, 0.5, 0.0, 2, "RC" )
 : chara = "Mukuro"; lay = 2; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo00_muk0194" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷、雷欧……这种时候你还说什么傻话……！？”
 
 : EraseChara( "Mukuro", 0.5 )
@@ -606,12 +606,12 @@
 : PlayVoice( "Voices/vo10_mid0017" )
 \CN["九一"]
 “你们两个，看起来很有看头
-我们不能因为性急而等待成长”
+ 我们不能因为性急而等待成长”
 
 : DrawChara( "Midori", 22, 0)
 : PlayVoice( "Voices/vo10_mid0018" )
 \CN["九一"]
-“我会像刚才那个女人一样一瞬间{杀，玫瑰}的。”
+“我会像刚才那个女人一样一瞬间杀掉你的。”
 
 : PlaySe( "SE/Se_dash01" )
 : SetLayerRelPos( 3, 300, 0, 0.25)
@@ -646,11 +646,11 @@
 : PlayBgm("BGM/10_CM010")
 : PlayVoice( "Voices/vo10_mid0019" )
 \CN["九一"]
-“哎，真能干啊。居然接受了我们家的{颅拔，狗}……”
+“哎，真能干啊。居然接受了我们家的颅拔……”
 
 //: DrawChara( "Ryu", 13, 0)
 \CN["龙"]
-“好像是你斟酌了……”
+“看起来你已经调整过了啊……”
 
 //: EraseChara( "Ryu", 0.5 )
 //: DrawChara( "Leo", 2, 0, 1, 0.5, 0.0, 2, "RC" )
@@ -668,7 +668,7 @@
 : ShowWnd()
 \CN["龙"]
 “这个出奇的速度——
-白夜干部、{九星，救星}中的一个人，看起来像望月殿」
+白夜干部、九星中的一个人，看起来像望月殿下。
 
 : DrawChara( "Midori", 5, 0, 0, 0.0, 0.0, 4, "LC" )
 : chara = "Midori"; lay = 4; type = "F";
@@ -682,12 +682,12 @@
 : PlayVoice( "Voices/vo10_mid0021" )
 \CN["望月"]
 「那你是什么人？
-我们家的一击就止住了，名字之类的就记住了”
+ 至少接住了我的一击，名字之类的还是会记住的”
 
 : DrawChara( "Ryu", 9, 0)
 \CN["龙"]
 “鬼灯副长、新渡户龙——
-虽然我以后不想和你见过面……”
+ 虽然我以后不曾与你见过面……”
 
 : DrawChara( "Midori", 17, 0)
 : PlayVoice( "Voices/vo10_mid0022" )
@@ -734,7 +734,7 @@
 
 : DrawChara( "Ranmaru", 2, 0)
 \CN["一只眼睛藏起来的男人"]
-“别这么脆啊。撤退是我的命令。”
+“别这么轴啊。撤退是我的命令。”
 
 : DrawChara( "Ranmaru", 16, 0)
 \CN["一只眼睛藏起来的男人"]
@@ -763,7 +763,7 @@
 \CN["龙"]
 「…………」
 
-龙也没有追，一直在寻找着浩一的去向
+龙也没有追，一直在寻找着久一的去向
 凝视着。
 
 : DrawChara( "Leo", 23, 0, 1, 0.5, 0.0, 2, "R" )
@@ -777,7 +777,7 @@
 
 : DrawChara( "Mukuro", 7, 0, 2, 0.5, 0.0, 3, "L" )
 : PlayVoice( "Voices/vo00_muk0195" )
-\CN["无黑色"]
+\CN["无黑"]
 “……龙先生……刚才的女性到底是谁？”。
 白夜的干部说了些什么……”
 
@@ -790,7 +790,7 @@
 “如果就这样继续战斗的话，我们可能全部都死了
 不知道。是个有那么点实力的女人”
 
-我第一个任务是死亡8人，目标是逃跑
+我第一个任务结果是死亡8人，目标是逃跑
 结果糟糕透顶。
 
 而且亲身体验到了白夜的恐怖。
