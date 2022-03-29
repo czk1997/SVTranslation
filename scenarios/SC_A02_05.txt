@@ -35,13 +35,13 @@
 : ShowWnd()
 \CN["财阀的户主"]
 “……话说回来，高千穗君，你真是个美人啊。
-不经常被说吗？”
+ 经常被这么说吧？”
 
 //Yoshi：センターにあざみ
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0065" )
-\CN["嘲讽"]
-“不，没怎么被说过呢。
+\CN["爱彩弥"]
+“不，没怎么被这么说过呢。
 但是，谢谢”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
@@ -49,17 +49,17 @@
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : PlayVoice( "Voices/vo01_mom0092" )
-\CN["桃子"]
+\CN["桃"]
 “……小银，局长真厉害啊。”
 
-\CN["银子"]
+\CN["银"]
 “嗯？啊，确实。身体的动作真是不一般啊。”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0093" )
-\CN["桃子"]
+\CN["桃"]
 “喂！就算快要被性骚扰了
-你躲得真透彻啊」
+ 你躲得真透彻啊」
 
 //＠立ち絵：消去
 : StopBgm( 1.0 )
@@ -100,23 +100,23 @@
 “嗯……真的是我的性命被盯上了吗？”
 
 \CN["财阀的户主"]
-“威胁信和杀害预告之类的没有来。
-在外面也会被什么东西袭击，没有什么特别的，是不是太过小心了？”
+“威胁信和杀害预告之类的都没有来。
+ 在外面也没被什么东西袭击，没有什么特别的，是不是太过小心了？”
 
 : DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0066" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “如果什么都没有的话，那就再好不过了。
-我们有责任把你送到幕府去
-有的话，请忍耐一下……”
+ 我们有责任把你送到幕府去
+ 所以，请忍耐一下……”
 
 \CN["财阀的户主"]
 “嘛，确实是被贼袭击致死的
-也不算俏皮话”
+ 也不算笑话”
 
 \CN["财阀的户主"]
 “啊，比起那种事
-一路上都积满了……”
+ 一路上都积满了……”
 
 : HideWnd()
 : PlaySe( "SE/Se_Katana01" )
@@ -125,9 +125,9 @@
 : DrawChara( "Azami", 6, 0)
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0067" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “非常抱歉，在做这种事情的时候
-”
+请考虑下场合。”
 
 \CN["财阀的户主"]
 “哈……？”
@@ -152,8 +152,8 @@
 : Call("Scenarios/Common*CutinFadeOut")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0068" )
-\CN["嘲讽"]
-“桃子！银！我求了护卫！”
+\CN["爱彩弥"]
+“桃！银！护卫的事，拜托了！”
 
 : HideWnd()
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
@@ -171,7 +171,7 @@
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : DrawChara( "Gin",10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : PlayVoice( "Voices/vo01_mom0094" )
-\CN["桃子"]
+\CN["桃"]
 “明白了！”
 
 //Yoshi：右にあざみ、左に黄菜子
@@ -205,7 +205,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0069" )
 : ShowWnd()
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （这条太刀筋，是白夜杀手独特的东西——
 这么小的孩子……）
 
@@ -232,9 +232,9 @@
 : ShowWnd()
 //: DrawChara( "Azami",23, 0)
 : PlayVoice( "Voices/vo05_aza0070" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （而且看不见感情……。
-简直就像在和栗子战斗一样。很难做……）
+简直就像在和栗子战斗一样。很难办……）
 
 //●演出：場面転換トランジション
 : HideWnd()
@@ -250,19 +250,19 @@
 好好干吧！”
 
 : DrawChara( "Gin", 9, 0)
-\CN["银子"]
+\CN["银"]
 “大叔，闭嘴老实点吧。”
 
 \CN["财阀的户主"]
-“喂，你说我是谁……说话要小心啊！”
+“喂，你再说谁啊……说话要小心啊！”
 
-\CN["银子"]
+\CN["银"]
 “啊？我不知道。”
 
 : PlayVoice( "Voices/vo01_mom0095" )
-\CN["桃子"]
-“如果局长不在的话，你也可以这样抱怨
-没能做到吧”
+\CN["桃"]
+“如果局长不在的话，你才可以这样抱怨
+ 没想到吧”
 
 //●演出：場面転換トランジション
 //●演出：黄菜子　暗殺術使う。あざみが防ぐ
@@ -298,7 +298,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0071" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “喂喂，那么糟糕的东西，是谁给的？”
 
 //: DrawChara( "Kinako",29, 0)
@@ -338,11 +338,11 @@
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “……那个小鬼是什么人？”
 
 : PlayVoice( "Voices/vo01_mom0096" )
-\CN["桃子"]
+\CN["桃"]
 “那么小的身体，居然会用那么大的刀……”
 
 //●演技：心の声です
@@ -353,7 +353,7 @@
 : DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : DrawChara( "Kinako",25, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : PlayVoice( "Voices/vo05_aza0072" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （拖长了就糟糕了……）
 
 //●演技：呼吸乱れ。テンポはゆっくりでお願いします
@@ -388,11 +388,11 @@
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “小姐，你怎么看？”
 
 : PlayVoice( "Voices/vo01_mom0097" )
-\CN["桃子"]
+\CN["桃"]
 “局长看起来有点着急。”
 
 \CN["财阀的户主"]
@@ -400,14 +400,14 @@
 
 \CN["财阀的户主"]
 「我，无论如何都要保护我的生命！
-万一的时候，你们会成为我的盾……”
+ 万一的时候，你们会成为我的盾……”
 
 : DrawChara( "Gin", 0, 0)
-\CN["银子"]
+\CN["银"]
 “……局长着急的理由大概是……”
 
 : PlayVoice( "Voices/vo01_mom0098" )
-\CN["桃子"]
+\CN["桃"]
 “啊，是为了那个孩子吧。”
 
 //●演出：場面転換トランジション
@@ -433,7 +433,7 @@
 
 //●演技：心の声です
 : PlayVoice( "Voices/vo05_aza0073" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （看来已经到了极限了。但是——）
 
 : DrawChara( "Kinako",24, 0)
@@ -460,16 +460,16 @@
 : Call("Scenarios/Common*CutinFadeOut")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0074" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （啊，白夜真是残酷啊……。
-可能是洗脑了什么，但真是荒唐。）
+ 可能是洗脑了什么，但真是荒唐。）
 
 //●演技：心の声です
 //: DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0075" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （让他在这里死去太可惜了。
-这孩子一定能更大幅度地振翅飞翔……）
+ 这孩子一定能更大幅度地振翅飞翔……）
 
 //: EraseChara( "Azami", 0.5 )
 //: EraseChara( "Kinako", 0.5 )
@@ -482,22 +482,22 @@
 : Call("Scenarios/Common*EvFadeOut")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0099" )
-\CN["桃子"]
+\CN["桃"]
 “好像决定了。”
 
 : PlayBgm("BGM/03_CM003")
 \CN["财阀的户主"]
-“快点杀！虽说是个小鬼，但我是想杀我的！”
+“快点杀！虽说是个小鬼，但是想杀我的！”
 
 \CN["财阀的户主"]
 “快点！快点！快点快点快点快点快点快点快点！”
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom0100" )
-\CN["桃子"]
+\CN["桃"]
 “小银，拜托了。”
 
-\CN["银子"]
+\CN["银"]
 「…………」
 
 //●演出：銀が財閥に当て身を食らわせて気絶させる
@@ -512,7 +512,7 @@
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0101" )
-\CN["桃子"]
+\CN["桃"]
 “呼……终于安静下来了呢。”
 
 //Yoshi：右にあざみ、左に銀、センターに桃
@@ -520,18 +520,18 @@
 : DrawChara( "Azami", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo05_aza0076" )
-\CN["嘲讽"]
-「哈哈哈，你们也是你们，胆子很好。
-好像可以振翅高飞啊」
+\CN["爱彩弥"]
+「哈哈哈，你们也是你们，胆子很大。
+ 好像可以振翅高飞啊」
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0102" )
-\CN["桃子"]
+\CN["桃"]
 “当然啦，局长。
 我们会变得更伟大的！”
 
 : DrawChara( "Gin", 3, 0)
-\CN["银子"]
+\CN["银"]
 “是啊。”
 
 //●演出：暗転
@@ -560,7 +560,7 @@
 : PlayVoice( "Voices/vo02_kin0053" )
 //\CN["黄菜子"]
 //「ある財閥の暗殺に失敗した私は鬼灯に連れて行かれました」
-一个财阀暗杀失败的我被鬼灯带走了。
+暗杀财阀失败的我被鬼灯带走了。
 
 //: DrawChara( "Kinako",37, 0)
 : PlayVoice( "Voices/vo02_kin0054" )

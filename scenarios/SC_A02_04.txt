@@ -14,31 +14,31 @@
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0061" )
-\CN["嘲讽"]
-「好的，桃子也来了。
-我来说明你们要做的任务”
+\CN["爱彩弥"]
+「好的，桃也来了。
+ 我来说明你们要做的任务”
 
 : DrawChara( "Azami", 1, 0)
 //●読み：飯田隆盛（いいだたかもり）
 : PlayVoice( "Voices/vo05_aza0062" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我想让你做的是护卫任务
-对方是饭田隆盛这个资本家”
+ 对方是饭田隆盛这个资本家”
 
 : DrawChara( "Momo", 3, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0062" )
-\CN["桃子"]
+\CN["桃"]
 “……饭田隆盛？是在哪里听到过的名字呢。”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0063" )
-\CN["桃子"]
+\CN["桃"]
 “确实是和财阀家中的一个住吉家有关系的人
-没有吗？”
+ 是吗？”
 
 : DrawChara( "Azami", 3, 0)
 : PlayVoice( "Voices/vo05_aza0063" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “您答对了。真不愧是。”
 
 加津佐的资本家饭田隆盛——
@@ -47,27 +47,27 @@
 威胁的对象肯定是反幕派的人吧。
 
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “那个饭田只是不让他死就好了……。
-敌人是什么样的家伙有头绪吗？”
+ 敌人是什么样的家伙有头绪吗？”
 
 : DrawChara( "Azami", 0, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0064" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，大概吧。现在无黑正在去打听。”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “那我们就集中在护卫上就好了。”
 
 : DrawChara( "Momo", 0, 0, 1 )
 : PlayVoice( "Voices/vo01_mom0064" )
-\CN["桃子"]
+\CN["桃"]
 “因为不知道会有什么样的家伙来袭击，所以疏忽大意是大敌
 小银。也许会出现暗杀专家”
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “我明白了。小姐。”
 
 //＠マップ封印：帝都西街道
@@ -81,12 +81,12 @@
 事件信息更新了。
 
 <color=FF0000>※为了方便菜单画面有两个角色
-实际行动的只有一个角色。</color>
+但是实际行动的只有一个角色。</color>
 
 : HideWnd()
 : DrawImage( 1, 0, "MiscImage/tutorial01", Call("Scenarios/Common*EffTime") )
 : Wait()
-关于派对
+关于小队
 
 //●シーンエンド
 : HideWnd()
@@ -110,18 +110,18 @@
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 \CN["饭田家执事"]
 “我等您了。
-您是鬼灯先生吧？”
+ 您是鬼灯人是吧？”
 
 : DrawChara( "Momo", 1, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0065" )
-\CN["桃子"]
+\CN["桃"]
 “是的，没错。
-我想马上和饭田隆盛先生见面，可以吗？”
+ 我想马上和饭田隆盛先生见面，可以吗？”
 
 //: DrawChara( "Ranmaru", 16, 0)
 \CN["饭田家执事"]
 “知道了。我带您去。
-请这边走——”
+ 请这边走——”
 
 //●演出：場面転換トランジション
 : HideWnd()
@@ -147,45 +147,45 @@
 
 : DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom0066" )
-\CN["桃子"]
+\CN["桃"]
 “咦？我的脸上有什么东西？”
 
 \CN["饭田"]
-“什么，就算是鬼灯队的队员
-我担心只有你们能担任护卫吗？”
+“那什么，就算是鬼灯队的队员
+ 我担心只有你们能担任护卫吗？”
 
 : DrawChara( "Gin", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
-\CN["银子"]
+\CN["银"]
 「…………」
 
 //＠会話フォント小さく
 //●演技：隣にいる銀に小声で諭しています
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0067" )
-\CN["桃子"]
+\CN["桃"]
 <size=70%>“……小银，不行，冷静点。”</size>
 
 //＠会話フォント小さく
 : DrawChara( "Gin", 21, 0)
-\CN["银子"]
+\CN["银"]
 <size=70%>“我知道，小姐”</size>
 
 \CN["饭田家执事"]
 “您说的是，老爷，比这两位更优秀的护卫是
-我觉得很少有”
+ 我觉得应该很少有”
 
 \CN["饭田"]
 “嗯……原来如此。
-你这样看的话，应该没问题吗？”
+ 你都这样看的话，应该没问题吗？”
 
 \CN["饭田"]
 “仔细想想，如果有个笨家伙来了，你应该会把他赶回去的
-抛光品”
+ 才对吧”
 
 //●演技：心の声です
 : DrawChara( "Momo", 3, 0 )
 : PlayVoice( "Voices/vo01_mom0068" )
-\CN["桃子"]
+\CN["桃"]
 （哎，我还以为那位执事不是普通人
 看来被完全信任了呢……）
 
@@ -194,17 +194,17 @@
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0069" )
-\CN["桃子"]
+\CN["桃"]
 “不，不用在意。”
 
 \CN["饭田"]
 “您能这么说我很感激。
-总之，你要经常待在我身边
-希望你能保护我”
+ 总之，你要经常待在我身边
+ 希望你能保护我”
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0070" )
-\CN["桃子"]
+\CN["桃"]
 “知道了。请交给我们。”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -266,47 +266,47 @@
 : DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0071" )
-\CN["桃子"]
+\CN["桃"]
 “警护的任务真的很辛苦呢。
-也不知道敌人什么时候会来袭击……”
+ 也不知道敌人什么时候会来袭击……”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “那个执事实在是不可靠。”
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0072" )
-\CN["桃子"]
+\CN["桃"]
 “是吗？好像是个好人……”
 
 : DrawChara( "Momo", 5, 1)
 : PlayVoice( "Voices/vo01_mom0073" )
-\CN["桃子"]
+\CN["桃"]
 「那么，我去洗澡吧。
-那么小银也一起进去吗？”
+ 那么小银也一起进去吗？”
 
 : DrawChara( "Gin", 7, 0)
-\CN["银子"]
+\CN["银"]
 「…………」
 
 : DrawChara( "Momo", 14, 2)
 : PlayVoice( "Voices/vo01_mom0074" )
-\CN["桃子"]
+\CN["桃"]
 “我告诉你，这是开玩笑的吧？”
 
 : StopBgm( 1.0 )
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “……小姐，请等一下浴室。”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom0075" )
-\CN["桃子"]
+\CN["桃"]
 “咦？为什么？”？
 我真想洗个澡……？”
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “……总觉得有味道。”
 
 : HideWnd()
@@ -316,26 +316,26 @@
 : DrawChara( "Momo", 13, 2)
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0076" )
-\CN["桃子"]
+\CN["桃"]
 “呃，骗人的，香味什么的……啊，真的吗？
-那就更应该洗澡了吧？
-难道味道好吗？”
+ 那就更应该洗澡了吧？
+ 难道味道不好吗？”
 
 : DrawChara( "Gin", 22, 1)
-\CN["银子"]
+\CN["银"]
 “不是那样的……。
 只是，随着风飘来了不祥的味道”
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0077" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵，开玩笑啦，开玩笑的。
 但是，看来护卫工作今天就要结束了”
 
 小银的鼻子很好使。
 
 在贫民窟中生存下来培养出来的危机感知能力是
-最可靠。
+最可靠的。
 
 恐怕有刺客瞄准了饭田先生的性命
 大家都聚集过来了吧。
@@ -370,7 +370,7 @@
 
 //＠立ち絵出さない
 : DrawFaceThumbnail( "Gin", 1, 0 )
-\CN["银子"]
+\CN["银"]
 “啊，那是个好主意。
 但是，想起来好像太晚了……”
 
@@ -387,7 +387,7 @@
 : lay = 3; type = "WL";
 : Call( "Scenarios/Common*FgEff")
 : PlayBgm("BGM/16_TM001")
-\CN["银子"]
+\CN["银"]
 “现在马上卷着尾巴逃跑的话就放过你。”
 
 \CN["浪人B"]
@@ -395,7 +395,7 @@
 
 \CN["浪人A"]
 “嘿嘿，后面的姐姐真是个好女人啊。
-杀了这个哥哥之后，大家一起犯吧」
+杀 了这个哥哥之后，大家一起侵犯吧」
 
 : HideWnd()
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -409,19 +409,19 @@
 : DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0078" )
-\CN["桃子"]
+\CN["桃"]
 “哈~……这样的男人，大家都是这样的吧。”
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom0079" )
-\CN["桃子"]
-“看到女性的话，第二句话就‘犯’。只能说这句话。”
-不知道吗？喂，小银？”
+\CN["桃"]
+“看到女性的话，第二句话就‘侵犯’。只能说这句话。”
+ 不知道吗？喂，小银？”
 
 : DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : lay = 0; type = "WR";
 : Call( "Scenarios/Common*FgEff")
-\CN["银子"]
+\CN["银"]
 “啊？怎么样呢？”
 
 \CN["浪人A"]
@@ -478,23 +478,23 @@
 
 //●ＳＥ：倒れる音
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “没什么好说的。”
 
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0080" )
-\CN["桃子"]
+\CN["桃"]
 “但是，好像又来了？”
 
 从后面，和刚才那帮人一样被人雇佣了
 看上去像是浪人的人们朝着这边跑来。
 
 : DrawChara( "Gin", 21, 0)
-\CN["银子"]
+\CN["银"]
 “……对吧。说实话，我很讨厌。”
 
 : DrawChara( "Gin", 11, 0)
-\CN["银子"]
+\CN["银"]
 “嘛，虽然只是全部打倒而已……”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -541,7 +541,7 @@
 //●分岐：勝利した場合
 //--------------------------------------------------------
 *win02
-那之后我和小银也来了浪人
+那之后我和小银将袭来的浪人
 一个劲地打倒。
 
 : HideWnd()
@@ -550,7 +550,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0081" )
-\CN["桃子"]
+\CN["桃"]
 “呼。差不多该结束了吧？”
 
 : HideWnd()
@@ -558,19 +558,19 @@
 : lay = 3; type = "WR";
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “好像是，小姐。只是——”
 
 \CN["魔术师之女"]
 「…………」
 
-浪人们不来了之后
+浪人们离开了之后
 悄然而来的魔术师风之女。
 
-营造出的气氛是强者的天性。
+营造出的气氛是强者的样子。
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “小姐，请小心啊。”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -622,7 +622,7 @@
 //●場所：飯田隆盛の屋敷・廊下
 : DrawImage( 9, 0, "MiscImage/CutinFg02", 0.5)
 \CN["魔术师之女"]
-“……呃……好像比预想的要做……。
+“……呃……好像比预想的要难……。
 这里还是不要勉强比较好”
 
 //●演出：魔術師の女、退場する
@@ -634,17 +634,17 @@
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0082" )
-\CN["桃子"]
-“现在的{移动魔石，心灵之石}！？
-应该不是那么容易就能到手的，那个……”
+\CN["桃"]
+“现在的移动魔石！？
+ 应该不是那么容易就能到手的，那个……”
 
 : DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “烦死了，好像不会来了。”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0083" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。先去饭田那里……”
 
 //●演出：場面転換トランジション
@@ -668,15 +668,15 @@
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom0084" )
-\CN["桃子"]
+\CN["桃"]
 “现在攻来的所有人都处理好了。”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0085" )
-\CN["桃子"]
+\CN["桃"]
 “但是，在这里再呆下去会很危险。
-刺客是魔术的，而且还夹杂着相当多的使用者
-因为有……”
+ 刺客会使用魔法，而且还夹杂着相当多的使用者的感觉
+ 因为有……”
 
 最后战斗的魔术师是威胁。
 
@@ -689,20 +689,20 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom0086" )
-\CN["桃子"]
+\CN["桃"]
 “啊？不是一起的吗？”
 
 \CN["饭田"]
 “不，我看不见你的身影。”
 
 : DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
-\CN["银子"]
+\CN["银"]
 “不会吧，被刺客杀了……？”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 「不，那种程度的家伙会想办法解决的家伙
-我不这么认为……”
+ 我不这么认为……”
 
 //●演出：暗転
 : HideWnd()
@@ -742,12 +742,12 @@
 //●状況：刺客に敗北
 //●場所：飯田隆盛の屋敷・廊下
 : DrawChara( "Gin", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “哈，哈……呃……真糟糕……这样下去的话……”
 
 : DrawChara( "Momo", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0087" )
-\CN["桃子"]
+\CN["桃"]
 “这里就退一次，重整姿势……”
 
 去了饭田先生的房间，带出去逃走。
@@ -776,7 +776,7 @@
 : Call("Scenarios/Common*CutinFadeOut")
 : DrawChara( "Gin", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “什么都不能还嘴……”
 
 \CN["鬼灯队士・男C"]
@@ -794,7 +794,7 @@
 : chara = "Momo"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo01_mom0088" )
-\CN["桃子"]
+\CN["桃"]
 “小银，先去饭田那里吧。”
 
 //●演出：場面転換トランジション
@@ -816,13 +816,13 @@
 : ShowWnd()
 : DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
 : DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 「……！」
 
 //●演技：飯田隆盛の死体を見ました
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0089" )
-\CN["桃子"]
+\CN["桃"]
 “什么……！？”
 
 : HideWnd()
@@ -838,7 +838,7 @@
 
 //: DrawChara( "Gin", 19, 0)
 : DrawFaceThumbnail( "Gin", 19, 0 )
-\CN["银子"]
+\CN["银"]
 “……可恶……！”
 
 在小银的视线中被弹飞的头——
@@ -853,11 +853,11 @@
 : DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0090" )
-\CN["桃子"]
+\CN["桃"]
 “……小银，他的遗体。”
 
 : DrawChara( "Gin", 22, 0)
-\CN["银子"]
+\CN["银"]
 “了解”
 
 //●演出：暗転
@@ -902,20 +902,20 @@
 不必生病”
 
 : DrawChara( "Gin", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “哈，哈，还差得远呢……”
 
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0091" )
-\CN["桃子"]
+\CN["桃"]
 “是啊……不能轻易放弃啊。”
 
 \CN["魔术师"]
-“看来只有根性啊……。
+“看来只有气势啊……。
 这些家伙将来会成为祸害，所以必须在这里杀了他们”
 
 : DrawChara( "Gin", 10, 0)
-\CN["银子"]
+\CN["银"]
 “小姐……”
 
 就像小银成为我的盾一样，站在我面前。
@@ -925,7 +925,7 @@
 
 : StopBgm( 1.0 )
 : DrawChara( "Gin", 18, 0)
-\CN["银子"]
+\CN["银"]
 「……！？」
 
 //●ＳＥ：ドアの開く音
@@ -954,7 +954,7 @@
 “……事情办完了，我回去了。”
 
 \CN["魔术师"]
-“但是，要把他们弄活……”
+“但是，要把他们杀掉……”
 
 : DrawChara( "Ranmaru", 3, 0)
 \CN["男人"]
@@ -978,12 +978,12 @@
 : EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
 : Wait()
 : ShowWnd()
-现在的{移动魔石，特蕾波特斯通}……？
+现在的一移动魔石……？
 但是，那个应该不是简单就能得到的东西。
 
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0088" )
-\CN["桃子"]
+\CN["桃"]
 “小银，先去饭田那里吧。”
 
 : Jump( "*sc004a_1" )
