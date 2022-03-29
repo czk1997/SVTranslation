@@ -5,30 +5,30 @@
 //●場所：帝都・薬屋
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["药店"]
-“喂，能帮我问一下请求吗？”
+“喂，有点事情想要问一下？”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk0397" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的。如果是我能做的事的话……”
 
-药店里受到了各种各样的照顾。
-如果是拜托的话我想问你……。
+我在药店里受到了各种各样的照顾。
+如果是委托的话，我还是想要听听……。
 
 \CN["药店"]
 “街上的贵族要求我用特制的美容化妆水
-为了制作那个的材料没送到……”
+ 为了制作那个的材料没送到……”
 
 \CN["药店"]
 “虽然需要史莱姆的粘液，但是普通史莱姆是不行的
-需要上位种类的史莱姆的粘液”
+ 需要上位种类的史莱姆的粘液”
 
 //――――――――――――――――――――――――――――
 //＠通常選択肢,select01
 //■選択肢１：頼みを聞いてあげる
 //■選択肢２：今は忙しい
 //――――――――――――――――――――――――――――
-\CI["答应你的请求"]
+\CI["答应请求"]
 \CI["现在很忙"]
 那么，怎么办呢？
 
@@ -39,13 +39,13 @@
 *select01_s1
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk0398" )
-\CN["无黑色"]
+\CN["无黑"]
 “你知道那个史莱姆出没在哪里吗？”
 
 \CN["药店"]
 “帝都西街道的森林中史莱姆的上位物种
-我从客商那里听说了《格林斯莱姆》的出现。
-所以，如果去那里的话……”
+ 我从客商那里听说了《格林斯莱姆》的出现。
+ 所以，如果去那里的话……”
 
 : HideWnd()
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -79,9 +79,9 @@
 //●場所：帝都西の森
 : DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0399" )
-\CN["无黑色"]
+\CN["无黑"]
 “这就是那个史莱姆吗……。
-果然名列前茅，不能大意啊”
+ 果然名列前茅，不能大意啊”
 
 //●演出：スライムが襲いかかってくる
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -120,7 +120,7 @@
 //●状況：戦闘終了後
 : DrawChara( "Mukuro", 11, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0400" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，接下来把这家伙的粘液装到瓶子里——”
 
 : RpgCharaOff("Boss")
@@ -152,11 +152,11 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0401" )
-\CN["无黑色"]
+\CN["无黑"]
 “史莱姆的粘液这样可以吗？”
 
 \CN["药店"]
-“嗯！对了对了！看的感觉真是太好了！”！
+“嗯！对了对了！专这样感觉真是太好了！”！
 谢谢！”
 
 \CN["药店"]

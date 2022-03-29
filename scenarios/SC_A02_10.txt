@@ -35,15 +35,15 @@
 
 \CN["幕臣E"]
 “如果这件事被将军知道了的话
-你们肯定全部被人砍头了！”
+ 你们肯定全部要被砍头！”
 
 //: EraseChara( "Ji", 0.5 )
 某一天的幕府——
 家臣们变相奔走着。
 
-其原因是幕府将军《一桥忠胜，一吐为快》的
-一个女儿，{一桥小夜，一翼啊}突然消失了
-有了。
+其原因是幕府将军一桥忠胜的
+一个女儿 一桥小夜 
+突然消失了。
 
 //●演出：場面転換トランジション
 //●場所：帝都
@@ -63,14 +63,14 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo24_say0001" )
 \CN["幕府的公主"]
-“总算能溜走了。
-来到这里的话，应该没问题吧？”
+“总算溜走了。
+ 来到这里的话，应该没问题吧？”
 
 : DrawChara( "Sayo", 2, 1)
 : PlayVoice( "Voices/vo24_say0002" )
 \CN["幕府的公主"]
 「我不是笼子里的鸟。
-偶尔也去外面玩一下”
+偶尔也想去外面玩一下”
 
 公主不允许外出。
 
@@ -87,7 +87,7 @@
 : PlayVoice( "Voices/vo24_say0003" )
 \CN["幕府的公主"]
 “那么，虽然来到街上是很好的
-首先要做什么呢？”
+ 首先要做什么呢？”
 
 : DrawChara( "Sayo", 5, 0)
 : PlayVoice( "Voices/vo24_say0004" )
@@ -95,30 +95,30 @@
 “嗯……真糟糕。我不知道该做什么。”
 
 虽然是非常想去街上看看的公主
-一旦出来，就不知道具体该做什么。
+但一旦出来，就不知道具体该做什么。
 
 \CN["男A"]
 “呐……那孩子是迷路了吗？”
 
 \CN["女A"]
-“不能和你扯上关系……。
-那件和服一定是贵族的孩子！”
+“不能和她扯上关系……。
+ 那件和服一定是贵族的孩子！”
 
 \CN["男B"]
 “告诉警察不是更好吗？”
 
 \CN["男C"]
-“啊，我不想和你扯上关系。你就是啊。”
+“啊，我不想和他扯上关系。”
 
 明明是女孩子迷路的情况
 周围的大人中没有一个人想跟他说话。
 
-公主穿的和服只有一件价格
-有稍微超过镇上居民年收入的价格。
+公主穿的和服任意一件，
+都有稍微超过镇上居民年收入的价格。
 
 对这样阶级的人伸出援助之手
-除了幕府的相关人员，都是坏人，只有偏离了头脑的好人
-没有。
+除了幕府的相关人员，都是坏人，
+那种脑子奇怪的善人是没有的。
 
 //●ＳＥ：ぐーー。お腹の鳴る音
 : HideWnd()
@@ -131,13 +131,13 @@
 : PlayVoice( "Voices/vo24_say0005" )
 \CN["幕府的公主"]
 “嗯，肚子饿了。
-应该先吃点什么再出来啊」
+ 应该先吃点什么再出来啊」
 
 : DrawChara( "Sayo", 3, 0)
 : PlayVoice( "Voices/vo24_say0006" )
 \CN["幕府的公主"]
 “但是，这样的话就无法摆脱了吧
-很难呢”
+ 很难呢”
 
 话虽如此，今后该怎么办才好呢？
 
@@ -169,7 +169,7 @@
 : ShowWnd()
 \CN["摊子上的大叔"]
 “哦，欢迎光临。
-小姐，要用吗？”
+ 小姐，要用吗？”
 
 : DrawChara( "Sayo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo24_say0009" )
@@ -183,7 +183,7 @@
 : PlayVoice( "Voices/vo24_say0010" )
 \CN["幕府的公主"]
 “对了，那个咖啡有很好闻的味道
-是什么？”
+ 是什么？”
 
 \CN["摊子上的大叔"]
 “小姐，你不知道烤串吗？”
@@ -191,7 +191,7 @@
 : DrawChara( "Sayo", 3, 0)
 : PlayVoice( "Voices/vo24_say0011" )
 \CN["幕府的公主"]
-“……真漂亮……？我没听说过。”
+“……好香……？我还没听说过。”
 
 : DrawChara( "Sayo", 7, 0)
 : PlayVoice( "Voices/vo24_say0012" )
@@ -205,7 +205,7 @@
 : DrawChara( "Sayo", 0, 0)
 : PlayVoice( "Voices/vo24_say0013" )
 \CN["幕府的公主"]
-“半学……？”
+“半价……？”
 
 \CN["摊子上的大叔"]
 “嗯？你没带钱吗？”
@@ -216,7 +216,7 @@
 “钱……家里有很多呢……”
 
 \CN["摊子上的大叔"]
-“那就不行了。”
+“那不就行了。”
 
 //●演出：レオ　登場する
 : HideWnd()
@@ -244,18 +244,18 @@
 : PlayVoice( "Voices/vo24_say0015" )
 \CN["幕府的公主"]
 “我不是你！
-因为我有‘小夜’这个名字！”
+ 因为我有‘小夜’这个名字！”
 
 : DrawChara( "Leo", 13, 0)
 \CN["雷欧"]
 「这样啊，不好意思，不好意思。
-那么，sayo饿了吗？”
+ 那么，小夜饿了吗？”
 
 //●演技：見栄はってます
 : DrawChara( "Sayo", 3, 0)
 : PlayVoice( "Voices/vo24_say0016" )
 \CN["小夜"]
-“没什么……我到那里为止……”
+“没什么……我只是……”
 
 //●ＳＥ：ぐーーー　お腹の減る音
 : PlaySe( "SE/Se_Hungry" )
@@ -289,23 +289,23 @@
 
 : DrawChara( "Leo", 2, 0)
 \CN["雷欧"]
-“别把我当小孩子看待，你还不是小孩子吗？”
+“虽然这么说，你不还是小孩子吗？”
 
 : DrawChara( "Sayo", 9, 2)
 : PlayVoice( "Voices/vo24_say0020" )
 \CN["小夜"]
 “不对！我不是小孩子……。
-我已经是一位出色的女士了！”
+ 我已经是一位出色的女士了！”
 
 : DrawChara( "Leo", 13, 0)
 \CN["雷欧"]
-“哇，我说了。”
+“哇，哇。”
 
-那是从旁边看有点年龄差距的兄妹
+从旁边那是看有点年龄差距的兄妹
 看起来好像在开心地玩耍。
 
-然而，有一个人看到这一幕，脸色惨白地仰望着天空
-就在附近。
+然而，就在附近，有一个人看到这一幕，
+脸色惨白地仰望着天空。
 
 //●演出：あざみ登場する
 : HideWnd()
@@ -319,7 +319,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0087" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “公主……我找到了……”
 
 : HideWnd()
@@ -331,17 +331,17 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo24_say0021" )
 \CN["小夜"]
-“嗯……我在嘲讽……被发现了……”
+“嗯……爱彩弥……被发现了……”
 
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
 \CN["雷欧"]
-“等一下——嘲弄局长……”
+“等一下——爱彩弥局长……”
 
 : DrawChara( "Azami", 0, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0088" )
-\CN["嘲讽"]
-“啊，Leo，没关系。
+\CN["爱彩弥"]
+“啊，雷欧，没关系。
 怎么说呢，这是幕府将军的女儿啊”
 
 //: EraseChara( "Leo", 0.5 )
@@ -358,8 +358,8 @@
 
 : DrawChara( "Azami", 3, 0)
 : PlayVoice( "Voices/vo05_aza0089" )
-\CN["嘲讽"]
-“顺便说一下，根据我的看法，你的工资会减轻半年。”
+\CN["爱彩弥"]
+“顺便说一下，根据我的看法，你的工资会减少半年份。”
 
 : ImpactLayer( 5, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Leo", 4, 0)
@@ -369,21 +369,21 @@
 
 : DrawChara( "Azami", 0, 0)
 : PlayVoice( "Voices/vo05_aza0090" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “好是好是好，过几天吧。”
 
 : DrawChara( "Azami", 2, 0)
 : PlayVoice( "Voices/vo05_aza0091" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “……现在不是这种时候。
-公主，我会尽快回幕府的。我来陪你”
+ 公主，我会尽快送你回幕府的。我来陪你”
 
 //: EraseChara( "Leo", 0.5 )
 : DrawChara( "Sayo", 3, 0, 0 )
 : PlayVoice( "Voices/vo24_say0023" )
 \CN["小夜"]
-“嗯……有点小聪明……。
-只要一点点就够了，在街上走一走”
+“嗯……爱彩弥……只要一点点……。
+ 只要一点点就够了，在街上走一走”
 
 //: EraseChara( "Sayo", 0.5 )
 : DrawChara( "Leo", 1, 0, 0 )
@@ -392,24 +392,24 @@
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0092" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “不，无论如何都要带他回幕府。
-因为现在幕府内的幕臣们都恐慌了”
+ 因为现在幕府内的幕臣们都恐慌了”
 
 : DrawChara( "Leo", 2, 0)
 \CN["雷欧"]
-“但是，说点事情的话，不是稍微好一点吗？”
+“但是，这么说的话，稍微等一会也可以吧？”
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0093" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “不行。公主发生什么事的时候，我可担不起责任。”
 
 : DrawChara( "Leo", 5, 0)
 \CN["雷欧"]
 “但是啊……”
 
-雷欧咬住了小孔。
+雷欧咬住了食物。
 
 : HideWnd()
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
@@ -422,13 +422,13 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo24_say0024" )
 \CN["小夜"]
-“好啊，嘲讽。能送我到幕府吗？”
+“好啊，爱彩弥。能送我到幕府吗？”
 
 : DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : chara = "Azami"; lay = 4 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo05_aza0094" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “是的。我会负责带公主去幕府。”
 
 : HideWnd()
@@ -440,21 +440,21 @@
 : Call( "Scenarios/Common*FgLarge" )
 : ShowWnd()
 \CN["雷欧"]
-“喂，不是sayo，是公主啊
+“喂，小夜，不对，是公主
 不是想在街上玩吗？
-明明是个小孩子，为什么那么坦率呢？啊？”
+明明是个小孩子，为什么不坦率呢？啊？”
 
 : DrawChara( "Sayo", 4, 0)
 : PlayVoice( "Voices/vo24_say0025" )
 \CN["小夜"]
-“‘サヨ’就可以了。你叫我公主的时候
-总觉得好痒”
+“‘小夜’就可以了。你叫我公主的时候
+ 总觉得好痒”
 
 : DrawChara( "Sayo", 8, 0)
 : PlayVoice( "Voices/vo24_say0026" )
 \CN["小夜"]
 “虽然我很高兴你的心情，但是我的任性
-再也不能给你添麻烦了……”
+ 再也不能给你添麻烦了……”
 
 : DrawChara( "Leo", 1, 0)
 \CN["雷欧"]
@@ -466,12 +466,12 @@
 : Wait()
 : Call( "Scenarios/Common*FgResetLayer" )
 : ShowWnd()
-被嘲笑带走的公主。
+被彩弥带走的公主。
 
 并不是单纯的懂事。
-我只知道放弃妥协。
+是知道放弃和妥协。
 
-那样的孩子分别的时候，朝向雷欧——
+那孩子在分别的时候，朝向雷欧——
 
 : DrawChara( "Sayo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo24_say0027" )
@@ -485,19 +485,19 @@
 : DrawChara( "Leo", 14, 0)
 \CN["雷欧"]
 “因为他是近期将成为地上最强的男人！
-千万不要忘记啊」
+ 千万不要忘记啊」
 
 : DrawChara( "Sayo", 7, 0)
 : PlayVoice( "Voices/vo24_say0028" )
 \CN["小夜"]
-“……Leo，对吧……嗯，我知道了！我会记住的。”
+“……雷欧，对吧……嗯，我知道了！我会记住的。”
 
 : DrawChara( "Sayo", 1, 0)
 : PlayVoice( "Voices/vo24_say0029" )
 \CN["小夜"]
 “那么，雷欧。再见！”
 
-不是总是摆出的笑容。
+不是总是摆出的微笑。
 
 把发自内心天真无邪的笑容还给了雷欧。
 
@@ -512,12 +512,13 @@
 //体験版　ここで切る（仮）
 : if $trial == true
 	: ShowWnd()
-谢谢您玩到这里。
-体验版到此结束。
+	谢谢您玩到这里。
+	体验版到此结束。
 
 	: HideWnd()
 	: DrawImage( 9, 0, "MiscImage/TrialEnd", Call("Scenarios/Common*EffTime") )
 \NULL[]
+
 	: FadeOut( 0.5 )
 	: Wait()
 	: LoadScene( "Title" )
