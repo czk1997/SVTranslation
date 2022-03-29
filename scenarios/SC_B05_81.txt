@@ -1,0 +1,543 @@
+//========================================================
+//○デートしてみる？
+//========================================================
+//●場所：鬼灯屯所
+//●視点：無黒視点
+//Yoshi：左に銀、右に桃
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Leo", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0915" )
+\CN["桃子"]
+“小银，今天我上街买东西。”
+
+\CN["银子"]
+“我明白了。”
+
+//●演出：桃＆銀　退場する
+: HideWnd()
+: chara = "Gin"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Momo"; lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+//Yoshi：センターに無黒
+//: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+本想去巡视一下，今天轮到我的是桃子和银的搭档
+我碰见了出去。
+
+\CN["鬼灯队士・女E"]
+“公主椿和风真，那两个人的关系很好呢。”
+
+\CN["鬼灯队士・女B"]
+“嗯。已经超越了情侣，是夫妇了呢。”
+
+\CN["鬼灯队士・女A"]
+“现在开始要约会了吗？不，不，我也想要男朋友。”
+
+//: DrawChara( "Mukuro",42, 0)
+那两个人开始交往了
+感觉和交往前没什么不同的是
+只有我吗？
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：左に無黒、右にレオ
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Leo",11, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["雷欧"]
+“无黑，我们也约会吧，约会。
+下次休息是一起的吧？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk1997" )
+\CN["无黑色"]
+“是啊。嗯，好啊。”
+
+: JumpLayer( 4, 0, -50, 1, 0.25)
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“哈~…是吧。果然不行啊——…啊？”
+
+: ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“无黑，刚才说了什么！？说了好！？”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk1998" )
+\CN["无黑色"]
+“有那么吃惊吗？”
+
+\CN["雷欧"]
+“不，因为每次都邀请他，他都说‘不行！’或者说“不行”
+不是要砍掉吗”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk1999" )
+\CN["无黑色"]
+“嘛，偶尔也是……说是约会，也是那个吧？”？
+男女一起去玩的全部都叫“约会”吧？”
+
+: DrawChara( "Leo",10, 0)
+\CN["雷欧"]
+“啊……那边……”
+
+//●演出：場面転換トランジション
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["鬼灯队士・女A"]
+“嗬，那边好像也有春天的暖炉啊。”
+
+\CN["鬼灯队士・女B"]
+「嗯。但是，无黑酱也真的是，对自己的心情
+很迟钝吧”
+
+\CN["鬼灯队士・女E"]
+“因为金丝雀君也相当迟钝……”
+
+\CN["鬼灯队士・女A"]
+“年轻的人会成为情侣。黄菜子现在也是恋爱中的少女。”
+正在迈进。啊——！好羡慕啊！”
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 6, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Leo",11, 0, 0, 0.5, 0.0, 4, "RC" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+//Yoshi：左に無黒、右にレオ
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2000" )
+\CN["无黑色"]
+“那怎么办？约会吗？”
+
+: DrawChara( "Leo",11, 0)
+\CN["雷欧"]
+“当然啦！这是当然的！”！
+场所由我来考虑。做最好的计划吧！”
+
+//●背景：空
+//Yoshi：背景、昼
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: ShowWnd()
+——约会当天。
+
+//●場所：帝都・昼
+//: DrawChara( "Leo",13, 0, 0, 0.5, 0.0, 3, "C" )
+//Yoshi：左にレオ、右に無黒
+//: DrawChara( "Mukuro", 2, 0, 0, 0.5, 0.0, 4, "R" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a006a_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/09_CM009")
+: ShowWnd()
+\CN["雷欧"]
+（不会吧，真的是无黑的约会，简直就像做梦一样。
+那个也很时尚……）
+
+//: DrawChara( "Leo", 6, 1)
+\CN["雷欧"]
+（糟糕……什么啊，这个太可爱了吧……。
+怦然心动）
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2001" )
+\CN["无黑色"]
+“怎么了？我的脸上有什么？”
+
+\CN["雷欧"]
+“啊，不对……那件衣服很适合，很可爱。”
+
+//: DrawChara( "Mukuro",36, 1)
+: PlayVoice( "Voices/vo00_muk2002" )
+\CN["无黑色"]
+“是吗，是吗？可爱吗……”
+
+暂且，请桃子这个那个地告诉，试着打扮了一下……。
+
+你能喜欢我真是太好了。
+
+对约会的申请提出OK的是
+并不是什么心血来潮的事。
+
+——这么说来。
+
+//●演出：過去回想トランジション
+//●場所：鬼灯屯所・昼・回想
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: cutinfile = "Refrain"
+: Call("Scenarios/Common*CutinFadeIn")
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Bebi", 0 )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_01", 0.0 )
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 4, "C" )
+: DrawChara( "Bebi", 0, 0, 0, 0.5, 0.0, 5, "R" )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+//Yoshi：左に無黒、右中に黄菜子、右に紅美
+: PlayVoice( "Voices/vo02_kin0398" )
+\CN["黄菜子"]
+“无黑先生，你见过雷欧吗？”
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2003" )
+\CN["无黑色"]
+“不，今天还没看……。
+你找他有什么事吗？”
+
+: PlayVoice( "Voices/vo02_kin0399" )
+\CN["黄菜子"]
+“是的，我收到了一封信给雷欧。
+那也是如此”
+
+//: DrawChara( "Bebi",10, 0)
+: PlayVoice( "Voices/vo07_beb0147" )
+\CN["红美"]
+“不要拿情书来耍我。
+喜欢的话直接告诉对方喜欢就好了……”
+
+//: DrawChara( "Mukuro",42, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk2004" )
+\CN["无黑色"]
+（……是吗，果然那家伙很受欢迎啊）
+
+//: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0400" )
+\CN["黄菜子"]
+“那个，无黑没关系吗？脸色好像不太好。”
+
+//: DrawChara( "Mukuro",38, 0)
+: PlayVoice( "Voices/vo00_muk2005" )
+\CN["无黑色"]
+“……啊，啊！啊，没什么。嗯，没什么。”
+
+有这样的情况
+
+
+
+//●演出：過去回想トランジション
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Bebi", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 1.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+//Yoshi：左中に小夜、右中にレオ
+: DrawChara( "Sayo", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo24_say0187" )
+\CN["小夜"]
+“利昂——！”
+
+//●演出：小夜　レオに抱きつく
+//Yoshi：右中にレオ
+: PlaySe( "SE/Se_Cloth01" )
+: DrawChara( "Leo",15, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Sayo", 1, 0, 0, 0.5, 0.0, 3, "LC" )
+\CN["雷欧"]
+“呼……！纱乃今天也很有精神呢。”
+
+: PlayVoice( "Voices/vo24_say0188" )
+\CN["小夜"]
+“嘿嘿。因为来这里很开心啊！”！
+而且，还有雷欧”
+
+: DrawChara( "Sayo", 4, 0)
+: PlayVoice( "Voices/vo24_say0189" )
+\CN["小夜"]
+“雷欧，今天休息吧？
+那就可以在一起了”
+
+: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“是啊。你有什么想做的吗？”
+
+: DrawChara( "Sayo", 0, 0)
+: PlayVoice( "Voices/vo24_say0190" )
+\CN["小夜"]
+“是啊……奥赛罗比较好。
+我想试一次奥赛罗”
+
+: DrawChara( "Leo",16, 0)
+\CN["雷欧"]
+“好啊。我告诉你，我真的很厉害。”
+
+偶然看到关系和睦的奥赛罗的两个人的时候也是这样。
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Sayo", 0.5 )
+//Yoshi：センターに無黒
+: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 3, "C" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk2006" )
+\CN["无黑色"]
+（果然我很奇怪。胸口很奇怪。）
+
+街上的女孩子也是如此，小夜也是如此。
+
+我看到雷欧和别的女孩子关系很好
+越来越多的人会变得战战兢兢、心神不定。
+
+//●演出：過去回想明ける
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseAllImage( 9, 0.0 )
+: ResetLayer(9)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a006a_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+//Yoshi：左にレオ、右に無黒
+//: DrawChara( "Leo", 6, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 4, "R" )
+所以，要好好面对这份心情
+我答应了和雷奥约会……。
+
+总之，一起逛帝都的街道
+在热门的店里吃饭了。
+
+//: DrawChara( "Mukuro",35, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk2007" )
+\CN["无黑色"]
+（嗯……。我做得好吗？）
+
+\CN["雷欧"]
+“从刚才开始就一直是这种感觉
+怎么了？”
+
+忧心忡忡地盯着我。
+
+//: DrawChara( "Mukuro",34, 0)
+: PlayVoice( "Voices/vo00_muk2008" )
+\CN["无黑色"]
+“啊，不，是这样啊。我好像能很好地约会呢。”
+想着……”
+
+//: DrawChara( "Mukuro",35, 0)
+: PlayVoice( "Voices/vo00_muk2009" )
+\CN["无黑色"]
+“仔细想想，除了任务以外……私底下和男孩子两个人
+这是我第一次做什么……”
+
+//: DrawChara( "Leo", 5, 1)
+\CN["雷欧"]
+“是吗？是吗？这样啊，我是你的第一次……”
+
+//: DrawChara( "Mukuro", 6, 1)
+: PlayVoice( "Voices/vo00_muk2010" )
+\CN["无黑色"]
+“哇，真是对不起！所以，有什么奇怪的地方吗？”
+如果有的话，能告诉我的话我会很开心的”
+
+//: DrawChara( "Leo",14, 1)
+\CN["雷欧"]
+“没那么用力吧？”
+
+\CN["雷欧"]
+“我一直在说，我只是和你在一起而已
+非常开心，只要你能这样意识到
+高兴得不得了”
+
+//: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“所以说，做得很好之类的，不要在意
+好吧”
+
+雷欧轻轻地把手放在了头上。
+
+//: DrawChara( "Mukuro",35, 1)
+: PlayVoice( "Voices/vo00_muk2011" )
+\CN["无黑色"]
+“呃……希望你不要把那个当孩子看待。”
+
+小夜经常请Leo做
+我觉得这个好。
+
+//: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“啊，知道了，知道了，不知不觉。”
+
+//: DrawChara( "Mukuro",35, 1)
+虽然这么说，但是一点也不觉得不好
+把放在头上的雷欧的手取下来，然后就这样牵着。
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2012" )
+\CN["无黑色"]
+“因为今天是约会……。
+一般是这样牵着手做的吧？”
+
+//: DrawChara( "Leo", 2, 1)
+\CN["雷欧"]
+“啊，啊……对了对了，就是那个！”
+
+紧紧握手。
+我手汗什么的没关系吗？
+
+//: DrawChara( "Mukuro",42, 0)
+
+明明没有在意过这样的事情……。
+
+偶然，在街上的同龄的女孩子们映入眼帘。
+
+//: DrawChara( "Leo", 3, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a006b_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["雷欧"]
+“所以，不要在意这些。”
+
+对我这么说的雷欧的侧脸
+比起平时，看上去更闪耀，显得更凛凛。
+
+//: DrawChara( "Mukuro",38, 2)
+//●演技：照れまくって直視していられないって感じです
+: PlayVoice( "Voices/vo00_muk2013" )
+\CN["无黑色"]
+「…………」
+
+//: DrawChara( "Mukuro",39, 2)
+怎么办？我不能正视雷欧的脸。
+
+心脏也一直七上八下的。
+
+//●演技：心の声です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a006a_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2014" )
+\CN["无黑色"]
+（Leo的手，豆子之类的碎了，硬邦邦的，而且很大……。
+果然是男孩子啊）
+
+并且，通过日常的训练不断的努力传达了出来。
+
+//: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“手很粗糙，不是很舒服的东西。”
+
+//: DrawChara( "Mukuro", 2, 1)
+: PlayVoice( "Voices/vo00_muk2015" )
+\CN["无黑色"]
+“好……而且我更喜欢这种手。
+我在看你一直努力到什么程度”
+
+//: DrawChara( "Leo", 6, 2)
+\CN["雷欧"]
+“是、是吗……”
+
+鼻子的头在咯吱咯吱地挠着。
+
+//: DrawChara( "Mukuro", 1, 1)
+: PlayVoice( "Voices/vo00_muk2016" )
+\CN["无黑色"]
+“雷欧也很紧张吗？”
+
+\CN["雷欧"]
+“那是，因为啊。和最喜欢的女人一起走啊？”？
+多少……”
+
+这样啊。雷欧也和我一样。
+
+//: DrawChara( "Mukuro",28, 1)
+听了那个，虽然不知道为什么
+心情变得非常开心。
+
+//: DrawChara( "Mukuro",34, 1)
+: PlayVoice( "Voices/vo00_muk2017" )
+\CN["无黑色"]
+“可以暂时牵着你的手吗？”
+
+//: DrawChara( "Leo",14, 1)
+\CN["雷欧"]
+“哦，是啊！那是当然的。”
+
+//: DrawChara( "Mukuro", 2, 1)
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk2018" )
+\CN["无黑色"]
+（最近胸口的沙尘暴和心跳都一定是这样的。）
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a006c_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+我大概，大概，这家伙的事……。
+
+然后也没有特别去哪里的店。
+
+两个人牵着手在帝都等地散步。
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//Yoshi：背景消去
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

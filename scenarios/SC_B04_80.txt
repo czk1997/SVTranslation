@@ -1,0 +1,339 @@
+//========================================================
+//○ヴィクトール騎士団の３人
+//========================================================
+//●場所：帝都の宿・夜
+//●状況：ファルケ、イライザ、ゼノが３人集まっている
+//●背景：和風民家・部屋・夜
+//Yoshi：背景、明るい
+//●演出：イライザ、酒飲んでいるので頬赤でお願いします
+//Yoshi：左にイライザ、右にファルケ
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Falke", 1 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Falke", 1 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05", 1.0 )
+: DrawChara( "Elisa", 4, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Falke", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0046" )
+\CN["伊拉伊萨"]
+“这个榻榻米真有趣啊。”
+
+\CN["沥青"]
+「ズズズ……呜～原来如此，这就是Zip先生
+说好吃的大和茶吗？”
+
+: DrawChara( "Elisa", 3, 1)
+: PlayVoice( "Voices/vo19_era0047" )
+\CN["伊拉伊萨"]
+“不过，只是稍微越过了大海
+到这里为止都不一样啊。世界真的好广阔啊」
+
+//Yoshi：センターにゼノ
+: CharaCostume( "Xeno", 1 )
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Xeno", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["奇诺"]
+“两个人都有自己的房间，为什么要在我的房间……”
+
+//Yoshi：左にイライザ、右にファルケ
+: DrawChara( "Elisa", 0, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Falke", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: JumpLayer( 3, 0, -50, 1, 0.25)
+//●演技：酒（日本酒）を飲んでいます
+: PlayVoice( "Voices/vo19_era0048" )
+\CN["伊拉伊萨"]
+“噗哈哈~…。不过，这边的酒也很好喝啊。”
+
+: DrawChara( "Xeno", 2, 0)
+\CN["奇诺"]
+“在大和地区，主食米是用农作物做的
+真像酒啊。还有，明天也有，不要喝多了
+请给我”
+
+//●演出：ゼノに絡みます
+: PlayVoice( "Voices/vo19_era0049" )
+\CN["伊拉伊萨"]
+“别这么说。没关系，没关系，这样就足够了。”
+不会醉的”
+
+: layer = 5; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Xeno", 9, 0)
+\CN["奇诺"]
+“呃……有酒味啊……”
+
+: DrawChara( "Elisa", 9, 1)
+: PlayVoice( "Voices/vo19_era0050" )
+\CN["伊拉伊萨"]
+「嘿嘿。但是，这个真的好烦啊。
+我给你买几瓶土特产……”
+
+: DrawChara( "Falke", 9, 0)
+\CN["沥青"]
+“……我很惊讶你会说出那种话。
+总觉得，做得很好啊。说实话，我很意外”
+
+: DrawChara( "Elisa", 8, 1)
+: PlayVoice( "Voices/vo19_era0051" )
+\CN["伊拉伊萨"]
+“啊？意外是怎么回事啊。”
+
+: DrawChara( "Falke", 4, 0)
+\CN["沥青"]
+“不，因为啊，克莱西亚，克莱西亚一直在说
+你突然说“订婚了！”说出口的日子是认真的
+吓了我一跳”
+
+\CN["沥青"]
+“那个，因为中提琴的表情真的很吃惊啊……”
+
+: DrawChara( "Xeno", 4, 0)
+\CN["奇诺"]
+“那就连我也吓了一跳。
+没想到这个世界上会有人想和伊丽莎结婚
+没想到竟然有……”
+
+: DrawChara( "Elisa",11, 1)
+: PlayVoice( "Voices/vo19_era0052" )
+\CN["伊拉伊萨"]
+“那是怎么回事啊，Zero？啊，是吧？”
+
+: PlaySe( "SE/Se_Kubishime" )
+: layer = 5; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+伊莉莎将手臂旋转到了泽诺的脖子上
+就这样戴上了头锁。
+
+: DrawChara( "Xeno",13, 2)
+\CN["奇诺"]
+“～～～～～！”小王子说是开玩笑！
+所以，放开我……！嗯，呼吸……！”
+
+: DrawChara( "Xeno", 7, 1)
+: DrawChara( "Elisa",17, 1)
+: PlayVoice( "Voices/vo19_era0053" )
+\CN["伊拉伊萨"]
+“喂，不好意思，不好意思……！
+你也上年纪了啊。猜中胸口的话会很糟糕的”
+
+: PlayVoice( "Voices/vo19_era0054" )
+\CN["伊拉伊萨"]
+“呃，那个孩子……是黄菜子吗？
+对，也没有什么不好的。嘿嘿……”
+
+: ImpactLayer( 5, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Xeno",10, 1)
+\CN["奇诺"]
+“……！？来、来、黄菜子没什么……”
+
+: DrawChara( "Falke",12, 0)
+\CN["沥青"]
+“啊！怎么了？怎么了？说的好像很有意思。
+伊洛伊萨，详情！”
+
+: DrawChara( "Elisa", 3, 1)
+: PlayVoice( "Voices/vo19_era0055" )
+\CN["伊拉伊萨"]
+“你看，刚到大和的时候，泽诺好像很有趣
+说是有，就去精灵之森之类的地方玩了
+不是吗？”
+
+: DrawChara( "Xeno", 9, 0)
+\CN["奇诺"]
+“虽然不是来玩的……”
+
+: DrawChara( "Elisa", 4, 1)
+: PlayVoice( "Voices/vo19_era0056" )
+\CN["伊拉伊萨"]
+“然后，在那里可爱的女孩子被强盗缠上了哦
+在那里，泽诺跑出去救了一个女孩。
+呐，Zno”
+
+: DrawChara( "Xeno",19, 2)
+\CN["奇诺"]
+「…………」
+
+: DrawChara( "Falke", 5, 0)
+\CN["沥青"]
+“诶，ZOO，你不是在干吗？”
+
+: DrawChara( "Xeno", 2, 0)
+\CN["奇诺"]
+「那、那是、我也是骑士的端部。
+只是做了作为骑士理所当然的事”
+
+\CN["沥青"]
+“哎，不管怎么说，做得很好。
+那么，伊拉伊萨，那个孩子可爱吗？”
+
+//●読み：あーいう娘（あーいうこ）
+: DrawChara( "Elisa", 0, 1)
+: PlayVoice( "Voices/vo19_era0057" )
+\CN["伊拉伊萨"]
+“啊，是啊。她是个身材矮小又可爱的女孩子。
+嘿嘿，Zno喜欢那个女孩子啊。
+不是一见钟情吗？啊？”
+
+: layer = 5; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Xeno", 5, 1)
+\CN["奇诺"]
+“……呃，没什么，那，不是这样的……。
+不可能一见钟情……”
+
+: DrawChara( "Falke", 1, 0)
+\CN["沥青"]
+“烦人，别那么逗我。
+还有，Zno——”
+
+: DrawChara( "Xeno", 0, 0)
+: DrawChara( "Falke",14, 0)
+\CN["沥青"]
+“听好了，这种事情还是坦率一点比较好。
+倔强的话，以后会变成麻烦的事情……”
+
+: PlayVoice( "Voices/vo19_era0058" )
+\CN["伊拉伊萨"]
+“对了对了。谁是骑士团长啊
+粘上一次之后，那是因为已经很辛苦了啊」
+
+: DrawChara( "Falke", 4, 0)
+\CN["沥青"]
+“一味地妨碍恋爱之路，茶茶泡汤的副团长也
+要小心啊，Zno”
+
+: DrawChara( "Xeno", 4, 0)
+\CN["奇诺"]
+“我会留意的。”
+
+: DrawChara( "Xeno", 1, 0)
+\CN["奇诺"]
+“比起这个，两个人明天也要早起
+差不多该睡了吧？”
+
+: DrawChara( "Falke", 9, 0)
+\CN["沥青"]
+“嗯？啊，已经这个时间了啊。
+是啊，那我也差不多该睡了吧”
+
+: DrawChara( "Elisa", 5, 1)
+: PlayVoice( "Voices/vo19_era0059" )
+\CN["伊拉伊萨"]
+“那么，我也来。嘿嘿，感觉不错，醉得很厉害。”
+心情变好了。你也早点睡吧」
+
+: DrawChara( "Xeno", 3, 0)
+\CN["奇诺"]
+“我还剩下调查的东西。”
+
+: DrawChara( "Falke", 1, 0)
+\CN["沥青"]
+“要适可而止。”
+
+\CN["奇诺"]
+“是的。但是，我想用阿波罗的箭稍微缩短一点。”
+
+: DrawChara( "Falke", 3, 0)
+\CN["沥青"]
+“是阿波罗的箭吗……必须快点找到。
+所以我们才来到大和」
+
+: DrawChara( "Elisa", 4, 1)
+: PlayVoice( "Voices/vo19_era0060" )
+\CN["伊拉伊萨"]
+“嗯，说是只能这样了。
+这样啊，请让我给你一个建议”
+
+: DrawChara( "Xeno", 8, 0)
+\CN["奇诺"]
+「……？」
+
+: DrawChara( "Elisa", 8, 0)
+: PlayVoice( "Voices/vo19_era0061" )
+\CN["伊拉伊萨"]
+“学习太多了，即使眼睛不好，也绝对不要戴眼镜。”
+
+: DrawChara( "Xeno", 9, 0)
+\CN["奇诺"]
+“嗯？是因为很难战斗吗？”
+
+: DrawChara( "Elisa",17, 1)
+: PlayVoice( "Voices/vo19_era0062" )
+\CN["伊拉伊萨"]
+“嘛，有各种各样的……”
+
+: DrawChara( "Falke", 2, 0)
+\CN["沥青"]
+“啊，是啊。奇诺，我也和伊拉伊萨意见相同……。
+眼睛不好的话，我给你买隐形眼镜”
+
+: DrawChara( "Xeno",10, 0)
+\CN["奇诺"]
+“哈？如果骑士团长这么说的话我也会这么做……”
+
+: DrawChara( "Falke", 9, 0)
+\CN["沥青"]
+“呼啊~……那我睡了。晚安。”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Falke"; lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: DrawChara( "Elisa", 5, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+//: DrawChara( "Elisa", 5, 1)
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0063" )
+\CN["伊拉伊萨"]
+“我也是。Zno，你也早点睡吧。”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Elisa"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: ShowWnd()
+//●演出：ファルケ、イライザ出て行く
+法尔克和伊拉伊萨分别由幕府准备
+我回到了房间。
+
+: HideWnd()
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawFaceThumbnail( "Elisa", 3, 0, 0 )
+: PlayVoice( "Voices/vo19_era0064" )
+\CN["伊拉伊萨"]
+（杰诺救的那个女孩，好像有什么事啊。
+如果那家伙不帮忙的话，我就赶紧打进去了
+但是……）
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Elisa", 11, 0, 0 )
+: PlayVoice( "Voices/vo19_era0065" )
+\CN["伊拉伊萨"]
+（而且，那个时候，感觉到了糟糕的杀气……。
+变成了非常开心的事情啊）
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

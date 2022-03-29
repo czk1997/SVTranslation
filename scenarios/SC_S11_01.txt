@@ -1,0 +1,297 @@
+//========================================================
+//○銭湯の男湯に入浴する
+//========================================================
+*sc000
+//露出開発度Ｂ以上で*sc001開始
+: if ( $chapter < 5 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+: if ( CharaHRank( "Mukuro", "Immoral" ) < 2 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) < 2 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+//白夜第４章のみ
+: if ( $chapter == 7 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+: if ( Flag ( "DatsuiMukuro" ) == true ) Return endif
+*sc001
+//●演技：心の声です
+: DrawChara( "Mukuro", 12, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk6911" )
+\CN["无黑色"]
+（接下来是男浴室吗……）
+
+嗓子咕噜咕噜地响了。
+
+在多次被男人看到裸体的过程中，对于被看到的事情
+已经能感受到某种快感了。
+
+正因为如此——
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 28, 1)
+: PlayVoice( "Voices/vo00_muk6912" )
+\CN["无黑色"]
+（普通地想的话，会做不可能的事
+然后被看到裸体的话，会有什么样的感觉呢？）
+
+这就是其中之一。
+虽说是进入男浴室……。
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：もう一度考え直そう
+//■選択肢２：ここまで来たら引き下がれない
+//――――――――――――――――――――――――――――
+\CI["再重新考虑一下吧"]
+\CI["到了这里就下不去了"]
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：もう一度考え直そうを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+不不不不，不管怎么进去男浴室都不可能吧。
+
+//●シーンエンド
+: Return
+//-------------------------------------------------------
+//●選択肢２：ここまで来たら引き下がれないを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+: if ( $inExtra == true )
+	: HideWnd()
+	: DrawImage( 1, 0, "BGImage/BG_School01_01", 1.0 )
+	: ShowWnd()
+: endif
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: DrawChara( "Mukuro", 12, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk6913" )
+\CN["无黑色"]
+“……要试试吗？”
+
+好奇心和兴奋感都抑制不住。
+
+//●演出：無黒　男湯に入っていく
+//＠場所移動：男湯
+//●演出：男湯に移動後、脱衣場へ
+: if ( $inExtra == false )
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: RpgDoorLock( "Door_Men", false )
+: RpgDoorOpen( "Door_Men" )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 8	\
+:	"MoveRight", 2	\
+:	"Turn", "U" )
+: Wait()
+: else
+: EraseChara( "Mukuro", 0.5 )
+: endif
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_School01_01", Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+\CN["男1"]
+“嘿嘿……？”
+
+\CN["男2"]
+“咦？那个黑发的姐姐，进了男浴室
+你在想什么？”
+
+//●ＣＧ：Ｈカットイン・着替え（無黒）
+//●ＣＧ差分：着衣
+//＠evcg：eva_c040
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_1_0100002_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6914" )
+\CN["无黑色"]
+（……果然很受关注啊）
+
+附近的男人们盯着我看。
+
+\CN["男1"]
+「…………」
+
+用惊讶的目光，但是，眼睛一直睁不开。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6915" )
+\CN["无黑色"]
+（在这里一动不动就没有意义了。
+必须好好行动……）
+
+我是来这里洗澡的
+必须要做那样的行为。
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：下着
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_2_0100002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Mukuro", 3 )
+: ShowWnd()
+脱掉衣服，穿内衣。
+
+\CN["男1"]
+「……！？」
+
+\CN["男2"]
+“那孩子，真的吗……”
+
+\CN["男3"]
+“白色内衣之类的让人兴奋。紧致的性感身体
+”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6916" )
+\CN["无黑色"]
+（明明还没全部脱下来，视线却刺痛了，直打哆嗦
+感觉到了♥</color>）
+
+别说被男人看到内衣了，就连裸体也没见过
+应该有数不清的。
+
+但是，男浴室本来就是女的我进入的
+在不被允许的地方，暴露出害羞的样子
+我莫名地兴奋起来。
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：下着脱ぎ
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_3_0300002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Mukuro", 1 )
+: ShowWnd()
+然后，取下胸罩，只穿内衣。
+
+\CN["男1"]
+“真是美乳啊。居然能看到那种东西……”
+
+\CN["男2"]
+“光是看到裸体，小鸡就勃起了。”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6917" )
+\CN["无黑色"]
+（剩下的一张……脱掉这个，就光着身子……。
+在男浴室里，全部暴露出来……）
+
+有羞耻心。
+但是，手却停不下来。
+
+想要看到裸体的心情非常强烈，已经……。
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：全裸
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_4_0300003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6918" )
+\CN["无黑色"]
+（……全部脱掉了……。
+在男浴室里，我光着身子……）
+
+\CN["男3"]
+“哦，真的是裸体了……。
+腰都变细了，真是的”
+
+\CN["男1"]
+“拜托你的话，汪星人应该会哄你吧？”
+
+窃窃私语。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6919" )
+\CN["无黑色"]
+（呃……被说了那样的话……。
+好害羞……明明害羞得不得了啊）
+
+女阴憋得慌。
+
+小腹疼得滴答滴答的爱液。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6920" )
+\CN["无黑色"]
+（就这样洗澡的话
+一定会更加……）
+
+肯定会有刺激的事情在等着你。
+
+这么一想，就坐立不安了。
+
+//●ＣＧ：消去
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: if ( $inExtra == true ) Return endif
+: CharaCanCostumeChange( "Mukuro", true )
+: ShowWnd()
+可以换服装了。
+<color=FF0000>※服装变更是从“菜单”中的“角色”开始的
+可以变更。也有不可更改的地方。</color>
+
+: CharaAddHSkill( "Mukuro", 1000 )
+: CharaAddHSkill( "Mukuro", 1001 )
+H技能“改变服装”和
+学会了“曝光自慰”。
+
+//シーン登録
+: HideWnd()
+: SceneFlagUp( "SC_S11_01" )
+//●演出：浴室に移動する
+//●シーンエンド
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 3	\
+:	"MoveUp", 2 )
+: Wait()
+//脱衣イベントフラグＯＮ
+: Flag( "DatsuiMukuro", true )
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+//Ｈ履歴更新
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 6000 ) endif
+: FadeOut( 0.5 )
+: Wait()
+: mapId = RpgMapID()
+: if ( mapId == 6 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town01_07_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map07" )
+: elif ( mapId == 45 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town05_08_Saito", "", "Scenarios/Map_Town05_Saito_Init*Map08" )
+: elif ( mapId == 58 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town06_04_Sakitama3" )
+: endif

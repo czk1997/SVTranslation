@@ -1,0 +1,182 @@
+//========================================================
+//○スライムの粘液を採ってきて１
+//========================================================
+*sc001
+//●場所：帝都・薬屋
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["药店"]
+“喂，能帮我问一下请求吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0397" )
+\CN["无黑色"]
+“是的。如果是我能做的事的话……”
+
+药店里受到了各种各样的照顾。
+如果是拜托的话我想问你……。
+
+\CN["药店"]
+“街上的贵族要求我用特制的美容化妆水
+为了制作那个的材料没送到……”
+
+\CN["药店"]
+“虽然需要史莱姆的粘液，但是普通史莱姆是不行的
+需要上位种类的史莱姆的粘液”
+
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：頼みを聞いてあげる
+//■選択肢２：今は忙しい
+//――――――――――――――――――――――――――――
+\CI["答应你的请求"]
+\CI["现在很忙"]
+那么，怎么办呢？
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：頼みを聞いてあげるを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk0398" )
+\CN["无黑色"]
+“你知道那个史莱姆出没在哪里吗？”
+
+\CN["药店"]
+“帝都西街道的森林中史莱姆的上位物种
+我从客商那里听说了《格林斯莱姆》的出现。
+所以，如果去那里的话……”
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+活动信息更新了！
+
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaBaloonOff("NPC_T01_018")
+: FadeIn( 0.5 )
+: Wait()
+: SetMission( "SC_A02_50_1", "Hidden" )
+: SetMission( "SC_A02_50_2", "InProgress" )
+: Return
+//-------------------------------------------------------
+//●選択肢２：今は忙しいを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+: DrawChara( "Mukuro", 0, 0 )
+\CN["药店"]
+“是吗……那就没办法了。”
+
+//●シーンエンド
+: Return
+//========================================================
+//○スライムの粘液を採ってきて２
+//========================================================
+*sc002
+//●場所：帝都西の森
+: DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0399" )
+\CN["无黑色"]
+“这就是那个史莱姆吗……。
+果然名列前茅，不能大意啊”
+
+//●演出：スライムが襲いかかってくる
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle
+//――――――――――――――――――――――――――――
+//■戦　闘：グリーンスライム
+//■タイプ：通常戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：グリーンスライム,0,1,2,win
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*win" ) endif	//勝利後のラベル
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Forest01_01", "BGM/21_BM002", 1005, -1, -1, "Scenarios/SC_A02_50*battle_end", true)
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle" )
+: else
+	: Jump( "Scenarios/SC_S01_01*sc001" )	//敗北した場合
+: endif
+
+*win
+//●状況：戦闘終了後
+: DrawChara( "Mukuro", 11, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0400" )
+\CN["无黑色"]
+“那么，接下来把这家伙的粘液装到瓶子里——”
+
+: RpgCharaOff("Boss")
+冷冰冰的触感难以形容。
+
+把倒了的史莱姆的粘液塞进了委托人给的瓶子里。
+
+//●演出：無黒　退場してから場面転換
+//＠マップ移動：帝都・薬屋
+//●場所：帝都・薬屋
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Town01_03_Teito", "", "Scenarios/SC_A02_50*sc002_1" )
+
+*sc002_1
+: HideWnd()
+: Call("Scenarios/Map_Town01_Teito_Init*Map03")
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 5	\
+:	"MoveUp", 2 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0401" )
+\CN["无黑色"]
+“史莱姆的粘液这样可以吗？”
+
+\CN["药店"]
+“嗯！对了对了！看的感觉真是太好了！”！
+谢谢！”
+
+\CN["药店"]
+“那么，谢谢是这样的……。
+先给你几个物品吧”
+
+//: DrawChara( "Mukuro", 1, 0)
+//: PlayVoice( "Voices/vo00_muk0402" )
+//\CN["無黒"]
+//「いいのか？　貴重なものだと聞いたが……」
+//\CN["薬屋"]
+//「これだけあれば大丈夫だから。
+//　売れば結構高値がつくと思うわよ？」
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: AddItem( "HpMedicenM", 10 )
+: AddItem( "SpMedicenM", 10 )
+得到了10个高级伤药和10个技能之叶。
+
+//＠アイテム：グリーンスライムの粘液,1
+//＠アイテム：上級薬草,10
+//●シーンエンド
+: SetMission( "SC_A02_50_2", "Successed" )
+: Return

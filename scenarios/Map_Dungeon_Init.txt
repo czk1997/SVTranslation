@@ -1,0 +1,2636 @@
+//========================================================
+//○帝都西街道
+//========================================================
+*Map_Dungeon01_01
+: if ( MissionProgress( "SC_A02_50_2", "InProgress" ) == true )
+	: RpgMapBaloonOn("SC_A02_50")
+: endif
+: if ( MissionProgress( "SC_A02_50_2", "Successed" ) == true )
+	: RpgMapBaloonOn("SC_A02_50","Enter")
+: endif
+: Return
+//========================================================
+//○帝都西の洞窟・Ｃフロア
+//========================================================
+*Map_Dungeon02_03
+: if ( MissionProgress( "SC_A01_03_2", "Successed" ) == true )
+	: RpgMapBaloonOff("Boss")
+: endif
+: Return
+//========================================================
+//○帝都北街道
+//========================================================
+*Map_Dungeon03_01
+: if ( MissionProgress( "SC_A02_04_2", "InProgress" ) == true )
+	: RpgEventOff("Passage1a")
+	: RpgEventOff("Passage1b")
+	: RpgEventOff("Passage1c")
+	: RpgEventOff("ToRootA")
+	: RpgMapBaloonOff("ToRootA")
+	: RpgEventOn("Passage2")
+: endif
+: if ( MissionProgress( "SC_A02_04_2", "InProgress", "Successed", "Failed" ) == true )
+	: RpgEventOff("Passage1a")
+	: RpgEventOff("Passage1b")
+	: RpgEventOff("Passage1c")
+: endif
+//白夜ルート時
+: if ( $chapter >= 7 && $chapter <= 9)
+	: RpgEventOff("Passage1a")
+	: RpgEventOff("Passage1b")
+	: RpgEventOff("Passage1c")
+	: RpgEventOn("Passage2")
+	: RpgEventOn("Passage5")
+	: RpgMapBaloonOff("ToRootA")
+	: RpgMapBaloonOff("ToRootB")
+	: RpgMapBaloonOn("ToRootC")
+	: RpgEventOff("Passage3")
+: endif
+//--------------------------------------------------------
+//○帝都北街道・敵配置
+//--------------------------------------------------------
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 2 )
+	: RpgCharaOn("2_Gorotsuki01")
+	: RpgCharaOn("2_Gorotsuki02")
+	: RpgCharaOn("2_Gorotsuki03")
+	: RpgCharaOn("2_Gorotsuki04")
+	: RpgCharaOn("2_Dog01")
+	: RpgCharaOn("2_Dog02")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 6 )
+	: RpgCharaOn("6_Pig01")
+	: RpgCharaOn("6_Pig02")
+	: RpgCharaOn("6_Pig03")
+	: RpgCharaOn("6_Pig04")
+	: RpgCharaOn("6_Pig05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+	: RpgCharaOn("13_Goblin01")
+	: RpgCharaOn("13_Goblin02")
+	: RpgCharaOn("13_Majyutsushi01")
+	: RpgCharaOn("13_Majyutsushi02")
+	: RpgCharaOn("13_Majyutsushi03")
+	: RpgCharaOn("13_Majyutsushi04")
+	: RpgCharaOn("13_Oak01")
+	: RpgCharaOn("13_Oak02")
+	: RpgCharaOn("13_Oak03")
+	: RpgCharaOn("13_Oak04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Dog01")
+	: RpgCharaOn("14_Dog02")
+	: RpgCharaOn("14_Dog03")
+	: RpgCharaOn("14_Dog04")
+	: RpgCharaOn("14_Shokushu01")
+	: RpgCharaOn("14_Shokushu02")
+	: RpgCharaOn("14_Shokushu03")
+	: RpgCharaOn("14_Rounin01")
+	: RpgCharaOn("14_Rounin02")
+	: RpgCharaOn("14_Rounin03")
+: endif
+: Return
+//========================================================
+//○帝都北街道Ａ
+//========================================================
+*Map_Dungeon03_02
+//--------------------------------------------------------
+//○帝都北街道・敵配置
+//--------------------------------------------------------
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 2 )
+	: RpgCharaOn("2_Gorotsuki01")
+	: RpgCharaOn("2_Gorotsuki02")
+	: RpgCharaOn("2_Gorotsuki03")
+	: RpgCharaOn("2_Gorotsuki04")
+	: RpgCharaOn("2_Gorotsuki05")
+	: RpgCharaOn("2_Dog01")
+	: RpgCharaOn("2_Dog02")
+	: RpgCharaOn("2_Dog03")
+	: RpgCharaOn("2_Dog04")
+	: RpgCharaOn("2_Dog05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+	: RpgCharaOn("13_Goblin01")
+	: RpgCharaOn("13_Goblin02")
+	: RpgCharaOn("13_Majyutsushi01")
+	: RpgCharaOn("13_Majyutsushi02")
+	: RpgCharaOn("13_Majyutsushi03")
+	: RpgCharaOn("13_Oak01")
+	: RpgCharaOn("13_Oak02")
+	: RpgCharaOn("13_Oak03")
+	: RpgCharaOn("13_Oak04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Dog01")
+	: RpgCharaOn("14_Dog02")
+	: RpgCharaOn("14_Dog03")
+	: RpgCharaOn("14_Dog04")
+	: RpgCharaOn("14_Shokushu01")
+	: RpgCharaOn("14_Shokushu02")
+	: RpgCharaOn("14_Shokushu03")
+	: RpgCharaOn("14_Rounin01")
+	: RpgCharaOn("14_Rounin02")
+	: RpgCharaOn("14_Rounin03")
+: endif
+: Return
+//========================================================
+//○帝都北街道Ｂ
+//========================================================
+*Map_Dungeon03_03
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 3 )
+	: RpgCharaOn("3_Horse01")
+	: RpgCharaOn("3_Horse02")
+	: RpgCharaOn("3_Horse03")
+	: RpgCharaOn("3_Horse04")
+	: RpgCharaOn("3_Horse05")
+	: RpgCharaOn("3_Gorotsuki01")
+	: RpgCharaOn("3_Gorotsuki02")
+	: RpgCharaOn("3_Gorotsuki03")
+	: RpgCharaOn("3_Gorotsuki04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+	: RpgCharaOn("13_Goblin01")
+	: RpgCharaOn("13_Goblin02")
+	: RpgCharaOn("13_Goblin03")
+	: RpgCharaOn("13_Majyutsushi01")
+	: RpgCharaOn("13_Majyutsushi02")
+	: RpgCharaOn("13_Majyutsushi03")
+	: RpgCharaOn("13_Oak01")
+	: RpgCharaOn("13_Oak02")
+	: RpgCharaOn("13_Oak03")
+	: RpgCharaOn("13_Oak04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Dog01")
+	: RpgCharaOn("14_Dog02")
+	: RpgCharaOn("14_Dog03")
+	: RpgCharaOn("14_Shokushu01")
+	: RpgCharaOn("14_Shokushu02")
+	: RpgCharaOn("14_Shokushu03")
+	: RpgCharaOn("14_Rounin01")
+	: RpgCharaOn("14_Rounin02")
+	: RpgCharaOn("14_Rounin03")
+	: RpgCharaOn("14_Rounin04")
+: endif
+: if ( MissionProgress( "SC_A02_04_2", "InProgress" ) == false )
+	: RpgMapBaloonOff( "ToIida1" )
+	: RpgMapBaloonOff( "ToIida2" )
+: endif
+: Return
+//========================================================
+//○帝都北街道Ｃ
+//========================================================
+*Map_Dungeon03_04
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+	: RpgCharaOn("13_Goblin01")
+	: RpgCharaOn("13_Goblin02")
+	: RpgCharaOn("13_Goblin03")
+	: RpgCharaOn("13_Majyutsushi01")
+	: RpgCharaOn("13_Majyutsushi02")
+	: RpgCharaOn("13_Majyutsushi03")
+	: RpgCharaOn("13_Majyutsushi04")
+	: RpgCharaOn("13_Oak01")
+	: RpgCharaOn("13_Oak02")
+	: RpgCharaOn("13_Oak03")
+	: RpgCharaOn("13_Oak04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Dog01")
+	: RpgCharaOn("14_Dog02")
+	: RpgCharaOn("14_Dog03")
+	: RpgCharaOn("14_Dog04")
+	: RpgCharaOn("14_Shokushu01")
+	: RpgCharaOn("14_Shokushu02")
+	: RpgCharaOn("14_Shokushu03")
+	: RpgCharaOn("14_Rounin01")
+	: RpgCharaOn("14_Rounin02")
+	: RpgCharaOn("14_Rounin03")
+	: RpgCharaOn("14_Rounin04")
+: endif
+//イベント配置
+: if ( MissionProgress( "SC_C04_11_1", "InProgress" ) == true )
+	: RpgCharaOn("SC_C04_11")
+: endif
+: if ( MissionProgress( "SC_C05_09_1", "InProgress" ) == true )
+	: RpgEventOn("ToRouyashiki")
+	: RpgMapBaloonOn("ToRouyashiki")
+: endif
+: Return
+//========================================================
+//○帝都南街道
+//========================================================
+*Map_Dungeon06_01
+//共通ルート時
+//密談の証拠を手に入れろ！　進行中の場合
+: if ( MissionProgress( "SC_A02_06_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("ToTakahama","Event")
+//高浜の奴隷市を調査せよ！　進行中の場合
+: elif ( MissionProgress( "SC_A03_03_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("ToTakahama","Event")
+//白夜ルート時
+//商人伊勢商左衛門を追え　進行中
+: elif ( MissionProgress( "SC_C04_06_1", "InProgress" ) == true )
+	: RpgMapBaloonOff("ToTakahama")
+	: RpgEventOn("Closed")
+	: RpgCharaOn("SC_C04_06")
+//見廻組から女衒を守れ！　進行中の場合
+: elif ( MissionProgress( "SC_C04_09_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("ToTakahama","Event")
+: endif
+//--------------------------------------------------------
+//敵配置
+//--------------------------------------------------------
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 4 )
+	: RpgCharaOn("4_Slime01")
+	: RpgCharaOn("4_Slime02")
+	: RpgCharaOn("4_Slime03")
+	: RpgCharaOn("4_Slime04")
+	: RpgCharaOn("4_Tar01")
+	: RpgCharaOn("4_Tar02")
+	: RpgCharaOn("4_Tar03")
+	: RpgCharaOn("4_Tar04")
+	: RpgCharaOn("4_Devil01")
+	: RpgCharaOn("4_Devil02")
+	: RpgCharaOn("4_Devil03")
+	: RpgCharaOn("4_Devil04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 6 )
+	: RpgCharaOn("6_Goblin01")
+	: RpgCharaOn("6_Goblin02")
+	: RpgCharaOn("6_Goblin03")
+	: RpgCharaOn("6_Goblin04")
+	: RpgCharaOn("6_Goblin05")
+	: RpgCharaOn("6_Goblin06")
+	: RpgCharaOn("6_Goblin06")
+	: RpgCharaOn("6_Bird01")
+	: RpgCharaOn("6_Bird02")
+	: RpgCharaOn("6_Bird03")
+	: RpgCharaOn("6_Bird04")
+	: RpgCharaOn("6_Bird05")
+	: RpgCharaOn("6_Bird06")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 12 )
+	: RpgCharaOn("12_Therianthrope01")
+	: RpgCharaOn("12_Therianthrope02")
+	: RpgCharaOn("12_Therianthrope03")
+	: RpgCharaOn("12_Therianthrope04")
+	: RpgCharaOn("12_Oak01")
+	: RpgCharaOn("12_Oak02")
+	: RpgCharaOn("12_Oak03")
+	: RpgCharaOn("12_Oak04")
+	: RpgCharaOn("12_Shokushu01")
+	: RpgCharaOn("12_Shokushu02")
+	: RpgCharaOn("12_Shokushu03")
+	: RpgCharaOn("12_Shokushu04")
+: endif
+: Return
+//========================================================
+//○永登呂山・３合目・洞窟
+//========================================================
+*Map_Dungeon07_08
+: if ( MissionProgress( "SC_A02_07", "Successed", "Failed" ) == true )
+	: RpgMapBaloonOff("Boss")
+: endif
+: Return
+
+//========================================================
+//○帝都西の森
+//========================================================
+*Map_Dungeon08_02
+: if ( MissionProgress( "SC_A02_50_2", "Successed" ) == true )
+	: RpgCharaOff("Boss")
+: endif
+: Return
+//========================================================
+//○高浜港
+//========================================================
+*Map_Dungeon09_01
+: if ( MissionProgress( "SC_A03_05_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("Door")
+: endif
+: if ( MissionProgress( "SC_A03_10_2", "InProgress" ) == true )
+	: RpgMapBaloonOn("Door")
+: endif
+: if ( MissionProgress( "SC_B05_12_1", "InProgress" ) == true )
+	: StopBgm( 0.0 )
+	: Jump( "Scenarios/SC_B05_11*sc002" )
+: endif
+//見廻組から女衒を守れ！発生中
+: if ( MissionProgress( "SC_C04_09_2", "InProgress" ) == true )
+	: RpgCharaOn( "SC_C04_09" )
+	: RpgDoorLock( "Door", false )
+: endif
+: if ( Flag ( "SC_C04_09_sc003" ) == true )
+	: RpgCharaOff( "SC_C04_09" )
+: endif
+: Return
+//========================================================
+//○高浜港・レンガ倉庫１Ｆ
+//========================================================
+*Map_Dungeon09_02
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 7 )
+	: RpgCharaOn("7_Rounin01")
+	: RpgCharaOn("7_Rounin02")
+	: RpgCharaOn("7_Rounin03")
+	: RpgCharaOn("7_Rounin04")
+	: RpgCharaOn("7_Rounin05")
+	: RpgCharaOn("7_Therianthrope01")
+	: RpgCharaOn("7_Therianthrope02")
+	: RpgCharaOn("7_Therianthrope03")
+	: RpgCharaOn("7_Therianthrope04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+	: RpgCharaOn("13_Majyutsushi01")
+	: RpgCharaOn("13_Majyutsushi02")
+	: RpgCharaOn("13_Majyutsushi03")
+	: RpgCharaOn("13_Majyutsushi04")
+	: RpgCharaOn("13_Kunoichi01")
+	: RpgCharaOn("13_Kunoichi02")
+	: RpgCharaOn("13_Kunoichi03")
+	: RpgCharaOn("13_Kunoichi04")
+	: RpgCharaOn("13_Kunoichi05")
+: endif
+: Return
+//========================================================
+//○高浜港・レンガ倉庫Ｂ１Ｆ
+//========================================================
+*Map_Dungeon09_03
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 7 )
+	: RpgCharaOn("7_Rounin01")
+	: RpgCharaOn("7_Rounin02")
+	: RpgCharaOn("7_Rounin03")
+	: RpgCharaOn("7_Rounin04")
+	: RpgCharaOn("7_Therianthrope01")
+	: RpgCharaOn("7_Therianthrope02")
+	: RpgCharaOn("7_Therianthrope03")
+	: RpgCharaOn("7_Therianthrope04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+	: RpgCharaOn("13_Majyutsushi01")
+	: RpgCharaOn("13_Majyutsushi02")
+	: RpgCharaOn("13_Majyutsushi03")
+	: RpgCharaOn("13_Majyutsushi04")
+	: RpgCharaOn("13_Kunoichi01")
+	: RpgCharaOn("13_Kunoichi02")
+	: RpgCharaOn("13_Kunoichi03")
+	: RpgCharaOn("13_Kunoichi04")
+: endif
+: Return
+//========================================================
+//○高浜港・倉庫・Ｂ２Ｆ
+//========================================================
+*Map_Dungeon09_04
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 7 )
+	: RpgCharaOn("7_Rounin01")
+	: RpgCharaOn("7_Rounin02")
+	: RpgCharaOn("7_Rounin03")
+	: RpgCharaOn("7_Rounin04")
+	: RpgCharaOn("7_Rounin05")
+	: RpgCharaOn("7_Therianthrope01")
+	: RpgCharaOn("7_Therianthrope02")
+	: RpgCharaOn("7_Therianthrope03")
+	: RpgCharaOn("7_Therianthrope04")
+	: RpgCharaOn("7_Therianthrope05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+	: RpgCharaOn("13_Majyutsushi01")
+	: RpgCharaOn("13_Majyutsushi02")
+	: RpgCharaOn("13_Majyutsushi03")
+	: RpgCharaOn("13_Majyutsushi04")
+	: RpgCharaOn("13_Majyutsushi05")
+	: RpgCharaOn("13_Kunoichi01")
+	: RpgCharaOn("13_Kunoichi02")
+	: RpgCharaOn("13_Kunoichi03")
+	: RpgCharaOn("13_Kunoichi04")
+	: RpgCharaOn("13_Kunoichi05")
+: endif
+: if ( MissionProgress( "SC_A03_05_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("Door")
+: endif
+: Return
+//========================================================
+//○神那街道
+//========================================================
+*Map_Dungeon12_01
+: if ( MissionProgress( "SC_A03_09_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("EVENT")
+	: RpgEventOn("EVENT")
+	: RpgEventOff("Closed")
+: endif
+: if ( MissionProgress( "SC_B04_50_2", "InProgress" ) == true )
+	: RpgMapBaloonOn("ToKanna02")
+	: RpgEventOff("Passage1")
+: endif
+: if ( MissionProgress( "SC_C05_05_1", "InProgress" ) == true )
+	: RpgEventOff("Passage2")
+	: RpgMapBaloonOn("ToKanna03")
+: endif
+: if ( MissionProgress( "SC_D05_17_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("EVENT")
+	: RpgEventOn("EVENT")
+	: RpgEventOff("Closed")
+: endif
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 9 )
+	: RpgCharaOn("9_Gorotsuki01")
+	: RpgCharaOn("9_Gorotsuki02")
+	: RpgCharaOn("9_Gorotsuki03")
+	: RpgCharaOn("9_Gorotsuki04")
+	: RpgCharaOn("9_Oak01")
+	: RpgCharaOn("9_Oak02")
+	: RpgCharaOn("9_Oak03")
+	: RpgCharaOn("9_Oak04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Dog01")
+	: RpgCharaOn("14_Dog02")
+	: RpgCharaOn("14_Dog03")
+	: RpgCharaOn("14_Dog04")
+	: RpgCharaOn("14_Shokushu01")
+	: RpgCharaOn("14_Shokushu02")
+	: RpgCharaOn("14_Shokushu03")
+	: RpgCharaOn("14_Shokushu04")
+	: RpgCharaOn("14_Zombie01")
+	: RpgCharaOn("14_Zombie02")
+	: RpgCharaOn("14_Zombie03")
+	: RpgCharaOn("14_Zombie04")
+	: RpgCharaOn("14_Zombie05")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: endif
+: Return
+
+//再配置
+*Map_Dungeon12_01R
+: RpgCharaOff("NpcHanimeDemon")
+: RpgCharaOff("HNPC_Slime")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○神那街道２
+//========================================================
+*Map_Dungeon12_02
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( MissionProgress( "SC_B04_50_2", "InProgress" ) == true )
+		: RpgMapBaloonOn("SC_B04_50")
+		: RpgEventOn("SC_B04_50")
+		: RpgCharaOn("SC_B04_50")
+	: endif
+: endif
+: Return
+//========================================================
+//○神那街道３
+//========================================================
+*Map_Dungeon12_03
+: Jump( "Scenarios/SC_C05_05*sc002" )
+: Return
+//========================================================
+//○清水組の屋敷
+//========================================================
+*Map_Dungeon13_01
+: if ( Flag ( "ShimizuEvent0" ) == false )
+	: RpgEventOn("SC_A03_09")
+: endif
+: Return
+
+//========================================================
+//○那須野山１
+//========================================================
+*Map_Dungeon14_01
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 9 )
+	: RpgCharaOn("9_Oak01")
+	: RpgCharaOn("9_Oak02")
+	: RpgCharaOn("9_Oak03")
+	: RpgCharaOn("9_Oak04")
+	: RpgCharaOn("9_Gorotsuki01")
+	: RpgCharaOn("9_Gorotsuki02")
+	: RpgCharaOn("9_Gorotsuki03")
+	: RpgCharaOn("9_Gorotsuki04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Slime01")
+	: RpgCharaOn("14_Slime02")
+	: RpgCharaOn("14_Slime03")
+	: RpgCharaOn("14_Slime04")
+	: RpgCharaOn("14_Gorotsuki01")
+	: RpgCharaOn("14_Gorotsuki02")
+	: RpgCharaOn("14_Gorotsuki03")
+	: RpgCharaOn("14_Gorotsuki04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Oak01")
+	: RpgCharaOn("15_Oak02")
+	: RpgCharaOn("15_Horse01")
+	: RpgCharaOn("15_Horse02")
+	: RpgCharaOn("15_Horse03")
+	: RpgCharaOn("15_Devil01")
+	: RpgCharaOn("15_Devil02")
+	: RpgCharaOn("15_Devil03")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: endif
+: Return
+
+//再配置
+*Map_Dungeon14_01R
+: RpgCharaOff("NpcHanimeDog")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: endif
+: Return
+//========================================================
+//○那須野山２
+//========================================================
+*Map_Dungeon14_02
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 9 )
+	: RpgCharaOn("9_Oak01")
+	: RpgCharaOn("9_Oak02")
+	: RpgCharaOn("9_Oak03")
+	: RpgCharaOn("9_Oak04")
+	: RpgCharaOn("9_Oak05")
+	: RpgCharaOn("9_Gorotsuki01")
+	: RpgCharaOn("9_Gorotsuki02")
+	: RpgCharaOn("9_Gorotsuki03")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Slime01")
+	: RpgCharaOn("14_Slime02")
+	: RpgCharaOn("14_Slime03")
+	: RpgCharaOn("14_Slime04")
+	: RpgCharaOn("14_Gorotsuki01")
+	: RpgCharaOn("14_Gorotsuki02")
+	: RpgCharaOn("14_Gorotsuki03")
+	: RpgCharaOn("14_Gorotsuki04")
+	: RpgCharaOn("14_Gorotsuki05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Oak01")
+	: RpgCharaOn("15_Oak02")
+	: RpgCharaOn("15_Oak03")
+	: RpgCharaOn("15_Horse01")
+	: RpgCharaOn("15_Horse02")
+	: RpgCharaOn("15_Horse03")
+	: RpgCharaOn("15_Horse04")
+	: RpgCharaOn("15_Devil01")
+	: RpgCharaOn("15_Devil02")
+	: RpgCharaOn("15_Devil03")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon14_02R
+: RpgCharaOff("NpcHanimeOni")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○那須野山３
+//========================================================
+*Map_Dungeon14_03
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 9 )
+	: RpgCharaOn("9_Oak01")
+	: RpgCharaOn("9_Oak02")
+	: RpgCharaOn("9_Oak03")
+	: RpgCharaOn("9_Oak04")
+	: RpgCharaOn("9_Gorotsuki01")
+	: RpgCharaOn("9_Gorotsuki02")
+	: RpgCharaOn("9_Gorotsuki03")
+	: RpgCharaOn("9_Gorotsuki04")
+	: RpgCharaOn("9_Gorotsuki05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Slime01")
+	: RpgCharaOn("14_Slime02")
+	: RpgCharaOn("14_Slime03")
+	: RpgCharaOn("14_Slime04")
+	: RpgCharaOn("14_Slime05")
+	: RpgCharaOn("14_Gorotsuki01")
+	: RpgCharaOn("14_Gorotsuki02")
+	: RpgCharaOn("14_Gorotsuki03")
+	: RpgCharaOn("14_Gorotsuki04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Oak01")
+	: RpgCharaOn("15_Oak02")
+	: RpgCharaOn("15_Oak03")
+	: RpgCharaOn("15_Oak04")
+	: RpgCharaOn("15_Horse01")
+	: RpgCharaOn("15_Horse02")
+	: RpgCharaOn("15_Horse03")
+	: RpgCharaOn("15_Devil01")
+	: RpgCharaOn("15_Devil02")
+	: RpgCharaOn("15_Devil03")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon14_03R
+: RpgCharaOff("NpcHanimeHumanAnal")
+: RpgCharaOff("NpcHanimePig")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○那須野山・頂上
+//========================================================
+*Map_Dungeon14_04
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 9 )
+	: RpgCharaOn("9_Oak01")
+	: RpgCharaOn("9_Oak02")
+	: RpgCharaOn("9_Oak03")
+	: RpgCharaOn("9_Gorotsuki01")
+	: RpgCharaOn("9_Gorotsuki02")
+	: RpgCharaOn("9_Gorotsuki03")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Slime01")
+	: RpgCharaOn("14_Slime02")
+	: RpgCharaOn("14_Slime03")
+	: RpgCharaOn("14_Gorotsuki01")
+	: RpgCharaOn("14_Gorotsuki02")
+	: RpgCharaOn("14_Gorotsuki03")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Oak01")
+	: RpgCharaOn("15_Oak02")
+	: RpgCharaOn("15_Oak03")
+	: RpgCharaOn("15_Horse01")
+	: RpgCharaOn("15_Horse02")
+	: RpgCharaOn("15_Devil01")
+	: RpgCharaOn("15_Devil02")
+: endif
+: if ( MissionProgress( "SC_A03_10_1", "InProgress" ) == true )
+	: RpgEventOn("SC_A03_10")
+	: RpgEventOn("SC_A03_10_1")
+	: RpgEventOn("SC_A03_10_2")
+: endif
+//SC_B04_12「傾国の美女」発生時
+: if ( MissionProgress( "SC_B04_12_1", "InProgress" ) == true )
+	: RpgDoorLock( "TamamoHouse", false)
+	: RpgMapBaloonOn("SC_B04_12","Event")
+: endif
+//SC_C04_12「傾国の女と呼ばれている存在」発生時
+: if ( MissionProgress( "SC_C04_12_1", "InProgress" ) == true )
+	: RpgDoorLock( "TamamoHouse", false)
+	: RpgMapBaloonOn("SC_B04_12","Event")
+	: RpgEventOn("SC_C04_12")
+: endif
+//SC_D05_21「因縁　～姫椿桃編～」発生時
+: if ( MissionProgress( "SC_D05_21_1", "InProgress" ) == true )
+	: RpgCharaOn("Tamamo2")
+: endif
+//SC_D06_52「風神と呼ばれた男のケジメ」解放時
+: if ( MissionProgress( "SC_D06_51_1", "Opened" ) == true )
+	: RpgMapBaloonOn("SC_B04_12","Event")
+	: RpgDoorLock( "TamamoHouse", false )
+: endif
+: Return
+//========================================================
+//○那須野山・玉藻の小屋
+//========================================================
+*Map_Dungeon14_05
+: if ( MissionProgress( "SC_B04_12_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_B04_12*sc002" )
+: endif
+: if ( MissionProgress( "SC_D06_51_1", "Opened" ) == true )
+	: RpgCharaOff("Tamamo")
+	: Jump( "Scenarios/SC_D06_51" )
+: endif
+: Return
+//========================================================
+//○日東街道
+//========================================================
+*Map_Dungeon17_01
+: if ( MissionProgress( "SC_B04_03_1", "InProgress" ) == true )
+	: RpgEventOff("Closed")
+	: RpgMapBaloonOn("SC_B04_03")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon17_01R
+: RpgCharaOff("NpcHanimeHumanAnal")
+: RpgCharaOff("NpcHanimeOni")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○北国街道
+//========================================================
+*Map_Dungeon18_00
+: if ( Flag ( "KitaguniKaidoEvent" ) == true )
+	: RpgEventOff( "SC_B04_05" )
+	: RpgMapBaloonOff( "SC_B04_05" )
+: endif
+: if ( MissionProgress( "SC_B04_05_2", "InProgress" ) == true )
+	: RpgEventOff( "Close2" )
+: endif
+: if ( $chapter >= 5 )	//５章以降、恵蘇封印する
+	: RpgMapBaloonOff("ToEsoL")
+	: RpgMapBaloonOff("ToEsoC")
+	: RpgMapBaloonOff("ToEsoR")
+	: RpgEventOn("CloseL")
+	: RpgEventOn("CloseC")
+	: RpgEventOn("CloseR")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: endif
+: Return
+
+//再配置
+*Map_Dungeon18_00R
+: RpgCharaOff("NpcHanimeHumanSex01")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: endif
+: Return
+//========================================================
+//○北霊山
+//========================================================
+*Map_Dungeon19_01
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon19_01R
+: RpgCharaOff("NpcHanimeHoushi")
+: RpgCharaOff("NpcHanimeOni")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon19_02
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon19_02R
+: RpgCharaOff("NpcHanimeHumanFera")
+: RpgCharaOff("NpcHanimeHorse")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon19_03
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+		: RpgCharaOn("NpcHanimeDemon")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+		: RpgCharaOn("NpcHanimeDemon")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+		: RpgCharaOn("NpcHanimeDemon")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon19_03R
+: RpgCharaOff("NpcHanimeHumanSex02")
+: RpgCharaOff("NpcHanimeDemon")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+		: RpgCharaOn("NpcHanimeDemon")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+		: RpgCharaOn("NpcHanimeDemon")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+		: RpgCharaOn("NpcHanimeDemon")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon19_04
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeDog")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeDog")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeDog")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon19_04R
+: RpgCharaOff("NpcHanimeDog")
+: RpgCharaOff("NpcHanimePig")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeDog")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeDog")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeDog")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○鷹尾山
+//========================================================
+*Map_Dungeon20_01
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon20_02
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon20_03
+: if ( MissionProgress( "SC_D05_20_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_D05_20" )
+: else
+	: RpgMapBaloonOff( "SC_D05_20" )
+	: RpgEventOff( "SC_D05_20" )
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon20_04
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeOni")
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeOni")
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeOni")
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○帝都東街道・帝都仙葉道
+//========================================================
+*Map_Dungeon10_01
+//精霊の森　通行許可
+: if ( MissionProgress( "SC_A03_08_1", "InProgress" ) == true )
+	: RpgEventOff("Closed1")
+	: RpgEventOff("Closed2")
+	: RpgMapBaloonOn("ToSeireiForestA(L)")
+	: RpgMapBaloonOn("ToSeireiForestA(R)")
+: endif
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 8 )
+	: RpgCharaOn("8_Goblin01")
+	: RpgCharaOn("8_Goblin02")
+	: RpgCharaOn("8_Goblin03")
+	: RpgCharaOn("8_Goblin04")
+	: RpgCharaOn("8_Goblin05")
+	: RpgCharaOn("8_Goblin06")
+	: RpgCharaOn("8_Oak01")
+	: RpgCharaOn("8_Oak02")
+	: RpgCharaOn("8_Oak03")
+	: RpgCharaOn("8_Oak04")
+	: RpgCharaOn("8_Oak05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 12 )
+	: RpgCharaOn("12_Therianthrope01")
+	: RpgCharaOn("12_Therianthrope02")
+	: RpgCharaOn("12_Therianthrope03")
+	: RpgCharaOn("12_Therianthrope04")
+	: RpgCharaOn("12_Therianthrope05")
+	: RpgCharaOn("12_Oak01")
+	: RpgCharaOn("12_Oak02")
+	: RpgCharaOn("12_Oak03")
+	: RpgCharaOn("12_Oak04")
+	: RpgCharaOn("12_Oak05")
+	: RpgCharaOn("12_Oak06")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+//	: RpgCharaOn("13_Snake01")
+//	: RpgCharaOn("13_Snake02")
+//	: RpgCharaOn("13_Snake03")
+//	: RpgCharaOn("13_Snake04")
+	: RpgCharaOn("13_Sahagin01")
+	: RpgCharaOn("13_Sahagin02")
+	: RpgCharaOn("13_Sahagin03")
+	: RpgCharaOn("13_Goblin01")
+	: RpgCharaOn("13_Goblin02")
+	: RpgCharaOn("13_Goblin03")
+	: RpgCharaOn("13_Goblin04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Oak01")
+	: RpgCharaOn("15_Oak02")
+	: RpgCharaOn("15_Oak03")
+	: RpgCharaOn("15_Oak04")
+	: RpgCharaOn("15_Horse01")
+	: RpgCharaOn("15_Horse02")
+	: RpgCharaOn("15_Horse03")
+	: RpgCharaOn("15_Horse04")
+	: RpgCharaOn("15_Devil01")
+	: RpgCharaOn("15_Devil02")
+	: RpgCharaOn("15_Devil03")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon10_01R
+: RpgCharaOff("NpcHanimeHorse")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○帝都東街道・帝都仙葉道
+//========================================================
+*Map_Dungeon10_02
+//仙葉通行許可
+: if ( MissionProgress( "SC_C06_02_03", "InProgress" ) == true )
+	: RpgEventOff("Close02_1")
+	: RpgEventOff("Close02_2")
+	: RpgMapBaloonOn("ToSenba1")
+	: RpgMapBaloonOn("ToSenba2")
+: endif
+: if ( MissionProgress( "SC_B04_06_1", "InProgress" ) == true )
+	: RpgEventOff("Close02_1")
+	: RpgEventOff("Close02_2")
+	: RpgMapBaloonOn("ToSenba1")
+	: RpgMapBaloonOn("ToSenba2")
+: endif
+//帝都東街道・吉野原道許可
+: if ( MissionProgress( "SC_B04_10_1", "InProgress" ) == true )
+	: RpgEventOff("Close01_1")
+	: RpgEventOff("Close01_2")
+	: RpgMapBaloonOn("ToTeitoHigashi02_1")
+	: RpgMapBaloonOn("ToTeitoHigashi02_2")
+: endif
+: if ( MissionProgress( "SC_B04_10_2", "InProgress" ) == true )
+	: RpgEventOff("Close01_1")
+	: RpgEventOff("Close01_2")
+	: RpgMapBaloonOn("ToTeitoHigashi02_1")
+	: RpgMapBaloonOn("ToTeitoHigashi02_2")
+: endif
+: if ( MissionProgress( "SC_B04_10_3", "InProgress" ) == true )
+	: RpgEventOff("Close01_1")
+	: RpgEventOff("Close01_2")
+	: RpgMapBaloonOn("ToTeitoHigashi02_1")
+	: RpgMapBaloonOn("ToTeitoHigashi02_2")
+: endif
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 8 )
+	: RpgCharaOn("8_Goblin01")
+	: RpgCharaOn("8_Goblin02")
+	: RpgCharaOn("8_Goblin03")
+	: RpgCharaOn("8_Goblin04")
+	: RpgCharaOn("8_Goblin05")
+	: RpgCharaOn("8_Oak01")
+	: RpgCharaOn("8_Oak02")
+	: RpgCharaOn("8_Oak03")
+	: RpgCharaOn("8_Oak04")
+	: RpgCharaOn("8_Oak05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 12 )
+	: RpgCharaOn("12_Therianthrope01")
+	: RpgCharaOn("12_Therianthrope02")
+	: RpgCharaOn("12_Therianthrope03")
+	: RpgCharaOn("12_Therianthrope04")
+	: RpgCharaOn("12_Therianthrope05")
+	: RpgCharaOn("12_Oak01")
+	: RpgCharaOn("12_Oak02")
+	: RpgCharaOn("12_Oak03")
+	: RpgCharaOn("12_Oak04")
+	: RpgCharaOn("12_Oak05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+//	: RpgCharaOn("13_Snake01")
+//	: RpgCharaOn("13_Snake02")
+//	: RpgCharaOn("13_Snake03")
+	: RpgCharaOn("13_Sahagin01")
+	: RpgCharaOn("13_Sahagin02")
+	: RpgCharaOn("13_Sahagin03")
+	: RpgCharaOn("13_Sahagin04")
+	: RpgCharaOn("13_Goblin01")
+	: RpgCharaOn("13_Goblin02")
+	: RpgCharaOn("13_Goblin03")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Oak01")
+	: RpgCharaOn("15_Oak02")
+	: RpgCharaOn("15_Oak03")
+	: RpgCharaOn("15_Horse01")
+	: RpgCharaOn("15_Horse02")
+	: RpgCharaOn("15_Horse03")
+	: RpgCharaOn("15_Horse04")
+	: RpgCharaOn("15_Devil01")
+	: RpgCharaOn("15_Devil02")
+	: RpgCharaOn("15_Devil03")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon10_02R
+: RpgCharaOff("NpcHanimeHumanSex03")
+: RpgCharaOff("NpcHanimeDog")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○帝都東街道・吉野原
+//========================================================
+*Map_Dungeon10_03
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 8 )
+	: RpgCharaOn("8_Goblin01")
+	: RpgCharaOn("8_Goblin02")
+	: RpgCharaOn("8_Goblin03")
+	: RpgCharaOn("8_Goblin04")
+	: RpgCharaOn("8_Goblin05")
+	: RpgCharaOn("8_Oak01")
+	: RpgCharaOn("8_Oak02")
+	: RpgCharaOn("8_Oak03")
+	: RpgCharaOn("8_Oak04")
+	: RpgCharaOn("8_Oak05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 12 )
+	: RpgCharaOn("12_Therianthrope01")
+	: RpgCharaOn("12_Therianthrope02")
+	: RpgCharaOn("12_Therianthrope03")
+	: RpgCharaOn("12_Therianthrope04")
+	: RpgCharaOn("12_Therianthrope05")
+	: RpgCharaOn("12_Oak01")
+	: RpgCharaOn("12_Oak02")
+	: RpgCharaOn("12_Oak03")
+	: RpgCharaOn("12_Oak04")
+	: RpgCharaOn("12_Oak05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 13 )
+//	: RpgCharaOn("13_Snake01")
+//	: RpgCharaOn("13_Snake02")
+//	: RpgCharaOn("13_Snake03")
+	: RpgCharaOn("13_Sahagin01")
+	: RpgCharaOn("13_Sahagin02")
+	: RpgCharaOn("13_Sahagin03")
+//	: RpgCharaOn("13_Sahagin04")
+	: RpgCharaOn("13_Goblin01")
+	: RpgCharaOn("13_Goblin02")
+	: RpgCharaOn("13_Goblin03")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Oak01")
+	: RpgCharaOn("15_Oak02")
+	: RpgCharaOn("15_Oak03")
+	: RpgCharaOn("15_Oak04")
+	: RpgCharaOn("15_Horse01")
+	: RpgCharaOn("15_Horse02")
+	: RpgCharaOn("15_Horse03")
+	: RpgCharaOn("15_Horse04")
+	: RpgCharaOn("15_Devil01")
+	: RpgCharaOn("15_Devil02")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon10_03R
+: RpgCharaOff("NpcHanimeHumanFera")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○精霊の森
+//========================================================
+*Map_Dungeon11_01
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon11_01R
+: RpgCharaOff("NpcHanimeHumanSex01")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: endif
+: Return
+
+//Ｂフロア
+*Map_Dungeon11_02
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon11_02R
+: RpgCharaOff("NpcHanimeHoushi")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: endif
+: Return
+//========================================================
+//○妖精の森Ａフロア
+//========================================================
+*Map_Dungeon21_01
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Shokushu01")
+	: RpgCharaOn("14_Shokushu02")
+	: RpgCharaOn("14_Shokushu03")
+	: RpgCharaOn("14_Oak01")
+	: RpgCharaOn("14_Oak02")
+	: RpgCharaOn("14_Oak03")
+	: RpgCharaOn("14_Slime01")
+	: RpgCharaOn("14_Slime02")
+	: RpgCharaOn("14_Slime03")
+	: RpgCharaOn("14_Slime04")
+	: RpgCharaOn("14_Slime05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Shokushu01")
+	: RpgCharaOn("15_Shokushu02")
+	: RpgCharaOn("15_Shokushu03")
+	: RpgCharaOn("15_Slime01")
+	: RpgCharaOn("15_Slime02")
+	: RpgCharaOn("15_Slime03")
+	: RpgCharaOn("15_Minotauros01")
+	: RpgCharaOn("15_Minotauros02")
+	: RpgCharaOn("15_Minotauros03")
+	: RpgCharaOn("15_Minotauros04")
+	: RpgCharaOn("15_Minotauros05")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon21_01R
+: RpgCharaOff("NpcHanimeOni")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeOni")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○妖精の森Ｂフロア
+//========================================================
+*Map_Dungeon21_02
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Shokushu01")
+	: RpgCharaOn("14_Shokushu02")
+	: RpgCharaOn("14_Shokushu03")
+	: RpgCharaOn("14_Oak01")
+	: RpgCharaOn("14_Oak02")
+	: RpgCharaOn("14_Oak03")
+	: RpgCharaOn("14_Oak04")
+	: RpgCharaOn("14_Oak05")
+	: RpgCharaOn("14_Oak06")
+	: RpgCharaOn("14_Slime01")
+	: RpgCharaOn("14_Slime02")
+	: RpgCharaOn("14_Slime03")
+	: RpgCharaOn("14_Slime04")
+	: RpgCharaOn("14_Slime05")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Shokushu01")
+	: RpgCharaOn("15_Shokushu02")
+	: RpgCharaOn("15_Shokushu03")
+	: RpgCharaOn("15_Slime01")
+	: RpgCharaOn("15_Slime02")
+	: RpgCharaOn("15_Slime03")
+	: RpgCharaOn("15_Slime04")
+	: RpgCharaOn("15_Slime05")
+	: RpgCharaOn("15_Minotauros01")
+	: RpgCharaOn("15_Minotauros02")
+	: RpgCharaOn("15_Minotauros03")
+	: RpgCharaOn("15_Minotauros04")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon21_02R
+: RpgCharaOff("NpcHanimeHumanFera")
+: RpgCharaOff("NpcHanimePig")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○妖精の森Ｃフロア
+//========================================================
+*Map_Dungeon21_03
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Shokushu01")
+	: RpgCharaOn("14_Shokushu02")
+	: RpgCharaOn("14_Oak01")
+	: RpgCharaOn("14_Oak02")
+	: RpgCharaOn("14_Oak03")
+	: RpgCharaOn("14_Oak04")
+	: RpgCharaOn("14_Oak05")
+	: RpgCharaOn("14_Slime01")
+	: RpgCharaOn("14_Slime02")
+	: RpgCharaOn("14_Slime03")
+	: RpgCharaOn("14_Slime04")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Shokushu01")
+	: RpgCharaOn("15_Shokushu02")
+	: RpgCharaOn("15_Shokushu03")
+	: RpgCharaOn("15_Slime01")
+	: RpgCharaOn("15_Slime02")
+	: RpgCharaOn("15_Slime03")
+	: RpgCharaOn("15_Minotauros01")
+	: RpgCharaOn("15_Minotauros02")
+	: RpgCharaOn("15_Minotauros03")
+	: RpgCharaOn("15_Minotauros04")
+: endif
+: if ( MissionProgress( "SC_B05_03_1", "InProgress" ) == true )
+	: RpgEventOff("Closed")
+	: RpgMapBaloonOn("Event")
+: endif
+: if ( MissionProgress( "SC_C05_02_1", "InProgress" ) == true )
+	: RpgEventOff("Closed")
+	: RpgMapBaloonOn("Event")
+: endif
+: if ( MissionProgress( "SC_D05_22_1", "InProgress" ) == true )
+	: RpgEventOn("SC_D05_22")
+	: RpgMapBaloonOn("SC_D05_22")
+: endif
+: if ( MissionProgress( "SC_D06_50_1", "Opened" ) == true )
+	: RpgEventOff("Closed")
+	: RpgMapBaloonOn("Event")
+: endif
+: Return
+
+//========================================================
+//○魔術師の墓への道
+//========================================================
+*Map_Dungeon23_03
+: if ( MissionProgress( "SC_B05_04_1", "InProgress" ) == true )
+	: RpgEventOff("Closed1")
+	: RpgEventOff("Closed2")
+	: RpgEventOff("Closed3")
+: endif
+: Return
+
+//========================================================
+//○現し身の洞窟
+//========================================================
+*Map_Dungeon26_00
+: if ( Flag ( "UtsushimiEvent" ) == false )
+	: Call( "Scenarios/SC_B05_05*sc002" )
+: endif
+: Return
+
+//========================================================
+//○現し身の洞窟・Ｃフロア
+//========================================================
+*Map_Dungeon26_03
+: if ( MissionProgress( "SC_B05_05_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("ToUtsushimi04_Boss")
+: endif
+: Return
+
+//========================================================
+//○不死の山
+//========================================================
+*Map_Dungeon28_01
+: if ( MissionProgress( "SC_B05_08_2", "InProgress" ) == true )
+	: if ( Flag ( "FushiEvent01" ) == false )
+		: Jump( "Scenarios/SC_B05_08*sc003" )
+	: endif
+: endif
+: if ( MissionProgress( "SC_B06_02_1", "InProgress" ) == true )
+	: RpgEventOn("MapMove")
+	: RpgMapBaloonOn("Start(C)","Start")
+	: if ( Flag ( "SC_B06_02_sc002" ) == false )
+		: Jump( "Scenarios/SC_B06_02*sc002" )
+	: endif
+: endif
+: if ( MissionProgress( "SC_C06_06_1", "InProgress" ) == true )
+	: RpgEventOn("MapMove")
+	: RpgMapBaloonOn("Start(C)","Start")
+: endif
+//浪人ルート時
+: if ( MissionProgress( "SC_D06_04_1", "InProgress" ) == true )
+	: RpgEventOn("MapMove")
+	: RpgMapBaloonOn("Start(C)","Start")
+: endif
+
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon28_01R
+: RpgCharaOff("NpcHanimeHumanAnal")
+: RpgCharaOff("NpcHanimeDog")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: endif
+: Return
+
+
+*Map_Dungeon28_03
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon28_03R
+: RpgCharaOff("NpcHanimeHorse")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon28_04
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon28_04R
+: RpgCharaOff("NpcHanimeHumanSex02")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon28_05
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon28_05R
+: RpgCharaOff("NpcHanimePig")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon28_06
+: if ( MissionProgress( "SC_B05_08_2", "InProgress" ) == true )
+	: RpgMapBaloonOn("Event")
+: endif
+: if ( MissionProgress( "SC_B06_02_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("Event")
+: endif
+: if ( MissionProgress( "SC_C06_06_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("Event")
+: endif
+: if ( MissionProgress( "SC_B06_02_2", "InProgress" ) == true )
+	: RpgMapBaloonOn( "Event", "Enter" )
+: endif
+: if ( MissionProgress( "SC_D06_04_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("Event")
+: endif
+: Return
+
+*Map_Dungeon28_07
+: RpgPlayAnim( "ToIkukan", true )
+: Return
+//========================================================
+//○大和東街道１
+//========================================================
+*Map_Dungeon16_01
+: if ( MissionProgress( "SC_B05_08_1", "InProgress" ) == true )
+	: RpgCharaOn("Kinako")
+	: RpgCharaOn("Bebi")
+	: RpgEventOn("SC_B05_08")
+: endif
+//浪人ルート時
+: if ( $chapter >= 11 )
+	: RpgEventOff("Start")
+	: RpgEventOff("Start2")
+	: RpgMapBaloonOff( "Start(L)" )
+	: RpgMapBaloonOff( "Start(R)" )
+	: RpgEventOn("ToTeito1")
+	: RpgEventOn("ToTeito2")
+	: RpgMapBaloonOn( "ToTeito1" )
+	: RpgMapBaloonOn( "ToTeito2" )
+: endif
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Dog01")
+	: RpgCharaOn("14_Dog02")
+	: RpgCharaOn("14_Dog03")
+	: RpgCharaOn("14_Rounin01")
+	: RpgCharaOn("14_Rounin02")
+	: RpgCharaOn("14_Rounin03")
+	: RpgCharaOn("14_Oak01")
+	: RpgCharaOn("14_Oak02")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Shokushu01")
+	: RpgCharaOn("15_Shokushu02")
+	: RpgCharaOn("15_Shokushu03")
+	: RpgCharaOn("15_Slime01")
+	: RpgCharaOn("15_Slime02")
+	: RpgCharaOn("15_Slime03")
+	: RpgCharaOn("15_Slime04")
+	: RpgCharaOn("15_Slime05")
+	: RpgCharaOn("15_Gorotsuki01")
+	: RpgCharaOn("15_Gorotsuki02")
+	: RpgCharaOn("15_Gorotsuki03")
+	: RpgCharaOn("15_Gorotsuki04")
+	: RpgCharaOn("15_Gorotsuki05")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon16_01R
+: RpgCharaOff("NpcHanimeHumanSex03")
+: RpgCharaOff("NpcHanimeHumanFera")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: endif
+: Return
+
+//========================================================
+//○大和東街道２
+//========================================================
+*Map_Dungeon16_02
+: if ( MissionProgress( "SC_C05_11_1", "InProgress" ) == true )
+	: RpgCharaOn("Leo")
+	: RpgEventOn("Closed2")
+: endif
+//浪人ルート時
+: if ( $chapter >= 11 )
+	: RpgEventOff("Closed1_1")
+	: RpgEventOff("Closed1_2")
+	: RpgEventOn("START")
+	: RpgMapBaloonOn( "START" )
+	: RpgEventOn("Closed2")
+: endif
+: if ( $chapter == 12 )
+	: RpgEventOff("Closed2")
+: endif
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 14 )
+	: RpgCharaOn("14_Dog01")
+	: RpgCharaOn("14_Dog02")
+	: RpgCharaOn("14_Rounin01")
+	: RpgCharaOn("14_Rounin02")
+	: RpgCharaOn("14_Rounin03")
+	: RpgCharaOn("14_Oak01")
+	: RpgCharaOn("14_Oak02")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Shokushu01")
+	: RpgCharaOn("15_Shokushu02")
+	: RpgCharaOn("15_Shokushu03")
+	: RpgCharaOn("15_Shokushu04")
+	: RpgCharaOn("15_Slime01")
+	: RpgCharaOn("15_Slime02")
+	: RpgCharaOn("15_Slime03")
+	: RpgCharaOn("15_Slime04")
+	: RpgCharaOn("15_Gorotsuki01")
+	: RpgCharaOn("15_Gorotsuki02")
+	: RpgCharaOn("15_Gorotsuki03")
+	: RpgCharaOn("15_Gorotsuki04")
+: endif
+
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimePig")
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimePig")
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimePig")
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon16_02R
+: RpgCharaOff("NpcHanimePig")
+: RpgCharaOff("NpcHanimeHoushi")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimePig")
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimePig")
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimePig")
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: endif
+: Return
+//========================================================
+//○大和東街道・北ルート
+//========================================================
+*Map_Dungeon16_03
+//敵配置
+: if ( Call("Scenarios/Battle*GetEnemyLevel") == 10 )
+	: RpgCharaOn("10_Majyutsushi01")
+	: RpgCharaOn("10_Majyutsushi02")
+	: RpgCharaOn("10_Majyutsushi03")
+	: RpgCharaOn("10_Horse01")
+	: RpgCharaOn("10_Horse02")
+	: RpgCharaOn("10_Horse03")
+	: RpgCharaOn("10_Slime01")
+	: RpgCharaOn("10_Slime02")
+	: RpgCharaOn("10_Slime03")
+: elif ( Call("Scenarios/Battle*GetEnemyLevel") == 15 )
+	: RpgCharaOn("15_Shokushu01")
+	: RpgCharaOn("15_Shokushu02")
+	: RpgCharaOn("15_Shokushu03")
+	: RpgCharaOn("15_Slime01")
+	: RpgCharaOn("15_Slime02")
+	: RpgCharaOn("15_Slime03")
+	: RpgCharaOn("15_Gorotsuki01")
+	: RpgCharaOn("15_Gorotsuki02")
+	: RpgCharaOn("15_Gorotsuki03")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon16_03R
+: RpgCharaOff("NpcHanimeDemon")
+: RpgCharaOff("NpcHanimeHumanFera")
+: RpgCharaOff("HNPC_Slime")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeDemon")
+		: RpgCharaOn("NpcHanimeHumanFera")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: endif
+: Return
+//========================================================
+//○大和東街道・小屋
+//========================================================
+*Map_Dungeon16_07
+: if ( Flag ( "SC_B05_16" ) == true )
+	: RpgMapBaloonOff("Inn")
+	: RpgEventOff("Inn")
+	: RpgCharaOn("Leo2")
+	: Jump( "Scenarios/SC_B05_16*sc002" )
+: endif
+: Return
+//========================================================
+//○恐山・１合目
+//========================================================
+*Map_Dungeon30_01
+: if ( MissionProgress( "SC_C04_02_1", "InProgress" ) == true )
+	: if ( Flag ( "SC_C04_02_sc002" ) == false )
+		: Jump( "Scenarios/SC_C04_02*sc002" )
+	: endif
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHorse")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon30_02
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHoushi")
+		: RpgCharaOn("HNPC_Slime")
+	: endif
+: endif
+: Return
+//========================================================
+//○恐山・３合目
+//========================================================
+*Map_Dungeon30_03
+: if ( MissionProgress( "SC_C04_02_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("SC_C04_02","Event")
+	: RpgEventOn("SC_C04_02")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimePig")
+	: endif
+: endif
+: Return
+//========================================================
+//○ヒラガの研究所
+//========================================================
+*Map_Dungeon31_01
+: RpgCharaOff("NpcHanimeHumanSex02")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex02")
+	: endif
+: endif
+: Return
+
+*Map_Dungeon31_02
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: CharaCostume( "Mukuro", 0 )
+: endif
+: if ( MissionProgress( "SC_C04_51_1", "Opened" ) == true )
+	: RpgCharaOn("Hiraga")
+	: RpgCharaBaloonOn("Hiraga","Heart")
+: endif
+: if ( MissionProgress( "SC_C04_04_2", "InProgress" ) == true )
+	: RpgCharaOn("Hiraga")
+: endif
+: if ( MissionProgress( "SC_C04_04_1", "InProgress" ) == true )
+	: RpgCharaOn("Hiraga")
+	: Jump( "Scenarios/SC_C04_04*sc002" )
+: endif
+: Return
+//========================================================
+//○水上渓谷
+//========================================================
+*Map_Dungeon32_01
+: if ( MissionProgress( "SC_C04_04_2", "InProgress"  ) == true )
+	: RpgCharaOn("SC_C04_04")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex03")
+		: RpgCharaOn("NpcHanimeHumanAnal")
+		: RpgCharaOn("NpcHanimeDog")
+	: endif
+: endif
+: Return
+//========================================================
+//○織笠神社への道
+//========================================================
+*Map_Dungeon33_01
+: if ( MissionProgress( "SC_C04_10_1", "InProgress" ) == true )
+	: RpgEventOn("Closed1")
+	: RpgEventOn("Closed2")
+: endif
+: if ( $chapter >= 9 )
+	: RpgEventOn("Closed1")
+	: RpgEventOn("Closed2")
+	: RpgEventOn("SC_D05_18_1")
+	: RpgEventOn("SC_D05_18_2")
+: endif
+: if ( MissionProgress( "SC_D05_18_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_D05_18_1" )
+	: RpgMapBaloonOn( "SC_D05_18_2" )
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanFera")
+	: endif
+: endif
+: Return
+//========================================================
+//○織笠神社
+//========================================================
+*Map_Town17_01
+: if ( MissionProgress( "SC_C04_10_1", "InProgress"  ) == true )
+	: RpgMapBaloonOn( "SC_C04_10", "Event" )
+	: RpgDoorLock( "Door_Wa_warp_C", false )
+: endif
+: Return
+//========================================================
+//○冷泉の杜
+//========================================================
+*Map_Dungeon34_02
+: if ( MissionProgress( "SC_C04_10_2", "InProgress" ) == true )
+	: RpgEventOn("ToReizenBoss(U)")
+	: RpgMapBaloonOn( "ToReizenBoss(U)", "Event" )
+: else
+	: RpgEventOn("Closed")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+		: RpgCharaOn("NpcHanimeHumanSex01")
+	: endif
+: endif
+: Return
+//========================================================
+//○芦立洞窟
+//========================================================
+*Map_Dungeon36_01
+: RpgMapBaloonOff( "NPCH04_014" )
+: if (WhoLeader( "Mei" ) == true)	//プレイヤーが無黒の時
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMei") == true )
+		: RpgMapBaloonOn( "NPCH04_014" )
+	: endif
+: endif
+: Return
+
+*Map_Dungeon36_06
+: if ( MissionProgress( "SC_C04_12_2", "InProgress" ) == true )
+	: RpgCharaOn("Tamamo")
+: endif
+: Return
+//========================================================
+//○帝都西教会への道
+//========================================================
+*Map_Dungeon37_01
+: if ( MissionProgress( "SC_C05_07_1", "InProgress" ) == true || MissionProgress( "SC_C05_07_2", "InProgress" ) == true )
+	: RpgEventOff("Closed")
+	: RpgMapBaloonOn( "ToKyokai")
+: endif
+: if (WhoLeader( "Mei" ) == true)	//プレイヤーが無黒の時
+	: if ( CharaHRank( "Mei", "Immoral" ) >= 2 )
+		: RpgCharaOn("NPCH04_012")
+	: endif
+: endif
+: Return
+//========================================================
+//○帝都西教会
+//========================================================
+*Map_Dungeon38_01
+: if ( Flag ( "NishiKyokaiEvent" ) == false )
+	: RpgCharaOn("Mobu01")
+	: RpgCharaOn("Mobu02")
+	: RpgCharaOn("Mobu03")
+	: RpgMapBaloonOff( "ToNishiKyokai02" )
+	: Jump( "Scenarios/SC_C05_07*sc002" )
+: endif
+: Return
+//========================================================
+//○帝都西教会２
+//========================================================
+*Map_Dungeon38_02
+: if ( MissionProgress( "SC_C05_07_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_C05_07" )
+	: RpgEventOn("SC_C05_07")
+	: RpgCharaOn("Ranmaru")
+	: RpgCharaOff("ToNishiKyokai03")
+: endif
+: Return
+//========================================================
+//○帝都西教会３
+//========================================================
+*Map_Dungeon38_03
+: if ( Flag ( "NishiKyokaiEvent2" ) == false )
+	: Jump( "Scenarios/SC_C05_07*sc004" )
+: else
+	: RpgCharaOff("Mobu01")
+	: RpgCharaOff("Mobu02")
+	: RpgCharaOff("Mobu03")
+: endif
+: Return
+//========================================================
+//○牢屋敷
+//========================================================
+*Map_Dungeon35_01
+: if ( Flag ( "RouYashikiEvent" ) == false )
+	: Jump( "Scenarios/SC_C05_09*sc002" )
+: endif
+: if ( Flag ( "RouyaSc002a" ) == true )
+	: RpgCharaOff("RouyaSc002a")
+	: RpgCharaOff("sc002a_1")
+	: RpgCharaOff("sc002a_2")
+: endif
+: if ( Flag ( "RouyaSc002b" ) == true )
+	: RpgCharaOff("RouyaSc002b")
+	: RpgCharaOff("sc002b_1")
+	: RpgCharaOff("sc002b_2")
+	: RpgCharaOff("sc002b_3")
+: endif
+: if ( Flag ( "RouyaSc002c" ) == true )
+	: RpgCharaOff("RouyaSc002c")
+	: RpgCharaOff("sc002c_1")
+	: RpgCharaOff("sc002c_2")
+: endif
+: if ( Flag ( "RouyaSc002d" ) == true )
+	: RpgCharaOff("RouyaSc002d")
+	: RpgCharaOff("sc002d_1")
+	: RpgCharaOff("sc002d_2")
+: endif
+: if ( Flag ( "RouyaSc002e" ) == true )
+	: RpgCharaOff("RouyaSc002e")
+	: RpgCharaOff("sc002e_1")
+	: RpgCharaOff("sc002e_2")
+: endif
+: if ( Flag ( "RouyaSc002f" ) == true )
+	: RpgCharaOff("RouyaSc002f")
+	: RpgCharaOff("sc002f_1")
+	: RpgCharaOff("sc002f_2")
+: endif
+: Return
+//========================================================
+//○雲の道４
+//========================================================
+*Map_Dungeon39_01
+: if ( Flag ( "RouninRootIn" ) == true )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+			: RpgCharaOn("NpcHanimeHorse")
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+			: RpgCharaOn("NpcHanimeHorse")
+		: endif
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+			: RpgCharaOn("NpcHanimeHorse")
+		: endif
+	: endif
+: endif
+: Return
+
+*Map_Dungeon39_02
+: if ( Flag ( "RouninRootIn" ) == true )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+			: RpgCharaOn("NpcHanimeHumanSex03")
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+			: RpgCharaOn("NpcHanimeHumanSex03")
+		: endif
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+			: RpgCharaOn("NpcHanimeHumanSex03")
+		: endif
+	: endif
+: endif
+: Return
+
+*Map_Dungeon39_03
+: if ( Flag ( "RouninRootIn" ) == true )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+			: RpgCharaOn("NpcHanimeHumanFera")
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+			: RpgCharaOn("NpcHanimeHumanFera")
+		: endif
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+			: RpgCharaOn("NpcHanimeHumanFera")
+		: endif
+	: endif
+: endif
+: Return
+
+*Map_Dungeon39_04
+: if ( MissionProgress( "SC_C06_01_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_C06_01" )
+: endif
+: if ( MissionProgress( "SC_D06_52_1", "Opened" ) == true )
+	: if ( $evilLevel == 3 )
+		: CharaCostume( "Daruma", 0 )
+		: RpgCharaOn("Daruma")
+	: endif
+: endif
+: if ( Flag ( "RouninRootIn" ) == true )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+			: RpgCharaOn("NpcHanimeHumanAnal")
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginMomo") == true )
+			: RpgCharaOn("NpcHanimeHumanAnal")
+		: endif
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: if ( Call("Scenarios/CommonSys*ShowNonVirginKinako") == true )
+			: RpgCharaOn("NpcHanimeHumanAnal")
+		: endif
+	: endif
+: endif
+: Return
+//========================================================
+//○暴れイノシシの巣穴
+//========================================================
+*Map_Dungeon40_03
+: if ( MissionProgress( "SC_D04_06_1", "InProgress" ) == false )
+	: RpgMapBaloonOff( "ToAbare04" )
+: endif
+: Return
+//最奥
+*Map_Dungeon40_04
+: if ( Flag ( "SC_D04_06_START" ) == false )
+	: Jump( "Scenarios/SC_D04_06*sc002" )
+: endif
+: if ( Flag ( "SC_D04_06_Enemy01" ) == false ) RpgCharaOff("Enemy01") endif
+: if ( Flag ( "SC_D04_06_Enemy02" ) == false ) RpgCharaOff("Enemy02") endif
+: if ( Flag ( "SC_D04_06_Enemy03" ) == false ) RpgCharaOff("Enemy03") endif
+: if ( Flag ( "SC_D04_06_Enemy04" ) == false ) RpgCharaOff("Enemy04") endif
+: if ( Flag ( "SC_D04_06_Enemy05" ) == false ) RpgCharaOff("Enemy05") endif
+: Return
+//========================================================
+//○播磨街道２
+//========================================================
+*Map_Dungeon41_02
+: if ( MissionProgress( "SC_D04_08_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_D04_08" )
+	: RpgEventOn( "SC_D04_08" )
+	: RpgEventOff( "Close" )
+: endif
+: Return
+//========================================================
+//○茨木街道
+//========================================================
+*Map_Dungeon43_02
+: if ( MissionProgress( "SC_D04_13_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_D04_13" )
+	: RpgEventOn("SC_D04_13")
+	: RpgEventOff("Closed")
+: endif
+: if ( MissionProgress( "SC_D04_19_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "ToAkesato" )
+	: RpgEventOn("ToAkesato")
+	: RpgEventOff("Closed2")
+: endif
+: if ( MissionProgress( "SC_D04_19_2", "InProgress" ) == true )
+	: RpgMapBaloonOn( "ToAkesato" )
+	: RpgEventOn("ToAkesato")
+	: RpgEventOff("Closed2")
+: endif
+: Return
+//========================================================
+//○新田
+//========================================================
+*Map_Town13_01
+: if ( Flag ( "NittaEvent" ) == false )
+	: Jump( "Scenarios/SC_D04_15*sc002" )
+: else
+	: RpgCharaOff("SC_D04_15a")
+	: RpgCharaOff("SC_D04_15b")
+	: RpgCharaOff("SC_D04_15c")
+: endif
+: Return
+//========================================================
+//○明里村
+//========================================================
+*Map_Town14_01
+: if ( MissionProgress( "SC_D04_19_1", "InProgress" ) == true )
+	: RpgCharaWarp( "Player", "SC_D04_19_1")
+	: Jump( "Scenarios/SC_D04_19*sc002" )
+: endif
+: Return
+//========================================================
+//○六角山
+//========================================================
+*Map_Dungeon45_03
+: if ( MissionProgress( "SC_D05_02_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_D05_02" )
+: endif
+: Return
+//========================================================
+//○熊野街道
+//========================================================
+*Map_Dungeon46_02
+: if ( MissionProgress( "SC_D05_04_1", "InProgress" ) == true || MissionProgress( "SC_D05_04_2", "InProgress" ) == true )
+	: RpgMapBaloonOn( "ToKayama01" )
+	: RpgMapBaloonOn( "ToKayama02" )
+	: RpgEventOff("closed01")
+	: RpgEventOff("closed02")
+: endif
+: if ( MissionProgress( "SC_D05_10_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_D05_10" )
+: endif
+: Return
+//========================================================
+//○香山
+//========================================================
+*Map_Town15_01
+: if ( MissionProgress( "SC_D05_04_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D05_04*sc002" )
+: endif
+: Return
+//========================================================
+//○西都南湿原
+//========================================================
+*Map_Dungeon49_01
+: if ( MissionProgress( "SC_D05_08_1", "InProgress" ) == true )
+	: RpgCharaOn("Enemy01")
+	: RpgCharaOn("Enemy02")
+	: RpgCharaOn("Enemy03")
+	: RpgEventOn("SC_D05_08")
+	: RpgMapBaloonOn( "SC_D05_08" )
+: endif
+: Return
+//========================================================
+//○丹羽峠
+//========================================================
+*Map_Dungeon50_03
+: if ( MissionProgress( "SC_D05_13_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "SC_D05_13" )
+: endif
+: Return

@@ -1,0 +1,731 @@
+//========================================================
+//○思うままに自由気ままに
+//========================================================
+//●視点：無黒視点
+//●背景：空・昼
+//Yoshi：背景
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )
+	: Call( "Scenarios/CommonSys*SetParam" )
+	: Jump( "*HscStart" )
+: endif
+: if ( SceneFlag( "SC_B07_04" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = true
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_B07_04" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: StopBgm( 0.0 )
+: CharaCostume( "Mukuro", 0 )
+: Call( "Scenarios/CommonSys*Word" )
+: CharaCostume( "Mukuro", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+和希拉加激战后，我回到了帝都。
+
+伤口痊愈身体开始转动的我
+没对任何人说什么就悄悄地旅行了。
+
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●場所：地方の町
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Village04_01", 1.0 )
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+只是朝着想到的方向前进。
+自由自在地周游各国。
+
+幸运的是迄今为止锻造出来的技术有了帮助
+即使被坏男人纠缠也没什么。
+
+如果路银不足的话
+从镇上的入口商店得到工作，或者卖身体
+赚钱。
+
+那样的，享受着没有到达的地方的旅行。
+
+//●演出：場面転換トランジション
+//●状況：居酒屋で酒を飲んでいる
+//●背景：居酒屋
+//Yoshi：背景、茶屋・夜
+: HideWnd()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Pub01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+//●演技：お酒（日本酒）を飲んでいます
+: DrawChara( "Mukuro", 0, 3, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk2387" )
+\CN["无黑色"]
+「…………」
+
+旅行后马上记住的是喝酒。
+
+进入预定住宿城市的适当的居酒屋
+一个人喝晚饭的情况也很多。
+
+\CN["男人"]
+“一个人喝酒也不开心吧？
+我请客，要不要和我一起喝？”
+
+: DrawChara( "Mukuro", 0, 1, 0)
+: PlayVoice( "Voices/vo00_muk2388" )
+\CN["无黑色"]
+“啊，没关系……”
+
+我完全知道你有用心，但没什么特别的。
+
+如果给我钱的话就无条件。
+不稳定，或者是当场的气氛好
+想的话我就免费给你哄。
+
+喝酒的时候基本上都是这种感觉。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+\CI["和谁一起度过了夜晚"]
+\CI["脱了衣服被谁抱在怀里"]
+所以，今晚我也——
+
+: if ($choice == 1) CharaCostume( "Mukuro", 1 ) endif
+//●ＣＧ：ベロチュー
+: HideWnd()
+: PlayBgm("BGM/35_H_IMMORAL")
+: DrawImage( 1, 0, "BGImage/BG_Souko01", Call("Scenarios/Common*EffTime") )
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c035_0_0_0011002_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：キスしながら……
+: PlayVoice( "Voices/vo00_muk2389" )
+\CN["无黑色"]
+“嗯……”♥</在中♥</嗯，嗯♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_fera01" )
+和男人一起进入居酒屋的朴素的“单人房间”
+
+一进屋就抱住他
+就这样夺取嘴唇，将伸出的舌头插入缝隙中。
+
+: PlayVoice( "Voices/vo00_muk2390" )
+\CN["无黑色"]
+“中，59a0”♥</嗯♥</哈哈♥</color>
+然后，再♥</中译日♥</嗯♥</中、中、う♥</color>」
+
+男人好好地回应了我。
+
+就像把舌头放回我嘴里一样，还给我热烈的吻。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c035_0_0_0501002_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2391" )
+\CN["无黑色"]
+“中浦……嗯♥</在……中♥</嗯，嗯……嗯♥</color>
+中文字幕♥</中文字幕♥</中，小鲁♥</color>」
+
+喜欢接吻。
+
+虽然我插嘴也可以，但是更喜欢被要求。
+
+: PlayVoice( "Voices/vo00_muk2392" )
+\CN["无黑色"]
+「んんんちょう59a0」♥</色系59a0♥</嗯……嗯♥</color>
+我……中♥</嗯，嗯♥</中……中♥</color>」
+
+如果被积极地舔的话，就会毫无办法地情绪高涨。
+
+//●演技：ここでキス終了
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 11, 2, 3, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2393" )
+\CN["无黑色"]
+“嗯……呜、呜……”♥</啊♥</啊啊♥</color>
+很擅长接吻……。感觉已经习惯了……”
+
+需要深吸一口气
+经过长时间的接吻，我重新凝视了他的眼睛。
+
+\CN["偶然遇见的人"]
+“就那样吧。所以……
+一喝完就邀请我上床，真让人佩服”
+
+: DrawChara( "Mukuro", 37, 2, 0)
+: PlayVoice( "Voices/vo00_muk2394" )
+\CN["无黑色"]
+“呵呵♥</我也喜欢喝酒……
+我更喜欢小矮人，所以♥</color>」
+
+\CN["偶然遇见的人"]
+“原来如此啊……嘿嘿，我请了我好几次。
+真的是第一次请了我一杯”
+
+: DrawChara( "Mukuro", 1, 2, 0)
+: PlayVoice( "Voices/vo00_muk2395" )
+\CN["无黑色"]
+“稍微喝一点就足够了♥</喝太多的话……
+因为公鸡好像很难勃起啊”
+
+\CN["偶然遇见的人"]
+“请多关照。
+但是，这一点不用担心……你看？”
+
+: PlayVoice( "Voices/vo00_muk2396" )
+\CN["无黑色"]
+“啊……”♥</真的吗♥</好厉害啊……”
+
+被压上勃起了的小鸡鸡。
+
+//●演技：キスしています
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c035_0_0_0401002_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2397" )
+\CN["无黑色"]
+“嗯，中，智惠。”♥</中、中、中、中、中♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_fera01" )
+我会再吻他。
+
+: PlayVoice( "Voices/vo00_muk2398" )
+\CN["无黑色"]
+「爸爸♥</真的吗♥</中译日♥</color>
+嗯~~♥</就这样吧♥</嗯，嗯，被，被♥</color>」
+
+抱在怀里的话勃起小矮人会碰到肚子
+感觉肚子过了会刺激子宫。
+
+: PlayVoice( "Voices/vo00_muk2399" )
+\CN["无黑色"]
+“喂，嗯，嗯，嗯♥</中、中、韩♥</color>
+嗯，注射♥</中文字幕♥</啊，呜，呜♥</color>」
+
+不仅仅是心情。
+
+被故意强加的龟头啄着肚子。
+
+//●演技：キス、ここで終わりです
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c035_0_0_0501002_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2400" )
+\CN["无黑色"]
+「中、九、九」♥</我的名字♥</中、中、中、中、中♥</color>
+中、中、近♥</嗯，噗……嗯……”
+
+//●ＣＧ：ベロチューOFF
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+我知道你在催促我。
+
+: DrawChara( "Mukuro", 41, 2, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk2401" )
+\CN["无黑色"]
+“呐……差不多可以了吧？”
+
+我已经忍不住了。
+
+\CN["偶然遇见的人"]
+“当然，你不说的话
+我正要开口”
+
+我们再吻一次……
+相拥而卧。
+
+//●ＣＧ：ちんぐり騎乗位（無黒）
+//●ＣＧ差分：未挿入・愛液
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_1_0111002_1100000_0_"
+: DrawImage( 1, 0, "BGImage/BG_Black", 0.0 )
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Mukuro", 0.0 )
+: ShowWnd()
+往下看勃起的小弟弟的话，兴奋就无法隐藏了。
+
+: PlayVoice( "Voices/vo00_muk2402" )
+\CN["无黑色"]
+“嗯，哈，嗯，嗯，嗯。”♥</哇……哈…小矮人
+好厉害的银♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi04" )
+\CN["偶然遇见的人"]
+“总觉得，如果是这种姿势的话，我好像会被侵犯……”
+
+: PlayVoice( "Voices/vo00_muk2403" )
+\CN["无黑色"]
+“嗯？你讨厌这种东西吗？”
+
+\CN["偶然遇见的人"]
+“不，偶尔这样也不错。
+好不容易，就按照你喜欢的那样做吧”
+
+: PlayVoice( "Voices/vo00_muk2404" )
+\CN["无黑色"]
+“我知道了……请期待……”
+
+我把已经湿透了的女阴
+慢慢靠近男人的小鸡鸡。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_1_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——中居。
+
+\CN["偶然遇见的人"]
+“呜……已经这么湿了……”
+
+: PlayVoice( "Voices/vo00_muk2405" )
+\CN["无黑色"]
+“从接吻的时候开始，就一直湿着……”♥</color>
+老爷爷，我实在是太想见到你了……”
+
+//●演技：挿入です
+: PlayVoice( "Voices/vo00_muk2406" )
+\CN["无黑色"]
+“这个顽强勃起的公鸡，会插在里面……。
+嗯……嗯……小金，好烫♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2407" )
+\CN["无黑色"]
+“啊啊啊……啊，要进去了……嗯，啊，哈
+嗯！！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嗯，嗯，嗯，嗯！
+
+: PlayVoice( "Voices/vo00_muk2408" )
+\CN["无黑色"]
+“恩……啊啊啊啊啊啊啊啊啊♥</啊，啊，啊，啊♥</color>
+哈、哈、嗯♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi02" )
+只是插入了，甜蜜的声音就漏出来了。
+
+: PlayVoice( "Voices/vo00_muk2409" )
+\CN["无黑色"]
+“嗯……”♥</啊……啊♥</这个小气鬼，真好♥</color>
+好好地，撞到了舒服的地方♥</color>」
+
+\CN["偶然遇见的人"]
+“我也是，只是放进去就觉得是个好球……。
+这样的人妖，我还是第一次见到”
+
+插在我身上的男人那样夸奖我
+到现在为止听了好几次。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2410" )
+\CN["无黑色"]
+“里面好像是最舒服的……”
+
+\CN["偶然遇见的人"]
+“是、是吗……？”
+
+: PlayVoice( "Voices/vo00_muk2411" )
+\CN["无黑色"]
+“呵呵，好好插在里面之后……嗯……
+因为要移动……嗯，嗯，啊♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——啾啾，努奇，啾，啾，啾。
+
+//●演技：緩やかなピストンです
+: PlayVoice( "Voices/vo00_muk2412" )
+\CN["无黑色"]
+「恩，啊，恩……啊，啊，啊啊啊啊啊啊啊啊啊啊啊啊♥</color>
+哈，啊啊啊……嗯♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2413" )
+\CN["无黑色"]
+「呜呜、呜呜、啊啊啊啊啊啊啊啊啊啊啊」♥</我的名字♥</空啊，嗯♥</color>
+好，太厉害了♥</小气鬼，好大♥</啊，啊啊啊♥</color>」
+
+\CN["偶然遇见的人"]
+“真的。里面很粗糙，擦到龟头上的话
+好舒服！”
+
+: PlayVoice( "Voices/vo00_muk2414" )
+\CN["无黑色"]
+「嗯……是的♥</是的，好像是。嗯，啊，啊，啊♥</color>
+吓得小公鸡直哆嗦，真让人受不了♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+把腰上下加快。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2415" )
+\CN["无黑色"]
+“呃，嗯，啊，啊，啊，啊……”♥</color>
+渐渐变硬了……嗯，啊啊啊啊啊啊♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2416" )
+\CN["无黑色"]
+“啊，啊，啊……呜哇！好舒服……”♥</color>
+又硬，又能好好送到里面……嗯，嗯♥</color>」
+
+这个小气鬼，中奖了。
+
+所以，为了让自己心情舒畅
+腰擅自活动了。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2417" )
+\CN["无黑色"]
+“恩是啊！啊，啊，啊……感觉很厉害。
+呃，空……小金，太好了♥</color>」
+
+\CN["偶然遇见的人"]
+“呃……里面蜿蜒起伏……。
+已经变得很帅了吗？”
+
+: PlayVoice( "Voices/vo00_muk2418" )
+\CN["无黑色"]
+“哈，哈，接吻的时候就很兴奋……”♥</color>
+被插了一个小矮人……因为非常想做爱”
+
+: PlayVoice( "Voices/vo00_muk2419" )
+\CN["无黑色"]
+“所以……嗯……感觉小金……动起来
+里面，用力一戳，马上就来了……”
+
+\CN["偶然遇见的人"]
+“是吗，是吗……我也差不多该……虽然很讨厌……”
+
+{阴道内，肚子}的小弟弟，痛苦地膨胀着的是
+我想正因为传达了，才接近顶峰吧。
+
+: PlayVoice( "Voices/vo00_muk2420" )
+\CN["无黑色"]
+“那么，就这样继续行动吧……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘、ZU、ZUKU、ZUKU、ZUKU、ZUKU、ZUKU、ZUKU！
+
+\CN["偶然遇见的人"]
+“啊……啊……啊啊……”
+
+男人的呻吟让我更加兴奋。
+
+和普通的骑乘位不同，是我掌握主导权的体位。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2421" )
+\CN["无黑色"]
+“这样的话，啊，哈，好像是我犯的……
+嗯……太兴奋了♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2422" )
+\CN["无黑色"]
+“心情好的是，不断地来……嗯，嗯，嗯，嗯
+啊啊啊啊啊啊！好的……好的，好的♥</color>」
+
+\CN["偶然遇见的人"]
+“……啊…啊……啊，我已经忍不住了……！”
+
+男子一脸悲伤，光是看到就毛骨悚然。
+
+: PlayVoice( "Voices/vo00_muk2423" )
+\CN["无黑色"]
+“呵呵，想玩的话，可以去……”
+
+\CN["偶然遇见的人"]
+“但是，这样的话就在里面……！”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2424" )
+\CN["无黑色"]
+“拿出来吧，没关系……今天是没关系的日子……。
+就这样，在我的女阴里♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2425" )
+\CN["无黑色"]
+「嗯，啊，啊啊啊啊啊啊啊啊啊」♥</吝啬鬼、老太婆、
+不断膨胀，心情很好♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一下子、一下子、一下子、一下子、一下子！
+
+使劲握住男人的脚。
+
+然后，像推着一样，腰前后激烈地打滑。
+
+\CN["偶然遇见的人"]
+“啊啊啊……然后，出来……已经出来了！
+唔……啊啊……然后，出来！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0411002_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呼呼，呜呜，呜呜，呜呜！
+
+: PlayVoice( "Voices/vo00_muk2426" )
+\CN["无黑色"]
+“嗯……哦，小矮人能弹出来……”♥</color>」
+
+\CN["偶然遇见的人"]
+“啊……啊…啊……啊……！”
+
+//●演出：射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咕嘟咕嘟咕嘟！咚！咚咚咚咚！
+
+小蝌蚪一边脉动一边注入精液。
+粘稠的中出热量一下子传遍全身——
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0311002_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2427" )
+\CN["无黑色"]
+“哦哦哦哦哦哦哦……”♥</嗯……哈哈哈
+好、好、好、好…好、好……好、好♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2428" )
+\CN["无黑色"]
+“好……好……感觉是中出精液……”♥</color>
+好棒……啊，啊，啊……啊啊……啊…啊啊…啊啊啊♥</color>」
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk2429" )
+\CN["无黑色"]
+“一、呜呜呜呜呜呜呜呜————————————！”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi03" )
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0211002_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+阿飞！阿飞！阿飞！阿飞！阿飞！
+
+我的娇声响彻居酒屋的小房间。
+
+\CN["偶然遇见的人"]
+“好、好厉害……好紧张……啊啊……”
+
+//●演出：射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_2_0511002_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，咻咻，咻咻！
+
+男子忍不住把小矮子推上去，竟然已经射精了
+以难以想象的强大气势，向子宫注入精液。
+
+: PlayVoice( "Voices/vo00_muk2430" )
+\CN["无黑色"]
+“那么，再见了……下次再一起吧。”♥</哦哦哦哦哦♥</color>
+心情愉快♥</心情舒畅♥</啊啊啊啊啊啊啊啊啊啊啊啊♥</color>」
+
+一边接受中出精液，一边一个劲地重复绝顶。
+
+\CN["偶然遇见的人"]
+“啊……啊……我还是第一次见到这么好色的女人。”
+
+我乱得让男人忍不住吃惊。
+
+//●演出：暗転
+: HideWnd()
+: StopBackVoice()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_1_0411013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayBackVoice( "Voices/BGV00_muk_jigo02" )
+: ShowWnd()
+激烈的行为之后，喘口气。
+
+身上沾满了精液
+从那里闻到的香味里，深深地疼痛着。
+
+\CN["偶然遇见的人"]
+“哈哈哈……好久没这么燃烧了……。
+既可爱又身材出众，而且还拥有名器……”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b021_1_1_0211013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2431" )
+\CN["无黑色"]
+“呼～……。好像还能勃起小鸡鸡呢……”
+
+\CN["偶然遇见的人"]
+“咦？还没？”
+
+明明应该是干劲十足的废柴……。
+
+也有打开开关无缘无故地想一个劲地转动的夜晚。
+
+: PlayVoice( "Voices/vo00_muk2432" )
+\CN["无黑色"]
+“呵呵，稍微碰一下就发现小鸡鸡勃起了。”♥</color>
+这样的话，马上就要被拥抱了啊……呵呵”
+
+//●背景：空・夜
+//Yoshi：背景
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+周游全国各地，看各种各样的东西，吃好吃的东西
+吃了……。
+
+好不容易拼了命保护的地方，不好好享受的话。
+再多享受一点吧。
+
+旅行还将继续。
+
+//Yoshi：背景消去
+//●エンディング：ビッチＥＮＤ
+//＠タイトルへ戻る
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+: SceneFlagUp( "SC_B07_04" )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 3.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: if ( $inExtra == true ) Return endif
+: ResetLayer(9)
+: FadeOut( 0.0 )
+: Wait()
+: SharedFlag( "GameClear", true )
+: AfterStoryFlagUp( "Ending04" )
+: Call( "Scenarios/CommonSys*HanimeRefAllOpen")
+: LoadScene( "Title" )

@@ -1,0 +1,526 @@
+//========================================================
+//○蘭丸と達磨の出会い
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+//●黒画面
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: ShowWnd()
+//●視点：蘭丸視点
+——现在也在梦中看到过。
+
+//●場所：どこかの屋敷
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Yashiki01_01", 1.0 )
+: ShowWnd()
+这是我以前在幕府工作的时候的事。
+
+所谓“帝都守护队”，就是以将军的警卫为中心，在幕府内进行警备
+我所属于去的地方。
+
+前将军{一桥忠义，一吐为快}的直属
+说起来，在见回组的前身组织中，被白夜消灭了
+是组织。
+
+//●演出：場面転換トランジション
+//●場所：どこかの村
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Village02_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBackVoice( "Voices/vo53_mob0002" )
+: PlayBgm("BGM/08_CM008")
+: ShowWnd()
+\CN["村里的女人1"]
+“啊啊啊啊啊！住手！”
+
+\CN["帝都守护队1"]
+“好吵啊。要老实点！”
+
+\CN["帝都守护队2"]
+“你很努力啊。这个女人，可以先犯了。
+黑发大奶。喜欢吧？”
+
+: DrawChara( "Ranmaru", 1, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["兰丸"]
+“……我很好。”
+
+\CN["帝都守护队3"]
+“那家伙是优等生。不会坐这种车的。”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“我不喜欢勉强自己。”
+
+对于像我这样乡间寒村出身的人来说，侍奉幕府是绝对不可能的
+被称为荣誉。
+
+所以，因为可以侍奉对方，所以满怀期待
+来到帝都……。
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+（在幕府中，为了保护将军而谋取将军之命的人
+保护街道治安的警察，与反对派的恐怖活动对应的鬼灯
+我认为合作守护大和是我的职责）
+
+但是，那完全不同。
+
+: DrawChara( "Ranmaru", 6, 0)
+\CN["兰丸"]
+（所做的事和那一带的盗贼们一样……）
+
+前将军是个非常贪婪的男人，非常任性
+而且是个非常胆小的男人。
+
+或进入与幕府所言相反的贵族宅邸
+暗中讨伐，还有稀有价值的资源的村庄
+以“反幕派”的名义消灭。
+
+希望早就破灭了，只是将被说的事情处理好
+我度过了无精打采的日子。
+
+: StopBackVoice()
+想辞职也辞职不了。
+只是来了追兵被杀了而已。
+
+//●演出：暗転
+: StopBgm( 1.0 )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: ResetLayer(9)
+: ShowWnd()
+就这样，扼杀自己的心，悠然自得地生活的时候
+发生了一件令人难忘的令人不快的事件。
+
+//●演出：場面転換トランジション
+//●場所：織笠神社・昼
+//●背景：神社・昼
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/28_ID01")
+: ShowWnd()
+\CN["帝都守护队4"]
+“嘿嘿，巫女基本上是处女吧。
+非常期待啊”
+
+\CN["帝都守护队5"]
+“这也是命令啊。没办法。啊，没办法。”
+
+: DrawChara( "Ranmaru", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["兰丸"]
+“为什么要在这里？
+据说织笠神社的神主是非常信仰的人”
+
+来神社之前在附近的城镇打听过
+关于织笠神社一个坏消息也没听到。
+
+倒不如说，神主和神社的相关人员都是非常优秀的人
+净是夸奖。
+
+\CN["帝都守护队6"]
+“来吧。这是幕府的命令。”
+
+\CN["帝都守护队4"]
+“好像是因为没能支付上缴金什么的。”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“……是吗？”
+
+当时，幕府实行“神社选拔”的政策。
+
+: DrawChara( "Ranmaru", 6, 0)
+\CN["兰丸"]
+（表面上是为了排除没有祭祀神的伪神社。
+但是，本质上是取了上缴金而不相应的情况下
+用暴力击溃的东西……）
+
+在迄今为止的大和历史中，神社和寺庙的人们相互协助
+武装起义的事例有很多。
+
+: DrawChara( "Ranmaru", 7, 0)
+\CN["兰丸"]
+（既可以通过抢钱来滋润自己的腰包
+也可以从神社夺走力量。将军是一石二鸟
+你是这么想的吧）
+
+马马虎虎，我也到了忍耐的极限了。
+我想快点脱离这样的组织。
+
+最近，我一直在想那样的事。
+
+但是，不能付诸行动。
+事到如今我还觉得，他只是个想当然的废料。
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+「…………」
+
+\CN["帝都守护队5"]
+“怎么了？”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“我在这里监视你。”
+
+\CN["帝都守护队6"]
+“那家伙还是老样子，放着不管吧。”
+
+\CN["帝都守护队4"]
+“胳膊是我们当中最厉害的。
+如果说想监视的话，就让他做吧」
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“啊……”
+
+因为我是胆小鬼。
+
+我也不会阻止他们。与自己无关。
+这样做的话一点也感觉不到罪恶感。
+
+: EraseChara( "Ranmaru", 0.5 )
+
+//●演出：時間経過
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["女声"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊——————！！”
+
+一个接一个地听到女人的悲鸣。
+血的味道越来越浓。
+
+//: DrawChara( "Ranmaru", 15, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Ranmaru", 15, 0, 0 )
+\CN["兰丸"]
+“……”
+
+我知道神社里在进行什么。
+
+闭上眼睛，低着头，只是默默地忍耐。
+
+//: EraseChara( "Ranmaru", 0.5 )
+//●演出：時間経過
+//●場所：織笠神社・夜
+//●背景：神社・夜
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+天完全黑了，周围一片漆黑的时候——
+
+\CN["帝都守护队4"]
+“啊，太好了。我一个劲儿地吃处女。”
+
+\CN["帝都守护队5"]
+“话说，你的兴趣太差了！
+在神主面前侵犯了神主的妻子，在看到妻子之前把神主
+杀了你啊」
+
+\CN["帝都守护队6"]
+“嘿嘿。夫人，真是个好女人啊。
+那样的美女受到打击而失禁了，太棒了”
+
+: DrawChara( "Ranmaru", 14, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["兰丸"]
+（垃圾们……）
+
+无法形容的愤怒涌上心头，却马上将其扼杀。
+
+在不了解情况的人看来，这些家伙和我都是同类。
+我知道那么点事。
+
+\CN["帝都守护队5"]
+“完成了。完成了。燃烧吧。”
+
+\CN["帝都守护队6"]
+“喂！”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+「…………」
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+我知道神社里没有幸存者。
+这些家伙肯定一个不剩地杀了。
+
+//●演出：着火。ループアニメ可能ならループアニメ入れる
+: trackIndex = PlaySe( "SE/Se_FireLoop", true, 0.25 );
+: PlayAnim( "Animations/Anime_LoopFire", true, 0, 0, 1, 1 )
+: DrawFaceThumbnail( "Ranmaru", 0, 0, 0 )
+\CN["兰丸"]
+（……我真是无能为力啊）
+
+然后，向没见过的受害者们默哀。
+即使知道那只是我的自我满足。
+
+\CN["帝都守护队4"]
+“哦，燃烧着燃烧着。”
+
+\CN["帝都守护队5"]
+“即使这样，和巫女一起做也是最棒的。
+只有处女，最棒的就是看到痛苦的呼喊”
+
+然后，很快就到了吧。
+
+//: EraseChara( "Ranmaru", 0.5 )
+//: DrawChara( "Mikage", 10, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo11_mik0230" )
+\CN["女孩子的声音"]
+“别碰我！”
+
+听到女孩子的声音，慌忙回头看——
+
+: DrawChara( "Ranmaru", 15, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["兰丸"]
+“太糟糕了！”
+
+我看到帝都守护队的人和女孩子有牵连。
+
+: DrawChara( "Ranmaru", 6, 0)
+\CN["兰丸"]
+（那个女孩子遭遇了不幸！只有那个……！）
+
+于是一溜烟地跑了出去。
+
+\CN["帝都守护队4"]
+“老实点吧。这样的话，我会好好对待的。”
+
+男人的手伸长了。
+
+: CharaCostume( "Ranmaru", 1 )
+: DrawChara( "Ranmaru", 8, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["兰丸"]
+“可恶……！”
+
+回过神来发现拔刀了。
+想要斩杀向女孩子伸手的男子。
+
+但是——
+
+//●演出：斬殺　エフェクト
+//: EraseChara( "Mikage", 0.5 )
+: EraseChara( "Ranmaru", 0.5 )
+: StopBgm( 1.0 )
+: HideWnd()
+: StopBgm( 0.5 )
+: StopAnim()
+: StopSe( trackIndex );
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+血之雨比我赶到的还要早。
+
+帝都守护队的男人们变成了无头的尸体
+倒在石板上，漂浮在血泊中。
+
+//●演出：達磨（仮面あり）　登場する
+: HideWnd()
+: EraseAllImage( 9, 0.0 )
+: CharaCostume( "Daruma", 2)
+: PlayBgm("BGM/14_CM014")
+: trackIndex = PlaySe( "SE/Se_FireLoop", true, 0.25 );
+: PlayAnim( "Animations/Anime_LoopFire", true, 0, 0, 1, 1 )
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_02", 0.0 )
+: DrawChara( "Daruma", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["达磨"]
+“竟然要对这样的孩子出手……。
+不可置之度外”
+
+: PlayBgm("BGM/14_CM014")
+: PlayVoice( "Voices/vo11_mik0233" )
+\CN["女孩子"]
+“啊……啊…啊……啊…啊…啊啊啊啊啊……”
+
+人就在眼前被杀了。
+吓破了腰也是理所当然的吧。
+
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+“对不起。因为很紧急。
+不是给像狗一样的孩子看的好东西啊”
+
+: PlayVoice( "Voices/vo11_mik0234" )
+\CN["女孩子"]
+“啊……啊…那个……啊啊……”
+
+女孩就这样失神了。
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“总之，还是让他在什么地方休息比较好。
+回头再考虑一下自己的动作吧”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“但是，在那之前好像还有必须要做的事情。”
+
+: CharaCostume( "Ranmaru", 1 )
+: DrawChara( "Ranmaru", 6, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Daruma", 1, 0,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+\CN["兰丸"]
+「…………」
+
+这就是我和头的相遇。
+
+我姑且是拿着刀，但是手脚都在嘎嘎地颤抖。
+
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+（这可不能死啊，我……哈哈…）
+
+我真的做好了死的觉悟。
+我马上感觉到战斗的话就会被瞬间杀死。
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“来我这里吗？”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“……嘿嘿？”
+
+头突然说了那样的话，我很吃惊。
+
+: DrawChara( "Ranmaru", 6, 0)
+\CN["兰丸"]
+“为什么要找我？”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“我一眼就知道了狗的可能性。
+一定要来我这里”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+「…………」
+
+\CN["达磨"]
+“狗的才能，在垃圾堆里腐烂实在可惜。”
+
+: DrawChara( "Ranmaru", 7, 0)
+\CN["兰丸"]
+“那么，爷爷是什么人？”
+
+//: DrawChara( "Daruma", 2, 0)
+//\CN["達磨"]
+//「仮面をしているはずなのに、よく分かったな」
+//: DrawChara( "Ranmaru", 5, 0)
+//\CN["蘭丸"]
+//「なんとなくね」
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“我的名字叫达磨。建立了一个名为白夜的幕府和思想不同的组织。”
+是统率者”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“嗯，是反幕派吧。”
+
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+“像狗一样，在幕府的人看来是敌人。”
+
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+“我可以进去吗？可能会成为幕府的间谍。”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+「没关系。那样的话，只是我没有眼力而已。
+无论采取什么手段，都只会负责杀死无辜”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“这样啊……”
+
+我知道如果在这里拒绝的话肯定会被杀的。
+所以，我选择的答案一开始就决定了。
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+（正好是个好机会。我们上车吧。）
+
+对幕府越来越不信任。
+
+虽说如此，我不认为反幕派是正确的。
+我知道那个。
+
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+“呼。好像答案出来了。”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“嗯，那边——白夜就到了。”
+
+就这样，我离开了幕府组织“帝都守护队”
+进入白夜。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: StopAnim
+: StopSe( trackIndex );
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Daruma", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，嘛，在不太清楚的时候就飞黄腾达了
+成为干部，成为干部的第二名
+不过呢。
+
+//●備考：無黒と冥の村が襲われた事件のことです
+从那天开始，大约10年后吧。
+《帝都守护队》在白夜完全被消灭。
+
+然后，成为灭亡的原因的{事件，事情}对我来说
+虽然是意料之外的大事。
+
+那又是别的话了。
+
+//Yoshi：背景消去
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

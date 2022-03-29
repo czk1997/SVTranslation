@@ -1,0 +1,364 @@
+//========================================================
+//○大和を滅ぼす存在
+//========================================================
+//●場所：鬼灯屯所・夜
+//●視点：第三者視点
+//●背景：空・夜
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: ShowWnd()
+各自到达屯所的时候已经是晚上了。
+
+吃完饭去洗澡——
+在那之后，大家睡得像泥一样。
+
+//●演出：場面転換トランジション
+//●状況：小夜　寝ている
+//●演技：眠っています
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_03", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawFaceThumbnail( "Sayo", 5, 0, 0 )
+: PlayVoice( "Voices/vo24_say0168" )
+\CN["小夜"]
+“好—…”
+
+在客厅里熟睡的小夜。
+
+回来后，睁开眼睛。
+然后洗完澡，又睡着了。
+
+因为刚要被杀了，所以变成这样也是理所当然的。
+
+//●演出：あざみ　登場する
+: DrawChara( "Azami", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo05_aza0363" )
+\CN["嘲讽"]
+“睡得真好啊。”
+
+淤青进入房间。
+
+: DrawChara( "Azami", 1, 0)
+: chara = "Azami"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo05_aza0364" )
+\CN["嘲讽"]
+“公主，对不起。”
+
+: HideWnd()
+: EraseChara( "Azami", 0.5 )
+: Wait()
+: ResetLayer(3)
+: evbg = true; evcos = false;
+: evfile = "evy_a009_1_1_0000000_00000000_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+为了不让小夜醒来
+施上睡眠的魔术、{催眠魔术、睡眠}。
+
+然后，如果痣想要抱着小夜……。
+
+//●演出：レオ　登場する
+//: EraseChara( "Sayo", 0.5 )
+//: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 3, "LC" )
+//: DrawChara( "Leo", 2, 0, 0, 0.5, 0.0, 4, "RC" )
+: HideWnd()
+: evfile = "evy_a009_1_2_0000000_00000000_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+\CN["雷欧"]
+“局长，你在干什么？”
+
+//: DrawChara( "Azami", 3, 0)
+: HideWnd()
+: evfile = "evy_a009_1_3_0000000_00000000_"; Call("Scenarios/Common*EvChange");
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0365" )
+\CN["嘲讽"]
+“是雷欧吗？我只是来看公主。”
+
+//: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“这么晚了吗？”
+
+//: DrawChara( "Azami", 0, 0)
+: PlayVoice( "Voices/vo05_aza0366" )
+\CN["嘲讽"]
+“嘛，我很担心。”
+
+//: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“是吗？我一定会带你去某个地方的。”
+我是这么想的”
+
+//: DrawChara( "Azami", 3, 0)
+: PlayVoice( "Voices/vo05_aza0367" )
+\CN["嘲讽"]
+“别说傻话了。
+为什么我必须要做那种事？”
+
+//: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“那么，只是局长想为sayo做点什么呢？”
+总觉得明白”
+
+//: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“现在也在对sayo施加睡眠的魔术吧？
+喂，局长，你到底想干什么？”
+
+雷欧追问小斑。
+
+一边抑制着眼看就要怒吼的样子，一边淡淡地。
+
+//: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0368" )
+\CN["嘲讽"]
+“啊，话说你听说过‘阿波罗之箭’吗？”
+
+//: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“啊？那是什么？”
+
+//: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0369" )
+\CN["嘲讽"]
+“阿波罗的箭是古代魔术之一
+有能让大陆一瞬间变成火海的威力
+传达着”
+
+//: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0370" )
+\CN["嘲讽"]
+“那个魔术是通过名为‘阿波罗之弓’的神器
+好像是被继承了……”
+
+//: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+“……你想说什么？”
+
+//: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0371" )
+\CN["嘲讽"]
+“公主继承了《阿波罗之箭》。
+虽然事情的经过完全不清楚”
+
+//: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“哈？SAYO继承了《阿波罗之箭》这首歌吗？
+那种证据，你在哪里啊？”
+
+//: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0372" )
+\CN["嘲讽"]
+“我给你看……”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: PlaySe( "SE/Se_Cloth01" )
+: ShowWnd()
+小夜的胸口微微弯曲。
+
+在还快要膨胀的胸口正中央鲜明地
+长了像痣一样的东西。
+
+: DrawChara( "Leo", 2, 0, 0, 0.5, 0.0, 3, "LC")
+\CN["雷欧"]
+“痣……？好像什么花纹……”
+
+: DrawChara( "Azami", 2, 0, 0, 0.5, 0.0, 4, "RC")
+: PlayVoice( "Voices/vo05_aza0373" )
+\CN["嘲讽"]
+“上次一起洗澡的时候偶然发现了。
+之前觉得很薄，但是很明显地就出来了”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0374" )
+\CN["嘲讽"]
+“正因为出现了这种花纹
+这是公主继承阿波罗之箭的证明”
+
+一边这样说着，一边将小夜赤脚的胸口恢复过来。
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0375" )
+\CN["嘲讽"]
+“既然继承了阿波罗的箭，公主对于住在大和的人来说是
+除了威胁什么都没有”
+
+: DrawChara( "Leo", 7, 0)
+\CN["雷欧"]
+“威胁？但是，那是SAYO给阿波罗的箭
+如果不用不就好了吗？”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“本来sayo就是人类。
+魔术不应该是人类无法使用的吗？”
+
+虽然有力地询问了对方的痣，但痣只是摇头。
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0376" )
+\CN["嘲讽"]
+“如果公主是拥有魔力的种族的话，那就更好了……”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0377" )
+\CN["嘲讽"]
+“没有魔力的人得到阿波罗之箭的情况下
+在红色月亮出来的那一天就让它暴走了……”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0378" )
+\CN["嘲讽"]
+“然后，马上就要到红月亮的日子了。
+在花纹鲜明浮现的现在，暴走确实是——”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0379" )
+\CN["嘲讽"]
+“已经，停下来是不可能的。所以，我——”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+「所以说，要抓走小夜就那样杀掉他
+所以……”
+
+一边挥舞着用力握紧的拳头，使血管浮出水面
+尽管如此，雷欧还是想尽办法控制在了极限的地方。
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0380" )
+\CN["嘲讽"]
+“公主就像是抱着破坏大和的炸弹一样。
+如果爆炸的话，很多人就会死”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“所以，你要杀了吗？sayo的命怎么样都可以吗？”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0381" )
+\CN["嘲讽"]
+“不可能无所谓……。
+如果不杀也能解决的话，我也会这么做的！”
+
+: DrawChara( "Azami", 22, 0)
+: PlayVoice( "Voices/vo05_aza0382" )
+\CN["嘲讽"]
+“如果杀了公主，就能拯救无数的生命。
+那也没办法啊！”
+
+: DrawChara( "Leo", 21, 0)
+\CN["雷欧"]
+“没办法……？别开玩笑了！”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“小夜啊，至今为止遇到了很多痛苦的事情。
+所以，今后不光是开心的事情是不行的”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“你要杀了那个？因为没有别的办法？”？
+开玩笑也要适可而止！”
+
+: DrawChara( "Azami", 22, 0)
+: PlayVoice( "Voices/vo05_aza0383" )
+\CN["嘲讽"]
+“她说一个公主的牺牲能帮助大家！
+你选哪个？连那么简单的事情都不知道吗！”
+
+: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“啊，我可不能选择其中一个哦！”
+
+雷欧一边这样说着，一边睡下了小夜。
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“我要拯救佐约和住在大和的人——”
+
+: DrawChara( "Azami", 19, 0)
+: PlayVoice( "Voices/vo05_aza0384" )
+\CN["嘲讽"]
+“那么你打算说‘选择哪个都是我呢’吗？
+像往常一样……”
+
+: DrawChara( "Leo", 21, 0)
+\CN["雷欧"]
+“吵死了。”
+
+//●演出：レオ　刀を抜く
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Azami", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Katana01" )
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0200000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//: DrawChara( "Leo", 20, 0, 1, 0.5, 0.0, 4, "RC" )
+//: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0385" )
+\CN["嘲讽"]
+“你怎么把刀对准我？
+你知道吗？”
+
+//: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“啊，和你说话，已经什么都没有了。
+我来保护你。我不会交给你的”
+
+//: DrawChara( "Leo", 23, 0)
+\CN["雷欧"]
+“啊啊啊啊啊！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Gus" )
+: DrawImage( 9, 0, "BGImage/BG_White", 1.0 )
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+雷欧假装要砍，目瞪口呆。
+
+趁着眼睑发黑的间隙
+雷欧抱着小夜从房间里跑了出来。
+
+//●演出：ホワイトアウト　解除
+//: HideWnd()
+//: Call("Scenarios/Common*CutinFadeOut")
+//: ShowWnd()
+//: DrawChara( "Azami", 23, 0)
+//: PlayVoice( "Voices/vo05_aza0386" )
+//\CN["あざみ"]
+//「あのバカ、室内でなんつーデタラメな技を……！」
+//: EraseChara( "Azami", 0.5 )
+//●背景：空・夜
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+那天，雷欧带着小夜跳出了鬼灯。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーンエンド
+: Jump( "Scenarios/SC_B05_11" )

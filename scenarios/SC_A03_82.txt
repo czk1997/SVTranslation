@@ -1,0 +1,506 @@
+//========================================================
+//○貴族令嬢が魔術師になった日
+//========================================================
+//●場所：玉藻の小屋
+//●視点：桃視点
+//●背景：空・昼
+//Yoshi：背景
+: AutoFaceThumbnail( false )
+: StopBgm( 0.0 )
+//服装を記憶
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Momo", 0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+刚从家里跑出来的我和小银
+为了逃离女椿的追兵，她辗转四方。
+
+//●背景：街道・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: SwapImage( 1, 0, "BGImage/BG_Kaido02_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/05_CM005")
+//●演出：銀が追っ手を倒す
+: PlaySe( "SE/Se_Down01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["山茶女的追兵"]
+“——…呜哈哈……！”
+
+//: DrawChara( "Gin", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“啊哈……真是的，今天早上开始这是第几组了呢？”
+
+//: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom0279" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“是啊……大概是第十组吧？”
+
+//: DrawChara( "Gin", 21, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“每天，每天，好好地，就这些……”
+
+//: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0280" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“不是注入了剩下的全部财产吗？”
+
+如果能和财阀日野家保持联系的话
+山茶女家的将来会很安定。
+
+眼看就要没落的现在，无论做什么事，我都要和日野家的家长
+你想让我结婚吧。
+
+对每天不断来的追兵感到束手无策
+而且……。
+
+//●演技：心の声です
+//: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0281" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+（我只是在小银的保护下……。
+什么都没做……）
+
+没有战斗的方法和力量的我
+不是只有小银的行李吗？
+
+这种想法随着日子的流逝越来越强烈
+每次看到倒在地上的追兵，都会对小银说对不起
+变成了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+但是，有人向如此懦弱的我伸出了手。
+
+//●背景：山中・昼
+//Yoshi：背景
+: AutoFaceThumbnail( false )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 1.0 )
+: Wait()
+//: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+//: DrawChara( "Gin", 12, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlaySe( "SE/Se_Monster01" )
+: PlayBgm("BGM/16_TM001")
+: ShowWnd()
+\CN["魔物群"]
+““咕噜噜鲁鲁鲁……”
+
+//: DrawChara( "Gin", 12, 1)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“完全被包围了呢，小姐。”
+
+//: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0282" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“是啊……有点不太时尚呢……”
+
+不小心踩到了据说会大量产生魔物的那须野山
+踏进了房间，果然被魔物群包围了。
+
+如果一只一只的话，小银应该可以从容地击退
+不愧是这几位对手……。
+
+//●演技：心の声です
+//: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom0283" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+（这种时候，如果我也能成为战斗力的话……）
+
+至少，如果能使用一个魔术的话，我也会在小银的旁边
+明明可以并排战斗的……。
+
+那是悔恨得牙齿直眨巴的时候。
+
+//●演出：玉藻　登場する
+: HideWnd()
+: StopBgm( 1.0 )
+//: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Tamamo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0036" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“哎呀哎呀，在这个时期去山里，真是愚蠢的家伙们啊。”
+
+: PlayBgm("BGM/15_ESM04")
+这就是后来成为我魔术老师的玉藻老师的
+相遇了。
+
+: DrawChara( "Tamamo", 0, 0, 0)
+//: DrawChara( "Gin", 12, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“什么啊，这猴面包树……？”
+
+: DrawChara( "Tamamo", 1, 0)
+: PlayVoice( "Voices/vo22_tam0037" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“小心说话的方法，小僧。
+{现在，现在}的主人和蕨菜的强度不一样]
+//: DrawChara( "Gin", 14, 1)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“啊？”
+
+: DrawChara( "Tamamo", 2, 0, 1)
+: PlayVoice( "Voices/vo22_tam0038" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“故事要等驱赶了魔物们。”
+
+//※●演出：玉藻　水形魔法
+: EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
+: cgkeep = false;
+: Call( "Scenarios/Effect*TamamoAction01" )
+: ShowWnd()
+老师像跳舞一样华丽地活动身体。
+
+: AutoFaceThumbnail( false )
+以老师为中心展开了火焰，魔物们发出了悲鸣
+扑通一声倒在那里。
+
+//: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom0284" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“啊，那个……魔术……！？”
+
+//: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“……只是昏过去了吗？”
+
+//●読み：行くぞ（ゆくぞ）
+: DrawChara( "Tamamo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo22_tam0039" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“就算是魔物也不喜欢无用的杀生。
+在这群家伙醒来之前，我去吧，小鬼们”
+
+//: DrawChara( "Gin", 15, 1)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“啊？你在找茬吗？”
+
+: EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom0285" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“小银，不用了！现在就跟这个人走吧。”
+
+//: DrawChara( "Gin", 19, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“……我知道了。”
+
+//●演出：場面転換トランジション
+//●背景：玉藻の小屋・昼
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+//: EraseChara( "Momo", 0.0 )
+//: EraseChara( "Gin", 0.0 )
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/02_CM002")
+: ShowWnd()
+然后和小银一起去了老师住的小屋。
+
+然后我一到就马上向老师低头——
+
+: DrawChara( "Tamamo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+//: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+//: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo01_mom0286" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“拜托了！请告诉我魔术！”
+
+//: DrawChara( "Gin", 18, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“……小姐，怎么会这样。”
+
+//: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0287" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“没关系，向别人请教的时候这样做是理所当然的。”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0040" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“呵呵。我知道你是个身份高贵的女人
+连像笑一样的下等的人都低头了……”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0041" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“那么，你为什么想掌握魔术呢？”
+
+//: DrawChara( "Gin", 0, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“那是——”
+
+//: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0288" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“小银，好吧，我来告诉你。”
+
+然后，我毫不隐瞒地向老师坦白了一切。
+
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0042" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“因为不想让我结婚，所以带着家臣到处逃窜
+在的话。我不想成为绊脚石，所以想学魔术”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0043" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“不是那样的吗？
+我只觉得她是令媛的任性……”
+
+//: DrawChara( "Gin", 9, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“哇，我太任性了，小姐没什么……”
+
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0044" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+「我决定任性。
+你的主是贵族的千金吧？”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0045" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“对贵族来说，结婚不是因为迷恋而肿的吗？”
+
+//: DrawChara( "Gin", 11, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“你……！”
+
+//: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0289" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“没关系，小银，就是那样。”
+
+是的——说讨厌结婚就出门的是
+除了我的任性什么都没有。
+
+在贵族家出生的女性的角色
+不负责任地放弃着。
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0046" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“但是，我最喜欢那种东西了。”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0047" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“想从大小姐铺好的轨道上脱离吗？”
+非常开心”
+
+//: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0290" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“那么，请给我魔术……！”
+
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0048" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“是的，不急。
+魔术不是任何人都能使用的”
+
+//: DrawChara( "Gin", 5, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“是啊。只要有精灵的血，谁都可以使用。”
+”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0049" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“没有魔术才能的人无论怎么努力都是徒劳的。
+相反，有才能的人不努力也没用……”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0050" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“那就是魔术。”
+
+//: DrawChara( "Gin", 9, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“那么，你女儿怎么样？
+你马上就知道你有才能吗？”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0051" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“嘛，一般来说是不行的。
+但是，我马上就知道了。暂时，等一下”
+
+老师轻轻地把手贴在我的额头上。
+
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0052" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“呼呼……呵呵……”
+
+//: DrawChara( "Gin", 18, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“怎么样？”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0053" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“真是个卓越的人才啊。看来锻炼起来很有价值。
+我的修行相当严格哦？能跟过来吗？”
+
+//: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0291" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+「好啊。我一定要做给你看。
+呃……你——”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0054" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“是啊。
+这么说来，我还没有自我介绍呢”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0055" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“我的名字是玉藻——
+无论是玉藻大人还是玉藻姐姐都可以随意称呼哦”
+
+//: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0292" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“是啊……那么，师傅……又不太合适
+老师……嗯，可以叫我老师吗？”
+
+: DrawChara( "Tamamo", 5, 1)
+: PlayVoice( "Voices/vo22_tam0056" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“老师啊……嗯，没关系，那个，我很喜欢。”
+
+//: DrawChara( "Gin", 1, 0)
+: AutoFaceThumbnail( false )
+\CN["银子"]
+“……拜托你了。”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0057" )
+: AutoFaceThumbnail( true )
+\CN["玉藻"]
+“呵呵。什么嘛，如果是你的话，过一年就变成一个魔术师了。”
+我会习惯的。会好好跟上来的哦？”
+
+//: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom0293" )
+: AutoFaceThumbnail( false )
+\CN["桃子"]
+“好的！请多关照，老师！”
+
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+//: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+老师的修行真的很严格。
+
+对于从来没有好好活动过身体的我来说
+每天都过得很辛苦。
+
+因此，完全没有体力和魔术的贵族千金
+作为鬼灯的队员，总算可以置身于战场了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+: HideWnd()
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

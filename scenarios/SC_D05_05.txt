@@ -1,0 +1,493 @@
+//========================================================
+//○嘘を伝えた依頼者に鉄槌を１
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+//●状況：口入屋の元に戻ってきた無黒
+: Call("Scenarios/map_town05_saito_init*Map03_1")	//初期化
+: RpgCharaTurn( "Kuchiireya", "D" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+回到西都的我向入口店说了在街上得到的信息。
+
+\CN["眼镜店"]
+“果然是这样啊……从那之后，果然还是很在意
+我彻底调查了委托人的事情”
+
+\CN["眼镜店"]
+“我觉得自己的地位会被大冈佐吉夺走
+他似乎非常着急”
+
+\CN["眼镜店"]
+“那么，为了目的的手段选择好像很有名。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4447" )
+\CN["无黑色"]
+“原来如此。也就是说，委托内容可能是撒谎的。”
+贵吗？”
+
+\CN["眼镜店"]
+“啊，好好地把里面取出来了。
+大冈佐吉在欺骗百姓，这好像是苏伊士在说谎”
+
+\CN["眼镜店"]
+“大冈佐吉从赚得多的人那里得税，从少的人那里得税
+好像采取了过于贪婪的做法。
+好像是在模仿海外国家的制度”
+
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk4448" )
+\CN["无黑色"]
+“也就是说，在有钱人看来，大冈是想排除的人物
+但是”
+
+\CN["眼镜店"]
+“我觉得这样才是正确的。
+啊，上先生的纠纷有点来，真的吗？”
+
+\CN["眼镜店"]
+“只是，我不知道你在骗我，所以不能就这样下去
+很奇怪啊。不要通情达理”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4449" )
+\CN["无黑色"]
+“是报复吗？我们已经交往到这种地步了，我会陪你到最后。”
+
+\CN["眼镜店"]
+“不愧是无黑！”
+
+: DrawChara( "Mukuro", 2, 0)
+虽然在其他地区不知道，但是要好好地和报复打交道
+{西都，这里}隐含的明白。
+
+\CN["眼镜店"]
+“报复对方的名字是‘矶边充三，快来吧’
+官僚啊」
+
+\CN["眼镜店"]
+“我会保护有权力的人，所以在幕府内是寄生虫
+好像是在背地里叫我”
+
+: DrawChara( "Mukuro", 12, 0)
+是评价不太好的人物啊。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4450" )
+\CN["无黑色"]
+“知道了。那告诉我那个人的住处。”
+
+\CN["眼镜店"]
+“确实，应该住在西都的北方。
+要去的话，带我去吧？”
+
+: SetMission( "SC_D05_04_2", "Hidden" )
+: SetMission( "SC_D05_04_3", "InProgress" )
+: EraseChara( "Mukuro", 0.5 )
+\CI["请人带路"]
+\CI["做好准备后"]
+怎么办？
+
+: if ($choice == 0)
+	\CN["眼镜店"]
+“知道了。那么，马上去吧。”
+
+	: HideWnd()
+	: StopBgm( 1.0 )
+	: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: Call( "Scenarios/Common*LayerClean" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: Wait()
+	: ResetLayer(9)
+	: ShowWnd()
+然后，我被带到了入口店，去了矶边充三的房子
+好容易走到了。
+
+事件信息更新了。
+
+	: Jump( "*sc002" )
+
+: else
+	\CN["眼镜店"]
+“准备好了再叫我。”
+
+事件信息更新了。
+: endif
+//●シーンエンド
+: Return
+
+*sc001_2
+\CN["眼镜店"]
+“准备好了吗？”
+
+\CI["请人带路"]
+\CI["做好准备后"]
+怎么办？
+
+: if ($choice == 0)
+	\CN["眼镜店"]
+“知道了。那么，马上去吧。”
+
+	: HideWnd()
+	: StopBgm( 1.0 )
+	: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: Call( "Scenarios/Common*LayerClean" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: Wait()
+	: ResetLayer(9)
+	: ShowWnd()
+然后，我被带到了入口店，去了矶边充三的房子
+好容易走到了。
+
+	: Jump( "*sc002" )
+
+: else
+	\CN["眼镜店"]
+“准备好了再叫我。”
+
+: endif
+: Return
+//========================================================
+//○嘘を伝えた依頼者に鉄槌を２
+//========================================================
+*sc002
+//●場所：磯辺充三の屋敷前
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_House01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/37_Dungeon")
+: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	: ShowWnd()
+	\CN["保镖1"]
+“嗯？你没听说今天有客人来吗？”
+
+	\CN["保镖2"]
+“啊。所以，你来这里做什么？”
+
+//●分岐：［服装］全裸の場合
+: else
+	: ShowWnd()
+	\CN["保镖1"]
+“怎么了？莫非是被强盗拿走了衣服？”？
+还是被魔物打败了？”
+
+	\CN["保镖2"]
+“让我好好看看。这家伙完全没有受伤
+一定是那个，是个让人看到害羞的地方而高兴的世界的家伙”
+
+//●分岐終了
+: endif
+\CN["保镖1"]
+“这里不是像你这样的女人能来的好地方。
+所以，和我们在那边愉快地玩吧？”
+
+: DrawChara( "Mukuro", 28, 0)
+男人们用充满了用心想做爱的心情的态度
+搭话。
+
+//＠分岐：淫乱度Ｂ未満の場合
+//＠ラベルジャンプ：sc002_01
+//＠分岐終了
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) < 2 ) Jump( "*sc002_01" ) endif
+//●分岐：淫乱度Ｂ以上の場合
+//●演技：心の声です
+: DrawChara( "Mukuro", 29, 0)
+: PlayVoice( "Voices/vo00_muk4451" )
+\CN["无黑色"]
+（在打倒他之前，我可以让他做个好事情吗？）
+
+*sc002_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002_select
+//■選択肢１：エッチさせてやる
+//■選択肢２：張り倒す
+//――――――――――――――――――――――――――――
+\CI["让他做爱"]
+\CI["打倒"]
+让他做也可以，但是怎么办呢？
+
+: if ($choice == 1) Jump( "*sc002_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：エッチさせてやるを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s1
+//●シーン：「幕府官僚の用心棒とエッチする」へ
+//＠シナリオジャンプ：SC_D05_06
+: Jump( "Scenarios/SC_D05_06" )
+
+//-------------------------------------------------------
+//●選択肢２：張り倒すを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s2
+//●シーン：エッチしない場合へ
+//＠ラベル：sc002_01
+//●分岐終了
+//●エッチしない場合
+*sc002_01
+//●演出：無黒　刀を手に取る
+: DrawChara( "Mukuro", 26, 0, 5)
+: PlayVoice( "Voices/vo00_muk4452" )
+\CN["无黑色"]
+“不好意思，这里请让我稍微强行通过。”
+
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	\CN["保镖1"]
+“是谁雇佣的杀手吗？”
+
+	\CN["保镖2"]
+“没办法。那家伙被各种各样的人怨恨着。
+因为是工作，所以要把这个女人打死”
+
+//●分岐：［服装］全裸の場合
+: else
+	\CN["保镖1"]
+“是个光着身子拿着刀的女人吗……真的很讨厌啊。”
+
+	\CN["保镖2"]
+“长相和身材都很好，但是很可惜。
+这种危险的家伙最好杀了他”
+
+//●分岐終了
+: endif
+: EraseChara( "Mukuro", 0.5 )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：用心棒×２
+//■タイプ：通常戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：用心棒×２,0,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_House01_01", "BGM/22_BM003", 1073, -1, -1, "Scenarios/SC_D05_05*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 1, 0, "BGImage/BG_House01_01", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○嘘を伝えた依頼者に鉄槌を３
+//========================================================
+*sc003
+//●戦闘勝利後
+//●演出：用心棒たち倒れる
+//●分岐：悪堕ちＬＶが３の場合
+//●強制的に殺人へ
+//＠ラベルジャンプ：sc003_select_s2
+//●分岐終了
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_House01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 2, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: if ( $evilLevel == 3 ) Jump( "*sc003_select_s2" ) endif
+\CI["就这样放着"]
+\CI["醒过来也很麻烦，杀了他吧"]
+这些家伙，怎么办？
+
+: if ($choice == 1) Jump( "*sc003_select_s2" ) endif
+*sc003_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc003_select
+//■選択肢１：このまま放っておく
+//■選択肢２：目覚められても厄介だから殺しておこう
+//――――――――――――――――――――――――――――
+//-------------------------------------------------------
+//●選択肢１：このまま放っておくを選んだ場合
+//-------------------------------------------------------
+*sc003_select_s1
+: DrawChara( "Mukuro", 27, 0)
+放着不管吧。无暇顾及。
+
+//●選択肢合流地点へ
+//＠ラベル：sc003_select_s_end
+: EraseChara( "Mukuro", 0.5 )
+: Jump( "*sc003_select_s_end" )
+
+//-------------------------------------------------------
+//●選択肢２：目覚められても厄介だから殺しておこうを選んだ場合
+//-------------------------------------------------------
+*sc003_select_s2
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4453" )
+\CN["无黑色"]
+“如果被醒来就麻烦了。要不要先屏住呼吸？”
+
+//●演出：斬殺エフェクト
+//●演出：用心棒×２　殺す
+//＠殺害,2
+//●選択肢合流地点へ
+//＠ラベル：sc003_select_s_end
+: EraseChara( "Mukuro", 0.5 )
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*sc003_select_s_end
+//●演出：無黒　屋敷に入って行く
+//●演出：場面転換トランジション
+//●背景：洋風屋敷・部屋
+//Yoshi：背景、本棚の部屋・昼
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Room03_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 2, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+//●読み：磯辺充三（いそべじゅうぞう）
+: PlayVoice( "Voices/vo00_muk4454" )
+\CN["无黑色"]
+“你就是幕臣，矶边充三吧？”
+
+一边把在房子里的人全都打倒，一边好不容易走到了海岸边。
+
+: DrawChara( "Mukuro", 41, 0)
+顺便说一下，我没有杀人——。
+
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	\CN["海滨"]
+“什么，为什么，你……！
+难道是大冈的大便在怂恿我……？”
+
+//●分岐：［服装］全裸の場合
+: else
+	\CN["海滨"]
+“哈，是个光着身子拿着刀的女人……啊啊啊…我，你是指你
+什么都不知道……！钱的话我给你，快从这里出来
+去吧」
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 28, 0, 2)
+	: PlayVoice( "Voices/vo00_muk4455" )
+	\CN["无黑色"]
+（这样的事情经常有。
+确实如果有裸体拿刀的女人的话会很恐怖吧）
+
+//●分岐終了
+: endif
+//●演出：口入屋が後からやってくる
+: DrawChara( "Mukuro", 25, 0)
+\CN["眼镜店"]
+“不好意思，从这里开始可以交给我吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4456" )
+\CN["无黑色"]
+“嗯？没关系……”
+
+\CN["眼镜店"]
+“我要告诉这个笨蛋{礼仪，礼仪}之类的东西
+不可能”
+
+\CN["海滨"]
+“喂，你说这是谁啊……”
+
+\CN["眼镜店"]
+“寄生虫的海岸边，幕臣——不，应该是原幕臣吧。
+马上就要到了”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk4457" )
+\CN["无黑色"]
+“那么，入口店。我会在外面监视的。”
+
+\CN["眼镜店"]
+“圣诞老人”
+
+//●演出：無黒　退場する
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: ShowWnd()
+\CN["眼镜店"]
+“喂，开始愉快的上课吧。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+出了房间马上就听到了海岸边的哭喊声。
+
+\CN["眼镜店"]
+“还只是剥了小指的指甲。很老实。”
+
+\CN["海滨"]
+“呀，住手……是我不好……对不起……对不起”
+
+\CN["眼镜店"]
+“我想问的不是道歉而是理由。
+请你在我理解之前说明一下我对委托撒谎的理由”
+
+眼镜店，那家伙相当习惯拷问啊。
+一边想着这些，一边在外面继续听着海岸边的悲鸣。
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//＠六角山の魔物退治１を全部クリアしている場合
+//＠桃の操作へ
+//●シーンエンド
+: SetMission( "SC_D05_04_3", "Successed" )
+: FadeOut( 0.0 )
+: Wait()
+: if ( MissionProgress( "SC_D05_02_1", "Successed", "Failed" ) == true )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_07")
+: else
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif

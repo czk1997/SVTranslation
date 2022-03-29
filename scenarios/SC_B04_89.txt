@@ -1,0 +1,674 @@
+//========================================================
+//○裏切り者には罰を
+//========================================================
+//●場所：白夜のアジト・処刑部屋
+//●背景：白夜のアジト・処刑部屋
+//●視点：第三者視点
+//Yoshi：背景
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Midori", 0 )
+: CharaCostume( "Mikage", 0 )
+: CharaCostume( "Manji", 0 )
+: CharaCostume( "Ranmaru", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_ZashikiRo01_02", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“什么，这是什么！放开我！谁会这样……！”
+
+——大和的哪里。白夜作为活动据点的地方。
+
+于是白夜九星五黄的卍把身体用铁的锁链
+被拘束了。
+
+//●演出：みどり・御影　登場する
+: HideWnd()
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Mikage", 0, 0, 0, 0.0, 0.0, 4, "RC" )
+: DrawChara( "Midori", 2, 0, 0, 0.0, 0.0, 3, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo10_mid0081" )
+: ShowWnd()
+\CN["绿色"]
+「哇，卍。终于醒了吗？
+真是的，要睡到什么时候啊，自己”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“什么！？望月上织笠……你们把我们……？”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“你们也不是不知道吧！
+九星之间的争执在头脑中应该是被严格禁止的！
+别以为这样愚蠢的模仿就可以了事！”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Midori", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo10_mid0082" )
+\CN["绿色"]
+“你这家伙本来就解决不了，卍”
+
+: DrawChara( "Midori", 9, 0)
+: PlayVoice( "Voices/vo10_mid0083" )
+\CN["绿色"]
+“我再说了好几次了，望月啊，绿
+或者是望月先生吧？”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+「…………」
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo11_mik0031" )
+\CN["御影"]
+“请扪心自问。将自己犯下的许多罪行。”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“罪……？这种东西，太多了我不知道！
+白夜里没有一个清廉洁白的家伙”
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0032" )
+\CN["御影"]
+“……愚蠢的男人。恶心。想吐。”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“无所谓，放开我！
+现在离开的话，就在头上闭嘴吧」
+
+//●演出：蘭丸　登場する
+: HideWnd()
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Ranmaru", 3, 0, 0, 0.0, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["兰丸"]
+“嗯，那可不行啊。”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["卍"]
+「什…兰丸！你和这两个笨蛋一样吗？
+怎么了？”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“之前啊，你知道在高浜有奴隶商被捕吗？
+是从海的另一边把人掳来当奴隶的人」
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“啊？那是怎么回事？”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“你啊，和那个奴隶商有联系吧？
+不要向头脑报告，随你的便”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“什么……这是怎么回事？我完全不知道。”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo10_mid0084" )
+\CN["绿色"]
+“卍，你已经败露了。你是不是太不擅长说谎了？”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo11_mik0033" )
+\CN["御影"]
+“闭嘴！{件，无聊}的奴隶商以肃清为对象进行交易
+事情应该是被禁止的。违反命令相当于万死”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“所以你不是说不知道吗！”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo10_mid0085" )
+\CN["绿色"]
+“嘛，这样逞强也是现在的事吧。”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“对，拷问也没用，望月。
+我才不知道那是奴隶商……”
+
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0086" )
+\CN["绿色"]
+“嗯？我们没打算给你拷打吗？”
+
+: DrawChara( "Midori", 15, 0)
+: PlayVoice( "Voices/vo10_mid0087" )
+\CN["绿色"]
+“我要给你的话，是要拷问或者行刑
+开小差”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“处刑……是怎么回事啊！？
+说起来我和那个奴隶商联系在一起的证据是
+是吗！？”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["兰丸"]
+“有啊。很多。
+我已经仔细调查过你了”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“哈……？怎么回事？”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo11_mik0034" )
+\CN["御影"]
+“你没有注意到吗？
+你早就被监视了？”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“……奇奇……难道我没有被信任吗……。
+到现在为止，我觉得我是为了白夜而做的”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["兰丸"]
+“你啊，现在在说什么甜言蜜语？”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo11_mik0035" )
+\CN["御影"]
+“听了会吐吧。因为被信任所以进入九星。”
+明明能做到……”
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0036" )
+\CN["御影"]
+“请不要因为自己的愚蠢行为而破坏了信用
+我只觉得脑子有问题”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“织笠，你从刚才开始就一直在撒娇！！
+不过，也有可能是头脑发愣了吧！”
+
+好像想反射性地揍他
+被拘束的身体只能发出喀嚓喀嚓的锁链金属声
+做不到。
+
+然后，自己不经意脱口而出的话是
+对于御影来说是最不应该说的话
+我不知道。
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo11_mik0037" )
+\CN["御影"]
+“笨蛋……现在马上，用我的手——”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Midori", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo10_mid0088" )
+\CN["绿色"]
+“御影，等一下！我们约好了让我来做吧？”
+
+绿急忙阻止了欲行使魔术的御影。
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["兰丸"]
+“那么，接下来就交给望月，我们出去吧。”
+
+//●演技：不機嫌な沈黙です
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo11_mik0038" )
+\CN["御影"]
+「…………」
+
+//●演出：御影・蘭丸　退場する
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0089" )
+\CN["绿色"]
+“那么，卍。快乐的时间开始了。”
+
+//●演出：みどり　義手を外す
+: PlaySe( "SE/Se_Katana04" )
+: CharaCostume( "Midori", 1 )
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Midori", 19, 0, 0 )
+绿取下左臂的义手，尖锐地长出了长针。
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“望月，你……适可而止……”
+
+//●演出：血飛沫
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: Call( "Scenarios/Effect*Blood05" )
+: EraseChara( "Manji", 0.0 )
+: ShowWnd()
+绿的左手里埋着的枪
+贯穿卍的左脚。
+
+//: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“呜哇！说啊……望月、你、等一下
+我一定要杀了你……”
+
+//: EraseChara( "Manji", 0.5 )
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: DrawChara( "Midori", 28, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0090" )
+\CN["绿色"]
+“是的。如果自己有后面的话
+来杀我，没关系。我们可是非常欢迎的”
+
+: DrawChara( "Midori", 20, 0)
+: PlayVoice( "Voices/vo10_mid0091" )
+\CN["绿色"]
+“那么，接下来哪里好呢？我给你选。”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“哈……哈……怎么了……”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 22, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0092" )
+\CN["绿色"]
+“哈哈，不回答吗！”
+
+//●演出：血飛沫
+: HideWnd()
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Manji", 0, 0, 0, 0.5, 0.0, 2, "C" )
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: Call( "Scenarios/Effect*Blood05" )
+: ShowWnd()
+\CN["卍"]
+“啊～啊～～～～～～～～！”
+
+绿再次用头盖拔出卍足。
+那个和刚才扎的地方一点不差，在同一个地方。
+
+//: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“哈……哈…望月……先生……请原谅……”
+
+//: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“九星也要放弃……白夜也要过去……不要再露面了
+我会谨慎地活下去……所以，请特别放过我……”
+
+//: EraseChara( "Manji", 0.5 )
+//: DrawChara( "Midori", 10, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0093" )
+\CN["绿色"]
+“啊？自己说什么呢？算了，快点吧！”
+
+//●演出：血飛沫
+: HideWnd()
+: Call( "Scenarios/Effect*Blood05" )
+: ShowWnd()
+//: EraseChara( "Midori", 0.5 )
+//: DrawChara( "Manji", 0, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["卍"]
+“嗯……！”
+
+三次，绿挖了相同的地方
+卍发出小小的呻吟后，尿漏了。
+
+//: EraseChara( "Manji", 0.5 )
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Midori", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0094" )
+\CN["绿色"]
+“啊，我这是第一次处死九星的家伙。
+非常期待……”
+
+: DrawChara( "Midori", 17, 0)
+: PlayVoice( "Voices/vo10_mid0095" )
+\CN["绿色"]
+“昨天晚上太期待了，完全睡不着……”
+
+: DrawChara( "Midori", 13, 0)
+: PlayVoice( "Voices/vo10_mid0096" )
+\CN["绿色"]
+“那是什么？只是稍微用脚戳了一下
+什么失禁啊」
+
+: DrawChara( "Midori", 9, 0)
+: PlayVoice( "Voices/vo10_mid0097" )
+\CN["绿色"]
+“真的拜托了……不可能，真的……。
+自己太失望了吧……”
+
+//●演出：血飛沫
+: HideWnd()
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: Call( "Scenarios/Effect*Blood05" )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+\CN["卍"]
+“啊啊啊啊啊————！”
+
+然后，这次挖右脚的小腿附近
+卍因为剧痛而觉醒。
+
+//●読み：処刑（あそび）
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0098" )
+\CN["绿色"]
+“我、{处刑、游戏}中使用药物，真的很讨厌。
+但是，你太失望了，不这么用的话
+看样子很开心”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“哈哈哈……住手……住手吧……拜托了……
+住手……”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0099" )
+\CN["绿色"]
+“我好像在说处女被侵犯之前的话。
+那个有点有趣。嗯，我在说线”
+
+: DrawChara( "Midori", 18, 0)
+: PlayVoice( "Voices/vo10_mid0100" )
+\CN["绿色"]
+“因为要用这个，所以要更加努力。”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“……呀，算了……！”
+
+绿用非常熟练的手势在卍的手臂上打针。
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“什么，你打了什么……？”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0101" )
+\CN["绿色"]
+“请给我恢复元气的药。”
+
+脸色苍白无力地问卍，绿爽快地回答。
+
+: DrawChara( "Midori", 27, 0)
+: PlayVoice( "Voices/vo10_mid0102" )
+\CN["绿色"]
+「呐，继续干吧。大腿那里一失血就马上
+因为是死的关系啊……。接下来是手臂♪”
+
+//●演出：血飛沫
+: HideWnd()
+: Call( "Scenarios/Effect*Blood05" )
+: ShowWnd()
+绿拔头盖，从卍的身体各处刺过去
+穿孔而去。
+
+为了不让它死掉，要以绝妙的程度避免致命伤。
+
+//●演出：場面転換トランジション
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Midori", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0103" )
+\CN["绿色"]
+“基本上就算刺伤也不要紧。”
+
+: DrawChara( "Midori", 2, 0)
+: PlayVoice( "Voices/vo10_mid0104" )
+\CN["绿色"]
+“不过，比拉加大叔做的药，真的很糟糕。
+普通的话早就失去意识了……”
+
+绿先卍打的是九星八白的比拉加配制的
+是特制的药。
+
+: DrawChara( "Midori", 8, 0)
+: PlayVoice( "Voices/vo10_mid0105" )
+\CN["绿色"]
+“那么，下次去哪里好呢？”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“哈、哈、哈、已经放弃了……拜托了……所以……”……
+痛啊……已经……讨厌了……”
+
+//●演技：心の声です
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0106" )
+\CN["绿色"]
+（说在这里杀了他，真是太好了♪
+还没有放弃的证据啊）
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“啊啊啊啊啊啊啊啊……请原谅……拜托了……
+望月大人啊……！”
+
+出的东西全部出完的卍在连失禁都不能的状况下
+尽管如此，还是继续向绿乞求原谅。
+
+浑身是洞。再也握不住刀了。
+不仅如此，连好好走路都变得不可能的身体
+尽管如此，他还是继续说希望得到原谅。
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0107" )
+\CN["绿色"]
+“那么，下一个是这里吗？”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“……已经……算了……”
+
+//●演出：血飛沫
+: HideWnd()
+: Call( "Scenarios/Effect*Blood05" )
+: DrawChara( "Manji", 0, 0)
+: ShowWnd()
+\CN["卍"]
+“啊……啊……啊……啊…啊…啊啊……啊啊……”
+
+拔头盖是在卍股间——睾丸击破一个。
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 28, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0108" )
+\CN["绿色"]
+“还有，有两个中的一个还没毁掉呢。”
+
+然后，绿又重新开始处刑。
+
+一方的睾丸崩溃状态的卍和刚才一样
+在没有致命伤的地方开个洞。
+
+慢慢地，慢慢地——
+那简直就像蛇把猎物掐死一样。
+
+: DrawChara( "Midori", 7, 0)
+: PlayVoice( "Voices/vo10_mid0109" )
+\CN["绿色"]
+“那就另一边吧？”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“不，不喜欢……别这样……”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 29, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0110" )
+\CN["绿色"]
+“别还嘴！”
+
+//●演出：血飛沫
+: HideWnd()
+: Call( "Scenarios/Effect*Blood05" )
+: ShowWnd()
+而且，毫不留情的一方的睾丸也会毁掉。
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“呼……呜……哈、哈……哈、啊啊……”
+
+即使那样也不能昏倒的卍。
+
+然后，终于——
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“这……杀了我……杀了我……。
+想死……”
+
+我已经放弃了生存，希望死了。
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0111" )
+\CN["绿色"]
+“自己想死吗？说些没有男子气概的话……”
+
+: DrawChara( "Midori", 10, 0)
+: PlayVoice( "Voices/vo10_mid0112" )
+\CN["绿色"]
+“那就不需要小鸡鸡了吧。”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“杀了我……快杀了我……哈哈…杀了我……”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+早就答不上来了。
+
+在没有互相咬过的语言的对话中
+绿挖出了卍的阴茎。
+
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“杀了他……杀了他……”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0113" )
+\CN["绿色"]
+“啊，坏了也不要紧。不好，下次就在这里吧……”
+
+//●演出：血飛沫
+: HideWnd()
+: Call( "Scenarios/Effect*Blood05" )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+\CN["卍"]
+「――――――――――」
+
+绿为了下次卍不能说话
+嗓子哑了。
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0114" )
+\CN["绿色"]
+“那么，接下来就是正式演出了！
+我会慢慢地、慢慢地花时间处刑的♪”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: EraseChara( "Midori", 0.0 )
+: ShowWnd()
+绿直到最后都没有夺走卍的视线。
+卍能亲身感受到疼痛，用眼睛看到。
+
+直到绿厌倦为止，一直被嘲弄了几十个小时之后
+最后被挖出眼珠，被贯穿要害——
+
+他尽情地感受着对死亡的恐惧，气绝了。
+
+……………………………………………………。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

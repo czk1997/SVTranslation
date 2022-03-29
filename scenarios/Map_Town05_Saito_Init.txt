@@ -1,0 +1,269 @@
+//========================================================
+//○西都　初期化
+//========================================================
+//--------------------------------------------------------
+//外
+//--------------------------------------------------------
+*Map01
+//ＮＰＣ配置
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: RpgCharaOn("NPC_T05_055")
+	: RpgCharaOn("NPC_T05_056a")
+	: RpgCharaOn("NPC_T05_056b")
+	: RpgCharaOn("NPC_T05_058")
+	: RpgCharaOn("NPC_T05_059")
+	: RpgCharaOn("NPC_T05_060")
+	: if ( Call("Scenarios/CommonSys*BirthExperience") == true )
+		: RpgCharaOn("NPC_T05_057")
+		: RpgCharaOn("NPC_T05_070")
+	: endif
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: RpgCharaOff("NPC_T05_059")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: RpgCharaOn("NPC_T05_028")
+	: RpgCharaOn("NPC_T05_029")
+	: RpgCharaOn("NPC_T05_030")
+	: RpgCharaOn("NPC_T05_031")
+	: RpgCharaOn("NPC_T05_032")
+	: RpgCharaOn("NPC_T05_033")
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: RpgCharaOn("NPC_T05_043")
+	: RpgCharaOn("NPC_T05_044")
+	: RpgCharaOn("NPC_T05_045")
+	: RpgCharaOn("NPC_T05_046")
+	: RpgCharaOn("NPC_T05_047")
+: endif
+//玉藻の家
+: if ( MissionProgress( "SC_D05_13_1", "Successed" ) == true )
+	: RpgMapBaloonOn( "To15" )
+	: RpgDoorLock( "To15", false )
+: endif
+: if ( MissionProgress( "SC_D05_15_1", "InProgress","Successed","Failed" ) == true )
+	: RpgMapBaloonOff( "To15" )
+	: RpgDoorLock( "To15", true )
+: endif
+//浪人ルート・最終章
+: if( $chapter == 12 )
+	: RpgMapBaloonOff( "To15" )
+	: RpgDoorLock( "To15", true )
+	: RpgMapBaloonOff( "To14" )
+	: RpgDoorLock( "To14", true )
+	: if MissionProgress( "SC_D04_53", "Opened" ) == true	// 子宮改造手術まだの場合は発生させる
+		: RpgMapBaloonOn( "To14" )
+		: RpgDoorLock( "To14", false )
+	: endif
+: endif
+//兼光を手に入れろ！　発生時
+: if ( MissionProgress( "SC_D04_09_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("To13","Event")
+	: RpgDoorLock("To13",false)
+: endif
+//出世欲に塗れた男　発生時
+: if ( MissionProgress( "SC_D04_11_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("SC_D04_11","Event")
+	: RpgCharaOn("SC_D04_11a")
+	: RpgCharaOn("SC_D04_11b")
+	: RpgEventOn("SC_D04_11")
+: endif
+//ＮＰＣ殺害時の封鎖処理
+: if ( Flag ( "Kill_Map_Town05_03" ) == true )
+	: RpgMapBaloonOff( "To03" )
+	: RpgDoorLock( "To03", true )
+: endif
+: if ( Flag ( "Kill_Map_Town05_06" ) == true )
+	: RpgMapBaloonOff( "To06" )
+	: RpgDoorLock( "To06", true )
+: endif
+: if ( Flag ( "Kill_Map_Town05_10" ) == true )
+	: RpgMapBaloonOff( "To10" )
+	: RpgDoorLock( "To10", true )
+: endif
+: if ( Flag ( "Kill_Map_Town05_11" ) == true )
+	: RpgMapBaloonOff( "To11" )
+	: RpgDoorLock( "To11", true )
+: endif
+//露出イベント
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( CharaCostume( "Mukuro" ) == 1 )
+		: RpgEventOn( "Roshutsu" )
+		: RpgMapBaloonOn( "Roshutsu" )
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( CharaCostume( "Momo" ) == 1 )
+		: RpgEventOn( "Roshutsu" )
+		: RpgMapBaloonOn( "Roshutsu" )
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( CharaCostume( "Kinako" ) == 1 )
+		: RpgEventOn( "Roshutsu" )
+		: RpgMapBaloonOn( "Roshutsu" )
+	: endif
+: endif
+//ＮＰＣ生存チェック
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+//居酒屋
+//--------------------------------------------------------
+*Map03_1
+//ＮＰＣ配置
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: RpgCharaOn("NPC_T05_063")
+	: RpgCharaOn("NPC_T05_064")
+	//デリヘル
+	: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 )
+		: if ( ItemCount( "Delehel" ) == 0 )
+			: RpgCharaOn("DeliveryHealth")
+		: endif
+	: endif
+	//口入屋のハート
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 && Flag ( "KuchiireyaH" ) == false )
+		: RpgCharaBaloonOn("Kuchiireya","Heart")
+	: endif
+	: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 )
+		: RpgCharaBaloonOn( "NPC_T05_010", "Heart" )
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: RpgCharaOn("NPC_T05_036")
+	: RpgCharaOn("NPC_T05_037")
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: RpgCharaOn("NPC_T05_050")
+	: if ( CharaHRank( "Kinako", "Immoral" ) >= 2 )
+		: RpgCharaBaloonOn( "NPC_T05_010", "Heart" )
+	: endif
+: endif
+//
+: if ( MissionProgress( "SC_D04_19_1", "InProgress" ) == true )
+	: RpgCharaOff("Kuchiireya")
+: endif
+: if ( Flag ( "Kuchiireya_off" ) == true )
+	: RpgCharaOff("Kuchiireya")
+: endif
+: if ( $chapter == 12 )	//浪人ルート最終章
+	: RpgCharaOff("Kuchiireya")
+: endif
+//ＮＰＣ生存チェック
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+//宿屋
+//--------------------------------------------------------
+*Map03_2
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	//: RpgCharaOn("NPC_T05_061")
+	: if ( Call("Scenarios/CommonSys*BirthExperience") == true ) RpgCharaBaloonOn( "NPC_T05_061" ) endif
+	: RpgCharaOn("NPC_T05_062")
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: RpgCharaOn("NPC_T05_034")
+	: RpgCharaOn("NPC_T05_035")
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: RpgCharaOn("NPC_T05_048")
+	: RpgCharaOn("NPC_T05_049")
+: endif
+//ＮＰＣ生存チェック
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+//銭湯
+//--------------------------------------------------------
+*Map06
+//男湯イベント　５章～
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 && Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) >= 2 && Flag ( "DatsuiMukuro" ) == false )
+		: RpgMapBaloonOn( "SC_S11","Heart" )
+	: endif
+	: if ( Flag ( "DatsuiMukuro" ) == true )
+		: RpgDoorLock( "Door_Men", false )
+		: RpgMapBaloonOn( "SC_S11","Enter" )
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( CharaHRank( "Momo", "Immoral" ) >= 2 && Call( "Scenarios/CommonSys*CharaHRank_Momo_Exhibitionist" ) >= 2 && Flag ( "DatsuiMomo" ) == false )
+		: RpgMapBaloonOn( "SC_S11","Heart" )
+	: endif
+	: if ( Flag ( "DatsuiMomo" ) == true )
+		: RpgDoorLock( "Door_Men", false )
+		: RpgMapBaloonOn( "SC_S11","Enter" )
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( CharaHRank( "Kinako", "Immoral" ) >= 2 && Call( "Scenarios/CommonSys*CharaHRank_Kinako_Exhibitionist" ) >= 2 && Flag ( "DatsuiKinako" ) == false )
+		: RpgMapBaloonOn( "SC_S11","Heart" )
+	: endif
+	: if ( Flag ( "DatsuiKinako" ) == true )
+		: RpgDoorLock( "Door_Men", false )
+		: RpgMapBaloonOn( "SC_S11","Enter" )
+	: endif
+: endif
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+//銭湯・男湯
+//--------------------------------------------------------
+*Map08
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: RpgCharaOn("NPC_T05_065")
+	: RpgCharaOn("NPC_T05_066")
+	: RpgCharaOn("NPC_T05_067")
+	: RpgCharaOn("NPC_T05_068")
+	: RpgCharaOn("NPC_T05_069")
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: RpgCharaOn("NPC_T05_038")
+	: RpgCharaOn("NPC_T05_039")
+	: RpgCharaOn("NPC_T05_040")
+	: RpgCharaOn("NPC_T05_041")
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: RpgCharaOn("NPC_T05_051")
+	: RpgCharaOn("NPC_T05_052")
+	: RpgCharaOn("NPC_T05_053")
+	: RpgCharaOn("NPC_T05_054")
+: endif
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+//菜ノ花楼
+//--------------------------------------------------------
+*Map09
+: if ( MissionProgress( "SC_D04_51", "Opened" ) == true && CharaHRank( "Mukuro", "Immoral" ) >= 2 )
+	: RpgCharaBaloonOn("NPC_T05_025","Heart")
+: endif
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+//民家１
+//--------------------------------------------------------
+*Map10
+: if (WhoLeader( "Mukuro" ) == true)
+	: RpgCharaOff("NPC_T05_026")
+: endif
+: Return
+//--------------------------------------------------------
+//民家２
+//--------------------------------------------------------
+*Map11
+: if (WhoLeader( "Momo" ) == true)
+	: RpgCharaOn("NPC_T05_042")
+: endif
+: Return
+//--------------------------------------------------------
+//民家３
+//--------------------------------------------------------
+*Map12
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+		: RpgMapBaloonOn( "SC_D04_54", "Heart" )
+		: RpgEventOn( "SC_D04_54" )
+	: endif
+: endif
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+//ヒラガの研究所
+//--------------------------------------------------------
+*Map14
+: if ( WhoLeader( "Mukuro" ) == true )
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral", "Immoral" ) == 3 && MissionProgress( "SC_D04_53", "Opened" ) == true )
+		: RpgCharaOn( "Hiraga" )
+	: endif
+: endif
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return

@@ -1,0 +1,293 @@
+//========================================================
+//○自由を手にした３人の女浪人
+//========================================================
+//●背景：黒画面
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: ShowWnd()
+——几个月后。
+
+//●背景：帝都・街並み・昼
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+\CN["男1"]
+“我还以为将军突然去世会怎么样呢
+意外的是没什么变化啊”
+
+\CN["男2"]
+“是啊。将军家的血统断绝了，幕府也消失了。”
+虽然有传闻”
+
+将军一桥忠胜的死因心脏病发作而猝死。
+幕府突然失去了头脑……。
+
+\CN["女1"]
+“新将军——和小夜大人结婚的人，真是个能干的人啊。
+看起来很那个，政略结婚吧？”
+
+\CN["女2"]
+“喂！我才不说那种话呢！”！
+什么时候在哪里可以看到他们……嗯，已经没问题了吗？”
+
+一桥忠胜的独生女一桥小夜嫁到了财阀家六原家。
+
+因为将军突然去世，作为丈夫的六原家的户主突然
+临时代行将军一职。
+
+然后，玉藻成为将军的妾
+被比拉加的魔导器封印在那须野山。
+
+那个魔导器被施加了使接近的人死亡的魔术
+人们称之为“杀生石”。
+
+//●演出：蘭丸　登場する
+: CharaCostume( "Ranmaru", 0 )
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["兰丸"]
+“将军猝死的事态也不会让帝都混乱
+统治的手腕受到好评，正式就任将军的日子也很短
+据说很近——吗？”
+
+头上好像有一只扁虱在里面做什么，让我查一下
+接到命令，就在前几天去了国外。
+
+: DrawChara( "Ranmaru", 1, 0, 0 )
+\CN["兰丸"]
+“回到大和就什么都没有了。
+简直就是帮助乌龟的男人的故事啊」
+
+\CN["兰丸"]
+“小夜姬大人的结婚对象是财阀的六原家——
+日野家被拆毁了，然后就变成了继承人的家”
+
+说是继承了，还是说夺走了。
+
+: DrawChara( "Ranmaru", 7, 0, 0)
+\CN["兰丸"]
+“直到比拉加作为一名拳击手在背后做着各种各样的事情为止
+我知道……”
+
+: DrawChara( "Ranmaru", 1, 0, 0)
+\CN["兰丸"]
+“还有，他定期从国外购买精灵的奴隶
+听说有好几个销路……嗯，现在
+这是无关紧要的信息啊”
+
+没有要报告的对象，也没有可以活用的对象的信息
+不过是八卦而已。
+
+\CN["兰丸"]
+“没有必须要做的事，也没有想做的事。”
+
+: DrawChara( "Ranmaru", 4, 0, 0)
+\CN["兰丸"]
+“……我接下来会怎么样呢？”
+
+//●演出：蘭丸　去る
+//●演出：場面転換トランジション
+//●背景：ヒラガの研究室
+//Yoshi：背景
+
+: HideWnd()
+: chara = "Ranmaru"; lay = 0; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Laboratory01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: CharaCostume( "Aguri", 0 )
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0289" )
+\CN["亚久里"]
+“希拉加大人，你怎么不高兴呢？”
+
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Hiraga", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["平底片"]
+“不，有点被拒绝了呢。
+看，这是之前说的事情……”
+
+: PlayVoice( "Voices/vo16_agu0290" )
+\CN["亚久里"]
+“神八代大人、公主椿大人、有栖川大人三位贵族
+您说要提拔幕臣吗？”
+
+: DrawChara( "Hiraga", 6, 0, 0 )
+\CN["平底片"]
+“是的。嘛，应该会变成这样吧。”
+我早就料到了”
+
+\CN["平底片"]
+“小夜姬大人没精神，肩负将军的六原家的户主也是
+因为是刚才说的一种感觉”
+
+//●読み：六原（ろくはら）
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0291" )
+\CN["亚久里"]
+“听说六原大人的评价不错……”
+
+: DrawChara( "Hiraga", 6, 0, 0 )
+\CN["平底片"]
+“是啊。还有，他对我的关心都跟小夜大人说了。”
+因为啊。在这一点上，现状是非常好操作的”
+
+\CN["平底片"]
+“只是，再考虑一下还有几年，你对这件事的关心度
+现在开始需要准备……”
+
+: DrawChara( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“希望今后也能过上安稳的生活。
+必须在所有方面都做好万全的准备”
+
+\CN["平底片"]
+“亚久里先生，我觉得你还会很忙的
+请多关照”
+
+: DrawChara( "Aguri", 4, 0)
+: PlayVoice( "Voices/vo16_agu0292" )
+\CN["亚久里"]
+“是的。我的身体经常和希拉加先生在一起……”
+
+希拉里作为一名拳击手君临天下
+全部都是为了和亚久里一起平静地度过永远的时光。
+
+因此掌握实权是必不可少的
+只不过是在做而已。
+
+//●演出：場面転換トランジション
+//●背景：空・昼
+//Yoshi：背景
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 5 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Hiraga", 0.0 )
+: EraseChara( "Aguri", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+——然后，说到无黑他们……。
+
+//●背景：おんぼろ部屋
+//Yoshi：背景、昼
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_BoroRoom01_01", 1.0 )
+: Wait()
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1589" )
+\CN["桃子"]
+“无黑的黄菜子，比拉加说的事
+拒绝真是太好了吗？”
+
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4692" )
+\CN["无黑色"]
+“嗯？不是挺好的吗？”
+
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo02_kin0859" )
+\CN["黄菜子"]
+“是的，我对现在的生活很满意……。
+而且城里的工作很辛苦”
+
+从那以后，先在帝都的下町租房子
+在那里和桃子和黄菜子一起一边挣日资一边生活。
+
+想在更好的地方住更好的房子就住下来了
+那种东西不适合我们。
+
+如果能躲过风雨就好了。
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom1590" )
+\CN["桃子"]
+“是啊。光是成为贵族就已经是麻烦的制约了。”
+又有，不能随心所欲的话就麻烦了”
+
+因为原来是贵族的桃说，所以很有说服力。
+桃子的话和黄菜子一起点头。
+
+如果不选择的话，有可以挣到不愁吃的工作。
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk4693" )
+\CN["无黑色"]
+“那么，今天做什么呢？”
+
+: DrawChara( "Kinako", 0, 0, 1)
+: PlayVoice( "Voices/vo02_kin0860" )
+\CN["黄菜子"]
+“要看有什么工作……”
+
+: DrawChara( "Momo", 5, 1)
+: PlayVoice( "Voices/vo01_mom1591" )
+\CN["桃子"]
+“嘛，没有工作的话就不做了，不管多少事情都要做。”
+
+没有特别想做的事情。
+
+所以，瞬间、瞬间想做的事情
+不忍耐地干下去。
+
+: PlayVoice( "Voices/vo00_muk4694" )
+\CN["无黑色"]
+“我们是自由的。”
+
+: DrawChara( "Momo", 2, 0, 0)
+: PlayVoice( "Voices/vo01_mom1592" )
+\CN["桃子"]
+“就是那个！”
+
+: DrawChara( "Kinako", 1, 0, 0)
+: PlayVoice( "Voices/vo02_kin0861" )
+\CN["黄菜子"]
+“是的！”
+
+//●演出：無黒・桃・黄菜子　去る
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+在西都的平民区贫民窟中生存下来，在帝都被贵族玩弄
+最后把大和灭了。
+
+在那样的辛苦之后，我们得到的东西是——
+
+是不被任何人束缚的自由。
+
+//●演出：暗転
+//Yoshi：背景消去
+//●エンディング：浪人ＥＮＤ
+//＠タイトルへ戻る
+: HideWnd()
+: FadeOut( 1.0 )
+: Wait()
+: if ( $inExtra == true ) Return endif
+: SharedFlag( "GameClear", true )
+: AfterStoryFlagUp( "Ending10" )
+: Call( "Scenarios/CommonSys*HanimeRefAllOpen")
+: LoadScene( "Title" )

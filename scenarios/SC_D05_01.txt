@@ -1,0 +1,179 @@
+//========================================================
+//○時代が動こうとしている
+//========================================================
+//アイキャッチ
+: $chapter = 11	// 章の設定
+: HideWnd()
+: Call( "Scenarios/Common*Eyecatch" )
+: EraseAllImage(1,1.0)
+: Wait()
+//●場所：鬼灯屯所
+//●視点：無黒視点
+//無黒　強制着衣
+: CharaCostume( "Mukuro", 0 )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/48_Goodnight")
+: ShowWnd()
+——帝都鬼灯的屯所。
+
+\CN["鬼灯队士・男A"]
+「…………」
+
+\CN["鬼灯队士・女A"]
+「…………」
+
+无黑脱落，连桃子也下落不明
+退团鬼灯。
+
+//●演技：心の声です
+: DrawChara( "Azami", 6, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0774" )
+\CN["嘲讽"]
+（全员都很疲惫啊……。
+气氛不太好）
+
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Leo", 11, 0, 0, 0.5, 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+\CN["雷欧"]
+“我！大家都好暗啊。
+让气氛更高涨吧！成！”
+
+雷欧为了活跃黑暗的气氛
+1个人努力开朗地努力着。
+
+: DrawChara( "Leo", 11, 0, 0, 0.5, 0.0, 5, "LC" )
+: DrawChara( "Ryu", 2, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["龙"]
+“银还没把山茶女……”
+
+\CN["鬼灯队士・女B"]
+“好像是。好像能从日野家逃出来了。”
+但是，依然没有抓住她在哪里”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“……那个笨蛋，再拜托我们一点。”
+
+: EraseChara( "Ryu", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Bebi", 2, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo07_beb0203" )
+\CN["红美"]
+“黄菜子也完全没有回来。”
+
+\CN["鬼灯队士・女B"]
+“黄菜子，好像在苦战呢。
+这次的情报收集……”
+
+鬼灯有很多不好的地方。
+队员们的脸上显出了浓厚的疲劳感。
+
+: EraseChara( "Bebi", 0.5 )
+: DrawChara( "Azami", 7, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0775" )
+\CN["嘲讽"]
+“我们只是做我们的事……”
+
+: DrawChara( "Azami", 22, 0)
+: PlayVoice( "Voices/vo05_aza0776" )
+\CN["嘲讽"]
+“今后，和反幕派一起的战斗也会激化。
+你们可不是朝下的时候啊」
+
+嘲讽叫好。
+
+——鬼灯就那样失去了气势。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●場所：西都・町並み
+//●演技：伸びしながら言っている感じです
+: HideWnd()
+: FadeOut( 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Village04_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4353" )
+\CN["无黑色"]
+“嗯……今天天气也不错啊。”
+
+今天天气也很好，家附近也有吵架什么的
+被害人蹲在地上。
+
+——和往常一样的日常生活。
+
+//●演出：桃　やってくる
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Momo", 5, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1276" )
+\CN["桃子"]
+“啊，无黑！”
+
+一直以为一定会回到帝都——鬼灯里的桃子
+为什么，{西都，这里}还留着。
+
+: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: DrawChara( "Momo", 5, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo00_muk4354" )
+\CN["无黑色"]
+“早上好。你早上很早就开始工作了吗？”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1278" )
+\CN["桃子"]
+“早上开始收集药草的材料，顺便去击退魔物。
+话说回来，早上很早，已经吃午饭了吧？”
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk4355" )
+\CN["无黑色"]
+“昨天来晚了。”
+
+桃子也从我照顾的眼镜店得到了工作
+一边挣钱一边生活。
+
+虽然住在同一个小客栈里，但各自生活着。
+
+为什么不回鬼灯呢？
+我不打算问那个理由。
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4356" )
+\CN["无黑色"]
+“这是{西都，这里}的规则。”
+
+我也得挣点钱，去吃口店看看吧。
+
+//●シーンエンド
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: DestinationMap( "Map_Town05_01_Saito" )
+: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")

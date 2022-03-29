@@ -1,0 +1,636 @@
+//========================================================
+//○命がけの特訓、黒夜叉の力１
+//========================================================
+*sc001
+//●場所：白夜の隠れ家・冥の部屋
+: HideWnd()
+//: RpgCharaTurn( "Mei", "D" )
+//: FadeIn( 0.5 )
+//: Wait()
+//: StopBgm( 0.0 )
+: PlayBgm("BGM/42_CM019")
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0300" )
+\CN["冥"]
+“无黑，你在精灵之里教了我什么？”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2872" )
+\CN["无黑色"]
+“我知道了我使用的刀的真面目
+然后，我听说他有隐藏在我身上的力量”
+
+{黑夜叉，暗黑妖精}暂时伏下了……。
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0301" )
+\CN["冥"]
+“是隐藏的力量吗……。
+{黑夜叉，暗黑精灵}有可能到达
+是这样吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2873" )
+\CN["无黑色"]
+“姐姐，为什么要把那个……！？”
+
+: PlayVoice( "Voices/vo09_mei0302" )
+\CN["冥"]
+“因为你和我是有血缘关系的姐妹。
+因为我能做到，所以我想你也不会是那样吧”
+
+: DrawChara( "Mukuro", 34, 0)
+: PlayVoice( "Voices/vo00_muk2874" )
+\CN["无黑色"]
+“到、到……姐姐、{黑夜叉，暗黑妖精}
+能成为吗？”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0303" )
+\CN["冥"]
+“啊。一味地训练，终于达到了自由自在。”
+
+说得天花乱坠的姐姐。
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2875" )
+\CN["无黑色"]
+「那么，那么，我也训练一下的话{黑夜叉，暗黑妖精}
+能成为吗？”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0304" )
+\CN["冥"]
+“并不是说确实。
+你为什么想要{黑夜叉，暗黑妖精}？」
+
+姐姐看着我强烈地追问。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2876" )
+\CN["无黑色"]
+“……我觉得今后为了生存下去是必要的。
+如果就这样的话，就无法生存下去……”
+
+//●演出：SC_C04_13部分を過去回想として入れる
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a025_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+//: EraseChara( "Daruma", 0.0 )
+//: EraseChara( "Ryu", 0.0 )
+: ShowWnd()
+//: DrawChara( "Ryu", 41, 0)
+\CN["龙"]
+“——八重樱流·奥义”
+
+//: DrawChara( "Ryu", 42, 0)
+\CN["龙"]
+“八咫乌！！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Swing01" )
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+无数的剑闪向达磨袭来。
+
+//: DrawChara( "Daruma", 0, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a026_1_0_1000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: EraseImage( 9, 0, Call("Scenarios/Common*EffTime") )
+: ShowWnd()
+\CN["达磨"]
+“我也会用这个技能来回应你的。”
+
+//: DrawChara( "Daruma", 2, 0)
+\CN["达磨"]
+“天真一刀流・影断！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+那时，看到了认真的龙先生的坚强。
+而且，超过那个的头的底不知道的强度。
+
+在这之前，如果要和幕府斗争的话，一定会和鬼灯相撞。
+如果得不到力量的话，我确实会死的。
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0305" )
+\CN["冥"]
+“呼，迷惑好像消失了很多啊。”
+
+//●分岐：悪堕ちＬＶが３の場合
+: if ( $evilLevel == 3 )
+	//●演技：心の声です
+	: DrawChara( "Mei", 14, 0)
+	: PlayVoice( "Voices/vo09_mei0306" )
+	\CN["冥"]
+（但是，相当危险啊。无黑使出了{黑夜叉，暗黑妖精}的力量
+得到的话，感觉就这样沉溺于力量中……）
+
+姐姐的脸上现出不安的神色。
+
+//●分岐終了
+: endif
+: DrawChara( "Mei", 0, 0, 1)
+: PlayVoice( "Voices/vo09_mei0307" )
+\CN["冥"]
+“无黑，我来特训你。跟我来。”
+
+//●演出：場面転換トランジション
+//●場所：崎珠・裏手の山
+//●背景：山・昼
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/01_CM001")
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mei", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0308" )
+\CN["冥"]
+“这里的话就不碍事了。”
+
+姐姐拔刀。
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk2877" )
+\CN["无黑色"]
+“{黑夜叉，暗黑妖精}的特训是这个……？”
+
+真的是认真比赛吗？
+
+: DrawChara( "Mei", 3, 0)
+: PlayVoice( "Voices/vo09_mei0309" )
+\CN["冥"]
+「不，不是的。你真的有获得力量的素质吗？」
+让我核对一下”
+
+//●読み：長（おさ）
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0310" )
+\CN["冥"]
+“就算精灵里的村长说你有可能性。
+我不相信自己的眼睛看不到自己的肌肤”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2878" )
+\CN["无黑色"]
+“如果是这样的话……”
+
+拔刀。
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 23, 0, 2)
+	: PlayVoice( "Voices/vo00_muk2879" )
+	\CN["无黑色"]
+“如果姐姐要试我的话
+只有全力以赴”
+
+	: DrawChara( "Mei", 2, 0)
+	: PlayVoice( "Voices/vo09_mei0311" )
+	\CN["冥"]
+“这样就可以了。
+不想死的话，就打算杀了我来”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 26, 0, 2)
+	: PlayVoice( "Voices/vo00_muk2880" )
+	\CN["无黑色"]
+“姐姐，我打算杀了她。”
+
+	: DrawChara( "Mei", 5, 0)
+	: PlayVoice( "Voices/vo09_mei0312" )
+	\CN["冥"]
+“真是太杀气了。好吧，我接受它站起来。”
+
+//●分岐終了
+: endif
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：神八代冥
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：神八代冥,1,1,1
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc002" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_01", "BGM/22_BM003", 1054, -1, -1, "Scenarios/SC_C05_03*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc002" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○命がけの特訓、黒夜叉の力２
+//========================================================
+*sc002
+//●状況：戦闘終了後
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 31, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mei", 4, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0313" )
+\CN["冥"]
+“无黑，我很高兴。好像提高了很多技术。”
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 21, 1)
+	: PlayVoice( "Voices/vo00_muk2881" )
+	\CN["无黑色"]
+“啊，哈哈，我已经竭尽全力了
+姐姐还很从容吧……”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 21, 1)
+	: PlayVoice( "Voices/vo00_muk2882" )
+	\CN["无黑色"]
+“我本来打算真的杀了他……。
+哈……哈…姐姐，一点气都没有喘出来……”
+
+//●分岐終了
+: endif
+: DrawChara( "Mei", 2, 0)
+: PlayVoice( "Voices/vo09_mei0314" )
+\CN["冥"]
+“就算是白夜的干部，也拿到了第三个名次。
+不能跟妹妹比”
+
+: DrawChara( "Mei", 14, 0, 0)
+: PlayVoice( "Voices/vo09_mei0315" )
+\CN["冥"]
+“那么，差不多该认真了吧……”
+
+姐姐给我压力很大。
+
+: DrawChara( "Mei", 20, 0, 0)
+: PlayVoice( "Voices/vo09_mei0316" )
+\CN["冥"]
+“现在开始到{黑夜叉，暗黑妖精}。
+无黑，做好觉悟吧”
+
+//●演出：冥　ダークエルフ変身演出
+: HideWnd()
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: StopBgm( 1.0 )
+: cgkeep = false;
+: Call( "Scenarios/Effect*MeiDE" )
+//●演技：ダークエルフ化した冥を見て驚愕する
+: PlayBgm("BGM/42_CM019")
+: DrawChara( "Mei", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: DrawFaceThumbnail( "Mukuro", 18, 0, 0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2883" )
+\CN["无黑色"]
+“这、这就是{黑夜叉，暗黑妖精}……！？”
+
+外表和气氛都截然不同的姐姐。
+
+只是站在那里
+放着一股要吓破腰的劲头。
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0317" )
+\CN["冥"]
+“无黑，现在开始请你和我战斗。”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0318" )
+\CN["冥"]
+“如果变成了黑夜叉、黑精灵，就无法抑制冲动。
+说不定我会杀了你……”
+
+姐姐是认真的。
+我真的打算和我战斗。
+
+: DrawFaceThumbnail( "Mukuro", 16, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2884" )
+\CN["无黑色"]
+“……只有干了。”
+
+//＠ＨＰＭＰ完全回復処理
+: Call( "Scenarios/CommonSys*AllRecovery" )
+: StoreBgm()
+*battle02
+//――――――――――――――――――――――――――――
+//■戦　闘：神八代冥（ダークエルフ）
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり。絶対に勝てない（数ターンで強制終了）
+//――――――――――――――――――――――――――――
+//＠戦闘：神八代冥（ダークエルフ）,1,1,0,sc003,sc003
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_01", "BGM/22_BM003", 1055, -1, -1, "Scenarios/SC_C05_03*sc003" , true )
+//========================================================
+//○命がけの特訓、黒夜叉の力３
+//========================================================
+*sc003
+//そのまま戦闘中のＢＧＭを流しておく
+//●演出：無黒　大きなダメージを受ける
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: RestoreBgm()
+: cgkeep = false;
+: Call( "Scenarios/Effect*MeiAction01" )
+//: DrawChara( "Mukuro", 31, 1, 2, 0.25, 0.0, 3, "RC" )
+: Wait()
+: DrawFaceThumbnail( "Mukuro", 31, 1, 2 )
+//: DrawChara( "Mei", 0, 0, 1, 0.25, 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2885" )
+\CN["无黑色"]
+“……呜！”
+
+简直站不住脚。
+我的技术一窍不通。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk2886" )
+\CN["无黑色"]
+（不会吧，差到这种程度……）
+
+忍受鬼灯的严格训练，即使脱掉了也没有怠慢锻炼。
+
+我问她是不是离姐姐很近了
+明明有自负……。
+
+//●演出：冥が目前まで迫る
+//: DrawChara( "Mei", 3, 0)
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_a001_1_1_0200000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0319" )
+\CN["冥"]
+“啊啊啊啊啊啊啊！”
+
+刀就在眼前。
+
+//: DrawChara( "Mukuro", 18, 0)
+: PlayVoice( "Voices/vo00_muk2887" )
+\CN["无黑色"]
+“嘘，死了……”
+
+变成了黑夜叉，黑精灵}的姐姐没有慈悲心。
+
+——这样下去的话确实会变成两半。
+
+//●ＳＥ：心臓の音
+: PlaySe( "SE/Se_Heartbeat" )
+心脏剧烈地跳动。
+
+马上就要到这里的“死亡”令人目眩。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+//: DrawChara( "Mukuro", 16, 0)
+: DrawFaceThumbnail( "Mukuro", 16, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2888" )
+\CN["无黑色"]
+“呃……”
+
+——我不能成为{黑夜叉，暗黑妖精}吗？
+——还没习惯就在这里死去吗？
+
+//●演技：心の声です
+//: DrawChara( "Mei", 4, 0)
+: DrawFaceThumbnail( "Mei", 4, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0320" )
+\CN["冥"]
+（无黑……！）
+
+一瞬间，姐姐露出了不安的表情。
+
+//: DrawChara( "Mukuro", 46, 0)
+//: DrawFaceThumbnail( "Mukuro", 46, 0, 0 )
+//: PlayVoice( "Voices/vo00_muk2889" )
+//\CN["無黒"]
+//「オオォオオオォオオオオオォッッ！！！」
+//●演出：ホワイトバック
+//: CharaCostume( "Mukuro", 2 )
+//●演出：無黒・ダークエルフ化
+: HideWnd()
+: cgkeep = true;
+: Call( "Scenarios/Effect*MukuroDE" )
+: PlayBgm("BGM/17_TM002")
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: ShowWnd()
+//: DrawChara( "Mukuro", 31, 0)
+: PlayVoice( "Voices/vo00_muk2890" )
+\CN["无黑色"]
+“哈……哈…哈……哈……”
+
+眼看就要被砍掉的时候，她把姐姐的刀弹飞了。
+
+充满力量。
+快要溢出来了。
+
+: HideWnd()
+//: EraseChara( "Mei", 0.0 )
+//: EraseChara( "Mukuro", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: DrawChara( "Mei", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0321" )
+\CN["冥"]
+“看来，好像好好地{黑夜叉，暗黑妖精}到了呢。”
+
+: DrawChara( "Mei", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L")
+: DrawChara( "Mukuro", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R")
+: PlayVoice( "Voices/vo00_muk2891" )
+\CN["无黑色"]
+“是吗……这种感觉，果然是我，{黑夜叉，暗黑妖精}”
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+虽然很奇怪很焦躁，但也不是不能抑制的。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//悪堕ちＬＶが３の場合
+: else
+//●演技：心の声です
+	: DrawChara( "Mukuro", 26, 0)
+	: PlayVoice( "Voices/vo00_muk2892" )
+	\CN["无黑色"]
+（这种心情是吗？刚才姐姐说的
+{黑夜叉，暗黑妖精}的话就抑制不住冲动之类的
+说的就是这个吗……）
+
+什么都想破坏的心情突然涌出来。
+
+但是，似乎并不是无法抑制。
+
+//●分岐終了
+: endif
+: DrawChara( "Mei", 3, 0)
+: PlayVoice( "Voices/vo09_mei0322" )
+\CN["冥"]
+“变成无黑、{黑夜叉，暗黑妖精}的时候最重要的是
+是力量的分配。如果怠慢了那个的话，马上就会用尽全力”
+
+: DrawChara( "Mei", 4, 0)
+: PlayVoice( "Voices/vo09_mei0323" )
+\CN["冥"]
+“熟能生巧，我来当你的对手
+{黑夜叉，深精灵}习惯使用力量吧」
+
+//●演出：アクションシーン演出
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DL"; Call( "Scenarios/Common*FgEff");
+: lay = 4; type = "DR"; Call( "Scenarios/Common*FgEff");
+: Wait()
+//: DrawChara( "Mei", 1, 0)
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_a001_1_1_0200000_1000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0324" )
+\CN["冥"]
+“哦哦哦哦哦哦哦哦哦！”
+
+//: DrawChara( "Mukuro", 46, 0)
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2893" )
+\CN["无黑色"]
+“啊啊啊啊啊啊啊！！”
+
+//●ＳＥ：カキン　刀を合わせる音
+//●演出：斬撃エフェクト
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_KatanaHit02" )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 6, 6 )
+: Wait()
+: EraseChara( "Mukuro",0.0 )
+: EraseChara( "Mei", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: ShowWnd()
+从那天开始，对姐姐的对手给予了{黑夜叉，暗黑妖精}的力量
+接受了运用自如的特训……。
+
+//: DrawChara( "Mukuro", 7, 0, 0, 0.25, 0.0, 3, "RC" )
+//: DrawChara( "Mei", 0, 0, 0, 0.25, 0.0, 4, "LC" )
+: DrawFaceThumbnail( "Mukuro", 7, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2894" )
+\CN["无黑色"]
+“像姐姐一样自由自在地{黑夜叉，暗黑妖精}
+不能……。不被逼到绝境的话……”
+
+: DrawFaceThumbnail( "Mei", 1, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0325" )
+\CN["冥"]
+“只有这个稍微锻炼了一下
+不能顺利进行。不要着急，加油吧……”
+
+//Yoshi：背景消去
+//※スキル『黒夜叉化』を覚える
+//●シーン：「時は来た。白夜、動き出す」へ
+//＠シナリオジャンプ：SC_C05_04
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+//無黒と冥　服装を着衣にしておく
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Mei", 0 )
+: SetMission( "SC_C05_03_1", "Successed" )
+: LoadMap( "Map_Event000", "", "Scenarios/SC_C05_04")

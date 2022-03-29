@@ -1,0 +1,325 @@
+//========================================================
+//○これからの大和
+//========================================================
+//●場所：帝都・小高い丘
+//●視点：無黒視点
+//●背景：小高い山・昼
+//Yoshi：背景、河川・昼
+: HideWnd()
+: CharaCostume( "Ranmaru", 0 )
+: CharaCostume( "Leo", 1 )
+: DrawImage( 1, 0, "BGImage/BG_River01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/49_TM005")
+: ShowWnd()
+帝都附近的山上，至今为止殉职的鬼灯队士们
+有埋葬的墓地。
+
+和比拉加的战斗结束后回到帝都的我们
+局长和龙先生，结束了在那场战斗中丧生的人们的火葬
+来到了墓地。
+
+: DrawChara( "Ranmaru", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["兰丸"]
+“可以吗？请把脑袋也埋在这里。”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“没关系，竟然让抱着信念战斗的人曝露在原野上。”
+我绝对不会做武士的”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["兰丸"]
+“这样啊。那个。各种各样。”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“那个，头的最后怎么样？”
+
+: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“我只是瞥了一眼——”
+
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“原来是武士啊。世界最强啊。”
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Ranmaru", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1065" )
+\CN["桃子"]
+“对了对了。和小银战斗的日野家的保镖
+伊藤是人吗？怎么样了？”
+
+: DrawChara( "Gin", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“我不知道。我已经不见了。
+我觉得不久就会出现在我面前……”
+
+: DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1066" )
+\CN["桃子"]
+“小银，不要再乱来了。我们约好了。”
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“……我明白了。”
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+掘土填埋骨灰罐。
+
+: DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk2383" )
+\CN["无黑色"]
+“……局长”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 12, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Kinako", 3, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo02_kin0558" )
+\CN["黄菜子"]
+“唔……唔……最后就变成这样了……。
+没能好好道谢……”
+
+//●演技：涙を堪えています
+: PlayVoice( "Voices/vo01_mom1067" )
+\CN["桃子"]
+「…………」
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“龙先生……谢谢你锻炼了我。”
+
+\CN["银子"]
+“……谢谢……”
+
+挖个深坑埋葬骨灰罐。
+
+虽然敌对了，但还是帮了我做了
+注入的爱情和回忆不会改变。
+
+一起度过的日子一个接一个地浮现出来，快要哭出来了。
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0559" )
+\CN["黄菜子"]
+“……红美，好好休息吧。”
+
+红美为了保护黄菜子而战斗着……。
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["雷欧"]
+“小矮子……你真是个优秀的武士啊。”
+
+: PlayVoice( "Voices/vo00_muk2384" )
+\CN["无黑色"]
+“……又是小矮子……被红美……骂了吧？
+不是矮个子而是红美……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Momo", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1068" )
+\CN["桃子"]
+“是啊……。因为变成这样是理所当然的……”
+
+\CN["银子"]
+「…………」
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“是啊……”
+
+——红美拼命练习喷火的样子。
+——点燃局长的香烟的红美的身姿。
+——雷欧和菜搭配的红美的身姿。
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 6, 1, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+//●演技：涙を堪えながら
+: PlayVoice( "Voices/vo02_kin0560" )
+\CN["黄菜子"]
+“……咕嘟……嗯……说是不能哭……”
+明明知道会让红美……担心的……”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 39, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk2385" )
+\CN["无黑色"]
+“啊……是啊……没错……”
+
+眼前浮现出理所当然地展开的景象。
+
+一定，今后也会一直持续下去吧
+相信而不怀疑的情景在一瞬间崩溃了。
+
+: DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["雷欧"]
+“红美，接下来就交给我吧。
+我们去那里的话，再开心一点吧”
+
+: PlayVoice( "Voices/vo00_muk2386" )
+\CN["无黑色"]
+“理所当然的{日常、事物}，其实不是理所当然的……。
+正因为如此，才是珍贵而无可替代的东西吧”
+
+正因为如此，才必须珍惜。
+
+在重新振作精神的同时，为死去的人们祈祷冥福。
+
+//●演出：場面転換トランジション
+//●視点：玉藻視点
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Summit01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+——不死之山。
+
+: DrawChara( "Tamamo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo22_tam0201" )
+\CN["玉藻"]
+“这里应该没问题吧？”
+
+在无人到访的安静场所里
+决定埋葬了。
+
+话虽如此，但两人并没有留下遗骸。
+埋下他们的遗痕，建造一座小而清静的坟墓。
+
+——比拉加和三条亚久里。
+两个人只是想一起生活。
+
+喜欢的人一起生活。
+我只是希望这一点点理所当然的事情而已。
+
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0202" )
+\CN["玉藻"]
+“复杂的想法……”
+
+扁虱变成了{超越者，蜘蛛}
+亚久里被强行变成了人造魔族、伊维尔罗伊德。
+
+{超能力者，超能力者}可以短命的活下去
+好像不会。
+
+为了延长寿命，希拉加把很多精灵们
+牺牲了。
+
+将精灵的魔力吸到生命尽头
+是通过吸收而生存下来的。
+
+使这件事成为可能的是，从小夜中抽出阿波罗之箭
+是时候使用的魔导器什么的吧。
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0203" )
+\CN["玉藻"]
+“比拉加做的事情是不被允许的。”
+
+我是找了遗物才知道的——
+
+: DrawChara( "Tamamo", 5, 0, 1 )
+: PlayVoice( "Voices/vo22_tam0204" )
+\CN["玉藻"]
+“只要不被伊维尔罗伊德打败，他就会……”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0205" )
+\CN["玉藻"]
+“问这样的问题不是没有意义的吗？”
+
+那家伙犯下的罪行非常重大。
+
+被破坏的东西，被夺走的东西数不胜数。
+
+: DrawChara( "Tamamo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo22_tam0206" )
+\CN["玉藻"]
+“不过，至少可以允许两个人靠在一起吧。”
+
+抬头仰望天空，看到白色的细云在流动。
+
+经历了好几次大和的灭亡。
+
+每当此时，我都会仰望天空
+我不断重复着被消灭、重生。
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0207" )
+\CN["玉藻"]
+“天空原来是这么蓝的啊。”
+
+现在看到的天空是第一次仰望的天空
+通往未知未来的天空。
+
+已经没有剩下我必须要做的事情了。
+
+也就是说，只有在这身体自然腐朽之前
+虽然被给予了自由……。
+
+: DrawChara( "Tamamo", 0, 0, 1 )
+: PlayVoice( "Voices/vo22_tam0208" )
+\CN["玉藻"]
+“暂时让我好好休息一下吧。”
+
+还有时间。
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0209" )
+\CN["玉藻"]
+“总之，先关注一下武士们制作的大和吧
+好像……”
+
+//Yoshi：背景消去
+//●エンディング：通常ＥＮＤ
+//＠タイトルへ戻る
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 3.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: if ( $inExtra == true ) Return endif
+: ResetLayer(9)
+: FadeOut( 0.0 )
+: SharedFlag( "GameClear", true )
+: AfterStoryFlagUp( "Ending03" )
+: Call( "Scenarios/CommonSys*HanimeRefAllOpen")
+: LoadScene( "Title" )

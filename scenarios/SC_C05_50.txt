@@ -1,0 +1,161 @@
+//========================================================
+//○旅の商人と名刀虎徹？
+//========================================================
+*sc001
+//●場所：崎珠・裏通り
+//着衣の場合
+: if( Call( "Scenarios/CommonSys*CosWear" ) == true )
+	: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+	\CN["行商"]
+“哟，姐姐。其实啊，那个有名的刀‘虎彻’
+到手了，怎么样？要不要买一下？”
+
+: else
+	: DrawChara( "Mukuro", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+	\CN["行商"]
+“嘿嘿，我给你看了裸体这种好东西。”
+
+	\CN["行商"]
+“其实，我拿到了那把有名的刀‘虎彻’，怎么样？
+要不要买一下？”
+: endif
+: DrawChara( "Mukuro", 1, 0, 0 )
+: PlayVoice( "Voices/vo00_muk3094" )
+\CN["无黑色"]
+“可以让我看看吗？”
+
+从旅行商人的男人那里收到了虎彻，试着眺望了一下……。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk3095" )
+\CN["无黑色"]
+（你给我看是好东西，但我却不敢说刀的真假
+完全不知道啊……）
+
+把刀还给商人，要离开这里的话
+
+\CN["行商"]
+“本来这家伙就值100万日元……”
+
+\CN["行商"]
+“你真是个美人，看你的态度如何
+可以免费让给你。怎么样？”
+
+//●分岐：遊廓仕事経験がない場合
+: if ( CharaHParam( "Mukuro", "SexualJob" ) == 0 )
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 28, 0, 3)
+	: PlayVoice( "Voices/vo00_muk3096" )
+	\CN["无黑色"]
+（这是十有八九是冒牌货吗……）
+
+如果虎彻是真的，只不过是为了H而已
+送100万以上价值的东西是不可能的。
+
+	//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●エロ仕事経験がある場合
+: else
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk3097" )
+	\CN["无黑色"]
+（……要100万日元吗？如果是真的话可以大赚一笔。）
+
+如果是赝品的话，那样就可以了。
+
+对方要求的是性接待
+那样做倒没什么关系……。
+
+//●分岐終了
+: endif
+*sc001_select
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：無視する
+//■選択肢２：殺して刀を奪い取る
+//■選択肢３：エッチさせるぐらいいいか（※遊廓経験あり）
+//――――――――――――――――――――――――――――
+: if ( CharaHRank( "Mukuro", "Immoral" ) < 2 )
+	\CI["忽略"]
+	\CI["杀刀夺刀"]
+怎么办？
+
+: else
+	\CI["忽略"]
+	\CI["杀刀夺刀"]
+	\CI["可以做爱吗"]
+怎么办？
+
+: endif
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+: if ($choice == 2) Jump( "*sc001_select_s3" ) endif
+//-------------------------------------------------------
+//●選択肢１：無視するを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+\CN["行商"]
+“是吗……这个，如果再卖100万之类的。”
+明明能得到却很傻的女人”
+
+//●シーンエンド
+: Return
+//-------------------------------------------------------
+//●選択肢２：殺して刀を奪い取るを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+——这里的话，没人看见，没关系吗。
+
+\CN["行商"]
+「……？」
+
+//: EraseChara( "Mukuro", 0.5 )
+//●演出：斬殺　エフェクト
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: Call( "Scenarios/Effect*Blood01" )
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_1_0200000_1000000_2_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["行商"]
+“……啊…啊…啊……呃，你……”
+
+//●ＳＥ：倒れる音
+//●演出：商人死ぬ
+: HideWnd()
+: PlaySe( "SE/Se_Down01" )
+: target = "SC_C05_50"
+: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 21, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3098" )
+\CN["无黑色"]
+“警察来之前离开吗……又会变成麻烦的事情。”
+
+总之，虎彻之后会在适当的地方
+可以卖吗。
+
+//＠アイテム：虎徹,1
+//●シーンエンド
+: AddKill( 1 )
+: AddItem( "KeyItem06", 1 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+夺取了《虎彻》。
+
+: SetMission( "SC_C05_50_1", "Successed" )
+: Return
+//-------------------------------------------------------
+//●選択肢３：エッチさせるぐらいいいかを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s3
+//●シーン：「うまい話を持ちかけられて股を開く」へ
+//＠シナリオジャンプ：SC_C05_51
+: Jump( "Scenarios/SC_C05_51" )

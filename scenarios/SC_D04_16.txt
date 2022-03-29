@@ -1,0 +1,1237 @@
+//========================================================
+//○異邦人からの壮絶レイプ
+//========================================================
+//●状況：オリバーに敗北後
+//●演出：攻撃エフェクト
+//●演出：無黒　一歩下がって倒れる
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Room01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlaySe( "SE/Se_AnimeEff_Hit02" )
+: PlayAnim( "Animations/AnimeEff_Hit02", false, 0, 0, 1, 1 )
+: Wait()
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["奥利弗"]
+“大和的武士吗……。
+明明是女人，却很能干嘛”
+
+受到奥利弗的一击，失去了意识。
+
+//●演出：オリバーの部下　登場する
+\CN["奥利弗的部下1"]
+“奥利弗大人，这个女人怎么办？
+马上杀？”
+
+\CN["奥利弗的部下2"]
+“听说大和女中好色的人很多。
+杀之前我想试试看……”
+
+\CN["奥利弗"]
+“光是杀掉的话就没意思了。
+反正要做的话，还是做祭品比较好”
+
+\CN["奥利弗的部下1"]
+“OK。那我去准备一下。”
+
+\CN["奥利弗"]
+“啊。反正还是给我看看比较好。
+拜托你了”
+
+\CN["奥利弗的部下2"]
+“我明白了。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D04_16" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D04_16" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●ＣＧ：十字架貼り付け
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_0_0000001_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+//●演技：気絶から目を覚ます
+: PlayVoice( "Voices/vo00_muk3931" )
+\CN["无黑色"]
+“嗯……嗯……嗯……？”
+
+\CN["奥利弗"]
+“怎么样？心情怎么样？”
+
+: PlayVoice( "Voices/vo00_muk3932" )
+\CN["无黑色"]
+“呃……这、这是你……？”
+
+现在的我具体是什么情况？
+
+裸着身子，为了不让手脚动而固定
+只懂一点点。
+
+\CN["奥利弗的部下1"]
+“景色不错。全裸的女人被钉在十字架上，真是太煽情了。”
+
+\CN["奥利弗的部下2"]
+“是一种艺术吗？
+嘛，现在开始，我要弄得很烂呢”
+
+\CN["奥利弗的部下3"]
+“看到圆圆的女阴很兴奋”
+
+\CN["城里人1"]
+“……因为我要违抗奥利弗先生。”
+
+\CN["城里人2"]
+“嘘……不要对视。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_0_0200001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3933" )
+\CN["无黑色"]
+“你这样做……想让我做什么？”
+
+\CN["奥利弗"]
+“我想请你做仪式的祭品。”
+
+: PlayVoice( "Voices/vo00_muk3934" )
+\CN["无黑色"]
+“……仪式？”
+
+\CN["奥利弗"]
+“啊，这是非常神圣的仪式。所以，即使是城里的人也会这样做。”
+”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_0_0000001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3935" )
+\CN["无黑色"]
+「嗯。仪式什么的都是徒有其名，有羞辱给人看的事。」
+是目的吧？”
+
+这是为了炫耀自己的力量吧。
+
+\CN["奥利弗"]
+“哎，真聪明。明明那么聪明，还敢跟我顶嘴。”
+之类的，我不太清楚……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_0_0200001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3936" )
+\CN["无黑色"]
+“……因为是这样的工作。”
+
+\CN["奥利弗"]
+“不愧是大和的武士，真能干。”
+
+\CN["奥利弗的部下1"]
+“奥利弗先生，差不多该……”
+
+\CN["奥利弗的部下2"]
+“快点，那个女的，让我们见鬼吧。”
+
+一群貌似是部下的男人在吵闹。
+
+//●分岐：淫乱度Ｂ未満の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) < 2 )
+那些部下们把我犯了很多不是吗。
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_0_0000001_1000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	//●演技：心の声です
+	: PlayVoice( "Voices/vo00_muk3937" )
+	\CN["无黑色"]
+（……输了是我的错……。
+这种状态只能忍耐了吧）
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●淫乱度Ｂ以上の場合
+: else
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_0_0200002_1000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3938" )
+	\CN["无黑色"]
+“你想犯我也没办法吧？
+那就赶紧做吧”
+
+有很多男人。
+
+一想到以后会被那些男人侵犯
+这种危机的状况让我很兴奋。
+
+//●分岐終了
+: endif
+\CN["奥利弗"]
+“那么，差不多该开始了吧。”
+
+奥利弗站了起来。
+
+//●演技：心の声です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_0_0000001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3939" )
+\CN["无黑色"]
+（要从这里活着回来，要忍耐忍耐忍耐
+只能得到别人的帮助）
+
+而且，如果不能实现的话就只有死……。
+不，有可能遭遇更严重的事情吗。
+
+//●ＳＥ：ズボンを下ろす音
+: PlaySe( "SE/Se_Cloth01" )
+奥利弗把裤子放下，勃起了
+飞快地跑了出来。
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0011002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——嘴。
+
+\CN["奥利弗"]
+“好嘞……嗯……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0111002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo00_muk3940" )
+\CN["无黑色"]
+“嗯……呃！嗯……嗯，好饿啊！”
+
+: PlayVoice( "Voices/vo00_muk3941" )
+\CN["无黑色"]
+“这个，被撬开了……啊，好大……啊啊……
+嗯……嗯…嗯……”
+
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: PlayBackVoice( "Voices/BGV00_muk_aegi01" )
+比普通的要粗一圈或两圈
+推开阴道口进来。
+
+将阴道壁撬开，向前冲。
+
+//●分岐：オマンコ開発度Ｂ未満の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) < 1 )
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_1_0211002_1000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3942" )
+	\CN["无黑色"]
+“嗯……呜……呜……哈…哈…呜…唔……”
+
+	\CN["奥利弗"]
+“明明胆子很稳，我却没什么经验。”
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_1_0011002_1000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3943" )
+	\CN["无黑色"]
+“哈，哈……怎么样都无所谓……。
+和你没关系……”
+
+	\CN["奥利弗"]
+“是啊。和次数没有关系。
+在去那个世界之前，我会让你体验到最棒的性生活
+敬请期待”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●オマンコ開発度Ｂ以上の場合
+: else
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_1_0101002_1000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3944" )
+	\CN["无黑色"]
+“哈，啊啊……啊，小气鬼……好大……”♥</color>
+啊啊啊……这么粗的话……嗯，啊，啊啊啊！”
+
+身体擅自做出反应，获得了快感。
+
+	\CN["奥利弗"]
+“你玩得真痛快啊？
+好像要吃小鸡鸡”
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_1_0301002_1000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3945" )
+	\CN["无黑色"]
+“嗯……嗯……小矮人，渐渐变硬了♥</color>
+中、广啊……”
+
+	\CN["奥利弗"]
+“真是个乱花钱的人啊。
+那么，在我死之前，我会让你舒服的做爱的”
+
+//●分岐終了
+: endif
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+女士们、女士们、女士们、女士们、先生们、女士们、先生们！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0001002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストンされています
+: PlayVoice( "Voices/vo00_muk3946" )
+\CN["无黑色"]
+“嗯哈，嗯，啊啊，嗯，啊啊啊啊啊啊啊啊啊啊啊啊啊啊！”！
+啊啊啊，啊……呃……嗯，是啊！”
+
+: PlayVoice( "Voices/vo00_muk3947" )
+\CN["无黑色"]
+“嗯，啊，啊，啊，中，那么大，被摩擦了的话
+嗯，嗯，啊……嗯……啊，啊啊啊！”
+
+\CN["奥利弗"]
+“哦，太紧了吧……。
+那么，再往里走一点……”
+
+奥利弗强行将我的脚打开。
+
+然后，在那之后，我的腰好像要被\V[Mukuro Penis]拔下来了
+引到别处——
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0101002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+噗哧噗哧噗哧噗！！
+
+: PlayVoice( "Voices/vo00_muk3948" )
+\CN["无黑色"]
+“嗯，好烫！啊……啊…啊……呃，突然……
+里面……”
+
+: PlayVoice( "Voices/vo00_muk3949" )
+\CN["无黑色"]
+“哈……哈…啊…啊，碰上了……我还以为能穿过去呢。”
+
+粗的\V[Mukuro Penis]增强气势，尽情地扎到阴道深处。
+
+: PlayVoice( "Voices/vo00_muk3950" )
+\CN["无黑色"]
+“嗯啊啊……啊，哈，嗯……啊，啊……啊，啊……
+嗯，呃……嗯……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0301002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3951" )
+\CN["无黑色"]
+“哦，只有里面啊……在前面，嗯……那，那么
+如果被炒了的话……啊……啊…啊…啊啊啊…啊啊……啊…啊…啊…！”
+
+\CN["奥利弗"]
+“哦……里面很粗糙……很可怕的插入感……
+好厉害……真是个名器啊”
+
+: PlayVoice( "Voices/vo00_muk3952" )
+\CN["无黑色"]
+“呼呼……嗯，净是里面，那种……嗯……
+被炒了之后……嗯…嗯……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0201002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3953" )
+\CN["无黑色"]
+“呃，啊啊啊……嗯……嗯……嗯……嗯……”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi02" )
+奥利弗用力地戳着腰
+执拗地责备阴道深处。
+
+反复地抽插，甚至影响到子宫。
+
+\CN["奥利弗"]
+“里面粒粒大小的感觉很舒服，紧固也很好。
+娼馆……这里是游廓吧？在那里
+工作的话，现在也许能拿到第一名”
+
+: PlayVoice( "Voices/vo00_muk3954" )
+\CN["无黑色"]
+“嗯哈……啊哈……嗯，好吵……哈，哈……
+不要说多余的话……嗯……快点说出来就好了……”
+
+\CN["奥利弗的部下1"]
+“这个女人，竟然和奥利弗说话……”
+
+\CN["奥利弗"]
+“让我说吧。反正，这个结束了就死了。”
+
+\CN["奥利弗"]
+“我要把这家伙的血献给神。
+想象一下这样的美女会死去的样子，然后就……”
+
+阴道内的\V[Mukuro Penis]像跳跃一样地运动。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0001002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3955" )
+\CN["无黑色"]
+“嗯……这、这个、变态……”
+
+\CN["奥利弗"]
+“兴趣因人而异。逝世后要宽容。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+祝你好运！嘘！嘘！嘘！咕嘟咕嘟！
+啧啧！噗噗！嘘！嘘！嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0001002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3956" )
+\CN["无黑色"]
+“啊啊啊啊啊，啊，啊啊啊……嗯，啊，啊……
+嗯……嗯！”
+
+奥利弗一边喘着粗气，一边激烈地摆动着腰。
+
+不仅是里面，从阴道口到阴道深处用长时间的冲程
+以象削去阴道壁一样的气势反复往返。
+
+: PlayVoice( "Voices/vo00_muk3957" )
+\CN["无黑色"]
+“呃……嗯，啊，啊啊啊啊啊……啊，哈，啊
+嗯……嗯…”
+
+\CN["奥利弗"]
+“差不多该出门了……对让我心情舒畅的事情
+这是奖赏。我会好好地倒在里面”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+呜呜呜呜、一直、咕嘟、呜呜呜呜！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0301002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：膣の一番奥に男性器が入って苦しい
+: PlayVoice( "Voices/vo00_muk3958" )
+\CN["无黑色"]
+“支票……嗯……啊，在里面…不，不……除此之外
+进不去了，所以……”
+
+: PlayVoice( "Voices/vo00_muk3959" )
+\CN["无黑色"]
+“啊，呃……嗯……哦哦哦……嗯，呃，啊……
+嗯……嗯……呃……呃……啊啊啊啊…啊啊……”
+
+\V[Mukuro Penis]在阴道深处，甚至会撬开子宫口
+深入。
+
+龟头已经进入了无法再做下去的地方
+像裂开似的，脉动很大……。
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(30,45)) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0401013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，咻咻，咻咻！
+呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜！！！
+
+: PlayVoice( "Voices/vo00_muk3960" )
+\CN["无黑色"]
+“呜……啊，嗯……啊啊啊啊……嗯，啊啊啊……
+呜……哈…嗯！”
+
+直接从子宫口注入的精液。
+
+从那里溢出的热量一下子渗透到身体中
+背脊发凉的东西跑过去扩散开来。
+
+//●ＣＧ差分：挿入・射精後精液
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_1_0201013_1000020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["奥利弗"]
+“哈、哈、呼……是最棒的女婿。”
+
+: PlayVoice( "Voices/vo00_muk3961" )
+\CN["无黑色"]
+“哈……、哈……哈……是的，那就……快点
+请拔出来……”
+
+: PlayVoice( "Voices/vo00_muk3962" )
+\CN["无黑色"]
+“放在里面的话……嗯……肚子很痛苦……”
+
+明明射精结束了勃起却完全没有平息。
+
+保持硬度和大小的\V[Mukuro Penis]
+在阴道内精神地胡闹。
+
+//●ＣＧ差分：未挿入・射精後精液
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_0_0201013_1000030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を引き抜かれています
+: PlayVoice( "Voices/vo00_muk3963" )
+\CN["无黑色"]
+“嗯……啊…啊……”
+
+: PlayBackVoice( "Voices/BGV00_muk_jigo01" )
+\V[Mukuro Penis]被拔出后，从开着的阴道口开始
+精液泄漏出来，在地面上形成白色的水洼。
+
+\CN["奥利弗的部下2"]
+“好厉害，别出来了。简直就像漏了精液一样。”
+
+\CN["奥利弗"]
+“因为心情好到能出这么多啊。”
+
+: PlayVoice( "Voices/vo00_muk3964" )
+\CN["无黑色"]
+“哈……哈…哈……哈……嗯……嗯……啊啊……”
+
+一边呼吸急促，一边看周围。
+
+今后一定会被其他男人侵犯的吧。
+这样想着的话。
+
+\CN["奥利弗"]
+“那么，完成了。去吧。”
+
+\CN["奥利弗的部下1"]
+“啊……奥利弗，果然还是做那个啊。”
+
+用奥利弗的部下们期待的眼神
+看着我。
+
+\CN["奥利弗"]
+“向你的女阴下拳。
+这就是所谓的Fist fack吧”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_0_0001013_1000030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3965" )
+\CN["无黑色"]
+“哈？这、拳头……！？”
+
+//●ＣＧ差分：フィストファック
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_2_0111003_1000040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘎吱嘎吱，吱吱嘎吱，吱吱嘎吱！
+
+//●演技：フィストファック。めちゃくちゃ苦しいです
+: PlayVoice( "Voices/vo00_muk3966" )
+\CN["无黑色"]
+“嗯……啊…好厉害！？”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi03" )
+\CN["奥利弗的部下1"]
+“因为奥利弗的技术，我锻炼得很好。”
+
+\CN["奥利弗的部下2"]
+“但是，看到那个痛苦的表情很开心。”
+
+: PlayVoice( "Voices/vo00_muk3967" )
+\CN["无黑色"]
+“啊，裂开了……呃，那样不行……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b036_1_2_0311103_1000040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3968" )
+\CN["无黑色"]
+“啊……嗯，嗯……嗯……嗯……嗯……是……是，但是
+呃、呜……啊呜……嗯…嗯……嗯……！”
+
+\CN["奥利弗"]
+“看，不放松的话会很痛的。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咕嘟咕嘟……嘴、咕嘟咕嘟……！
+
+//●分岐：オマンコ開発度Ｂ未満の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) < 2 )
+	: PlayVoice( "Voices/vo00_muk3969" )
+	\CN["无黑色"]
+“不、不……不…不……啊……不……不对…………”……
+嗯……嗯……嗯……嗯……”
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0011003_1000040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3970" )
+	\CN["无黑色"]
+“啊，不行啊……也，已经……哈……哈………前面很暗
+成为……”
+
+刚才也有被侵犯的
+而且还残留着战斗时的伤害……。
+
+如果万无一失的话，也许能忍受。
+
+	: PlayVoice( "Voices/vo00_muk3971" )
+	\CN["无黑色"]
+“啊~呃……哦，哦……嗯……嗯……嗯……！”
+
+	//●ＣＧ差分：フィストファック・尿
+	: HideWnd()
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+	: PlayHSe( "SE/Hse_Nyou" )
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0411113_1000140_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+——乔伯乔巴。
+
+	: StopBackVoice()
+	\CN["奥利弗的部下3"]
+“啊，泄露了。”
+
+我无法忍受被拳头打进的冲动。
+
+当我觉得视野扭曲的瞬间，就像突然断了线一样
+意识消失了。
+
+	//●演出：暗転
+	: HideWnd()
+	: StopBgm( 1.0 )
+	: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: Call( "Scenarios/Common*LayerClean" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: Wait()
+	: ResetLayer(9)
+	: ShowWnd()
+	\CN["奥利弗"]
+“啧！失禁了。
+如果能忍耐的话，明明很有趣的”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●オマンコ開発度Ｂ以上の場合
+: else
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0301103_1000040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3972" )
+	\CN["无黑色"]
+“太感谢了，啊……呜，呜……呜，呜……呜
+嗯，嗯……哈~啊……！”
+
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Sounyu02" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: ShowWnd()
+呼呼，吱，吱！锯齿状锯齿状！！
+
+	\CN["奥利弗"]
+“在女阴里，小鸡鸡的触感和对手的触感
+果然不对啊”
+
+	\CN["奥利弗"]
+“但是，相当顺利地进去……”
+
+	: PlayVoice( "Voices/vo00_muk3973" )
+	\CN["无黑色"]
+“啊呜……啊啊啊啊，呐，进去吧……！”……！
+哈、叶……啊…嗯…嗯，嗯~哦~！”
+
+奥利弗毫不留情地将拳头刺入阴道内。
+
+像是要被解开关节一样，强行把拳头推过来。
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0001003_1000040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3974" )
+	\CN["无黑色"]
+“嗯，嗯，嗯，嗯……嗯，嗯，嗯！”！
+哈……哈……呜……呜，呜，呜！”
+
+	\CN["奥利弗"]
+“好好进去了啊，拳。
+等，因为能生孩子，所以至少能装这么多吧”
+
+	: PlayVoice( "Voices/vo00_muk3975" )
+	\CN["无黑色"]
+“呃，好痛苦……嗯，被抱在怀里……嗯……啊……”
+
+比起感觉上的疼痛，痛苦更强烈吗？
+
+感觉肚子被强烈压迫着。
+
+	\CN["奥利弗"]
+“因为要动起来。”
+
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Sounyu02" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: ShowWnd()
+好吃！冒牌货！珠理奈！长颈鹿！
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0301103_1000040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3976" )
+	\CN["无黑色"]
+“嗯，好饿啊……！哦，哦……哈哈……”……
+啊啊……呜……呜…嗯…嗯…呜！”
+
+	: PlayVoice( "Voices/vo00_muk3977" )
+	\CN["无黑色"]
+“嗯，用手臂……中，搅拌啊……嗯……呜……呜……
+这、坏了……女阴，快坏了吧……！”
+
+	\CN["奥利弗"]
+“没关系。因为女阴很柔软。”
+
+情绪高涨，说那样的话。
+
+用握拳在阴道内甘油的话，压迫感会更强。
+
+	//●演技：心の声です
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0001003_1000040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3978" )
+	\CN["无黑色"]
+（痛苦痛苦痛苦得快死了……。
+但是，还没到无法忍受的程度）
+
+正因为如此，才会拼命忍耐。
+
+忍受手臂在阴道内来回的恶心。
+
+	//●演出：時間経過トランジション
+	: StopBackVoice()
+	: HideWnd()
+	: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+	: Wait()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0201003_1100040_0_"
+	: Call("Scenarios/Common*EvIn")
+	: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+	: Wait()
+	: ShowWnd()
+	//●演技：ここから快感が出てきています
+	: PlayVoice( "Voices/vo00_muk3979" )
+	\CN["无黑色"]
+“嗯，哈……哈，哈……哈…啊…啊……啊……
+嗯……嗯……嗯，啊……呜……”
+
+	: PlayBackVoice( "Voices/BGV00_muk_aegi03" )
+	\CN["奥利弗"]
+“哦，你感觉到了Fist fack吗？”
+
+	: PlayVoice( "Voices/vo00_muk3980" )
+	\CN["无黑色"]
+“啊，并没有感觉到……只是，已经习惯了而已。
+哈……哈…哈…嗯……哈……哈…啊…啊啊啊！”
+
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Sounyu02" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: ShowWnd()
+嗯，嗯，嗯，嗯，嗯，嗯！
+
+阴道口完全被手臂的大小打开了。
+
+手臂被大量的爱液缠住，同时能顺畅地将阴道内全部打开
+来往。
+
+痛苦的事情渐渐没有了。
+然后，取而代之的是，像是重写一样，产生了快感。
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0301003_1100040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3981" )
+	\CN["无黑色"]
+“嗯，啊啊，啊啊……这个，这样的……
+嗯，用手臂……女阴，被搅乱了……”
+
+	: PlayVoice( "Voices/vo00_muk3982" )
+	\CN["无黑色"]
+“啊，感觉什么的……心情变好了……”……
+嗯……呜、呜……呜呜呜……呜呜哇……！”
+
+	\CN["奥利弗"]
+“那么，更深一点的地方……紧紧地贴在子宫上……！”
+
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Sounyu02" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: ShowWnd()
+慢吞吞，慢吞吞，慢吞吞，慢吞吞，慢吞吞！
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0101003_1100040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	//●演技：膣奥に腕が届く
+	: PlayVoice( "Voices/vo00_muk3983" )
+	\CN["无黑色"]
+“嗯，好的，好的，我的手臂，进来……
+啊，呜……呜……嗯……呜…呜”
+
+	: PlayVoice( "Voices/vo00_muk3984" )
+	\CN["无黑色"]
+“哦哦哦，哦，来，来了……一口气就来了……”……
+啊……啊啊啊……嗯……嗯……嗯……”
+
+在子宫口受到强烈刺激的同时
+身体的内部急速的绝顶感涌来。
+
+即使想要留住，也会一个接一个地溢出。
+怎么也做不到太强烈的刺激。
+
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0301003_1100040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3985" )
+	\CN["无黑色"]
+“哦哦哦哦哦哦…啊，呃……也，已经……了！”！
+一、三、三、三、三、三、五……”
+
+	: PlayVoice( "Voices/vo00_muk3986" )
+	\CN["无黑色"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊！？”
+
+	//●ＣＧ差分：フィストファック・潮
+	: HideWnd()
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+	: Call("Scenarios/Common*Shasei")
+	: PlayHSe( "SE/Hse_Shio" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evbg = true; evcos = false;
+	: evfile = "eva_b036_1_2_0401113_1110040_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+啊啊啊啊啊啊啊啊啊啊啊啊！！
+
+	: PlayVoice( "Voices/vo00_muk3987" )
+	\CN["无黑色"]
+“啊啊啊…啊呜……嗯，好……嗯……”……
+这个、这个啊……嗯、手臂、被女阴……”
+
+	\CN["奥利弗"]
+“像想象的那样，在Fist fack中是个好球
+这个女人真是一塌糊涂啊”
+
+	//●分岐：オマンコ開発度Ｂの場合
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) == 2 )
+		: PlayVoice( "Voices/vo00_muk3988" )
+		\CN["无黑色"]
+“嗯……啊啊啊……啊……啊……啊…啊…啊…啊……”
+
+		: HideWnd()
+		: evbg = true; evcos = false;
+		: evfile = "eva_b036_1_2_0001003_1110040_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+		: PlayVoice( "Voices/vo00_muk3970" )
+		\CN["无黑色"]
+“啊，不行啊……也，已经……哈……哈………前面很暗
+成为……”
+
+像是被狠狠地打了头一样
+那种感觉的冲击来了。
+
+		: PlayVoice( "Voices/vo00_muk3989" )
+		\CN["无黑色"]
+“啊……这、这个不行……已经……”
+
+		: StopBackVoice()
+当我觉得视野扭曲的瞬间，就像突然断了线一样
+意识消失了。
+
+		//●演出：暗転
+		: HideWnd()
+		: StopBgm( 1.0 )
+		: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+		: Wait()
+		: Call( "Scenarios/Common*LayerClean" )
+		: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+		: Wait()
+		: ResetLayer(9)
+		: ShowWnd()
+		\CN["奥利弗"]
+“我擅自一个人，擅自昏过去了……”
+
+		//●分岐終了地点へ
+	//●分岐：それ以外の場合
+	//●オマンコ開発度Ａの場合
+	: else
+		: HideWnd()
+		: evbg = true; evcos = false;
+		: evfile = "eva_b036_1_2_0301003_1100040_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+		//●演技：呂律があやしくなります
+		: PlayVoice( "Voices/vo00_muk3990" )
+		\CN["无黑色"]
+「呜哇啊啊啊啊啊啊啊……真是的……停不下来，不断地过来♥</color>
+来、来、来、来吧……来吧……”
+
+绝顶之后，更加激烈的情感涌上心头
+周而复始。
+
+		\CN["奥利弗"]
+“manko，痉挛得乱七八糟……”
+
+		: PlayVoice( "Voices/vo00_muk3991" )
+		\CN["无黑色"]
+「啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color>
+哦哦哦哦哦哦哦哦哦哦哦，嗯，嗯，好的♥</color>」
+
+		: HideWnd()
+		: evbg = true; evcos = false;
+		: evfile = "eva_b036_1_2_0101003_1100040_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+		//●演技：絶頂です
+		: PlayVoice( "Voices/vo00_muk3992" )
+		\CN["无黑色"]
+「恩哈哈啊♥</啊，啊♥</啊啊啊啊♥</嗯……嗯……恩……
+嗯，嗯…嗯……啊~啊~啊~！？”
+
+		//●ＣＧ差分：フィストファック・尿
+		: HideWnd()
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+		: PlayHSe( "SE/Hse_Nyou" )
+		: evbg = true; evcos = false;
+		: evfile = "eva_b036_1_2_0401113_1000140_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+女士们，女士们，先生们！
+
+		//●演技：失禁しています
+		: PlayVoice( "Voices/vo00_muk3993" )
+		\CN["无黑色"]
+“啊啊啊……啊啊啊……啊啊啊……啊，好有趣……
+我回来了……我回来了♥</color>」
+
+		: PlayVoice( "Voices/vo00_muk3994" )
+		\CN["无黑色"]
+「啊啊啊啊啊♥</这个，这个，也很可爱♥</哇，哇……
+太棒了……嗯，我和珠理奈在一起♥</color>」
+
+		: HideWnd()
+		: evbg = true; evcos = false;
+		: evfile = "eva_b036_1_2_0301113_1000140_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+		: PlayVoice( "Voices/vo00_muk3995" )
+		\CN["无黑色"]
+“又是奶昔，啊啊……啊…啊…啊……啊啊啊……啊啊啊啊♥</color>」
+
+好容易才知道是尿尿了。
+
+意识朦胧，渐渐听不见周围的声音
+来了。
+
+当我觉得视野扭曲的瞬间，就像突然断了线一样
+意识消失了。
+
+		//●演出：暗転
+		: StopBackVoice()
+		: HideWnd()
+		: StopBgm( 1.0 )
+		: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+		: Wait()
+		: Call( "Scenarios/Common*LayerClean" )
+		: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+		: Wait()
+		: ResetLayer(9)
+		: ShowWnd()
+		\CN["奥利弗"]
+“……擅自耍帅，真是太不小心了。”
+
+		//●分岐終了
+		//●分岐終了
+	: endif
+: endif
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_D04_16
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+//シーン登録
+: SceneFlagUp( "SC_D04_16" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 44 ) endif
+//●状況：無黒　気絶後
+//●視点：第三者視点
+//●背景：町・外
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Village03_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/38_Slam")
+: ShowWnd()
+\CN["奥利弗"]
+“那就这样打死他吧。”
+
+\CN["奥利弗的部下1"]
+“我也想试试……”
+
+\CN["奥利弗的部下2"]
+“放弃吧。这是一种仪式……”
+
+\CN["奥利弗"]
+“因此，我要做祭品。
+可爱的孩子的尸体一定很美吧。非常激动”
+
+奥利弗向昏倒在地上的无黑
+举起来。
+
+//●演出：血飛沫エフェクト
+: HideWnd()
+: StopBgm( 1.0 )
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+周围一片鲜血四溅，地面和建筑物等
+染成了红色。
+
+被狙击的无黑没有伤。
+被漂亮地斩杀了的奥利弗的尸体正在滚动。
+
+//●演出：般若　登場する
+//あざみcos4へ変更
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: CharaCostume( "Azami", 4 )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayBgm("BGM/14_CM014")
+: ShowWnd()
+\CN["奥利弗的部下1"]
+“啊啊啊……真的吗……”
+
+\CN["奥利弗的部下2"]
+“你这家伙，居然……！”
+
+突然出现的般若让外国人吃下去。
+
+\CN["般若"]
+「…………」
+
+般若只是拿起刀，就害怕起来了。
+
+\CN["奥利弗的部下3"]
+“啊，那个，绝对不行！快逃！”
+
+\CN["奥利弗的部下4"]
+“在场的人，全部都被杀了！”
+
+察觉到般若危险的所有人，都像是在撒蜘蛛子一样
+一起逃走。
+
+//●演出：玉藻　登場する
+\CN["般若"]
+「…………」
+
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Tamamo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo22_tam0310" )
+\CN["玉藻"]
+“好像花了不少时间。但是，神八代无黑将来成为大和存亡的关键。”
+的存在。不能让他死在这种地方”
+
+般若对玉藻的话微微点头。
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+//あざみcos0へ戻し
+: CharaCostume( "Azami", 0 )
+//●演出：般若　退場する
+然后，一言不发，默默离开了那个地方。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーンエンド
+: FastTravelMapOff( "Nitta" )
+: SetMission( "SC_D04_14_1", "Failed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 7 )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D04_17")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif

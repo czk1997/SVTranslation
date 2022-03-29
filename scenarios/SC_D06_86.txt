@@ -1,0 +1,920 @@
+//========================================================
+//○悲劇の姫君、財閥に売られて
+//========================================================
+//●背景：黒画面
+//Yoshi：背景
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D06_86" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D06_86" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: ShowWnd()
+利用比拉加的魔导器将阿波罗之箭这个大和
+一桥小夜被提取出了毁灭的危险力量。
+
+经常在旁边的亲信的爷爷因为违抗将军的罪名被斩首
+作为心灵支柱的鬼灯已经没有了。
+
+尊敬的人、憧憬的人、朋友——
+少女将失去所有重要的人的悲伤
+没能接住。
+
+……………………………………………………。
+
+//●場所：財閥の家
+//●視点：小夜視点
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom05", 1.0 )
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+\CN["财阀"]
+“小夜，今天开始这里就是你的家。”
+
+//●演技：何もかも諦めて自暴自棄に。とことん冷めています
+: DrawChara( "Sayo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo24_say0253" )
+\CN["小夜"]
+“……嗯，我知道了。”
+
+\CN["财阀"]
+“从今天开始我就是你的未婚妻了。”
+
+: DrawChara( "Sayo", 7, 0, 1)
+: PlayVoice( "Voices/vo24_say0254" )
+\CN["小夜"]
+「…………」
+
+不死之山之后，我好像持续睡了一周左右。
+
+醒来后，从父亲那里回到了财阀家之一的六原家
+被告知要我出嫁，就送到了这里。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0255" )
+\CN["小夜"]
+（对方是比自己大两圈以上的男人吗……）
+
+在大和，如果是财阀和贵族的话，我这个年纪结婚比较早
+婚约不算晚也不算早。
+
+在父亲看来，我想好好地把我赶出去
+和已经过了适龄期还单身的六原家的户主
+你订婚了吧。
+
+//●演出：時間経過トランジション
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Sayo", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 00.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+晚上洗完澡后。
+我的未婚夫进了房间——
+
+\CN["财阀"]
+“因为我们订婚了。
+未婚妻之间，有必要确认一下彼此的爱”
+
+兴奋得直喘大气。
+
+\CN["财阀"]
+“喂，可以吧？”
+
+: DrawFaceThumbnail( "Sayo", 3, 0, 0 )
+: PlayVoice( "Voices/vo24_say0256" )
+\CN["小夜"]
+“……恩”
+
+如果违抗的话，就不知道会被做什么。
+
+而且，和这个人说的一样，我已经成为这个人的东西了
+所以，必须要好好接受——……。
+
+//●状況：小夜、全裸でベッドに横たわっている
+//●ＣＧ：財閥の婚約者との初夜（小夜）
+//●ＣＧ差分：全裸・未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+\CN["财阀"]
+“呼呼，好漂亮啊，小夜。”
+
+: PlayVoice( "Voices/vo24_say0257" )
+\CN["小夜"]
+“是的……”
+
+脱掉衣服，赤裸着躺在被子上。
+
+\CN["财阀"]
+“啊啊啊……有透明感的光滑肌肤
+快要膨胀的乳房、浅粉色的乳头、还有光滑的
+那个，太棒了！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_1_1_0200001_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0258" )
+\CN["小夜"]
+“嗯……被盯着看的话，那个……”
+
+与其说是害羞，不如说是恶心。
+
+\CN["财阀"]
+“不紧张也可以哦？
+小夜，很放松哦”
+
+: PlayVoice( "Voices/vo24_say0259" )
+\CN["小夜"]
+“无论如何都很紧张……”
+
+不紧张。来到这里，我觉得很讨厌。
+
+我对自己还有拒绝的勇气感到惊讶……。
+
+\CN["财阀"]
+“呵呵，那我来帮你消除紧张感吧。”
+
+//●演技：身体に触れられています。不快害虫が身体を沿う感じです
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_1_1_0500002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0260" )
+\CN["小夜"]
+“嗯……呃……呃……嗯……嗯……！”
+
+差点叫苦不迭，总算忍住了。
+
+\CN["财阀"]
+“简直就像优质丝绸般的手感。啊，还有牛奶
+有味道……”
+
+: PlayVoice( "Voices/vo24_say0261" )
+\CN["小夜"]
+“……嗯……嗯……嗯……啊……啊……”
+
+这个身体有种“哇”的感觉
+怎么表达才好呢？
+
+也许和最讨厌的虫子在身体上爬行很相似。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_1_1_0200002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0262" )
+\CN["小夜"]
+（但是，忍耐一下。不好好习惯的话……）
+
+: PlayVoice( "Voices/vo24_say0263" )
+\CN["小夜"]
+“嗯……啊…啊……啊…呃……嗯……啊啊……”
+嗯……啊啊…嗯……”
+
+起鸡皮疙瘩。感到发冷。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0264" )
+\CN["小夜"]
+（能早点结束吗？）
+
+刚开始不久，我就一直在想那件事。
+
+\CN["财阀"]
+“呵呵，接下来是这里吧。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_1_1_0300002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0265" )
+\CN["小夜"]
+“嗯……哈…嗯！”
+
+被摸到大腿内侧的话，恶心感会增加。
+
+: PlayVoice( "Voices/vo24_say0266" )
+\CN["小夜"]
+“……嗯！啊……哈……啊……啊……嗯……嗯……”
+
+\CN["财阀"]
+“怎么了？这里不太舒服吗？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_1_1_0100002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0267" )
+\CN["小夜"]
+“呃……总觉得，非常痒……。
+这么说来，对我来说可能还太早……”
+
+我只是抱着一点点希望说而已。
+
+\CN["财阀"]
+「没关系，交给我就好了。
+如果觉得痒的话，这样做不就好了吗？”
+
+//●ＣＧ差分：クンニ
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_2_1_0300002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：股間に顔を埋められています
+: PlayVoice( "Voices/vo24_say0268" )
+\CN["小夜"]
+“……！那、那、那是……啊…是……不行，不行！”
+
+把脸埋在我的胯股之间，鼻子会响起来
+不由得说了不行。
+
+\CN["财阀"]
+“小君……有很甜的味道……”
+
+: PlayVoice( "Voices/vo24_say0269" )
+\CN["小夜"]
+“不，不……”
+
+\CN["财阀"]
+“不用害羞，我们已经订婚了。
+让妻子心情舒畅是丈夫的职责”
+
+\CN["财阀"]
+“我一定会成为好丈夫的。”
+
+那么说来——
+
+中华……中华……中华……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_2_1_0200002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：クンニされています
+: PlayVoice( "Voices/vo24_say0270" )
+\CN["小夜"]
+“恩……！而且，舌头……太粗糙了
+被舔了那个……”
+
+: PlayVoice( "Voices/vo24_say0271" )
+\CN["小夜"]
+“呀，住手……！这种地方太脏了！”！
+给我舔一下！”
+
+因为太恶心了，忍不住大声喊。
+
+\CN["财阀"]
+“没什么脏的。不用客气。”
+
+\CN["财阀"]
+“中、中、晚、晚啊……中、晚了”
+
+: PlayVoice( "Voices/vo24_say0272" )
+\CN["小夜"]
+“嗯……啊…嗯……嗯，啊……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_2_1_0400002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0273" )
+\CN["小夜"]
+（呀……真讨厌！恶心……。
+那个，一边啪嗒啪嗒地响一边被舔）
+
+不愉快的感觉贯穿身体。
+
+即使扭过身体，对方的身体也比我高大得多
+满不在乎。
+
+所以我只能忍耐着忍耐……。
+
+: PlayVoice( "Voices/vo24_say0274" )
+\CN["小夜"]
+“嗯……嗯……背上阵阵发冷……。
+哈、哈……嗯……嗯……”
+
+\CN["财阀"]
+“呵呵，感觉到了吗？嗯，中、中、中……
+一点点，甜甜的汤汁……嗯，溢出来了”
+
+\CN["财阀"]
+“被我点破女阴
+心情变好了吧？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_2_1_0500002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0275" )
+\CN["小夜"]
+“来，不可能心情变好……”
+
+一不小心说出了真心话。
+
+\CN["财阀"]
+“嗯？”
+
+: PlayVoice( "Voices/vo24_say0276" )
+\CN["小夜"]
+“什么都没有……嗯，嗯……嗯……”
+
+\CN["财阀"]
+“这样啊。喂，女孩子，在这里……阴郁的地方
+虽然说是栗子，但是在这里被人点窜的话
+好舒服啊”
+
+\CN["财阀"]
+“我会帮你舔小夜的克利俄斯的。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_2_1_0301002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：クリトリスを舐められて、反応が変わります。快感が＋
+: PlayVoice( "Voices/vo24_say0277" )
+\CN["小夜"]
+“嗯！是啊……啊啊啊……！”
+
+什、什么……！？刚才的！
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0278" )
+\CN["小夜"]
+（光是碰上舌头，身体就有点冷……）
+
+\CN["财阀"]
+“刚才还叫我比比君呢。我会更加努力的。
+好烫好烫～”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_2_1_0101002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0279" )
+\CN["小夜"]
+“嗯……嗯……哈……啊…嗯……嗯……！
+啊，算了……那里，已经不行了……感觉很奇怪……”
+
+: PlayVoice( "Voices/vo24_say0280" )
+\CN["小夜"]
+“啊啊啊，啊，啊……说不行……啊，呀……”……
+啊……嗯……嗯……嗯，我会做的……”
+
+明明应该很讨厌的，在被舔的时候
+渐渐地，这个心情变好了。
+
+身体好像变得很热。
+
+财阀的叔叔一直死缠烂打地舔着我的那个。
+
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_3_1_0501002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["财阀"]
+“噗哈哈~！呵呵，已经解开很多了吧？”
+
+: PlayVoice( "Voices/vo24_say0281" )
+\CN["小夜"]
+“哈……哈……哈……”
+
+终于解放了。在床上调整呼吸。
+
+总觉得就像发烧的时候一样，头突然一下子沉了下来。
+
+\CN["财阀"]
+“那么，差不多是一个吧。”
+
+//●ＳＥ：衣擦れの音
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = true; evcos = false;
+: evfile = "evj_b001_3_1_0301002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：勃起した男性器を見て声が出ないぐらい驚いています
+: PlayVoice( "Voices/vo24_say0282" )
+\CN["小夜"]
+“……！？”
+
+\CN["财阀"]
+“不用那么吃惊，我不怕小公鸡。”
+
+: PlayVoice( "Voices/vo24_say0283" )
+\CN["小夜"]
+“那、那就是小气鬼……？骗人的……！！
+因为，以前在浴室看到的爷爷的东西更小了”
+
+正朝上，硬邦邦的形状。
+一看就觉得恐怖。
+
+\CN["财阀"]
+“小夜太漂亮了，太可爱了
+也许比平时更大了呢”
+
+\CN["财阀"]
+“但是，这让小夜心情非常好
+我能做到。我现在开始做给你看”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0211002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——google。
+
+//●演技：膣口に男性器をあてがわれています
+: PlayVoice( "Voices/vo24_say0284" )
+\CN["小夜"]
+“我要做给你看……不，不……等一下！
+那么大的，不可能进去啊……”
+
+\CN["财阀"]
+“没关系，我会好好进去的。请相信我……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+奇奇、奇奇、梅莉、奇奇……！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0311002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器の挿入開始です
+: PlayVoice( "Voices/vo24_say0285" )
+\CN["小夜"]
+“嗯……嗯，好痛！不，不……不行……”
+
+: PlayVoice( "Voices/vo24_say0286" )
+\CN["小夜"]
+“坏掉了……那种东西，不可能放进去……嗯
+不、不……不，不……不，不！”
+
+\CN["财阀"]
+“不会坏的。女孩子的女阴呢，要让它变得柔软
+做好了哦”
+
+\CN["财阀"]
+“所以，我的也会好好放进去的……”
+
+被强行塞进去。
+
+我的腿好像要裂开了。
+像针扎一样的疼痛跑了之后，热疼的疼痛出来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0511002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0287" )
+\CN["小夜"]
+“嗯……嗯……啊哈哈……应该不会进去的……”
+
+: PlayVoice( "Voices/vo24_say0288" )
+\CN["小夜"]
+“拔出来……坏掉了……因为会裂开……”
+
+\CN["财阀"]
+“没关系，看，还有一点。
+只要这里进去……嗯……一口气……”
+
+//●ＣＧ差分：挿入・破瓜
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0311002_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+美琪……美琪……奇奇奇奇……好……噗——
+好辣好辣，好辣！！
+
+//●演技：処女喪失です
+: PlayVoice( "Voices/vo24_say0289" )
+\CN["小夜"]
+“呜呜呜呜……！啊，呜呜啊……！”
+
+: PlayBackVoice( "Voices/BGV24_say_aegi01" )
+\CN["财阀"]
+“呼……呼……呵呵，你看，全部都进去了。”
+
+: PlayVoice( "Voices/vo24_say0290" )
+\CN["小夜"]
+“哈……哈……嗯……啊…啊……啊…呃……”
+
+胯下像燃烧一样地热疼。
+
+就像蛀牙的时候牙疼一样，但是却比蛀牙疼好几倍
+强烈的疼痛断断续续地袭来。
+
+\CN["财阀"]
+“小夜的女阴，急着要我的小鸡鸡
+我会给你系紧的”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0411002_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0291" )
+\CN["小夜"]
+“不知道……哈，哈，疼得不得了……。
+嗯……哈，快点拔出来……”
+
+\CN["财阀"]
+“不行啊。难得有机会，必须要好好做到最后。”
+
+: PlayVoice( "Voices/vo24_say0292" )
+\CN["小夜"]
+“说到最后……”
+
+那是什么意思呢，在幕府的时候告诉侍女
+领而知。
+
+果然是这样啊……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0511102_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0293" )
+\CN["小夜"]
+（生这个人的孩子是我的职责……）
+
+财阀家娶我的理由多半是为了生孩子。
+
+所以，拒绝为了这个目的的行为
+连看护父亲之死的理由都不允许。
+
+\CN["财阀"]
+“我会慢慢移动的。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——一直……一直…一直……一直……不……不……不……不……不……不……不……不……不……不…不……！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0211002_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：緩やかなピストンです
+: PlayVoice( "Voices/vo24_say0294" )
+\CN["小夜"]
+“嗯……啊……啊……嗯……不，那……
+啊呜……呜……呜……”
+
+: PlayVoice( "Voices/vo24_say0295" )
+\CN["小夜"]
+“嗯……嗯……嗯，如果还动的话……嗯……”……
+好痛……拜托了，停下来……”
+
+\CN["财阀"]
+“没关系，我马上习惯了，心情会变好。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+Zun、ZZU、锯齿、锯齿、一、一、一！
+
+: PlayVoice( "Voices/vo24_say0296" )
+\CN["小夜"]
+“嗯……啊，啊呜……啊，啊，啊……呜！”
+
+肚子里被鸡丁打开的疼痛
+甚至不允许我叫苦。
+
+\CN["财阀"]
+“嗯……小夜的女阴又变强了
+让我心情舒畅”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0311002_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0297" )
+\CN["小夜"]
+“哈，哈，小公鸡……拔出来……已经，不……
+嗯……嗯…嗯！”
+
+: PlayVoice( "Voices/vo24_say0298" )
+\CN["小夜"]
+“再也……嗯，嗯……不要太激烈了……”
+
+小鸡鸡的存取变得快，疼痛也变得强。
+
+刺痛的疼痛，侵蚀身体的疼痛不断地袭来。
+
+\CN["财阀"]
+“哈，哈，哈，哈，已经要拿出来了……”
+
+: PlayVoice( "Voices/vo24_say0299" )
+\CN["小夜"]
+“……出来吧？”
+
+\CN["财阀"]
+“嗯。我的精子，可以交给小夜。”
+
+额头上滴满了汗，抿着嘴微笑
+我那样说。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0411002_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0300" )
+\CN["小夜"]
+（接下来，精子就要被拿出来了……。
+不……厉害，不……）
+
+紧紧抓住床单。
+
+\CN["财阀"]
+“哈！哈！小夜，快生我的宝宝啊。
+我会好好地射精你的”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——哼哼，哼哼，呻吟……呜呜哇！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0311002_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：奥に男性器を押し込まれて、息苦しくなります
+: PlayVoice( "Voices/vo24_say0301" )
+\CN["小夜"]
+“哇哈哈……啊……啊…啊…啊……嗯……！”
+
+\CN["财阀"]
+“嗯……再也没有进展了。
+这里是小夜的最里面呢”
+
+: PlayVoice( "Voices/vo24_say0302" )
+\CN["小夜"]
+“哈、哈、哈、呜……好痛苦啊……。
+拔出来……小气鬼，拔出来……肚子裂开了
+所以……”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0303" )
+\CN["小夜"]
+（就这样，被娜卡拿出精子也可以……。
+如果能早点结束的话，那就……）
+
+讨厌被娜卡拿出精液。
+
+\CN["财阀"]
+“好的……小夜”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0511102_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0304" )
+\CN["小夜"]
+“快点……快点拿出来，让它结束……”
+
+但是，我想马上从灼烧自己的痛苦中解脱出来
+这样的心情一直很强烈……。
+
+\CN["财阀"]
+“哈哈哈，小夜，要出很多啊！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0211002_1001000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0305" )
+\CN["小夜"]
+“嗯……嗯……嗯……”
+
+好好闭上眼睛，用身体的力量
+我做好了接下来会带来的冲击的觉悟。
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0111013_1001010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜，呜呜，呜呜，呜呜
+怎么办啊！
+
+: PlayVoice( "Voices/vo24_say0306" )
+\CN["小夜"]
+“嗯……啊…啊，好烫……呜……进入肚子里。
+在娜卡，小矮人跳起来……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0311013_1001010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0307" )
+\CN["小夜"]
+“呜……呜……呜啊啊啊啊啊啊啊啊啊啊————！”
+
+: PlayBackVoice( "Voices/BGV24_say_jigo01" )
+就算有了觉悟，也不能忍受。
+
+娜卡的小鸡鸡一边脉动着，一边把精子放在我体内
+这样想的话是不行的。
+
+\CN["财阀"]
+“小夜，你真舒服啊。”
+
+\CN["财阀"]
+“给瘦小的女阴再多拿一点。”
+
+//●演出：射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_4_1_0511113_1001010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克！露露！杜威！
+咕嘟咕嘟咕嘟！咚！咚！咚！
+
+: PlayVoice( "Voices/vo24_say0308" )
+\CN["小夜"]
+“又来了……小静，快行动……精子被娜卡拿出来。”
+
+: PlayVoice( "Voices/vo24_say0309" )
+\CN["小夜"]
+“不，不……啊……啊……已经，不……啊…”
+
+\CN["财阀"]
+“呵呵，小夜，全部接受吧。”
+
+疼痛得身体动弹不得。
+甚至觉得身体的下半部分被分割了。
+
+只能按照这个人的所作所为，等待时间的流逝。
+
+//●ＣＧ差分：未挿入・射精後
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_3_1_0511113_1001030_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器抜かれる。放心状態で荒い呼吸をしています
+: PlayVoice( "Voices/vo24_say0310" )
+\CN["小夜"]
+“嗯……呃……哈、哈、哈……哈……哈……”
+
+被拔了小鸡鸡之后，好像还在里面。
+
+精液令人讨厌的热度和侵蚀内脏的疼痛一直持续着。
+
+\CN["财阀"]
+“有点累了吗？休息一下吧。”
+
+: PlayVoice( "Voices/vo24_say0311" )
+\CN["小夜"]
+“哈……哈……哈……呜……嗯……嗯……嗯……”
+
+\CN["财阀"]
+“我高兴得都快哭出来了”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evj_b001_3_1_0411013_1001030_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo24_say0312" )
+\CN["小夜"]
+（我现在在哭呢……）
+
+虽然觉得脸颊附近有点暖和
+竟然哭了。
+
+\CN["财阀"]
+“从今以后，我会一直爱你的。
+直到死亡将两个人分开为止”
+
+这样的时间还会持续下去……。真讨厌啊……。
+
+我能从这无药可救的耻辱中解放出来
+这个人是死，还是我——
+
+看不到终点的残酷现实。
+然后就算是一点也好，闭上眼睛，把意识藏在黑暗的地方
+沉下去了。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_D06_86" )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

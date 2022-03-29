@@ -1,0 +1,268 @@
+//========================================================
+//○雨の日のふたり
+//========================================================
+//●場所：帝都の町中
+//●背景：空・雨
+//Yoshi：背景
+//服装を記憶
+: StopBgm( 0.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky04", 1.0 )
+: Wait()
+: ShowWnd()
+——有一天，这是和雷欧一起去任务的时候发生的事。
+
+//●演技：突然、雨が降ってきました
+: trackIndex = PlaySe( "SE/Se_Rain01", true );
+//: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 3, "RC" )
+: CharaCostume( "Mukuro", 0 )
+: DrawFaceThumbnail( "Mukuro", 7, 0 )
+: PlayVoice( "Voices/vo00_muk0995" )
+\CN["无黑色"]
+“雨，变强了呢……”
+
+//: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+: CharaCostume( "Leo", 0 )
+: DrawFaceThumbnail( "Leo", 0, 0 )
+\CN["雷欧"]
+“无黑，那边那边！让我躲雨吧！”
+
+被雷欧说了之后跑进有屋顶的地方。
+
+//: EraseChara( "Leo", 0.5 )
+//: EraseChara( "Mukuro", 0.5 )
+//●ＣＧ：雨に濡れて下着が透けて見えて
+//: DrawChara( "Mukuro", 36, 0, 3, 0.5, 0.0, 3, "RC" )
+//: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a003_1_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/09_CM009")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0996" )
+\CN["无黑色"]
+“呼~……我还以为要下雨呢
+怎么会变得这么强大呢……”
+
+//: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“真的，好好听黄菜子的话
+要是能拿着折叠式的就好了……”
+
+//: DrawChara( "Leo",8, 0)
+\CN["雷欧"]
+“啊，真倒霉啊……。
+我不喜欢下雨啊”
+
+//: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk0997" )
+\CN["无黑色"]
+“是吗？我很喜欢下雨……”
+
+//: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“真的吗？”
+
+//: DrawChara( "Mukuro", 29, 0)
+: PlayVoice( "Voices/vo00_muk0998" )
+\CN["无黑色"]
+“啊，怎么说呢，我喜欢雨声和气味。
+还有，这种气氛……”
+
+//: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“嗯。嘛，我总觉得我喜欢空气。”
+
+//: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk0999" )
+\CN["无黑色"]
+“真的吗？明明有很多人不喜欢盯着看。”
+
+如果说喜欢雨的空气的话，会被说成很奇怪
+很多。
+
+对村子里的人也是这样，以前对桃子也说过同样的话
+“诶，你不喜欢皱眉啊！头发也不扎起来。”
+之类的话。
+
+//: DrawChara( "Leo", 15, 0)
+\CN["雷欧"]
+“嘛，我觉得这样就好了。
+因为啊，只有在下雨的时候才会有这种东西不是吗？”
+
+//: DrawChara( "Mukuro", 4, 0)
+: PlayVoice( "Voices/vo00_muk1000" )
+\CN["无黑色"]
+“是啊。好像是雷欧。”
+
+//: DrawChara( "Leo", 16, 0)
+\CN["雷欧"]
+“是吗？而且，我还是最喜欢下雨的
+好像能习惯啊」
+
+嗯？雷欧盯着我看。
+
+//: DrawChara( "Leo", 11, 1)
+\CN["雷欧"]
+“因为啊，你看，只有雨才有的乐趣吧
+因为无黑非常性感，所以是眼睛的保养”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a003_1_1_0200001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk1001" )
+\CN["无黑色"]
+“嗯？性感是……？”
+
+看自己的身体。
+上衣湿了，内衣露出来了。
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//●分岐：露出開発度Ｂ未満の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) < 2 )
+	//: DrawChara( "Mukuro", 20, 2, 0, 0.5, 0.0, 3, "RC" )
+	//: DrawChara( "Leo", 11, 1, 0, 0.5, 0.0, 2, "LC" )
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_a003_1_2_0300002_0000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk1002" )
+	\CN["无黑色"]
+“什么……什么啊……什么啊……雷、雷欧！
+没想到，这个，你看到了……？”
+
+	//: DrawChara( "Leo", 15, 1)
+	\CN["雷欧"]
+“啊。已经好好地敲进脑子里了！”
+
+	//: DrawChara( "Leo", 14, 1)
+	\CN["雷欧"]
+“无黑……！谢谢你”
+
+一边这样说，一边浮现出非常好的笑容。
+
+	//: DrawChara( "Mukuro", 19, 2)
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_a003_1_2_0400003_0000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk1003" )
+	\CN["无黑色"]
+“呃，那个，雷欧的……雷欧的……笨蛋啊——————！”
+
+	//●背景：空・雨
+	//Yoshi：背景
+	//: HideWnd()
+	//: SwapImage( 1, 0, "BGImage/BG_Sky04", 1.0 )
+	//: Wait()
+	//: ShowWnd()
+	//●ＳＥ：バチーン　ビンタの音
+	//: DrawChara( "Leo", 10, 0)
+	: HideWnd()
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: PlaySe( "SE/Se_Binta01" )
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: ShowWnd()
+	\CN["雷欧"]
+“我爱你啊——————！！”
+
+	//: DrawChara( "Leo", 8, 0)
+	\CN["雷欧"]
+“突然耳光不厉害吗？”
+
+	//: DrawChara( "Mukuro", 6, 2)
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_a003_1_2_0300002_0000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk1004" )
+	\CN["无黑色"]
+“嗯，好吵！嗯……内衣被好好地看了……”
+
+	//: DrawChara( "Leo", 3, 0)
+	\CN["雷欧"]
+“嘛，我觉得纯白的胸罩很适合你哦？”
+
+	//: DrawChara( "Mukuro", 27, 1)
+	: PlayVoice( "Voices/vo00_muk1005" )
+	\CN["无黑色"]
+“哇，混蛋！再说下去就揍你！
+无论是洗澡的时候，还是你……！”
+
+我被雷欧看到内衣了，非常害羞。
+有了洞就想进去。
+
+但是，没有不可思议的厌恶感
+不知怎么的心情。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	//: DrawChara( "Mukuro", 35, 1, 0, 0.5, 0.0, 3, "RC" )
+	//: DrawChara( "Leo", 11, 1, 0, 0.5, 0.0, 2, "LC" )
+	: PlayVoice( "Voices/vo00_muk1006" )
+	\CN["无黑色"]
+“啊……内衣露出来了……”
+
+	//: DrawChara( "Leo", 2, 0)
+	\CN["雷欧"]
+“哦，你不生气吗？”
+
+	//: DrawChara( "Mukuro", 36, 1)
+	: HideWnd()
+	: evbg = true; evcos = false;
+	: evfile = "eva_a003_1_1_0100002_0000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk1007" )
+	\CN["无黑色"]
+“又被雨淋湿了，没办法吧。
+嘛，也不是不害羞，所以不太直来直去
+能看到的是……”
+
+	//: DrawChara( "Leo", 6, 1)
+	\CN["雷欧"]
+“啊！不好意思！”
+
+	//●演技：心の声です
+	//: DrawChara( "Mukuro", 7, 0)
+	: PlayVoice( "Voices/vo00_muk1008" )
+	\CN["无黑色"]
+（能看到内衣，更是如此……。
+倒不如说是裸体……）
+
+以前也有过好几次被男人看到过裸体
+我经历了好几次更丢脸的行为。
+
+那又是为什么呢？
+雷欧对方会觉得不好意思的是……？
+
+	//: DrawChara( "Leo", 5, 0)
+	\CN["雷欧"]
+「…………」
+
+//●分岐終了
+: endif
+在互相有些尴尬的气氛中
+避雨一直等到雨势减弱。
+
+//●シーンエンド
+: StopSe( trackIndex );
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

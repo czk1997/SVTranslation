@@ -1,0 +1,529 @@
+//========================================================
+//○イキリ制裁
+//========================================================
+*sc001
+//●場所：崎珠・居酒屋
+//●状況：居酒屋で店長に話すと絡んでくる男がいる
+//●演出：無黒　後ろを向く
+: HideWnd()
+: RpgCharaOn("Mobu01")
+: RpgCharaOn("Mobu02")
+: RpgCharaBatch( "Mobu01"	\
+:	"Speed", 6.0	\
+:	"MoveRight", 12 )
+: RpgCharaBatch( "Mobu02"	\
+:	"Speed", 6.0	\
+:	"MoveRight", 12 )
+: Wait()
+: ShowWnd()
+\CN["半灰色"]
+“呐，姐姐，和我们一起喝吧？
+我请客”
+
+: RpgCharaTurn( "Player", "L" )
+: DrawChara( "Mukuro", 23, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2688" )
+\CN["无黑色"]
+“我拒绝。因为我没有时间和你们一起喝酒。”
+
+//●分岐：淫乱度Ｂ以上の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+如果是合适的男人的话，就喝吧——
+
+但是，真不巧，我想和这样的男人做爱
+不怎么想。
+//●分岐終了
+: endif
+\CN["半灰色"]
+“说话方式不是有问题吗？”
+
+男子拿出刀，朝我走来。
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 24, 0)
+	: PlayVoice( "Voices/vo00_muk2689" )
+	\CN["无黑色"]
+“朝着这个目标前进，就是做好了觉悟
+可以吗？”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	: DrawChara( "Mukuro", 26, 0)
+	: PlayVoice( "Voices/vo00_muk2690" )
+	\CN["无黑色"]
+“把刀指向对方，就有了自己被杀的觉悟
+应该做好了吧？”
+//●分岐終了
+: endif
+\CN["半灰色"]
+“……呃，你……”
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Mobu02"	\
+:	"Speed", 6.0	\
+:	"MoveRight", 2 )
+: Wait()
+: ShowWnd()
+倒向上的男人用刀刺我。
+
+——太慢了。
+
+//●演出：斬撃　エフェクト
+//●ＳＥ：カランカラン　刃物を落とす音
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Sword01" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["半灰色"]
+“嗯……！”
+
+放下刀，把刀指向蹲下的男人。
+
+: DrawChara( "Mukuro", 27, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2691" )
+\CN["无黑色"]
+“如果就这样老老实实地从店里出去的话，就饶了你一条命吧。”
+
+\CN["半灰色"]
+“……可恶！”
+
+//●演出：半グレ　逃げ出して行く
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Mobu02"	\
+:	"Speed", 10.0	\
+:	"MoveDown", 4 )
+: RpgCharaBatch( "Mobu01"	\
+:	"Speed", 10.0	\
+:	"MoveDown", 4 )
+: Wait()
+: RpgCharaOff("Mobu02")
+: RpgCharaBatch( "Mobu01"	\
+:	"Speed", 10.0	\
+:	"MoveRight", 2	\
+:	"MoveDown", 1 )
+: Wait()
+: RpgCharaOff("Mobu01")
+: RpgCharaTurn( "Player", "U" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2692" )
+\CN["无黑色"]
+“吵死我了。”
+
+支付了一些麻烦费打算离开店的话。
+
+\CN["店长"]
+“呐，你不知道那家伙是谁吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2693" )
+\CN["无黑色"]
+“啊？我是第一次看见那个家伙……”
+
+\CN["店长"]
+“要小心那些家伙。
+是最近扎根于这个城市的半格雷集团的家伙”
+
+\CN["店长"]
+“我一定会来报复你的。
+小心点比较好”
+
+复仇吗。那太麻烦了。
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2694" )
+\CN["无黑色"]
+“店长，那个半格雷集团的老板在哪里？”
+你知道吗？”
+
+\CN["店长"]
+“嘛，我知道……不会吧，你……是吧！？”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2695" )
+\CN["无黑色"]
+“放任不管好像也很麻烦
+如果能弄破的话就把它弄破吧」
+
+\CN["店长"]
+“嘛，如果是你的话，说不定会把他们的组织‘土蜘蛛，つちも}’
+也许会倒闭”
+
+//●読み：土蜘蛛（つちぐも）
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2696" )
+\CN["无黑色"]
+“土蜘蛛？那是刚才那家伙所在的组织的名字吗？”
+
+\CN["店长"]
+“是的，南边的长屋里好像住着一个老板。
+镇上的人也很困扰，请把他们给毁了吧
+我们很高兴……”
+
+南区好像住着一个叫做“土蜘蛛”的组织头目。
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if( $evilLevel < 3 )
+如果是这样的话，那就去看看是什么样的地方吧
+看看也不错吧。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+被挑衅了，如果再纠缠起来的话会很郁闷。
+毁掉是最好的吧。
+
+: endif
+//●演出：場面転換トランジション
+//●場所：崎珠・長屋
+//●演出：無黒　長屋に移動する
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 3	\
+:	"MoveLeft", 2	\
+:	"MoveDown", 1 )
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayBgm("BGM/01_CM001")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+\CN["男人"]
+“有樱花纹的外褂黑发美少女——
+看来是照顾了我们家啊”
+
+: PlayVoice( "Voices/vo00_muk2697" )
+\CN["无黑色"]
+“我想见一个叫做‘土蜘蛛’的头目
+你是这样吗？”
+
+\CN["土蜘蛛的首领"]
+“啊，对了。
+你要好好负责啊」
+
+领导的男人出类拔萃。
+
+//●演出：無黒　刀を抜く
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 27, 0, 5)
+: PlayVoice( "Voices/vo00_muk2698" )
+\CN["无黑色"]
+“那正好。
+只需斩杀你就可以击溃土蜘蛛”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：土蜘蛛のリーダー
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：土蜘蛛のリーダー,1,1,1
+//●状況：戦闘終了後
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc001_win" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_WaRoom04_01", "BGM/22_BM003", 1052, -1, -1, "Scenarios/SC_C04_50*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc001_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+*sc001_win
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: ShowWnd()
+\CN["土蜘蛛的首领"]
+“呜……难道，我会被女人做什么……”
+
+//●分岐：悪堕ちＬＶが３の場合
+//●強制的に殺す
+//●演出：斬殺　エフェクト
+: if( $evilLevel < 3 ) Jump( "*sc001_select" ) endif
+: HideWnd()
+//: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: Call( "Scenarios/Effect*Blood01" )
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_1_0200000_1000000_2_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+//: DrawChara( "Mukuro", 21, 1, 2, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2699" )
+\CN["无黑色"]
+“呵呵。因为是领导，所以更能让我开心。”
+我是这么想的。真是目瞪口呆啊……”
+
+明明那么威风凛凛的，只有这个程度吗……。
+
+一边在身上沐浴着斩首、喷出来的血
+总觉得哪里不够。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["土蜘蛛的成员"]
+“那、那样的……高松君，被这样纤细的女人杀害了
+怎么……”
+
+回头一看，在居酒屋缠着我的男人脸色发青
+看到满身是血的我，浑身颤抖。
+
+高松君就是我杀的那个男人吧。
+
+: DrawChara( "Mukuro", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo00_muk2700" )
+\CN["无黑色"]
+“你也想变成这样吗？”
+
+\CN["土蜘蛛的成员"]
+“啊……啊…啊啊啊……啊，杀了人！！”
+
+: PlaySe( "SE/Se_dash01" )
+男子一边害怕我，一边一溜烟地逃走了。
+
+//●演出：暗転
+//＠殺人：1
+//●選択肢合流地点へ
+//＠ラベルジャンプ：sc001_select_s_end
+//●分岐終了
+: HideWnd()
+: value = 1; Call("Scenarios/CommonSys*Murder")
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: SetMission( "SC_C04_50_1", "Hidden" )
+: SetMission( "SC_C04_50_2", "Successed" )
+: Jump( "*sc001_select_s_end" )
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：見逃してやる
+//■選択肢２：殺しておく
+//――――――――――――――――――――――――――――
+\CI["放过他"]
+\CI["杀死"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：見逃してやるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+: DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk2701" )
+\CN["无黑色"]
+“如果马上从这个城市组织出来的话，我就放过你。”
+
+\CN["土蜘蛛的首领"]
+“……切…我知道了。”
+
+\CN["土蜘蛛的首领"]
+“只要活着，就有可能会出人头地。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+我还以为他会更抵抗，没想到他很淡泊。
+
+土蜘蛛的首领带着部下老实地从街上出去。
+
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["土蜘蛛的成员"]
+“高松君，可以吗？
+我才不听那家伙的话呢……”
+
+\CN["土蜘蛛的首领"]
+“……那家伙，大概是个白夜之人。
+被白夜盯上的话会怎么样，你知道吗？”
+
+\CN["土蜘蛛的成员"]
+“呃……白夜的……。
+如果是这样的话，我怎么会若无其事地打招呼呢……”
+
+\CN["土蜘蛛的首领"]
+“那么，你知道吗？”？
+我要负责任”
+
+\CN["土蜘蛛的成员"]
+“唔……”
+
+//●選択肢合流地点へ
+//＠ラベル：sc001_select_s_end
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: SetMission( "SC_C04_50_1", "Successed" )
+: Jump( "*sc001_select_s_end" )
+//-------------------------------------------------------
+//●選択肢２：殺しておくを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+//●演出：斬殺　エフェクト
+: HideWnd()
+: value = 1; Call("Scenarios/CommonSys*Murder")
+//: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: Call( "Scenarios/Effect*Blood01" )
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_1_0200000_1000000_2_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 39, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2702" )
+\CN["无黑色"]
+“如果放任你不管的话，说不定还会有奇怪的事情纠缠你
+因为不知道啊」
+
+我觉得杀领导的人很快
+杀死。
+
+\CN["土蜘蛛的成员"]
+“那、那样的……高松君，被这样纤细的女人杀害了
+怎么……”
+
+回头一看，在居酒屋缠着我的男人脸色发青
+看到满身是血的我，浑身颤抖。
+
+高松君就是我杀的那个男人吧。
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk2700" )
+\CN["无黑色"]
+“你也想变成这样吗？”
+
+\CN["土蜘蛛的成员"]
+“啊……啊…啊啊啊……啊，杀了人！！”
+
+男子一边害怕我，一边一溜烟地逃走了。
+
+//●選択肢合流地点へ
+//＠ラベル：sc001_select_s_end
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: SetMission( "SC_C04_50_1", "Hidden" )
+: SetMission( "SC_C04_50_2", "Successed" )
+: Jump( "*sc001_select_s_end" )
+
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*sc001_select_s_end
+: ShowWnd()
+当天成为“土蜘蛛”成员的人一个不剩
+好像从崎珠镇消失了。
+
+//●場所：崎珠・居酒屋
+//●演出：暗転解除
+: RpgCharaWarp("Player", "SC_C04_50" )
+: HideWnd()
+: EraseImage( 0, 0, 1.0)
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+\CN["店长"]
+“多亏了你，我得救了。”
+
+: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2703" )
+\CN["无黑色"]
+“我并不是想帮助别人才做的。
+因为挑衅的我有责任”
+
+只不过是自己擦了擦自己的屁股而已
+如果你能这样高兴的话，那就这样。
+
+\CN["店长"]
+“这是求之不得的礼。请收下这家伙。”
+
+: AddItem( "SpMedicenM", 5 )
+无黑得到了5张“技能之叶”。
+
+//＠メモ：何かアイテムを手に入れる
+//●シーンエンド
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Town06_01_Sakitama", "From02", "Scenarios/Map_Town06_Sakitama_Init*Map01")

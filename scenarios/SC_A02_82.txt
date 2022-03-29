@@ -1,0 +1,586 @@
+//========================================================
+//○レオと銀のわんこそば対決！
+//========================================================
+//●場所：帝都・飯屋
+//●視点：レオ視点
+//●背景：居酒屋・昼
+//Yoshi：背景、茶屋
+: HideWnd()
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Leo", 0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Chaya01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/40_Comedy")
+: ShowWnd()
+帝都有鬼灯队士热心的饭店。
+
+据说在那里会举办某个活动
+试着窥视了一下是什么样的东西。
+
+//●演出：レオ　登場する
+//Yoshi：センターにレオ
+: DrawChara( "Leo", 5, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["雷欧"]
+“小碗荞麦面大会……？”
+
+\CN["饭店的店长"]
+“诶，之前去北方旅行的时候经历过……。
+稍微，做做看吧”
+
+: DrawChara( "Leo",13, 0)
+\CN["雷欧"]
+“看起来很有趣。那是什么规则？”
+
+\CN["饭店的店长"]
+“规则很简单，是比能吃多少的东西。
+雷欧，怎么样？要不要试试？”
+
+\CN["雷欧"]
+“只说一个劲地吃就行了吗？
+那样不是轻而易举嘛！”
+
+\CN["饭店的店长"]
+“顺便说一下，现状的首位是鸢屋的鹰先生，一共220杯。”
+
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“220杯！？真的吗……”
+
+200碗以上的荞麦面，果然不行吧。
+
+\CN["饭店的店长"]
+“不过，一杯大概一口就够了。”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“啊。那样的话，也许能行……”
+
+即使有了干劲——
+
+//●演出：桃＆銀　登場する
+//Yoshi：右にレオ、左に銀、センターに桃
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: DrawChara( "Gin", 1, 0, 0, 0.0, 0.0, 4, "L" )
+: DrawChara( "Momo", 5, 0, 0, 0.0, 0.0, 5, "C" )
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: lay = 5; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0116" )
+\CN["桃子"]
+“听说你在做有趣的事情，所以我来了♪”
+
+: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+「…………」
+
+: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 3, "R" )
+\CN["雷欧"]
+“哦！你们也来参加了碗荞麦面大会吗？”
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“小碗荞麦面大会……？”
+
+店长就像刚才对我说的那样，对桃和银进行说明。
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0117" )
+\CN["桃子"]
+“哎，Leo君接下来要挑战了。”
+
+: DrawChara( "Leo",13, 0)
+\CN["雷欧"]
+“嘛，赢了之后在这家店留下我们伟大的名字也是
+我觉得还不错”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0118" )
+\CN["桃子"]
+“小银不做吗？”
+
+: DrawChara( "Gin", 0, 0)
+\CN["银子"]
+“太无聊了。
+吃多了会伤到身体”
+
+: DrawChara( "Leo",12, 0)
+\CN["雷欧"]
+“嘛，就是害怕输给我啊。”
+
+: DrawChara( "Gin",17, 0)
+\CN["银子"]
+“啊？刚排练肚子就饿扁了
+认真起来的话，就把你这个混蛋瞬间杀了”
+
+: DrawChara( "Momo", 1, 0)
+: DrawChara( "Leo", 7, 0)
+\CN["雷欧"]
+“不不不不不不不不，我在故乡和巨人雷奥先生
+你觉得我能实现吗？”
+
+\CN["饭店的店长"]
+“风真先生怎么办？”
+
+: DrawChara( "Gin",10, 0)
+\CN["银子"]
+“店长，我也要做。就算死也不会输给这家伙。”
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0119" )
+\CN["桃子"]
+“呵呵。男生呢。变得非常有趣了♪”
+
+\CN["饭店的店长"]
+“明白了！
+那么，现在有空的两个人，跟着雷欧和风真吧」
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+店长把店员叫过来。
+
+所谓的小碗荞麦面，吃完后旁边的店员一个接一个地
+碗里好像放了荞麦面。
+
+//Yoshi：右にレオ、左に銀
+: DrawChara( "Leo", 0, 0, 0, 0.0, 0.0, 3, "R" )
+: DrawChara( "Gin", 1, 0, 0, 0.0, 0.0, 4, "L" )
+: chara = "Leo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: chara = "Gin"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+“好啊。我已经尽力了。”
+
+\CN["饭店的店长"]
+“上弦的时候把盖子盖在碗上！”
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“呵。吃得快的话我有自信。
+因为我是在不快点吃饭就吃不到的地方长大的”
+
+: StopBgm( 1.0 )
+\CN["饭店的店长"]
+“——限制时间是15分钟！开始！”
+
+: PlayBgm("BGM/18_TM003")
+以店长的一句话开始。
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“ズズズ！”
+
+: DrawChara( "Gin", 4, 0)
+\CN["银子"]
+“不好意思！”
+
+\CN["饭店的店员A"]
+“雷欧，不咬直接吞下去好像是诀窍。”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“……嗯？是吗？”
+
+\CN["饭店的店员B"]
+“风真，是用喉咙来品尝的。”
+
+: DrawChara( "Gin",18, 0)
+\CN["银子"]
+“是吗？”
+
+吃完后，荞麦面就会一个接一个地放进碗里。
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“……嗯……嗯”
+
+: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+“嗯……嗯……嗯……”
+
+\CN["客人A"]
+“哦！鬼灯的年轻人在挑战吗？”
+
+\CN["客人B"]
+“吃起来真好吃啊。哥哥们，都加油吧。”
+
+其他客人也会在周围大声应援。
+
+这样热闹真好啊。
+情绪高涨起来。
+
+//●演出：時間経過
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“哈……哈……哈……”
+
+虽然一开始很西瓜
+过了10分钟左右，变得很难受。
+
+已经很饱了……。
+
+: DrawChara( "Gin", 3, 0)
+\CN["银子"]
+“呼……”
+
+银看着这边用鼻子笑了。
+
+: DrawChara( "Leo", 9, 0)
+\CN["雷欧"]
+“还差得远呢————！店员，我会加快速度的。”
+
+: DrawChara( "Gin",20, 0)
+\CN["银子"]
+“我也是！我不会输给那家伙的！”
+
+\CN["饭店的店长"]
+“这可真厉害啊。
+还有5分钟就刷新了新记录”
+
+\CN["客人C"]
+“不愧是鬼灯的队员啊！”
+
+\CN["雷欧"]
+“哦哦哦哦哦哦哦哦！好贪婪！”
+
+\CN["银子"]
+“ズズズーー！”
+
+//Yoshi：センターに桃
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0120" )
+\CN["桃子"]
+“两个人吃得真厉害啊。
+啊，店员……我要少吃A套餐”
+
+\CN["饭店的店长"]
+“爱啊！”
+
+//●演出：時間経過
+//Yoshi：右にレオ、左に銀
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 3, "R" )
+: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 4, "L" )
+: ShowWnd()
+\CN["饭店的店长"]
+“还剩1分钟！”
+
+\CN["雷欧"]
+「…………」
+
+\CN["银子"]
+「…………」
+
+\CN["客人A"]
+“真厉害。两个人都无言地继续吃！”
+
+\CN["客人B"]
+“真是白热化的男人的战斗啊！”
+
+肚子好难受啊！
+
+往银那边看一眼。
+
+\CN["银子"]
+「…………」
+
+视线恰好吻合。
+
+//●演技：心の声です
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+（……绝对不能输！）
+
+//●演技：心の声です
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+（我不能输给雷欧！）
+
+剩下一点，胃破裂了也要吃个够吃！
+我不想输给那家伙！
+
+男人们的意气用事互相碰撞。
+
+//●演出：時間経過
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: StopBgm( 1.0 )
+: ShowWnd()
+\CN["饭店的店长"]
+“结束了！”
+
+: PlayBgm("BGM/40_Comedy")
+: DrawChara( "Leo",10, 0)
+\CN["雷欧"]
+“哈……哈…哈……呜……呜……呜……”
+
+: DrawChara( "Gin",16, 0)
+\CN["银子"]
+“哈……哈……哈……”
+
+\CN["客人A"]
+“好厉害啊，两个人都吃了。”
+
+:// EraseChara( "Leo", 0.5 )
+//: EraseChara( "Gin", 0.5 )
+//: Wait()
+//Yoshi：センターに桃
+//: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Momo", 3, 0 )
+: PlayVoice( "Voices/vo01_mom0121" )
+\CN["桃子"]
+“真的，很能吃呢……。
+啊，这个炸鸡块真好吃！”
+
+\CN["饭店的店长"]
+“嘿嘿，因为今天买到了好鸡。”
+
+桃子和店长聊天的时候，店员们开始统计。
+
+//Yoshi：右にレオ、左に銀
+//: EraseChara( "Momo", 0.5 )
+: DrawChara( "Leo", 1, 0 )
+: DrawChara( "Gin", 7, 0 )
+\CN["饭店的店员A"]
+“雷欧，426杯！”
+
+\CN["客人C"]
+“哦哦哦哦哦哦哦哦——！
+我轻松搞定了鹰先生的220杯！”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“嘿嘿……”
+
+那么，那家伙吃了多少？
+
+\CN["饭店的店员B"]
+“风真先生也喝426杯！”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“切……”
+
+\CN["客人A"]
+“好，两个人都很厉害……”
+
+//Yoshi：センターに桃
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: ResetLayer(3)
+: ResetLayer(4)
+: DrawChara( "Momo",13, 0, 0, 0.5, 0.0, 5, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0122" )
+\CN["桃子"]
+“雷欧和小银都吃了那么多！？
+好厉害啊……”
+
+\CN["饭店的店长"]
+“啊，这个记录好像是绝对不会被打破的记录啊。”
+
+: DrawChara( "Leo", 3, 0, 0, 0.5, 0.0, 3, "R" )
+\CN["雷欧"]
+“哈，哈，下次再做的话我绝对会赢的。”
+
+: DrawChara( "Gin", 10, 0, 0, 0.5, 0.0, 4, "L" )
+\CN["银子"]
+“哈？说梦话要睡！”
+
+: JumpLayer( 5, 0, -50, 1, 0.25)
+: DrawChara( "Momo",12, 0)
+: PlayVoice( "Voices/vo01_mom0123" )
+\CN["桃子"]
+“两个人都不能在那种地方亲亲！
+真的很讨厌！”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+话虽如此，果然吃多了。
+再也走不动了。
+
+//●演出：黄菜子がやってくる
+//Yoshi：センターに黄菜子
+: HideWnd()
+: PlaySe( "SE/Se_Fusuma01" )
+: DrawChara( "Kinako", 1, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0081" )
+\CN["黄菜子"]
+“你好”
+
+\CN["饭店的店长"]
+“哦！黄菜子，欢迎光临！”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0082" )
+\CN["黄菜子"]
+“那个，外面贴着的那个小狗，因为叫‘那个’
+拜托了”
+
+//Yoshi：センターに桃
+: HideWnd()
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 5, "C" )
+: Wait()
+: ImpactLayer( 5, 0.1, 0.1, 1, 0.25)
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0124" )
+\CN["桃子"]
+“黄菜子，要挑战吗！？”
+
+//Yoshi：右にレオ
+: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 3, "R" )
+\CN["雷欧"]
+“不愧是……对黄菜子不是很严厉吗？”
+
+//Yoshi：左に銀
+: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 4, "L" )
+\CN["银子"]
+“我觉得还是放弃比较好……”
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+\CN["饭店的店长"]
+“黄菜子，怎么办？”
+
+嗯？感觉店长一定要挑战一下
+就像在看黄菜子一样……。
+
+\CN["客人A"]
+“是黄菜子的挑战吗……很期待啊。”
+
+客人也边笑边看。
+
+——然后，马上就能明白客人反应的理由。
+
+//●演出：時間経過
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["饭店的店长"]
+“好的，结束了！”
+
+//Yoshi：センターに黄菜子
+: HideWnd()
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: Wait()
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0083" )
+\CN["黄菜子"]
+“咕嘟咕嘟……呼……已经结束了吗？”
+
+即使结束了15分钟的限制时间黄菜子还是很从容
+感觉。
+
+\CN["饭店的店员"]
+“黄菜子，527杯！”
+
+//Yoshi：右にレオ、左に銀、センターに桃
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Leo", 2, 0, 0, 0.5, 0.0, 3, "R" )
+: DrawChara( "Gin",21, 0, 0, 0.5, 0.0, 4, "L" )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["银子"]
+“……是骗人的吧。”
+
+\CN["雷欧"]
+「…………」
+
+黄菜子明明那么小，却吃得很厉害。
+
+: DrawChara( "Momo",12, 0)
+: PlayVoice( "Voices/vo01_mom0125" )
+\CN["桃子"]
+“我一直在想，那个小小的身体到底在哪里……。
+而且体型完全没变……”
+
+//Yoshi：センターに黄菜子
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Kinako", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0084" )
+\CN["黄菜子"]
+“可能还想吃点……”
+
+//Yoshi：センターにレオ
+//: EraseChara( "Kinako", 0.5 )
+//: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Leo", 4, 0 )
+\CN["雷欧"]
+“诶……？”
+
+//Yoshi：センターに黄菜子
+//: EraseChara( "Leo", 0.5 )
+: DrawChara( "Kinako",17, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0085" )
+\CN["黄菜子"]
+“桃子的炸鸡块看上去很好吃。
+对不起，我也要炸鸡块”
+
+\CN["饭店的店长"]
+“爱啊！黄菜子，你特别是我请客。”
+
+: DrawChara( "Kinako", 1, 1)
+: PlayVoice( "Voices/vo02_kin0086" )
+\CN["黄菜子"]
+“嘿嘿，谢谢。”
+
+//Yoshi：センターにレオ
+//: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["雷欧"]
+「…………」
+
+: EraseChara( "Kinako", 0.5 )
+怎么说呢，上面有上面有上面的人，不能用外表来判断。
+
+那是很清楚的一天。
+
+//Yoshi：背景消去
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

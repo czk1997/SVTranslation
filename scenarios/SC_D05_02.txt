@@ -1,0 +1,324 @@
+//========================================================
+//○六角山の魔物退治１
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“所谓六角山，就是从这里往西的西都地方有名的山
+虽然有，但是如果在那里出现了奇怪的魔物就好了」
+
+\CN["眼镜店"]
+“去惩办他们的家伙也完全没有回来。
+恐怕是被那个魔物给打败了吧”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4357" )
+\CN["无黑色"]
+“你知道是什么样的魔物吗？”
+
+\CN["眼镜店"]
+“因为没有直接接见，所以不能断言……”
+
+\CN["眼镜店"]
+“从听到受灾情况之类的话来看
+我觉得是触手系的魔物”
+
+: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk4358" )
+\CN["无黑色"]
+“触手系的魔物啊。
+如果对方是这样的话，那倒是挺有道理的……”
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：依頼を受ける
+//■選択肢２：もう少し考える
+//――――――――――――――――――――――――――――
+\CI["接受委托"]
+\CI["再考虑一下"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：依頼を受けるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+: DrawChara( "Mukuro", 0, 0)
+\CN["眼镜店"]
+“啊！能帮我做吗！？真不愧是无黑啊。”
+
+\CN["眼镜店"]
+“刚才也说过了，魔物好像在六角山。
+如果是触手系的魔物的话，请注意不要被吞噬”
+
+//＠マップ解放：六角山
+//●シーンエンド
+: SetMission( "SC_D05_02_1", "InProgress" )
+: FastTravelMapOn( "Rokkakuyama" )
+: DestinationMap( "Map_Dungeon45_04_Rokkakuyama" )
+事件信息更新了。
+
+: Return
+
+*sc001_1
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+「魔物好像在六角山。
+如果是触手系的魔物的话，请注意不要被吞噬”
+
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：もう少し考えるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+: DrawChara( "Mukuro", 0, 0)
+\CN["眼镜店"]
+“这样啊。等，如果还想接受的话再和我说话。”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○六角山の魔物退治２
+//========================================================
+*sc002
+: if ( MissionProgress( "SC_D05_02_1", "InProgress" ) == false )
+	: Jump( "Scenarios/Map_Event*Closed" )
+: else
+	\CI["准备好了"]
+	\CI["再次确认"]
+	前面好像有什么……。
+	: if ($choice == 1) Return endif
+: endif
+//●場所：六角山・頂上
+//●状況：触手に人が襲われている
+*sc002_1
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Summit01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: cutinfile = "CutinFg15"; Call("Scenarios/Common*CutinFadeIn");
+: PlaySe( "SE/Se_Monster01" )
+: PlayBgm("BGM/16_TM001")
+: ShowWnd()
+――――――――――――――――――――
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4359" )
+\CN["无黑色"]
+“啊，那是……！？”
+
+在触手系的魔物中也是大型的，据说非常危险
+埃维尔虫。
+
+\CN["男人"]
+“啊，救命啊……！好，拜托了……这个，这样的怪物
+没想到是对方……！”
+
+: DrawChara( "Mukuro", 6, 0, 3)
+: PlayVoice( "Voices/vo00_muk4360" )
+\CN["无黑色"]
+“等一下！马上来救你——”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "DR"; Call( "Scenarios/Common*FgEffOut");
+: PlaySe( "SE/Se_Monster01" )
+\CN["触手"]
+“哦哦哦哦——”
+
+正要去营救的时候，触手大声地叫。
+
+\CN["男人"]
+“啊……啊…救……啊啊啊啊啊啊啊啊啊啊啊！！”
+
+//●演出：男　触手に吸い込まれる
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+在我方救助不久，男子就被触手吞没了。
+
+//: EraseChara( "Mukuro", 0.5 )
+//●演出：無黒　刀を抜く
+: DrawChara( "Mukuro", 27, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk4361" )
+\CN["无黑色"]
+“这家伙就是那个魔物吗？据说吃死了好几个人……。
+看来入口店的预想是对的啊”
+
+触手似乎决定下一个目标是我
+一边盯着这边，一边驱散杀气袭击过来——
+
+//●読み：細切れ（こまぎれ）
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk4362" )
+\CN["无黑色"]
+“给你切成细条！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：エビルワーム
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：六角山の魔物退治３　へ
+//■敗　北：触手の悪魔に呑み込まれて　へ
+//――――――――――――――――――――――――――――
+//＠戦闘：エビルワーム,2,2,0,sc003,lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*lose" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Summit01_01", "BGM/22_BM003", 1071, -1, -1, "Scenarios/SC_D05_02*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 1, 0, "BGImage/BG_Summit01_01", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Jump( "*lose" )	//敗北した場合
+: endif
+//========================================================
+//○六角山の魔物退治３
+//========================================================
+*sc003
+//●演出：無黒　アクション演出
+//: DrawChara( "Mukuro", 46, 0, 5, 0.5, 0.0, 3, "RC" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Summit01_01", 0.0 )
+: FadeIn( 0.5 )
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_a002_0_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4363" )
+\CN["无黑色"]
+“咚——”
+
+//: DrawChara( "Mukuro", 24, 0)
+估计触手的气势会消失，所以跳得很大。
+
+//: DrawChara( "Mukuro", 46, 0)
+: PlayVoice( "Voices/vo00_muk4364" )
+\CN["无黑色"]
+“——八重樱流・{天冲，天冲}！！”
+
+//: EraseChara( "Mukuro", 0.5 )
+//●演出：斬撃エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: PlaySe( "SE/Se_Monster01" )
+: ShowWnd()
+——鱼尾狮。
+
+: StopBgm( 1.0 )
+触手发出临终魔，在那里屏息。
+
+之后剩下了很大的肉块。
+
+为了刚才被吃掉而死亡的人，还有其他牺牲的人
+先默哀一下，敌人抓到了。
+
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk4365" )
+\CN["无黑色"]
+“那么，把讨伐证明部位割下来
+带到入口店吗？”
+
+//●演出：斬撃エフェクト後、退場する
+//●演出：場面転換トランジション
+//●場所：西都・居酒屋
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: LoadMap( "Map_Town05_03_Saito", "Kuchiireya", "Scenarios/SC_D05_02*sc003_1")
+
+*sc003_1
+: Call("Scenarios/map_town05_saito_init*Map03_1")	//初期化
+: RpgCharaTurn( "Kuchiireya", "D" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["眼镜店"]
+“欢迎回来。那个样子，好像能很好地治退啊。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4366" )
+\CN["无黑色"]
+“和你预想的一样。对方是触手系的怪物
+那也是非常危险的家伙”
+
+: DrawChara( "Mukuro", 0, 0)
+告诉入口店对方是埃维尔姆。
+
+\CN["眼镜店"]
+“艾维尔姆……？好奇怪啊……。
+那是在西都那边不存在的物种啊”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4367" )
+\CN["无黑色"]
+“是吗？感觉像是混在什么地方来的。”
+没有吗？”
+
+\CN["眼镜店"]
+“啊，是这样啊。想都想不出来。”
+
+\CN["眼镜店"]
+“那无黑，这是报酬。下次再拜托你了。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+无黑收到了报酬。
+
+//●シーンエンド
+: $money += 2500
+: SetMission( "SC_D05_02_1", "Successed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: if ( MissionProgress( "SC_D05_04_2", "Successed", "Failed" ) == true || MissionProgress( "SC_D05_04_3", "Successed", "Failed" ) == true || MissionProgress( "SC_D05_04_4", "Successed", "Failed" ) == true )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_07")
+: else
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif
+
+*lose
+//●シーン：「触手の悪魔に呑み込まれて」へ
+//＠シナリオジャンプ：SC_D05_03
+: Jump( "Scenarios/SC_D05_03" )

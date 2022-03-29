@@ -1,0 +1,747 @@
+//========================================================
+//○紅美との出会い
+//========================================================
+//●視点：黄菜子視点
+//●場所：鬼灯屯所
+//●背景：鬼灯屯所・昼
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 5 )
+: CharaCostume( "Azami", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Bebi", 0 )
+: CharaCostume( "Ryu", 0 )
+: HideWnd()
+: PlayBgm("BGM/36_ID03")
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 1.0 )
+: Wait()
+//Yoshi：右にレオ、左にベビ
+: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 3, "R" )
+: DrawChara( "Bebi", 4, 0, 0, 0.5, 0.0, 4, "L" )
+: ShowWnd()
+\CN["雷欧"]
+“啊——————！那是我的菜！
+你在干什么！”
+
+: PlayVoice( "Voices/vo07_beb0003" )
+\CN["红美"]
+“因为剩下了，所以一定不要。
+ 善良的鄙人给他吃了！”
+
+\CN["雷欧"]
+“对，那个是我最喜欢的东西
+明明留到了最后……”
+
+: DrawChara( "Leo", 9, 0)
+\CN["雷欧"]
+“我不会原谅你……小矮子，你这家伙，绝对不会原谅你的！”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+//Yoshi：右に無黒、左に黄菜子
+: DrawChara( "Mukuro",10, 0, 0, 0.5, 0.0, 3, "R" )
+: DrawChara( "Kinako", 3, 0, 0, 0.5, 0.0, 4, "L" )
+: PlayVoice( "Voices/vo02_kin0012" )
+\CN["黄菜子"]
+“啊，那个……吵架是……”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk0177" )
+\CN["无黑"]
+“哈~……你们不能能安静地吃饭吗？”
+
+//Yoshi：黄菜子退場、左にレオ
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Leo", 6, 0, 0, 0.5, 0.0, 4, "L" )
+\CN["雷欧"]
+“因为，这家伙把我最重要的菜……！”
+
+//Yoshi：センターに紅美
+: DrawChara( "Bebi", 6, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo07_beb0004" )
+\CN["红美"]
+“不赶紧吃最糟糕了！
+这个世界是靠弱肉强食来维持的哟？”
+
+: DrawChara( "Leo", 9, 0)
+\CN["雷欧"]
+“啊，我说了，你！
+喂，小矮子，现在马上出来！”
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0005" )
+\CN["红美"]
+“别小矮子了，来吧！红美来了！”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+//Yoshi：レオと紅美退場、左に黄菜子
+: DrawChara( "Kinako",12, 0, 0, 0.5, 0.0, 4, "L" )
+: PlayVoice( "Voices/vo02_kin0013" )
+\CN["黄菜子"]
+“呜呜……两个人都是，所以吵架……”
+
+: DrawChara( "Mukuro",28, 0)
+: PlayVoice( "Voices/vo00_muk0178" )
+\CN["无黑"]
+“黄菜子，这是常有的事。还是放任不管比较好。
+因为那样做很开心”
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0014" )
+\CN["黄菜子"]
+“是、是吗……？
+那我再来一碗饭吧”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0179" )
+\CN["无黑"]
+“是吗，是吗……顺便问一下，现在是第几碗？”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0015" )
+\CN["黄菜子"]
+“嗯……确实是第五碗了。”
+
+//●演出：黄菜子　ご飯をよそいに退場させる
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Mukuro",22, 0)
+: PlayVoice( "Voices/vo00_muk0180" )
+\CN["无黑"]
+“……对，第5碗吗……。
+哈哈，那么小的身体在哪里，会进入那样的地方呢？”
+
+: EraseChara( "Mukuro", 0.5 )
+午饭不吃很多的话就没力气了
+脑子也转不过来了。
+
+//Yoshi：右にレオ、左に紅美
+: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 3, "R" )
+: DrawChara( "Bebi", 1, 0, 0, 0.5, 0.0, 4, "L" )
+: PlayVoice( "Voices/vo07_beb0006" )
+\CN["红美"]
+“雷欧什么的，就让在下的火焰烧得焦黑吧。”
+
+\CN["雷欧"]
+“啊？怎么说呢，你是不会吐出火焰的吧……。
+ 充其量，火柴的火不是好地方吗……”
+
+: PlayVoice( "Voices/vo07_beb0007" )
+\CN["红美"]
+“哈？好好吐出来了！
+完全没有拿出真本事就完了！”
+
+//●演出：あざみ登場する
+//Yoshi：センターにあざみ
+: EraseChara( "Bebi", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: ResetLayer(4)
+: ResetLayer(3)
+: Wait()
+: PlaySe("SE/Se_Foot03")
+: DrawChara( "Azami", 2, 0, 0, 0.0, 0.0, 5, "LC" )
+: FadeOutLayer( 5, 0.0 )
+: SetLayerRelPos( 5, -50, 0, 0.0, 0)
+: SetLayerRelPos( 5, 50, 0, 0.5, 0)
+: FadeInLayer(5, 0.5)
+: Wait()
+//: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo05_aza0034" )
+\CN["爱彩弥"]
+「啊，红美，在一个好地方。
+ 喂，给我喷火！”
+
+//: DrawChara( "Leo", 5, 0)
+//: DrawChara( "Bebi",13, 0)
+: DrawChara( "Bebi", 13, 0, 0, 0.0, 0.0, 3, "RC" )
+: FadeOutLayer( 3, 0.0 )
+: SetLayerRelPos( 3, 50, 0, 0.0, 0)
+: SetLayerRelPos( 3, -50, 0, 0.5, 0)
+: FadeInLayer(3, 0.5)
+: Wait()
+: PlayVoice( "Voices/vo07_beb0008" )
+\CN["红美"]
+“……海螺，烤焦了你还不知道吗？”
+
+//●演技：炎を吐こうとしていますが、ライターの火ぐらいしか出ない
+: DrawChara( "Bebi", 3, 0)
+: PlayVoice( "Voices/vo07_beb0009" )
+\CN["红美"]
+“呼——————！”
+
+: PlaySe("SE/Se_Fire01")
+——酒窝。
+
+: DrawChara( "Azami", 3, 0)
+: PlayVoice( "Voices/vo05_aza0035" )
+\CN["爱彩弥"]
+“圣诞老人，红美。
+我本来想抽烟的，可是火没了，忘了……”
+
+: DrawChara( "Azami", 4, 0)
+: PlayVoice( "Voices/vo05_aza0036" )
+\CN["爱彩弥"]
+“我觉得红美的这个刚刚好。”
+
+//Yoshi：あざみ退場
+: HideWnd()
+: SetLayerRelPos( 5, 100, 0, 0.5)
+: EraseChara( "Azami", 0.5 )
+: Wait()
+: ResetLayer(5)
+: DrawChara( "Bebi", 0, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0010" )
+\CN["红美"]
+「…………」
+
+: DrawChara( "Leo", 12, 0, 0, 0.5, 0.0, 4, "LC" )
+\CN["雷欧"]
+“哈哈哈哈哈哈哈哈哈哈哈哈♪”
+
+: DrawChara( "Bebi", 1, 2)
+: PlayVoice( "Voices/vo07_beb0011" )
+\CN["红美"]
+“哇，别笑了！”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako", 6, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0016" )
+\CN["黄菜子"]
+“真是的！雷欧和红美不能吵架。”
+
+: EraseChara( "Kinako", 0.5 )
+刚才无黑也说过
+这是常有的事。
+
+而且我在想，
+这样热闹的生活要是能一直持续下去就好了
+
+\CN["鬼灯队士・女C"]
+“我一直很在意，但是……”
+红美到底是什么啊？”
+
+最近，刚入伍鬼灯的谍报负责人的孩子问我。
+
+//Yoshi：右にレオ、左に紅美
+: DrawChara( "Leo", 5, 0, 0, 0.5, 0.0, 3, "R" )
+: DrawChara( "Bebi", 0, 0, 0, 0.5, 0.0, 4, "L" )
+: PlayVoice( "Voices/vo07_beb0012" )
+\CN["红美"]
+“嗯？在下，我是武士。”
+
+\CN["鬼灯队士・女C"]
+“啊……不，是那个种族的东西……。
+我没见过像红美那样的野兽……”
+
+\CN["雷欧"]
+“啊，那是，是啊。
+说话的野兽真是少见啊……”
+
+\CN["鬼灯队士・男D"]
+“……我觉得不是这个问题……”
+
+\CN["鬼灯队士・女C"]
+“这么说来，红美是怎样经过鬼灯饲养的呢？”
+变成这样了？”
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0013" )
+\CN["红美"]
+“在下，我可不是被养的！”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+//Yoshi：右に無黒、左に黄菜子
+: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "R" )
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 4, "L" )
+: PlayVoice( "Voices/vo00_muk0181" )
+\CN["无黑"]
+“大概是前年左右吧？
+确实，被黄菜子捡到了……”
+
+: PlayVoice( "Voices/vo02_kin0017" )
+\CN["黄菜子"]
+“这样啊……已经变成那样了呢。”
+
+//●演出：回想に入る
+//●背景：黒画面
+: StopBgm( 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: HideWnd()
+: EraseImage( 1, 0, 1.0)
+: Wait()
+: ResetLayer(1)
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Rule_00", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: ShowWnd()
+——那是刚入队鬼灯不久的事。
+
+当时发生了很多事，还没怎么和鬼灯的各位
+还没习惯的时候的事。
+
+和红美相遇是在那个时候——
+这是因为考试时而进入山林的事情。
+
+//●場所：山の中
+//●背景：山
+//●演技：過去の黄菜子。口数少ない。無口。敬語じゃないです
+//Yoshi：センターに黄菜子
+//＠黄菜子　刀ありに変更
+: CharaCostume( "Kinako", 5 )
+: HideWnd()
+: PlayBgm("BGM/03_CM003")
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: DrawChara( "Kinako",11, 0, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0018" )
+: ShowWnd()
+\CN["黄菜子"]
+“……这就结束了，只剩下回去了。”
+
+我几经周折才加入鬼灯
+据说是要等上高田山然后并返回
+我参加了这样的考试。
+
+鬼灯要求完成这个测试
+第一次被认为是一个人。
+
+//●ＳＥ：子犬のような鳴き声
+: PlaySe("SE/Se_Dog01")
+从远处传来什么声音。
+
+: PlayVoice( "Voices/vo02_kin0019" )
+\CN["黄菜子"]
+“刚才的……野兽的声音？好小……”
+
+有拼命寻求帮助的声音。
+
+小型的野兽和草食兽受到肉食兽的袭击
+就是那样吧。
+
+野兽的世界是弱肉强食。
+人介入那里绝对不好。
+
+: DrawChara( "Kinako",12, 0)
+: PlayVoice( "Voices/vo02_kin0020" )
+\CN["黄菜子"]
+“……我知道……但是——”
+
+一定是和那时的自己重叠了吧。
+
+从最底层的状况中得到帮助的自己的状况。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: StopBgm( 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition04", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+朝着有声音的方向走去。
+
+: PlaySe("SE/Se_Monster04")
+\CN["野兽"]
+“咻咻咻……”
+
+//●演技：紅美、口調が変わっています
+//Yoshi：センターに紅美
+: PlayBgm("BGM/16_TM001")
+: DrawChara( "Bebi", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo07_beb0014" )
+\CN["红美"]
+“哦，哦，我被吃了也不好吃……”……
+ 叫他走开……！”
+
+: PlayVoice( "Voices/vo07_beb0015" )
+\CN["红美"]
+“呀啊啊啊啊！好、好、好、好、救救我！！”
+
+大和狼——
+
+//●演技：心の声です
+//Yoshi：センターに黄菜子
+: EraseChara( "Bebi", 0.5 )
+: DrawChara( "Kinako", 7, 0, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0021" )
+\CN["黄菜子"]
+（从未见过的野兽……那到底是——）
+
+这样下去会被大和狼吃掉。
+不救的话！
+
+//●ＣＧ：アクションシーン（黄菜子）
+: HideWnd()
+: PlaySe("SE/Se_Dog01")
+: SetLayerRelPos( 3, 100, 0, 0.15)
+: EraseChara( "Kinako", 0.15 )
+: Wait()
+: ResetLayer(3)
+: AutoFaceThumbnail( false )
+: DrawImage( 8, 0, "EventCG/evc_a002_0_1_0100000_1000000_0_0", 0.5)
+: Wait()
+: ShowWnd()
+跑了出出去，阻挡在大和狼面前。
+
+: PlaySe("SE/Se_Monster04")
+\CN["野兽"]
+“卡鲁鲁鲁——”
+
+狼从小兽向我改变目标。
+
+发出威吓的声音，把我的喉咙割断
+把姿势放低。
+
+: PlayVoice( "Voices/vo02_kin0022" )
+\CN["黄菜子"]
+“一击定胜负……！”
+
+拔出我身高那么高的大刀『扬羽』。
+
+——是守护我生命的重要武器
+——是和我经常在一起的存在
+——夺走了我重要的人雄起。
+
+: PlayVoice( "Voices/vo02_kin0023" )
+\CN["黄菜子"]
+“呀！”
+
+//●演出：斬撃演出
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+\CN["野兽"]
+「――――――――」
+
+狼向我剥下牙不久就冒着血飞沫倒在了那里。
+
+失去了头部的身体嗡嗡地乱动
+不久就变成了一块肉。
+
+: PlayVoice( "Voices/vo02_kin0024" )
+\CN["黄菜子"]
+「…………」
+
+手哆嗦。心里已经冷了。
+
+用自己的手夺走什么生命的时候总是这样。
+
+: StopBgm( 0.5 )
+不管是人还是动物和野兽都一样。
+
+//●ＣＧ消去
+: HideWnd()
+: EraseImage( 9, 0, 0.5)
+: EraseImage( 8, 0, 0.5)
+: Wait()
+: ResetLayer(9)
+: ResetLayer(8)
+: AutoFaceThumbnail( true )
+//Yoshi：右に黄菜子、左に紅美
+: DrawChara( "Kinako", 3, 0, 1, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Bebi", 8, 0, 0, 0.5, 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0016" )
+\CN["红美"]
+“啊……啊…啊啊……”
+
+: PlayBgm("BGM/09_CM009")
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0025" )
+\CN["黄菜子"]
+“已经没关系了……”
+
+抱着害怕的小野兽的孩子。
+
+: DrawChara( "Bebi", 2, 0)
+: PlayVoice( "Voices/vo07_beb0017" )
+\CN["红美"]
+“……啊，啊，谢谢你……你真坚强……”
+
+: DrawChara( "Kinako", 8, 0)
+: PlayVoice( "Voices/vo02_kin0026" )
+\CN["黄菜子"]
+“不……”
+
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+我还不够坚强坚强的。
+
+总之，这孩子怎么办？
+
+//●演出：あざみ登場する
+//Yoshi：右に黄菜子、左にあざみ、センターに紅美
+: CharaCostume( "Azami", 3 )
+: PlaySe("SE/Se_Foot01")
+: DrawChara( "Azami", 0, 0, 0, 0.0, 0.0, 4, "L" )
+: FadeOutLayer( 4, 0.0 )
+: SetLayerRelPos( 4, -50, 0, 0.0, 0)
+: SetLayerRelPos( 4, 50, 0, 0.5, 0)
+: FadeInLayer(4, 0.5)
+: Wait()
+: PlayVoice( "Voices/vo05_aza0037" )
+\CN["爱彩弥"]
+“我看见了，黄菜子。干的不错。”
+
+: DrawChara( "Azami",17, 0)
+: PlayVoice( "Voices/vo05_aza0038" )
+\CN["爱彩弥"]
+“嗯？你抱着的野兽是……”
+
+: DrawChara( "Kinako",10, 0, 1, 0.25, 0.0, 3, "R" )
+: DrawChara( "Bebi", 2, 0, 0, 0.25, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo02_kin0027" )
+\CN["黄菜子"]
+“被狼袭击了……”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0039" )
+\CN["爱彩弥"]
+“……黄菜子，我一般不会说不好的话。
+ 还是杀了他比较好”
+
+: DrawChara( "Kinako", 7, 0)
+: PlayVoice( "Voices/vo02_kin0028" )
+\CN["黄菜子"]
+「……！？」
+
+: PlayVoice( "Voices/vo05_aza0040" )
+\CN["爱彩弥"]
+“那家伙不是普通的野兽。”
+
+: PlayVoice( "Voices/vo05_aza0041" )
+\CN["爱彩弥"]
+“大概，贝希摩斯的幼成体……不，有那种东西吗？”
+我不知道……我觉得确实存在着荒唐的东西”
+
+: DrawChara( "Azami", 6, 0)
+
+: PlayVoice( "Voices/vo02_kin0029" )
+\CN["黄菜子"]
+“呃，贝希莫斯的……？
+但是，贝希莫斯——”
+
+在我出生之前就已经越过海洋的国家
+被称为“生物的天敌”的存在。
+
+而且，在20多年前，大和也出现了。
+
+但是，那个好像在不知不觉中消失了。
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0042" )
+\CN["爱彩弥"]
+“黄菜子，如果你不做的话，我就杀了你。
+ 对不起，能把那个交给我吗？”
+
+: DrawChara( "Azami", 6, 0)
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0030" )
+\CN["黄菜子"]
+「…………」
+
+: DrawChara( "Bebi", 8, 0)
+: PlayVoice( "Voices/vo07_beb0018" )
+\CN["红美"]
+“不，不愿意……我不想死……我没什么不好的
+ 我没有……”
+
+: DrawChara( "Kinako",10, 0)
+: PlayVoice( "Voices/vo07_beb0019" )
+\CN["红美"]
+“而且贝希莫斯是什么啊……
+ 我不知道你的意思……”
+
+: DrawChara( "Azami",17, 0)
+: PlayVoice( "Voices/vo05_aza0043" )
+\CN["爱彩弥"]
+“……那，那家伙，要说别人的话吗！？”
+
+: DrawChara( "Azami",22, 0)
+: PlayVoice( "Voices/vo05_aza0044" )
+\CN["爱彩弥"]
+“你到底在哪里学会的语言？
+ 是谁告诉我的吗？”
+
+: PlayVoice( "Voices/vo07_beb0020" )
+\CN["红美"]
+“我不知道……呃……我，不知什么时候在这种地方
+ 我不知道为什么会说话……”
+
+: DrawChara( "Azami",18, 0)
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0031" )
+\CN["黄菜子"]
+“局长……这孩子没有撒谎……”
+
+: DrawChara( "Kinako",10, 0)
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0045" )
+\CN["爱彩弥"]
+“……嗯。那么，黄菜子，你想怎么做？”
+
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0032" )
+\CN["黄菜子"]
+“我不想杀人”
+
+: PlayVoice( "Voices/vo05_aza0046" )
+\CN["爱彩弥"]
+“但是，如果巨兽长大成为人类的威胁的话
+ 怎么办？在那之前你能杀吗？”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0033" )
+\CN["黄菜子"]
+「是的！那时我要负责杀死这个孩子。
+ 我来照顾她”
+
+就算再怎么像野兽，也要把在我心中抽泣颤抖的孩子
+我没能置之不理。
+
+: DrawChara( "Kinako",10, 0)
+//●演技：心の声です
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0047" )
+\CN["爱彩弥"]
+（嘛，如果有威胁的话，我可以亲手处理。）
+
+//●演技：心の声です
+: DrawChara( "Azami", 0, 0)
+: PlayVoice( "Voices/vo05_aza0048" )
+\CN["爱彩弥"]
+（那个黄菜子如此强烈地主张自己的想法。
+嗯，这家伙的存在一定会成为黄菜子的支柱吧）
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0034" )
+\CN["黄菜子"]
+“局长……！”
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0049" )
+\CN["爱彩弥"]
+“啊，知道了。知道了。
+ 那么，那个贝希莫斯的孩子就随你的便好了”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0050" )
+\CN["爱彩弥"]
+“但是，刚才说的话，绝对不要忘记。”
+
+: DrawChara( "Azami", 0, 0)
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0035" )
+\CN["黄菜子"]
+“是的！”
+
+: DrawChara( "Bebi", 2, 0)
+: PlayVoice( "Voices/vo07_beb0021" )
+\CN["红美"]
+“呜呜……啊，谢谢……谢谢…”
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0036" )
+\CN["黄菜子"]
+“不用哭那么多，没关系。
+今后我会在你身边……对吧……嗯……”
+
+对了。名字怎么办？
+
+: DrawChara( "Kinako", 5, 0)
+: PlayVoice( "Voices/vo02_kin0037" )
+\CN["黄菜子"]
+“因为是贝希莫斯的婴儿
+ 嗯，小贝比怎么样？”
+
+: DrawChara( "Bebi", 0, 0)
+: PlayVoice( "Voices/vo07_beb0022" )
+\CN["红美"]
+“呃，贝比……？嗯，我，这样就可以了！”
+
+因为是贝希莫斯的婴儿，所以叫做贝比斯。
+于是就借用了像这样的汉字，变成了“红美”。
+
+这就是我和红美的相遇。
+现在对我来说是非常重要的存在。
+
+//＠コス戻す
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Azami", 0 )
+: HideWnd()
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Azami", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+: Wait()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition04", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+//●演出：場面転換トランジション
+
+——那之后过了几天。
+
+//●場所：黄菜子の部屋
+//●背景：鬼灯屯所・和室・昼
+
+//Yoshi：右に黄菜子、左に紅美
+: DrawChara( "Kinako", 0, 0, 1, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Bebi", 2, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo07_beb0023" )
+\CN["红美"]
+“呐，黄菜子”
+
+: PlayVoice( "Voices/vo02_kin0038" )
+\CN["黄菜子"]
+“怎么了？”
+
+: DrawChara( "Bebi",10, 0)
+: PlayVoice( "Voices/vo07_beb0024" )
+\CN["红美"]
+“在这个国家有武士吗？”
+
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+//Yoshi：センターに紅美
+: DrawChara( "Bebi", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo07_beb0025" )
+\CN["红美"]
+“所以啊，我要成为武士。
+我要成为武士，保护黄菜子”
+
+红美把自己说成是“在下”
+“～でごじゃる”是从这时开始说起的。
+
+: EraseChara( "Bebi", 0.5 )
+//●シーンエンド
+//サイドエピソード終了処理
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

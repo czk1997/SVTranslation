@@ -1,0 +1,1062 @@
+//========================================================
+//○部下との蜜月
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mikage", 0 )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_C04_85" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_C04_85" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●背景：和室・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 1.0 )
+: Wait()
+: DrawChara( "Mikage", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0130" )
+\CN["御影"]
+“京子，好像已经完全没事了呢。
+看起来和以前的脸色完全不一样”
+
+我这么一打招呼，京子就恭敬地垂着头。
+
+: PlayVoice( "Voices/vo50_mob0001" )
+\CN["京子"]
+“让您担心了。
+像这样完全恢复了状态”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0131" )
+\CN["御影"]
+“呵呵，放心了。这也是托了无黑菩萨的福。”
+
+: PlayVoice( "Voices/vo50_mob0002" )
+\CN["京子"]
+“是的。”
+
+即使只是能像这样慢慢地说话
+奇迹般的事情。
+
+: DrawChara( "Mikage", 1, 0)
+: PlayVoice( "Voices/vo11_mik0132" )
+\CN["御影"]
+“你怎么那么扭扭捏捏的？”
+
+: PlayVoice( "Voices/vo50_mob0003" )
+\CN["京子"]
+“不，不，没什么。”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0133" )
+\CN["御影"]
+“呵呵，不用客气。
+你有什么想要我做的事吗？”
+
+: PlayVoice( "Voices/vo50_mob0004" )
+\CN["京子"]
+“……呃，御影大人……”
+
+京子带着惊讶和喜悦的表情这样说道。
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0134" )
+\CN["御影"]
+“那么，你希望我做什么？
+不要害羞，说说看”
+
+: PlayVoice( "Voices/vo50_mob0005" )
+\CN["京子"]
+“……是的。”
+
+点了点头，然后继续说下去。
+
+: PlayVoice( "Voices/vo50_mob0006" )
+\CN["京子"]
+“就这样，变得有精神了……那个……”
+
+: PlayVoice( "Voices/vo50_mob0007" )
+\CN["京子"]
+“好久没想被御影大人疼爱了……”
+
+像大量摄取了酒一样变红
+尽管如此，他还是继续向我投来目光。
+
+啊啊……多么可爱啊。
+
+: DrawChara( "Mikage", 5, 1)
+: PlayVoice( "Voices/vo11_mik0135" )
+\CN["御影"]
+“呵呵，京子真是没办法的孩子……”
+
+: PlayVoice( "Voices/vo50_mob0008" )
+\CN["京子"]
+“请不要认为我是个粗野的孩子……
+因为我已经和御影大人过了很久了……”
+
+笔帽儿。
+
+把手指贴在一堆辩解的繁琐的嘴唇上。
+
+: PlayVoice( "Voices/vo50_mob0009" )
+\CN["京子"]
+“美、美伢、大人……”
+
+: PlayVoice( "Voices/vo11_mik0136" )
+\CN["御影"]
+“我也……今晚不打算让你一个人呆着。”
+
+: PlayVoice( "Voices/vo50_mob0010" )
+\CN["京子"]
+“诶————嗯！？”
+
+//●演出：暗転
+//●ＳＥ：衣擦れの音
+: HideWnd()
+: StopBgm( 1.0 )
+: chara = "Mikage"; lay = 3; type = "WR"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: PlaySe( "SE/Se_Cloth01" )
+: CharaCostume( "Mikage", 1 )
+: DrawChara( "Mikage", 5, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+脱掉京子的衣服后，我也把衣服全部脱掉。
+
+: HideWnd()
+: chara = "Mikage"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: EraseImage( 1, 0, 1.0)
+: Wait()
+: ShowWnd()
+然后，移动到卧室——
+
+//●ＣＧ：部下と貝合わせ（御影）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0111001_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+: PlayVoice( "Voices/vo50_mob0011" )
+\CN["京子"]
+“御影大人……”
+
+//●演技：貝合わせをしています。
+: PlayVoice( "Voices/vo11_mik0137" )
+\CN["御影"]
+“嗯……身体还是那么棒……嗯，嗯……”
+
+: PlayVoice( "Voices/vo50_mob0012" )
+\CN["京子"]
+“嗯……！被御影大人看到了……
+重要的地方也紧贴在一起……”
+
+: PlayBackVoice( "Voices/BGV11_mik_aegi01" )
+我和京子互相成了一丝一毫的样子。
+
+: PlayVoice( "Voices/vo11_mik0138" )
+\CN["御影"]
+“好久不见之前……
+首先需要这边吧？”
+
+: StopBackVoice()
+//●演技：最初からディープキスを行っています。
+: PlayVoice( "Voices/vo11_mik0139" )
+\CN["御影"]
+“抬起头……嗯……嗯……”
+
+: PlayBackVoice( "Voices/BGV11_mik_fera01" )
+: PlayVoice( "Voices/vo50_mob0013" )
+\CN["京子"]
+“中……中…中…我知道……”
+
+京子的脸近在眼前，舌头和舌头紧紧地缠绕在一起。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0140" )
+\CN["御影"]
+（京子的舌头……很柔软……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0141" )
+\CN["御影"]
+（这种感觉……我也好久不见了……嗯……）
+
+自从京子倒下后，我就没有心情了。
+
+: PlayVoice( "Voices/vo50_mob0014" )
+\CN["京子"]
+“恩中……御影大人……御影大人的舌头
+好舒服……嘴里全部都进来了……”
+
+: PlayVoice( "Voices/vo50_mob0015" )
+\CN["京子"]
+“呃……嗯……中、珠、珠中……”
+
+: PlayVoice( "Voices/vo11_mik0142" )
+\CN["御影"]
+“再多吐舌头……缠在一起……嗯……呜…呜……呜……”……
+嗯……嗯…呃……呃……那个……”
+
+进到脑子里。
+这种感觉扩散开来，灵敏度会变得更加敏锐。
+
+: PlayVoice( "Voices/vo50_mob0016" )
+\CN["京子"]
+“请再给我一点，御影大人……”
+
+: PlayVoice( "Voices/vo11_mik0143" )
+\CN["御影"]
+“是啊，好久不见了……再淹死一点吧……”
+
+中穗。抽搐。嗯，中，中，普。
+
+在只有两个人的空间里，只有重叠着嘴唇的水声回响着。
+
+: StopBackVoice()
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0311001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：京子のアソコをグイグイと押し当てます。
+: PlayVoice( "Voices/vo11_mik0144" )
+\CN["御影"]
+“你的这里……从刚才开始就战战兢兢地反应着
+好像是。是不是受不了了？”
+
+//●演技：御影にアソコを押し当てられています。
+: PlayVoice( "Voices/vo50_mob0017" )
+\CN["京子"]
+“哈，啊啊，嗯……！
+美、御影大人…那、那是……嗯、啊啊！”
+
+: PlayBackVoice( "Voices/BGV11_mik_aegi01" )
+虽然只是口头接触
+只在同一个地方接触从刚才开始就多次颤抖的女性器官。
+
+: PlayVoice( "Voices/vo11_mik0145" )
+\CN["御影"]
+“呵呵，好像还是很容易感觉到呢。
+只是接吻，就这么湿了吗？”
+
+: PlayVoice( "Voices/vo50_mob0018" )
+\CN["京子"]
+“嗯……嗯……嗯……！”
+
+: PlayVoice( "Voices/vo50_mob0019" )
+\CN["京子"]
+“猜对了！
+御影大人的那个人……和我的那个人接触着……”
+
+: PlayVoice( "Voices/vo50_mob0020" )
+\CN["京子"]
+“心跳不已……真是毛骨悚然……！
+被淋湿了很多……啊，哈哈……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+中、中、中、水、水。
+
+京子的脚完全固定，我开始单方面责备。
+
+: PlayVoice( "Voices/vo50_mob0021" )
+\CN["京子"]
+“这个姿势……好像把一切都交给御影大人了……恩”
+
+: PlayVoice( "Voices/vo50_mob0022" )
+\CN["京子"]
+“非常有感觉……一个人做……呃……
+简直无法比拟……爱液都出来了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0411001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0146" )
+\CN["御影"]
+“呼……一个人？”
+
+: PlayVoice( "Voices/vo11_mik0147" )
+\CN["御影"]
+“……你在我不在的时候，随便安慰了自己吗？”
+
+试着用稍微有点施虐的语气低声细语。
+
+: PlayVoice( "Voices/vo50_mob0023" )
+\CN["京子"]
+“诶……那是……嗯……！”
+
+: PlayVoice( "Voices/vo50_mob0024" )
+\CN["京子"]
+“御影大人……！然后用力摩擦……
+嗯，啊，嗯，嗯……！”
+
+: PlayVoice( "Voices/vo11_mik0148" )
+\CN["御影"]
+“是吗？虽然和以前没什么变化？”
+
+虽然态度冷淡
+真的改变了腰的活动方式的角度。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0149" )
+\CN["御影"]
+（这个角度……应该能感觉到……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0150" )
+\CN["御影"]
+（当然我的克利特里斯……也会擦得很厉害……）
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+小中、小咕、小嘴、小栗。
+
+京子和我，两个人的爱液充分溢出成为润滑油。
+
+: PlayVoice( "Voices/vo50_mob0025" )
+\CN["京子"]
+“御影大人……不行，不行……！”
+
+: PlayVoice( "Voices/vo50_mob0026" )
+\CN["京子"]
+“是不是因为这个责任……敏感的地方，太过摩擦……！”
+
+: PlayVoice( "Voices/vo11_mik0151" )
+\CN["御影"]
+“敏感的地方在哪里？”
+
+: PlayVoice( "Voices/vo50_mob0027" )
+\CN["京子"]
+“嗯，那个，在那里啊……！
+现在正在擦……我的那个……！”
+
+: PlayVoice( "Voices/vo11_mik0152" )
+\CN["御影"]
+“光是那个我不知道。
+因为不知道……感觉会更糟……”
+
+给害羞的京子的那个
+将更大接触面涂长。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+哼！加油！狗熊！哼哼！
+
+: PlayVoice( "Voices/vo50_mob0028" )
+\CN["京子"]
+“啊啊啊啊啊啊啊啊啊啊！？”
+
+: PlayVoice( "Voices/vo50_mob0029" )
+\CN["京子"]
+“那个，不行……感觉太多了……变得奇怪了
+嗯，嗯，嗯……！”
+
+: PlayVoice( "Voices/vo50_mob0030" )
+\CN["京子"]
+“我变成笨蛋了……那个
+我的馒头……无法忍受这样的快感……！”
+
+: PlayVoice( "Voices/vo11_mik0153" )
+\CN["御影"]
+“呵呵，还差得远呢？”
+
+: PlayVoice( "Voices/vo50_mob0031" )
+\CN["京子"]
+“美、御影大人……难道在生气吗……？
+我、那个……一、一个人做的事……”
+
+: PlayVoice( "Voices/vo11_mik0154" )
+\CN["御影"]
+“嗯……？你看起来很生气吗？”
+
+: PlayVoice( "Voices/vo11_mik0155" )
+\CN["御影"]
+“从刚才开始，嗯，嗯……竟然把你……
+明明心情很好……？”
+
+: PlayVoice( "Voices/vo50_mob0032" )
+\CN["京子"]
+“比以前……嗯……责备得更厉害……”
+
+: PlayVoice( "Voices/vo50_mob0033" )
+\CN["京子"]
+“这样的话，我……马上就到了……”……
+哈哈……！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "evg_b001_1_1_0711002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+微微、微微、微微
+京子小小的身体在颤抖。
+
+京子对比平时更快的行为完全着迷。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0156" )
+\CN["御影"]
+（已经这么乱了……京子真是可爱的孩子）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0157" )
+\CN["御影"]
+（就这样让他做也可以……
+但是那样的话，确实会觉得很无聊呢）
+
+幸运的是我的优势不会变。
+如果可以的话，我想看到京子更加凌乱的样子……。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0158" )
+\CN["御影"]
+（……真想看看更加忍耐的京子啊）
+
+: PlayVoice( "Voices/vo50_mob0034" )
+\CN["京子"]
+“啊，那个御影大人……？”
+
+: PlayVoice( "Voices/vo50_mob0035" )
+\CN["京子"]
+“沉默地被责备的话……嗯♥</color>
+好像是被惩罚了……嗯…”
+
+: PlayVoice( "Voices/vo50_mob0036" )
+\CN["京子"]
+“哈，嗯……已经上去了……”♥</color>
+心情好的话，马上就到那里……啊啊啊…！”
+
+: HideWnd()
+: evfile = "evg_b001_1_1_0511002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0159" )
+\CN["御影"]
+“是吗？我看起来还很从容？”
+
+: PlayVoice( "Voices/vo50_mob0037" )
+\CN["京子"]
+“真是的……！刚才开始就很疼……”♥</color>
+腰也很僵硬……！”
+
+: PlayVoice( "Voices/vo50_mob0038" )
+\CN["京子"]
+“所以才那么激烈……”♥</color>
+嗯，啊，嗯，嗯！”
+
+京子咬紧牙关，还没有达到目的。
+力量就这样流向被子，在床单上留下了很强的皱纹。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo50_mob0039" )
+\CN["京子"]
+“不行啊……真的很帅……我要去……！”
+
+: PlayVoice( "Voices/vo50_mob0040" )
+\CN["京子"]
+“啊……啊啊啊啊啊啊啊啊…！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘎嘎，嘎嘎嘎嘎！
+
+看到了绝顶的预兆的那一瞬间。
+
+: PlayVoice( "Voices/vo11_mik0160" )
+\CN["御影"]
+“……呼”
+
+: PlayVoice( "Voices/vo50_mob0041" )
+\CN["京子"]
+“啊……啊……啊……呃……？”
+
+停止突然的动作，停止对京子的秘部的刺激。
+
+: PlayVoice( "Voices/vo50_mob0042" )
+\CN["京子"]
+“哈……看……美伢，大人……？”
+
+: HideWnd()
+: evfile = "evg_b001_1_1_0711002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0161" )
+\CN["御影"]
+「哎呀，怎么了？
+是你让我等的吧？”
+
+: PlayVoice( "Voices/vo50_mob0043" )
+\CN["京子"]
+“嗯……是，是……那是，所以……”
+
+: PlayVoice( "Voices/vo50_mob0044" )
+\CN["京子"]
+“我的那个……变得很悲伤。
+如果突然放弃的话……会很寂寞……嗯…”
+
+京子一下子露出悲伤的表情诉说着。
+
+那样的样子，在我心中确实会有精神上的快感。
+
+//●演技：心の声です
+: HideWnd()
+: evfile = "evg_b001_1_1_0511002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0162" )
+\CN["御影"]
+（啊，对了对了，就是这个♥</color>
+京子的这种表情，我还想再看看……）
+
+战战兢兢。
+我想更加满足这样的京子。
+
+只有那个想法会更加膨胀。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0163" )
+\CN["御影"]
+“呵呵，可爱的京子……
+你想变得那么舒服吗？”
+
+: PlayVoice( "Voices/vo50_mob0045" )
+\CN["京子"]
+“嗯……是，是……
+就这样心情舒畅……想传达给你……”
+
+: PlayVoice( "Voices/vo11_mik0164" )
+\CN["御影"]
+“像这样被骂了一顿……喘了很多……”
+
+: PlayVoice( "Voices/vo50_mob0046" )
+\CN["京子"]
+“嗯，果然……啊，又蹭了……！
+馒头，入口疼……腰浮起来了……恩”
+
+: PlayVoice( "Voices/vo50_mob0047" )
+\CN["京子"]
+“啊啊啊啊啊啊啊啊啊啊……！
+果然……这个感觉比刚才还要强烈……！”
+
+: PlayVoice( "Voices/vo50_mob0048" )
+\CN["京子"]
+“{阴道内，内}……一直疼着……！
+从里面战战兢兢地……嗯……啊…啊啊啊啊”
+
+京子带着酒醉的表情，流着口水。
+
+如果是其他的对手的话，一定会看到肮脏的丑态
+现在可爱和舒畅混杂着满足感。
+
+: PlayVoice( "Voices/vo11_mik0165" )
+\CN["御影"]
+“可以再感受一下吗……？”
+
+: PlayVoice( "Voices/vo50_mob0049" )
+\CN["京子"]
+“嗯……请让我继续干下去……”……
+我……已经忍不住了……极限了……！”
+
+: PlayVoice( "Voices/vo11_mik0166" )
+\CN["御影"]
+“哎呀，那可不得了……嗯…”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo50_mob0050" )
+\CN["京子"]
+“啊啊啊……！
+又来了……这次才是……啊，好帅……嗯……”
+
+: PlayVoice( "Voices/vo11_mik0167" )
+\CN["御影"]
+“什么时候都可以啊……嗯……啊…啊…啊”
+
+: PlayVoice( "Voices/vo50_mob0051" )
+\CN["京子"]
+“嗯……！
+啊啊啊啊，小i，嗯，嗯……！”
+
+确认京子的膝盖剧烈地颤抖，再次停止动作。
+
+: PlayVoice( "Voices/vo50_mob0052" )
+\CN["京子"]
+“～～～～～～！？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0511002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：半分泣いたように懇願しています。
+: PlayVoice( "Voices/vo50_mob0053" )
+\CN["京子"]
+“美伢，大人……又……又来了……还欺负我……”
+
+: PlayVoice( "Voices/vo50_mob0054" )
+\CN["京子"]
+“眼看就要结束了……别再阻止了……”……
+真的已经到极限了……明明想活下去的……！”
+
+: PlayVoice( "Voices/vo11_mik0168" )
+\CN["御影"]
+“……！”
+
+京子哭了一半以上，恳求达到顶峰。
+
+那个样子很可爱，喜欢得不得了。
+到现在为止焦躁的部分，更加煽情地映入我的眼帘。
+
+: PlayVoice( "Voices/vo50_mob0055" )
+\CN["京子"]
+“拜托了……请再让我开心一点吧……！”
+
+: PlayVoice( "Voices/vo11_mik0169" )
+\CN["御影"]
+“呵呵……那么，欺负人就到这里吧。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo50_mob0056" )
+\CN["京子"]
+“哈……啊啊啊啊啊啊……！
+我来捧场了……御影大人的，我来了……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+图中！哼！狗熊！枪杆！
+珠！一直！图中！图中枪！
+
+像插入一样激烈地突出腰部
+强行提高开始拉的绝顶的波。
+
+: PlayVoice( "Voices/vo50_mob0057" )
+\CN["京子"]
+“啊，啊啊啊……！
+全身都战战兢兢的……比以前更大了……！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0711002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo50_mob0058" )
+\CN["京子"]
+“恩哈哈哈！嗯呜呜哇！
+好、好、好…”
+
+: PlayVoice( "Voices/vo11_mik0170" )
+\CN["御影"]
+“嗯……这个不愧是……我也……！”
+
+: PlayBackVoice( "Voices/BGV11_mik_aegi02" )
+看着因快感而神魂颠倒的京子
+我也已经忍不住了。
+
+: PlayVoice( "Voices/vo50_mob0059" )
+\CN["京子"]
+“哈，一起就好，是吗……”
+
+: PlayVoice( "Voices/vo50_mob0060" )
+\CN["京子"]
+「就这样和我一起……御影大人也一起
+请心情舒畅……达到顶峰吧，嗯，啊啊啊……！”
+
+像那样的小孩子一样的要求，也让人感到非常开心。
+
+看来我也已经完全发烧了呢。
+
+: PlayVoice( "Voices/vo11_mik0171" )
+\CN["御影"]
+“嗯……走吧……我也快到了……”
+
+: PlayVoice( "Voices/vo50_mob0061" )
+\CN["京子"]
+“嗯！啊！啊！啊！啊啊！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0811002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo50_mob0062" )
+\CN["京子"]
+“好，好厉害……这次才是真的好……！”……！
+啊，啊，嗯，嗯~～～！”
+
+: PlayVoice( "Voices/vo11_mik0172" )
+\CN["御影"]
+“哇，我也是……呃……嗯，嗯……！”
+
+: PlayVoice( "Voices/vo50_mob0063" )
+\CN["京子"]
+“啊啊啊啊～～～～～！”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo11_mik0173" )
+\CN["御影"]
+“啊……啊…好…好…啊…啊……啊……啊………啊……
+哈……！啊啊……嗯……！”
+
+//●ＣＧ差分：潮（京子）
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0611013_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+吓一跳！吓一跳！比酷、比酷！
+看、看、看！
+
+: PlayBackVoice( "Voices/BGV11_mik_jigo01" )
+尽情地吹潮……
+在那丑陋的绝顶上瑟瑟发抖。
+
+: PlayVoice( "Voices/vo50_mob0064" )
+\CN["京子"]
+“嗯……<^f59a0>♥</啊啊啊♥</谢谢♥</color>」
+
+紧贴在一起的那个人，在完全相同的时间跳跃起来。
+
+: PlayVoice( "Voices/vo11_mik0174" )
+\CN["御影"]
+“嗯……果然京子是……”……
+心情非常好呢……哈哈……”
+
+: PlayVoice( "Voices/vo50_mob0065" )
+\CN["京子"]
+“嗯……啊啊啊……还……停不下来……”
+
+: HideWnd()
+: evfile = "evg_b001_1_1_0811013_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0175" )
+\CN["御影"]
+“呵呵，京子。
+这样舒服吗……”
+
+京子在眼前瑟瑟发抖。
+
+对于这样的她，恶作剧之心再次痛了起来。
+
+: PlayVoice( "Voices/vo11_mik0176" )
+\CN["御影"]
+“还想要……这样可以吗？”
+
+: PlayVoice( "Voices/vo50_mob0066" )
+\CN["京子"]
+“……嗯哈哈……美伢，大人……？
+现在不行……还在路上——”
+
+: PlayVoice( "Voices/vo50_mob0067" )
+\CN["京子"]
+“啊啊啊啊啊！？”
+
+京子一直痉挛着
+把同样刚达到的自己的秘部强加于人。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0911013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0177" )
+\CN["御影"]
+“嗯……！嗯，啊啊，这个……嗯
+我也感觉很坚强……”
+
+: PlayVoice( "Voices/vo50_mob0068" )
+\CN["京子"]
+“呜呜呜呜！
+啊、啊、嗯……！”
+
+: PlayVoice( "Voices/vo50_mob0069" )
+\CN["京子"]
+“这个不行……”♥</color>
+真的，嗯，啊啊啊！”
+
+: PlayVoice( "Voices/vo50_mob0070" )
+\CN["京子"]
+“我在……”♥</继续干下去吧♥</color>
+郁子停不下来……漫画，变成了笨蛋♥</color>」
+
+: PlayVoice( "Voices/vo11_mik0178" )
+\CN["御影"]
+“哈、哈、京子……非常可爱……”
+
+: PlayVoice( "Voices/vo50_mob0071" )
+\CN["京子"]
+“喂，请不要看……”♥</color>
+请不要看如此混乱的我♥</color>」
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+战栗比酷！
+格格！嘎嘎！咕嘟咕嘟！
+
+: PlayBackVoice( "Voices/BGV11_mik_aegi02" )
+京子就像坏掉的玩具一样颤抖，不断地向山顶进发。
+
+说话不拖泥带水，简直就像个孩子。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0811013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo50_mob0072" )
+\CN["京子"]
+“美咲大人♥</我、我♥</color>」
+
+: PlayVoice( "Voices/vo50_mob0073" )
+\CN["京子"]
+“比刚才还要大的是……嗯，啊啊……！”
+
+: PlayVoice( "Voices/vo11_mik0179" )
+\CN["御影"]
+「没关系，今天随你的便来。
+我也是……如果你心情好的话，那就……”
+
+: PlayVoice( "Voices/vo50_mob0074" )
+\CN["京子"]
+“嗯啊啊啊……嗯……啊啊啊啊啊……！”
+
+: PlayVoice( "Voices/vo11_mik0180" )
+\CN["御影"]
+“京子……就这样，随你的便……
+嗯，啊，哈哈♥</color>」
+
+: PlayVoice( "Voices/vo50_mob0075" )
+\CN["京子"]
+“嗯！嗯！嗯！哈！”
+
+: PlayVoice( "Voices/vo50_mob0076" )
+\CN["京子"]
+“已经不行了……这个，这个啊……”♥</color>
+啊，对了，啊啊啊啊♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+熟透了！受骗！狗熊！熟透了！
+咕！好痛！图中！小忠！
+
+彼此的性器激烈地摩擦
+感觉就好像变成了一个一样。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0711013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0181" )
+\CN["御影"]
+“京子……我也……会再来的……”
+
+: PlayVoice( "Voices/vo50_mob0077" )
+\CN["京子"]
+「哈哈♥</color>
+和美咲大人一起……就这样一直在一起♥</color>」
+
+: PlayVoice( "Voices/vo11_mik0182" )
+\CN["御影"]
+“嗯……嗯！嗯……嗯……好…好…好……好…”
+
+: PlayVoice( "Voices/vo50_mob0078" )
+\CN["京子"]
+“啊啊啊啊啊啊……啊啊啊……呜呜哇~～～！”
+
+//●演技：食いしばり系の絶頂です
+: PlayVoice( "Voices/vo11_mik0183" )
+\CN["御影"]
+“嗯……！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b001_1_1_0911013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘿嘿！吓一跳！战栗比酷！
+
+: PlayVoice( "Voices/vo50_mob0079" )
+\CN["京子"]
+“哈哈，嗯，啊啊啊啊啊啊…！”
+
+: PlayVoice( "Voices/vo11_mik0184" )
+\CN["御影"]
+“嗯……哈……果然是连续……呜……”……
+嗯……哈、哈、哈……”
+
+在连绵不绝的绝顶上
+思绪像被侵犯了一样染上了雪白。
+
+身体上的疲劳也很大
+比起那个心情更充实。
+
+//●ＣＧ：消去
+//●背景：和室・消灯
+: StopBackVoice()
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_03", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mikage", 1, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0185" )
+\CN["御影"]
+“京子……？没事吧……？”
+
+: PlayVoice( "Voices/vo50_mob0080" )
+\CN["京子"]
+“哈……嗯……啊啊啊……”
+
+: PlayVoice( "Voices/vo50_mob0081" )
+\CN["京子"]
+“这、变成这样的只有……和御影大人……”
+
+: DrawChara( "Mikage", 5, 2)
+: PlayVoice( "Voices/vo11_mik0186" )
+\CN["御影"]
+“呵呵，是吗……”
+
+京子一副疲惫的样子，看着我脸上浮现出笑容。
+
+那个表情应该是我想看的
+没有任何诅咒的安心表情。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0187" )
+\CN["御影"]
+（啊，太好了……真的太好了……）
+
+那种事到现在才真正体会到。
+
+: PlayVoice( "Voices/vo50_mob0082" )
+\CN["京子"]
+“御影大人……好像就这样睡着了……”
+
+: DrawChara( "Mikage", 1, 2)
+: PlayVoice( "Voices/vo11_mik0188" )
+\CN["御影"]
+“是啊，我也已经到极限了……但是在那之前——”
+
+: PlayVoice( "Voices/vo50_mob0083" )
+\CN["京子"]
+“嗯……啊…嗯……嗯……”
+
+这次只是温柔地互相接触，简短地交换了吻。
+
+: PlayVoice( "Voices/vo50_mob0084" )
+\CN["京子"]
+“哈哈……嗯……
+终于回来了……我有这种感觉”
+
+: DrawChara( "Mikage", 5, 2)
+: PlayVoice( "Voices/vo11_mik0189" )
+\CN["御影"]
+“是的，我也是……。晚安，京子。”
+
+: PlayVoice( "Voices/vo50_mob0085" )
+\CN["京子"]
+“是的……是的……美伢，大人……嗯……”
+
+今天好像能睡得很好。
+
+就这样，我陷入了深深的睡眠。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_C04_85" )
+: FadeOut( 0.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

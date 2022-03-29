@@ -1,0 +1,257 @@
+//========================================================
+//○かつての地上最強と対決する
+//========================================================
+//●場所：雲の道
+//●分岐：［服装］着衣・ダークエルフの場合
+: CharaCostume( "Daruma", 0 )
+: DrawChara( "Daruma", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["达磨"]
+“唔，你们好容易才到这里了吗……”
+
+//●分岐：［服装］全裸の場合
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: Playchara = "Mukuro"
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: Playchara = "Momo"
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: Playchara = "Kinako"
+: endif
+: if ( CharaCostume( Playchara ) == 1 )
+	: DrawChara( "Daruma", 11, 0, 0, 0.5, 0.0, 2, "LC" )
+	\CN["达磨"]
+“竟然光着身子来我这里。你真是被人小看了。”
+
+	: EraseChara( "Daruma", 0.5 )
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 6, "RC" )
+	: PlayVoice( "Voices/vo00_muk4683" )
+	\CN["无黑色"]
+（明明是裸体，却完全没有反应，稍微不要受伤。）
+
+: else
+	: EraseChara( "Daruma", 0.5 )
+	: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 6, "RC" )
+: endif
+: DrawChara( "Kinako", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0857" )
+\CN["黄菜子"]
+“这个人是白夜的{头，头}，达磨。
+大家请小心”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4684" )
+\CN["无黑色"]
+“……啊，从刚才开始就觉得手脚紧贴着。”
+
+是达人散发的灵气吗。
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["达磨"]
+“唔，好像杀了很多人啊。
+血的味道漂到这里来”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4685" )
+\CN["无黑色"]
+“首先，我会好好泡澡的。”
+
+达磨和我们保持距离，静静地拔刀。
+
+: DrawChara( "Daruma", 13, 0)
+\CN["达磨"]
+“被这把妖刀村雨斩的人肯定会死。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1586" )
+\CN["桃子"]
+“爷爷，你血气方刚吗？
+我并不是想和你战斗”
+
+: DrawChara( "Daruma", 14, 0)
+\CN["达磨"]
+“我有理由必须杀死我们”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+达磨想杀我们的理由吗……。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 28, 0)
+: PlayVoice( "Voices/vo00_muk4686" )
+\CN["无黑色"]
+（那样的东西，太多了）
+
+\CN["达磨"]
+“杀了滑头和比拉加，帮助我的人
+雪恨”
+
+//●分岐：［服装］ダークエルフの場合
+: if ( CharaCostume( Playchara ) == 2 )
+	: DrawChara( "Daruma", 13, 0, 0, 0.5, 0.0, 2, "LC" )
+	\CN["达磨"]
+“对方{黑夜叉，暗黑妖精}也是一样的。
+因为我曾经杀了{黑夜叉，暗黑妖精}啊」
+
+//●分岐終了
+: endif
+: DrawChara( "Daruma", 15, 0)
+\CN["达磨"]
+“我走了——”
+
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：達磨
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：達磨,2,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*win" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_01", "BGM/14_CM014", 1088, -1, -1, "Scenarios/SC_D06_52*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*win" )	//勝利した場合
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//●状況：戦闘勝利後
+*win
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: StopBgm( 0.0 )
+: PlayBgm("BGM/41_Sad")
+: DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["达磨"]
+“……呃……是吗……滑头的{实力，力量}、诚的东西”
+
+: DrawChara( "Daruma", 11, 0)
+\CN["达磨"]
+“我也是昏庸的……”
+
+//●演出：達磨　倒れる
+: PlaySe( "SE/Se_Down01" )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 24, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4687" )
+\CN["无黑色"]
+“有什么想留下的吗？”
+
+把刀插在倒下的达磨上。
+
+: DrawFaceThumbnail( "Daruma", 10, 0, 0 )
+\CN["达磨"]
+“什么都没有。连向你们挑战失败都没有。”
+
+: DrawFaceThumbnail( "Daruma", 11, 0, 0 )
+\CN["达磨"]
+“快点把我的脑袋拨开吧，神八代无黑。”
+
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+按照达磨的愿望，我来砍头。
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: ShowWnd()
+: DrawFaceThumbnail( "Mukuro", 25, 0, 0 )
+: PlayVoice( "Voices/vo00_muk4688" )
+\CN["无黑色"]
+“桃子，把达磨的遗体烧掉吧。这是武士的同情。”
+
+: DrawFaceThumbnail( "Momo", 0, 0, 0 )
+: PlayVoice( "Voices/vo01_mom1587" )
+\CN["桃子"]
+“了解”
+
+//●演出：炎魔術エフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Fire02" )
+: PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 6, 6 )
+: Wait()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+让桃子用魔术烧达磨的尸体。
+连骨头都不留。直到全部化为灰烬消失为止。
+
+: DrawFaceThumbnail( "Kinako", 10, 0, 0 )
+: PlayVoice( "Voices/vo02_kin0858" )
+\CN["黄菜子"]
+“达磨的手脚是魔道义肢，是魔导器的一种。”
+
+: DrawFaceThumbnail( "Mukuro", 25, 0, 0 )
+: PlayVoice( "Voices/vo00_muk4689" )
+\CN["无黑色"]
+“好像不仅仅是双手双脚。”
+
+手脚和义眼即使是桃花的魔术也没有燃烧留下。
+
+: DrawFaceThumbnail( "Momo", 11, 0, 0 )
+: PlayVoice( "Voices/vo01_mom1588" )
+\CN["桃子"]
+“这个怎么办？”
+
+: DrawFaceThumbnail( "Mukuro", 23, 0, 0 )
+: PlayVoice( "Voices/vo00_muk4690" )
+\CN["无黑色"]
+“先埋在这里吧。”
+
+然后挖了个深洞，把达磨的残骸——义手和义足
+给你填上。
+
+最后把那家伙的拿手妖刀村雨作为墓碑立了起来。
+
+: DrawFaceThumbnail( "Mukuro", 1, 0, 3 )
+: PlayVoice( "Voices/vo00_muk4691" )
+\CN["无黑色"]
+“……去吗？”
+
+//●演出：無黒・桃・黄菜子　退場する
+//●演出：暗転
+//＠最強系のスキル獲得
+//＠場所移動：帝都
+//●シーンエンド
+: HideWnd()
+: SetMission( "SC_D06_52_1", "Successed" )
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")

@@ -1,0 +1,536 @@
+//========================================================
+//○白夜の変
+//========================================================
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+//失敗した罰～の発生判定処理
+: value = 0
+: if ( MissionProgress( "SC_C04_01_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_02_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_03_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_03_2", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_04_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_04_2", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_06_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_06_2", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_06_3", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_09_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_09_2", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_09_3", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_10_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_10_2", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_11_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_12_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_12_2", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_50_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_50_2", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C04_51_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C05_02_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C05_05_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C05_05_2", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C05_07_1", "Failed" ) == true ) value += 1; endif
+: if ( MissionProgress( "SC_C05_07_2", "Failed" ) == true ) value += 1; endif
+//ここまで失敗数が２以上＆処女なら処女喪失イベント「失敗した罰は処女喪失」発生
+//ここまで失敗数が２以上＆非処女なら「失敗した者には罰を」発生
+: if ( value < 2 ) Jump( "*sc001_01" ) endif
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == false )
+	: Jump( "Scenarios/SC_S04_01*sc001" )
+: else
+	: Jump( "Scenarios/SC_S04_01*sc002" )
+: endif
+*sc001_01
+//●場所：帝都
+//●視点：第三者視点
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: ShowWnd()
+——几天后。
+
+//●演出：場面転換トランジション
+//●背景：帝都・昼
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+\CN["街上的男人"]
+“拜托了……请不要再做了……。
+我的店……”
+
+\CN["反幕派1"]
+“嘿嘿，太棒了！
+不要抱怨幕府不能保护你们”
+
+\CN["反幕派2"]
+“哇————！”
+
+反幕派开始在大和各种各样的地方奋起。
+
+袭击房屋和商店抢劫财物、放火房屋、
+而且还杀了和幕府无关的人，强奸了女人
+我想做什么就做什么。
+
+\CN["白夜队士·男1"]
+“呃，不一个一个地叫的话是做不到的吧？”
+
+: DrawChara( "Manji", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["卍"]
+“你想喧闹吧？让我来干吧。”
+
+\CN["白夜队士·男2"]
+“卍君，出现了睡眠组。”
+
+\CN["卍"]
+“大约有多少人？”
+
+\CN["白夜队士·男2"]
+“大概有5个人。”
+
+\CN["卍"]
+“大象大象只有5个人吗？幕府也没有干劲啊。”
+
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Manji", 0, 0, 1)
+\CN["卍"]
+“嗯，干脆{杀，时候}来吧。”
+
+//: EraseChara( "Manji", 0.5 )
+//●演出：卍　退場させる
+//＠分岐：未知の呪術を解呪せよを失敗している場合
+//＠ラベルジャンプ：sc001_03
+//＠分岐終了
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Manji"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: if ( MissionProgress( "SC_C04_10_2", "Failed" ) == true )
+	: Jump( "*sc001_03" )
+: endif
+*sc001_02
+//●場所：神社
+//●背景：神社・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: DrawChara( "Mikage", 5, 0, 0, 0.0, 0.0, 3, "C" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0197" )
+\CN["御影"]
+「愚蠢的人不需要怜悯。
+尽情地胡闹吧！”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+\CN["男1"]
+“啊……喂，救命……”
+
+\CN["京子"]
+“‘闪电魔术，火花’！！！”
+
+//●演出：雷魔術演出
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Thunder03" )
+: PlayAnim( "Animations/AnimeL_Thunder03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["僧侣1"]
+「――！！」
+
+\CN["御影的部下C"]
+“我是京子派森，小妹妹。”
+
+\CN["京子"]
+“美咲，你总是这么说的吧。
+说话要小心”
+
+\CN["御影的部下C"]
+“老师！”
+
+\CN["僧人2"]
+“只不过是巫女的身份……。
+那也不是人类，而是精灵的癖好……”
+
+\CN["御影的部下C"]
+“这种说法真让人生气啊。
+会燃烧的吧”
+
+\CN["御影的部下C"]
+“《灼热魔术，炽热》！！”
+
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Fire02" )
+: PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+御影的部下中的一人放出了炎之魔术。
+
+被点燃的僧侣变成了火人
+左右为难。
+
+: DrawChara( "Mikage", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo11_mik0198" )
+\CN["御影"]
+“呼，那孩子，火的魔术控制得很好
+好像进步了呢。做得很好”
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0199" )
+\CN["御影"]
+「京子，请把大家都放低。
+我差不多该做完了”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+\CN["京子"]
+“知道了。”
+
+\CN["京子"]
+“是御影大人的命令！全体人员，退避！”
+
+\CN["御影的部下C"]
+“太好了”
+
+\CN["御影的部下B"]
+“我知道了。”
+
+在御影的右臂柳泽京子的召唤下，部下们开始避难——、
+
+//●演出：御影　上級炎魔術演出
+: HideWnd()
+: cgkeep = true;
+: Call( "Scenarios/Effect*Mikage_Action01" )
+: evfile = "evg_a001_1_1_0100000_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+御影放出的上级炎魔术
+烧毁了几百年传统的神社。
+
+//: DrawChara( "Mikage", 1, 0)
+: PlayVoice( "Voices/vo11_mik0200" )
+\CN["御影"]
+“你们真幸运。”
+
+//: DrawChara( "Mikage", 9, 0)
+: PlayVoice( "Voices/vo11_mik0201" )
+\CN["御影"]
+“因为死了，神社就消失了，有种屈辱和绝望感
+没什么味道也可以”
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: Call("Scenarios/Common*EvDelete")
+: PlaySe( "SE/Se_AnimeL_Fire02" )
+: PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 6, 6 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: ShowWnd()
+影子中的忧伤和牙膏交织在一起的话语
+被火焰的轰鸣声吞没了。
+
+//●演出：暗転
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●演出：場面転換トランジション
+*sc001_03
+//●背景：村・昼
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Village01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+过了一天，起义不仅仅是在大街上
+也波及到了小村庄和驿站町。
+
+: DrawChara( "Iwao", 0, 0, 0, 0.25, 0.0, 4, "C" )
+//: DrawChara( "Shion", 1, 0, 0, 0.25, 0.0, 3, "L" )
+\CN["严严"]
+“哦哦哦哦哦哦哦哦！”
+
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["村里的男人1"]
+“……哈哈”
+
+\CN["村里的男人2"]
+“这、这家伙是怪物！好可怕……”
+
+: HideWnd()
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Shion", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0193" )
+\CN["紫苑"]
+“哎呀哎呀，向着我可爱可爱的严酱
+怪物是……。你的眼睛坏了吗？”
+
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Shion", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+\CN["严严"]
+“妈妈，我变得非常开心了哦。”
+
+: DrawChara( "Shion", 5, 0)
+: PlayVoice( "Voices/vo12_shi0194" )
+\CN["紫苑"]
+“在这里的人全部杀光也在所不惜。
+我会喜欢严酱的”
+
+\CN["村里的男人3"]
+“啊啊啊……啊，这个村子已经结束了……”
+
+严就像生日时收到礼物的孩子一样欢闹
+开心地杀人或破坏建筑物。
+
+//●演出：時間経過
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Shion", 0.0 )
+: EraseChara( "Iwao", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+——2～3小时后。
+那里除了父子以外，没有人在呼吸。
+
+//＠備考：全年齢版は以下のシーンをカット（開始）
+//●ＣＧ：息子のペニスを咥える母親（紫苑）
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evh_b001_1_3_0211002_1000001_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：男性器を舐めながら
+: PlayVoice( "Voices/vo12_shi0195" )
+\CN["紫苑"]
+“嗯……中、嗯……唔、唔……严……”……
+在小鸡鸡变成这样之前……熟透了……好兴奋啊……”
+
+: PlayBackVoice( "Voices/BGV12_shi_fera02" )
+\CN["严严"]
+“呼……呼……好开心啊♪^f59a0>♥</color>」
+
+在血味蔓延的地方
+让内脏飞出，头朝向正后方
+在头部乱七八糟的尸体散乱中——
+
+: PlayVoice( "Voices/vo12_shi0196" )
+\CN["紫苑"]
+“暴走后，总是小矮人，这样的小玲…嗯
+血管浮上来，雄的味道很强烈，呜，呜♥</color>」
+
+紫苑是性最高潮兴奋的儿子
+啃着严阴茎。
+
+不管是变成战场尸体散乱的地方。
+
+\CN["严严"]
+“啊啊啊……妈妈，小鸡鸡好舒服！啊啊！”
+
+//●演出：射精
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = false; evcos = false;
+: evfile = "evh_b001_1_3_0311103_1000011_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：口内射精されて、精液を飲んでいます
+: PlayVoice( "Voices/vo12_shi0197" )
+\CN["紫苑"]
+“嗯————！嗯……，好大的量……”♥</color>
+嗯，嗯……嗯，嗯，嗯，嗯♥</color>」
+
+紫苑和严――
+对于疯狂的父母和子女来说，这是理所当然的日常生活之一。
+
+//＠備考：全年齢版は以下のシーンをカット（終了）
+//●演出：場面転換トランジション
+*sc001_04
+//●場所：どこかの貴族の屋敷
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: SwapImage( 1, 0, "BGImage/BG_Garden01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["睡眠组1"]
+“反幕派现在已经变成了无需问答就可以杀了啊。”
+
+\CN["睡眠组2"]
+“大叔，你很会花钱吧？”
+
+\CN["贵族"]
+“……见回组……幕府的狗”
+
+但是，幕府也不输，自夸有本事的流浪人和浪人
+作为见回组的队员雇佣来对抗反幕派。
+
+\CN["睡眠组3"]
+“反幕派全部杀光，据说可以杀几个人。
+杀了心情爽快。所以能拿到钱是最好的工作”
+
+\CN["睡眠组2"]
+“嘿嘿，别觉得不好……”
+
+//●演出：斬殺　エフェクト
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+见回组的男人中有一个人想把刀挥下去
+那个不能实现。
+
+//●演出：みどり　登場する
+//: DrawChara( "Mimawari", 0, 0, 1, 0.25, 0.0, 3, "C" )
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: CharaCostume( "Midori", 1 )
+: DrawChara( "Midori", 2, 0, 0, 0.25, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+\CN["睡眠组1"]
+“呃，你……！”
+
+: DrawChara( "Midori", 4, 0)
+: PlayVoice( "Voices/vo10_mid0276" )
+\CN["绿色"]
+“我现在不是说我们家吗？”
+
+\CN["睡眠组1"]
+“哈……？”
+
+: DrawChara( "Midori", 17, 0)
+: PlayVoice( "Voices/vo10_mid0277" )
+\CN["绿色"]
+“说话要注意。”
+
+//: EraseChara( "Mimawari", 0.25 )
+//●演出：斬殺　エフェクト
+: HideWnd()
+: effecttype = "3a"; se = "Se_Sting01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["睡眠组1"]
+“——……！？”
+
+: DrawChara( "Midori", 28, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0278" )
+\CN["绿色"]
+“你不是一直说祸从口出吗？”
+
+\CN["睡眠组3"]
+“……啊啊……不，现在完全看不见……”
+
+\CN["睡眠组3"]
+“像大针一样的假手……
+我从一个爱吃东西的人那里听说过……非常爱杀人
+异常者……”
+
+//●演技：ツッコミするような感覚で人を殺します
+: DrawChara( "Midori", 19, 0)
+: PlayVoice( "Voices/vo10_mid0279" )
+\CN["绿色"]
+“谁是异常者啊！”
+
+//: EraseChara( "Mimawari", 0.25 )
+//●演出：斬殺　エフェクト
+: HideWnd()
+: EraseChara( "Midori", 0.0 )
+: effecttype = "3a"; se = "Se_Sting01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+//: DrawChara( "Midori", 27, 0, 0, 0.25, 0.0, 4, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0280" )
+\CN["绿色"]
+“还有，不要说我们的搭档像大针一样。
+去掉头盖，有个很好的名字。记住的时候”
+
+\CN["贵族"]
+“得救了……。道谢……”
+
+//: EraseChara( "Midori", 0.5 )
+//●演出：血飛沫　エフェクト
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+以绿自傲的拔头盖挖贵族左脚的小腿。
+
+: DrawChara( "Midori", 19, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo10_mid0281" )
+\CN["绿色"]
+“别误会了。我们不是来救你的。”
+
+\CN["贵族"]
+“……是吗”
+
+: DrawChara( "Midori", 16, 0)
+: PlayVoice( "Voices/vo10_mid0282" )
+\CN["绿色"]
+“自己啊，对幕府也有各种各样的好脸色吧？”
+
+//●読み：拷問（“おしゃべり”と読んで下さい）→演出の一環です
+: DrawChara( "Midori", 28, 0)
+: PlayVoice( "Voices/vo10_mid0283" )
+\CN["绿色"]
+“我有件事想问一下
+和我一起到早上{拷问，聊天}吧？」
+
+其中也有叛变反幕派并企图向幕府进犯的有势力的人。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+就这样，以白夜为中心的反幕派的叛乱每一天都在持续
+增加了激烈性，各种各样的人物的想法混杂在一起变得混沌。
+
+一桥幕府无法抑制暴动。
+
+……………………………………………………。
+
+//＠シナリオジャンプ：SC_C05_09
+: FadeOut( 0.0 )
+: CharaCostume( "Midori", 0 )
+: LoadMap( "Map_Town07_06_Byakuya", "Def2", "Scenarios/SC_C05_09")

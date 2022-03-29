@@ -1,0 +1,354 @@
+//========================================================
+//○研究者の手伝い１
+//========================================================
+*sc001
+//●場所：白夜の隠れ家・冥の部屋
+//SC_C04_01から続いてくる
+//●読み：九星（きゅうせい）・八白（はっぱく）
+: DrawChara( "Mei", 1, 0, 0)
+: DrawChara( "Mukuro", 0, 0, 0)
+: PlayVoice( "Voices/vo09_mei0216" )
+\CN["冥"]
+“白夜的干部——处于九星的八白地位的人
+有个叫希拉加的发明家”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0217" )
+\CN["冥"]
+“那家伙被称为大和一的天才发明家
+那家伙好像有想要帮忙的事情”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2482" )
+\CN["无黑色"]
+“天才发明家希拉加啊……。
+只听说过名字”
+
+发明了我们平时使用的设备的人
+是吗？确实。
+
+这么说来，前几天姐姐带我去头上打招呼
+没在去过的地方啊。
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0218" )
+\CN["冥"]
+“帮忙的内容可以直接问比拉加。
+说了想让他收集什么材料之类的话”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0219" )
+\CN["冥"]
+“比拉加的研究所在远离村庄的地方。
+我会把地图发给你的设备，请确认一下”
+
+//＠マップ解放：ヒラガの研究所への道
+//●シーンエンド
+: SetMission( "SC_C04_04_1", "InProgress" )
+: FastTravelMapOn( "HiragaLavoWay" )
+: DestinationMap( "Map_Dungeon31_02_HiragaLabo" )
+事件信息更新了。
+
+: Return
+
+//--------------------------------------------------------
+//●２回目以降～
+//--------------------------------------------------------
+*sc001_1
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo09_mei0218" )
+\CN["冥"]
+“帮忙的内容可以直接问比拉加。
+说了想让他收集什么材料之类的话”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0219" )
+\CN["冥"]
+“比拉加的研究所在远离村庄的地方。
+我会把地图发给你的设备，请确认一下”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○研究者の手伝い２
+//========================================================
+*sc002
+//●場所：ヒラガの研究所
+//●状況：ヒラガと亜久里がいる
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 6	\
+:	"MoveLeft", 1 )
+: Wait()
+: RpgCharaTurn( "Hiraga", "R" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2483" )
+\CN["无黑色"]
+“我被要求帮忙研究……”
+
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["平底片"]
+“欢迎光临，神八代无黑先生。
+我一直在等你哦”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“那么，亚久里先生，请说明一下。”
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Aguri"	\
+:	"MoveLeft", 3	\
+:	"MoveDown", 1 )
+: Wait()
+: DrawChara( "Aguri", 1, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0049" )
+\CN["亚久里"]
+“是的。我想拜托无黑菩萨是为了制作被拜托的药
+就是收集材料”
+
+: DrawChara( "Aguri", 0, 0)
+: PlayVoice( "Voices/vo16_agu0050" )
+\CN["亚久里"]
+“水上溪谷，水珠丛生的‘茧罗恩之花’”
+”
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk2484" )
+\CN["无黑色"]
+“马可罗恩的花？是我没听说过的草药。
+可以告诉我有什么特征吗？”
+
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0051" )
+\CN["亚久里"]
+“特征是紫色的花盛开，散发着强烈的甜味的草。
+据说在溪谷深处开着花”
+
+: DrawChara( "Aguri", 4, 0, 0)
+: PlayVoice( "Voices/vo16_agu0052" )
+\CN["亚久里"]
+“据说水上溪谷里栖息着很多妖兽。
+请小心”
+
+//＠マップ解放：水上渓谷
+//●シーンエンド
+: HideWnd()
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: SetMission( "SC_C04_04_1", "Hidden" )
+: SetMission( "SC_C04_04_2", "InProgress" )
+: FastTravelMapOn( "Mizukami" )
+: DestinationMap( "Map_Dungeon32_01_Mizukamikeikoku" )
+: ShowWnd()
+事件信息更新了。
+
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Dungeon31_01_HiragaLabo", "FromHiragaLab")
+//--------------------------------------------------------
+//●２回目以降～
+//--------------------------------------------------------
+//亜久里
+*sc002_1
+: DrawChara( "Aguri", 1, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo16_agu0053" )
+\CN["亚久里"]
+“{水上溪谷，水泄不通}上生长的‘茧罗恩之花’是
+开紫色的花，散发出甜美香味的草”
+
+: DrawChara( "Aguri", 4, 0, 0)
+: PlayVoice( "Voices/vo16_agu0052" )
+\CN["亚久里"]
+“据说水上溪谷里栖息着很多妖兽。
+请小心”
+
+//●シーンエンド
+: Return
+
+//ヒラガ
+*sc002_2
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["平底片"]
+“神八代无黑，请多关照。”
+
+: Return
+
+//========================================================
+//○研究者の手伝い３
+//========================================================
+*sc003
+//●場所：水上渓谷
+//●状況：マコロエンの花を調べる
+: DrawChara( "Mukuro", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2485" )
+\CN["无黑色"]
+“紫色的花，还有非常甜的味道……。
+这是马可罗恩的花没错吧……”
+
+亚久里之类的比拉加助手的女人说的特征
+一致。
+
+: DrawChara( "Mukuro", 28, 0)
+: PlayVoice( "Voices/vo00_muk2486" )
+\CN["无黑色"]
+“如果弄错了，那就到那个时候了。
+以后再来取就好了”
+
+//●分岐：淫乱度Ｃ以下の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
+	: DrawChara( "Mukuro", 39, 1)
+	: PlayVoice( "Voices/vo00_muk2487" )
+	\CN["无黑色"]
+“即便如此……这种香味，总觉得身体会发热。”
+
+身体变热了，变得不均匀了。
+
+	//●演技：深呼吸をしています
+	: DrawChara( "Mukuro", 21, 1)
+	: PlayVoice( "Voices/vo00_muk2488" )
+	\CN["无黑色"]
+“呜～……哈～…呜～……”
+
+大口吸气呼气，让心平静下来。
+
+“马可罗恩的花”还是快点交给比拉加比较好
+听起来不错。
+
+	//●演出：暗転
+	//＠場所移動：ヒラガの研究所
+	//●シーン：「研究者の手伝い４」へ
+	//＠ラベルジャンプ：sc004
+	//●分岐終了地点へ
+	: HideWnd()
+	: StopBgm( 0.5 )
+	: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+	: Wait()
+	: EraseChara( "Mukuro", 0.0 )
+	: LoadMap( "Map_Dungeon31_02_HiragaLabo", "SC_C04_04", "Scenarios/SC_C04_04*sc004")
+//●分岐：それ以外の場合
+: else
+//●シーン：「媚薬効果のある花の香りに我慢できなくなって」へ
+//＠シナリオジャンプ：SC_C04_05
+//●分岐終了
+	: HideWnd()
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: Jump( "Scenarios/SC_C04_05" )
+: endif
+//========================================================
+//○研究者の手伝い４
+//========================================================
+*sc004
+//●場所：ヒラガの研究所
+//●演出：無黒　ヒラガのところへ
+: HideWnd()
+: RpgCharaOn( "Hiraga" )
+: RpgCharaTurn( "Hiraga", "R" )
+: RpgCharaWarp( "Aguri", "SC_C04_04_Aguri" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+\CN["平底片"]
+“欢迎回来，无黑先生。
+找到马可罗恩的花了吗？”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk2489" )
+\CN["无黑色"]
+“大致按照您说的取了东西。
+这样没错吗？”
+
+把“玛可罗恩之花”这样的东西交给亚久里。
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Aguri", 4, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo16_agu0054" )
+\CN["亚久里"]
+“是的。这个颜色，是强烈的甜味。
+在这里没错”
+
+好像没有错真是太好了。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2490" )
+\CN["无黑色"]
+“顺便说一下，新的药是什么样的
+可以问吗？”
+
+有着让身体变热的甜味的草药。
+这样一来，到底会做什么，我有兴趣。
+
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC")
+\CN["平底片"]
+“这是献媚药，是游廓委托的。”
+
+: DrawChara( "Mukuro", 39, 1)
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“将马可罗恩的花磨碎后有强烈的催淫效果
+男性的话可以促进勃起，女性的话可以活化爱液的分泌
+有功效”
+
+还做了那样的东西呢。
+
+不管怎么说，看起来很满足真是太好了。
+
+//: DrawChara( "Hiraga", 0, 0)
+//\CN["ヒラガ"]
+//「そうだ。手伝って頂いたお礼に１つお譲り致しましょう。
+//　必要なければ道具屋にでも売ってお金にして頂ければと……」
+//＠アイテム：特性催淫クリーム,1
+//●演出：無黒　退場する
+//●分岐：恐山肝試しと遊廓のケツモチクリア済の場合
+//●シーン：「商人伊勢商左衛門を追え１」へ
+//＠シナリオジャンプ：SC_C04_05
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーンエンド
+//●分岐終了
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Hiraga", 0.0 )
+: SetMission( "SC_C04_04_2", "Successed" )
+//処女の場合「魔導器で処女喪失」を発生させる
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == false )
+	: SetMission( "SC_C04_51_1", "Opened" )
+新的子事件发生了！
+
+: endif
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+: $money += 3000
+无黑收到了报酬。
+
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 7 )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_C04_06")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: DestinationMap( "Map_Town07_02_Byakuya" )
+	: LoadMap( "Map_Town07_01_Byakuya", "MukuroRoom", "Scenarios/Map_Town07_Byakuya_Init*Map01")
+: endif

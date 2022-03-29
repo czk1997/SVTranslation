@@ -1,0 +1,915 @@
+//========================================================
+//○遊廓のケツモチ１
+//========================================================
+*sc001
+//●場所：白夜の隠れ家・冥の部屋
+//SC_C04_01から続いてくる
+: DrawChara( "Mukuro", 1, 0, 0)
+: DrawChara( "Mei", 0, 0, 0)
+: PlayVoice( "Voices/vo00_muk2458" )
+\CN["无黑色"]
+“姐姐，这个游廓的工作是什么？”
+
+: PlayVoice( "Voices/vo09_mei0212" )
+\CN["冥"]
+“简单来说就是护卫的工作。
+主要的工作是保护在妓院工作的女性不受粗暴的客人的侵害”
+
+: PlayVoice( "Voices/vo09_mei0213" )
+\CN["冥"]
+“你去过游廓吗？”
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk2459" )
+\CN["无黑色"]
+“一次都没有。什么样的地方呢？”
+虽然听说过……”
+
+//●分岐：淫乱度Ｃ以下の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
+说实话，我没有什么好印象。
+
+男人给女人钱，有很多做爱的地方
+因为只把它当做场所来看待。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+给人的印象是男人付钱给女人做爱的地方。
+
+但是，那样的事相当内情错综复杂
+虽然我是这么想的。
+//●分岐終了
+: endif
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0214" )
+\CN["冥"]
+“那正好。有着独特氛围的城市是……”
+还是亲眼看看比较好”
+
+姐姐说得很对。
+因为百闻不如一见。
+
+//●読み：吉野原（よしのはら）・楼主（ろうしゅ）
+: DrawChara( "Mukuro", 0, 0)
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0215" )
+\CN["冥"]
+“你想做的工作是在吉野原游廓工作的女性的护卫工作。
+详细内容可以问吉野原的楼主的女人”
+
+: DrawChara( "Mukuro", 3, 0, 3)
+: PlayVoice( "Voices/vo00_muk2460" )
+\CN["无黑色"]
+“明白。总之先去吉野原看看。”
+
+//＠マップ解放：吉野原
+//●シーンエンド
+: FastTravelMapOn( "Yoshinohara" )
+: DestinationMap( "Map_Town11_04_Yoshinohara" )
+: SetMission( "SC_C04_03_1", "InProgress" )
+: Return
+
+//--------------------------------------------------------
+//●２回目以降～
+//--------------------------------------------------------
+*sc001_1
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo09_mei0215" )
+\CN["冥"]
+“你想做的工作是在吉野原游廓工作的女性的护卫工作。
+详细内容可以问吉野原的楼主的女人”
+
+: DrawChara( "Mukuro", 3, 0, 3)
+: PlayVoice( "Voices/vo00_muk2460" )
+\CN["无黑色"]
+“明白。总之先去吉野原看看。”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○遊廓のケツモチ２
+//========================================================
+*sc002
+//●場所：吉野原・楼主の家
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["楼主"]
+“主人是白夜派来的吗？”
+
+: PlayVoice( "Voices/vo00_muk2461" )
+\CN["无黑色"]
+“是的，他让我来做护卫。”
+
+\CN["楼主"]
+“恩。有位客人有点为难……。
+无论如何，我希望你能助我一臂之力”
+
+*sc002_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002_select
+//■選択肢１：力を貸す
+//■選択肢２：準備を整えてから
+//――――――――――――――――――――――――――――
+\CI["帮助"]
+\CI["做好准备后"]
+怎么办？
+
+: if ($choice == 1) Return endif
+//-------------------------------------------------------
+//●選択肢１：力を貸すを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s1
+\CN["楼主"]
+「那么，我到了八点。
+我带您去想请主人保护的店吧”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+跟随楼主的人……。
+
+//●シーン：「遊廓のケツモチ３」へ
+//＠ラベルジャンプ：sc003
+: Jump( "*sc003" )
+//-------------------------------------------------------
+//●選択肢２：準備を整えてからを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s2
+//●シーンエンド
+
+//========================================================
+//○遊廓のケツモチ３
+//========================================================
+*sc003
+//●場所：吉野原・遊廓
+//●演出：花魁たちの前に移動する
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_YuukakuZashiki01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+\CN["楼主"]
+“我带了护卫来。”
+
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo00_muk2462" )
+\CN["无黑色"]
+“我是神八代无黑。请多关照。”
+
+\CN["花魁2"]
+“这个女孩是护卫？
+诚，你可靠吗？”
+
+\CN["花魁1"]
+“你没说话。
+因为一眼就看不出来，所以总是不能一个人独当一面啊”
+
+一个花魁在责备我说什么的花魁。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk2463" )
+\CN["无黑色"]
+（这个人也不是普通人）
+
+营造出的氛围，将至今为止的几个修罗场
+使人想起他钻了空子。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2464" )
+\CN["无黑色"]
+（这就是花魁吗……。
+就像姐姐说的那样，亲眼看到真是太好了）
+
+和我想的完全不一样。
+
+痛感到至今为止的印象都是错误的
+我意识到自己的视野很狭窄。
+
+\CN["楼主"]
+“我来介绍一下。在这个花廓里名列首位的花魁
+{铃兰大夫，铃兰太郎}”
+
+\CN["铃兰大夫"]
+“初次见面。”
+
+优雅地行一个礼。
+
+//●読み：鈴蘭太夫（すずらんだゆう）
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2465" )
+\CN["无黑色"]
+“所谓的护卫，是指铃兰大夫的吗？”
+
+\CN["楼主"]
+“再见。请一定要从黄昏开始保护铃兰太夫。”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2466" )
+\CN["无黑色"]
+“我知道了。看样子
+我觉得会给特定的人添麻烦”
+
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk2467" )
+\CN["无黑色"]
+“可以问一下详细情况吗？”
+
+\CN["楼主"]
+“是的，当然可以。
+我会在那边的房间里告诉您详细情况的”
+
+//●演出：楼主・無黒　奥の部屋
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后再被带到里面的房间
+请告诉我护卫内容的详细内容。
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——晚上。
+
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom05_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/01_CM001_inst")
+: PlayBackVoice( "Voices/vo54_mob0001" )
+: ShowWnd()
+隔着一个隔扇在房间里待命。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 0, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk2468" )
+\CN["无黑色"]
+（至今为止没有什么特别的问题吗……）
+
+在房间里做什么呢
+从间隙中进行确认。
+
+为了能在发生什么事的时候马上应对……。
+
+//●分岐：淫乱度Ｃ以下の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
+	: DrawChara( "Mukuro", 39, 1)
+	: PlayVoice( "Voices/vo00_muk2469" )
+	\CN["无黑色"]
+“即使那样也很生动啊……。
+眺望别人的情事……嗯……”
+
+//●分岐：処女の場合
+	: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == false )
+		//●演技：心の声です
+		: DrawChara( "Mukuro", 1, 1)
+		: PlayVoice( "Voices/vo00_muk2470" )
+		\CN["无黑色"]
+（……故事就是这样的吗）
+
+我还没有经验，只有耳熟能详的知识。
+
+亲眼目睹了真正的性行为
+我不知道该说什么。
+
+	//●分岐終了地点へ
+	//●分岐：それ以外の場合
+	: else
+		//●演技：心の声です
+		: DrawChara( "Mukuro", 21, 1)
+		: PlayVoice( "Voices/vo00_muk2471" )
+		\CN["无黑色"]
+（唔……喘得那么厉害……。
+我在做爱的时候也是这样的感觉吗？）
+
+	一想起来，脸上就要冒火。
+	//●分岐終了
+	: endif
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+//●演技：心の声です
+	: DrawChara( "Mukuro", 21, 2, 4)
+	: PlayVoice( "Voices/vo00_muk2472" )
+	\CN["无黑色"]
+（哈，哈，听到了那样令人心情舒畅的声音
+我也莫名地兴奋起来……）
+
+当目睹了花魁娇艳的声音在喘息时
+我的心情变得不好了。
+
+下腹部开始痒痒了，明明是工作中却很色情
+变成了心情。
+
+//●分岐終了
+: endif
+就这样一直守护着。
+
+: PlaySe( "SE/Se_Device01" )
+一直这样持续下去吗
+设备收到了联系。
+
+//●演技：心の声です
+: StopBackVoice()
+: DrawChara( "Mukuro", 0, 1, 5)
+: PlayVoice( "Voices/vo00_muk2473" )
+\CN["无黑色"]
+（下一位客人是问题的伙伴吗……）
+
+接到了警戒的通知
+把手放在刀上重新振作精神。
+
+//●演出：場面転換トランジション
+//●背景：遊廓・昼
+//Yoshi：背景、遊郭座敷
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_YuukakuZashiki01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+\CN["客人"]
+“啧！我明明指名了第一名
+你这样啊……”
+
+\CN["客人"]
+“啊，我想要真正的第一名！
+我说让传说中的花魁堇太夫拥抱我！
+现在在吉野原吧？我知道！”
+
+\CN["铃兰大夫"]
+“我没听说过这样的话。”
+
+\CN["铃兰大夫"]
+“如果是做无礼的事情的话就不用付钱了。
+”
+
+\CN["客人"]
+“啊？我是贵族家的人？
+你要反抗吗？”
+
+\CN["铃兰大夫"]
+“不能接待给别人添麻烦的人。
+我领了你”
+
+以大男人为对手，堂堂正正的态度。
+
+\CN["客人"]
+“喂！你们滚出去！”
+
+//●演出：ヤクザ×２が出てくる
+: HideWnd()
+: cutinfile = "CutinFg01"
+: Call("Scenarios/Common*CutinFadeIn")
+: ShowWnd()
+\CN["流氓1"]
+“叫我了吗？”
+
+\CN["流氓2"]
+「…………」
+
+两个有型的男人如何进来。
+
+真糟糕……！
+
+//●演出：無黒　部屋に飛び入る
+: EraseAllImage( 9, Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 17, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DL"; Call( "Scenarios/Common*FgEff");
+\CN["客人"]
+“什么啊，你。
+但是，你的脸很可爱嘛”
+
+\CN["客人"]
+“嘛，虽然不是花魁
+真想拥有啊……”
+
+\CN["流氓1"]
+“诶……”
+
+\CN["流氓2"]
+“……不能大意，这个女人。
+你是什么人？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2474" )
+\CN["无黑色"]
+“我是被委托担任这里护卫的人。”
+
+//●読み：退いて（ひいて）
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2475" )
+\CN["无黑色"]
+“我不想太粗暴。
+如果可以的话能退下来就太好了……”
+
+\CN["客人"]
+“什么？害怕了吗？”？
+你们就是这么回事，手下留情吧」
+
+\CN["流氓1"]
+“手下留情的话，会被杀的……”
+
+\CN["流氓2"]
+“不能退。真不好意思。”
+
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：ヤクザ×２
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：ヤクザ×２,1,1,0,sc004a,sc004b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc004a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc004b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_YuukakuZashiki01_01", "BGM/22_BM003", 1044, 1044, -1, "Scenarios/SC_C04_03*battle_end" , true )
+
+*battle_end
+: StopBgm( 0.0 )
+: if ( $battleWin == true )
+	: Jump( "*sc004a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*sc004b" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+//========================================================
+//○遊廓のケツモチ４Ａ
+//========================================================
+*sc004a
+: HideWnd()
+: PlayBgm("BGM/28_ID01")
+: DrawImage( 1, 0, "BGImage/BG_YuukakuZashiki01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: ShowWnd()
+\CN["流氓1"]
+“……呃……嗯”
+
+\CN["流氓2"]
+“比预想的实力者还要强……”
+
+\CN["客人"]
+“不是吧，是骗人的吧……喂，你这些家伙，出了很多钱啊！”！
+面对这样的小姑娘，真是没出息……”
+
+: DrawChara( "Mukuro", 0, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo00_muk2476" )
+\CN["无黑色"]
+“那么，接下来就是你了……”
+
+\CN["客人"]
+“哦，我可是贵族啊！
+把刀指向我，你就是个叛徒！”
+
+现在的我作为反幕派头号白夜的一员行动着
+即使被人这样说，也只会觉得是在开玩笑。
+
+*sc003_win_select01
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc003_win_select01
+//■選択肢１：見逃してやる
+//■選択肢２：全員始末しておく
+//――――――――――――――――――――――――――――
+\CI["放过他"]
+\CI["全部收拾好"]
+那么，怎么办呢……？
+
+: if ($choice == 1) Jump( "*sc003_win_select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：見逃してやるを選んだ場合
+//-------------------------------------------------------
+*sc003_win_select01_s1
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk2477" )
+\CN["无黑色"]
+“想逃就逃吧……”
+
+\CN["客人"]
+“哼……！你给我记住……！”
+
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_dash01" )
+贵族的客人带着两个摇摇晃晃站起来的流氓
+从房间里出去了。
+
+: PlayBgm("BGM/01_CM001_inst")
+: DrawChara( "Mukuro", 2, 0, 0)
+: PlayVoice( "Voices/vo00_muk2478" )
+\CN["无黑色"]
+“没关系吗？没有受伤吗？”
+
+\CN["铃兰大夫"]
+“是的，托您的福。
+主人，诚，真是好手艺啊」
+
+\CN["铃兰大夫"]
+“主人做了护卫真是太好了。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，一部分从头到尾都向楼主报告。
+
+因为帮我解决了麻烦而被感谢了。
+
+……………………………………………………。
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——在那之后。
+
+//●背景：吉野原・街並み・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Yuukaku01_04", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: trackIndex = PlaySe( "SE/Se_Night1", true );
+: ShowWnd()
+\CN["客人"]
+“可恶……那个女人是什么人……。
+不，那种事怎么样都无所谓”
+
+\CN["客人"]
+“吉野原的这家店，我一定要把它弄坏！
+明天也要和将军对号入座……”
+
+//●演出：巌・紫苑　登場する
+: StopSe( trackIndex );
+: HideWnd()
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: DrawChara( "Shion", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: PlayBgm("BGM/30_CM015")
+: ShowWnd()
+\CN["严严"]
+“……哼哼”
+
+: PlayVoice( "Voices/vo12_shi0143" )
+\CN["紫苑"]
+“哎呀哎呀，一个一个地。
+主人们脸色苍白，你觉得怎么样？”
+
+\CN["客人"]
+「什，你怎么了？
+隔壁的年轻女子，难道是传说中的堇太夫吗？”
+
+: DrawChara( "Shion", 2, 0)
+: PlayVoice( "Voices/vo12_shi0144" )
+\CN["紫苑"]
+“咦？你知道我吗？”
+
+因为遇到了憧憬的堇太夫而眼角下垂的贵族男子。
+与此相反，黑社会的男人们脸色苍白。
+
+\CN["流氓1"]
+“……这，旁边的大个子，怎么会……那个……”
+
+\CN["流氓2"]
+“啊，啊，这个风貌……怎么可能弄错…！”
+
+\CN["流氓1"]
+“快乐杀人鬼……镝木严……！？”
+
+注意到的时候已经晚了。
+
+: DrawChara( "Iwao", 1, 0)
+\CN["严严"]
+“哦哦哦哦哦哦哦哦哦哦！！”
+
+//●演出：血飛沫エフェクト
+: HideWnd()
+: StopBgm( 0.0 )
+: PlaySe( "SE/Se_Swing03" )
+: EraseChara( "Shion", 0.0 )
+: EraseChara( "Iwao", 0.0 )
+: Call( "Scenarios/Effect*Blood01" )
+: SwapImage( 1, 0, "BGImage/BG_Red", 0.0 )
+: Wait()
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+第二天，贵族和流氓们被发现成肉块。
+
+我甚至不知道那具尸体是谁
+说得乱七八糟，简直就是肉块
+是恰好的状态。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●選択肢合流地点へ
+//＠ラベル：sc003_win_select01_s_end
+: $money += 3000
+无黑收到了报酬。
+
+: SetMission( "SC_C04_03_1", "Successed" )
+: Jump( "*sc003_win_select01_s_end" )
+//-------------------------------------------------------
+//●選択肢２：全員始末しておくを選んだ場合
+//-------------------------------------------------------
+*sc003_win_select01_s2
+//●演技：心の声です
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk2479" )
+\CN["无黑色"]
+（在这里放跑的话，以后就不要麻烦了。）
+
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 0, 1)
+我没有接到不许杀人的命令。
+
+\CN["客人"]
+“好……你，你在干什么……？”
+
+: DrawChara( "Mukuro", 1, 1)
+: PlayVoice( "Voices/vo00_muk2480" )
+\CN["无黑色"]
+“因为你是幕府方面的贵族。
+不能在这里放过……”
+
+重摆刀。
+
+\CN["客人"]
+“啊啊啊……啊……啊……啊啊……啊…啊……啊……”
+
+//●演出：斬撃＆血飛沫　エフェクト
+//＠殺人：3
+: StopBgm( 1.0 )
+: value = 3; Call("Scenarios/CommonSys*Murder")
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: EraseChara( "Mukuro", 0.0 )
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+我没有兴趣看他痛苦的样子。
+
+挥刀轻生。
+那是我给这家伙的恩惠。
+
+然后，一部分从头到尾都向楼主报告。
+
+虽然杀人是做得太过分了，但他却给予了我很大的麻烦
+开心和感谢。
+
+……………………………………………………。
+
+: SetMission( "SC_C04_03_1", "Hidden" )
+: SetMission( "SC_C04_03_2", "Successed" )
+: $money += 3000
+无黑收到了报酬。
+
+//●選択肢合流地点へ
+//＠ラベル：sc003_win_select01_s_end
+: Jump( "*sc003_win_select01_s_end" )
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*sc003_win_select01_s_end
+//＠仕事：成功
+//●分岐：恐山肝試しと研究者の手伝いクリア済の場合
+//●シーン：「商人伊勢商左衛門を追え１」へ
+//＠シナリオジャンプ：SC_C04_05
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーンエンド
+//●分岐終了
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 7 )
+	: FadeOut( 0.0 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_C04_06")
+: else
+	: LoadMap( "Map_Town07_01_Byakuya", "MukuroRoom", "Scenarios/Map_Town07_Byakuya_Init*Map01")
+: endif
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+//========================================================
+//○遊廓のケツモチ４Ｂ
+//========================================================
+*sc004b
+: HideWnd()
+: PlayBgm("BGM/28_ID01")
+: DrawImage( 1, 0, "BGImage/BG_YuukakuZashiki01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2481" )
+\CN["无黑色"]
+“……呃……作为我来说……”
+
+//●演出：無黒　倒れる
+: HideWnd()
+: PlaySe("SE/Se_Down01")
+: chara = "Mukuro"; lay = 3; type = "Down"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: ShowWnd()
+明明没有疏忽大意……。
+
+受到了很大的伤害
+放下刀，在那个场合倒下，然后放开了意识。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●演出：暗転解除
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_YuukakuZashiki01_01", 0.0 )
+: Wait()
+: ShowWnd()
+\CN["客人"]
+“呐，你没有杀吧？”
+
+\CN["流氓1"]
+“是的，没问题。”
+
+\CN["客人"]
+“这家伙真是个大好人。比起和这里的臭女人打交道
+看起来很开心”
+
+//●演出：巌＆紫苑　登場する
+: HideWnd()
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: DrawChara( "Shion", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: PlayBgm("BGM/30_CM015")
+: ShowWnd()
+\CN["严严"]
+“……哼哼哼哼”
+
+: DrawChara( "Shion", 2, 0)
+: PlayVoice( "Voices/vo12_shi0145" )
+\CN["紫苑"]
+“严酱，稍微控制一下就好了。”
+
+: DrawChara( "Shion", 0, 0)
+: PlayVoice( "Voices/vo12_shi0146" )
+\CN["紫苑"]
+“这里不是西都。
+做过头了的话，会被头骂的”
+
+\CN["客人"]
+“你难道不是那个有名的堇太夫吗？”
+
+: DrawChara( "Shion", 2, 0)
+: PlayVoice( "Voices/vo12_shi0144" )
+\CN["紫苑"]
+“咦？你知道我吗？”
+
+因为遇到了憧憬的堇太夫而眼角下垂的贵族男子。
+与此相反，黑社会的男人们脸色苍白。
+
+\CN["流氓1"]
+“……这，旁边的大个子，怎么会……那个……”
+
+\CN["流氓2"]
+“啊，啊，这个风貌……怎么可能弄错…！”
+
+\CN["流氓1"]
+“快乐杀人鬼……镝木严……！？”
+
+: DrawChara( "Iwao", 1, 0)
+\CN["严严"]
+“哦哦哦哦哦哦哦哦哦哦！！”
+
+//●演出：血飛沫エフェクト
+: HideWnd()
+: StopBgm( 0.0 )
+: PlaySe( "SE/Se_Swing03" )
+: EraseChara( "Shion", 0.0 )
+: EraseChara( "Iwao", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Red", 0.25 )
+: Wait()
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+接着我醒过来的是吉野原的客栈。
+
+那之后，白夜的人马上进入
+好像把流氓全部杀光了。
+
+姐姐也特别注意我。
+幸存下来的只是运气好而已。
+
+这个工作以失败告终了。
+
+……………………………………………………。
+
+//＠仕事：失敗
+//●分岐：恐山肝試しと研究者の手伝いクリア済の場合
+//●シーン：「商人伊勢商左衛門を追え１」へ
+//＠シナリオジャンプ：SC_C04_05
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーンエンド
+//●分岐終了
+: Call( "Scenarios/CommonSys*AllRecovery" )
+: SetMission( "SC_C04_03_1", "Failed" )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 7 )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_C04_06")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: DestinationMap( "Map_Town07_02_Byakuya" )
+	: LoadMap( "Map_Town07_01_Byakuya", "MukuroRoom", "Scenarios/Map_Town07_Byakuya_Init*Map01")
+: endif

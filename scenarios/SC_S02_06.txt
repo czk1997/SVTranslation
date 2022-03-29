@@ -1,0 +1,949 @@
+//========================================================
+//○戦闘敗北レイプ・人間（冥）
+//========================================================
+//ジャンプ処理
+: if ( Flag ( "EnemyHuman" ) == false && Flag ( "EnemyElf" ) == false && Flag ( "EnemyJujin" ) == false )
+	: Jump( "*sc002" )
+: endif
+*sc001
+//●状況：戦闘に敗北後。無黒は処女です
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+男人用害羞的表情接近吃了败仗的我。
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart1" ) endif
+: if ( SceneFlag( "SC_S02_06_1" ) == false ) Jump( "*HscStart1" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart1" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump1" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart1" ) endif
+
+*HscJump1
+: Jump( "Scenarios/HSceneSkip*SC_S02_06_1" )
+
+*HscStart1
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+: Call( "Scenarios/CommonSys*Word" )
+
+//●演出：暗転解除
+//●ＣＧ：Ｈカットイン・立位セックス（冥）
+//●ＣＧ差分：未挿入（顔ＵＰ）
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_1_0100001_0000000_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+\CN["男人"]
+“哇，你很冷静啊。”
+
+: PlayVoice( "Voices/vo09_mei1246" )
+\CN["冥"]
+“……我是战败的人。事到如今再也不做哭喊的样子了。”
+
+用充满用心的眼神用鼻子笑着看着我的男人。
+
+体力耗尽的身体，已经很难好好运动身体了。
+
+\CN["男人"]
+“那也挺好的。
+是不是很清楚要做什么的感觉呢”
+
+抱着我，压着下半身变硬的东西。
+
+这家伙想干什么？
+不知道才奇怪。
+
+: PlayVoice( "Voices/vo09_mei1247" )
+\CN["冥"]
+“……赶紧做就行了。”
+
+\CN["男人"]
+“啊，不是说了吗？既然已经下了这样的决心……”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_0_0111002_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——呼呼……呼呼！
+
+//●演技：男性器をあてがわれています
+: PlayVoice( "Voices/vo09_mei1248" )
+\CN["冥"]
+“嗯……嗯……！”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi01" )
+\V[Mei Penis]被\V[Mei Omanko]分配。
+
+\CN["男人"]
+“如果有觉悟的话，那就这样吧。
+我也很喜欢侵犯那个因害怕而哭喊的女人……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嗯！！
+
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo09_mei1249" )
+\CN["冥"]
+“呜！呜……呜……啊…呜哇！！”
+
+一口气将\V[Mei Penis]插到根部
+把热呼呼的叹气撒了出来。
+
+: PlayVoice( "Voices/vo09_mei1250" )
+\CN["冥"]
+“啊，啊啊……嗯…啊，啊，啊……
+{阴道内，内}硬的{插入，是}了……」
+
+一旦出现{插入，是}
+可以相应地感受到。
+
+有厌恶感，非常恶心。
+但是，如果想通了，就没什么。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo09_mei1251" )
+\CN["冥"]
+（毕竟只是拿出生殖器而已。）
+
+\CN["男人"]
+“原来如此啊？一开始就好像是这个意思啊。
+为什么湿了……”
+
+: PlayVoice( "Voices/vo09_mei1252" )
+\CN["冥"]
+“……怎么说都可以。”
+
+\CN["男人"]
+“啧。要是反应这么冷淡的话。
+但是，嗯，manko的反应很热烈”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一下子、一下子、一下子、一下子、一下子、一下子、一下子！
+
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_0_0211102_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：下から上へ突き上げるようなピストンです
+: PlayVoice( "Voices/vo09_mei1253" )
+\CN["冥"]
+“哇！哇！啊！啊！啊！啊！”
+
+男人为了引起我的反应，用了腰。
+
+//●分岐：淫乱度Ｃの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) <= 1 )
+: PlayVoice( "Voices/vo09_mei1254" )
+\CN["冥"]
+“嗯，啊，嗯……啊，啊，嗯！
+{阴道内，内}被摩擦了……嗯，嗯！」
+
+\CN["男人"]
+“哈、哈、拧紧、好厉害……。
+呜……尖啊、根部啊……非常紧绷……”
+
+男人紧紧地抱住我，{阴道内，内}像搅动一样地
+我去动阴茎。
+
+{阴道内，内}每次被摩擦，爱液就会增加量
+不小心奏出了令人讨厌的水声。
+
+\CN["男人"]
+“怎么样？我的小鸡鸡心情好吗？”
+
+: PlayVoice( "Voices/vo09_mei1255" )
+\CN["冥"]
+“哈，嗯……呃，没什么……没什么……”
+
+如果在这里能心情非常好或者谄媚的话
+也许能制造出破绽……。
+
+\CN["男人"]
+“那就更激烈一点吧……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！啧啧！慢吞吞！
+嘘！嘘嘘！
+
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_0_0111102_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストン激しくなります
+: PlayVoice( "Voices/vo09_mei1256" )
+\CN["冥"]
+“啊啊，啊，嗯，嗯，啊！
+啊，啊，呜，呜，呜，呜哇！”
+
+: PlayVoice( "Voices/vo09_mei1257" )
+\CN["冥"]
+“恩！喂，如果被强行塞进里面的话……
+啊……嗯……那，就那么强行……呃”
+
+男子尽情地将腰向前突出，用阴茎剜出阴道深处。
+
+: PlayVoice( "Voices/vo09_mei1258" )
+\CN["冥"]
+“啊……啊呜……那、那是……啊啊啊啊啊啊啊啊啊！”
+
+前部碰到子宫口
+不由得发出了很大的声音。
+
+\CN["男人"]
+“对了对了，那个声音……但是，现在的声音很紧……
+一下子就到了极限……”
+
+\CN["男人"]
+“在这里干净利落一次比较好
+之后会更开心的”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！好厉害！
+
+: PlayVoice( "Voices/vo09_mei1259" )
+\CN["冥"]
+“呜、啊、嗯、呜呜呜呜！啊、啊啊啊、啊、啊
+啊，呃，好饿！”
+
+\CN["男人"]
+“啊，啊，我把它拿出来……”
+
+兴奋地跑来跑去。
+
+: PlayVoice( "Voices/vo09_mei1260" )
+\CN["冥"]
+“嗯……啊，啊，太激烈了……”……
+嗯，嗯，嗯……啊，啊，好饿啊！”
+
+\CN["男人"]
+“哈、哈、是、出、出……呃……往里、出……！”
+
+男子用力地打了腰，然后露出了隐秘的声音——
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Uterus = "eve_c003"; Call( "Scenarios/Effect*UterusEjaculation" );
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_0_0211113_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜呜呜呜呜呜呜！
+
+: PlayVoice( "Voices/vo09_mei1261" )
+\CN["冥"]
+“呃，啊啊啊……呃……被{射精，だ}了
+{阴道内，内}，精液，{射精，然后}……」
+
+扑哧扑哧地注入气势。
+
+\CN["男人"]
+“啊啊啊啊……好舒服……”
+
+男子一边发呆，一边继续释放精液。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●淫乱度Ｂ以上の場合
+: else
+: PlayVoice( "Voices/vo09_mei1262" )
+\CN["冥"]
+“嗯……嗯，嗯！
+啊，啊，啊……嗯，嗯……！”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi02" )
+\CN["男人"]
+“哈，哈，感觉乱七八糟的……”
+
+不管强行被侵犯还是不被侵犯
+小鸡鸡被女阴拿出没有变化。
+
+{阴道内，内}往返的行为，不知不觉开始认真的感觉
+收起来了……。
+
+: PlayVoice( "Voices/vo09_mei1263" )
+\CN["冥"]
+“嗯！呃，啊！
+哈、哈、来、变好心情了……”
+
+: PlayVoice( "Voices/vo09_mei1264" )
+\CN["冥"]
+“嗯！嗯，啊啊啊啊啊啊啊啊啊！！”！！
+啊，太激烈了……女阴，被黏糊糊的……”
+
+\CN["男人"]
+“被侵犯了，没想到会有这种感觉。
+你原来是个好色鬼啊」
+
+\CN["男人"]
+“这个馒头，怎么说也是非常成熟的
+感觉到了，是相当认真的吧？你”
+
+: PlayVoice( "Voices/vo09_mei1265" )
+\CN["冥"]
+“嗯，嗯，嗯……！哈，嗯，啊啊……
+哟，多余的事……嗯，啊……嗯……”
+
+: PlayVoice( "Voices/vo09_mei1266" )
+\CN["冥"]
+「チ、小鸡鸡，猜中了……嗯，哦，里面呢……嗯，啊，啊
+被戳到了的话……嗯，呃……嗯……嗯……！”
+
+不客气地搅拌{阴道内，内}，带热溶化。
+
+那样的话，就无法抑制自己激动的热情了
+变成这样了……。
+
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_0_0111102_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei1267" )
+\CN["冥"]
+“我、你……！好棒！好棒……呜……呜……”♥</color>」
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo09_mei1268" )
+\CN["冥"]
+“呜、呜……好棒……好棒……好棒……”
+呜呜呜——————————————！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+结果，我就这样毫不犹豫地登上了顶峰。
+
+//●分岐：淫乱度Ａの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) == 3 )
+: PlayVoice( "Voices/vo09_mei1269" )
+\CN["冥"]
+“啊啊啊啊啊啊啊啊啊啊啊啊”♥</啊……啊♥</[color=59a0]♥</color>
+被抢了……嗯，嗯，嗯！”
+
+\CN["男人"]
+“manko非常紧绷……。
+再戳一点的话，就更好了吧？”
+
+男人一笑就露出讨厌的笑容
+粗暴地责备变得敏感的女阴。
+
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_0_0211102_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei1270" )
+\CN["冥"]
+“等一下……嗯……！呜、呜……”♥</color>
+好、好……好、现在……好、好……”
+
+: PlayVoice( "Voices/vo09_mei1271" )
+\CN["冥"]
+“嘛，又是一次，停下来……！”！
+哦哦哦哦，哦，哦……好厉害啊……
+啊……啊…啊…啊啊……嗯……”
+
+//●演技：激しい絶頂です
+: PlayVoice( "Voices/vo09_mei1272" )
+\CN["冥"]
+“啊，呜呜呜呜呜呜呜呜呜——————！！！
+哦哦，谢谢！”
+
+//●ＣＧ差分：挿入・潮
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_0_0111113_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+啊啊啊啊啊啊啊啊啊啊啊啊——！
+
+\CN["男人"]
+“呜……这家伙，终于吹到了潮水……！”
+
+//●分岐終了
+: endif
+\CN["男人"]
+“哈啊哈……啊，我也很帅啊！”！
+我会马上射精的！”
+
+噗哧噗哧！！
+
+//●演技：絶頂しているところに男性器を深く押し込まれます
+: PlayVoice( "Voices/vo09_mei1273" )
+\CN["冥"]
+“呜……嗯，哈……チ、小鸡，在里面……！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Uterus = "eve_c003"; Call( "Scenarios/Effect*UterusEjaculation" );
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c003_0_0_0211113_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+噗哼！！嘘！噗哧噗！！
+
+: PlayVoice( "Voices/vo09_mei1274" )
+\CN["冥"]
+“呜呜！呜呜，呜呜呜哇！！”
+
+: PlayVoice( "Voices/vo09_mei1275" )
+\CN["冥"]
+「せ、精液、{射精，}呃……嗯…嗯♥</color>
+嗯——————！”
+
+我就那样，一边绝顶男人的射精一边接受。
+
+: PlayVoice( "Voices/vo09_mei1276" )
+\CN["冥"]
+“嗯，呃……<color=59a0>♥</嗯，啊啊……嗯哈哈♥</color>
+啊，糟了……精液，吸吮着，呼噜呼噜♥</color>」
+
+\CN["男人"]
+“呃，嗯……好像被吸光了……”
+
+: PlayVoice( "Voices/vo09_mei1277" )
+\CN["冥"]
+“呜呜呜……呜…呜…哈，哈……
+呐、{阴道内、内}、小鸡鸡、弹跳、满满的、
+{射精，だ}被……嗯，啊啊……」
+
+//●分岐終了
+: endif
+//●ＣＧ：レイプ事後（冥）
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_b003_0_1_0000000_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+好狡猾……噗！呜哇呜……真是的。
+
+: PlayVoice( "Voices/vo09_mei1278" )
+\CN["冥"]
+“啊————啊，哈……呃，真的哦……”……
+呜……呜……嗯……啊………嗯……”
+
+被\V[Mei Omanko]拔出，禁不住发出了叹息。
+
+\CN["男人"]
+“老实点睡的话
+我会再做的，嗯？”
+
+//●演技：男を殺す隙をうかがっているだけです
+: PlayVoice( "Voices/vo09_mei1279" )
+\CN["冥"]
+「…………」
+
+男人犯了我的罪，完全疏忽了。
+机会即将到来。
+
+\CN["男人"]
+“等，稍微休息一下，我再犯。”
+
+男子无防备地坐下。
+
+//●ＣＧ：消去
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mei", 20, 3, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei1280" )
+\CN["冥"]
+“哈、哈……不好意思，那是没有的。”
+
+\CN["男人"]
+“诶……？”
+
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: EraseChara( "Mei", 0.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+只是叫出胧月的体力恢复了。
+一不小心把呆了的男人的头跳了出去。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，我将剩下的力量用尽
+总算回到了附近的城镇，得到了津贴。
+
+//●演出：暗転
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_S02_06_1
+//＠拠点復帰
+//●シーンエンド
+*HScene_End1
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S02_06_1" )
+: chara = "Mei"
+: Call( "Scenarios/CommonSys*LoseRape" )
+: Jump( "Scenarios/CommonSys*LoseReturn" )
+//========================================================
+//○敗北レイプ・冥（魔物編）
+//========================================================
+*sc002
+//●状況：戦闘に敗北後。冥は処女です
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+吃了败仗的我，用尽全力倒在了那个地方。
+
+魔物的手伸向那样的我——
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart2" ) endif
+: if ( SceneFlag( "SC_S02_06_2" ) == false ) Jump( "*HscStart2" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart2" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump2" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart2" ) endif
+
+*HscJump2
+: Jump( "Scenarios/HSceneSkip*SC_S02_06_2" )
+
+*HscStart2
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+: Call( "Scenarios/CommonSys*Word" )
+//●ＣＧ：Ｈカットイン・異種姦・ミノタウロス（冥）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c012_0_0_0100002_2000000_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei1281" )
+\CN["冥"]
+“嗯，嗯……嗯，嗯……”
+
+消耗了一根手指都动不了的我
+将魔物勃起的\V[Mei Penis]推过来。
+
+: PlayVoice( "Voices/vo09_mei1282" )
+\CN["冥"]
+“哈、哈……这家伙，向我发情了……”
+
+发情了的魔物做的事只有1个。
+我想和对方交尾。
+
+我有半个精灵的血
+具有可以和所有种族交配的特性。
+
+//●ＳＥ：魔物の吠え声
+: PlaySe( "SE/Se_Monster01" )
+——咕噜鲁鲁鲁！
+
+//●演技：生殖器を膣口にあてがわれています
+: PlayVoice( "Voices/vo09_mei1283" )
+\CN["冥"]
+“呜呜呜呜！”
+
+魔物发出低沉的呻吟声，在阴道孔里
+推过来。
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c012_0_0_0210002_2100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+胖乎乎的、一直、一直的！！！
+
+//●演技：５００ミリのペットボトルぐらいの太さのペニス挿入です
+: PlayVoice( "Voices/vo09_mei1284" )
+\CN["冥"]
+“呜、呜……嗯！嗯……呜呜哇……呜……！！”！！
+嗯……呃，呃，哈哈……啊啊啊！”
+
+: PlayVoice( "Voices/vo09_mei1285" )
+\CN["冥"]
+“恩，啊……呜！是、{插入，是}啊……”……
+那么，破裂了……啊……啊……呃，呃……”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi02" )
+语言不通。
+
+魔物没有表现出任何反应，只是把自己的\V[Mei Penis]
+我只沉迷于挤东西。
+
+: PlayVoice( "Voices/vo09_mei1286" )
+\CN["冥"]
+“呃…呃，嗯……嗯！嗯！
+{阴道内，内}、满满地……嗯…啊啊啊啊啊啊」
+
+: PlayVoice( "Voices/vo09_mei1287" )
+\CN["冥"]
+“哇哈哈……啊，来了……全部，{插入，是}啊……
+哦哦哦哦哦…嗯，嗯，嗯，嗯！”
+
+魔物一口气把腰按进去，一直到根部
+打进来了。
+
+//●ＳＥ：魔物の吠え声
+: PlaySe( "SE/Se_Monster01" )
+哦哦哦哦哦哦！
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+哇！嘘！嘘！呼呼！！
+
+: PlayVoice( "Voices/vo09_mei1288" )
+\CN["冥"]
+“……嗯，好！好！好，好！
+嗯，哈！啊啊啊，啊！”
+
+魔物马上开始了抽奖。
+
+速度不慢。
+突然间，激烈的往返摩擦{阴道内，内}。
+
+: PlayVoice( "Voices/vo09_mei1289" )
+\CN["冥"]
+「呜呜！呜呜……呜呜！呜呜！
+火支票……是秃顶，是……等等……”
+
+: PlayVoice( "Voices/vo09_mei1290" )
+\CN["冥"]
+“哦，哦哦哦哦哦…嗯……嗯……！”！
+哦，嗯，嗯！唔，哦！”
+
+每次魔物移动，身体内部都会有翻覆的冲击
+穿透全身。
+
+: PlayVoice( "Voices/vo09_mei1291" )
+\CN["冥"]
+“嗯！啊！啊！啊！啊！啊！啊！
+这、这样的、这个、坏掉了……啊啊啊、嗯、嗯！”
+
+我苦闷的期间也被挖{阴道内，内}的话
+巨大的压迫感不断地袭来。
+
+//●分岐：淫乱度Ｂ以上の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) >= 2 )
+//●演技：快感を得てしまっています
+: PlayVoice( "Voices/vo09_mei1292" )
+\CN["冥"]
+“呃，明明很痛苦……哈哈哈，女婿，撕碎了
+明明是用小鸡鸡展开的，为什么会有这样的感觉♥</color>」
+
+: PlayVoice( "Voices/vo09_mei1293" )
+\CN["冥"]
+「呜呜呜呜！呜呜，呜呜呜呜呜呜！」！
+但是，不行……被魔物侵犯，心情变好了♥</color>」
+
+即使觉得不能心情变好
+顶峰感一个接一个地涌上来。
+
+被极粗的小鸡鸡侵犯，心情变得非常舒畅
+收起来了……。
+
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c012_0_0_0411002_2100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei1294" )
+\CN["冥"]
+“啊，真是太棒了……真是受不了了……呃，呃……”♥</color>
+哦哦哦哦哦……啊……啊，嗯，嗯……”
+
+//●演技：絶頂です
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Orgasm", 1) endif
+: PlayVoice( "Voices/vo09_mei1295" )
+\CN["冥"]
+“嗯……嗯……嗯……嗯………”♥</color>
+嗯，嗯……哦哦哦哦！！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+呸！！战栗比酷！吓一跳！！
+
+: PlayVoice( "Voices/vo09_mei1296" )
+\CN["冥"]
+「呜呜！呜呜……呜呜呜呜呜呜呜呜呜呜呜呜呜啊」♥</color>」
+
+尽情地吼叫着，最终达到了顶峰
+尽管如此，魔物还是不停止行动。
+
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c012_0_0_0210002_2100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei1297" )
+\CN["冥"]
+“哦哦，哦……哦，嗯，嗯……”♥</color>
+那、这样啊……呃，明明是一个人，现在却……”
+
+: PlayVoice( "Voices/vo09_mei1298" )
+\CN["冥"]
+“等一下！嗯，嗯，嗯，嗯，嗯！！
+我、我……我会的！”
+
+一味地挥着腰，蹂躏痉挛着的女阴。
+
+//●分岐終了
+: endif
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: PlayBackVoice( "Voices/BGV09_mei_aegi03" )
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！
+
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c012_0_0_0411002_2100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストン、すごく激しいです
+: PlayVoice( "Voices/vo09_mei1299" )
+\CN["冥"]
+
+
+甚至会想是不是把内脏拖出来了呢
+激烈地拿出\ V[Mei Penis]来——
+
+//●ＳＥ：魔物の雄叫び
+: PlaySe( "SE/Se_Monster01" )
+——啊啊啊啊啊啊啊啊啊啊啊啊！！！
+
+魔物大吼的瞬间，{阴道内，内}收纳着
+\V[Mei Penis]用力跳跃。
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Uterus = "eve_c012"; Call( "Scenarios/Effect*UterusEjaculation" );
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c012_0_0_0311013_2100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呼，呜呜，呜呜，呜呜，呜呜，呜呜，呜呜！
+
+: PlayVoice( "Voices/vo09_mei1300" )
+\CN["冥"]
+“呃……啊……啊……啊……啊……然后，{射精，出}了……”
+
+我的{阴道内，内}尽情地精液被吐出。
+
+: PlayVoice( "Voices/vo09_mei1301" )
+\CN["冥"]
+“啊，嗯，嗯……{阴道内，内}，痒痒的……
+哈……肚子快裂开了……呃，呃……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+天哪！鲍勃！布奇！！
+
+: PlayVoice( "Voices/vo09_mei1302" )
+\CN["冥"]
+“嗯……嗯……嗯……嗯……嗯……
+啊，好热啊，{射精，然后}……变得满满的……”
+
+在保持意识竭尽全力的地方被射精
+眼前一片空白。
+
+尽管如此，魔物还是毫不留情地向{阴道内，内}持续放出精液。
+
+//●ＣＧ差分：未挿入・射精後
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_c012_0_0_0411013_2100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+噗噗！噗噗……呜呜呜哇……呜呜呜哇……。
+
+: PlayVoice( "Voices/vo09_mei1303" )
+\CN["冥"]
+“嗯哈……哈……哈……哈…哈…哈…哈…哈，哈
+嗯……哈…”
+
+\V[Mei Penis]被拔出的瞬间，{阴道内，内}
+无法平息的精液溢出。
+
+: PlayVoice( "Voices/vo09_mei1304" )
+\CN["冥"]
+“哈，哈……哈……真糟糕……呜……
+已经……意识到了……”
+
+……意识模糊。
+消耗的身体，在连续的绝顶超越了极限。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+——几个小时后。
+
+//●ＣＧ：レイプ事後（冥）
+//●ＣＧ差分：ぶっかけ
+: HideWnd()
+: evcha = "Mei"; evbg = false; evcos = true;
+: evfile = "eve_b003_0_1_0000000_1100010_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: if ( $inExtra == true )
+	: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: endif
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：数時間、犯された後です
+: PlayVoice( "Voices/vo09_mei1305" )
+\CN["冥"]
+“呜呜、呜呜……呜呜…呜呜…呜呜…呜呜……”
+
+: PlayBackVoice( "Voices/BGV09_mei_jigo01" )
+魔物似乎毫不留情地侵犯了失去意识的我。
+
+接着醒来的时候，肚子都快撑破了
+注入了大量精液，以溢出的状态倒下了。
+
+//●演出：暗転
+: HideWnd()
+: StopBackVoice()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+那之后，路过的旅行者好像救了我。
+
+//＠Ｈシーン終了：SC_S02_06_2
+//＠拠点復帰
+//●シーンエンド
+*HScene_End2
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S02_06_2" )
+: chara = "Mei"
+: Call( "Scenarios/CommonSys*LoseRape" )
+: Jump( "Scenarios/CommonSys*LoseReturn" )

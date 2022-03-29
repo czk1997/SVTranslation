@@ -1,0 +1,1851 @@
+//========================================================
+//○【特定キャラ】あざみ
+//========================================================
+*CHA05_1
+: NpcCode = "CHA05_1"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●時期：白夜ルート
+//●場所：白夜のアジト
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo09_mei0903" )
+\CN["冥"]
+“虽然是妹妹的事，但是突然拔出来，真是对不起……”
+
+: DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0846" )
+\CN["嘲讽"]
+“没什么需要道歉的。
+白夜……跟你一起去的，是他自己
+因为已经决定了嘛”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0904" )
+\CN["冥"]
+“啊，这样说的话就帮大忙了。”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○【特定キャラ】みどり
+//========================================================
+*CHA10
+: NpcCode = "CHA10"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●時期：白夜ルート
+//●場所：崎珠・みどりの部屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Midori", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo10_mid0608" )
+\CN["绿色"]
+“我本来应该特地来这里的。”
+
+\CN["卍"]
+「…………」
+
+: DrawChara( "Mei", 3, 0)
+: PlayVoice( "Voices/vo09_mei0905" )
+\CN["冥"]
+“因为是上司的命令。有意见的话就告诉我。”
+
+: DrawChara( "Midori", 26, 0)
+: PlayVoice( "Voices/vo10_mid0609" )
+\CN["绿色"]
+“切……真的，我不喜欢。”
+
+//●シーンエンド
+: Return
+
+//--------------------------------------------------------
+
+*CHA10_1
+//●時期：白夜ルート・冥が目標を見失いかけれる
+//●場所：崎珠・みどりの部屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Midori", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo10_mid0610" )
+\CN["绿色"]
+“自己最近很奇怪吗？
+软乎乎的书签，好辣啊！”
+
+: DrawChara( "Mei", 11, 0)
+: PlayVoice( "Voices/vo09_mei0906" )
+\CN["冥"]
+“……是吗？”
+
+//●演技：ため息です
+: DrawChara( "Midori", 10, 0)
+: PlayVoice( "Voices/vo10_mid0611" )
+\CN["绿色"]
+“哈~。不管你死不死我们家
+虽然没有关系……”
+
+: DrawChara( "Midori", 12, 0)
+: PlayVoice( "Voices/vo10_mid0612" )
+\CN["绿色"]
+“只是，看到现在的你就莫名地生气。
+总觉得很无聊”
+
+//●シーンエンド
+: Return
+
+//--------------------------------------------------------
+
+*CHA10_2
+//●時期：白夜ルート・冥が復活する
+//●場所：崎珠・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Midori", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo10_mid0613" )
+\CN["绿色"]
+“噗哈哈~！果然中午喝一杯最棒了！”
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0907" )
+\CN["冥"]
+“从白天开始喝酒吗？好像很从容啊。”
+
+: DrawChara( "Midori", 18, 0)
+: PlayVoice( "Voices/vo10_mid0614" )
+\CN["绿色"]
+“因为我们家体质不好醉。
+嘛，就算是烂醉如泥，如果是自己的对手的话，也不要被瞬杀烧伤”
+
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0908" )
+\CN["冥"]
+“是啊。我来杀你。”
+
+: DrawChara( "Midori", 22, 0)
+: PlayVoice( "Voices/vo10_mid0615" )
+\CN["绿色"]
+“哈？不是的。我会把你瞬间杀了。
+那么，现在开始做吗？出去吗？”
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0909" )
+\CN["冥"]
+“因为现在有重要的事情。
+结束了的话，不管多少我都会陪你的”
+
+: DrawChara( "Midori", 21, 0)
+: PlayVoice( "Voices/vo10_mid0616" )
+\CN["绿色"]
+“哇。约好了。你是我{杀，玫瑰}做完了
+在那之前不要死啊」
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○【特定キャラ】御影
+//========================================================
+*CHA11
+: NpcCode = "CHA11"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●時期：白夜ルート・幕府を落としてから
+//●場所：白夜のアジト
+//●演技：ボーッとしています。燃え尽き症候群
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Mikage", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo11_mik0391" )
+\CN["御影"]
+「…………」
+
+: DrawChara( "Mei", 7, 0)
+: PlayVoice( "Voices/vo09_mei0910" )
+\CN["冥"]
+“织笠，真少见啊，你竟然发呆。”
+
+: DrawChara( "Mikage", 6, 0)
+: PlayVoice( "Voices/vo11_mik0392" )
+\CN["御影"]
+「啊？冥先生，你来了啊。
+其实最近没有什么劲头……”
+
+这是以推翻幕府为目标的织笠。
+就是那种实现了目标，失去了生存的意义的感觉
+是吧。
+
+: DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo11_mik0390" )
+\CN["御影"]
+“呃，这样说可不好啊。
+如果没有听到的话我会很开心的”
+
+: DrawChara( "Mei", 4, 0)
+: PlayVoice( "Voices/vo09_mei0911" )
+\CN["冥"]
+“啊，幕府消失了
+因为还有很多事情要做”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0393" )
+\CN["御影"]
+“呵呵，是啊。
+是的，现在开始呢”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○【特定キャラ】紫苑
+//========================================================
+*CHA12
+: NpcCode = "CHA12"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●時期：白夜ルート
+//●場所：崎珠
+——从门前传来了什么。
+
+//●演技：エッチしています
+: DrawFaceThumbnail("Shion", 9, 3, 0, 1 )
+: PlayVoice( "Voices/vo12_shi0358" )
+\CN["紫苑"]
+“啊啊，嗯，啊，啊，啊…严，再加一点。”♥</color>
+再多品尝一下我的点心♥</color>」
+
+: DrawFaceThumbnail("Shion", 11, 3, 0, 1 )
+: PlayVoice( "Voices/vo12_shi0359" )
+\CN["紫苑"]
+“那里……嗯……呃，好舒服……啊啊啊……呃
+哈……嗯！”
+
+//●演技：心の声です
+: DrawChara( "Mei", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0912" )
+\CN["冥"]
+（从白天开始就是父子……多么肮脏…）
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○【特定キャラ】蘭丸
+//========================================================
+*CHA14
+: NpcCode = "CHA19"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●時期：白夜ルート
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["兰丸"]
+「冥酱，你特意来看我吗？
+非常开心”
+
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0913" )
+\CN["冥"]
+“并不是来见你的。
+我只是碰巧来附近看看情况而已”
+
+: DrawChara( "Ranmaru", 17, 0)
+\CN["兰丸"]
+“这样啊。这样也很开心。”
+
+被那样的笑的话，会被吓到。
+为什么呢？
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○【特定キャラ】玉藻
+//========================================================
+*CHA22
+: NpcCode = "CHA22"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●時期：白夜ルート
+//●場所：白夜のアジト
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Tamamo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo22_tam0452" )
+\CN["玉藻"]
+“没想到，又有一天会回到这里……。
+这也是命运吗？”
+
+//●シーンエンド
+: Return
+
+//--------------------------------------------------------
+
+*CHA22_1
+//●時期：白夜ルート
+//●場所：崎珠・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Tamamo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo22_tam0458" )
+\CN["玉藻"]
+“你也喝一杯吧，怎么样？我来请客吧。”
+
+: DrawChara( "Mei", 11, 0)
+: PlayVoice( "Voices/vo09_mei0914" )
+\CN["冥"]
+“不好意思，我不太会喝酒。
+我只接受您的心意”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○【崎珠・外】若者・男
+//========================================================
+*NPC_T06_001
+: NpcCode = "NPC_T06_001"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_001_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_001_nude" ) endif
+//●場所：崎珠・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“这里是崎珠，位于大和东的山间小镇。
+虽说是城市，但还是在发展中”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T06_001_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“啊啊啊……凛凛美丽的裸体……。
+哈、哈、好兴奋……！”
+
+//●演技：心の声です
+: DrawChara( "Mei", 5, 0 )
+: PlayVoice( "Voices/vo09_mei0915" )
+\CN["冥"]
+（在街上光着身子，被男人用下流的眼神看着……。
+嗯……光是这个就让人毛骨悚然了♥</color>）
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・外】若者・女
+//========================================================
+*NPC_T06_002
+: NpcCode = "NPC_T06_002"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_002_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_002_nude" ) endif
+//●場所：崎珠・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“你去过帝都吗？
+一定是比这里更发达、更棒的地方吧”
+
+: DrawChara( "Mei", 19, 0 )
+: PlayVoice( "Voices/vo09_mei0916" )
+\CN["冥"]
+“这里有这里的好处。
+旁边的草坪是蓝色的”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T06_002_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“哈！？呐，你在干什么？”？
+光着身子在外面走，脑子不是很奇怪吗？”
+
+//●演技：心の声です
+: DrawChara( "Mei", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0917" )
+\CN["冥"]
+（简直就像看到脏东西一样。
+理所当然吗……）
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・外】中年・女
+//========================================================
+*NPC_T06_003
+: NpcCode = "NPC_T06_003"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_003_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_003_nude" ) endif
+//●場所：崎珠・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“位于市中心的大宅邸是反幕派组织中最棒的
+好像是拥有力量的白夜的根据城”
+
+\CN["妇女"]
+“接近了也不知道会被做什么
+要小心啊」
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T06_003_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“喂，等一下，你的衣服怎么了！？”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・外】老人・男
+//========================================================
+*NPC_T06_004
+: NpcCode = "NPC_T06_004"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_004_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_004_nude" ) endif
+//●場所：崎珠・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“据说这片土地从前是由掌管幸福的神创造的。
+不是写在我祖先留下的书上的吗”
+
+: PlayVoice( "Voices/vo09_mei0918" )
+\CN["冥"]
+“听说那片土地、那片土地有各种各样的由来和传承
+这里也有这样的东西吗……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T06_004_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“哦哦哦哦哦……！？啊，你的衣服怎么了！？”
+
+//●演技：心の声です
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0919" )
+\CN["冥"]
+（……自己暴露自己的肌肤，给我看看……
+因为这样的事，我才这么兴奋……）
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・外】道具屋
+//========================================================
+*NPC_T06_005
+: NpcCode = "NPC_T06_005"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：崎珠・外
+//●分岐：［服装］着衣・ダークエルフの場合
+: if ( CharaCostume( "Mei" ) == 0 || CharaCostume( "Mei" ) == 2 )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["道具店"]
+“欢迎光临。哎呀，难道是干部的……？”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●全裸の場合
+: else
+\CN["道具店"]
+“……嗯？说不定是干部的……？
+但是，为什么会那样……”
+
+: DrawChara( "Mei", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0920" )
+\CN["冥"]
+“是……那是，那个，有各种各样的……”
+
+到底是因为想做才露出来的
+不可能说。
+
+\CN["道具店"]
+“成为干部的话，会有各种各样的事情吧。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+//●分岐終了
+: endif
+*NPC_T06_005_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,NPC_T06_005_select
+//■選択肢１：買い物をする
+//■選択肢２：話をする
+//■選択肢３：何もしない
+//――――――――――――――――――――――――――――
+\CI["买东西"]
+\CI["说话"]
+\CI["什么也不做"]
+怎么办？
+
+: if ($choice == 1)
+	: Jump( "*NPC_T06_005_select_s2" )
+: elif ($choice == 2)
+	: Jump( "*NPC_T06_005_select_s3" )
+: endif
+
+//-------------------------------------------------------
+//●選択肢１：買い物をするを選んだ場合
+//-------------------------------------------------------
+*NPC_T06_005_select_s1
+//●買い物処理
+//●シーンエンド
+: Call( "Scenarios/CommonSys*ItemShop" )
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：話をするを選んだ場合
+//-------------------------------------------------------
+*NPC_T06_005_select_s2
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["道具店"]
+“要从干部那里拿到钱……”
+
+: DrawChara( "Mei", 13, 0)
+: PlayVoice( "Voices/vo09_mei0921" )
+\CN["冥"]
+“不，那可不行。我会好好付钱买的。
+否则下面就无法显示了”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//-------------------------------------------------------
+//●選択肢３：何もしないを選んだ場合
+//-------------------------------------------------------
+*NPC_T06_005_select_s3
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・外】中年
+//========================================================
+*NPC_T06_018
+: NpcCode = "NPC_T06_018"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「いきなりおっぱいを揉まれる」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_001" )
+
+//========================================================
+//○【崎珠・外】若者
+//========================================================
+*NPC_T06_019
+: NpcCode = "NPC_T06_019"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「外でフェラチオして欲しいと頼まれる」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_002" )
+
+//========================================================
+//○【崎珠・外】中年
+//========================================================
+*NPC_T06_020
+: NpcCode = "NPC_T06_020"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_020_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_020_nude" ) endif
+//●場所：崎珠・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“崎珠这一带行人不多。
+小心点比较好哦”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T06_020_nude
+//●状況：全裸
+//●ＮＰＣエッチ：「誘われて野外エッチしてしまう」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_003" )
+
+//========================================================
+//○【崎珠・宿・居酒屋】店主
+//========================================================
+*NPC_T06_006
+: NpcCode = "NPC_T06_006"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_006_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_006_nude" ) endif
+//●場所：崎珠・宿・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["掌柜"]
+“这是冥先生，您有什么吩咐……”
+
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0922" )
+\CN["冥"]
+“我只是路过附近才露面的。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・宿・居酒屋】白夜隊士・男
+//========================================================
+*NPC_T06_007
+: NpcCode = "NPC_T06_007"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：崎珠・宿・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士"]
+“啊……那份工作好辛苦啊……
+被卍君击毙……怎么隐藏……”
+
+\CN["白夜队士"]
+“啊！？这、这是冥大人！
+是，是！我不会隐瞒的！好好地卍君
+我来报告！”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・宿・居酒屋】白夜隊士・女
+//========================================================
+*NPC_T06_008
+: NpcCode = "NPC_T06_008"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_008_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_008_nude" ) endif
+//●場所：崎珠・宿・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士"]
+“噗哈哈~！”
+
+: DrawChara( "Mei", 11, 0)
+: PlayVoice( "Voices/vo09_mei0923" )
+\CN["冥"]
+“从白天开始喝酒啊……呵呵”
+
+\CN["白夜队士"]
+“……！你、你、冥大人！？
+这个、这个……这个不对……啊、那个、那个……”
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0924" )
+\CN["冥"]
+“不用那么着急，你才刚刚做完工作吧？
+那么，休息一下也是必要的”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・宿・居酒屋】中年・男
+//========================================================
+*NPC_T06_009
+: NpcCode = "NPC_T06_009"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_009_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_009_nude" ) endif
+//●場所：崎珠・宿・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“社会上好像在争幕府派和反幕派
+但是，和我没有关系”
+
+\CN["男人"]
+“明天的天气更重要。
+因为会影响作物”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・宿・居酒屋】若者・男×２
+//========================================================
+*NPC_T06_010
+: NpcCode = "NPC_T06_010"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_010_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_010_nude" ) endif
+//●場所：崎珠・宿・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男1"]
+“之前，旅人说过
+现在，帝都好像有一群被称作“见回组”的鱿鱼呢”
+
+\CN["男1"]
+“抢劫，绑架女人，犯下这些罪行，简直是为所欲为。”
+
+\CN["男2"]
+“真的吗……那不就是半格雷吗？”。
+帝都有半格雷集团吗？”
+
+\CN["男1"]
+“啊？不太清楚。”
+
+//●演技：心の声です
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0925" )
+\CN["冥"]
+（是帝都的见回组吗……根据兰丸的报告，幕府直属的
+虽然是半格雷组织……）
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・宿・居酒屋】旅人・男
+//========================================================
+*NPC_T06_011
+: NpcCode = "NPC_T06_011"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_011_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_011_nude" ) endif
+//●場所：崎珠・宿・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“在帝都突然出现的所谓见回组的组织，总觉得将军是直接
+好像是集合了有本事的人的组织”
+
+\CN["男人"]
+“结果貌似是小混混和半格雷都聚在一起了
+仗着将军的威望，好像在胡闹”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・宿・居酒屋】若者・男女
+//========================================================
+*NPC_T06_012
+: NpcCode = "NPC_T06_012"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：崎珠・宿・居酒屋
+——从门的深处传来了什么声音。
+
+\CN["男人"]
+“哈哈哈！”
+
+\CN["妇女"]
+“也，要更加……嗯，啊…好舒服……”……
+刺……再往里……啊啊啊啊！”
+
+//●分岐：淫乱度Ｃの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) <= 1 )
+	//●演技：心の声です
+	: DrawChara( "Mei", 11, 0, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo09_mei0926" )
+	\CN["冥"]
+（……这个，这个……还是快点离开比较好）
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●淫乱度Ｂ以上の場合
+: else
+	//●演技：心の声です
+	: DrawChara( "Mei", 11, 0, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo09_mei0927" )
+	\CN["冥"]
+（听起来很舒服的声音……。
+在这里不好。不均匀）
+
+//●分岐終了
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+: endif
+: Return
+
+//========================================================
+//○【崎珠・宿・居酒屋】商人
+//========================================================
+*NPC_T06_021
+: NpcCode = "NPC_T06_021"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「居酒屋でワンナイトラブ」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_004" )
+
+//========================================================
+//○【崎珠・宿・居酒屋】若者
+//========================================================
+*NPC_T06_022
+: NpcCode = "NPC_T06_022"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「宿屋で誘われてアナルセックスする」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_005" )
+
+//========================================================
+//○【崎珠・風呂屋】番台・老婆
+//========================================================
+*NPC_T06_013
+: NpcCode = "NPC_T06_013"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：崎珠・風呂屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老婆子"]
+“哎，冥。洗澡吗？进来吧。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・風呂屋】白夜隊士・女・裸
+//========================================================
+*NPC_T06_014
+: NpcCode = "NPC_T06_014"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：崎珠・風呂屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士"]
+“冥大人也要泡澡吗？”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0928" )
+\CN["冥"]
+“啊。我想洗个大澡来转换心情。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・風呂屋】若者・女・裸
+//========================================================
+*NPC_T06_015
+: NpcCode = "NPC_T06_015"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：崎珠・風呂屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“今天之后去居酒屋做生意。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・風呂屋】若者・女・裸
+//========================================================
+*NPC_T06_016
+: NpcCode = "NPC_T06_016"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：崎珠・風呂屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“洗完澡后必须用化妆水和乳液来保养皮肤。
+我试着买了进口货，感觉非常好”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・民家１】老人・男
+//========================================================
+*NPC_T06_017
+: NpcCode = "NPC_T06_017"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T06_017_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T06_017_nude" ) endif
+//●場所：崎珠・民家１
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“就在20年前，这里是只有田地的地方
+但是，一个男人来了，一下子发展了起来”
+
+\CN["老人"]
+“那就是达磨大人——白夜的头。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T06_017_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“哦，裸体的女子在我这里！
+哈哈，没用的东西要是有精神就好了！？”
+
+//●演技：心の声です
+: DrawChara( "Mei", 12, 0)
+: PlayVoice( "Voices/vo09_mei0929" )
+\CN["冥"]
+（随便去别人家……而且也是光着身子爬进来……。
+明明是坏事，心情却很激动！）
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【崎珠・民家２】中年
+//========================================================
+*NPC_T06_023
+: NpcCode = "NPC_T06_023"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「怪我で動けない人を手コキでスッキリさせる」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_006" )
+
+//========================================================
+//○【白夜の隠れ家・１階】白夜隊士・男
+//========================================================
+*NPC_T07_001
+: NpcCode = "NPC_T07_001"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：白夜の隠れ家・１階
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士"]
+“在西边的干部们现在也来了
+每天都没有活下去的感觉”
+
+: DrawChara( "Mei", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0930" )
+\CN["冥"]
+“那真是对不起。”
+
+\CN["白夜队士"]
+「好疼！你、冥大人！？
+不，现在的不一样！”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【白夜の隠れ家・１階】白夜隊士・男×２
+//========================================================
+*NPC_T07_002
+: NpcCode = "NPC_T07_002"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠白夜ルート・第５章：NPC_T07_002_1
+//●場所：白夜の隠れ家・１階
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士·男1"]
+“{三碧，さんばく}的冥大人的妹妹，是无黑的吧？
+果然很像啊”
+
+\CN["白夜队士·男2"]
+“啊，既漂亮又身材出众
+就算一次也好，希望你能yara啊」
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0931" )
+\CN["冥"]
+“哇。对妹妹那样……”
+
+\CN["白夜队士·男1"]
+「啊啊啊啊啊啊……你、冥大人！？
+这、这是……”
+
+\CN["白夜队士·男2"]
+“好像是在打招呼！是吗！”
+
+无黑不可能被这种程度的家伙给闭门不出
+放着不管吗。
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【白夜の隠れ家・１階】白夜隊士・男
+//========================================================
+*NPC_T07_003
+: NpcCode = "NPC_T07_003"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：白夜の隠れ家・１階
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士"]
+“呃……之前被打的伤还没好……。
+用妖刀斩伤的恢复魔术是没有效果的。
+虽然不知道理由……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【白夜の隠れ家・１階】白夜隊士・女
+//========================================================
+*NPC_T07_004
+: NpcCode = "NPC_T07_004"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：白夜の隠れ家・１階
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士"]
+“冥大人，今天也很凛凛美丽，很棒……”
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0932" )
+\CN["冥"]
+“哼，我不会恭维的。”
+
+\CN["白夜队士"]
+“不，不，我不是恭维你，我要认真！”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【白夜の隠れ家・１階】白夜隊士・女
+//========================================================
+*NPC_T07_005
+: NpcCode = "NPC_T07_005"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：白夜の隠れ家・１階
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士"]
+“九星之冥大人向我发出声音……啊啊啊……好幸福……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【白夜の隠れ家・地下】白夜隊士・男
+//========================================================
+*NPC_T07_006
+: NpcCode = "NPC_T07_006"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：白夜の隠れ家・地下
+: DrawChara( "Mei", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0933" )
+\CN["冥"]
+“监视地下，辛苦了。”
+
+\CN["白夜队士"]
+“啊！谢谢你的话，我很痛心！”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【白夜の隠れ家・地下】白夜隊士・女・裸
+//========================================================
+*NPC_T07_008
+: NpcCode = "NPC_T07_008"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：白夜の隠れ家・地下
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["白夜队士"]
+「………………」
+
+//●演技：心の声です
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0934" )
+\CN["冥"]
+（多次失败者的下场吗……）
+
+女人的话会被耍得体无完肤。
+男人被狠狠地教训了一顿，觉得死了更好。
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【白夜の隠れ家・地下】白夜隊士男女
+//========================================================
+*NPC_T07_009
+: NpcCode = "NPC_T07_009"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：白夜の隠れ家・地下
+//※BGV
+——从里面传来声音。
+
+\CN["白夜队士"]
+“不，不，不行！也，请原谅我……
+啊……啊……呃，呃，嗯……恩！”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・南エリア】若者・男
+//========================================================
+*NPC_T01_001
+: NpcCode = "NPC_T01_001"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_001_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_001_nude" ) endif
+//●場所：帝都・南エリア
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“看回组的那些家伙出去了，终于和平了。
+将军换了，好像要成为最棒的帝都了”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_001_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“噢噢！你难道有曝光癖吗？”？
+看，可以吧？”
+
+: PlayVoice( "Voices/vo09_mei0935" )
+\CN["冥"]
+“随你的便……因为看到裸体，会很兴奋。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・南エリア】老人・男
+//========================================================
+*NPC_T01_004
+: NpcCode = "NPC_T01_004"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_004_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_004_nude" ) endif
+//●場所：帝都・南エリア
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“即使换了将军，也没有发生太大的混乱。
+期待今后”
+
+因为将军不在了，我以为很混乱
+意外地，好像不是那样。
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_004_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“——哇！！？啊啊啊……！”
+
+: DrawChara( "Mei", 19, 0 )
+: PlayVoice( "Voices/vo09_mei0936" )
+\CN["冥"]
+“对不起。我没打算让你吃惊到那种程度。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・南エリア】少年
+//========================================================
+*NPC_T01_005
+: NpcCode = "NPC_T01_005"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_005_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_005_nude" ) endif
+//●場所：帝都・南エリア
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["少年"]
+“我果然想成为武士！”
+
+\CN["少年"]
+“前面有半黑半金发的哥哥保护着我不被周围人看到
+我也想成为能保护别人的武士
+我想了！”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_005_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["少年"]
+“哼！？姐姐，你来了！”
+
+: DrawChara( "Mei", 19, 0 )
+: PlayVoice( "Voices/vo09_mei0937" )
+\CN["冥"]
+“哼，像你这样的年纪对女人的身体会很感兴趣吧？
+不要害羞。作为男人是理所当然的反应”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・南エリア】中年
+//========================================================
+*NPC_T01_094
+: NpcCode = "NPC_T01_094"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「帝都でパイズリをお願いされる」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_007" )
+
+//========================================================
+//○【帝都・北エリア】若者・女
+//========================================================
+*NPC_T01_009
+: NpcCode = "NPC_T01_009"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_009_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_009_nude" ) endif
+//●場所：帝都・北エリア
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“之前看到的那个男人，真是太棒了~。
+虽然被叫做兰丸……但是，不能再见吗？”
+
+//●演技：心の声です
+: DrawChara( "Mei", 3, 0 )
+: PlayVoice( "Voices/vo09_mei0938" )
+\CN["冥"]
+（兰丸的话……？那家伙果然很受欢迎啊……）
+
+//●分岐：淫乱度Ｂ以上の場合
+
+普通的话，确实五官端正
+嘛，不，因为很帅……。
+
+//●演技：心の声です
+: DrawChara( "Mei", 7, 0)
+: PlayVoice( "Voices/vo09_mei0939" )
+\CN["冥"]
+（呃，我在工作中在想什么……！？）
+
+//●分岐終了
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_009_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“你，{曝光，那个}，对自己的身体有多少自信？
+要是被那边的地滚石侵犯就好了……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・北エリア】若者・女×２
+//========================================================
+*NPC_T01_010
+: NpcCode = "NPC_T01_010"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_010_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_010_nude" ) endif
+//●場所：帝都・北エリア
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["女1"]
+“为什么会突然消失呢？”
+
+\CN["女2"]
+“啊？只要生活好就什么都可以。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_010_nude
+//●状況：全裸
+//●演出：女２人、無黒の方向を向く
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["女1"]
+“啊啊啊啊啊啊！我、色狼……不，我是色狼！”
+
+\CN["女2"]
+“听说这样的家伙是最危险的！
+谁……谁来帮帮我！”
+
+: DrawChara( "Mei", 11, 0 )
+: PlayVoice( "Voices/vo09_mei0940" )
+\CN["冥"]
+“不用那么害怕……。
+不，普通地想的话会害怕吗……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・宿屋】宿屋
+//========================================================
+*NPC_T01_013
+: NpcCode = "NPC_T01_013"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・宿屋
+//●分岐：［服装］着衣・ダークエルフの場合
+: if ( CharaCostume( "Mei" ) == 0 || CharaCostume( "Mei" ) == 2 )
+	: DrawChara( "Mei", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+	\CN["客栈"]
+“欢迎光临。您住的地方是一晚50辆。”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●全裸の場合
+: else
+	: DrawChara( "Mei", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+	\CN["客栈"]
+“……哈哈。嘛，卖是我的自由，但是……”
+房间要干净地使用哦。因为打扫很麻烦”
+
+//●分岐終了
+: endif
+*NPC_T01_013_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,NPC_T01_013_select
+//■選択肢１：泊まっていく
+//■選択肢２：泊まっていかない
+//――――――――――――――――――――――――――――
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+\CI["住下去"]
+\CI["不住"]
+怎么办？
+
+: if ($choice == 1) Jump( "*NPC_T01_013_select_s2" ) endif
+
+//-------------------------------------------------------
+//●選択肢１：泊まっていくを選んだ場合
+//-------------------------------------------------------
+*NPC_T01_013_select_s1
+//●宿泊処理（５０両）
+//●シーンエンド
+: money = 50
+: Call( "Scenarios/CommonSys*Inn" )
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//-------------------------------------------------------
+//●選択肢２：泊まっていかないを選んだ場合
+//-------------------------------------------------------
+*NPC_T01_013_select_s2
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・宿屋】旅人・男
+//========================================================
+*NPC_T01_014
+: NpcCode = "NPC_T01_014"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_014_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_014_nude" ) endif
+//●場所：帝都・宿屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["旅人"]
+“我之前在工作上听说过
+据说吉野原传说中的花魁堇太夫复活了”
+
+\CN["旅人"]
+“啊！哪怕一次也好，我都想让你来陪我啊。”
+
+//●読み：菫太夫（すみれだゆう）
+//●演技：心の声です
+: DrawChara( "Mei", 18, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0941" )
+\CN["冥"]
+（堇太夫是指紫苑先生吧……。
+被称为传说中的花魁吗……）
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+//--------------------------------------------------------
+
+*NPC_T01_014_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["旅人"]
+“嗯？难道是营业吗？”？
+这之后我有事。如果不是那样的话，我就买了
+非常遗憾”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・宿屋】カップル
+//========================================================
+*NPC_T01_017
+: NpcCode = "NPC_T01_017"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・宿屋
+//: DrawChara( "Mei", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayBackVoice( "Voices/vo54_mob0001" )
+\CN["妇女"]
+“呵呵，收到的钱请让我好好保管。
+我来帮你动”
+
+\CN["男人"]
+“啊啊啊……好，好厉害……很好吃……嗯……”
+
+//●分岐：淫乱度Ｂ以上の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) >= 2 )
+	//●演技：心の声です
+	: DrawFaceThumbnail( "Mei", 11, 1, 0 )
+	: PlayVoice( "Voices/vo09_mei0942" )
+	\CN["冥"]
+（喘息声，听了就受不了了……。
+身体会痛……）
+
+//●分岐終了
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+: endif
+: StopBackVoice()
+: Return
+
+//========================================================
+//○【帝都・道具屋】道具屋・男
+//========================================================
+*NPC_T01_021
+: NpcCode = "NPC_T01_021"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・道具屋
+//●分岐：［服装］着衣・ダークエルフの場合
+: if ( CharaCostume( "Mei" ) == 0 || CharaCostume( "Mei" ) == 2 )
+	: DrawChara( "Mei", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+	\CN["道具店"]
+“欢迎光临，要不要买点什么？”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●全裸の場合
+: else
+	\CN["道具店"]
+“嘿嘿，真是眼福啊。姐姐，身材很好。”
+
+	//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+	: Return
+//●分岐終了
+: endif
+
+*NPC_T01_021_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,NPC_T01_021_select
+//■選択肢１：買い物をする
+//■選択肢２：会話をする
+//■選択肢３：何もしない
+//――――――――――――――――――――――――――――
+\CI["买东西"]
+\CI["会话"]
+\CI["什么也不做"]
+怎么办？
+
+: if ($choice == 1)
+	: Jump( "*NPC_T01_021_select_s2" )
+: elif ($choice == 2)
+	: Jump( "*NPC_T01_021_select_s3" )
+: endif
+
+//-------------------------------------------------------
+//●選択肢１：買い物をするを選んだ場合
+//-------------------------------------------------------
+*NPC_T01_021_select_s1
+//●買い物処理
+//●シーンエンド
+: Call( "Scenarios/CommonSys*ItemShop" )
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：会話をするを選んだ場合
+//-------------------------------------------------------
+*NPC_T01_021_select_s2
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["道具店"]
+“最近，用发明的魔导器来分享经验之类的东西
+有啊。真是一个了不起的时代啊”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//-------------------------------------------------------
+//●選択肢３：何もしないを選んだ場合
+//-------------------------------------------------------
+*NPC_T01_021_select_s3
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・居酒屋】居酒屋店主
+//========================================================
+*NPC_T01_023
+: NpcCode = "NPC_T01_023"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_023_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_023_nude" ) endif
+//●場所：帝都・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["掌柜"]
+“你是兰丸君的朋友啊。
+我曾经受过他一点照顾呢」
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_023_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["掌柜"]
+“等一下，有点为难啊！在店内裸体是！”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・居酒屋】中年・男×２
+//========================================================
+*NPC_T01_024
+: NpcCode = "NPC_T01_024"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_024_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_024_nude" ) endif
+//●場所：帝都・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男1"]
+“我还以为鬼灯不见了会怎么样呢
+没人看了真是太好了”
+
+\CN["男2"]
+“虽然不知道新将军会变成什么样，很不安。
+不是一桥家，而是别的财阀当上了将军”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_024_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男1"]
+“哦，裸体的姐姐在工作吗？这里呢？”
+
+\CN["男2"]
+“在西都的菜花楼店里，好像有这种说法。”
+
+//●演技：心の声です
+: DrawChara( "Mei", 4, 0 )
+: PlayVoice( "Voices/vo09_mei0943" )
+\CN["冥"]
+（在居酒屋光着身子……我在干什么呢？）
+
+但是，我很兴奋。已经回不去了。
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・居酒屋】中年・男
+//========================================================
+*NPC_T01_062
+: NpcCode = "NPC_T01_062"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_062_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_062_nude" ) endif
+//●場所：帝都・居酒屋
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“这里的常客老爷爷被巡游组的家伙杀害了。
+我身边的人都不在了，怎么能稍微浮起来呢”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_062_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“你的牛奶和蛋糕都很有分量啊。
+我想再多看看”
+
+: DrawChara( "Mei", 1, 0 )
+: PlayVoice( "Voices/vo09_mei0944" )
+\CN["冥"]
+“是自己这样露出的。
+就算被看到也不讨厌”
+
+倒不如说，很开心，很激动。
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・居酒屋】若者
+//========================================================
+*NPC_T01_095
+: NpcCode = "NPC_T01_095"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「帝都の居酒屋で口説かれて」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_008" )
+
+//========================================================
+//○【帝都・銭湯】番台・老人・女
+//========================================================
+*NPC_T01_030
+: NpcCode = "NPC_T01_030"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_030_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_030_nude" ) endif
+//●場所：帝都・銭湯
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["看台"]
+“哎，你确实是……。
+没错。我在听你说话。是新幕府的关系者啊」
+
+\CN["看台"]
+“不能收取费用。请免费进去。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_030_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["看台"]
+“哎呀，你真冒失啊。
+我忘记穿衣服了”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・銭湯・女湯】若者・女
+//========================================================
+*NPC_T01_032
+: NpcCode = "NPC_T01_032"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・銭湯・女湯
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“既没有回访组，反幕派也变得老实了。
+我觉得现在是最和平的”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・銭湯・女湯】若者・女
+//========================================================
+*NPC_T01_033
+: NpcCode = "NPC_T01_033"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・銭湯・女湯
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“最好不要去川下。
+那里还是老样子，治安不好”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・銭湯・女湯】若者・女
+//========================================================
+*NPC_T01_034
+: NpcCode = "NPC_T01_034"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・銭湯・女湯
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“我觉得你的身体非常紧实。
+真好啊。好羡慕”
+
+//●演技：心の声です
+: DrawChara( "Mei", 7, 0 )
+: PlayVoice( "Voices/vo09_mei0945" )
+\CN["冥"]
+（被女性那样盯着看的话，总觉得不可思议
+不要有心情）
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・銭湯・男湯】中年・男
+//========================================================
+*NPC_T01_036
+: NpcCode = "NPC_T01_036"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・銭湯・男湯
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“这里是男浴室吧？漂亮的姐姐进来了
+虽然很幸运”
+
+//●演技：心の声です
+: DrawChara( "Mei", 10, 0 )
+: PlayVoice( "Voices/vo09_mei0946" )
+\CN["冥"]
+（……果然还是被仔细看了……。
+明明做了这样变态的事情，却感觉到了♥</color>）
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・銭湯・男湯】若者・男
+//========================================================
+*NPC_T01_037
+: NpcCode = "NPC_T01_037"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・銭湯・男湯
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“女汤在那边吧？但是，真的身体很好。
+但是，果然看的话很失礼啊”
+
+: DrawChara( "Mei", 1, 0 )
+: PlayVoice( "Voices/vo09_mei0947" )
+\CN["冥"]
+“没关系，我觉得可以被看到。”
+来了男浴室”
+
+\CN["男人"]
+“是吗，这样啊。那就让我好好看看吧。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・銭湯・男湯】若者・男
+//========================================================
+*NPC_T01_038
+: NpcCode = "NPC_T01_038"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：帝都・銭湯・男湯
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“哇哈哈……怎么会有色情的身体！
+小鸡鸡会勃起的”
+
+: DrawChara( "Mei", 10, 0 )
+: PlayVoice( "Voices/vo09_mei0948" )
+\CN["冥"]
+“好像是啊。
+小鸡鸡，勃起得很厉害，动得直哆嗦”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・貧民街・外】中年・女
+//========================================================
+*NPC_T01_064
+: NpcCode = "NPC_T01_064"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_064_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_064_nude" ) endif
+//●場所：帝都・貧民街・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“你最好注意一下川下一个人走路。”
+
+\CN["妇女"]
+“前几天，和你一样是精灵的孩子被掳走了。
+那个孩子现在还没回来，现在一定……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_064_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“你这身打扮……莫非是要被拐走了？
+前几天，女精灵也被掳走了……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・貧民街・外】若者
+//========================================================
+*NPC_T01_096
+: NpcCode = "NPC_T01_096"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「帝都の貧民街でいきなりベロチューされる」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_009" )
+
+//========================================================
+//○【帝都・貧民街・外】ゴロツキ×２
+//========================================================
+*NPC_T01_097
+: NpcCode = "NPC_T01_097"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「帝都の貧民街のゴロツキに絡まれセクハラされる」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_010" )
+
+//========================================================
+//○【帝都・貧民街】若者
+//========================================================
+*NPC_T01_098
+: NpcCode = "NPC_T01_098"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●ＮＰＣエッチ：「帝都の貧民街で半グレとキメセクする」へ
+: Jump( "Scenarios/SC_N02_04*NPCH04_011" )
+
+//========================================================
+//○【帝都・貧民街・民家１】老人・男
+//========================================================
+*NPC_T01_059
+: NpcCode = "NPC_T01_059"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_059_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_059_nude" ) endif
+//●場所：帝都・貧民街・民家１
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“我觉得一桥将军的手腕相当高超。
+但是，我也期待着新的将军”
+
+\CN["老人"]
+“因为现在没有大的混乱。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_059_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“主人，我不是被谁袭击过。
+不是那种曝光游戏的家伙。怎么样？”
+
+: DrawChara( "Mei", 4, 0 )
+: PlayVoice( "Voices/vo09_mei0949" )
+\CN["冥"]
+“没错。{曝光，这个}是自己做的……”
+
+\CN["老人"]
+「……我已经枯萎了。
+如果再早20年就好了，那就太遗憾了”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○【帝都・貧民街・民家２】若者・女
+//========================================================
+*NPC_T01_060
+: NpcCode = "NPC_T01_060"; Call( "Scenarios/CommonSys*NpcConversation" );
+//＠全裸時：NPC_T01_060_nude
+: if ( CharaCostume( "Mei" ) == 1 ) Jump( "*NPC_T01_060_nude" ) endif
+//●場所：帝都・貧民街・民家２
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“这里的地区不管怎么说是帝都也不安全。”
+
+\CN["妇女"]
+“如果没有巡礼组的话，这次就和之前一样悠闲了
+做坏事。因为刚换了将军，警备也很严格
+汤汁”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//--------------------------------------------------------
+
+*NPC_T01_060_nude
+//●状況：全裸
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“啊，你到底在想什么！？
+就算这里是川下，也不能光着身子进来……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+//========================================================
+//○仙葉ＮＰＣ
+//========================================================
+*NPC_T10_001
+: NpcCode = "NPC_T10_001"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：仙葉・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“仙叶也渐渐失去了气势。
+看来只能搬到别的城镇了”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+*NPC_T10_002
+: NpcCode = "NPC_T10_002"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：仙葉・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老人"]
+“这里在我年轻的时候也更热闹了……
+看到他越来越寂寞，真是有点难受啊”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+*NPC_T10_003
+: NpcCode = "NPC_T10_002"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：仙葉・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["妇女"]
+“啊？在这样什么都没有的城镇里，客人真少见啊。”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+*NPC_T10_005
+: NpcCode = "NPC_T10_005"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：仙葉・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“本来应该一切都会顺利的……。
+只要那个笨蛋不失败……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+
+*NPC_T10_006
+: NpcCode = "NPC_T10_005"; Call( "Scenarios/CommonSys*NpcConversation" );
+//●場所：仙葉・外
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["男人"]
+“不管怎么说，我对这个城市很有感情。
+我真想设法重建啊……”
+
+//●シーンエンド
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )

@@ -1,0 +1,1405 @@
+//========================================================
+//○ＮＰＣ会話
+//========================================================
+*CHA00
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*CHA00" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*CHA00" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*CHA00" )
+: else
+	: Jump( "Scenarios/SC_N01_04*CHA00" )
+: endif
+: Return
+
+*CHA01
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*CHA01" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*CHA01" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*CHA01" )
+: else
+	: Jump( "Scenarios/SC_N01_04*CHA01" )
+: endif
+: Return
+
+*CHA02
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*CHA02" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*CHA02" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*CHA02" )
+: else
+	: Jump( "Scenarios/SC_N01_04*CHA02" )
+: endif
+: Return
+
+//黄菜子　時期被りの例外処理
+*CHA02_2
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*CHA02_2" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*CHA02_2" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*CHA02_2" )
+: else
+	: Jump( "Scenarios/SC_N01_04*CHA02_2" )
+: endif
+: Return
+
+*CHA04
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*CHA04" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*CHA04" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*CHA04" )
+: else
+	: Jump( "Scenarios/SC_N01_04*CHA04" )
+: endif
+: Return
+
+*CHA07
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*CHA07" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*CHA07" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*CHA07" )
+: else
+	: Jump( "Scenarios/SC_N01_04*CHA07" )
+: endif
+: Return
+
+*CHA19
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*CHA19" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*CHA19" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*CHA19" )
+: else
+	: Jump( "Scenarios/SC_N01_04*CHA19" )
+: endif
+: Return
+
+*NPC_T01_001
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_001" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_001" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_001" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_001" )
+: endif
+: Return
+
+*NPC_T01_002
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_002" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_002" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_002" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_002" )
+: endif
+: Return
+
+*NPC_T01_003
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_003" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_003" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_003" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_003" )
+: endif
+: Return
+
+*NPC_T01_004
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_004" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_004" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_004" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_004" )
+: endif
+: Return
+
+*NPC_T01_005
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_005" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_005" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_005" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_005" )
+: endif
+: Return
+
+*NPC_T01_063
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_063" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_063" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_063" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_063" )
+: endif
+: Return
+
+*NPC_T01_061
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_061" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_061" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_061" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_061" )
+: endif
+: Return
+
+*NPC_T01_039
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_039" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_039" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_039" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_039" )
+: endif
+: Return
+
+*NPC_T01_040
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_040" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_040" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_040" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_040" )
+: endif
+: Return
+
+*NPC_T01_079
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_079" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_079" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_079" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_079" )
+: endif
+: Return
+
+*NPC_T01_094
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_094" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_094" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_094" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_094" )
+: endif
+: Return
+
+*NPC_T01_098
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_098" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_098" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_098" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_098" )
+: endif
+: Return
+
+*NPC_T01_099
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_099" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_099" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_099" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_099" )
+: endif
+: Return
+
+*NPC_T01_006
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_006" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_006" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_006" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_006" )
+: endif
+: Return
+
+*NPC_T01_007
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_007" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_007" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_007" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_007" )
+: endif
+: Return
+
+*NPC_T01_008
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_008" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_008" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_008" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_008" )
+: endif
+: Return
+
+*NPC_T01_009
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_009" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_009" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_009" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_009" )
+: endif
+: Return
+
+*NPC_T01_010
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_010" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_010" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_010" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_010" )
+: endif
+: Return
+
+*NPC_T01_011
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_011" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_011" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_011" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_011" )
+: endif
+: Return
+
+*NPC_T01_012
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_012" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_012" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_012" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_012" )
+: endif
+: Return
+
+*NPC_T01_080
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_080" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_080" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_080" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_080" )
+: endif
+: Return
+
+*NPC_T01_013
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_013" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_013" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_013" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_013" )
+: endif
+: Return
+
+*NPC_T01_014
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_014" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_014" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_014" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_014" )
+: endif
+: Return
+
+*NPC_T01_100
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_100" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_100" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_100" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_100" )
+: endif
+: Return
+
+*NPC_T01_015
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_015" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_015" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_015" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_015" )
+: endif
+: Return
+
+*NPC_T01_016
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_016" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_016" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_016" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_016" )
+: endif
+: Return
+
+*NPC_T01_017
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_017" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_017" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_017" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_017" )
+: endif
+: Return
+
+*NPC_T01_055
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_055" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_055" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_055" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_055" )
+: endif
+: Return
+
+*NPC_T01_066
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_066" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_066" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_066" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_066" )
+: endif
+: Return
+
+*NPC_T01_081
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_081" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_081" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_081" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_081" )
+: endif
+: Return
+
+*NPC_T01_082
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_082" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_082" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_082" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_082" )
+: endif
+: Return
+
+*NPC_T01_018
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_018" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_018" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_018" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_018" )
+: endif
+: Return
+
+*NPC_T01_019
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_019" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_019" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_019" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_019" )
+: endif
+: Return
+
+*NPC_T01_020
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_020" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_020" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_020" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_020" )
+: endif
+: Return
+
+*NPC_T01_021
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_021" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_021" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_021" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_021" )
+: endif
+: Return
+
+*NPC_T01_022
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_022" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_022" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_022" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_022" )
+: endif
+: Return
+
+*NPC_T01_023
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_023" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_023" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_023" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_023" )
+: endif
+: Return
+
+*NPC_T01_024
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_024" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_024" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_024" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_024" )
+: endif
+: Return
+
+*NPC_T01_025
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_025" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_025" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_025" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_025" )
+: endif
+: Return
+
+*NPC_T01_026
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_026" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_026" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_026" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_026" )
+: endif
+: Return
+
+*NPC_T01_027
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_027" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_027" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_027" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_027" )
+: endif
+: Return
+
+*NPC_T01_062
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_062" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_062" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_062" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_062" )
+: endif
+: Return
+
+*NPC_T01_028
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_028" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_028" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_028" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_028" )
+: endif
+: Return
+
+*NPC_T01_029
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_029" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_029" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_029" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_029" )
+: endif
+: Return
+
+*NPC_T01_067
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_067" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_067" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_067" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_067" )
+: endif
+: Return
+
+*NPC_T01_068
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_068" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_068" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_068" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_068" )
+: endif
+: Return
+
+*NPC_T01_083
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_083" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_083" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_083" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_083" )
+: endif
+: Return
+
+*NPC_T01_084
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_084" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_084" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_084" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_084" )
+: endif
+: Return
+
+*NPC_T01_095
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_095" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_095" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_095" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_095" )
+: endif
+: Return
+
+*NPC_T01_101
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_101" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_101" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_101" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_101" )
+: endif
+: Return
+
+*NPC_T01_030
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_030" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_030" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_030" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_030" )
+: endif
+: Return
+
+*NPC_T01_031
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_031" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_031" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_031" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_031" )
+: endif
+: Return
+
+*NPC_T01_032
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_032" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_032" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_032" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_032" )
+: endif
+: Return
+
+*NPC_T01_036
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_036" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_036" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_036" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_036" )
+: endif
+: Return
+
+*NPC_T01_033
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_033" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_033" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_033" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_033" )
+: endif
+: Return
+
+*NPC_T01_034
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_034" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_034" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_034" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_034" )
+: endif
+: Return
+
+*NPC_T01_035
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_035" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_035" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_035" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_035" )
+: endif
+: Return
+
+*NPC_T01_037
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_037" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_037" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_037" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_037" )
+: endif
+: Return
+
+*NPC_T01_038
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_038" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_038" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_038" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_038" )
+: endif
+: Return
+
+*NPC_T01_069
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_069" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_069" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_069" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_069" )
+: endif
+: Return
+
+*NPC_T01_070
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_070" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_070" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_070" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_070" )
+: endif
+: Return
+
+*NPC_T01_071
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_071" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_071" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_071" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_071" )
+: endif
+: Return
+
+*NPC_T01_072
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_072" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_072" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_072" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_072" )
+: endif
+: Return
+
+*NPC_T01_085
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_085" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_085" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_085" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_085" )
+: endif
+: Return
+
+*NPC_T01_086
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_086" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_086" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_086" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_086" )
+: endif
+: Return
+
+*NPC_T01_087
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_087" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_087" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_087" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_087" )
+: endif
+: Return
+
+*NPC_T01_088
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_088" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_088" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_088" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_088" )
+: endif
+: Return
+
+*NPC_T01_102
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_102" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_102" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_102" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_102" )
+: endif
+: Return
+
+*NPC_T01_103
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_103" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_103" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_103" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_103" )
+: endif
+: Return
+
+*NPC_T01_105
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_105" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_105" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_105" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_105" )
+: endif
+: Return
+
+*NPC_T01_041
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_041" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_041" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_041" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_041" )
+: endif
+: Return
+
+*NPC_T01_042
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_042" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_042" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_042" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_042" )
+: endif
+: Return
+
+*NPC_T01_043
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_043" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_043" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_043" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_043" )
+: endif
+: Return
+
+*NPC_T01_044
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_044" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_044" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_044" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_044" )
+: endif
+: Return
+
+*NPC_T01_078
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_078" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_078" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_078" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_078" )
+: endif
+: Return
+
+*NPC_T01_045
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_045" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_045" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_045" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_045" )
+: endif
+: Return
+
+*NPC_T01_046
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_046" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_046" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_046" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_046" )
+: endif
+: Return
+
+*NPC_T01_047
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_047" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_047" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_047" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_047" )
+: endif
+: Return
+
+*NPC_T01_048
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_048" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_048" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_048" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_048" )
+: endif
+: Return
+
+*NPC_T01_049
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_049" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_049" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_049" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_049" )
+: endif
+: Return
+
+*NPC_T01_050
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_050" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_050" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_050" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_050" )
+: endif
+: Return
+
+*NPC_T01_051
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_051" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_051" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_051" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_051" )
+: endif
+: Return
+
+*NPC_T01_052
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_052" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_052" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_052" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_052" )
+: endif
+: Return
+
+*NPC_T01_053
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_053" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_053" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_053" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_053" )
+: endif
+: Return
+
+*NPC_T01_054
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_054" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_054" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_054" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_054" )
+: endif
+: Return
+
+*NPC_T01_056
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_056" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_056" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_056" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_056" )
+: endif
+: Return
+
+*NPC_T01_057
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_057" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_057" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_057" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_057" )
+: endif
+: Return
+
+*NPC_T01_064
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_064" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_064" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_064" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_064" )
+: endif
+: Return
+
+*NPC_T01_058
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_058" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_058" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_058" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_058" )
+: endif
+: Return
+
+*NPC_T01_065
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_065" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_065" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_065" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_065" )
+: endif
+: Return
+
+*NPC_T01_073
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_073" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_073" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_073" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_073" )
+: endif
+: Return
+
+*NPC_T01_074
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_074" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_074" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_074" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_074" )
+: endif
+: Return
+
+*NPC_T01_075
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_075" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_075" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_075" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_075" )
+: endif
+: Return
+
+*NPC_T01_076
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_076" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_076" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_076" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_076" )
+: endif
+: Return
+
+*NPC_T01_089
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_089" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_089" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_089" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_089" )
+: endif
+: Return
+
+*NPC_T01_090
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_090" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_090" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_090" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_090" )
+: endif
+: Return
+
+*NPC_T01_091
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_091" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_091" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_091" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_091" )
+: endif
+: Return
+
+*NPC_T01_092
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_092" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_092" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_092" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_092" )
+: endif
+: Return
+
+*NPC_T01_093
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_093" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_093" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_093" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_093" )
+: endif
+: Return
+
+*NPC_T01_096
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_096" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_096" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_096" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_096" )
+: endif
+: Return
+
+*NPC_T01_097
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_097" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_097" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_097" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_097" )
+: endif
+: Return
+
+*NPC_T01_106
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_106" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_106" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_106" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_106" )
+: endif
+: Return
+
+*NPC_T01_107
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_107" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_107" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_107" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_107" )
+: endif
+: Return
+
+*NPC_T01_108
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_108" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_108" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_108" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_108" )
+: endif
+: Return
+
+*NPC_T01_109
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_109" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_109" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_109" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_109" )
+: endif
+: Return
+
+*NPC_T01_059
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_059" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_059" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_059" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_059" )
+: endif
+: Return
+
+*NPC_T01_060
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_060" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_060" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_060" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_060" )
+: endif
+: Return
+
+*NPC_T01_077
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_077" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_077" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_077" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_077" )
+: endif
+: Return
+
+*NPC_T01_110
+: if (WhoLeader( "Mukuro" ) == true)
+	: Jump( "Scenarios/SC_N01_01*NPC_T01_110" )
+: elif (WhoLeader( "Momo" ) == true)
+	: Jump( "Scenarios/SC_N01_02*NPC_T01_110" )
+: elif (WhoLeader( "Kinako" ) == true)
+	: Jump( "Scenarios/SC_N01_03*NPC_T01_110" )
+: else
+	: Jump( "Scenarios/SC_N01_04*NPC_T01_110" )
+: endif
+: Return
+
+//========================================================
+//○城前イベント
+//========================================================
+*Event01_01
+幕府城に用はない。
+
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1)
+: Return

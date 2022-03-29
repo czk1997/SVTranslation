@@ -1,0 +1,797 @@
+//========================================================
+//○あの日の真実を知りたくて
+//========================================================
+//●場所：幕府
+//●視点：冥視点
+//: DrawChara( "Mei", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: StopBgm( 0.0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_BakuhuRoom01_01", 1.0 )
+: Wait()
+: ShowWnd()
+没有将军的幕府。
+
+我一个人在调查那里的记录。
+
+: DrawChara( "Mei", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo09_mei0077" )
+\CN["冥"]
+“如果我的想法对的话，恐怕就在这里……”
+
+//●演出：過去回想に入る
+//●場所：無黒・冥の故郷
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Mei", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Village01_04", 0.0 )
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+——那一天，我的村子被什么人的集团袭击了。
+
+//: DrawChara( "Mei", 14, 0, 0, 0.5, 0.0, 3, "RC" )
+//●演出：冥　アクションシーン
+//: DrawChara( "Mei", 3, 0)
+//SC_C06_02での回想ポイント
+*RefStart_SC_C06_02
+: CharaCostume( "Mei", 0 )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_a001_1_1_0200000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/28_ID01")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0078" )
+\CN["冥"]
+“啊啊啊啊啊啊啊！”
+
+//●演出：斬撃エフェクト
+: SwapImage( 1, 0, "BGImage/BG_Village01_01", 1.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: Call("Scenarios/Common*EvDelete")
+: PlaySe( "SE/Se_Down01" )
+\CN["男1"]
+“哈哈……！”
+
+: DrawChara( "Mei", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo09_mei0079" )
+\CN["冥"]
+“大家都平安无事……！”
+
+在附近的山上练习的我
+忐忑不安地赶回了村子。
+
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0080" )
+\CN["冥"]
+“这些家伙是什么人？”
+
+身上的刀、枪、防具都是相当优质的东西
+其中也有使用魔导器的人。
+
+如果是那一带的强盗的话，优质的装备什么的早早地卖掉就变成钱了
+应该换了。
+
+所以，很难想象所谓的“强盗集团”。
+可能性不是0……。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mei", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+//●演技：死体を見つけて悔しがっている
+: DrawChara( "Mei", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0081" )
+\CN["冥"]
+“……呜”
+
+在赶来的途中，村里的人们的遗体
+我看到过好几次像垃圾一样被放置着。
+
+: DrawChara( "Mei", 3, 0)
+: PlayVoice( "Voices/vo09_mei0082" )
+\CN["冥"]
+“——爸爸、妈妈、无黑”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Mei"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+希望他平安无事，于是全速去了自己的家。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Mei", 3, 0, 0, 0.5, 0.0, 3, "RC" )
+回来的路上，无黑被男人们袭击了。
+
+//: EraseChara( "Mei", 0.5 )
+//●演出：斬撃アニメーション
+//●ＳＥ：倒れる音
+//＠立ち絵：冥（着衣）
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0019" )
+\CN["无黑色"]
+“呐，姐姐……！”
+
+: DrawChara( "Mei", 18, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0001" )
+“没关系吗？没有受伤吗？”
+
+只是被踢了肚子，就不会受很大的伤，所以放心了。
+不愧是我妹妹。好好锻炼过。
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0020" )
+\CN["无黑色"]
+“嗯……想办法……”
+
+: DrawChara( "Mei", 3, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0002" )
+\CN["冥"]
+“那么，快逃到森林那边去吧。”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0021" )
+\CN["无黑色"]
+“呐，姐姐，我也……”
+
+: DrawChara( "Mei", 0, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0003" )
+\CN["冥"]
+“不用担心也没关系……”
+
+轻轻地，把手放在无黑的头上。
+
+: DrawChara( "Mei", 19, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0004" )
+\CN["冥"]
+“只要抓到敌人的头目
+他们也一定会撤退的”
+
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0005" )
+\CN["冥"]
+“你只要躲在那个小屋的地下室就可以了。
+我马上收拾敌人，去接你……”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0022" )
+\CN["无黑色"]
+“嗯……姐姐……”
+
+: PlaySe( "SE/Se_dash01" )
+然后，目送着跑出去的无黑。
+
+: AutoFaceThumbnail( true )
+: DrawChara( "Mei", 14, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0083" )
+\CN["冥"]
+“不快点的话，村子就……！”
+
+眼前小屋的地下室是非常时期隐藏的场所。
+在那里，不会被贼发现的吧。
+
+让无黑避难后，赶往村里。
+
+//●演出：場面転換トランジション
+//●状況：死体の山、そこに達磨とダークエルフのみどりがいる
+//●演技：死体の山に唖然とする
+: StopBgm( 1.0 )
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mei"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: CharaCostume( "Daruma", 2 )
+: CharaCostume( "Midori", 6 )
+: DrawChara( "Midori", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Mei", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/29_ID02")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0084" )
+\CN["冥"]
+“……！这是你们……？”
+
+一进村子，发现到处都是尸体。
+
+手脚被拆散的人，脸被乱七八糟的人，可能是谁
+处于不明状态的人等等，各种各样。
+
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0158" )
+\CN["绿色"]
+“啊？自己也是那个吗？幕府什么的是他们中的一个吗？”
+
+这个时候，我有生以来第一次说{黑夜叉，暗黑妖精}
+目睹了存在。
+
+但是，那个时候不知道眼前的人形怪物是什么。
+
+//●演技：心の声です
+: DrawChara( "Mei", 15, 0)
+: PlayVoice( "Voices/vo09_mei0085" )
+\CN["冥"]
+（什么，这家伙……？手在颤抖……）
+
+无论遇到怎样的达人、怎样的魔物
+我从来没有退缩过。
+
+但是，此时的我感受到了死亡的预感
+收起来了……。
+
+: DrawChara( "Midori", 6, 0)
+: PlayVoice( "Voices/vo10_mid0159" )
+\CN["绿色"]
+“你知道自己和我们之间力量的差距吗？
+但是，我有点喜欢她想要逃跑”
+
+: DrawChara( "Mei", 13, 0)
+: PlayVoice( "Voices/vo09_mei0086" )
+\CN["冥"]
+“因为村里重要的人被杀了……。
+害怕什么的是不行的”
+
+因为愤怒超过了死亡的恐怖。
+
+所以，我能拔刀了。
+
+: CharaCostume( "Daruma", 2 )
+: DrawChara( "Daruma", 0, 0, 0, 0, 0.0, 3, "LC" )
+: EraseChara( "Daruma", 0)
+: DrawFaceThumbnail( "Daruma", 0, 0, 0, 0 )
+\CN["达磨"]
+「…………」
+
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0160" )
+\CN["绿色"]
+「呼。{黑夜叉，暗黑精灵}化后的我，{刀，ソレ}
+面对面啊，自己啊，真是没有胆量啊”
+
+: DrawChara( "Midori", 7, 0)
+: PlayVoice( "Voices/vo10_mid0161" )
+\CN["绿色"]
+“我很喜欢这样的人。
+不能一下子就把脑袋弄碎或是太可惜了”
+
+: DrawChara( "Midori", 4, 0)
+: PlayVoice( "Voices/vo10_mid0162" )
+\CN["绿色"]
+“慢慢地，慢慢地，慢慢地，慢慢地玩
+然后，然后，花了慢慢的时间{杀，玫瑰}
+要做吗？”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+{黑夜叉，暗黑妖精}做好准备。
+
+//●演技：心の声です
+: DrawChara( "Mei", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: chara = "Mei"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo09_mei0087" )
+\CN["冥"]
+（是被蛇盯上的青蛙吗？笑不出来。）
+
+拿着刀的手在颤抖。
+
+//●演技：心の声です
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0088" )
+\CN["冥"]
+（即使不能杀人，至少也要让他受伤……。
+为了尽可能地提高无黑和其他人生存的概率）
+
+这个时候还不知道父母是否还活着。
+
+只是，应该建在那里的我的家和隔壁的家
+几乎全部都被烧坏了。
+
+然后，在这里呼吸的人只有我和眼前的两个人
+只传达了一点。
+
+//白夜ルート時、ここでリターン
+: if( $chapter == 9 ) Return endif
+//●演出：場面転換トランジション
+//●演出：蘭丸と達磨の立ち絵を出す
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mei", 0.0 )
+: ResetLayer(3)
+: CharaCostume( "Ranmaru", 0 )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+远处有男人注视着冥和绿的交换。
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“……真厉害啊，那个孩子。在黑夜叉，黑精灵面前
+一步也不退让什么的”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“恩。那个{女子，女婿}，有可能到达。”
+
+//●演出：場面転換トランジション
+//●演出：冥　アクションシーン
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+//: DrawChara( "Mei", 14, 0, 0, 0.5, 0.0, 3, "RC" )
+//: CharaCostume( 10, 6 )
+//: DrawChara( "Midori", 3, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayBgm("BGM/17_TM002")
+: HideWnd()
+: effecttype = "4"; se = "Se_Swing01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+挥舞着刀，刚才的紧张感稍微缓和了一些。
+
+: DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo10_mid0163" )
+\CN["绿色"]
+“刚才还在喀哒喀哒喀哒地抖着呢，不做了。
+不然就没意思了”
+
+//: DrawChara( "Mei", 3, 0)
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_a001_1_1_0200000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0089" )
+\CN["冥"]
+“啊啊啊啊啊啊啊！！”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：刀合わせの音
+: HideWnd()
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = true;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+//: DrawChara( "Midori", 6, 0)
+: PlayVoice( "Voices/vo10_mid0164" )
+\CN["绿色"]
+“我真有一手好手艺。
+使用的也是相当不错的刀。铭是什么？”
+
+//: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0090" )
+\CN["冥"]
+“我叫胧月，是从我的老师那里得到的。”
+
+//: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0165" )
+\CN["绿色"]
+“嗯。嘛，怎么都行。”
+
+//: DrawChara( "Midori", 0, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_2_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0166" )
+\CN["绿色"]
+“我啊！！”
+
+//●演出：刺す演出
+: HideWnd()
+: effecttype = "3b"; se = "Se_Stab01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+——嘘！
+
+被射穿左肩，血飞溅。
+
+//●演技：肩を刀で刺されています
+: DrawChara( "Mei", 13, 1, 0, 0.0, 0.0, 3, "C")
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0091" )
+\CN["冥"]
+“哈、哈……嗯……呃……”
+
+: DrawChara( "Mei", 3, 1)
+: PlayVoice( "Voices/vo09_mei0092" )
+\CN["冥"]
+“啊啊啊啊啊啊啊啊啊啊————！”
+
+//●演出：冥　アクションシーン
+: HideWnd()
+: EraseChara( "Mei", 0.0 )
+: cgkeep = true; Call( "Scenarios/Effect*MeiAction01" );
+: ShowWnd()
+: DrawFaceThumbnail( "Ranmaru", 3, 0, 0, 0 )
+\CN["兰丸"]
+《太厉害了……。与{黑夜叉，暗黑精灵}化的望月先生为对手
+经常到这里……”
+
+: DrawFaceThumbnail( "Daruma", 0, 0, 0, 2)
+\CN["达磨"]
+“果然，那个{女子，おなご}，我觉得能够做到的可能性很高。
+与黑夜叉、黑精灵敌对的现在，应该马上就要到了。
+我的直觉就是这样告诉你的”
+
+: DrawChara( "Midori", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo10_mid0167" )
+\CN["绿色"]
+“是的，别着急。我们这里也没有杀你的打算。”
+
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0168" )
+\CN["绿色"]
+“嘛，我会慢慢攻击的。
+我不能调整这个样子，杀了你可不行啊”
+
+//●演出：みどり　アクションシーン
+: HideWnd()
+: EraseChara( "Midori", 0.0 )
+: cgkeep = true;
+: Call( "Scenarios/Effect*MidoriAction01" )
+: ShowWnd()
+完全看不到攻击。
+
+确实会穿上不会造成致命伤的地方。
+
+//●演技：心の声です
+//: DrawChara( "Mei", 13, 1)
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_a001_1_1_0300000_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0093" )
+\CN["冥"]
+（被玩弄得很漂亮啊……）
+
+实力相差那么多。
+
+不是大人和孩子的东西。
+说是象和蚂蚁那么大的差别也不为过。
+
+陷入绝望状况的我————
+
+//●演技：心の声です
+//: DrawChara( "Mei", 14, 1)
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_a001_1_1_0200000_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0094" )
+\CN["冥"]
+（不能死……不想死……！）
+
+活下来，大家再一起————
+
+: StopBgm( 1.0 )
+在强烈祈愿的瞬间，脑内杂乱无章地说着话
+流入来——
+
+//●演出：冥　ダークエルフ化
+: PlayBgm("BGM/42_CM019")
+: cgkeep = false;
+: Call( "Scenarios/Effect*MeiDE" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+编织出浮起的语言。
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0095" )
+\CN["冥"]
+“这是什么感觉？充满了力量。”
+
+: DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo10_mid0169" )
+\CN["绿色"]
+“等、自己、{黑夜叉，暗黑妖精}化不了的话
+从一开始就做那个！我把土豆放进去了”
+
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0170" )
+\CN["绿色"]
+“这样的话，明明很开心的。真的很恶心。”
+
+我不知道为什么会变成这样。
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0096" )
+\CN["冥"]
+“但是，现在的话应该能杀了这家伙。”
+
+按捺不住感情。
+
+这不仅仅是对对方的憎恶，也是什么？
+应该说是破坏冲动性的东西非常强烈的感觉吧。
+
+//●演出：冥　アクションシーン
+//●演技：戦いが楽しくて笑いが出てしまう感じです
+//: DrawChara( "Mei", 11, 0)
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_a001_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: EraseChara( "Midori", 0.0 )
+: EraseChara( "Mei", 0.0 )
+: PlayVoice( "Voices/vo09_mei0097" )
+\CN["冥"]
+“呵呵……”
+
+: keep = false; cgkeep = true;
+: Call( "Scenarios/Effect*Blood02" )
+看到血飞沫心里就激昂。
+
+和狩猎时发现极上鹿时的心情很相似。
+
+//: DrawChara( "Midori", 4, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_2_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0171" )
+\CN["绿色"]
+“花瓶的也差不多吧。啊？”
+
+//: DrawChara( "Midori", 0, 0)
+//: PlayVoice( "Voices/vo10_mid0172" )
+//\CN["みどり"]
+//「……もうあかん。頭、ぶっちーんきたわ。
+//　頭、コイツ{殺,バラ}してええやろ？　我慢できひんて」
+: StopBgm( 1.0 )
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["达磨"]
+「不行。望月，暂时撤退。」
+
+: PlayBgm("BGM/14_CM014")
+戴着面具的男人和另一个用刘海遮住一只眼睛的男人
+从我们中间挤进来。
+
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Midori", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R")
+: PlayVoice( "Voices/vo10_mid0173" )
+\CN["绿色"]
+「哈？头，你说什么？
+现在不干也不可能吧”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+「…………」
+
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0174" )
+\CN["绿色"]
+“……真是的，真恶心。”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+虽然恶语伤人，但女人还是退了下来。
+
+//●演出：達磨　仮面を外す
+: CharaCostume( "Daruma", 0 )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: DrawChara( "Mei", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+戴着面具的男子摘下面具向我搭话。
+
+让人感觉不到年龄的眼力，只有达人拥有
+酝酿出了气氛。
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“{女子，おなご}哟，うぬ叫什么名字？”
+
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0098" )
+\CN["冥"]
+「…………」
+
+在这个男人面前，本能地避开战斗比较好
+我想起来了。
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0099" )
+\CN["冥"]
+“神八代冥”
+
+: DrawChara( "Daruma", 5, 0)
+\CN["达磨"]
+「神八代，到我这里来。
+为了今后的大和，请使用我们的力量”
+
+: DrawChara( "Mei", 13, 0)
+: PlayVoice( "Voices/vo09_mei0100" )
+\CN["冥"]
+“你觉得我能帮助把自己的村子搞得乱七八糟的人吗？”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嗯。先听我说吧。”
+
+//●演出：過去回想から戻る
+//白夜ルート時はリターンさせる
+: if ( $chapter >= 7 )
+	: Return
+: endif
+: StopBgm( 1.0 )
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Daruma", 0.0 )
+: EraseChara( "Mei", 0.0 )
+//ここで登場した人物の服装をリセットさせておく
+: CharaCostume( "Mei", 0 )
+: CharaCostume( "Midori", 0 )
+: CharaCostume( "Ranmaru", 0 )
+: DrawImage( 1, 0, "BGImage/BG_BakuhuRoom01_01", 1.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+据老板说，袭击我村庄的是幕府的一伙人。
+
+不问身份、性别，只凭实力聚集起来的将军直属部队“帝都守护队”
+被告知那是袭击村子的人的真面目。
+
+头说，村子里有一个特殊的黑曜石可以开采的矿山
+据说是为了幕府独占那个吧。
+
+因为村里的黑曜石在海外卖得很高。
+
+: DrawChara( "Mei", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo09_mei0101" )
+\CN["冥"]
+“……嗯，这个也不对。”
+
+我给白夜的理由是为了知道真相。
+
+实际袭击村庄，把父亲、母亲和其他村民都杀了的家伙
+绿一个不留地杀了。
+
+但是我不想让它结束。
+
+//●演技：心の声です
+: DrawChara( "Mei", 12, 0)
+: PlayVoice( "Voices/vo09_mei0102" )
+\CN["冥"]
+（绝不能让夺走我重要之物的蠢货横行霸道
+不行……）
+
+所以，建立那个组织的理由，与制作相关的人物
+我仔细调查了那个。
+
+以西都为据点活动的是“帝都守护队”的队长
+因为他掌握了当时在场的人害怕报复而逃到西都的情报。
+
+//●演技：心の声です
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0103" )
+\CN["冥"]
+（那家伙已经杀了。
+但是，还不能断定结束）
+
+我还继续调查。
+
+调查《帝都守护队》的根源及其根源。
+
+//●演出：蘭丸が入ってくる
+: HideWnd()
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0104" )
+\CN["冥"]
+“……兰丸吗？”
+
+很久没有和兰丸这样两个人独处了。
+
+一边调查东西，一边做着，想不到的话题。
+从那里，也有一直不踩进去的事情
+顺口说出来。
+
+我还很固执地执着于“帝都守护队”。
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“别误会了。复仇什么都不会发生。”
+我不是想说那样的话……”
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0098" )
+\CN["冥"]
+「…………」
+
+兰丸想说的我明白。
+
+我自己也有一些不得不妥协的事情
+我知道。
+
+没有被囚禁，必须要迈出一步。
+那个应该自己也知道。
+
+//●ＳＥ：デバイスの音
+: PlaySe( "SE/Se_Device01" )
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“嗯？紧急收集电话？”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0106" )
+\CN["冥"]
+“啊，我也来了。好像九星全员集合。
+必须回到据点”
+
+//●演出：冥・蘭丸　退場した跡、暗転させる
+: HideWnd()
+: chara = "Mei"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Ranmaru"; lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+: DrawFaceThumbnail( "Ranmaru", 1, 0, 0 )
+\CN["兰丸"]
+（这么说来，大和的头脑是否会焕然一新
+我说过啊）
+
+\CN["兰丸"]
+（般若先生回到这里来，有什么好事吗
+但是……嗯，有种很讨厌的预感啊）
+
+……………………………………………………。
+
+<^FF0000>侧面小故事更新了！</color>
+
+//●シーンエンド
+//●拠点（吉野原）に戻して行動開始
+: Jump( "Scenarios/CommonSys*LoseReturn" )

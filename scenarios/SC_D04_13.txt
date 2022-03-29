@@ -1,0 +1,496 @@
+//========================================================
+//○指名手配の辻斬り退治１
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["眼镜店"]
+“最近，茨木街道的驿站町发生了一起杀人事件
+知道吗？”
+
+: DrawChara( "Mukuro", 0, 0, 0 )
+: PlayVoice( "Voices/vo00_muk3897" )
+\CN["无黑色"]
+“因为镇上的人在谈论。我听说过。”
+
+: DrawChara( "Mukuro", 0, 0)
+因为贵族被斩杀而成为话题
+所以才被通缉的吧？
+
+\CN["眼镜店"]
+“茨木街道的驿站町是非常重要的地方。
+贵族啦，还有其他国家的大人物也会去利用”
+
+\CN["眼镜店"]
+“是吗，所以我就奋起，把那个叫做辻斩的精灵的家伙
+逮住。奖金也很高
+当然不论生死”
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：仕事を引き受ける
+//■選択肢２：もっとよく考える
+//――――――――――――――――――――――――――――
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+\CI["接受工作"]
+\CI["想得更好"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：仕事を引き受けるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+//●読み：茨木街道（いばらぎかいどう）
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk3898" )
+\CN["无黑色"]
+“我来试试这项工作。那家伙现在还在茨木街道的驿站町
+在吗？”
+
+\CN["眼镜店"]
+“大概是这样吧。
+这几天接连发生事件的可能性很高”
+
+: DrawChara( "Mukuro", 0, 0)
+总之，只能去看看了吗。
+
+\CN["眼镜店"]
+“对方好像晚上出没。住宿由我来安排。
+到了驿站町，在旅馆待到晚上就好了”
+
+//＠マップ解放：茨木街道
+: EraseChara( "Mukuro", 0.5 )
+: FastTravelMapOn( "IbarakiKaido" )
+: SetMission( "SC_D04_13_1", "InProgress" )
+: Return
+//●シーンエンド
+
+*sc001_1
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["眼镜店"]
+“对方好像晚上出没。住宿由我来安排。
+到了驿站町，在旅馆待到晚上就好了”
+
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：もっとよく考えるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+\CN["眼镜店"]
+“嘛，对方好像是有名的辻斩啊。
+有兴趣的话，再打招呼吧”
+
+//: EraseChara( "Mukuro", 0.5 )
+//●シーンエンド
+: Return
+
+//========================================================
+//○指名手配の辻斬り退治２
+//========================================================
+*sc002
+\CI["就这样向前冲"]
+\CI["返回"]
+今后好像会发生什么……。
+
+: if ($choice == 1) Return endif
+//●場所：茨木街道・宿場町
+//●背景：宿場町・昼
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 0.5 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_SyukubaVillage01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 25, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayBgm("BGM/01_CM001")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3899" )
+\CN["无黑色"]
+“相当、{人气、人烟}没有的驿站町。
+理所当然吗……”
+
+街上很冷清，我想收集点什么信息
+好像不行。
+
+晚上在入口铺给我们安排的住宿房间休息吧。
+
+//●演出：無黒退場
+//●背景：空・昼
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 0; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+然后马上去旅店，在准备好的房间休息。
+
+//●演出：時間経過トランジション
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+——然后，等夜幕降临后离开客栈。
+
+//●背景：宿場町・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_SyukubaVillage01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: trackIndex = PlaySe( "SE/Se_Night1", true );
+: DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3900" )
+\CN["无黑色"]
+“晚上的驿站町这么安静，真奇怪。”
+
+特别是在交易频繁的茨木街道的驿站町
+如果是平时的话，到了这个时间就会变成妓女
+奇怪的商人应该会哗啦出来。
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk3901" )
+\CN["无黑色"]
+“正因为如此，才更害怕辻斩吧。”
+
+也就是说，辻斩事件的可信度很高……。
+
+: DrawChara( "Mukuro", 41, 0)
+: PlayVoice( "Voices/vo00_muk3902" )
+\CN["无黑色"]
+“……我只是在街上徘徊了一会儿。”
+
+从背后感觉到了气息——强烈的杀气。
+那家伙绝对是个辻斩神吧。
+
+出了旅馆，只是稍微走了一下后街
+对方来了。
+
+//●演出：無黒　刀を抜く
+: StopSe( trackIndex );
+: PlayHSe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 24, 0, 5 )
+: PlayVoice( "Voices/vo00_muk3903" )
+\CN["无黑色"]
+“我知道他在后面。
+赶紧让我看看你的样子怎么样？”
+
+//●分岐：［服装］着衣の場合
+: PlayBgm("BGM/16_TM001")
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	\CN["杜松子酒"]
+“好厉害。一个女人走这样的夜路，真让人佩服啊。”
+
+	\CN["杜松子酒"]
+“不管对方是男的还是女的，不管是精灵还是兽人
+没关系。只要杀人就满足了”
+
+//●分岐：［服装］全裸の場合
+: else
+\CN["杜松子酒"]
+“裸体的妓女……好像不是这样的。
+那个富余，而且是刀，曝光狂的变态吗……”
+
+	: DrawChara( "Mukuro", 27, 0)
+	: PlayVoice( "Voices/vo00_muk3904" )
+	\CN["无黑色"]
+“虽然我觉得比起辻斩的家伙要好一些。”
+
+	\CN["杜松子酒"]
+“不管对方是男的还是女的，不管是精灵还是兽人
+就算是曝光狂的变态也没关系。只要杀人就满足了”
+
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3905" )
+\CN["无黑色"]
+“你不觉得自己会被砍吗？”
+
+\CN["杜松子酒"]
+“愚问。只要有你和爱刀的夹竹桃
+不必害怕任何人！像你这样的美人的血
+把刀刃染成美丽的红色吧”
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk3906" )
+\CN["无黑色"]
+“{夹竹桃，鱼糕}吗。
+没听说过名字的刀……”
+
+: DrawChara( "Mukuro", 24, 0)
+酿造出的氛围是妖刀的味道。
+不是一个可以拔手取胜的对手。
+
+\CN["杜松子酒"]
+“我走了！”
+
+: EraseChara( "Mukuro", 0.5 )
+: StopBgm( 1.0 )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：人斬りジン
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：人斬りジン,2,2,1,sc003,lose
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_SyukubaVillage01_03", "BGM/22_BM003", 1069, -1, -1, "Scenarios/SC_D04_13*battle_end" , true )
+
+*battle_end
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 1, 0, "BGImage/BG_SyukubaVillage01_03", 0.0 )
+	: FadeIn( 0.5 )
+	: Wait()
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○指名手配の辻斬り退治３
+//========================================================
+*sc003
+//●勝利した場合
+//●演出：斬撃エフェクト
+//●ＳＥ：カキン！　刀を飛ばす音
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_SyukubaVillage01_03", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_KatanaHit02" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, 0.0 )
+: DrawChara( "Mukuro", 24, 0, 5, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+放飞对方的刀，将刀锋对准眼前。
+
+: PlayBgm("BGM/01_CM001")
+\CN["杜松子酒"]
+“……啊，咦？你在这里做什么……？”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3907" )
+\CN["无黑色"]
+（果然是被妖刀操控着？）
+
+我听说过几起类似的事件……。
+
+\CN["杜松子酒"]
+“喂，请原谅我……！”
+
+突然，他开始跪下，拼命请求原谅。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk3908" )
+\CN["无黑色"]
+（难道你不记得以前的事情吗？）
+
+//●分岐：悪堕ちＬＶが３の場合
+//●強制で殺害
+: if ( $evilLevel == 3 )
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+——嘛，不用想了。
+
+	//＠ラベルジャンプ：sc003_select_s2
+	: Jump( "*sc003_select_s2" )
+//●分岐終了
+: endif
+
+*sc003_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc003_select
+//■選択肢１：このまま捕まえる
+//■選択肢２：演技の可能性もある。殺しておこう
+//――――――――――――――――――――――――――――
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+\CI["就这样抓住"]
+\CI["也有演技的可能性。杀了他吧"]
+那么，怎么了呢？
+
+: if ($choice == 1) Jump( "*sc003_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：このまま捕まえるを選んだ場合
+//-------------------------------------------------------
+*sc003_select_s1
+
+//●演出：斬撃エフェクト
+//●ＳＥ：打撃音
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["杜松子酒"]
+“是！”
+
+: PlaySe( "SE/Se_Down01" )
+打杜松子酒昏过去后用绳索绑上。
+
+然后用设备联系入口店。
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk3909" )
+\CN["无黑色"]
+“我抓到了杜松子酒，请你处理一下。”
+
+\CN["眼镜店"]
+“不愧是无黑！已经做好准备了！
+我马上派人去，请稍等一下啊」
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，还不到5分钟警察就来了
+我带了杜松子酒去。
+
+恐怕是和眼镜的入口店在后面相连的家伙吧。
+
+在驿站町的旅店住了一晚后，回到了西都。
+
+……………………………………………………。
+
+: $money += 1000
+无黑收到了成功报酬。
+
+//＠仕事成功
+//＠場所移動：西都
+//●シーンエンド
+: SetMission( "SC_D04_13_1", "Successed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 7 )
+	: FadeOut( 0.0 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D04_17")
+: else
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif
+//-------------------------------------------------------
+//●選択肢２：演技の可能性もある。殺しておこうを選んだ場合
+//-------------------------------------------------------
+*sc003_select_s2
+: DrawChara( "Mukuro", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk3910" )
+\CN["无黑色"]
+“杀了他吗……”
+
+\CN["杜松子酒"]
+“希伊！呀，住手！什么都干！”！
+什么都可以！所以只有生命——”
+
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+//＠殺害,1
+: AddKill(1)
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+啪的一声砍了杜松子酒的头
+杀人后用设备联系入口店。
+
+: DrawChara( "Mukuro", 26, 0, 2, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3911" )
+\CN["无黑色"]
+“琴酒已经处理好了。拜托你善后。”
+
+\CN["眼镜店"]
+“不愧是无黑！竟然能轻易杀人。
+我马上派人去，请稍等一下啊」
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，还不到5分钟警察就来了
+把杜松子酒的遗体搬走了。
+
+恐怕是和眼镜的入口店在后面相连的家伙吧。
+
+在驿站町的旅店住了一晚后，回到了西都。
+
+……………………………………………………。
+
+: $money += 1000
+无黑收到了成功报酬。
+
+//＠仕事成功
+//＠場所移動：西都
+//●シーン：「堕ちた桃」へ
+//＠シナリオジャンプ：SC_D04_17
+: SetMission( "SC_D04_13_1", "Hidden" )
+: SetMission( "SC_D04_13_2", "Successed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 7 )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D04_17")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif

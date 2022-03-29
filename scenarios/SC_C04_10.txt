@@ -1,0 +1,808 @@
+//========================================================
+//○未知の呪術を解呪せよ１
+//========================================================
+*sc000
+: FadeIn( 0.5 )
+: Call( "Scenarios/Map_Town07_Byakuya_Init*Map01" )
+: Wait()
+因为织笠御影住在织笠神社
+去织笠神社吧。
+
+: FastTravelMapOn( "Orikasa" )
+: DestinationMap( "Map_Town17_01_Orikasa" )
+: SetMission( "SC_C04_10_1", "InProgress" )
+事件信息更新了。
+
+: Return
+
+//--------------------------------------------------------
+
+*sc001
+//●場所：織笠神社
+//●状況：原因不明の病で倒れた部下を御影が看病している
+: RpgCharaOff("Player")
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+\CN["巫女之女"]
+“哈、哈、御影大人……我已经……不行了……”
+
+: DrawChara( "Mikage", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo11_mik0086" )
+\CN["御影"]
+“没关系，我一定会治好的。
+{京子，ここ}，请小心点」
+
+对御影来说可以说是右臂的《柳泽京子，柳柳柳佐子》是
+现在躺在病床上。
+
+昨天，京子突然倒下了。
+用御影的魔术总算保住了性命……。
+
+//●演技：心の声です
+//●読み：病（やまい）
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0087" )
+\CN["御影"]
+（京子倒下的原因不是病，而是被什么人施了咒术。
+那个也被施加了相当强大的力量）
+
+京子被施加的咒术慢慢地侵蚀着身体。
+是停止内脏器官的工作，致死的类型。
+
+//●演技：心の声です
+: DrawChara( "Mikage", 6, 0)
+: PlayVoice( "Voices/vo11_mik0088" )
+\CN["御影"]
+（现在我就这样用魔术抑制着咒语的进行……。
+这样的话，已经——）
+
+京子的生命还有几个小时。
+御影自身不能在这里行动，不能前往解咒。
+
+\CN["柳泽"]
+“……御影大人？”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0089" )
+\CN["御影"]
+“你什么都不用担心，没关系。
+所以，现在好好休息吧”
+
+\CN["柳泽"]
+“是的……”
+
+御影给京子施加了睡眠的魔术。
+
+让他睡下虽然只是心情上的问题
+咒术的进展缓慢了。
+
+//●演技：心の声です
+: DrawChara( "Mikage", 6, 0)
+: PlayVoice( "Voices/vo11_mik0090" )
+\CN["御影"]
+（……我该怎么做……？）
+
+看起来会帮忙的绿
+真不巧，现在不知道去哪里了。
+
+只能看着就这样在旁边衰弱的京子
+做不到吗？
+
+御影烦恼着，不知所措。
+
+: HideWnd()
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaOn("Mobu")
+: RpgCharaBatch( "Mobu"	\
+:	"Speed", 4.0	\
+:	"MoveUp", 7 )
+: Wait()
+: RpgCharaTurn( "Mikage", "D" )
+: ShowWnd()
+\CN["御影的部下A"]
+“御影大人，失礼了。
+有神八代无黑菩萨
+怎么办呢？”
+
+: DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo11_mik0091" )
+\CN["御影"]
+“请马上让我过去。”
+
+御影的脸一下子变得华丽起来。
+
+自己想解咒也动不了。
+话虽如此，自己的部下去解咒却力不从心。
+
+//●演技：心の声です
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0092" )
+\CN["御影"]
+（神八代无黑的话，一定能想办法解决的……）
+
+御影知道鬼灯中的无黑的实力
+他通过在恐山打倒亡灵来显示实力。
+
+虽然没有仔细看过
+无论怎么低估也有能和京子匹敌的力量
+我明白你的意思。
+
+//●演出：場面転換トランジション
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mikage", 0.0 )
+: RpgCharaOn("Player")
+: DrawImage( 1, 0, "BGImage/BG_Orikasa01_01", 0.0 )
+: DrawChara( "Mukuro", 0, 0, 0, 0, 0.0, 3, "RC" )
+: DrawChara( "Mikage", 5, 0, 0, 0, 0.0, 4, "LC" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+//●演出：無黒登場させておく
+: PlayVoice( "Voices/vo11_mik0093" )
+\CN["御影"]
+“无黑先生，欢迎光临。”
+
+: PlayVoice( "Voices/vo00_muk2644" )
+\CN["无黑色"]
+“姐姐叫我来帮忙……”
+
+大体上可以推测出该做什么。
+
+睡在眼前的女人，恐怕会帮助织笠御影的部下
+就是这种感觉吧。
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0094" )
+\CN["御影"]
+“这个孩子现在被施了强力的咒术。
+我想请你帮我解开这个咒语”
+
+//●読み：解呪（かいじゅ）
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2645" )
+\CN["无黑色"]
+“解开咒语？真不巧，我不会解咒……”
+
+//●読み：解呪（かいじゅ）・依り代（よりしろ）
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0095" )
+\CN["御影"]
+“没有必要进行解咒。
+希望你能破坏咒语的依据费”
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0096" )
+\CN["御影"]
+“根据我的魔术，这个咒术的依据代恐怕是
+{冷泉之社，应该是冷泉之森}”
+
+据织笠先生说，冷泉的森林里充满了灵气
+这是一个特殊的场所，是一个非常适合进行咒术的地方。
+
+因为是连织笠先生都无法解咒的程度的咒术
+肯定是从那里打来的。
+
+: DrawChara( "Mukuro", 0, 0, 3)
+: PlayVoice( "Voices/vo00_muk2646" )
+\CN["无黑色"]
+“我知道了。好像是命中注定的。
+马上就去”
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0097" )
+\CN["御影"]
+“无黑先生，请多关照。
+这孩子……京子对我来说是比什么都重要的部下”
+
+织笠先生有多重视自己的部下和亲信呢
+传达了很多。
+
+正因为如此，京子才不能让孩子死。
+必须尽快出发。
+
+//●シーンエンド
+: HideWnd()
+: SetMission( "SC_C04_10_1", "Hidden" )
+: SetMission( "SC_C04_10_2", "InProgress" )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+
+: StopBgm( 0.5 )
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Town17_01_Orikasa", "From02", "Scenarios/Map_Dungeon_Init*Map_Town17_01")
+//========================================================
+//○未知の呪術を解呪せよ２
+//========================================================
+*sc002
+\CI["准备好了"]
+\CI["再次确认"]
+今后好像会有什么……。
+
+: if ($choice == 1) Return endif
+: LoadMap( "Map_Dungeon34_03_Reizennomori", "", "Scenarios/SC_C04_10*sc002_1")
+
+*sc002_1
+//●場所：冷泉の社・奥
+//●演出：無黒　数歩歩き出す
+//●演技：２日酔いの朝のような感じです
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 5 )
+: Wait()
+: DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2647" )
+\CN["无黑色"]
+“嗯……总觉得有点讨厌……”
+
+一踏入的瞬间，身体像灌了铅一样沉重。
+
+粘糊糊地缠在身上的空气令人不快。
+
+//●読み：依り代（よりしろ）
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk2648" )
+\CN["无黑色"]
+“那个像，是织笠先生说过的咒术的代替品吗……”
+
+那么，把那个弄坏就好了吧。
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Dark01" )
+: PlayAnim( "Animations/AnimeL_Dark01", false, 0, 0, 6, 6 )
+: Wait()
+: RpgCharaOn("Enemy")
+: ShowWnd()
+\CN["恶魔"]
+「…………」
+
+从像中突然出现了从未见过的魔物。
+
+: DrawChara( "Mukuro", 23, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2649" )
+\CN["无黑色"]
+“我不知道哪里有人，可以请你停止诅咒吗？
+给你添麻烦了”
+
+试着说一下。
+
+\CN["恶魔"]
+“我是恶魔少女，对恶魔来说契约是绝对的。
+除了契约者的命令以外不能中断”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk2650" )
+\CN["无黑色"]
+“小妖精？真是从未听说过的恶魔啊。”
+
+\CN["石蜡"]
+「这样啊。但是，没有必要记住。
+既然看到了这个样子，就必须在这里杀了你啊」
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：ガーゴイル
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：ガーゴイル,1,1,0,sc003a,sc003b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc003b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_03", "BGM/22_BM003", 1047, -1, -1, "Scenarios/SC_C04_10*battle_end01" , true )
+
+*battle_end01
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003a" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*sc003b" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+//========================================================
+//○未知の呪術を解呪せよ３Ａ
+//========================================================
+*sc003a
+: FadeIn( 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Monster01" )
+\CN["石蜡"]
+“哦~哦~哦~”
+
+//●演出：ガーゴイル　消える
+: HideWnd()
+: target = "Enemy"
+: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: ShowWnd()
+少女哥尔发出了临终魔的叫声
+变成沙子融化在风中。
+
+//●演出：無黒　像の前に移動する
+
+: DrawChara( "Mukuro", 10, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2651" )
+\CN["无黑色"]
+“这个像是依据的代没错。
+还有就是，把这家伙弄坏就好了”
+
+//●演出：無黒　アクションシーン。像を破壊する
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Sword01" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 100, 1, 1 )
+: Wait()
+: RpgCharaTurn( "Obje01", "U" )
+: DrawChara( "Mukuro", 0, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2652" )
+\CN["无黑色"]
+“越发感到讨厌了。
+大概，我觉得这样已经没问题了……”
+
+不回织笠神社看看情况的话，什么也说不出来。
+
+//●演出：場面転換トランジション
+//●場所：織笠神社
+//●演出：無黒　部屋に入っていく
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Orikasa01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0098" )
+\CN["御影"]
+“无黑先生，谢谢您！
+托您的福，京子的解咒成功了”
+
+京子睡得很安详。
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk2653" )
+\CN["无黑色"]
+“是吗？能好好地解除诅咒真是太好了。”
+
+: PlayVoice( "Voices/vo11_mik0099" )
+\CN["御影"]
+“多亏了你，真的非常感谢。”
+
+织笠先生的眼睛湿润了。
+
+那么高兴吧。
+
+//●演技：心の声です
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk2654" )
+\CN["无黑色"]
+（像这样被别人感谢真是太好了……）
+
+那个不管属于哪里都一样。
+
+认为自己是绝对的恶的白夜。
+
+但是，实际上，在里面试着这样工作的话完全不一样。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——那天深夜御影的卧室。
+
+//●場所：御影の部屋・夜
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom04_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+//●視点：第三者視点
+\CN["御影的部下B"]
+“对不起，打扰您休息了。”
+
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo11_mik0100" )
+\CN["御影"]
+“不，没关系。请进。”
+
+因为我知道御影会发生什么
+没睡着一直等着。
+
+//●演出：部下が慌てて入ってくる
+\CN["御影的部下B"]
+“……雪乃……河村雪乃……刚才就咽气了。”
+
+\CN["御影的部下B"]
+“突然觉得很痛苦……就这样……吐血……”……
+然后……嗯…”
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0101" )
+\CN["御影"]
+“……是吗？真遗憾，真的。
+谢谢您的报告”
+
+\CN["御影的部下B"]
+“……是的。”
+
+//●演出：部下　退場する
+: PlaySe( "SE/Se_dash01" )
+部下带着悲痛的表情退场。
+
+御影的部下之一，河村雪乃突然吐血
+从毛孔这个毛孔里喷出血来，痛苦得团团转
+好像死了。
+
+部下们因为得了怪病而战战兢兢
+御影知道真正的原因。
+
+——诅咒回复。
+咒术失败时，诅咒会回到使用过的本人身上。
+因为是和恶魔的契约，所以失败的代价很大。
+
+: DrawChara( "Mikage", 7, 0)
+: PlayVoice( "Voices/vo11_mik0102" )
+\CN["御影"]
+“诅咒别人就是两个洞，这是自作自受……”
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0103" )
+\CN["御影"]
+“那孩子诅咒京子……为什么会这样……。
+真的很悲伤……”
+
+河村雪乃诅咒柳泽京子的理由是嫉妒。
+
+在御影的右臂中最受宠爱的京子非常憎恨。
+京子死了的话，自己就在那个位置……。
+我是这么想才施了咒术的。
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0104" )
+\CN["御影"]
+“那个孩子虽然被咒语{长，た}着
+我无法解咒的诅咒
+应该打不到……”
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0105" )
+\CN["御影"]
+“是哪个人赐予那个孩子力量的呢……？”
+
+——不能原谅给予雪乃力量的人的心情
+——让雪乃做到这种地步的自己真是没出息啊
+
+御影因为无计可施的悔恨而心碎。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+: $money += 5000
+无黑得到了报酬！
+
+//Yoshi：背景消去
+//●分岐：「見廻組から女衒を守れ！」が終了している場合
+//●シーン：「財閥の脱獄を手伝え１」へ
+//＠シナリオジャンプ：SC_C04_11
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●場所移動：白夜のアジト
+//●シーンエンド
+//●分岐終了
+: FadeOut( 0.0 )
+: SetMission( "SC_C04_10_2", "Successed" )
+: if ( MissionProgress( "SC_C04_09_2", "Successed","Failed" ) == true || MissionProgress( "SC_C04_09_3", "Successed","Failed" ) == true )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event011", "", "Scenarios/SC_C04_11")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town06_06_Sakitama", "", "Scenarios/SC_C04_09")
+: endif
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+//========================================================
+//○未知の呪術を解呪せよ３Ｂ
+//========================================================
+*sc003b
+//●演出：無黒　倒れる
+: FadeIn( 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Down01" )
+力不能及而倒下。
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 31, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawFaceThumbnail( "Mukuro", 31, 0, 3 )
+: PlayVoice( "Voices/vo00_muk2655" )
+\CN["无黑色"]
+（……到此为止吗……）
+
+对手是恶魔。做好死的觉悟。
+
+就这样被思念所杀吗？
+是生着吃，还是被玩弄之后？
+
+\CN["石蜡"]
+“……力量用过头了……以那个女人的力量来说，这是界限吗……”
+
+\CN["石蜡"]
+“但是，合同已经履行了……”
+
+//●演出：ガーゴイル　消えて像が壊れる
+: HideWnd()
+: target = "Enemy"
+: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: PlaySe( "SE/Se_AnimeL_Earth01" )
+: RpgCharaTurn( "Obje01", "U" )
+: ShowWnd()
+小妖精突然变成沙子融化在风中的同时
+被认为是依据的时代的奥妙形象被破坏了。
+
+: DrawChara( "Mukuro", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk2656" )
+\CN["无黑色"]
+“……哈……哈……得救了吗……？”
+
+说是力量用多了。
+总之，好像没有死。
+
+: DrawChara( "Mukuro", 39, 0, 3)
+: PlayVoice( "Voices/vo00_muk2657" )
+\CN["无黑色"]
+“要不要回一次神社？”
+
+摇摇晃晃地站起来。
+
+//●演出：無黒　退場する
+//●演出：場面転換トランジション
+//●場所：織笠神社
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Orikasa01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+回到神社后，巫女们急急忙忙地行动着。
+
+\CN["御影的部下B"]
+“神八代大人，对不起。
+今天来取……”
+
+被施了咒术的女人好像在我回来之前就断气了。
+诅咒总算是解除了诅咒，但是身体没有。
+
+//●演技：仕事に失敗した申し訳ないような気持ちです
+: DrawChara( "Mukuro", 7, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2658" )
+\CN["无黑色"]
+“……是吗？我知道了。”
+
+如果我能好好打败那个恶魔的话，说不定。
+
+心里留下了无可奈何的郁闷。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——那天的深夜。
+
+//●視点：第三者視点
+//●場所：どこかの森
+//●背景：森・夜
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Mountain01_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/30_CM015")
+: ShowWnd()
+\CN["御影的部下A"]
+“……哈…哈……哈……哈……”
+
+御影的部下之一，河村雪乃深夜徘徊在附近的森林里。
+
+同僚柳泽京子突然死亡。
+因为自己有那个原因，所以被罪恶感折磨着。
+
+//●演出：御影　登場する
+//●演技：相手に敵意を向けています
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo11_mik0106" )
+\CN["御影"]
+“这么晚还做什么？”
+
+\CN["雪乃"]
+“美、御影大人……！？”
+
+御影的语气并不是担心半夜在森林里徘徊的部下。
+那是和敌人做对手时的事。
+
+\CN["雪乃"]
+“智、不对……我什么都……”
+
+: DrawChara( "Mikage", 1, 0)
+: PlayVoice( "Voices/vo11_mik0107" )
+\CN["御影"]
+“有什么不同吗？”
+
+只是，淡淡的。
+御影用没有感情的语言回应。
+
+\CN["雪乃"]
+“嗯……对不起。
+怎么会变成这样……”
+
+\CN["雪乃"]
+“我只是……我只是想威胁一下……”
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0108" )
+\CN["御影"]
+“是吗？”
+
+御影对雪乃拼命辩解的样子和言语
+我确信他是满怀杀京子的心情诅咒的。
+
+: DrawChara( "Mikage", 7, 0)
+: PlayVoice( "Voices/vo11_mik0109" )
+\CN["御影"]
+“让你做到这种地步是我的不争气
+这也是原因”
+
+: DrawChara( "Mikage", 6, 0)
+: PlayVoice( "Voices/vo11_mik0110" )
+\CN["御影"]
+“所以，我来亲手送你到那个世界去吧。”
+
+\CN["雪乃"]
+“美、御影大人……请原谅……！”
+
+雪乃脸色发青。
+因为御影把自己叫做“贵様”。
+
+那是对御影持有强烈敌意的对方的说法
+雪乃知道。
+
+: DrawChara( "Mikage", 10, 0)
+: PlayVoice( "Voices/vo11_mik0111" )
+\CN["御影"]
+“——去死吧。”
+
+//●演出：御影　炎魔術演出
+: HideWnd()
+: EraseChara( "Mikage", 0.0 )
+: PlaySe( "SE/Se_AnimeL_Fire03" )
+: PlayAnim( "Animations/AnimeL_Fire03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["雪乃"]
+“御影大人啊啊啊啊啊啊啊啊啊啊啊————————！”
+
+雪乃被御影放出的火焰灼烧。
+
+愤怒的豪火使肉糜烂，使骨头烧焦
+熊熊燃烧。
+
+河村雪乃触犯了御影的愤怒
+连燃烧的残渣都不允许遗留，结束了一生。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//Yoshi：背景消去
+//●分岐：「見廻組から女衒を守れ！」が終了している場合
+//●シーン：「財閥の脱獄を手伝え１」へ
+//＠シナリオジャンプ：SC_C04_11
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●場所移動：白夜のアジト
+//●シーンエンド
+//●分岐終了
+: FadeOut( 0.0 )
+: SetMission( "SC_C04_10_2", "Failed" )
+: if ( MissionProgress( "SC_C04_09_2", "Successed","Failed" ) == true || MissionProgress( "SC_C04_09_3", "Successed","Failed" ) == true )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event011", "", "Scenarios/SC_C04_11")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town06_06_Sakitama", "", "Scenarios/SC_C04_09")
+: endif

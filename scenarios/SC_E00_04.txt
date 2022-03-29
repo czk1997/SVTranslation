@@ -1,0 +1,1654 @@
+//========================================================
+//○最初で最後。結ばれた夜の出来事
+//========================================================
+//●場所：厚海・ニーナの家
+//●背景：洋風の家・昼
+//Yoshi：背景
+: HideWnd()
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Nina", 0 )
+: DrawImage( 1, 0, "BGImage/BG_Room02_01", 1.0 )
+: Wait()
+: Sleep(0.5)
+//●状況：無黒とニーナが２人で話をしている
+//●ＣＧ：ニーナ　過去写真
+: evbg = true; evcos = false;
+: evfile = "evx_a055_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/36_ID03")
+: ShowWnd()
+有很多平静的日子。
+
+偶尔也要稍微放松一下
+大家一起来到了雷欧老家的厚海。
+
+: PlayVoice( "Voices/vo00_muk4848" )
+\CN["无黑色"]
+“这张照片，说不定是妮娜年轻的时候……？”
+
+: PlayVoice( "Voices/vo27_nii0110" )
+\CN["尼娜"]
+“呵呵。对了对了。是个很漂亮的美女吧？”
+
+: PlayVoice( "Voices/vo00_muk4849" )
+\CN["无黑色"]
+“是的。现在也一样，非常漂亮。”
+
+桃和银很快就两个人消失了
+黄菜子和奇诺说要在街上散步，就走了。
+
+因为Leo是妮娜小姐的使者
+现在这里只有我和尼娜两个人。
+
+: PlayVoice( "Voices/vo27_nii0111" )
+\CN["尼娜"]
+“然后，戴着这个眼镜的看起来很聪明的女孩子就是扎拉
+考试之类的，经常是第一名呢”
+
+: PlayVoice( "Voices/vo27_nii0112" )
+\CN["尼娜"]
+“那么，你觉得这个恶心的人是谁？”
+
+: PlayVoice( "Voices/vo00_muk4850" )
+\CN["无黑色"]
+“……难道是多米尼克大臣吗？”
+
+: PlayVoice( "Voices/vo27_nii0113" )
+\CN["尼娜"]
+“猜对了！”
+
+我听说雷欧的妈妈是维克托人
+没想到竟然是大臣和同学，真让人吃惊。
+
+但是，其中有一个特别大放异彩的男孩。
+
+然后，那个侧脸，或者说氛围在哪里，现在用来使用
+让人想起出现的某人……。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4851" )
+\CN["无黑色"]
+（莫非，这个人是雷欧的……？）
+
+: PlayVoice( "Voices/vo27_nii0114" )
+\CN["尼娜"]
+“呵呵，在意吗？”
+
+: PlayVoice( "Voices/vo00_muk4852" )
+\CN["无黑色"]
+“啊……！？不好意思……不知不觉……”
+
+: PlayVoice( "Voices/vo27_nii0115" )
+\CN["尼娜"]
+“不用那么在意吗？”
+
+: PlayVoice( "Voices/vo27_nii0116" )
+\CN["尼娜"]
+“嘛，正如无黑酱所想的那样。
+这个人的名字是零。是雷欧的父亲”
+
+: PlayVoice( "Voices/vo27_nii0117" )
+\CN["尼娜"]
+“——被称为最强生物的人。”
+
+//●演出：回想に入るトランジション
+//●視点：ニーナ視点
+//●背景：空・昼
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+——我一生中唯一爱过的人Zip君。
+
+他的第一印象说得很清楚，是最差的。
+
+//●背景：騎士団学校・昼
+//Yoshi：背景
+: HideWnd()
+: CharaCostume( "Nina", 1 )
+: SwapImage( 1, 0, "BGImage/BG_School01_01", 1.0 )
+: Wait()
+: CharaCostume( "Nina", 1 )
+: DrawChara( "Nina", 28, 0, 0, 0.5, 0.0, 3, "C" )
+: Wait()
+: PlayBgm("BGM/36_ID03")
+: ShowWnd()
+//●演技：ここから過去のニーナです。年齢は１６歳ぐらい
+: PlayVoice( "Voices/vo27_nii0118" )
+\CN["尼娜"]
+“现在开始就要实习了，你打算去哪里？”
+
+\CN["绝大多数"]
+“什么啊，太松弛了，能做吗？”
+
+: DrawChara( "Nina", 34, 0)
+: PlayVoice( "Voices/vo27_nii0119" )
+\CN["尼娜"]
+“我说你很火……我们还是骑士团学校的学生啊？”？
+应该有很多必须要做的事情”
+
+\CN["绝大多数"]
+“没什么。这里的教官，谁都敌不过我。”
+
+杰普没有认真上课和训练。
+
+学校也经常偷懒，好像去了什么地方。
+
+//●背景：騎士団学校・闘技場・昼
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Nina", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Arena01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/21_BM002")
+: ShowWnd()
+//●演技：魔法を唱えています
+: DrawChara( "Nina", 32, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo27_nii0120" )
+\CN["尼娜"]
+“石头球！！”
+
+//●演出：土系魔法エフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Earth01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["骑士团学校生1"]
+“哎呀！”
+
+\CN["骑士团学校生1"]
+“我可不是那种程度就能被打败的！尼娜！”
+
+刚才的魔法是诱饵。
+本命是——
+
+//●演技：詠唱です
+: DrawChara( "Nina", 22, 0)
+: PlayVoice( "Voices/vo27_nii0121" )
+\CN["尼娜"]
+“怒火中烧{御身，御影}的{雷，伊势}的精灵啊——
+遵从我的命令，给愚蠢的人制裁的{雷，乌贼}」
+
+: DrawChara( "Nina", 40, 0)
+: PlayVoice( "Voices/vo27_nii0122" )
+\CN["尼娜"]
+“闪电！！”
+
+//●演出：雷魔術エフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Thunder03" )
+: PlayAnim( "Animations/AnimeL_Thunder03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["骑士团学校生1"]
+“好厉害！！”
+
+\CN["教官"]
+“胜者，妮娜！”
+
+: StopBgm( 1.0 )
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0123" )
+\CN["尼娜"]
+“呵呵。你很擅长雷系魔法呢。”
+
+: PlayBgm("BGM/36_ID03")
+\CN["骑士团学校生1"]
+“呃……我忘记了……你原来有这个啊……”
+
+: EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
+剑的手臂在里面
+魔法是回复魔法和雷系魔法的顶级。
+
+那是骑士团学校时代的我。
+
+就这样从骑士团学校毕业进入骑士团作为骑士
+为维克托尔而战。
+
+我知道作为精灵的我只能在这条路上生存下去
+所以，锻炼从来没有缺过。
+
+但是——
+
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["教官"]
+“胜者，Zip！”
+
+\CN["绝大多数"]
+「…………」
+
+\CN["骑士团学校生2"]
+“喂，又不是瞬杀吗……”
+
+\CN["骑士团学校生3"]
+“那家伙老是偷懒，为什么还那么厉害呢？”？
+这就是才能吗……这样的话，神是不公平的！”
+
+\CN["绝大多数"]
+（神不公平啊？这是理所当然的。
+让我笑……）
+
+\CN["绝大多数"]
+（……如果这是才能的话，该有多好啊）
+
+杰普好像有毕业的打算
+考试考得很好。
+
+学力考试在年级里也是相当低的。
+但是，实际技术考试以绝对领先。
+
+: DrawFaceThumbnail( "Nina", 32, 0, 0 )
+: PlayVoice( "Voices/vo27_nii0124" )
+\CN["尼娜"]
+“……绝对不承认”
+
+无论怎么努力，也达不到他的脚下。
+所以，我对他的印象不好。
+
+//●演出：回想から戻るトランジション
+//●背景：洋風の家・昼
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Room02_01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: CharaCostume( "Nina", 0 )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Nina", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4853" )
+\CN["无黑色"]
+“那个，从那以后怎么谈恋爱……？”
+
+: DrawChara( "Nina", 14, 0)
+: PlayVoice( "Voices/vo27_nii0125" )
+\CN["尼娜"]
+“是啊。嘛，虽然互相敌视过……”
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0126" )
+\CN["尼娜"]
+“他有他自己拥有的东西，知道了之后
+是吧。被他吸引的是——”
+
+//●演出：回想に入るトランジション
+//●背景：空・昼
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: EraseChara( "Nina", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: CharaCostume( "Nina", 1 )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+自己也很在意zep君
+发现自己喜欢上对方是在临近毕业的时候
+是的。
+
+维克托尔骑士团的毕业考试根据能力进行实地任务。
+
+那个考试合格的人被分配到骑士团的概率很高。
+
+还有就是考试不及格就退学，还是考试死？
+是其中之一。
+
+所以，我的毕业考试就是惩办橡树。
+这是一个解决住到某个村庄深处的问题。
+
+——从结论来说
+我没能从骑士团学校毕业。
+
+//●背景：洞窟
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_Cave01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+//●演技：オークを退治した後です
+: DrawChara( "Nina", 34, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo27_nii0127" )
+\CN["尼娜"]
+“呼……哈，哈……总算有办法了呢。
+这样就不会合格了！”
+
+打倒了奥克的我有着达到目的的安心感
+我疏忽了。
+
+//●演出：呪縛系エフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Dark01" )
+: PlayAnim( "Animations/AnimeL_Dark01", false, 0, 0, 6, 6 )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Nina", 4, 0)
+: ShowWnd()
+//●演技：呪縛系の魔法をかけられます
+: PlayVoice( "Voices/vo27_nii0128" )
+\CN["尼娜"]
+「……！？」
+
+: PlayBgm("BGM/11_CM011")
+被施了咒语的魔法而动弹不得。
+
+\CN["教官"]
+「…………」
+
+: DrawChara( "Nina", 32, 0)
+: PlayVoice( "Voices/vo27_nii0129" )
+\CN["尼娜"]
+“……教官？为什么要这么愚蠢？”
+
+给我施加咒缚魔法的是这位教官本人。
+
+\CN["教官"]
+“妮娜，你被选中了。太好了。”
+
+: DrawChara( "Nina", 38, 0)
+: PlayVoice( "Voices/vo27_nii0130" )
+\CN["尼娜"]
+“被选中了？怎么回事？”
+
+\CN["教官"]
+“哈拉特大臣好像很喜欢你……”
+
+: DrawChara( "Nina", 4, 0)
+: PlayVoice( "Voices/vo27_nii0131" )
+\CN["尼娜"]
+“大臣？我只见过一次……”
+
+即使说见面了，也只是在前几天的派对上简单地打了个招呼而已。
+那也不过是一两句话而已。
+
+所以，我不可能因为这点小事就喜欢上我
+我是这么想的……。
+
+\CN["教官"]
+“只要把你交给大臣，我就能一辈子玩下去了
+能得到奖赏”
+
+\CN["教官"]
+“你长得很可爱，胸也很大。
+虽然有点想尝尝，但如果出手的话大臣的心证就出来了
+变差了……”
+
+: DrawChara( "Nina", 40, 0)
+: PlayVoice( "Voices/vo27_nii0132" )
+\CN["尼娜"]
+“不，不……不要靠近我！”
+
+: PlayVoice( "Voices/vo27_nii0133" )
+\CN["尼娜"]
+“谁啊！拜托了，帮帮我！”
+
+\CN["教官"]
+“这种地方不可能有人来帮忙。
+放弃吧，妮娜”
+
+教官咏唱魔法。
+
+: DrawChara( "Nina", 34, 0)
+: PlayVoice( "Voices/vo27_nii0134" )
+\CN["尼娜"]
+“那是睡眠的魔法……不好意思，对于现在的我……”
+
+几乎用尽了消灭橡树的魔力。
+
+而且，这个教官擅长的魔法是咒缚
+操纵精神和系统的魔法。
+
+我的力量是无法忍受的。
+
+\CN["教官"]
+“睡觉！”
+
+//●演出：催眠魔法エフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Smoke01" )
+: PlayAnim( "Animations/AnimeL_Smoke01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+//●演技：催眠系の魔法をかけられています
+: PlayVoice( "Voices/vo27_nii0135" )
+\CN["尼娜"]
+“呜……这、这样……哈……睡吧……什么的……”
+
+疲劳感和睡魔一下子袭来。
+
+像是脑浆被破坏了一样什么都想不出来
+眼皮的重量让人睁不开眼睛……。
+
+: PlayVoice( "Voices/vo27_nii0136" )
+\CN["尼娜"]
+“……杰普……”
+
+: HideWnd()
+: EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_Down01" )
+: ShowWnd()
+哼着心爱的男孩的名字，我马上失去了意识。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●背景：宿屋・夜
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Room06_03", 1.0 )
+: Wait()
+: ShowWnd()
+//●演技：寝ぼけています
+: DrawChara( "Nina", 36, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo27_nii0137" )
+\CN["尼娜"]
+“……嗯……嗯……啊，咦？被子……？
+这里是……？啊？我确实是……？”
+
+: PlayBgm("BGM/49_TM005")
+醒来时，被睡在了便宜的旅馆的床上。
+
+……头痛。
+确实，我被教官施加了睡眠的魔法……。
+
+\CN["绝大多数"]
+“你醒了吗？”
+
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Nina", 40, 0)
+: PlayVoice( "Voices/vo27_nii0138" )
+\CN["尼娜"]
+“啊，咦？Zip君！？诶？诶？”
+
+我其实是在做梦吧？
+
+啊，渐渐想起来了。
+确实，说点什么把我交给部长什么的。
+
+: DrawChara( "Nina", 18, 0)
+: PlayVoice( "Voices/vo27_nii0139" )
+\CN["尼娜"]
+“所以，这一定是梦。
+我现在被格斯教官带去部长那里……”
+
+//●演技：ほっぺたをつねられています
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Nina", 42, 0)
+: PlayVoice( "Voices/vo27_nii0140" )
+\CN["尼娜"]
+「呼呼……啊，没有啊！
+（呼……什，你干什么啊！）”
+
+杰普拉着两颊。
+
+\CN["绝大多数"]
+“只是醒过来做而已。”
+
+: DrawChara( "Nina", 30, 0)
+: PlayVoice( "Voices/vo27_nii0141" )
+\CN["尼娜"]
+“呜呜……不，好痛……”
+
+\CN["绝大多数"]
+“不是梦吧？是现实。”
+
+: DrawChara( "Nina", 6, 0)
+: PlayVoice( "Voices/vo27_nii0142" )
+\CN["尼娜"]
+“……呜……这样啊，是现实吗……。
+但是，女孩子再温柔一点怎么样？”
+
+\CN["绝大多数"]
+“因为没有人教我如何温柔对待女人。”
+
+总是生硬的说法。
+
+但是，那样的说法让我放心。
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0143" )
+\CN["尼娜"]
+“对不起，我道谢晚了。
+你救了我吧？”
+
+\CN["绝大多数"]
+“来吧？”
+
+: DrawChara( "Nina", 4, 0)
+: PlayVoice( "Voices/vo27_nii0144" )
+\CN["尼娜"]
+“喂，你怎么跑到那里来了？”？
+应该只有教师知道我的毕业考试地点”
+
+\CN["绝大多数"]
+“没什么大不了的。在街上偶然看到了那家伙。
+因为态度可疑，所以只是在意地跟在后面而已”
+
+: PlayVoice( "Voices/vo27_nii0145" )
+\CN["尼娜"]
+“……真的吗？只是偶然吗？”
+
+\CN["绝大多数"]
+“啊，只是偶然。”
+
+\CN["绝大多数"]
+「看，你已经休息了。本来就和奥克战斗吧
+累了吧”
+
+: DrawChara( "Nina", 24, 0)
+: PlayVoice( "Voices/vo27_nii0146" )
+\CN["尼娜"]
+“杰普君……对吧。”
+
+\CN["绝大多数"]
+“啊……？”
+
+//●演技：キスしています
+: DrawChara( "Nina", 14, 2)
+: chara = "Nina"; lay = 3 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+: PlayVoice( "Voices/vo27_nii0147" )
+\CN["尼娜"]
+“……嗯”
+
+\CN["绝大多数"]
+「…………」
+
+: DrawChara( "Nina", 0, 2)
+: PlayVoice( "Voices/vo27_nii0148" )
+\CN["尼娜"]
+“不好好道谢的话……”
+
+嘴唇和嘴唇一瞬间互相接触。
+
+这是我的初吻。
+只是碰了一下，心脏就要跳出来了
+那样，激烈地跳动着。
+
+\CN["绝大多数"]
+“孩子的吻是礼吗？”
+
+: DrawChara( "Nina", 2, 2)
+: PlayVoice( "Voices/vo27_nii0149" )
+\CN["尼娜"]
+“……诶？”
+
+\CN["绝大多数"]
+「…………」
+
+: DrawChara( "Nina", 14, 2)
+//●演技：ゼップの方からキスされています
+: PlayVoice( "Voices/vo27_nii0150" )
+\CN["尼娜"]
+“嗯——！嗯……嗯，嗯……”
+
+//●演技：ベロチューです
+: PlayVoice( "Voices/vo27_nii0151" )
+\CN["尼娜"]
+“嗯、中、中、中……嗯、承、中……
+嗯……嗯，嗯，嗯，嗯……”
+
+以为杰普君吻了他
+把舌头掰开，和我的舌头缠绕在一起。
+
+//●演技：口を離します
+: DrawChara( "Nina", 34, 2)
+: PlayVoice( "Voices/vo27_nii0152" )
+\CN["尼娜"]
+“嗯哈……哈、哈、ze、zep君！？
+不，突然那样……”
+
+\CN["绝大多数"]
+“突然是你先来的吧？”
+
+: PlayVoice( "Voices/vo27_nii0153" )
+\CN["尼娜"]
+“因为、所以……嗯……嗯、嗯……嗯……嗯……嗯……”……
+呃，rero……嗯……嗯……chu，chu……”
+
+: PlayVoice( "Voices/vo27_nii0154" )
+\CN["尼娜"]
+「熟透了，中……呃，他，熟透了……中
+嗯……嗯，嗯……嗯”
+
+\CN["绝大多数"]
+“……嗯……嗯……”
+
+: DrawChara( "Nina", 0, 2)
+: PlayVoice( "Voices/vo27_nii0155" )
+\CN["尼娜"]
+“噗哈哈……哈，哈，杰普，接吻……好厉害……。
+总觉得，我已经完全习惯了”
+
+脑子里一片空白，全身像中暑时一样热。
+
+\CN["绝大多数"]
+“那么……”
+
+: DrawChara( "Nina", 4, 2)
+: PlayVoice( "Voices/vo27_nii0156" )
+\CN["尼娜"]
+“嗯……嗯，嗯……嗯，嗯，嗯……
+嗯，嗯，嗯，嗯，嗯”
+
+缠绕在一起的舌头粗糙的触感，还有热的呼吸。
+
+竟然和Zip君做这样的事
+那才是在做梦。
+
+//●演技：キスしながら胸を触られます
+: PlayVoice( "Voices/vo27_nii0157" )
+\CN["尼娜"]
+“嗯！嗯……嗯……嗯……嗯……！”
+
+手触到胸口。
+
+\CN["绝大多数"]
+“妮娜……”
+
+: DrawChara( "Nina", 0, 2)
+: PlayVoice( "Voices/vo27_nii0158" )
+\CN["尼娜"]
+“好啊……如果是泽普的话……。
+而且，还亲了这样的吻……”
+
+还亲了很浓厚的大人的吻，已经到现在了。
+
+: DrawChara( "Nina", 4, 2)
+: PlayVoice( "Voices/vo27_nii0159" )
+\CN["尼娜"]
+“嗯……呼，嗯……啊啊啊啊啊啊啊啊啊！”
+
+温柔的触碰方式，会让声音提高。
+
+\CN["绝大多数"]
+“……没事吧？”
+
+: DrawChara( "Nina", 12, 2)
+: PlayVoice( "Voices/vo27_nii0160" )
+\CN["尼娜"]
+“嗯……。可以再摸一下……”
+
+: PlayVoice( "Voices/vo27_nii0161" )
+\CN["尼娜"]
+“嗯，嗯……嗯……嗯，嗯，嗯……”……
+嗯，嗯，嗯”
+
+身体好像软绵绵的浮在空中。
+
+靠在Zip君身上，他的体温好像转移到了我身上
+总觉得不可思议。
+
+: PlayVoice( "Voices/vo27_nii0162" )
+\CN["尼娜"]
+“杰普……”
+
+\CN["绝大多数"]
+「…………」
+
+//●演出：立ち絵消去する
+: EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
+和Zip君互相凝视。
+
+说不出话来。
+
+: StopBgm( 1.0 )
+——什么都不说。
+只是互相看着对方点点头而已……。
+
+//●ＣＧ：最強生物が愛した女・測位セックス（ニーナ）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_1_0111001_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.5, 255, 255, 255 )
+: Wait()
+: PlayBgm("BGM/33_H_LOVE")
+: ShowWnd()
+//●演技：露わになった乳房を揉まれています
+: PlayVoice( "Voices/vo27_nii0163" )
+\CN["尼娜"]
+“嗯……哈…啊……啊啊…啊，啊，嗯”
+
+露着光秃秃的乳房
+直接用手触摸。
+
+硬汉子的手。而且——
+
+\CN["绝大多数"]
+“嗯？”
+
+: PlayVoice( "Voices/vo27_nii0164" )
+\CN["尼娜"]
+“手，好硬啊……还长了豆子……”
+
+一定是完全没有锻炼，只靠才能游走过来的
+因为想两个人所以很吃惊。
+
+因为，成为这样的手是比别人努力了好几倍
+因为是这样。
+
+//●ＣＧ差分：カットイン（キス）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_2_0111001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：後半キスです
+: PlayVoice( "Voices/vo27_nii0165" )
+\CN["尼娜"]
+“接吻……可能还想……嗯……”
+
+: PlayVoice( "Voices/vo27_nii0166" )
+\CN["尼娜"]
+“喂，嗯，嗯……这次，由我来……
+嗯……嗯，嗯，嗯，嗯……嗯，我知道了”
+
+刚才的kiss是从杰普君那里来的，我一直在做。
+
+这次由我来。强词夺理。
+
+//●ＣＧ差分：カットイン消去
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_1_0311001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo27_nii0167" )
+\CN["尼娜"]
+（这样就好了吗？）
+
+\CN["绝大多数"]
+“……嗯…嗯……”
+
+: PlayVoice( "Voices/vo27_nii0168" )
+\CN["尼娜"]
+“嗯，嗯，嗯，嗯，嗯……中…”……
+哈、哈、中、嗯……知道了、嗯”
+
+//●演技：最後、膣に手が触れます
+: PlayVoice( "Voices/vo27_nii0169" )
+\CN["尼娜"]
+“哈，哈……嗯……Zip，君……嗯，嗯……
+嗯，嗯……嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——中栗。
+
+接吻的时候，杰普的手碰到了危险的地方。
+
+\CN["绝大多数"]
+“你的，这里好热……”
+
+: PlayVoice( "Voices/vo27_nii0170" )
+\CN["尼娜"]
+“嗯……我不知道……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_1_0111001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+中、中、中、中。
+
+//●演技：膣口の辺りを指で撫でられています
+: PlayVoice( "Voices/vo27_nii0171" )
+\CN["尼娜"]
+“嗯，啊啊啊，zep君……就是这样的地方……”……
+啊啊，啊……嗯，嗯……嗯……！”
+
+: PlayVoice( "Voices/vo27_nii0172" )
+\CN["尼娜"]
+“被碰了的话……嗯，我会乖乖的……啊，啊……
+心情变得很奇怪……嗯……嗯……”
+
+如果是自己的话，偶尔会在难以忍受的夜晚一个人做
+这样接触过的地方。
+
+除了自己以外的人都接触到了那个敏感的部分。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_1_0311001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0173" )
+\CN["尼娜"]
+“嗯，哈，啊……渐渐地，变热了……”
+
+: PlayVoice( "Voices/vo27_nii0174" )
+\CN["尼娜"]
+“用手指，上下慢慢地摩擦着……嗯……真是毛骨悚然
+啊啊啊啊，呜……呜呜……！”
+
+: PlayBackVoice( "Voices/BGV27_nii_aegi01" )
+热从下往上爬。
+
+即使对未知的刺激感到困惑，身体也会自然地接受。
+
+: PlayVoice( "Voices/vo27_nii0175" )
+\CN["尼娜"]
+“我也……”
+
+光是别人帮忙我就不喜欢。
+
+手触到杰普君的胯股之间。
+
+\CN["绝大多数"]
+“嗯……！妮娜……”
+
+//●演技：男性器に触れています
+: PlayVoice( "Voices/vo27_nii0176" )
+\CN["尼娜"]
+“太硬了，在里面战战兢兢的。”
+
+\CN["绝大多数"]
+「…………」
+
+//●ＣＧ差分：未挿入・男性器
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_1_0111001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0177" )
+\CN["尼娜"]
+“这、这是Zip的……”
+
+猛烈地勃起，微微地颤抖着。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——是的……。
+
+: PlayVoice( "Voices/vo27_nii0178" )
+\CN["尼娜"]
+“呜……杰普……啊……”
+
+杰普君的肉丁一碰到我的阴道口
+发出带着水气的声音。
+
+\CN["绝大多数"]
+“你这里变得非常热了。”
+
+: PlayVoice( "Voices/vo27_nii0179" )
+\CN["尼娜"]
+“哈……哈………因为刚才Zip碰了很多。”
+
+: PlayVoice( "Voices/vo27_nii0180" )
+\CN["尼娜"]
+“而且，就算是泽普君的阿丁，也很热血……”
+
+和手指不同，仅仅是青霉素的前端碰到了阴道口
+背上电流飞溅，渗透全身。
+
+为了相互联系的行为——
+身体理解那个，本能寻求了。
+
+\CN["绝大多数"]
+“……妮娜，能插上哦。”
+
+: PlayVoice( "Voices/vo27_nii0181" )
+\CN["尼娜"]
+“嗯……”
+
+从现在开始，我要和Zip君在一起了……。
+
+不可能回到这里，也不想回去。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_1_0311001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo27_nii0182" )
+\CN["尼娜"]
+（开始的时候，好像非常疼呢……）
+
+以前，朋友因为太痛了，不太顺利
+一直在做啊。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo27_nii0183" )
+\CN["尼娜"]
+（而且，Zip君果然很大。
+那么大的，真的{插入，是}吗……？）
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0411001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——嘴，咕嘟。
+
+//●演技：挿入です
+: PlayVoice( "Voices/vo27_nii0184" )
+\CN["尼娜"]
+“嗯……啊…嗯……嗯…嗯……嗯……！”
+
+杰普君想把肉毒杆菌尖贴在阴道口
+慢慢地向前走。
+
+: PlayVoice( "Voices/vo27_nii0185" )
+\CN["尼娜"]
+“拉……啊，啊……泽普的，有点
+一个一个地{插入，是}出来……”
+
+: PlayVoice( "Voices/vo27_nii0186" )
+\CN["尼娜"]
+“嗯……嗯……哈……嗯，嗯……！”
+
+入口比想象中的要软，把陈茶的前端
+一饮而尽。
+
+\CN["绝大多数"]
+“不行的话，好好说出来……”
+
+: PlayVoice( "Voices/vo27_nii0187" )
+\CN["尼娜"]
+“你这样说，能忍耐吗？”
+
+\CN["绝大多数"]
+“……不行啊。”
+
+: PlayVoice( "Voices/vo27_nii0188" )
+\CN["尼娜"]
+“那就好好做到最后……。
+如果是我的话，就没问题了”
+
+只是前面的地方{插入，是}了
+那个本子变得很烫。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0311001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——一直……擦……唔……不小心……不小心！
+
+: PlayVoice( "Voices/vo27_nii0189" )
+\CN["尼娜"]
+“嗯……啊，嗯……嗯…呜……呜……”……
+啊……呃…嗯！”
+
+: PlayVoice( "Voices/vo27_nii0190" )
+\CN["尼娜"]
+“哈……哈……谢普……来……。
+再多做一点也没关系……”
+
+一步一步，一步的状态下，青霉素会在{阴道内，肚子}
+向前走。
+
+谨慎认真地……。
+一边拨开阻挡侵入的阴道墙，一边向里走。
+
+\CN["绝大多数"]
+“……嗯，妮娜……”
+
+泄露了我的名字，然后把腰向前推。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0411001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0191" )
+\CN["尼娜"]
+“嗯……啊啊啊……啊…嗯……嗯，嗯！”
+
+: PlayVoice( "Voices/vo27_nii0192" )
+\CN["尼娜"]
+“小鸡鸡，慢慢地走过来……嗯，啊……”……
+啊……呃，嗯……啊啊啊！”
+
+\CN["绝大多数"]
+“恩……还有，有点……”
+
+杰普吐了气，动了腰。
+
+小鸡鸡进一步进化，然后被扭进里面。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0311001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0193" )
+\CN["尼娜"]
+“好啊……就这样，过来……”
+
+\CN["绝大多数"]
+“啊……”
+
+如果能跨出这前面，那个时候，我会好好地
+直到最后都能阻止杰普。
+
+虽然也有害怕的心情
+但是，比起这个，我更想贯穿一线，好好地联系在一起
+我的心情一直很强烈。
+
+\CN["绝大多数"]
+“去吧……。放松一下比较好……”
+
+//●演技：処女喪失です
+: PlayVoice( "Voices/vo27_nii0194" )
+\CN["尼娜"]
+“嗯……啊……啊……哈……呜…呜…呜……
+嗯……呜…呜呜呜————————！”
+
+//●ＣＧ差分：挿入・破瓜
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0411001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——要哭了！一直……牢骚！
+
+脑中回响着尖锐的疼痛。
+刚感觉到那个的时候，青霉素就{插入，是}到了根部。
+
+: PlayVoice( "Voices/vo27_nii0195" )
+\CN["尼娜"]
+“哈……哈…嗯……嗯……哈…哈……”
+
+\CN["绝大多数"]
+“没事吧？”
+
+: PlayVoice( "Voices/vo27_nii0196" )
+\CN["尼娜"]
+“杰普君……全部，{插入，是}了吗？”
+
+\CN["绝大多数"]
+“啊，全部都进去了。”
+
+: PlayVoice( "Voices/vo27_nii0197" )
+\CN["尼娜"]
+“这样啊……嗯……哈，啊，那么大啊
+小鸡鸡，好好地在这里{插入，是}了啊……”
+
+这就是破瓜的疼痛吗。
+从阴道口到下腹部附近一直在呻吟。
+
+但是，现在这个疼痛，在这里被Zip君拥抱着
+这不是梦，而是现实。
+
+\CN["绝大多数"]
+「…………」
+
+: PlayVoice( "Voices/vo27_nii0198" )
+\CN["尼娜"]
+“可以继续……没关系……”
+
+: PlayVoice( "Voices/vo27_nii0199" )
+\CN["尼娜"]
+“我想更多地感受到杰普君……”
+
+直到最后{插入，是}为止，拒绝侵入的阴道壁
+现在，和杰普君的肉丁紧紧地粘在一起了。
+
+肚子下面的部分是吸着的
+自己也知道。
+
+\CN["绝大多数"]
+“知道了。我也……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0111001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一、一、一、一、一、一、一、一！
+
+//●演技：ゆっくりしたピストンです
+: PlayVoice( "Voices/vo27_nii0200" )
+\CN["尼娜"]
+“嗯……啊……啊……啊…啊…啊……嗯……”
+
+\CN["绝大多数"]
+“哈……哈……哈……”
+
+杰普君以缓慢的动作动着腰。
+
+{阴道内，肚子}感觉像用小鸡鸡抚摸一样的
+我去抽奖。
+
+: PlayVoice( "Voices/vo27_nii0201" )
+\CN["尼娜"]
+“啊……呃，呃……嗯，嗯……嗯…嗯…嗯，嗯”
+
+\CN["绝大多数"]
+“妮娜……”
+
+: PlayVoice( "Voices/vo27_nii0202" )
+\CN["尼娜"]
+“只是稍微有点冒失而已……。
+但是，杰普君会慢慢地行动，所以……”
+
+: PlayVoice( "Voices/vo27_nii0203" )
+\CN["尼娜"]
+“哈，哈……我的{阴道内，内}……嗯，啊……
+我知道我会慢慢适应杰普君的……”
+
+我能意识到阴道已经磨损了。
+
+\CN["绝大多数"]
+“呃……{阴道内，内}太紧了……。
+而且，会变得越来越热”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一直……一直…一直……一直、一直、咕嘟咕嘟！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0411001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0204" )
+\CN["尼娜"]
+“呜呜呜呜！啊，在里面……呜，嗯……啊啊啊啊！”
+
+\CN["绝大多数"]
+“……太好了，不知不觉就。”
+
+那个Zip君有点抱歉的表情
+那个非常新鲜。
+
+甚至忘记了从里面撞过来的疼痛。
+
+: PlayVoice( "Voices/vo27_nii0205" )
+\CN["尼娜"]
+“我的{阴道内，内}很舒服。
+太好了。能心情舒畅地对待杰普……”
+
+: PlayVoice( "Voices/vo27_nii0206" )
+\CN["尼娜"]
+“渐渐习惯了，可以再动一下……”
+
+杰普君能让我心情变好
+你的要求让我非常开心。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0211001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0207" )
+\CN["尼娜"]
+“嗯，啊啊啊，啊，啊……”
+
+: PlayVoice( "Voices/vo27_nii0208" )
+\CN["尼娜"]
+“啊，感觉到了……Zip君的……小鸡鸡、{阴道内、肚子}
+摩擦……啊啊啊啊啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV27_nii_aegi02" )
+\CN["绝大多数"]
+“恩……你的{阴道内，内}，好几次收缩……”
+
+塞普君一脸茫然。
+
+和ビン一起{阴道内，肚子}收纳的小鸡鸡动
+感觉到。
+
+慢慢地，然后，有时，稍微加快一点……。
+停下腰抱紧我之后再接吻。
+
+: PlayVoice( "Voices/vo27_nii0209" )
+\CN["尼娜"]
+“嗯，啊……嗯……哈，哈……渐渐地
+也许已经习惯了……”
+
+在这种感觉持续下去的过程中，疼痛渐渐缓和下来
+取而代之的是心情舒畅。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0411001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嗯，一直，一直，一直，一直，一直！
+
+: PlayVoice( "Voices/vo27_nii0210" )
+\CN["尼娜"]
+“啊啊啊啊啊啊啊啊啊啊啊！{阴道内，内}……
+从入口往里走，杰普在动……”
+
+: PlayVoice( "Voices/vo27_nii0211" )
+\CN["尼娜"]
+“全部……肚子里全部都感觉到了小鸡鸡……”……
+渐渐地，热起来了……”
+
+从阴道口到阴道深处。
+用长的一击可以把钦京拿出来。
+
+我也很有感觉
+水啊水啊水啊水啊的声音都湿了
+收起来了。
+
+: PlayVoice( "Voices/vo27_nii0212" )
+\CN["尼娜"]
+“啊啊啊啊！啊，嗯，嗯……啊……
+哈，嗯……嗯，呜……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0311001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：軽い絶頂です
+: PlayVoice( "Voices/vo27_nii0213" )
+\CN["尼娜"]
+“Zip君……里面很热……猜中了，渐渐地感觉到……
+嗯……啊，哈，啊啊啊啊啊！”
+
+变得发出声音来寻求杰普君。
+
+\CN["绝大多数"]
+“现在……？”
+
+: PlayVoice( "Voices/vo27_nii0214" )
+\CN["尼娜"]
+“哈……哈……只有一点点，所以……。
+也许只有一点点……我已经死了……”
+
+说实话，我自己也不太清楚。
+
+只是，总觉得有什么大的东西穿透了过去。
+
+: PlayVoice( "Voices/vo27_nii0215" )
+\CN["尼娜"]
+“嗯，啊，啊……呃，突然很激烈……！”！
+啊啊啊，哈，嗯！”
+
+: PlayVoice( "Voices/vo27_nii0216" )
+\CN["尼娜"]
+“Zip君，现在这么激烈……嗯……Zoku
+因为会这样……哈哈哈，里面好吓人……”
+
+\CN["绝大多数"]
+“不好意思，好像停不下来……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0411001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！慢吞吞！嘘！嘘！嘘！嘘！
+
+更加激烈的往返。
+但是，比起痛苦，爱的感觉更强烈。
+
+: PlayVoice( "Voices/vo27_nii0217" )
+\CN["尼娜"]
+“杰普君，你对我那么激烈……用我的身体
+脸上看起来很舒服……”
+
+: PlayVoice( "Voices/vo27_nii0218" )
+\CN["尼娜"]
+“啊哈，这么想着，又上去了……
+刚才那个又大又热的……会不断地过来…”
+
+: PlayVoice( "Voices/vo27_nii0219" )
+\CN["尼娜"]
+「啊啊啊啊啊啊，啊，嗯，嗯！
+啊、嗯、嗯……嗯、哈、啊啊啊！”
+
+感觉身体接受了杰普君的全部。
+
+全身的各个地方都变得敏感，肌肤的温暖和触感等全部
+贪得无厌。
+
+\CN["绝大多数"]
+“呃，哈……哈……呃……嗯……”
+
+: PlayVoice( "Voices/vo27_nii0220" )
+\CN["尼娜"]
+“杰普君……嗯……哈，哈……啊，嗯！”
+
+一边露出悲伤的表情，一边前后摇晃着腰。
+
+\CN["绝大多数"]
+“……呼……嗯……差不多了”
+
+虽然Zip君慎重地退缩了腰。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0311001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0221" )
+\CN["尼娜"]
+“不要拔……”
+
+\CN["绝大多数"]
+「…………」
+
+因为开始觉得那样做是理所当然的性
+我没有带避孕器具，我也没有准备。
+
+但是，想要接受到最后的心情太强烈了
+不由得脱口而出的真心话。
+
+: PlayVoice( "Voices/vo27_nii0222" )
+\CN["尼娜"]
+「好啊，就这样{射精，射精}也可以……。
+我的，{阴道内，内}想{射精，だ}」
+
+: PlayVoice( "Voices/vo27_nii0223" )
+\CN["尼娜"]
+“杰普君……嗯，啊啊…呜呜……！”
+
+像是自己把腰压着一样地移动
+把变浅的插入变深。
+
+\CN["绝大多数"]
+“妮娜……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0211001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一直、咕嘟、咕嘟……呜呜呜呜呜！
+
+: PlayVoice( "Voices/vo27_nii0224" )
+\CN["尼娜"]
+「恩！哦，进到里面去了……阿丁，送到里面了。
+好好地，好好地{插入，是}到根部呢」
+
+: PlayVoice( "Voices/vo27_nii0225" )
+\CN["尼娜"]
+“啊啊啊，啊啊，哈……嗯，哈……
+来……Zip君……嗯啊啊，啊啊啊啊啊啊啊！”
+
+\CN["绝大多数"]
+“妮娜……啊，啊……嗯……嗯……”
+
+: PlayVoice( "Voices/vo27_nii0226" )
+\CN["尼娜"]
+“阿丁巴狗，战战兢兢的……。
+{射精，だ}做……在里面，塞普君满满的{射精，だ}做”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0411001_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0227" )
+\CN["尼娜"]
+“哇，我也是……比刚才更强的人来了……”……
+杰普君……啊，啊啊啊啊啊…！”
+
+更激烈，甚至粗暴的抽奖。
+
+感觉像是在阴道内揉来滚去，我大声地叫着
+让心情激动起来。
+
+: PlayVoice( "Voices/vo27_nii0228" )
+\CN["尼娜"]
+“啊啊啊啊啊！啊……啊…啊啊啊，嗯……
+啊啊，啊……啊…嗯……嗯……”
+
+//●演出：射精
+//●ＣＧ差分：挿入・破瓜・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0311011_1101010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：射精と同時に絶頂です
+: PlayVoice( "Voices/vo27_nii0229" )
+\CN["尼娜"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+咚！咚！咕嘟咕嘟咕嘟！
+别管！看！别克乌木！
+
+小鸡鸡在里面很大，跳了一跳之后
+放出浓厚的精液。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b004_1_3_0111011_1101020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["绝大多数"]
+“哈……哈……哈……哈…哈…哈…哈……”
+
+: PlayVoice( "Voices/vo27_nii0230" )
+\CN["尼娜"]
+“嗯……哈，嗯……哈…啊…啊…哈…”
+
+: PlayBackVoice( "Voices/BGV27_nii_jigo01" )
+互相达到同时，调整呼吸。
+
+小鸡鸡还没有完全吃完
+从硝基和间隙中滴下了浅桃色的浊液。
+
+: PlayVoice( "Voices/vo27_nii0231" )
+\CN["尼娜"]
+“杰普君的，还是那么大……”
+
+\CN["绝大多数"]
+“只有那个，和你很合得来吧？”
+
+: PlayVoice( "Voices/vo27_nii0232" )
+\CN["尼娜"]
+“也就是说，我和泽普的性格相合
+太好了……？”
+
+\CN["绝大多数"]
+“也许……”
+
+: PlayVoice( "Voices/vo27_nii0233" )
+\CN["尼娜"]
+“也许……”
+
+是的，被说得像开玩笑似的，不由得两颊绯红。
+
+\CN["绝大多数"]
+“那你确认一下吗？”
+
+: PlayVoice( "Voices/vo27_nii0234" )
+\CN["尼娜"]
+“那个，Zip君，我的眼睛有点害怕……”
+
+\CN["绝大多数"]
+“因为和喜欢的女人变成这样了。”
+
+: PlayVoice( "Voices/vo27_nii0235" )
+\CN["尼娜"]
+“呃，喜欢的女人是……啊…对，这样的话
+但是……”
+
+但是，面对面说那样的话
+怎么也笑不出来。
+
+\CN["绝大多数"]
+“如果你说你有理的话，我今天也会克制你……”
+
+: PlayVoice( "Voices/vo27_nii0236" )
+\CN["尼娜"]
+“压抑，不是放弃吗……”
+
+\CN["绝大多数"]
+“你觉得我会放弃吗？”
+
+: PlayVoice( "Voices/vo27_nii0237" )
+\CN["尼娜"]
+“完全没想过呢。
+但是，那个我也可能……。再加一点，Zip君……”
+
+//●ＣＧ差分：消去
+//●背景：空・夜
+//Yoshi：背景
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: ShowWnd()
+在那之后也会不断地互相寻求。
+
+不考虑将来的事情，只是一边咀嚼着结合在一起的喜悦。
+
+//●背景：宿屋・消灯
+//●服装：ニーナ（全裸）
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Room06_04", 1.0 )
+: Wait()
+: CharaCostume( "Nina", 2 )
+: ShowWnd()
+: DrawFaceThumbnail( "Nina", 0, 2, 0 )
+: PlayVoice( "Voices/vo27_nii0238" )
+\CN["尼娜"]
+“……Z君…嗯……”
+
+互相赤身裸体，一边筋疲力尽一边互相拥抱。
+
+就好像小狗在玩耍一样，把脸贴在杰普的胸口上。
+
+\CN["绝大多数"]
+「……」
+
+杰普把手放在我的头上温柔地抚摸着我。
+
+\CN["绝大多数"]
+“你是那种爱撒娇的人吗？”
+
+: DrawFaceThumbnail( "Nina", 6, 2, 0 )
+: PlayVoice( "Voices/vo27_nii0239" )
+\CN["尼娜"]
+“因为对方是我喜欢的人，所以我只是这样做……”
+
+: PlayVoice( "Voices/vo27_nii0240" )
+\CN["尼娜"]
+“再稍微让我满足一下……”
+
+因为卷入了那个大臣的事情中
+不能在维克托尔。
+
+现在想来，我一定从那时开始就在心里某处明白了
+是的吧。
+
+所以，这只是一夜的梦。
+
+黎明的同时就结束了，是一种虚幻而甜美的东西。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+之后，我离开了维克托尔，漂流到了大和。
+
+这个夜晚对我来说是一生中唯一的甜蜜时刻。
+绝对无法忘记的，只有一次的相逢。
+
+——我唯一爱的男人后来被称为最强生物。
+他似乎在赌上人类天敌性命的战斗中笑着结束了一生。
+
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+//●シーンエンド
+: Return

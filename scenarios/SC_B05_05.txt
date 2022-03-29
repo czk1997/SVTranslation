@@ -1,0 +1,710 @@
+//========================================================
+//○それぞれの課題～有栖川黄菜子の場合～１
+//========================================================
+*sc001
+//●場所：鬼灯屯所・黄菜子＆紅美の部屋
+//●演出：回想話風の演出
+//Yoshi：センターに玉藻
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: StopBgm( 0.0 )
+: Party( "Kinako" )
+: PartyType = "Party03"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: FastTravelMapOn( "TeitoHigashiKaido" )
+: CharaCostume( "Kinako", 0 )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 0.0 )
+: cutinfile = "Refrain"
+: Call("Scenarios/Common*CutinFadeIn")
+: PlayBgm("BGM/03_CM003")
+: Wait()
+: DrawChara( "Tamamo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0116" )
+\CN["玉藻"]
+“黄菜子，你必须直面自己内心的黑暗。
+主人，明明是武士却犹豫要不要杀人
+在吗？”
+
+//Yoshi：玉藻_非表示
+//●演出：回想明ける演出
+: HideWnd()
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: RpgCharaOn("Bebi")
+: EraseChara( "Tamamo", 0.0 )
+: ResetLayer(0)
+: ResetLayer(1)
+: ResetLayer(9)
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+玉藻大人的忠告是：
+我也一直耿耿于怀。
+
+//Yoshi：センターに黄菜子（刀なし）
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0291" )
+\CN["黄菜子"]
+（收集作为鬼灯情报的正确情报。
+我觉得只要这样，就能成为大家的力量）
+
+//Yoshi：黄菜子_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+但是，现在已经到了不能那样说的状况了。
+
+前几天，白夜攻进鬼灯的时候也是这样。
+
+龙先生很早就察觉到了异变，他把我和红美他们
+我命令他逃到安全的地方。
+
+//Yoshi：センターに黄菜子（刀なし）
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0292" )
+\CN["黄菜子"]
+（我只是被保护着……。
+紧急时刻别说战斗力了，连在场都不行）
+
+不能杀人的我。
+
+用这双手斩杀了母亲之后，把人作为对手拿了刀
+变得迷失了自己。
+
+局长暗杀失败了，鬼灯的大家都很好
+被拯救吧——
+
+如果，有人向对方握过刀的话？
+如果，用这双手杀了谁的话？
+
+//●演技：心の声です
+: DrawChara( "Kinako",12, 0)
+: PlayVoice( "Voices/vo02_kin0293" )
+\CN["黄菜子"]
+（一定会回到以前——杀手时代的我身上。）
+
+//Yoshi：黄菜子_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+一定会失去好不容易得到的安定，我非常害怕。
+
+正因为如此，我才更喜欢与人交往
+一直以来都在逃避……。
+
+//Yoshi：左に紅美、右に黄菜子
+: RpgCharaTurn( "Bebi", "U" )
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo07_beb0085" )
+\CN["红美"]
+“奇奈子，没事吧？
+您看起来脸色不好，很抱歉……”
+
+: RpgCharaTurn( "Player", "D" )
+: DrawChara( "Kinako", 5, 0)
+: PlayVoice( "Voices/vo02_kin0294" )
+\CN["黄菜子"]
+“嗯，嗯。没关系的……”
+
+红美好像很担心地看了看脸。
+
+//Yoshi：紅美・黄菜子_非表示
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 3, 0, 0 )
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0295" )
+\CN["黄菜子"]
+（如果我的力量能像玉藻先生和局长所说的那样起作用的话。
+如果能成为守护重要大家的力量的话——）
+
+一想到要杀谁就止不住发抖。
+
+: DrawChara( "Kinako", 9, 0)
+但是，不能那样说。
+只是被保护，仅仅被重视是讨厌的！
+
+//Yoshi：左に紅美、右に黄菜子
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Kinako", 0, 0, 0 )
+: PlayVoice( "Voices/vo07_beb0086" )
+\CN["红美"]
+“那不是去那个狐狸姐姐说的地方吗？”？
+那么，在下也跟着走吧！”
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0087" )
+\CN["红美"]
+“就算说不行也绝对要跟在一起！
+对于在下来说，大家都是重要的伙伴”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0296" )
+\CN["黄菜子"]
+“嗯！红美，一起去吧！”
+
+//Yoshi：紅美・黄菜子_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+我从玉藻大人那里得到的课题是：
+有着『{现，郁郁}身上的洞穴』这种不可思议力量的洞窟
+好像有。
+
+去那里面对自己——
+那是给我的课题。
+
+: SetMission( "SC_B05_05_1", "InProgress" )
+事件信息更新了。
+
+//＠マップ解放：現し身の洞窟
+//●シーンエンド
+: CharaCostume( "Kinako", 5 )
+: FadeOut( 1.0 )
+: Wait()
+: FastTravelMapOn( "Utsushimi" )
+: DestinationMap( "Map_Dungeon26_00_UtsushimiCave" )
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○それぞれの課題～有栖川黄菜子の場合～２
+//========================================================
+*sc002
+//●場所：現し身の洞窟・入口
+//Yoshi：左に紅美、右に黄菜子(刀あり)
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Cave02", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0,4, "RC" )
+: PlayVoice( "Voices/vo07_beb0088" )
+\CN["红美"]
+“奇奈子，从这里感觉到了什么奇怪的东西。
+因为不能用嘴很好地说明所以很抱歉……”
+
+现实中的洞窟，一般人别说进去了，连找都找不到
+从玉藻先生那里听说是不可能的洞窟。
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0297" )
+\CN["黄菜子"]
+“如果红美说的话，这里入口的可能性很高呢。”
+
+试着遵从红美的野生本能吧。
+
+: DrawChara( "Kinako",17, 0)
+: PlayVoice( "Voices/vo02_kin0298" )
+\CN["黄菜子"]
+“在这里贴上玉藻先生给的纸币。”
+
+: DrawChara( "Bebi", 0, 0)
+: DrawChara( "Kinako", 7, 0)
+在岩石表面贴上御符纸的话，那里突然开始发光入口
+出现了。
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0089" )
+\CN["红美"]
+“奇纳哥，好像从这里放进去一样。”
+
+//Yoshi：紅美・黄菜子_非表示
+//●シーンエンド
+: Flag( "UtsushimiEvent", true )
+: RpgCharaWarp( "Player", "FromUtsushimi01" )
+: RpgCharaTurn( "Player", "U" )
+: Return
+//========================================================
+//○それぞれの課題～有栖川黄菜子の場合～３
+//========================================================
+*sc003
+//●場所：現し身の洞窟
+: HideWnd()
+: FadeIn( 1.0 )
+: RpgCharaOn("Bebi")
+: RpgCharaBatch( "Player"	\
+:	"Speed", 6.0	\
+:	"MoveUp", 15 )
+: RpgCharaBatch( "Bebi"	\
+:	"Speed", 6.0	\
+:	"MoveUp", 15 )
+: Wait()
+: RpgCharaOn("NiseKinako")
+: RpgCharaMove( "NiseKinako", "U", 1)
+: ShowWnd()
+//●演出：黄菜子が鏡に近づくと、もう１人の黄菜子が鏡から出てくる
+//Yoshi：左に紅美、右に黄菜子(刀あり)
+: PlayBgm("BGM/30_CM015")
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo07_beb0090" )
+\CN["红美"]
+“有两个kinako在吗！？”
+
+: DrawChara( "Kinako",19, 0)
+: PlayVoice( "Voices/vo02_kin0299" )
+\CN["黄菜子"]
+“这一定是玉藻大人所说的现身洞窟的考验。”
+
+从镜子里出来的我看起来和我完全一样……。
+
+//Yoshi：紅美・黄菜子_非表示
+//: EraseChara( "Kinako", 0.5 )
+//: EraseChara( "Bebi", 0.5 )
+//Yoshi：センターに『黄菜子』(刀あり)
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako",26, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: SetLayerColor( 5, 100, 100, 100)
+//●演技：もう１人の黄菜子は『』で表します
+: PlayVoice( "Voices/vo02_kin0300" )
+\CN["另一个黄菜子"]
+《呼呼……》
+
+//Yoshi：『黄菜子』_非表示
+//Yoshi：左に紅美、右に黄菜子(刀あり)
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo07_beb0091" )
+\CN["红美"]
+“啊，是kinako，但不是kinako。”
+
+: DrawChara( "Kinako", 8, 0)
+: PlayVoice( "Voices/vo02_kin0301" )
+\CN["黄菜子"]
+“在红美看来，是这样的。”
+
+现在，眼前的我是杀手时的我。
+
+//Yoshi：紅美・黄菜子_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：センターに『黄菜子』(刀あり)
+: DrawChara( "Kinako",20, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo02_kin0302" )
+\CN["另一个黄菜子"]
+“对不起，这是命令——”
+
+//Yoshi：『黄菜子』_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+拔刀静静地杀气。
+
+//Yoshi：左に紅美、右に黄菜子(刀あり)
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Kinako", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo07_beb0092" )
+\CN["红美"]
+“就算是别人，也要和奇纳哥战斗……”
+
+: PlayVoice( "Voices/vo02_kin0303" )
+\CN["黄菜子"]
+“红美，退下。”
+
+: DrawChara( "Bebi", 0, 0)
+: PlayVoice( "Voices/vo07_beb0093" )
+\CN["红美"]
+“奇纳哥……？”
+
+: DrawChara( "Kinako",12, 0)
+: PlayVoice( "Voices/vo02_kin0304" )
+\CN["黄菜子"]
+“至今为止一直无法面对，一直在逃避。”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0305" )
+\CN["黄菜子"]
+“所以，现在我必须面对自己。”
+
+//Yoshi：紅美・黄菜子_非表示
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+//●演出：黄菜子　刀を抜く
+: PlaySe( "SE/Se_Katana01" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+拔刀。
+
+比如明明知道自己的身份是对方——
+
+//Yoshi：センターに黄菜子(刀なし)
+//: DrawChara( "Kinako", 9, 0, 0, 0.5, 0.0, 3, "C" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0306" )
+\CN["黄菜子"]
+（哈，哈，手在颤抖……拜托，停下来……！
+这样的话，我……！）
+
+//Yoshi：黄菜子_非表示
+//: EraseChara( "Kinako", 0.5 )
+: PlaySe( "SE/Se_Heartbeat" )
+——心脏剧烈跳动。
+——呼吸困难。
+——汗止不住。
+
+身体像被鬼压床了似的一动也不动。
+
+//●演出：もう１人の黄菜子が襲いかかってくる
+//Yoshi：センターに『黄菜子』(刀なし)
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Kinako",20, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0307" )
+\CN["另一个黄菜子"]
+“请死吧”
+
+//Yoshi：『黄菜子』_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：センターに紅美
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo07_beb0094" )
+\CN["红美"]
+“キナコーーーーーーー！！”
+
+红美要打出来。
+
+//Yoshi：紅美_非表示
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：センターに黄菜子(刀なし)
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0308" )
+\CN["黄菜子"]
+（必须要保护红美！）
+
+不能装作什么样子。
+
+因为我不想再失去重要的存在了！
+
+//Yoshi：黄菜子_非表示
+: StopBgm( 1.0 )
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: PlayBgm("BGM/18_TM003")
+//●演出：黄菜子　揚羽解放演出
+: Call( "Scenarios/Effect*KinakoAgeha" )
+: PlaySe( "SE/Se_AnimeL_Dark01" )
+: PlayAnim( "Animations/AnimeL_Dark01", false, 0, 0, 6, 6 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evc_a001_1_1_0100001_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0309" )
+\CN["另一个黄菜子"]
+“……！”
+
+: PlayVoice( "Voices/vo07_beb0095" )
+\CN["红美"]
+“奇纳哥……？”
+
+: PlayVoice( "Voices/vo02_kin0310" )
+\CN["黄菜子"]
+“没关系，红美。”
+
+拔刀——即使解放了扬羽
+我没有被杀手的我吞没。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Kinako",19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0311" )
+\CN["黄菜子"]
+“有栖川黄菜子，我去——”
+
+//Yoshi：黄菜子_非表示
+: ResetLayer(5)	//もう１人の黄菜子用レイヤーの色味をリセットさせておく
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：もう１人の黄菜子
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：もう１人の黄菜子,1,1,0,sc003_win,sc003_lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003_win" ) endif	//勝利後のラベル
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cave02", "BGM/22_BM003", 1028, -1, -1, "Scenarios/SC_B05_05*battle" , true )
+
+*battle
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*sc003_lose" )	//敗北した場合
+: endif
+
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+*sc003_win
+//Yoshi：センターに『黄菜子』(刀なし)
+: DrawChara( "Kinako",30, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: SetLayerColor( 5, 100, 100, 100)
+: PlayVoice( "Voices/vo02_kin0312" )
+\CN["另一个黄菜子"]
+“……我输了……请杀了我吧。”
+
+//Yoshi：『黄菜子』_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左に紅美、右に黄菜子(刀なし)
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Kinako",10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+//: PlayVoice( "Voices/vo07_beb0096" )
+\CN["红美"]
+「…………」
+
+: DrawChara( "Kinako", 8, 0)
+: PlayVoice( "Voices/vo02_kin0313" )
+\CN["黄菜子"]
+“没有必要杀你。”
+
+//Yoshi：紅美、黄菜子_非表示
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：センターに『黄菜子』(刀なし)
+: DrawChara( "Kinako",25, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+//●演技：自害しようとしています
+: PlayVoice( "Voices/vo02_kin0314" )
+\CN["另一个黄菜子"]
+『…………』
+
+//Yoshi：『黄菜子』_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：センターに紅美
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo07_beb0097" )
+\CN["红美"]
+“キナコ、キナコ啊！？”
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//●演出：黄菜子　前に出てもう１人の黄菜子を気絶させる
+//Yoshi：センターに黄菜子(刀なし)
+//: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+//: PlayVoice( "Voices/vo02_kin0315" )
+//\CN["黄菜子"]
+//「タァッ！！」
+: cgkeep = false;
+: Call( "Scenarios/Effect*KinakoAction01" )
+: Wait()
+//Yoshi：黄菜子_非表示
+: PlaySe( "SE/Se_Down01" )
+: RpgCharaTurn( "NiseKinako", "U" )
+——杜莎莉。
+
+//Yoshi：左に紅美、右に黄菜子（刀あり）
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Kinako",10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo07_beb0098" )
+\CN["红美"]
+“奇纳哥，这家伙没事吧？”
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0316" )
+\CN["黄菜子"]
+“嗯，没关系，我只是昏过去了。”
+
+我真正害怕的是
+不仅仅是迷失了自己。
+
+我真正害怕的是——
+
+: DrawChara( "Kinako", 8, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0317" )
+\CN["黄菜子"]
+（我不再是我了
+然后亲手杀死了重要的人）
+
+小时候不光是身体，连精神也要渗透进去
+被教的杀人术。
+
+刺肉时的触觉、断骨时的触觉、
+然后想要逃离割去生命的重压
+关闭了心扉。
+
+: DrawChara( "Kinako",17, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0318" )
+\CN["黄菜子"]
+（但是，已经没关系了。我可以战斗了。）
+
+不是为了杀人，而是为了保护扬起翅膀就可以了。
+
+和拯救了我的重要的人们
+为了今后也一起走下去。
+
+: DrawChara( "Bebi", 9, 0)
+: PlayVoice( "Voices/vo07_beb0099" )
+\CN["红美"]
+“奇奈子，你长得很好。”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0319" )
+\CN["黄菜子"]
+“是吗？嘿嘿……”
+
+: DrawChara( "Bebi", 5, 0)
+: PlayVoice( "Voices/vo07_beb0100" )
+\CN["红美"]
+“那么，就回大家家吧。
+在下，肚子饿了，我要吃了”
+
+: DrawChara( "Kinako", 1, 0)
+: PlayVoice( "Voices/vo02_kin0320" )
+\CN["黄菜子"]
+“嗯！我也饿了。快回屯所吧。”
+
+//Yoshi：紅美・黄菜子_非表示
+//●演出：黄菜子＆紅美　退場する
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+然后，我迈出了新的一步。
+
+//●演出：黄菜子と紅美の退場に合わせて暗転させる
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(5)
+: ResetLayer(9)
+: SetMission( "SC_B05_05_1", "Successed" )
+: ShowWnd()
+……………………………………………………。
+
+: CharaAddSkill( "Kinako", 50603 )
+黄菜子学会了新的被动技能。
+
+//＠余っているキャラクター選択肢表示する。
+//＠余っているキャラがいない場合は次のシーンへ
+//●シーンエンド
+: if ( MissionProgress( "SC_B05_03_1", "Successed", "Failed" ) == true )
+	: if ( MissionProgress( "SC_B05_04_1", "Successed", "Failed" ) == true )
+		: FadeOut( 0.0 )
+		: LoadMap( "Map_Event000", "", "Scenarios/SC_B05_06")
+	: else
+		: FadeOut( 0.0 )
+		: LoadMap( "Map_Town02_03_Hozuki", "Return", "Scenarios/SC_B05_04")
+	: endif
+: elif ( MissionProgress( "SC_B05_04_1", "Successed", "Failed" ) == true )
+	: FadeOut( 0.0 )
+	:: LoadMap( "Map_Town02_02_Hozuki", "SC_B05_03", "Scenarios/SC_B05_03")
+: else
+	\CI["各自的课题～神八代无黑的情况～"]
+	\CI["各自的课题～姫椿桃的情况～"]
+你开始说什么？
+
+	: if ($choice == 0)
+		: FadeOut( 0.0 )
+		: LoadMap( "Map_Town02_02_Hozuki", "SC_B05_03", "Scenarios/SC_B05_03")
+	: else
+		: FadeOut( 0.0 )
+		: LoadMap( "Map_Town02_03_Hozuki", "Return", "Scenarios/SC_B05_04")
+	: endif
+: endif
+
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+*sc003_lose
+//●演出：黄菜子　倒れる
+//Yoshi：センターに『黄菜子』（刀なし）
+: StopBgm( 1.0 )
+: DrawChara( "Kinako",20, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: SetLayerColor( 5, 100, 100, 100)
+: PlayVoice( "Voices/vo02_kin0321" )
+\CN["另一个黄菜子"]
+“请死吧”
+
+//Yoshi：『黄菜子』_非表示
+//●演出：惨殺演出後
+: EraseChara( "Kinako", 0.0 )
+: ResetLayer(5)
+: HideWnd()
+: PlaySe( "SE/Se_Slash01" )
+: DrawImage( 1, 0, "BGImage/BG_Red", 1.0 )
+: Call( "Scenarios/Effect*Blood01" )
+: Wait()
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+另一个我的羽毛穿透了我的脑海。
+
+//●演出：回想明ける演出
+//●場所：現し身の洞窟・入口
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Rule_00", 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon26_00_UtsushimiCave", "FromUtsushimi01", "Scenarios/SC_B05_05*sc003_lose_1")
+
+*sc003_lose_1
+//Yoshi：左に紅美
+: Call( "Scenarios/CommonSys*AllRecovery" )
+: RpgCharaOn("Bebi")
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: PlayVoice( "Voices/vo07_beb0101" )
+\CN["红美"]
+“奇奈子，你为什么发呆呢？”
+
+//Yoshi：右に黄菜子（刀あり）
+: CharaCostume( "Kinako", 5 )
+: DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+
+: PlayVoice( "Voices/vo02_kin0322" )
+\CN["黄菜子"]
+“啊，咦？我没有死……？”
+
+: DrawChara( "Bebi", 2, 0)
+: PlayVoice( "Voices/vo07_beb0102" )
+\CN["红美"]
+“你在说什么？
+我才刚找到这个入口就请客了”
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0323" )
+\CN["黄菜子"]
+“……是吗？是吗？嗯，好像有点发呆。”
+
+//Yoshi：紅美・黄菜子_非表示
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+一瞬间，白日梦也做了吧？
+比起那个，好像留下了鲜明的印象。
+
+因为是这样不可思议的地方，所以发生什么都不奇怪吗。
+必须要振作精神！
+
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("Bebi")
+: FadeIn( 0.5 )
+: Wait()
+//●シーンエンド
+: Return

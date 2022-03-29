@@ -1,0 +1,419 @@
+//========================================================
+//○サムライを知らなかった頃
+//========================================================
+//●視点：レオ視点
+//●場所：帝都・街中
+//●背景：帝都・街並み・昼
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_TeitoUra01_01", 1.0 )
+: Wait()
+: CharaCostume( "Leo", 0 )
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+\CN["街上的孩子A"]
+“呐，雷欧是外国人吗？”
+
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“嗯？是啊”
+
+\CN["街上的孩子B"]
+“那么，那你去过外国吗？”
+
+: DrawChara( "Leo", 2, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“不，一次都没有。”
+
+: DrawChara( "Leo", 0, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“怎么说呢，我大人是在大和出生的大和长大的。
+是个有着纯粹大和魂的男人！”
+
+母亲是外国人，父亲也是外国人。
+
+话虽如此，我完全不知道父亲的事情。
+
+//＠真田：↓生きているはずですが、死んだと伝えているということで
+我出生的时候已经死了
+因为是从妈妈那里听来的。
+
+\CN["街上的孩子C"]
+“雷欧，你为什么想进鬼灯？”
+
+: DrawChara( "Leo", 18, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“呵呵呵，这个问题真不错，少年！
+本大爷是为了成为武士才来到{帝都，这里}的！」
+
+//●演出：過去回想
+//●背景：空・昼
+: StopBgm( 0.5 )
+//: EraseChara( "Leo", 0.5 )
+: HideWnd()
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+我出生的地方是名为{惠苏，えそ}的小镇
+从这里一直在北方，是一个被雪覆盖的非常寒冷的城市。
+
+在那里和精灵的母亲两个人生活着。
+
+//●背景：洋風民家・部屋・昼
+: HideWnd()
+: PlayBgm("BGM/26_FM004")
+: SwapImage( 1, 0, "BGImage/BG_Room02_01", 1.0 )
+: Wait()
+//: DrawChara( "Leo", 10, 0, 0, 0.0, 0.0, 3, "RC" )
+: ShowWnd()
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“我回来了。好，好烫，好烫！”
+
+//: DrawChara( "Leo", 0, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“妈妈，今天的饭是什么？
+肚子饿得要死”
+
+母亲是镇上唯一的魔术医生，被评价手艺非常好。
+
+也有从很远的地方来治疗的患者。
+
+母亲年轻的时候从国外逃命出来
+好像在惠苏安身了……。
+
+: HideWnd()
+: DrawChara( "Nina", 10, 0, 0, 0.0, 0.0, 4, "C" )
+: FadeOutLayer( 4, 0.0 )
+: SetLayerRelPos( 4, -100, 0, 0.0, 0)
+: SetLayerRelPos( 4, 100, 0, 0.5, 0)
+: FadeInLayer(4, 0.5)
+: Wait()
+: PlayVoice( "Voices/vo27_nii0001" )
+: AutoFaceThumbnail( true )
+: ShowWnd()
+\CN["尼娜"]
+“欢迎回来，雷欧。请等我吃饭。”
+
+//: DrawChara( "Leo", 2, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“……等一下？嗯？发生什么事了？”
+
+总是笑眯眯的温柔妈妈。
+但是，现在表情很认真。
+
+紧急的患者被送来了吧。
+
+//: DrawChara( "Leo", 1, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“那么，我应该做什么？”
+
+: DrawChara( "Nina", 12, 0)
+: PlayVoice( "Voices/vo27_nii0002" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“那就多拿点柴火来，把房间弄暖和点
+”
+
+//: DrawChara( "Leo", 0, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“OK，交给我吧！我会好好温暖你的！”
+
+//: EraseChara( "Leo", 0.5 )
+: EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
+被运送来的患者好像遭到了强盗的袭击。
+
+总算逃完了，但是手指被切断了
+跑进了妈妈那里。
+
+//●演出：時間経過
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Room02_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Nina", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0003" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“嗯……这样就可以了。”
+
+\CN["患者"]
+“啊啊啊……谢谢，妮娜……！
+手指和原来一样……”
+
+//: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“话说，妈妈，真是的呢……。
+明明手指断了，还照原样……真的，糟了”
+
+\CN["患者"]
+“是的，真的。魔术真厉害啊。”
+
+: DrawChara( "Nina", 14, 0)
+: PlayVoice( "Voices/vo27_nii0004" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“呵呵，是啊。手指相连的是你的运气好
+就这样”
+
+\CN["患者"]
+“是，是吗……？”
+
+//: DrawChara( "Leo", 2, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“啊？怎么回事？”
+
+//: DrawChara( "Leo", 5, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“话说，魔术什么的，不管什么都是啪啪的，这样
+难道不是那种感觉就治不好了吗？”
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0005" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“那个，魔术可不是万能的哦，雷欧。”
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0006" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“我本来就有我擅长的恢复魔术
+只不过是通过魔术提高了治愈力而已”
+
+//: DrawChara( "Leo", 2, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“诶？诶？治愈力？提高？怎么回事？”
+
+: DrawChara( "Nina", 12, 0)
+: PlayVoice( "Voices/vo27_nii0007" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“比如说，摔倒擦破皮后出血是吧？
+但是，花时间去做的话，一般就能治好的吧？”
+
+//: DrawChara( "Leo", 1, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“啊……是啊，确实是。嗯。”
+
+: DrawChara( "Nina", 10, 0)
+: PlayVoice( "Voices/vo27_nii0008" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“据说那个治疗力在魔术中提高了好几倍。
+并不是长了新的东西”
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0009" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“这次能把手指贴在一起的是被切断后马上
+所以，总算有办法了」
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0010" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“如果，过了时间手指和伤口会腐烂的话
+粘在一起是绝对不可能的”
+
+//: DrawChara( "Leo", 2, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“哎……就是这么回事……”
+
+\CN["患者"]
+“原来如此。我确实运气很好。”
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0011" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“是的。用适当的方法切掉的手指。”
+他给我拿来了”
+
+//: DrawChara( "Leo", 4, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“真的吗……那个。这样啊，原来有这样的做法啊。”
+
+\CN["患者"]
+“我们在客商之间是常识。
+说实话，我不知道是什么意思……”
+
+//: DrawChara( "Leo", 0, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“诶~……那我也好好记住吧。
+也许会在狩猎中派上用场呢”
+
+\CN["患者"]
+“咦？你儿子没有继承你母亲吗？”
+
+//: DrawChara( "Leo", 14, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“啊，我的魔术就是稍微能使用雷击系的程度
+什么。所以，将来我想成为超级猎人”
+
+\CN["患者"]
+“什么？那个超猎人是？”
+
+//: DrawChara( "Leo", 0, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“如果魔术和刀都能很好地使用的话，狩猎什么的会很轻松
+会变成这样吧？就是那个家伙”
+
+: DrawChara( "Nina", 36, 0)
+: PlayVoice( "Voices/vo27_nii0012" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“你不是一直在说吗？”？
+你还都是半吊子，是剑术还是魔术
+被某一方榨取”
+
+: DrawChara( "Nina", 36, 0)
+: PlayVoice( "Voices/vo27_nii0013" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“你知道不能舔野生动物和魔物吗？”
+
+//: DrawChara( "Leo", 2, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“我知道，但是，都是超一流的
+使用起来不好吗？”
+
+: DrawChara( "Nina", 34, 0)
+: PlayVoice( "Voices/vo27_nii0014" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“追二兔者得一兔，这句谚语你知道吗？”
+
+//: DrawChara( "Leo", 5, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“那是什么？啊，好像在哪里听过
+虽然很在意，但是和我没有关系，我觉得怎样都可以”
+
+//: DrawChara( "Leo", 0, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“嘛，刀的使用方法是妈妈教给我的
+总会有办法的，还有就是雷击的魔术也能很好的发挥出来
+变得能使用了，刀和魔术的二刀流真帅啊」
+
+: DrawChara( "Nina", 24, 0)
+: PlayVoice( "Voices/vo27_nii0015" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“哈~……我是因为看到了痛苦的眼睛才这么说的。”
+
+: DrawChara( "Nina", 26, 0)
+: PlayVoice( "Voices/vo27_nii0016" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“两个都半途而废的话，在关键时刻就没用了。”
+
+//: DrawChara( "Leo", 14, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“但是，这种时候谁都拿的是我吧？”
+
+: DrawChara( "Nina", 29, 0)
+: PlayVoice( "Voices/vo27_nii0017" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“那个，我一直在说，如果是经典台词的话
+因为很痛啊。长大后想起来的时候在被子里
+因为他是个会摔倒的家伙”
+
+//: DrawChara( "Leo", 14, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“我太贪心了。要到手的话，我都想弄到手。”
+
+: DrawChara( "Nina", 27, 0)
+: PlayVoice( "Voices/vo27_nii0018" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“不行这个什么时候，我的话，我都不听……”
+
+\CN["患者"]
+“哈哈……但是，很厉害呢，妮娜。
+不仅是魔术，连剑术也……”
+
+: DrawChara( "Nina", 14, 0)
+: PlayVoice( "Voices/vo27_nii0019" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“呵呵，剑术没什么大不了的。
+因为我以前只学过一点”
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0020" )
+: AutoFaceThumbnail( true )
+\CN["尼娜"]
+“我觉得雷欧的剑术相当有道理。
+相反魔术只能使用一种”
+
+\CN["患者"]
+“这样的话，你就不以武士为目标了吗？”
+
+//: DrawChara( "Leo", 0, 0)
+: AutoFaceThumbnail( false )
+\CN["雷欧"]
+“武士……？这是什么？
+虽然名字不起眼，但总觉得很有趣”
+
+: EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Leo", 0.5 )
+现在想来，这一天，是我的命运开创的。
+
+第一次知道“武士”存在的日子——
+
+然后，从这天开始几天后
+我有一个很大的梦想。
+
+——想成为武士。
+
+//＠サイドエピソード解放：夢を見る者、生き残れる強さを持つ者
+//●シーンエンド
+: if( SideEpisodeFlag("episode06") == false )
+	: SideEpisodeFlagUp( "episode06" )
+<^FF0000>侧面小故事更新了！</color>
+: endif
+
+//サイドエピソード終了処理
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

@@ -1,0 +1,497 @@
+//========================================================
+//○人斬り無黒
+//========================================================
+*sc001
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+说是阿波罗的箭暴走，白面金毛九尾的狐狸复活
+大和未曾有过的危机悄悄离去几个月后的事情——
+
+//●背景：帝都・外
+//Yoshi：背景、昼
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_01", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["男1"]
+“将军换了才几个月啊～……。
+总觉得和以前没什么变化啊”
+
+\CN["男2"]
+“是啊。又不是挨饿，吵架的话一般会找警察。”
+被捕。刚换的时候，那是相当荒凉的
+但是”
+
+达磨是位于政治首位的财阀五十里家的户主
+五十里铃之助出乎意料地是个优秀的男人。
+
+他首先废除了幕府，建立了新政府。
+
+与此同时，他失去了将军的地位
+以总理大臣的身分带头领导国家。
+
+//●演出：場面転換トランジション後、暗転
+//●背景：黒画面
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+在那之中，我离开了白夜。
+
+穿过白夜，刺客来杀我
+这样的预测应该很简单……。
+
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+\CN["白夜队士"]
+“哈哈！”
+
+//●背景：森・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Forest01_01", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayBgm("BGM/01_CM001")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3475" )
+\CN["无黑色"]
+“稍微离开城镇就会袭击过来。”
+
+即使在街上也不能疏忽大意。
+睡觉的时候也被袭击过好几次。
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk3476" )
+\CN["无黑色"]
+“像我这样的一个小姑娘，放着也没关系。”
+
+不知什么原因，他一直被人盯着。
+
+: DrawChara( "Mukuro", 36, 0)
+: PlayVoice( "Voices/vo00_muk3477" )
+\CN["无黑色"]
+“嘛，和望月战斗之后
+因为减少了很多，所以没关系……”
+
+//●演出：回想に入るトランジション
+: CharaCostume( "Midori", 1 )
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_TeitoUra01_03", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3478" )
+\CN["无黑色"]
+“有什么事吗？”
+
+: DrawChara( "Midori", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo10_mid0480" )
+\CN["绿色"]
+“我不喜欢粘糊糊的东西
+直截了当地说”
+
+//●演出：みどり　武器を取る
+//: PlaySe( "SE/Se_Katana01" )
+: JumpLayer( 2, 0, -20, 1, 0.25)
+: DrawChara( "Midori", 11, 0)
+: PlayVoice( "Voices/vo10_mid0481" )
+\CN["绿色"]
+“头的命令来杀你，玫瑰。”
+
+//●演出：無黒　刀を抜く
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 6, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3479" )
+\CN["无黑色"]
+“我觉得是这样。”
+
+: DrawChara( "Midori", 16, 0)
+: PlayVoice( "Voices/vo10_mid0482" )
+\CN["绿色"]
+“老实说，命令什么的怎么样都无所谓。
+我曾经想试着和你玩一次叫做“你和喀哒互相杀”的游戏”
+
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk3480" )
+\CN["无黑色"]
+“真是奇遇啊。我也差不多该杀了有反应的人了。”
+我正想着呢”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Midori"; lay = 2; type = "SDL"; Call( "Scenarios/Common*FgEffOut");
+: chara = "Mukuro"; lay = 3; type = "SDR"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: ShowWnd()
+保持距离。
+
+//●演出：無黒・みどり　ダークエルフ化
+: PlayBgm("BGM/28_ID01")
+: HideWnd()
+: FadeOutLayer( 1, 0.0 )
+: cgkeep = false;
+: Call( "Scenarios/Effect*MukuroDE" )
+: cgkeep = false;
+: Call( "Scenarios/Effect*MidoriDE" )
+: FadeInLayer( 1, 0.0 )
+: DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0483" )
+\CN["绿色"]
+“血要滚滚而来！太兴奋了真恶心。”
+
+: DrawChara( "Mukuro", 26, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo00_muk3481" )
+\CN["无黑色"]
+“让我稍微开心一点吧。”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：刀と刀がぶつかる音
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Midori", 0.0 )
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+稍微放松一下就会被杀。
+
+这样紧张的战斗是和玉藻大人战斗以来的第一次。
+
+//: DrawChara( "Mukuro", 8, 0)
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_1_0200000_1000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3482" )
+\CN["无黑色"]
+“变成黑夜叉，暗黑精灵}挥舞刀的对手什么的
+因为大和只有数那么多啊」
+
+//: DrawChara( "Midori", 21, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_2_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0484" )
+\CN["绿色"]
+“去地狱的话会有很多吧？我不知道。”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：刀と刀がぶつかる音
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_KatanaHit02" )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 6, 6 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: ShowWnd()
+——卡蒂猫！！！
+
+神刀和妖刀相撞的话，简直就像刀尖一样
+感受。
+
+: DrawFaceThumbnail( "Midori", 2, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0485" )
+\CN["绿色"]
+“准备运动就是这样的。
+呐，差不多该认真了！”
+
+*battle01
+: if ( $inExtra == true )
+	\CI["算赢了"]
+	\CI["就算输了"]
+	: if ($choice == 0) 
+		: Jump( "*win" )
+	: else
+		: Jump( "*lose" )
+	: endif
+: endif
+//――――――――――――――――――――――――――――
+//■戦　闘：望月みどり
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：人斬り無黒（勝利）へ
+//■敗　北：人斬り無黒（敗北）へ
+//――――――――――――――――――――――――――――
+//＠戦闘：望月みどり,1,1,0,win,lose
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*AllRecovery" )
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*win" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*lose" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_TeitoUra01_03", "BGM/30_CM015", 1064, -1, -1, "Scenarios/SC_C07_03*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: Jump( "*lose" )	//敗北した場合
+: endif
+//========================================================
+//○人斬り無黒（勝利）
+//========================================================
+*win
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_TeitoUra01_03", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: StopBgm( 1.0 )
+: DrawChara( "Midori", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0486" )
+\CN["绿色"]
+“哈哈……我们输了啊……”
+
+//●ＳＥ：倒れる音
+: PlaySe( "SE/Se_Down01" )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: CharaCostume( "Midori", 0 )
+力尽的望月从黑夜叉，黑精灵}回到了人的姿态
+扑通一声倒在那里。
+
+//●演出：斬殺エフェクト
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+斩首，确实刺到了最后。
+
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3483" )
+\CN["无黑色"]
+“求之不得的同情。至少给你建个简单的坟墓。”
+
+望月是曾经一起战斗过的人啊。
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: ShowWnd()
+将遗体埋葬在路边风景优美的地方
+拿着适当的岩石来代替墓碑添上了。
+
+//●合流地点へ
+//＠ラベルジャンプ：sc002
+: Jump( "*sc002" )
+
+//========================================================
+//○人斬り無黒（敗北）
+//========================================================
+*lose
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_TeitoUra01_03", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 31, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3484" )
+\CN["无黑色"]
+“哼……我输了……赶紧杀了他吧……”
+
+//●ＳＥ：倒れる音
+: PlaySe( "SE/Se_Down01" )
+: CharaCostume( "Mukuro", 0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+望月败北的我当场倒下了。
+
+: DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo10_mid0487" )
+\CN["绿色"]
+“你的头为什么不来呢？你是在警戒海螺吗？”
+
+: DrawChara( "Midori", 1, 0)
+: PlayVoice( "Voices/vo10_mid0488" )
+\CN["绿色"]
+“嘛，不过，我也算是乐在其中了。
+你{杀，玫瑰}的话，会变得无聊的，会特别放过你的」
+
+//●演出：みどり　退場する
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Midori"; lay = 0; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: ShowWnd()
+如果是平时的话，望月会笑着杀了他或者拷问他
+什么也不做就走。
+
+那张脸好像有点后悔，但是还没有死心
+就是这样的感觉。
+
+//●合流地点へ
+//＠ラベルジャンプ：sc002
+//--------------------------------------------------------
+//●合流地点
+//--------------------------------------------------------
+*sc002
+//●演出：回想開けるトランジション
+: StopBgm( 1.0 )
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Forest01_01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: CharaCostume( "Mukuro", 0)
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3485" )
+\CN["无黑色"]
+“望月说是达磨的命令
+不久，又有九星的人来杀我了吧」
+
+希拉里对没有兴趣的事情绝对不会动。
+卍附近来了也能简单地将其击毙。
+织笠也{黑夜叉，暗黑妖精}化了的话就不是敌人了。
+
+麻烦的是达磨和之后，和我一样{黑夜叉，暗黑妖精}化
+能做到的镝木父子兰丸——还有，姐姐。
+
+: DrawChara( "Mukuro", 4, 0)
+: PlayVoice( "Voices/vo00_muk3486" )
+\CN["无黑色"]
+“呵呵——为什么呢？笑得很自然。”
+
+光是想象一下杀了他，就变成了那样。
+
+//●演出：刀を抜く
+//●ＳＥ：刀を抜く音
+: PlaySe( "SE/Se_Katana01" )
+拔刀凝视刀尖。
+
+: DrawChara( "Mukuro", 26, 0, 2)
+: PlayVoice( "Voices/vo00_muk3487" )
+\CN["无黑色"]
+“至今为止，到底杀了多少人？”
+
+刀总是离不开保养。
+本来因为是神刀，所以不太需要修整……。
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk3488" )
+\CN["无黑色"]
+「犯罪者、想要杀了我的人、
+在工作上被拜托杀死的人，运气不好被牵连的人——”
+
+: DrawChara( "Mukuro", 28, 0)
+: PlayVoice( "Voices/vo00_muk3489" )
+\CN["无黑色"]
+“嗯，杀得我连数都觉得愚蠢了。”
+
+最近对杀人没有任何抵抗。
+
+不仅如此，对对方切肉的感觉、切断骨头的感觉、
+对刺鼻的强烈血液的味道感到愉悦。
+
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk3490" )
+\CN["无黑色"]
+“其中好像也有人叫我刽子手……。
+话说回来，还是刽子手啊……”
+
+看了至今为止做过的事情{鉴，か}就不能否定了。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3491" )
+\CN["无黑色"]
+“能相信的只有自己，能依靠的只有刀。”
+
+这就是我现在的武士应有的状态。
+
+从现在开始到死为止，我一定是这样想的
+会继续前进吧。
+
+//●演出：暗転
+//●エンディング：人斬りＥＮＤ
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: ResetLayer(9)
+……………………………………………………。
+
+: FadeOut( 1.0 )
+: Wait()
+: if ( $inExtra == true ) Return endif
+: SharedFlag( "GameClear", true )
+: AfterStoryFlagUp( "Ending08" )
+: Call( "Scenarios/CommonSys*HanimeRefAllOpen")
+: LoadScene( "Title" )

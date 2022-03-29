@@ -1,0 +1,4329 @@
+//========================================================
+//○キャラクターの取得
+//========================================================
+*GetCharaId
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: charaId = "Mukuro"
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: charaId = "Momo"
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: charaId = "Kinako"
+: elif (WhoLeader( "Mei" ) == true)	//プレイヤーが黄菜子の時
+	: charaId = "Mei"
+: endif
+: Return
+//========================================================
+//○ＮＰＣ会話スタートの処理
+//========================================================
+*NpcConversation
+: Call( "Scenarios/CommonSys*Word" )	//淫語取得
+//女湯の場合、裸でも露出度を上げない
+: mapId = RpgMapID()
+: if ( mapId == 8 || mapId == 46 || mapId == 261 )
+	: Return
+: endif
+//裸だったら露出度を＋しておく
+: if (WhoLeader( "Mukuro" ) == true && CharaCostume( "Mukuro" ) == 1 )
+	: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+: elif (WhoLeader( "Momo" ) == true && CharaCostume( "Momo" ) == 1 )
+	: CharaAddHParam( "Momo", "Exhibitionist", 1)
+: elif (WhoLeader( "Kinako" ) == true && CharaCostume( "Kinako" ) == 1 )
+	: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+: elif (WhoLeader( "Mei" ) == true && CharaCostume( "Mei" ) == 1 )
+	: CharaAddHParam( "Mei", "Exhibitionist", 1)
+: endif
+: Return
+//========================================================
+//○全回復処理
+//========================================================
+*AllRecovery
+: CharaHp( "Mukuro", CharaMaxHp("Mukuro") )
+: CharaHp( "Momo", CharaMaxHp("Momo") )
+: CharaHp( "Kinako", CharaMaxHp("Kinako") )
+: CharaHp( "Leo", CharaMaxHp("Leo") )
+: CharaHp( "Gin", CharaMaxHp("Gin") )
+: CharaHp( "Mei", CharaMaxHp("Mei") )
+: CharaHp( "Azami", CharaMaxHp("Azami") )
+: CharaSp( "Mukuro", CharaMaxSp("Mukuro") )
+: CharaSp( "Momo", CharaMaxSp("Momo") )
+: CharaSp( "Kinako", CharaMaxSp("Kinako") )
+: CharaSp( "Leo", CharaMaxSp("Leo") )
+: CharaSp( "Gin", CharaMaxSp("Gin") )
+: CharaSp( "Mei", CharaMaxSp("Mei") )
+: CharaSp( "Azami", CharaMaxSp("Azami") )
+: Return
+
+//========================================================
+//○宿屋処理
+//========================================================
+*Inn
+: if( $money < money )
+	: ShowWnd()
+	泊まりたいがお金が足りない……。
+
+	: Return
+: endif
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: PlaySe( "SE/Se_Inn" )
+: Sleep( 1.2 )
+: FadeIn( 0.5 )
+: Wait()
+: $money -= money
+: Call("*AllRecovery")
+//: Call("*Time_Pass")
+: Return
+
+//========================================================
+//○宿屋処理（無料）
+//========================================================
+*Inn_Free
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: PlaySe( "SE/Se_Inn" )
+: Sleep( 1.2 )
+: FadeIn( 0.5 )
+: Wait()
+: Call("*AllRecovery")
+//: Call("*Time_Pass")
+: Return
+
+//========================================================
+//○時期変数の所得
+//========================================================
+*Time
+: if ( $chapter == 0 )
+	: Return(0)
+: elif ( $chapter == 1 )
+	: Return(1)
+: elif ( $chapter == 2 )
+	: Return(2)
+: elif ( $chapter == 3 )
+	: Return(3)
+: elif ( $chapter == 4 )
+	: Return(4)
+: elif ( $chapter == 5 )
+	: Return(5)
+: elif ( $chapter == 6 )
+	: Return(6)
+: elif ( $chapter == 7 )
+	: Return(4)
+: elif ( $chapter == 8 )
+	: Return(5)
+: elif ( $chapter == 9 )
+	: Return(6)
+: elif ( $chapter == 10 )
+	: Return(4)
+: elif ( $chapter == 11 )
+	: Return(5)
+: elif ( $chapter == 12 )
+	: Return(6)
+: else
+	: Return(0)
+: endif
+: Return
+//========================================================
+//○道具屋処理
+//========================================================
+*ItemShop
+//回想モード時は無効にする
+: if ( $inExtra == true ) Return endif
+//フラグリセット
+: Call("*ShopItemReset")
+//時期分岐
+: if( Call( "*Time" ) <= 3 )
+	: ShopItemOn("HpMedicenS")
+	: ShopItemOn("HpMedicenM")
+	: ShopItemOn("SpMedicenS")
+	: ShopItemOn("SpMedicenM")
+	: ShopItemOn("DebuffCure00")
+	: ShopItemOn("DebuffCure02")
+	: ShopItemOn("DebuffCure03")
+	: ShopItemOn("DebuffCure05")
+	: ShopItemOn("DebuffCure06")
+	: ShopItemOn("DebuffCure07")
+	: ShopItemOn("DebuffCure08")
+	: ShopItemOn("Teleporter")
+	: ShopItemOn("Pill")
+: elif( Call( "*Time" ) == 4)
+	: ShopItemOn("HpMedicenS")
+	: ShopItemOn("HpMedicenM")
+	: ShopItemOn("HpMedicenL")
+	: ShopItemOn("SpMedicenS")
+	: ShopItemOn("SpMedicenM")
+	: ShopItemOn("SpMedicenL")
+	: ShopItemOn("HpSpMedicenS")
+	: ShopItemOn("DebuffCure00")
+	: ShopItemOn("DebuffCure02")
+	: ShopItemOn("DebuffCure03")
+	: ShopItemOn("DebuffCure05")
+	: ShopItemOn("DebuffCure06")
+	: ShopItemOn("DebuffCure07")
+	: ShopItemOn("DebuffCure08")
+	: ShopItemOn("Teleporter")
+	: ShopItemOn("Pill")
+: elif( Call( "*Time" ) >= 5 )
+	: ShopItemOn("HpMedicenS")
+	: ShopItemOn("HpMedicenM")
+	: ShopItemOn("HpMedicenL")
+	: ShopItemOn("SpMedicenS")
+	: ShopItemOn("SpMedicenM")
+	: ShopItemOn("SpMedicenL")
+	: ShopItemOn("HpSpMedicenS")
+	: ShopItemOn("HpSpMedicenL")
+	: ShopItemOn("DebuffCure00")
+	: ShopItemOn("DebuffCure02")
+	: ShopItemOn("DebuffCure03")
+	: ShopItemOn("DebuffCure05")
+	: ShopItemOn("DebuffCure06")
+	: ShopItemOn("DebuffCure07")
+	: ShopItemOn("DebuffCure08")
+	: ShopItemOn("Teleporter")
+	: ShopItemOn("Pill")
+: endif
+: Shop()
+: Return
+
+//========================================================
+//○エロ道具屋
+//========================================================
+*HskiiShop
+//フラグリセット
+: Call("*ShopItemReset")
+: ShopItemOn("BuffAdd11")
+: ShopItemOn("SexualCycleItem")
+: ShopItemOn("HparamPlus00")
+: ShopItemOn("HparamPlus01")
+: ShopItemOn("HparamPlus02")
+: ShopItemOn("HparamPlus03")
+: ShopItemOn("HparamPlus04")
+: ShopItemOn("HparamPlus05")
+: Shop()
+: Return
+
+//========================================================
+//○道具フラグリセット
+//========================================================
+*ShopItemReset
+: ShopItemOff("HpMedicenS")
+: ShopItemOff("HpMedicenM")
+: ShopItemOff("HpMedicenL")
+: ShopItemOff("SpMedicenS")
+: ShopItemOff("SpMedicenM")
+: ShopItemOff("SpMedicenL")
+: ShopItemOff("HpSpMedicenS")
+: ShopItemOff("HpSpMedicenL")
+: ShopItemOff("HpMedicenAll")
+: ShopItemOff("HpSpMedicenAll")
+: ShopItemOff("DebuffCure00")
+: ShopItemOff("DebuffCure01")
+: ShopItemOff("DebuffCure02")
+: ShopItemOff("DebuffCure03")
+: ShopItemOff("DebuffCure04")
+: ShopItemOff("DebuffCure05")
+: ShopItemOff("DebuffCure06")
+: ShopItemOff("DebuffCure07")
+: ShopItemOff("DebuffCure08")
+: ShopItemOff("DebuffCure09")
+: ShopItemOff("BuffAdd00")
+: ShopItemOff("BuffAdd01")
+: ShopItemOff("BuffAdd02")
+: ShopItemOff("BuffAdd03")
+: ShopItemOff("BuffAdd04")
+: ShopItemOff("BuffAdd05")
+: ShopItemOff("BuffAdd06")
+: ShopItemOff("BuffAdd07")
+: ShopItemOff("BuffAdd08")
+: ShopItemOff("BuffAdd09")
+: ShopItemOff("BuffAdd10")
+: ShopItemOff("BuffAdd11")
+: ShopItemOff("Teleporter")
+: ShopItemOff("Pill")
+: ShopItemOff("SexualCycleItem")
+: ShopItemOff("HparamPlus00")
+: ShopItemOff("HparamPlus01")
+: ShopItemOff("HparamPlus02")
+: ShopItemOff("HparamPlus03")
+: ShopItemOff("HparamPlus04")
+: ShopItemOff("HparamPlus05")
+: ShopItemOff("NoItem00")
+: Return
+//========================================================
+//○隠語取得
+//========================================================
+*Word
+//無黒
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) == 0)
+	: Mukuro_Omanko = "アソコ"
+	: Mukuro_Penis = "アレ"
+: elif  ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) == 1)
+	: Mukuro_Omanko = "アソコ"
+	: Mukuro_Penis = "おちんちん"
+: elif  ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) == 2)
+	: Mukuro_Omanko = "オマンコ"
+	: Mukuro_Penis = "おちんぽ"
+: elif  ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) == 3)
+	: Mukuro_Omanko = "オマンコ"
+	: Mukuro_Penis = "おちんぽ"
+: endif
+//桃
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) == 0)
+	: Momo_Omanko = "アソコ"
+	: Momo_Penis = "おちんちん"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) == 1 )
+	: Momo_Omanko = "アソコ"
+	: Momo_Penis = "おちんちん"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) ==2 )
+	: Momo_Omanko = "おまんこ"
+	: Momo_Penis = "チンポ"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) == 3)
+	: Momo_Omanko = "おまんこ"
+	: Momo_Penis = "チンポ"
+: endif
+//黄菜子
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) == 0)
+	: Kinako_Omanko = "アソコ"
+	: Kinako_Penis = "アソコ"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) == 1 )
+	: Kinako_Omanko = "アソコ"
+	: Kinako_Penis = "おちんちん"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) == 2 )
+	: Kinako_Omanko = "オマンコ"
+	: Kinako_Penis = "おちんちん"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) == 3)
+	: Kinako_Omanko = "オマンコ"
+	: Kinako_Penis = "おちんちん"
+: endif
+//冥
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) == 0)
+	: Mei_Omanko = "アソコ"
+	: Mei_Penis = "ペニス"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) == 1)
+	: Mei_Omanko = "アソコ"
+	: Mei_Penis = "おちんちん"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) == 2)
+	: Mei_Omanko = "オマンコ"
+	: Mei_Penis = "チンポ"
+: elif ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) == 3)
+	: Mei_Omanko = "オマンコ"
+	: Mei_Penis = "チンポ"
+: endif
+: Return
+
+//========================================================
+//○服装記憶
+//========================================================
+*CosMemory
+// 全てのキャラに処理を施しておく
+: cos_Mukuro = CharaCostume( "Mukuro" )
+: cos_Momo = CharaCostume( "Momo" )
+: cos_Kinako = CharaCostume( "Kinako" )
+: cos_Leo = CharaCostume( "Leo" )
+: cos_Gin = CharaCostume( "Gin" )
+: cos_Azami = CharaCostume( "Azami" )
+: cos_Ryu = CharaCostume( "Ryu" )
+: cos_Bebi = CharaCostume( "Bebi" )
+: cos_Daruma = CharaCostume( "Daruma" )
+: cos_Mei = CharaCostume( "Mei" )
+: cos_Midori = CharaCostume( "Midori" )
+: cos_Mikage = CharaCostume( "Mikage" )
+: cos_Shion = CharaCostume( "Shion" )
+: cos_Iwao = CharaCostume( "Iwao" )
+: cos_Ranmaru = CharaCostume( "Ranmaru" )
+: cos_Hiraga = CharaCostume( "Hiraga" )
+: cos_Aguri = CharaCostume( "Aguri" )
+: cos_Manji = CharaCostume( "Manji" )
+: cos_Xeno = CharaCostume( "Xeno" )
+: cos_Elisa = CharaCostume( "Elisa" )
+: cos_Falke = CharaCostume( "Falke" )
+: cos_Clacier = CharaCostume( "Clacier" )
+: cos_Tamamo = CharaCostume( "Tamamo" )
+: cos_Tadakatsu = CharaCostume( "Tadakatsu" )
+: cos_Sayo = CharaCostume( "Sayo" )
+: cos_Fumimaro = CharaCostume( "Fumimaro" )
+: cos_Kotaro = CharaCostume( "Kotaro" )
+: cos_Nina = CharaCostume( "Nina" )
+: cos_Dominik = CharaCostume( "Dominik" )
+: cos_Ji = CharaCostume( "Ji" )
+: cos_Sasaki = CharaCostume( "Sasaki" )
+: cos_Mimawari = CharaCostume( "Mimawari" )
+: Return
+
+//========================================================
+//○服装戻す
+//========================================================
+*CosReturn
+: CharaCostume( "Mukuro", cos_Mukuro )
+: CharaCostume( "Momo", cos_Momo )
+: CharaCostume( "Kinako", cos_Kinako )
+: CharaCostume( "Leo", cos_Leo )
+: CharaCostume( "Gin", cos_Gin )
+: CharaCostume( "Azami", cos_Azami )
+: CharaCostume( "Ryu", cos_Ryu )
+: CharaCostume( "Bebi", cos_Bebi )
+: CharaCostume( "Daruma", cos_Daruma )
+: CharaCostume( "Mei", cos_Mei )
+: CharaCostume( "Midori", cos_Midori )
+: CharaCostume( "Mikage", cos_Mikage )
+: CharaCostume( "Shion", cos_Shion )
+: CharaCostume( "Iwao", cos_Iwao )
+: CharaCostume( "Ranmaru", cos_Ranmaru )
+: CharaCostume( "Hiraga", cos_Hiraga )
+: CharaCostume( "Aguri", cos_Aguri )
+: CharaCostume( "Manji", cos_Manji )
+: CharaCostume( "Xeno", cos_Xeno )
+: CharaCostume( "Elisa", cos_Elisa )
+: CharaCostume( "Falke", cos_Falke )
+: CharaCostume( "Clacier", cos_Clacier )
+: CharaCostume( "Tamamo", cos_Tamamo )
+: CharaCostume( "Tadakatsu", cos_Tadakatsu )
+: CharaCostume( "Sayo", cos_Sayo )
+: CharaCostume( "Fumimaro", cos_Fumimaro )
+: CharaCostume( "Kotaro", cos_Kotaro )
+: CharaCostume( "Nina", cos_Nina )
+: CharaCostume( "Dominik", cos_Dominik )
+: CharaCostume( "Ji", cos_Ji )
+: CharaCostume( "Sasaki", cos_Sasaki )
+: CharaCostume( "Mimawari", cos_Mimawari )
+: Return
+
+//========================================================
+//○ファストトラベル全部封印する
+//========================================================
+*FastTravelMapOffAll
+: FastTravelMapOff( "Teito" )
+: FastTravelMapOff( "Saito" )
+: FastTravelMapOff( "Sakitama" )
+: FastTravelMapOff( "Kazusa" )
+: FastTravelMapOff( "Takahama" )
+: FastTravelMapOff( "Atsuumi" )
+: FastTravelMapOff( "Senba" )
+: FastTravelMapOff( "Yoshinohara" )
+: FastTravelMapOff( "Nitta" )
+: FastTravelMapOff( "Akesato" )
+: FastTravelMapOff( "Kayama" )
+: FastTravelMapOff( "HiragaLavo" )
+: FastTravelMapOff( "TeitoNishikaido" )
+: FastTravelMapOff( "TeitoKitaKaido" )
+: FastTravelMapOff( "Oobagumi" )
+: FastTravelMapOff( "TeitoMinamiKaido" )
+: FastTravelMapOff( "Nagatoro" )
+: FastTravelMapOff( "TakahamaPort" )
+: FastTravelMapOff( "TeitoHigashiKaido" )
+: FastTravelMapOff( "KannaKaido" )
+: FastTravelMapOff( "Shimizukai" )
+: FastTravelMapOff( "NasunoYama" )
+: FastTravelMapOff( "YamatoHigashiKaidoC" )
+: FastTravelMapOff( "Sumiyoshi" )
+: FastTravelMapOff( "NittouKaido" )
+: FastTravelMapOff( "KitaguniKaido" )
+: FastTravelMapOff( "YoseiForest" )
+: FastTravelMapOff( "MajyutsushiHakaba" )
+: FastTravelMapOff( "Utsushimi" )
+: FastTravelMapOff( "YamatoHigashiKaidoA" )
+: FastTravelMapOff( "Fushinoyama" )
+: FastTravelMapOff( "HiragaLavoWay" )
+: FastTravelMapOff( "Mizukami" )
+: FastTravelMapOff( "Orikasa" )
+: FastTravelMapOff( "Ashidate" )
+: FastTravelMapOff( "TeitoNishiKyokai" )
+: FastTravelMapOff( "Kumonomichi" )
+: FastTravelMapOff( "AbareInoshishi" )
+: FastTravelMapOff( "Harima" )
+: FastTravelMapOff( "IbarakiKaido" )
+: FastTravelMapOff( "Rokkakuyama" )
+: FastTravelMapOff( "Kumanokaido" )
+: FastTravelMapOff( "SaitoNishiShitsugen" )
+: FastTravelMapOff( "Tanbatouge" )
+: FastTravelMapOff( "YamatoHigashiKaidoB" )
+: FastTravelMapOff( "TakaoYama" )
+: Return
+//========================================================
+//○敗北後、拠点復帰処理（定義）
+//========================================================
+*LoseReturn
+//奴隷市を潰せ！　進行中の処理
+: if ( MissionProgress( "SC_A03_05_1", "InProgress" ) == true )
+	: RemoveParty( "Leo" )	//パーティーからレオを外す
+	: Rmap = "Map_Town01_01_Teito"; Rwarp = "Hozuki"; Rsc = "Scenarios/Map_Town01_Teito_Init*Map01";
+	: Jump( "*LoseReturn_act" )
+: endif
+//逃亡　進行中の処理
+: if ( MissionProgress( "SC_B05_12_1", "InProgress" ) == true )
+	: Rmap = "Map_Town04_01_Takahama"; Rwarp = "FromInn"; Rsc = "Scenarios/Map_Town04_Takahama_Init*Map01";
+	: Jump( "*LoseReturn_act" )
+: endif
+//鬼灯ルート　最終章
+: if ( $chapter == 6 )
+	: Rmap = "Map_Town11_01_Yoshinohara"; Rwarp = "Inn"; Rsc = "Scenarios/Map_Town11_Yoshinohara_Init*Map01";
+	: Jump( "*LoseReturn_act" )
+: endif
+//白夜ルート
+: if ( $chapter >= 7 && $chapter <= 9 )
+	: Rmap = "Map_Town06_01_Sakitama"; Rwarp = "FromByakuya"; Rsc = "Scenarios/Map_Town06_Sakitama_Init*Map01";
+	: Jump( "*LoseReturn_act" )
+: endif
+//浪人ルート
+: if ( $chapter >= 10)
+	: if ( MissionProgress( "SC_D05_15_1", "Successed" ) == false )
+		: Rmap = "Map_Town05_01_Saito"; Rwarp = "From03"; Rsc = "Scenarios/Map_Town05_Saito_Init*Map01";
+		: Jump( "*LoseReturn_act" )
+	: else
+		: Rmap = "Map_Town01_01_Teito"; Rwarp = "Yadoya"; Rsc = "Scenarios/Map_Town01_Teito_Init*Map01";
+		: Jump( "*LoseReturn_act" )
+	: endif
+: endif
+//共通ルート時・汎用
+: Rmap = "Map_Town01_01_Teito"; Rwarp = "Hozuki"; Rsc = "Scenarios/Map_Town01_Teito_Init*Map01";
+: Jump( "*LoseReturn_act" )
+//========================================================
+//○敗北後、拠点復帰処理（実行）
+//========================================================
+*LoseReturn_act
+//※ＨＰ・ＭＰ全回復処理
+: StopBgm( 0.5 )
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( Rmap, Rwarp, Rsc)
+//========================================================
+//○敵フラグのリセット
+//========================================================
+*LoseFlagReset
+//種別リセット
+: FlagDown( "EnemyHuman" )
+: FlagDown( "EnemyElf" )
+: FlagDown( "EnemyJujin" )
+: FlagDown( "EnemyOak" )
+: FlagDown( "EnemyTentacle" )
+: FlagDown( "EnemyEgg" )
+: FlagDown( "EnemyDog" )
+: FlagDown( "EnemyPig" )
+: FlagDown( "EnemyHorse" )
+: FlagDown( "EnemyGoblin" )
+: FlagDown( "EnemyOther" )
+: Return
+//========================================================
+//○敗北レイプ処理（処女喪失）
+//========================================================
+*LoseRapeLostVirgin
+: if ( Flag ( "EnemyHuman" ) == true || Flag ( "EnemyElf" ) == true || Flag ( "EnemyJujin" ) == true )
+	: value1 = RandomRange(1,5)
+	: value2 = RandomRange(1,5)
+	: value3 = RandomRange(1,5)
+	: value_num = value1 + value2 + value3
+	: CharaAddHParam( chara, "WithHuman", value1)
+	: CharaAddHParam( chara, "WithElf", value2)
+	: CharaAddHParam( chara, "WithTherianthrope", value3)
+	: CharaAddHParam( chara, "Sex", value_num)
+	: CharaAddHParam( chara, "Rape", value_num)
+	: liquid = RandomRange(10,15) * value_num
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(10,15) * value_num
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5000 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( chara, 5000 ) endif
+: elif ( Flag ( "EnemyOak" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5001 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( chara, 5001 ) endif
+: elif ( Flag ( "EnemyTentacle" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5002 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( chara, 5002 ) endif
+: elif ( Flag ( "EnemyEgg" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5003 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( chara, 5003 ) endif
+: elif ( Flag ( "EnemyDog" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5004 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( chara, 5004 ) endif
+: elif ( Flag ( "EnemyPig" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithMagicBeast", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(60,80) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(60,80) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5005 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( chara, 5005 ) endif
+: elif ( Flag ( "EnemyHorse" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithMagicBeast", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(60,80) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(60,80) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5006 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( chara, 5006 ) endif
+: elif ( Flag ( "EnemyGoblin" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(35,50) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(35,50) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5007 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( chara, 5007 ) endif
+: endif
+: Call( "*LoseFlagReset" )	// フラグリセット
+: Return
+
+//========================================================
+//○敗北レイプ処理（非処女）
+//========================================================
+*LoseRape
+: if ( Flag ( "EnemyHuman" ) == true || Flag ( "EnemyElf" ) == true || Flag ( "EnemyJujin" ) == true )
+	: value1 = RandomRange(1,5)
+	: value2 = RandomRange(1,5)
+	: value3 = RandomRange(1,5)
+	: value_num = value1 + value2 + value3
+	: CharaAddHParam( chara, "WithHuman", value1)
+	: CharaAddHParam( chara, "WithElf", value2)
+	: CharaAddHParam( chara, "WithTherianthrope", value3)
+	: CharaAddHParam( chara, "Sex", value_num)
+	: CharaAddHParam( chara, "Rape", value_num)
+	: liquid = RandomRange(10,15) * value_num
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(10,15) * value_num
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5008 ) endif
+: elif ( Flag ( "EnemyOak" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5009 ) endif
+: elif ( Flag ( "EnemyTentacle" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5010 ) endif
+: elif ( Flag ( "EnemyEgg" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5011 ) endif
+: elif ( Flag ( "EnemyDog" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(30,45) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5012 ) endif
+: elif ( Flag ( "EnemyPig" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithMagicBeast", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(60,80) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(60,80) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5013 ) endif
+: elif ( Flag ( "EnemyHorse" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithMagicBeast", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(60,80) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(60,80) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5014 ) endif
+: elif ( Flag ( "EnemyGoblin" ) == true )
+	: value = RandomRange(5,15)
+	: CharaAddHParam( chara, "WithDemon", value)
+	: CharaAddHParam( chara, "Interbreed", value)
+	: CharaAddHParam( chara, "Sex", value)
+	: CharaAddHParam( chara, "Rape", value)
+	: liquid = RandomRange(35,50) * value
+	: CharaAddHParam( chara, "Bukkake", liquid)
+	: liquid = RandomRange(35,50) * value
+	: CharaAddHParam( chara, "EjaculateVagina", liquid)
+	: if ( $inExtra == false ) CharaSexHistory( chara, 5007 ) endif
+: endif
+//絶頂補正
+: if ( CharaHRank( chara, "Immoral" ) <= 1 )
+	: value = RandomRange(5,30)
+	: CharaAddHParam( chara, "Orgasm", value)
+: elif ( CharaHRank( chara, "Immoral" ) == 2 )
+	: value = RandomRange(10,30)
+	: CharaAddHParam( chara, "Orgasm", value)
+	: CharaAddHParam( chara, "Squirting", value)
+: elif ( CharaHRank( chara, "Immoral" ) == 3 )
+	: value = RandomRange(20,50)
+	: CharaAddHParam( chara, "Orgasm", value)
+	: CharaAddHParam( chara, "Squirting", value)
+	: CharaAddHParam( chara, "Urination", value)
+: endif
+: if chara == "Mukuro"
+	: if ( Call("Scenarios/CommonSys*BirthExperience") )
+		: milk = RandomRange(80,150) * value
+		: CharaAddHParam( chara, "Milk", milk)
+	: endif
+: endif
+: CharaAddHParam( chara, "Exhibitionist", 1 )	//露出値補正
+: Call( "*LoseFlagReset" )	// フラグリセット
+: Return
+
+//========================================================
+//○処女状態を取得（判定用）
+//========================================================
+//無黒の場合（恋人と結ばれた場合はロックするため、処女判定に）
+*Virgin_Mukuro
+: if ( Flag ( "NonVirgin_Mukuro" ) == false )
+	: Return(true)
+: else
+	: if ( Flag ( "Love_Mukuro" ) == true )
+		: Return(true)
+	: else
+		: Return(false)
+	: endif
+: endif
+
+//桃の場合
+*Virgin_Momo
+: if ( Flag ( "NonVirgin_Momo" ) == false )
+	: Return(true)
+: else
+	: if ( Flag ( "Love_Momo" ) == true )
+		: Return(true)
+	: else
+		: Return(false)
+	: endif
+: endif
+
+//黄菜子の場合
+*Virgin_Kinako
+: if ( Flag ( "NonVirgin_Kinako" ) == false )
+	: Return(true)
+: else
+	: if ( Flag ( "Love_Kinako" ) == true )
+		: Return(true)
+	: else
+		: Return(false)
+	: endif
+: endif
+
+//冥の場合
+*Virgin_Mei
+: if ( Flag ( "NonVirgin_Mei" ) == false )
+	: Return(true)
+: else
+	: if ( Flag ( "Love_Mei" ) == true )
+		: Return(true)
+	: else
+		: Return(false)
+	: endif
+: endif
+
+//========================================================
+//○プレイヤーキャラの着衣状態を取得
+//========================================================
+*CosWear
+: if ( WhoLeader( "Mukuro" ) == true )
+	: return (CharaCostume( "Mukuro" ) == 0 || CharaCostume( "Mukuro" ) == 2 || CharaCostume( "Mukuro" ) == 6)
+: elif ( WhoLeader( "Momo" ) == true )
+	: return ( CharaCostume( "Momo" ) == 0 )
+: elif ( WhoLeader( "Kinako" ) == true )
+	: return (CharaCostume( "Kinako" ) == 0 || CharaCostume( "Kinako" ) == 2 || CharaCostume( "Kinako" ) == 5)
+: elif ( WhoLeader( "Mei" ) == true )
+	: return (CharaCostume( "Mei" ) == 0 || CharaCostume( "Mei" ) == 2 )
+: endif
+
+//========================================================
+//○パーティ設定
+//========================================================
+*PartySetting
+: Call( "*AllRecovery" )
+: FlagDown( "Party01" )
+: FlagDown( "Party02" )
+: FlagDown( "Party03" )
+: FlagDown( "Party04" )
+: FlagDown( "Party05" )
+: FlagDown( "Party06" )
+: FlagDown( "Party07" )
+: FlagDown( "Party08" )
+: FlagDown( "Party09" )
+: Flag( PartyType, true )
+: Return
+//========================================================
+//○一時的にパーティーを単独にする
+//========================================================
+*PartyAlone
+//リーダーを記憶
+: if Leader() == 0
+	: Flag( "EnemyHuman", true )
+: elif Leader() == 1
+	: Flag( "EnemyElf", true )
+: elif Leader() == 2
+	: Flag( "EnemyJujin", true )
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: Party( "Mukuro" )
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: Party( "Momo" )
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: Party( "Kinako" )
+: else	//プレイヤーが冥の時
+	: Party( "Mei" )
+: endif
+: Return
+//========================================================
+//○パーティーを元に戻す
+//========================================================
+*PartyReset
+//パーティー設定フラグで元に戻す
+: if ( Flag ( "Party01" ) == true )
+	: Party( "Mukuro" )
+: elif ( Flag ( "Party02" ) == true )
+	: Party( "Momo" )
+: elif ( Flag ( "Party03" ) == true )
+	: Party( "Kinako" )
+: elif ( Flag ( "Party04" ) == true )
+	: Party( "Mei" )
+: elif ( Flag ( "Party05" ) == true )
+	: Party( "Mukuro", "Leo" )
+: elif ( Flag ( "Party06" ) == true )
+	: Party( "Momo", "Gin" )
+: elif ( Flag ( "Party07" ) == true )
+	: Party( "Mukuro", "Momo" )
+: elif ( Flag ( "Party08" ) == true )
+	: Party( "Mukuro", "Mei" )
+: elif ( Flag ( "Party09" ) == true )
+	: Party( "Mukuro", "Momo", "Kinako" )
+: endif
+//例外処理
+: if ( MissionProgress( "SC_B05_08_2", "InProgress") == true )
+	: Party( "Momo", "Gin", "Kinako" )
+: endif
+//リーダーを戻す処理
+: if Flag( "EnemyHuman" ) == true
+	: Num = 0
+: elif Flag( "EnemyElf" ) == true
+	: Num = 1
+: elif Flag( "EnemyJujin" ) == true
+	: Num = 2
+: else
+	: Num = 0	// エラー落ちを防ぐための処理
+: endif
+: Flag( "EnemyHuman", false )
+: Flag( "EnemyElf", false )
+: Flag( "EnemyJujin", false )
+: Leader( Num )
+: Return
+//========================================================
+//○強制浪人ルートのジャッジ
+//========================================================
+*RootJudge
+: JudgeValue = 0
+: if ( MissionProgress( "SC_A01_03_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A01_03_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A01_50", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A01_51", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A01_52", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_01_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_01_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_01_3", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_01_4", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_04_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_04_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_06_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_06_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_07", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_07_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_50_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_50_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_51_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_51_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_51_3", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A02_53", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_03_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_03_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_03_3", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_05_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_07_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_08_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_09_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_09_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_10_1", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_10_2", "Failed" ) == true ) JudgeValue += 1 endif
+: if ( MissionProgress( "SC_A03_13_1", "Failed" ) == true ) JudgeValue += 1 endif
+: Return(JudgeValue)
+
+//========================================================
+//○共通第３章・シーン判定
+//========================================================
+*Chapter_judge03_1
+: if ( MissionProgress( "SC_A03_14_1", "Successed", "Failed" ) == true )
+	: if ( MissionProgress( "SC_A03_15_1", "Successed", "Failed" ) == true )
+		: if ( Call( "*RootJudge" ) < 3 )
+			: Jump( "Scenarios/SC_A03_16" )
+		: else
+			: Jump( "Scenarios/SC_A03_19" )
+		: endif
+	: else
+		: Jump( "Scenarios/SC_A03_15" )
+	:endif
+: elif ( MissionProgress( "SC_A03_15_1", "Successed", "Failed" ) == true )
+	: if ( MissionProgress( "SC_A03_14_1", "Successed", "Failed" ) == true )
+		: if ( Call( "*RootJudge" ) < 3 )
+			: Jump( "Scenarios/SC_A03_16" )
+		: else
+			: Jump( "Scenarios/SC_A03_19" )
+		: endif
+	: else
+		: Jump( "Scenarios/SC_A03_14" )
+	:endif
+: else
+	\CI["春日神社攻防戦（桃）"]
+	\CI["怪しげなカラクリ工場（黄菜子）"]
+	どのストーリーを始めますか？
+
+	: if ($choice == 0) 
+		: Jump( "Scenarios/SC_A03_14" )
+	: else
+		: Jump( "Scenarios/SC_A03_15" )
+	: endif
+: endif
+
+*Chapter_judge03_2
+: if ( MissionProgress( "SC_A03_13_1", "Successed", "Failed" ) == true )
+	: if ( MissionProgress( "SC_A03_15_1", "Successed", "Failed" ) == true )
+		: if ( Call( "*RootJudge" ) < 3 )
+			: Jump( "Scenarios/SC_A03_16" )
+		: else
+			: Jump( "Scenarios/SC_A03_19" )
+		: endif
+	: else
+		: Jump( "Scenarios/SC_A03_15" )
+	:endif
+: elif ( MissionProgress( "SC_A03_15_1", "Successed", "Failed" ) == true )
+	: if ( MissionProgress( "SC_A03_13_1", "Successed", "Failed" ) == true )
+		: if ( Call( "*RootJudge" ) < 3 )
+			: Jump( "Scenarios/SC_A03_16" )
+		: else
+			: Jump( "Scenarios/SC_A03_19" )
+		: endif
+	: else
+		: Jump( "Scenarios/SC_A03_13" )
+	:endif
+: else
+	\CI["反幕派の重要人物を捕らえよ！（無黒）"]
+	\CI["怪しげなカラクリ工場（黄菜子）"]
+	どのストーリーを始めますか？
+
+	: if ($choice == 0) 
+		: Jump( "Scenarios/SC_A03_13" )
+	: else
+		: Jump( "Scenarios/SC_A03_15" )
+	: endif
+: endif
+
+*Chapter_judge03_3
+: if ( MissionProgress( "SC_A03_13_1", "Successed", "Failed" ) == true )
+	: if ( MissionProgress( "SC_A03_14_1", "Successed", "Failed" ) == true )
+		: if ( Call( "*RootJudge" ) < 3 )
+			: Jump( "Scenarios/SC_A03_16" )
+		: else
+			: Jump( "Scenarios/SC_A03_19" )
+		: endif
+	: else
+		: Jump( "Scenarios/SC_A03_14" )
+	:endif
+: elif ( MissionProgress( "SC_A03_14_1", "Successed", "Failed" ) == true )
+	: if ( MissionProgress( "SC_A03_13_1", "Successed", "Failed" ) == true )
+		: if ( Call( "*RootJudge" ) < 3 )
+			: Jump( "Scenarios/SC_A03_16" )
+		: else
+			: Jump( "Scenarios/SC_A03_19" )
+		: endif
+	: else
+		: Jump( "Scenarios/SC_A03_13" )
+	:endif
+: else
+	\CI["反幕派の重要人物を捕らえよ！（無黒）"]
+	\CI["春日神社攻防戦（桃）"]
+	どのストーリーを始めますか？
+
+	: if ($choice == 0) 
+		: Jump( "Scenarios/SC_A03_13" )
+	: else
+		: Jump( "Scenarios/SC_A03_14" )
+	: endif
+: endif
+
+//========================================================
+//○白夜第４章・シーン判定
+//========================================================
+*Chapter_Judge04b_1
+//３つクリアしていない＝0
+//恐山だけクリア＝1
+//遊廓だけクリア＝2
+//研究者だけクリア＝3
+//恐山・遊廓クリア＝4
+//恐山・研究所クリア＝5
+//遊廓・研究所クリア＝6
+//全部クリア＝7
+//恐山肝試しをクリアしている場合
+: if ( MissionProgress( "SC_C04_02_1", "Successed","Failed" ) == true )
+	//遊廓のケツモチをクリアしている場合
+	: if ( MissionProgress( "SC_C04_03_1", "Successed", "Failed" ) == true || MissionProgress( "SC_C04_03_2", "Successed", "Failed" ) == true )
+		//研究者の手伝いをクリアしている場合
+		: if ( MissionProgress( "SC_C04_04_2", "Successed","Failed" ) == true )
+			: Return(7)
+		//研究者の手伝いをクリアしていない場合
+		: else
+			: Return(4)
+		: endif
+	//遊廓のケツモチをクリアしていない場合
+	: else
+		//研究者の手伝いをクリアしている場合
+		: if ( MissionProgress( "SC_C04_04_2", "Successed","Failed" ) == true )
+			: Return(5)
+		: else
+			: Return(1)
+		: endif
+	: endif
+//遊廓のケツモチをクリアしている場合
+: elif ( MissionProgress( "SC_C04_03_1", "Successed", "Failed" ) == true || MissionProgress( "SC_C04_03_2", "Successed", "Failed" ) == true )
+	//研究者の手伝いをクリアしている場合
+	: if ( MissionProgress( "SC_C04_04_2", "Successed","Failed" ) == true )
+		: Return(6)
+	//研究者の手伝いをクリアしていない場合
+	: else
+		: Return(2)
+	: endif
+//研究者の手伝いをクリアしている場合
+: elif ( MissionProgress( "SC_C04_04_2", "Successed","Failed" ) == true )
+	: Return(3)
+: else
+	: Return(0)
+: endif
+
+//========================================================
+//○浪人ルート第４章・シーン判定
+//========================================================
+*Chapter_Judge04c_1
+//３つクリアしていない＝0
+//暴れイノシシ退治だけクリア＝1
+//はぐれ者の用心棒だけクリア＝2
+//兼光を手に入れろだけクリア＝3
+//暴れイノシシ・はぐれ者クリア＝4
+//暴れイノシシ・兼光クリア＝5
+//はぐれ者・兼光クリア＝6
+//全部クリア＝7
+//暴れイノシシ退治をクリアしている
+: if ( MissionProgress( "SC_D04_06_1", "Successed","Failed" ) == true )
+	//はぐれ者の用心棒をクリアしている場合
+	: if ( MissionProgress( "SC_D04_08_1", "Successed", "Failed" ) == true )
+		//兼光を手に入れろ！をクリアしている場合
+		: if ( MissionProgress( "SC_D04_09_1", "Successed","Failed" ) == true || MissionProgress( "SC_D04_09_2", "Successed","Failed" ) == true )
+			: Return(7)
+		//兼光を手に入れろ！をクリアしていない場合
+		: else
+			: Return(4)
+		: endif
+	//はぐれ者の用心棒をクリアしていない場合
+	: else
+		//兼光を手に入れろ！をクリアしている場合
+		: if ( MissionProgress( "SC_D04_09_1", "Successed","Failed" ) == true || MissionProgress( "SC_D04_09_2", "Successed","Failed" ) == true )
+			: Return(5)
+		: else
+			: Return(1)
+		: endif
+	: endif
+//はぐれ者の用心棒をクリアしている場合
+: elif ( MissionProgress( "SC_D04_08_1", "Successed", "Failed" ) == true )
+	//兼光を手に入れろ！をクリアしている場合
+	: if ( MissionProgress( "SC_D04_09_1", "Successed","Failed" ) == true || MissionProgress( "SC_D04_09_2", "Successed","Failed" ) == true )
+		: Return(6)
+	//兼光を手に入れろ！をクリアしていない場合
+	: else
+		: Return(2)
+	: endif
+//兼光を手に入れろ！をクリアしている場合
+: elif ( MissionProgress( "SC_D04_09_1", "Successed","Failed" ) == true || MissionProgress( "SC_D04_09_2", "Successed","Failed" ) == true )
+	: Return(3)
+: else
+	: Return(0)
+: endif
+
+//========================================================
+//○浪人ルート第４章・シーン判定２
+//========================================================
+*Chapter_Judge04c_2
+//３つクリアしていない＝0
+//出世欲に塗れた男だけクリア＝1
+//指名手配の辻斬り退治だけクリア＝2
+//異邦人に乗っ取られた町だけクリア＝3
+//出世欲に塗れた男・指名手配の辻斬りクリア＝4
+//出世欲に塗れた男・異邦人に乗っ取られた町クリア＝5
+//指名手配の辻斬り・異邦人に乗っ取られた町クリア＝6
+//全部クリア＝7
+//出世欲に塗れた男をクリアしている
+: if ( MissionProgress( "SC_D04_11_1", "Successed","Failed" ) == true || MissionProgress( "SC_D04_11_2", "Successed","Failed" ) == true )
+	//指名手配の辻斬り退治をクリアしている場合
+	: if ( MissionProgress( "SC_D04_13_1", "Successed", "Failed" ) == true || MissionProgress( "SC_D04_13_2", "Successed", "Failed" ) == true )
+		//異邦人に乗っ取られた町をクリアしている場合
+		: if ( MissionProgress( "SC_D04_14_1", "Successed","Failed" ) == true )
+			: Return(7)
+		//異邦人に乗っ取られた町をクリアしていない場合
+		: else
+			: Return(4)
+		: endif
+	//指名手配の辻斬り退治をクリアしていない場合
+	: else
+		//異邦人に乗っ取られた町をクリアしている場合
+		: if ( MissionProgress( "SC_D04_14_1", "Successed","Failed" ) == true )
+			: Return(5)
+		: else
+			: Return(1)
+		: endif
+	: endif
+//指名手配の辻斬り退治をクリアしている場合
+: elif ( MissionProgress( "SC_D04_13_1", "Successed", "Failed" ) == true || MissionProgress( "SC_D04_13_2", "Successed", "Failed" ) == true )
+	//異邦人に乗っ取られた町をクリアしている場合
+	: if ( MissionProgress( "SC_D04_14_1", "Successed","Failed" ) == true )
+		: Return(6)
+	//異邦人に乗っ取られた町をクリアしていない場合
+	: else
+		: Return(2)
+	: endif
+//異邦人に乗っ取られた町をクリアしている場合
+: elif ( MissionProgress( "SC_D04_14_1", "Successed","Failed" ) == true )
+	: Return(3)
+: else
+	: Return(0)
+: endif
+//========================================================
+//○浪人ルート第５章・シーン判定１
+//========================================================
+*Chapter_Judge05c_1
+//３つクリアしていない＝0
+//無黒イベントだけクリア＝1
+//桃イベントだけクリア＝2
+//黄菜子イベントだけクリア＝3
+//無黒イベント・桃イベントクリア＝4
+//無黒イベント・黄菜子イベントクリア＝5
+//桃イベント・黄菜子イベントクリア＝6
+//全部クリア＝7
+//無黒イベントをクリアしている
+: if ( MissionProgress( "SC_D05_20_1", "Successed","Failed" ) == true )
+	//桃イベントをクリアしている場合
+	: if ( MissionProgress( "SC_D05_21_1", "Successed", "Failed" ) == true )
+		//黄菜子イベントをクリアしている場合
+		: if ( MissionProgress( "SC_D05_22_1", "Successed","Failed" ) == true )
+			: Return(7)
+		//黄菜子イベントをクリアしていない場合
+		: else
+			: Return(4)
+		: endif
+	//桃イベントをクリアしていない場合
+	: else
+		//黄菜子イベントをクリアしている場合
+		: if ( MissionProgress( "SC_D05_22_1", "Successed","Failed" ) == true )
+			: Return(5)
+		: else
+			: Return(1)
+		: endif
+	: endif
+//桃イベントをクリアしている場合
+: elif ( MissionProgress( "SC_D05_21_1", "Successed", "Failed" ) == true )
+	//黄菜子イベントをクリアしている場合
+	: if ( MissionProgress( "SC_D05_22_1", "Successed","Failed" ) == true )
+		: Return(6)
+	//黄菜子イベントをクリアしていない場合
+	: else
+		: Return(2)
+	: endif
+//黄菜子イベントをクリアしている場合
+: elif ( MissionProgress( "SC_D05_22_1", "Successed","Failed" ) == true )
+	: Return(3)
+: else
+	: Return(0)
+: endif
+//========================================================
+//○非処女判定（無黒）
+//========================================================
+*ShowNonVirginMukuro
+//回想モード時の処理
+: if ( $inExtra == true )
+	: Return( RefNonVirginMukuro )
+: endif
+: if ( Flag ( "NonVirgin_Mukuro" ) == true && Flag ( "Love_Mukuro" ) == false )
+	: Return(true)
+: else
+	: Return(false)
+: endif
+
+//========================================================
+//○非処女判定（桃）
+//========================================================
+*ShowNonVirginMomo
+//回想モード時の処理
+: if ( $inExtra == true )
+	: Return( RefNonVirginMomo )
+: endif
+: if ( Flag ( "NonVirgin_Momo" ) == true && Flag ( "Love_Momo" ) == false )
+	: Return(true)
+: else
+	: Return(false)
+: endif
+
+//========================================================
+//○非処女判定（黄菜子）
+//========================================================
+*ShowNonVirginKinako
+: if ( $inExtra == true )
+	: Return( RefNonVirginKinako )
+: endif
+: if ( Flag ( "NonVirgin_Kinako" ) == true && Flag ( "Love_Kinako" ) == false )
+	: Return(true)
+: else
+	: Return(false)
+: endif
+
+//========================================================
+//○非処女判定（冥）
+//========================================================
+*ShowNonVirginMei
+: if ( $inExtra == true )
+	: Return( RefNonVirginMei )
+: endif
+: if ( Flag ( "NonVirgin_Mei" ) == true && Flag ( "Love_Mei" ) == false )
+	: Return(true)
+: else
+	: Return(false)
+: endif
+
+//========================================================
+//○出産判定
+//========================================================
+*BirthExperience
+: Call( "*GetCharaId" )
+: Return( CharaHParam( charaId, "Childbirth" ) > 0 )
+//========================================================
+//○売春処理
+//========================================================
+*Prostitution
+: $money += ProstitutionMoney
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: CharaAddHParam( "Mukuro", "ProstitutionIncome", ProstitutionMoney)
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: CharaAddHParam( "Momo", "ProstitutionIncome", ProstitutionMoney)
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: CharaAddHParam( "Kinako", "ProstitutionIncome", ProstitutionMoney)
+: else	//プレイヤーが冥の時
+	: CharaAddHParam( "Mei", "ProstitutionIncome", ProstitutionMoney)
+: endif
+: Return
+
+//========================================================
+//○母乳販売処理
+//========================================================
+*MilkSell
+: MilkMoney = RandomRange(1000,5000)
+: $money += MilkMoney
+: CharaAddHParam( "Mukuro", "MilkIncome", MilkMoney)
+無黒は手付け金としては\V[MilkMoney]両手に入れた。
+
+: Return
+
+//========================================================
+//○処女喪失
+//========================================================
+*MukuroLostVirgin
+//イベント調整
+: if ( MissionProgress( "SC_A01_50", "Successed" ) == false )
+	: SetMission( "SC_A01_50", "Hidden" )
+: endif
+: if ( MissionProgress( "SC_A01_51", "Successed" ) == false )
+	: SetMission( "SC_A01_51", "Hidden" )
+: endif
+: if ( MissionProgress( "SC_A01_52", "Successed" ) == false )
+	: SetMission( "SC_A01_52", "Hidden" )
+: endif
+: if ( MissionProgress( "SC_C04_51_1", "Successed" ) == false )
+	: SetMission( "SC_C04_51_1", "Hidden" )
+: endif
+: Flag( "NonVirgin_Mukuro", true )
+: Return
+//========================================================
+//○殺害処理
+//========================================================
+*Murder
+//殺害数を加える
+: AddKill( value )
+//殺害数に応じたイベント発生処理
+//【サブ】旅の商人と名刀虎徹？
+: if( $chapter >= 8 && $chapter <= 9)
+	: if( $evilLevel >= 2 )
+		: if ( MissionProgress( "SC_C05_50_1", "Opened" ) == false )
+			: if ( MissionProgress( "SC_C05_50_1", "Successed" ) == false && MissionProgress( "SC_C05_50_2", "Successed" ) == false )
+				: SetMission( "SC_C05_50_1", "Opened" )
+			: endif
+		: endif
+	: endif
+: endif
+: Return
+//========================================================
+//○出産シーン処理
+//========================================================
+*Birth
+//サブルーティーン処理にしておく
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: if CharaHasChild( "Mukuro", "Elf" ) == true
+	: Call( "Scenarios/SC_S13_01" )
+: elif CharaHasChild( "Mukuro", "Oak" ) == true
+	: Call( "Scenarios/SC_S13_02" )
+: elif CharaHasChild( "Mukuro", "Tentacle" ) == true
+	: Call( "Scenarios/SC_S13_03" )
+: elif CharaHasChild( "Mukuro", "Egg" ) == true
+	: Call( "Scenarios/SC_S13_04" )
+: elif CharaHasChild( "Mukuro", "Dog" ) == true
+	: Call( "Scenarios/SC_S13_05" )
+: elif CharaHasChild( "Mukuro", "Pig" ) == true
+	: Call( "Scenarios/SC_S13_06" )
+: elif CharaHasChild( "Mukuro", "Horse" ) == true
+	: Call( "Scenarios/SC_S13_07" )
+: elif CharaHasChild( "Mukuro", "Goblin" ) == true
+	: Call( "Scenarios/SC_S13_08" )
+: endif
+// 出産終了処理
+: CharaChildbirth( "Mukuro" )
+// 服装を戻す
+: CharaCostume( "Mukuro", 0 )
+// パーティーを復帰させる
+: if Flag( "EnemyHuman" ) == false && Flag( "EnemyElf" ) == false && Flag( "EnemyJujin" ) == false
+	: Return
+: endif
+: Call( "*PartyReset" )
+: Return
+//========================================================
+//○出産シーンスキップ処理
+//========================================================
+*BirthSkip
+: if CharaHasChild( "Mukuro", "Elf" )
+	: Call( "Scenarios/HSceneSkip*SC_S13_01" )
+: elif CharaHasChild( "Mukuro", "Oak" )
+	: Call( "Scenarios/HSceneSkip*SC_S13_02" )
+: elif CharaHasChild( "Mukuro", "Tentacle" )
+	: Call( "Scenarios/HSceneSkip*SC_S13_03" )
+: elif CharaHasChild( "Mukuro", "Egg" )
+	: Call( "Scenarios/HSceneSkip*SC_S13_04" )
+: elif CharaHasChild( "Mukuro", "Dog" )
+	: Call( "Scenarios/HSceneSkip*SC_S13_05" )
+: elif CharaHasChild( "Mukuro", "Pig" )
+	: Call( "Scenarios/HSceneSkip*SC_S13_06" )
+: elif CharaHasChild( "Mukuro", "Horse" )
+	: Call( "Scenarios/HSceneSkip*SC_S13_07" )
+: elif CharaHasChild( "Mukuro", "Goblin" )
+	: Call( "Scenarios/HSceneSkip*SC_S13_08" )
+: endif
+// 出産終了処理
+: CharaChildbirth( "Mukuro" )
+// 服装を戻す
+: CharaCostume( "Mukuro", 0 )
+// パーティーを復帰させる
+: if Flag( "EnemyHuman" ) == false && Flag( "EnemyElf" ) == false && Flag( "EnemyJujin" ) == false
+	: Return
+: endif
+: Call( "*PartyReset" )
+: Return
+//========================================================
+//○ＮＰＣ会話終了処理
+//========================================================
+*NpcSceneEnd
+//ＢＧＶ止め忘れの場合の保険
+: StopBackVoice()
+//保険で共通＆鬼灯ルートではリターンさせる
+: if ( $chapter < 7 ) Return endif
+//ＮＰＣ殺害を起こさない場所はリターンする
+: mapId = RpgMapID()
+: if ( mapId == 86 || mapId == 87 || mapId == 88 || mapId == 48 )
+	: Return
+: endif
+//悪堕ちＬＶがＭＡＸ＆浪人ルート最終章のみ＆リーダー無黒でで殺害シーン出現
+: if ( $evilLevel == 3 && $chapter == 12 )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		\CI["見逃してやる"]
+		\CI["殺す"]
+		どうする？
+
+		: if ( $choice == 0 ) Return endif
+		: Call( "*NpcKillingSetting" )
+		: Jump( Scenario )
+	: endif
+: endif
+: Return
+//========================================================
+//○ＮＰＣ殺害処理（セッティング）
+//========================================================
+*NpcKillingSetting
+: mapId = RpgMapID()
+//皆殺し処理の発生
+: if ( mapId == 2 )	// 帝都・宿屋
+	: value = 4; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_02", true )
+	: Move = true
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "Yadoya"
+	: Scenario = "Scenarios/SC_N03_01*sc011"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 3 )	// 帝都・薬屋
+	: value = 3; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_02", true )
+	: Move = true
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "Kusuriya"
+	: Scenario = "Scenarios/SC_N03_01*sc011"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 4 )	// 帝都・道具屋
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_04", true )
+	: Move = true
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "Doguya"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 5 )	// 帝都・居酒屋
+	: value = 10; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_05", true )
+	: Move = true
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "Izakaya"
+	: Scenario = "Scenarios/SC_N03_01*sc011"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 6 || mapId == 7 || mapId == 8 )	// 帝都・風呂関係
+	: value = 10; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_06", true )
+	: Move = true
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "Sento"
+	: Scenario = "Scenarios/SC_N03_01*sc011"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 9 )	// 帝都・民家
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_09", true )
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "SouthHouse1"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 10 )	// 帝都・民家
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_10", true )
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "SouthHouse2"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 11 )	// 帝都・民家
+	: value = 3; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_11", true )
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "NorthHouse1"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 12 )	// 帝都・民家
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_12", true )
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "NorthHouse2"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 13 )	// 帝都・民家
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_13", true )
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "NorthHouse3"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 14 )	// 帝都・民家
+	: value = 3; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town01_14", true )
+	: KillMapData = "Map_Town01_01_Teito"
+	: KillWarp = "Watanabe"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town01_Teito_Init*Map01"
+: elif ( mapId == 42 )	// 西都・居酒屋
+	: value = 10; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town05_03", true )
+	: Move = true
+	: KillMapData = "Map_Town05_01_Saito"
+	: KillWarp = "From02"
+	: Scenario = "Scenarios/SC_N03_01*sc011"
+	: Init = "Scenarios/Map_Town05_Saito_Init*Map01"
+: elif ( mapId == 45 || mapId == 46 || mapId == 47 )	// 西都・銭湯
+	: value = 10; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town05_06", true )
+	: Move = true
+	: KillMapData = "Map_Town05_01_Saito"
+	: KillWarp = "From06"
+	: Scenario = "Scenarios/SC_N03_01*sc011"
+	: Init = "Scenarios/Map_Town05_Saito_Init*Map01"
+: elif ( mapId == 49 )	// 西都・民家
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town05_10", true )
+	: Move = true
+	: KillMapData = "Map_Town05_01_Saito"
+	: KillWarp = "From10"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town05_Saito_Init*Map01"
+: elif ( mapId == 50 )	// 西都・民家
+	: value = 1; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town05_11", true )
+	: Move = true
+	: KillMapData = "Map_Town05_01_Saito"
+	: KillWarp = "From11"
+	: Scenario = "Scenarios/SC_N03_01*sc003"
+	: Init = "Scenarios/Map_Town05_Saito_Init*Map01"
+: elif ( mapId == 75 )	// 吉野原・宿屋
+	: value = 5; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town05_11", true )
+	: Move = true
+	: KillMapData = "Map_Town11_01_Yoshinohara"
+	: KillWarp = "Inn"
+	: Scenario = "Scenarios/SC_N03_01*sc011"
+	: Init = "Scenarios/Map_Town05_Saito_Init*Map01"
+: elif ( mapId == 76 )	// 吉野原・道具屋
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+	: Flag( "Kill_Map_Town05_10", true )
+	: Move = true
+	: KillMapData = "Map_Town11_01_Yoshinohara"
+	: KillWarp = "Shop"
+	: Scenario = "Scenarios/SC_N03_01*sc001"
+	: Init = "Scenarios/Map_Town05_Saito_Init*Map01"
+//ゴロツキ系
+: elif ( NpcCode == "NPC_T01_061" )
+	: Scenario = "Scenarios/SC_N03_01*sc004"
+: elif ( NpcCode == "NPC_T01_039" )
+	: Scenario = "Scenarios/SC_N03_01*sc005"
+: elif ( NpcCode == "NPC_T01_065" )
+	: Scenario = "Scenarios/SC_N03_01*sc006"
+: elif ( NpcCode == "NPC_T01_075" )
+	: Scenario = "Scenarios/SC_N03_01*sc004"
+: elif ( NpcCode == "NPC_T01_090" )
+	: Scenario = "Scenarios/SC_N03_01*sc005"
+: elif ( NpcCode == "NPC_T05_028" )
+	: Scenario = "Scenarios/SC_N03_01*sc006"
+: elif ( NpcCode == "NPC_T05_045" )
+	: Scenario = "Scenarios/SC_N03_01*sc004"
+: elif ( NpcCode == "NPC_T05_060" )
+	: Scenario = "Scenarios/SC_N03_01*sc005"
+//その他
+: else
+	: Move = false
+	//ランダム処理
+	: if ( RandomRange(0,100) <= 50 )
+		: Scenario = "Scenarios/SC_N03_01*sc002"
+	: else
+		: Scenario = "Scenarios/SC_N03_01*sc003"
+	: endif
+: endif
+: Return
+//========================================================
+//○ＮＰＣ殺害処理（実行）
+//========================================================
+*NpcKillingAct
+//２人組の処理
+: if ( NpcCode == "NPC_T01_003" )
+	: RpgCharaOff("NPC_T01_003a")
+	: Flag( "NPC_T01_003a", true )
+	: RpgCharaOff("NPC_T01_003b")
+	: Flag( "NPC_T01_003b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_003" )
+	: RpgCharaOff("NPC_T01_003a")
+	: Flag( "NPC_T01_003a", true )
+	: RpgCharaOff("NPC_T01_003b")
+	: Flag( "NPC_T01_003b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_010" )
+	: RpgCharaOff("NPC_T01_010a")
+	: Flag( "NPC_T01_010a", true )
+	: RpgCharaOff("NPC_T01_010b")
+	: Flag( "NPC_T01_010b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_013" )
+	: RpgCharaOff("NPC_T01_013_1")
+	: Flag( "NPC_T01_013_1", true )
+	: RpgCharaOff("NPC_T01_013_2")
+	: Flag( "NPC_T01_013_2", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_017" )
+	//: RpgCharaOff("NPC_T01_013_1")
+	//: Flag( "NPC_T01_013_1", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_024" )
+	: RpgCharaOff("NPC_T01_024a")
+	: Flag( "NPC_T01_024a", true )
+	: RpgCharaOff("NPC_T01_024b")
+	: Flag( "NPC_T01_024b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_028" )
+	: RpgCharaOff("NPC_T01_028a")
+	: Flag( "NPC_T01_028a", true )
+	: RpgCharaOff("NPC_T01_028b")
+	: Flag( "NPC_T01_028b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_058" )
+	: RpgCharaOff("NPC_T01_058a")
+	: Flag( "NPC_T01_058a", true )
+	: RpgCharaOff("NPC_T01_058b")
+	: Flag( "NPC_T01_058b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_065" )
+	: RpgCharaOff("NPC_T01_065a")
+	: Flag( "NPC_T01_065a", true )
+	: RpgCharaOff("NPC_T01_065b")
+	: Flag( "NPC_T01_065b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T01_068" )
+	: RpgCharaOff("NPC_T01_068a")
+	: Flag( "NPC_T01_068a", true )
+	: RpgCharaOff("NPC_T01_068b")
+	: Flag( "NPC_T01_068b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T03_005" )
+	: RpgCharaOff("NPC_T03_005a")
+	: Flag( "NPC_T03_005a", true )
+	: RpgCharaOff("NPC_T03_005b")
+	: Flag( "NPC_T03_005b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T04_005" )
+	: RpgCharaOff("NPC_T04_005a")
+	: Flag( "NPC_T04_005a", true )
+	: RpgCharaOff("NPC_T04_005b")
+	: Flag( "NPC_T04_005b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T04_005" )
+	: RpgCharaOff("NPC_T04_005a")
+	: Flag( "NPC_T04_005a", true )
+	: RpgCharaOff("NPC_T04_005b")
+	: Flag( "NPC_T04_005b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T04_019" )
+	: RpgCharaOff("NPC_T04_019a")
+	: Flag( "NPC_T04_019a", true )
+	: RpgCharaOff("NPC_T04_019b")
+	: Flag( "NPC_T04_019b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T05_011" )
+	: RpgCharaOff("NPC_T05_011a")
+	: Flag( "NPC_T05_011a", true )
+	: RpgCharaOff("NPC_T05_011b")
+	: Flag( "NPC_T05_011b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T05_056" )
+	: RpgCharaOff("NPC_T05_056a")
+	: Flag( "NPC_T05_056a", true )
+	: RpgCharaOff("NPC_T05_056b")
+	: Flag( "NPC_T05_056b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T06_010" )
+	: RpgCharaOff("NPC_T06_010a")
+	: Flag( "NPC_T06_010a", true )
+	: RpgCharaOff("NPC_T06_010b")
+	: Flag( "NPC_T06_010b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+: elif ( NpcCode == "NPC_T11_009" )
+	: RpgCharaOff("NPC_T11_009a")
+	: Flag( "NPC_T11_009a", true )
+	: RpgCharaOff("NPC_T11_009b")
+	: Flag( "NPC_T11_009b", true )
+	: value = 2; Call("Scenarios/CommonSys*Murder")
+//１人
+: else
+	: RpgCharaOff( NpcCode )
+	: Flag( NpcCode, true )
+	: value = 1; Call("Scenarios/CommonSys*Murder")
+: endif
+: Return
+//========================================================
+//○生存フラグ
+//========================================================
+*NpcLive
+: mapId = RpgMapID()	// マップＩＤを取得する
+// 帝都
+: if ( mapId == 1 )
+	: if ( Flag ( "NPC_T01_001" ) == true ) RpgCharaOff("NPC_T01_001") endif
+	: if ( Flag ( "NPC_T01_002" ) == true ) RpgCharaOff("NPC_T01_002") endif
+	: if ( Flag ( "NPC_T01_003a" ) == true ) RpgCharaOff("NPC_T01_003a") endif
+	: if ( Flag ( "NPC_T01_003b" ) == true ) RpgCharaOff("NPC_T01_003b") endif
+	: if ( Flag ( "NPC_T01_004" ) == true ) RpgCharaOff("NPC_T01_004") endif
+	: if ( Flag ( "NPC_T01_005" ) == true ) RpgCharaOff("NPC_T01_005") endif
+	: if ( Flag ( "NPC_T01_063" ) == true ) RpgCharaOff("NPC_T01_063") endif
+	: if ( Flag ( "NPC_T01_061" ) == true ) RpgCharaOff("NPC_T01_061") endif
+	: if ( Flag ( "NPC_T01_039" ) == true ) RpgCharaOff("NPC_T01_039") endif
+	: if ( Flag ( "NPC_T01_040" ) == true ) RpgCharaOff("NPC_T01_040") endif
+	: if ( Flag ( "NPC_T01_079" ) == true ) RpgCharaOff("NPC_T01_079") endif
+	: if ( Flag ( "NPC_T01_094" ) == true ) RpgCharaOff("NPC_T01_094") endif
+	: if ( Flag ( "NPC_T01_098" ) == true ) RpgCharaOff("NPC_T01_098") endif
+	: if ( Flag ( "NPC_T01_099" ) == true ) RpgCharaOff("NPC_T01_099") endif
+	: if ( Flag ( "NPC_T01_006" ) == true ) RpgCharaOff("NPC_T01_006") endif
+	: if ( Flag ( "NPC_T01_007" ) == true ) RpgCharaOff("NPC_T01_007") endif
+	: if ( Flag ( "NPC_T01_008" ) == true ) RpgCharaOff("NPC_T01_008") endif
+	: if ( Flag ( "NPC_T01_009" ) == true ) RpgCharaOff("NPC_T01_009") endif
+	: if ( Flag ( "NPC_T01_010a" ) == true ) RpgCharaOff("NPC_T01_010a") endif
+	: if ( Flag ( "NPC_T01_010b" ) == true ) RpgCharaOff("NPC_T01_010b") endif
+	: if ( Flag ( "NPC_T01_011" ) == true ) RpgCharaOff("NPC_T01_011") endif
+	: if ( Flag ( "NPC_T01_012" ) == true ) RpgCharaOff("NPC_T01_012") endif
+	: if ( Flag ( "NPC_T01_080" ) == true ) RpgCharaOff("NPC_T01_080") endif
+: elif ( mapId == 2 )
+	: if ( Flag ( "NPC_T01_013_1" ) == true ) RpgCharaOff("NPC_T01_013_1") endif
+	: if ( Flag ( "NPC_T01_013_2" ) == true ) RpgCharaOff("NPC_T01_013_2") endif
+	: if ( Flag ( "NPC_T01_014" ) == true ) RpgCharaOff("NPC_T01_014") endif
+	: if ( Flag ( "NPC_T01_015" ) == true ) RpgCharaOff("NPC_T01_015") endif
+	: if ( Flag ( "NPC_T01_016" ) == true ) RpgCharaOff("NPC_T01_016") endif
+	: if ( Flag ( "NPC_T01_055" ) == true ) RpgCharaOff("NPC_T01_055") endif
+	: if ( Flag ( "NPC_T01_066" ) == true ) RpgCharaOff("NPC_T01_066") endif
+	: if ( Flag ( "NPC_T01_081" ) == true ) RpgCharaOff("NPC_T01_081") endif
+	: if ( Flag ( "NPC_T01_082" ) == true ) RpgCharaOff("NPC_T01_082") endif
+: elif ( mapId == 3 )
+	: if ( Flag ( "NPC_T01_018" ) == true ) RpgCharaOff("NPC_T01_018") endif
+	: if ( Flag ( "NPC_T01_019" ) == true ) RpgCharaOff("NPC_T01_019") endif
+	: if ( Flag ( "NPC_T01_020" ) == true ) RpgCharaOff("NPC_T01_020") endif
+: elif ( mapId == 4 )
+	: if ( Flag ( "NPC_T01_021" ) == true ) RpgCharaOff("NPC_T01_021") endif
+	: if ( Flag ( "NPC_T01_022" ) == true ) RpgCharaOff("NPC_T01_022") endif
+: elif ( mapId == 5 )
+	: if ( Flag ( "NPC_T01_023" ) == true ) RpgCharaOff("NPC_T01_023") endif
+	: if ( Flag ( "NPC_T01_024a" ) == true ) RpgCharaOff("NPC_T01_024a") endif
+	: if ( Flag ( "NPC_T01_024b" ) == true ) RpgCharaOff("NPC_T01_024b") endif
+	: if ( Flag ( "NPC_T01_025" ) == true ) RpgCharaOff("NPC_T01_025") endif
+	: if ( Flag ( "NPC_T01_026" ) == true ) RpgCharaOff("NPC_T01_026") endif
+	: if ( Flag ( "NPC_T01_027" ) == true ) RpgCharaOff("NPC_T01_027") endif
+	: if ( Flag ( "NPC_T01_062" ) == true ) RpgCharaOff("NPC_T01_062") endif
+	: if ( Flag ( "NPC_T01_028a" ) == true ) RpgCharaOff("NPC_T01_028a") endif
+	: if ( Flag ( "NPC_T01_028b" ) == true ) RpgCharaOff("NPC_T01_028b") endif
+	: if ( Flag ( "NPC_T01_067" ) == true ) RpgCharaOff("NPC_T01_067") endif
+	: if ( Flag ( "NPC_T01_068a" ) == true ) RpgCharaOff("NPC_T01_068a") endif
+	: if ( Flag ( "NPC_T01_068b" ) == true ) RpgCharaOff("NPC_T01_068b") endif
+	: if ( Flag ( "NPC_T01_083" ) == true ) RpgCharaOff("NPC_T01_083") endif
+	: if ( Flag ( "NPC_T01_084" ) == true ) RpgCharaOff("NPC_T01_084") endif
+	: if ( Flag ( "NPC_T01_095" ) == true ) RpgCharaOff("NPC_T01_095") endif
+	: if ( Flag ( "NPC_T01_101" ) == true ) RpgCharaOff("NPC_T01_101") endif
+: elif ( mapId == 6 )
+	: if ( Flag ( "NPC_T01_030" ) == true ) RpgCharaOff("NPC_T01_030") endif
+	: if ( Flag ( "NPC_T01_031" ) == true ) RpgCharaOff("NPC_T01_031") endif
+	: if ( Flag ( "NPC_T01_032" ) == true ) RpgCharaOff("NPC_T01_032") endif
+	: if ( Flag ( "NPC_T01_036" ) == true ) RpgCharaOff("NPC_T01_036") endif
+: elif ( mapId == 7 )
+	: if ( Flag ( "NPC_T01_035" ) == true ) RpgCharaOff("NPC_T01_035") endif
+	: if ( Flag ( "NPC_T01_037" ) == true ) RpgCharaOff("NPC_T01_037") endif
+	: if ( Flag ( "NPC_T01_069" ) == true ) RpgCharaOff("NPC_T01_069") endif
+	: if ( Flag ( "NPC_T01_070" ) == true ) RpgCharaOff("NPC_T01_070") endif
+	: if ( Flag ( "NPC_T01_071" ) == true ) RpgCharaOff("NPC_T01_071") endif
+	: if ( Flag ( "NPC_T01_072" ) == true ) RpgCharaOff("NPC_T01_072") endif
+	: if ( Flag ( "NPC_T01_085" ) == true ) RpgCharaOff("NPC_T01_085") endif
+	: if ( Flag ( "NPC_T01_086" ) == true ) RpgCharaOff("NPC_T01_086") endif
+	: if ( Flag ( "NPC_T01_087" ) == true ) RpgCharaOff("NPC_T01_087") endif
+	: if ( Flag ( "NPC_T01_088" ) == true ) RpgCharaOff("NPC_T01_088") endif
+	: if ( Flag ( "NPC_T01_102" ) == true ) RpgCharaOff("NPC_T01_102") endif
+	: if ( Flag ( "NPC_T01_103" ) == true ) RpgCharaOff("NPC_T01_103") endif
+	: if ( Flag ( "NPC_T01_105" ) == true ) RpgCharaOff("NPC_T01_105") endif
+: elif ( mapId == 8 )
+	: if ( Flag ( "NPC_T01_033" ) == true ) RpgCharaOff("NPC_T01_033") endif
+	: if ( Flag ( "NPC_T01_034" ) == true ) RpgCharaOff("NPC_T01_034") endif
+	: if ( Flag ( "NPC_T01_035" ) == true ) RpgCharaOff("NPC_T01_035") endif
+: elif ( mapId == 9 )
+	: if ( Flag ( "NPC_T01_041" ) == true ) RpgCharaOff("NPC_T01_041") endif
+	: if ( Flag ( "NPC_T01_042" ) == true ) RpgCharaOff("NPC_T01_042") endif
+: elif ( mapId == 10 )
+	: if ( Flag ( "NPC_T01_043" ) == true ) RpgCharaOff("NPC_T01_043") endif
+	: if ( Flag ( "NPC_T01_044" ) == true ) RpgCharaOff("NPC_T01_044") endif
+: elif ( mapId == 11 )
+	: if ( Flag ( "NPC_T01_045" ) == true ) RpgCharaOff("NPC_T01_045") endif
+	: if ( Flag ( "NPC_T01_046" ) == true ) RpgCharaOff("NPC_T01_046") endif
+: elif ( mapId == 12 )
+	: if ( Flag ( "NPC_T01_047" ) == true ) RpgCharaOff("NPC_T01_047") endif
+	: if ( Flag ( "NPC_T01_048" ) == true ) RpgCharaOff("NPC_T01_048") endif
+: elif ( mapId == 13 )
+	: if ( Flag ( "NPC_T01_049" ) == true ) RpgCharaOff("NPC_T01_049") endif
+	: if ( Flag ( "NPC_T01_050" ) == true ) RpgCharaOff("NPC_T01_050") endif
+: elif ( mapId == 14 )
+	: if ( Flag ( "NPC_T01_051" ) == true ) RpgCharaOff("NPC_T01_051") endif
+	: if ( Flag ( "NPC_T01_052" ) == true ) RpgCharaOff("NPC_T01_052") endif
+	: if ( Flag ( "NPC_T01_053" ) == true ) RpgCharaOff("NPC_T01_053") endif
+	: if ( Flag ( "NPC_T01_054" ) == true ) RpgCharaOff("NPC_T01_054") endif
+: elif ( mapId == 15 )
+	: if ( Flag ( "NPC_T01_056" ) == true ) RpgCharaOff("NPC_T01_056") endif
+	: if ( Flag ( "NPC_T01_057" ) == true ) RpgCharaOff("NPC_T01_057") endif
+	: if ( Flag ( "NPC_T01_064" ) == true ) RpgCharaOff("NPC_T01_064") endif
+	: if ( Flag ( "NPC_T01_058a" ) == true ) RpgCharaOff("NPC_T01_058a") endif
+	: if ( Flag ( "NPC_T01_058b" ) == true ) RpgCharaOff("NPC_T01_058b") endif
+	: if ( Flag ( "NPC_T01_065a" ) == true ) RpgCharaOff("NPC_T01_065a") endif
+	: if ( Flag ( "NPC_T01_065b" ) == true ) RpgCharaOff("NPC_T01_065b") endif
+	: if ( Flag ( "NPC_T01_073" ) == true ) RpgCharaOff("NPC_T01_073") endif
+	: if ( Flag ( "NPC_T01_074" ) == true ) RpgCharaOff("NPC_T01_074") endif
+	: if ( Flag ( "NPC_T01_075" ) == true ) RpgCharaOff("NPC_T01_075") endif
+	: if ( Flag ( "NPC_T01_076" ) == true ) RpgCharaOff("NPC_T01_076") endif
+	: if ( Flag ( "NPC_T01_089" ) == true ) RpgCharaOff("NPC_T01_089") endif
+	: if ( Flag ( "NPC_T01_090" ) == true ) RpgCharaOff("NPC_T01_090") endif
+	: if ( Flag ( "NPC_T01_091" ) == true ) RpgCharaOff("NPC_T01_091") endif
+	: if ( Flag ( "NPC_T01_092" ) == true ) RpgCharaOff("NPC_T01_092") endif
+	: if ( Flag ( "NPC_T01_093" ) == true ) RpgCharaOff("NPC_T01_093") endif
+	: if ( Flag ( "NPC_T01_096" ) == true ) RpgCharaOff("NPC_T01_096") endif
+	: if ( Flag ( "NPC_T01_106" ) == true ) RpgCharaOff("NPC_T01_106") endif
+	: if ( Flag ( "NPC_T01_107" ) == true ) RpgCharaOff("NPC_T01_107") endif
+	: if ( Flag ( "NPC_T01_108" ) == true ) RpgCharaOff("NPC_T01_108") endif
+	: if ( Flag ( "NPC_T01_109" ) == true ) RpgCharaOff("NPC_T01_109") endif
+: elif ( mapId == 16 )
+	: if ( Flag ( "NPC_T01_059" ) == true ) RpgCharaOff("NPC_T01_059") endif
+: elif ( mapId == 17 )
+	: if ( Flag ( "NPC_T01_060" ) == true ) RpgCharaOff("NPC_T01_060") endif
+: elif ( mapId == 18 )
+	: if ( Flag ( "NPC_T01_077" ) == true ) RpgCharaOff("NPC_T01_077") endif
+	: if ( Flag ( "NPC_T01_110" ) == true ) RpgCharaOff("NPC_T01_110") endif
+: elif ( mapId == 40 )
+	: if ( Flag ( "NPC_T05_001" ) == true ) RpgCharaOff("NPC_T05_001") endif
+	: if ( Flag ( "NPC_T05_002" ) == true ) RpgCharaOff("NPC_T05_002") endif
+	: if ( Flag ( "NPC_T05_003" ) == true ) RpgCharaOff("NPC_T05_003") endif
+	: if ( Flag ( "NPC_T05_004" ) == true ) RpgCharaOff("NPC_T05_004") endif
+	: if ( Flag ( "NPC_T05_005" ) == true ) RpgCharaOff("NPC_T05_005") endif
+	: if ( Flag ( "NPC_T05_006" ) == true ) RpgCharaOff("NPC_T05_006") endif
+	: if ( Flag ( "NPC_T05_007" ) == true ) RpgCharaOff("NPC_T05_007") endif
+	: if ( Flag ( "NPC_T05_028" ) == true ) RpgCharaOff("NPC_T05_028") endif
+	: if ( Flag ( "NPC_T05_029" ) == true ) RpgCharaOff("NPC_T05_029") endif
+	: if ( Flag ( "NPC_T05_030" ) == true ) RpgCharaOff("NPC_T05_030") endif
+	: if ( Flag ( "NPC_T05_031" ) == true ) RpgCharaOff("NPC_T05_031") endif
+	: if ( Flag ( "NPC_T05_032" ) == true ) RpgCharaOff("NPC_T05_032") endif
+	: if ( Flag ( "NPC_T05_043" ) == true ) RpgCharaOff("NPC_T05_043") endif
+	: if ( Flag ( "NPC_T05_044" ) == true ) RpgCharaOff("NPC_T05_044") endif
+	: if ( Flag ( "NPC_T05_045" ) == true ) RpgCharaOff("NPC_T05_045") endif
+	: if ( Flag ( "NPC_T05_046" ) == true ) RpgCharaOff("NPC_T05_046") endif
+	: if ( Flag ( "NPC_T05_047" ) == true ) RpgCharaOff("NPC_T05_047") endif
+	: if ( Flag ( "NPC_T05_055" ) == true ) RpgCharaOff("NPC_T05_055") endif
+	: if ( Flag ( "NPC_T05_056a" ) == true ) RpgCharaOff("NPC_T05_056a") endif
+	: if ( Flag ( "NPC_T05_056b" ) == true ) RpgCharaOff("NPC_T05_056b") endif
+	: if ( Flag ( "NPC_T05_057" ) == true ) RpgCharaOff("NPC_T05_057") endif
+	: if ( Flag ( "NPC_T05_058" ) == true ) RpgCharaOff("NPC_T05_058") endif
+	: if ( Flag ( "NPC_T05_059" ) == true ) RpgCharaOff("NPC_T05_059") endif
+	: if ( Flag ( "NPC_T05_060" ) == true ) RpgCharaOff("NPC_T05_060") endif
+: elif ( mapId == 43 )
+	: if ( Flag ( "NPC_T05_010" ) == true ) RpgCharaOff("NPC_T05_010") endif
+	: if ( Flag ( "NPC_T05_011a" ) == true ) RpgCharaOff("NPC_T05_011a") endif
+	: if ( Flag ( "NPC_T05_011b" ) == true ) RpgCharaOff("NPC_T05_011b") endif
+	: if ( Flag ( "NPC_T05_012" ) == true ) RpgCharaOff("NPC_T05_012") endif
+	: if ( Flag ( "NPC_T05_013" ) == true ) RpgCharaOff("NPC_T05_013") endif
+	: if ( Flag ( "NPC_T05_036" ) == true ) RpgCharaOff("NPC_T05_036") endif
+	: if ( Flag ( "NPC_T05_037" ) == true ) RpgCharaOff("NPC_T05_037") endif
+	: if ( Flag ( "NPC_T05_050" ) == true ) RpgCharaOff("NPC_T05_050") endif
+	: if ( Flag ( "NPC_T05_063" ) == true ) RpgCharaOff("NPC_T05_063") endif
+	: if ( Flag ( "NPC_T05_064" ) == true ) RpgCharaOff("NPC_T05_064") endif
+: elif ( mapId == 42 )
+	: if ( Flag ( "NPC_T05_008" ) == true ) RpgCharaOff("NPC_T05_008") endif
+	: if ( Flag ( "NPC_T05_009" ) == true ) RpgCharaOff("NPC_T05_009") endif
+	: if ( Flag ( "NPC_T05_034" ) == true ) RpgCharaOff("NPC_T05_034") endif
+	: if ( Flag ( "NPC_T05_035" ) == true ) RpgCharaOff("NPC_T05_035") endif
+	: if ( Flag ( "NPC_T05_048" ) == true ) RpgCharaOff("NPC_T05_048") endif
+	: if ( Flag ( "NPC_T05_049" ) == true ) RpgCharaOff("NPC_T05_049") endif
+	: if ( Flag ( "NPC_T05_061" ) == true ) RpgCharaOff("NPC_T05_061") endif
+	: if ( Flag ( "NPC_T05_062" ) == true ) RpgCharaOff("NPC_T05_062") endif
+: elif ( mapId == 45 )
+	: if ( Flag ( "NPC_T05_014" ) == true ) RpgCharaOff("NPC_T05_014") endif
+	: if ( Flag ( "NPC_T05_015" ) == true ) RpgCharaOff("NPC_T05_015") endif
+	: if ( Flag ( "NPC_T05_016" ) == true ) RpgCharaOff("NPC_T05_016") endif
+	: if ( Flag ( "NPC_T05_021" ) == true ) RpgCharaOff("NPC_T05_021") endif
+	: if ( Flag ( "NPC_T05_022" ) == true ) RpgCharaOff("NPC_T05_022") endif
+: elif ( mapId == 46 )
+	: if ( Flag ( "NPC_T05_017" ) == true ) RpgCharaOff("NPC_T05_017") endif
+	: if ( Flag ( "NPC_T05_018" ) == true ) RpgCharaOff("NPC_T05_018") endif
+	: if ( Flag ( "NPC_T05_019" ) == true ) RpgCharaOff("NPC_T05_019") endif
+	: if ( Flag ( "NPC_T05_020" ) == true ) RpgCharaOff("NPC_T05_020") endif
+: elif ( mapId == 47 )
+	: if ( Flag ( "NPC_T05_023" ) == true ) RpgCharaOff("NPC_T05_023") endif
+	: if ( Flag ( "NPC_T05_024" ) == true ) RpgCharaOff("NPC_T05_024") endif
+	: if ( Flag ( "NPC_T05_038" ) == true ) RpgCharaOff("NPC_T05_038") endif
+	: if ( Flag ( "NPC_T05_039" ) == true ) RpgCharaOff("NPC_T05_039") endif
+	: if ( Flag ( "NPC_T05_040" ) == true ) RpgCharaOff("NPC_T05_040") endif
+	: if ( Flag ( "NPC_T05_041" ) == true ) RpgCharaOff("NPC_T05_041") endif
+	: if ( Flag ( "NPC_T05_051" ) == true ) RpgCharaOff("NPC_T05_051") endif
+	: if ( Flag ( "NPC_T05_052" ) == true ) RpgCharaOff("NPC_T05_052") endif
+	: if ( Flag ( "NPC_T05_053" ) == true ) RpgCharaOff("NPC_T05_053") endif
+	: if ( Flag ( "NPC_T05_054" ) == true ) RpgCharaOff("NPC_T05_054") endif
+	: if ( Flag ( "NPC_T05_065" ) == true ) RpgCharaOff("NPC_T05_065") endif
+	: if ( Flag ( "NPC_T05_066" ) == true ) RpgCharaOff("NPC_T05_066") endif
+	: if ( Flag ( "NPC_T05_067" ) == true ) RpgCharaOff("NPC_T05_067") endif
+	: if ( Flag ( "NPC_T05_068" ) == true ) RpgCharaOff("NPC_T05_068") endif
+	: if ( Flag ( "NPC_T05_069" ) == true ) RpgCharaOff("NPC_T05_069") endif
+: elif ( mapId == 48 )
+	: if ( Flag ( "NPC_T05_025" ) == true ) RpgCharaOff("NPC_T05_025") endif
+: elif ( mapId == 49 )
+	: if ( Flag ( "NPC_T05_026" ) == true ) RpgCharaOff("NPC_T05_026") endif
+	: if ( Flag ( "NPC_T05_027" ) == true ) RpgCharaOff("NPC_T05_027") endif
+: elif ( mapId == 50 )
+	: if ( Flag ( "NPC_T05_042" ) == true ) RpgCharaOff("NPC_T05_042") endif
+: endif
+: Return
+//========================================================
+//○デリヘル報酬計算
+//========================================================
+*DeliMoney
+//ベース金額
+: DeliMoney = 500
+//生セックス
+: if ( DeliCondom == false ) DeliMoney += 500 endif
+//中出し補正
+: if ( Nakadashi == true ) DeliMoney += 500 endif
+//金持ち補正
+: if ( DeliAppeal == 4 ) DeliMoney *= 4 endif
+: Return( DeliMoney )
+//====================================================
+//○無黒　初期非処女処理
+//====================================================
+*Mukuro_LostVirginSetting
+\CI["処女"]
+\CI["ある程度、経験している"]
+\CI["Ｈ大好き！　ヤリまくり"]
+無黒の性経験状態はどうしますか？
+
+: if ($choice == 0)
+	: Return
+: elif ($choice == 1)
+	: CharaLostVirgin( "Mukuro", 70 )
+	: CharaSexHistory( "Mukuro", 71 )
+	: CharaAddHParam( "Mukuro", "WithHuman", 4)
+	: CharaAddHParam( "Mukuro", "WithElf", 1)
+	: CharaAddHParam( "Mukuro", "SexualJob", 5)
+	: CharaAddHParam( "Mukuro", "Harassment", 10)
+	: CharaAddHParam( "Mukuro", "Fellatio", 5)
+	: CharaAddHParam( "Mukuro", "EjaculateOral", 20)
+	: CharaAddHParam( "Mukuro", "BreastPetting", 15)
+	: CharaAddHParam( "Mukuro", "Sex", 5)
+	: CharaAddHParam( "Mukuro", "VaginaPetting", 5)
+	: CharaAddHParam( "Mukuro", "EjaculateVagina", 20)
+	: CharaAddHParam( "Mukuro", "AnalSex", 3)
+	: CharaAddHParam( "Mukuro", "HipPetting", 10)
+	: CharaAddHParam( "Mukuro", "EjaculateAnal", 20)
+	: CharaAddHParam( "Mukuro", "Bukkake", 30)
+	: CharaAddHParam( "Mukuro", "Orgasm", 10)
+: elif ($choice == 2)
+	: CharaLostVirgin( "Mukuro", 70 )
+	: CharaSexHistory( "Mukuro", 72 )
+	: CharaAddHParam( "Mukuro", "ByInvited", 50)
+	: CharaAddHParam( "Mukuro", "Voluntary", 25)
+	: CharaAddHParam( "Mukuro", "Prostitution", 30)
+	: CharaAddHParam( "Mukuro", "SexualJob", 15)
+	: CharaAddHParam( "Mukuro", "Harassment", 50)
+	: CharaAddHParam( "Mukuro", "Sex", 150)
+	: CharaAddHParam( "Mukuro", "AnalSex", 100)
+	: CharaAddHParam( "Mukuro", "Orgy", 30)
+	: CharaAddHParam( "Mukuro", "Fellatio", 120)
+	: CharaAddHParam( "Mukuro", "Kiss", 100)
+	: CharaAddHParam( "Mukuro", "BreastJob", 80)
+	: CharaAddHParam( "Mukuro", "BreastPetting", 100)
+	: CharaAddHParam( "Mukuro", "VaginaPetting", 100)
+	: CharaAddHParam( "Mukuro", "HipPetting", 100)
+	: CharaAddHParam( "Mukuro", "Cunnilingus", 50)
+	: CharaAddHParam( "Mukuro", "Onanism", 30)
+	: CharaAddHParam( "Mukuro", "VirginBody", 20)
+	: CharaAddHParam( "Mukuro", "HandFootJob", 10)
+	: CharaAddHParam( "Mukuro", "Exhibitionist", 5)
+	: CharaAddHParam( "Mukuro", "Orgasm", 300)
+	: CharaAddHParam( "Mukuro", "Squirting", 100)
+	: CharaAddHParam( "Mukuro", "EjaculateVagina", 2000)
+	: CharaAddHParam( "Mukuro", "EjaculateAnal", 1000)
+	: CharaAddHParam( "Mukuro", "EjaculateOral", 1000)
+	: CharaAddHParam( "Mukuro", "Bukkake", 1500)
+	: CharaAddHParam( "Mukuro", "ProstitutionIncome", 25000)
+: endif
+: Flag( "NonVirgin_Mukuro", true )
+: CharaSetHRank( "Mukuro", "Immoral", "C" )
+: CharaSetHRank( "Mukuro", "OralSex", "C" )
+: CharaSetHRank( "Mukuro", "Breast", "C" )
+: CharaSetHRank( "Mukuro", "Vagina", "C" )
+: CharaSetHRank( "Mukuro", "Anal", "C" )
+: CharaSetHRank( "Mukuro", "Exhibitionist", "C" )
+: Return
+
+//========================================================
+//○冥　初期非処女処理
+//========================================================
+*Mei_LostVirginSetting
+\CI["隣村の男の子とこっそり……"]
+\CI["魔物に敗れて、その時に……"]
+\CI["処女は足枷になるからと貴族に……"]
+冥の初体験相手は？
+
+: if ($choice == 0)
+	: if ( $inExtra == false ) CharaLostVirgin( "Mei", 303 ) endif
+	: if ( $inExtra == false ) CharaSexHistory( "Mei",  303) endif
+	: CharaAddHParam( "Mei", "ByInvited", 5)
+: elif ($choice == 1)
+	: if ( $inExtra == false ) CharaLostVirgin( "Mei", 304 ) endif
+	: if ( $inExtra == false ) CharaSexHistory( "Mei", 304) endif
+	: CharaAddHParam( "Mei", "WithDemon", 1)
+	: CharaAddHParam( "Mei", "Rape", 1)
+	: CharaAddHParam( "Mei", "Interbreed", 1)
+: elif ($choice == 2)
+	: if ( $inExtra == false ) CharaLostVirgin( "Mei", 305 ) endif
+	: if ( $inExtra == false ) CharaSexHistory( "Mei",  305) endif
+	: CharaAddHParam( "Mei", "Sex", 10)
+	: CharaAddHParam( "Mei", "AnalSex", 1)
+	: CharaAddHParam( "Mei", "BreastJob", 1)
+	: CharaAddHParam( "Mei", "VaginaPetting", 5)
+	: CharaAddHParam( "Mei", "ByInvited", 5)
+: endif
+//パラメーター補足
+: Flag( "NonVirgin_Mei", true )
+: CharaAddHParam( "Mei", "WithHuman", 3)
+: CharaAddHParam( "Mei", "Sex", 5)
+: CharaAddHParam( "Mei", "Fellatio", 5)
+: CharaAddHParam( "Mei", "Kiss", 5)
+: CharaAddHParam( "Mei", "BreastPetting", 3)
+: CharaAddHParam( "Mei", "Orgasm", 10)
+: Return
+//========================================================
+//○遊郭仕事処理
+//========================================================
+*YukakuWorks
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: val = CharaHRank( "Mukuro", "Immoral" )
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: val = CharaHRank( "Momo", "Immoral" )
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: val = CharaHRank( "Kinako", "Immoral" )
+: endif
+: if ( val == 3 )
+	\CI["ストリップショー"]
+	\CI["エロコス喫茶手伝い"]
+	\CI["特別演舞"]
+	\CI["マル秘接待"]
+	何の仕事をしますか？
+: elif ( val == 2 )
+	\CI["ストリップショー"]
+	\CI["エロコス喫茶手伝い"]
+	\CI["特別演舞"]
+	何の仕事をしますか？
+: else
+	\CI["ストリップショー"]
+	\CI["エロコス喫茶手伝い"]
+	何の仕事をしますか？
+: endif
+: if ( $choice == 0 )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: Jump( "Scenarios/SC_S07_01" )
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: Jump( "Scenarios/SC_S07_02" )
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: Jump( "Scenarios/SC_S07_03" )
+	: endif
+: elif ( $choice == 1 )
+	: Call( "*PartyAlone" )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: LoadMap( "Map_Town18_01_EroCos", "", "Scenarios/SC_S06_01")
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: LoadMap( "Map_Town18_01_EroCos", "", "Scenarios/SC_S06_02")
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: LoadMap( "Map_Town18_01_EroCos", "", "Scenarios/SC_S06_03")
+	: endif
+: elif ( $choice == 2 )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: Jump( "Scenarios/SC_S09_01" )
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: Jump( "Scenarios/SC_S09_02" )
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: Jump( "Scenarios/SC_S09_03" )
+	: endif
+: elif ( $choice == 3 )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: Jump( "Scenarios/SC_S08_01" )
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: Jump( "Scenarios/SC_S08_02" )
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: Jump( "Scenarios/SC_S08_03" )
+	: endif
+: endif
+: Return
+//========================================================
+//○エロコス喫茶　報酬
+//========================================================
+*EroCosMoney
+: if ( CharaHParam( chara, "SexualJob" ) >= 50 )
+	: money = 8000
+: elif  ( CharaHParam( chara, "SexualJob" ) >= 20 )
+	: money = 5000
+: elif  ( CharaHParam( chara, "SexualJob" ) >= 10 )
+	: money = 3000
+: else
+	: money = 1000
+: endif
+: $money += money
+報酬として\V[money]両手に入れた。
+
+: Return
+//========================================================
+//○遊郭　報酬
+//========================================================
+*YukakuMoney
+: if ( CharaHParam( chara, "Yukaku" ) >= 20 )
+	: money = 10000
+: elif  ( CharaHParam( chara, "SexualJob" ) >= 10 )
+	: money = 5000
+: elif  ( CharaHParam( chara, "SexualJob" ) >= 5 )
+	: money = 3000
+: else
+	: money = 1000
+: endif
+: $money += money
+報酬として\V[money]両手に入れた。
+
+//Ｈパラメーター処理
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Yukaku", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "YukakuIncome", money) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJobIncome", money) endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Yukaku", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "YukakuIncome", money) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "SexualJobIncome", money) endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Yukaku", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "YukakuIncome", money) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "SexualJobIncome", money) endif
+: endif
+: Return
+//========================================================
+//○ＮＰＣアニメエロ（人間）
+//========================================================
+*NpcHanimeHumanSex01
+\CN["ゴロツキ"]
+「……へへへ」
+
+//黄菜子がダークエルフ時はイベント起こせない
+: if (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		\CN["ゴロツキ"]
+		「こいつは危険な感じがするなぁ……」
+
+		: FadeOut( 0.5 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeHumanSex01")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: endif
+
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+相手はものすごく興奮しているみたいだが……。
+
+: if ( $choice == 0 ) 
+	: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+		: CharaAddHParam( "Mukuro", "WithHuman", 1)
+		: CharaAddHParam( "Mukuro", "Rape", 1)
+		: CharaAddHParam( "Mukuro", "Sex", 1)
+		: CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15))
+		: if ( CharaCostume( "Mukuro" ) == 0 )
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_23_BC_Curry", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: elif ( CharaCostume( "Mukuro" ) == 1 )
+			: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+			: PlayAnim( "Animations/00_Mukuro_13_Back_2", false, 0, 0, 1, 1 )
+: Wait()
+		: else
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_19_DE_Piledriver", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: endif
+		//Ｈ履歴更新
+		: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10100 ) endif
+	: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+		: CharaAddHParam( "Momo", "Exhibitionist", 1)
+		: CharaAddHParam( "Momo", "WithHuman", 1)
+		: CharaAddHParam( "Momo", "Rape", 1)
+		: CharaAddHParam( "Momo", "Sex", 1)
+		: CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(10,15))
+		: HideWnd()
+		: PlayAnim( "Animations/01_Momo_33_Sexm", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+		: if ( $inExtra == false ) CharaSexHistory( "Momo", 10100 ) endif
+	: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+		: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+		: CharaAddHParam( "Kinako", "WithHuman", 1)
+		: CharaAddHParam( "Kinako", "Rape", 1)
+		: CharaAddHParam( "Kinako", "Sex", 1)
+		: CharaAddHParam( "Kinako", "EjaculateVagina", RandomRange(10,15))
+		: HideWnd()
+		: PlayAnim( "Animations/02_Kinako_43_Sex", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+		: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10100 ) endif
+	: endif
+//抵抗する場合
+: else
+	\CN["ゴロツキ"]
+	「……チッ！」
+
+: endif
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("NpcHanimeHumanSex01")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+//========================================================
+//○ＮＰＣアニメエロ（エルフ）
+//========================================================
+*NpcHanimeHumanSex02
+\CN["ゴロツキ"]
+「……へへへ」
+
+//黄菜子がダークエルフ時はイベント起こせない
+: if (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		\CN["ゴロツキ"]
+		「こいつは危険な感じがするなぁ……」
+
+		: FadeOut( 0.5 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeHumanSex02")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+相手はものすごく興奮しているみたいだが……。
+
+: if ( $choice == 0 ) 
+	: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+		: CharaAddHParam( "Mukuro", "WithElf", 1)
+		: CharaAddHParam( "Mukuro", "Rape", 1)
+		: CharaAddHParam( "Mukuro", "Sex", 1)
+		: CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15))
+		: if ( CharaCostume( "Mukuro" ) == 0 )
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_17_MissionaryPosition_2", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: elif ( CharaCostume( "Mukuro" ) == 1 )
+			: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_12_Back_1", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: else
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_20_DE_LowAngleBack", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: endif
+		: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10101 ) endif
+	: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+		: CharaAddHParam( "Momo", "Exhibitionist", 1)
+		: CharaAddHParam( "Momo", "WithElf", 1)
+		: CharaAddHParam( "Momo", "Rape", 1)
+		: CharaAddHParam( "Momo", "Sex", 1)
+		: CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(10,15))
+		: HideWnd()
+		: PlayAnim( "Animations/01_Momo_33_Sexm", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+		: if ( $inExtra == false ) CharaSexHistory( "Momo", 10101 ) endif
+	: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+		: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+		: CharaAddHParam( "Kinako", "WithElf", 1)
+		: CharaAddHParam( "Kinako", "Rape", 1)
+		: CharaAddHParam( "Kinako", "Sex", 1)
+		: CharaAddHParam( "Kinako", "EjaculateVagina", RandomRange(10,15))
+		: HideWnd()
+		: PlayAnim( "Animations/02_Kinako_43_Sex", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+		: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10101 ) endif
+	: endif
+//抵抗する場合
+: else
+	\CN["ゴロツキ"]
+	「……チッ！」
+
+: endif
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("NpcHanimeHumanSex02")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○ＮＰＣアニメエロ（獣人）
+//========================================================
+*NpcHanimeHumanSex03
+\CN["ゴロツキ"]
+「……へへへ」
+
+//黄菜子がダークエルフ時はイベント起こせない
+: if (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+	\CN["ゴロツキ"]
+	「こいつは危険な感じがするなぁ……」
+
+	: FadeOut( 0.5 )
+	: Wait()
+	: RpgCharaOff("NpcHanimeHumanSex03")
+	: FadeIn( 0.5 )
+	: Wait()
+	: Return
+	: endif
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+相手はものすごく興奮しているみたいだが……。
+
+: if ( $choice == 0 ) 
+	: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+		: CharaAddHParam( "Mukuro", "WithTherianthrope", 1)
+		: CharaAddHParam( "Mukuro", "Rape", 1)
+		: CharaAddHParam( "Mukuro", "Sex", 1)
+		: CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15))
+		: if ( CharaCostume( "Mukuro" ) == 0 )
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_23_BC_Curry", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: elif ( CharaCostume( "Mukuro" ) == 1 )
+			: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_11_WomanOnTop_2", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: else
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_19_DE_Piledriver", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: endif
+		: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10102 ) endif
+	: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+		: CharaAddHParam( "Momo", "Exhibitionist", 1)
+		: CharaAddHParam( "Momo", "WithTherianthrope", 1)
+		: CharaAddHParam( "Momo", "Rape", 1)
+		: CharaAddHParam( "Momo", "Sex", 1)
+		: CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(10,15))
+		: HideWnd()
+		: PlayAnim( "Animations/01_Momo_33_Sexm", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+		: if ( $inExtra == false ) CharaSexHistory( "Momo", 10102 ) endif
+	: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+		: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+		: CharaAddHParam( "Kinako", "WithTherianthrope", 1)
+		: CharaAddHParam( "Kinako", "Rape", 1)
+		: CharaAddHParam( "Kinako", "Sex", 1)
+		: CharaAddHParam( "Kinako", "EjaculateVagina", RandomRange(10,15))
+		: HideWnd()
+		: PlayAnim( "Animations/02_Kinako_43_Sex", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+		: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10102 ) endif
+	: endif
+//抵抗する場合
+: else
+	\CN["ゴロツキ"]
+	「……チッ！」
+
+: endif
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("NpcHanimeHumanSex03")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○ＮＰＣアニメフェラ
+//========================================================
+*NpcHanimeHumanFera
+\CN["ゴロツキ"]
+「……へへへ」
+
+//黄菜子がダークエルフ時はイベント起こせない
+: if (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+	\CN["ゴロツキ"]
+	「こいつは危険な感じがするなぁ……」
+
+	: FadeOut( 0.5 )
+	: Wait()
+	: RpgCharaOff("NpcHanimeHumanFera")
+	: FadeIn( 0.5 )
+	: Wait()
+	: Return
+	: endif
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+相手はものすごく興奮しているみたいだが……。
+
+: if ( $choice == 0 ) 
+	: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+		: if ( CharaCostume( "Mukuro" ) == 0 )
+			: CharaAddHParam( "Mukuro", "WithHuman", 1)
+			: CharaAddHParam( "Mukuro", "Rape", 1)
+			: CharaAddHParam( "Mukuro", "Fellatio", 1)
+			: CharaAddHParam( "Mukuro", "EjaculateOral", RandomRange(10,15))
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_05_Fellatio_2", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10103 ) endif
+		: elif ( CharaCostume( "Mukuro" ) == 1 )
+			: CharaAddHParam( "Mukuro", "WithHuman", 1)
+			: CharaAddHParam( "Mukuro", "Rape", 1)
+			: CharaAddHParam( "Mukuro", "Fellatio", 1)
+			: CharaAddHParam( "Mukuro", "EjaculateOral", RandomRange(10,15))
+			: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_04_Fellatio_1", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10103 ) endif
+		: else
+			: CharaAddHParam( "Mukuro", "WithHuman", 1)
+			: CharaAddHParam( "Mukuro", "BreastJob", 1)
+			: CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15))
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_22_DE_BreastJob", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10104 ) endif
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+		: CharaAddHParam( "Momo", "Exhibitionist", 1)
+		: CharaAddHParam( "Momo", "Fellatio", 1)
+		: CharaAddHParam( "Momo", "BreastJob", 1)
+		: CharaAddHParam( "Momo", "EjaculateOral", RandomRange(10,15))
+		: CharaAddHParam( "Momo", "Rape", 1)
+		: if ( $inExtra == false ) CharaSexHistory( "Momo", 10103 ) endif
+		: HideWnd()
+		: PlayAnim( "Animations/01_Momo_31_Fellatio", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+	: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+		: CharaAddHParam( "Kinako", "WithHuman", 1)
+		: CharaAddHParam( "Kinako", "Rape", 1)
+		: if ( CharaCostume( "Kinako" ) == 0 || CharaCostume( "Kinako" ) == 5 )
+			: CharaAddHParam( "Kinako", "Fellatio", 1)
+			: CharaAddHParam( "Kinako", "EjaculateOral", RandomRange(10,15))
+			: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10103 ) endif
+			: HideWnd()
+			: PlayAnim( "Animations/02_Kinako_41_Fellatio", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: elif ( CharaCostume( "Kinako" ) == 1 )
+			: CharaAddHParam( "Kinako", "AnalSex", 1)
+			: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10105 ) endif
+			: CharaAddHParam( "Kinako", "EjaculateAnal", RandomRange(10,15))
+			: HideWnd()
+			: PlayAnim( "Animations/02_Kinako_42_AnalSex", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: endif
+	: endif
+//抵抗する場合
+: else
+	\CN["ゴロツキ"]
+	「……チッ！」
+
+: endif
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("NpcHanimeHumanFera")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○ＮＰＣアニメ奉仕
+//========================================================
+*NpcHanimeHoushi
+//ダークエルフ時はイベント起こせない
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		\CN["男"]
+		「…………」
+
+		心ここにあらずって感じだ。
+		放っておこう。
+
+		: Return
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( CharaCostume( "Kinako" ) == 1 || CharaCostume( "Kinako" ) == 2 )
+		\CN["男"]
+		「…………」
+
+		心ここにあらずって感じだ。
+		放っておこう。
+
+		: Return
+	: endif
+: endif
+\CN["男"]
+「……頼む……ムラムラして、もう限界なんだ！」
+
+\CI["スッキリさせてあげる"]
+\CI["無視する"]
+
+: if ( $choice == 0 ) 
+	: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+		: if ( CharaCostume( "Mukuro" ) == 0 )
+			: HideWnd()
+			: CharaAddHParam( "Mukuro", "WithHuman", 1)
+			: CharaAddHParam( "Mukuro", "ByInvited", 1)
+			: CharaAddHParam( "Mukuro", "BreastJob", 1)
+			: CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15))
+			: PlayAnim( "Animations/00_Mukuro_10_BreastJob_Fellatio", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: elif ( CharaCostume( "Mukuro" ) == 1 )
+			: CharaAddHParam( "Mukuro", "WithHuman", 1)
+			: CharaAddHParam( "Mukuro", "ByInvited", 1)
+			: CharaAddHParam( "Mukuro", "HandFootJob", 1)
+			: CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15))
+			: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_07_HandJob", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: endif
+		: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10112 ) endif
+	: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+		: CharaAddHParam( "Momo", "Exhibitionist", 1)
+		: CharaAddHParam( "Momo", "Fellatio", 1)
+		: CharaAddHParam( "Momo", "BreastJob", 1)
+		: CharaAddHParam( "Momo", "EjaculateOral", RandomRange(10,15))
+		: CharaAddHParam( "Momo", "ByInvited", 1)
+		: HideWnd()
+		: PlayAnim( "Animations/01_Momo_31_Fellatio", false, 0, 0, 1, 1 )
+		: Wait()
+		: if ( $inExtra == false ) CharaSexHistory( "Momo", 10112 ) endif
+		: ShowWnd()
+	: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+		: CharaAddHParam( "Kinako", "WithHuman", 1)
+		: CharaAddHParam( "Kinako", "Rape", 1)
+		: CharaAddHParam( "Kinako", "Fellatio", 1)
+		: CharaAddHParam( "Kinako", "EjaculateOral", RandomRange(10,15))
+		: CharaAddHParam( "Kinako", "ByInvited", 1)
+		: HideWnd()
+		: PlayAnim( "Animations/02_Kinako_41_Fellatio", false, 0, 0, 1, 1 )
+		: Wait()
+		: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10112 ) endif
+		: ShowWnd()
+	: endif
+//抵抗する場合
+: else
+	\CN["男"]
+	「……そうか、残念だ」
+
+	: HideWnd()
+	: StopBgm( 1.0 )
+	: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: Call( "Scenarios/Common*LayerClean" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: Wait()
+	: ResetLayer(9)
+	: ShowWnd()
+	男はガッカリした様子で去って行った。
+
+: endif
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("NpcHanimeHoushi")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○ＮＰＣアニメアナル
+//========================================================
+*NpcHanimeHumanAnal
+\CN["ゴロツキ"]
+「……へへへ」
+
+//黄菜子がダークエルフ時はイベント起こせない
+: if (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+	\CN["ゴロツキ"]
+	「こいつは危険な感じがするなぁ……」
+
+	: FadeOut( 0.5 )
+	: Wait()
+	: RpgCharaOff("NpcHanimeHumanAnal")
+	: FadeIn( 0.5 )
+	: Wait()
+	: Return
+	: endif
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+相手はものすごく興奮しているみたいだが……。
+
+: if ( $choice == 0 ) 
+	: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+		: CharaAddHParam( "Mukuro", "WithHuman", 1)
+		: CharaAddHParam( "Mukuro", "Rape", 1)
+		: CharaAddHParam( "Mukuro", "AnalSex", 1)
+		: CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(10,15))
+		: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10105 ) endif
+		: if ( CharaCostume( "Mukuro" ) == 0 )
+			: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_16_WomanOnTop_3", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: elif ( CharaCostume( "Mukuro" ) == 1 )
+			: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_16_WomanOnTop_3", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: else
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_18_DE_AnalBack", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+		: CharaAddHParam( "Momo", "Exhibitionist", 1)
+		: CharaAddHParam( "Momo", "Rape", 1)
+		: CharaAddHParam( "Momo", "AnalSex", 1)
+		: CharaAddHParam( "Momo", "EjaculateAnal", RandomRange(10,15))
+		: if ( $inExtra == false ) CharaSexHistory( "Momo", 10105 ) endif
+		: HideWnd()
+		: PlayAnim( "Animations/01_Momo_32_AnalSex", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+	: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+		: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+		: CharaAddHParam( "Kinako", "Rape", 1)
+		: CharaAddHParam( "Kinako", "AnalSex", 1)
+		: CharaAddHParam( "Kinako", "EjaculateAnal", RandomRange(10,15))
+		: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10105 ) endif
+		: HideWnd()
+		: PlayAnim( "Animations/02_Kinako_42_AnalSex", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+	: endif
+//抵抗する場合
+: else
+	\CN["ゴロツキ"]
+	「……チッ！」
+
+: endif
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("NpcHanimeHumanAnal")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○ＮＰＣアニメ魔物
+//========================================================
+*NpcHanimeOni
+\CN["魔物"]
+「……ウオオンンッ！」
+
+//ダークエルフ時はイベント起こさない
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeOni")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeOni")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+魔物が発情している。
+
+: if ( $choice == 0 ) 
+	: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+		: CharaAddHParam( "Mukuro", "WithDemon", 1)
+		: CharaAddHParam( "Mukuro", "Rape", 1)
+		: CharaAddHParam( "Mukuro", "Sex", 1)
+		: CharaAddHParam( "Mukuro", "Interbreed", 1)
+		: if ( CharaCostume( "Mukuro" ) == 0 )
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_24_BC_Goblin", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10107 ) endif
+		: elif ( CharaCostume( "Mukuro" ) == 1 )
+			: CharaAddHParam( "Momo", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/00_Mukuro_25_Ork", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10106 ) endif
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+		: CharaAddHParam( "Momo", "WithDemon", 1)
+		: CharaAddHParam( "Momo", "Rape", 1)
+		: CharaAddHParam( "Momo", "Sex", 1)
+		: CharaAddHParam( "Momo", "Interbreed", 1)
+		: if ( CharaCostume( "Momo" ) == 0 )
+			: HideWnd()
+			: PlayAnim( "Animations/01_Momo_35_Goblin", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Momo", 10107 ) endif
+		: elif ( CharaCostume( "Momo" ) == 1 )
+			: CharaAddHParam( "Momo", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/01_Momo_34_Ork", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Momo", 10106 ) endif
+		: endif
+	: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+		: CharaAddHParam( "Kinako", "WithDemon", 1)
+		: CharaAddHParam( "Kinako", "Rape", 1)
+		: CharaAddHParam( "Kinako", "Sex", 1)
+		: CharaAddHParam( "Kinako", "Interbreed", 1)
+		: if ( CharaCostume( "Kinako" ) == 0 || CharaCostume( "Kinako" ) == 5 )
+			: HideWnd()
+			: PlayAnim( "Animations/02_Kinako_44_Ork", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10106 ) endif
+		: elif ( CharaCostume( "Kinako" ) == 1 )
+			: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+			: HideWnd()
+			: PlayAnim( "Animations/02_Kinako_45_Goblin", false, 0, 0, 1, 1 )
+			: Wait()
+			: ShowWnd()
+			: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10107 ) endif
+		: endif
+	: endif
+	: FadeOut( 0.0 )
+	: Wait()
+	: RpgCharaOff("NpcHanimeOni")
+	: FadeIn( 0.5 )
+	: Wait()
+//抵抗する場合
+: else
+	: if (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: PlaySe( "SE/Se_AnimeL_Fire01" )
+		: HideWnd()
+		: PlayAnim( "Animations/AnimeL_Fire01", false, 0, 0, 6, 6 )
+		: Wait()
+		: ShowWnd()
+	: else
+		: PlaySe( "SE/Se_AnimeL_Sword01" )
+		: HideWnd()
+		: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+		: Wait()
+		: ShowWnd()
+	: endif
+	: target = "NpcHanimeOni"
+	: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: endif
+: Return
+
+//========================================================
+//○ＮＰＣアニメ悪魔
+//========================================================
+*NpcHanimeDemon
+\CN["魔物"]
+「……ウオオンンッ！」
+
+//ダークエルフ時はイベント起こさない
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeDemon")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+//黄菜子操作時はイベントを起こさない
+: elif (WhoLeader( "Kinako" ) == true)
+	: PlaySe( "SE/Se_AnimeL_Sword01" )
+	: HideWnd()
+	: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+	: Wait()
+	: ShowWnd()
+	: target = "NpcHanimeDemon"
+	: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+	: Return
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+魔物が発情している。
+
+: if ( $choice == 0 ) 
+	: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+		: CharaAddHParam( "Mukuro", "WithDemon", 1)
+		: CharaAddHParam( "Mukuro", "Rape", 1)
+		: CharaAddHParam( "Mukuro", "Sex", 1)
+		: CharaAddHParam( "Mukuro", "Interbreed", 1)
+		: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+		: HideWnd()
+		: PlayAnim( "Animations/00_Mukuro_26_Minotaur_D", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+		: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10111 ) endif
+	: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+		: CharaAddHParam( "Momo", "WithDemon", 1)
+		: CharaAddHParam( "Momo", "Rape", 1)
+		: CharaAddHParam( "Momo", "Sex", 1)
+		: CharaAddHParam( "Momo", "Interbreed", 1)
+		: CharaAddHParam( "Momo", "Exhibitionist", 1)
+		: HideWnd()
+		: PlayAnim( "Animations/01_Momo_39_Daemon", false, 0, 0, 1, 1 )
+		: Wait()
+		: ShowWnd()
+		: if ( $inExtra == false ) CharaSexHistory( "Momo", 10111 ) endif
+	:endif
+	: FadeOut( 0.0 )
+	: Wait()
+	: RpgCharaOff("NpcHanimeDemon")
+	: FadeIn( 0.5 )
+	: Wait()
+//抵抗する場合
+: else
+	: if (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: PlaySe( "SE/Se_AnimeL_Fire01" )
+		: HideWnd()
+		: PlayAnim( "Animations/AnimeL_Fire01", false, 0, 0, 6, 6 )
+		: Wait()
+		: ShowWnd()
+	: else
+		: PlaySe( "SE/Se_AnimeL_Sword01" )
+		: HideWnd()
+		: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+		: Wait()
+		: ShowWnd()
+	: endif
+	: target = "NpcHanimeDemon"
+	: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: endif
+: Return
+
+//========================================================
+//○ＮＰＣアニメ犬
+//========================================================
+*NpcHanimeDog
+\CN["魔物"]
+「……ウオオンンッ！」
+
+//ダークエルフ時はイベント起こさない
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeDog")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeDog")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+魔物が発情している。
+
+: if ( $choice == 1 ) Jump( "*NpcHanimeDog_2" ) endif
+: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+	: CharaAddHParam( "Mukuro", "WithMagicBeast", 1)
+	: CharaAddHParam( "Mukuro", "Rape", 1)
+	: CharaAddHParam( "Mukuro", "Sex", 1)
+	: CharaAddHParam( "Mukuro", "Interbreed", 1)
+	: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/00_Mukuro_29_Dog", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10108 ) endif
+: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+	: CharaAddHParam( "Momo", "WithMagicBeast", 1)
+	: CharaAddHParam( "Momo", "Rape", 1)
+	: CharaAddHParam( "Momo", "Sex", 1)
+	: CharaAddHParam( "Momo", "Interbreed", 1)
+	: CharaAddHParam( "Momo", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/01_Momo_38_Dog", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10108 ) endif
+: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+	: CharaAddHParam( "Kinako", "WithMagicBeast", 1)
+	: CharaAddHParam( "Kinako", "Rape", 1)
+	: CharaAddHParam( "Kinako", "Sex", 1)
+	: CharaAddHParam( "Kinako", "Interbreed", 1)
+	: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/02_Kinako_48_Dog", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10108 ) endif
+: endif
+: FadeOut( 0.0 )
+: Wait()
+: RpgCharaOff("NpcHanimeDog")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//抵抗する場合
+*NpcHanimeDog_2
+: if (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: PlaySe( "SE/Se_AnimeL_Fire01" )
+	: HideWnd()
+	: PlayAnim( "Animations/AnimeL_Fire01", false, 0, 0, 6, 6 )
+	: Wait()
+	: ShowWnd()
+: else
+	: PlaySe( "SE/Se_AnimeL_Sword01" )
+	: HideWnd()
+	: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+	: Wait()
+	: ShowWnd()
+: endif
+: target = "NpcHanimeDog"
+: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: Return
+
+//========================================================
+//○ＮＰＣアニメ馬
+//========================================================
+*NpcHanimeHorse
+\CN["魔物"]
+「……ヒヒーン！」
+
+//ダークエルフ時はイベント起こさない
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeHorse")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimeHorse")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+魔物が発情している。
+
+: if ( $choice == 1 ) Jump( "*NpcHanimeHorse_2" ) endif
+: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+	: CharaAddHParam( "Mukuro", "WithMagicBeast", 1)
+	: CharaAddHParam( "Mukuro", "Rape", 1)
+	: CharaAddHParam( "Mukuro", "Sex", 1)
+	: CharaAddHParam( "Mukuro", "Interbreed", 1)
+	: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/00_Mukuro_27_Horse", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10110 ) endif
+: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+	: CharaAddHParam( "Momo", "WithMagicBeast", 1)
+	: CharaAddHParam( "Momo", "Rape", 1)
+	: CharaAddHParam( "Momo", "Sex", 1)
+	: CharaAddHParam( "Momo", "Interbreed", 1)
+	: CharaAddHParam( "Momo", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/01_Momo_36_Horse", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Momo", 10110 ) endif
+: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+	: CharaAddHParam( "Kinako", "WithMagicBeast", 1)
+	: CharaAddHParam( "Kinako", "Rape", 1)
+	: CharaAddHParam( "Kinako", "Sex", 1)
+	: CharaAddHParam( "Kinako", "Interbreed", 1)
+	: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/02_Kinako_46_Horse", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10110 ) endif
+: endif
+: FadeOut( 0.0 )
+: Wait()
+: RpgCharaOff("NpcHanimeHorse")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//抵抗する場合
+*NpcHanimeHorse_2
+: if (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: PlaySe( "SE/Se_AnimeL_Fire01" )
+	: HideWnd()
+	: PlayAnim( "Animations/AnimeL_Fire01", false, 0, 0, 6, 6 )
+	: Wait()
+	: ShowWnd()
+: else
+	: PlaySe( "SE/Se_AnimeL_Sword01" )
+	: HideWnd()
+	: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+	: Wait()
+	: ShowWnd()
+: endif
+: target = "NpcHanimeHorse"
+: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: Return
+
+//========================================================
+//○ＮＰＣアニメ豚
+//========================================================
+*NpcHanimePig
+\CN["魔物"]
+「……ブヒー！」
+
+//ダークエルフ時はイベント起こさない
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimePig")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: elif (WhoLeader( "Momo" ) == true)
+	: if ( CharaCostume( "Momo" ) == 1 )
+		: Jump( "*NpcHanimepig_2" )
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 1 )
+		: Jump( "*NpcHanimepig_2" )
+	: endif
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*FgFadeTime") )
+		: Wait()
+		魔物は怯えた声を出して
+		一目散に逃げ出して行った
+
+		: FadeOut( 0.0 )
+		: Wait()
+		: RpgCharaOff("NpcHanimePig")
+		: FadeIn( 0.5 )
+		: Wait()
+		: Return
+	: endif
+: endif
+\CI["好きにさせてあげる"]
+\CI["抵抗する"]
+魔物が発情している。
+
+: if ( $choice == 1 ) Jump( "*NpcHanimepig_2" ) endif
+: if (WhoLeader( "Mukuro" ) == true)	// プレイヤーが無黒の時
+	: CharaAddHParam( "Mukuro", "WithMagicBeast", 1)
+	: CharaAddHParam( "Mukuro", "Rape", 1)
+	: CharaAddHParam( "Mukuro", "Sex", 1)
+	: CharaAddHParam( "Mukuro", "Interbreed", 1)
+	: CharaAddHParam( "Mukuro", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/00_Mukuro_28_Pig", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10110 ) endif
+: elif (WhoLeader( "Momo" ) == true)	// プレイヤーが桃の時
+	: CharaAddHParam( "Momo", "WithMagicBeast", 1)
+	: CharaAddHParam( "Momo", "Rape", 1)
+	: CharaAddHParam( "Momo", "Sex", 1)
+	: CharaAddHParam( "Momo", "Interbreed", 1)
+	: CharaAddHParam( "Momo", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/01_Momo_37_Pig", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 10110 ) endif
+: elif (WhoLeader( "Kinako" ) == true)	// プレイヤーが黄菜子の時
+	: CharaAddHParam( "Kinako", "WithMagicBeast", 1)
+	: CharaAddHParam( "Kinako", "Rape", 1)
+	: CharaAddHParam( "Kinako", "Sex", 1)
+	: CharaAddHParam( "Kinako", "Interbreed", 1)
+	: CharaAddHParam( "Kinako", "Exhibitionist", 1)
+	: HideWnd()
+	: PlayAnim( "Animations/02_Kinako_47_Pig", false, 0, 0, 1, 1 )
+	: Wait()
+	: ShowWnd()
+	: if ( $inExtra == false ) CharaSexHistory( "Kinako", 10110 ) endif
+: endif
+: FadeOut( 0.0 )
+: Wait()
+: RpgCharaOff("NpcHanimePig")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//抵抗する場合
+*NpcHanimepig_2
+: if (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: PlaySe( "SE/Se_AnimeL_Fire01" )
+	: HideWnd()
+	: PlayAnim( "Animations/AnimeL_Fire01", false, 0, 0, 6, 6 )
+	: Wait()
+	: ShowWnd()
+: else
+	: PlaySe( "SE/Se_AnimeL_Sword01" )
+	: HideWnd()
+	: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+	: Wait()
+	: ShowWnd()
+: endif
+: target = "NpcHanimePig"
+: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: Return
+
+//========================================================
+//○Ｈ分岐・淫乱度
+//========================================================
+*CharaHRank_Mukuro_Immoral
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mukuro", "Immoral" ) )
+: else
+	: Return( Mukuro_Immoral )
+: endif
+//========================================================
+//○Ｈ分岐・口淫
+//========================================================
+*CharaHRank_Mukuro_OralSex
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mukuro", "OralSex" ) )
+: else
+	: Return( Mukuro_OralSex )
+: endif
+//========================================================
+//○Ｈ分岐・乳開発度
+//========================================================
+*CharaHRank_Mukuro_Breast
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mukuro", "Breast" ) )
+: else
+	: Return( Mukuro_Breast )
+: endif
+//========================================================
+//○Ｈ分岐・オマンコ
+//========================================================
+*CharaHRank_Mukuro_Vagina
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mukuro", "Vagina" ) )
+: else
+	: Return( Mukuro_Anal )
+: endif
+//========================================================
+//○Ｈ分岐・アナル
+//========================================================
+*CharaHRank_Mukuro_Anal
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mukuro", "Anal" ) )
+: else
+	: Return( Mukuro_Anal )
+: endif
+//========================================================
+//○Ｈ分岐・露出
+//========================================================
+*CharaHRank_Mukuro_Exhibitionist
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mukuro", "Exhibitionist" ) )
+: else
+	: Return( Mukuro_Exhibitionist )
+: endif
+//========================================================
+//○Ｈ分岐・危険日
+//========================================================
+*CharaIsMenstrual_Mukuro_UnsafeDay
+: if ( $inExtra == false )
+	: Return( CharaIsMenstrual( "Mukuro", "UnsafeDay" ) )
+: else
+	: Return( Mukuro_UnsafeDay )
+: endif
+//========================================================
+//○Ｈ分岐・避妊中
+//========================================================
+*CharaIsMenstrual_Mukuro_TakenPill
+: if ( $inExtra == false )
+	: Return( CharaIsMenstrual( "Mukuro", "TakenPill" ) )
+: else
+	: Return( Mukuro_TakenPill )
+: endif
+//========================================================
+//○Ｈ分岐・淫乱度
+//========================================================
+*CharaHRank_Momo_Immoral
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Momo", "Immoral" ) )
+: else
+	: Return( Momo_Immoral )
+: endif
+//========================================================
+//○Ｈ分岐・口淫
+//========================================================
+*CharaHRank_Momo_OralSex
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Momo", "OralSex" ) )
+: else
+	: Return( Momo_OralSex )
+: endif
+//========================================================
+//○Ｈ分岐・乳開発度
+//========================================================
+*CharaHRank_Momo_Breast
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Momo", "Breast" ) )
+: else
+	: Return( Momo_Breast )
+: endif
+//========================================================
+//○Ｈ分岐・オマンコ
+//========================================================
+*CharaHRank_Momo_Vagina
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Momo", "Vagina" ) )
+: else
+	: Return( Mukuro_Anal )
+: endif
+//========================================================
+//○Ｈ分岐・アナル
+//========================================================
+*CharaHRank_Momo_Anal
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Momo", "Anal" ) )
+: else
+	: Return( Momo_Anal )
+: endif
+//========================================================
+//○Ｈ分岐・露出
+//========================================================
+*CharaHRank_Momo_Exhibitionist
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Momo", "Exhibitionist" ) )
+: else
+	: Return( Momo_Exhibitionist )
+: endif
+//========================================================
+//○Ｈ分岐・危険日
+//========================================================
+*CharaIsMenstrual_Momo_UnsafeDay
+: if ( $inExtra == false )
+	: Return( CharaIsMenstrual( "Momo", "UnsafeDay" ) )
+: else
+	: Return( Momo_UnsafeDay )
+: endif
+//========================================================
+//○Ｈ分岐・避妊中
+//========================================================
+*CharaIsMenstrual_Momo_TakenPill
+: if ( $inExtra == false )
+	: Return( CharaIsMenstrual( "Momo", "TakenPill" ) )
+: else
+	: Return( Momo_TakenPill )
+: endif
+//========================================================
+//○Ｈ分岐・淫乱度
+//========================================================
+*CharaHRank_Kinako_Immoral
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Kinako", "Immoral" ) )
+: else
+	: Return( Kinako_Immoral )
+: endif
+//========================================================
+//○Ｈ分岐・口淫
+//========================================================
+*CharaHRank_Kinako_OralSex
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Kinako", "OralSex" ) )
+: else
+	: Return( Kinako_OralSex )
+: endif
+//========================================================
+//○Ｈ分岐・乳開発度
+//========================================================
+*CharaHRank_Kinako_Breast
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Kinako", "Breast" ) )
+: else
+	: Return( Kinako_Breast )
+: endif
+//========================================================
+//○Ｈ分岐・オマンコ
+//========================================================
+*CharaHRank_Kinako_Vagina
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Kinako", "Vagina" ) )
+: else
+	: Return( Kinako_Vagina )
+: endif
+//========================================================
+//○Ｈ分岐・アナル
+//========================================================
+*CharaHRank_Kinako_Anal
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Kinako", "Anal" ) )
+: else
+	: Return( Kinako_Anal )
+: endif
+//========================================================
+//○Ｈ分岐・露出
+//========================================================
+*CharaHRank_Kinako_Exhibitionist
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Kinako", "Exhibitionist" ) )
+: else
+	: Return( Kinako_Exhibitionist )
+: endif
+//========================================================
+//○Ｈ分岐・危険日
+//========================================================
+*CharaIsMenstrual_Kinako_UnsafeDay
+: if ( $inExtra == false )
+	: Return( CharaIsMenstrual( "Kinako", "UnsafeDay" ) )
+: else
+	: Return( Kinako_UnsafeDay )
+: endif
+//========================================================
+//○Ｈ分岐・避妊中
+//========================================================
+*CharaIsMenstrual_Kinako_TakenPill
+: if ( $inExtra == false )
+	: Return( CharaIsMenstrual( "Kinako", "TakenPill" ) )
+: else
+	: Return( Kinako_TakenPill )
+: endif
+//========================================================
+//○Ｈ分岐・淫乱度
+//========================================================
+*CharaHRank_Mei_Immoral
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mei", "Immoral" ) )
+: else
+	: Return( Mei_Immoral )
+: endif
+//========================================================
+//○Ｈ分岐・口淫
+//========================================================
+*CharaHRank_Mei_OralSex
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mei", "OralSex" ) )
+: else
+	: Return( Mei_OralSex )
+: endif
+//========================================================
+//○Ｈ分岐・乳開発度
+//========================================================
+*CharaHRank_Mei_Breast
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mei", "Breast" ) )
+: else
+	: Return( Mei_Breast )
+: endif
+//========================================================
+//○Ｈ分岐・オマンコ
+//========================================================
+*CharaHRank_Mei_Vagina
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mei", "Vagina" ) )
+: else
+	: Return( Mukuro_Anal )
+: endif
+//========================================================
+//○Ｈ分岐・アナル
+//========================================================
+*CharaHRank_Mei_Anal
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mei", "Anal" ) )
+: else
+	: Return( Mei_Anal )
+: endif
+//========================================================
+//○Ｈ分岐・露出
+//========================================================
+*CharaHRank_Mei_Exhibitionist
+: if ( $inExtra == false )
+	: Return( CharaHRank( "Mei", "Exhibitionist" ) )
+: else
+	: Return( Mei_Exhibitionist )
+: endif
+//========================================================
+//○Ｈ分岐・危険日
+//========================================================
+*CharaIsMenstrual_Mei_UnsafeDay
+: if ( $inExtra == false )
+	: Return( CharaIsMenstrual( "Mei", "UnsafeDay" ) )
+: else
+	: Return( Mei_UnsafeDay )
+: endif
+//========================================================
+//○Ｈ分岐・避妊中
+//========================================================
+*CharaIsMenstrual_Mei_TakenPill
+: if ( $inExtra == false )
+	: Return( CharaIsMenstrual( "Mei", "TakenPill" ) )
+: else
+	: Return( Mei_TakenPill )
+: endif
+
+//========================================================
+//○エクストラモード
+//========================================================
+*Extra_Immortal
+: if ( $inExtra == false ) Return endif
+\CI["淫乱度Ｄ"]
+\CI["淫乱度Ｃ"]
+\CI["淫乱度Ｂ"]
+\CI["淫乱度Ａ"]
+淫乱度は？
+
+: if ( $choice == 0 )
+	: val = 0
+: elif ( $choice == 1 )
+	: val = 1
+: elif ( $choice == 2 )
+	: val = 2
+: elif ( $choice == 3 )
+	: val = 3
+: endif
+: Mukuro_Immoral = val
+: Momo_Immoral = val
+: Kinako_Immoral = val
+: Mei_Immoral = val
+: Return
+
+*Extra_Immortal2
+: if ( $inExtra == false ) Return endif
+\CI["淫乱度Ｂ以上"]
+\CI["淫乱度Ｃ以下"]
+淫乱度は？
+
+: if ( $choice == 0 )
+	: val = 2
+: elif ( $choice == 1 )
+	: val = 1
+: endif
+: Mukuro_Immoral = val
+: Momo_Immoral = val
+: Kinako_Immoral = val
+: Mei_Immoral = val
+: Return
+
+*Extra_OralSex
+: if ( $inExtra == false ) Return endif
+\CI["口淫習熟度Ｄ"]
+\CI["口淫習熟度Ｃ"]
+\CI["口淫習熟度Ｂ"]
+\CI["口淫習熟度Ａ"]
+口淫習熟度は？
+
+: if ( $choice == 0 )
+	: val = 0
+: elif ( $choice == 1 )
+	: val = 1
+: elif ( $choice == 2 )
+	: val = 2
+: elif ( $choice == 3 )
+	: val = 3
+: endif
+: Mukuro_OralSex = val
+: Momo_OralSex = val
+: Kinako_OralSex = val
+: Mei_OralSex = val
+: Return
+
+*Extra_OralSex2
+: if ( $inExtra == false ) Return endif
+\CI["口淫習熟度Ｂ以上"]
+\CI["口淫習熟度Ｃ以下"]
+口淫習熟度は？
+
+: if ( $choice == 0 )
+	: val = 2
+: elif ( $choice == 1 )
+	: val = 1
+: endif
+: Mukuro_OralSex = val
+: Momo_OralSex = val
+: Kinako_OralSex = val
+: Mei_OralSex = val
+: Return
+
+*Extra_Breast
+: if ( $inExtra == false ) Return endif
+\CI["乳房開発度Ｄ"]
+\CI["乳房開発度Ｃ"]
+\CI["乳房開発度Ｂ"]
+\CI["乳房開発度Ａ"]
+乳房開発度は？
+
+: if ( $choice == 0 )
+	: val = 0
+: elif ( $choice == 1 )
+	: val = 1
+: elif ( $choice == 2 )
+	: val = 2
+: elif ( $choice == 3 )
+	: val = 3
+: endif
+: Mukuro_Breast = val
+: Momo_Breast = val
+: Kinako_Breast = val
+: Mei_Breast = val
+: Return
+
+*Extra_Breast2
+: if ( $inExtra == false ) Return endif
+\CI["乳房開発度Ｂ以上"]
+\CI["乳房開発度Ｃ以下"]
+乳房開発度は？
+
+: if ( $choice == 0 )
+	: val = 2
+: elif ( $choice == 1 )
+	: val = 1
+: endif
+: Mukuro_Breast = val
+: Momo_Breast = val
+: Kinako_Breast = val
+: Mei_Breast = val
+: Return
+
+*Extra_Vagina
+: if ( $inExtra == false ) Return endif
+\CI["オマンコ開発度Ｄ"]
+\CI["オマンコ開発度Ｃ"]
+\CI["オマンコ開発度Ｂ"]
+\CI["オマンコ開発度Ａ"]
+オマンコ開発度は？
+
+: if ( $choice == 0 )
+	: val = 0
+: elif ( $choice == 1 )
+	: val = 1
+: elif ( $choice == 2 )
+	: val = 2
+: elif ( $choice == 3 )
+	: val = 3
+: endif
+: Mukuro_Vagina = val
+: Momo_Vagina = val
+: Kinako_Vagina = val
+: Mei_Vagina = val
+: Return
+
+*Extra_Vagina2
+: if ( $inExtra == false ) Return endif
+\CI["オマンコ開発度Ｂ以上"]
+\CI["オマンコ開発度Ｃ以下"]
+オマンコ開発度は？
+
+: if ( $choice == 0 )
+	: val = 2
+: elif ( $choice == 1 )
+	: val = 1
+: endif
+: Mukuro_Vagina = val
+: Momo_Vagina = val
+: Kinako_Vagina = val
+: Mei_Vagina = val
+: Return
+
+*Extra_Anal
+: if ( $inExtra == false ) Return endif
+\CI["アナル開発度Ｄ"]
+\CI["アナル開発度Ｃ"]
+\CI["アナル開発度Ｂ"]
+\CI["アナル開発度Ａ"]
+アナル開発度は？
+
+: if ( $choice == 0 )
+	: val = 0
+: elif ( $choice == 1 )
+	: val = 1
+: elif ( $choice == 2 )
+	: val = 2
+: elif ( $choice == 3 )
+	: val = 3
+: endif
+: Mukuro_Anal = val
+: Momo_Anal = val
+: Kinako_Anal = val
+: Mei_Anal = val
+: Return
+
+*Extra_Anal2
+: if ( $inExtra == false ) Return endif
+\CI["アナル開発度Ｂ以上"]
+\CI["アナル開発度Ｃ以下"]
+アナル開発度は？
+
+: if ( $choice == 0 )
+	: val = 2
+: elif ( $choice == 1 )
+	: val = 1
+: endif
+: Mukuro_Anal = val
+: Momo_Anal = val
+: Kinako_Anal = val
+: Mei_Anal = val
+: Return
+
+*Extra_Exhibitionist
+: if ( $inExtra == false ) Return endif
+\CI["露出開発度Ｄ"]
+\CI["露出開発度Ｃ"]
+\CI["露出開発度Ｂ"]
+\CI["露出開発度Ａ"]
+露出開発度は？
+
+: if ( $choice == 0 )
+	: val = 0
+: elif ( $choice == 1 )
+	: val = 1
+: elif ( $choice == 2 )
+	: val = 2
+: elif ( $choice == 3 )
+	: val = 3
+: endif
+: Mukuro_Exhibitionist = val
+: Momo_Exhibitionist = val
+: Kinako_Exhibitionist = val
+: Mei_Exhibitionist = val
+: Return
+
+*Extra_Exhibitionist2
+: if ( $inExtra == false ) Return endif
+\CI["露出開発度Ｂ以上"]
+\CI["露出開発度Ｃ以下"]
+露出開発度は？
+
+: if ( $choice == 0 )
+	: val = 2
+: elif ( $choice == 1 )
+	: val = 1
+: endif
+: Mukuro_Exhibitionist = val
+: Momo_Exhibitionist = val
+: Kinako_Exhibitionist = val
+: Mei_Exhibitionist = val
+: Return
+
+*Extra_Menstrual
+: if ( $inExtra == false ) Return endif
+\CI["避妊中"]
+\CI["危険日"]
+\CI["どちらでもない"]
+性周期は？
+
+: if ( $choice == 0 )
+	: Mukuro_UnsafeDay = false
+	: Mukuro_TakenPill = true
+	: Momo_UnsafeDay = false
+	: Momo_TakenPill = true
+	: Kinako_UnsafeDay = false
+	: Kinako_TakenPill = true
+	: Mei_UnsafeDay = false
+	: Mei_TakenPill = true
+: elif ( $choice == 1 )
+	: Mukuro_UnsafeDay = true
+	: Mukuro_TakenPill = false
+	: Momo_UnsafeDay = true
+	: Momo_TakenPill = false
+	: Kinako_UnsafeDay = true
+	: Kinako_TakenPill = false
+	: Mei_UnsafeDay = true
+	: Mei_TakenPill = false
+: elif ( $choice == 2 )
+	: Mukuro_UnsafeDay = false
+	: Mukuro_TakenPill = false
+	: Momo_UnsafeDay = false
+	: Momo_TakenPill = false
+	: Kinako_UnsafeDay = false
+	: Kinako_TakenPill = false
+	: Mei_UnsafeDay = false
+	: Mei_TakenPill = false
+: endif
+: Return
+
+*Extra_Virgin
+: if ( $inExtra == false ) Return endif
+\CI["処女"]
+\CI["非処女"]
+性経験は？
+: if ( $choice == 0 )
+	: RefNonVirginMukuro = false
+	: RefNonVirginMomo = false
+	: RefNonVirginKinako = false
+	: RefNonVirginMei = false
+: else
+	: RefNonVirginMukuro = true
+	: RefNonVirginMomo = true
+	: RefNonVirginKinako = true
+	: RefNonVirginMei = true
+: endif
+: Return
+
+//========================================================
+//○エクストラモードスタート
+//========================================================
+*Start_Refrain
+: StoreBgm()
+: if ( $inExtra == false ) Return endif
+: Return
+
+*SetParam
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Azami", 0 )
+: CharaCostume( "Ryu", 0 )
+: CharaCostume( "Bebi", 0 )
+: CharaCostume( "Daruma", 0 )
+: CharaCostume( "Mei", 0 )
+: CharaCostume( "Midori", 0 )
+: CharaCostume( "Mikage", 0 )
+: CharaCostume( "Shion", 0 )
+: CharaCostume( "Iwao", 0 )
+: CharaCostume( "Ranmaru", 0 )
+: CharaCostume( "Aguri", 0 )
+: CharaCostume( "Manji", 0 )
+: CharaCostume( "Xeno", 0 )
+: CharaCostume( "Elisa", 0 )
+: CharaCostume( "Falke", 0 )
+: CharaCostume( "Clacier", 0 )
+: CharaCostume( "Tamamo", 0 )
+: CharaCostume( "Sayo", 0 )
+: CharaCostume( "Fumimaro", 0 )
+: CharaCostume( "Kotaro", 0 )
+: CharaCostume( "Nina", 0 )
+: CharaCostume( "Ji", 0 )
+: CharaCostume( "Mimawari", 0 )
+: Mukuro_Immoral = 0
+: Momo_Immoral = 0
+: Kinako_Immoral = 0
+: Mei_Immoral = 0
+: Mukuro_OralSex = 0
+: Momo_OralSex = 0
+: Kinako_OralSex = 0
+: Mei_OralSex = 0
+: Mukuro_Breast = 0
+: Momo_Breast = 0
+: Kinako_Breast = 0
+: Mei_Breast = 0
+: Mukuro_Vagina = 0
+: Momo_Vagina = 0
+: Kinako_Vagina = 0
+: Mei_Vagina = 0
+: Mukuro_Anal = 0
+: Momo_Anal = 0
+: Kinako_Anal = 0
+: Mei_Anal = 0
+: Mukuro_Exhibitionist = 0
+: Momo_Exhibitionist = 0
+: Kinako_Exhibitionist = 0
+: Mei_Exhibitionist = 0
+: Mukuro_UnsafeDay = false
+: Mukuro_TakenPill = false
+: Momo_UnsafeDay = false
+: Momo_TakenPill = false
+: Kinako_UnsafeDay = false
+: Kinako_TakenPill = false
+: Mei_UnsafeDay = false
+: Mei_TakenPill = false
+: Return
+
+//========================================================
+//○エクストラモード終了
+//========================================================
+*End_Refrain
+: if ( $inExtra == false ) Return endif
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RestoreBgm()
+: Return
+
+//========================================================
+//○ＮＰＣエッチスタート
+//========================================================
+*Start_NpcH_Refrain
+: StoreBgm()
+: if ( $inExtra == false ) Return endif
+: RefNonVirginMukuro = true
+: RefNonVirginMomo = true
+: RefNonVirginKinako = true
+: RefNonVirginMei = true
+: Call( "*SetParam" )
+\CI["Ｈパラメーターの設定をする"]
+\CI["設定をしない"]
+パラメーターの設定はどうしますか？
+
+: if ( $choice == 1 ) Jump( "*Start_NpcH_Refrain_Set" ) endif
+: Call( "*Start_NpcH_Refrain_Reset" )	// フラグのリセット
+\CI["着衣"]
+\CI["全裸"]
+: if ( $choice == 0 )
+	: SharedFlag( "NpcH_CosNude", false )
+: else
+	: SharedFlag( "NpcH_CosNude", true )
+: endif
+
+\CI["淫乱度Ｄ"]
+\CI["淫乱度Ｃ"]
+\CI["淫乱度Ｂ"]
+\CI["淫乱度Ａ"]
+: if ( $choice == 1 )
+	: SharedFlag( "NpcH_ImmoralC", true )
+: elif ( $choice == 2 )
+	: SharedFlag( "NpcH_ImmoralB", true )
+: elif ( $choice == 3 )
+	: SharedFlag( "NpcH_ImmoralA", true )
+: endif
+
+\CI["口淫開発度Ｄ"]
+\CI["口淫開発度Ｃ"]
+\CI["口淫開発度Ｂ"]
+\CI["口淫開発度Ａ"]
+: if ( $choice == 1 )
+	: SharedFlag( "NpcH_OralSexC", true )
+: elif ( $choice == 2 )
+	: SharedFlag( "NpcH_OralSexB", true )
+: elif ( $choice == 3 )
+	: SharedFlag( "NpcH_OralSexA", true )
+: endif
+
+\CI["乳房開発度Ｄ"]
+\CI["乳房開発度Ｃ"]
+\CI["乳房開発度Ｂ"]
+\CI["乳房開発度Ａ"]
+: if ( $choice == 1 )
+	: SharedFlag( "NpcH_BreastC", true )
+: elif ( $choice == 2 )
+	: SharedFlag( "NpcH_BreastB", true )
+: elif ( $choice == 3 )
+	: SharedFlag( "NpcH_BreastA", true )
+: endif
+
+\CI["オマンコ開発度Ｄ"]
+\CI["オマンコ開発度Ｃ"]
+\CI["オマンコ開発度Ｂ"]
+\CI["オマンコ開発度Ａ"]
+: if ( $choice == 1 )
+	: SharedFlag( "NpcH_VaginaC", true )
+: elif ( $choice == 2 )
+	: SharedFlag( "NpcH_VaginaB", true )
+: elif ( $choice == 3 )
+	: SharedFlag( "NpcH_VaginaA", true )
+: endif
+
+\CI["尻開発度Ｄ"]
+\CI["尻開発度Ｃ"]
+\CI["尻開発度Ｂ"]
+\CI["尻開発度Ａ"]
+: if ( $choice == 1 )
+	: SharedFlag( "NpcH_AnalC", true )
+: elif ( $choice == 2 )
+	: SharedFlag( "NpcH_AnalB", true )
+: elif ( $choice == 3 )
+	: SharedFlag( "NpcH_AnalA", true )
+: endif
+
+\CI["露出開発度Ｄ"]
+\CI["露出開発度Ｃ"]
+\CI["露出開発度Ｂ"]
+\CI["露出開発度Ａ"]
+: if ( $choice == 1 )
+	: SharedFlag( "NpcH_ExhibitionistC", true )
+: elif ( $choice == 2 )
+	: SharedFlag( "NpcH_ExhibitionistB", true )
+: elif ( $choice == 3 )
+	: SharedFlag( "NpcH_ExhibitionistA", true )
+: endif
+
+\CI["危険日"]
+\CI["避妊中"]
+\CI["その他"]
+: if ( $choice == 0 )
+	: SharedFlag( "NpcH_UnsafeDay", true )
+: elif ( $choice == 1 )
+	: SharedFlag( "NpcH_TakenPill", true )
+: endif
+
+//--------------------------------------------------------
+//セッティング
+//--------------------------------------------------------
+*Start_NpcH_Refrain_Set
+//服装
+: if( SharedFlag( "NpcH_CosNude" ) == true )
+	: CharaCostume( "Mukuro", 1 )
+	: CharaCostume( "Momo", 1 )
+	: CharaCostume( "Kinako", 1 )
+	: CharaCostume( "Mei", 1 )
+: else
+	: CharaCostume( "Mukuro", 0 )
+	: CharaCostume( "Momo", 0 )
+	: CharaCostume( "Kinako", 0 )
+	: CharaCostume( "Mei", 0 )
+: endif
+//淫乱度
+: if( SharedFlag( "NpcH_ImmoralC" ) == true )
+	: val = 1
+: elif( SharedFlag( "NpcH_ImmoralB" ) == true )
+	: val = 2
+: elif( SharedFlag( "NpcH_ImmoralA" ) == true )
+	: val = 3
+: else
+	: val = 0
+: endif
+: Mukuro_Immoral = val
+: Momo_Immoral = val
+: Kinako_Immoral = val
+: Mei_Immoral = val
+
+//口淫習熟度
+: if( SharedFlag( "NpcH_OralSexC" ) == true )
+	: val = 1
+: elif( SharedFlag( "NpcH_OralSexB" ) == true )
+	: val = 2
+: elif( SharedFlag( "NpcH_OralSexA" ) == true )
+	: val = 3
+: else
+	: val = 0
+: endif
+: Mukuro_OralSex = val
+: Momo_OralSex = val
+: Kinako_OralSex = val
+: Mei_OralSex = val
+
+//乳房
+: if( SharedFlag( "NpcH_BreastC" ) == true )
+	: val = 1
+: elif( SharedFlag( "NpcH_BreastB" ) == true )
+	: val = 2
+: elif( SharedFlag( "NpcH_BreastA" ) == true )
+	: val = 3
+: else
+	: val = 0
+: endif
+: Mukuro_Breast = val
+: Momo_Breast = val
+: Kinako_Breast = val
+: Mei_Breast = val
+
+//オマンコ
+: if( SharedFlag( "NpcH_VaginaC" ) == true )
+	: val = 1
+: elif( SharedFlag( "NpcH_VaginaB" ) == true )
+	: val = 2
+: elif( SharedFlag( "NpcH_VaginaA" ) == true )
+	: val = 3
+: else
+	: val = 0
+: endif
+: Mukuro_Vagina = val
+: Momo_Vagina = val
+: Kinako_Vagina = val
+: Mei_Vagina = val
+
+//アナル
+: if( SharedFlag( "NpcH_AnalC" ) == true )
+	: val = 1
+: elif( SharedFlag( "NpcH_AnalB" ) == true )
+	: val = 2
+: elif( SharedFlag( "NpcH_AnalA" ) == true )
+	: val = 3
+: else
+	: val = 0
+: endif
+: Mukuro_Anal = val
+: Momo_Anal = val
+: Kinako_Anal = val
+: Mei_Anal = val
+
+//露出
+: if( SharedFlag( "NpcH_ExhibitionistC" ) == true )
+	: val = 1
+: elif( SharedFlag( "NpcH_ExhibitionistB" ) == true )
+	: val = 2
+: elif( SharedFlag( "NpcH_ExhibitionistA" ) == true )
+	: val = 3
+: else
+	: val = 0
+: endif
+: Mukuro_Exhibitionist = val
+: Momo_Exhibitionist = val
+: Kinako_Exhibitionist = val
+: Mei_Exhibitionist = val
+
+: if( SharedFlag( "NpcH_UnsafeDay" ) == true )
+	: Mukuro_UnsafeDay = true
+	: Mukuro_TakenPill = false
+	: Momo_UnsafeDay = true
+	: Momo_TakenPill = false
+	: Kinako_UnsafeDay = true
+	: Kinako_TakenPill = false
+	: Mei_UnsafeDay = true
+	: Mei_TakenPill = false
+: elif( SharedFlag( "NpcH_TakenPill" ) == true )
+	: Mukuro_UnsafeDay = false
+	: Mukuro_TakenPill = true
+	: Momo_UnsafeDay = false
+	: Momo_TakenPill = true
+	: Kinako_UnsafeDay = false
+	: Kinako_TakenPill = true
+	: Mei_UnsafeDay = false
+	: Mei_TakenPill = true
+: else
+	: Mukuro_UnsafeDay = false
+	: Mukuro_TakenPill = false
+	: Momo_UnsafeDay = false
+	: Momo_TakenPill = false
+	: Kinako_UnsafeDay = false
+	: Kinako_TakenPill = false
+	: Mei_UnsafeDay = false
+	: Mei_TakenPill = false
+: endif
+//淫語を設定する
+: Call( "*Word" )
+: PlayBgm("BGM/35_H_IMMORAL")
+: Return
+//--------------------------------------------------------
+//NPCHフラグのリセット
+//--------------------------------------------------------
+*Start_NpcH_Refrain_Reset
+: SharedFlag( "NpcH_ImmoralC", false )
+: SharedFlag( "NpcH_ImmoralB", false )
+: SharedFlag( "NpcH_ImmoralA", false )
+: SharedFlag( "NpcH_OralSexC", false )
+: SharedFlag( "NpcH_OralSexB", false )
+: SharedFlag( "NpcH_OralSexA", false )
+: SharedFlag( "NpcH_BreastC", false )
+: SharedFlag( "NpcH_BreastB", false )
+: SharedFlag( "NpcH_BreastA", false )
+: SharedFlag( "NpcH_VaginaC", false )
+: SharedFlag( "NpcH_VaginaB", false )
+: SharedFlag( "NpcH_VaginaA", false )
+: SharedFlag( "NpcH_AnalC", false )
+: SharedFlag( "NpcH_AnalB", false )
+: SharedFlag( "NpcH_AnalA", false )
+: SharedFlag( "NpcH_ExhibitionistC", false )
+: SharedFlag( "NpcH_ExhibitionistB", false )
+: SharedFlag( "NpcH_ExhibitionistA", false )
+: SharedFlag( "NpcH_UnsafeDay", false )
+: SharedFlag( "NpcH_TakenPill", false )
+: Return
+
+//========================================================
+//○ＮＰＣＨエッチ回想終了
+//========================================================
+*End_NpcH_Refrain
+: StopBackVoice()
+: if ( $inExtra == false ) Return endif
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RestoreBgm()
+: Return
+
+//========================================================
+//○Ｈアニメ解放
+//========================================================
+*HanimeRefAllOpen
+: AnimationFlagUp( "anim00" )
+: AnimationFlagUp( "anim01" )
+: AnimationFlagUp( "anim02" )
+: AnimationFlagUp( "anim03" )
+: AnimationFlagUp( "anim04" )
+: AnimationFlagUp( "anim05" )
+: AnimationFlagUp( "anim06" )
+: AnimationFlagUp( "anim07" )
+: AnimationFlagUp( "anim08" )
+: AnimationFlagUp( "anim09" )
+: AnimationFlagUp( "anim10" )
+: AnimationFlagUp( "anim11" )
+: AnimationFlagUp( "anim12" )
+: AnimationFlagUp( "anim13" )
+: AnimationFlagUp( "anim14" )
+: AnimationFlagUp( "anim15" )
+: AnimationFlagUp( "anim16" )
+: AnimationFlagUp( "anim17" )
+: AnimationFlagUp( "anim18" )
+: AnimationFlagUp( "anim19" )
+: AnimationFlagUp( "anim20" )
+: AnimationFlagUp( "anim21" )
+: AnimationFlagUp( "anim22" )
+: AnimationFlagUp( "anim23" )
+: AnimationFlagUp( "anim24" )
+: AnimationFlagUp( "anim25" )
+: AnimationFlagUp( "anim26" )
+: AnimationFlagUp( "anim27" )
+: AnimationFlagUp( "anim28" )
+: AnimationFlagUp( "anim29" )
+: AnimationFlagUp( "anim30" )
+: AnimationFlagUp( "anim31" )
+: AnimationFlagUp( "anim32" )
+: AnimationFlagUp( "anim33" )
+: AnimationFlagUp( "anim34" )
+: AnimationFlagUp( "anim35" )
+: AnimationFlagUp( "anim36" )
+: AnimationFlagUp( "anim37" )
+: AnimationFlagUp( "anim38" )
+: AnimationFlagUp( "anim39" )
+: AnimationFlagUp( "anim40" )
+: AnimationFlagUp( "anim41" )
+: AnimationFlagUp( "anim42" )
+: AnimationFlagUp( "anim43" )
+: AnimationFlagUp( "anim44" )
+: AnimationFlagUp( "anim45" )
+: AnimationFlagUp( "anim46" )
+: AnimationFlagUp( "anim47" )
+: AnimationFlagUp( "anim48" )
+: AnimationFlagUp( "anim49" )
+: AnimationFlagUp( "anim50" )
+: AnimationFlagUp( "anim51" )
+: AnimationFlagUp( "anim52" )
+: Return
+//====================================================
+//○風呂の真偽値を取得する
+//====================================================
+*BathRoom
+: mapId = RpgMapID()
+: if mapId == 7 || mapId == 47 || mapId == 262	// 男湯
+	: Return(true)
+: elif mapId == 8 || mapId == 261 || mapId == 46	// 女湯
+	: Return(true)
+: else	// その他
+	: Return(false)
+: endif
+//====================================================
+//○特定キャラの着替え封印
+//====================================================
+*CosSeal
+: if ( WhoLeader( "Mukuro" ) == true )
+	: if CharaCanCostumeChange( "Mukuro" ) == true
+		: Flag( "CosSealMukuro", true )
+		: CharaCanCostumeChange( "Mukuro", false )
+	: endif
+: elif ( WhoLeader( "Momo" ) == true )
+	: if CharaCanCostumeChange( "Momo" ) == true
+		: Flag( "CosSealMomo", true )
+		: CharaCanCostumeChange( "Momo", false )
+	: endif
+: elif ( WhoLeader( "Kinako" ) == true )
+	: if CharaCanCostumeChange( "Kinako" ) == true
+		: Flag( "CosSealKinako", true )
+		: CharaCanCostumeChange( "Kinako", false )
+	: endif
+: elif ( WhoLeader( "Mei" ) == true )
+	: if CharaCanCostumeChange( "Mei" ) == true
+		: Flag( "CosSealMei", true )
+		: CharaCanCostumeChange( "Mei", false )
+	: endif
+: endif
+: Return
+//====================================================
+//○着替え封印解除
+//====================================================
+*CosSealReset
+: if ( Flag ( "CosSealMukuro" ) == true )
+	: Flag( "CosSealMukuro", false )
+	: CharaCanCostumeChange( "Mukuro", true )
+: endif
+: if ( Flag ( "CosSealMomo" ) == true )
+	: Flag( "CosSealMomo", false )
+	: CharaCanCostumeChange( "Momo", true )
+: endif
+: if ( Flag ( "CosSealKinako" ) == true )
+	: Flag( "CosSealKinako", false )
+	: CharaCanCostumeChange( "Kinako", true )
+: endif
+: if ( Flag ( "CosSealMei" ) == true )
+	: Flag( "CosSealMei", false )
+	: CharaCanCostumeChange( "Mei", true )
+: endif
+: Return
+//====================================================
+//○夜這い
+//====================================================
+*Yobai
+//確率分岐
+: Num = RandomRange(0,100)
+//キャラ別　※冥は起こさない
+: if ( WhoLeader( "Mukuro" ) == true )
+	//ダークエルフ時はイベント起こさない
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+	: endif
+	: if Num <= 50
+		: Jump( "Scenarios/SC_N02_01*NPCH01_064" )
+	: else
+		: Jump( "Scenarios/SC_N02_01*NPCH01_065" )
+	: endif
+: elif ( WhoLeader( "Momo" ) == true )
+	: if Num <= 50
+		: Jump( "Scenarios/SC_N02_02*NPCH02_037" )
+	: else
+		: Jump( "Scenarios/SC_N02_02*NPCH02_038" )
+	: endif
+: elif ( WhoLeader( "Kinako" ) == true )
+	//ダークエルフ時はイベント起こさない
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		: Jump( "Scenarios/CommonSys*NpcSceneEnd" )
+	: endif
+	: if Num <= 50
+		: Jump( "Scenarios/SC_N02_03*NPCH03_038" )
+	: else
+		: Jump( "Scenarios/SC_N02_03*NPCH03_039" )
+	: endif
+: endif
+: Jump( "Scenarios/CommonSys*NpcSceneEnd" )

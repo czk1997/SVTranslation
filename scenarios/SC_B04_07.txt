@@ -1,0 +1,3409 @@
+//========================================================
+//○私はわたし――姫椿家と決別１
+//========================================================
+*sc001
+//●背景：日野家の屋敷・客室・夜
+//Yoshi：背景
+: HideWnd()
+: RpgCharaOn("Fumimaro")
+: RpgCharaOn("Mobu")
+: RpgMapBaloonOff("SC_B04_07_sc002")
+: FadeIn( 0.25 )
+: Wait()
+: PlayBgm("BGM/08_CM008_inst")
+: ShowWnd()
+//●状況：文麻呂のところにやってきた桃
+几天后，我为了嫁到日野家
+我来到了日野文麻吕先生的家里。
+
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Fumimaro", 10, 0, 0, 0.5, 0.0, 4, "LC" )
+\CN["文麻吕"]
+“那么，桃小姐，今天开始这里就是你的房间了。
+如果有什么需要的话，请告诉她”
+
+\CN["日野家的帮手"]
+“请多关照。”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0363" )
+\CN["桃子"]
+“是的，我才是……”
+
+: DrawChara( "Fumimaro", 0, 0)
+\CN["文麻吕"]
+“那么，我还有一些事情要做。
+桃子，晚安”
+
+//●演出：文麻呂　退場する
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Fumimaro", 0.5 )
+: Wait()
+: RpgCharaBatch( "Fumimaro"	\
+:	"MoveDown", 5	\
+:	"MoveRight", 2	\
+:	"MoveDown", 1 )
+: Wait()
+: RpgCharaOff("Fumimaro")
+: ShowWnd()
+\CN["日野家的帮手"]
+“有什么事我马上就来
+请用房间里的通话设备联系我”
+
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0364" )
+\CN["桃子"]
+“谢谢”
+
+//●演出：お手伝いが退場してから窓のところへ移動
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: RpgCharaBatch( "Mobu"	\
+:	"MoveDown", 6	\
+:	"MoveRight", 2	\
+:	"MoveDown", 1 )
+: Wait()
+: RpgCharaOff("Mobu")
+: Sleep(0.5)
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 4 )
+: Wait()
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0365" )
+\CN["桃子"]
+“结果还是吵架分手了吧……哈哈……”
+
+结果，我决定退出鬼灯嫁给日野家
+只能选择了。
+
+也有设备返回过
+我和小银完全没说话。
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0366" )
+\CN["桃子"]
+“为什么我会做出那样愚蠢的事情呢……”
+
+稍微一想，就要哭出来了。
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0367" )
+\CN["桃子"]
+“反正要分手的话，就好好地——”
+
+胸口像要裂开一样的痛。
+
+既然来到了这里，就再也回不去了。
+
+再也不会和小银见面了。
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom0368" )
+\CN["桃子"]
+“……”
+
+毫无办法的东西涌上来。
+
+但是，不能吐出来。
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0369" )
+\CN["桃子"]
+“从今以后，已经……因为只有我……”
+
+——就在身边守护着我
+——他就在我身边支持着我
+——就在身边………………。
+
+一直待在身边是理所当然的小银，已经。
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0370" )
+\CN["桃子"]
+“如果，那个时候，小银结婚了
+如果反对的话？”
+
+我一定希望他反对吧。
+
+明明知道那是错误的答案……。
+说是必须履行作为出生在贵族家庭的女人的义务
+明明说已经做好觉悟了……。
+
+即便如此，我也一定要把自己的幸福——
+牺牲别人就能维持任性的幸福
+一定是一直期待着的。
+
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom0371" )
+\CN["桃子"]
+“所以才会变成这样吧……。
+神是好好地看着的呢。真的，很讨厌……”
+
+各种各样的事情太多了，脑子里塞满了。
+
+这种时候先睡个觉吧。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——睡着了是好事，但是半夜突然醒了。
+
+: HideWnd()
+: RpgCharaWarp("Player","Sleep")
+: EraseImage( 0, 0, 1.0)
+: EraseImage( 1, 0, 1.0)
+: Wait()
+: ResetLayer(0)
+: ResetLayer(1)
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0372" )
+\CN["桃子"]
+“嗯……奇怪的时间起床了呢。”
+
+口渴了，去喝点水吧。
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom0373" )
+\CN["桃子"]
+“保姆说如果有什么事情的话请叫我来
+真是的，这么晚叫他出来真是不好啊”
+
+自己去取吗。
+
+//●シーンエンド
+//パーティーを桃単独に
+: Party( "Momo" )
+: PartyType = "Party02"; Call( "Scenarios/CommonSys*PartySetting" )
+: RpgMapBaloonOn("SC_B04_07_sc002")
+: Return
+
+//========================================================
+//○私はわたし――姫椿家と決別２
+//========================================================
+*sc002
+: HideWnd()
+: FadeOut( 0.25 )
+: Wait()
+: LoadMap( "Map_Town10_05_Hino", "", "Scenarios/SC_B04_07*sc002_1")
+
+*sc002_1
+//●背景：日野家の屋敷
+//Yoshi：背景
+: HideWnd()
+: FadeIn( 0.25 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveLeft", 6 )
+: Wait()
+: RpgCharaOn("Mobu")
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1	\
+:	"Turn", "D" )
+: Wait()
+: RpgCharaBatch( "Mobu"	\
+:	"MoveUp", 2 )
+: Wait()
+: RpgDoorOpen("Door01")
+: RpgCharaBatch( "Mobu"	\
+:	"MoveUp", 1 )
+: Wait()
+: RpgDoorClose("Door01")
+: ShowWnd()
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0374" )
+\CN["桃子"]
+“……？现在的人是从地下出来的吧？”？
+在这样的深夜里……？”
+
+不知怎么的态度也很奇怪
+地下有什么东西吗？
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0375" )
+\CN["桃子"]
+“很在意呢……。
+去看看吧”
+
+眼睛完全清醒了，顺便去看看吧。
+
+//========================================================
+//○私はわたし――姫椿家と決別３
+//========================================================
+*sc003
+//●背景：日野家の屋敷・地下
+//Yoshi：背景
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Momo"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_ZashikiRo01_04", 0.0 )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+//●演出：桃　地下を歩いて行く
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["精灵的女人们"]
+「「「…………」」」
+
+: PlayBgm("BGM/38_Slam")
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0376" )
+\CN["桃子"]
+“……这是怎么回事……？”
+
+地下室里的牢房——
+
+在那里有几位手脚被枷锁所束缚的人
+有了。
+
+//●演技：心の声です
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0377" )
+\CN["桃子"]
+（看上去全部都是女性……而且，是精灵吗……）
+
+大家都是尖尖的耳朵，所以很快就知道是精灵。
+
+//●演技：心の声です
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0378" )
+\CN["桃子"]
+（莫非，这些人……是奴隶？
+这么说来——）
+
+以前，以无黑和雷欧为中心追赶的高滨奴隶商
+确实应该只把精灵当作奴隶来对待……。
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0379" )
+\CN["桃子"]
+“不会吧——”
+
+//●演出：文麻呂　登場する
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: CharaPartsOn( "Kotaro", 0 )
+: DrawChara( "Fumimaro", 1, 0, 0, 0.0, 0.0, 4, "LC" )
+: DrawChara( "Kotaro", 1, 0, 0, 0.0, 0.0, 3, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["文麻吕"]
+“哎呀，桃子。你迷路了吗？”
+
+日野先生和另一个貌似保镖的男人
+出现在我后面。
+
+: EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Fumimaro", 1, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom0380" )
+\CN["桃子"]
+“这是怎么回事？
+你想对她们做什么？”
+
+: DrawChara( "Fumimaro", 10, 0)
+\CN["文麻吕"]
+“呵呵，那是你不需要知道的事情。”
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“我觉得在这里看到的是睡得很香的梦
+”
+
+//●演出：ガス噴出
+: HideWnd()
+: PlaySe( "SE/Se_Gus" )
+: PlayAnim( "Animations/AnimeL_Smoke01", false, 0, 0, 6, 6 )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 10, 1)
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0381" )
+\CN["桃子"]
+“呃……这个，这个……结束……”
+
+: HideWnd()
+: PlaySe("SE/Se_Down01")
+: chara = "Momo"; lay = 3; type = "Down";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: ShowWnd()
+被吹起雾一样的东西的瞬间
+一瞬间头脑一下子变笨了
+
+: DrawChara( "Kotaro", 0, 0, 0, 0.5, 0.0, 5, "RC" )
+: CharaCostume( "Fumimaro", 1 )
+: DrawChara( "Fumimaro", 2, 0, 0, 0.5, 0.0, 4, "LC" )
+\CN["文麻吕"]
+“睡眠喷雾真厉害。一瞬间就睡着了。
+不愧是大和的天才发明家——比拉加博士！”
+
+: DrawChara( "Fumimaro", 4, 0)
+\CN["文麻吕"]
+“伊藤，把桃先生搬到远处去。
+还有，为了不出门，请锁好门”
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“因为稍微需要教育一下。”
+
+: DrawChara( "Kotaro", 1, 0)
+\CN["甲太郎"]
+“我知道了。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Kotaro", 0.0 )
+: EraseChara( "Fumimaro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+: CharaCostume( "Fumimaro", 0 )
+……………………………………………………。
+
+——那个时候，在鬼灯屯所。
+
+//●視点：銀視点
+//●場所：鬼灯屯所・道場・夜
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_HozukiDoujyo02", 1.0 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+: DrawChara( "Gin", 11, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["银子"]
+“哈……哈……哈……这样就好了……”……
+这样就……”
+
+//: DrawChara( "Gin", 13, 0)
+\CN["银子"]
+“啊啊啊啊啊啊啊！”
+
+: HideWnd()
+: Call( "Scenarios/Effect*GinAction01" )
+: ShowWnd()
+被战斗训练用的人偶撞了很多。
+
+: DrawChara( "Gin", 12, 0)
+\CN["银子"]
+“切……为什么这么烦躁呢……”
+
+那天，送了女儿之后一直是这种感觉。
+
+心烦意乱的去处的心情
+我撞到了那里。
+
+//●演出：レオが道場に入ってくる
+: HideWnd()
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: DrawChara( "Leo", 1, 0, 0, 0.0, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["雷欧"]
+“深夜里很忙，睡不着。”
+
+: DrawChara( "Gin", 11, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["银子"]
+“啊？你不是那么敏感吗？”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“喂……好恐怖好恐怖”
+
+: DrawChara( "Gin", 14, 0)
+\CN["银子"]
+“你掉下去了吗？”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+「因为啊，桃子不见了之后，你。
+只是一直在焦躁而已”
+
+: DrawChara( "Gin", 11, 0)
+\CN["银子"]
+“……真是的。你懂什么？”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“什么都不知道啊……但是——”
+
+: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+“恋爱的女人不在身边的时候，会有多么痛苦？
+如果只是那种心情的话，我倒是能理解的”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“如果没有无黑，我也会很痛苦的。
+简直无法想象……”
+
+: DrawChara( "Gin", 14, 0)
+\CN["银子"]
+“不要和你在一起……”
+
+: DrawChara( "Gin", 7, 0)
+\CN["银子"]
+“这样就好了……。
+女儿一定是这样幸福的”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+「嗯。那你要和桃子结婚了，嗯，不知道在哪里
+财阀真的在想怎么能和桃子对抗啊」
+
+: DrawChara( "Gin", 22, 0)
+\CN["银子"]
+「…………」
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“呐，你们难道是个很厉害的笨蛋吗？”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“……哈？你……”
+
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Cloth01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+因为说了太让人生气的话
+不知不觉抓住了这家伙的胸口。
+
+: DrawChara( "Leo", 23, 0, 0, 0.0, 0.0, 4, "C" )
+: chara = "Leo"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+「桃子喜欢你，你也喜欢桃子。
+那不是最重要的吗？”
+
+: EraseChara( "Leo", 0.0 )
+: ResetLayer(4)
+: DrawChara( "Gin", 18, 0, 0, 0.0, 0.0, 4, "C" )
+: chara = "Gin"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["银子"]
+“小姐说我……？”
+
+: DrawChara( "Gin", 18, 0, 0, 0.0, 0.0, 4, "RC" )
+: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 3, "LC" )
+: chara = "Leo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+“哈？你不知道吗？真的吗？”
+
+: DrawChara( "Gin", 19, 0)
+\CN["银子"]
+“……你不是随便说的吗？”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“那个人本来就不能和我这样的人在一起。
+我出生也好成长也好……什么都太不一样了”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“对于作为贵族女儿出生的人来说，结婚有特别的意义。
+因为是为了政略的道具。但是，如果婆家是那个财阀的话
+小姐一定是……”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“……如果对方是财阀的话，就不会幸福吗？
+财阀的男人真的是你承认的男人吗？”
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“……虽然感觉不可靠，但却是个温柔的男人。
+一定会好好珍惜女儿的”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“你真的这么想吗？”
+
+: DrawChara( "Gin", 21, 0)
+\CN["银子"]
+「…………」
+
+//●演出：あきれ顔→真剣な表情へ
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“哈～……”
+
+//: DrawChara( "Leo", 17, 0, 0, 0.5, 0.0, 4, "C" )
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 0; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 4, "C" )
+: ShowWnd()
+\CN["银子"]
+“……嗯？”
+
+//●演出：レオが銀を殴ってぶっ飛ばす
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: layer = 4; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Gin", 13, 0)
+: ShowWnd()
+\CN["银子"]
+“呃，你……你在干什么！”
+
+//●演出：銀が殴りかかるが、レオに止められる
+: EraseChara( "Gin", 0.5 )
+: ResetLayer(3)
+: ResetLayer(4)
+: PlaySe( "SE/Se_Cloth01" )
+: DrawChara( "Leo", 23, 0, 0, 0.0, 0.0, 4, "C" )
+: chara = "Leo"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+「ウジョウジ、不是在说谎哦！
+你还是武士吗？”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“看现在的你，真让人火大啊！”
+
+: DrawChara( "Leo", 21, 0)
+\CN["雷欧"]
+“这样就好了，小姐说她会幸福的
+抱怨、抱怨……”
+
+: DrawChara( "Leo", 21, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Gin", 11, 0, 0, 0.0, 0.0, 3, "RC" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["银子"]
+「…………」
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“桃子为什么事到如今才想嫁给财阀呢
+你想好了吗？”
+
+: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+“你不是一直待在桃子身边才知道吗？”
+
+: DrawChara( "Gin", 21, 0)
+\CN["银子"]
+“……小姐，是为了完成贵族女儿的使命。”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“真的就这些吗？作为贵族女儿的职责是什么？”
+为了实现这个愿望，桃子打算结婚吗？”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“桃子的父亲现在有反幕嫌疑。
+如果不早点结婚成为财阀家的一员的话就会被处刑……。
+那样的话，公主椿家就只剩下一个环节了”
+
+: DrawChara( "Gin", 10, 0)
+\CN["银子"]
+“所以，小姐现在下定决心结婚……”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“这样啊……这样啊。
+啊～……那个，再说一遍。你是笨蛋吧？”
+
+: DrawChara( "Leo", 7, 0)
+\CN["雷欧"]
+“你真的这么想吗？
+真的是桃为了拯救自己的家才结婚的”
+
+: DrawChara( "Gin", 21, 0)
+\CN["银子"]
+“除此之外还有什么……”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“不是有吗？你一定有想好的！
+稍微想一想，连小孩子都能明白”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“桃子想救自己的老爸的是……
+为了不让人怀疑反幕
+是为了我们吧！”
+
+: DrawChara( "Gin", 18, 0)
+\CN["银子"]
+「…………」
+
+: DrawChara( "Leo", 23, 0)
+\CN["雷欧"]
+“不仅仅是为了我们……。
+因为那家伙不想给你添麻烦
+所以我选择了结婚……这样的话，就分手吧！”
+
+: DrawChara( "Gin", 18, 0)
+\CN["银子"]
+“女儿为了我……”
+
+//●演出：黄菜子　登場する
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: ResetLayer(3)
+: ResetLayer(4)
+: CharaCostume( "Kinako", 0 )
+: DrawChara( "Kinako", 2, 0, 0, 0.0, 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 0; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo02_kin0214" )
+: ShowWnd()
+\CN["黄菜子"]
+“风真，雷欧，我有话要跟你说。
+财阀日野家户主日野文麻吕的事情”
+
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0215" )
+\CN["黄菜子"]
+“前几天，雷欧和无黑有关的妖精的人身买卖事件
+但是，我发现日野家在背地里拉着手”
+
+: PlayBgm("BGM/05_CM005")
+: DrawChara( "Gin", 21, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 4, "L" )
+: DrawChara( "Kinako", 10, 0, 0, 0.5, 0.0, 5, "R" )
+\CN["雷欧"]
+“真的吗，那个……财阀是幕后操纵者……。
+但是，这样的事情经常被查明啊”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0216" )
+\CN["黄菜子"]
+“实际上局长好像秘密调查了日野家有什么
+刚才好像抓住了尾巴”
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“这样啊。虽然局长经常不在
+背地里做了各种各样的事啊……”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“等等……也就是说，桃子是——”
+
+//●演出：銀　ダッシュで走り出していく
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: DrawChara( "Leo", 0, 0)
+: ShowWnd()
+\CN["雷欧"]
+“终于有点像了吧。”
+
+//●視点：桃視点
+//●演出：場面転換トランジション
+//●場所：日野家の屋敷・離れの小屋
+//●演技：目を覚まします
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Cellar02", 0.0 )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/37_Dungeon")
+: DrawChara( "Momo", 10, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0382" )
+\CN["桃子"]
+“……嗯……嗯……啊，咦？这里是……？”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0383" )
+\CN["桃子"]
+“嗯……总觉得，头很痛……。
+我的确看到精灵的女孩们被抓了
+然后……”
+
+被日野先生发现并喷了像喷雾一样的东西——
+
+从那以后到现在都没有记忆。
+
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom0384" )
+\CN["桃子"]
+“啊……我疏忽了……。
+那个时候，好像被什么弄到了……”
+
+虽然不知道是谁做的，但是一瞬间就犯困的喷雾器
+好像有什么可怕的东西呢。
+
+//●演技：心の声です
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0385" )
+\CN["桃子"]
+（日野文麻吕从事精灵奴隶的买卖。
+这件事，不早点告诉鬼灯里的谁的话……！）
+
+在反幕行为之前，做着这样不人道的事情
+不能原谅。
+
+我不知道是钱还是有别的目的。
+
+//●演出：桃　小屋から出ようとするが扉が開かない
+: EraseChara( "Momo", 0.5 )
+总之，必须要从这里逃出去。
+
+我正要开门，可是
+
+//: DrawChara( "Momo", 7, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0386" )
+\CN["桃子"]
+“……呃……好像是外面锁着呢。
+那么，虽然有点粗暴，但请用魔术把门弄坏吧——”
+
+//●演出：桃　魔術を放つが作動しない
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Momo", 10, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0387" )
+\CN["桃子"]
+“诶……？为什么？魔术不能发动……？”
+
+//●演出：ドアが開いて文麻呂が出てくる
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_DoorClose01" )
+: Sleep(0.5)
+: DrawChara( "Fumimaro", 1, 0, 0, 0.0, 0.0, 4, "C" )
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["文麻吕"]
+“哎呀，你好像醒了。”
+
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Fumimaro", 1, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom0388" )
+\CN["桃子"]
+“竟然关在这种地方……”
+
+: DrawChara( "Fumimaro", 3, 0)
+\CN["文麻吕"]
+“是的，夜间在房子里随便走走是不好的。
+因此，我想稍微给他点惩罚”
+
+: DrawChara( "Fumimaro", 4, 0)
+\CN["文麻吕"]
+“我想反省后再给你拿出来
+那种眼神，好像完全没有反省呢”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0389" )
+\CN["桃子"]
+“是的。但是，真的很吃惊。
+财阀家的你竟然和精灵的贩卖人有关系”
+
+: DrawChara( "Fumimaro", 3, 0)
+\CN["文麻吕"]
+“嗯？有什么问题吗？”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0390" )
+\CN["桃子"]
+“问题是当然的吧！
+贩卖人口这种不人道的事情，不可能做得好”
+
+: DrawChara( "Fumimaro", 1, 0)
+\CN["文麻吕"]
+“咦？不人道？
+嘛，把人当做奴隶来买卖，我也是不人道的
+我常常认为这是愚蠢的行为”
+
+: DrawChara( "Fumimaro", 4, 0)
+\CN["文麻吕"]
+“但是，我的对手不是人类，而是精灵？
+存在只是一种障碍，没有必要给予人权
+”
+
+: CharaCostume( "Fumimaro", 1 )
+: DrawChara( "Fumimaro", 5, 0)
+\CN["文麻吕"]
+“嘛，你在精灵中也是特别的……”
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0391" )
+\CN["桃子"]
+“一点都不开心的特别对待呢。
+为什么，你会敌视精灵到这种地步呢？”
+
+: DrawChara( "Fumimaro", 1, 0)
+\CN["文麻吕"]
+“理由？是啊……硬要说的话，精灵是魔术
+可以使用。那对人类来说除了威胁以外什么都不是”
+
+: DrawChara( "Fumimaro", 6, 0)
+\CN["文麻吕"]
+“那种危险的家伙不可能出去吧。
+为了世界的和平，他们是不需要的存在”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0392" )
+\CN["桃子"]
+“作为人格者而出名的你实际上是歧视主义者。”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0393" )
+\CN["桃子"]
+“我饰演了一个对任何人都很温柔的好青年……。
+真佩服啊」
+
+: CharaCostume( "Fumimaro", 0 )
+: DrawChara( "Fumimaro", 0, 0)
+\CN["文麻吕"]
+“因为有很大的好处呢。”
+
+: DrawChara( "Fumimaro", 2, 0)
+\CN["文麻吕"]
+“如果和这种风接触的话，周围的人会随便抬起来。
+事情会顺利进行的”
+
+//●演技：心の声です
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0394" )
+\CN["桃子"]
+（这家伙好像是神经病……。
+在魔术无法使用的现在，只能从这里逃走……）
+
+幸好门被这家伙打开了。机会现在——
+
+//●演出：桃　隙を突いて外に出る
+: PlaySe("SE/Se_Foot01")
+: chara = "Momo"; lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: layer = 4; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: CharaCostume( "Fumimaro", 1 )
+: DrawChara( "Fumimaro", 0, 0)
+\CN["文麻吕"]
+“呃……！”
+
+//●演出：場面転換トランジション
+//●場所：日野家の屋敷・裏手
+//●状況：周りを大勢のモブに囲まれている。真ん中に甲太郎
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: CharaCostume( "Fumimaro", 0 )
+: EraseChara( "Fumimaro", 0 )
+: SwapImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: PlayBgm("BGM/16_TM001")
+: Wait()
+: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0395" )
+\CN["桃子"]
+「……！」
+
+被很多男人包围着。
+
+这个是穷途末路的东西吧？
+
+//●演出：文麻呂　後ろから出てくる
+: EraseChara( "Momo", 0.5 )
+: CharaCostume( "Fumimaro", 2 )
+: DrawChara( "Fumimaro", 8, 0, 0, 0.5, 0.0, 4, "C" )
+\CN["文麻吕"]
+“什么啊……你到底在做什么啊，你啊。”
+
+语调变了……？
+不，这就是这家伙的本色吧。
+
+: DrawChara( "Fumimaro", 5, 0)
+\CN["文麻吕"]
+“酷，怎么可能放过……。
+喂，伊藤，聚集了多少人？”
+
+: DrawChara( "Fumimaro", 8, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Kotaro", 1, 0, 0, 0.5, 0.0, 3, "L" )
+\CN["甲太郎"]
+“大概100人左右……”
+
+: DrawChara( "Fumimaro", 5, 0)
+\CN["文麻吕"]
+“那好吧。要是能逃的话，就试着逃吧。”
+
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0396" )
+\CN["桃子"]
+“……呃”
+
+: DrawChara( "Fumimaro", 2, 0)
+\CN["文麻吕"]
+“顺便说一下，即使想使用魔术也不行。
+因为在宅地内禁止魔术”
+
+: DrawChara( "Fumimaro", 5, 0)
+\CN["文麻吕"]
+“这是我认识的天才发明家给我做的。
+那是个不能使用魔术的魔导器”
+
+//●演技：心の声です
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0397" )
+\CN["桃子"]
+（因此，刚才魔术没有发动……）
+
+被100个以上的强壮男子包围
+而且拜托的纲的魔术也不发动。
+
+果然要突破这里是不可能的……。
+
+//●演技：心の声です
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom0398" )
+\CN["桃子"]
+（完全塞满了呢……）
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“呵呵，正如我所料。
+那张绝望的脸，虚幻而美丽……非常兴奋”
+
+: EraseChara( "Kotaro", 0.5 )
+//: DrawChara( "Momo", 10, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Fumimaro", 2, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["文麻吕"]
+“那么，刚才把作为丈夫的我推开了
+有必要惩罚一下啊”
+
+: HideWnd()
+: chara = "Momo"; lay = 5 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: chara = "Fumimaro"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: PlaySe( "SE/Se_Kubishime" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 10, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0399" )
+\CN["桃子"]
+“……呃，好痛！不要那么用力抓住！”
+
+: DrawChara( "Fumimaro", 4, 0)
+\CN["文麻吕"]
+「ククク，在我的仆人们面前爱你。
+在外面看着也可以吧”
+
+: DrawChara( "Momo", 10, 1)
+: PlayVoice( "Voices/vo01_mom0400" )
+\CN["桃子"]
+“呀，住手！不，不……！放开我！”
+
+背过脸来，竭尽全力抵抗。
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“是啊，太害羞了。
+稍微瘦一点的话，就会好起来的……！”
+
+如果要比力气的话，根本就咬不动。
+
+: DrawChara( "Momo", 10, 1)
+: PlayVoice( "Voices/vo01_mom0401" )
+\CN["桃子"]
+“……小银……帮帮我……”
+
+: DrawChara( "Fumimaro", 2, 0)
+\CN["文麻吕"]
+“银……？”
+
+: DrawChara( "Fumimaro", 3, 0)
+\CN["文麻吕"]
+“啊，那家伙啊……我记得在派对上见过。
+那是在你身边徘徊的金鱼的粪便啊」
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“在丈夫开始做爱的工作之前
+会念叨其他男人的名字，真是个差劲的女人啊。
+这似乎有必要进行严格的教育”
+
+: DrawChara( "Momo", 10, 1)
+: PlayVoice( "Voices/vo01_mom0402" )
+\CN["桃子"]
+“不，不……！呃，空……！”
+
+虽然想抛开，但是完全不行。
+
+——就这样，只能被这个男人伏击了吗……？
+
+: HideWnd()
+: StopBgm( 0.0 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Fumimaro", 0.5 )
+: Wait()
+: ResetLayer(4)
+: ResetLayer(5)
+: PlaySe( "SE/Se_Wind01" )
+: Sleep(1.0)
+: DrawChara( "Fumimaro", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["文麻吕"]
+“……嗯？风……？”
+
+突然间，狂风吹进了我和日野之间。
+
+: DrawChara( "Fumimaro", 4, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Kotaro", 4, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["甲太郎"]
+“文麻吕大人，请下去。”
+
+: DrawChara( "Fumimaro", 0, 0)
+\CN["文麻吕"]
+“嗯……？怎么回事？”
+
+//●演出：銀　登場する
+: HideWnd()
+: EraseChara( "Kotaro", 0.5 )
+: EraseChara( "Fumimaro", 0.5 )
+: Wait()
+: DrawChara( "Gin", 11, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+//: DrawChara( "Momo", 10, 1)
+: DrawFaceThumbnail( "Momo", 10, 1, 0 )
+: PlayVoice( "Voices/vo01_mom0403" )
+\CN["桃子"]
+“小银！”
+
+: PlayBgm("BGM/05_CM005")
+: DrawChara( "Gin", 10, 0)
+\CN["银子"]
+“……小姐”
+
+——小银来了。
+
+就连小银也一个人面对这个人数
+应该是不可能的。
+
+绝望的情况不会改变。
+明明被逼得很紧却没有变化，不行。
+
+各种各样的热的东西涌上来。
+
+在这种情况下抱着不适合的感情
+溢出来的话总会有办法的……。
+
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: DrawChara( "Gin", 11, 0)
+\CN["银子"]
+“日野，离开你的女儿吧。”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: ResetLayer(3)
+: DrawChara( "Fumimaro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Kotaro", 0, 0, 0, 0.0, 0.0, 4, "L" )
+: DrawChara( "Momo", 0, 0, 0, 0.0, 0.0, 5, "C" )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Fumimaro", 8, 0)
+: ShowWnd()
+\CN["文麻吕"]
+“切……明明是个好地方，却来打扰我，真是可恶……！”
+
+: DrawChara( "Fumimaro", 5, 0)
+\CN["文麻吕"]
+“不，没关系吗……。
+这样就变得有趣了”
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“在风真银看着的眼前侵犯他。
+让我们看到了陪伴多年的女人变成雌性的姿态
+必须要做啊」
+
+: DrawChara( "Fumimaro", 6, 0)
+\CN["文麻吕"]
+“伊藤，干掉他吧！但是，不要杀他。”
+
+: DrawChara( "Kotaro", 6, 0 )
+\CN["甲太郎"]
+“哈哈！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: DrawChara( "Gin", 9, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Kotaro", 0, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“虽然说得很了不起，但还是依赖下属吧……。
+和贩卖人口的混蛋很配”
+
+: DrawFaceThumbnail( "Fumimaro", 6, 0, 0)
+\CN["文麻吕"]
+“不管怎么说。
+毕竟只不过是败犬的远吠而已”
+
+: DrawFaceThumbnail( "Fumimaro", 8, 0, 0)
+\CN["文麻吕"]
+“哎呀，伊藤！”
+
+//: EraseChara( "Gin", 0.5 )
+: DrawChara( "Kotaro", 5, 0, 0 )
+\CN["甲太郎"]
+“我明白了。”
+
+\CN["文麻吕手下的男人1"]
+“那我们也是。”
+
+: DrawChara( "Kotaro", 6, 0)
+\CN["甲太郎"]
+“你们退下去吧，只会妨碍你们。”
+
+\CN["文麻吕手下的男人2"]
+“哈？”
+
+: DrawChara( "Kotaro", 2, 0)
+\CN["甲太郎"]
+“不好意思，能让我和这个男人用大麻做吗？”
+
+: DrawFaceThumbnail( "Fumimaro", 1, 0, 0)
+\CN["文麻吕"]
+“嘛，好吧。
+伊藤，如果是你的话，好像会让你更开心”
+
+//●演出：銀ＶＳ甲太郎　ＣＧを挟みつつエフェクトとか入れていく
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+//: EraseChara( "Momo", 0.0 )
+: EraseChara( "Kotaro", 0.0 )
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = -400; y1 = -300; z1 = 2.0; time = 0;
+: x2 = -400; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Kotaro", 7, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kotaro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: PlayBgm("BGM/18_TM003")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+“哈！”
+
+//●演出：甲太郎の一撃、銀が受け止める
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = 600; y1 = -300; z1 = 2.0; time = 0;
+: x2 = 600; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Gin", 7, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“……！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: ResetLayer(3)
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Kotaro", 5, 0, 0, 0.0, 0.0, 4, "R" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+“呼……”
+
+甲太郎打算一击打住，使出了认真的踢。
+
+但是，银用手接住了。
+
+: DrawChara( "Gin", 11, 0)
+\CN["银子"]
+“不是要做吗？”
+
+: DrawChara( "Kotaro", 3, 0)
+\CN["甲太郎"]
+“……你也是。”
+
+那是开始的信号。
+武器只是互相锻炼过的自己的身体。
+
+//: DrawChara( "Gin", 13, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_2_0300000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Kotaro", 0.0 )
+: ShowWnd()
+\CN["银子"]
+“啊啊啊啊！”
+
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Kotaro", 7, 0)
+\CN["甲太郎"]
+“啊！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//: DrawChara( "Gin", 14, 0)
+\CN["银子"]
+“呃……达达！”
+
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: DrawChara( "Kotaro", 8, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["甲太郎"]
+“呼呼！”
+
+: DrawChara( "Kotaro", 7, 0)
+: chara = "Kotaro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["甲太郎"]
+“大叔！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = 600; y1 = -300; z1 = 2.0; time = 0;
+: x2 = 600; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Gin", 15, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“チ……！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: ResetLayer(3)
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Kotaro", 0, 0, 0, 0.0, 0.0, 4, "R" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+一步也不让的斗殴。
+
+但是，双方勉强避免了致命的伤害。
+
+: DrawChara( "Gin", 10, 0)
+\CN["银子"]
+“呐，你有那么多的手腕，为什么要变成那样的小人呢？”
+你运气好吗？”
+
+: DrawChara( "Kotaro", 3, 0)
+\CN["甲太郎"]
+“发生了很多事呢。”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“是吗？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a012_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+交换了简短的话语之后，又开始了互相殴打。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: ResetLayer(4)
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Fumimaro", 8, 0, 0, 0.5, 0.0, 3, "L" )
+\CN["文麻吕"]
+“伊藤，只不过是公主椿的随从者而已
+你在干什么？”
+
+: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom0404" )
+\CN["桃子"]
+“不算什么，也不是随从者。”
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“……哈？”
+
+: JumpLayer( 4, 0, -50, 1, 0.25)
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0405" )
+\CN["桃子"]
+“他——小银是我的伙伴。
+请好好记住”
+
+//●演出：囲んでいる男の１人が桃の背後に回る
+\CN["文麻吕手下的男人1"]
+“你看！敢反抗文麻吕大人，真是个好胆量。”
+
+: layer = 4; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom0406" )
+\CN["桃子"]
+“……！”
+
+一个男人从后面袭击过来了。
+
+//●演出：銃撃で男死ぬ
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Fumimaro", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Gun01" )
+: Call( "Scenarios/Effect*Blood01" )
+: PlaySe( "SE/Se_Down01" )
+: layer = 1; time = 1.0; strength = 10; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: Wait()
+枪弹穿过男人的头，男人在我到达之前
+事情断了。
+
+: DrawChara( "Fumimaro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["文麻吕"]
+“不要对我沉默不语，随便乱来。”
+
+文麻吕对着一动不动的男人说
+信口开河。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Fumimaro", 0.5 )
+: ResetLayer(3)
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = 600; y1 = -300; z1 = 2.0; time = 0;
+: x2 = 600; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Gin", 13, 0, 0, 0.5, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“哈，哈……我啊！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: ResetLayer(3)
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = -400; y1 = -300; z1 = 2.0; time = 0;
+: x2 = -400; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Kotaro", 5, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kotaro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: layer = 3; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+「……！」
+
+//: DrawChara( "Gin", 14, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_2_0300000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ResetLayer(3)
+: ShowWnd()
+\CN["银子"]
+“这个！”
+
+//: DrawChara( "Kotaro", 7, 0)
+: PlaySe("SE/Se_Swing02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+\CN["甲太郎"]
+“哈！”
+
+//●演出：甲太郎のカウンター
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvCutinFadeOut")
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Gin", 15, 0)
+\CN["银子"]
+“唔……”
+
+开始时双方都是寸步不让的进攻。
+
+: DrawChara( "Gin", 14, 0)
+\CN["银子"]
+“勤勤恳恳地……！”
+
+//●演出：銀の攻撃　空振り
+: HideWnd()
+: PlaySe("SE/Se_Swing02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect05", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Kotaro", 0.0 )
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawChara( "Kotaro", 6, 0, 0, 0.0, 0.0, 3, "C")
+: chara = "Kotaro"; lay = 3 ; type = "DL";
+: PlaySe( "SE/Se_Foot01" )
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["甲太郎"]
+“因为是不允许失败的立场。”
+
+//●演出：甲太郎の攻撃がヒット
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = 600; y1 = -300; z1 = 2.0; time = 0;
+: x2 = 600; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Gin", 12, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01" )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“呜啊啊啊！”
+
+: EraseChara( "Gin", 0.5 )
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: ResetLayer(3)
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Fumimaro", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 4, "R" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0407" )
+\CN["桃子"]
+“……小银”
+
+\CN["文麻吕"]
+“可恶，看来伊藤更优秀啊。”
+
+//●演技：心の声です
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0408" )
+\CN["桃子"]
+（小银的攻击被切断而被流放……。
+最初的谈判目标，恐怕是这个吧……）
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Fumimaro", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“哇！”
+
+//●演出：銀の一撃を受け止める甲太郎
+: HideWnd()
+: Call( "Scenarios/Effect*GinAction01" )
+: ShowWnd()
+//: DrawChara( "Kotaro", 9, 1)
+\CN["甲太郎"]
+“呃！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = -400; y1 = -300; z1 = 2.0; time = 0;
+: x2 = -400; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Kotaro", 13, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kotaro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+（明明反复进行如此激烈的攻击
+几乎没有疲惫）
+
+: DrawChara( "Kotaro", 10, 1)
+\CN["甲太郎"]
+“你这家伙，是什么样的身体构造？”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Kotaro", 0, 0, 0, 0.0, 0.0, 4, "R" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+甲太郎接受了银的攻击，打到了柜台。
+
+本应该是被逼到绝境了，但形势却渐渐逆转了。
+
+: DrawChara( "Gin", 11, 0)
+\CN["银子"]
+“你的锻炼方法是不是太天真了？”
+
+//●演出：銀の一撃を受け止める甲太郎
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: ResetLayer(4)
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = -400; y1 = -300; z1 = 2.0; time = 0;
+: x2 = -400; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Kotaro", 13, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kotaro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+“酷……”
+
+//: DrawChara( "Gin", 13, 0)
+: DrawFaceThumbnail( "Gin", 13, 0, 0 )
+\CN["银子"]
+“哇！”
+
+//●演出：銀の一撃が甲太郎に当たる
+//: DrawChara( "Kotaro", 9, 1)
+: PlaySe("SE/Se_AnimeL_Damage03")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: DrawFaceThumbnail( "Kotaro", 9, 0, 0 )
+\CN["甲太郎"]
+“酷……！”
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: Call("Scenarios/Common*CutinFadeOut")
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Fumimaro", 10, 0, 0, 0.5, 0.0, 3, "LC" )
+: ShowWnd()
+\CN["文麻吕"]
+“喂，喂，伊藤！你，认真做吧！”
+
+伊藤无法阻止银的攻击
+文麻吕开始露骨地焦躁起来。
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0409" )
+\CN["桃子"]
+“两个都很认真。
+哪怕只有一点点的空隙也会死……”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0410" )
+\CN["桃子"]
+“小银小时候，在一个无论什么时候被谁杀都不奇怪的地方
+我活了下来。在最后关头的比赛中小银竟然输了
+不可能”
+
+: DrawChara( "Fumimaro", 2, 0)
+\CN["文麻吕"]
+“可恶……是个什么时候被谁杀都不奇怪的地方
+活着的时候，不觉得只有那家伙啊……”
+
+//●演出：場面転換
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Fumimaro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a015_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: ImpactLayer( 8, 0.2, 0.2, 1, 0.1 )
+: PlayAnim( "Animations/AnimeXL_Hit01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+“酷……呃，饿……”
+
+//: DrawChara( "Gin", 13, 0)
+\CN["银子"]
+“我啊……！”
+
+: HideWnd()
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: ImpactLayer( 8, 0.2, 0.2, 1, 0.1 )
+: PlayAnim( "Animations/AnimeXL_Hit01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Kotaro", 11, 1)
+\CN["甲太郎"]
+“噗！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Call("Scenarios/Common*EvDelete")
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Kotaro", 0, 0, 0, 0.0, 0.0, 4, "R" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+渐渐地，甲太郎的攻击变得无法控制了。
+
+但是——
+
+: DrawChara( "Kotaro", 9, 1)
+\CN["甲太郎"]
+（最后是什么时候被谁这么打的？）
+
+//●演出：過去回想
+//●場所：地下格闘場・過去
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: DrawImage( 9, 0, "BGImage/BG_White", 0.1)
+: Wait()
+: EraseChara( "Kotaro", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: ShowWnd()
+“杀！杀！杀！杀！杀！杀！杀！”
+
+“再杀一点吧！”
+
+“我赌了你所有的财产，输了就揍你！”
+
+//●演出：現在に戻す
+: HideWnd()
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a015_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//: DrawChara( "Gin", 13, 0, 0, 0.0, 0.0, 6, "RC" )
+//: DrawChara( "Kotaro", 9, 1, 0, 0.0, 0.0, 5, "LC" )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["甲太郎"]
+“……啧……被打得太多了，想起了讨厌的事情。”
+
+//: DrawChara( "Gin", 14, 0)
+\CN["银子"]
+“啊？”
+
+//: DrawChara( "Kotaro", 14, 1)
+\CN["甲太郎"]
+“只是自言自语……”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = -400; y1 = -300; z1 = 2.0; time = 0;
+: x2 = -400; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe( "SE/Se_Foot01" )
+: DrawChara( "Kotaro", 7, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kotaro"; lay = 3 ; type = "DL";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: ShowWnd()
+甲太郎大大下降深呼吸。
+
+: DrawFaceThumbnail( "Gin", 11, 0, 0 )
+\CN["银子"]
+“……气氛变了吗？”
+
+: DrawChara( "Kotaro", 12, 1)
+\CN["甲太郎"]
+“啊啊啊啊啊啊啊！”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Kotaro"; lay = 3; type = "SDL";
+: Call( "Scenarios/Common*FgEffOut")
+//: DrawChara( "Gin", 15, 0)
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a015_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["银子"]
+“嗯！”
+
+//: DrawChara( "Gin", 13, 0)
+\CN["银子"]
+“哇！”
+
+//●演出：殴り合いエフェクト
+: HideWnd()
+: Call( "Scenarios/Effect*Renda01" )
+: ShowWnd()
+挨打就打。
+
+不知不觉变成了那种形式的胜负。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Gin", 4, 0, 0, 0.0, 0.0, 3, "L")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["银子"]
+“什么嘛，你这家伙，不会吵架吧。”
+
+: DrawChara( "Kotaro", 10, 1, 0, 0.0, 0.0, 4, "R")
+: PlaySe("SE/Se_Foot01")
+: lay = 0; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+\CN["甲太郎"]
+“因为小时候是在不太好的环境中长大的。”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“我觉得。一开始就这样做就好了……”
+
+: DrawChara( "Kotaro", 14, 1)
+\CN["甲太郎"]
+“有能耐的鹰是什么？”
+
+//●演出：殴り合いエフェクト
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 3; type = "SDR";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Kotaro"; lay = 4; type = "SDL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: Call( "Scenarios/Effect*Renda01" )
+: ShowWnd()
+互相防御。
+只有拳头来来往往互相殴打。
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = -400; y1 = -300; z1 = 2.0; time = 0;
+: x2 = -400; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Kotaro", 14, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kotaro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+“哼……”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = 600; y1 = -300; z1 = 2.0; time = 0;
+: x2 = 600; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Gin", 13, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“达拉！”
+
+//●演出：メッセージフェイスのみ
+: CharaCostume( "Fumimaro", 2 )
+: DrawFaceThumbnail( "Fumimaro", 6, 0, 0 )
+\CN["文麻吕"]
+“伊藤，赶快杀了他！我不是给了他便宜货吗！”！
+快点用吧，笨蛋！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: ResetLayer(3)
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 13, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Kotaro", 10, 0, 0, 0.0, 0.0, 4, "R" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+“啧……真烦人，一个一个……”
+
+: DrawChara( "Gin", 3, 0)
+\CN["银子"]
+“想要用的话可以用吗？
+我会等你准备的时间吗？”
+
+: DrawChara( "Kotaro", 14, 1)
+\CN["甲太郎"]
+“不要啊。突然怎么了？你想休息吗？”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“啊？那不是你吗？”
+
+: DrawChara( "Kotaro", 14, 1)
+\CN["甲太郎"]
+「呼。不一定弄错了。
+我不喜欢互相殴打。想快点结束”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 3; type = "SDR";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Kotaro"; lay = 4; type = "SDL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+//: DrawChara( "Gin", 13, 0)
+: evbg = true; evcos = false;
+: evfile = "evx_a012_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["银子"]
+“我啊啊啊啊！”
+
+//: DrawChara( "Kotaro", 12, 1)
+\CN["甲太郎"]
+“啊啊啊啊啊！”
+
+//●演出：殴り合いエフェクト
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a015_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: layer = 8; time = 1.0; strength = 50; vibrato = 60;
+: Call( "Scenarios/Common*CgShake" )
+: Call( "Scenarios/Effect*Renda01" )
+: ShowWnd()
+然后再次展开激烈的殴打。
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 12, 0, 0, 0.0, 0.0, 3, "LC" )
+: DrawChara( "Kotaro", 13, 0, 0, 0.0, 0.0, 4, "RC" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“哈哈哈……”
+
+\CN["甲太郎"]
+“哼哼哼……”
+
+: DrawChara( "Gin", 13, 0, 0 )
+\CN["银子"]
+“给我适可而止！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Kotaro", 0.0 )
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = -400; y1 = -300; z1 = 2.0; time = 0;
+: x2 = -400; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Kotaro", 11, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kotaro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+“花了！”
+
+: DrawFaceThumbnail( "Gin", 12, 0, 0 )
+\CN["银子"]
+“……！？”
+
+: DrawFaceThumbnail( "Momo", 8, 0, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0411" )
+\CN["桃子"]
+“小银！”
+
+被邀请到泥泞的地方而被抓住脚的银
+和甲太郎的目标一样，身体崩溃了。
+
+: DrawChara( "Kotaro", 12, 1)
+\CN["甲太郎"]
+“这就结束了……风真银！”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Kotaro"; lay = 3; type = "SDL";
+: Call( "Scenarios/Common*FgEffOut")
+崩体银。
+在这一点上，甲太郎绝不放过，立刻开始了绞尽脑汁的招数。
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 14, 0, 0, 0.0, 0.0, 3, "C" )
+: DrawChara( "Kotaro", 12, 0, 0, 0.0, 0.0, 2, "RC" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: chara = "Kotaro"; lay = 2 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“呜哇……呜……呜……！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Kubishime" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——缝纫机。
+
+甲太郎轧了银的脖子骨。
+
+: DrawChara( "Kotaro", 14, 1)
+\CN["甲太郎"]
+“我是{马歇尔艺术，这个}活下来的。”
+
+\CN["甲太郎"]
+“我的最强招数——用三五竿子杀了你……！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Kubishime" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——基西、基西、基西。
+
+: DrawChara( "Gin", 15, 0)
+\CN["银子"]
+“————————哇！！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(3)
+: ResetLayer(2)
+: DrawChara( "Momo", 7, 0, 0, 0.0, 0.0, 4, "RC" )
+: DrawChara( "Fumimaro", 2, 0, 0, 0.0, 0.0, 3, "LC" )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["文麻吕"]
+“大蛇扼杀猎物一般地杀死对方
+三分之一保持——”
+
+: DrawChara( "Fumimaro", 3, 0)
+\CN["文麻吕"]
+“没有一个人能从伊藤那逃脱出来。
+已经决定了啊」
+
+这样下去小银会被杀的……！
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0412" )
+\CN["桃子"]
+“算了……算了…算了吧……！”
+
+桃嚎。
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“呵呵……伊藤，再让他痛苦一点吧！”
+
+文麻吕一边看那个情况一边兴奋一边提高声音。
+
+//●演技：心の声です
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: EraseChara( "Fumimaro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: DrawChara( "Gin", 15, 0, 0, 0.0, 0.0, 3, "C" )
+: DrawChara( "Kotaro", 13, 0, 0, 0.0, 0.0, 2, "RC" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: chara = "Kotaro"; lay = 2 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["甲太郎"]
+（没那么富裕……）
+
+: HideWnd()
+: PlaySe( "SE/Se_Kubishime" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——基西、米西、基西！
+
+: DrawFaceThumbnail( "Momo", 8, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0413" )
+\CN["桃子"]
+“住手！——————！！”
+
+在桃的悲痛叫声中——
+
+: DrawChara( "Gin", 15, 0)
+\CN["银子"]
+“……小姐……不是那样的……我想问的是
+不是那样的话……”
+
+: DrawFaceThumbnail( "Momo", 7, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0414" )
+\CN["桃子"]
+“小银……！但是……！”
+
+银虽然意识朦胧，但还没有放弃。
+
+: DrawChara( "Kotaro", 12, 1)
+\CN["甲太郎"]
+“呜……快点，给我累死！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Kubishime" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Gin", 15, 0)
+: ShowWnd()
+\CN["银子"]
+“————！”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Kotaro", 0.0 )
+: ResetLayer(2)
+: ResetLayer(3)
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Fumimaro", 9, 1, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["文麻吕"]
+“也许……太兴奋了！！”
+
+\CN["文麻吕"]
+“一直在身边支持着我的男人一点一点地被杀了
+能看到真是太棒了！”
+
+文麻吕握紧拳头
+她满脸笑容地看着银痛苦的样子。
+
+在成为日野家户主之前经常去的高滨地下格斗技
+一边回忆着明明在看却沉迷其中的日子。
+
+//●演技：心の声です
+: EraseChara( "Fumimaro", 0.5 )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo01_mom0415" )
+\CN["桃子"]
+（小银的眼睛还没有死……。
+我不能放弃……不好好做的话……）
+
+//●演技：心の声です
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0416" )
+\CN["桃子"]
+（因为我是小银的伙伴！）
+
+桃子抬起头，将视线投向银。
+
+并不是不安的表情。
+用总是能看到的凛然的表情凝视对方——、
+
+: DrawFaceThumbnail( "Gin", 2, 0, 0, 0 )
+\CN["银子"]
+（……对了，那才是你的女儿——）
+
+: StopBgm( 1.0 )
+//: DrawChara( "Momo", 8, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Momo", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0417" )
+\CN["桃子"]
+“小银，命令啊——”
+
+//: DrawChara( "Momo", 8, 0)
+: HideWnd()
+: PlayBgm("BGM/18_TM003")
+: evbg = true; evcos = false;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0418" )
+\CN["桃子"]
+「把妨碍我们的人打倒吧！」
+
+: DrawFaceThumbnail( "Gin", 3, 0, 0 )
+\CN["银子"]
+“——明白了！”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: PlaySe( "SE/Se_Cloth01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+眼看就要倒下的银使出了全部的力量
+甩开甲太郎。
+
+: DrawChara( "Gin", 13, 0, 0, 0.5, 0.0, 4, "L" )
+: DrawChara( "Kotaro", 11, 0, 0, 0.5, 0.0, 3, "R")
+\CN["甲太郎"]
+“笨蛋啊……我的三重奏……是！？”
+
+: DrawChara( "Gin", 11, 0)
+\CN["银子"]
+“下次由我来给你看——我会好好的……”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 4; type = "SDR"; Call( "Scenarios/Common*FgEffOut");
+: EraseChara( "Kotaro", 0.5 )
+: evbg = true; evcos = false;
+: evfile = "evx_a012_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+//: DrawChara( "Gin", 13, 1, 0, 0.5, 0.0, 6, "C" )
+\CN["银子"]
+“{高岭潇39082；，杀了我}啊！！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Dageki" )
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+银浑身解数的拳头闯入了无防备的甲太郎的腹中。
+
+: DrawFaceThumbnail( "Kotaro", 12, 0, 0 )
+\CN["甲太郎"]
+“——ガハ……！”
+
+//●演出：甲太郎　倒れる演出
+//: EraseChara( "Kotaro", 0.5 )
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: PlaySe( "SE/Se_Down01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+就这样将身体弯曲成く字，甲太郎倒下了。
+
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Wind01" )
+: DrawChara( "Gin", 6, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["银子"]
+“你很坚强……但是，我更坚强。”
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/55_IDO09")
+: CharaCostume( "Fumimaro", 2 )
+: DrawChara( "Fumimaro", 11, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["文麻吕"]
+“伊藤！你在睡什么啊！”！
+我不可能被这样的垃圾给打败！”
+
+: DrawChara( "Fumimaro", 10, 0)
+\CN["文麻吕"]
+“你被炒鱿鱼了！被炒鱿鱼了！赶紧切腹！”
+
+文麻吕因为甲太郎被打倒而变得半狂。
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Fumimaro", 0.0 )
+: ResetLayer(3)
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = 600; y1 = -300; z1 = 2.0; time = 0;
+: x2 = 600; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Gin", 11, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+「…………」
+
+: PlaySe( "SE/Se_Foot01" )
+银一步一步慢慢地向文麻吕走去。
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: ResetLayer(3)
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Fumimaro", 11, 0, 0, 0.5, 0.0, 3, "C")
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["文麻吕"]
+“喂，喂，我是财阀日野家的日野文麻吕！
+财阀对幕府有很大的影响力”
+
+: DrawChara( "Fumimaro", 10, 0)
+\CN["文麻吕"]
+“可以吗？你是鬼灯吧？”？
+如果违抗我，鬼灯就会成为国贼解散”
+
+: DrawFaceThumbnail( "Gin", 11, 0, 0 )
+\CN["银子"]
+「…………」
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“对了！现在马上把{公主椿桃，这个女人}放在那里的话
+当做没什么特别的事。当然，我也不会对幕府说什么。
+条件很好吧”
+
+: DrawChara( "Fumimaro", 8, 0)
+\CN["文麻吕"]
+“而且，你也需要把山茶女的随从解雇，需要钱吧？
+对了。给他一辈子闲着的钱。为什么要从吉野原
+可以猜中女人”
+
+: DrawChara( "Fumimaro", 9, 0)
+\CN["文麻吕"]
+“所以，看，{公主椿桃，这个女人}放弃吧！！
+这家伙一定会和我结婚更幸福。
+而且已经和我订婚了，这家伙是我的女人”
+
+//: DrawChara( "Gin", 11, 0, 0, 0.5, 0.0, 6, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Fumimaro", 0.0 )
+: ShowWnd()
+\CN["银子"]
+「…………」
+
+*sc003_1
+银在文麻吕面前突然停下脚步。
+
+//: DrawChara( "Gin", 11, 0)
+:// HideWnd()
+//: evbg = true; evcos = false;
+//: evfile = "evb_a003_1_1_0100000_0000000_0_"
+//: Call("Scenarios/Common*EvChange")
+//: ShowWnd()
+//: DrawFaceThumbnail( "Gin", 1, 0, 0 )
+\CN["银子"]
+“小姐不是你的女人……”
+
+//: DrawFaceThumbnail( "Fumimaro", 8, 0, 0 )
+\CN["文麻吕"]
+“啊？”
+
+//: DrawChara( "Gin", 13, 0)
+: HideWnd()
+//: StopBgm( 0.5 )
+: PlayBgm("BGM/05_CM005")
+: PlaySe( "SE/Se_Effect00" )
+: evbg = true; evcos = false;
+: evfile = "evx_a014_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+//: DrawFaceThumbnail( "Gin", 10, 0, 0 )
+\CN["银子"]
+“小姐是我的女人。”
+
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.25, 255, 255, 255 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_a003_1_1_0110000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.25, 255, 255, 255 )
+: Wait()
+//: PlayBgm("BGM/05_CM005")
+: ShowWnd()
+那句话里桃流着大颗的眼泪——
+
+//●演出：銀　文麻呂を殴ってぶっ飛ばす
+: HideWnd()
+: PlaySe( "SE/Se_Swing02" )
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: DrawFaceThumbnail( "Fumimaro", 10, 0, 0 )
+\CN["文麻吕"]
+“恩恩恩恩——————————！”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+银放出的踢抓住文麻吕的脸大幅度地吹跑。
+
+: DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 6, "C" )
+\CN["银子"]
+“你这家伙可真想有拳头啊。”
+
+: DrawFaceThumbnail( "Fumimaro", 10, 0, 0 )
+\CN["文麻吕"]
+“啊……啊……啊……啊……啊……”
+
+: EraseChara( "Gin", 0.5 )
+文麻吕流着鼻血被踢飞倒在地上。
+
+鼻子弯曲，缺了两颗门牙
+身体一边抽筋一边昏迷。
+
+\CN["文麻吕手下的男人2"]
+“文麻吕大人和伊藤先生……！”
+
+\CN["文麻吕手下的男人3"]
+“不要着急。大家一起袭击的话
+总会有办法的……”
+
+\CN["文麻吕手下的男人4"]
+“这里不能使用魔术，那边的男人也已经摇摇晃晃了。”
+
+\CN["文麻吕手下的男子5"]
+“有100个人。我们杀了这家伙的话
+一定能从文麻吕大人那里得到奖赏的”
+
+\CN["文麻吕手下的男子6"]
+“喂！快者胜！把这家伙打死！”
+
+虽然大声喊叫，但是没有回答。
+
+\CN["文麻吕手下的男人2"]
+“怎么了……？”
+
+\CN["文麻吕手下的男人3"]
+“为什么谁都不来！？
+难道大家都吓得逃走了吗……？”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = 600; y1 = -300; z1 = 2.0; time = 0;
+: x2 = 600; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Gin", 10, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“剩下的就只有你们了。”
+
+\CN["文麻吕手下的男人4"]
+“怎么回事……喂…怎么回事！？”
+
+//●演出：無黒、レオ、龍　登場する
+: HideWnd()
+: PlayBgm("BGM/10_CM010")
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: ResetLayer(3)
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 2, 0.0, 0.0, 5, "R" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: DrawChara( "Leo", 0, 0, 1, 0.0, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: DrawChara( "Ryu", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1192" )
+\CN["无黑色"]
+“什么啊，已经不在了吗……？
+我觉得好像还有很多……”
+
+: DrawChara( "Ryu", 6, 0)
+\CN["龙"]
+“好像有几个人丧失了斗志逃走了。
+剩下的只有那边的人吧”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“就算没有无黑和师傅，我一个人也足够了。”
+
+//●演技：泣きながら
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ryu", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0419" )
+\CN["桃子"]
+“看，大家……”
+
+: DrawFaceThumbnail( "Mukuro", 6, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1193" )
+\CN["无黑色"]
+“桃子！我之后会好好跟你说的。”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0420" )
+\CN["桃子"]
+“嗯，嗯……”
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom0421" )
+\CN["桃子"]
+“呐，无黑不是很生气吗？”
+
+: DrawChara( "Momo", 11, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Gin", 9, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["银子"]
+“当然啦，小姐……。
+之后请挨骂”
+
+\CN["文麻吕手下的男人4"]
+“啊，鬼灯那帮家伙竟然……”
+
+\CN["文麻吕手下的男子5"]
+「怎、怎么了……！
+日野家是财阀吧？应该对幕府有很大的影响力”
+
+\CN["文麻吕手下的男子5"]
+“那些家伙应该是幕府的唯命是从。
+那为什么会聚集成这样……”
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: file = "BGImage/BG_Kouya01_03"; lay = 1; 
+: x1 = 600; y1 = -300; z1 = 2.0; time = 0;
+: x2 = 600; y2 = -300; z2 = 2.0; accel = false;
+: Call( "Scenarios/Common*EffImage" )
+: DrawChara( "Leo", 3, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Leo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+“那是那个啊。”
+
+雷欧给银发信号。
+
+: DrawFaceThumbnail( "Gin", 2, 0, 0 )
+\CN["银子"]
+“……啊”
+
+银朝着他们迈出了强有力的一步——
+
+: HideWnd()
+: FadeOut( 0.25, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: ResetLayer(3)
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0 )
+: DrawChara( "Gin", 10, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“御用改！
+日野文麻吕，以贩卖人口的嫌疑将你们带走”
+
+\CN["文麻吕手下的男人2"]
+“酷……”
+
+\CN["文麻吕手下的男人3"]
+“结束了……已经…”
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: EraseChara( "Gin", 0.5 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+剩下的手下的男人们都扔掉武器投降。
+
+无黑和雷欧将其捕获，事态终于平静下来。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「私はわたし――姫椿家と決別４」へ
+//========================================================
+//○私はわたし――姫椿家と決別４
+//========================================================
+*sc004
+//●場所：日野家の屋敷・裏手
+//●視点：桃視点
+: FadeOut( 0.0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_03", 0.0, 0.1 )
+: Wait()
+: FadeIn( 0.25, 0, 0, 0, "BGImage/Transition15", 1.0 )
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+\CN["银子"]
+“小姐，我们也回去吧。”
+
+无黑他们带着昏过去的日野和他的部下们
+我先走了一步。
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0422" )
+\CN["桃子"]
+“小银……！”
+
+再也抑制不住自己的心情
+我朝着小银跑去。
+
+//●演出：銀に抱きつく桃
+: HideWnd()
+//: DrawChara( "Momo", 0, 2, 1, 0.5, 0.0, 4, "LC" )
+: beforelay = 4; afterlay = 4; move = -1; time = 0.5;
+: chara = "Momo"; face = 2; hoho = 1; pose = 0; pos = "C";
+: Call( "Scenarios/Common*FgPosChange" )
+: Wait()
+: PlaySe( "SE/Se_Cloth01" )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: ResetLayer(4)
+: ShowWnd()
+我跳进宽广而炽热的胸板里，小银好好地
+接受、支持、包容我——
+
+: DrawChara( "Momo", 0, 2, 0, 0.0, 0.0, 3, "C")
+: chara = "Momo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo01_mom0423" )
+\CN["桃子"]
+“小银……小银……我、我……嗯……”
+
+: DrawFaceThumbnail( "Gin", 5, 0, 0 )
+\CN["银子"]
+“……小姐”
+
+仅仅几天，就离开了……。
+
+叫我“小姐”真是爱不释手
+我自己也不知道为什么……。
+
+//●演技：感情が爆発してしまいます。号泣
+: DrawChara( "Momo", 0, 2)
+: PlayVoice( "Voices/vo01_mom0424" )
+\CN["桃子"]
+“小银……嗯……嗯……嗯……嗯……嗯………”
+
+: DrawChara( "Momo", 0, 2)
+: PlayVoice( "Voices/vo01_mom0425" )
+\CN["桃子"]
+“哇啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊——”
+
+: DrawFaceThumbnail( "Gin", 0, 0,0 )
+\CN["银子"]
+「…………」
+
+: DrawChara( "Momo", 0, 2)
+: PlayVoice( "Voices/vo01_mom0426" )
+\CN["桃子"]
+“啊啊啊啊啊啊啊啊啊……啊啊啊啊啊啊啊……”
+
+说不出话来。
+
+至今为止一直压抑着积攒下来的东西
+一口气涌出来。
+
+: EraseChara( "Momo", 0.0 )
+: ResetLayer(3)
+: DrawChara( "Gin", 6, 0, 0, 0.0, 0.0, 3, "C")
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["银子"]
+“小姐，对不起……”
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“我不会再离开你了，因为我会一直在你身边……”
+
+: EraseChara( "Gin", 0.0 )
+: ResetLayer(3)
+: DrawChara( "Momo", 0, 2, 0, 0.5, 0.0, 3, "C")
+: chara = "Momo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo01_mom0427" )
+\CN["桃子"]
+“因为是约定，所以……绝对……绝对是绝对的绝对……”
+
+: DrawFaceThumbnail( "Gin", 2, 0, 0 )
+\CN["银子"]
+“……我保证。”
+
+脸埋在小银的怀里，我像婴儿一样
+一个劲地哭。
+
+: DrawChara( "Momo", 0, 2)
+: PlayVoice( "Voices/vo01_mom0428" )
+\CN["桃子"]
+“……啊，那个，腰……？”
+
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: ResetLayer(3)
+: ShowWnd()
+全部结束后，把所有积压的东西都吐出来了
+安心地松了腰。
+
+//●演出：お姫様抱っこ
+//●演技：銀にお姫様抱っこされています
+//: DrawChara( "Momo", 3, 2, 0, 0.5, 0.0, 4, "LC" )
+: PlaySe( "SE/Se_Cloth01" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a004_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0429" )
+\CN["桃子"]
+“哎呀……！小金……！？”
+
+//: DrawChara( "Gin", 4, 0)
+\CN["银子"]
+“请好好抓住我哦。”
+
+//: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0430" )
+\CN["桃子"]
+“嗯，嗯……”
+
+这、这是公主抱吧……？
+
+呜呜……怎么办……。
+虽然很开心但是很害羞，看不到正面的脸。
+
+//: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+“小姐……”
+
+//: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0431" )
+\CN["桃子"]
+“什么，是什么……？”
+
+//: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“就这样——”
+
+//●演技：キスされています
+//: DrawChara( "Momo", 3, 2)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a004_1_2_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0432" )
+\CN["桃子"]
+“嗯……？”
+
+嘴唇有什么柔软的感觉。
+
+//●演技：キスです
+//: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0433" )
+\CN["桃子"]
+“嗯……小银……”
+
+//: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+「…………」
+
+初吻对女孩子来说是非常重要的东西。
+
+但是，对于出生在贵族家的我来说
+我只是单纯的梦想和幻想。
+
+如果将来只对做丈夫的人那样做是理所当然的
+这才是嘴唇和嘴唇合在一起的仪式吧
+这样想着。
+
+但是——
+
+: PlayVoice( "Voices/vo01_mom0434" )
+\CN["桃子"]
+“恩哈……小银……我也……嗯……”
+
+\CN["银子"]
+“……小姐……”
+
+眼泪一个接一个地涌出来停不下来。
+感情太激动了，好像要爆了头。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a004_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+如果这是梦的话，可以睡一辈子。
+
+//●演出：黄菜子　登場する
+//: DrawChara( "Kinako", 4, 0, 0, 0.5, 0.0, 5, "RC" )
+: DrawFaceThumbnail( "Kinako", 4, 0, 0 )
+: PlayVoice( "Voices/vo02_kin0217" )
+\CN["黄菜子"]
+“桃先生，风真先生，局长要留言。”
+
+公主抱在怀里的时候被看得一清二楚。
+
+嘛，如果不是接吻的地方就好了
+虽然很好。
+
+: PlayVoice( "Voices/vo01_mom0435" )
+\CN["桃子"]
+“黄菜子……！？这个，那个……那个……”
+
+\CN["银子"]
+“有栖川，你说的是什么？”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom0436" )
+\CN["桃子"]
+（呜哇……为什么小银一下子就露出那么无所谓的表情
+不行啊！？）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom0437" )
+\CN["桃子"]
+（你不会发现我的脸涨得通红吗
+明明心里七上八下的……！）
+
+: DrawFaceThumbnail( "Kinako", 0, 0, 0 )
+: PlayVoice( "Voices/vo02_kin0218" )
+\CN["黄菜子"]
+“局长将给两位新的任务。
+还有，把这个交给桃先生……”
+
+: PlayVoice( "Voices/vo01_mom0438" )
+\CN["桃子"]
+“这、这个……我的设备……。
+但是，我退出了鬼灯——”
+
+//: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“有栖川，请告诉我任务的事情。”
+
+//●読み：曾太郎（そうたろう）
+: DrawFaceThumbnail( "Kinako", 0, 0, 0 )
+: PlayVoice( "Voices/vo02_kin0219" )
+\CN["黄菜子"]
+“是的！要重做的对象是公主椿曾太郎——
+我是姬椿家的家长”
+
+: PlayVoice( "Voices/vo01_mom0439" )
+\CN["桃子"]
+“……小银，已经没事了。”
+
+\CN["银子"]
+“啊……”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+小银慢慢地把我放下。
+
+: DrawChara( "Momo", 4, 1, 0, 0.0, 0.0, 3, "C")
+: chara = "Momo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo01_mom0440" )
+\CN["桃子"]
+“请告诉我详细情况。”
+
+: DrawChara( "Momo", 0, 1)
+: PlayVoice( "Voices/vo01_mom0441" )
+\CN["桃子"]
+“我——不，我和小银会好好相处的。”
+
+向黄菜子询问关于任务的详细内容。
+
+我想快点结束。
+就这样不回屯所，和小银一起去了位于仙叶的姬椿的宅邸
+去了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「私はわたし――姫椿家と決別５へ」
+//========================================================
+//○私はわたし――姫椿家と決別５
+//========================================================
+*sc005
+//●視点：桃視点
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——第二天仙叶・姬椿家。
+
+//●演出：桃と銀　入ってくる
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Room02_01", 1.0 )
+: Wait()
+: DrawChara( "Momo", 4, 0, 0, 0.0, 0.0, 4, "RC" )
+: DrawChara( "Gin", 8, 0, 0, 0.0, 0.0, 3, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: PlayBgm("BGM/02_CM002")
+: ShowWnd()
+\CN["桃之父"]
+“桃子，风真，你回来干什么了！”
+
+\CN["桃妈妈"]
+“你是已经嫁给日野家的人
+你应该不会回这个家的”
+
+//●演出：『来る』の強調用フリガナ『・・』
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0442" )
+\CN["桃子"]
+“是啊，妈妈，{来，・・}这也是最后一次了。”
+
+我再次踏入姬椿家的理由只有一个。
+
+//●読み：曾太郎（そうたろう）
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0443" )
+\CN["桃子"]
+“父亲——不，公主椿曾太郎。
+改用吧，觉悟吧！”
+
+\CN["桃之父"]
+“哈？”
+
+\CN["桃妈妈"]
+“桃子，你在说什么蠢话！？
+父亲的反幕嫌疑应该已经没有了”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0444" )
+\CN["桃子"]
+“是的。带走的理由不是反幕的嫌疑。”
+
+刚才局长交给我的任务是
+以欺诈罪的嫌疑带走公主椿家户主，姬椿曾太郎。
+
+你一定是非常缺钱吧。
+好像是花言巧语欺骗了很多商人。
+
+不仅是反幕的嫌疑，也有那样的事
+应该是想快点和财阀家建立亲戚关系吧。
+
+一想到和这样的垃圾流着同样的血就恶心。
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0445" )
+\CN["桃子"]
+“如果要抵抗的话，我们也会相应地处理的吧？”
+
+\CN["桃之父"]
+“那么，居然想抓住亲生父亲……。
+你这个不孝者！！”
+
+\CN["桃妈妈"]
+“桃！你是鬼灯的一员吧？
+那就放过我这些吧！”
+
+\CN["桃妈妈"]
+“才不是欺诈！被骗了才不好。”
+
+\CN["桃之父"]
+“这样的话就没办法了……”
+
+父亲发出了信号，召集了山茶女的护卫和忍者们。
+
+\CN["桃之父"]
+“杀了这两个人！这是命令！”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“……小姐，那个”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0446" )
+\CN["桃子"]
+“哈～……。
+万万没想到他会愚蠢到这种地步”
+
+万一在这里杀了我和小银。
+
+就在这时，援军马上从鬼灯里赶来。
+
+杀了我们这个幕府组织鬼灯的队员
+命令的事表示了反对幕的意思。
+
+我好像不理解那件事。
+
+: DrawChara( "Gin", 7, 0)
+\CN["银子"]
+“小姐，怎么办？”
+
+小银一边问着怎么办
+眼睛炯炯有神地闪耀着斗志满满的样子。
+
+现在或是现在，我都要命令你干掉我
+有种期待的感觉。
+
+但是，这里是——
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0447" )
+\CN["桃子"]
+“小银，退下。这里是我……”
+
+: EraseChara( "Gin", 0.5 )
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0448" )
+\CN["桃子"]
+“因为这是必须用我的手去解决的事情。”
+
+\CN["桃之父"]
+“哼……竟然要违背父母……。
+这样的家伙，已经不是女儿了！杀了他！”
+
+山茶女们一起袭击过来。
+
+//●演出：桃　魔術で忍たちを攻撃する
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: PlaySe( "SE/Se_AnimeL_Thunder02" )
+: PlayAnim( "Animations/AnimeL_Thunder02", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["山茶女家的忍A"]
+“什么！？难道说，魔术……！？”
+
+//: DrawChara( "Momo", 9, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0449" )
+\CN["桃子"]
+「啊？连我能使用魔术这件事都
+你不知道吗？”
+
+//●演出：桃　魔術で忍たちを一網打尽にする
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Thunder03" )
+: PlayAnim( "Animations/AnimeL_Thunder03", false, 0, 0, 6, 6 )
+: Wait()
+: Call( "Scenarios/Effect*WindMagic" )
+: ShowWnd()
+\CN["山茶女家的忍B"]
+“笨蛋啊……公主椿家精锐部队的我们都束手无策了
+怎么……”
+
+: HideWnd()
+: DrawChara( "Gin", 2, 0, 0, 0.0, 0.0, 3, "LC" )
+: DrawChara( "Momo", 0, 0, 0, 0.0, 0.0, 4, "RC")
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["银子"]
+“这种程度就够精锐啦，别逗我笑了。”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0450" )
+\CN["桃子"]
+“日野的家长不是靠我们而是靠着白夜
+我觉得我能理解……”
+
+//●演出：桃　魔術で忍たちを一網打尽にする
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Call( "Scenarios/Effect*WindMagic" )
+: ShowWnd()
+\CN["桃之父"]
+“啊啊啊……啊…啊…啊……你，把魔术……”
+
+: DrawChara( "Momo", 9, 0, 0, 0.0, 0.0, 3, "C")
+: chara = "Momo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo01_mom0451" )
+\CN["桃子"]
+“最后给你忠告”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0452" )
+\CN["桃子"]
+“如果抵抗的话，我也会采取相应的手段。
+当然，不论生死”
+
+这样的人渣也是亲生父亲。
+说实话，我不想入手。
+
+\CN["桃之父"]
+“……随你的便。”
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0453" )
+\CN["桃子"]
+“小银”
+
+: DrawFaceThumbnail( "Gin", 1, 0, 0 )
+\CN["银子"]
+“啊……”
+
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: ResetLayer(3)
+: ShowWnd()
+突然陷入困境的父亲——
+小银捕获了姬椿家的户主。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后不久赶到的警察们
+把山茶女宅邸的人们带走了。
+
+……………………………………………………。
+
+//●シーン：「これからは１人の男としてお嬢の傍に」へ
+//＠シナリオジャンプ：SC_B04_08
+//ここでイベント情報を更新しておく
+: $money += 4000
+: SetMission( "SC_B04_06_1", "Successed" )
+: Jump( "Scenarios/SC_B04_08" )

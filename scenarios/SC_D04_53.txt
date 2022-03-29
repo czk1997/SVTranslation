@@ -1,0 +1,1269 @@
+//========================================================
+//○魔導手術で子宮改造１
+//========================================================
+*sc001
+//●場所：西都・ヒラガの家
+//: RpgCharaBaloonOff( "Hiraga" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 0, 0, "BGImage/BG_Room01_01", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+\CN["平底片"]
+“哎呀哎呀，神八代，今天怎么了？”
+
+这个男人的名字是希拉加。
+
+像我们这样的浪人也好，罪犯也好
+虽然是流氓，但是只要付钱谁都会好好治疗的。
+
+就是所谓的黑医。
+
+也有因为绝对严守秘密而出名的
+在西都新地的妓女和夜鹰也经常利用。
+
+//●分岐：［服装］全裸の場合
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 25, 0)
+	: PlayVoice( "Voices/vo00_muk4234" )
+	\CN["无黑色"]
+（这个人，不管我穿衣服还是裸体
+态度完全没变啊）
+
+//●分岐終了
+: endif
+//●演技：心の声です
+: DrawChara( "Mukuro", 28, 0)
+: PlayVoice( "Voices/vo00_muk4235" )
+\CN["无黑色"]
+（不管怎么说都是一个劲地H
+顺便说一下，要好好检查一下吗？）
+
+告诉他希望看病。
+
+\CN["平底片"]
+“知道了。那么，请亚久里先生听电话。”
+
+//: RpgCharaTurn( "Aguri", "U" )
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Aguri", 0, 0, 0, 0.5, 0.0, 2, "L" )
+: PlayVoice( "Voices/vo16_agu0263" )
+\CN["亚久里"]
+“好的。那么，这边请。”
+
+//●演出：無黒　診察ベッドに横になる
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+//: Wait()
+//: RpgCharaBatch( "Aguri"	\
+//:	"MoveLeft", 2	\
+//:	"MoveUp", 1 )
+//: Wait()
+//: RpgCharaMoveTo("Player", 16, 11, 4.0 )
+//: Wait()
+//: RpgCharaTurn( "Player", "D" )
+//: Wait()
+: ShowWnd()
+被称为亚久里的冷酷氛围的助手带着
+去检查床。
+
+: DrawChara( "Aguri", 0, 0, 0, 0.5, 0.0, 2, "C" )
+: PlayVoice( "Voices/vo16_agu0264" )
+\CN["亚久里"]
+“请不要动。”
+
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+比拉加的助手亚久里把我放在床上
+装饰着类似魔导器的东西。
+
+虽然不太清楚结构
+好像是能知道身体状态的魔导器。
+
+一般来说是打开大腿，在那里装上什么机器
+我听说过，这个很轻松很好。
+
+//: HideWnd()
+//: RpgCharaBatch( "Hiraga"	\
+//:	"MoveLeft", 2 )
+//: Wait()
+//: ShowWnd()
+
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["平底片"]
+“嗯，没有什么异常。
+也没有得过性病”
+
+: DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk4236" )
+\CN["无黑色"]
+“是吗？我放心了。”
+
+因为是用这个身体挣日资
+好好检查的话可以放心。
+
+//: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+\CN["平底片"]
+“对了对了，神八代，你对子宫的强化没兴趣吗？
+虽然用魔导器做手术很简单”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4237" )
+\CN["无黑色"]
+“子宫的改造……？怎么回事？”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“是的。特别是像你这样和魔物战斗的人
+有时会被魔物袭击——我想应该是这样的”
+
+//●分岐：異種姦経験がある場合
+: if ( CharaHParam( "Mukuro", "Interbreed" ) >= 1 )
+	: DrawChara( "Mukuro", 12, 0)
+	: PlayVoice( "Voices/vo00_muk4238" )
+	\CN["无黑色"]
+“嘛……确实有啊……”
+
+	: DrawChara( "Hiraga", 0, 0)
+	\CN["平底片"]
+“和人外的性行为会给子宫带来很大的伤害
+有很多。如果是一些伤口的话，可以用魔术来治疗……”
+
+//●分岐終了
+: endif
+//: DrawChara( "Mukuro", 23, 0)
+这么说来，前几天，和我一样是个浪人女
+说是因为被侵犯而导致子宫受损。
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk4239" )
+\CN["无黑色"]
+“为了不让任何魔物侵犯都没关系，要强化子宫
+是吗？”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“是的，没错。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4240" )
+\CN["无黑色"]
+“嘛，这样的话就这样吧。
+如果能接受的话，我想试试看”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“很遗憾，我们不能免费提供
+还有，也有不能忽视的巨大影响”
+
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4241" )
+\CN["无黑色"]
+“很大的影响？”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“是的，手术是重新制作子宫细胞的。
+只是，由此孕育出了“魔物之子”
+也有可能”
+
+\CN["平底片"]
+“一般来说，人类和精灵在怀孕大约10个月后就会生孩子
+但是，做这个手术不到一天就可以生孩子了
+”
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk4242" )
+\CN["无黑色"]
+“竟然怀孕了魔物之子，真不愧是……”
+
+对生孩子有抵触情绪。
+
+\CN["平底片"]
+“嘛，如果生了孩子的话，就由我们来收养吧
+我们会好好照顾您直到长大成人
+请放心”
+
+\CN["平底片"]
+“只是，费用相当高。
+要5万两，怎么办呢？”
+
+//●分岐：所持金が５万両以上ある場合
+: if( $money < 50000 ) Jump( "*sc001_2" ) endif
+: DrawChara( "Mukuro", 0, 0)
+五万两——
+
+*select01
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：もっとよく考えてみる
+//■選択肢２：子宮改造手術をお願いする
+//――――――――――――――――――――――――――――
+\CI["再好好考虑一下"]
+\CI["请进行子宫改造手术"]
+暂且，虽然手头有。
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+
+//-------------------------------------------------------
+//●選択肢１：もっとよく考えてみるを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“那倒是。
+如果想接受手术的话，随时都可以”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Hiraga", 0.5 )
+//: EraseChara( "Aguri", 0.5 )
+//●シーンエンド
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：子宮改造手術をお願いするを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+\CN["平底片"]
+“知道了。
+毕竟不能在这里做
+我打算去特别的设施”
+
+: DrawChara( "Aguri", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo16_agu0265" )
+\CN["亚久里"]
+“请这边来。我带您去。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Hiraga", 0.0 )
+: EraseChara( "Aguri", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+//: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 3, "RC" )
+希拉加有一个魔导器，可以通过电话传送
+我用那个去设施什么的。
+
+:// DrawChara( "Mukuro", 41, 0)
+这么说来，希拉加为什么会有那么厉害的魔导器呢？
+虽然这么想，但不去追究是礼仪。
+
+//: EraseChara( "Mukuro", 0.5 )
+//●シナリオ「魔導手術で子宮改造２」へ
+//＠ラベルジャンプ：sc002
+: Jump( "*sc002" )
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+*sc001_2
+: DrawChara( "Mukuro", 0, 0)
+我现在告诉他我没有存货就拒绝了。
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“如果想接受手术的话，随时都可以。”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Hiraga", 0.5 )
+//: EraseChara( "Aguri", 0.5 )
+//●シーンエンド
+//●分岐終了
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaWarp( "Hiraga", "Hiraga" )
+: RpgCharaWarp( "Aguri", "Aguri" )
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○魔導手術で子宮改造２
+//========================================================
+*sc002
+//●場所：研究所
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D04_53" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D04_53" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Laboratory01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4243" )
+\CN["无黑色"]
+“这里呢？总觉得有很多很棒的设备……”
+
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+\CN["平底片"]
+“像我秘密的研究所一样。
+那么，亚久里先生，请做好准备。”
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: PlayVoice( "Voices/vo16_agu0266" )
+\CN["亚久里"]
+“知道了。马上给您准备……”
+
+女助手进了里屋。
+
+//●演出：時間経過トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Aguri", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+稍微等一下——
+
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 4, "L" )
+: DrawChara( "Aguri", 4, 0, 0, 0.5, 0.0, 2, "R" )
+: PlayVoice( "Voices/vo16_agu0267" )
+\CN["亚久里"]
+“准备好了。”
+
+\CN["平底片"]
+“谢谢，亚久里。
+那么，神八代先生，这边请」
+
+//●演出：無黒　ヒラガについていく
+//●演出：暗転
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Hiraga", 0.0 )
+: EraseChara( "Aguri", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+被送到里屋。
+
+//＠服装記憶
+: Call( "Scenarios/CommonSys*CosMemory" )
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Mukuro" ) == 0 )
+
+	: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+	\CN["平底片"]
+“穿着衣服不能进行手术
+可以帮我把内衣也脱下来吗？”
+
+	: DrawFaceThumbnail( "Mukuro", 1, 0, 0 )
+	: PlayVoice( "Voices/vo00_muk4244" )
+	\CN["无黑色"]
+“啊，我知道了。”
+
+	//●演出：着替え演出
+	//●服装：無黒・全裸
+	//無黒cos1へ変更
+正如所说，全部脱光光。
+
+//●分岐終了
+: endif
+\CN["平底片"]
+“那么请坐在这边的椅子上。
+亚久里先生，以后就拜托你了”
+
+: DrawFaceThumbnail( "Aguri", 1, 0, 0 )
+: PlayVoice( "Voices/vo16_agu0268" )
+\CN["亚久里"]
+“神八代大人，我会固定身体的，请暂时忍耐一下。”
+
+: PlayVoice( "Voices/vo16_agu0269" )
+\CN["亚久里"]
+“如果被胡闹的话，就无法挽回了
+敬请谅解”
+
+: DrawFaceThumbnail( "Mukuro", 34, 0, 0 )
+: PlayVoice( "Voices/vo00_muk4245" )
+\CN["无黑色"]
+“我知道了。请多关照。”
+
+用淡泊的语调说的话，非常可怕。
+
+正如所说的那样，把身体交给助手
+手脚被固定。
+
+//●ＣＧ：機械姦（無黒）
+//●ＣＧ差分：未挿入
+: CharaCostume( "Mukuro", 1 )
+: HideWnd()
+: StopBgm( 0.5 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_1_0210001_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4246" )
+\CN["无黑色"]
+“嗯……果然，这身打扮真丢人啊……”
+
+手上戴着手铐，脚被好好地展开
+女阴已经完全暴露出来了。
+
+\CN["平底片"]
+“虽说是魔导手术，但不是用手术刀剖腹之类的
+没有，请放心”
+
+\CN["平底片"]
+“是啊。和从女性器皿里插入的内窥镜一样的东西
+如果您能考虑一下的话”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_1_0310001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4247" )
+\CN["无黑色"]
+“因为是女性器皿……那就和普通手淫
+对你来说是不会变的感觉吗？”
+
+\CN["平底片"]
+“是啊。大概呢，这样的印象可以吗……”
+
+那样的话，我就放心了。
+倒不如说是因为期待而让女阴疼了起来。
+
+//●ＣＧ差分：未挿入２
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_1_0210001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0270" )
+\CN["亚久里"]
+“那么开始手术。”
+
+女助手推着机器过来。
+
+: PlayVoice( "Voices/vo00_muk4248" )
+\CN["无黑色"]
+“形状很漂亮，就是小鸡鸡的那个啊。”
+
+\CN["平底片"]
+“我觉得是适合插入女性器皿的形状。
+尤其是像你这样类型的人”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_1_0310001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4249" )
+\CN["无黑色"]
+“我猜对了，什么也不能还嘴。”
+
+: PlayVoice( "Voices/vo16_agu0271" )
+\CN["亚久里"]
+“那么，我马上插入。”
+
+//●ＣＧ差分：挿入１
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——中、咕嘟、一直、一直！
+
+//●演技：女性器にディルドのようなものが挿入されています
+: PlayVoice( "Voices/vo00_muk4250" )
+\CN["无黑色"]
+“嗯……哈……啊，啊，呜……嗯
+啊……啊…啊……嗯，很粗♥</color>」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4251" )
+\CN["无黑色"]
+“啊，哈哈，进来了哦。”♥</啊啊啊啊啊啊♥</又硬又硬
+粗啊，女阴肉啊♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘嘘！呜……呜……呜哇！！
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi01" )
+\CN["平底片"]
+“很难{插入，是}呢”
+
+: PlayVoice( "Voices/vo00_muk4252" )
+\CN["无黑色"]
+“哈……呃……哈……接下来该怎么办呢……。
+手术开始了吗？”
+
+\CN["平底片"]
+“不。首先需要现阶段的子宫及其周边的数据
+我查一下”
+
+\CN["平底片"]
+“稍微有点刺激，请谅解。”
+
+: PlayVoice( "Voices/vo16_agu0272" )
+\CN["亚久里"]
+“那么，让魔导器运转。”
+
+发出尖锐的声音，魔导器——进入我的阴道内
+开始前后抽签。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストンされています
+: PlayVoice( "Voices/vo00_muk4253" )
+\CN["无黑色"]
+“嗯，啊，啊……啊啊啊啊啊啊啊啊啊啊♥</啊，啊
+哈，啊，嗯，嗯♥</嗯，哈，啊啊啊啊啊啊♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4254" )
+\CN["无黑色"]
+「中、擦えて……伊博沃在女阴中摩擦着♥</color>
+哦哦，哦，女阴，被搅乱了♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi02" )
+这个非常舒服。
+
+伊博伯用按摩女阴的感觉擦了过来
+每次被摩擦一次全身都会发抖。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+祝你好运！嘘！嘘！顺溜！
+加油！呼呼！嘘！嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4255" )
+\CN["无黑色"]
+「啊啊啊啊！啊，感觉到了♥</感觉一个劲地♥</color>
+这、这样的话马上……嗯、不、好像很开心……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+
+//●演技：軽い絶頂です
+: PlayVoice( "Voices/vo00_muk4256" )
+\CN["无黑色"]
+“啊……啊啊……啊啊啊♥</啊，哈，哈
+嗯，呜，呜……啊，啊…呜呜呜♥</color>」
+
+只是存取稍微早了一点，就被轻轻地嘲弄了。
+
+\CN["平底片"]
+“现在好像感受到了轻松的风尚呢。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4257" )
+\CN["无黑色"]
+“对，对了……用机器分析的话，真是乱七八糟
+好害羞啊」
+
+\CN["平底片"]
+“讨厌吗？”
+
+: PlayVoice( "Voices/vo00_muk4258" )
+\CN["无黑色"]
+“不，这是因为有新鲜感而兴奋……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+慢吞吞！加油！嘘！嘘！嘘！
+好！骗人的！加油！嘘嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4259" )
+\CN["无黑色"]
+「啊，啊啊啊啊啊啊啊啊啊」♥</啊，哈，啊，啊……好饿啊♥</color>
+啊啊啊啊啊♥</嗯，嗯，啊啊啊♥</color>」
+
+\CN["平底片"]
+“好像阴道内大部分都松了。”
+
+: PlayVoice( "Voices/vo00_muk4260" )
+\CN["无黑色"]
+“哈、哈、哈……心情太好了……嗯
+女阴，可能变成了托管♥</color>」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4261" )
+\CN["无黑色"]
+「嗯，哈，啊啊啊啊啊啊♥</那、那里、软弱的地方……
+啊，嗯，嗯！”
+
+从刚才开始身体就一直因快感而颤抖。
+
+魔导器小鸡鸡的疣能清除女阴中的污垢
+又有一种剪下来的感觉，让人受不了。
+
+\CN["平底片"]
+“不必忍耐风尚。
+嘛，我好像没有忍耐”
+
+: PlayVoice( "Voices/vo00_muk4262" )
+\CN["无黑色"]
+“这、明明心情这么好，怎么能忍受呢。”♥</color>」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4263" )
+\CN["无黑色"]
+“啊啊啊，嗯……嗯，嗯……嗯…恩
+那么，再见了♥</color>」
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——战战兢兢地战战兢兢！
+
+: PlayVoice( "Voices/vo00_muk4264" )
+\CN["无黑色"]
+「嗯！啊，头，软绵绵的呢。」♥</color>
+啊……嗯，嗯，啊啊啊啊啊啊♥</color>」
+
+快感早已渗透全身。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4265" )
+\CN["无黑色"]
+“哇，哇，好烫，好烫啊……再搅拌一下
+魔导器的……用机器小矮人一塌糊涂地犯了个大错误♥</color>」
+
+不能自己尽情地活动腰
+非常着急。
+
+: PlayVoice( "Voices/vo00_muk4266" )
+\CN["无黑色"]
+“明明想更加、更加、更加心情舒畅地玩下去的♥</color>」
+
+\CN["平底片"]
+“因为反复了好几次轻的风尚
+子宫下来了呢”
+
+\CN["平底片"]
+“亚久里先生，我们进入下一步吧。”
+
+: PlayVoice( "Voices/vo16_agu0273" )
+\CN["亚久里"]
+“我知道了。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：子宮の奥に入ってきます
+: PlayVoice( "Voices/vo00_muk4267" )
+\CN["无黑色"]
+“下一个……嗯……哈哈……机器小鸡鸡，在里面……”
+
+: PlayVoice( "Voices/vo00_muk4268" )
+\CN["无黑色"]
+“啊哈哈……然后，撞到子宫的入口……啊，啊啊啊啊
+呃……恩，呃，来了……啊，啊…啊…啊…啊……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_5_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4269" )
+\CN["无黑色"]
+“呜……呃……啊啊啊……恩啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+//●ＣＧ差分：挿入・腹ぼこ・潮吹き
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_6_0411013_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜哇啊啊啊啊啊啊！！！
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+哦哦哦哦哦哦哦哦哦！！！
+
+一边吹着潮水，一边往里，把机器小鸡鸡放到子宫里
+被推下去。
+
+机器小鸡鸡把子宫口推开的话，{侵入，是}进入子宫中。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_6_0310013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4270" )
+\CN["无黑色"]
+「啊啊啊……然后，被海水吹起了♥</一边吹着海风……嗯
+机器小鸡鸡……哈哈哈，进入肚子里……”
+
+: PlayVoice( "Voices/vo00_muk4271" )
+\CN["无黑色"]
+「呼、呼、嗯……肚子饿扁了♥</color>
+机械小鸡鸡，完全进入子宫了♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！加油！嘘！嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_6_0210013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4272" )
+\CN["无黑色"]
+“啊啊啊……子宫的入口，突然打开了♥</嗯，嗯
+从肚子里出来的精灵，身体，像是要溶化了♥</color>」
+
+机器小鸡鸡张开子宫口
+在子宫内不断地攻击。
+
+头变白了，这就是子宫的改造手术
+怎么早就想不出来了。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_6_0411013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4273" )
+\CN["无黑色"]
+“啊啊啊，嗯，啊啊啊啊啊啊啊啊”♥</这个、这个、守护……
+子宫，一直被责备♥</color>」
+
+: PlayVoice( "Voices/vo16_agu0274" )
+\CN["亚久里"]
+“怎么办？”
+
+\CN["平底片"]
+“差不多该开始了吧。”
+
+: PlayVoice( "Voices/vo16_agu0275" )
+\CN["亚久里"]
+“知道了。那么，我去投药。”
+
+: PlayVoice( "Voices/vo00_muk4274" )
+\CN["无黑色"]
+“啊……药剂……嗯……啊，啊啊啊……
+温暖的、直接进入子宫……！？”
+
+//●ＣＧ差分：挿入・薬剤
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_4_0111013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咚、咚、咚、咚、咚、咚、咚、咚、咚咚！
+
+: PlayVoice( "Voices/vo00_muk4275" )
+\CN["无黑色"]
+“嗯~好棒！然后，出来了……子宫里满满的
+被拿出来……在里面被拿出来了……好厉害，什么东西一下子
+啊啊啊啊啊啊啊啊啊♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4276" )
+\CN["无黑色"]
+“哦哦，嗯，嗯，嗯，嗯，嗯……”♥</color>
+啊，阿嚏……阿嚏，好烫啊♥</color><color=#f59aa0>♥</color>」
+
+: PlayVoice( "Voices/vo16_agu0276" )
+\CN["亚久里"]
+“再加点药，就能满足子宫。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_4_0411013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+参考翻译！别管！德彪！别克！
+别管！别管！咕嘟咕嘟！
+
+: PlayVoice( "Voices/vo00_muk4277" )
+\CN["无黑色"]
+「哇啊啊啊啊啊啊啊啊啊！」♥</更加、更加满足♥</color>
+子宫很舒服，所以要多吃点♥</color>」
+
+发出令人吃惊的粗俗声音
+贪婪地持续追求快感。
+
+能得到如此强烈的快感，不是常有的事吗
+所以，不知不觉就太入迷了。
+
+: PlayVoice( "Voices/vo00_muk4278" )
+\CN["无黑色"]
+「嗯，不好意思。」♥</啊啊……嗯……女阴，好烫啊♥</color>
+哈、哈、哈……肚子太热了，吃得很饱♥</color>」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_4_0310013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4279" )
+\CN["无黑色"]
+“好可怕……哈，哈，阿嚏，阿嚏，阿嚏，阿嚏，阿嚏，阿嚏！”♥</color>
+嗨……下次再聊吧，来个AQUE吧♥</color>」
+
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+别克！别克！嘎嘎嘎嘎地响！
+
+意识朦胧。
+
+伴随着强烈快感的绝顶之波无法停止。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_4_0111013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4280" )
+\CN["无黑色"]
+「嗯……啊…啊…啊啊…啊啊啊啊啊啊♥</话说回来♥</color>
+嗯，是的，真的……好的♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4281" )
+\CN["无黑色"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊”♥</彩色笔♥</哦哦哦哦哦♥</color>
+伊格……伊格…嗯……嗯♥</color>」
+
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_4_0411013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4282" )
+\CN["无黑色"]
+“一……呃，好……好……嗯……嗯………”♥</color>
+嗯……嗯……嗯♥</color>」
+
+//●ＣＧ差分：挿入・潮
+
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_4_0111013_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+超现实主义者————！
+项目符号-项目符号-项目符号！
+
+: PlayVoice( "Voices/vo00_muk4283" )
+\CN["无黑色"]
+“啊啊啊啊啊啊啊啊……啊啊啊……
+嗯，嗯，嗯，哈，哈哈哈……啊♥</color>」
+
+\CN["平底片"]
+“手术顺利结束了呢。
+亚久里，请从她的阴道里拔出魔导器”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_4_0210013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+
+//●演技：意識が朦朧としています
+: PlayVoice( "Voices/vo00_muk4284" )
+\CN["无黑色"]
+“嘛，等下啊~…来，我要拔了……”
+
+模糊的视野。试着用含糊其辞的语调传达给对方——、
+
+: PlayVoice( "Voices/vo16_agu0277" )
+\CN["亚久里"]
+“我把魔导器排出。”
+
+//●ＣＧ差分：挿入１
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_3_0111013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——滑头！
+
+//●演技：膣内に入っている機械が抜かれます
+: PlayVoice( "Voices/vo00_muk4285" )
+\CN["无黑色"]
+“嗯……从子宫里钻出来……”
+
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_2_0310013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+从子宫口溜出的机器小鸡鸡
+慢慢地从阴道内抽出。
+
+: PlayVoice( "Voices/vo00_muk4286" )
+\CN["无黑色"]
+“嗯……啊…啊……啊……然后，就出来了……”♥</color>」
+
+//●ＣＧ差分：未挿入・尿
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: PlayHSe( "SE/Hse_Nyou" )
+: evbg = true; evcos = false;
+: evfile = "eva_b024_1_2_0411013_1100100_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——慢吞吞。
+
+: PlayVoice( "Voices/vo00_muk4287" )
+\CN["无黑色"]
+“嗯……也漏出来了……哈，哈，真是粗心大意……
+尿……漏出来了……嗯……停不下来了♥</color>」
+
+心情好得尿死了
+连阻止的心情都没有。
+
+有时过于激烈，意识几乎都没有了
+羞耻心完全麻痹了，不知跑到哪里去了。
+
+\CN["平底片"]
+“哎呀，好像失禁了啊。”
+
+: PlayVoice( "Voices/vo16_agu0278" )
+\CN["亚久里"]
+“马上打扫。”
+
+听到助手用无机质的声音这样说。
+
+我在被拘束的状态下睡着了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: StopBackVoice()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_D04_53
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//裸だった場合、露出値を＋しておく
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithOther", 1) endif
+: if ( CharaCostume( "Mukuro" ) == 1 ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+//シーン登録
+: SceneFlagUp( "SC_D04_53" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 48 ) endif
+//========================================================
+//○魔導手術で子宮改造３
+//========================================================
+*sc003
+//●場所：研究所
+//●演出：無黒　目が覚める
+//妊娠可能状態にする
+: HideWnd()
+: Call( "Scenarios/CommonSys*CosReturn" )	//服装復帰
+: CharaFertilely( "Mukuro" )
+: Flag( "Birth", true )
+: DrawImage( 1, 0, "BGImage/BG_Laboratory01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Mukuro", 8, 1, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4288" )
+\CN["无黑色"]
+“嗯……嗯……我就那样睡了吗？”
+
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+\CN["平底片"]
+“是的，睡得很舒服。”
+
+: DrawChara( "Mukuro", 7, 1)
+我还睡得迷迷糊糊的
+我记得子宫的改造手术非常舒服。
+
+: DrawChara( "Mukuro", 11, 1)
+: PlayVoice( "Voices/vo00_muk4289" )
+\CN["无黑色"]
+“完全没有实感
+子宫的重建顺利结束了吗？”
+
+//●分岐：過去の行為で妊娠していなかった場合
+: if ( CharaHasChild( "Mukuro" ) == false )
+	\CN["平底片"]
+“是的，不会停滞不前。我觉得没有实感……”
+
+	: DrawChara( "Mukuro", 0, 0)
+	: PlayVoice( "Voices/vo00_muk4290" )
+	\CN["无黑色"]
+“是吗……。嘛，那也是……”
+
+	\CN["平底片"]
+“有疼痛或者不舒服吗？”
+
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk4291" )
+	\CN["无黑色"]
+“不，没什么特别的。”
+
+	: DrawChara( "Mukuro", 0, 0)
+硬要说的话，刚才感觉到的暴力快感会慢慢消失
+只不过是感觉留下了而已。
+
+	\CN["平底片"]
+“那就太好了。”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●過去の行為で妊娠していた場合
+: else
+	\CN["平底片"]
+“是的，不会停的。
+只是，有一个问题……”
+
+	: DrawChara( "Mukuro", 10, 0)
+	: PlayVoice( "Voices/vo00_muk4292" )
+	\CN["无黑色"]
+“问题？难道发生了什么事？”
+
+	\CN["平底片"]
+“是的。神八代，好像怀孕了。”
+
+	: DrawChara( "Mukuro", 18, 0)
+	: PlayVoice( "Voices/vo00_muk4293" )
+	\CN["无黑色"]
+“诶！？怀孕了……？”
+
+嘛，说到想到的地方还是有的……。
+
+	\CN["平底片"]
+“我想不久会受到子宫改造的影响。
+马上就到临月了吧”
+
+	: DrawChara( "Mukuro", 30, 0)
+	: PlayVoice( "Voices/vo00_muk4294" )
+	\CN["无黑色"]
+“嗯，听说要迎来临月了……。
+怎么说呢，这么一说的话，就像肚子胀了一样”
+
+据说希拉加开始准备生育
+留下助手走出房间。
+
+	//●演出：時間経過トランジション
+	//●服装：無黒・妊娠
+	//無黒cos5へ変更
+	: HideWnd()
+	: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+	: Wait()
+	: EraseChara( "Hiraga", 0.0 )
+	: EraseChara( "Mukuro", 0.0 )
+	: Call( "Scenarios/CommonSys*CosMemory" )
+	: CharaCostume( "Mukuro", 5 )
+	: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+	: Wait()
+	: ShowWnd()
+然后，过了一会儿突然肚子开始大膨胀。
+
+	: DrawChara( "Mukuro", 40, 1, 0, 0.0, 0.0, 3, "C" )
+	: PlayVoice( "Voices/vo00_muk4295" )
+	\CN["无黑色"]
+“呃……我知道肚子里有什么……”
+
+用手抚摸大鼓起的肚子。
+
+	: DrawChara( "Mukuro", 38, 1)
+	: PlayVoice( "Voices/vo00_muk4296" )
+	\CN["无黑色"]
+“哈……哈……好重啊，这个……嗯…嗯，嗯！”
+
+汁液从阴道溢出。
+好像破了水。
+
+	: DrawChara( "Mukuro", 38, 1, 0, 0.0, 0.0, 3, "RC" )
+	: DrawChara( "Aguri", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+	: PlayVoice( "Voices/vo16_agu0279" )
+	\CN["亚久里"]
+“准备好了。神八代，这边请。”
+
+	//●演出：暗転
+	: HideWnd()
+	: StopBgm( 1.0 )
+	: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: Call( "Scenarios/Common*LayerClean" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: Wait()
+	: ResetLayer(9)
+	: ShowWnd()
+在助手的陪同下，在生孩子的地方
+被带去了。
+
+……………………………………………………。
+
+	//●出産シーンへ
+	: Call( "Scenarios/CommonSys*Birth" )
+//●分岐終了
+: endif
+//＠出産シーン終了後の合流地点
+*sc003_01
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+之后，使用比拉加的魔导器回到西都。
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“如果迎来了临月，马上就要去刚才的研究所了
+将功能放入设备中”
+
+希拉里轻轻地说
+仔细一想，我觉得你做了一件很荒唐的事。
+
+那个比拉加，到底是什么人呢？
+
+//＠場所移動：西都・ヒラガの家の前
+//＠妊娠システムチャート
+无黑一旦被人或魔物中出，就会变成怀孕的体质。
+
+即使是安全日，也有可能怀孕。
+※为了防止怀孕，请使用“药物”进行避孕。
+
+//●シーンエンド
+: SetMission( "SC_D04_53", "Successed" )
+: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")

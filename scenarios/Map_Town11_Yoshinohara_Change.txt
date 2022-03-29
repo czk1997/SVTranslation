@@ -1,0 +1,31 @@
+//========================================================
+//○吉野原・外
+//========================================================
+*Map01
+: RpgCharaOff("NPC_T11_011")
+: RpgCharaOff("NPC_T11_012")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: RpgCharaOn("NPC_T11_011")
+	: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 )
+		: RpgCharaOn("NPC_T11_012")
+	: endif
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: RpgCharaOff("NPC_T11_011")
+	: endif
+: endif
+: Return
+//========================================================
+//○吉野原・宿屋
+//========================================================
+*Map02
+: RpgCharaBaloonOff( "NPC_T11_007" )
+: RpgCharaOff("NPC_T11_013")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 )
+		: RpgCharaOn("NPC_T11_013")
+	: endif
+	: if ( Flag ( "Love_Mukuro" ) == true )
+		: RpgCharaBaloonOn( "NPC_T11_007", "Heart" )
+	: endif
+: endif
+: Return

@@ -1,0 +1,725 @@
+//========================================================
+//○敗北者の行く末、神八代冥のその後
+//========================================================
+//●背景：黒画面
+//サイドエピソード開始処理
+: HideWnd()
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D06_81" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D06_81" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: ShowWnd()
+和无黑他们战斗后，神八代冥幸存下来，之后的故事。
+
+她在被希拉加完全提取了魔力之后
+完全失去了战斗力。
+
+\CI["普通地享受着乱交"]
+\CI["变成黑精灵享受着乱交"]
+然后，现在的神八代冥是——
+
+: if ($choice == 0)
+	: CharaCostume( "Mei", 1 )
+: else
+	: CharaCostume( "Mei", 2 )
+: endif
+//●視点：メイ視点
+//●場所：スラム街
+//●ＣＧ：スラム街で乱交（メイ）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0100001_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+//●演技：メイ、自暴自棄の果て、ビッチ化した後です
+: PlayVoice( "Voices/vo09_mei0802" )
+\CN["冥"]
+“呵呵，这么大的小鸡鸡……金子也鼓起来了
+据说精液被堵住了♥</color>」
+
+\CN["贫民窟的男子1"]
+“为了和你结婚，我一直在存钱。
+已经1周以上了，{射精，但是}没做哟」
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0200001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0803" )
+\CN["冥"]
+“是吗？那我就很期待了……”
+
+被夺走力量，目标也完全失去的我。
+只是漫不经心地独自漂洋过海。
+
+适当地工作，争取日资。
+在这样的日子里，他平淡地、无精打采地重复着……。
+
+于是，不知从什么时候开始，这里扎根于被称为贫民窟的地区。
+
+\CN["灌篮高手2"]
+“嘿嘿，梅，你的身体什么时候看都是最棒的。”
+
+\CN["灌篮高手3"]
+“确实，你是东洋出身的女人吧？”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0100001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0804" )
+\CN["冥"]
+“啊，大和这个岛国的出身。”
+
+\CN["灌篮高手2"]
+“没听说过的国家啊。像你这样异国情调的美女
+有很多吗？”
+
+: PlayVoice( "Voices/vo09_mei0805" )
+\CN["冥"]
+“啊？我本来就不知道我是美女……”
+
+但是，每天都在追求身体
+不坏吧。
+
+一开始是很粗暴很勉强，想要侵犯却又被反击了。
+
+然后，治安不好的贫民窟和我做爱的时候
+就这样产生了一点秩序。
+
+\CN["贫民窟的男子1"]
+“你们已经够了吧？快让我插上小鸡鸡吧。
+因为好像要破裂了”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0300001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0806" )
+\CN["冥"]
+“原来是这样啊……。插进去的瞬间，不是拿出来的吗？”
+
+正因为说是一直在积蓄，所以小鸡鸡像铁一样硬
+放着热。
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0301002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：挿入です
+: PlayVoice( "Voices/vo09_mei0807" )
+\CN["冥"]
+“嗯……小鸡鸡，会被插进去的……。
+嗯，嗯……啊…啊……嗯，嗯！”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0100002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嗯，嗯，嗯，嗯！
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi02" )
+把那样的小鸡鸡在阴道孔里叼到，坐下吞进去的话
+快感的颤抖袭来。
+
+\CN["贫民窟的男子1"]
+“哇哈……啊…啊啊……啊！”
+
+: PlayVoice( "Voices/vo09_mei0808" )
+\CN["冥"]
+“呜呜……呜呜……”♥</直到发根都{插入，是}了♥</color>
+哈，哈，好像好好地坚持了啊……”
+
+\CN["贫民窟的男子1"]
+“嘿嘿……虽然有点糟糕。
+不管怎么说，你的女阴是最好的”
+
+\CN["贫民窟的男子1"]
+“不只是像处女一样严厉，而是像bitch一样贪婪
+不是。前端和根部同时紧闭的感觉好厉害啊
+受不了”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0200002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0809" )
+\CN["冥"]
+“嗯……”♥</啊啊啊啊啊……小鸡鸡，现在
+{阴道内，内}有点害怕♥</color>」
+
+\CN["贫民窟的男子1"]
+“那是因为，很讨厌，还缠着小鸡鸡……”
+
+: PlayVoice( "Voices/vo09_mei0810" )
+\CN["冥"]
+“明明还完全没有动，{射精，那么}是吗？
+嗯……战栗变强了♥</color>」
+
+\CN["灌篮高手2"]
+“明明和芽衣在一起，却要把她监禁起来
+你是笨蛋吧？”
+
+\CN["灌篮高手3"]
+“虽然还是快点{射精，だ}比较好。
+你这个混蛋！”
+
+\CN["贫民窟的男子1"]
+“嗯，吵死了……我还能忍耐。
+因为我非常能忍耐”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0301002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：グラインドを開始します
+: PlayVoice( "Voices/vo09_mei0811" )
+\CN["冥"]
+“那我就走了……。
+嗯……啊啊…嗯，啊，啊♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！
+
+\CN["贫民窟的男子1"]
+“啊啊啊……呃……女阴里，热得湿了
+和小鸡鸡纠缠在一起……”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0401002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0812" )
+\CN["冥"]
+“哈……嗯，啊……小鸡鸡，已经变成面包了♥</color>
+这样啊♥</我会把你的女阴处理得满满的♥</color>」
+
+: PlayVoice( "Voices/vo09_mei0813" )
+\CN["冥"]
+“嗯，啊，啊，啊……恩啊啊啊啊啊啊♥</color>
+嗯，嗯，嗯，嗯……嗯，嗯，嗯♥</color>」
+
+一边用{阴道内，内}感觉小鸡鸡暴躁
+让腰前后左右打滑。
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0301002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo09_mei0814" )
+\CN["冥"]
+（没想到会变成这样……）
+
+没想到会沉迷到这种程度。
+没想到对别人的拥抱会如此抗拒。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo09_mei0815" )
+\CN["冥"]
+（变得自暴自弃，然后，和那个时候打招呼的男人睡觉——
+然后呢……）
+
+那个男人是和黑手党相连的男人……。
+
+这是切入点，和不特定多数的男性进行行为
+因为沉迷于其中……。
+
+: PlayVoice( "Voices/vo09_mei0816" )
+\CN["冥"]
+「嗯啊啊啊♥</啊啊啊啊♥</啊啊啊啊啊♥</大小相当不错♥</color>
+好好地在里面……嗯……碰上舒服的地方……”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0401002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：軽い絶頂です
+: PlayVoice( "Voices/vo09_mei0817" )
+\CN["冥"]
+「啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊」♥</感觉到了……哈哈
+心情舒畅♥</啊……啊…啊啊啊啊啊啊啊啊啊啊啊啊♥</color>」
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi03" )
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+吓我一跳！嘿嘿！嘿嘿！图片库！
+
+轻浮的绝顶之波袭来，身体微微颤抖。
+
+\CN["贫民窟的男子1"]
+“呼呼……嗯，现在，女阴紧紧地关上……”……
+呀，糟了……已经……！”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0501002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0818" )
+\CN["冥"]
+“嘛，还没……再忍耐一下……。
+哈，哈，感觉很好心情也变好了啊♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！努哈！努布！
+嘘！嘘！好！嘘！嘘！嘘！
+
+: PlayVoice( "Voices/vo09_mei0819" )
+\CN["冥"]
+“啊啊，啊啊啊啊啊啊啊啊啊啊啊啊啊♥</哦，哦哦哦哦♥</color>
+呼、咕、呜……啊…啊♥</color>」
+
+把身体交给站起来的快感，腰再用力摆动。
+
+\CN["贫民窟的男子1"]
+“啊啊啊……已经不行了……{射精，然后}了！
+啊……啊…啊啊……！”
+
+//●演技：中出しされてしまいます
+: PlayVoice( "Voices/vo09_mei0820" )
+\CN["冥"]
+“等一下……！还有一点……啊啊啊……！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0301012_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+酷酷！酷酷！别克！参考翻译！看！
+
+: PlayVoice( "Voices/vo09_mei0821" )
+\CN["冥"]
+“呜哇……还有，明明稍微有点帅……哈，哈……”
+
+\CN["贫民窟的男子1"]
+“不好意思，我不能忍耐……而且，还……”
+
+//●演出：射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0401013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呼，呜呜呜呜！
+好啰嗦，咚，咚，咚！
+
+: PlayVoice( "Voices/vo09_mei0822" )
+\CN["冥"]
+“哇，呜哇，呜哇，啊啊啊……气势，好厉害
+啊……从女阴那里溢出精液♥</color>」
+
+\CN["贫民窟的男子1"]
+“你不是说了吗？你说我堆得乱七八糟的。”
+
+以象挖阴道里头一样的气势被射精，在阴道内瞬间用精液
+被填满。
+
+//●ＣＧ差分：未挿入・射精後
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0100012_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0823" )
+\CN["冥"]
+“嗯……掉了小鸡鸡，就溢出来了……”♥</color>」
+
+: PlayVoice( "Voices/vo09_mei0824" )
+\CN["冥"]
+“刚才，因为生疏了，女阴疼得不得了……。
+谁都可以，希望快点把小鸡鸡打进我身上”
+
+: PlayBackVoice( "Voices/BGV09_mei_jigo01" )
+一催促，马上就换下一个男人。
+
+\CN["灌篮高手2"]
+“如果是我的话，就给你个劲”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0200002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0825" )
+\CN["冥"]
+“勃起得血管都快浮出来了。
+这个小鸡鸡插上的话绝对会很舒服的♥</color>」
+
+马上跨了过去，刚才还叼着别的男人的小鸡鸡
+对着阴道口——
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0401002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を挿入しています
+: PlayVoice( "Voices/vo09_mei0826" )
+\CN["冥"]
+“啊啊啊啊……嗯，啊啊啊啊啊啊啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi02" )
+虽然高冷了，但是因为插入了小鸡鸡
+烧再上来。
+
+\CN["灌篮高手2"]
+“把发根和钾两处同时收紧。
+芽衣的manko最舒服了”
+
+: PlayVoice( "Voices/vo09_mei0827" )
+\CN["冥"]
+“是吗，是吗……那我也觉得最舒服了
+虽然很开心……”
+
+\CN["灌篮高手2"]
+“啊，我会让你哭得没有富余。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+剧毒！剧毒！嘘！嘘！嘘！好烦！
+啧啧！啧啧！慢吞吞！慢吞吞！古吉布！
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0200002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：下から激しく突き上げられる
+: PlayVoice( "Voices/vo09_mei0828" )
+\CN["冥"]
+“嗯……啊啊……呃，突然就很激动……”♥</color>
+啊啊啊……对女阴……响彻子宫♥</color>」
+
+\CN["灌篮高手2"]
+“哇，哇，里面，粘糊糊的，真舒服啊。”
+
+从下面激烈粗暴的抽插带来了强烈的刺激
+从肚子里一点一点地引出快感。
+
+: PlayVoice( "Voices/vo09_mei0829" )
+\CN["冥"]
+“哇，我也要动……嗯，啊啊啊啊啊啊！
+女婿，全部都感受到了认真的小鸡鸡”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0301002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0830" )
+\CN["冥"]
+“哇，好厉害，猜中了……很坚强，硬邦邦的小鸡鸡
+雁首……嗯，舒服的地方，摩擦着♥</color>」
+
+\CN["灌篮高手2"]
+“芽衣，这里很弱啊。在这深处……嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+哇哇哇哇，哇哇哇哇，哇哇哇哇！
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0501002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0831" )
+\CN["冥"]
+“啊啊啊啊啊啊！那、那是最有感觉的。”♥</color>
+最里面的，就是子宫入口的小鸡鸡的感觉♥</color>」
+
+: PlayVoice( "Voices/vo09_mei0832" )
+\CN["冥"]
+「噢噢噢，太好了！」♥</颜色，麻了……女阴，麻了
+一口气站起来♥</color>」
+
+\CN["灌篮高手2"]
+“啊，果然心情很好啊。
+manko好厉害，蠢蠢欲动……”
+
+肚子里热。
+
+{阴道内，内}有气势地反复收缩
+我自己也完全明白了。
+
+: PlayVoice( "Voices/vo09_mei0833" )
+\CN["冥"]
+“啊啊啊啊……啊啊……啊，哈哈♥</color>
+啊，好酷啊……好饿啊……啊啊啊啊啊啊啊啊啊啊♥</color>」
+
+\CN["灌篮高手2"]
+“哈，哈，好帅啊！看！去！去！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！慢吞吞！嘘！嘘！噗噗！嘘！
+软绵绵！努迪奇！嘘！嘘！加油！
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_2_0301002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0834" )
+\CN["冥"]
+“喂，好棒啊……我要走了……！”！
+好球……好球……啊啊……好球、好球、好球……好棒♥</color>」
+
+刚才好像要达到顶峰了，有什么事情没能达到顶峰吗
+为了不让本能逃走，要敏感地接受绝顶感。
+
+全身从腹部开始发热。
+子宫疼痛。身体在寻求。
+
+: PlayVoice( "Voices/vo09_mei0835" )
+\CN["冥"]
+“噢噢噢噢噢……好棒啊……好棒……好棒……唔
+好球♥</游戏名称：《完美小姐》♥</我说……呃……”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo09_mei0836" )
+\CN["冥"]
+“我要饿了————————！”
+
+//●ＣＧ差分：挿入・潮
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0411003_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+大家好！！！
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi03" )
+\CN["灌篮高手3"]
+“啊！潮好大啊。”
+
+\CN["灌篮高手4"]
+“真的是一副很舒服的样子。
+光是看到那一幕，就非常兴奋”
+
+\CN["灌篮高手2"]
+“啊啊啊……而且，紧闭……啊，我也是……”
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0511003_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0837" )
+\CN["冥"]
+“恩，喂……是、{射精，是}做吧……”……
+在重要的地方{射精，だ}做……再多一点……
+想更加生动♥</color>」
+
+\CN["灌篮高手2"]
+“啊啊哈……我会把它充分地拿出来，让它怀孕的。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一、一、一、一、一、一、一、一、一、三、一、一！
+
+激烈的撞击使身体悬空。
+
+在深到把子宫口用力推上去的地方
+加油打过来。
+
+: PlayVoice( "Voices/vo09_mei0838" )
+\CN["冥"]
+「啊啊啊啊啊啊啊啊啊啊啊啊」♥</心情舒畅♥</色彩设计♥</color>
+不，好球……又是好球♥</又来了……又来了♥</color>」
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo09_mei0839" )
+\CN["冥"]
+“呃……呃……啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0411013_1110010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克乌乌、别勒鲁、德彪乌乌！！
+
+: PlayBackVoice( "Voices/BGV09_mei_jigo02" )
+在激烈绝顶{阴道内，内}突然紧张的瞬间
+小鸡鸡裂开，放出热流。
+
+\CN["灌篮高手2"]
+“呜————！好舒服啊！”
+
+: PlayVoice( "Voices/vo09_mei0840" )
+\CN["冥"]
+“哦哦哦哦…呃，好痛……哈，{阴道内射精，里面}啊
+胆小鬼♥</直接送到子宫内♥</color>」
+
+\CN["灌篮高手3"]
+“啊啊啊啊……我已经忍不住了！快换我吧！”
+
+一个劲地看着干劲十足的我，聚集在一起的男人们发出了粗暴的声音。
+
+已经脱掉内衣，把勃起的小鸡鸡翻了个大筋斗
+有的男人会假装出来。
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0511013_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂後、全力疾走の後みたいに呼吸が乱れています
+: PlayVoice( "Voices/vo09_mei0841" )
+\CN["冥"]
+“哈！哈！哈！呼……嗯…哈，哈……
+呵呵……今天好像要通宵了啊♥</color>」
+
+: PlayVoice( "Voices/vo09_mei0842" )
+\CN["冥"]
+“在这里勃起小鸡鸡的精子，全部都是我的女阴
+我会喝下去的”
+
+啧啧咂嘴。
+
+如果妹妹或者认识我的人看到现在的我会怎么想呢？
+
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_b009_1_1_0301013_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0843" )
+\CN["冥"]
+“……一定会蔑视的吧。”
+
+迄今为止，我一直克制自己的感情，为达成目标而竭尽全力
+虽然是我，但现在却完全相反，只靠感情生活着。
+
+——想赚钱的时候就赚钱，想赚钱的话就惨了。
+
+我对现在的状况相当满意。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_D06_81" )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

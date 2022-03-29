@@ -1,0 +1,424 @@
+//========================================================
+//○合同訓練、最強生物の片鱗
+//========================================================
+//●場所：鬼灯屯所・道場・昼
+//●背景：鬼灯屯所・道場・昼
+//●視点：第三者視点
+//●状況：鬼灯隊士とヴィクトール騎士団の合同稽古
+//Yoshi：背景
+//: DrawChara( "Falke", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+//: DrawChara( "Leo", 19, 0, 1, 0.5, 0.0, 4, "RC" )
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Falke", 0 )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Elisa", 0 )
+: CharaCostume( "Xeno", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: DrawImage( 1, 0, "BGImage/BG_HozukiDoujyo01", 0.0 )
+: ShowWnd()
+: PlayBgm("BGM/43_ID04")
+: ShowWnd()
+\CN["雷欧"]
+“啊啊啊啊啊啊啊！”
+
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: ResetLayer(7)
+: ResetLayer(9)
+: DrawChara( "Falke", 4, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["沥青"]
+“哟！”
+
+: DrawChara( "Falke", 4, 0, 0, 0.0, 0.0, 3, "R")
+: DrawChara( "Leo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L")
+\CN["雷欧"]
+“不愧是世界最强……但是，不能轻易地退出！”
+
+: DrawChara( "Falke", 5, 0)
+\CN["沥青"]
+“啊，全力以赴。”
+
+维克托尔骑士团被赋予帝都据点
+经常出现在屯所。
+
+如果不移动身体的话，柏油和伊拉伊萨会很奇怪
+因此，混杂在鬼灯队士的训练中。
+
+: DrawChara( "Leo", 22, 0)
+\CN["雷欧"]
+“这是我的珍藏品。
+我会认真去做的——”
+
+//●演出：レオ　必殺技
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a002_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: Call( "Scenarios/Effect*LeoAction01" )
+: ShowWnd()
+刀上缠绕着电的刀刃袭击了柏油。
+
+就算是世界最强的，也不能一看就轻易地卖掉
+雷欧自信地说不可能。
+
+//: DrawChara( "Falke", 16, 0)
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["沥青"]
+“哈！”
+
+//: EraseChara( "Leo", 0.5 )
+//: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 5, "RC" )
+: DrawFaceThumbnail( "Mukuro", 1, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1492" )
+\CN["无黑色"]
+“竟然把雷欧的技术弹得那么干脆……”
+
+: HideWnd()
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "R" )
+: DrawChara( "Elisa", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0075" )
+\CN["伊拉伊萨"]
+“嘛，雷欧的那个我看像是这把魔法剑的一种
+因为啊。不适用于假币。
+毕竟这是那家伙老婆的拿手好戏啊」
+
+//: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo02_kin0252" )
+\CN["黄菜子"]
+“费尔克骑士团长的夫人是原骑士团的骑士吧？”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0076" )
+\CN["伊拉伊萨"]
+“啊，现在还在做公主什么的
+那是因为有了孩子才退役的”
+
+: DrawChara( "Elisa", 17, 1)
+: PlayVoice( "Voices/vo19_era0077" )
+\CN["伊拉伊萨"]
+“以前非常厉害……。
+我也被打败了好几次，和那家伙的训练沸腾起来了
+没办法啊」
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Falke", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+//: DrawChara( "Leo", 21, 0, 0, 0.5, 0.0, 4, "RC" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0300000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Elisa", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: ShowWnd()
+\CN["雷欧"]
+“哈，我还没有输呢，费尔克先生。”
+
+//: DrawChara( "Falke", 5, 0)
+: DrawFaceThumbnail( "Falke", 5, 0, 0 )
+\CN["沥青"]
+“呼，完全没有折断。真是目中无人。”
+
+//: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“我的性格是什么事都全力以赴。”
+
+: PlaySe( "SE/Se_Foot01" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a002_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//: DrawChara( "Leo", 23, 0)
+\CN["雷欧"]
+“哦哦哦哦哦哦哦哦哦！！”
+
+雷欧一边发出鼓足干劲的声音
+朝着柏油路走去。
+
+//●演技：心の声です
+//●演技：レオがゼップの子供だと勘づいたがそんなはずはないって感じ
+: HideWnd()
+: DrawChara( "Elisa", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: Call("Scenarios/Common*EvFadeOut")
+//: EraseChara( "Falke", 0.5 )
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0078" )
+\CN["伊拉伊萨"]
+（……那家伙，果然。不，但是……。
+但是，只能这样……）
+
+//●演出：レオとファルケ　刀を合わせる
+: EraseChara( "Elisa", 0.0 )
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: DrawChara( "Falke", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["沥青"]
+“……！”
+
+: DrawChara( "Leo", 22, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L")
+: DrawChara( "Falke", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["雷欧"]
+“哈，哈，哈……”
+
+: DrawChara( "Falke", 4, 0)
+\CN["沥青"]
+“雷欧，训练中的脸都晒黑了。”
+
+: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“不，好像变得很开心。”
+
+对着一边合着刀一边微微抬起嘴角的雷欧
+柏油也露出了同样的笑容。
+
+//●演出：場面転換トランジション
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Falke", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: DrawChara( "Elisa", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: Wait()
+: PlayVoice( "Voices/vo19_era0079" )
+\CN["伊拉伊萨"]
+“啊，那个柏油的家伙，看起来很开心。
+雷欧也很了不起啊。脸上露出那样的表情
+什么嘛”
+
+: DrawChara( "Elisa", 10, 1)
+: PlayVoice( "Voices/vo19_era0080" )
+\CN["伊拉伊萨"]
+「啊，我也滚滚而来。
+啊，谁来陪我啊”
+
+伊洛伊萨的眼神变得锐利。
+
+即使是聚集了精英们的维克托尔骑士团
+看了这个伊拉萨的眼睛，就像被蛇盯上的青蛙一样
+虽然有很多人捞上来了……。
+
+: DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Elisa", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo19_era0081" )
+\CN["伊拉伊萨"]
+“黄菜子，怎么样？
+你也来试试实战训练吧？”
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0253" )
+\CN["黄菜子"]
+“诶？那个，我不会对人训练……”
+
+//●演技：心の声です
+: DrawChara( "Elisa", 1, 0)
+: PlayVoice( "Voices/vo19_era0082" )
+\CN["伊拉伊萨"]
+（我想确认一下之前的感觉……。
+强迫他做也没意义吗？）
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk1493" )
+\CN["无黑色"]
+“伊拉伊萨先生，我可以吗？”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0083" )
+\CN["伊拉伊萨"]
+“啊！无黑，能和我交往吗？
+我想和你认真地做一次啊」
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk1494" )
+\CN["无黑色"]
+“我也是，伊拉伊萨。
+我想跟得上你的速度”
+
+无黑曾经是白夜九星之一，望月绿的速度
+吃过苦头。
+
+到这里为止，和绿相依为命还活着的是
+无黑本人最清楚的只能说是奇迹。
+
+: DrawChara( "Mukuro", 17, 0, 2 )
+: PlayVoice( "Voices/vo00_muk1495" )
+\CN["无黑色"]
+“拜托了，伊拉伊萨先生。”
+
+: DrawChara( "Elisa", 10, 0)
+: PlayVoice( "Voices/vo19_era0084" )
+\CN["伊拉伊萨"]
+「真好啊，那份假发。
+如果让我看到那样的话，我会滚滚而来的”
+
+: DrawChara( "Elisa", 12, 0)
+: PlayVoice( "Voices/vo19_era0085" )
+\CN["伊拉伊萨"]
+“无黑，我不会偷工减料的。我走了。”
+
+无黑对伊拉伊萨，雷欧对柏油
+借着维克托尔骑士团的第一和第二名的胸
+我充实了训练。
+
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Elisa", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+——另一方面。
+
+//●演出：ゼノ　立ち絵を出す
+: DrawChara( "Xeno", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["鬼灯队士・男A"]
+“怎么样？要不要和我一起训练一下？”？
+作为黄菜子的大哥”
+
+\CN["鬼灯队士・男B"]
+“不，我先来。你适合黄菜子的对手吗？”
+要好好看看啊。作为黄菜子的哥哥”
+
+\CN["鬼灯队士・男C"]
+“我也想要混合。
+作为黄菜子的哥哥，我想先看看他的实力”
+
+: DrawChara( "Xeno", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo07_beb0073" )
+\CN["红美"]
+“在下是对手！
+让在下的火焰烧得焦黑吧」
+
+: DrawChara( "Xeno", 1, 0)
+\CN["奇诺"]
+“那个我今天只是为了调查东西才去的。”
+
+以红色美为首
+男人们聚集在一起。
+
+: DrawChara( "Xeno", 2, 0)
+\CN["奇诺"]
+“那就一点点吧。”
+
+\CN["鬼灯队士・男A"]
+“呵呵，必须要来。”
+
+: HideWnd()
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: PlaySe( "SE/Se_Foot01" )
+: evbg = true; evcos = false;
+: evfile = "evx_a027_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+结果，不管怎么说，奇诺也参加了训练。
+
+: HideWnd()
+: PlaySe( "SE/Se_Swing01" )
+: Sleep(0.15)
+: evbg = true; evcos = false;
+: evfile = "evx_a027_1_1_0100000_0000000_1_"
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.1 )
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+他说他不喜欢参谋活动身体
+有非凡的身体能力。
+
+: HideWnd()
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0074" )
+\CN["红美"]
+“这家伙很厉害。”
+
+\CN["鬼灯队士・男A"]
+“哼……嘛，不是要做吗……”
+
+\CN["鬼灯队士・男B"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊。
+在那么小的身体里，哪里有那样的力量”
+
+与维克托尔骑士团的联合训练气氛高涨
+今后逗留期间也要定期做。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

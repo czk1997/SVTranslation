@@ -1,0 +1,2022 @@
+//========================================================
+//○出張売春・客３・導入（黄菜子）
+//========================================================
+//●状況：黄菜子　淫乱度Ｂ以上です
+//Yoshi：背景
+*sc001
+//淫語取得
+: Call( "Scenarios/CommonSys*Word" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05", 1.0 )
+: Wait()
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+//●分岐：［服装］全裸の場合
+: if ( CharaCostume( "Kinako" ) == 1 )
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Exhibitionist", 1) endif
+: CharaCostume( 2, 1 )
+: DrawChara( "Kinako", 0, 1, 0, 0.5, 0.0, 3, "C" )
+\CN["男人"]
+“……难道是赤身裸体到这里来了？
+不，这种高度变态的行为，真不愧是……”
+
+: DrawChara( "Kinako", 12, 1)
+: PlayVoice( "Voices/vo02_kin1990" )
+\CN["黄菜子"]
+“是的。我在外面光着身子走。”
+
+\CN["男人"]
+“……诶？真的吗？
+你难道是曝光狂了吗？明明那么年轻？”
+
+我觉得和年龄没有关系……。
+
+男人知道我是裸体来的
+我好像很吃惊。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["男人"]
+“我一定是因为玩面板欺诈之类的，半玩半叫的
+难道……真的，这样的……”
+
+男人一看到我就很吃惊。
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin1991" )
+\CN["黄菜子"]
+“没关系。就算这样，我还是有经验的……”
+
+\CN["男人"]
+“真的吗？嘛，如果是没有经验的话，那就没经验了……”
+
+//●分岐終了
+: endif
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Kinako" ) == 1 ) Jump( "*sc001_select01_s_end" ) endif
+*sc001_select01
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select01
+//■選択肢１：服は着たまま……
+//■選択肢２：服を脱ぐ
+//――――――――――――――――――――――――――――
+\CI["穿着衣服……"]
+\CI["脱衣服"]
+那么，衣服怎么办呢？
+
+: if ($choice == 1) Jump( "*sc001_select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：服は着たまま……を選んだ場合
+//-------------------------------------------------------
+*sc001_select01_s1
+//●演技：心の声です
+: DrawChara( "Kinako", 8, 0)
+: PlayVoice( "Voices/vo02_kin1992" )
+\CN["黄菜子"]
+（如果对方说想脱衣服的话，就脱掉好了吗？）
+
+//●選択肢合流地点へ
+//＠ラベル：sc001_select01_s_end
+: Jump( "*sc001_select01_s_end" )
+//-------------------------------------------------------
+//●選択肢２：服を脱ぐを選んだ場合
+//-------------------------------------------------------
+*sc001_select01_s2
+//●ＣＧ：野外で脱衣（黄菜子）
+//●ＣＧ差分：着衣
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: evbg = false; evcos = false;
+: evfile = "evc_b004_0_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["男人"]
+“啊，可以脱掉衣服赤身裸体吗？”
+
+: PlayVoice( "Voices/vo02_kin1993" )
+\CN["黄菜子"]
+“裸体比较好吧？我知道了……”
+
+//●ＳＥ：服を脱ぐ音
+//●ＣＧ差分：下着
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evc_b004_0_2_0200001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["男人"]
+“真是兜裆布啊……哈哈，真是太好了……很新鲜。”
+
+: PlayVoice( "Voices/vo02_kin1994" )
+\CN["黄菜子"]
+“那么，剩下的也脱了吧……”
+
+//●ＳＥ：服を脱ぐ音
+//●ＣＧ差分：全裸
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evc_b004_0_3_0300001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+把穿的衣服脱光，全裸。
+
+//●分岐：露出開発度Ａの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Exhibitionist" ) == 3 )
+//●演技：心の声です
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Exhibitionist", 1) endif
+: PlayVoice( "Voices/vo02_kin1995" )
+\CN["黄菜子"]
+（呃……就这样，在男人面前光着身子而已
+但是……。肚子下面变得很热……）
+
+//●分岐終了
+: endif
+//●選択肢合流地点へ
+: CharaCostume( "Kinako", 1 )
+//＠ラベル：sc001_select01_s_end
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*sc001_select01_s_end
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin1996" )
+\CN["黄菜子"]
+“那么，马上开始吧？”
+
+\CN["男人"]
+“啊，请多关照……”
+
+//●前戯パートへ
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: if ( DeliPlayA == 1 ) Jump( "*sc002b" ) endif
+//========================================================
+//○出張売春・客３・前戯Ａ（黄菜子）
+//========================================================
+*sc002a
+//●ＣＧ：Ｈカットイン・シクスティナイン（黄菜子）
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c006_0_1_0100001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男に跨がってシクスティナインの体勢になります
+: PlayVoice( "Voices/vo02_kin1997" )
+\CN["黄菜子"]
+“嗯……呃……这样可以吗？”
+
+\CN["男人"]
+“啊……能清楚地看到女阴”
+
+有人拜托我想仔细看女阴
+成为西克斯汀的姿势。
+
+: PlayVoice( "Voices/vo02_kin1998" )
+\CN["黄菜子"]
+“小气鬼，好烫……
+而且，变得这么大了”
+
+\CN["男人"]
+“嗯……”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi04" )
+用手轻轻地握住勃起颤抖着的小珠的根部
+握住它的话，从后面会传来苦闷的声音。
+
+\CN["男人"]
+“明明这么小很可爱，却很性感的女阴
+可以舔一下吗？”
+
+: PlayVoice( "Voices/vo02_kin1999" )
+\CN["黄菜子"]
+“好的，请随你的便……”
+
+\CN["男人"]
+“那么……嗯……”
+
+不烫的舌尖碰到女阴。
+
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Cunnilingus", 1) endif
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2000" )
+\CN["黄菜子"]
+“嗯……啊啊……啊啊……啊……嗯……啊啊啊！”
+
+: PlayVoice( "Voices/vo02_kin2001" )
+\CN["黄菜子"]
+“如果用舌头抚摸女阴的筋的话……嗯，嗯！”
+
+\CN["男人"]
+“啊啊啊……女阴……女阴很好吃……！
+充满色情的汁液”
+
+\CN["男人"]
+“嗯……嗯……嗯……嗯……嗯……”
+
+: PlayVoice( "Voices/vo02_kin2002" )
+\CN["黄菜子"]
+“呼啊，啊，啊，那个，那么女阴……如果被耍得一塌糊涂的话
+啊……嗯……来，心情很好……”
+
+: PlayVoice( "Voices/vo02_kin2003" )
+\CN["黄菜子"]
+“呜呜呜呜……呃，好色的酱油……满满的……”……
+出来了……”
+
+用舌头舔阴道孔的话，腰会很痛。
+
+\CN["男人"]
+“啊哈，那么，这里也……用舌头尖儿修剪一下……”……
+嗯……”
+
+: PlayVoice( "Voices/vo02_kin2004" )
+\CN["黄菜子"]
+“哎呀……那、那是……克里特里斯……啊啊啊啊！”
+
+: PlayVoice( "Voices/vo02_kin2005" )
+\CN["黄菜子"]
+“是的，这是让人心情非常舒畅的地方，所以……
+啊啊，啊，呜……啊，嗯！”
+
+被舌尖玩弄敏感的critos
+发出很大的声音。
+
+然后，小腹部有强烈的震感
+爱液会一下子溢出来。
+
+\CN["男人"]
+“哦哦哦哦，这个，我真的很有感觉呢。
+是吗……那就再舔一下这里……嗯哼！”
+
+: PlayVoice( "Voices/vo02_kin2006" )
+\CN["黄菜子"]
+“嗯……！呃，克利特里斯……嗯……”……
+哈、哈、哇、我也……不光是被这样做……”
+
+就这样，只做是不好的。
+
+所以——
+
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Fellatio", 1) endif
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c006_0_1_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：亀頭を舐めていきます
+: PlayVoice( "Voices/vo02_kin2007" )
+\CN["黄菜子"]
+“ちゃっち……れろ……れろ……嗯……ちゃ……”♥</color>
+用手和舌头……嗯……”
+
+: PlayBackVoice( "Voices/BGV02_kin_fera01" )
+一边用手慢慢地操作着小精灵
+用舌尖舔龟头。
+
+\CN["男人"]
+“哦哦哦哦哦哦…那，那是……啊…用又小又软的手
+碰了小鸡鸡……然后，舌头绝妙……”
+
+\CN["男人"]
+“哦，我也必须再舔一下！啾，啾！”
+
+: PlayVoice( "Voices/vo02_kin2008" )
+\CN["黄菜子"]
+“嗯，呃，啊啊啊……啊啊…嗯……嗯……哈
+嗯……嗯……呃……呃，那个，我知道了！”
+
+: PlayVoice( "Voices/vo02_kin2009" )
+\CN["黄菜子"]
+“哈，哈……忍汁出来了……是苦的，是尖的
+中、中、嗯……中、智…”
+
+用手接过小丁当，从前面开始就有痛苦的前驱
+渗出。
+
+一边用舌头舔取那个，一边加速处理速度。
+
+: PlayVoice( "Voices/vo02_kin2010" )
+\CN["黄菜子"]
+“这个，战战兢兢的背后……小气鬼的残渣
+在积存的地方……用舌尖…嗯……”
+
+: PlayVoice( "Voices/vo02_kin2011" )
+\CN["黄菜子"]
+“ちゃろ……れろ……我会让你变漂亮的……”……
+嗯，嗯，嗯……嗯，呃……”
+
+\CN["男人"]
+“啊啊啊啊……那、那是……哈哈，乱七八糟
+好舒服……”
+
+\CN["男人"]
+“哦，我也……要更加小心地把女阴照顾到每一个角落……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c006_0_1_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2012" )
+\CN["黄菜子"]
+“啊啊，啊啊……如果被人这样嘲弄的话
+不能好好地舔……啊…嗯……嗯…嗯，嗯”
+
+互相一个劲地舔生殖器。
+
+//●分岐：［出張売春］男がテクニシャンの場合
+: if ( DeliAppeal == 3 )
+\CN["男人"]
+“耳塞……耳塞……耳塞！”
+
+: PlayVoice( "Voices/vo02_kin2013" )
+\CN["黄菜子"]
+“嗯，哈……嗯，中，我要听……”……
+哈、哈……嗯……嗯，嗯……嗯，嗯……”
+
+在舔的过程中，身体就昂起来了
+热的块儿往上涌。
+
+\CN["男人"]
+“女阴在蠢蠢欲动……”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c006_0_1_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2014" )
+\CN["黄菜子"]
+“啊，嗯……好像很帅……嗯……”……
+啊，真是的……真是受不了……”
+
+: PlayVoice( "Voices/vo02_kin2015" )
+\CN["黄菜子"]
+“不断地往上冲……也已经……
+啊，啊……嗯……嗯……嗯，好棒……啊…”
+
+: PlayVoice( "Voices/vo02_kin2016" )
+\CN["黄菜子"]
+“嗯……哈……不，很好……！”！
+不，好棒……好棒啊………啊啊啊啊啊啊！”
+
+//●ＣＧ差分：潮
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Squirting", 1) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c006_0_1_0411013_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+噗哼……噗哼……噗哼……噗哼……！
+
+\CN["男人"]
+“噗噗噗！好厉害……用我的舌头吹潮……”
+
+: PlayVoice( "Voices/vo02_kin2017" )
+\CN["黄菜子"]
+“哈……哈、哈……是、对不起……心情太好了
+只有我，先去了……”
+
+\CN["男人"]
+“什么。如果让你看到那样的魅力的话
+我也非常兴奋”
+
+//●分岐終了
+: endif
+\CN["男人"]
+“呐，差不多该正式开始了……”
+
+//●ＣＧ：消去
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: DrawFaceThumbnail( "Kinako", 14, 2, 0 )
+: PlayVoice( "Voices/vo02_kin2018" )
+\CN["黄菜子"]
+“是的……我明白了……”
+
+和男人一起去被子的地方。
+
+//●本番パートへ
+: StopBackVoice()
+: if( DeliPlayB == 0 )
+	: Jump( "*sc003a" )
+: else
+	: Jump( "*sc003b" )
+: endif
+//========================================================
+//○出張売春・客３・前戯Ｂ（黄菜子）
+//========================================================
+*sc002b
+\CN["男人"]
+“啊，我想让你舔我的屁股……。
+我喜欢舔肛门……”
+
+: DrawFaceThumbnail( "Kinako", 17, 2, 0 )
+: PlayVoice( "Voices/vo02_kin2019" )
+\CN["黄菜子"]
+“舔屁股就可以了吧？我知道了……”
+
+//●ＣＧ：アナル舐め
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c008_0_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["男人"]
+“啊？可以吗？没有任何抵抗吗？”
+
+: PlayVoice( "Voices/vo02_kin2020" )
+\CN["黄菜子"]
+“抵抗……？没什么。”
+
+: PlayBackVoice( "Voices/BGV02_kin_fera01" )
+遭遇更肮脏的事情，心灵也被撕裂了
+这没什么。
+
+//●演技：アナル舐めしています（抵抗ゼロです）
+: PlayVoice( "Voices/vo02_kin2021" )
+\CN["黄菜子"]
+“屁股，我去舔一下……嗯……给我……”
+
+: PlayVoice( "Voices/vo02_kin2022" )
+\CN["黄菜子"]
+“喂……嗯……嗯……嗯……嗯……嗯……啾……啾……”
+
+伸长舌头，拼命地舔屁股的孔。
+
+一看到肛门刺痛，就莫名地兴奋起来。
+
+\CN["男人"]
+“嗯哈哈……屁股孔，能被舔，果然很好……”……
+我受不了舌头的玩弄……”
+
+: PlayVoice( "Voices/vo02_kin2023" )
+\CN["黄菜子"]
+“嗯……嗯……这里，皱巴巴的地方，用舌头描……
+嗯……嗯……嗯……嗯…嗯……嗯……嗯……”
+
+: PlayVoice( "Voices/vo02_kin2024" )
+\CN["黄菜子"]
+“在这里小心点……啾……啪……嗯……呜……呜……”……
+小皮……小中…”
+
+让舌头充分地含有唾液，仔细地去除每一个皱纹
+继续描绘。
+
+紧致的地方渐渐松弛了。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c008_0_1_0301002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：訳　お尻、こんな感じでいいですか？
+: PlayVoice( "Voices/vo02_kin2025" )
+\CN["黄菜子"]
+“嗯，嗯……小火鸡，这样的鱼翅，真好吃。”
+
+\CN["男人"]
+“啊……啊……最棒了……”
+
+: PlayVoice( "Voices/vo02_kin2026" )
+\CN["黄菜子"]
+“嗯……嗯……嗯，嗯……嗯……”
+
+舌头的动作越来越激烈。
+
+在描绘周围之后，用舌尖突出中心
+我会去挖洞。
+
+\CN["男人"]
+“呃……啊啊……而且，舌头成了洞……！”
+
+这样做好像很舒服
+男人就像女孩子一样开始哮喘。
+
+: PlayVoice( "Voices/vo02_kin2027" )
+\CN["黄菜子"]
+“中”
+
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "HandFootJob", 1) endif
+: PlayVoice( "Voices/vo02_kin2028" )
+\CN["黄菜子"]
+“……小金也这样，好好地”
+
+\CN["男人"]
+“……！”
+
+一边舔屁股上的洞，一边颤抖着的小精灵
+用手握住，男子嗖的一声摇动了身体。
+
+\CN["男人"]
+“那、那个、真是受不了……”
+
+\CN["男人"]
+“拜托了！一边处理小鸡鸡，一边舔伤口！”
+
+: PlayVoice( "Voices/vo02_kin2029" )
+\CN["黄菜子"]
+“我知道了。那么，小鸡丁，一边嚼着肉棒
+我来舔屁股的孔吧”
+
+: PlayVoice( "Voices/vo02_kin2030" )
+\CN["黄菜子"]
+“啾啾，啾啾……嗯，嗯……啾啾……呜呜……”……
+嗯……嗯……嗯……嗯…嗯”
+
+\CN["男人"]
+“啊啊……这个，这个，好舒服啊……
+哈、哈……哦哦……嗯……”
+
+好像真的很舒服。
+
+公鸡在手上咚咚地颤抖着。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c008_0_1_0211002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：２行目で舌を差し入れます
+: PlayVoice( "Voices/vo02_kin2031" )
+\CN["黄菜子"]
+“嗯……嗯……嗯，嗯……嗯……嗯……”……
+嗯————！”
+
+\CN["男人"]
+“……！”
+
+收紧舌头，把舌头一点一点地放进臀部里。
+
+: PlayVoice( "Voices/vo02_kin2032" )
+\CN["黄菜子"]
+“嗯……嗯……被他……嗯……嗯，嗯，嗯
+嗯……中穗、小皮、小皮……”
+
+用舌尖在屁股里玩弄，发出柔弱的声音
+看到你闷闷不乐的样子，我也会很兴奋。
+
+所以，变得更想为她做些什么。
+
+: PlayVoice( "Voices/vo02_kin2033" )
+\CN["黄菜子"]
+“嗯，嗯……物品也是，ひこ、ひこ……注……
+嗯，中、中、嗯……”
+
+\CN["男人"]
+“啊啊啊啊……呃……也，已经……了！”
+
+//●分岐：［出張売春］絶倫の場合
+: if ( DeliAppeal == 2 )
+\CN["男人"]
+“喂，给我点帅……就这样，让我来处理射精……”
+
+请一边几乎变成哭声一边射精。
+
+那个声音让我毛骨悚然。
+
+//●演技：舐めながらです
+: PlayVoice( "Voices/vo02_kin2034" )
+\CN["黄菜子"]
+“好嘞好嘞……我们要拌嘿嘿嘿”
+（可以啊……我给你拿出来吧。）
+
+: PlayVoice( "Voices/vo02_kin2035" )
+\CN["黄菜子"]
+“啾啾，嗯……啾，啾啾，啾……”
+
+\CN["男人"]
+“哇……呃，好舒服……然后，出来……！”
+
+\CN["男人"]
+“嗯……嗯……嗯！”
+
+//●演出：射精
+//●ＣＧ差分：射精
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Bukkake", RandomRange(10,15)) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Sotodashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c008_0_1_0411003_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜、呜呜、呜呜、呜呜呜呜呜！！
+
+//●演技：口を離します
+: PlayVoice( "Voices/vo02_kin2036" )
+\CN["黄菜子"]
+“嗯……嗯……精液出来了很多……”
+
+\CN["男人"]
+“啊……啊…啊啊……”
+
+一边处理着公鸡
+把剩下的精液挤出。
+
+男人心情很好地放松着脸
+我已经精疲力尽地吐在我的手上了。
+
+//●分岐終了
+: endif
+\CN["男人"]
+“哈，哈……呐，差不多该……正式演出了……。
+非常想被插上”
+
+小鸡鸡痛苦地勃起颤抖着。
+
+: PlayVoice( "Voices/vo02_kin2037" )
+\CN["黄菜子"]
+“……那么，在被子的地方……”
+
+和男人一起去被子的地方。
+
+//●本番パートへ
+: StopBackVoice()
+: if( DeliPlayB == 0 )
+	: Jump( "*sc003a" )
+: else
+	: Jump( "*sc003b" )
+: endif
+//========================================================
+//○出張売春・客３・本番・セックス（黄菜子）
+//========================================================
+*sc003a
+//●ＣＧ：Ｈカットイン・騎乗位セックス（黄菜子）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c002_0_1_0100002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2038" )
+\CN["黄菜子"]
+“小气鬼，变得很有精神。”
+
+跨在男人的上面，给他擦上纵肌。
+
+//●演技：膣穴を男性器で弄っています
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2039" )
+\CN["黄菜子"]
+“嗯……啊…啊，嗯……嗯……哈…嗯”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi04" )
+完全湿了，但不马上插入。
+
+中、中、中。
+
+把小鸡鸡擦在女阴上
+将溢出的爱液缠绕在一起做成trol。
+
+\CN["男人"]
+“哈……哈……快点让我插上……。
+已经到了忍耐的极限了……”
+
+: PlayVoice( "Voices/vo02_kin2040" )
+\CN["黄菜子"]
+“你那么想插吗？”
+
+我稍微着急一下。
+
+\CN["男人"]
+“啊……啊，我想插……！让我插上……”
+
+: PlayVoice( "Voices/vo02_kin2041" )
+\CN["黄菜子"]
+“嗯……那么，差不多该轮到我了
+我帮你插在女阴里”
+
+//●分岐：［出張売春］コンドームありの場合
+: if ( DeliCondom == true )
+	\CN["男人"]
+“等一下……必须先戴避孕套……”
+
+	: PlayVoice( "Voices/vo02_kin2042" )
+	\CN["黄菜子"]
+“避孕器具，戴上比较好吗？”
+
+	\CN["男人"]
+“嘛，是啊……这样的话，姑且……”
+
+	: PlayVoice( "Voices/vo02_kin2043" )
+	\CN["黄菜子"]
+“那我帮你戴吧。”
+
+	//●ＣＧ：消去
+	: HideWnd()
+	: Call("Scenarios/Common*EvFadeOut")
+	: ShowWnd()
+暂时挪开身体打开房间里的避孕器具的封。
+
+然后，嘴里叼着那个——
+
+	//●ＣＧ：Ｈカットイン・フェラチオ（黄菜子）
+	//●ＣＧ差分：コンドームあり
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Fellatio", 1) endif
+	: HideWnd()
+	: evcha = "Kinako"; evbg = false; evcos = true;
+	: evfile = "evc_c005_0_2_0100002_1000000_0_"
+	: Call("Scenarios/Common*EvFadeIn")
+	: ShowWnd()
+	//●演技：コンドームを口に咥えて、装着させます
+	: PlayVoice( "Voices/vo02_kin2044" )
+	\CN["黄菜子"]
+“啊……嗯……嗯……”
+
+	\CN["男人"]
+“啊啊啊……呃，用嘴……！”
+
+我用嘴给你戴上避孕套。
+
+	//●ＣＧ：Ｈカットイン・騎乗位セックス
+	//●ＣＧ差分：未挿入
+	: HideWnd()
+	: evcha = "Kinako"; evbg = false; evcos = true;
+	: evfile = "evc_c002_0_3_0100002_1000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo02_kin2045" )
+	\CN["黄菜子"]
+“我会继续下去的。”
+
+//●分岐終了
+: endif
+//●演技：膣口に男性器をあてがいます
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2046" )
+\CN["黄菜子"]
+“啊……嗯……”
+
+我抬起腰，用公文包的前部垫上。
+
+\CN["男人"]
+“哈，快让我插上……拜托了……！”
+
+: PlayVoice( "Voices/vo02_kin2047" )
+\CN["黄菜子"]
+“不用着急，没关系的？
+我会好好给你插上的……”
+
+: PlayVoice( "Voices/vo02_kin2048" )
+\CN["黄菜子"]
+“那么，我就把小鸡鸡插在女阴里……。
+嗯……嗯……啊……啊啊啊啊啊……！”
+
+//●ＣＧ差分：挿入
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Sex", 1) endif
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c002_0_0_0300002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayBackVoice( "Voices/BGV02_kin_aegi01" )
+: ShowWnd()
+好……好…好…好…好…好……好……好烦！
+
+//●分岐：［出張売春］男のペニスが大きい場合
+: if ( DeliAppeal == 1 )
+	: PlayVoice( "Voices/vo02_kin2049" )
+	\CN["黄菜子"]
+“嗯！哦，好大……哈，嗯……！”……！
+啊呜……嗯啊啊啊……”
+
+	\CN["男人"]
+“我的小鸡鸡挺大的……
+但是，好好地展开……”
+
+	: PlayVoice( "Voices/vo02_kin2050" )
+	\CN["黄菜子"]
+“是的，是的……没关系…爷爷，我会好好进去的
+所以……嗯……嗯……嗯……”
+
+//●分岐終了
+: endif
+: PlayVoice( "Voices/vo02_kin2051" )
+\CN["黄菜子"]
+“恩哈……我要进去了……小气鬼、懒散鬼、
+插上了……哈，哈……就这样一口气……”
+
+//●演技：根元まで男性器を挿入します
+: PlayVoice( "Voices/vo02_kin2052" )
+\CN["黄菜子"]
+“啊……啊啊啊……哈哈……小金，全部都进去了。
+呜哇呜！”
+
+\CN["男人"]
+“啊啊啊……真的进来了……在这么小的阴道孔里
+小鸡鸡被吞了……”
+
+: PlayVoice( "Voices/vo02_kin2053" )
+\CN["黄菜子"]
+“哈……嗯……嗯，很硬……很烫……”
+
+\CN["男人"]
+“哇，好小……哈哈……里面连手掌都绷紧了……”……
+连小鸡鸡都疼的勒紧，受不了……”
+
+我不会马上动腰。
+
+我会慢慢地等女婿适应小鸡鸡的。
+
+: PlayVoice( "Voices/vo02_kin2054" )
+\CN["黄菜子"]
+“差不多该开始行动了吧……？”
+
+\CN["男人"]
+“啊……拜托了。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘……嘘……嘘……嘘……嘘……嘘……嘘……嘘！
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c002_0_0_0210002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：自分から動いています
+: PlayVoice( "Voices/vo02_kin2055" )
+\CN["黄菜子"]
+“嗯……哈…啊……啊…嗯……嗯……嗯……
+嗯……啊…啊…啊啊……嗯……”
+
+: PlayVoice( "Voices/vo02_kin2056" )
+\CN["黄菜子"]
+“嗯……嗯……这个，这样的感觉，怎么样？”
+
+\CN["男人"]
+“嗯……嗯……一边收缩，一边用女阴做小鸡鸡……”……
+被使唤了……好舒服……”
+
+: PlayVoice( "Voices/vo02_kin2057" )
+\CN["黄菜子"]
+“嗯……那么，就以这样的感觉，摆动腰吧。
+啊啊……啊，啊…呜呜……呜呜啊，啊啊啊啊”
+
+: PlayVoice( "Voices/vo02_kin2058" )
+\CN["黄菜子"]
+“我会动的，所以……在那里，只是一动不动……
+很好吧？”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi02" )
+说完后，有节奏地让腰前后移动。
+
+小金渐渐膨胀起来，把鼻涕虫推上来
+一边感受一边移动。
+
+: PlayVoice( "Voices/vo02_kin2059" )
+\CN["黄菜子"]
+“嗯……啊…啊，啊……嗯……哈，哈……
+呼啊……嗯……”
+
+\CN["男人"]
+“……这样天真无邪的女孩子……
+爱液，出了很多……气喘……”
+
+\CN["男人"]
+“光是这样，就让我非常兴奋！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+剧毒！嘘！好！嘘！嘘嘘！
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c002_0_0_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：下から突き上げられています
+: PlayVoice( "Voices/vo02_kin2060" )
+\CN["黄菜子"]
+“啊啊……啊……然后，从下面被推上去……”……
+小鸡鸡……里面，碰上……”
+
+: PlayVoice( "Voices/vo02_kin2061" )
+\CN["黄菜子"]
+“哇，我要动了，所以……嗯，动了的话……”……
+嗯……啊啊啊…啊，啊，啊……”
+
+\CN["男人"]
+“太兴奋了停不下来！腰擅自动了。”
+
+男人扭动腰，向里面刺。
+
+兴奋地苦闷着，拿着我的腰配合着我的动作
+我用丁零摩擦鼻涕。
+
+: PlayVoice( "Voices/vo02_kin2062" )
+\CN["黄菜子"]
+“恩，小公鸡，在里面……咕噜咕噜地……啊啊
+嗯……嗯啊啊！”
+
+在子宫的入口咯噔咯噔地敲着公鸡的前部好几次。
+
+这一点让全身都能感受到强烈的快感。
+
+\CN["男人"]
+“哈哈哈，急死了……小鸡被女婿咬了
+好像在嗍……褶，好像在舔……”
+
+男人从下面露出的悲伤的声音
+我也不可思议地心情激动起来。
+
+: PlayVoice( "Voices/vo02_kin2063" )
+\CN["黄菜子"]
+“呼啊，啊啊，好舒服……哈…啊……啊……
+从女阴那里传来了咕噜咕噜的声音……”
+
+: PlayVoice( "Voices/vo02_kin2064" )
+\CN["黄菜子"]
+“这个，这个，有点不好意思……但是…恩！
+因为很舒服……嗯，啊，腰变快了”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+女士们、女士们、女士们、女士们、女士们、女士们、女士们！
+
+色情的声音，非常好听。
+
+\CN["男人"]
+“啊啊啊…呃，好舒服……啊…啊…啊…啊……啊……
+我、我……也不……！”
+
+: PlayVoice( "Voices/vo02_kin2065" )
+\CN["黄菜子"]
+“嗯……嗯，哦，小金，吃了很多
+”
+
+: PlayVoice( "Voices/vo02_kin2066" )
+\CN["黄菜子"]
+“哈，哈，嗯……呃，太舒服了……”……
+里面……啊啊啊……麻利地过来……”
+
+\CN["男人"]
+“哈……啊啊……受不了……我……嗯！”
+
+男人使劲地抬起腰，把我抬起来。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c002_0_0_0410002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2067" )
+\CN["黄菜子"]
+“嗯——————！”
+
+子宫口的前端被用力挤压
+强烈的感情穿透。
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo02_kin2068" )
+\CN["黄菜子"]
+“嗯……啊……不行，不行……这样啊……啊…啊，啊
+呜呜呜——————！”
+
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c002_0_0_0210003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咕嘟咕嘟……毕昆……毕昆……真是吓了我一跳！
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi03" )
+无法抑制突如其来的冲击
+就这样，迎来了绝顶。
+
+//●演技：絶頂後、息が上がっています
+: PlayVoice( "Voices/vo02_kin2069" )
+\CN["黄菜子"]
+“哈……哈………嗯……哈……啊啊……”
+
+\CN["男人"]
+“呜……啊，我也拿出来吧……然后，出来……！”
+
+小鸡丁在竹竿上痛苦地跳跃。
+
+//●分岐：［出張売春］コンドームありの場合
+: if ( DeliCondom == true )
+	//●演出：射精
+	: HideWnd()
+	: Call("Scenarios/Common*Shasei")
+	: PlayHSe( "SE/Hse_Nakadashi01" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Kinako"; evbg = false; evcos = true;
+	: evfile = "evc_c002_0_0_0410013_1100000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+咻咻！
+
+	: PlayVoice( "Voices/vo02_kin2070" )
+	\CN["黄菜子"]
+“嗯……嗯，是的……小气鬼，真厉害
+有点害怕，好好感受一下……”
+
+	\CN["男人"]
+“哈……哈……哈……”
+
+	: PlayVoice( "Voices/vo02_kin2071" )
+	\CN["黄菜子"]
+“我会好好地榨你的……嗯…”
+
+	\CN["男人"]
+“啊啊啊……那、那个……女婿，吓了一跳……！”
+
+小腹部用力一点，把小公鸡关上。
+
+男人一边呼出粗气，一边弹着腰。
+
+	: PlayVoice( "Voices/vo02_kin2072" )
+	\CN["黄菜子"]
+“……小金，我要拔了……嗯……”
+
+	//●ＣＧ差分：未挿入
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Sounyu02" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Kinako"; evbg = false; evcos = true;
+	: evfile = "evc_c002_0_2_0310013_1100000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+我会哭的……。
+
+	: PlayBackVoice( "Voices/BGV02_kin_jigo01" )
+	\CN["男人"]
+“啊哈，原来是这么射精的……。
+橡胶变成了面包”
+
+	//●分岐：オマンコ開発度Ａの場合
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Vagina" ) == 3 )
+		: PlayVoice( "Voices/vo02_kin2073" )
+		\CN["黄菜子"]
+“哈……哈……哈……哈……嗯……哇，我也是……
+心情变得太好了……啊啊……啊，不行……”
+
+		//●演技：お漏らししています
+		: PlayVoice( "Voices/vo02_kin2074" )
+		\CN["黄菜子"]
+“嗯……然后，就出来了……啊……松了……”……
+呼啊……啊……啊…啊…啊啊……啊……”
+
+		//●ＣＧ差分：未挿入・尿
+		: HideWnd()
+		: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Urination", 1) endif
+		: PlayHSe( "SE/Hse_Nyou" )
+		: evcha = "Kinako"; evbg = false; evcos = true;
+		: evfile = "evc_c002_0_2_0410013_1100100_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+慢吞吞……慢吞吞……慢吞吞……。
+
+		: PlayVoice( "Voices/vo02_kin2075" )
+		\CN["黄菜子"]
+“啊……不，不对……尾巴，不要出来……！”！
+然后，停下来……嗯……啊……啊啊啊……”
+
+		\CN["男人"]
+“……啊啊……漏了……。
+好兴奋……”
+
+心情变得太好了，我停不下来。
+
+就这样跨上男人，一直到最后。
+
+		//●ＣＧ差分：未挿入
+		: HideWnd()
+		: evcha = "Kinako"; evbg = false; evcos = true;
+		: evfile = "evc_c002_0_2_0310013_1100000_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+		\CN["男人"]
+“出了很多啊。”
+
+		: PlayVoice( "Voices/vo02_kin2076" )
+		\CN["黄菜子"]
+“呜呜呜……对，对不起……。
+漏了、漏了……我…嗯……”
+
+		\CN["男人"]
+“好的，好的。这样就很开心了。”
+
+	//●分岐終了
+	: endif
+	: PlayVoice( "Voices/vo02_kin2077" )
+	\CN["黄菜子"]
+“哈……哈…嗯……嗯……嗯……啊…啊…啊……”
+
+	\CN["男人"]
+「…………」
+
+然后，在调整好呼吸之前先把身体沉入被子里。
+
+	//●演出：暗転
+	: StopBackVoice()
+	: HideWnd()
+	: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: Call( "Scenarios/Common*LayerClean" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: Wait()
+	: ResetLayer(9)
+	: ShowWnd()
+……………………………………………………。
+
+//●事後パートへ
+//●分岐：それ以外の場合
+: else
+	: PlayBackVoice( "Voices/BGV02_kin_aegi02" )
+	//●分岐：［出張売春］中出し希望の場合
+	: if ( Nakadashi == true )
+		\CN["男人"]
+“啊，可以拿出来吗……就这样，变成你的女阴……”
+
+		: PlayVoice( "Voices/vo02_kin2078" )
+		\CN["黄菜子"]
+“嗯……拿出来好了……请拿出来……”……
+嗯……啊啊啊啊……啊！”
+
+		//●演出：射精
+		//●ＣＧ差分：挿入・膣内射精
+		: HideWnd()
+		: Uterus = "evc_c002"; Call( "Scenarios/Effect*UterusEjaculation" );
+		//: CharaPartsOn( "Kinako",4 )
+		: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateVagina", RandomRange(10,15)) endif
+		: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+		: Call( "Scenarios/Common*CgShake" )
+		: Wait()
+		: evcha = "Kinako"; evbg = false; evcos = true;
+		: evfile = "evc_c002_0_0_0410013_1100010_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+咻咻的咻咻，咻咻的咻咻！
+
+		: PlayVoice( "Voices/vo02_kin2079" )
+		\CN["黄菜子"]
+“啊，好烫……肚子里挂着……精液……
+满满的，咻……嗯啊啊……”
+
+好好地坐下来，把小金插到根部的状态
+接受被娜卡射精的精液。
+
+		//●分岐：［出張売春］絶倫の場合
+		: if ( DeliAppeal == 2 )
+			\CN["男人"]
+“啊啊啊……好厉害……还出来……”……
+哈哈……然后，出来……！”
+
+			: PlayVoice( "Voices/vo02_kin2080" )
+			\CN["黄菜子"]
+“嗯……全部，请全部拿出来吧……对女阴……
+精液，所积存的全部……”
+
+			: PlayVoice( "Voices/vo02_kin2081" )
+			\CN["黄菜子"]
+“啊，嗯……啊啊！嗯……呜呜哇！”
+
+			//●演出：射精
+			: HideWnd()
+			: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateVagina", RandomRange(10,15)) endif
+			: Call("Scenarios/Common*Shasei")
+			: PlayHSe( "SE/Hse_Nakadashi01" )
+			: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+			: Call( "Scenarios/Common*CgShake" )
+			: Wait()
+			: evcha = "Kinako"; evbg = false; evcos = true;
+			: evfile = "evc_c002_0_0_0310013_1100010_0_"
+			: Call("Scenarios/Common*EvChange")
+			: ShowWnd()
+呸！阿飞！呼！呼！阿飞！
+
+			: PlayVoice( "Voices/vo02_kin2082" )
+			\CN["黄菜子"]
+“嗯……啊……嗯……嗯……嘛，又出来了……”……
+精液溢出来了……嗯……啊啊啊啊！”
+
+			//●分岐終了
+		: endif
+		\CN["男人"]
+“哇哈哈……哇，好厉害……被女婿吸了
+上……！”
+
+		: PlayBackVoice( "Voices/BGV02_kin_jigo01" )
+男人一边呼出粗气，一边弹着腰。
+
+		: PlayVoice( "Voices/vo02_kin2083" )
+		\CN["黄菜子"]
+“……那么，差不多该把小金去掉了吧……恩”
+
+		//●ＣＧ差分：未挿入
+		: HideWnd()
+		: evcha = "Kinako"; evbg = false; evcos = true;
+		: evfile = "evc_c002_0_1_0410013_1100020_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+我会哭的……。
+
+		\CN["男人"]
+“哈哈……从女阴那里，溢出来了很多”
+
+		//●分岐：オマンコ開発度Ａの場合
+		: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Vagina" ) == 3 )
+			: PlayVoice( "Voices/vo02_kin2073" )
+			\CN["黄菜子"]
+“哈……哈……哈……哈……嗯……哇，我也是……
+心情变得太好了……啊啊……啊，不行……”
+
+			: PlayVoice( "Voices/vo02_kin2074" )
+			\CN["黄菜子"]
+“嗯……然后，就出来了……啊……松了……”……
+呼啊……啊……啊…啊…啊啊……啊……”
+
+			//●ＣＧ差分：未挿入・尿
+			: HideWnd()
+			: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Urination", 1) endif
+			: PlayHSe( "SE/Hse_Nyou" )
+			: evcha = "Kinako"; evbg = false; evcos = true;
+			: evfile = "evc_c002_0_1_0210013_1100120_0_"
+			: Call("Scenarios/Common*EvChange")
+			: ShowWnd()
+慢吞吞……慢吞吞……慢吞吞……。
+
+			: PlayVoice( "Voices/vo02_kin2075" )
+			\CN["黄菜子"]
+“啊……不，不对……尾巴，不要出来……！”！
+然后，停下来……嗯……啊……啊啊啊……”
+
+			\CN["男人"]
+“……啊啊……漏了……。
+好兴奋……”
+
+心情变得太好了，我停不下来。
+
+就这样跨上男人，一直到最后。
+
+			//●ＣＧ差分：未挿入
+			: HideWnd()
+			: evcha = "Kinako"; evbg = false; evcos = true;
+			: evfile = "evc_c002_0_1_0410013_1100020_0_"
+			: Call("Scenarios/Common*EvChange")
+			: ShowWnd()
+
+			\CN["男人"]
+“出了很多啊。”
+
+			: PlayVoice( "Voices/vo02_kin2076" )
+			\CN["黄菜子"]
+“呜呜呜……对，对不起……。
+漏了、漏了……我…嗯……”
+
+			\CN["男人"]
+“好的，好的。这样就很开心了。”
+
+		//●分岐終了
+		: endif
+		: PlayVoice( "Voices/vo02_kin2077" )
+		\CN["黄菜子"]
+“哈……哈…嗯……嗯……嗯……啊…啊…啊……”
+
+		\CN["男人"]
+「…………」
+
+然后，在调整好呼吸之前先把身体沉入被子里。
+
+		//●演出：暗転
+		: StopBackVoice()
+		: HideWnd()
+		: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+		: Wait()
+		: Call( "Scenarios/Common*LayerClean" )
+		: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+		: Wait()
+		: ResetLayer(9)
+		: ShowWnd()
+……………………………………………………。
+
+	//●事後パートへ
+	//●分岐：それ以外の場合
+	: else
+		//●外出しの場合
+		\CN["男人"]
+“啊……啊…然后，出来……！”
+
+		//●演技：最後、男性器を抜きます
+		: PlayVoice( "Voices/vo02_kin2084" )
+		\CN["黄菜子"]
+“啊……啊啊啊……啊啊啊……嗯……嗯……！”
+
+		//●ＣＧ差分：未挿入
+		: HideWnd()
+		: PlayHSe( "SE/Hse_Sounyu01" )
+		: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+		: Call( "Scenarios/Common*CgShake" )
+		: Wait()
+		: evcha = "Kinako"; evbg = false; evcos = true;
+		: evfile = "evc_c002_0_1_0210003_1100000_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+感觉到男人的射精，拔出了小鸡鸡。
+
+		//●演出：射精
+		//●ＣＧ差分：未挿入・ぶっかけ
+		: HideWnd()
+		//: CharaPartsOn( "Kinako", 2)
+		: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Bukkake", RandomRange(10,15)) endif
+		: Call("Scenarios/Common*Shasei")
+		: PlayHSe( "SE/Hse_Sotodashi01" )
+		: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+		: Call( "Scenarios/Common*CgShake" )
+		: Wait()
+		: evcha = "Kinako"; evbg = false; evcos = true;
+		: evfile = "evc_c002_0_1_0310013_1100030_0_"
+		: Call("Scenarios/Common*EvChange")
+		: ShowWnd()
+呜呜呜呜！嘘！呼！呼！
+
+小鸡鸡一边乱蹦乱跳，一边朝着我发出浓厚而炽热的白浊
+我打过来。
+
+		: PlayVoice( "Voices/vo02_kin2085" )
+		\CN["黄菜子"]
+“嗯……黏糊糊的，满满的……。
+嗯……嗯……精液，非常温暖……”
+
+		\CN["男人"]
+“哈……哈………超级舒服……”
+
+		: PlayVoice( "Voices/vo02_kin2077" )
+		\CN["黄菜子"]
+“哈……哈…嗯……嗯……嗯……啊…啊…啊……”
+
+		\CN["男人"]
+「…………」
+
+然后，在调整好呼吸之前先把身体沉入被子里。
+
+		//●演出：暗転
+		: StopBackVoice()
+		: HideWnd()
+		: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+		: Wait()
+		: Call( "Scenarios/Common*LayerClean" )
+		: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+		: Wait()
+		: ResetLayer(9)
+		: ShowWnd()
+……………………………………………………。
+
+		//●事後パートへ
+		//●分岐終了
+	: endif
+//●分岐終了
+: endif
+: Jump( "*sc004" )
+//========================================================
+//○出張売春・客３・本番・アナルセックス（黄菜子）
+//========================================================
+*sc003b
+\CN["男人"]
+“……我想试试肛门
+能做到吗？”
+
+//●ＣＧ：Ｈカットイン・アナルセックス（黄菜子）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_1_0100001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2086" )
+\CN["黄菜子"]
+“是的。我也有在屁股上玩的经验，所以没关系。”
+
+趴着，抬起屁股邀请你。
+
+\CN["男人"]
+“啊，多么色情的肛门啊。
+”
+
+: PlayVoice( "Voices/vo02_kin2087" )
+\CN["黄菜子"]
+“这里，我已经准备好了。
+小金，请插上……”
+
+也有这样的事吗，准备好了。
+
+\CN["男人"]
+“那么，马上去肛门……”
+
+: PlayVoice( "Voices/vo02_kin2088" )
+\CN["黄菜子"]
+“请。请用我的屁股舒服点……”
+
+\CN["男人"]
+“啊……嗯……”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "AnalSex", 1) endif
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_0_0210002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——咕……咕！
+
+//●演技：尻穴に男性器を挿入されます
+: PlayBackVoice( "Voices/BGV02_kin_aegi01" )
+: PlayVoice( "Voices/vo02_kin2089" )
+\CN["黄菜子"]
+“嗯……嗯……嗯！”
+
+男人想在屁股洞里垫个小鸡巴
+慢慢插入。
+
+\CN["男人"]
+“呃……真的是可以进去的东西啊……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一直……唔唔唔唔……唔唔唔……唔唔……唔……小汪……小汪……！
+
+: PlayVoice( "Voices/vo02_kin2090" )
+\CN["黄菜子"]
+“啊啊啊啊啊……啊，进来了……对，是的……”……
+老爷爷，在那里……往里挤……呜呜呜……”
+
+: PlayVoice( "Voices/vo02_kin2091" )
+\CN["黄菜子"]
+“啊，嗯……啊啊啊啊……嗯……呃，好饿……
+啊……啊…啊…嗯……啊啊啊！”
+
+\CN["男人"]
+“哇，好厉害……小鸡鸡，好像被吸进了……”
+
+\CN["男人"]
+“屁股，自己往上顶……啊啊啊……进去……”……
+小鸡鸡，一个接一个地进去……！”
+
+//●分岐：［出張売春］男のペニスが大きい場合
+: if ( DeliAppeal == 1 )
+: PlayVoice( "Voices/vo02_kin2092" )
+\CN["黄菜子"]
+“嗯啊啊啊……啊，小金……好大……呃……！
+啊……呜哇……啊，屁股，好大啊……”
+
+\CN["男人"]
+“哈……哈……果然还是太大了吧……？”
+
+: PlayVoice( "Voices/vo02_kin2093" )
+\CN["黄菜子"]
+“是……没关系……就这样，请继续……”……
+我想会好好进去的……嗯……嗯……”
+
+一放松，龟头就钻了进来。
+
+//●分岐終了
+: endif
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu03" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——呜呜呜呜呜哇！
+
+//●演技：男性器が根元まで入りました
+: PlayVoice( "Voices/vo02_kin2094" )
+\CN["黄菜子"]
+“啊……嗯……呃……小静，到最后为止……
+进去了……哈……哈……啊啊……”
+
+把龟头吞进去后，剩下的部分就一点一点地一直到根部
+我吞了进去。
+
+\CN["男人"]
+“啊啊啊……这种感觉，让人受不了……。
+里面的软绵绵的，最舒服了”
+
+被公鸡的粗细打开的肛门
+我很害怕。
+
+肚子里小鸡鸡乱闹，把肠壁推上去。
+
+: PlayVoice( "Voices/vo02_kin2095" )
+\CN["黄菜子"]
+“呼……嗯……用屁股，我会让你心情舒畅的。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一直……一直…发牢骚……一直……一直……磨磨蹭蹭……！
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_0_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：自分から動いています
+: PlayVoice( "Voices/vo02_kin2096" )
+\CN["黄菜子"]
+“嗯……啊…嗯……嗯……嗯……啊，啊，嗯
+啊啊啊啊……啊啊……啊啊……嗯……”
+
+自己前后腰，把屁股里的小公鸡
+让我抽奖。
+
+在心情变好的地方，用鸡丁尖一碰
+不知不觉间，就会发出甜蜜的声音。
+
+\CN["男人"]
+“哈，哈……这样的，自己开始行动……啊啊啊……
+真是太粘了，受不了了……”
+
+: PlayVoice( "Voices/vo02_kin2097" )
+\CN["黄菜子"]
+“嗯……嗯……小金，渐渐变硬了
+要走了呢……哈哈，在屁股上使劲……”
+
+\CN["男人"]
+“呃……啊！啊啊啊，肛门突然绷紧了……啊！”
+
+在屁股的孔里用力，把小金的根部给勒紧。
+
+这样做的话，从后面传来出神的声音
+我知道你心情变好了。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2098" )
+\CN["黄菜子"]
+“哈……嗯……这样，嗯……动屁股……
+公鸡，出来，让我进去……”
+
+: PlayVoice( "Voices/vo02_kin2099" )
+\CN["黄菜子"]
+“啊，猜中里面的话……嗯……啊啊啊啊啊啊！
+呜哇……真是太爽了”
+
+像这样，屁股朝着自己移动
+非常好的东西。
+
+被推开肛门的感觉、到达深处时的压迫感
+沉迷于肛门性爱的舒适感。
+
+: PlayVoice( "Voices/vo02_kin2100" )
+\CN["黄菜子"]
+“啊啊啊……啊……啊，啊……啊啊……啊……啊……”……
+哈……啊啊啊啊……嗯……啊啊啊啊！”
+
+在那过程中，我也兴奋起来了。
+
+\CN["男人"]
+“哈，哈……阿纳尔开始抽筋了……”
+
+\CN["男人"]
+“这个……啊，难不成很帅？”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_0_0210002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2101" )
+\CN["黄菜子"]
+“哈……是……是的……看起来很帅……用屁股……
+嗯……好像要去死了……”
+
+\CN["男人"]
+“是、是吗……哈、哈……哦，我其实已经
+界限已经到了……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一……一下子……一下子……一下子……一下子……！
+
+男人也想射精得不得了吗
+配合我动了腰。
+
+插入变深
+用力往上推肚子。
+
+//●演技：ピストンが激しくなります
+: PlayVoice( "Voices/vo02_kin2102" )
+\CN["黄菜子"]
+“呼啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊，嗯！
+呜、啊、呜、嗯……呜、嗯、啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi02" )
+心情舒畅起来了，我也沉醉在其中，坐了下来
+正在摇晃。
+
+\CN["男人"]
+“呃……也，已经……已经不行了……”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_0_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2103" )
+\CN["黄菜子"]
+“好的，好的……请随时去……我也是
+因为很有活力……哈……用屁股……嗯……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo02_kin2104" )
+\CN["黄菜子"]
+“啊啊啊……嗯……啊，屁股，已经不行了……屁股好受……
+啊啊啊啊啊啊啊啊啊啊！！”
+
+//●ＣＧ差分：挿入・潮
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Squirting", 1) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_0_0210003_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，水珠，咻咻，战战兢兢！
+
+\CN["男人"]
+“哈，哈……收紧得好像要把小鸡鸡吃掉似的……
+潮，吹着……”
+
+//●分岐：尻開発度Ａの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Anal" ) == 3 )
+: PlayVoice( "Voices/vo02_kin2105" )
+\CN["黄菜子"]
+“嗯……嘛，还停不下来……郁的，还来……！”
+
+一边吹潮一边达到顶峰，成为枷锁的东西
+好像掉了。
+
+顶峰感不断地涌上来，好像停不下来似的。
+
+: PlayVoice( "Voices/vo02_kin2106" )
+\CN["黄菜子"]
+“嗯，好，好……好棒……又来了！”！
+好棒，好棒……好棒……好棒……”
+
+//●演技：絶頂です
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2107" )
+\CN["黄菜子"]
+“啊啊啊啊啊啊啊啊啊啊啊——————！？”
+
+//●ＣＧ差分：挿入・尿
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Urination", 1) endif
+: PlayHSe( "SE/Hse_Nyou" )
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_0_0411013_1100100_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+慢吞吞的！！！
+
+: PlayVoice( "Voices/vo02_kin2108" )
+\CN["黄菜子"]
+“啊……啊啊……啊……然后，出来了……我……”……
+尿……尿漏了……”
+
+: PlayVoice( "Voices/vo02_kin2109" )
+\CN["黄菜子"]
+“不，不……呜……呜…呜……呜，停不下来……”……
+对、对不起……这样，泄露了……”
+
+\CN["男人"]
+“哈……啊啊，一边肛门做爱
+我的小鸡鸡心情变好了，甚至泄露了……”
+
+\CN["男人"]
+“啊啊啊啊……这个好厉害！好兴奋！”
+
+出了洋相，可是男人却不知道为什么很厉害
+我很高兴和兴奋。
+
+//●分岐終了
+: endif
+\CN["男人"]
+“我、我也要出演……啊…啊…啊…啊…！”
+
+//●分岐：［出張売春］中出し希望の場合
+: if ( Nakadashi == true )
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateAnal", RandomRange(10,15)) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_0_0311013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，咻咻，咻咻！
+
+: PlayVoice( "Voices/vo02_kin2110" )
+\CN["黄菜子"]
+“啊啊啊……然后，然后……屁股上有热的！
+哈、哈……嗯……嗯啊啊啊……”
+
+: PlayVoice( "Voices/vo02_kin2111" )
+\CN["黄菜子"]
+“哦，小气鬼，在里面咕咚咕咚地……嗯……”……
+注入了……又热又浓的精液，出来了很多♥</color>」
+
+//●分岐：［出張売春］絶倫の場合
+: if ( DeliAppeal == 2 )
+\CN["男人"]
+“哦哦哦哦哦…嘛，还没出来……！”！
+哈哈……再发一次……嗯……！”
+
+//●演出：射精
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateAnal", RandomRange(10,15)) endif
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_0_0411013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜呜呜呜呜呜呜呜呜呜呜！
+
+: PlayVoice( "Voices/vo02_kin2112" )
+\CN["黄菜子"]
+“啊啊啊……啊，啊啊……啊啊啊……啊啊啊…啊啊啊
+然后，出来了……又在肚子里……又热了！”
+
+: PlayVoice( "Voices/vo02_kin2113" )
+\CN["黄菜子"]
+“哈、哈……呜、呜、呜……啊、溢出……
+屁股上的洞太烫了……嗯，啊……嗯…”
+
+//●分岐終了
+: endif
+\CN["男人"]
+“啊啊啊……哈、哈、哈……”
+
+男人一次又一次地颤抖着小鸡鸡
+吐着热的气息……。
+
+我一边拖着肛门，一边榨取精液。
+
+//●ＣＧ差分：未挿入・射精後精液
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_1_0210013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を引き抜かれます
+: PlayVoice( "Voices/vo02_kin2114" )
+\CN["黄菜子"]
+“嗯……嗯……啊啊啊……哈…！”
+
+: PlayBackVoice( "Voices/BGV02_kin_jigo01" )
+从屁股里拔出小鸡鸡的话，就会溢出咕噜咕噜的精液
+洒出来了。
+
+\CN["男人"]
+“哈哈……肛门性，最舒服的……”
+
+看到男人露出满意的表情
+突然没了力气，挤了进去。
+
+//●暗転
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●事後パートへ
+//●分岐：それ以外の場合
+: else
+//●外出しの場合
+\CN["男人"]
+“哈啊哈……呜哇！”
+
+//●ＣＧ差分：未挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_1_0311002_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+男人激烈地动了腰
+屁股上掉了小鸡鸡……。
+
+//●演出：射精
+//●ＣＧ差分：未挿入・ぶっかけ
+: HideWnd()
+//: CharaPartsOn( "Kinako", 2)
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Bukkake", RandomRange(10,15)) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Sotodashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c004_0_1_0210013_1200030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+杜布！别管！看！参考翻译！
+
+: PlayVoice( "Voices/vo02_kin2115" )
+\CN["黄菜子"]
+“嗯……精液是不是很烫……非常粘稠。”♥</color>」
+
+突然沿着皮肤垂下来。
+
+\CN["男人"]
+“心情很好，不由得脱身……
+嗯……啊……哈……”
+
+\CN["男人"]
+“哈哈……肛门性，最舒服的……”
+
+看到男人露出满意的表情
+突然没了力气，挤了进去。
+
+//●暗転
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●事後パートへ
+//●分岐終了
+: endif
+//========================================================
+//○出張売春・客３・事後（黄菜子）
+//========================================================
+*sc004
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 1.0 )
+: Wait()
+//: CharaPartsOn( "Kinako", 0,1)
+: DrawChara( "Kinako", 8, 1, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["男人"]
+“乱七八糟，心情很好。
+像你这样的女儿来了，我很幸运”
+
+洗完澡后，男人会很满足地告诉你。
+
+: DrawChara( "Kinako", 17, 1)
+: PlayVoice( "Voices/vo02_kin2116" )
+\CN["黄菜子"]
+“你能满足我真是太好了。”
+
+\CN["男人"]
+“啊，我非常满足。
+请收下这个”
+
+男人把钱交给我
+一边哼着小曲，一边走出了房间。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了
+//●シーンエンド
+: if ( CharaCostume( "Kinako" ) == 1 )
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Exhibitionist", 1) endif
+: endif
+: Call( "Scenarios/CommonSys*CosReturn" )
+: money_value = Call( "Scenarios/CommonSys*DeliMoney" )
+: $money += money_value
+: if( Race == 0 )
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "WithHuman", 1) endif
+: elif( Race == 1 )
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "WithElf", 1) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "WithTherianthrope", 1) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "CallGirlIncome", money_value ) endif
+: if ( $inExtra == false ) CharaSexHistory( "Kinako", Deliid ) endif
+: RpgPlayBgm()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: Return

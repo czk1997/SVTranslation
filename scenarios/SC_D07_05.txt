@@ -1,0 +1,954 @@
+//========================================================
+//○支配者の妾たち
+//========================================================
+//●視点：第三者視点
+//●背景：空・昼
+//Yoshi：背景
+: StopBgm( 1.0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )
+	: Call( "Scenarios/CommonSys*SetParam" )
+	: Jump( "*HscStart" )
+: endif
+: if ( SceneFlag( "SC_D07_05" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D07_05" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——之后的故事。
+
+//●状況：４Ｐしている無黒たち
+//●ＣＧ：支配者の妾たち（無黒・桃・黄菜子）
+//●ＣＧ差分：挿入（桃）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_1_0101001_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1632" )
+\CN["桃子"]
+“啊，呃，嗯，嗯……”♥</color>
+嗯，呃，啊啊啊啊啊♥</color>」
+
+\CN["将军"]
+“哈，哈，我一直在想，3个精灵就这样张开了大腿
+在这里也很壮观啊……”
+
+虽然是败北的无黑他们，但并没有被夺去生命。
+
+无黑、桃、黄菜子3人和玉藻一样
+被认为是辅佐将军的妾。
+
+: PlayVoice( "Voices/vo02_kin0906" )
+\CN["黄菜子"]
+“嗯……因为桃子发出了色情的声音
+女阴，痒痒的，真难受……”
+
+: PlayVoice( "Voices/vo00_muk4734" )
+\CN["无黑色"]
+“我也想要将军大人的小弟弟……”
+
+让希拉加发明的嗅觉者无可奈何地发情
+蔓延着特殊香味的房间。
+
+于是今晚也举行了性的宴会。
+
+: PlayVoice( "Voices/vo01_mom1633" )
+\CN["桃子"]
+“不行啊……”♥</嗯……嗯……嗯♥</color>
+不，现在我正在做呢&”
+
+\CN["将军"]
+“别急，我会好好疼爱你们的。
+玉藻已经疲倦了”
+
+: PlayVoice( "Voices/vo01_mom1634" )
+\CN["桃子"]
+“这样啊，那么激烈的话，不管老师怎么说……”
+
+桃子稍微离开的地方，从阴道口一边滴精液一边流
+看到筋疲力尽的玉藻，他这样说道。
+
+如果各自有单独的对象
+也有像今晚那样总结的情况。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！嘘！
+
+: PlayVoice( "Voices/vo01_mom1635" )
+\CN["桃子"]
+“嗯哈，啊，嗯，嗯，嗯。”♥</彩色将军的小鸡鸡，嗯
+总是责怪我心情好的地方♥</color>」
+
+: PlayVoice( "Voices/vo01_mom1636" )
+\CN["桃子"]
+“嗯……恩啊……嗯，哈，啊啊啊啊啊啊啊啊啊啊啊♥</color>」
+
+\CN["将军"]
+“你的manko，真是让人受不了啊……！
+慢慢地移动，那种感觉又……”
+
+: PlayVoice( "Voices/vo01_mom1637" )
+\CN["桃子"]
+“嗯，嗯……啊，夫人……将军的小鸡鸡
+馒头送到了最里面……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_1_0233001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：軽い絶頂です
+: PlayVoice( "Voices/vo01_mom1638" )
+\CN["桃子"]
+“啊啊啊……”♥</不好意思……啊啊啊
+嗯，嗯！”
+
+将军阴茎有力地刺进了子宫口，桃子轻轻地绝顶了。
+娇声震颤着身体。
+
+: PlayVoice( "Voices/vo02_kin0907" )
+\CN["黄菜子"]
+“呃……被人看到那样的脸，我受不了……”
+
+: PlayVoice( "Voices/vo00_muk4735" )
+\CN["无黑色"]
+“啊。里面太悲伤了……果然很痛苦啊……”
+
+\CN["将军"]
+“呵呵。等一下。”
+
+将军很高兴地回应了无黑和黄菜子的哀求。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+朱古力、ZUZU、ジュグ、ズチ、ズ、ズ、ズ！
+
+: PlayVoice( "Voices/vo01_mom1639" )
+\CN["桃子"]
+「哈、呼、啊啊啊♥</嗯……呃，来，好开心
+嗯，啊啊啊啊啊啊啊啊♥</color>」
+
+速度慢慢上升的将军的抽奖
+桃的阴道内一边蠢蠢欲动，一边全身到处蔓延快感。
+
+\CN["将军"]
+“褶皱像舔我的小鸡鸡一样蠢蠢欲动。
+动起来的话，加上紧固，真是太好了”
+
+\CN["将军"]
+“贵族们都想抱着一个公主椿的女儿的意思是
+所谓明白”
+
+: PlayVoice( "Voices/vo01_mom1640" )
+\CN["桃子"]
+“嗯，嗯……”♥</那种事，怎样都无所谓♥</color>
+现在，敏感地，喜欢着感觉到的漫画……”
+
+: PlayVoice( "Voices/vo01_mom1641" )
+\CN["桃子"]
+“哈……嗯……啊啊啊……嗯……啊啊啊啊啊♥</color>
+小鸡鸡……小鸡鸡很烫……很坚强，在很深的地方♥</color>」
+
+随着将军的行动，桃子本能地摇着腰。
+
+\CN["将军"]
+“竟然自己也会动……嗯……你真是个色迷。
+虽说如此，贵族的千金也没这么性感……”
+
+: PlayVoice( "Voices/vo01_mom1642" )
+\CN["桃子"]
+“所以说，贵族什么的根本没关系……。
+哈，哈，谁要是被这个小鸡鸡戴上了，就会变成这样”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_1_0333001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1643" )
+\CN["桃子"]
+“啊，啊，啊……！嗯！”！
+啊，好棒啊……好棒啊……啊，啊啊！”
+
+桃子忍不住把手伸向将军的脖子。
+
+\CN["将军"]
+“呵呵，抱得那么紧。要出去了？”
+
+: PlayVoice( "Voices/vo01_mom1644" )
+\CN["桃子"]
+“哈，哈，你根本不想出去吧……。
+嗯，啊啊啊，呐，请放到阴道内，里面吧♥</color>」
+
+\CN["将军"]
+“可以吗？”
+
+: PlayVoice( "Voices/vo01_mom1645" )
+\CN["桃子"]
+“当然可以……拿出来……”♥</在里面，在漫画的深处
+拿出很多……”
+
+: PlayVoice( "Voices/vo01_mom1646" )
+\CN["桃子"]
+“将军大人的精液，我只是喜欢而已，就一直在喝。”♥</color>
+嗯，嗯，啊啊啊啊啊啊啊♥</color>」
+
+桃子一边发出尖锐的娇声，一边被绝顶的波浪吞没。
+
+变强的系紧，和更紧的缠在一起的阴道褶
+将军自身也迎来了极限。
+
+\CN["将军"]
+“我拿出来……嗯……好饿……！”
+
+//●演出：射精
+//●ＣＧ差分：挿入（桃）・膣内射精（桃）
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_1_0433012_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别管、别管、别管、别管、道奇！
+德彪！咕嘟咕嘟咕嘟！咚！咚！
+
+: PlayVoice( "Voices/vo01_mom1647" )
+\CN["桃子"]
+“啊啊啊啊啊啊啊——！然后，出来了……啊啊
+精液出来了……一下子就变得很舒服了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_1_0333012_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo01_mom1648" )
+\CN["桃子"]
+“好球……好球……啊…啊…啊…啊…啊啊……啊啊……啊
+嗯————————！”
+
+在子宫里沐浴将军的精液的同时，桃子发出类似悲鸣的声音。
+
+\CN["将军"]
+“嗯……勒紧……！”
+
+: PlayVoice( "Voices/vo01_mom1649" )
+\CN["桃子"]
+“啊啊啊啊…啊…啊…啊，出来了好多啊。”♥</color>
+小鸡鸡，吓得直哆嗦……包子，好烫……”
+
+桃子一边发出欢喜的声音，一边颤抖着身体。
+
+//●ＣＧ差分：未挿入・射精後（桃）
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_4_0433012_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1650" )
+\CN["桃子"]
+“哈，哈……用精液装满了漫画。”♥</color>
+黏糊糊地溢出来了……嗯……啊啊啊……啊啊♥</color>」
+
+\CN["将军"]
+“呼～……”
+
+一边吐着甜蜜的气息一边筋疲力尽的桃子。
+
+就在他身边，拔出阴茎的将军满意地擦汗。
+
+\CN["将军"]
+“下一个是这样啊……要谁呢？”
+
+今天已经射精过几次了
+将军的阴茎使血管浮起并猛烈勃起。
+
+一边笑着一边比较着无黑和黄菜子。
+
+\CN["将军"]
+“有栖川，请让我用你那小小的女阴来享受吧。”
+
+: PlayVoice( "Voices/vo02_kin0908" )
+\CN["黄菜子"]
+“好的……随时都可以。
+请用我的女阴心情变好♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4736" )
+\CN["无黑色"]
+“……下一个是黄菜子吗……。这个苦闷还在继续吗？”
+
+灰心丧气的无黑。
+
+\CN["将军"]
+“呵呵。神八代啊，忍耐了多少心情会变好。
+期待着等待比较好”
+
+//●ＣＧ差分：挿入（黄菜子）・射精後（桃）
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_2_0532012_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+慢吞吞……慢吞吞……粘糊糊……粘糊糊……粘糊糊！
+
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo02_kin0909" )
+\CN["黄菜子"]
+“啊，哈哈，我进来了……”♥</color>将军大人的……
+又大又粗的公鸡……嗯……啊啊啊啊啊！”
+
+和体格一样，虽然是很小的阴道口，但如果被推到龟头上
+慢慢地扩大。
+
+已经做好了让爱液滴落的程度的soko
+简单地将将军粗壮的阴茎吞到了根部。
+
+\CN["将军"]
+“啊……还是老样子，你的身体还是那么瘦小，真是厉害的束缚啊。”
+
+: PlayVoice( "Voices/vo02_kin0910" )
+\CN["黄菜子"]
+“哈，是的……馒头，嗯……将军大人的公鸡
+扩大到了大小♥</color>」
+
+: PlayVoice( "Voices/vo02_kin0911" )
+\CN["黄菜子"]
+“呜呜……呜呜……哈…啊啊啊……是个小气鬼
+满了♥</啊，啊啊啊啊啊啊啊♥</color>」
+
+还没成熟的阴道内，只是一味地勒紧阴茎
+就是这样。
+
+将军十分满足于青涩的阴道触感。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+小咕、小咕、小咕、小咕、小咕、小咕、小咕、小咕！
+
+: PlayVoice( "Voices/vo02_kin0912" )
+\CN["黄菜子"]
+“啊，是啊，是啊……啊，是啊，嗯……”♥</color>
+啊，啊，嗯……嗯，嗯♥</color>」
+
+: PlayVoice( "Voices/vo02_kin0913" )
+\CN["黄菜子"]
+“肚子的深处……嗯啊啊，被塞进了……”♥</color>
+公鸡出来的时候，好像要被拿走♥</color>」
+
+\CN["将军"]
+“嗯……感觉是在勉强自己……。
+呼、呼……我开始兴奋了……！”
+
+将军带着卑微的笑容，慢慢加快了抽奖的速度。
+
+不仅仅是单纯的存取，在深入到根部之后
+咕噜咕噜地挖出子宫口。
+
+: PlayVoice( "Voices/vo02_kin0914" )
+\CN["黄菜子"]
+“娜卡，请你使劲擦擦……如果撞到里面的话
+嗯……啊…啊……啊哈哈……啊啊啊啊啊啊啊啊啊啊啊♥</color>」
+
+: PlayVoice( "Voices/vo02_kin0915" )
+\CN["黄菜子"]
+“我的身体轻飘飘的……嗯……有点战战兢兢的，背上
+来了，很舒服♥</啊，啊啊啊啊啊啊啊啊啊♥</color>」
+
+混杂着痛苦的喘息声只有一瞬间。
+马上变成甜美而艳丽的声音。
+
+\CN["将军"]
+“有栖川，如果你因为这种声音喘息的话，会有很大的反差呢。
+越发兴奋。懂得一部分人的嗜好！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！乌七八糟！
+加油！嘘！啧啧！嘘，拖泥带水！
+
+将军一边提高声音，一边前后激烈地活动着腰。
+
+: PlayVoice( "Voices/vo02_kin0916" )
+\CN["黄菜子"]
+“呜、呜、呜啊……！娜卡，被激烈攻击了
+嗯，呼，呜呜！”
+
+: PlayVoice( "Voices/vo02_kin0917" )
+\CN["黄菜子"]
+“啊，感觉太过了♥</啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color>
+啊……这个，再加上，心情变好了♥</color>」
+
+\CN["将军"]
+“嗯？很帅吗？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_2_0633112_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0918" )
+\CN["黄菜子"]
+“哈、是……哈、哈……嗯，好像很不错……。
+一直忍耐着不要墨鱼……”
+
+\CN["将军"]
+“这样啊。我还以为是manko拧得特别厉害呢。
+好吧，我来让你开心吧”
+
+: PlayVoice( "Voices/vo02_kin0919" )
+\CN["黄菜子"]
+“嗯，好……嗯……啊，夫人，尽情猜中吧。”♥</color>」
+
+: PlayVoice( "Voices/vo02_kin0920" )
+\CN["黄菜子"]
+“啊，啊，啊，是个又胖又健壮的小矮人，女婿……
+蔓延开来了♥</color>」
+
+将军弯腰后，折回气势冲向阴道深处。
+
+一边被撬开米奇和阴道内
+黄菜子的喘息变得激烈，被强烈刺激到最深处。
+
+: PlayVoice( "Voices/vo01_mom1651" )
+\CN["桃子"]
+“我一直在想，黄菜子会像那样喘息
+总觉得有点犯罪呢。我都很兴奋……”
+
+: PlayVoice( "Voices/vo00_muk4737" )
+\CN["无黑色"]
+“是啊。而且还让我看了那么激烈的活塞
+哈，哈，生杀也是个好地方……”
+
+粘糊糊的粘糊糊的声音里夹杂着黄菜子的娇声。
+
+混杂在香味中的雌性独特的香味
+吃着红豆的无黑只是在揉大腿。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_2_0733012_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0921" )
+\CN["黄菜子"]
+“啊，啊，啊，啊……啊啊啊啊啊啊啊啊啊啊！
+嗯，好像很不错……嗯……也已经不行了……”
+
+: PlayVoice( "Voices/vo02_kin0922" )
+\CN["黄菜子"]
+“我要……我要……嗯，啊啊啊啊啊啊啊♥</color>
+小气鬼，心情太好了♥</真漂亮啊……好漂亮啊♥</color>」
+
+\CN["将军"]
+“啊……！”
+
+对于即将绝顶的黄菜子更加强力的收尾
+将军发出了暗哑的声音。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_2_0633112_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0923" )
+\CN["黄菜子"]
+“哎呀，嗯……好棒……真是的……好棒啊……”♥</color>
+啊啊啊啊啊……啊…嗯……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo02_kin0924" )
+\CN["黄菜子"]
+“我要、我要、我要
+呃，呃……啊啊啊啊啊啊啊啊啊————！”
+
+阿飞！阿飞！阿飞！阿飞！阿飞！
+吓我一跳！吓我一跳！战栗比酷！
+
+黄菜子一边发出尖锐的娇声，一边强健着身体。
+
+\CN["将军"]
+“强烈的束缚……我也就这样……嗯……！”
+
+//●演出：射精
+//●ＣＧ差分：挿入（黄菜子）・膣内射精（黄菜子）・射精後（桃）
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_2_0733023_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜哇，呜哇，呜哇，呜哇！
+
+将军出的大量精液瞬间填满了黄菜子的小阴道内
+从缝隙中很有气势地溢出来。
+
+: PlayVoice( "Voices/vo02_kin0925" )
+\CN["黄菜子"]
+“嗯哈……啊……嗯，好温柔啊……哈哈……
+女阴，充满了将军大人的精液♥</color>」
+
+: PlayVoice( "Voices/vo01_mom1652" )
+\CN["桃子"]
+“在老师昏厥的时候拿出来，我也这么觉得
+明明已经出了很多，但是量真是惊人啊……”
+
+\CN["将军"]
+“嗯……嗯……呵呵。还剩下很多呢。
+如果是这个身体的话，就完全不会衰退了”
+
+原本就绝伦的将军，也有作为人的界限。
+
+但是，在被比拉加改造的肉体上
+好像可以无限储存精液。
+
+//●ＣＧ差分：未挿入・射精後（桃・黄菜子）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_4_0633123_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器抜かれています
+: PlayVoice( "Voices/vo02_kin0926" )
+\CN["黄菜子"]
+“呼……嗯……哈、哈……”♥</color>
+小金，好像还在里面呢♥</color>」
+
+黄菜子屏住呼吸，出神地按着小腹。
+呵呵，脸上浮现出与身体不相称的艳丽笑容。
+
+: PlayVoice( "Voices/vo00_muk4738" )
+\CN["无黑色"]
+“哈，哈……将军大人，已经……女婿，太难过了。”
+
+在旁边看了2人苦闷喘息的样子的无黑
+热气腾腾地向将军乞讨。
+
+\CN["将军"]
+「呵呵，神八代啊，说不定是偷偷地自慰了
+的吗？好像湿到了连manko都不可能的程度？”
+
+: PlayVoice( "Voices/vo00_muk4739" )
+\CN["无黑色"]
+“我没有……！我想碰你，因为我一直在拼命忍耐。”
+
+从无黑的阴道口中溢出了浓稠和爱液
+我把床单弄湿了。
+
+阴道孔和无黑的意志无关，让人讨厌
+拖拖拉拉。
+
+\CN["将军"]
+“呵呵。好吧。
+我会给你足够的忍耐”
+
+: PlayVoice( "Voices/vo00_muk4740" )
+\CN["无黑色"]
+“啊，想要……快点，在这里……。
+猛烈的勃起公鸡，向我的好色之徒……”
+
+将军将阴茎前端对着阴道孔
+无黑浮现出期待的笑容——
+
+//●ＣＧ差分：挿入（無黒）・射精後（桃・黄菜子）
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_3_0833023_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜呜呜呜呜！一直、一直咕嘟咕嘟的！
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4741" )
+\CN["无黑色"]
+「饿了……小弟弟，进来了哦♥</啊……啊…啊
+恩啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊————！”
+
+\CN["将军"]
+“呃……神八代，你只要被插上就很开心吗？”
+
+: PlayVoice( "Voices/vo00_muk4742" )
+\CN["无黑色"]
+“啊，啊啊……真是的……我一直在等小鸡鸡
+只是被插入了，就无法忍耐了……”
+
+微微颤抖着，无黑回答将军的话。
+
+\CN["将军"]
+“真是绝顶的manko战战兢兢啊。
+一动不动也很舒服……”
+
+: PlayVoice( "Voices/vo00_muk4743" )
+\CN["无黑色"]
+“嗯，给我动一下……我想让你多做一点……。
+哈，哈，只打了一次，疼痛就收不住了”
+
+\CN["将军"]
+“呵呵，你的manko可是非常厉害的名器啊。
+多活动一下心情会更好”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——手术刀、手术刀、一直、一直、一直、一直、一直、一直！
+
+: PlayVoice( "Voices/vo00_muk4744" )
+\CN["无黑色"]
+“啊，啊，啊，啊，啊……”♥</color>
+哦，好大……小矮人，好硬，好烫♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4745" )
+\CN["无黑色"]
+“嗯，啊啊，嗯……哈，哈，珍奇
+因为太大了……所以很容易就送到了里面♥</color>」
+
+\CN["将军"]
+“里面的zarazara刺激了龟头，在神八代的这里
+果然非常舒服！”
+
+将军用全身的体重，将阴茎伸向深处，直到极限
+使之潜入。
+
+将龟头推到无黑的阴道深处，软乎乎地粗暴地坐下
+我在打滑翔机。
+
+: PlayVoice( "Voices/vo00_muk4746" )
+\CN["无黑色"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊”♥</color>
+哦，小矮人，刚刚钓上来的敏感女婿到处乱翻……”
+
+: PlayVoice( "Voices/vo00_muk4747" )
+\CN["无黑色"]
+“喋喋不休，说起来……嗯，呃，啊啊啊啊啊啊啊啊啊啊♥</color>
+哈，又舒服了，大的还回来了♥</color>」
+
+尽管子宫口被粗暴地抬起来
+无黑开心地乱个不停，甜蜜的声音一直在喘息。
+
+: PlayVoice( "Voices/vo02_kin0927" )
+\CN["黄菜子"]
+“无黑桑，好厉害，感觉很舒服……”
+
+: PlayVoice( "Voices/vo01_mom1653" )
+\CN["桃子"]
+“明明一直都很酷，居然还这么喘气……。
+这在男生看来，可能受不了”
+
+\CN["将军"]
+“哇，啊，啊……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！
+格格！嘘！努奇！呼呼！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_3_0933223_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストンが激しくなっています
+: PlayVoice( "Voices/vo00_muk4748" )
+\CN["无黑色"]
+“啊啊，啊，啊……来，好舒服……”♥</color>
+小矮人，感觉很厉害……啊，小胖子啊♥</color>」
+
+\CN["将军"]
+“……收紧又变得更厉害了……。
+受不了……”
+
+: PlayVoice( "Voices/vo00_muk4749" )
+\CN["无黑色"]
+“呜呜呜……在里面，到了漫画的最里面……子宫的地方
+因为有小鸡鸡在……”
+
+: PlayVoice( "Voices/vo00_muk4750" )
+\CN["无黑色"]
+“一碰到子宫，仅此而已……嗯，哈哈，啊啊啊啊啊啊啊啊♥</color>
+感觉一个劲地……嘛，又……嗯！”
+
+持续被责备阴道里头的无黑。
+
+再次感受到从身体内部升起的强烈的绝顶感
+伴随着将军的抽插，摇晃着腰。
+
+: PlayVoice( "Voices/vo00_muk4751" )
+\CN["无黑色"]
+“来，心情太好了，会变奇怪……女阴，会变奇怪的。”♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4752" )
+\CN["无黑色"]
+「啊啊，啊，啊啊啊啊啊啊啊啊啊啊♥</啊，哈，哈……
+嗯，嗯……哈，啊，恩啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color>」
+
+\CN["将军"]
+“嗯……{阴道内，内}在蠢蠢欲动……。
+神八代，又变得很有活力了吧？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_3_0033223_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4753" )
+\CN["无黑色"]
+“啊，啊……又来了……嗯，一直都很开心的样子
+啊啊，啊啊啊……啊，又来了♥</color>」
+
+\CN["将军"]
+“是吗？我的小鸡鸡没那么舒服。”
+
+只需反复抽奖就感觉到敏感，真心追求完美
+将军对无黑他们非常高兴。
+
+对于自己觉得心情变好就好的行为
+想让对方心情舒畅并屈服的感情
+萌芽着——
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_3_0933223_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4754" )
+\CN["无黑色"]
+「啊啊啊啊啊，啊，我要走了啊♥</color>
+那、那么激烈的话……又……呃、好、好吧♥</color>」
+
+\CN["将军"]
+“随便乱来就好”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！加油！嘘！好！
+
+将军再加上齿轮，用力将阴茎伸向无黑的阴道深处
+捅过去。
+
+: PlayVoice( "Voices/vo00_muk4755" )
+\CN["无黑色"]
+“啊，啊，啊，好饿啊。”♥</color>
+嗯，呃，啊啊啊啊啊啊…啊啊，嗯！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_3_0033223_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4756" )
+\CN["无黑色"]
+“嗯，嗯……嗯，嗯，嗯！”！
+好、好、好……啊啊啊啊……呃、啊……”
+
+在绝顶之前，无黑用力将下腹。
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4757" )
+\CN["无黑色"]
+“呜……呜……呜呜呜呜————！！！
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊————！！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+吓一跳！吓一跳！战栗比酷！吓一跳！
+
+\CN["将军"]
+“嗯……嗯，好啊……”……
+我要把我的独子给打倒”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+祝你好运！慢吞吞！啧啧！嘘！嘘！嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_3_0033223_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4758" )
+\CN["无黑色"]
+“啊啊啊啊啊啊……啊，现在，我在想……我在想的地方
+我是公鸡，嗯……被搅乱了的话♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4759" )
+\CN["无黑色"]
+“哦哦哦哦，嗯，那么，回头见，回头见……
+一边工作一边工作，一边工作的女阴，又来了！”
+
+\CN["将军"]
+“哈，哈……好棒啊……”
+
+: PlayVoice( "Voices/vo00_muk4760" )
+\CN["无黑色"]
+“来、过来……给我滚来滚去的、好色之徒……”……
+精液，直到子宫变成面包……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4761" )
+\CN["无黑色"]
+“恩，啊……恩啊啊啊啊啊啊啊啊啊啊——！！”
+
+//●演出：射精
+//●ＣＧ差分：挿入（無黒）・膣内射精（無黒）・射精後（桃・黄菜子）
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_3_0933234_1100050_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，咻咻，咻，咻！
+咻咻！好啰嗦！咚！咚！
+
+: PlayVoice( "Voices/vo00_muk4762" )
+\CN["无黑色"]
+“嗯……！啊…啊…啊…嗯，嗯……嗯♥</color>」
+
+无黑的身体紧紧地绷紧，一边颤抖着
+接受将军的射精。
+
+\CN["将军"]
+“哈……哈……哈……”
+
+: PlayVoice( "Voices/vo00_muk4763" )
+\CN["无黑色"]
+“呃，喂，里面的小矮人，咚的一声动起来……
+精液被输送……女阴，变得满满的♥</color>」
+
+将军一口气把腰沉下去，紧紧地贴在一起，连缝隙都没有
+注入精液。
+
+即使从结合部溢出精液，仍持续射精。
+
+//●ＣＧ差分：未挿入・射精後（無黒・桃・黄菜子）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b006_1_4_0033224_1100060_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器、抜かれています
+: PlayVoice( "Voices/vo00_muk4764" )
+\CN["无黑色"]
+“哈……哈…好…好厉害……精液，漏出来了
+好像……里面放了很多♥</color>」
+
+: PlayVoice( "Voices/vo01_mom1654" )
+\CN["桃子"]
+“真是惊人的量啊。
+将军大人，我又想要起来了……”
+
+: PlayVoice( "Voices/vo02_kin0928" )
+\CN["黄菜子"]
+“……我也想要更多。下次给我。”
+
+: PlayVoice( "Voices/vo00_muk4765" )
+\CN["无黑色"]
+“将军大人，连续也没关系……。
+女阴，好像还在疼”
+
+\CN["将军"]
+“呵呵。真是个可爱的家伙。夜还很长。
+你们也要做到昏过去啊」
+
+看到将军的隆起无可平息的阴茎
+无黑他们瞪大眼睛，做出雌的脸。
+
+作为将军妾的夜间工作还没有结束。
+
+//●演出：暗転
+//●エンディング：バッドエンド
+//＠タイトルへ戻る
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_D07_05" )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: FadeOut( 0.0 )
+: Wait()
+: SharedFlag( "GameClear", true )
+: AfterStoryFlagUp( "Ending14" )
+: Call( "Scenarios/CommonSys*HanimeRefAllOpen")
+: LoadScene( "Title" )

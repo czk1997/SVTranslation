@@ -1,0 +1,328 @@
+//========================================================
+//○ヤマトイノシシ退治を手伝って１
+//========================================================
+: if ( MissionProgress( "SC_A03_50_2", "InProgress" ) == true )
+	: Jump( "*sc002" )
+: endif
+*sc001
+//●場所：帝都
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["幕府的官员"]
+“啊，这是鬼灯
+来得正好”
+
+\CN["幕府的官员"]
+“现在，发生了非常困难的事情。
+如果可以的话，希望能帮我一把……”
+
+*select01
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：別に構わないが
+//■選択肢２：すまない。今は忙しくて
+//――――――――――――――――――――――――――――
+: EraseChara( "Mukuro", 0.5 )
+\CI["没什么关系"]
+\CI["对不起。现在很忙"]
+那么，怎么办呢？
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：別に構わないがを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0949" )
+\CN["无黑色"]
+“有什么为难的事吗？”
+
+\CN["幕府的官员"]
+“是的。其实呢，帝都北路有一只大和野猪
+发生了……”
+
+\CN["幕府的官员"]
+“如果放任不管的话，会对周边的城镇和村庄造成损害。”
+
+\CN["幕府的官员"]
+“如果可以的话，去北街道把大和野猪
+如果能帮我抓5头左右的话……”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk0950" )
+\CN["无黑色"]
+“知道了。交给我吧。
+然后，倒下后怎么办？”
+
+\CN["幕府的官员"]
+“打倒后作为讨伐部位，将大和野猪的尾巴”
+如果能交给我就好了”
+
+//●シーンエンド
+: SetMission( "SC_A03_50_1", "Hidden" )
+: SetMission( "SC_A03_50_2", "InProgress" )
+: EraseChara( "Mukuro", 0.5 )
+事件信息更新了。
+
+: Return
+//-------------------------------------------------------
+//●選択肢２：すまない。今は忙しくてを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+\CN["幕府的官员"]
+“是吗？对不起，我正忙着呢……”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○ヤマトイノシシ退治を手伝って２
+//========================================================
+*sc002
+: if ( ItemCount( "KeyItem03" ) < 5 )
+	: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+	\CN["幕府的官员"]
+“大和野猪发生在帝都北街。
+如果在繁殖之前能想想办法的话……”
+
+: else
+	//●状況：ヤマトイノシシのしっぽを５個持っている
+	: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk0951" )
+	\CN["无黑色"]
+“让你久等了。我去打大和野猪了。”
+
+给你五只大野猪的尾巴。
+
+	\CN["幕府的官员"]
+“是的！确实是大和野猪的尾巴
+确认了！不愧是鬼灯队的队员啊。
+居然能这么快惩办我……”
+
+	: DrawChara( "Mukuro", 2, 0)
+	: PlayVoice( "Voices/vo00_muk0952" )
+	\CN["无黑色"]
+“如果还有什么困难的话，请告诉我。”
+
+	\CN["幕府的官员"]
+“好的！我一定会的！
+我还以为鬼灯会更伟大呢
+完全没有那样的事啊”
+
+……是吗，因为在公务所平时没有什么接触点
+原来是这样看的啊……。
+
+今后要注意。
+
+	: if ( ItemCount( "KeyItem03" ) >= 6 )
+		\CN["幕府的官员"]
+“多余的也都在这里拿。”
+
+	: endif
+	//＠アイテム：ヤマトイノシシのしっぽ,5
+	//※パッシブスキル『癒しの加護』を獲得
+	//●シーンエンド
+	: HideWnd()
+	: ItemCount( "KeyItem03", 0 )
+	: CharaAddSkill( "Mukuro", 50503 )
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: ShowWnd()
+无黑获得了无源技能“治愈的加护”。
+
+	: HideWnd()
+	: FadeOut( 0.5 )
+	: Wait()
+	: SetMission( "SC_A03_50_2", "Successed" )
+	: RpgCharaOff( "SC_A03_50" )
+	: FadeIn( 0.5 )
+	: Wait()
+: endif
+: Return
+//========================================================
+//○ヤマトイノシシの処理
+//========================================================
+*Pig01
+//バトル開始までの処理
+: HideWnd()
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+//戦闘開始に必要なデータの取得
+: bgimage = Call( "Scenarios/Battle*GetBattleBg" )	//背景画像の取得
+//敵ＩＤの取得
+: enemy = 121
+//イージーモード時の処理
+: if ( Flag ( "EasyMode" ) == true )
+	: enemy += 10000
+: endif
+: StoreBgm()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( bgimage, "BGM/21_BM002", enemy, enemy, enemy, "Scenarios/SC_A03_50*BattleEnd01" )
+
+*BattleEnd01
+: RestoreBgm()
+: if ( $battleWin == true )
+	: AddItem( "KeyItem03", 1 )
+	: ShowWnd()
+得到了大和野猪的尾巴！
+
+	: RpgCharaOff("6_Pig01")
+	: Call( "*MissionAlert" )
+	: Return(true)
+: elif ( $battleEscape == true )
+	: RpgCharaOff("6_Pig01")
+	: Return(true)
+: else
+	: Jump( "Scenarios/Battle*LoseEscape" )
+: endif
+
+*Pig02
+//バトル開始までの処理
+: HideWnd()
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+//戦闘開始に必要なデータの取得
+: bgimage = Call( "Scenarios/Battle*GetBattleBg" )	//背景画像の取得
+//敵ＩＤの取得
+: enemy = 121
+//イージーモード時の処理
+: if ( Flag ( "EasyMode" ) == true )
+	: enemy += 10000
+: endif
+: StoreBgm()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( bgimage, "BGM/21_BM002", enemy, enemy, enemy, "Scenarios/SC_A03_50*BattleEnd02" )
+
+*BattleEnd02
+: RestoreBgm()
+: if ( $battleWin == true )
+	: AddItem( "KeyItem03", 1 )
+	: ShowWnd()
+得到了大和野猪的尾巴！
+
+	: RpgCharaOff("6_Pig02")
+	: Call( "*MissionAlert" )
+	: Return(true)
+: elif ( $battleEscape == true )
+	: RpgCharaOff("6_Pig02")
+	: Return(true)
+: else
+	: Jump( "Scenarios/Battle*LoseEscape" )
+: endif
+
+*Pig03
+//バトル開始までの処理
+: HideWnd()
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+//戦闘開始に必要なデータの取得
+: bgimage = Call( "Scenarios/Battle*GetBattleBg" )	//背景画像の取得
+//敵ＩＤの取得
+: enemy = 121
+//イージーモード時の処理
+: if ( Flag ( "EasyMode" ) == true )
+	: enemy += 10000
+: endif
+: StoreBgm()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( bgimage, "BGM/21_BM002", enemy, enemy, enemy, "Scenarios/SC_A03_50*BattleEnd03" )
+
+*BattleEnd03
+: RestoreBgm()
+: if ( $battleWin == true )
+	: AddItem( "KeyItem03", 1 )
+	: ShowWnd()
+得到了大和野猪的尾巴！
+
+	: RpgCharaOff("6_Pig03")
+	: Call( "*MissionAlert" )
+	: Return(true)
+: elif ( $battleEscape == true )
+	: RpgCharaOff("6_Pig03")
+	: Return(true)
+: else
+	: Jump( "Scenarios/Battle*LoseEscape" )
+: endif
+
+*Pig04
+//バトル開始までの処理
+: HideWnd()
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+//戦闘開始に必要なデータの取得
+: bgimage = Call( "Scenarios/Battle*GetBattleBg" )	//背景画像の取得
+//敵ＩＤの取得
+: enemy = 121
+//イージーモード時の処理
+: if ( Flag ( "EasyMode" ) == true )
+	: enemy += 10000
+: endif
+: StoreBgm()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( bgimage, "BGM/21_BM002", enemy, enemy, enemy, "Scenarios/SC_A03_50*BattleEnd04" )
+
+*BattleEnd04
+: RestoreBgm()
+: if ( $battleWin == true )
+	: AddItem( "KeyItem03", 1 )
+	: ShowWnd()
+得到了大和野猪的尾巴！
+
+	: RpgCharaOff("6_Pig04")
+	: Call( "*MissionAlert" )
+	: Return(true)
+: elif ( $battleEscape == true )
+	: RpgCharaOff("6_Pig04")
+	: Return(true)
+: else
+	: Jump( "Scenarios/Battle*LoseEscape" )
+: endif
+
+*Pig05
+//バトル開始までの処理
+: HideWnd()
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+//戦闘開始に必要なデータの取得
+: bgimage = Call( "Scenarios/Battle*GetBattleBg" )	//背景画像の取得
+//敵ＩＤの取得
+: enemy = 121
+//イージーモード時の処理
+: if ( Flag ( "EasyMode" ) == true )
+	: enemy += 10000
+: endif
+: StoreBgm()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( bgimage, "BGM/21_BM002", enemy, enemy, enemy, "Scenarios/SC_A03_50*BattleEnd05" )
+
+*BattleEnd05
+: RestoreBgm()
+: if ( $battleWin == true )
+	: AddItem( "KeyItem03", 1 )
+	: ShowWnd()
+得到了大和野猪的尾巴！
+
+	: RpgCharaOff("6_Pig05")
+	: Call( "*MissionAlert" )
+	: Return(true)
+: elif ( $battleEscape == true )
+	: RpgCharaOff("6_Pig05")
+	: Return(true)
+: else
+	: Jump( "Scenarios/Battle*LoseEscape" )
+: endif
+
+//サブルーティン
+*MissionAlert
+: if ( ItemCount( "KeyItem03" ) >= 5 )
+大和野猪的尾巴聚集了5只以上！
+: endif
+: Return

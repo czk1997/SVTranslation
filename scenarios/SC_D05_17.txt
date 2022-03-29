@@ -1,0 +1,274 @@
+//========================================================
+//○卍からヒラガを守れ！１
+//========================================================
+*sc001
+\CI["准备好了"]
+\CI["好好准备之后"]
+前面好像有卍之家……。
+
+: if ($choice == 1) Return endif
+//●場所：河之内・卍の家
+//●演出：無黒たち進んで行く
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: DrawChara( "Manji", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+\CN["卍"]
+“那孩子，去工作之后就没回来过的明信片
+不是吗。我以为他一定死了」
+
+: if ( CharaCostume( "Kinako" ) == 1 )
+	\CN["卍"]
+“而且，光着身子……喂喂，你醒了吗？
+嘛，我同情你。1毫米左右”
+
+: endif
+黄菜子在那卍中无言地拔刀——、
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 21, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo02_kin0775" )
+\CN["黄菜子"]
+“我要杀了你。”
+
+是的，静静地嘟囔了一句。
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom1480" )
+\CN["桃子"]
+“黄菜子，你这家伙太过分了。”
+
+: DrawChara( "Mukuro", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo00_muk4553" )
+\CN["无黑色"]
+“那么，这半格雷就交给黄菜子吧。”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1481" )
+\CN["桃子"]
+「是啊。我们去消灭后面涌出了稻草的虫子
+要吗？”
+
+//●演出：無黒・桃　後ろを向くと白夜のモブが入ってくる
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+\CN["卍的部下1"]
+“卍君，这群家伙可以打败吧？”
+
+\CN["卍的部下2"]
+“又可爱又大，超滚滚。”
+
+: DrawChara( "Manji", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["卍"]
+“啊，那些家伙就交给你们了
+犯是在我之后”
+
+\CN["卍"]
+“这个小鬼{杀，玫瑰}之后，我也会加入的。”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+//パーティーを黄菜子単独に
+: Party( "Kinako" )
+: PartyType = "Party03"; Call( "Scenarios/CommonSys*PartySetting" )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：卍
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：卍,2,2,0,sc002a,sc002b
+//＠備考：黄菜子ＶＳ卍　タイマン勝負
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc002a" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_WaRoom04_01", "BGM/22_BM003", 1076, -1, -1, "Scenarios/SC_D05_17*battle" , true )
+
+*battle
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc002a" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Party( "Mukuro","Momo","Kinako" )
+		: PartyType = "Party09"; Call( "Scenarios/CommonSys*PartySetting" )
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○卍からヒラガを守れ！２Ａ
+//========================================================
+*sc002a
+//●状況：戦闘に勝利
+//●演出：黄菜子　アクション。卍の刀を飛ばす
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/18_TM003")
+: DrawChara( "Kinako", 23, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Manji", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["卍"]
+“骗人的吧……？这样的小鬼比我还……？”
+
+: DrawChara( "Kinako", 21, 0)
+: PlayVoice( "Voices/vo02_kin0776" )
+\CN["黄菜子"]
+“下一次是最后一次了。我要杀了你。”
+
+黄菜子没有改变表情，用没有抑扬顿挫的声音静静地嘟囔着。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Manji", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0777" )
+\CN["黄菜子"]
+“——有栖川流参之刃”
+
+\CN["卍"]
+“……”
+
+//: EraseChara( "Manji", 0.5 )
+黄菜子一摆好，卍就吓破了腰
+
+//: DrawChara( "Kinako", 29, 0)
+: PlayVoice( "Voices/vo02_kin0778" )
+\CN["黄菜子"]
+“{扫帚星，扫帚}”
+
+//: EraseChara( "Kinako", 0.5 )
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+//: DrawChara( "Kinako", 20, 0, 1, 0.5, 0.0, 3, "R" )
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+甚至没有时间去乞讨
+妖刀扬羽割掉了卍头。
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Mukuro", 26, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4554" )
+\CN["无黑色"]
+“那边好像结束了。”
+
+这边也差不多收拾好了。
+剩下3、4个人左右。
+
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: DrawChara( "Kinako", 4, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0779" )
+\CN["黄菜子"]
+“是的，无论如何……”
+
+\CN["卍的部下3"]
+“啊啊啊…卍君被那样的小鬼{杀，玫瑰}杀了……”
+
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a002_1_1_0100000_1000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1482" )
+\CN["桃子"]
+「那么，你们还做吗？」
+
+桃子手持魔术之弓，威吓剩下的卍的部下们。
+
+\CN["卍的部下4"]
+“希奇！这怎么可能赢！”
+
+\CN["卍的部下5"]
+「卍君被{杀，玫瑰}的家伙，我可不能和他们做对手。
+只能逃走了！”
+
+: HideWnd()
+: PlaySe( "SE/Se_dash01" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+卍的部下们慌张张地逃走了。
+
+: DrawChara( "Mukuro", 23, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: DrawChara( "Momo", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom1483" )
+\CN["桃子"]
+“呼～。剩下的只是没有毅力啊。”
+
+: DrawChara( "Mukuro", 2, 1)
+: PlayVoice( "Voices/vo00_muk4555" )
+\CN["无黑色"]
+“我们也赶紧回去吧。”
+
+//●演出：無黒たち　家から出て行く
+//＠分岐：「反幕巫女を始末せよ！」が終了している場合
+//●シーン：「対決　白夜九星」へ
+//＠シナリオジャンプ：SC_D05_19
+//＠分岐：それ以外の場合
+//＠場所移動：帝都
+//●シーンエンド
+//＠分岐終了
+: HideWnd()
+: Party( "Mukuro","Momo","Kinako" )
+: PartyType = "Party09"; Call( "Scenarios/CommonSys*PartySetting" )
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: SetMission( "SC_D05_17_1", "Successed" )
+: if ( MissionProgress( "SC_D05_18_1", "Successed", "Failed" ) == true )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_19")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")
+: endif

@@ -1,0 +1,495 @@
+//========================================================
+//○白夜幹部　ナンバー２の男
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Mei", 0 )
+//●場所：白夜の隠れ家
+//●状況：冥に稽古をつけてもらった後。
+//●演出：冥　アクション演出
+: HideWnd()
+: PlaySe( "SE/Se_KatanaHit02" )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 4, 4 )
+: Wait()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_HozukiDoujyo01", 1.0 )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*MeiAction01" )
+: Wait()
+: DrawChara( "Mukuro", 31, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayBgm("BGM/42_CM019")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2752" )
+\CN["无黑色"]
+“哈，哈，姐姐，谢谢您。”
+
+: DrawChara( "Mei", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 31, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0261" )
+\CN["冥"]
+“好好擦拭汗水，别让身体着凉。
+还有，无黑，你的剑术……”
+
+: DrawChara( "Mukuro", 2, 1)
+: PlayVoice( "Voices/vo00_muk2753" )
+\CN["无黑色"]
+“嗯，是鬼灯学的。
+我和这个更合适”
+
+: DrawChara( "Mei", 0, 1)
+: PlayVoice( "Voices/vo09_mei0262" )
+\CN["冥"]
+“我的剑术无法引出你的潜力
+是啊。和以前的你动作很不一样。”
+
+: DrawChara( "Mukuro", 21, 1)
+: PlayVoice( "Voices/vo00_muk2754" )
+\CN["无黑色"]
+“但是，今天也没能从姐姐那里拿到一瓶……”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0263" )
+\CN["冥"]
+“别那么垂头丧气。
+你的本事很高”
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0264" )
+\CN["冥"]
+“如果是你的话，我觉得超过我的日子也很近了。”
+
+在白夜的藏身之处有类似训练场的地方……。
+
+白夜队士讨厌辛苦的人很多，排练本身
+很少有人做。
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+\CN["白夜队士·男1"]
+“冥先生，下次可以吗？”
+
+\CN["白夜队士·女1"]
+“我也拜托你了。”
+
+但是，爱慕姐姐的人们
+大家都是缺少锻炼的人，我也受到了很好的刺激。
+
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["兰丸"]
+“冥酱，我很努力呢。”
+
+兰丸经常来训练场。
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo09_mei0265" )
+\CN["冥"]
+“兰丸，你也怎么样？我来陪你。”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“我？嗯，是啊……”
+
+兰丸抱着胳膊，手贴在下巴上想了一会……。
+
+: CharaCostume( "Ranmaru", 1 )
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+“最近可能有点迟钝，所以还是先活动一下身体吧。”
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0266" )
+\CN["冥"]
+“啊，快过来。”
+
+: HideWnd()
+: PlayBgm("BGM/10_CM010")
+: PlaySe("SE/Se_Foot01")
+: chara = "Mei"; lay = 2; type = "DR"; Call( "Scenarios/Common*FgEffOut");
+: chara = "Ranmaru"; lay = 4; type = "DL"; Call( "Scenarios/Common*FgEffOut");
+: PlaySe( "SE/Se_KatanaHit02" )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+姐姐和兰丸对峙。
+
+//: EraseChara( "Mei", 0.25 )
+//: EraseChara( "Ranmaru", 0.25 )
+\CN["白夜队士·男1"]
+“这么说来，兰丸看起来并没有那么强
+为什么要当干部呢？”
+
+\CN["白夜队士·女1"]
+“这也是二黑的地位，也就是说在干部中排名第二
+是吧？”
+
+\CN["白夜队士·男1"]
+“我觉得冥先生和望月先生更厉害啊……”
+
+兰丸先生总是那么飘逸
+经常会被这样评价。
+
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["兰丸"]
+「…………」
+
+//●演技：心の声です
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Mei", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo09_mei0267" )
+\CN["冥"]
+（面对刀才知道……）
+
+姐姐明明是练习，眼神却变了。
+
+//●演技：心の声です
+//: EraseChara( "Ranmaru", 0.25 )
+//: EraseChara( "Mei", 0.25 )
+//: DrawChara( "Mukuro", 0, 0, 0, 0.25, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Mukuro", 0, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2755" )
+\CN["无黑色"]
+（那个独特的氛围……我不想和那个人敌对。）
+
+安静而有力的剑心，这样比较好吧。
+
+//: EraseChara( "Mukuro", 0.25 )
+: DrawChara( "Ranmaru", 0, 0, 0)
+: DrawChara( "Mei", 19, 0, 0)
+: PlayVoice( "Voices/vo09_mei0268" )
+\CN["冥"]
+“兰丸，偶尔也从你那里开始着手怎么样？”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“嗯，我不是那种类型的。”
+
+兰丸先生练习的地方我只见过数。
+
+//●演技：心の声です
+//: EraseChara( "Ranmaru", 0.25 )
+//: EraseChara( "Mei", 0.25 )
+//: DrawChara( "Mukuro", 1, 0, 0, 0.25, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Mukuro", 1, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2756" )
+\CN["无黑色"]
+（因为是在忍受姐姐的猛攻，光是这样就足够了
+我知道他是相当有实力的人）
+
+//: EraseChara( "Mukuro", 0.5 )
+\CN["白夜队士·女1"]
+“兰丸，给人一种只会防御的印象。”
+
+: DrawChara( "Ranmaru", 16, 0, 0)
+\CN["兰丸"]
+“呐，你，防御是非常重要的。”
+
+: DrawChara( "Ranmaru", 17, 0)
+\CN["兰丸"]
+“我们做的不是比赛，而是互相残杀。
+没有死的人才是胜者”
+
+\CN["白夜队士·女1"]
+“……啊，不好意思……”
+
+\CN["白夜队士·男1"]
+“你能听到现在的声音是多大的震耳欲聋啊。”
+
+: DrawChara( "Ranmaru", 17, 0, 0)
+: DrawChara( "Mei", 1, 0, 0)
+: PlayVoice( "Voices/vo09_mei0269" )
+\CN["冥"]
+“神经好像被狠狠地磨砺了一番。”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“嗯，是吗？”
+
+: DrawChara( "Mei", 7, 0)
+: PlayVoice( "Voices/vo09_mei0270" )
+\CN["冥"]
+“的确，你总是这样。”
+
+兰丸先生想从这个空间，所有的地方得到信息
+我觉得是神经紧张。
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0271" )
+\CN["冥"]
+“再说一遍，这是训练。你来射击。”
+
+: DrawChara( "Ranmaru", 12, 0)
+\CN["兰丸"]
+“那我就这么办吧。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a031_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Mei", 0.0 )
+: ShowWnd()
+兰丸那样说着改变了姿势。
+
+//: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“那么，我走了——”
+
+//: DrawChara( "Ranmaru", 5, 0)
+\CN["兰丸"]
+“天真一刀流——”
+
+兰丸先生跑出去缩短距离。
+
+//: DrawChara( "Ranmaru", 9, 0)
+\CN["兰丸"]
+“一个字！”
+
+//●演出：斬撃　エフェクト
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+//●演技：技を受け止める
+//: DrawChara( "Mei", 18, 0)
+: ShowWnd()
+: DrawFaceThumbnail( "Mei", 18, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0272" )
+\CN["冥"]
+“哇！”
+
+//: EraseChara( "Mei", 0.25 )
+//: EraseChara( "Ranmaru", 0.25 )
+\CN["白夜队士·男1"]
+“诶……！？不，刚才没看见……”
+
+\CN["白夜队士·女1"]
+“……兰丸，你隐藏了那样的实力。
+但是，冥先生却很轻松地接受了”
+
+: HideWnd()
+: DrawChara( "Ranmaru", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: DrawChara( "Mei", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WR"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0273" )
+\CN["冥"]
+“今天好像很有干劲啊。”
+
+: DrawChara( "Ranmaru", 5, 0)
+\CN["兰丸"]
+“因为我有点想活动一下身体。”
+
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0274" )
+\CN["冥"]
+“如果你总是那么鼓足干劲的话
+我也能成为很好的锻炼……”
+
+//●演出：冥と蘭丸　アクション入れる
+: HideWnd()
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Mei", 0.0 )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_a001_1_1_0300000_1000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: effecttype = "4"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: evbg = true; evcos = false;
+: evfile = "evx_a031_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+姐姐和兰丸的技能开始交流。
+
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo09_mei0275" )
+\CN["冥"]
+“那么，这次就从这里开始吧！”
+
+//: DrawChara( "Mei", 3, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_a001_1_1_0200000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0276" )
+\CN["冥"]
+“{阳隐一刀流，扁柏一刀流}・一把大刀——
+{不知道夜月，来吧好了好了}！！」
+
+: HideWnd()
+: effecttype = "4"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+//: DrawChara( "Ranmaru", 7, 0)
+: DrawFaceThumbnail( "Ranmaru", 0, 0, 0 )
+\CN["兰丸"]
+“……哇！”
+
+//: EraseChara( "Ranmaru", 0.25 )
+//: EraseChara( "Mei", 0.25 )
+//●演出：刀合わせ
+: DrawChara( "Ranmaru", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Mei", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“是我输了吧……。练习用的刀，有裂缝了。”
+
+//●演技：心の声です
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0277" )
+\CN["冥"]
+（虽然已经完全决定了……。
+因为时间充裕而防止了）
+
+//●演技：心の声です
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0278" )
+\CN["冥"]
+（这家伙是故意隐瞒{实力，力量}的吗？
+还是说，只是没有注意到自己的才能吗……？）
+
+: DrawChara( "Ranmaru", 17, 0)
+\CN["兰丸"]
+「冥酱，不要那样盯着我。
+看，笑吧，笑吧”
+
+姐姐好像有什么想法。
+
+//●演技：心の声です
+//: EraseChara( "Mei", 0.25 )
+//: EraseChara( "Ranmaru", 0.25 )
+//: DrawChara( "Mukuro", 17, 0, 0, 0.25, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Mukuro", 17, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2757" )
+\CN["无黑色"]
+（正因为是白夜的干部，兰丸先生才不是普通人。）
+
+//: EraseChara( "Mukuro", 0.5 )
+但是，这天我看到的只是兰丸的实力的一部分。
+
+: DrawChara( "Ranmaru", 16, 0, 0)
+: DrawChara( "Mei", 0, 0, 0)
+\CN["兰丸"]
+「呐，冥，现在开始约会吧。
+找到了好的店”
+
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0279" )
+\CN["冥"]
+“为什么我需要和你约会？”
+
+然后，开始了对平时兰丸姐姐的猛攻。
+
+\CN["白夜队士·男1"]
+“又开始了……”
+
+\CN["白夜队士·女2"]
+“兰丸先生，如果不说话的话就很帅了。”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“那是因为，我最喜欢冥酱了。”
+
+: JumpLayer( 2, 0, -50, 1, 0.25)
+: DrawChara( "Mei", 5, 1)
+: PlayVoice( "Voices/vo09_mei0280" )
+\CN["冥"]
+“所以，所以你不要随便说这些话。
+就算出现了误会的女人也不会抱怨的”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“我倒没什么误会。”
+
+对至今为止没见过的姐姐的一面有点吃惊。
+
+从在故乡的时候开始就有很多男人向姐姐搭讪。
+然后，我看了好几个人都击沉了……。
+
+//●演技：心の声です
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Mukuro", 12, 0, 0, 0.25, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Mukuro", 12, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2758" )
+\CN["无黑色"]
+（姐姐挥棒的时候没有原谅她）
+
+从来没有像现在这样把脸稍微红过。
+
+只是，淡淡地回答说“不能交往”“对不起”
+只是还了。
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 1, 0)
+: DrawFaceThumbnail( "Mukuro", 1, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2759" )
+\CN["无黑色"]
+（兰丸姑且不论，姐姐也是那个样子
+也不是完全没有吗？）
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 39, 0)
+: DrawFaceThumbnail( "Mukuro", 39, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2760" )
+\CN["无黑色"]
+（姐姐并没有意识到兰丸是认真的
+没有……嗯，有什么理由吗？）
+
+姐姐顽固是有什么大理由的。
+
+//: EraseChara( "Mukuro", 0.25 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: DrawChara( "Ranmaru", 17, 0, 0, 0.0, 0.0, 4, "LC" )
+: DrawChara( "Mei", 5, 1, 0, 0.0, 0.0, 2, "RC" )
+: Wait()
+: ShowWnd()
+\CN["兰丸"]
+“那就一起去吃饭吧！”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 2, 1, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo09_mei0281" )
+\CN["冥"]
+“不好意思，我刚吃过饭。”
+
+//●演技：心の声です
+//: EraseChara( "Ranmaru", 0.25 )
+//: EraseChara( "Mei", 0.25 )
+//: DrawChara( "Mukuro", 2, 0, 0, 0.25, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Mukuro", 2, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2761" )
+\CN["无黑色"]
+（我再怎么追问也没办法。
+因为只能变成这样）
+
+一边考虑着这些事情，一边微笑着说姐姐和兰丸在哪里
+我眺望着对话。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

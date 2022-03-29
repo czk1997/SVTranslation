@@ -1,0 +1,502 @@
+//========================================================
+//○趣味と実益を兼ねた売春の日々
+//========================================================
+//●背景：黒画面
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 1 )
+: CharaCostume( "Momo", 1 )
+: CharaCostume( "Kinako", 1 )
+另一方面，那个时候——
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D06_02" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D06_02" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●ＣＧ：Ｈカットイン・セックス・後背位１（無黒）
+//●ＣＧ差分：挿入
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", Call("Scenarios/Common*EffTime") )
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c006_0_0_0500002_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+//●演技：後背位セックスしています。淫乱度Ａ
+: PlayVoice( "Voices/vo00_muk4608" )
+\CN["无黑色"]
+“啊啊啊啊啊！”♥</嗯，那里，很舒服♥</color>
+再，再……里面，再用力一点♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi03" )
+\CN["男1"]
+“哈哈哈，没想到像你这样有名器的人竟然在这种地方
+居然在卖……”
+
+: PlayVoice( "Voices/vo00_muk4609" )
+\CN["无黑色"]
+“那种事，现在怎么样都无所谓了吧？
+比起这个，还是给我一个小矮人，让我心情舒畅吧♥</color>」
+
+帝都有几家居酒屋和旅店兼备的地方
+在那样的地方，女性卖身体的事被默认。
+
+在外面按照目的搭讪的无黑
+从男人那里收取了被称为零花钱的卖淫费，涉及到了行为。
+
+\CN["男1"]
+“来，心情太好了……差不多该……”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c006_0_0_0701002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4610" )
+\CN["无黑色"]
+“呜哇！哇，我也很喜欢……嗯……”……
+就这样，不要拔……中出也可以……”
+
+: PlayVoice( "Voices/vo00_muk4611" )
+\CN["无黑色"]
+“小气鬼，就这样……让我来……啊啊……啊……
+呃……呜……呜……呜……”
+
+\CN["男1"]
+“啊，好饿……好紧张……！”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c006_0_0_0611002_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4612" )
+\CN["无黑色"]
+「好、好饿啊好————————！！
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color><color=#f59aa0>♥</color><color=#f59aa0>♥</color>」
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c006_0_0_0711013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！
+
+: PlayVoice( "Voices/vo00_muk4613" )
+\CN["无黑色"]
+“啊啊啊啊啊啊啊啊……气势汹汹地出来了……女阴，用精液
+被满足了……呼啊……好舒服……心情太好了♥</color>」
+
+\CN["男1"]
+“啊啊啊……女阴……里面缠绕着，嗯……
+精液，被吸走了……！”
+
+: PlayVoice( "Voices/vo00_muk4614" )
+\CN["无黑色"]
+“哈，哈，是，小公鸡……中出后的
+小矮人，还是老太婆，战战兢兢的……”
+
+既能赚钱，又能心情舒畅。
+
+: StopBackVoice()
+没有这么好的行为
+无黑比起在西都的时候更喜欢做爱。
+
+//●分岐：桃の淫乱度がＡの場合
+//●演出：暗転
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) == 3 )
+	: HideWnd()
+	: Call("Scenarios/Common*EvFadeOut")
+	: ShowWnd()
+这样度过的不仅仅是无黑——
+
+	//●ＣＧ：Ｈカットイン・足コキ（桃）
+	: HideWnd()
+	: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+	: Wait()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c008_0_1_0400001_0000000_0_"
+	: Call("Scenarios/Common*EvIn")
+	: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+	: Wait()
+	: ShowWnd()
+	\CN["男2"]
+“啊啊啊……啊啊……啊啊……”
+
+	: PlayVoice( "Voices/vo01_mom1529" )
+	\CN["桃子"]
+“呵呵，我真的那么喜欢用脚做的。”
+
+	: PlayBackVoice( "Voices/BGV01_mom_jigo01" )
+	\CN["男2"]
+“哈，是的……我最喜欢你了……”
+
+桃子因桃子受到女孩子的责备而兴奋不已
+很受欢迎。
+
+	: HideWnd()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c008_0_1_0211001_1000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	//●演技：心の声です
+	: PlayVoice( "Voices/vo01_mom1530" )
+	\CN["桃子"]
+（用脚这样做，只会给小鸡鸡筋疲力尽
+这么扭曲♥</color>）
+
+	//●演技：心の声です
+	: PlayVoice( "Voices/vo01_mom1531" )
+	\CN["桃子"]
+（仅仅是看到她这样的身影，我也莫名地兴奋起来
+女阴湿了♥</color>）
+
+	\CN["男2"]
+“啊啊啊……嗯……已经要出去了……我要出去了……”……
+桃大人啊……！”
+
+	: PlayVoice( "Voices/vo01_mom1532" )
+	\CN["桃子"]
+“啊？你那么想射精吗？
+想从小鸡鸡里拿出精子来？”
+
+	\CN["男2"]
+“好的，好的……拜托了！
+请用桃大人的脚给我烤一下！”
+
+比桃子年长很多，而且身份相当高的男人
+高声恳求射精。
+
+	: HideWnd()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c008_0_1_0400001_0000000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo01_mom1533" )
+	\CN["桃子"]
+“呵呵，听到这种声音，真是让人毛骨悚然啊。”
+
+	: PlayVoice( "Voices/vo01_mom1534" )
+	\CN["桃子"]
+“没关系，我来帮你做吧。”♥</color>
+把我的脚充分地露出来，弄得粘糊糊的”
+
+桃子露出了嗜好性的笑容，用脚趾准确地抓住了男人的弱点。
+
+	\CN["男2"]
+“啊……啊…啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+	//●演出：射精
+	//●ＣＧ差分：ぶっかけ
+	: HideWnd()
+	: Call("Scenarios/Common*Shasei")
+	: PlayHSe( "SE/Hse_Sotodashi01" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c008_0_1_0300002_1000010_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+德彪！别管！好烫好烫！！
+
+	: StopBackVoice()
+男子一边发出无情的声音，一边用精液沾满了桃子的脚。
+
+//●分岐終了
+: endif
+//●分岐：黄菜子の淫乱度がＡの場合
+//●演出：暗転
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) == 3 )
+	: HideWnd()
+	: Call("Scenarios/Common*EvFadeOut")
+	: ShowWnd()
+而且，黄菜子也积极地做自己喜欢的工作
+正在接受——
+
+	//●ＣＧ：Ｈカットイン・寝バック（黄菜子）
+	//●ＣＧ差分：挿入
+	: HideWnd()
+	: evcha = "Kinako"; evbg = false; evcos = true;
+	: evfile = "evc_c003_0_0_0311002_1100000_0_"
+	: Call("Scenarios/Common*EvFadeIn")
+	: ShowWnd()
+	//●演技：寝バックで挿入されています。淫乱度Ａ
+	: PlayVoice( "Voices/vo02_kin0819" )
+	\CN["黄菜子"]
+「呃……啊…啊啊啊……啊啊啊啊啊啊啊啊♥</color>」
+
+	: PlayBackVoice( "Voices/BGV02_kin_aegi03" )
+	\CN["男3"]
+“哇，啊，这个小洞非常狭窄，很舒服。
+而且这种不道德，真是太可怕了！”
+
+	\CN["男3"]
+“怎么样？你的小鸡鸡舒服吗？”
+
+	: PlayVoice( "Voices/vo02_kin0820" )
+	\CN["黄菜子"]
+“哈，是的……非常舒服呢……。
+漫画被塞满了小鸡鸡♥</color>」
+
+	\CN["男3"]
+“即便如此，女人还是很不可思议。明明是这么小的洞，居然还扩散开来。”
+因为好好地放了小鸡鸡”
+
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Piston02" )
+	: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Kinako"; evbg = false; evcos = true;
+	: evfile = "evc_c003_0_0_0211003_1110000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+嘘！嘘！嘘！好！嘘！嘘！
+啧啧！慢吞吞！嘘！嘘！嘘！
+
+	: PlayVoice( "Voices/vo02_kin0821" )
+	\CN["黄菜子"]
+「啊啊啊啊啊！啊…啊啊啊啊，嗯，嗯，漫画
+如果那么激烈的话……会麻了……”
+
+	\CN["男3"]
+“嗯？麻痹了吗？”
+
+	: PlayVoice( "Voices/vo02_kin0822" )
+	\CN["黄菜子"]
+“啊，好像很兴奋……嗯……嗯♥</color>」
+
+	\CN["男3"]
+「这样啊。这么小的绳子也能打到啊。
+我越来越兴奋了”
+
+男子全身大幅度运动，在黄菜子狭窄的阴道内这样也可以吗
+激烈地反复抽签。
+
+	: PlayVoice( "Voices/vo02_kin0823" )
+	\CN["黄菜子"]
+“不行，不行……我忍不住先……”……
+啊啊啊……真的不行……我已经忍不住了……！”
+
+	: HideWnd()
+	: evcha = "Kinako"; evbg = false; evcos = true;
+	: evfile = "evc_c003_0_0_0211002_0100000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo02_kin0824" )
+	\CN["黄菜子"]
+“嗯……啊，啊啊啊……不，很好……”
+嗯……嗯……嗯♥</color>」
+
+	//●演技：絶頂。食いしばる系の絶頂です
+	: PlayVoice( "Voices/vo02_kin0825" )
+	\CN["黄菜子"]
+「呜呜呜呜呜呜——————#f59a0]♥</color><color=#f59aa0>♥</color><color=#f59aa0>♥</color>」
+
+	: HideWnd()
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: ShowWnd()
+黄菜子用力握住床单，就这样绝顶了——
+
+	\CN["男3"]
+“啊……呀，糟了……来不及了……”
+
+	//●演出：射精
+	//●ＣＧ差分：挿入・膣内射精
+	: HideWnd()
+	: Call("Scenarios/Common*Shasei")
+	: PlayHSe( "SE/Hse_Nakadashi01" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Kinako"; evbg = false; evcos = true;
+	: evfile = "evc_c003_0_0_0411013_1100010_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+呼！呸！咻咻地打！
+
+	: PlayVoice( "Voices/vo02_kin0826" )
+	\CN["黄菜子"]
+“嗯啊啊啊……娜娜，娜卡把精液拿出来……”
+
+	\CN["男3"]
+“啊啊啊……好厉害……这种感觉还是第一次……”
+
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Nakadashi01" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: ShowWnd()
+咚！咚！咚！咚！咚！
+
+黄菜子本来就很瘦小，阴道内有拉扯的气势
+勒紧男人的阴茎。
+
+伴随痉挛的收缩只会从男人身上榨取精华。
+
+	: PlayVoice( "Voices/vo02_kin0827" )
+	\CN["黄菜子"]
+“哈……哈…呜……嗯……嗯……”♥</color>
+精液已经出来了，但是小鸡鸡还很健康♥</color>」
+
+行为之后，露出了与天真无邪的容貌不相称的淫秽笑容
+浮起的黄菜子。
+
+	\CN["男3"]
+“这好像成了习惯……还请多多关照。”
+
+	: StopBackVoice()
+	//●分岐終了
+: endif
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+无黑他们被希拉加拜托暂时留在帝都。
+
+虽然已经安排好了生活费和能解决的地方
+没什么特别要做的，时间和性欲都很紧张。
+
+………………………………。
+
+……………………。
+
+…………。
+
+//＠３人分順番に表示は可能か？
+//＠Ｈシーン終了：SC_D06_02_1
+//＠分岐：桃の淫乱度がＡの場合
+//＠Ｈシーン終了：SC_D06_02_2
+//＠分岐終了
+//＠分岐：黄菜子の淫乱度がＡの場合
+//＠Ｈシーン終了：SC_D06_02_3
+//＠分岐終了
+//●シーン：「白夜を滅ぼせ！１」合流地点へ
+//＠シナリオジャンプ：SC_D06_03
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+: Call( "Scenarios/CommonSys*CosReturn" )
+//シーン登録
+: SceneFlagUp( "SC_D06_02" )
+//Ｈ履歴更新＆パラボーナス
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithTherianthrope", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "ByInvited", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Prostitution", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 20) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 20) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgy", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Fellatio", 20) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Kiss", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastJob", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 20) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "VaginaPetting", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "HipPetting", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Cunnilingus", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "VirginBody", 5) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "HandFootJob", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 100) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 50) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+: if ( Call( "Scenarios/CommonSys*BirthExperience" ) == true )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Milk", 1000) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", 2000) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", 2000) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateOral", 2000) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", 2000) endif
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 53 ) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) == 3 )
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithElf", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithTherianthrope", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "ByInvited", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Voluntary", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Prostitution", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 20) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "AnalSex", 20) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgy", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Fellatio", 20) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Kiss", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "BreastJob", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "BreastPetting", 20) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "VaginaPetting", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "HipPetting", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Cunnilingus", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Urination", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "VirginBody", 5) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "HandFootJob", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 100) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Squirting", 50) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Exhibitionist", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", 2000) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateAnal", 2000) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateOral", 2000) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Bukkake", 2000) endif
+	: if ( $inExtra == false ) CharaSexHistory( "Momo", 106 ) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) == 3 )
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "WithHuman", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "WithElf", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "WithTherianthrope", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "ByInvited", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Voluntary", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Prostitution", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Sex", 20) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "AnalSex", 20) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgy", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Fellatio", 20) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Kiss", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "BreastJob", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "BreastPetting", 20) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "VaginaPetting", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "HipPetting", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Cunnilingus", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Urination", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "VirginBody", 5) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "HandFootJob", 10) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgasm", 100) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Squirting", 50) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Exhibitionist", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateVagina", 2000) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateAnal", 2000) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateOral", 2000) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Bukkake", 2000) endif
+	: if ( $inExtra == false ) CharaSexHistory( "Kinako", 202 ) endif
+: endif
+: Jump( "Scenarios/SC_D06_03" )

@@ -1,0 +1,154 @@
+//========================================================
+//○遊廓・エロコス喫茶（無黒）
+//========================================================
+*sc001
+: Call("Scenarios/Map_Town18_EroCos_Init")
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: if ( CharaCostume( "Mukuro" ) == 2 )
+	: ShowWnd()
+{黑夜叉，暗黑妖精}这样的话很难做
+恢复原状后换完衣服。
+: endif
+: CharaCostume( "Mukuro", 4 )
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Wait()
+: if ( Flag ( "EroCosWorksMukuro" ) == true ) Return endif
+//＠最初の１回目だけ発生する
+//●服装：無黒・エロコス
+: DrawChara( "Mukuro", 9, 1, 3, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk6745" )
+\CN["无黑色"]
+“……这就是这里的服务员服吗……。
+几乎都是圆的啊”
+
+据说递交的制服只有日本式的和兜裆布
+是非常煽情的东西。
+
+\CN["母版"]
+“噢噢！无黑酱，我觉得她很适合身材
+嗯，超出预想了”
+
+: DrawChara( "Mukuro", 8, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk6746" )
+\CN["无黑色"]
+“那么，我应该做什么？”
+
+\CN["母版"]
+“是啊。跟服务员还有和客人说话就好了。”
+
+: DrawChara( "Mukuro", 3, 1)
+: PlayVoice( "Voices/vo00_muk6747" )
+\CN["无黑色"]
+“是吗？我会努力的。”
+
+//＠立ち絵消去
+: EraseChara( "Mukuro", 0.5 )
+之后，老板教了我一番工作
+打工开始了。
+
+//●エロコス喫茶バイト開始
+//●シーンエンド
+: Flag( "EroCosWorksMukuro", true )
+: Return
+
+//--------------------------------------------------------
+
+*sc002
+//●場所：エロコス喫茶
+\CN["母版"]
+“嗯？怎么了？”
+
+*sc002_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002_select
+//■選択肢１：服装を変えたい
+//■選択肢２：仕事を終了する
+//■選択肢３：何もない
+//――――――――――――――――――――――――――――
+\CI["想换衣服"]
+\CI["结束工作"]
+\CI["什么也没有"]
+: if ($choice == 1) Jump( "*sc002_select_s2" ) endif
+: if ($choice == 2) Jump( "*sc002_select_s3" ) endif
+//-------------------------------------------------------
+//●選択肢１：服装を変えたいを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s1
+//●分岐：［服装］エロコスの場合
+: if ( CharaCostume( "Mukuro" ) == 4 )
+	: DrawChara( "Mukuro", 9, 1, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk6748" )
+	\CN["无黑色"]
+“虽然是接待客人，但还是裸体比较好
+这个可以脱掉吗？”
+
+	\CN["母版"]
+“啊，如果无黑酱想这么做的话，那就没关系了。”
+
+	: DrawChara( "Mukuro", 2, 1)
+	: PlayVoice( "Voices/vo00_muk6749" )
+	\CN["无黑色"]
+“知道了。那我就把这件衣服脱了。”
+
+	//●服装：無黒・全裸
+	: HideWnd()
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: PlaySe( "SE/Se_Cloth01" )
+	: CharaCostume( "Mukuro", 1 )
+	: ShowWnd()
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	//●全裸の場合
+	: DrawChara( "Mukuro", 9, 1, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk6750" )
+	\CN["无黑色"]
+“果然还是穿点什么比较好。”
+
+	\CN["母版"]
+“知道了。那就这样。”
+
+从老板那里收到服装。
+
+	//●服装：無黒・エロコス
+	: HideWnd()
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: PlaySe( "SE/Se_Cloth01" )
+	: CharaCostume( "Mukuro", 4 )
+	: ShowWnd()
+//●分岐終了
+: endif
+//●シーンエンド
+: Return
+//-------------------------------------------------------
+//●選択肢２：仕事を終了するを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s2
+\CN["母版"]
+“已经结束了吗？知道了。辛苦了。”
+
+//●バイト終了処理
+//報酬はエロ仕事回数を軸に計算する
+: chara = "Mukuro"; Call( "Scenarios/CommonSys*EroCosMoney" )
+
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: CharaCostume( "Mukuro", 0 )
+//仲間を元に戻す
+: Call( "Scenarios/CommonSys*PartyReset" )
+: LoadMap( "Map_Town05_09_Saito", "EroCosReturn" )
+
+//-------------------------------------------------------
+//●選択肢３：何もないを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s3
+\CN["母版"]
+“这样啊。嘛，有什么事的话跟我说。”
+
+//●シーンエンド
+: Return

@@ -1,0 +1,345 @@
+//========================================================
+//○媚薬効果のある花の香りに我慢できなくなって
+//========================================================
+//●状況：媚薬効果のある香りに発情している。淫乱度Ｂ～
+//●ＣＧ：Ｈカットイン・オナニー
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_C04_05" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_C04_05" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Onanism", 1) endif
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0110002_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2491" )
+\CN["无黑色"]
+“哈……哈…是，不行……再忍耐一下的话……
+变得奇怪……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——中。
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi01" )
+只需将手指贴在股间，就可以传递潮湿的针脚。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk2492" )
+\CN["无黑色"]
+（这里没有人……哈，哈，不能就这样下去
+不去……）
+
+完全火辣辣的身体只能在这里安抚了。
+
+*select01
+: Call( "Scenarios/CommonSys*CosMemory" )
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: Jump( "*select01_s_end" )
+: endif
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：服を着たままオナニーする
+//■選択肢２：服を脱いでオナニーする
+//――――――――――――――――――――――――――――
+\CI["穿着衣服自慰"]
+\CI["脱下衣服自慰"]
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+
+//-------------------------------------------------------
+//●選択肢１：服を着たままオナニーするを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+挪开穿孔器玩弄\V[Mukuro Omanko]。
+
+//●選択肢合流地点へ
+//＠ラベル：select01_s_end
+: Jump( "*select01_s_end" )
+//-------------------------------------------------------
+//●選択肢２：服を脱いでオナニーするを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: DrawFaceThumbnail( "Mukuro", 0, 2, 0 )
+//●演技：服を脱いでいます
+: PlayVoice( "Voices/vo00_muk2493" )
+\CN["无黑色"]
+“嗯……呃……恩……嗯！”
+
+//●服装変更：全裸
+//●演出：服を脱いで裸になる
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: CharaCostume( "Mukuro", 1 )
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0110002_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+这里是外面，穿的都脱了光。
+
+//●選択肢合流地点へ
+//＠ラベル：select01_s_end
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*select01_s_end
+//●演出：指で女性器を弄っています
+: PlayVoice( "Voices/vo00_muk2494" )
+\CN["无黑色"]
+“嗯……啊啊……哈，啊，啊……嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0210002_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+——中、中、口！
+
+手指上粘满了爱液。
+
+: PlayVoice( "Voices/vo00_muk2495" )
+\CN["无黑色"]
+“啊，好舒服……嗯，呃……哈！
+手指、嘴巴……嗯……恩！”
+
+: PlayVoice( "Voices/vo00_muk2496" )
+\CN["无黑色"]
+“嗯……，麻了……在外面玩女阴
+心情太好了……哈、哈、啊啊啊、啊啊啊！”
+
+在野外发出淫靡的声音
+大声喘息自慰。
+
+用爱液变软的手指一个劲地玩弄着女巫。
+
+: PlayVoice( "Voices/vo00_muk2497" )
+\CN["无黑色"]
+“花飘出的香味……嗯……身体很敏感
+变成这样了♥</color>」
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ラスト、絶頂です
+: PlayVoice( "Voices/vo00_muk2498" )
+\CN["无黑色"]
+“好厉害……嗯……感觉到了……用努尔的手指
+如果碰了克利特里斯……啊啊啊啊啊啊啊啊！”
+
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘿嘿！嘿嘿！嘿嘿！战栗比酷！
+
+只要稍微碰一下克里特里斯就达到了顶峰。
+
+: PlayVoice( "Voices/vo00_muk2499" )
+\CN["无黑色"]
+“也，再摸一下……克利特里斯，再摸一下……”……
+哈，哈，我想更加活跃♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2500" )
+\CN["无黑色"]
+“嗯，啊啊啊，哈……啊啊，嗯！”！
+心情好，心情好，有点栗子酱的感觉
+啊啊啊啊啊♥</color>」
+
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+——努奇、古奇、Z啾！
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi02" )
+剥了皮的阴蒂本来就很敏感
+对花飘散的香味反应敏感度增加了。
+
+: PlayVoice( "Voices/vo00_muk2501" )
+\CN["无黑色"]
+“恩！啊，虽然看起来很简单，但还是忍耐一下吧……
+哈哈……这样的话，应该会更舒服的……”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0210002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂を堪えています
+: PlayVoice( "Voices/vo00_muk2502" )
+\CN["无黑色"]
+“恩……不，不行……啊…啊，嗯……
+哈……嗯，嗯♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2503" )
+\CN["无黑色"]
+“女阴，好厉害……
+在外面手淫……一个人心情变好了♥</color>」
+
+爱液漫溢不止。
+
+手指都黏在了黏糊糊的网上。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2504" )
+\CN["无黑色"]
+“啊啊啊……嗯……恩！啊，好……”……
+嗯……呃…呃……呃……嗯……嗯♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2505" )
+\CN["无黑色"]
+“好、好、好、啊……啊啊啊啊啊啊啊啊啊啊啊啊——！！”
+
+//●演出：絶頂
+//●ＣＧ差分：潮吹き
+: StopBackVoice()
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0411013_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——呜呜呜呜啊啊啊啊啊啊啊啊啊啊啊啊啊啊！
+
+: PlayVoice( "Voices/vo00_muk2506" )
+\CN["无黑色"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊”♥</不停地……manko、女阴、
+战战兢兢的……”
+
+: PlayVoice( "Voices/vo00_muk2507" )
+\CN["无黑色"]
+“嘛，又来了……又来了，又来了……嗯，呃……
+我要开始了——————！”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi03" )
+绝顶不止。
+
+一边像贪图着手指一样移动
+被一个接一个涌来的快感所冲走。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0310013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2508" )
+\CN["无黑色"]
+“已经停不下来了……啊啊……要走了，又要来了……”……
+啊啊啊啊啊…好舒服……好、好、好♥</color>」
+
+: PlayVoice( "Voices/vo00_muk2509" )
+\CN["无黑色"]
+“恩啊啊啊啊啊啊啊啊啊啊啊————————！？”
+
+//●演出：絶頂
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0210013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+阿飞！阿飞！阿飞！战栗比酷！
+
+: PlayVoice( "Voices/vo00_muk2510" )
+\CN["无黑色"]
+“嗯……然后就出来了……不，不……会漏出来的……”……
+不行……啊…啊…啊……啊…嗯……嗯……！”
+
+//●ＣＧ差分：尿
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: PlayHSe( "SE/Hse_Nyou" )
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c036_0_0_0411013_1100100_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——女士们。
+
+: PlayVoice( "Voices/vo00_muk2511" )
+\CN["无黑色"]
+“哈，哈，这个，在这种地方泄露了……
+太恶心了……尿，停不下来♥</color>」
+
+在外面的手淫竟然达到了如此激烈的顶点。
+
+对紫罗兰草的花香有强烈的催淫效果
+我知道了，但是已经晚了。
+
+重复着几乎要泄露的激烈绝顶
+当场用尽了力气，一时动弹不得。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_C04_05
+//●服装：元に戻す
+//●シーン：「研究者の手伝い４」へ
+//＠シナリオジャンプ：SC_C04_05 sc004
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//裸だった場合、露出値を＋しておく
+: if ( CharaCostume( "Mukuro" ) == 1 ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+//シーン登録
+: SceneFlagUp( "SC_C04_05" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 28 ) endif
+: FadeOut( 0.0 )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: LoadMap( "Map_Dungeon31_02_HiragaLabo", "SC_C04_04", "Scenarios/SC_C04_04*sc004")

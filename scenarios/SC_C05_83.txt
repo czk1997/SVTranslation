@@ -1,0 +1,259 @@
+//========================================================
+//○天才発明家の秘密
+//========================================================
+//●場所：ヒラガの研究室
+//Yoshi：背景
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Laboratory01_01", 1.0 )
+: Wait()
+//●視点：ヒラガ視点
+: PlayBgm("BGM/36_ID03")
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: ShowWnd()
+\CN["平底片"]
+“虽然还没到中午，但是分段很好
+今天就到此结束吧”
+
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0070" )
+\CN["亚久里"]
+“知道了。那么，马上给您拿茶来。”
+
+最近，已经很根深蒂固了呢。
+休息的时候好好休息。这是长寿的秘诀。
+
+就在这时，亚久里把茶倒了过来
+给我。
+
+: DrawChara( "Hiraga", 3, 0)
+\CN["平底片"]
+“真是好香的茶啊。”
+
+: DrawChara( "Aguri", 4, 0)
+: PlayVoice( "Voices/vo16_agu0071" )
+\CN["亚久里"]
+“因为得到了{井豆，いず}的新茶。”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“这样啊。那么——。
+嗯……这个好。非常好吃”
+
+当初渡到大和的时候，这个“茶”
+因为不合口味所以没能喝……。
+
+渐渐习惯了，不到现在就不安了
+完了。
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“亚久里先生今天也要好好休息啊。”
+
+: DrawChara( "Aguri", 0, 0)
+: PlayVoice( "Voices/vo16_agu0072" )
+\CN["亚久里"]
+“是的，我知道了。”
+
+//●演出：時間経過
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Aguri", 0.0 )
+: EraseChara( "Hiraga", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["平底片"]
+“那么，亚久里好像也出去了……”
+
+亚久里最近休息日，没有什么特别的事情的时候
+我去帝都的下町玩。
+
+有喜欢的煎饼店，前几天
+好像和哪个家里没有的男生关系变好了。
+
+: DrawChara( "Hiraga", 3, 0)
+\CN["平底片"]
+“确实，是弥一这个名字吗？”
+
+好像是帮助了被流氓纠缠的地方
+从那以后，他就被亲近了。
+
+虽然不怎么在脸上露出来，但是很开心地看着那个孩子
+说话给人印象深刻。
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“到底是什么样的孩子，我真想见见一下。”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“那么，在亚久里先生回来之前
+要办完事吗？”
+
+//●演出：ヒラガ　退場する
+: chara = "Hiraga"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+如果什么都不告诉亚久里的话
+是不可以的事情。
+
+回到研究室，我不在的话可能会觉得可疑
+也不是没有……。
+
+因为必须慎重慎重。
+
+//●演出：場面転換トランジション
+//●演出：森→洞窟といった具合に移動変遷を入れる
+//●場所：ヒラガの秘密研究所
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Forest01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Sleep(1.0)
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_Cave01", 0.0 )
+: Sleep(1.0)
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Laboratory02_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/12_CM012")
+: ShowWnd()
+研究所后面的山。
+稍微改良一下那里的洞窟
+我还建了一个研究所。
+
+: HideWnd()
+: DrawChara( "Hiraga", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+\CN["平底片"]
+「…………」
+
+很多胶囊排列在一起。
+
+其中有向国内外奴隶商交售市价数倍的钱
+我是定期作为奴隶贩卖的精灵。
+
+用了很多精灵，你到底在干什么？
+
+从结论上来讲，对于我们来说是“不死之药”
+正在做。
+
+说到不死之药的话有点语病呢。
+说是为了不死的药对吗。
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“虽然这是无关紧要的事情。”
+
+生前的舒托尔设计并由我完成的特殊魔导器。
+使用这个来提取体内的魔力。
+
+//●演出：ヒラガ　カプセルに入る
+: HideWnd()
+: chara = "Hiraga"; lay = 3 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+: Wait()
+: ShowWnd()
+//: DrawChara( "Hiraga", 5, 0)
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+“呼～……”
+
+进入魔导器胶囊，将提取出的魔力注入我的身体
+流进去。
+
+顺便说一下，魔法——哦，在大和地区被称为魔术呢
+能使用魔术的以精灵为首，兽人种的一部分，还有恶魔之类的
+只有那样说的生物。
+
+其中精灵这个种族的魔力特性非常清澈
+因此，可以提取并注入。
+
+兽人种和恶魔的魔力中杂质过多是不行的。
+
+: DrawFaceThumbnail( "Hiraga", 3, 0, 0 )
+\CN["平底片"]
+（精灵的高纯度魔力流入
+细胞活性化）
+
+被夺去了全部魔力的精灵就这样死去了。
+
+虽然不是至少要补偿
+为了能像安稳的睡眠一样死去。
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+「…………」
+
+{超能力者，超能力者}只能活到30岁左右
+不行。
+
+被称为超越人类智慧的强大肌肉力量和反射神经
+后面加的是当然的事。
+
+当然，我也不例外。
+
+: DrawFaceThumbnail( "Hiraga", 2, 0, 0 )
+\CN["平底片"]
+（至今为止，牺牲了很多精灵……）
+
+{超能力者，超能力者}的我活了50年以上
+提取精灵的魔力，并将其注入体内而生存
+只是在。
+
+我夺走了精灵的生命而活着。
+我并不是没有对这个事实的看法。
+
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+（并不是想要什么特别的东西……）
+
+亚久里也不是普通人。
+
+就像谢托尔把我变成了{超能力者，超能力者}一样
+向亚久里先生移植了名为莉莉丝的恶魔心脏
+变成了人造魔族，伊维尔罗伊德。
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+（我的愿望只是想和亚久里先生一起生活。
+永远永远……）
+
+如果是为了这个的话，无论是什么事情我都毫不犹豫地
+完成了。
+
+现在我的行动原理是“一生和亚久里在一起”
+只是这样而已。
+
+: DrawFaceThumbnail( "Hiraga", 2, 0, 0 )
+\CN["平底片"]
+（不能让亚久里知道这个秘密。）
+
+她是个非常温柔的人。
+
+一定要和我一起背负罪孽。
+
+那不是我所期望的……。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

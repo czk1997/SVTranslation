@@ -1,0 +1,797 @@
+//========================================================
+//○ヒラガと亜久里の夜２
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_C06_83" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_C06_83" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●背景：ヒラガの研究室
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_a002_1_2_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/33_H_LOVE")
+//: DrawImage( 1, 0, "BGImage/BG_Laboratory01_01", 1.0 )
+: Wait()
+: ShowWnd()
+//●視点：亜久里視点
+//＠立ち絵：ヒラガ（着衣）、亜久里（着衣）
+//●演技：キスしています。
+//: DrawChara( "Aguri", 1, 1, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo16_agu0192" )
+\CN["亚久里"]
+“……嗯……嗯……啊啊……”
+
+//: DrawChara( "Aguri", 4, 1)
+: PlayVoice( "Voices/vo16_agu0193" )
+\CN["亚久里"]
+“比拉加先生，再给我一点……
+舌头……缠绕在一起……直到深处……”
+
+//●演技：舌を熱心に絡めていきます。
+//: DrawChara( "Aguri", 1, 1)
+: PlayVoice( "Voices/vo16_agu0194" )
+\CN["亚久里"]
+“珠……呜……嗯……”
+
+//: EraseChara( "Aguri", 0.5 )
+//: DrawChara( "Hiraga", 5, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["平底片"]
+“是的是的，更多一些呢……”
+
+: PlayBackVoice( "Voices/BGV16_agu_fera01" )
+几乎要说是平常的事
+比拉加在亲吻我的腰上更加用力。
+
+就这样，舌头紧紧地拧在紧贴的嘴唇上。
+
+//: EraseChara( "Hiraga", 0.5 )
+//: DrawChara( "Aguri", 3, 1, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo16_agu0195" )
+\CN["亚久里"]
+“嗯……啊，那个……嗯，那个……”
+
+//: DrawChara( "Aguri", 4, 1)
+: PlayVoice( "Voices/vo16_agu0196" )
+\CN["亚久里"]
+“我喜欢和希拉加大人在一起……”……
+嗯……呜呜……呜呜呜……呜…”
+
+//: EraseChara( "Aguri", 0.5 )
+//: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["平底片"]
+“呵呵……看来今天的亚久里先生
+好像完全兴奋了……再抬起头来”
+
+//: DrawChara( "Aguri", 4, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo16_agu0197" )
+\CN["亚久里"]
+“……好的……希拉加大人……”
+
+重叠了好几次，融化了的比拉加先生的舌头
+连我的牙齿都舔得粘糊糊的。
+
+//: DrawChara( "Aguri", 1, 1)
+: PlayVoice( "Voices/vo16_agu0198" )
+\CN["亚久里"]
+“嗯……哈…嗯，嗯珠……”
+
+一开始还不习惯而费尽心思的深吻
+现在已经到了要自己主动要求的程度。
+
+那是因为对方是希拉加大人。
+
+//: EraseChara( "Aguri", 0.5 )
+//: DrawChara( "Aguri", 4, 1, 1, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo16_agu0199" )
+\CN["亚久里"]
+“希拉加大人……请再吻我一下……”
+
+//: DrawChara( "Hiraga", 6, 0)
+\CN["平底片"]
+“是的，当然……”
+
+//: DrawChara( "Aguri", 1, 1)
+: PlayVoice( "Voices/vo16_agu0200" )
+\CN["亚久里"]
+“呜……呜呜……呜呜……呜……”
+
+//: DrawChara( "Aguri", 3, 1)
+: PlayVoice( "Voices/vo16_agu0201" )
+\CN["亚久里"]
+“……嗯……已经……这么硬……”
+
+两脚缠绕在白衣的缝隙里。
+
+于是，血液就聚集在一起并隆起了
+比拉加先生的阴茎的感觉从脚传来。
+
+//: EraseChara( "Aguri", 0.5 )
+//: EraseChara( "Hiraga", 0.5 )
+//: DrawChara( "Aguri", 0, 1, 0, 0.5, 0.0, 3, "C" )
+: StopBackVoice()
+: HideWnd()
+: evfile = "evk_a002_1_1_0100000_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0202" )
+\CN["亚久里"]
+“……希拉加先生。
+如果是我的话，无论什么时候……都会按照你所期望的那样……”
+
+对于这位先生的忠诚和爱情，时间和场所都不选择。
+我想按照自己的愿望，朝着这个方向尽力。
+
+希拉加大人软弱无力地眯起了眼睛。
+
+//: EraseChara( "Aguri", 0.5 )
+//: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["平底片"]
+“那么，是啊……
+今晚在后面的洞怎么样？”
+
+//: EraseChara( "Hiraga", 0.5 )
+//: DrawChara( "Aguri", 4, 1, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo16_agu0203" )
+\CN["亚久里"]
+“啊啊啊……是的……能得到比拉加大人的疼爱吗？”
+那……哪里都……”
+
+从裙子上面好好地把屁股的孔塞进去
+突然发出甜蜜的声音。
+
+我也是一个女人。
+被比拉加大人抑制了性感带，变得很开心。
+
+//: EraseChara( "Aguri", 0.5 )
+//●ＣＧ：アナルセックス（亜久里）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0204" )
+\CN["亚久里"]
+“请这边走……”
+
+把屁股上的洞自己暴露出来，用手指展开。
+
+\CN["平底片"]
+「…………」
+
+吞下希拉加大人的唾液的声音
+代替回信送到了我的耳朵里。
+
+\CN["平底片"]
+“果然亚久里让我很兴奋呢。”
+
+\CN["平底片"]
+“丰满的肉体加上魅力十足的屁股……在你面前比一位研究者还要厉害
+变成了一个男人”
+
+: PlayVoice( "Voices/vo16_agu0205" )
+\CN["亚久里"]
+“……要是比拉加大人的话，即使看到这么丢脸的地方也没关系。”
+
+\CN["平底片"]
+“呵呵，今天怎么也忍不住了。
+恕我冒昧，可以插上这个吗？”
+
+: PlayVoice( "Voices/vo16_agu0206" )
+\CN["亚久里"]
+“嗯……是，是……在我的肛门……”……
+请尽情享受……”
+
+在得到我的同意后
+比拉加大人将勃起的阴茎前端推到一边。
+
+//●ＣＧ差分：挿入
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0200001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：亀頭が肛門にあてがわれています。
+: PlayVoice( "Voices/vo16_agu0207" )
+\CN["亚久里"]
+“嗯……嗯……嗯……嗯……”
+
+: PlayBackVoice( "Voices/BGV16_agu_aegi03" )
+\CN["平底片"]
+“还是老样子，我也有这种感觉呢。
+仅仅是碰上阴茎就已经发出甜蜜的声音了”
+
+: PlayVoice( "Voices/vo16_agu0208" )
+\CN["亚久里"]
+“我要像希拉加大人……嗯……如果你能爱我的话
+哪里都感觉到了……嗯……啊……”
+
+\CN["平底片"]
+“没关系，请放心。
+等习惯了再插入”
+
+: PlayVoice( "Voices/vo16_agu0209" )
+\CN["亚久里"]
+“啊啊啊……啊啊……嗯……。
+屁股……温柔地揉开了……啊…”
+
+\CN["平底片"]
+“放松一下……对，是的。
+没什么好担心的，交给我吧……”
+
+//●演技：挿入され始めます。
+: PlayVoice( "Voices/vo16_agu0210" )
+\CN["亚久里"]
+“那是当然的……嗯啊啊”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+呜哇……呜……呜……。
+
+龟头开始一点点地被小心地塞进去。
+
+: PlayVoice( "Voices/vo16_agu0211" )
+\CN["亚久里"]
+“啊啊啊……！嗯……嗯……嗯……！”
+
+\CN["平底片"]
+“做这个的时候最开心的是
+让我看到亚久里坦率的表情”
+
+\CN["平底片"]
+“坦率地感觉到的地方，非常棒。”
+
+: PlayVoice( "Voices/vo16_agu0212" )
+\CN["亚久里"]
+“嗯……！嗯，现在被说了那样的话……
+啊……啊啊……好害羞……”
+
+\CN["平底片"]
+“差不多龟头都要进去了……再集中在这里……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0310001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：亀頭まで挿入されています。
+: PlayVoice( "Voices/vo16_agu0213" )
+\CN["亚久里"]
+“嗯……是Kali……{插入，是}出来了……！”
+
+//挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！一直……一直……！
+
+: PlayBackVoice( "Voices/BGV16_agu_aegi01" )
+在完全关闭的肛门上
+扁虱先生的阴茎慢慢地插入。
+
+: PlayVoice( "Voices/vo16_agu0214" )
+\CN["亚久里"]
+“如此细致地……仔细地插入的话……
+无论什么时候……总是会想起来……”
+
+: PlayVoice( "Voices/vo16_agu0215" )
+\CN["亚久里"]
+“在我的肛门里……比拉加大人阴茎的触感
+无论何时……无论在哪里……都能记住……”
+
+\CN["平底片"]
+“呵呵……是吗？
+那也就只有男性的冥利了吧！”
+
+: PlayVoice( "Voices/vo16_agu0216" )
+\CN["亚久里"]
+“嗯，啊，啊啊啊！”
+
+虞部、虞美人、虞美人！
+
+插入完成一半左右的瞬间
+比拉加大人尽情地向前突出了腰。
+
+//●ＣＧ差分：挿入
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0200001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：完全に挿入されています。
+: PlayVoice( "Voices/vo16_agu0217" )
+\CN["亚久里"]
+“哈……嗯……嗯……嗯……”
+
+: PlayVoice( "Voices/vo16_agu0218" )
+\CN["亚久里"]
+“哈…啊…啊……{插入，是}了……
+比拉加大人的……我的肛门里全部……”
+
+: PlayBackVoice( "Voices/BGV16_agu_aegi02" )
+\CN["平底片"]
+“哦哦，这个是。
+从一开始……呃……就受到了热烈的欢迎……哈哈”
+
+: PlayVoice( "Voices/vo16_agu0219" )
+\CN["亚久里"]
+“对不起，非常抱歉……只是被插了一下……很有快感……”
+
+: PlayVoice( "Voices/vo16_agu0220" )
+\CN["亚久里"]
+“啊啊啊……嗯……嗯……嗯……”
+
+: PlayVoice( "Voices/vo16_agu0221" )
+\CN["亚久里"]
+“这个……我怎么也做不到
+这样的话，太难过了……”
+
+\CN["平底片"]
+“我知道了。那么……我会动的……”
+
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咕嘟……紧紧地……湿透了。
+
+我的肛门粘得粘糊糊的。
+
+//●演出：ピストン演出
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0310001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストンが開始されています。
+: PlayVoice( "Voices/vo16_agu0222" )
+\CN["亚久里"]
+“嗯……啊啊啊……啊……啊啊……”
+
+: PlayVoice( "Voices/vo16_agu0223" )
+\CN["亚久里"]
+“恩……希拉加大人的，慢慢地进出……呃
+把屁股上的洞……啪嗒啪嗒……展开……”
+
+\CN["平底片"]
+“呜……！哈……！
+啊，还是一如既往的拘束……抽插也很辛苦……”
+
+为了证明那个发言
+从龟头到肉竿的根本的出入口，比拉加先生能享受。
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+懒汉……懒汉……懒汉……熟女。
+
+反复放进去或拿出来。
+
+肛门由于那个强的密闭感好几次咽下阴茎。
+
+: PlayVoice( "Voices/vo16_agu0224" )
+\CN["亚久里"]
+“嗯……啊啊啊……啊啊啊啊啊……！”
+
+\CN["平底片"]
+“咦……？里面有温水……”
+
+: PlayVoice( "Voices/vo16_agu0225" )
+\CN["亚久里"]
+“请开动……嗯，嗯……哇，我……啊
+心情变好了……啊，啊啊，嗯……！”
+
+: HideWnd()
+: evfile = "evk_b003_1_0_0511002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0226" )
+\CN["亚久里"]
+“嗯啊啊……啊啊啊……嗯……！”
+
+\CN["平底片"]
+“呵呵……真的很容易感觉到是这边呢。
+请不要客气，请再感受一下……！”
+
+笑嘻嘻地低声私语的同时，给抽奖增加变化。
+
+: PlayVoice( "Voices/vo16_agu0227" )
+\CN["亚久里"]
+“啊，啊啊啊……这次太深了……啊，在里面……！”
+
+: PlayVoice( "Voices/vo16_agu0228" )
+\CN["亚久里"]
+“啊啊啊……嗯……嗯……！”……！
+我的肛门……把阴茎衔到了里面…嗯……！”
+
+\CN["平底片"]
+“呵呵，你刚才还没有痉挛吧？
+想要达到顶峰的时候不要客气”
+
+: PlayVoice( "Voices/vo16_agu0229" )
+\CN["亚久里"]
+“嗯……！
+啊……嗯，啊啊啊……！”
+
+: PlayVoice( "Voices/vo16_agu0230" )
+\CN["亚久里"]
+“希拉加大人……已经上来了……呃
+快感……包裹着全身…嗯！”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+厚颜无耻！图中！咕嘟！好痛！
+
+突然……不，好像是在看准时机
+平底片先生可以加快抽插速度。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0411001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0231" )
+\CN["亚久里"]
+“嗯……！嗯，嗯，嗯……！”
+
+: PlayVoice( "Voices/vo16_agu0232" )
+\CN["亚久里"]
+“嘻，希拉加大人……イ，好像很厉害……呃
+这个……我已经……不…了……！”
+
+\CN["平底片"]
+“嗯！请一定要！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0511002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂しています。
+: PlayVoice( "Voices/vo16_agu0233" )
+\CN["亚久里"]
+“啊啊啊啊……啊，嗯，嗯，嗯……”……
+啊……啊…我要……呜呜呜哇！！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘿嘿！吓我一跳！吓一跳！吓一跳！
+
+: PlayVoice( "Voices/vo16_agu0234" )
+\CN["亚久里"]
+“啊啊啊啊啊……啊…啊啊啊……呜…呜……”
+
+由于平底片先生的抽插，简慢地先迎接了绝顶。
+
+肛门反复出现裂缝
+肠道内的分泌液也会比以往更加充足。
+
+: PlayVoice( "Voices/vo16_agu0235" )
+\CN["亚久里"]
+“哈、哈……感觉太多了……”
+
+\CN["平底片"]
+“对不起，这个……我也是……！”
+
+: PlayVoice( "Voices/vo16_agu0236" )
+\CN["亚久里"]
+“哈，好的……就像希拉加大人喜欢的那样……”
+
+抓住屁股的手突然用力。
+
+就这样沉溺于性
+在肛门进行激烈的抽签。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0611002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0237" )
+\CN["亚久里"]
+“嗯啊啊！啊啊啊！嗯！”
+
+: PlayVoice( "Voices/vo16_agu0238" )
+\CN["亚久里"]
+“啊，刚刚好的肛门
+由希拉加大人的阴茎支配……嗯…！”
+
+: PlayVoice( "Voices/vo16_agu0239" )
+\CN["亚久里"]
+“山顶还在继续……快感还残留着……”
+
+\CN["平底片"]
+“好，这太棒了……！”
+
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！慢吞吞！咕嘟咕嘟！
+
+一副全神贯注的样子，希拉加大人坐下。
+
+: PlayVoice( "Voices/vo16_agu0240" )
+\CN["亚久里"]
+“嗯！嗯，到现在为止……最激烈的……！”……！
+比拉加大人的阴茎……在肠内蠕动……！”
+
+: PlayVoice( "Voices/vo16_agu0241" )
+\CN["亚久里"]
+“嗯……！啊，嘛，还长大了……！”……！
+我心中的快感……还……再多一点……！”
+
+\CN["平底片"]
+“哇……！啊…！啊啊啊！”
+
+: HideWnd()
+: evfile = "evk_b003_1_0_0511002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0242" )
+\CN["亚久里"]
+“好舒服……好舒服，希拉加大人……呃
+阴茎被磨碎了……和比拉加大人合为一体……！”
+
+在第几次肛门收缩中
+希拉里的阴茎从根部被吞下。
+
+\CN["平底片"]
+“呃……！那是……嗯……！”
+
+: PlayVoice( "Voices/vo16_agu0243" )
+\CN["亚久里"]
+“啊啊啊啊……！
+阴茎、痒痒的……颤抖着过来…”
+
+\CN["平底片"]
+“亚久里……我也……！”
+
+: HideWnd()
+: evfile = "evk_b003_1_0_0611002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0244" )
+\CN["亚久里"]
+“是的……是的……什么时候都可以……请…”
+
+: PlayVoice( "Voices/vo16_agu0245" )
+\CN["亚久里"]
+“在希拉加先生喜欢的地方
+{射精，だ}想做的时候……全部……」
+
+尽管如此，我自己的灵敏度也再次达到了最高潮。
+
+也许我会先到达顶峰……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0246" )
+\CN["亚久里"]
+“啊啊啊啊……好……啊啊啊，真是的……”
+
+: PlayVoice( "Voices/vo16_agu0247" )
+\CN["亚久里"]
+“我来了……这个、这个、已经……！
+真是的……就这样……啊啊啊…！”
+
+//●演技：絶頂、潮吹きしています。
+: PlayVoice( "Voices/vo16_agu0248" )
+\CN["亚久里"]
+“太好了……太糟了……啊…啊…啊…啊…啊啊……啊啊……
+啊啊啊啊啊啊啊啊————————！”
+
+//●ＣＧ差分：潮吹き
+: HideWnd()
+//潮吹き
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0711012_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘿嘿！吓我一跳！
+啊啊啊啊啊啊啊啊啊！
+
+: PlayVoice( "Voices/vo16_agu0249" )
+\CN["亚久里"]
+“嗯！嗯！嗯！嗯……！”
+
+\CN["平底片"]
+“那个收紧……好厉害……啊，啊啊啊啊”
+
+\CN["平底片"]
+“我也……嗯……！”
+
+//●ＣＧ差分：挿入・腸内射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_0_0511012_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——怪酷！酷酷！咕嘟咕嘟！
+
+//●演技：絶頂している中、射精されています。
+: PlayVoice( "Voices/vo16_agu0250" )
+\CN["亚久里"]
+“恩——————！！”
+
+与我的巨大顶峰几乎同时
+比拉加也达到了一直忍耐着的射精。
+
+最大限度地保持热度和气势
+精液在我的肛门里倒流。
+
+: PlayVoice( "Voices/vo16_agu0251" )
+\CN["亚久里"]
+“嗯……嗯……呜…呜……呜……”
+
+: PlayVoice( "Voices/vo16_agu0252" )
+\CN["亚久里"]
+“扁虱大人的……放在肛门里……放在肚子里……”
+
+\CN["平底片"]
+“哈啊……呜……呜……！”
+
+\CN["平底片"]
+“亚久里先生……我要拔了……”
+
+: PlayVoice( "Voices/vo16_agu0253" )
+\CN["亚久里"]
+“嗯，嗯……嗯……”
+
+//●ＣＧ差分：未挿入・射精後
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evk_b003_1_1_0111012_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+长腿、长腿、长腿……泥泞、泥泞。
+
+: PlayBackVoice( "Voices/BGV16_agu_jigo01" )
+在拔根的同时，从肛门开始滴大量的精液。
+
+: PlayVoice( "Voices/vo16_agu0254" )
+\CN["亚久里"]
+“嗯…………比拉加大人的阴茎……太可惜了……”
+
+\CN["平底片"]
+“呵呵，如果能这么说的话我会很开心的。”
+
+: PlayVoice( "Voices/vo16_agu0255" )
+\CN["亚久里"]
+“只是……事实，所以……”
+
+相互之间摇摇晃晃的样子
+我们会钻进地板里。
+
+\CN["平底片"]
+“今天很兴奋吧？”
+
+: PlayVoice( "Voices/vo16_agu0256" )
+\CN["亚久里"]
+“……真不好意思，比拉加大人……”
+
+\CN["平底片"]
+“不不不不，这种东西应该相互坦诚。
+特别是像我们这样的研究者”
+
+注意到的时候，比拉加先生的表情再次变成了研究者。
+
+还是这个人根本的研究者。
+
+//●演技：か細い声で。
+: PlayVoice( "Voices/vo16_agu0257" )
+\CN["亚久里"]
+“……我最喜欢你了。”
+
+\CN["平底片"]
+“嗯，呃……？”
+
+: PlayVoice( "Voices/vo16_agu0258" )
+\CN["亚久里"]
+“不，什么都可以。”
+
+就那样效率很好地进行了整理。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_C06_83" )
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

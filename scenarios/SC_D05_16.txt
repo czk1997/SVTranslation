@@ -1,0 +1,449 @@
+//========================================================
+//○門番の見廻組から身体検査を受ける
+//========================================================
+//●状況：見廻組から身体検査をすると言われています。全員淫乱度Ｂ以上
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D05_16" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D05_16" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: if ( $inExtra == true )
+	: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 1.0 )
+	: Wait()
+	: PlayBgm("BGM/12_CM012")
+: endif
+: DrawChara( "Mukuro", 26, 0, 0, 0.5, 0.0, 4, "C" )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 2, "R" )
+: PlayVoice( "Voices/vo00_muk4545" )
+\CN["无黑色"]
+“我知道了。我不抵抗。随你的便。”
+
+我知道这些家伙只有别有用心，但我不想粗暴对待。
+
+如果有什么粗暴的事情的话
+那时就是那时。当场杀死。
+
+\CN["睡眠组1"]
+“那么，你有没有先带危险品或违法的救生圈呢？”
+让我检查一下吧”
+
+\CN["睡眠组2"]
+“三个人都先把衣服脱了吧。”
+
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: Wait()
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1471" )
+\CN["桃子"]
+“光是裸体就好的话，轻松就好了。”
+
+//●演出：桃　着替え
+//●服装：桃・下着
+//桃cos2へ変更
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_2_0300001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Momo", 2 )
+: ShowWnd()
+桃子毫不犹豫地脱了衣服。
+
+\CN["镇上的男子1"]
+“那些孩子们，都被周围的人缠上了。真可怜。”
+
+\CN["镇上的男子2"]
+“好像马上就要裸体了。一起看吧。”
+
+看热闹的人蜂拥而来。
+
+\CN["睡眠组1"]
+“噢噢！牛奶好大！”
+
+\CN["睡眠组2"]
+“话说，虽然没有胸罩，但是裤子穿得很好啊。”
+
+//: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1472" )
+\CN["桃子"]
+“基本上不戴胸罩。”
+
+//: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom1473" )
+\CN["桃子"]
+“还有，{现代，现在}即使是这样的衣服也要穿内衣
+基本啊。请记住”
+
+桃子妖艳地微笑。
+
+如果我是男人的话，简直会把理性都放飞。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["睡眠组1"]
+“看，还有两个人。”
+
+\CN["睡眠组3"]
+“特别期待那边的孩子。”
+
+\CN["睡眠组2"]
+“啊……你就是这样的兴趣啊……”
+
+//●演技：着替えをしています
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evc_b004_0_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0770" )
+\CN["黄菜子"]
+“……嗯”
+
+//: EraseChara( "Kinako", 0.5 )
+//●演出：黄菜子　着替え
+//●服装：黄菜子・下着
+//: CharaCostume( "Kinako", 3 )
+//: DrawChara( "Kinako", 10, 0, 0, 0.5, 0.0, 2, "R" )
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evfile = "evc_b004_0_2_0200001_0000000_0_"; Call("Scenarios/Common*EvChange");
+: CharaCostume( "Kinako", 3 )
+: ShowWnd()
+黄菜子和桃子一样毫不犹豫地脱下衣服变成内衣。
+
+//: EraseChara( "Mukuro", 0.5 )
+//●演出：無黒　着替え
+//●服装：無黒・下着
+//無黒cos3へ変更
+//: DrawChara( "Mukuro", 25, 0, 0, 0.5, 0.0, 4, "C" )
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evfile = "eva_c040_0_2_0100002_1000000_0_"; Call("Scenarios/Common*EvChange");
+: CharaCostume( "Mukuro", 3 )
+: ShowWnd()
+接着我也脱了衣服。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4546" )
+\CN["无黑色"]
+“黄菜子，没事吧？”
+
+: DrawChara( "Kinako", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo02_kin0771" )
+\CN["黄菜子"]
+“说不害羞是骗人的
+穿着内衣”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4547" )
+\CN["无黑色"]
+“这样可以吗？”
+
+\CN["睡眠组1"]
+“不，不好好全部脱掉的话就不知道了。”
+
+\CN["睡眠组2"]
+“对了对了。内衣里有卖药的
+因为也有把馒头藏起来的搬运店”
+
+: DrawChara( "Kinako", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L")
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R")
+: DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C")
+: PlayVoice( "Voices/vo01_mom1474" )
+\CN["桃子"]
+“反正我是这么想的。
+我已经看到这里了，虽然已经到现在了……”
+
+桃子露出困惑的表情。
+
+//●演技：心の声です
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom1475" )
+\CN["桃子"]
+（但是，因为是帝都。在这种地方，能看到小银的是
+果然很辛苦啊。各种各样……）
+
+\CN["睡眠组1"]
+“怎么了？害怕了吗？”
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom1476" )
+\CN["桃子"]
+“快点结束吧。”
+
+//●演出：桃　全裸になる
+//●服装：桃・全裸
+//桃cos1へ変更
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: Wait()
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_5_0400001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: CharaCostume( "Momo", 1 )
+: ShowWnd()
+桃子脱去内衣脱光。
+
+: HideWnd()
+: evfile = "evb_b011_0_3_0100001_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+\CN["睡眠组2"]
+“哦哦哦哦！身材真好啊。好兴奋。”
+
+//●分岐：桃の露出開発度Ａ未満の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Exhibitionist" ) < 3 )
+	//: DrawChara( "Momo", 10, 1)
+	: PlayVoice( "Voices/vo01_mom1477" )
+	\CN["桃子"]
+“如果被人用那么讨厌的眼神看的话
+虽然真的很恶心……”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●桃の露出開発度Ａの場合
+: else
+//●演技：心の声です
+	//: DrawChara( "Momo", 10, 2)
+	: PlayVoice( "Voices/vo01_mom1478" )
+	\CN["桃子"]
+（用非常恶心的眼神看着我的身体……。
+胸、屁股、大腿……意识到的话，会有色情的心情
+也许已经变成这样了♥</color>）
+
+//●分岐終了
+: endif
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+看周围的男人们的胯股之间大大地膨胀着。
+
+: DrawChara( "Mukuro", 41, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk4548" )
+\CN["无黑色"]
+“如果遮住前屈或者稍微勃起的话
+怎么样？”
+
+\CN["睡眠组2"]
+“因为没有理由隐瞒。”
+
+: EraseChara( "Mukuro", 0.5 )
+\CN["睡眠组3"]
+“哈，哈，你看，那边的孩子，你也快点全部脱掉啊。”
+
+//●演出：黄菜子　全裸になる
+//●服装：黄菜子・全裸
+//黄cos1へ変更
+: CharaCostume( "Kinako", 1 )
+//: DrawChara( "Kinako", 2, 1, 0, 0.5, 0.0, 2, "R" )
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evc_b004_0_3_0300001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0772" )
+\CN["黄菜子"]
+“这样可以吗？”
+
+\CN["睡眠组3"]
+“啊啊啊……呼，快要膨胀的胸部……光溜溜的那个……”
+
+//●分岐：黄菜子の露出開発度Ａの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Exhibitionist" ) == 3 )
+	//●演技：心の声です
+	: PlayVoice( "Voices/vo02_kin0773" )
+	\CN["黄菜子"]
+（被看到裸体什么的，只是觉得不好意思
+应该……）
+
+	//●演技：心の声です
+	: PlayVoice( "Voices/vo02_kin0774" )
+	\CN["黄菜子"]
+（明明是这样，为什么这么烦
+会来吗？）
+
+//●分岐終了
+: endif
+//●演出：無黒　全裸になる
+//●服装：無黒・全裸
+//無黒cos1へ変更
+: HideWnd()
+: CharaCostume( "Mukuro", 1 )
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_4_0300003_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 4, "C" )
+\CN["镇上的男人3"]
+“哇……大家都裸体了。
+虽然很可怜，但是看了之后会很兴奋”
+
+\CN["街上的女人1"]
+“连那么小的孩子都……真是没出息啊。”
+
+\CN["街上的女人2"]
+“嘘！听到了就不知道会被做什么了
+哇”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4549" )
+\CN["无黑色"]
+“看，我按照你的要求好好地给你脱了衣服。
+快点结束‘体检’吧”
+
+//●分岐：無黒の露出開発度Ａ未満の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) < 3 )
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 39, 2)
+	: PlayVoice( "Voices/vo00_muk4550" )
+	\CN["无黑色"]
+（果然，被这么盯着看的话
+害羞得不得了
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●無黒の露出開発度Ａの場合
+: else
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 37, 2)
+	: PlayVoice( "Voices/vo00_muk4551" )
+	\CN["无黑色"]
+（被这么死板地盯着看，果然还是很兴奋♥</color>
+只是被看到，就会疼起来）
+
+//●分岐終了
+: endif
+\CN["睡眠组1"]
+“呵呵。我会仔细调查每一个角落。”
+
+\CN["睡眠组2"]
+“可能在manko里藏了什么。
+不插小鸡鸡就不知道啊，这是”
+
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Mukuro", 37, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo01_mom1479" )
+\CN["桃子"]
+“如果想不同意的话，就堂堂正正地邀请他‘想耍威风’吧。”
+
+\CN["睡眠组1"]
+“那么，黑发的你——”
+
+见回组的一个人边笑边把手伸向我的胸口
+那时候。
+
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Aguri", 0, 0, 0, 0.5, 0.0, 2, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: ShowWnd()
+\CN["平底片"]
+“哎呀，怎么这么吵啊。”
+
+: PlayVoice( "Voices/vo16_agu0280" )
+\CN["亚久里"]
+“好久不见。”
+
+: EraseChara( "Aguri", 0.5 )
+: DrawChara( "Mukuro", 34, 0, 0, 0.5, 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4552" )
+\CN["无黑色"]
+“咦？希拉加？”
+
+当比拉加和他的助手来的时候，不知道为什么身边的人
+打开道路，开始低头。
+
+\CN["睡眠组3"]
+“希拉加大人，这三个人……”
+
+: DrawChara( "Hiraga", 2, 0)
+\CN["平底片"]
+“是我的客人。您没有做无礼的事吧？”
+
+\CN["睡眠组1"]
+“……嗯”
+
+\CN["睡眠组2"]
+“对，对了，我们有巡视。
+对不起！失礼了！”
+
+: HideWnd()
+: EraseChara( "Hiraga", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_dash01" )
+: ShowWnd()
+一群人慌张张地走开。
+
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["平底片"]
+“那么，在这里站着说什么呢
+让我们在我的研究室里谈谈吧”
+
+//●演出：暗転
+: HideWnd()
+: EraseChara( "Hiraga", 0.5 )
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，就去了平野绫的研究室……。
+
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Exhibitionist", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Exhibitionist", 1) endif
+//無黒、桃、黄cos0へ戻し
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+//シーン登録
+: SceneFlagUp( "SC_D05_16" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 52 ) endif
+: if ( $inExtra == false ) CharaSexHistory( "Momo", 105 ) endif
+: if ( $inExtra == false ) CharaSexHistory( "Kinako", 201 ) endif
+//●シーン：「帝都に向かえ３」へ
+//＠シナリオジャンプ：SC_D05_15 sc003
+: Jump( "Scenarios/SC_D05_15*sc003" )

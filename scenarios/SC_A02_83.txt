@@ -1,0 +1,315 @@
+//========================================================
+//○サムライになりたい！
+//========================================================
+//●視点：レオ視点
+//●演出：回想に入る演出
+//●場所：厚海・外・過去
+//●背景：雪の町・外
+//Yoshi：背景（雪の街素材なし、村代用）
+//※少年時代のレオ＝メッセージフェイス出さないための処理
+: HideWnd()
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Nina", 0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Village03_05", 1.0 )
+: Wait()
+//Yoshi：右にレオ、左にニーナ
+//: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 3, "R" )
+: PlayBgm("BGM/36_ID03")
+: DrawChara( "Nina", 0, 0, 0, 0.5, 0.0, 4, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo27_nii0021" )
+\CN["尼娜"]
+“那么，今天就到这里吧……”
+
+\CN["少年时代的雷欧"]
+“哈、哈、哈……”
+
+那一天，我对武士这个存在产生了兴趣
+一个劲儿地调查。
+
+没有好好读过书的我
+我做了在房间里闭门不出读书之类的事。
+
+妈妈和朋友都觉得脑子不正常了吧？
+虽然真的很担心，但是那件事暂且放在一边。
+
+\CN["少年时代的雷欧"]
+“可是，老妈竟然能把剑用到这种程度……”
+
+: PlayVoice( "Voices/vo27_nii0022" )
+\CN["尼娜"]
+“这是以前抓的杵柄。”
+
+我不太清楚你母亲的过去。
+
+在培养骑士的学校上学这件事
+我听说过……。
+
+: PlayVoice( "Voices/vo27_nii0023" )
+\CN["尼娜"]
+“如果想成为武士的话
+不更加磨练技术是不行的”
+
+//: DrawChara( "Leo", 5, 0)
+\CN["少年时代的雷欧"]
+“真的吗……话说回来，比妈妈还强的家伙
+你在那里吗？”
+
+: DrawChara( "Nina",10, 0)
+: PlayVoice( "Voices/vo27_nii0024" )
+\CN["尼娜"]
+“有啊。有很多。”
+
+: PlayVoice( "Voices/vo27_nii0025" )
+\CN["尼娜"]
+“世上有人在，不能只凭外表来判断。”
+只有这件事要牢牢记住”
+
+//: DrawChara( "Leo", 0, 0)
+\CN["少年时代的雷欧"]
+“喂！”
+
+//●背景：空・昼
+: HideWnd()
+: StopBgm( 1.0 )
+//: EraseChara( "Leo", 0.5 )
+: EraseChara( "Nina", 0.5 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+所谓武士就是一把刀活下去的人。
+
+确实是我理想中的存在。
+
+从说想成为武士的那一天开始
+妈妈真的开始认真地给我练习了。
+
+然后，有一天——
+
+//●場所：厚海・レオの実家
+//●背景：洋風民家・部屋・昼
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Room02_01", 1.0 )
+: Wait()
+: ShowWnd()
+//Yoshi：右にレオ
+//: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 3, "R" )
+\CN["少年时代的雷欧"]
+“那妈妈，我走了。”
+
+当剑术长高到可以从认真的母亲那里取得一支的时候
+知道了名为“鬼灯”的武士集团。
+
+在帝都每天都在为人们战斗的团体。
+
+——成为武士。
+我决定参加鬼灯队士的考试。
+
+//Yoshi：左にニーナ
+: DrawChara( "Nina", 6, 0, 0, 0.0, 0.0, 4, "C" )
+: chara = "Nina"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo27_nii0026" )
+\CN["尼娜"]
+“利奥，等一下。”
+
+//: DrawChara( "Leo", 5, 0)
+\CN["少年时代的雷欧"]
+“……恩”
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0027" )
+\CN["尼娜"]
+“把这个拿去吧。”
+
+: PlayBgm("BGM/43_ID04")
+出发前母亲给了我一把刀。
+
+//: DrawChara( "Leo", 2, 0)
+\CN["少年时代的雷欧"]
+“这是你母亲珍爱的刀吗……？”
+
+: DrawChara( "Nina",14, 0)
+: PlayVoice( "Voices/vo27_nii0028" )
+\CN["尼娜"]
+“这是至今为止一直守护着刚来大和的我的刀。
+所以，这次雷欧，你拿去吧」
+
+//: DrawChara( "Leo", 6, 0)
+\CN["少年时代的雷欧"]
+“……呃，很重。”
+
+现在才是最适合我的手的
+第一次拿到手上的时候一下子沉重地压了过来。
+
+——这才是真正的刀的重量。
+刀是这么重的东西，印象很深。
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0029" )
+\CN["尼娜"]
+“我觉得那把刀永远不会在你身边。
+总有一天会放手的”
+
+: PlayVoice( "Voices/vo27_nii0030" )
+\CN["尼娜"]
+“如果遇到可以托付生命的伙伴的话……。
+一定会有适合你的刀在你身边
+”
+
+//＠フォント小さく
+//●演技：呟くような感じ。あの人＝ゼップのことです
+: DrawChara( "Nina",18, 0)
+: PlayVoice( "Voices/vo27_nii0031" )
+\CN["尼娜"]
+“……被称为‘神刀’的刀来到了那个人的身边
+就如同邂逅一样”
+
+//: DrawChara( "Leo",14, 0)
+\CN["少年时代的雷欧"]
+“喂！我一定要成为武士！”
+
+//: DrawChara( "Leo", 0, 0)
+\CN["少年时代的雷欧"]
+“大和一……不对，要成为世界最强的武士
+我会成为你的”
+
+: DrawChara( "Nina",14, 0)
+: PlayVoice( "Voices/vo27_nii0032" )
+\CN["尼娜"]
+“呵呵。雷欧，你一定会的。”
+
+//●演出：回想から戻る演出
+//●場所：どこかの屋敷の前・夜
+//●背景：和風屋敷・外観・夜
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Nina", 0.0 )
+: ResetLayer(4)
+: DrawImage( 1, 0, "BGImage/BG_TeitoUra01_03", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 4, "L" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0487" )
+\CN["无黑色"]
+“雷欧，差不多该开始了。”
+
+: PlayBgm("BGM/18_TM003")
+: DrawChara( "Leo",14, 0, 0, 0.5, 0.0, 3, "R" )
+\CN["雷欧"]
+“喂！交给我吧！我一个人就够了！”
+
+在等待任务的时候，打盹的我好像做了很久以前的梦。
+
+\CN["鬼灯队士・男A"]
+“雷欧，无黑，我去！”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“喂！那就来一下吧！”
+
+//●演出：場面転換トランジション
+//●場所：どこかの屋敷の中・夜
+//●背景：洋風屋敷・廊下・夜
+//Yoshi：「和風屋敷・外観」からの移動となっているため「和風屋敷・廊下」にて対応
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_WaRoom01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+//Yoshi：センターにレオ
+: DrawChara( "Leo",19, 0, 1, 0.0, 0.0, 3, "C" )
+: chara = "Leo"; lay = 3 ; type = "WL";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+“御用改！做好觉悟吧！”
+
+\CN["流氓A"]
+“什么，什么，什么？！”
+
+\CN["流氓B"]
+“啧……！莫非是幕府的狗？”
+
+//●ＣＧ：レオ・アクションシーン
+//●※演出：レオ用のエフェクト
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: ResetLayer(3)
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["雷欧"]
+“不是狗，是武士！”
+
+: HideWnd()
+: cgkeep = false;
+: Call( "Scenarios/Effect*LeoAction01" )
+: Call("Scenarios/Common*EvDelete")
+: Wait()
+: ShowWnd()
+\CN["流氓A"]
+“啊啊啊啊啊……不会吧……那家伙……”
+
+\CN["流氓B"]
+「ら、雷神！？」
+
+虽然是妈妈给我的刀，但终于能挥了。
+
+“如果遇到可以托付生命的伙伴的话……。
+一定会有适合你的刀在你身边
+所以——”
+
+如果妈妈说得对的话
+也许马上就要放手了呢。
+
+因为啊——
+
+//●演出：無黒が敵を切る
+//Yoshi：左に無黒
+: HideWnd()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: AutoFaceThumbnail( true )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0488" )
+\CN["无黑色"]
+“你不是一直在说麻痹大意是大敌吗！”
+
+//Yoshi：右にレオ
+: HideWnd()
+: Call("Scenarios/Common*EvCutinFadeOut")
+: DrawChara( "Mukuro",17, 0, 5, 0.5, 0.0, 4, "L" )
+: DrawChara( "Leo", 0, 0, 1, 0.5, 0.0, 3, "R" )
+: ShowWnd()
+\CN["雷欧"]
+“喔！不愧是我的新娘！真棒……！”
+
+因为我遇到了“可以托付生命的伙伴”。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

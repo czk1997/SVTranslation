@@ -1,0 +1,350 @@
+//========================================================
+//○風神と呼ばれた男のケジメ
+//========================================================
+*sc001
+//●場所：須那ノ山・小屋
+//●状況：小屋に入ると発生
+: HideWnd()
+: Leader( 0 )	//　無黒をリーダーに強制する
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 4 )
+: Wait()
+: RpgCharaTurn( "Player", "D" )
+: RpgCharaOn("Momo")
+: RpgCharaOn("Kinako")
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4677" )
+\CN["无黑色"]
+“那么，来到这里是很好的，但是没有什么特别的。”
+
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0854" )
+\CN["黄菜子"]
+“现在下山的话，途中会天黑。
+我觉得还是住在这里比较好……”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1571" )
+\CN["桃子"]
+“正如黄菜子说的那样。
+这座山晚上非常危险……”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk4678" )
+\CN["无黑色"]
+“桃子这么说的话，是啊。就在这里住一晚吧。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+这样下山很危险
+决定在小屋里住一晚。
+
+……………………………………………………。
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——第二天早上。
+
+//●場所変更：須那ノ山・小屋前
+//●演出：小屋から桃が出てきて銀と出くわす
+: HideWnd()
+: Party( "Momo" )
+: PartyType = "Party02"; Call( "Scenarios/CommonSys*PartySetting" )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon14_04_Nasunoyama", "FromHouse", "Scenarios/SC_D06_51*sc001_1")
+
+*sc001_1
+: HideWnd()
+: RpgCharaOn("Gin")
+: RpgCharaWarp( "Gin", "SC_D06_51" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: StopBgm( 0.0 )
+: PlayBgm("BGM/05_CM005")
+: ShowWnd()
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Momo" ) == 0 )
+	: DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 3, "LC" )
+	: ShowWnd()
+	\CN["银子"]
+“……小姐？”
+
+	//●演技：銀に非常に会いづらかった
+	: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 4, "RC" )
+	: PlayVoice( "Voices/vo01_mom1572" )
+	\CN["桃子"]
+“………小银！？”
+
+//●分岐：［服装］全裸の場合
+: else
+	: DrawChara( "Gin", 9, 0, 0, 0.5, 0.0, 3, "LC" )
+	\CN["银子"]
+“好像在不见的时候，已经变成变态了呢。”
+
+	: DrawChara( "Momo", 7, 1, 0, 0.5, 0.0, 4, "RC" )
+	: PlayVoice( "Voices/vo01_mom1573" )
+	\CN["桃子"]
+“变态什么的……我穿什么样的衣服对小银来说
+没关系吧！”
+
+	: DrawChara( "Momo", 9, 0)
+	: PlayVoice( "Voices/vo01_mom1574" )
+	\CN["桃子"]
+“还是说，小银看到我的裸体很兴奋？
+小鸡鸡勃起了会很难受吗？”
+
+	: DrawChara( "Gin", 8, 0)
+	\CN["银子"]
+“如果是以前的女儿对象的话，也许会变成这样。
+但是，我已经看腻了只是变态的那个了……”
+
+//●分岐終了
+: endif
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1575" )
+\CN["桃子"]
+“那么，小银在这里做什么呢？”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“这是我的台词。
+鬼灯消失后，只是在大和旅行时偶然路过而已
+”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1576" )
+\CN["桃子"]
+“旅行？为了什么？”？
+难道你一直在找我吗？”
+
+: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+“确实在找人……。
+那也是，对我来说重要的人啊」
+
+: DrawChara( "Gin", 10, 0)
+\CN["银子"]
+“但是，那家伙好像已经毫无办法地堕落了。
+不仅失去了作为一个人的尊严和尊严，还给予了他人伤害
+成为了存在”
+
+说完后，小银摆好架势。
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1577" )
+\CN["桃子"]
+“哎呀，你是不是打算对柔弱的女孩子挥拳头？”
+
+: DrawChara( "Gin", 12, 0)
+\CN["银子"]
+“啊。如果在这里放过你的话，以后会成为很大的敌人的。”
+所以啊。在为时已晚之前杀了他”
+
+: DrawChara( "Momo", 3, 0)
+那个小银说要真的杀了我
+说实话，我觉得很受打击。
+
+: DrawChara( "Momo", 4, 0)
+但是，实际上完全没有那样的事。
+
+//●演技：心の声です
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom1578" )
+\CN["桃子"]
+（只不过是被那边的流氓和半格雷他们说了而已
+真没想到啊）
+
+置身于严酷的环境中，我好像变了。
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1579" )
+\CN["桃子"]
+“如果你打算战斗的话
+我也不打算乖乖地被杀了”
+
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: RpgCharaMove( "Player", "U", 1 )
+: Wait()
+: ShowWnd()
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：銀
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：銀,2,2,1,win,lose
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*win" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_01", "BGM/05_CM005", 1087, -1, -1, "Scenarios/SC_D06_51*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+*win
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: DrawChara( "Momo", 4, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Gin", 19, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+\CN["银子"]
+“哈……哈…不会吧，你到这里为止
+没想到我已经有力量了……”
+
+: DrawChara( "Momo", 12, 1)
+: PlayVoice( "Voices/vo01_mom1580" )
+\CN["桃子"]
+“小银……”
+
+小银的呼吸很奇怪。
+好像是受了致命伤，治疗也已经晚了吧。
+
+光凭气力站着，瞪着我。
+
+: DrawChara( "Momo", 4, 1)
+: PlayVoice( "Voices/vo01_mom1581" )
+\CN["桃子"]
+“再见……一直以来谢谢你。”
+
+我给小银刺了一只狗。
+
+对那件事不可思议地没有任何抵抗——
+
+//●演出：炎魔術演出
+: HideWnd()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: cgkeep = true;
+: Call( "Scenarios/Effect*MomoAction01" )
+: RpgCharaOff("Gin")
+: ShowWnd()
+认真的魔术将小银的身体完全烧毁。
+
+//●演出：銀　消える
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+我浑身的魔术之炎使小银无影无踪
+烧光了。
+
+//●演出：無黒と黄菜子　出てくる
+: HideWnd()
+: RpgDoorOpen( "TamamoHouse" )
+: Wait()
+: RpgCharaOn( "Mukuro" )
+: RpgCharaOn( "Kinako" )
+: RpgCharaTurn( "Player", "U" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0855" )
+\CN["黄菜子"]
+“桃子……没事吧？”
+
+//●演出：桃　涙を流している立ち絵でお願いします
+: DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom1582" )
+\CN["桃子"]
+“虽然苦战了很久，没关系吧？”
+
+黄菜子和无黑看起来很担心。
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 34, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: PlayVoice( "Voices/vo00_muk4679" )
+\CN["无黑色"]
+“眼泪……”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1583" )
+\CN["桃子"]
+“诶？骗人的！我在哭吗……？”
+
+被无黑说了才注意到。
+触摸脸颊的话，确实有流眼泪的感觉。
+
+: DrawChara( "Momo", 6, 1)
+: PlayVoice( "Voices/vo01_mom1584" )
+\CN["桃子"]
+“这个是那个啊。只是眼睛里有垃圾。
+不用担心”
+
+: DrawChara( "Mukuro", 38, 0)
+: PlayVoice( "Voices/vo00_muk4680" )
+\CN["无黑色"]
+“是吗……”
+
+//●演出：立ち絵消す
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+然后，先下山。
+
+在西都生活的一点点时间。
+那是不知不觉间，连疼痛都察觉不到的程度
+我的心好像麻痹了。
+
+//●演出：暗転
+//＠桃用の便利なスキルを覚えられるアイテム入手
+//＠場所移動：帝都
+//●シーンエンド
+: HideWnd()
+: SetMission( "SC_D06_51_1", "Successed" )
+: FadeOut( 1.0 )
+: Wait()
+: Party( "Mukuro","Momo","Kinako" )
+: Participate( 0, true, 1, true, 2, true )
+: PartyType = "Party09"; Call( "Scenarios/CommonSys*PartySetting" )
+: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")

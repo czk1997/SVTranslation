@@ -1,0 +1,482 @@
+//========================================================
+//○帝都西の教会の真相
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+//●場所：居酒屋
+//●視点：蘭丸視点
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Pub01", 1.0 )
+: Wait()
+: CharaCostume( "Ranmaru", 0 )
+: DrawChara( "Ranmaru", 2, 0, 0, 0.0, 0.0, 3, "C" )
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+\CN["兰丸"]
+“……大叔，再来一碗。”
+
+\CN["小酒馆的老板"]
+“喔。话说，你喝那么多真少见啊。”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“是吗？嘛，偶尔也……”
+
+\CN["小酒馆的老板"]
+“看，这是特别赠送的。这是西方人的酒。”。
+这是很难买到的名酒。要瞒着其他人哦？”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“哇！是啊。”
+
+喝一杯特别赠送的酒。
+
+: DrawChara( "Ranmaru", 17, 0)
+\CN["兰丸"]
+“噢噢！这个很好吃……不，非常好吃。”
+
+\CN["小酒馆的老板"]
+“是吧？”
+
+虽然不知道酒的好坏
+只有这个芋头烧酒非常好吃
+我完全明白。
+
+和这个小酒馆的老板已经有十年多了
+有交往。
+
+所以呢，你察觉到我很少见的消沉
+你这样招待我。
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“哈~……脸上露出来了吗……。
+必须要好好做啊……”
+
+特别是不想被冥发现的地方。
+
+但是，冥酱对于这样的事情非常敏锐
+因为啊……。
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+（你说我是认真的，就算你明白了
+但是……）
+
+这样的方面的话，比起装在箱里长大的女性
+我觉得很迟钝。
+
+不，或者可能是已经知道了而被敷衍了
+不知道。
+
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+“嗯……嗯……”
+
+大口喝度数大的酒。
+
+我现在变成这样是前几天和冥一起做的
+可能是因为教会的事件。
+
+//●演出：過去回想に入る
+//●回想：SC_C05_07「帝都西の教会の秘密」の蘭丸視点。
+//●場所：帝都西の教会
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+蹲下来和男孩子对视。
+
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["兰丸"]
+“你好”
+
+\CN["男孩1"]
+“你好好♪”
+
+\CN["男孩2"]
+“大叔，是旅人吗？”
+
+: DrawChara( "Ranmaru", 17, 0)
+\CN["兰丸"]
+“大叔真过分啊”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“和哥哥还有这个姐姐一起旅行
+偶然路过这里”
+
+: DrawChara( "Ranmaru", 6, 0)
+\CN["兰丸"]
+（……这些孩子已经死了。
+而且——）
+
+乍看之下，像个普通的孩子。
+被行使了那么巧妙的魔术。
+
+还有，我觉得好像做了很在意的工艺品。
+不好好看一下是不知道的。
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+（这个时候，带着这样的左眼出生的是
+是幸运还是不幸，完全不想去考虑。）
+
+我的左眼相当特殊。
+可以用眼睛看魔力。
+
+所以，这些孩子们其实是被当做僵尸的
+马上就知道是被操纵了。
+
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["男孩1"]
+“啊！神父出来了。”
+
+\CN["女孩1"]
+“神父♪”
+
+\CN["神父"]
+“外面很吵，很在意呢。”
+
+//: DrawChara( "Ranmaru", 4, 0)
+: DrawFaceThumbnail( "Ranmaru", 4, 0, 0 )
+\CN["兰丸"]
+（能看到魔力的波长。操纵这些孩子的是
+那个神父好像没错……）
+
+大概是100%的黑色吧。
+之后不把里面取下来的话。
+
+//●演出：フラッシュバック
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Ranmaru", 1, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["兰丸"]
+“那个，后面的男孩子呢？”
+
+\CN["神父"]
+“啊，这孩子是今天刚送到这里的孩子
+是啊。看，打招呼！”
+
+\CN["男孩4"]
+“这，你好……”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+（这个孩子魔术还没有固定下来。
+也就是说，他不仅刚被当成僵尸……）
+
+如果你相信今天送到这里的话
+是被这个神父杀死的地方吧。
+
+断定不好。不好好地把里面取下来的话。
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“……是的，你好。”
+
+冥，看到那个样子有什么注意到了吗？
+
+不，没关系吗。
+
+//●演出：場面転換トランジション
+//●背景：空・夜
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: EraseChara( "Ranmaru", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+晚上悄悄地拜访了教堂。
+
+: PlayBgm("BGM/41_Sad")
+白天见到的孩子们都这么晚了
+像白天一样在院子里玩。
+
+: DrawFaceThumbnail( "Ranmaru", 14, 0, 0 )
+\CN["兰丸"]
+（红色怪异发光的眼睛是僵尸的证据。
+真讨厌啊，这样啊）
+
+自己的坏预感猜中了，所以不可能高兴。
+
+: DrawFaceThumbnail( "Ranmaru", 6, 0, 0 )
+\CN["兰丸"]
+（这样的话，神父的真面目是{死灵使，尼克罗曼萨}吗。
+有点在意大人僵尸不出来）
+
+: DrawFaceThumbnail( "Ranmaru", 7, 0, 0 )
+\CN["兰丸"]
+（偷偷潜入教堂，想调查各种各样的事情。）
+
+然后，根据我的臆测，教堂里有什么秘密的房间
+我觉得那里有被僵尸化的大人。
+
+: DrawFaceThumbnail( "Ranmaru", 5, 0, 0 )
+\CN["兰丸"]
+（据说这附近有旅人失踪
+我会经常听的。）
+
+虽然想着一定会被魔物吃掉
+我觉得一定不止这些。
+
+在那之后，去了冥酱的房间，发生了什么事
+第二天我去了教堂。
+
+//●場所：教会の部屋
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Syoko", 0.0 )
+: DrawChara( "Mei", 0, 0, 0, 0.0, 0.0, 2, "RC" )
+: DrawChara( "Ranmaru", 16, 0, 0, 0.0, 0.0, 3, "LC" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["兰丸"]
+“地下就交给冥吧。
+我有件事想在教堂再调查一下”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“必须在神父回来之前做完。”
+
+: DrawChara( "Mei", 4, 0, 1)
+: PlayVoice( "Voices/vo09_mei0385" )
+\CN["冥"]
+“啊，我知道了。交给我吧。”
+
+发现地下室后，冥潜入了地下
+确认后我会出去一次。
+
+//●演出：場面転換トランジション
+//●場所：教会の外
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Mei", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["男孩1"]
+“啊，哥哥。你在里面干什么？”
+
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["兰丸"]
+“我读了一会儿书。”
+
+\CN["男孩2"]
+“喂，你看了什么书？”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“是啊——”
+
+发动左眼的力量，“看”孩子们。
+
+: DrawChara( "Ranmaru", 14, 0)
+\CN["兰丸"]
+（……昨天的不是弄错了吗。
+这几个孩子里埋着魔导器。）
+
+魔力不断膨胀，眼看就要爆炸了。
+
+: DrawChara( "Ranmaru", 6, 0)
+\CN["兰丸"]
+（这么说的话，就是嵌入了定时性的炸弹吗？）
+
+\CN["女孩1"]
+“哥哥，你怎么了？”
+
+天真无邪地笑着的孩子们。
+
+: DrawChara( "Ranmaru", 7, 0)
+\CN["兰丸"]
+（这些孩子被信任的神父杀死，变成僵尸
+最后被嵌入了炸弹
+
+为什么无辜的孩子们要遭遇这样的不幸呢？
+
+是谁想了这样的垃圾才实行的？
+
+: DrawChara( "Ranmaru", 6, 0)
+\CN["兰丸"]
+「…………」
+
+强烈的愤怒涌上来，无法保持冷静。
+
+说的是肠子翻滚。
+
+: DrawChara( "Ranmaru", 15, 0)
+\CN["兰丸"]
+“这样下去的话，冥酱很危险！”
+
+//●演出：蘭丸　退場する
+: PlaySe("SE/Se_Foot01")
+: chara = "Ranmaru"; lay = 3; type = "SDL"; Call( "Scenarios/Common*FgEffOut");
+马上去地下室。
+
+炸弹快炸了。
+一定，神父也知道自己被卷入死亡之中
+已经做好觉悟了吧。
+
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Renga", 1.0 )
+: Wait()
+: ShowWnd()
+地下和我预想的一样，有很多僵尸。
+
+一边打倒僵尸，一边到达地下深处。
+
+然后，正好冥酱给神父打了一个电话
+我正要刺。
+
+: DrawChara( "Mei", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Ranmaru", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["兰丸"]
+“小冥……快逃！”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0401" )
+\CN["冥"]
+“嗯？”
+
+: DrawChara( "Ranmaru", 15, 0)
+\CN["兰丸"]
+“好的！啊，好的！”
+
+//●演出：蘭丸　冥の傍へ
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Ranmaru"; lay = 4; type = "DL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: PlaySe( "SE/Se_Cloth01" )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+想救冥酱！
+身体在想之前就开始活动，抱着冥酱。
+
+: DrawFaceThumbnail( "Mei", 3, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0402" )
+\CN["冥"]
+“等一下，等一下，兰丸……！？喂，突然抱住我
+嗯……对，就是这样啊，我还没有杀了那家伙！”
+
+: DrawChara( "Ranmaru", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: chara = "Ranmaru"; lay = 0 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+\CN["兰丸"]
+“那怎么都行，我快从这里逃出来！”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: ResetLayer(3)
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+幸运的是，因为有移动石、电话石}的手头
+总算逃出去了，两个人都平安无事。
+
+当时在场的人，只有我们平安无事。
+
+//●演出：過去回想から戻る
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Pub01", 1.0 )
+: DrawChara( "Ranmaru", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+\CN["兰丸"]
+“噗哈哈~……”
+
+然后，从那以后也很在意，所以调查了很多。
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“你想组建僵尸武士集团吗……。
+真恶心！”
+
+幕府——也就是说，将军忠实地听了自己的话
+尽管如此，似乎还是想要一个即使杀了也不会死的护卫。
+
+只是，那个{死灵使，尼克罗曼萨}以外的人
+因为不能操纵僵尸所以被驳回了。
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+（被背叛的时候，有被僵尸杀死的危险性
+我是这么想的吧）
+
+然后、{死灵使、尼克罗曼萨}因为知道秘密
+因为这件事让他卷入爆炸而死亡。
+
+将幕府的魔导技师制造的魔导器炸弹
+据说是要埋在变成僵尸的孩子们头上让他们爆炸
+用不人道也要有个限度的方法。
+
+{死灵使，尼克罗曼萨}知道自己会被杀
+没跑。真正的理由既然本人死了
+永远不会知道吧。
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+（比拉加说，这些孩子恐怕都没有精灵
+说是兽人种吧。即使变成僵尸也有魔力
+因为自身不会消失，所以就利用它……）
+
+越查越清楚，心里越不痛快
+无论怎样我都会郁闷的。只有那样过分的事
+是的。
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+（这样的夜晚我也想喝……）
+
+只是，一时，寻求些许的安宁。
+
+在常去的居酒屋，经常喝一些轻量的酒
+一直喝到喝醉。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

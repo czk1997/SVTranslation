@@ -1,0 +1,242 @@
+//========================================================
+//○鬼灯局長　千穂あざみ
+//========================================================
+//●場所：鬼灯屯所・あざみの部屋
+//●背景：鬼灯屯所・和室・昼
+//＠立ち絵：あざみ（着衣）
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Azami", 0 )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: DrawChara( "Azami", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Azami"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: ShowWnd()
+——鬼灯局长高千穗的嘲讽。
+
+丰富的知识和经验，还有美丽的美貌。
+
+而且被称为拥有罕见的超凡魅力和曲艺者云集
+率领鬼灯。
+
+但是……。
+
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・道場
+//●背景：鬼灯屯所・道場・昼
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: DrawImage( 1, 0, "BGImage/BG_HozukiDoujyo01", 1.0 )
+: Wait()
+: PlayBgm("BGM/24_FM002")
+: ShowWnd()
+某一天的训练后，局长的事情成为了话题。
+
+: CharaCostume( "Leo", 0 )
+: DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“师傅，我一直有在意的事情。”
+
+: CharaCostume( "Ryu", 0 )
+: DrawChara( "Ryu", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["龙"]
+“什么？”
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“我从没见过局长在战斗。”
+
+: CharaCostume( "Momo", 0 )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: PlayVoice( "Voices/vo01_mom0031" )
+\CN["桃子"]
+“这么说来，是啊。
+总是，只是{老爷，好容易}发出指示而已……”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
+\CN["银子"]
+“……但是，我不是想互相残杀的对手。”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“那是因为，我也总觉得，像这样，用肌肤去感受
+虽然我知道很多……”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ryu", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["龙"]
+“原来如此。如果本能能明白这一点，那就太棒了。”
+
+: DrawChara( "Ryu", 10, 0)
+\CN["龙"]
+“在战场上，无法感受到对方力量的人
+我会早死的”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "RC" )
+: PlayVoice( "Voices/vo00_muk0182" )
+\CN["无黑色"]
+“但是，我想试着交手一次。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“啊，我和我都！和局长试试看！”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
+\CN["银子"]
+“嘛，你不用交刀也会被瞬杀的。”
+
+: DrawChara( "Leo", 9, 0)
+\CN["雷欧"]
+“啊？那是你吧？”
+
+: DrawChara( "Gin", 3, 0)
+\CN["银子"]
+“呼，是啊。我确实不会交锋。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom0032" )
+\CN["桃子"]
+“小银不用刀。”
+
+//＠演出：あざみが道場にやってくる
+: HideWnd()
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe("SE/Se_Foot02")
+: DrawChara( "Azami", 3, 0, 0, 0.0, 0.0, 3, "RC" )
+: FadeOutLayer( 3, 0.0 )
+: SetLayerRelPos( 3, 100, 0, 0.0, 0)
+: SetLayerRelPos( 3, -100, 0, 0.5, 0)
+: FadeInLayer(3, 0.5)
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0051" )
+\CN["嘲讽"]
+“啊，排练的状态怎么样？”
+
+局长一到道场，刚才还成为了话题
+所以，大家一起关注。
+
+: DrawChara( "Ryu", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0052" )
+\CN["嘲讽"]
+“喂喂，怎么了？一直盯着别人的脸？
+龙，我的脸上有什么东西吗？”
+
+: DrawChara( "Ryu", 30, 1)
+\CN["龙"]
+“啊……不，没什么，没什么……。
+或者说，局长……ち，很近……”
+
+: DrawChara( "Azami", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo05_aza0053" )
+\CN["嘲讽"]
+“嗯？啊……不知不觉……”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0033" )
+\CN["桃子"]
+“呐，无黑……以前就在想，龙啊
+绝对是这样吧？关于局长……”
+
+: CharaCostume( "Mukuro", 0 )
+: DrawChara( "Mukuro", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo00_muk0183" )
+\CN["无黑色"]
+“嗯……怎么样？局长是个美人……”
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom0034" )
+\CN["桃子"]
+“绝对是这样！
+喂，小银和小雷都是这么想的吧？”
+
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+\CN["银子"]
+“对吧？没兴趣。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "R" )
+\CN["雷欧"]
+“嗯。啊，师傅……绝对是这样。
+话说，暴露了吧。谁看都知道，那个……”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ryu", 46, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "L" )
+\CN["龙"]
+“你们好像很有精神啊。
+雷欧和女椿两人特别吗……？呼哧呼哧”
+
+: JumpLayer( 6, 0, -50, 1, 0.25)
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“我瘦了！”
+
+: DrawChara( "Momo", 14, 0)
+: PlayVoice( "Voices/vo01_mom0035" )
+\CN["桃子"]
+“啊……我有点在街上有事。
+因为小银会代替我做……”
+
+: HideWnd()
+: PlaySe("SE/Se_dash01")
+: SetLayerRelPos( 3, 100, 0, 0.5)
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: ShakeLayer( 5, 1.0, 30, 50, true)
+: Wait()
+: DrawChara( "Gin", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: ShowWnd()
+\CN["银子"]
+“等一下——小姐！为什么是我！？”
+
+: DrawChara( "Ryu", 42, 1)
+\CN["龙"]
+“不要问答！”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+话虽如此，局长和龙先生啊……。
+
+我也和桃子想的一样，觉得两个人很般配。
+
+这种事不是外场说长道短的。
+我觉得是当事人之间的问题。
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Mukuro", 0, 0, 0, )
+: PlayVoice( "Voices/vo00_muk0184" )
+\CN["无黑色"]
+（谁喜欢谁……。
+男女关系……嗯，我还不太清楚呢……）
+
+我有必须要做的事情。
+恋爱什么的，这样的话还太早了。
+
+//●シーンエンド
+//サイドエピソード終了処理
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

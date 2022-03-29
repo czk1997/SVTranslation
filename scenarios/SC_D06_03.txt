@@ -1,0 +1,1002 @@
+//========================================================
+//○白夜を滅ぼせ！１
+//========================================================
+*sc001
+//●場所：ヒラガの研究所
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——有一天。
+
+//●場所：帝都・宿屋
+//●演出：無黒・桃・黄菜子が集まる
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: DrawChara( "Mukuro", 0, 0, 0, 0.0, 0.0, 6, "C" )
+: DrawChara( "Momo", 1, 0, 0, 0.0, 0.0, 5, "L" )
+: DrawChara( "Kinako", 0, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/01_CM001")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1527" )
+\CN["桃子"]
+“早上好！喂，说不定两个人都是来自比拉加先生
+被称呼的感觉？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4607" )
+\CN["无黑色"]
+“听说有个请求。大概是想让反幕派处理掉吧。”
+应该是那样的吧”
+
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0818" )
+\CN["黄菜子"]
+“我也这么认为。白夜主要干部不在了，势头很好。”
+因为没有了……”
+
+因为是清除反幕派的机会，所以不能浪费吧。
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom1528" )
+\CN["桃子"]
+“那么，我们赶快去比拉加先生那里吧。”
+
+//場面転換
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Laboratory01_01", 1.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+\CN["平底片"]
+“谢谢您特意前来。”
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo00_muk4615" )
+\CN["无黑色"]
+“那么，所谓的话呢？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“我想您已经察觉到了
+将军想趁这个机会把反幕派势力一扫而光
+我想，如果能帮我的话……”
+
+这是我预想中的请求。
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0828" )
+\CN["黄菜子"]
+“反幕派叫一层，就是白夜吗？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“没错。完全摧毁反幕派势力最大的白夜
+他们的士气应该会一下子被削减”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4616" )
+\CN["无黑色"]
+“那么，具体做什么好呢？
+单纯地考虑的话，我觉得杀了白夜的头目就好了”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“嗯。白夜的头，只要杀了达磨，白夜就会灭亡。
+干部应该只剩下兰丸了”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“而且，他也在迷住行踪呢。
+他原本就没有野心，放着不管也没关系吗？”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1535" )
+\CN["桃子"]
+“这样的话，就进入白夜的据点或者什么地方就好了
+是吗？”
+
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+“是的，希望您能这样做。”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“白夜的据点在一个叫崎珠的城市。
+为了能过上安稳的日子，请多关照”
+
+//＠分岐：フラグ［御影生存］が１の場合
+//＠サイドエピソード解放：敗北者の行く末、織笠御影のその後
+//＠分岐終了
+//＠分岐：フラグ［冥生存］が１の場合
+//＠サイドエピソード解放：敗北者の行く末、神八代冥のその後
+//＠分岐終了
+//＠分岐：フラグ［みどり生存］が１の場合
+//＠サイドエピソード解放：敗北者の行く末、望月みどりのその後
+//＠分岐終了
+//＠分岐：フラグ［紫苑生存］が１の場合
+//＠サイドエピソード解放：敗北者の行く末、鏑木紫苑のその後
+//＠分岐終了
+: sideepisode = false
+: if ( Flag ( "Mikage_Live" ) == true )
+	: sideepisode = true
+	: SideEpisodeFlagUp( "episode61" )
+: endif
+: if ( Flag ( "Mei_Live" ) == true )
+	: sideepisode = true
+	: SideEpisodeFlagUp( "episode62" )
+: endif
+: if ( Flag ( "Midori_Live" ) == true )
+	: sideepisode = true
+	: SideEpisodeFlagUp( "episode63" )
+: endif
+: if ( Flag ( "Shion_Live" ) == true )
+	: sideepisode = true
+	: SideEpisodeFlagUp( "episode64" )
+: endif
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: if ( sideepisode == true )
+事件信息更新了。
+<^FF0000>侧面小故事更新了！</color>
+: else
+事件信息更新了。
+: endif
+//＠マップ解放：崎珠
+//●シーンエンド
+: FastTravelMapOn( "TakaoYama" )
+: FastTravelMapOn( "NasunoYama" )
+: FastTravelMapOn( "YoseiForest" )
+: FastTravelMapOn( "Sakitama" )
+: FadeOut( 0.5 )
+: Wait()
+: SetMission( "SC_D06_03_1", "InProgress" )
+: DestinationMap( "Map_Town06_01_Sakitama" )
+: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")
+//========================================================
+//○白夜を滅ぼせ！２
+//========================================================
+*sc002
+//●場所：白夜のアジト・入口
+//●状況：龍が立っている
+//●分岐：全員着衣の場合
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: DrawChara( "Ryu", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["龙"]
+“好久不见了。看起来很健康比什么都好。”
+
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1536" )
+\CN["桃子"]
+“龙先生！？你为什么会在这里……！？”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4617" )
+\CN["无黑色"]
+“这是怎么回事？”
+
+//●分岐：全裸のキャラがいる場合
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: if ( CharaCostume( "Mukuro" ) == 1 || CharaCostume( "Momo" ) == 1 || CharaCostume( "Kinako" ) == 1 )
+	: DrawChara( "Ryu", 28, 0)
+	\CN["龙"]
+“……曾经一起战斗过的伙伴就是这样不礼貌的样子。
+太可怜了。好像丢了羞耻啊」
+
+	//●分岐：無黒が全裸の場合
+	: if ( CharaCostume( "Mukuro" ) == 1 )
+		: DrawChara( "Mukuro", 41, 0, 0, 0.0, 0.0, 5, "RC" )
+		: PlayVoice( "Voices/vo00_muk4618" )
+		\CN["无黑色"]
+“我已经不是鬼灯的一员了。不管以什么样的姿态出去
+这是我的自由”
+
+	//●分岐終了
+		: EraseChara( "Mukuro", 0.5 )
+	: endif
+	//●分岐：桃が全裸の場合
+	: if ( CharaCostume( "Momo" ) == 1 )
+		//: EraseChara( "Mukuro", 0.5 )
+		: DrawChara( "Momo", 5, 0, 0, 0.0, 0.0, 5, "RC" )
+		: PlayVoice( "Voices/vo01_mom1537" )
+		\CN["桃子"]
+“呵呵。说了那么硬的话。
+乳房、屁股等，想看的话就堂堂正正地看吧？”
+
+		: EraseChara( "Momo", 0.5 )
+	//●分岐終了
+	: endif
+	//●分岐：黄菜子が全裸の場合
+	: if ( CharaCostume( "Kinako" ) == 1 )
+		: DrawChara( "Kinako", 4, 1, 0, 0.0, 0.0, 4, "RC" )
+		: PlayVoice( "Voices/vo02_kin0829" )
+		\CN["黄菜子"]
+“……这个，这个……不知不觉就成了习惯……”
+
+		: EraseChara( "Kinako", 0.5 )
+	//●分岐終了
+	: endif
+//●分岐終了
+: endif
+在白夜的据点前龙先生挡住了去路。
+
+: DrawChara( "Ryu", 1, 0)
+\CN["龙"]
+“鬼灯解散了，在白夜捡到了。
+仅此而已”
+
+: DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1538" )
+\CN["桃子"]
+“原来是回到了一直以来都是敌人的组织里去了。”
+
+: DrawChara( "Ryu",30, 0)
+\CN["龙"]
+“所属的组织倒闭了。在那里跟我打招呼的时候
+因为有共鸣所以加入了。这不是什么坏事吧”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4619" )
+\CN["无黑色"]
+“是啊。条理也很通顺。”
+
+: DrawChara( "Ryu", 10, 0)
+\CN["龙"]
+「你们来这里做什么？
+好像不是来玩的……”
+
+龙先生盯着我们。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo02_kin0830" )
+\CN["黄菜子"]
+“很有威压感……如果可以的话，我就不想敌对了。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1539" )
+\CN["桃子"]
+“我有同感。但是，如果不倒下来的话就不会让我通过……”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4620" )
+\CN["无黑色"]
+“龙先生，我不想和你战斗。
+你能通过那里吗？”
+
+: DrawChara( "Ryu", 12, 0)
+\CN["龙"]
+“你是这么说，还以为能坦率地通过吗？”
+
+: DrawChara( "Mukuro", 28, 0)
+: PlayVoice( "Voices/vo00_muk4621" )
+\CN["无黑色"]
+“不，我只是问问废柴。”
+
+: DrawChara( "Ryu", 46, 0)
+\CN["龙"]
+“现在的我不是鬼灯，而是白夜的新渡户龙——
+要经过这里的话，就杀了我过去啊」
+
+: HideWnd()
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: evbg = true; evcos = false;
+: evfile = "evx_a101_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["龙"]
+“——有个男人爱着大海
+——有一只乌龟被一个男人拯救了
+——某个公主遇到了一个海之男”
+
+\CN["龙"]
+“——海之姬爱上了男人
+——海之男渴望回到陆地
+——然后，玉匣打开了”
+
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: evfile = "evx_a101_1_1_0200000_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+\CN["龙"]
+“
+
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255)
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: CharaCostume( "Ryu", 1 )
+: DrawImage( 1, 0, "BGImage/BG_Village04_01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255)
+: Wait()
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：新渡戸龍（ダークエルフ）
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：新渡戸龍（ダークエルフ）,2,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Village04_01", "BGM/10_CM010", 1083, -1, -1, "Scenarios/SC_D06_03*battle01_end" , true )
+
+*battle01_end
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: CharaCostume( "Ryu", 0 )
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○白夜を滅ぼせ！３
+//========================================================
+*sc003
+//●状況：戦闘勝利後
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Village04_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: DrawChara( "Ryu", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["龙"]
+“啊……遗憾……是我输了……”
+
+//●ＳＥ：倒れる音
+//＠龍の服装を元に戻す
+: PlaySe( "SE/Se_Down01" )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: CharaCostume( "Ryu", 0 )
+龙先生用尽全力坐下了。
+
+: DrawChara( "Mukuro", 40, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4622" )
+\CN["无黑色"]
+“哈……哈………三个人合作，终于实现了……”
+
+: DrawChara( "Kinako", 3, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0831" )
+\CN["黄菜子"]
+“无黑先生……”
+
+: DrawChara( "Mukuro", 37, 0)
+: PlayVoice( "Voices/vo00_muk4623" )
+\CN["无黑色"]
+“啊，我知道。我来做吧。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+: DrawChara( "Mukuro", 38, 1)
+: PlayVoice( "Voices/vo00_muk4624" )
+\CN["无黑色"]
+“龙先生……”
+
+龙先生取出小刀，将刀尖按在自己的腹部——
+
+: DrawFaceThumbnail( "Ryu", 34, 0, 0 )
+\CN["龙"]
+“……对不起，我没能指引你。”
+
+最后的话是对我们的道歉和后悔。
+
+//●ＳＥ：刺す音
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", 0.0 )
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+龙先生把小刀往腹部用力推
+发出闷声。
+
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+我挥下刀，把龙的头弄掉了。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawFaceThumbnail( "Ryu", 30, 0, 0, )
+	\CN["龙"]
+“……随你的便。”
+
+	: EraseChara( "Mukuro", 0.5 )
+	//●演出：斬殺エフェクト
+	//●ＳＥ：斬る音
+	: HideWnd()
+	: keep = true; cgkeep = false;
+	: Call( "Scenarios/Effect*Blood04" )
+	: ShowWnd()
+――――――――――――――――――――――――――――
+
+坐着，斩落了做好死亡觉悟的龙的头。
+
+	//●演技：心の声です
+	: DrawFaceThumbnail( "Mukuro", 24, 0, 0 )
+	: PlayVoice( "Voices/vo00_muk4625" )
+	\CN["无黑色"]
+（——我好像变了很多啊）
+
+为了生存而教给我剑术的老师，他亲自给他打了一拳
+明明……。
+
+别说什么都没想，还能排除强敌真是太开心了
+我想了。
+
+清楚地感受到了自身的变化。
+
+	//●分岐終了
+: endif
+: SetMission( "SC_D06_03_1", "Hidden" )
+: SetMission( "SC_D06_03_2", "InProgress" )
+//＠システム：龍のチップ削除してから暗転解除
+//●シーンエンド
+//========================================================
+//○白夜を滅ぼせ！４
+//========================================================
+*sc004
+//●場所：白夜のアジト
+//●状況：あざみが待っている
+//●演技：シリアス。怒っています
+: HideWnd()
+: StopBgm( 0.25 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Garden01_01", 0.0 )
+: DrawChara( "Azami", 6, 0, 0, 0.0, 0.0, 2, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0777" )
+\CN["嘲讽"]
+“来到这里，就是杀了龙来的吗……”
+
+白夜的藏身之处，局长一个人在等着我们。
+
+: DrawChara( "Azami", 6, 0, 0, 0.0, 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 35, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4626" )
+\CN["无黑色"]
+“因为有龙先生在，我原以为局长也在……”
+
+不好的预料中了。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1540" )
+\CN["桃子"]
+“我不想和局长先生战斗。
+我想让你从这里逃走……”
+
+//●演技：威圧しています
+: DrawChara( "Azami", 17, 0)
+: PlayVoice( "Voices/vo05_aza0778" )
+\CN["嘲讽"]
+“……在战场上，我以这样的理由退出了
+你真的这么想吗？”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo02_kin0832" )
+\CN["黄菜子"]
+“这样的局长，还是第一次……”
+
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4627" )
+\CN["无黑色"]
+“鬼灯的顶端不是伊达吗……”
+
+老实说，我不太清楚局长的{实力，强度}。
+虽然我总觉得我很坚强……。
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1541" )
+\CN["桃子"]
+“在杀人之前我想先问一下
+局长为什么在白夜……？”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo05_aza0779" )
+\CN["嘲讽"]
+“嗯？不管别人怎么说啊。
+而且，我原本就是白夜的一员”
+
+局长的话确实让我们大家听不懂。
+
+: DrawChara( "Azami", 26, 0)
+: PlayVoice( "Voices/vo05_aza0780" )
+\CN["嘲讽"]
+“顺便说一下，你不是很般若吗？
+那个的真面目，其实是我吧……”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom1542" )
+\CN["桃子"]
+“哈！？”
+
+: PlayVoice( "Voices/vo02_kin0833" )
+\CN["黄菜子"]
+“……咦……？”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo05_aza0781" )
+\CN["嘲讽"]
+“有一次鬼灯局长高千穗在嘲讽，然后有一次
+白夜九星{一白，一宿}的般若——那就是我啊」
+
+突然坦白，头脑一片混乱。
+
+: DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4628" )
+\CN["无黑色"]
+“局长一直在欺骗我们吗？”
+
+: DrawChara( "Azami", 13, 0)
+: PlayVoice( "Voices/vo05_aza0782" )
+\CN["嘲讽"]
+“啊？话说回来，现在的你们，对于我来说
+除了敌人以外什么都不是。详细的事情没有说的意义”
+
+: DrawChara( "Mukuro", 23, 0)
+: DrawChara( "Azami", 14, 0)
+: PlayVoice( "Voices/vo05_aza0783" )
+\CN["嘲讽"]
+“因此，谈话到此结束。
+{袖子，袖子}知道了，既然互相对着刀，就要做一件事]
+: DrawChara( "Azami", 16, 0)
+: PlayVoice( "Voices/vo05_aza0784" )
+\CN["嘲讽"]
+“吃同一个锅里的饭什么的，那种事怎么样都无所谓。
+只是为了活下去而互相残杀而已”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1543" )
+\CN["桃子"]
+“无黑，黄菜子，好像不是发呆的时候。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk4629" )
+\CN["无黑色"]
+“正如桃所说的那样。胡思乱想的是之后，之后！”
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*AzamiDE" )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+局长{黑夜叉，暗黑妖精}化。
+我们能成为局长也不奇怪。
+
+: DrawChara( "Azami", 7, 0, 0)
+: PlayVoice( "Voices/vo05_aza0785" )
+\CN["嘲讽"]
+“时隔数年再次将黑夜叉、黑精灵化。
+这样的话就不能手下留情了”
+
+: DrawChara( "Azami", 22, 0)
+: PlayVoice( "Voices/vo05_aza0786" )
+\CN["嘲讽"]
+“如果今后还活着的话，就杀了我吧。”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+*battle02
+//――――――――――――――――――――――――――――
+//■戦　闘：高千穂あざみ（ダークエルフ）
+//■タイプ：ボス戦（逃走可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：高千穂あざみ（ダークエルフ）,2,0,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc005" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Garden01_01", "BGM/31_CM016", 1084, -1, -1, "Scenarios/SC_D06_03*battle" , true )
+
+*battle
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc005" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 1, 0, "BGImage/BG_Garden01_01", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle02" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle02" )
+	: else
+		: CharaCostume( "Azami", 0 )
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○白夜を滅ぼせ！５
+//========================================================
+*sc005
+//●状況：戦闘勝利後
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Garden01_01", 0.0 )
+: CharaCostume( "Azami", 0 )
+: DrawChara( "Azami", 23, 1, 0, 0.0, 0.0, 2, "C" )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+//●演技：やられた後、大きなダメージを負っています
+: PlayVoice( "Voices/vo05_aza0787" )
+\CN["嘲讽"]
+“嗯……嗯……！”
+
+//あざみcos0へ戻し
+//●演出：あざみ　元の姿に戻ります
+: DrawChara( "Azami", 24, 1, 0)
+: PlayVoice( "Voices/vo05_aza0788" )
+\CN["嘲讽"]
+“……是我输了啊……烤也好煮也好，你们的
+喜欢就好……”
+
+//●ＳＥ：刀を落とす音
+: PlaySe( "SE/Se_KatanaDrop01" )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+局长认为放弃了刀，再也没有战斗的意思而投降。
+
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom1544" )
+\CN["桃子"]
+“无黑，怎么办？”
+
+//●演技：黄菜子は過去救って貰ったことがあり複雑な想いです
+: DrawChara( "Kinako", 12, 0)
+: PlayVoice( "Voices/vo02_kin0834" )
+\CN["黄菜子"]
+“……无黑先生”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+*battle02_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,battle02_select
+//■選択肢１：殺すなんてできない
+//■選択肢２：心を押し殺して局長を殺す
+//――――――――――――――――――――――――――――
+\CI["不能杀人"]
+\CI["扼杀局长"]
+……怎么办才好？
+
+: if ($choice == 1) Jump( "*battle02_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：殺すなんてできないを選んだ場合
+//-------------------------------------------------------
+*battle02_select_s1
+: DrawChara( "Azami", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo05_aza0789" )
+\CN["嘲讽"]
+“如果被你杀了，我会后悔的
+可以放弃……”
+
+: DrawChara( "Azami", 27, 0)
+: PlayVoice( "Voices/vo05_aza0790" )
+\CN["嘲讽"]
+“来吧，无黑，快点杀了我。”
+
+: DrawChara( "Azami", 27, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 40, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4630" )
+\CN["无黑色"]
+“居然杀了局长……我做不到……”
+
+: DrawChara( "Azami", 26, 0)
+: PlayVoice( "Voices/vo05_aza0791" )
+\CN["嘲讽"]
+“……如果说了那样甜蜜的话，今后——
+不能在今后的大和生存下去”
+
+尽管如此，我还是犹豫着要杀局长
+
+//●演出：電撃魔術エフェクト
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Azami", 0.0 )
+: PlaySe( "SE/Se_AnimeL_Thunder03" )
+: PlayAnim( "Animations/AnimeL_Thunder03", false, 0, 0, 6, 6 )
+: Wait()
+//●演技：電撃系の魔術を食らっています
+: DrawFaceThumbnail( "Azami", 23, 1, 0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0792" )
+\CN["嘲讽"]
+“哇……！”
+
+//●演出：あざみ倒れる
+//●ＳＥ：倒れる音
+: PlaySe( "SE/Se_Down01" )
+受到不知从哪里放出的电击，局长倒下了。
+
+//●演出：ヒラガ＆亜久里登場する
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Aguri", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["平底片"]
+“亚久里先生，真棒。”
+
+比拉加和助手出现。
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 16, 1, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo00_muk4631" )
+\CN["无黑色"]
+“希拉加！”
+
+: DrawChara( "Aguri", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 16, 1, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo16_agu0283" )
+\CN["亚久里"]
+“神八代大人，请冷静下来。”
+
+在被比拉加吃掉的瞬间，被比拉加的助手制止了。
+
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["平底片"]
+“没关系，应该没有死。”
+
+: DrawChara( "Mukuro", 17, 1, 2)
+: PlayVoice( "Voices/vo00_muk4632" )
+\CN["无黑色"]
+“你打算怎么做局长？”
+
+\CN["平底片"]
+“请允许我使用。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1545" )
+\CN["桃子"]
+“利用，你打算做什么？
+说起来，你到底在做什么呢？”
+
+: DrawChara( "Hiraga", 6, 0)
+\CN["平底片"]
+“我很难告诉你那个。
+是顶级秘密哦”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+变得感情用事的桃问，也能轻松躲开。
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“亚久里，麻烦你了。”
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+比拉加和助手带着局长消失在某处。
+
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Kinako", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom1546" )
+\CN["桃子"]
+“有点……！太棒了！”！
+无黑，可以吗？放着不管”
+
+: DrawChara( "Mukuro", 9, 0)
+: PlayVoice( "Voices/vo00_muk4633" )
+\CN["无黑色"]
+“没办法……。
+不追求是我们的礼仪”
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0835" )
+\CN["黄菜子"]
+“是啊。”
+
+: DrawChara( "Mukuro", 34, 0)
+: PlayVoice( "Voices/vo00_muk4634" )
+\CN["无黑色"]
+“要回去一次吗？达磨好像不在这里……”
+
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom1547" )
+\CN["桃子"]
+“话说回来，和龙先生和局长战斗，已经筋疲力尽了。
+现在被袭击的话，可不是什么好东西啊」
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0836" )
+\CN["黄菜子"]
+“是啊。最好回去休息一下。”
+
+//＠フラグ：あざみ生存,1
+//●演出：無黒・桃・黄菜子　退場する
+//●シーン：「力を求めた者の末路１」へ
+//＠シナリオジャンプ：SC_D06_04
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Flag( "Azami_Live", true )
+: Jump( "*End" )
+//-------------------------------------------------------
+//●選択肢２：心を押し殺して局長を殺すを選んだ場合
+//-------------------------------------------------------
+*battle02_select_s2
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 40, 0, 0, 0.5, 0.0, 6, "RC" )
+	: DrawChara( "Azami", 25, 0, 0, 0.5, 0.0, 2, "LC" )
+	: PlayVoice( "Voices/vo00_muk4635" )
+	\CN["无黑色"]
+“局长，对不起……”
+
+	: DrawChara( "Azami", 26, 0)
+	: PlayVoice( "Voices/vo05_aza0793" )
+	\CN["嘲讽"]
+“没关系，如果你要我的首级
+还可以放弃”
+
+	: EraseChara( "Mukuro", 0.5 )
+	: EraseChara( "Azami", 0.5 )
+不说是夙愿的地方好像是局长。
+
+	//●演出：斬殺エフェクト
+	: HideWnd()
+	: keep = true; cgkeep = false;
+	: Call( "Scenarios/Effect*Blood03" )
+	: ShowWnd()
+按杀各种涌上来的东西，挥舞刀。
+
+	//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 24, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+	: DrawChara( "Azami", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+	: PlayVoice( "Voices/vo00_muk4636" )
+	\CN["无黑色"]
+“不能放过局长。
+如果有下次的话，被杀的可能是我”
+
+	: DrawChara( "Azami", 8, 0)
+	: PlayVoice( "Voices/vo05_aza0794" )
+	\CN["嘲讽"]
+“是啊，没错。”
+
+	//●演出：斬殺エフェクト
+	: HideWnd()
+	: EraseChara( "Azami", 0.0 )
+	: EraseChara( "Mukuro", 0.0 )
+	: keep = true; cgkeep = false;
+	: Call( "Scenarios/Effect*Blood03" )
+	: ShowWnd()
+毫不犹豫地挥刀。
+
+	//●分岐終了
+	//●ＳＥ：倒れる音
+: endif
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+没有痛苦也没有恐惧。
+局长一边大笑着，一边沉入血海，结束了一生。
+
+杀了恩人不可能心情好。
+
+但是，只能这样做。
+桃子和黄菜子当然都知道。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+回家路上谁也没说一句话。
+
+然后，今天的事情之后将大大改变大和
+成为了切入点。
+
+……………………………………………………。
+
+*End
+: $money += 15000
+拿到了报酬。
+
+//●シーン：「力を求めた者の末路１」へ
+//＠シナリオジャンプ：SC_D06_04
+: FastTravelMapOff( "Sakitama" )
+: SetMission( "SC_D06_03_2", "Successed" )
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_D06_04")

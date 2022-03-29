@@ -1,0 +1,236 @@
+//========================================================
+//○見廻組
+//========================================================
+//●場所：帝都
+//Yoshi：背景、昼
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: PlayBgm("BGM/42_CM019")
+: ShowWnd()
+//●視点：冥視点
+//●状況：冥と蘭丸が帝都に入って情報を集めている
+这是在接到上司的命令去调查帝都街道情况时发生的事。
+
+在帝都的贵族街上，一个被绳索绑住的贵族男子
+被粗暴地摔在地上，用绳子拖着。
+
+我和兰丸一起从影子里看到了那个。
+
+\CN["贵族"]
+“呃……不，住手吧……！我可是贵族啊？”
+
+\CN["贵族"]
+“就算是幕府的人，也允许如此粗暴的行为
+不可能！”
+
+//: DrawChara( "Mimawari", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: cutinfile = "CutinFg05"
+: x1 = -50; x2 = 50; y1 = 0; y2 = 0; time = 0.4;
+: Call("Scenarios/Common*CutinSlideIn")
+: ShowWnd()
+\CN["男1"]
+“这是可以被原谅的吧。”
+
+\CN["男2"]
+“对了对了，因为这是上司的命令。”
+
+周围没有人。
+一定是害怕被牵连而逃走之类的吧。
+
+//: EraseChara( "Mimawari", 0.5 )
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+穿着白色外褂的两个男子，一边嘎嘎地笑着
+把贵族男子拖走。
+
+: DrawChara( "Mei", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo09_mei0233" )
+\CN["冥"]
+“对于贵族，那种态度……。
+说是幕府的人，那家伙是什么人？”
+
+: DrawChara( "Ranmaru", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["兰丸"]
+“那个白色的外褂应该是‘看回组、み周ぐみ’这个组织的家伙吧。”
+
+//●読み：見廻組（みまわりぐみ）
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0234" )
+\CN["冥"]
+“……见回组？”
+
+没听说过的名字。
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“就好像最近成立的一桥将军直属的护卫组织一样
+好像”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“看，我们一个接一个地杀害了幕府的大人物
+对吧？”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“于是害怕了的将军为了保护自己四六小时
+我觉得是匆忙组织起来的”
+
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0235" )
+\CN["冥"]
+“我还以为他是个胆子更大的人……”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“一般来说，如果周围的人被杀了的话，我会很着急的。”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“怎么说呢，被杀的人都在严加戒备呢
+即便如此还是被杀了呢～”
+
+确实啊。
+在这种情况下保持精神会更奇怪吗。
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0236" )
+\CN["冥"]
+“原来如此。然后，那样的人作为成员
+有吗……”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“是啊。不问身份，总之就是‘吵架’很厉害的人。”
+是以感觉来收集的吧”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“所以，鬼灯一直是威胁。”
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0237" )
+\CN["冥"]
+“是啊。特别是局长和另外一个男人，那两个人要小心。”
+
+我即使拿出真心也不知道能不能取胜。
+就是那样的对手。
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“看回组有调查的感觉，和那附近的半格雷集团没什么区别。
+虽然没必要过于警惕……”
+
+: DrawChara( "Ranmaru", 6, 0)
+\CN["兰丸"]
+“组长‘笹木幸三郎，快来吧’可能要注意了。
+我觉得他是相当有实力的人”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0238" )
+\CN["冥"]
+「这样啊。如果你这么说的话，请注意
+哦！”
+
+兰丸的情报取得非常值得信赖。
+
+: DrawChara( "Ranmaru", 17, 0)
+\CN["兰丸"]
+“因为我对冥的爱非常深。”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+如果没有这样的地方的话，可以更信任。
+
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo09_mei0239" )
+\CN["冥"]
+“……嗯”
+
+我的见解是，看回组不会成为很大的威胁。
+
+只是——
+
+//●演技：心の声です
+: DrawChara( "Mei", 0, 0, 1)
+: PlayVoice( "Voices/vo09_mei0240" )
+\CN["冥"]
+（是相亲组吗……说不定——）
+
+我有想在这里做的事情。
+
+而且，也许这群人有关系。
+
+//●演技：心の声です
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0241" )
+\CN["冥"]
+（我也稍微试探一下吧）
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●場所：白夜の隠れ家・無黒の部屋
+//Yoshi：背景、昼
+: HideWnd()
+: FadeOut( 0.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05", 0.0 )
+: DrawChara( "Mukuro", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/01_CM001")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2620" )
+\CN["无黑色"]
+“那么，接下来怎么办呢？”
+
+: DrawChara( "Mukuro", 29, 0)
+: PlayVoice( "Voices/vo00_muk2621" )
+\CN["无黑色"]
+“姐姐想帮其他干部的工作
+我说过……”
+
+姐姐现在外出了。
+
+总之，兰丸经常和姐姐在一起
+人的地方和平时住在织笠神社
+据说织笠御影要去人的地方。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 0, 0, 3)
+: PlayVoice( "Voices/vo00_muk2622" )
+\CN["无黑色"]
+（现在只做被要求做的事情……）
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+一动不动也没办法，赶紧去看看吧。
+
+\CI["帮助兰丸"]
+\CI["帮助织笠御影"]
+从哪里去？
+
+: FadeOut( 0.5 )
+: Wait()
+: if ($choice == 0)
+	: LoadMap( "Map_Town06_06_Sakitama", "", "Scenarios/SC_C04_09")
+: else
+	: LoadMap( "Map_Town07_01_Byakuya", "MukuroRoom", "Scenarios/SC_C04_10")
+: endif

@@ -1,0 +1,1222 @@
+//========================================================
+//○侍集団『鬼灯』
+//========================================================
+*sc000
+: $chapter = 1	// 章の設定
+//初期セッティング（アイテム）
+: AddItem( "HpMedicenS" 10 )
+: AddItem( "SpMedicenS" 5 )
+: AddItem( "Teleporter" 5 )
+//ゲームクリアしている場合は自爆技を覚える
+: if ( SharedFlag( "GameClear" ) == true )
+	: CharaAddHSkill( "Mukuro", 805 )
+	: CharaAddHSkill( "Momo", 805 )
+	: CharaAddHSkill( "Kinako", 805 )
+	: CharaAddHSkill( "Mei", 805 )
+	\CI["从头开始"]
+	\CI["以LV MAX开始"]
+	新游戏怎么开始？
+	: if ( $choice == 1 )
+		: $money += 999999
+		: AddExp( 999999 )
+	: endif
+
+	: Call( "Scenarios/CommonSys*Mukuro_LostVirginSetting" )
+: endif
+
+*sc001
+: RpgCharaOff( "Player" )
+: Flag( "Party01", true )
+游戏难度如何？
+
+\CI["正常模式"]
+\CI["简易模式"]
+※游戏难度不能中途变更
+简易模式时获得经验值将增加
+BOSS战的时候可以选择“自动胜利”的选项。
+
+: if ( $choice == 1 )
+	: Flag( "EasyMode", true )
+: endif
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：オープニングを見る
+//■選択肢２：オープニングをスキップする
+//――――――――――――――――――――――――――――
+\CI["看开场"]
+\CI["不看开场"]
+看开场曲动画吗？
+
+: if ( $choice == 1 )
+	: FadeOut( 1.0 )
+	: Wait()
+	: LoadMap( "Map_Town02_02_Hozuki", "WakeUp", "Scenarios/SC_A01_02*sc002" )
+: endif
+//●背景：黒画面
+//＠亜久里の台詞はＳＥ扱いします
+//背景表示
+: DrawImage( 0, 0, "BGImage/Bg_Black", 0.0 )	//黒引いておく
+: HideWnd()
+: DrawImage( 0, 1, "BGImage/Bg_OldFilm", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition13", 1.0, true, 0.0, 0.0)
+: PlayBgm("BGM/13_CM013")
+//カットイン文字
+: Wait
+: PlayVoice( "Voices/se_sp0001" )
+: DrawImage( 1, 0, "MiscImage/Cutin01_01" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+//【亜久里】
+“——我能为你做什么呢？”
+
+: DrawImage( 1, 0, "MiscImage/Cutin01_02" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+我只是想和你永远在一起。
+其他什么也不想要。只是，如果能静静地在一起的话
+这样就可以了。
+
+: DrawImage( 1, 0, "MiscImage/Cutin01_03" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+所以，不能一起离开这个国家吗？
+
+: PlayVoice( "Voices/se_sp0002" )
+: DrawImage( 1, 0, "MiscImage/Cutin01_04" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+//【亜久里】
+“——你要去哪里？”
+
+: DrawImage( 1, 0, "MiscImage/Cutin01_05" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+是东洋的小岛国。名字叫“大和”。
+那里的话，一定能过上安稳的生活。
+
+: PlayVoice( "Voices/se_sp0003" )
+: DrawImage( 1, 0, "MiscImage/Cutin01_06" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+//【亜久里】
+“——是我真的可以吗？”
+
+: DrawImage( 1, 0, "MiscImage/Cutin01_07" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+不是你是不行的。
+不用担心。
+为了能和你一直在一起，我会做些什么。
+
+: PlayVoice( "Voices/se_sp0004" )
+: DrawImage( 1, 0, "MiscImage/Cutin01_08" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+//【亜久里】
+“——我也……我将向您诉说一生的忠诚，爱。
+生病的时候也好，健康的时候也好——”
+
+: DrawImage( 1, 0, "MiscImage/Cutin01_09" , 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+是的，不管是谁都不会让我们分开。
+那就是，即使死也——……。
+
+//●演出：以下、２つナレーション風にボイスを入れて演出。
+//●演技：ナレーションを読む感じでお願います
+: StopBgm(2.0)
+: EraseImage(0,1, 2.0)
+: EraseImage(1,0, 2.0)
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0001" )
+//\CN["無黒"]
+——这是被称为“生物的天敌”的生物
+被黑夜叉（黑精灵）所消灭，数年后的故事
+
+: PlayVoice( "Voices/vo00_muk0002" )
+//\CN["無黒"]
+漂浮在茫茫大海中的东洋小岛国
+被称为“大和”的国家的故事——
+
+//●背景：空・夜
+//●視点：三人称視点
+: HideWnd()
+//＠虫の声ループで入れる
+: trackIndex = PlaySe( "SE/Se_Night1", true );
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition15", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+——某一天深夜。
+
+微温的风吹拂着，总觉得有点不舒服，令人毛骨悚然夜晚。
+
+这样的日子一定会发生什么不好的事情。
+到外面卷进来可受不了。
+
+住在附近的人很清楚那个东西。
+
+所以，这样不吉利的夜晚，即使见不到父母的死
+不要出去。
+
+除了一部分人————
+
+*sc001_01
+//●場所：ヤクザの屋敷・夜
+: StopSe( trackIndex );	//ループ停止
+//＠背景：和風屋敷・外観・夜
+: HideWnd
+: PlayBgm("BGM/18_TM003")
+: SwapImage(1, 0, "BGImage/BG_House01_03", 1.0)
+: Wait()
+//＠立ち絵：無黒（着衣）、桃（着衣）、レオ（着衣）、銀（着衣）
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 6; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd
+威风凛凛的女性站在了最前面
+紧接着几个男女。
+
+那个集团有着像饿了的野兽一样锐利的目光
+只是静静地，然后确实地朝着有猎物的地方前进。
+
+他们不是大象般的聚会。
+
+国家最高权力者将军。
+一桥家世袭将军的政府是“一桥幕府”
+或者简单地称之为“幕府”。
+
+幕府所属的，为了维持大和的治安的组织
+有一个经过千锤百炼的武士集团。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+那个组织的名字是『{鬼灯，酸浆}』
+被反幕府派的掌权者们视为畏惧的象征。
+
+//＠立ち絵：消去
+//＠立ち絵：あざみ（着衣）
+//＠あざみ立ち絵拡大
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: chara = "Azami"; lay = 6 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo05_aza0001" )
+\CN["鬼灯局长"]
+“——那么，情况怎么样了？”
+
+前头的女人被称为“设备”的通信用魔导器——
+用以魔力为动力源的机器确认状况。
+
+: DrawFaceThumbnail( "Kinako", 0, 0, 0, 0)
+: PlayVoice( "Voices/vo02_kin0001" )
+\CN["设备声音"]
+《目标确认。如提供的信息
+	胜山义邦
+
+: DrawChara( "Azami", 0, 0)
+: JumpLayer( 6, 0, -50, 1, 0.25)
+: PlayVoice( "Voices/vo05_aza0002" )
+\CN["鬼灯局长"]
+“了解”
+
+//●読み：勝山義邦（かつやまよしくに）人名です
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0001" )
+\CN["鬼灯队士之女1"]
+“说到胜山义邦，在反幕派中也算是大人物吧？
+虽然听说过要没落……”
+
+: DrawChara( "Momo", 12, 1,)
+: PlayVoice( "Voices/vo01_mom0002" )
+\CN["鬼灯队士之女1"]
+“怎么会，竟然向这种乡下的流氓求助……”
+
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Azami", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: SetLayerRelPos( 2, -50, 0, 0.0, 0)
+: SetLayerRelPos( 2, 50, 0, 0.25, 0)
+: PlayVoice( "Voices/vo05_aza0003" )
+\CN["鬼灯局长"]
+“那边在那边会很辛苦吧。
+嘛，那是无关紧要的事啊」
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk0003" )
+\CN["鬼灯队士的女子2"]
+“我们只是做我们应该做的事……”
+
+: DrawChara( "Azami", 5, 0)
+: PlayVoice( "Voices/vo05_aza0004" )
+\CN["鬼灯局长"]
+“没错，无黑。
+我们鬼灯的任务是清除威胁人民的坏人”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0005" )
+\CN["鬼灯局长"]
+“敌人的数量大概有多少？”
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(6)
+: ShowWnd()
+之前入侵了房屋的谍报队
+告诉了答案。
+
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: chara = "Azami"; lay = 3 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+: PlayVoice( "Voices/vo05_aza0006" )
+\CN["鬼灯局长"]
+“原来如此，大概只有50人左右吧……”
+
+//＠あざみ消去
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_House01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
+: chara = "Gin"; lay = 6 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+: ShowWnd()
+\CN["鬼灯队士之男1"]
+“数量什么的没关系。
+ 全部，一个一个地扔出去就好了”
+
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: chara = "Leo"; lay = 5 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+\CN["鬼灯队士之男2"]
+“只有50个人的话，我一个人就足够了！
+全部交给我吧”
+
+: DrawChara( "Gin", 17, 0)
+\CN["鬼灯队士之男1"]
+“啊？你在说梦话吗？”？
+你看，有一亿人也不够啊」
+
+: DrawChara( "Leo", 7, 0)
+\CN["鬼灯队士之男2"]
+“啊？你才是在说什么梦话呢？”？
+如果你很困的话，就早点回去睡觉吧」
+
+: DrawChara( "Gin", 14, 0)
+\CN["鬼灯队士之男1"]
+“啊？”
+
+: DrawChara( "Leo", 9, 0)
+\CN["鬼灯队士之男2"]
+“啊？”
+
+: DrawFaceThumbnail("Ryu", 2, 0)
+\CN["鬼灯队士之男3"]
+“我知道你们在战场前兴奋，但你们要冷静一点。
+我总是告诉你缺乏冷静的行为是致命的”
+
+: JumpLayer( 5, 0, -50, 1, 0.25)
+: DrawChara( "Leo", 8, 0)
+\CN["鬼灯队士之男2"]
+“……对、对不起！”
+
+: DrawChara( "Gin", 22, 0)
+\CN["鬼灯队士之男1"]
+“……”
+
+: HideWnd()
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(5)
+: ResetLayer(6)
+: DrawChara( "Azami", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: chara = "Azami"; lay = 2 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0007" )
+\CN["鬼灯局长"]
+“嘛，身体好是好事。
+所以啊，但是如果这份经精力用在别的地方就好了。”
+
+//●ＳＥ：刀を抜く音
+: PlaySe("SE/Se_Katana01")
+//＠あざみ：コス変更
+: CharaCostume("Azami", 3)
+: DrawChara("Azami", 5, 0, 0)
+: JumpLayer( 5, 0, -50, 1, 0.25)
+女人拔出了刀——
+
+只是，仅此一点，鬼灯队员们的表情就发生了变化。
+
+让肌肤紧绷的冷空气和紧张感。
+
+每天，用有限的生命的交换持的锐利的牙以及
+裸露的眼睛，注视着狩猎的场所。
+
+: DrawChara( "Azami", 18, 0)
+: PlayVoice( "Voices/vo05_aza0008" )
+\CN["鬼灯局长"]
+“——那么，开始吗？”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0009" )
+\CN["鬼灯局长"]
+“先锋是无黑和雷欧！打开突破口！”
+
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(2)
+: DrawChara( "Mukuro", 17, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0004" )
+\CN["无黑"]
+“知道了！”
+
+: DrawChara( "Leo", 18, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+\CN["雷欧"]
+“OKOK！我和无黑两个人的话就轻松取胜吧！”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk0005" )
+\CN["无黑"]
+“雷欧，不能大意。振作精神。”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“是！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo05_aza0010" )
+\CN["鬼灯局长"]
+“——那么，后面是桃子，还有银，拜托你们了！”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0003" )
+\CN["桃子"]
+“嗯嗯！交给我吧。”
+
+: DrawChara( "Gin", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
+\CN["银子"]
+“啊。谁都不会无事通过这里的。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 22, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: chara = "Azami"; lay = 2 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+: PlayVoice( "Voices/vo05_aza0011" )
+\CN["爱彩弥"]
+“那我走了！全体人员，突入开始！”
+
+//●演出：場面転換トランジション
+//●場所：ヤクザの屋敷・部屋・夜
+//●背景：和風屋敷・廊下・夜
+//＠立ち絵：無黒（着衣）
+//＠立ち絵レイヤー情報を初期化
+*sc001_02
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: ResetLayer(2)
+: DrawImage( 1, 0, "BGImage/BG_WaRoom02_03", 1.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe( "SE/Se_Foot01" )
+: DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: chara = "Mukuro"; lay = 2 ; type = "WL"; Call( "Scenarios/Common*FgLarge" );
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0006" )
+\CN["无黑"]
+“不许动了！老实点！”
+
+\CN["流氓A"]
+“喂喂，你说什么呢……”
+
+\CN["流氓B"]
+“呐姐姐啊，像你这样美丽的脸和刀什么的
+这样的危险的东西不适合。好了，交给我吧”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 2; type = "DR"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0007" )
+\CN["无黑"]
+“我给你一个忠告。就算是女人，也要小看哦。”
+
+//●演出：斬撃アニメ
+//●ＣＧ：アクションシーン（無黒）
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["流氓1"]
+“啊啊啊啊啊啊啊啊啊啊啊！！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvIn")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0008" )
+\CN["无黑"]
+“好好看着自己痛苦瞬间吧。做好觉悟吧！”
+
+//●演出：神八代無黒　紹介演出
+: HideWnd()
+: PlaySe("SE/Se_Taiko")
+: DrawImage( 9, 0, "MiscImage/CutinName01_Mukuro", 0.0 )
+: SetLayerRelPos( 9, 50, 0, 0.0, 0)
+: SetLayerRelPos( 9, -50, 0, 0.5, 0)
+: Wait()
+\NULL[]
+: Call("Scenarios/Common*EvCutinFadeOut")
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: ShowWnd()
+: ShowWnd()
+\CN["流氓2"]
+“哈！这家伙怎么回事！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["雷欧"]
+“哦，这边也有哦。”
+
+\CN["流氓B"]
+“……这、这个感觉……不会吧，你……那个……？！”
+
+\CN["流氓C"]
+“雷神的雷欧……！？”
+
+//●ＣＧ：アクションシーン（レオ）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0300000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["流氓B"]
+“呀！！！！！！！！”
+
+//●演出：レオ・ゴールドスタイン　紹介演出
+: HideWnd()
+: PlaySe("SE/Se_Taiko")
+: cutinfile = "CutinName02_Leo"
+: x1 = -50; x2 = 50; y1 = 0; y2 = 0; time = 0.5;
+: Call("Scenarios/Common*CutinSlideIn")
+\NULL[]
+: HideWnd()
+: Call("Scenarios/Common*EvCutinFadeOut")
+: ShowWnd()
+\CN["鬼灯队士・男A"]
+“不愧是无黑和雷欧！
+两个人还是一如既往的啊！”
+
+\CN["鬼灯队士・男B"]
+“你们真的是很好的搭档哦。”
+
+: DrawChara( "Leo", 14, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: FadeOutLayer( 3, 0.0)
+: SetLayerRelPos( 3, -50, 0, 0.0, 0)
+: SetLayerRelPos( 3, 50, 0, 0.25, 0)
+: FadeInLayer( 3, 0.25)
+: Wait()
+\CN["雷欧"]
+“嘛！不管怎么说，我和无黑是最好的搭档！
+ 恋人——，说是夫妻也不过分”
+
+: DrawChara( "Mukuro", 11, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: FadeOutLayer( 2, 0.0)
+: SetLayerRelPos( 2, 50, 0, 0.0, 0)
+: SetLayerRelPos( 2, -50, 0, 0.25, 0)
+: FadeInLayer( 2, 0.25)
+: Wait()
+: PlayVoice( "Voices/vo00_muk0009" )
+\CN["无黑"]
+“说得太过分了！看，下一个，赶紧！”
+
+: DrawChara( "Leo", 5, 0)
+: JumpLayer( 3, 0, -50, 1, 0.25)
+\CN["雷欧"]
+“真是个无情的女人啊。”
+
+: DrawChara( "Mukuro", 27, 1, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo00_muk0010" )
+\CN["无黑"]
+“现在不是开玩笑的时候。
+说了奇怪的话，我会把你打入地狱的”
+
+: PlaySe("SE/Se_dash01")
+: SetLayerRelPos( 2, 100, 0, 0.25)
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Leo", 10, 0)
+\CN["雷欧"]
+“啊——！等一下，等一下！无黑，我不是……！”
+
+: PlaySe("SE/Se_dash01")
+: SetLayerRelPos( 3, 100, 0, 0.25)
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(2)
+: ResetLayer(3)
+\CN["鬼灯队士・男A"]
+「哈哈哈，啊，雷欧那家伙，将来就算跟在一起
+绝对不要被打屁股”
+
+\CN["鬼灯队士・男B"]
+“说的是啊！”
+
+//●演出：斬撃アニメ
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+\CN["流氓D"]
+“唔……！”
+
+//●ＳＥ：倒れる音
+//●演出：場面転換トランジション
+//●場所：ヤクザの屋敷・外・夜
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseImage( 9, 0, 0.0)
+: SwapImage(1, 0, "BGImage/BG_House01_03", 0.0)
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["流氓E"]
+“哈，哈，哈，可恶，什么啊，这家伙真是个差劲的家伙。”
+
+\CN["流氓F"]
+“我听说过。
+鬼灯这只幕府的狗很糟糕”
+
+: PlaySe("SE/Se_Foot01")
+: DrawChara( "Gin", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: lay = 2; type = "WR"; Call( "Scenarios/Common*FgEff");
+\CN["银子"]
+“喂，幕府的狗是什么时候的事啊？”
+
+\CN["流氓G"]
+“可恶，我们也被小看了啊。
+就两个人也这么嚣张”
+
+\CN["流氓H"]
+“嘿嘿，男人杀了
+女人们抢了以后再当玩具吧」
+
+//●ＣＧ：桃・アクションシーン
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(2)
+: evbg = true; evcos = false;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0004" )
+\CN["桃子"]
+“呵呵，很遗憾，你们不是我的类型。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0005" )
+\CN["桃子"]
+“在地狱里学习才智、品质和常识就好了！”
+
+//●演出：炎魔法
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Fire02" )
+: PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["流氓E"]
+「――――――――――――――――――――――――」
+
+\CN["流氓F"]
+“嘛，魔术……？”
+
+\CN["流氓G"]
+“呃……”
+
+//●演技：相手を馬鹿にする、見下すような感じです
+: PlayVoice( "Voices/vo01_mom0006" )
+\CN["桃子"]
+“诶~……也有完全知道魔术的聪明人
+	有的呢。感到惊讶的人”
+
+\CN["流氓F"]
+“什么……那个，你……！”
+
+//●演出：姫椿桃　紹介演出
+: PlaySe("SE/Se_Taiko")
+: HideWnd()
+: cutinfile = "CutinName03_Momo"
+: x1 = 50; x2 = -50; y1 = 0; y2 = 0; time = 0.5;
+: Call("Scenarios/Common*CutinSlideIn")
+\NULL[]
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0007" )
+\CN["桃子"]
+“小银的命令啊——
+那家伙们全都去打趴下吧」
+
+: HideWnd()
+: ResetLayer(3)
+: Call("Scenarios/Common*EvCutinFadeOut")
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: SetLayerRelPos( 3, -50, 0, 0.0, 0)
+: SetLayerRelPos( 3, 50, 0, 0.25, 0)
+: Wait()
+: ShowWnd()
+\CN["银"]
+“明白了！”
+
+\CN["流氓G"]
+“啊，竟然直接地朝我们走来，真是个不要命的家伙。”
+
+//●ＣＧ：銀・アクションシーン
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: ResetLayer(3)
+: EraseChara("Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlaySe("SE/Se_Wind01")
+\CN["流氓F"]
+“……嗯？风……？”
+
+\CN["流氓G"]
+“不会吧，这家伙……风神之银！？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_2_0300000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“哈！”
+
+//●演出：打撃アニメ
+: HideWnd()
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.25)
+: PlaySe( "SE/Se_AnimeL_Attack03" )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["流氓F"]
+「――――――！」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_2_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“嘘！”
+
+//●演出：打撃アニメ
+: HideWnd()
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.25)
+: PlaySe( "SE/Se_AnimeL_Attack02" )
+: PlayAnim( "Animations/AnimeL_Attack02", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["流氓G"]
+“什么——！”
+
+//●演出：風真銀　紹介演出
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlaySe("SE/Se_Taiko")
+: DrawImage( 9, 0, "MiscImage/CutinName04_Gin", 0.0 )
+: SetLayerRelPos( 9, 50, 0, 0.0, 0)
+: SetLayerRelPos( 9, -50, 0, 0.5, 0)
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“什么呀，已经结束了吗？”
+
+//●演出：場面転換トランジション
+//●場所：ヤクザの屋敷・廊下
+//●背景：和風屋敷・廊下
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseAllImage( 9, 0.0 )
+: Call("Scenarios/Common*EvDelete")
+: SwapImage( 1, 0, "BGImage/BG_WaRoom01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["鬼灯队士・女A"]
+“哇！”
+
+//●演出：斬撃アニメ
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["流氓H"]
+“啊啊啊啊啊啊啊！！”
+
+: HideWnd()
+: effecttype = "3"; se = "Se_Swing01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["鬼灯队士・女B"]
+“啊啊啊啊啊啊！”
+
+//●ＳＥ：カキン！　刀を受け止める音
+: HideWnd()
+: PlaySe( "SE/Se_KatanaHit01" )
+: EraseImage( 9, 0, 0.5)
+: ResetLayer(9)
+: Wait()
+: ShowWnd()
+\CN["流氓I"]
+“嘿嘿，这不是很能干嘛。
+我喜欢不成熟的女人”
+
+\CN["流氓J"]
+“但是，好像就在这里结束了。”
+
+背后隐藏着一个流氓，袭击了女队员。
+
+//●演出：斬撃アニメ
+//●ＳＥ：倒れる音
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash03", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: PlaySe("SE/Se_Down01")
+: ShakeLayer(1, 0.5, 5, 50)
+: ShowWnd()
+——杜莎。
+
+//＠立ち絵：龍
+: PlaySe("SE/Se_Foot02")
+: HideWnd()
+: DrawChara( "Ryu", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: FadeOutLayer( 2, 0.0)
+: SetLayerRelPos( 2, -50, 0, 0.0, 0)
+: SetLayerRelPos( 2, 50, 0, 0.25, 0)
+: FadeInLayer( 2, 0.25)
+: Wait()
+: ShowWnd()
+\CN["鬼灯队士之男3"]
+“没有受伤吗？”
+
+//●演出：新渡戸龍　紹介演出
+: HideWnd()
+: PlaySe("SE/Se_Taiko")
+: cutinfile = "CutinName05_Ryu"
+: x1 = -50; x2 = 50; y1 = 0; y2 = 0; time = 0.5;
+: Call("Scenarios/Common*CutinSlideIn")
+: ShowWnd()
+\CN["鬼灯队士・女B"]
+“哈，是！谢谢！”
+
+: HideWnd()
+: EraseImage( 9, 0, 0.25)
+: Wait()
+: ResetLayer(9)
+: SetLayerScale( 2, 1.5, 1.5)
+: SetLayerPos( 2, 0, -400, 0.0)
+: FadeOutLayer( 2 , 0 )
+: FadeInLayer( 2, 0.25, 0.0)
+: DrawChara( "Ryu", 0, 0)
+: ShowWnd()
+\CN["龙"]
+“不知道敌人藏在哪里。
+要时常注意，千万不要疏忽大意”
+
+//●演出：場面転換トランジション
+//●場所：ヤクザの屋敷・天井裏
+//＠立ち絵：黄菜子（着衣）
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: ResetLayer(2)
+: SwapImage( 1, 0, "BGImage/BG_WaRoom02_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Kinako", 0, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0002" )
+\CN["鬼灯队士的女孩"]
+“呼～……是这样吗……”
+
+//＠立ち絵：紅美
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo07_beb0001" )
+\CN["神秘的生物"]
+“黄菜子，已经可以了吗？”
+
+: DrawChara( "Kinako", 1, 0)
+: JumpLayer( 2, 0, -30, 1, 0.25)
+: PlayVoice( "Voices/vo02_kin0003" )
+\CN["黄菜子"]
+“嗯！接下来就交给大家了，红美。”
+
+: DrawChara( "Bebi", 06, 0)
+: PlayVoice( "Voices/vo07_beb0002" )
+\CN["红美"]
+“这样就糟了！
+在下没必要特意跑出去”
+
+//●演出：有栖川黄菜子＆紅美　紹介演出
+//●演出：場面転換トランジション
+//●場所：ヤクザの屋敷・部屋・夜
+//●背景：和風屋敷・部屋・夜
+: HideWnd()
+: PlaySe("SE/Se_Taiko")
+: DrawImage( 9, 0, "MiscImage/CutinName06_Kinako", 0.0 )
+: FadeOutLayer( 9, 0 )
+: SetLayerScale( 9, 2, 2)
+: SetLayerPos( 9, 0, 0, 0.0)
+//: time = Call("Scenarios/Common*EffTime")
+: SetLayerScale( 9, 1, 1, 0. 0.5, 0.0, "InSine")
+: SetLayerPos( 9, 0, 0, 0.5, 0.0, "InSine")
+: FadeInLayer( 9, 0.5)
+: Wait()
+\NULL[]
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: ResetLayer(9)
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["胜山"]
+“这是怎么回事？这是怎么回事？”
+
+\CN["流氓头目"]
+“喂！怎么了！？”
+
+\CN["流氓H"]
+“哎……好像幕府的狗都潜进来了。”
+
+\CN["胜山"]
+“说到幕府的狗，是鬼灯吗……！？
+为什么他们会在这样的地方……！？”
+
+\CN["流氓头目"]
+“……啧……也就是说，有人在心动
+是被掀开了吗……”
+
+\CN["胜山"]
+「喂喂，怎么办啊！
+真的没问题吗？啊？”
+
+\CN["流氓头目"]
+“别那么担心。这个房间不容易找到。
+这个房间的存在，包括我在内只有2、3个人知道”
+
+\CN["胜山"]
+“说这么悠闲的话怎么办！如果被发现了的话……？
+我不想在这里结束……”
+
+\CN["胜山"]
+“为了什么特意去这么偏狭的地方，没有那么大的势力
+你是来黑道的吗！？”
+
+\CN["流氓头目"]
+“真是的，这句话太过分了，胜山先生。”
+
+\CN["胜山"]
+“嗯！好吧，我想办法解决你！！”！！
+你们这帮人，怎么都行！”
+
+胜山义邦惊慌失措，大发雷霆。
+
+在周围的是自己的伙伴，作为自己的手足而行动
+一定可以为了自己豁出命来。
+
+——对，误会了。
+
+能让你发誓忠诚的理由什么的
+明明哪里都没有。
+
+\CN["流氓头目"]
+「哈～……啊，胜山先生啊，你搞错了什么
+没有吗？”
+
+\CN["胜山"]
+“哈？”
+
+\CN["流氓H"]
+「…………」
+
+在胜山背后转来转去的一个流氓，手里拿着刀的刀尖
+面向脖子。
+
+//●演出：斬撃アニメ
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: Wait()
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+\CN["流氓H"]
+“！”
+
+\CN["流氓头目"]
+“切……！？为什么这里……！？”
+
+\CN["流氓H"]
+“咯咯咯的家伙肯定也吐过这里了！”
+
+: PlayVoice( "Voices/vo05_aza0012" )
+\CN["鬼灯局长"]
+“不，很遗憾没能得到那么多的信息。”
+
+\CN["流氓头目"]
+“那为什么！？”
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0013" )
+\CN["鬼灯局长"]
+“是这样决定的——
+只是我们的情报担当非常优秀而已”
+
+//●演出：斬撃アニメーション
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: EraseChara( "Azami", 0.0 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_a001_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["流氓头目"]
+“——呜”
+
+\CN["胜山"]
+“可恶！幕府的狗，鬼灯……。
+作为与腐败幕府相依为命之辈，这样的……”
+
+//: DrawChara( "Azami", 9, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_a001_1_1_0400001_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0014" )
+\CN["鬼灯局长"]
+“是啊……。
+不过，我觉得比起只在口头上说的愚蠢的人要好得多”
+
+: HideWnd()
+: cutinfile = "CutinName07_Azami"
+: x1 = 50; x2 = -50; y1 = 0; y2 = 0; time = 0.5;
+: Call("Scenarios/Common*CutinSlideIn")
+\NULL[]
+: ShowWnd()
+//●読み：勝山義邦（かつやま　よしくに）※人名です
+: PlayVoice( "Voices/vo05_aza0015" )
+\CN["鬼灯局长"]
+“胜山义邦——
+御用！”
+
+//●演出：高千穂あざみ　紹介演出
+//●背景：空・夜
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: Call("Scenarios/Common*EvCutinFadeOut")
+: ShowWnd()
+鬼灯的任务是为了维持大和的治安，肃清反旗者。
+
+今晚，反幕派势力中的一人又被鬼灯肃清了。
+
+//●読み：白夜（びゃくや）＝反幕派の最大組織です
+: DrawFaceThumbnail("Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0016" )
+\CN["爱彩弥"]
+（我还以为“白夜”一定在里面……）
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+——几个小时后。
+
+//●背景：和風屋敷・外観・夜
+//●場所：ヤクザの屋敷・夜
+//＠立ち絵：みどり（着衣）、御影（着衣）
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_House01_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: DrawChara( "Midori", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+鬼灯的镇压，使得已经没有流氓的踪影。
+之后房子里来了两个女人。
+
+: PlayVoice( "Voices/vo11_mik0001" )
+\CN["巫女服的女人"]
+“向入口店出售情报，让鬼灯肃清。
+好像进展顺利了呢”
+
+: PlayVoice( "Voices/vo10_mid0001" )
+\CN["嘴笨的女人"]
+“哈~……真是的，有一个逃到最后的家伙吗？”
+ 可怜啊。真可怜啊……”
+
+: DrawChara( "Midori", 9, 0)
+: PlayVoice( "Voices/vo10_mid0002" )
+\CN["嘴笨的女人"]
+“只是来看情况，太无聊了。
+ 为什么我们亲自做这种事呢？”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0002" )
+\CN["巫女服的女人"]
+“呵呵，只是顺便而已
+来看这里的情况的而已”
+
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0003" )
+\CN["嘴笨的女人"]
+“哦！有什么事吗？
+什么啊，竟然要保密，你也是人不好啊”
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0003" )
+\CN["巫女服的女人"]
+“细致入微地做就好了，但稍微开始得意忘形了
+好像是想在这里压制一下。”
+
+: DrawChara( "Midori", 08, 1,)
+: PlayVoice( "Voices/vo10_mid0004" )
+\CN["嘴笨的女人"]
+“嗯。也就是说，杀掉所有人。”
+是吗？”
+
+: DrawChara( "Mikage", 7, 0)
+: JumpLayer( 2, 0, -50, 1, 0.25)
+: PlayVoice( "Voices/vo11_mik0004" )
+\CN["巫女服的女人"]
+“是的，正如你喜欢的那样——”
+
+: DrawChara( "Midori", 18, 1)
+: PlayVoice( "Voices/vo10_mid0005" )
+\CN["嘴笨的女人"]
+“好棒！那么，就这样活着带我回房间吧
+手指啦，手啦，脚啦，七零八落地……”
+
+: DrawChara( "Midori", 28, 2)
+: PlayVoice( "Voices/vo10_mid0006" )
+\CN["嘴笨的女人"]
+“还有，这样啊。可以先把小鸡切了啊……。
+对有意识的人做那个的话反应会很有趣！”
+
+//●演出：暗転
+//●シーンエンド
+//＠ＡＤＶシーン：終了
+//●シーンスタート：「無黒の過去」
+//＠シナリオジャンプ：SC_A01_02
+//＠あざみの服装リセットさせておく
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mikage", 0.0 )
+: EraseChara( "Midori", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: CharaCostume("Azami",0)
+: Jump( "Scenarios/SC_A01_02" )

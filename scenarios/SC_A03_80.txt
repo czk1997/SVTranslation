@@ -1,0 +1,861 @@
+//========================================================
+//○鬼灯サバイバル合宿
+//========================================================
+//●状況：過去シーン。２年前
+//●場所：どこかの山
+//●背景：山・昼
+//Yoshi：背景
+//服装を記憶
+: StopBgm( 0.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 1.0 )
+: Wait()
+: ShowWnd()
+鬼灯入伍之日——
+
+我和雷欧、桃、银的当时的新人们
+为了加深羁绊，在魔物交错的山上
+我被赋予了度过一周的课题。
+
+//Yoshi：左にレオ、右に無黒
+//: DrawChara( "Leo", 5, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 4, "R" )
+: HideWnd()
+: PlayBgm("BGM/09_CM009")
+: evbg = true; evcos = false;
+: evfile = "evy_a002_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["雷欧"]
+“就算这样，在山上度过一周该做什么好呢？”
+
+互相自我介绍结束后，雷欧突然说了。
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0973" )
+\CN["无黑色"]
+“是为了生活而做的准备吗？”
+
+//: DrawChara( "Leo",13, 0)
+\CN["雷欧"]
+“什么！我才是无黑酱呢！”
+
+//: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk0974" )
+\CN["无黑色"]
+“没什么大不了的……。
+那么，黄金周有这样的经验吗？
+是在山里笼着的吗？”
+
+//: DrawChara( "Mukuro", 2, 0)
+//: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“山就像我们的庭院一样。
+这里就交给我吧！听老子的话
+首先不会弄错的”
+
+//: DrawChara( "Leo",13, 0)
+\CN["雷欧"]
+“还有，不是黄金周，《Leo》就可以了。
+大家都这么叫……”
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0975" )
+\CN["无黑色"]
+“那么，我也希望《无黑酱》能停止……。
+因为不太习惯……”
+
+//: EraseChara( "Leo", 0.5 )
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：センターに無黒、右に桃、左に銀
+//: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 5, "C" )
+//: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo01_mom0255" )
+\CN["桃子"]
+“嗯。那你是神八代吗？”
+
+//: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk0976" )
+\CN["无黑色"]
+“无黑也没关系……姐姐也在，所以在故乡大家都来了
+”
+
+//: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0256" )
+\CN["桃子"]
+「这样啊。嗯！无黑……无黑…嗯！
+真好啊，这样啊。看，是用下面的名字互相称呼吗？”
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0977" )
+\CN["无黑色"]
+“就是这样吗？”
+
+//: DrawChara( "Gin",23, 0)
+\CN["银子"]
+“女儿没有一个同辈的朋友。
+希望你能喜欢”
+
+//: DrawChara( "Momo",13, 0)
+: PlayVoice( "Voices/vo01_mom0257" )
+\CN["桃子"]
+“小银！说话方式啊！”！
+那我就好像没有朋友的波奇一样吧”
+
+//: DrawChara( "Gin", 0, 0)
+\CN["银子"]
+“……有朋友吗？”
+
+//: DrawChara( "Gin", 1, 0)
+//: DrawChara( "Momo",14, 0)
+: PlayVoice( "Voices/vo01_mom0258" )
+\CN["桃子"]
+“呜哇……那太好了，小银！”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Gin", 0.5 )
+//Yoshi：センターにレオ
+//: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["雷欧"]
+“那么，在太阳落山之前先确保床铺吧。
+小屋之类的吗？”
+
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：右に桃、左に銀
+//: DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo01_mom0259" )
+\CN["桃子"]
+“如果有浴室的话我会很开心的……。
+在那附近有温泉涌出吗？”
+
+//: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“……小姐，真是太严厉了。
+魔物还在里面”
+
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Gin", 0.5 )
+//Yoshi：センターに無黒
+//: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo00_muk0978" )
+\CN["无黑色"]
+“先不说洗澡，确保粮食不是很重要吗？”
+
+//: EraseChara( "Mukuro", 0.5 )
+
+//Yoshi：右に桃、左に銀
+//: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo01_mom0260" )
+\CN["桃子"]
+“是啊。各自决定负责人，然后各自行动比较好。”
+虽然看起来效率很好，但魔物却很混乱
+好吧，这里”
+
+\CN["银子"]
+“如果只有我和小姐的话，怎么都可以
+那两个人……”
+
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Gin", 0.5 )
+//Yoshi：左にレオ、右に無黒
+//: DrawChara( "Leo", 8, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["雷欧"]
+“啊？没有一个或两个魔物！
+我一个人就足够了”
+
+: StopBgm( 1.0 )
+//: DrawChara( "Leo", 3, 0)
+//: DrawChara( "Mukuro",17, 0)
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: AutoFaceThumbnail( false )	//顔画像出さない処理
+: PlayVoice( "Voices/vo00_muk0979" )
+\CN["无黑色"]
+“好像不是1、2只……。
+马上就出来了”
+
+: PlayBgm("BGM/27_FM005")
+乘风而来强烈的野兽气味。
+
+周围围了好几只魔物。
+
+//: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“嘿嘿，10只或20只……不，有100只也没关系！
+交给我吧」
+
+//: EraseChara( "Leo", 0.5 )
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：右に桃、左に銀
+//: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Gin",23, 0, 0, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo01_mom0261" )
+\CN["桃子"]
+“嘛，鬼灯已经入队了，所以没什么弱的
+我想。我不知道你的{实力，力量}吧」
+
+\CN["银子"]
+“是的。被海参拖后腿可受不了。”
+
+//: EraseChara( "Momo", 0.5 )
+//Yoshi：右にレオ
+//: DrawChara( "Leo", 7, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["雷欧"]
+“啊？谁说是海参？”
+
+//: DrawChara( "Gin",10, 0)
+\CN["银子"]
+“是你啊。”
+
+//: DrawChara( "Gin",14, 0)
+雷欧和银互相对峙。
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：右に無黒、左に桃
+//: DrawChara( "Mukuro",11, 0, 0, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "L" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evy_a002_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0980" )
+\CN["无黑色"]
+“哈~……这两个人好像很不投缘啊……”
+
+: PlayVoice( "Voices/vo01_mom0262" )
+\CN["桃子"]
+“但是，小银这么拼真是少见啊？
+因为，基本上对别人不关心”
+
+//: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk0981" )
+\CN["无黑色"]
+“是吗……。
+总之，有必要想办法解决这里。怎么办？”
+
+//: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0263" )
+\CN["桃子"]
+「是啊。那么，先把我和小银的{实力，力量}
+披露一下怎么样？小银，这样可以吗？”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//Yoshi：左に銀、右にレオ
+//: DrawChara( "Gin", 3, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Leo", 8, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["银子"]
+“我明白了，小姐。”
+
+\CN["雷欧"]
+“哈？所以我一个人就足够了。”
+
+//Yoshi：センターに桃
+//: DrawChara( "Momo", 5, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0264" )
+\CN["桃子"]
+“是是是是是的是的，在可爱又可爱的无黑色面前
+我知道你想耍帅，但这里是我和小银
+交给我吧」
+
+//: DrawChara( "Gin", 4, 0)
+\CN["银子"]
+“就是这么回事。”
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: AutoFaceThumbnail( false )
+: ShowWnd()
+魔物们慢慢缩短距离。
+
+//Yoshi：センターに無黒
+//: DrawChara( "Mukuro",46, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo00_muk0982" )
+\CN["无黑色"]
+“来了！”
+
+魔物——从狼变成魔物的群体中
+几只狗向我们龇牙咧嘴地袭击过来。
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：左に銀、右に桃
+//: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Momo", 2, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom0265" )
+\CN["桃子"]
+“小银，命令啊——
+撒过来的魔物，请华丽地踢散！”
+
+//: DrawChara( "Gin", 3, 0)
+\CN["银子"]
+“知道了！”
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+银朝着魔物群跑去。
+
+//Yoshi：センターに桃
+//: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0266" )
+\CN["桃子"]
+“这果然是初级魔术不行啊……”
+
+//: DrawChara( "Momo",15, 0)
+桃子闭上眼睛开始咏唱。
+
+//: EraseChara( "Momo", 0.5 )
+//Yoshi：左にレオ、右に無黒
+//: DrawChara( "Leo", 2, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["雷欧"]
+“诶，那个家伙，原来是舞台地滚球啊……”
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0983" )
+\CN["无黑色"]
+“桃子是魔术的使用者。”
+
+自我介绍的时候说他很擅长魔术。
+
+//: DrawChara( "Leo", 5, 0)
+: PlaySe( "SE/Se_Wind01" )
+\CN["雷欧"]
+“……嗯？风……？”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：センターに銀
+//: DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 5, "C" )
+//●演出：銀　アクションシーン
+\CN["银子"]
+“啊啊啊啊啊啊啊啊！！”
+
+//※●演出：銀　魔物を拳でぶちのめしていく
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["魔物A"]
+“哇！”
+
+\CN["魔物B"]
+「――――！」
+
+//: DrawChara( "Gin",11, 0)
+\CN["银子"]
+“天哪！”
+
+//※殴るアニメーションエフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+用拳头一下子把袭击过来的魔物打飞。
+
+//: EraseChara( "Gin", 0.5 )
+//Yoshi：左にレオ、右に無黒
+//: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["雷欧"]
+“诶……不是要做吗？”
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0984" )
+\CN["无黑色"]
+“啊，我锻炼得很好。”
+
+//: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“是啊。那家伙不光是嘴……。
+只是普通地锻炼身体是做不出来的，那个拳头”
+
+//: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk0985" )
+\CN["无黑色"]
+“这样啊。你也这么认为吗？”
+
+一定是为了保护桃子而努力的吧。
+
+//: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+「……呃，没什么，只是比那附近的家伙强而已。
+嘛，虽然不是我的敌人……”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：センターに桃
+//: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0267" )
+\CN["桃子"]
+“小银，我走了！”
+
+听到桃的信号，银马上离开了那个地方——
+
+//: EraseChara( "Momo", 0.5 )
+//●演出：桃　中級炎魔術
+//※炎魔法エフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Fire02" )
+: PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+桃子放出的火焰魔术将魔物群一网打尽
+幸存下来的魔物们也慌慌张张地逃走了。
+
+//Yoshi：左にレオ、右に無黒
+//: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Mukuro", 6, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["雷欧"]
+“哇……是火焰啊，火焰……好厉害啊。”
+
+: PlayVoice( "Voices/vo00_muk0986" )
+\CN["无黑色"]
+“真厉害。真是的，竟然能使用这么厉害的魔术。”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：右に桃、左に銀
+//: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo01_mom0268" )
+\CN["桃子"]
+“完全不厉害。这是中级魔术。”
+
+//: DrawChara( "Momo",12, 0)
+: PlayVoice( "Voices/vo01_mom0269" )
+\CN["桃子"]
+“那也是我现在的魔力消耗太大了
+打不了几个。很难说是很会用……”
+
+//: DrawChara( "Gin", 1, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evy_a002_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["银子"]
+“那么，接下来怎么办？
+能让我看看那两个人的手臂吗？”
+
+//: DrawChara( "Momo", 0, 0)
+//●読み：忙しない（せわしない）
+: PlayVoice( "Voices/vo01_mom0270" )
+\CN["桃子"]
+“是啊……熊也一起来，我可不忙啊。”
+
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Gin", 0.5 )
+//Yoshi：センターにレオ
+//: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["雷欧"]
+“熊的程度，我会一瞬间把你抓回来的。
+正适合晚饭”
+
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：左に桃、右に無黒
+//: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo00_muk0987" )
+\CN["无黑色"]
+“熊能吃吗？”
+
+//: DrawChara( "Momo",12, 0)
+: PlayVoice( "Voices/vo01_mom0271" )
+\CN["桃子"]
+“可以吃的。但是，我不太喜欢熊肉。”
+没有吧……。因为，是非常有野兽味的东西……”
+
+//: EraseChara( "Momo", 0.5 )
+//Yoshi：左に銀、センターに桃
+//: DrawChara( "Gin", 0, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["银子"]
+“小姐，在山上生活奢侈是敌人。”
+
+//: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0272" )
+\CN["桃子"]
+“我知道……”
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：右にレオ
+//: DrawChara( "Leo",13, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["雷欧"]
+“只是处理方法不好而已。
+魔物化了的熊的肉好好处理的话会很好吃的”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: AutoFaceThumbnail( false )
+: PlaySe( "SE/Se_Monster01" )
+: ShowWnd()
+\CN["熊"]
+“哦哦哦哦哦哦哦哦哦哦哦！”
+
+: PlaySe( "SE/Se_Swing03" )
+就在这时，熊的魔物把我们当成了敌人
+一边呐喊一边袭击过来——
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：センターにレオ
+//: DrawChara( "Leo",18, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["雷欧"]
+“哟……！”
+
+: PlaySe("SE/Se_Katana02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+雷欧用刀挡住了熊的一击。
+
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：左に銀、右に桃
+//: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "R" )
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0273" )
+\CN["桃子"]
+「哇哈……魔物化的熊真是强大无比啊？
+竟然接受了……”
+
+: AutoFaceThumbnail( false )
+//: DrawChara( "Gin",23, 0)
+\CN["银子"]
+“正如我所想的那样，你是个脑肌混蛋。”
+
+//: EraseChara( "Momo", 0.5 )
+//Yoshi：右にレオ
+//: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["雷欧"]
+“哎，你不行吧？”
+
+//: DrawChara( "Gin",15, 0)
+//: DrawChara( "Leo", 7, 0)
+\CN["银子"]
+“啊？我怎么可能做不到你能做的事呢。”
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：センターに無黒
+//: DrawChara( "Mukuro",46, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo00_muk0988" )
+\CN["无黑色"]
+“雷欧，不要大意！好好看着前方，向前！”
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：センターにレオ
+//: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["雷欧"]
+“没关系……哟！”
+
+雷欧就那样用腕力强行把熊推回去。
+
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：センターに無黒
+//: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo00_muk0989" )
+\CN["无黑色"]
+“真是不象人类的腕力啊……”
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：センターにレオ
+//: DrawChara( "Leo", 3, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["雷欧"]
+“那么，那么，差不多该给我力量了吧
+一定要好好给我看啊」
+
+//●演出：レオ　アクションシーン
+//: DrawChara( "Leo",19, 0)
+\CN["雷欧"]
+“那么，就让我来拿吧！”
+
+\CN["雷欧"]
+“好嘞——{雷鸣刀，来吧}！！”
+
+//※●演出：雷斬撃エフェクト
+: StopBgm( 1.0 )
+: Call( "Scenarios/Effect*ThunderMagic" )
+雷欧的一击杀死了熊。
+
+//: DrawChara( "Leo",13, 0)
+: HideWnd()
+: PlayBgm("BGM/26_FM004")
+: evbg = true; evcos = false;
+: evfile = "evy_a002_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["雷欧"]
+“怎么啦！看了？看了吗？很厉害吧！”
+
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：左に桃、右にレオ、センターに無黒
+//: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Leo",13, 0, 0, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo00_muk0990" )
+\CN["无黑色"]
+“是现在雷击系的魔术吗……？让它和刀混合”
+
+//: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0274" )
+\CN["桃子"]
+“诶。雷欧君也能用魔术吗？”
+
+//: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“不，只有那个。”
+
+\CN["雷欧"]
+“是在老妈住的国家里让剑上魔术的魔法剑吗？
+好像有那样的战斗方式，所以一直在练习”
+
+//: DrawChara( "Momo", 3, 0)
+//: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“然后，现在终于能做到了。”
+
+//: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0991" )
+\CN["无黑色"]
+“对了，雷欧是半妖精吗？”？
+现在的那个，明显是魔术吧？”
+
+//: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“好像是啊。老妈是精灵，爸爸是什么样的家伙呢？”
+我完全不知道。好像在我出生之前就死了”
+
+//: DrawChara( "Momo", 4, 0)
+//: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk0992" )
+\CN["无黑色"]
+“是吗，是吗……不好意思，我问了奇怪的事情。”
+
+//: DrawChara( "Leo",13, 0)
+\CN["雷欧"]
+“嗯，完全没在意。
+啊……如果能以这个为段子约会就好了……。
+真可惜啊”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//Yoshi：左に銀
+//: DrawChara( "Gin", 4, 0, 0, 0.5, 0.0, 3, "L" )
+\CN["银子"]
+“喂，你实际上是处男吧？”
+
+//: DrawChara( "Leo",10, 0)
+\CN["雷欧"]
+“啊啊？什、什、什么根据那样的事？
+我是处男。已经是那个了。专利权。
+真的很好吃”
+
+//Yoshi：センターに桃
+//: DrawChara( "Momo",14, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0275" )
+\CN["桃子"]
+“小银，你突然说什么？”
+
+//: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“对不起，小姐。这家伙太过于处男了。”
+我说过了，所以不小心”
+
+\CN["雷欧"]
+“所以，不对！我完全不是处男！”
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：左に桃、右に無黒
+//: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom0276" )
+\CN["桃子"]
+“不管对方是处男还是不认真
+不在意吧？呐，无黑”
+
+//: DrawChara( "Mukuro",34, 0)
+: PlayVoice( "Voices/vo00_muk0993" )
+\CN["无黑色"]
+“为什么问我……！？”
+
+//: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom0277" )
+\CN["桃子"]
+“嗯？那是啊，在这里的女孩子是
+只有我和你”
+
+//: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk0994" )
+\CN["无黑色"]
+“所以，所以……嘛，我也没什么兴趣。
+恋爱和我完全没有缘分吧”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//●演技：銀と内緒話するような感じです
+//Yoshi：左に銀、右に桃
+//: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Momo",11, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom0278" )
+\CN["桃子"]
+“呐，小银，好像真的没有注意到无黑
+是吧？”
+
+//: DrawChara( "Gin",23, 0)
+\CN["银子"]
+“我想是这样。”
+
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Gin", 0.5 )
+桃和银在悄悄地交谈。
+
+我说了什么奇怪的话吗？
+
+//●演出：場面転換トランジション
+: AutoFaceThumbnail( true )	//メッセージフェイス表示へ
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: SwapImage( 1, 0, "BGImage/BG_Mountain02", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+//Yoshi：左にあざみ、右に龍
+: CharaCostume( "Azami", 0 )	//コス設定
+: CharaCostume( "Ryu", 0 )
+: DrawChara( "Azami", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Ryu",24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo05_aza0199" )
+\CN["嘲讽"]
+“怎么样？龙，今年的新人们呢。
+在不久的将来，我觉得这是背负鬼灯的面子”
+
+: DrawChara( "Ryu",20, 0)
+\CN["龙"]
+“我也这么认为，局长。
+但是，还有必须要确认的事情”
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0200" )
+\CN["嘲讽"]
+“你真慎重啊。
+我确信我能看到现在的战斗”
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0201" )
+\CN["嘲讽"]
+“老实说，那个成员中最担心的就是Leo
+看现在的好像没问题”
+
+: DrawChara( "Ryu",22, 0)
+\CN["龙"]
+“也就是说，局长说有人会被黄金周斩杀
+是的，你确信吗？”
+
+: DrawChara( "Azami", 3, 0)
+: PlayVoice( "Voices/vo05_aza0202" )
+\CN["嘲讽"]
+“啊！那家伙是为了保护自己最重要的人
+什么都能做到吧。一定是那样的男人”
+
+: DrawChara( "Ryu", 1, 0)
+\CN["龙"]
+“有什么根据吗？”
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0203" )
+\CN["嘲讽"]
+“当然啦！女人的直觉很憔悴。”
+
+: DrawChara( "Ryu",28, 0)
+\CN["龙"]
+“……局长的女人的直觉……只有不安。”
+
+: DrawChara( "Azami",27, 0)
+: PlayVoice( "Voices/vo05_aza0204" )
+\CN["嘲讽"]
+“嗯？如果有什么想说的话，我只问你一声。”
+
+//●演出：デバイスが鳴る
+//●演技：デバイス（スマホみたいなもの）に着信があります
+: HideWnd()
+: PlaySe( "SE/Se_Device01" )
+: Sleep(1.0)
+: DrawChara( "Ryu", 2, 0)
+: DrawChara( "Azami", 2, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0205" )
+\CN["嘲讽"]
+“啊，怎么了？发生什么事了吗？”
+
+\CN["鬼灯队士・女C"]
+“现在是有新人的山，听说山贼出没了
+有了信息”
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0206" )
+\CN["嘲讽"]
+“哎，山贼……明白了！谢谢。”
+
+: DrawChara( "Ryu",20, 0)
+\CN["龙"]
+“是山贼吗……。
+没想到这么快就有机会了”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0207" )
+\CN["嘲讽"]
+“就是说那些家伙背负着什么吧？
+果然他们拿着呢。这是荒唐的命运”
+
+//●背景：空・昼
+//Yoshi：背景、場面転換
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Azami", 0.0 )
+: EraseChara( "Ryu", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+然后，找到不用的小屋
+以那里为据点活动，总算过了一周。
+
+被魔物群袭击是家常便饭。
+而且还有山贼的袭击，真的很辛苦。
+
+但是，多亏了那个我们的信赖加深了
+正因为有了这一周，现在才得以生存下去
+我是这么想的。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

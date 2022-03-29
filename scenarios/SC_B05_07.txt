@@ -1,0 +1,184 @@
+//========================================================
+//○人間不信の将軍
+//========================================================
+//●場所：幕府
+//●視点：第三者視点
+//●背景：黒画面
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: RpgCharaOff("Player")	//プレイヤー非表示
+: RpgCharaOn("Ji")
+: FadeIn( 0.0 )
+——无黑他们在街上寻找小夜的时候。
+
+//●背景：消去
+: HideWnd()
+: EraseImage( 0, 0, 1.0)
+: Wait()
+: PlayBgm("BGM/24_FM002")
+: ShowWnd()
+: DrawChara( "Ji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老头儿"]
+“忠胜先生，今天有话想跟您说！”
+
+: DrawChara( "Tadakatsu", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["将军"]
+“什么？你说我不满意吗？”
+
+: DrawChara( "Ji", 1, 0)
+\CN["老头儿"]
+「…………」
+
+爷爷还年轻的时候就开始侍奉幕府了
+今年是50年。迎来节点。
+
+有很高的办公能力，在幕臣中也有相当的地位
+小夜出生后退出一线，经常在小夜的身边。
+
+: DrawChara( "Tadakatsu", 4, 0)
+\CN["将军"]
+“我知道，小夜逃出了幕府，鬼灯的
+告诉他们的是你啊」
+
+: DrawChara( "Ji", 5, 0)
+\CN["老头儿"]
+“那、那是……”
+
+: DrawChara( "Tadakatsu", 3, 0)
+\CN["将军"]
+“别多管闲事。
+多亏了这个，笹木才花了多余的时间。
+怎么办？”
+
+: DrawChara( "Ji", 6, 0, 0 )
+\CN["老头儿"]
+「…………」
+
+老爷爷低着头，握着拳头颤抖着。
+
+从上一代将军开始就是这样，将军说的话绝对是绝对的。
+不允许违背、意见。
+
+不遵守这些规矩的人降职或处刑。
+一个接一个地从自己的眼前消失
+正在看。
+
+: DrawChara( "Ji", 1, 0, 0 )
+\CN["老头儿"]
+“……我呢。”
+
+大口吸气，腹部用力——
+
+: DrawChara( "Tadakatsu", 1, 0)
+\CN["将军"]
+“嗯？”
+
+: DrawChara( "Ji", 10, 0, 0 )
+\CN["老头儿"]
+“我坚决反对将军的所作所为！”
+
+老头子想将军为了自己的保身牺牲小夜
+我察觉到了这一点。
+
+: DrawChara( "Ji", 5, 0, 0 )
+\CN["老头儿"]
+“我的事情怎么样都没关系。
+但是，只有小夜大人……！”
+
+: DrawChara( "Tadakatsu", 19, 0 )
+\CN["将军"]
+“你想违抗我吗……！”
+
+将军站起来，向爷爷怒吼。
+
+: DrawChara( "Ji", 6, 0, 0 )
+\CN["老头儿"]
+“……！”
+
+老爷爷在那魄力的瞬间，差点吓破了腰
+总算站住了。
+
+: DrawChara( "Ji", 6, 0, 0 )
+: DrawChara( "Tadakatsu", 3, 0, 0 )
+\CN["将军"]
+“你不是说过自己变成什么样都没关系吗？”
+
+: DrawChara( "Ji", 1, 0)
+\CN["老头儿"]
+“这样的话，小夜大人就得救了……”
+
+: DrawChara( "Tadakatsu", 6, 0)
+\CN["将军"]
+“啊，我们约好了。”
+
+将军抿着嘴笑。
+
+: DrawChara( "Tadakatsu", 7, 0)
+\CN["将军"]
+“其实我从一个天才发明家那里得到了有趣的东西。
+我想你试一试”
+
+//●演出：将軍　退場させる
+: HideWnd()
+: EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Shogun"	\
+:	"MoveRight", 2	\
+:	"Turn", "U"	\
+:	"PlaySe", "SE/Se_Fusuma01"	\
+:	"Sleep", 1.0	\
+:	"MoveLeft", 2	\
+:	"Turn", "D" )
+: Wait()
+: ShowWnd()
+前几天，与天才发明家希拉加见面的将军在那个时候
+我商量了能不能制作出保护自己的机关。
+
+在那里有从希拉加那里收到的东西。
+
+: DrawChara( "Ji", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老头儿"]
+“那是……？”
+
+桐木箱里精心制作的大注射器。
+试管里加入了毒性很强的溶液。
+
+: HideWnd()
+: EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Shogun"	\
+:	"MoveDown", 1 )
+: Wait()
+: DrawChara( "Tadakatsu", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["将军"]
+“我觉得很光荣。
+因为你今后会成为保护我的最强棋子”
+
+: DrawChara( "Ji", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["老头儿"]
+“喂，请住手……！”
+
+: DrawChara( "Tadakatsu", 11, 0, 0 )
+\CN["将军"]
+“垃圾”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Tadakatsu", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: PlaySe( "SE/Se_Sting01" )
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「緊急事態、小夜姫と無黒を救い出せ１」へ
+//＠シナリオジャンプ：SC_B05_08
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event010", "", "Scenarios/SC_B05_08")

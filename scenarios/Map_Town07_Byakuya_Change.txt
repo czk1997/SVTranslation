@@ -1,0 +1,92 @@
+//========================================================
+//○白夜の隠れ家
+//========================================================
+//--------------------------------------------------------
+// 入口
+//--------------------------------------------------------
+*Map01
+: RpgCharaOff("NPC_T07_010")
+: RpgCharaOff("NPC_T07_011")
+: RpgCharaOff("NPC_T07_012")
+: RpgCharaOff("Mikage")
+: if ( WhoLeader( "Mukuro" ) == true )
+	: RpgCharaOn("NPC_T07_010")
+	: RpgCharaOn("NPC_T07_011")
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+		: RpgCharaOn("NPC_T07_012")
+	: endif
+	: if ( MissionProgress( "SC_C04_10_1", "Successed" ) == true )
+		: RpgCharaOn("Mikage")
+	: endif
+: endif
+// 小夜を探せ　進行中
+: if ( MissionProgress( "SC_C05_11_1", "InProgress" ) == true )
+	: RpgCharaOff("Mikage")
+: endif
+: Return
+//--------------------------------------------------------
+// 冥の部屋
+//--------------------------------------------------------
+*Map02
+: RpgEventOff( "Inn" )
+: RpgMapBaloonOff( "Inn" )
+: RpgCharaOn("Mei")
+: if (WhoLeader( "Mei" ) == true)
+	: RpgCharaOff("Mei")
+	: RpgEventOn( "Inn" )
+	: RpgMapBaloonOn( "Inn" )
+: endif
+// 小夜を探せ　進行中
+: if ( MissionProgress( "SC_C05_11_1", "InProgress" ) == true )
+	: RpgCharaOff("Mei")
+: endif
+: Return
+//--------------------------------------------------------
+// みどりの部屋
+//--------------------------------------------------------
+*Map03
+: RpgCharaOff("Midori")
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( $chapter == 8 ) RpgCharaOn("Midori") endif
+: endif
+// 小夜を探せ　進行中
+: if ( MissionProgress( "SC_C05_11_1", "InProgress" ) == true )
+	: RpgCharaOff("Midori")
+: endif
+: Return
+//--------------------------------------------------------
+// 卍の部屋
+//--------------------------------------------------------
+*Map04
+: RpgCharaOff("Manji")
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mukuro" ) == false )
+		: RpgCharaOn("Manji")
+	: endif
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: RpgCharaOn("Manji")
+	: endif
+: endif
+: Return
+//--------------------------------------------------------
+// 地下室
+//--------------------------------------------------------
+*Map05
+: RpgCharaOff("NPC_T07_007")
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mukuro" ) == false )
+		: RpgCharaOn("NPC_T07_007")
+	: endif
+: endif
+: Return
+//--------------------------------------------------------
+// 無黒の部屋
+//--------------------------------------------------------
+*Map06
+: RpgEventOff( "Inn_Mukuro" )
+: RpgMapBaloonOff( "Inn" )
+: if ( WhoLeader( "Mukuro" ) == true )
+	: RpgEventOn( "Inn_Mukuro" )
+	: RpgMapBaloonOn( "Inn" )
+: endif
+: Return

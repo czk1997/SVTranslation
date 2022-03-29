@@ -1,0 +1,137 @@
+//========================================================
+//○対決　白夜九星
+//========================================================
+//●場所：ヒラガの研究所
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Laboratory01_01", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 6, "C" )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 5, "L" )
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 4, "R" )
+: Wait()
+: ShowWnd()
+——那是我结束了来自希拉里的委托，去报告的时候。
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“不愧是我看中的人。
+顺利完成了目标”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“所以呢，我想继续拜托你们的事情
+谢谢……”
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk4567" )
+\CN["无黑色"]
+“嘛，虽然我已经预料到了。”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1496" )
+\CN["桃子"]
+“反正也要把白夜剩下的干部打倒啊
+是这么回事吧？”
+
+白夜的两个干部都是我们处理的
+我想那边已经可以预见了。
+
+而且，大元就是比拉加。
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“这是你的回答。在幕府的人看来，白夜是最大的敌人。”
+
+\CN["平底片"]
+“为了大和的未来，必须消灭的组织
+”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1497" )
+\CN["桃子"]
+「必须毁灭……。
+本来就属于那里的，还真是好啊”
+
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+“呵呵，人就是这样的。”
+
+我很明白希拉加说的话。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4568" )
+\CN["无黑色"]
+（如果对方与鬼灯敌对，打算杀了我的话
+我会毫不犹豫地砍掉的。）
+
+并不是什么都不想那件事……。
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4569" )
+\CN["无黑色"]
+“这是一艘船，我陪你到最后。”
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom1498" )
+\CN["桃子"]
+“呃，如果无黑这样就好了的话，我也没关系。”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0786" )
+\CN["黄菜子"]
+“……我都无所谓。”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“那太好了。”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk4570" )
+\CN["无黑色"]
+“希拉加，我想让你听听我的请求。”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“是的，会稍长一点……。
+亚久里，能给我拿点小吃来吗？”
+
+: DrawFaceThumbnail( "Aguri", 1, 0, 0 )
+: PlayVoice( "Voices/vo16_agu0282" )
+\CN["亚久里"]
+“知道了。马上给您准备。”
+
+助手往里走，开始准备小吃。
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“那么，马上。我想拜托你们一件事——”
+
+希拉里开始淡然地说话。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●キャラクター選択画面
+//●シーンエンド
+\CI["因缘~神八代无黑篇开始~"]
+\CI["因缘~公主椿桃篇~开始"]
+\CI["因缘～有栖川黄菜子篇～开始"]
+开始哪个故事？
+
+: if ( $choice == 0 )
+	: Jump( "Scenarios/SC_D05_20" )
+: elif ( $choice == 1 )
+	: Jump( "Scenarios/SC_D05_21" )
+: else
+	: Jump( "Scenarios/SC_D05_22" )
+: endif

@@ -1,0 +1,486 @@
+//========================================================
+//○帝都西地方の害獣退治１
+//========================================================
+*sc001
+//●場所：鬼灯屯所・あざみの部屋
+//＠立ち絵：無黒（着衣）、あざみ（着衣）
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0027" )
+\CN["爱彩弥"]
+「啊，无黑吗？来得正好。
+其实我有想交给你的任务”
+
+: PlayVoice( "Voices/vo00_muk0039" )
+\CN["无黑"]
+“是的，是什么呢？”
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0028" )
+\CN["爱彩弥"]
+“从帝都出来，沿着街道向西走的地方有个洞穴
+你知道吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk0040" )
+\CN["无黑"]
+“是的。至少有个洞穴。
+场所和设备都看了的话也会想办法……”
+
+: DrawChara( "Azami", 3, 0)
+: PlayVoice( "Voices/vo05_aza0029" )
+\CN["爱彩弥"]
+「这样啊。那么，任务就是在那个洞窟里有凶恶的魔物
+好像住到了那里。希望你去看看情况”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk0041" )
+\CN["无黑"]
+“明白。如果有凶恶的魔物存在的话，就要当场处理好。”
+可以吗？”
+
+: DrawChara( "Azami", 5, 0)
+: PlayVoice( "Voices/vo05_aza0030" )
+\CN["爱彩弥"]
+“啊，那就拜托了。交给你了。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+//＠フラグ：鬼灯屯所外・移動可能,ＯＮ
+: Flag( "HozukiMoveOn", true )
+//＠イベント「帝都西地方の害獣退治」進行中
+: SetMission( "SC_A01_03_1", "Hidden" )
+: SetMission( "SC_A01_03_2", "InProgress" )
+: if ( Flag ( "NonVirgin_Mukuro" ) == false )
+	//＠サブイベント「有名エロカラクリ技師が作ったディルド」解放
+	: SetMission( "SC_A01_50", "Opened" )
+	//＠サブイベント「渡辺家当主に処女を捧げる！」解放
+	: SetMission( "SC_A01_52", "Opened" )
+: endif
+事件记录已更新。
+
+//＠マップ解放：帝都
+//＠マップ解放：帝都西街道
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoNishikaido" )
+//＠目的地：帝都西街道
+: DestinationMap( "Map_Dungeon01_01_TeitoNishiKaido" )
+//＠サイドエピソード解放：こう見えて可愛いものが好き
+//＠サイドエピソード解放：紅美との出会い
+//＠サイドエピソード解放：サムライを知らなかった頃
+//＠サイドエピソード解放：風真銀は従者である
+//＠サイドエピソード解放：鬼灯局長　千穂あざみ
+: SideEpisodeFlagUp( "episode00" )
+: SideEpisodeFlagUp( "episode01" )
+: SideEpisodeFlagUp( "episode02" )
+: SideEpisodeFlagUp( "episode03" )
+: SideEpisodeFlagUp( "episode04" )
+<^FF0000>支线任务更新了！</color>
+
+※支线任务可以从从状态画面的
+《支线任务》中看到
+请一定要看看！
+
+: FadeOut( 1.0 )
+: Wait()
+: RpgCharaBaloonOff("CHA05")
+: FadeIn( 1.0 )
+: Return
+
+//========================================================
+//○帝都西地方の害獣退治２
+//========================================================
+*sc002
+//クリア後、イベント起こさない
+: if ( MissionProgress( "SC_A01_03_2", "Successed" ) == true )
+	: Jump( "Scenarios/Map_Event*Closed" )
+: endif
+//●場所：帝都西の洞窟・ボスの部屋前
+//●演技：最初の……は匂いを嗅いでいます
+: DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0042" )
+\CN["无黑"]
+“……这个味道……”
+
+从里面飘来的强烈气味。
+
+野兽特有的味道浓缩了数十倍
+不由得皱起了眉头。
+
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk0043" )
+\CN["无黑"]
+“肯定在这里面。”
+
+从这种迹象来看，无疑是相当大的东西。
+
+*select01
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：大丈夫。準備はできている
+//■選択肢２：もう一度、ちゃんと確認してから
+//――――――――――――――――――――――――――――
+\CI["没关系。准备好了"]
+\CI["确认后"]
+那么，怎么办？
+
+: if ( $choice == 1 )
+	: Jump( "*select01_s2" )
+: endif
+//-------------------------------------------------------
+//●選択肢１：大丈夫。準備はできているを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+//＠演出：無黒　洞窟の奥に進んでいく
+//●演出：場面転換トランジション
+//●場所：帝都西の洞窟・ボスの部屋
+//●ＳＥ：獣の声
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Dungeon02_04_TeitoNishiDokutsuD", "", "Scenarios/SC_A01_03*select01_s1_01" )
+
+*select01_s1_01
+: FadeIn( 1.0 );
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"Speed", 4.0	\
+:	"MoveUp", 7 )	// 前に７歩進む
+: Wait()
+: PlaySe("SE/Se_Bear01")
+: DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["魔物"]
+“哈！！！！”
+
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk0044" )
+\CN["无黑"]
+“好像不是普通的熊。
+变成魔物的熊吗……”
+
+即使只是熊也不能疏忽大意
+变成魔物的话……。
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk0045" )
+\CN["无黑"]
+“之后处理回更麻烦。
+现在必须在这里消灭！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle
+//――――――――――――――――――――――――――――
+//■戦　闘：アウルベア
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘前選択肢呼出し（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_Cave01", "BGM/22_BM003", 1000, -1, -1, "Scenarios/SC_A01_03*battle_end", true)
+
+*battle_end
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利
+: elif ( $battleEscape == true )
+	这场战斗，不能逃走！
+
+	: Jump( "*battle" )
+: else
+	: Jump( "Scenarios/SC_S01_01*sc001" )	//敗北
+: endif
+//-------------------------------------------------------
+//●選択肢２：もう一度、ちゃんと確認してからを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+//●無黒　引き返す
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: ShowWnd()
+: Return
+
+//========================================================
+//○帝都西地方の害獣退治３
+//========================================================
+*sc003
+//●場所：帝都西の洞窟・ボスの部屋
+//●状況：モンスターに勝利
+//●ＳＥ：断末魔の叫び（獣）
+: RestoreBgm
+: PlaySe("SE/Se_Monster01")
+	呀！！！！！！！！
+
+//●ＳＥ：ドサッ　倒れる音
+//＠ドット：消す
+: RpgCharaOff( "Boss" )
+: Sleep(0.25)
+: RpgCharaOn( "Boss" )
+: Sleep(0.25)
+: RpgCharaOff( "Boss" )
+: Sleep(0.25)
+: RpgCharaOn( "Boss" )
+: Sleep(0.25)
+: RpgCharaOff( "Boss" )
+: Sleep(0.25)
+: RpgCharaOn( "Boss" )
+: Sleep(0.25)
+: RpgCharaOff( "Boss" )
+: Wait()
+: PlaySe("SE/Se_Down01")
+: CharaPartsOn( "Mukuro", 0)	//汗追加
+: DrawChara( "Mukuro", 31, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0046" )
+\CN["无黑"]
+“哈、哈、哈……呼……。
+ 差点儿危险了……”
+
+: DrawChara( "Mukuro", 0, 1)
+: PlayVoice( "Voices/vo00_muk0047" )
+\CN["无黑"]
+“但是，这样一来就放心了。”
+
+一想到魔物化的熊出现在村庄里就毛骨悚然。
+
+一定有很多人牺牲吧。
+
+//＠立ち絵：消去
+//＠ドット：出口に歩かせると同時に暗転させていく
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・玄関
+: HideWnd()
+: StopBgm( 0.5 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"Speed", 4.0	\
+:	"MoveDown", 7 )
+: Sleep( 1.0 )
+//●背景：屯所・玄関・昼
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Genkan01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+回到屯所后，一个非常正经的男人们转着眼睛
+我倒在了那附近。
+
+//＠立ち絵：レオ（着衣）
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Leo", 0, 0, 0, 0.0, 0.0, 3, "LC" )
+: FadeOutLayer( 3, 0.0)
+: SetLayerRelPos( 3, -100, 0, 0.0, 0)
+: SetLayerRelPos( 3, 100, 0, 0.5, 0)
+: FadeInLayer( 3, 0.5)
+: Wait()
+\CN["雷欧"]
+“哟，欢迎回来！”
+
+: PlayVoice( "Voices/vo00_muk0048" )
+\CN["无黑"]
+“喂，这是发生什么事了吗？”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“啊，这个？”
+
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“怎么说呢，这群没出息的家伙打进来了
+稍微玩一下的话，就是这个
+
+//＠立ち絵：銀（着衣）
+: HideWnd()
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Genkan01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+\CN["银"]
+“真是的，要是攻过来的话就攻过来，再稍微
+变强之后再来吧……。我很烦躁”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 2; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+\CN["鬼灯队士・男C"]
+“啊，肚子饿了……”
+
+\CN["鬼灯队士・女A"]
+“混在混乱中揉搓乳汁也是最糟糕的……”
+
+\CN["鬼灯队士・男B"]
+“我觉得你粗心大意是不对的。
+现在这样站着没受伤不是奇迹吗？”
+
+反幕派的家伙来屯所打人了吗。
+
+偶尔会有这样的事。
+
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["雷欧"]
+“啊，这样啊，无黑，没关系吗？”？
+你的对手是魔物吧？”
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk0049" )
+\CN["无黑"]
+“虽然有点危险，但是没问题。”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“真的吗？那我现在就检查下你身体里的
+各个角落——”
+
+: DrawChara( "Mukuro", 11, 1, 3)
+: PlayVoice( "Voices/vo00_muk0050" )
+\CN["无黑"]
+“没必要，H，变态！下流……”
+
+//＠立ち絵：消去（無黒）
+: HideWnd()
+: SetLayerRelPos( 4, 100, 0, 0.25)
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Leo", 4, 1)
+: ShowWnd()
+\CN["雷欧"]
+“……不、不对……我真的很担心你的身体…………
+说真的！喂……无黑酱！”
+
+: DrawChara( "Gin", 5, 0, 0, 0.0, 0.0, 4, "RC" )
+: FadeOutLayer( 4, 0.0)
+: SetLayerRelPos( 4, -100, 0, 0.0, 0)
+: SetLayerRelPos( 4, 100, 0, 0.5, 0)
+: FadeInLayer( 4, 0.5)
+: Wait()
+\CN["银"]
+“哈~……。所以说啊，处男就是这样……”
+
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Leo", 10, 0)
+\CN["雷欧"]
+“怎、怎、怎、童贞又怎么了……”
+
+: DrawChara( "Leo", 7, 0)
+\CN["雷欧"]
+“怎么说呢，银，你也是处男吧 ？
+啊？”
+
+: DrawChara( "Gin", 7, 0)
+\CN["银"]
+“哼……真无聊啊。”
+
+//＠立ち絵：消去（銀）
+: HideWnd()
+: SetLayerRelPos( 4, 100, 0, 0.5)
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Leo", 4, 0)
+: ShowWnd()
+\CN["雷欧"]
+“啊……！等一下！”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“你是处男吧？”
+
+//＠立ち絵：消去（レオ）
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・あざみの部屋
+//＠立ち絵：あざみ（着衣）
+: HideWnd()
+: StopBgm( 0.5 )
+: SetLayerRelPos( 3, 100, 0, 0.5)
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//＠背景消去
+: EraseImage( 1, 0, 1.0)
+: Wait()
+: ResetLayer(1)
+//＠あざみの部屋に移動
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Town02_07_Hozuki", "Azami_Room_Front", "Scenarios/SC_A01_03*sc003_1" )
+
+*sc003_1
+//＠暗転解除
+: FadeIn( 1.0 )
+: Wait()
+: PlayBgm("BGM/19_TM004")
+: DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0031" )
+\CN["爱彩弥"]
+“哟，欢迎回来。好早啊。那是什么感觉呢？”
+
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk0051" )
+\CN["无黑"]
+“洞窟内有被魔物化的熊，已经被我退治疗它了。”
+
+魔物化的熊 以及打倒了鸮熊的事
+此外，还将在洞窟内发现的事情详细报告给局长。
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0032" )
+\CN["爱彩弥"]
+“原来如此。最近魔物增加了呢。”
+
+野生的野兽等变成魔物袭击人类的是
+大约从20年前开始。
+
+这是只有在西边大陆才有的威胁。
+被称为“巨兽”的天敌的存在
+好像是出现在大和之地之后的事。
+
+不过，那只贝希莫斯被某人葬送了
+但真相不明。
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0033" )
+\CN["爱彩弥"]
+“以白夜为首的反幕派也很麻烦
+真的，好麻烦啊……”
+
+局长一边这么说着，一边抱着头。
+
+//●演出：暗転
+//●共通ルート・第１章　終了
+//イベント終了
+: SetMission( "SC_A01_03_2", "Successed" )
+: $money += 500	//報酬取得
+//目的地消去
+: DestinationMap
+: StopBgm( 0.5 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+//＠シナリオジャンプ：SC_A02_01
+: Jump( "Scenarios/SC_A02_01" )

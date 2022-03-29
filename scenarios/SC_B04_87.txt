@@ -1,0 +1,513 @@
+//========================================================
+//○北国で再会
+//========================================================
+//●場所：恵蘇・居酒屋
+//●背景：恵蘇・居酒屋
+//●視点：三人称視点
+//Yoshi：背景
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Falke", 0 )
+: CharaCostume( "Elisa", 0 )
+: CharaCostume( "Nina", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Pub01", 1.0 )
+: Wait()
+: PlayBgm("BGM/48_Goodnight")
+: ShowWnd()
+——惠苏居酒屋
+
+: DrawChara( "Nina", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Falke", 9, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["沥青"]
+“即使那样也很吃惊。
+雷欧的妈妈竟然是我们的前辈”
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0055" )
+\CN["尼娜"]
+“还没到前辈的程度。
+因为我在骑士团学校中途退学”
+
+: EraseChara( "Falke", 0.5 )
+: DrawChara( "Dominik", 2, 0, 0, 0.5, 0.0, 5, "RC" )
+\CN["多米尼克"]
+“妮娜，我知道不是道歉就可以解决的问题
+那时真的很抱歉。因为我没有力量……”
+
+多米尼克曾经一直很在意。
+
+骑士团学校的学生时代，发生了一件事。
+
+而且妮娜被卷入其中，不等毕业就不得不流亡大和
+事态发展到了不得已的地步。
+
+顺便说一下，那个事件的主谋者有一种说法是和哈拉特大臣
+被说。
+
+明明是重要的朋友、互相切磋琢磨过的伙伴，却什么也帮不上
+我一直后悔没能做到。
+
+: DrawChara( "Nina", 20, 0)
+: PlayVoice( "Voices/vo27_nii0056" )
+\CN["尼娜"]
+“不是多米尼克君觉得有责任。”
+
+: DrawChara( "Nina", 16, 0)
+: PlayVoice( "Voices/vo27_nii0057" )
+\CN["尼娜"]
+“嘛，虽然发生了各种各样的事情，但是现在能在这里快乐地生活着
+虽然很自大，但是也有可爱的儿子。因为我过着幸福的生活”
+
+: DrawChara( "Dominik", 5, 0)
+\CN["多米尼克"]
+“那就太好了……”
+
+: EraseChara( "Nina", 0.5 )
+: DrawChara( "Elisa", 4, 0, 0, 0.5, 0.0, 6, "LC" )
+: PlayVoice( "Voices/vo19_era0086" )
+\CN["伊拉伊萨"]
+“但是啊，完全无法想象啊。
+泽普和萨拉的姐姐，多米尼克的丈夫还是学生的时候”
+
+: EraseChara( "Dominik", 0.5 )
+: DrawChara( "Falke", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["沥青"]
+“啊，我也是。特别是泽普。”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Nina", 2, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo27_nii0058" )
+\CN["尼娜"]
+“啊……等一下。呵呵，有好东西哦。
+因为我总是随身携带”
+
+//●ＣＧ：過去の写真
+: HideWnd()
+: PlaySe( "SE/Se_Book01" )
+: evbg = true; evcos = false;
+: evfile = "evx_a055_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Nina", 0.0 )
+: EraseChara( "Falke", 0.0 )
+: ShowWnd()
+妮娜对多米尼克笑了笑
+桌子上放了一张照片。
+
+//: DrawChara( "Nina", 14, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawFaceThumbnail( "Dominik", 7, 0, 0 )
+\CN["多米尼克"]
+“妮娜……你还拿着这个吗！？”
+
+: DrawFaceThumbnail( "Nina", 16, 0, 0)
+: PlayVoice( "Voices/vo27_nii0059" )
+\CN["尼娜"]
+“那么，和大家一起拍的照片就只有这个了
+因为是很重要的回忆”
+
+//: EraseChara( "Dominik", 0.5 )
+: DrawFaceThumbnail( "Elisa", 0, 0, 0 )
+: PlayVoice( "Voices/vo19_era0087" )
+\CN["伊拉伊萨"]
+“这个是妮娜啊。哇，好可爱啊。
+还有，扎拉，你很年轻。要乳吗！？”
+
+: DrawFaceThumbnail( "Nina", 2, 0, 0)
+: PlayVoice( "Voices/vo27_nii0060" )
+\CN["尼娜"]
+“是的是的。因为发育很好。
+被称为学园开始以来的才女
+太厉害了。考试什么的总是满分”
+
+//: EraseChara( "Nina", 0.5 )
+//: EraseChara( "Elisa", 0.5 )
+//: DrawChara( "Dominik", 5, 0, 0, 0.5, 0.0, 5, "RC" )
+: DrawFaceThumbnail( "Falke", 9, 0, 0 )
+\CN["沥青"]
+“还有，这个绝对是多米尼克先生吧？
+总觉得和现在的印象完全不一样。怎么说呢，那个
+脑肌的……”
+
+: DrawFaceThumbnail( "Dominik", 2, 0, 0)
+\CN["多米尼克"]
+“……不要说。”
+
+//: EraseChara( "Falke", 0.5 )
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: DrawChara( "Nina", 16, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo27_nii0061" )
+\CN["尼娜"]
+“多米尼克君很温柔，很有力气
+很受欢迎哦”
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0062" )
+\CN["尼娜"]
+“但是，说自己还是修行之身
+即使被告白也会全部拒绝吧”
+
+: DrawChara( "Nina", 2, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Dominik", 6, 0, 0, 0.5, 0.0, 3, "LC")
+\CN["多米尼克"]
+“……是以前的事。”
+
+: DrawChara( "Dominik", 1, 0)
+\CN["多米尼克"]
+“如果你这么说的话，绝大多数不是都拒绝了吗？”？
+每天都有女生说要介绍Z哦”
+
+: DrawChara( "Nina", 14, 0)
+: PlayVoice( "Voices/vo27_nii0063" )
+\CN["尼娜"]
+“是啊……嗯”
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0064" )
+\CN["尼娜"]
+“啊，可能会在意多米尼克和什么样的孩子结婚了。
+能告诉我姐姐吗？”
+
+: DrawChara( "Dominik", 4, 0)
+\CN["多米尼克"]
+“姐姐不是岁数吧。”
+
+: DrawChara( "Nina", 17, 0)
+: PlayVoice( "Voices/vo27_nii0065" )
+\CN["尼娜"]
+“多米尼克？你说什么了？”
+
+: DrawChara( "Dominik", 6, 0)
+\CN["多米尼克"]
+“……对不起，我失言了。”
+
+: EraseChara( "Dominik", 0.5 )
+: DrawChara( "Elisa", 4, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo19_era0088" )
+\CN["伊拉伊萨"]
+“多米尼克的丈夫的妻子像密涅瓦一样贤淑
+是小姐哦。防御魔法的专家啊”
+
+: DrawChara( "Nina", 6, 0)
+: PlayVoice( "Voices/vo27_nii0066" )
+\CN["尼娜"]
+“诶。防御魔法的。也就是精灵之子？”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Dominik", 5, 0, 0, 0.5, 0.0, 3, "LC" )
+\CN["多米尼克"]
+“不，她是人。”
+
+: DrawChara( "Nina", 28, 0)
+: PlayVoice( "Voices/vo27_nii0067" )
+\CN["尼娜"]
+“诶！？但是魔法——大和不是魔法而是魔术
+虽然有人叫我，但我只会用精灵或者兽人
+应该做不到……”
+
+: DrawChara( "Dominik", 4, 0)
+\CN["多米尼克"]
+“我知道。人类本来就没有魔力。”
+
+: DrawChara( "Dominik", 5, 0)
+\CN["多米尼克"]
+“密涅瓦的家族很特殊。
+她说祖先好像是精灵的家族”
+
+: EraseChara( "Nina", 0.5 )
+: DrawChara( "Falke", 9, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["沥青"]
+“啊，是的。”
+
+: EraseChara( "Dominik", 0.5 )
+: DrawChara( "Elisa", 3, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo19_era0089" )
+\CN["伊拉伊萨"]
+「这样啊，你也是半妖精啊。
+耳朵是普通的”
+
+: DrawChara( "Falke", 12, 0)
+\CN["沥青"]
+“啊。所以我也知道自己是半妖精的时候
+吓了一跳”
+
+: EraseChara( "Falke", 0.5 )
+: DrawChara( "Nina", 2, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo27_nii0068" )
+\CN["尼娜"]
+“就像遗传的恶作剧一样。”
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0069" )
+\CN["尼娜"]
+“有趣的是，大和的外表就像是费尔克君
+没有特征的前卫精灵有很多”
+
+: DrawChara( "Nina", 14, 0)
+: PlayVoice( "Voices/vo27_nii0070" )
+\CN["尼娜"]
+“实际上，雷欧就是这样。”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Falke", 1, 0, 0, 0.5, 0.0, 3, "LC" )
+\CN["沥青"]
+“这样啊。那家伙也是这样啊。”
+
+: EraseChara( "Nina", 0.5 )
+: DrawChara( "Elisa", 9, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo19_era0090" )
+\CN["伊拉伊萨"]
+“不管怎么说，被称为世界最强的沥青
+超越了吧”
+
+: DrawChara( "Falke", 5, 0)
+\CN["沥青"]
+“嗯？嗯，我觉得这个可能性很高。
+嘛，我还没有输的打算”
+
+: DrawChara( "Elisa", 3, 0)
+: PlayVoice( "Voices/vo19_era0091" )
+\CN["伊拉伊萨"]
+“真的，从以前开始就不服输啊。”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0092" )
+\CN["伊拉伊萨"]
+“啊！这个是Zip桑吧。
+哇……原来是这种感觉啊！？”
+
+: DrawChara( "Falke", 9, 0)
+\CN["沥青"]
+“完全和印象不一样。说到Zip
+因为有着这样硬朗的印象”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Nina", 2, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo27_nii0071" )
+\CN["尼娜"]
+“诶，那个Zip君啊。那个更让人吃惊呢。”
+
+: EraseChara( "Falke", 0.5 )
+: DrawChara( "Dominik", 3, 0, 0, 0.5, 0.0, 3, "LC" )
+\CN["多米尼克"]
+“嘛，从那以后和上面的人发生了各种各样的事情啊。
+我、斑马、还有扎拉……”
+
+: DrawChara( "Nina", 22, 0)
+: PlayVoice( "Voices/vo27_nii0072" )
+\CN["尼娜"]
+“是的……”
+
+: EraseChara( "Nina", 0.5 )
+: EraseChara( "Dominik", 0.5 )
+知道了绝和扎拉已经死了
+尼娜是从多米尼克口中得知的。
+
+他们的最后是怎样的？
+他们直到最后的最后都是有特色的
+好好地传达了。
+
+但是，一旦看到照片浮现在脑海里
+妮娜也会感同身受，只能忍受眼角发热
+没有。
+
+: DrawChara( "Elisa", 1, 0, 0, 0.5, 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo19_era0093" )
+\CN["伊拉伊萨"]
+“呐，妮娜小姐，即使问了稍微复杂的事情
+没关系吗？”
+
+: DrawChara( "Nina", 2, 0, 0, 0.5, 0.0, 5, "LC")
+: PlayVoice( "Voices/vo27_nii0073" )
+\CN["尼娜"]
+“好的。”
+
+: DrawChara( "Elisa", 3, 0)
+: PlayVoice( "Voices/vo19_era0094" )
+\CN["伊拉伊萨"]
+“雷欧啊，说不定是妮娜和泽普的
+不是生出来的孩子吗？”
+
+: EraseChara( "Nina", 0.5 )
+: DrawChara( "Dominik", 6, 0, 0, 0.5, 0.0, 5, "LC" )
+\CN["多米尼克"]
+“烦躁，突然之间……”
+
+: EraseChara( "Dominik", 0.5 )
+: DrawChara( "Falke", 3, 0, 0, 0.5, 0.0, 3, "LC" )
+\CN["沥青"]
+“其实，我在训练中和里奥试了几次
+我也觉得是不是有点那样”
+
+: DrawChara( "Falke", 12, 0)
+\CN["沥青"]
+“那家伙，被逼得走投无路，情绪高涨起来的话
+和杰普长得一模一样啊……”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Dominik", 0, 0, 0, 0.5, 0.0, 5, "RC" )
+\CN["多米尼克"]
+“妮娜……”
+
+: EraseChara( "Falke", 0.5 )
+: DrawChara( "Nina", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo27_nii0074" )
+\CN["尼娜"]
+“跟你们说也没关系。
+仔细想想，也不是藏起来的事吧”
+
+: DrawChara( "Dominik", 4, 0)
+\CN["多米尼克"]
+“那么，Leo是Zip的——！？”
+
+: DrawChara( "Nina", 16, 0)
+: PlayVoice( "Voices/vo27_nii0075" )
+\CN["尼娜"]
+“是的，肯定是我和杰普之间生的孩子。”
+
+: DrawChara( "Nina", 20, 0)
+: PlayVoice( "Voices/vo27_nii0076" )
+\CN["尼娜"]
+“幸好，肚子变大的时候
+这里也有住的地方啊」
+
+: DrawChara( "Dominik", 6, 0)
+\CN["多米尼克"]
+“真的吗……。果然，无法掩饰自己的惊讶。
+那个泽普有孩子，而且对方是尼娜……”
+
+: DrawChara( "Dominik", 4, 0)
+\CN["多米尼克"]
+“我隐约感觉到你们是恋爱关系。”
+
+: DrawChara( "Nina", 14, 0)
+: PlayVoice( "Voices/vo27_nii0077" )
+\CN["尼娜"]
+“嘛，有各种各样的事情。嘿嘿。”
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0078" )
+\CN["尼娜"]
+“那么，多米尼克君，为什么会在这么北的乡村
+特意来的？你不是来找我的
+应该没有吧”
+
+: DrawChara( "Nina", 8, 0)
+: PlayVoice( "Voices/vo27_nii0079" )
+\CN["尼娜"]
+“原本就来到大和国，但真正的缔结友好关系才是真的
+不是目的吧？”
+
+: DrawChara( "Dominik", 5, 0)
+\CN["多米尼克"]
+“不愧是尼娜。真敏锐啊。”
+
+: DrawChara( "Dominik", 0, 0)
+\CN["多米尼克"]
+“我们来到大和的目的是为了制作名为‘阿波罗之弓’的神器
+是回收哦。然后，听说好像在这个城市里”
+
+: DrawChara( "Nina", 12, 0)
+: PlayVoice( "Voices/vo27_nii0080" )
+\CN["尼娜"]
+“阿波罗的弓……？嗯……啊，难道是那个吗？”？
+在异文化交流会上，这个城镇的商人开起了维克托尔的魔导器
+你曾经买来过吧”
+
+//●読み：神器（じんぎ）
+: EraseChara( "Dominik", 0.5 )
+: DrawChara( "Elisa", 8, 0, 0, 0.5, 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo19_era0095" )
+\CN["伊拉伊萨"]
+“诶。我以为是魔导器，原来是神器啊……”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Dominik", 9, 0, 0, 0.5, 0.0, 5, "RC" )
+\CN["多米尼克"]
+“那个商人现在在哪里？”
+
+: DrawChara( "Nina", 24, 0)
+: PlayVoice( "Voices/vo27_nii0081" )
+\CN["尼娜"]
+“那个啊，几年前突然对幕府的官员们说
+被带去了，财产什么的全部被没收了”
+
+: EraseChara( "Dominik", 0.5 )
+: DrawChara( "Elisa", 3, 0, 0, 0.5, 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo19_era0096" )
+\CN["伊拉伊萨"]
+“被没收的话，‘阿波罗之弓’有可能在幕府
+好高啊”
+
+: EraseChara( "Nina", 0.5 )
+: DrawChara( "Dominik", 2, 0, 0, 0.5, 0.0, 5, "LC" )
+\CN["多米尼克"]
+“我想跟一桥将军说一下情况……”
+
+: DrawChara( "Elisa", 6, 0)
+: PlayVoice( "Voices/vo19_era0097" )
+\CN["伊拉伊萨"]
+“还是放弃比较好。现在不可信。
+知道阿波罗的弓的存在的话，很有可能滥用”
+
+: DrawChara( "Dominik", 0, 0)
+\CN["多米尼克"]
+“这也是有的，本来就不能把阿波罗的弓的秘密泄露出去
+不去。想办法在秘密里回收啊」
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Falke", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["沥青"]
+“嘛，泽诺有各种各样的活动，我们也回到帝都的话
+我去试探一下”
+
+: DrawChara( "Dominik", 4, 0)
+\CN["多米尼克"]
+“啊，请多关照。”
+
+: EraseChara( "Falke", 0.5 )
+: DrawChara( "Elisa", 9, 0, 0, 0.5, 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo19_era0098" )
+\CN["伊拉伊萨"]
+“那就先养精蓄锐吧
+我要吃喝了。妮娜，这里的推荐是？”
+
+: EraseChara( "Dominik", 0.5 )
+: DrawChara( "Nina", 16, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo27_nii0082" )
+\CN["尼娜"]
+“我对海鲜很自豪。你吃过螃蟹吗？”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Falke", 5, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["沥青"]
+“没有。我想吃那个。”
+
+骑士们也需要休息。
+
+然后，费尔克他们又品尝了惠苏名产的螃蟹料理和当地酒
+享受了一会儿大和的宴会。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: EraseChara( "Falke", 0.0 )
+: EraseChara( "Nina", 0.0 )
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーンエンド
+: HideWnd()
+: FadeOut( 0.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

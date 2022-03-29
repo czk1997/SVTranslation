@@ -1,0 +1,601 @@
+//========================================================
+//○もう誰も殺めたくないのです！
+//========================================================
+//＠プレイヤーキャラ：黄菜子
+//●視点：黄菜子
+//●背景：黒画面
+//Yoshi：背景
+
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: ShowWnd()
+——这是大约2年前
+这是我成为鬼灯队士之前的故事。
+
+//●演出：過去回想に入る
+//●場所：宿場町・昼・過去
+//●背景：宿場町・外
+//Yoshi：背景
+: HideWnd()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition04", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_SyukubaVillage01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: PlaySe("SE/Se_Effect00")
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/26_FM004")
+: ShowWnd()
+\CN["财阀的户主"]
+“……话说回来，高千穗君，你真是个美人啊。
+不经常被说吗？”
+
+//Yoshi：センターにあざみ
+: DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0065" )
+\CN["嘲讽"]
+“不，没怎么被说过呢。
+但是，谢谢”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：右に桃、左に銀
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayVoice( "Voices/vo01_mom0092" )
+\CN["桃子"]
+“……小银，局长真厉害啊。”
+
+\CN["银子"]
+“嗯？啊，确实。身体的动作真是不一般啊。”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0093" )
+\CN["桃子"]
+“喂！就算快要被性骚扰了
+你躲得真透彻啊」
+
+//＠立ち絵：消去
+: StopBgm( 1.0 )
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+//＠立ち絵：黄菜子（着衣）
+: Wait()
+: CharaCostume( "Kinako", 5 )
+: DrawChara( "Kinako",11, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+//●演技：過去の黄菜子。自我がほとんどありません
+: PlayVoice( "Voices/vo02_kin0043" )
+\CN["黄菜子"]
+“……发现目标”
+
+//＠立ち絵：消去
+: HideWnd()
+: SetLayerRelPos( 3, 100, 0, 0.5)
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//●演出：時間経過
+//●場所：宿場町・宿屋の部屋・昼・過去
+//●背景：和風民家・部屋・夜
+//Yoshi：背景
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition04", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+\CN["财阀的户主"]
+“嗯……真的是我的性命被盯上了吗？”
+
+\CN["财阀的户主"]
+“威胁信和杀害预告之类的没有来。
+在外面也会被什么东西袭击，没有什么特别的，是不是太过小心了？”
+
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0066" )
+\CN["嘲讽"]
+“如果什么都没有的话，那就再好不过了。
+我们有责任把你送到幕府去
+有的话，请忍耐一下……”
+
+\CN["财阀的户主"]
+“嘛，确实是被贼袭击致死的
+也不算俏皮话”
+
+\CN["财阀的户主"]
+“啊，比起那种事
+一路上都积满了……”
+
+: HideWnd()
+: PlaySe( "SE/Se_Katana01" )
+: CharaCostume( "Azami", 3 )
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Azami", 6, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0067" )
+\CN["嘲讽"]
+“非常抱歉，在做这种事情的时候
+”
+
+\CN["财阀的户主"]
+“哈……？”
+
+//●演出：黄菜子が登場して財閥当主に斬りかかる。あざみが防ぐ
+: HideWnd()
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe( "SE/Se_KatanaHit01" )
+: ShowWnd()
+――――――――――――――――――――――
+
+: PlayBgm("BGM/16_TM001")
+//Yoshi：右にあざみ、左に黄菜子
+: EraseChara( "Azami", 0.0 )
+: DrawChara( "Azami", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Kinako",25, 0, 1, 0.0, 0.0, 4, "L" )
+//: DrawChara( "Azami", 7, 0)
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0068" )
+\CN["嘲讽"]
+“桃子！银！我求了护卫！”
+
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+//Yoshi：右に桃、左に銀
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Gin",10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayVoice( "Voices/vo01_mom0094" )
+\CN["桃子"]
+“明白了！”
+
+//Yoshi：右にあざみ、左に黄菜子
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a001_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0044" )
+\CN["黄菜子"]
+“啊……！”
+
+//●演出：刀と刀が混じり合う。ＣＧとか使って流していく
+//●演技：心の声です
+: HideWnd()
+: PlaySe( "SE/Se_KatanaHit02" )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 6, 6 )
+: Wait()
+: DrawChara( "Azami", 6, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Azami"; lay = 3; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0069" )
+: ShowWnd()
+\CN["嘲讽"]
+（这条太刀筋，是白夜杀手独特的东西——
+这么小的孩子……）
+
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Kinako", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0045" )
+\CN["黄菜子"]
+“……杀了你”
+
+//●演出：刀と刀が混じり合う。
+//●演技：心の声です
+: HideWnd()
+: PlaySe( "SE/Se_Foot01" )
+: SetLayerRelPos( 3, -300, 0, 0.25)
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+//: DrawChara( "Azami",23, 0)
+: PlayVoice( "Voices/vo05_aza0070" )
+\CN["嘲讽"]
+（而且看不见感情……。
+简直就像在和栗子战斗一样。很难做……）
+
+//●演出：場面転換トランジション
+: HideWnd()
+: Call( "Scenarios/Common*FgResetLayer" )
+: Call("Scenarios/Common*EvFadeOut")
+//Yoshi：右に桃、左に銀
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: ShowWnd()
+\CN["财阀的户主"]
+“……怎么，为什么要和那样的孩子苦战呢？
+即便如此，他还是幕府引以为豪的武士集团局长吗！
+好好干吧！”
+
+: DrawChara( "Gin", 9, 0)
+\CN["银子"]
+“大叔，闭嘴老实点吧。”
+
+\CN["财阀的户主"]
+“喂，你说我是谁……说话要小心啊！”
+
+\CN["银子"]
+“啊？我不知道。”
+
+: PlayVoice( "Voices/vo01_mom0095" )
+\CN["桃子"]
+“如果局长不在的话，你也可以这样抱怨
+没能做到吧”
+
+//●演出：場面転換トランジション
+//●演出：黄菜子　暗殺術使う。あざみが防ぐ
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+//Yoshi：右にあざみ、左に黄菜子
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Kinako",11, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0046" )
+\CN["黄菜子"]
+“……呼”
+
+//●演出：黄菜子　揚羽の封印を解除する詠唱
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: Call( "Scenarios/Effect*KinakoAgeha" )
+
+//: DrawChara( "Azami",17, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_a001_1_1_0100001_1000000_2_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0071" )
+\CN["嘲讽"]
+“喂喂，那么糟糕的东西，是谁给的？”
+
+//: DrawChara( "Kinako",29, 0)
+: PlayVoice( "Voices/vo02_kin0047" )
+\CN["黄菜子"]
+“呀！”
+
+//●※演出：つばぜり合い
+//: EraseChara( "Azami", 0.5 )
+//: EraseChara( "Kinako", 0.5 )
+//Yoshi：右に桃、左に銀
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: ShowWnd()
+\CN["银子"]
+“……那个小鬼是什么人？”
+
+: PlayVoice( "Voices/vo01_mom0096" )
+\CN["桃子"]
+“那么小的身体，居然会用那么大的刀……”
+
+//●演技：心の声です
+//Yoshi：右にあざみ、左に黄菜子
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Kinako",25, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayVoice( "Voices/vo05_aza0072" )
+\CN["嘲讽"]
+（拖长了就糟糕了……）
+
+//●演技：呼吸乱れ。テンポはゆっくりでお願いします
+: PlayVoice( "Voices/vo02_kin0048" )
+\CN["黄菜子"]
+“哈……哈…呜……哈……哈……哈……”
+
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: x1 = 400; y1 = 0; z1 = 1.0; time = 0.25;
+: x2 = 0; y2 = 0; z2 = 1.0;
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_a002_0_1_0100000_1000000_0_"
+: Call( "Scenarios/Common*EvSlideIn" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0049" )
+\CN["黄菜子"]
+“啊啊啊啊啊啊啊！”
+
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: FadeOutLayer( 9, 0.25, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(9)
+//Yoshi：右に桃、左に銀
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: ShowWnd()
+\CN["银子"]
+“小姐，你怎么看？”
+
+: PlayVoice( "Voices/vo01_mom0097" )
+\CN["桃子"]
+“局长看起来有点着急。”
+
+\CN["财阀的户主"]
+“那、那难道是那个女人要被干掉的意思吗？”
+
+\CN["财阀的户主"]
+「我，无论如何都要保护我的生命！
+万一的时候，你们会成为我的盾……”
+
+: DrawChara( "Gin", 0, 0)
+\CN["银子"]
+“……局长着急的理由大概是……”
+
+: PlayVoice( "Voices/vo01_mom0098" )
+\CN["桃子"]
+“啊，是为了那个孩子吧。”
+
+//●演出：場面転換トランジション
+//●演技：全身に痛みが出てきています
+//Yoshi：右にあざみ、左に黄菜子
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Kinako",25, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayVoice( "Voices/vo02_kin0050" )
+\CN["黄菜子"]
+“呼……呜……呜…呜……呜……哈、哈……！”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0073" )
+\CN["嘲讽"]
+（看来已经到了极限了。但是——）
+
+: DrawChara( "Kinako",24, 0)
+: PlayVoice( "Voices/vo02_kin0051" )
+\CN["黄菜子"]
+“哈！”
+
+//●演出：黄菜子の力を振り絞った一撃を受け止めるあざみ
+//●演技：心の声です
+//: DrawChara( "Azami",23, 0)
+: SetLayerRelPos( 3, -300, 0, 0.25)
+: SetLayerRelPos( 4, 300, 0, 0.25)
+: Wait()
+: PlaySe("SE/Se_KatanaHit01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Azami", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evd_a001_1_1_0200001_1000000_1_"
+: Call("Scenarios/Common*EvIn")
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0074" )
+\CN["嘲讽"]
+（啊，白夜真是残酷啊……。
+可能是洗脑了什么，但真是荒唐。）
+
+//●演技：心の声です
+//: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0075" )
+\CN["嘲讽"]
+（让他在这里死去太可惜了。
+这孩子一定能更大幅度地振翅飞翔……）
+
+//: EraseChara( "Azami", 0.5 )
+//: EraseChara( "Kinako", 0.5 )
+//Yoshi：右に桃、左に銀
+: HideWnd()
+: StopBgm( 1.0 )
+//●※演出：あざみの一撃が黄菜子をとらえる。黄菜子倒れる
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0099" )
+\CN["桃子"]
+“好像决定了。”
+
+: PlayBgm("BGM/03_CM003")
+\CN["财阀的户主"]
+“快点杀！虽说是个小鬼，但我是想杀我的！”
+
+\CN["财阀的户主"]
+“快点！快点！快点快点快点快点快点快点快点！”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0100" )
+\CN["桃子"]
+“小银，拜托了。”
+
+\CN["银子"]
+「…………」
+
+//●演出：銀が財閥に当て身を食らわせて気絶させる
+: HideWnd()
+: JumpLayer( 4, 0, -50, 1, 0.25)
+: PlaySe( "SE/Se_Punch01" )
+: PlayAnim( "Animations/AnimeL_Attack01" )
+: Wait()
+: ShowWnd()
+\CN["财阀的户主"]
+“……呃！”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0101" )
+\CN["桃子"]
+“呼……终于安静下来了呢。”
+
+//Yoshi：右にあざみ、左に銀、センターに桃
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo05_aza0076" )
+\CN["嘲讽"]
+「哈哈哈，你们也是你们，胆子很好。
+好像可以振翅高飞啊」
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0102" )
+\CN["桃子"]
+“当然啦，局长。
+我们会变得更伟大的！”
+
+: DrawChara( "Gin", 3, 0)
+\CN["银子"]
+“是啊。”
+
+//●演出：暗転
+//●演技：以下、ナレーションを読むような感じでお願いします
+//Yoshi：センターに黄菜子
+//: DrawChara( "Kinako",11, 0, 1, 0.5, 0.0, 3, "C" )
+//Yoshi：メッセージフェイスOFF
+//: AutoFaceThumbnail( false )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0052" )
+//\CN["黄菜子"]
+//「――２年前、私は白夜の殺し屋の１人でした」
+——2年前，我是白夜杀手之一。
+
+: PlayVoice( "Voices/vo02_kin0053" )
+//\CN["黄菜子"]
+//「ある財閥の暗殺に失敗した私は鬼灯に連れて行かれました」
+一个财阀暗杀失败的我被鬼灯带走了。
+
+//: DrawChara( "Kinako",37, 0)
+: PlayVoice( "Voices/vo02_kin0054" )
+//\CN["黄菜子"]
+//「そこで生まれて初めて人の優しさに触れて、
+//　私は自分を取り戻すことができました」
+出生以来第一次接触到人的温柔
+我找回了自己。
+
+//: DrawChara( "Kinako", 1, 0)
+//: EraseChara( "Kinako", 0.5 )
+: PlayVoice( "Voices/vo02_kin0055" )
+//\CN["黄菜子"]
+//「今は鬼灯隊士・諜報担当としてみんなをサポートしています」
+——现在作为鬼灯队士和谍报负责人支持着大家。
+
+: PlayVoice( "Voices/vo02_kin0056" )
+//\CN["黄菜子"]
+//「あの日から人を相手に刀を向けることは一度もしていません」
+从那天起，我一次也没有把刀对着对方。
+
+//●演技：ここまでです
+//Yoshi：センターに黄菜子
+//Yoshi：メッセージフェイスON
+//: AutoFaceThumbnail( true )
+//: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 3, "C" )
+: StopBgm( 0.5 )
+: PlayVoice( "Voices/vo02_kin0057" )
+——我已经不想再杀任何人了！
+//\CN["黄菜子"]
+//「――私はもう誰も殺めたくないのです！」
+//: EraseChara( "Kinako", 0.5 )
+//Yoshi：背景消去
+//●シーン：「密談の証拠を手に入れろ！１」へ
+//＠シナリオジャンプ：SC_A02_06
+//●シーンエンド
+: CharaCostume( "Azami", 0 )
+: Jump( "Scenarios/SC_A02_06" )

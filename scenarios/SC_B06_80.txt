@@ -1,0 +1,1008 @@
+//========================================================
+//○大和に戻る前の夜の出来事
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: CharaCostume( "Elisa", 0 )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_B06_80" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_B06_80" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●場所：イライザの家・夜
+//●視点：イライザ視点
+——这是回到大和之前的一天。
+
+//●演技：着物を久しぶりに着ています
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Room01_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Elisa", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0182" )
+\CN["伊拉伊萨"]
+“好久没穿这个了呢。
+怎么样？合适吧？”
+
+\CN["伊拉伊萨的未婚妻"]
+“啊，真漂亮。
+这就是大和的传统服装啊”
+
+认识这家伙是一个有点远的战场。
+
+贝希莫斯不再出现的信息在其他国家也传播开来
+鲁格成为国王后国家终于安定下来了啊
+可是邻国攻过来了。
+
+然后，虽然不像战争那样夸张，但是和邻国的家伙们
+发生了武力冲突。
+
+然后，在那场战斗中我保护了同伴，受了性命攸关的重伤。
+
+救了我的就是这个男人。
+作为军医参加了战斗。
+
+那么，嘛，以此为契机
+变成了男女交往的对象，然后，嘛
+就是说要结婚了。
+
+\CN["伊拉伊萨的未婚妻"]
+「…………」
+
+: DrawChara( "Elisa", 3, 0)
+: PlayVoice( "Voices/vo19_era0183" )
+\CN["伊拉伊萨"]
+“喂喂，别那么潮湿。
+只是去大和看看情况而已”
+
+\CN["伊拉伊萨的未婚妻"]
+“即便如此还是会担心的。”
+
+\CN["伊拉伊萨的未婚妻"]
+“伊拉伊萨是骑士，我也有相应的觉悟
+但是，只有这个怎么也……”
+
+: DrawChara( "Elisa", 4, 0)
+: PlayVoice( "Voices/vo19_era0184" )
+\CN["伊拉伊萨"]
+“听说你太担心了。
+老实说，像这样为自己担心
+虽然很开心”
+
+我和男人这样生活，更别说结婚了
+连想象都没想过。
+
+与其说和这家伙在一起不累，不如说很轻松
+在一起完全不感到不舒服。
+
+当然，也有吵架的时候
+即使那样也不讨厌。
+
+\CN["伊拉伊萨的未婚妻"]
+“伊拉伊萨先生…！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: chara = "Elisa"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+被紧紧抱住。
+
+//●演技：ちょっと照れています
+: DrawChara( "Elisa", 5, 1)
+: PlayVoice( "Voices/vo19_era0185" )
+\CN["伊拉伊萨"]
+“喂，喂，怎么了，突然……”
+
+: DrawChara( "Elisa", 0, 1)
+: PlayVoice( "Voices/vo19_era0186" )
+\CN["伊拉伊萨"]
+“也许，我和平时不一样，因为欲望而无法忍耐
+变成这样了吗？”
+
+虽然在一起很开心，但是像这样被拥抱着
+被人感觉到男人的存在，心里就很激动。
+
+为了掩盖那个害羞，试着开玩笑。
+
+\CN["伊拉伊萨的未婚妻"]
+“对不起，今晚我想这样……”
+
+一直都是我坐在屁股上的感觉
+这家伙有时会很强势。
+
+这样的话，我的心也会跳动
+变强了，溢出来了——
+
+//●演技：キスです
+: DrawChara( "Elisa", 1, 1)
+: PlayVoice( "Voices/vo19_era0187" )
+\CN["伊拉伊萨"]
+“……嗯”
+
+\CN["伊拉伊萨的未婚妻"]
+“……真烦人……”
+
+: DrawChara( "Elisa", 3, 2)
+: PlayVoice( "Voices/vo19_era0188" )
+\CN["伊拉伊萨"]
+“从明天开始暂时不能见面……所以，今晚……和你”
+
+//●演技：大人のキスです
+: DrawChara( "Elisa", 4, 2)
+: PlayVoice( "Voices/vo19_era0189" )
+\CN["伊拉伊萨"]
+“嗯，嗯，嗯……嗯，嗯……嗯……呃，呃
+嗯……嗯……嗯，嗯，嗯♥</color>」
+
+: DrawChara( "Elisa", 1, 2)
+: PlayVoice( "Voices/vo19_era0190" )
+\CN["伊拉伊萨"]
+“哈，哈……呃，接吻……再多一点……嗯……”♥</color>
+嗯……嗯，嗯……嗯，呜，呜，呜♥</color>」
+
+把嘴唇合起来，把舌头拧进嘴里。
+然后，把我的长舌头缠在这家伙的舌头上。
+
+: DrawChara( "Elisa", 3, 2)
+: PlayVoice( "Voices/vo19_era0191" )
+\CN["伊拉伊萨"]
+“嗯……嗯……嗯……嗯……嗯……嗯……
+哈、嗯……嗯……”
+
+脑袋里像被白色的东西覆盖了一样的瞬间
+喜欢得不得了。
+
+其他的事情，一切都变得无法想象。
+
+只看到了这家伙，好好地感受这家伙的温暖
+变得能感觉到。
+
+\CN["伊拉伊萨的未婚妻"]
+“……伊拉伊萨……”
+
+//●演技：乳房に手を触れられています
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Elisa", 4, 3)
+: PlayVoice( "Voices/vo19_era0192" )
+\CN["伊拉伊萨"]
+“嗯……！啊，我也已经……”
+
+只是一边接吻一边用手触摸乳房
+我会在意那个。不均匀地着火了。
+
+我非常想和这家伙做爱。
+
+//●ＣＧ：出発前に婚約者とセックス（イライザ）
+//●ＣＧ差分：未挿入、汗、愛液
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255 )
+: Wait()
+: EraseChara( "Elisa", 0.0 )
+: ResetLayer(3)
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0100002_1100000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.5, 255, 255, 255 )
+: Wait()
+: PlayBgm("BGM/33_H_LOVE")
+: ShowWnd()
+连脱掉衣服的时间都很可惜。
+一起倒在床上。
+
+//●演技：乳房を揉まれています
+: PlayVoice( "Voices/vo19_era0193" )
+\CN["伊拉伊萨"]
+“嗯……啊…啊……哈，哈……奶，那么恶心
+被揉了的话……嗯…呜呜！”
+
+//＠ＢＧＶ：イライザ,喘ぎ・弱
+: PlayBackVoice( "Voices/BGV19_era_aegi01" )
+\CN["伊拉伊萨的未婚妻"]
+“伊拉伊萨的乳头已经变硬了……”
+
+: PlayVoice( "Voices/vo19_era0194" )
+\CN["伊拉伊萨"]
+“是吗，是吗……？恩…最近怎么了
+太忙了……好久没做了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0410002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0195" )
+\CN["伊拉伊萨"]
+“总觉得……嗯……非常兴奋……”……
+只是被你碰了一下……啊，恩，感觉到了”
+
+只是用温柔又有礼貌的手揉搓着奶而已。
+
+只是那样就心情舒畅得不得了。
+发出了热烈的声音。
+
+: PlayVoice( "Voices/vo19_era0196" )
+\CN["伊拉伊萨"]
+“也可以再用力按摩……啊，哈……今晚
+激烈……是想要的心情……”
+
+\CN["伊拉伊萨的未婚妻"]
+“那我就不客气了……”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——麦芽糖、麦芽糖、牛奶。
+
+: PlayVoice( "Voices/vo19_era0197" )
+\CN["伊拉伊萨"]
+“恩……啊，啊，啊……嗯……嗯……呜……
+啊……啊…啊…啊啊……啊啊啊啊啊！”
+
+: PlayVoice( "Voices/vo19_era0198" )
+\CN["伊拉伊萨"]
+“那、那个、好舒服……哈、哈、奶、紧紧地
+被强烈地揉搓……嗯，感觉乱七八糟♥</color>」
+
+\CN["伊拉伊萨的未婚妻"]
+“我也开始兴奋了……哈，哈，讨厌的胸部
+很柔软，而且有很好闻的味道……”
+
+: PlayVoice( "Voices/vo19_era0199" )
+\CN["伊拉伊萨"]
+“对，你这么一说……我也觉得不好意思了。”
+
+//●演技：乳首を摘ままれます
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0200002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0200" )
+\CN["伊拉伊萨"]
+「啊啊啊啊啊啊啊啊！chi、乳头、不行啊……啊啊啊啊…啊、
+我会吓一跳的……那、那是我最能感受到的……”
+
+心情达到最高潮的时候，全身都会吓一跳
+变得有点敏感。
+
+这种时候，如果被突然摘掉乳头的话
+只是那样就很有干劲了。
+
+: PlayVoice( "Voices/vo19_era0201" )
+\CN["伊拉伊萨"]
+“哈……哈……总觉得，变得悲伤起来……
+阿索科痒痒的……”
+
+: PlayVoice( "Voices/vo19_era0202" )
+\CN["伊拉伊萨"]
+“已经，{插入，是}了……快点，把你的给我……”
+
+只是被玩弄了一下奶
+脚互相摩擦的时候，湿得几乎要发出吱吱的声音
+有。
+
+\CN["伊拉伊萨的未婚妻"]
+“好久不见。
+请让我再好好享受一下胸部”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0410002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0203" )
+\CN["伊拉伊萨"]
+“也，再稍微……嗯……啊，呃，嗯！”
+
+这家伙越是兴奋的时候，越是细细地爱抚。
+
+: PlayVoice( "Voices/vo19_era0204" )
+\CN["伊拉伊萨"]
+“哈，哈，我变得热起来了……
+如果被着急的话……恩……太过悲伤了……”
+
+\CN["伊拉伊萨的未婚妻"]
+“还有一点……”
+
+明明一直都是温厚温柔的家伙……。
+
+这时突然浮现出嗜好性的微笑
+令人毛骨悚然。
+
+\CN["伊拉伊萨的未婚妻"]
+“因为我说过想要激烈
+放开乳头，这样——”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——紧紧地。
+
+//●演技：乳首を強くつねられて感じてしまっています
+: PlayVoice( "Voices/vo19_era0205" )
+\CN["伊拉伊萨"]
+“呜呜呜呜————！那，要是被拉得那么用力的话。”
+
+: PlayVoice( "Voices/vo19_era0206" )
+\CN["伊拉伊萨"]
+“啊……啊，我要去镇金了……嗯，嗯……
+哈、哈……一口气……嗯……嗯……”
+
+\CN["伊拉伊萨的未婚妻"]
+“渐渐变硬了呢……再用力揉搓……”
+
+: PlayVoice( "Voices/vo19_era0207" )
+\CN["伊拉伊萨"]
+“嗯，啊，啊，啊……那，那样做是不行的……！”……！
+只靠乳房就变奇怪了……”
+
+: PlayVoice( "Voices/vo19_era0208" )
+\CN["伊拉伊萨"]
+“啊……啊…啊……嗯，嗯……嗯，嗯！
+啊啊，嗯，嗯……啊啊，啊，啊……”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+浑身发冷的东西站了起来。
+
+//●演技：心の声です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0510002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0209" )
+\CN["伊拉伊萨"]
+（这么简单就被骂，真让人生气……但是……
+已经不行了……无法忍耐……）
+
+\CN["伊拉伊萨的未婚妻"]
+“伊拉伊萨先生，只是胸部就够了吗？
+想干吗？”
+
+: PlayVoice( "Voices/vo19_era0210" )
+\CN["伊拉伊萨"]
+“啊，真恶心……我好像忍不住了……。
+拜托了……让我吃醋……我想用你的手让我吃醋……”
+
+: PlayVoice( "Voices/vo19_era0211" )
+\CN["伊拉伊萨"]
+“啊，好漂亮啊……也，已经……啊，啊，啊
+哈……哈……好棒……好棒……”
+
+//●演技：食いしばって絶頂です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0212" )
+\CN["伊拉伊萨"]
+“呃，呃……嗯……恩————————！”
+
+//●演出：絶頂
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+吓我一跳！吓我一跳！阿飞！阿飞！
+
+只是被揉搓乳头，被粗暴地揉搓乳头，就很容易被咬。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_1_0410002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0213" )
+\CN["伊拉伊萨"]
+“哈……哈…哈……哈……哈……哈………哈……
+来、心情真好啊……”
+
+\CN["伊拉伊萨的未婚妻"]
+“这样啊。呵呵，你能满足我真是太好了。”
+
+一边这样说着，一边浮现出温柔的笑容。
+
+: PlayVoice( "Voices/vo19_era0214" )
+\CN["伊拉伊萨"]
+“确实很舒服，但是……”
+你不满意吗？”
+
+: PlayVoice( "Voices/vo19_era0215" )
+\CN["伊拉伊萨"]
+“被逗乐了，身体着火也没办法……。
+如果不是你的小鸡鸡的话就不会满足了……”
+
+: PlayVoice( "Voices/vo19_era0216" )
+\CN["伊拉伊萨"]
+“我希望你能插上银勃起的小鸡鸡……。
+我的女婿被耍得神魂颠倒，小鸡鸡
+打入……”
+
+明明还没有被摸到，就在那个和下腹的附近
+疼得难受。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_2_0510002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["伊拉伊萨的未婚妻"]
+“其实我也不能再忍耐了。”
+
+\CN["伊拉伊萨的未婚妻"]
+“伊拉伊萨先生甜蜜而性感的味道让人兴奋不已
+结束了……”
+
+: PlayVoice( "Voices/vo19_era0217" )
+\CN["伊拉伊萨"]
+“那就尽情地做吧……。
+你可以乱来，把我搞得乱七八糟……”
+
+被人温柔当然也很舒服
+果然，今晚本能地期待着被强烈的爱。
+
+\CN["伊拉伊萨的未婚妻"]
+“那么，要插吗？”
+
+: PlayVoice( "Voices/vo19_era0218" )
+\CN["伊拉伊萨"]
+“啊，快点来……。
+银的小鸡鸡，在我的{阴道内，内}里」
+
+//●ＣＧ差分：挿入、汗、愛液
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0311003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——滴溜溜地！嘘！嘘！嘘！
+
+: PlayVoice( "Voices/vo19_era0219" )
+\CN["伊拉伊萨"]
+“嗯……是、{插入，是}出来……啊…啊…啊……啊……
+硬的来……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+加油！嘘！噗噗！咕嘟咕嘟！嘘！
+真烦人！哼哼哼！
+
+\CN["伊拉伊萨的未婚妻"]
+“哈、哈、哈……在伊拉伊萨先生之中，真的很热血……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0100003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0220" )
+\CN["伊拉伊萨"]
+“你的小鸡鸡……嗯……吓得直哆嗦……
+啊，嗯，嗯！”
+
+刚才我也有，身体里面和外面都乱七八糟的
+变得敏感了。
+
+温暖什么的传达给我
+只是那样好像总会有办法的。
+
+\CN["伊拉伊萨的未婚妻"]
+“哇，好厉害……非常紧绷……嗯，呜！”！
+又严厉又迟钝……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+努古、goo、ズッ、グブウ……嘘……噗！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0200003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0221" )
+\CN["伊拉伊萨"]
+“恩是啊……啊，啊……啊啊啊……啊啊啊啊……啊啊啊……啊啊啊……
+呼……啊，啊啊啊啊啊，嗯……”
+
+//●読み：割り入って（わりいって）
+: PlayVoice( "Voices/vo19_era0222" )
+\CN["伊拉伊萨"]
+“女阴中，不断前进……我的{阴道内，内}里
+硬邦邦的加入……嗯，嗯，啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV19_era_aegi02" )
+一边强行推开阴道壁，小鸡鸡一边前进。
+
+下腹部紧紧地系着
+自己也明白了。
+
+: PlayVoice( "Voices/vo19_era0223" )
+\CN["伊拉伊萨"]
+“也，再来一点……到里面去……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0311003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0224" )
+\CN["伊拉伊萨"]
+“嗯……啊…啊啊……啊啊啊……啊啊……啊，啊……
+嗯————！”
+
+感觉很僵硬的瞬间
+全身发冷的电流跑过去。
+
+插入子宫口，直到小鸡鸡的前端碰到为止
+非常满足。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0225" )
+\CN["伊拉伊萨"]
+“呃，收到了……哈……啊……进到里面去……”
+
+\CN["伊拉伊萨的未婚妻"]
+“系得好厉害……呃……嗯…”
+
+: PlayVoice( "Voices/vo19_era0226" )
+\CN["伊拉伊萨"]
+“恩，哈……你喜欢我也没关系……”
+
+: PlayVoice( "Voices/vo19_era0227" )
+\CN["伊拉伊萨"]
+“女阴……擦了很多……变得很僵硬
+热呼呼的小鸡鸡，弄得乱七八糟……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘……嘘……嘘……嘘……嘘……嘘……嘘……嘘……嘘……
+用力……用力……用力……用力……用力……用力！
+
+收纳在阴道内的小鸡鸡慢慢地开始动。
+
+//●演技：緩やかなピストンです
+: PlayVoice( "Voices/vo19_era0228" )
+\CN["伊拉伊萨"]
+“啊啊啊啊啊……啊啊啊……啊啊啊……啊啊啊……啊啊啊
+啊，啊啊啊啊……啊，啊……啊啊啊啊啊！”
+
+: PlayVoice( "Voices/vo19_era0229" )
+\CN["伊拉伊萨"]
+“磨破了，好舒服……嗯……哈……嗯……！
+卡住了卡里，战战兢兢……”
+
+\CN["伊拉伊萨的未婚妻"]
+“啊啊哈……伊拉伊萨先生中突然蠢蠢欲动……”……
+好舒服……”
+
+为了使小鸡鸡适应而被抽插。
+
+褶在心爱的人的小鸡鸡身上缠绕
+追求了很深的亲密关系。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0100003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘……呜……啾……啾……呜……努奇……啾……
+慢吞吞……呜……努奇……呜……呜！
+
+//●演技：ピストンが速くなります
+: PlayVoice( "Voices/vo19_era0230" )
+\CN["伊拉伊萨"]
+“额，不断地溢出……声音，好厉害……”……
+这个，真不好意思……”
+
+: PlayVoice( "Voices/vo19_era0231" )
+\CN["伊拉伊萨"]
+“恩啊啊啊，啊，啊……啊啊啊啊啊！”
+
+\CN["伊拉伊萨的未婚妻"]
+“嗯，伊拉伊萨的，不断地向努鲁努尔
+”
+
+\CN["伊拉伊萨的未婚妻"]
+“伊拉伊萨先生，再……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0311003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——google！嘘！嘘！努哈！嘘！
+
+: PlayVoice( "Voices/vo19_era0232" )
+\CN["伊拉伊萨"]
+“啊啊啊啊！哈，哈，嗯……！嗯！”！
+哈，呜……嗯，啊，啊啊啊啊啊……！”
+
+存取越来越频繁。
+
+被用力摩擦阴道内而琴酒。
+
+\CN["伊拉伊萨的未婚妻"]
+“哈哈哈……真让人不爽，心情非常好。”
+
+: PlayVoice( "Voices/vo19_era0233" )
+\CN["伊拉伊萨"]
+“啊，我也……！嗯……也要更加激烈
+没关系……”
+
+: PlayVoice( "Voices/vo19_era0234" )
+\CN["伊拉伊萨"]
+“再搅拌一下……很烫，很舒服……。
+嗯……嗯，恩……乱七八糟的……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——嗯……嗯…嗯…嗯…嗯，嗯！
+
+抽插的速度会加快，爱液会被挤出。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0511003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0235" )
+\CN["伊拉伊萨"]
+“嘛，我在煮……嗯……刚才我才去的
+又……”
+
+: PlayVoice( "Voices/vo19_era0236" )
+\CN["伊拉伊萨"]
+“啊，又很有活力……啊啊…啊，好舒服……”……
+来……感觉…小鸡鸡心情太好了……”
+
+\CN["伊拉伊萨的未婚妻"]
+“伊拉伊萨先生，请再给我一点！
+因为是我，所以好几次都想耍帅！”
+
+\CN["伊拉伊萨的未婚妻"]
+“所以，更加激烈……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！
+嘘！嘘！嘘！嘘！嘘！
+
+//●演技：ピストンがすごく激しくなります
+: PlayVoice( "Voices/vo19_era0237" )
+\CN["伊拉伊萨"]
+“嗯，啊，啊，嗯，嗯，啊啊啊！”
+
+: PlayVoice( "Voices/vo19_era0238" )
+\CN["伊拉伊萨"]
+“哈，好激烈……好舒服……嘛，又是……”……
+好球、好球、好球……”
+
+腰擅自活动了。
+
+因为它能配合我的动作来行动
+快感越来越高。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0311003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0239" )
+\CN["伊拉伊萨"]
+“不，好球……好球……好棒……啊啊啊……好棒……”……
+嗯……嗯，嗯……恩…”
+
+: PlayVoice( "Voices/vo19_era0240" )
+\CN["伊拉伊萨"]
+“喂，你……怎么样……？
+啊哈……还有多久……”
+
+\CN["伊拉伊萨的未婚妻"]
+“其实我也是……已经到极限了……感觉很不错……”
+
+: PlayVoice( "Voices/vo19_era0241" )
+\CN["伊拉伊萨"]
+“那，那就一起吧……哈，哈……想和你在一起！
+想要被激烈的爱着，一起活下去……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！咕嘟咕嘟！骗人！
+
+\CN["伊拉伊萨的未婚妻"]
+“伊拉伊萨……哈，哈……也，已经……”
+
+把女阴卷起来那样激烈的拿出。
+
+从阴道口到阴道深处全部被责备——
+
+: PlayVoice( "Voices/vo19_era0242" )
+\CN["伊拉伊萨"]
+“不，没关系……就这样……小鸡，不要拔……”
+
+: PlayVoice( "Voices/vo19_era0243" )
+\CN["伊拉伊萨"]
+“我的{阴道内，内}……洒出来……精液，满满的
+{射精，だ}做……」
+
+\CN["伊拉伊萨的未婚妻"]
+“是、是……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！努哈！呼呼！嘘！
+嘘！嘘！加油！努迪奇！
+
+一边激烈地揉搓乳汁，一边腰的动作也变得更加激烈。
+
+: PlayVoice( "Voices/vo19_era0244" )
+\CN["伊拉伊萨"]
+“啊啊啊啊，擦破了……好球……好球、好球、好球……
+女阴好舒服……不，不好……”
+
+: PlayVoice( "Voices/vo19_era0245" )
+\CN["伊拉伊萨"]
+“一起……拿出来，希望你能在里面拿出……
+啊……啊…啊啊啊啊……啊啊啊♥</color>」
+
+\CN["伊拉伊萨的未婚妻"]
+“……然后，我出去……”
+
+\CN["伊拉伊萨的未婚妻"]
+“嗯……嗯……呜呜……”
+
+//●演出：射精
+//●ＣＧ差分：挿入、射精精液
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0411003_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+参考翻译！看！德彪乌乌！
+
+: PlayVoice( "Voices/vo19_era0246" )
+\CN["伊拉伊萨"]
+“啊，好烫……呃……啊…啊…啊…啊啊……啊啊……。
+{射精，然后}……满满的，在里面……」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0311003_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0247" )
+\CN["伊拉伊萨"]
+“呃……呃……恩啊啊啊啊啊啊啊啊啊！？”
+
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咚！咚！咚！咚！咚！
+咕嘟咕嘟咕嘟咕嘟地咕噜咕噜咕噜咕噜咕噜咕噜咕噜咕噜咕噜！！！
+
+: PlayVoice( "Voices/vo19_era0248" )
+\CN["伊拉伊萨"]
+“啊……啊…啊…啊啊……恩……啊啊啊啊啊啊！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0100003_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0249" )
+\CN["伊拉伊萨"]
+“啊，好温暖啊，好厉害{射精，所以}……哈
+小鸡鸡战战兢兢地……不断地溢出……”
+
+\CN["伊拉伊萨的未婚妻"]
+“呼……呼……哈……哈……哈……哈……”
+
+: PlayBackVoice( "Voices/BGV19_era_jigo01" )
+好好地收纳到根部的小鸡鸡。
+
+扑通一声巨响脉，注入精液。
+
+//●ＣＧ差分：挿入、精液溢れ
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0511013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0250" )
+\CN["伊拉伊萨"]
+“好厉害啊……嗯……小鸡鸡，{阴道内，内}闹得很凶……
+精液，溢出来了……”
+
+\CN["伊拉伊萨的未婚妻"]
+“心情太好了，不知不觉……头，发发呆。”
+
+: PlayVoice( "Voices/vo19_era0251" )
+\CN["伊拉伊萨"]
+“嘿嘿……如果能心情变好到那种程度的话
+好开心……”
+
+: PlayVoice( "Voices/vo19_era0252" )
+\CN["伊拉伊萨"]
+“我也被你的小鸡鸡给吓了一跳……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_2_0311112_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+小鸡鸡被拔出。
+
+刚刚还在里面呢
+马上就想要得不得了。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_2_0511112_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0253" )
+\CN["伊拉伊萨"]
+“呐，还不会吧？”
+
+\CN["伊拉伊萨的未婚妻"]
+“是的，好像还能继续努力。
+今晚我会好好爱你的”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_2_0411112_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0255" )
+\CN["伊拉伊萨"]
+“什么……！？啊，我爱你……”
+
+\CN["伊拉伊萨的未婚妻"]
+“不行吗？”
+
+: PlayVoice( "Voices/vo19_era0256" )
+\CN["伊拉伊萨"]
+“你知道我不会拒绝你这么说吗？”
+
+\CN["伊拉伊萨的未婚妻"]
+“再见！”
+
+: PlayVoice( "Voices/vo19_era0257" )
+\CN["伊拉伊萨"]
+“啊，啊……今晚我想让你做到底……”
+
+//●背景：空・夜
+//Yoshi：背景
+: StopBackVoice()
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evl_b001_1_3_0511013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: ShowWnd()
+然后，结果，两个人H到尽全力为止。
+
+明明是出发去大和的前夜
+直到黎明都没有休息，激烈地相爱着。
+
+//Yoshi：背景消去
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_B06_80" )
+: FadeOut( 0.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

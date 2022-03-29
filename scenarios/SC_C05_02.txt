@@ -1,0 +1,699 @@
+//========================================================
+//○エルフの里１
+//========================================================
+*sc001
+//●場所：崎珠・居酒屋
+//●視点：無黒視点
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——晚上接到姐姐的邀请去了居酒屋。
+
+//●演出：場面転換トランジション
+//●背景：居酒屋
+//Yoshi：背景、茶屋・夜
+//強制着衣
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Pub01", 0.0 )
+: DrawChara( "Mukuro", 0, 0, 0, 0.0, 0.0, 3, "RC" )
+: DrawChara( "Mei", 19, 0, 0, 0.0, 0.0, 4, "LC" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0282" )
+\CN["冥"]
+“不好意思，这种时候叫我。”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk2842" )
+\CN["无黑色"]
+“不，没关系。只是姐姐在这种地方
+叫我出来真稀奇啊”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0283" )
+\CN["冥"]
+“因为也有只能在这种场合才能说的话。”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0284" )
+\CN["冥"]
+“总之，先拜托你点什么吧。”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2843" )
+\CN["无黑色"]
+“嗯，那就用盐拌毛豆和烤鸡的拼盘。
+还有，请喝茶”
+
+\CN["店长"]
+“爱啊”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0285" )
+\CN["冥"]
+“什么嘛，不点酒吗？”
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk2844" )
+\CN["无黑色"]
+“我不擅长喝酒，因为必须要影响到明天……。
+那样的姐姐呢？我好像没喝酒”
+
+: DrawChara( "Mei", 7, 0)
+: PlayVoice( "Voices/vo09_mei0286" )
+\CN["冥"]
+“喝酒只在喜庆的时候喝。
+因为我不是坚强的人”
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0287" )
+\CN["冥"]
+“这家店的菜很好吃。我很喜欢。”
+
+\CN["店长"]
+“恩。如果能被美女这么说的话我会很开心的。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+然后一边享受料理，一边聊天。
+
+但是“姐姐为什么进入白夜了？”平时
+无论如何都想问一下
+我做不到。
+
+吃完菜后，店主还给我提供了特别服务
+在咂着羊羹之后，姐姐用神妙的表情跟我说。
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo09_mei0288" )
+\CN["冥"]
+“你不是一直在烦恼吗？”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2845" )
+\CN["无黑色"]
+“……嗯”
+
+掩饰掩饰也没有意义。
+
+现在是不是迷失了自己该做的事情？
+毫不隐瞒地说出。
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0289" )
+\CN["冥"]
+“原来如此……我以为是这样。”
+
+: DrawChara( "Mukuro", 36, 0)
+: PlayVoice( "Voices/vo00_muk2846" )
+\CN["无黑色"]
+“姐姐以前没有这样的事吗？”
+
+: DrawChara( "Mei", 4, 0)
+: PlayVoice( "Voices/vo09_mei0290" )
+\CN["冥"]
+“肯定有。
+现在也经常会迷路”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2847" )
+\CN["无黑色"]
+“……是吗？姐姐也是这样。”
+
+只是听了这句话，总觉得心里很轻松。
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0291" )
+\CN["冥"]
+“我想问你一个问题，你为什么在挥刀？”
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 23, 0)
+	: PlayVoice( "Voices/vo00_muk2848" )
+	\CN["无黑色"]
+“为什么？”？
+……是为了保护谁吗……？”
+
+现在的话有点让人吃惊。
+
+鬼灯里的我说着“为了重要的人”挥舞着刀
+我以为。
+
+但是，进入白夜之后会怎么样呢？
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk2849" )
+	\CN["无黑色"]
+（光是被命令的事情淡泊地处理着，是不行的
+没有吗？）
+
+注意到了这一点，往往会低下头。
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk2850" )
+	\CN["无黑色"]
+“为了什么，为了完成工作，为了保护自己
+一定”
+
+杀了被命令杀死的对方，向自己露出了獠牙
+为了杀人。除此之外还有什么呢？
+
+	//●演技：心の声です
+	: DrawChara( "Mei", 0, 0)
+	: PlayVoice( "Voices/vo09_mei0292" )
+	\CN["冥"]
+（……{白夜，这边}来了之后
+感觉无黑变了很多）
+
+	//●演技：心の声です
+	: DrawChara( "Mei", 4, 0)
+	: PlayVoice( "Voices/vo09_mei0293" )
+	\CN["冥"]
+（对杀人什么都不想了……。
+这样下去，早晚……）
+
+//●分岐終了
+: endif
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0294" )
+\CN["冥"]
+“这是我头上的命令，你从明天开始要去‘精灵之乡’
+让我去”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2851" )
+\CN["无黑色"]
+“从头开始……！？”
+
+直接向干部也不是什么的我下达命令？
+对那件事感到吃惊，不由得睁大了眼睛。
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2852" )
+\CN["无黑色"]
+“而且，精灵之乡……？
+虽然是没听说过的地方，但是姐姐，那里在哪里……？”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0295" )
+\CN["冥"]
+“你知道妖精之森吗？”
+
+这是位于崎珠北部的不可接近的森林。
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0296" )
+\CN["冥"]
+“那里曾经有一个只有精灵居住的村庄
+但是……”
+
+: DrawChara( "Mei", 4, 0)
+: PlayVoice( "Voices/vo09_mei0297" )
+\CN["冥"]
+“你在那里做什么？
+详细情况我也没听说过”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2853" )
+\CN["无黑色"]
+“总之先去吧……”
+
+如果那是命令的话只能服从。
+
+因为是脑子里的事，所以有什么想法吧。
+姐姐当然也应该是这样接受的。
+
+//●演技：心の声です
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0298" )
+\CN["冥"]
+（头部拥有很高的无黑能力。
+我想是为了无黑地剥去一层皮吧）
+
+//●演技：心の声です
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0299" )
+\CN["冥"]
+（怎么说呢，在精灵的村庄里，即使是现在，也曾经住在那里
+我听说还有精灵的亡灵。）
+
+//●演出：暗転
+//＠場所移動：白夜の隠れ家・入口
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: SetMission( "SC_C05_02_1", "InProgress" )
+: FastTravelMapOn( "YoseiForest" )
+: DestinationMap( "Map_Dungeon22_01_ElfnoSato" )
+: SideEpisodeFlagUp( "episode48" )
+: SideEpisodeFlagUp( "episode50" )
+: SideEpisodeFlagUp( "episode51" )
+: SideEpisodeFlagUp( "episode52" )
+: ShowWnd()
+事件信息更新了。
+<^FF0000>侧面小故事更新了！</color>
+
+//パーティーを無黒に変更
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Sakitama" )
+: FastTravelMapOn( "Yoshinohara" )
+: FastTravelMapOn( "HiragaLavoWay" )
+: FastTravelMapOn( "Mizukami" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: FastTravelMapOn( "TakahamaPort" )
+: FastTravelMapOn( "Orikasa" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "NasunoYama" )
+: FastTravelMapOn( "YoseiForest" )
+: FadeOut( 1.0 )
+: Wait()
+//崎珠　白夜前に移動
+: LoadMap( "Map_Town06_01_Sakitama", "FromByakuya", "Scenarios/Map_Town06_Sakitama_Init*Map01")
+
+//========================================================
+//○エルフの里２
+//========================================================
+*sc002
+\CI["准备好了！"]
+\CI["再次确认"]
+这前面好像是精灵之乡……。
+
+//選択肢２の場合、リターンする
+: if ($choice == 1) Return endif
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon22_01_ElfnoSato", "", "Scenarios/SC_C05_02*sc002_1" )
+
+*sc002_1
+//●場所：エルフの里
+//●状況：エルフの里に辿り着いた無黒は辺りを見渡す
+: HideWnd()
+: FadeIn( 1.0 )
+: Wait()
+: PlayBgm("BGM/48_Goodnight")
+: RpgCharaBatch( "Player"	\
+:	"Speed", 6.0	\
+:	"MoveUp", 17 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2854" )
+: ShowWnd()
+\CN["无黑色"]
+“这里是精灵之乡……以前只有精灵居住的村庄
+据说有……”
+
+那里变成了废墟，精灵们生活的痕迹
+只剩下一点点。
+
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk2855" )
+\CN["无黑色"]
+“怎么想都不是因为没有人而毁灭的。
+感觉是被兵器或者魔术之类的东西吹跑了”
+
+//●演出：！マーク出す
+//●演出：エルフの亡霊が現れる
+//●分岐：［服装］着衣の場合
+: HideWnd()
+: RpgCharaTurn( "Player", "D" )
+: RpgCharaOn("Osa2")
+: ShowWnd()
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	\CN["精灵之灵"]
+“这里有什么事？精灵的小姑娘。”
+
+	//●読み：主（あるじ）
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk2856" )
+	\CN["无黑色"]
+“……和森林里出现的恶灵是无法比拟的对手。
+这里的主人是什么？”
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	\CN["精灵之灵"]
+“来这里之前衣服被撕掉了吗
+还是纯粹的变态？”
+
+	: DrawChara( "Mukuro", 39, 1, 4)
+	: PlayVoice( "Voices/vo00_muk2857" )
+	\CN["无黑色"]
+“怎么，怎么都行吧，没什么……。
+因为喜欢而且是裸体……”
+
+	\CN["精灵之灵"]
+“曝光狂能走到这里吗，世界也到了尽头了
+但是——”
+
+//●分岐終了
+: endif
+\CN["精灵之灵"]
+「好像并不是来破坏我们沉睡的村庄啊。
+嗯……你是这样啊……原来如此”
+
+嗯？一边盯着我看一边嘟囔着。
+
+//●分岐：悪堕ちＬＶが３の場合
+: if( $evilLevel == 3 )
+//●演技：心の声です
+	: DrawChara( "Mukuro", 24, 0, 0)
+	: PlayVoice( "Voices/vo00_muk2858" )
+	\CN["无黑色"]
+（不太清楚，会不会毁灭？）
+
+我拿的刀虽然不懂道理，但是就算是恶灵也能斩断。
+对方看起来很麻烦，还是先砍了比较好
+可以吗？
+
+	\CN["精灵之灵"]
+（那家伙的眼睛充满了疯狂。这样下去的话确实能打开人心
+虽然会变成失去一切的快乐杀人鬼……）
+
+//●分岐終了
+: endif
+\CN["精灵之灵"]
+“看起来，好像很有力气。”
+
+从精灵的灵魂中感受到不可思议的魔力。
+
+\CN["精灵之灵"]
+“请让我试试你的力量。”
+
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：エルフの里長の亡霊
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：エルフの里長の亡霊,1,1,1
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Forest01_01", "BGM/22_BM003", 1053, -1, -1, "Scenarios/SC_C05_02*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○エルフの里３
+//========================================================
+*sc003
+//●状況：戦闘終了後
+//●演出：戦闘アクション演出を入れて、距離を取る
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: ShowWnd()
+\CN["精灵之灵"]
+“果然啊。你有达到的素质。”
+
+//●演技：戦闘後、疲労しています
+: DrawChara( "Mukuro", 36, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2859" )
+\CN["无黑色"]
+“……达到的素质？是什么意思？”
+
+\CN["精灵之灵"]
+“你知道{黑夜叉，暗黑妖精}吗？”
+
+: DrawChara( "Mukuro", 0, 1, 0)
+: PlayVoice( "Voices/vo00_muk2860" )
+\CN["无黑色"]
+“我知道，但是应该会出现在故事里吧？”
+
+\CN["精灵之灵"]
+“‘消灭生物的天敌’和
+说来说去。然后——”
+
+\CN["精灵之灵"]
+“数十年前，突然出现在大和的{黑夜叉，暗黑妖精}
+毁灭了我们的村庄”
+
+: DrawChara( "Mukuro", 1, 1)
+: PlayVoice( "Voices/vo00_muk2861" )
+\CN["无黑色"]
+“就算毁灭了，{黑夜叉，暗黑精灵}也不是虚构的存在
+没有吗！？”
+
+精灵的灵魂静静地摇头
+
+\CN["精灵之灵"]
+“看到村子里的惨状就知道了吧？”
+
+\CN["精灵之灵"]
+“只有一个人{黑夜叉，暗黑精灵}让村子变得体无完肤
+被消灭了」
+
+//●演技：言葉が出ないという感じです
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk2862" )
+\CN["无黑色"]
+「…………」
+
+//●備考：何者か＝達磨です
+\CN["精灵之灵"]
+“那个{黑夜叉，暗黑妖精}在那之后，被什么人杀害了
+我听说，虽然如此，死去的人和村落还是和原来一样
+”
+
+\CN["精灵之灵"]
+“即使我们在这片土地上只剩下灵魂存在，我们仍要停留的理由是……”
+只有一个”
+
+\CN["精灵之灵"]
+“如果，又是{黑夜叉，暗黑妖精}——
+或者，为了在威胁进一步出现时保护大和
+为了发现能对抗的人”
+
+\CN["精灵之灵"]
+“小丫头啊，你有可能会到{黑夜叉，暗黑妖精}。
+是成为大和的守护者呢，还是成为毁灭的威胁呢
+就看你了……”
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	//●演技：自分に眠る力に怖さを覚えています
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk2863" )
+	\CN["无黑色"]
+“是吗，是吗……我有那样的力量……”
+
+我能成为{黑夜叉，暗黑妖精}吗……。
+
+{黑夜叉，暗黑精灵}我并没有亲眼看到
+无法想象。
+
+但是，那样强大的力量沉睡在自己身上
+我知道这件事有点害怕了。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶが３の場合
+: else
+	//●演技：自分に眠る強大な力に嬉しさを覚えています
+	: DrawChara( "Mukuro", 26, 0)
+	: PlayVoice( "Voices/vo00_muk2864" )
+	\CN["无黑色"]
+“是吗？我有那么大的力量……”
+
+我能成为{黑夜叉，暗黑妖精}吗……。
+
+自己心中沉睡着无法想象的{暴力，力量}。
+这么一想，笑容就自然地溢出来了。
+
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2865" )
+\CN["无黑色"]
+“怎么做才能{黑夜叉，暗黑妖精}呢？”
+
+\CN["精灵之灵"]
+“我不知道。”
+
+\CN["精灵之灵"]
+“据说，重要的{存在，东西}
+有说是快要失去的时候，也有说是濒临死亡的时候”
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk2866" )
+\CN["无黑色"]
+“是吗……”
+
+突然醒来之类的感觉吧。
+说起来只是有可能性是不确定的。
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2867" )
+\CN["无黑色"]
+“那么，今后也只能锻炼自己的技能了。”
+
+举起刀来重新振作精神。
+
+我为什么挥刀？
+——为了什么而活？
+我想为了找到那个答案而活下去。
+
+\CN["精灵之灵"]
+“那把刀在战斗的时候就很在意……。
+你是在哪里弄到的？”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2868" )
+\CN["无黑色"]
+「怎么说呢，仓库里的东西来得正好，所以一直
+只是在用吗？”
+
+\CN["精灵之灵"]
+“嗯。神刀选择了使用者，在使用者面前出现了自己的身影。
+你的那把刀，恐怕是《天丛云，糖的云》
+
+\CN["精灵之灵"]
+“曾经被称为毁灭之苍的鬼使用过的神刀
+这是神做的刀”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2869" )
+\CN["无黑色"]
+“这是那么厉害的刀啊……。
+怪不得灵也会被斩断的”
+
+\CN["精灵之灵"]
+“女儿啊，在刀前——”
+
+把刀伸到面前，精灵的灵魂开始念叨着什么。
+
+\CN["精灵之灵"]
+「■■■■■■■■■■■■■■■■■■■■■■■■■■■」
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_AnimeL_Up01" )
+: PlayAnim( "Animations/AnimeL_Up01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+没听过的话在流动。
+或许是出于对这句话的共鸣，天丛云开始发出强烈的光芒。
+
+//●演出：天叢雲に光が集まっていく
+: DrawChara( "Mukuro", 1, 0 , 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk2870" )
+\CN["无黑色"]
+“光聚集在刀上……？”
+
+\CN["精灵之灵"]
+“这是我们通过奉献灵魂来解开封印的。
+现在还在彷徨的我们的同胞们……”
+
+\CN["精灵之灵"]
+「呼呼，在这里化身为恶灵而彷徨的我们
+终于可以回去了”
+
+精灵的灵魂露出平静的笑容。
+
+\CN["精灵之灵"]
+“这样天丛云的封印应该就解开了。”
+
+\CN["精灵之灵"]
+“之后就拜托你了。希望你能成为拯救的存在。”
+
+//●演出：エルフの霊　消える
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaOff("Osa2")
+: ShowWnd()
+留下这样的话，精灵的灵魂像是融化了一样
+消失了。
+
+: DrawChara( "Mukuro", 23, 0 , 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk2871" )
+\CN["无黑色"]
+“剩下的就看我了……”
+
+总之，先回去一次吧。
+回去和姐姐商量一下吧。
+
+//●演出：無黒　退場する
+//●演出：暗転
+//※無黒　武器名変更
+: CharaSetWeapon( "Mukuro", 100 )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+: CharaAddSkill( "Mukuro", 50600 )
+无黑学会了被动技能“天丛云之力”。
+
+: SetMission( "SC_C05_02_1", "Successed" )
+: SetMission( "SC_C05_03_1", "InProgress" )
+: DestinationMap( "Map_Town07_02_Byakuya" )
+事件信息更新了。
+
+: $money += 5000
+无黑得到了报酬！
+
+//＠場所移動：崎珠
+//●シーンエンド
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Town06_01_Sakitama", "", "Scenarios/Map_Town06_Sakitama_Init*Map01")

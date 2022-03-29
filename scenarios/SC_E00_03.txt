@@ -1,0 +1,1684 @@
+//========================================================
+//○ゼノくんが戻ってきた日のこと
+//========================================================
+//●背景：鬼灯屯所
+//Yoshi：背景、和室・昼
+: StopBgm( 0.0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 1.0 )
+: Wait()
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 5 )
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+//●視点：黄菜子視点
+//●演出：黄菜子　登場する
+: PlayVoice( "Voices/vo02_kin0929" )
+\CN["黄菜子"]
+“我回来了。”
+
+: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom1721" )
+\CN["桃子"]
+“欢迎回来，黄菜子。发生什么事了吗？”
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0930" )
+\CN["黄菜子"]
+“不，我没有特别要说的……。
+甚至在平民区有醉汉吵架”
+
+战斗结束后，维克托尔骑士团的各位回国了
+早，几个月——
+
+鬼灯现在由里奥先生担任局长恢复过来了。
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom1722" )
+\CN["桃子"]
+“黄菜子，你回来的时候不好意思
+港口那边好像发生了什么事，能不能快点去？”
+
+: DrawChara( "Kinako", 17, 0)
+: PlayVoice( "Voices/vo02_kin0931" )
+\CN["黄菜子"]
+“好的！我知道了！”
+
+//●演出：黄菜子　退場する
+: HideWnd()
+: chara = "Kinako"; lay = 0; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+//●演技：ゼノが戻ってくることを知っている
+: DrawChara( "Momo", 2, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1723" )
+\CN["桃子"]
+“呵呵……进展很顺利呢。”
+
+: DrawChara( "Gin", 17, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["银子"]
+“小姐，真是坏脸啊。”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1724" )
+\CN["桃子"]
+“坏脸色……。
+小银，对恋人不是没有那个吗？”
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“小姐无论长什么样的脸都很漂亮。”
+
+: layer = 2; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom1725" )
+\CN["桃子"]
+“……对，没那么突然……。
+啊呜……脸好烫……”
+
+\CN["鬼灯队士・女A"]
+“小银，你越来越不客气了……”
+
+\CN["鬼灯队士・女B"]
+“话说，我们也在，但是完全看不到。”
+
+//●演出：場面転換トランジション
+//●背景：港町・昼
+//Yoshi：背景、村04
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Village04_01", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/03_CM003")
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0932" )
+\CN["黄菜子"]
+“我听桃先生说发生了什么事……”
+
+好不容易走到了港口，感觉和平时一样。
+
+工作的人很有活力，感觉很热闹。
+
+\CN["港口的男子1"]
+“今天是从维尔来的定期船来的日子吗？”
+
+\CN["港口的男子2"]
+“他现在到了。那么，我要忙了。”
+
+听到维克托尔这个词，果然会心动。
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0933" )
+\CN["黄菜子"]
+“Zno君，现在怎么样了？”
+
+任务结束后，男孩回到了维克托尔。
+
+明明和我年龄差不多，却还在努力当骑士团参谋的厉害的人。
+
+: DrawChara( "Kinako", 8, 0)
+: PlayVoice( "Voices/vo02_kin0934" )
+\CN["黄菜子"]
+「…………」
+
+来的只是定期船。
+骑士团的参谋泽诺君不会来的。
+
+我知道这一点，但等我注意到了
+我的脚朝向定期船。
+
+//●演出：場面転換トランジション
+//●背景：港・昼
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: DrawImage( 1, 0, "BGImage/Bg_Harbor01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+好容易走到了船的地方，港口的男人们不停地忙碌着
+我正在卸货。
+
+: DrawChara( "Kinako", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0935" )
+\CN["黄菜子"]
+“果然，没理由来啊……”
+
+虽然知道，但还是很沮丧。
+
+桃子说港口出了什么事
+我正想着不做那个调查的时候。
+
+//●演出：ゼノ　登場する
+: StopBgm( 1.0 )
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Xeno", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["奇诺"]
+“……黄菜子？”
+
+//●演技：いきなりのゼノの登場に言葉が出ないぐらい驚いています
+: DrawChara( "Xeno", 1, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Kinako", 7, 0, 0, 0.5, 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo02_kin0936" )
+\CN["黄菜子"]
+「…………！！」
+
+: PlayBgm("BGM/48_Goodnight")
+突然说不出话来。
+
+: PlayVoice( "Voices/vo02_kin0937" )
+\CN["黄菜子"]
+“zeno君……为什么……”
+
+: DrawChara( "Xeno", 9, 0)
+\CN["奇诺"]
+“嘛，那个，有各种各样的……。
+我在大和”
+
+你会回答我绞尽脑汁想出来的话。
+
+: DrawChara( "Kinako", 12, 0)
+: PlayVoice( "Voices/vo02_kin0938" )
+\CN["黄菜子"]
+“……大和……？”
+
+: DrawChara( "Xeno", 3, 0)
+\CN["奇诺"]
+“嗯，我决定作为驻在员待在大和。”
+
+泽诺君又来了。
+说是在大和……。
+
+由于感情波动过大
+我不知道该做什么。
+
+: DrawChara( "Kinako", 6, 0)
+: PlayVoice( "Voices/vo02_kin0939" )
+\CN["黄菜子"]
+“杰诺君……！”
+
+//●ＳＥ：抱きつく音
+: PlaySe( "SE/Se_Cloth01" )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 12, 1, 0, 0.5, 0.0, 2, "C" )
+: chara = "Kinako"; lay = 2 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+//: DrawChara( "Xeno", 10, 1)
+\CN["奇诺"]
+“……来，黄菜子”
+
+回过神来发现自己已经飞进了杰诺君的心中。
+
+: DrawChara( "Kinako", 5, 1)
+: PlayVoice( "Voices/vo02_kin0940" )
+\CN["黄菜子"]
+“……泽诺……”
+
+把脸埋在他的胸膛里。
+
+简直像做梦一样。
+如果这是梦的话，请不要醒来。
+
+: HideWnd()
+: fadein_cha = "Xeno"; fadeout_cha = "Kinako"; face = 3; hoho = 0; pose = 0;
+: Call( "Scenarios/Common*FgFocus" )
+: ShowWnd()
+\CN["奇诺"]
+「…………」
+
+泽诺君会把我抱回去。
+
+仿佛被温暖包围着的感觉。
+在内心深处冻结的东西慢慢地融化了出来。
+
+//●演出：場面転換トランジション
+//●背景：宿屋・夜
+//Yoshi：背景、和室
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Xeno", 0.0 )
+: ResetLayer(2)
+: ResetLayer(3)
+: DrawImage( 1, 0, "BGImage/BG_Room06_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+然后，马上就来了。
+
+桃子先生来了联络，说在港口发生的事情顺利解决了。
+然后，他说今天就这样休息。
+
+: DrawChara( "Kinako", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0941" )
+\CN["黄菜子"]
+“桃子，你一定全都知道，那种事……”
+
+希望我能尽早和你见面
+是你为我做的吧。
+
+: DrawChara( "Xeno", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["奇诺"]
+「…………」
+
+因为还想在一起
+我跟着到了泽诺君住的旅店。
+
+就这样和男孩子两个人——
+明明有很多话想说，但是一直七上八下的。
+
+//●演出：↓スクリプト時、合わせセリフに修正
+: DrawChara( "Kinako", 12, 0)
+: DrawChara( "Xeno", 9, 0)
+: PlayVoice( "Voices/vo02_kin0942" )
+\CN["黄菜子和泽诺"]
+“啊，那个……”
+
+//: DrawChara( "Xeno", 9, 0)
+//\CN["ゼノ"]
+//「あ、あの……」
+……语言重叠了。
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Kinako", 8, 1)
+: PlayVoice( "Voices/vo02_kin0943" )
+\CN["黄菜子"]
+“啊……”
+
+: DrawChara( "Xeno", 8, 1)
+\CN["奇诺"]
+「…………」
+
+目光相对的话，因为害羞脸变得通红。
+
+明明一直想见你的。
+明明一直想看你的脸。
+
+啊，那样的话，会很害羞的……。
+
+: DrawChara( "Xeno", 5, 1)
+\CN["奇诺"]
+“是……是……是……是……”
+
+: DrawChara( "Kinako", 0, 1)
+: PlayVoice( "Voices/vo02_kin0944" )
+\CN["黄菜子"]
+“杰诺？”
+
+: DrawChara( "Xeno", 4, 1)
+\CN["奇诺"]
+“……好”
+
+杰诺深呼吸，从正面看着我的眼睛。
+
+用决心了什么的感觉的意志强的瞳孔，凝视着。
+
+: DrawChara( "Xeno", 5, 1)
+\CN["奇诺"]
+“我无论如何都想见黄菜子，所以回来了。
+回到维克托尔也只想着黄菜子”
+
+: DrawChara( "Kinako", 6, 1)
+: PlayVoice( "Voices/vo02_kin0945" )
+\CN["黄菜子"]
+“哇，我也是……。
+没有一天不去想杰诺君”
+
+分别之际互相传达心意
+从那以后，没有一天没有不考虑Zno君的事情。
+
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Xeno", 0.5 )
+据说那就是泽诺君也一样
+已经，充满了自己也无可奈何的心情。
+
+//●ＣＧ：初体験愛撫
+//●ＣＧ差分：着衣・キス・顔アップ
+: StopBgm( 0.5 )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_1_0110001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/33_H_LOVE")
+: ShowWnd()
+\CN["奇诺"]
+“……黄菜子”
+
+//●演技：キスされています
+: PlayVoice( "Voices/vo02_kin0946" )
+\CN["黄菜子"]
+“嗯……”
+
+不知从哪边开始，嘴唇互相接触。
+
+一边牵手，一边一直合着嘴唇。
+
+: PlayVoice( "Voices/vo02_kin0947" )
+\CN["黄菜子"]
+“嗯……嗯……嗯……啊，哈……谢乃……
+嗯……嗯…中…”
+
+身体一下子热了起来。
+
+头脑也突然清醒了，就决定了泽诺君回国的那一天
+虽然做的事情是一样的，但是感觉完全是不同的东西。
+
+: PlayVoice( "Voices/vo02_kin0948" )
+\CN["黄菜子"]
+“中、中……嗯……嗯……嗯……嗯……”
+
+\CN["奇诺"]
+“黄菜子……嗯……嗯……”
+
+: PlayVoice( "Voices/vo02_kin0949" )
+\CN["黄菜子"]
+“嗯……ze，zeno君……？”
+
+杰诺的手碰到胸口。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_2_0211001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["奇诺"]
+“啊……！对不起……”
+
+慌慌张张要放开手的zeno君。
+
+但是，请自己牵着zeno君的手。
+
+: PlayVoice( "Voices/vo02_kin0950" )
+\CN["黄菜子"]
+“没关系，你可以做你想做的事……”
+
+: PlayVoice( "Voices/vo02_kin0951" )
+\CN["黄菜子"]
+“我也不讨厌泽诺碰我这里。”
+
+\CN["奇诺"]
+“……那么，再见……”
+
+杰诺很害怕。
+就像对待易碎品一样触摸我的胸部。
+
+: HideWnd()
+: evfile = "evc_b009_1_2_0311001_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+//●演技：乳房を愛撫されています
+: PlayVoice( "Voices/vo02_kin0952" )
+\CN["黄菜子"]
+“嗯，啊啊……啊…嗯……嗯……”
+
+\CN["奇诺"]
+“啊，那个，你太强了吗？”
+
+: PlayVoice( "Voices/vo02_kin0953" )
+\CN["黄菜子"]
+“嗯，不……有点不好意思……”
+
+: PlayVoice( "Voices/vo02_kin0954" )
+\CN["黄菜子"]
+“我还以为你在摸我呢，不知道为什么
+变得很开心……”
+
+虽然也有害羞的心情
+但是，能接触到喜欢的人我一直很开心。
+
+: HideWnd()
+: evfile = "evc_b009_1_2_0211001_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0955" )
+\CN["黄菜子"]
+“嗯，啊……啊啊……嗯……啊啊……”
+
+\CN["奇诺"]
+“黄菜子的柔软……做成豆腐……”
+
+: PlayVoice( "Voices/vo02_kin0956" )
+\CN["黄菜子"]
+“是吗，是吗……？如果再大一点的话，就指的是zeno君
+也许能让我更开心……”
+
+\CN["奇诺"]
+“不，因为是黄菜子所以没关系。
+因为是黄菜子的胸，所以我也非常兴奋”
+
+: PlayVoice( "Voices/vo02_kin0957" )
+\CN["黄菜子"]
+“这样啊，因为是我……嘿嘿…”
+
+你这么一说我就高兴得不得了。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_1_0110001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：キスです
+: PlayVoice( "Voices/vo02_kin0958" )
+\CN["黄菜子"]
+“嗯……嗯，嗯……嗯……”
+
+\CN["奇诺"]
+“……黄菜子……嗯……！”
+
+//●演技：ゼノの舌が入ってきます
+: PlayVoice( "Voices/vo02_kin0959" )
+\CN["黄菜子"]
+“嗯……嗯……！”
+
+杰诺君的舌头进来了，不由得睁开了眼睛。
+
+但是……。
+
+//●演技：ディープキスです
+: PlayVoice( "Voices/vo02_kin0960" )
+\CN["黄菜子"]
+“嗯，嗯……嗯，嗯，嗯，嗯，嗯，嗯……”……
+嗯，小紫，小悠……嗯…呃……”
+
+: PlayVoice( "Voices/vo02_kin0961" )
+\CN["黄菜子"]
+“zeno，小君……嗯，我知道了！
+呜、呜、呜！”
+
+\CN["奇诺"]
+“……恩”
+
+把自己的舌头缠绕在进嘴里的zeno君的舌头上。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0962" )
+\CN["黄菜子"]
+（这一定是……大人的吻……。
+我和Zno君接吻了……）
+
+: PlayVoice( "Voices/vo02_kin0963" )
+\CN["黄菜子"]
+“喂，嗯……呃，中，珠露露……
+嗯，嗯，嗯，嗯，嗯，嗯”
+
+变得什么都不能考虑。
+
+被摸到胸部的话，身体的深处就会紧张。
+
+如果在这种状态下舌头互相缠绕的话
+头脑被一种要融化的感觉包围着。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_2_0211001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：口を離します
+: PlayVoice( "Voices/vo02_kin0964" )
+\CN["黄菜子"]
+“嗯，嗯……哈，哈……”
+
+: PlayVoice( "Voices/vo02_kin0965" )
+\CN["黄菜子"]
+“希望你再多摸一下……多摸一下你
+想要……”
+
+\CN["奇诺"]
+“我也想……更多地接触黄菜子……”
+
+: PlayVoice( "Voices/vo02_kin0966" )
+\CN["黄菜子"]
+“嗯，嗯，嗯……啊，啊，嗯……”
+
+包裹着，用温柔的手揉搓着。
+
+渐渐地，泽诺的手向下伸了出来。
+
+//●ＣＧ差分：手マン（下着）
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_3_0310001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：アソコに指が触れます
+: PlayVoice( "Voices/vo02_kin0967" )
+\CN["黄菜子"]
+“嗯……嗯！？”
+
+\CN["奇诺"]
+「…………」
+
+: PlayVoice( "Voices/vo02_kin0968" )
+\CN["黄菜子"]
+“只是有点吃惊……。
+如果你想摸他的话……”
+
+我把身体交给了杰诺君。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——中。
+
+: PlayVoice( "Voices/vo02_kin0969" )
+\CN["黄菜子"]
+“嗯……那、那里……啊…”
+
+\CN["奇诺"]
+“黄菜子的，好烫……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_3_0411001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：アソコを指で撫でられています
+: PlayVoice( "Voices/vo02_kin0970" )
+\CN["黄菜子"]
+“嗯……啊……啊啊啊……啊，啊，啊……”
+
+: PlayVoice( "Voices/vo02_kin0971" )
+\CN["黄菜子"]
+“那、那里……嗯、呼、呜！啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi04" )
+\CN["奇诺"]
+“没事吧？”
+
+因为不由得发出了很大的声音，所以zeno很吃惊。
+
+: PlayVoice( "Voices/vo02_kin0972" )
+\CN["黄菜子"]
+“没关系吧？这是第一次碰我……”
+
+: PlayVoice( "Voices/vo02_kin0973" )
+\CN["黄菜子"]
+“但是，如果是Zno君的话……虽然很不好意思……
+希望你碰我……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "evc_b009_1_3_0211001_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+中、中、中、中、中。
+
+: PlayVoice( "Voices/vo02_kin0974" )
+\CN["黄菜子"]
+“嗯，啊，嗯，嗯……发出了声音……”……
+啊啊……啊，啊……嗯啊啊……”
+
+\CN["奇诺"]
+“黄菜子的这里，渐渐变成了狸猫。
+而且，乳头也这么硬……”
+
+: PlayVoice( "Voices/vo02_kin0975" )
+\CN["黄菜子"]
+“呼……被Zno君摸了一下，感觉到了……”
+
+: PlayVoice( "Voices/vo02_kin0976" )
+\CN["黄菜子"]
+“嗯……！那孩子，如果用手指抚摸的话……
+啊啊啊啊啊啊！我会麻利的……”
+
+奇怪的声音会随便漏出来。
+
+和自己接触的感觉完全不同。
+
+被最喜欢的男孩子碰了一下，脸上像要发烧一样
+不好意思。
+
+但是，我一点也不想让你停下来。
+
+: HideWnd()
+: evfile = "evc_b009_1_3_0411001_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0977" )
+\CN["黄菜子"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊……
+嗯，嗯……嗯！”
+
+: PlayVoice( "Voices/vo02_kin0978" )
+\CN["黄菜子"]
+“啊，变热了……满是色情的汤汁
+会……呵呵，啊，嗯……”
+
+用手指像夹着鳄鱼一样抚摸。
+
+而且，如果用手指转动乳头的话，会有刺痛的感觉
+送到指甲尖。
+
+\CN["奇诺"]
+“想更仔细地看看黄菜子的裸体。不行吗？”
+
+: PlayVoice( "Voices/vo02_kin0979" )
+\CN["黄菜子"]
+“呜呜……是裸体……”
+
+被喜欢的人看到全裸，真是太丢脸了。
+
+: PlayVoice( "Voices/vo02_kin0980" )
+\CN["黄菜子"]
+“如果你说想看的话，我……”
+
+//●背景：宿屋・昼
+//Yoshi：背景、和室
+: StopBackVoice()
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Room06_03", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: ShowWnd()
+//●ＳＥ：衣擦れの音
+: PlaySe( "SE/Se_Cloth01" )
+虽然是已经凌乱的衣服
+我把那个全部脱掉。
+
+//●服装：黄菜子（全裸）
+: CharaCostume( "Kinako", 1 )
+: DrawChara( "Kinako", 4, 2, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0981" )
+\CN["黄菜子"]
+“怎么样？”
+
+以一丝一毫不缠的姿态站在了零之君的面前。
+
+: DrawFaceThumbnail( "Xeno", 3, 2, 0 )
+\CN["奇诺"]
+“非常漂亮。”
+
+: DrawChara( "Kinako", 5, 2)
+: PlayVoice( "Voices/vo02_kin0982" )
+\CN["黄菜子"]
+“……对，是吗？嘿嘿……”
+
+因为周围有很多身材好的女性，比如无黑菩萨、桃小姐等等
+我对自己的身体没什么自信。
+
+但是，因为泽诺君会看着我。
+
+如果喜欢的人看了说漂亮的话
+非常开心……。
+
+//●ＣＧ：初体験愛撫
+//●ＣＧ差分：全裸・指入れ
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_4_0110001_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Kinako", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0983" )
+\CN["黄菜子"]
+“嗯哈……啊…啊…啊……啊……谢乃……嗯，嗯”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi04" )
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+忠、中、中。
+
+汤比刚才溢出来了。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——一直，狗中，咕嘟咕嘟。
+
+//●演技：膣内に指（１本）が入ってきます
+: PlayVoice( "Voices/vo02_kin0984" )
+\CN["黄菜子"]
+“嗯……啊…啊啊啊啊啊啊！”
+
+泽诺的手指慢慢地伸进了娜卡。
+
+\CN["奇诺"]
+“黄菜子好烫……变成了肥胖子。”
+
+: HideWnd()
+: evfile = "evc_b009_1_4_0210001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0985" )
+\CN["黄菜子"]
+“哈，哈……感觉到了Zno君，就变成了这样……”
+
+这还是第一次看到她这么湿。
+
+\CN["奇诺"]
+（怎么办呢？确实，用手指帮你解开这里……）
+
+\CN["奇诺"]
+（就这样真的和黄菜子……？
+如果黄菜子说可以的话……）
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "evc_b009_1_4_0110001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+空中、空中、空中、空中。
+
+: PlayVoice( "Voices/vo02_kin0986" )
+\CN["黄菜子"]
+“嗯，啊，哈……嗯，啊…嗯……”
+
+\CN["奇诺"]
+“黄菜子，没事吧？”
+
+: PlayVoice( "Voices/vo02_kin0987" )
+\CN["黄菜子"]
+“嗯，嗯……这样的话，完全没问题吧？”
+
+是不是因为惊讶于zeno君手指的入侵
+那卡紧紧地收缩着。
+
+: PlayVoice( "Voices/vo02_kin0988" )
+\CN["黄菜子"]
+“嗯，啊啊啊……嗯，嗯……啊，啊啊啊……”
+
+: PlayVoice( "Voices/vo02_kin0989" )
+\CN["黄菜子"]
+“我好好地感受到了Zno君的手指……
+嗯，啊，啊啊啊啊啊……”
+
+用手指慢慢地适应了入口附近。
+
+\CN["奇诺"]
+“……在黄菜子之中，溶化了……缠绕在手指上。”
+
+\CN["奇诺"]
+“乳头也一起碰一下比较好吧？确实。”
+
+: HideWnd()
+: evfile = "evc_b009_1_4_0210001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0990" )
+\CN["黄菜子"]
+“呼啊啊啊啊啊……啊，啊啊啊……啊啊啊啊啊啊啊！”
+
+突然发出尖锐的声音。
+
+乳头变得非常敏感，而且还被玩弄着
+结束了，强烈的快感袭来。
+
+: PlayVoice( "Voices/vo02_kin0991" )
+\CN["黄菜子"]
+“嗯哈、嗯、啊啊、啊啊……呜呜！”！
+嗯，嗯……哈，哈，啊……啊啊……”
+
+: PlayVoice( "Voices/vo02_kin0992" )
+\CN["黄菜子"]
+“zeno，小君……等一下……这样下去的话……哈哈
+嘘……嗯！”
+
+\CN["奇诺"]
+“这样的话……？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_4_0411001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：イクって言うのが恥ずかしい感じです
+: PlayVoice( "Voices/vo02_kin0993" )
+\CN["黄菜子"]
+“啊，那个……啊…那个……呃……”
+
+清楚地说“很帅”，果然是太害羞了。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——中、口、水。
+
+: PlayVoice( "Voices/vo02_kin0994" )
+\CN["黄菜子"]
+“嗯……呃，啊，和乳头一起，那个也
+如果被提醒的话”
+
+: PlayVoice( "Voices/vo02_kin0995" )
+\CN["黄菜子"]
+“zeno君……嗯，我……啊…啊…啊啊……啊……
+对、那里、也很……但是、不行…嗯……嗯——！”
+
+\CN["奇诺"]
+“黄菜子里非常热。手指都快碎了……”
+
+: PlayVoice( "Voices/vo02_kin0996" )
+\CN["黄菜子"]
+“啊啊啊，啊，嗯……啊啊！啊啊啊……
+不行……已经不行了……等一下……”
+
+: PlayVoice( "Voices/vo02_kin0997" )
+\CN["黄菜子"]
+“如果再这样的话……我就不客气了……。
+哈哈哈，哦，大的溢出来了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_4_0110001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：食いしばる系の絶頂です
+: PlayVoice( "Voices/vo02_kin0998" )
+\CN["黄菜子"]
+“呃……嗯……嗯……嗯——————！！”
+
+: StopBackVoice()
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+吓得浑身发抖！！！
+
+\CN["奇诺"]
+“呃……呃，黄菜子……？”
+
+//●演技：絶頂後、呼吸が乱れています
+: PlayVoice( "Voices/vo02_kin0999" )
+\CN["黄菜子"]
+“哈——、哈——、哈……哈……哈……啊啊…啊啊啊”
+
+: PlayBackVoice( "Voices/BGV02_kin_jigo01" )
+虽然曾经有过几次这样的经历
+这是我第一次感觉到身体内部都在发抖。
+
+而且，一旦合而为一，呼吸就会变得如此痛苦。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b009_1_4_0210001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1000" )
+\CN["黄菜子"]
+“哈……哈……哈哈哈，对不起……。
+我现在去了……”
+
+\CN["奇诺"]
+“是吗，这样啊。我才是……。现在的是女孩子的……”
+
+\CN["奇诺"]
+“对不起，我有点吃惊。
+其实，这是我有生以来第一次做这种事……
+之所以沉默……是因为不想让你感到不安”
+
+: PlayVoice( "Voices/vo02_kin1001" )
+\CN["黄菜子"]
+“绝对不会感到不安的。”
+
+\CN["奇诺"]
+「……！」
+
+: PlayVoice( "Voices/vo02_kin1002" )
+\CN["黄菜子"]
+“因为，是Zno君为我做的事……。
+而且，我是zeno君的第一个对象……”
+
+不仅不安，而且高兴得几乎要跳起来。
+
+心潮澎湃，感情摇摆不定……。
+
+泽诺君的每一句话都能为我做一件事
+我觉得我心中的某个东西会被大大地引出。
+
+: PlayVoice( "Voices/vo02_kin1003" )
+\CN["黄菜子"]
+“Zno君，可以拜托你一件事吗？”
+
+\CN["奇诺"]
+“嗯。如果是黄菜子的请求的话，一个也好，一百个也好。”
+
+: PlayVoice( "Voices/vo02_kin1004" )
+\CN["黄菜子"]
+“……啊，那个……哇，我的……”
+
+心脏都快跳出来了，心跳得很快就变强了。
+头脑沸腾快要融化了……。
+
+: PlayVoice( "Voices/vo02_kin1005" )
+\CN["黄菜子"]
+“我的孩子，在这里……不是手指，而是zeno君的……
+希望被插上……”
+
+\CN["奇诺"]
+“那、那是……”
+
+: PlayVoice( "Voices/vo02_kin1006" )
+\CN["黄菜子"]
+“请和我做爱……”
+
+一边变得热到快要从脸上冒烟了的程度一边断言。
+
+零之君面泛微笑，一次，脖子竖起来运动——
+
+\CN["奇诺"]
+“我也想和黄菜子做爱。”
+
+//●ＣＧ：初体験セックス（黄菜子）
+//●ＣＧ差分：未挿入
+: StopBackVoice()
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_1_0111001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1007" )
+\CN["黄菜子"]
+“呜呜……这是Zno君的……”
+
+有生以来第一次见到的小爷爷。
+真的有男孩子呢……。
+
+\CN["奇诺"]
+“……黄菜子的也是这种感觉。”
+
+: PlayVoice( "Voices/vo02_kin1008" )
+\CN["黄菜子"]
+“嗯……我怎么样……？
+形状啦，那个……”
+
+\CN["奇诺"]
+“我只见过黄菜子……。
+但是，粉红色的很漂亮，很性感……”
+
+小金和小金动了。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin1009" )
+\CN["黄菜子"]
+（泽诺君看到我的那个，很兴奋……？）
+
+公鸡长大了，会让男孩子性兴奋
+我作为知识知道生理现象。
+
+然后，今后要做的事情也作为知识……。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin1010" )
+\CN["黄菜子"]
+（泽诺的小弟弟，现在开始去我的娜卡……）
+
+和手指大小和粗细完全不同。
+
+完全没有恐惧。有的只是不安。
+
+能好好地进入我的小阴道孔吗？
+只是这样的不安。
+
+\CN["奇诺"]
+“果然很恐怖吗？”
+
+: PlayVoice( "Voices/vo02_kin1011" )
+\CN["黄菜子"]
+“不，没关系……零之君，过来……”
+
+\CN["奇诺"]
+“嗯……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "evc_b010_1_1_0211001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+——九中。
+
+//●演技：男性器をあてがわれています
+: PlayVoice( "Voices/vo02_kin1012" )
+\CN["黄菜子"]
+“嗯！”
+
+在入口可以看到小金的前端。
+
+\CN["奇诺"]
+“这里就可以了吧？”
+
+: PlayVoice( "Voices/vo02_kin1013" )
+\CN["黄菜子"]
+“是、是……在那里……”
+
+从那里我再张开腿。
+
+为了让泽诺君容易进来。
+为了能够迎接。
+
+: HideWnd()
+: evfile = "evc_b010_1_1_0111001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1014" )
+\CN["黄菜子"]
+“治之君，好啊……就这样进来吧……”
+
+\CN["奇诺"]
+“嗯，我去……”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0311001_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+切……切…切……切……！
+
+//●演技：男性器挿入です
+: PlayVoice( "Voices/vo02_kin1015" )
+\CN["黄菜子"]
+“嗯……嗯……嗯，嗯……啊…嗯……嗯！”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi04" )
+入口扩大到了公鸡的大小。
+
+: PlayVoice( "Voices/vo02_kin1016" )
+\CN["黄菜子"]
+“嗯……嗯……zeno君，怎么样……？
+嗯……啊，哈……有好好地放进去……？”
+
+\CN["奇诺"]
+“嗯……也许只有前面，全部都进去了……”
+
+: PlayVoice( "Voices/vo02_kin1017" )
+\CN["黄菜子"]
+“是吗……呵呵，好好进去了呢……”
+
+这样的话，就能和Zno君好好地H了。
+
+虽然有蔓延到大腿周围的迟钝的疼痛和压迫感
+那个事实让我非常开心……。
+
+\CN["奇诺"]
+“嗯。黄菜子里很烫……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "evc_b010_1_2_0211001_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+嘘……咕嘟……咔……咔…咔…咔！
+
+: PlayVoice( "Voices/vo02_kin1018" )
+\CN["黄菜子"]
+“嗯……啊，啊，啊……嗯……嗯！”
+
+杰诺慢慢地坐下
+娜卡被摊开成小金。
+
+\CN["奇诺"]
+“哈、哈、嗯……”
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0311001_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1019" )
+\CN["黄菜子"]
+“呜……嗯……哈…哈……嗯，嗯！
+杰诺君进来了……我知道……”
+
+: PlayVoice( "Voices/vo02_kin1020" )
+\CN["黄菜子"]
+“嗯，啊，啊啊啊啊啊……啊…啊……嗯，嗯
+嗯……”
+
+\CN["奇诺"]
+“……黄菜子，果然很疼吧？”
+
+: PlayVoice( "Voices/vo02_kin1021" )
+\CN["黄菜子"]
+“哈、哈、哈……不，痛是痛。”
+
+: PlayVoice( "Voices/vo02_kin1022" )
+\CN["黄菜子"]
+“但是，请不要放弃……请继续……”……
+直到最后，都好好地……”
+
+\CN["奇诺"]
+“嗯……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咕嘟，咕嘟，小咕，小咕，小咕，一直在！
+
+\CN["奇诺"]
+“哈，哈，又热又软，真舒服。
+进入一半左右的话，就会被吸引到里面去……”
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0211001_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1023" )
+\CN["黄菜子"]
+“啊……呃……哈，哈……是指zeno君
+感觉好多了……”
+
+: PlayVoice( "Voices/vo02_kin1024" )
+\CN["黄菜子"]
+“泽诺君进了娜娜
+我完全明白……”
+
+\CN["奇诺"]
+“嗯……把黄菜子的、我的系紧……”
+
+阶段性地，慢慢地，插入前进。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0311001_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：虫歯が疼くような痛みを感じています
+: PlayVoice( "Voices/vo02_kin1025" )
+\CN["黄菜子"]
+“嗯……嗯！？”
+
+窍门的瞬间，刺痛的疼痛穿过了身体
+身体会抽筋。
+
+\CN["奇诺"]
+“没关系！？”
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0111001_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1026" )
+\CN["黄菜子"]
+“嗯……只是有点吃惊……”
+
+然后，我终于明白了这个强烈刺激的真面目。
+
+从这里再往前走一步的话，一定会和zeno君在一起
+意味着习惯了。
+
+这样的话，完全没有犹豫的理由。
+
+: PlayVoice( "Voices/vo02_kin1027" )
+\CN["黄菜子"]
+“就这样，请过来……。希望你收下。”
+
+\CN["奇诺"]
+“恩，我会珍惜一生……”
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0211001_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1028" )
+\CN["黄菜子"]
+“啊啊啊……啊…啊啊啊……啊啊啊……啊，啊，啊……
+啊……嗯……”
+
+//●ＣＧ差分：挿入・破瓜
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0511001_1201000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——噗哼……我要流了！！
+
+//●演技：処女喪失です
+: PlayVoice( "Voices/vo02_kin1029" )
+\CN["黄菜子"]
+“嗯，嗯，嗯，嗯！”
+
+\CN["奇诺"]
+“哈，哈……黄菜子，全部都进去了……”
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0311001_1201000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1030" )
+\CN["黄菜子"]
+“嗯，嘿嘿……好像是……嗯……嗯
+杰诺君的全部都进去了”
+
+额头上不断地流着汗，隐隐的疼痛。
+
+但是，甚至让人觉得这样也很可爱
+我很高兴你能接受我。
+
+: PlayVoice( "Voices/vo02_kin1031" )
+\CN["黄菜子"]
+“娜卡，我要杜松子酒……嗯……小金，在娜卡
+战战兢兢地……”
+
+: PlayVoice( "Voices/vo02_kin1032" )
+\CN["黄菜子"]
+“嗯，嘿嘿……泽诺君，我已经好好地在这里了。”
+
+一边握着手，一边分享温暖。
+
+\CN["奇诺"]
+「…………」
+
+看到了zeno君痛苦的表情
+我的胸部非常地抽动。
+
+: PlayVoice( "Voices/vo02_kin1033" )
+\CN["黄菜子"]
+“Zno君，请按照你想做的做……
+即使动……也没关系……”
+
+\CN["奇诺"]
+“但是……还是很疼吧？”
+
+: PlayVoice( "Voices/vo02_kin1034" )
+\CN["黄菜子"]
+“没关系，是的……。如果能让Zno君心情变好的话
+仅此而已，我……”
+
+治之君让我心情变好了。
+只要想象一下那个样子，我的心就会热起来。
+
+\CN["奇诺"]
+“嗯……我会慢慢来的。”
+
+杰诺君握紧我的手，前后摆动着腰。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0511001_1201000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1035" )
+\CN["黄菜子"]
+“嗯，啊，嗯……嗯…嗯……嗯……！”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi01" )
+肚子下面紧紧地拉着，每次动都会被拉着
+逐渐变成感觉。
+
+: PlayVoice( "Voices/vo02_kin1036" )
+\CN["黄菜子"]
+“我完全知道小公鸡在动……”
+
+: PlayVoice( "Voices/vo02_kin1037" )
+\CN["黄菜子"]
+“哈，哈，啊……嗯，嗯……啊啊啊啊……
+啊啊……嗯，啊啊啊！”
+
+一点点，一点点
+每次往返都会习惯疼痛和压迫感。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin1038" )
+\CN["黄菜子"]
+（身体渐渐适应了zeno君……）
+
+我觉得那种感觉很开心。
+
+: PlayVoice( "Voices/vo02_kin1039" )
+\CN["黄菜子"]
+“Zno君，可以更尽情地行动哦……。
+我没关系，所以……”
+
+\CN["奇诺"]
+“真的没关系吗？”
+
+: PlayVoice( "Voices/vo02_kin1040" )
+\CN["黄菜子"]
+“是的……而且呢，渐渐地，那个……来，心情很好
+所以……”
+
+: PlayVoice( "Voices/vo02_kin1041" )
+\CN["黄菜子"]
+“明明是第一次做爱……感觉到了……。
+嗯……我是H的……”
+
+\CN["奇诺"]
+“心情变好了……这样啊……”
+
+这样说的话，Zno君露出放心的表情。
+
+\CN["奇诺"]
+“能让黄菜子心情舒畅，我很开心。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一、一、一、一、一、一、一。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0211001_1201000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストンが速くなります
+: PlayVoice( "Voices/vo02_kin1042" )
+\CN["黄菜子"]
+“嗯，啊，啊，啊，啊……呵呵，啊啊啊啊啊啊啊啊啊”
+
+: PlayVoice( "Voices/vo02_kin1043" )
+\CN["黄菜子"]
+“明明听到色情的声音很害羞……嗯……
+公鸡来来回回……肚子好烫……”
+
+\CN["奇诺"]
+“嗯……哈，哈……没事吧？不疼吗？”
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0311001_1201000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1044" )
+\CN["黄菜子"]
+“嗯，啊，啊啊啊……里面，真是让人毛骨悚然……”……
+要快速移动……渐渐地，心情变好了……”
+
+: PlayVoice( "Voices/vo02_kin1045" )
+\CN["黄菜子"]
+“杰诺君，不用客气……。
+尽情地行动吧”
+
+\CN["奇诺"]
+“嗯，嗯……但是，黄菜子中，心情太好了……”……
+激烈的话，那个……然后，好像要出来了……”
+
+: PlayVoice( "Voices/vo02_kin1046" )
+\CN["黄菜子"]
+“说是要出去……啊……说不定……”
+
+杰诺的脸涨得通红。
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0111001_1201000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1047" )
+\CN["黄菜子"]
+“好啊……拿出来也……”
+
+\CN["奇诺"]
+“……诶”
+
+: PlayVoice( "Voices/vo02_kin1048" )
+\CN["黄菜子"]
+“在Zno君想拿的地方拿出来……。
+这样拿出去也可以……”
+
+: PlayVoice( "Voices/vo02_kin1049" )
+\CN["黄菜子"]
+“我……嗯……心情变好了……”……
+请把精液拿出来……”
+
+\CN["奇诺"]
+“但是……我没有戴……！”
+
+看到zeno君痛苦的表情，我也兴奋了吗
+小个子变强了。
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0211001_1201000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1050" )
+\CN["黄菜子"]
+“啊啊啊啊啊，啊，啊，啊，好啊……拿出去给娜娜也……”
+没关系……”
+
+: PlayVoice( "Voices/vo02_kin1051" )
+\CN["黄菜子"]
+“我想要治之君的……哈，哈，在里面……
+请拿出来满满的……”
+
+\CN["奇诺"]
+“我也是，如果黄菜子好的话，想就这样放在黄菜子里。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！呼呼！嘘！嘘！
+
+杰诺君的腰会动得更快。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0411001_1201000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1052" )
+\CN["黄菜子"]
+“啊，啊，啊……嗯，啊啊，这个，擦掉了……
+娜卡，小金鸡，又硬又热，被摩擦了……”
+
+: PlayVoice( "Voices/vo02_kin1053" )
+\CN["黄菜子"]
+“嗯，啊啊啊，嗯，嗯……嗯，啊，啊……
+哈、呜、啊……啊啊啊啊啊啊啊！”
+
+每次被拿出来，肚子的下面就会变得很强。
+
+在里面的话，会有刺痛的疼痛感
+而且马上就被心情好的覆盖了。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0311001_1201000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1054" )
+\CN["黄菜子"]
+“zeno君……zeno君…我，我也……啊啊啊……
+又……又很有活力……”
+
+\CN["奇诺"]
+“恩……一起挺好的……因为是第一次……”……
+因为是第一次和黄菜子做爱，所以想和她在一起”
+
+: PlayVoice( "Voices/vo02_kin1055" )
+\CN["黄菜子"]
+“嗯！我也是！和泽诺君在一起！”
+
+杰诺君一边喘着气一边腰嘎巴地前后
+我去动一下。
+
+我一边用力握着zeno君的手一边接住那个。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0511001_1201000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1056" )
+\CN["黄菜子"]
+“啊啊啊啊，嗯，嗯！啊啊啊啊啊……
+嗯，已经……我……嗯…嗯，嗯，嗯！”
+
+: PlayVoice( "Voices/vo02_kin1057" )
+\CN["黄菜子"]
+“zeno君……已经……啊…啊……呜呜呜”
+
+\CN["奇诺"]
+“嗯……黄菜子，我也……”
+
+: PlayVoice( "Voices/vo02_kin1058" )
+\CN["黄菜子"]
+“来……泽诺，请给我一杯……！”
+
+一边紧握着双手，一边到了最大限度
+我会把腰往前冲。
+
+\CN["奇诺"]
+“嗯……！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・破瓜・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0511011_1201010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂
+: PlayVoice( "Voices/vo02_kin1059" )
+\CN["黄菜子"]
+“恩啊啊啊啊啊啊啊啊啊啊啊啊啊——————！”
+
+在阴道深处小鸡鸡大动作后
+热的东西会充满Naka。
+
+: PlayVoice( "Voices/vo02_kin1060" )
+\CN["黄菜子"]
+“啊……啊…啊……然后，出来了……很啰嗦……
+娜娜……热的，满满的……”
+
+\CN["奇诺"]
+“嗯……嗯……”
+
+杰诺君体重增加，身体正好重叠在一起
+那卡的鸡丁嘎吱嘎吱地颤抖着。
+
+: PlayVoice( "Voices/vo02_kin1061" )
+\CN["黄菜子"]
+“哈……哈…哈……哈……肚子好暖和……”
+
+\CN["奇诺"]
+“黄菜子……嘛，还没……！”
+
+公鸡一边吐着精液
+舒舒服服地擦着鼻涕。
+
+: PlayVoice( "Voices/vo02_kin1062" )
+\CN["黄菜子"]
+“请全部拿出来……热死了，我的娜卡。”
+
+\CN["奇诺"]
+“嗯，嗯……嗯……！”
+
+//●演出：射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0311011_1201010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜，呜呜呜呜呜呜呜呜！
+
+: PlayVoice( "Voices/vo02_kin1063" )
+\CN["黄菜子"]
+“嗯……啊…啊……啊啊……啊啊……啊啊……啊啊……”
+
+: PlayBackVoice( "Voices/BGV02_kin_jigo01" )
+从仿佛能在里面弹跳的小鸡鸡中，注入精液。
+
+: HideWnd()
+: evfile = "evc_b010_1_2_0111011_1201020_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+\CN["奇诺"]
+“哈——……哈……哈，哈……”
+
+: PlayVoice( "Voices/vo02_kin1064" )
+\CN["黄菜子"]
+“嗯……啊……哈…哈…嗯……嗯……”
+
+\CN["奇诺"]
+“呐，总觉得好厉害……该说是融化了吧
+虽然说不好……但是和黄菜子在一起
+很强”
+
+: PlayVoice( "Voices/vo02_kin1065" )
+\CN["黄菜子"]
+“……我也……感觉到了很多Zno君。”
+
+: PlayVoice( "Voices/vo02_kin1066" )
+\CN["黄菜子"]
+“我最喜欢你了……”
+
+\CN["奇诺"]
+“我也……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_b010_1_2_0411011_1201020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：キスです
+: PlayVoice( "Voices/vo02_kin1067" )
+\CN["黄菜子"]
+「嗯……是吧♥</color>」
+
+握着手，把脸贴在一起。
+
+在感受彼此的存在的同时
+为了填补分离的时间，紧紧地贴在一起。
+
+直到尽头都在寻求着温暖。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+回屯所的时候，我忘不了桃先生那张自暴自弃的脸。
+
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+//●シーンエンド
+: Return

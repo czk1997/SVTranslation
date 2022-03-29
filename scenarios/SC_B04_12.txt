@@ -1,0 +1,637 @@
+//========================================================
+//○傾国の美女１
+//========================================================
+*sc001
+//●場所：鬼灯屯所・あざみの部屋
+//●状況：桃と銀があざみの部屋にいる
+//●背景：空
+//Yoshi：背景、昼
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: StopBgm( 0.0 )
+: ShowWnd()
+——无黑一个人在吉野原担任任务的时候。
+
+//●背景：背景消す
+//Yoshi：背景消去
+: HideWnd()
+: RpgCharaOn("Gin")
+: EraseImage( 1, 0, 1.0)
+: Wait()
+: ResetLayer(1)
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+从吉野原回来的我和谨慎结束的小银一起
+被局长叫去了。
+
+: DrawChara( "Azami", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0294" )
+\CN["嘲讽"]
+「那么，叫你们的不是别人。
+你们的师傅，是关于玉藻的事”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom0580" )
+\CN["桃子"]
+“老师怎么了？”
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0295" )
+\CN["嘲讽"]
+“最近好像被幕府通缉了。”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["银子"]
+“嗯？为什么？”？
+女狐虽然性格不好，但头脑应该不坏”
+
+: DrawChara( "Gin",0, 0)
+\CN["银子"]
+“我觉得应该不会模仿被通缉的样子……”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0581" )
+\CN["桃子"]
+“为什么老师必须要被通缉呢？”
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: DrawChara( "Azami", 2, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0296" )
+\CN["嘲讽"]
+“玉藻——在1000年以上的时间里反复转世
+你知道活下来的妖狐玉藻的别名吗？”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Momo", 11, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom0582" )
+\CN["桃子"]
+“不，我没听说过。”
+
+: DrawChara( "Gin", 3, 0)
+\CN["银子"]
+“小姐，可能是性格不好的女狐或者阴险的女狐吧
+没有吗？”
+
+: DrawChara( "Momo", 13, 0)
+: PlayVoice( "Voices/vo01_mom0583" )
+\CN["桃子"]
+“小银！我才不说呢。”
+
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Azami", 3, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0297" )
+\CN["嘲讽"]
+“继续。玉藻是颠覆国家的存在——
+被称为倾国美女”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom0584" )
+\CN["桃子"]
+“倾国的……？老师…？”
+
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Azami", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0298" )
+\CN["嘲讽"]
+“正确的说法应该是前世的玉藻们吧……。
+有看未来的能力，被购买那个能力历代的大和的
+我被统治者们宠爱了」
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0299" )
+\CN["嘲讽"]
+“然后，距今约300年前，由稀世的天才魔术师之手
+真面目被揭穿了。玉藻是颠覆国家的妖怪。
+然后，据说那家伙封印了玉藻的前世”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["银子"]
+“不是封印，只是单纯的杀掉而已……？”
+
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Azami", 4, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0300" )
+\CN["嘲讽"]
+“虽然杀了他，但是因为他转世了，所以用了封印的说法吧。”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom0585" )
+\CN["桃子"]
+“但是，这并不是和现在的老师直接相关的
+是吧？那么，为什么老师要通缉呢？”
+
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Azami", 6, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0301" )
+\CN["嘲讽"]
+“将来一定会给大和带来灾难。
+那么，就趁现在杀了他吧”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 21, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["银子"]
+“不知道为什么……那是什么啊。
+原本大和的灾祸就决定了是女狐的错
+又不是……”
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0586" )
+\CN["桃子"]
+“是啊！老师怎么可能做那种事！”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0587" )
+\CN["桃子"]
+“因为这种不确定的事情，打算把无辜的老师处死
+幕府到底在想什么！？”
+
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Azami", 25, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0302" )
+\CN["嘲讽"]
+“般若暗中活跃倒幕派……
+将军现在好像相当心乱……”
+
+: DrawChara( "Azami", 24, 0)
+: PlayVoice( "Voices/vo05_aza0303" )
+\CN["嘲讽"]
+“虽然不知道在哪里知道了玉藻的存在
+总之，幕府发出了这样的命令”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 21, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom0588" )
+\CN["桃子"]
+“真是愚蠢啊……”
+
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0304" )
+\CN["嘲讽"]
+“那么，我也会做出这种愚蠢的行为
+不能视而不见啊……”
+
+: DrawChara( "Azami", 3, 0)
+: PlayVoice( "Voices/vo05_aza0305" )
+\CN["嘲讽"]
+“在那里，我想对你们这些受玉藻信赖的人
+我想把这件事传达给玉藻，并得到保护”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom0589" )
+\CN["桃子"]
+“当然啦！我绝对不会让老师死的！”
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“但是，可以吗？如果隐匿了女狐，局长的立场就糟糕了
+难道不是这样吗？”
+
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Azami", 6, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0306" )
+\CN["嘲讽"]
+“啊，虽说如此，也不能让玉藻被杀。
+为了大和”
+
+好像有什么特别的事情……。
+那稍后再问吧。
+
+现在先跑到老师那里。
+
+//●シーンエンド
+: HideWnd()
+: EraseChara( "Azami", 0.5 )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+
+: FadeOut( 1.0 )
+: Wait()
+: SetMission( "SC_B04_12_1", "InProgress" )
+//サブイベント「今夜は私が銀ちゃんを」発生
+: SetMission( "SC_B04_54", "Opened" )
+: FastTravelMapOn( "NasunoYama" )
+: DestinationMap( "Map_Dungeon14_05_Nasunoyama" )
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○傾国の美女２
+//========================================================
+*sc002
+//●場所：玉藻の小屋
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 3 )
+: Wait()
+: RpgCharaOff("Gin")
+: ShowWnd()
+: PlayBgm("BGM/09_CM009")
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 4, "C" )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Gin", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo22_tam0058" )
+\CN["玉藻"]
+“终于来了吗？桃子和小僧。
+等累了”
+
+\CN["银子"]
+“好像知道我们会来似的。”
+
+: DrawChara( "Tamamo", 2, 0, 0 )
+: PlayVoice( "Voices/vo22_tam0059" )
+\CN["玉藻"]
+“我知道了。”
+
+//●分岐：フラグ［桃と銀・宿屋でエッチ］が１の場合
+: if ( MissionProgress( "SC_B04_54", "Successed" ) == true )
+	: DrawChara( "Tamamo", 2, 1, 1)
+	: PlayVoice( "Voices/vo22_tam0060" )
+	\CN["玉藻"]
+“我知道来这里的途中，在客栈里气氛很热烈。
+桃子啊，你是不是很积极呢”
+
+	: DrawChara( "Momo", 14, 2, 0)
+	: DrawChara( "Gin", 1, 0, 0)
+	: PlayVoice( "Voices/vo01_mom0590" )
+	\CN["桃子"]
+“喂，老师……！？为什么要把那件事……！？”
+
+	: DrawChara( "Gin", 22, 1)
+	\CN["银子"]
+“小姐，请冷静下来。
+这是从女狐狸嘴里听来的。”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	: DrawChara( "Tamamo", 2, 0, 1 )
+	: PlayVoice( "Voices/vo22_tam0061" )
+	\CN["玉藻"]
+“即便如此，桃子和小僧啊。
+你们这些家伙，好像终于结了婚啊」
+
+	: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+	: Wait()
+	: DrawChara( "Momo", 13, 2, 0 )
+	: DrawChara( "Gin", 1, 0, 0 )
+	: PlayVoice( "Voices/vo01_mom0591" )
+	\CN["桃子"]
+“什么！？契约……。
+确实……我和小银做过那样的事
+为什么……！？”
+
+	: DrawChara( "Gin", 22, 1)
+	\CN["银子"]
+“小姐，请冷静下来。
+这是从女狐狸嘴里听来的。”
+
+//●分岐終了
+: endif
+: DrawChara( "Tamamo", 0, 0, 0 )
+: PlayVoice( "Voices/vo22_tam0062" )
+\CN["玉藻"]
+“并不是随便你。
+从见到你们的时候开始，我就知道会变成这样”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 12, 1, 0 )
+: PlayVoice( "Voices/vo01_mom0592" )
+\CN["桃子"]
+「呜呜……哇，我和小银从那时候开始就是这样
+看到了吗……？”
+
+: DrawChara( "Gin", 19, 0)
+\CN["银子"]
+“说话真奇怪，女狐狸。
+你不是藏了什么吗？”
+
+: DrawChara( "Tamamo", 2, 0, 1 )
+: PlayVoice( "Voices/vo22_tam0063" )
+\CN["玉藻"]
+“好像脑子变得很灵活了，小僧。
+左先生，我觉得必须要说那件事”
+
+: DrawChara( "Tamamo", 0, 0, 0 )
+: PlayVoice( "Voices/vo22_tam0064" )
+\CN["玉藻"]
+“从嘲讽中得知，秸秆有预见未来的能力
+你在吗？”
+
+: DrawChara( "Momo", 4, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0593" )
+\CN["桃子"]
+“是的。局长说了那样的话……”
+
+: StopBgm( 1.0 )
+: DrawChara( "Tamamo", 1, 0)
+: PlayVoice( "Voices/vo22_tam0065" )
+\CN["玉藻"]
+“那么，先说结论。
+在我们所能看到的未来中，大和不存在”
+
+: PlayBgm("BGM/41_Sad")
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0594" )
+\CN["桃子"]
+“诶？不存在就是大和灭亡吗？”
+
+: DrawChara( "Tamamo", 3, 0)
+: PlayVoice( "Voices/vo22_tam0066" )
+\CN["玉藻"]
+“左大人。大和很快就会灭亡。会消失得无影无踪的。”
+
+: DrawChara( "Gin", 17, 0, 0 )
+\CN["银子"]
+“话说得太离谱了，不知道怎么回事。
+女狐狸，你不是在捉弄我们吗？”
+
+: DrawChara( "Tamamo", 4, 0, 1 )
+: PlayVoice( "Voices/vo22_tam0067" )
+\CN["玉藻"]
+“如果是开玩笑的话，那该有多好啊……”
+
+用这种语气说话的老师非常认真。
+
+: DrawChara( "Momo", 7, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0595" )
+\CN["桃子"]
+“说话太突然了，不太明白……。
+说起来，消失得无影无踪是什么原因？”
+
+是灾害啦，或者瘟疫流行吗？
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom0596" )
+\CN["桃子"]
+“这么说来，几百年前，大和差点就灭亡了
+我记得在什么文献上读过……”
+
+虽然只写了原因是很大的灾害。
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0068" )
+\CN["玉藻"]
+“文献上记载着灾害，原因是贝希莫斯。
+人类无法与喷火的巨大怪物交锋……”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0597" )
+\CN["桃子"]
+“这种怪物是谁惩办的？”
+
+: DrawChara( "Tamamo", 2, 0, 0 )
+: PlayVoice( "Voices/vo22_tam0069" )
+\CN["玉藻"]
+“有着不知从哪里出现的黑色翅膀的人在死斗之后
+我杀了贝希莫斯……”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0070" )
+\CN["玉藻"]
+“主人们也说了{黑夜叉，暗黑精灵}的故事
+你听过吗？”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0598" )
+\CN["桃子"]
+“嗯，这我的确知道……。
+被称为宵暗的使者，告诉我这是带来一切破坏的存在
+收到的东西……”
+
+: DrawChara( "Gin", 5, 0, 0 )
+\CN["银子"]
+“因为连在贫民窟长大的我都知道。
+但是，这和神和佛不是一样的吗？”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0071" )
+\CN["玉藻"]
+“不是的，小僧。{黑夜叉，暗黑精灵}真的存在着。”
+
+: DrawChara( "Tamamo", 0, 0, 1 )
+: PlayVoice( "Voices/vo22_tam0072" )
+\CN["玉藻"]
+“在精灵中获得力量而到达的人
+{黑夜叉，暗黑妖精}不是可以变成的吗」
+
+: DrawChara( "Tamamo", 5, 0, 0)
+: PlayVoice( "Voices/vo22_tam0073" )
+\CN["玉藻"]
+“那么，我们所看到的未来是{黑夜叉，暗黑妖精}
+在几个人聚集的地方突然发生了大爆炸。
+大和很快就从这片土地上消失了”
+
+: DrawChara( "Gin", 21, 0)
+\CN["银子"]
+「……越来越不明白了，女狐。
+为什么{黑夜叉，暗黑妖精}会有很多呢
+大爆炸发生后大和突然消失了？”
+
+: DrawChara( "Tamamo", 0, 0, 0 )
+: PlayVoice( "Voices/vo22_tam0074" )
+\CN["玉藻"]
+“如果知道原因的话，我想说不辛苦。”
+
+: DrawChara( "Tamamo", 2, 0, 0)
+: PlayVoice( "Voices/vo22_tam0075" )
+\CN["玉藻"]
+“在异文化交流会上有机会接触维克托尔的文件
+有啊。那时我想到了一个可能性”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0076" )
+\CN["玉藻"]
+“{黑夜叉，暗黑精灵}有谁传到了维克托尔
+可能是放出了古代魔术《阿波罗之箭》吧”
+
+: DrawChara( "Momo", 0, 0, 1 )
+: PlayVoice( "Voices/vo01_mom0599" )
+\CN["桃子"]
+“阿波罗之箭……？”
+
+: DrawChara( "Tamamo", 0, 0, 1 )
+: PlayVoice( "Voices/vo22_tam0077" )
+\CN["玉藻"]
+体内有被称为阿波罗之弓的核武器
+继承者可以以生命为代价
+像魔术一样的——”
+
+: DrawChara( "Tamamo", 2, 0, 0)
+: PlayVoice( "Voices/vo22_tam0078" )
+\CN["玉藻"]
+“这个威力可以让一个国家轻松变成焦土
+”
+
+: DrawChara( "Gin", 19, 0, 0 )
+\CN["银子"]
+“真是难以置信的事啊。
+那才是不好的童话啊」
+
+: DrawChara( "Momo", 4, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0600" )
+\CN["桃子"]
+“但是，可以认为是一种可能性……吗？”
+
+: DrawChara( "Tamamo", 3, 0, 0 )
+: PlayVoice( "Voices/vo22_tam0079" )
+\CN["玉藻"]
+“也就是说，我有件事想让你嘲讽一下。
+无论如何都希望能毁灭白夜”
+
+: DrawChara( "Momo", 3, 0, 0)
+: PlayVoice( "Voices/vo01_mom0601" )
+\CN["桃子"]
+“嗯，我明白了，但是现在的话和白夜有什么关系呢？”
+是吗？”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0080" )
+\CN["玉藻"]
+“我说白夜有继承阿波罗之箭的人
+我在推测。在发动前杀了那个家伙才能活下去
+没有路可走”
+
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0081" )
+\CN["玉藻"]
+“我能看到未来。
+但是，关于改变自古以来所看到的未来的事
+这是无法完成的命运”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0082" )
+\CN["玉藻"]
+“所以我决定离开白夜。”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0602" )
+\CN["桃子"]
+“也许，这是老师改变未来的主要原因
+难道是命中注定要死去吗？”
+
+: DrawChara( "Tamamo", 0, 0, 1 )
+: PlayVoice( "Voices/vo22_tam0083" )
+\CN["玉藻"]
+「呼。不愧是桃子，好锋利啊。没错。
+因为我的死，那个未来会改变形状，确实会发生。
+至今为止都是这样的”
+
+: DrawChara( "Gin", 0, 0, 0 )
+\CN["银子"]
+“原来如此。如果那是事实的话，让女狐狸死了可不行啊。
+局长说要保护，也是因为这个原因吗？”
+
+: DrawChara( "Tamamo", 0, 0, 0 )
+: PlayVoice( "Voices/vo22_tam0084" )
+\CN["玉藻"]
+“总之我已经把应该传达给你们的事情全部传达了。
+差不多该轮到这里的追兵了」
+
+: DrawChara( "Tamamo", 2, 0, 0)
+: PlayVoice( "Voices/vo22_tam0085" )
+\CN["玉藻"]
+“在发生麻烦事之前，你们也最好离开这里。
+虽然你们的心情很开心，但是我会躲在别的地方”
+
+//※ワープアニメーション
+//●演出：玉藻　姿を消す
+: HideWnd()
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Tamamo", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Heal01" )
+: PlayAnim( "Animations/AnimeL_Heal01", false, 0, 0, 6, 6 )
+: RpgCharaOff("Tamamo")
+: Wait()
+: ShowWnd()
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0603" )
+\CN["桃子"]
+“啊……！老师……！？”
+
+: DrawChara( "Gin", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["银子"]
+“切……不知什么地方消失了。”
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“小姐，如果被女狐狸的追兵发现了，就和那家伙说的一样
+好像会很麻烦。赶紧从这里出去吧”
+
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Momo", 0, 0, 1 )
+: PlayVoice( "Voices/vo01_mom0604" )
+\CN["桃子"]
+“是啊。嗯……”
+
+//●演出：桃＆銀　外に出てから暗転
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: RpgCharaTurn( "Momo", "D" )
+: RpgCharaTurn( "Gin", "L" )
+: RpgCharaOff("Gin")
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 4 )
+: Wait()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+下山后，老师马上和局长联系说
+得知被幕府通缉了。
+
+在老师住的小屋里好像有一群走马观花的人
+再晚一点就撞见了，真是麻烦啊
+没错。
+
+从老师那里得知了多个{黑夜叉，暗黑妖精}和
+指大和灭亡。
+
+太多太突然了
+我的头好像要爆胎了。
+
+……………………………………………………。
+
+//●シーン：「達磨襲来、鬼灯半壊」へ
+//＠シナリオジャンプ：SC_B04_13
+: $money += 4000
+: SetMission( "SC_B04_12_1", "Successed" )
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_B04_13")

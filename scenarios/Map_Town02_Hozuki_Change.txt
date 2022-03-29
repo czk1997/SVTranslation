@@ -1,0 +1,327 @@
+//========================================================
+//○鬼灯屯所
+//========================================================
+*Map01
+: RpgCharaOff("NPC_T02_006")
+: RpgCharaBaloonOff("NPC_T02_008")
+: RpgCharaOff("CHA24a")
+: RpgCharaOff("CHA24b")
+: RpgCharaOff("CHA24c")
+: RpgCharaOff("CHA24d")
+: RpgEventOff("CHA24")
+: RpgCharaOff("CHA24")
+: RpgCharaOff("CHA03a")
+: RpgCharaOff("CHA03b")
+: RpgCharaOn("NPC_T02_007_1")
+: RpgCharaBaloonOn("NPC_T02_007_1")
+: RpgCharaOff("CHA20")
+: RpgCharaOff("CHA03_1")
+//共通処理
+: if ( Flag ( "NonVirgin_Mukuro" ) == false )
+	: RpgCharaOn("NPC_T02_007_1")
+	: RpgEventOff("NPC_T02_007")
+	: RpgMapBaloonOff("NPC_T02_007")
+: endif
+//裸の場合　強制着衣へ
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: CharaCostume( "Mukuro", 0 )
+: endif
+: if ( CharaCostume( "Momo" ) == 1 )
+	: CharaCostume( "Momo", 0 )
+: endif
+: if ( CharaCostume( "Kinako" ) == 1 )
+	: CharaCostume( "Kinako", 5 )
+: endif
+: if ( CharaCostume( "Mei" ) == 1 )
+	: CharaCostume( "Mei", 0 )
+: endif
+//あざみの部屋前
+: if ( MissionProgress( "SC_A01_03_1", "Opened" ) == true )
+	: RpgMapBaloonOn( "AzamiRoom", "Event" )
+: endif
+: if ( MissionProgress( "SC_A02_04_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "AzamiRoom", "Event" )
+: endif
+//第４章のみ
+: if( $chapter == 4 )
+	: RpgCharaOn("CHA18")
+: endif
+//第４章～
+: if( $chapter >= 4 )
+	: RpgCharaOff("NPC_T02_007_1")
+	: RpgEventOff("NPC_T02_007")
+	: RpgCharaOn("NPC_T02_007_2")
+: endif
+//プレイヤーが無黒の時
+: if (WhoLeader( "Mukuro" ) == true)
+	: if( $chapter >= 0 && $chapter <= 1 )
+		: RpgCharaOn("NPC_T02_006")
+	: endif
+	: if ( Flag ( "HentaiDildo" ) == true )
+		: RpgCharaBaloonOff("NPC_T02_007_1")
+	: endif
+	: if ( MissionProgress( "SC_A03_51_1", "Opened" ) == true )
+		: RpgCharaBaloonOn("NPC_T02_008")
+	: endif
+	//第３章のみ
+	: if( $chapter == 3 )
+		: RpgCharaOn("CHA24a")
+		: RpgCharaOn("CHA24b")
+		: RpgCharaOn("CHA24c")
+		: RpgCharaOn("CHA24d")
+		: RpgEventOn("CHA24")
+		: RpgCharaOn("CHA24")
+	: endif
+	: if( $chapter == 4 )
+		: RpgCharaOn("CHA24")
+		: RpgCharaOn("CHA03a")
+		: RpgCharaOn("CHA03b")
+	: endif
+//プレイヤーが桃の時
+: elif (WhoLeader( "Momo" ) == true)
+	: if( $chapter >= 0 && $chapter <= 1 )
+		: RpgCharaOn("NPC_T02_006")
+	: endif
+	: RpgCharaOff("NPC_T02_007_1")
+	//第３章・第４章
+	: if( $chapter == 3 )
+		: RpgCharaOn("CHA24")
+	: endif
+	: if( $chapter == 4 )
+		//第４章のみ
+		: RpgCharaOn("CHA24")
+		: RpgCharaOn("CHA20")
+		: if ( Flag ( "MomoReturn" ) == true ) 
+			: RpgCharaOn("CHA03_1")
+		: endif
+	: endif
+//プレイヤーが黄菜子の時
+: elif (WhoLeader( "Kinako" ) == true)
+	: RpgCharaOff("NPC_T02_007_1")
+	//第３章・第４章
+	: if( $chapter == 3 )
+		: RpgCharaOn("CHA24")
+	: endif
+	: if( $chapter == 4 )
+		: RpgCharaOn("CHA24")
+		//第４章のみ
+		: RpgCharaOn("CHA03_1")
+		: RpgCharaOn("CHA20")
+	: endif
+: endif
+//調整
+: if ( MissionProgress( "SC_B04_05_1", "InProgress" ) == true )
+	: RpgCharaOff("CHA03a")
+	: RpgCharaOff("CHA03b")
+: endif
+: if ( MissionProgress( "SC_B04_05_2", "InProgress" ) == true )
+	: RpgCharaOff("CHA03a")
+	: RpgCharaOff("CHA03b")
+: endif
+: if ( MissionProgress( "SC_B04_05_3", "InProgress" ) == true )
+	: RpgCharaOff("CHA03a")
+	: RpgCharaOff("CHA03b")
+: endif
+//桃復帰後
+: if ( Flag ( "MomoReturn" ) == true )
+	: RpgCharaOff("CHA03a")
+	: RpgCharaOff("CHA03b")
+	: RpgCharaOff("CHA18")
+	: RpgCharaOff("CHA20")
+: endif
+: Return
+
+//========================================================
+//○鬼灯屯所・無黒の部屋
+//========================================================
+*Map02
+: RpgEventOff("SC_A01_51")
+: RpgMapBaloonOff("SC_A01_51")
+: RpgEventOn("SC_A01_51")
+: RpgCharaOff("CHA00")
+: if (WhoLeader( "Mukuro" ) == false)
+	: RpgMapBaloonOff("Inn")
+	: RpgEventOff("Inn_Mukuro")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	//SC_A01_51「自らの手で処女膜を破ってしまう」発生
+	: if ( Flag ( "HentaiDildo" ) == true )
+		: if ( Flag ( "NonVirgin_Mukuro" ) == false )
+			: RpgEventOn("SC_A01_51")
+			: RpgMapBaloonOn("SC_A01_51")
+		: endif
+	: endif
+	//第４章以降は強制的に削除
+	: if ( $chapter >= 4 ) 
+		: RpgEventOff("SC_A01_51")
+		: RpgMapBaloonOff("SC_A01_51")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: if ( Flag ( "MomoReturn" ) == true )
+		//: RpgCharaOn("CHA00")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if( $chapter >= 4 )
+		//: RpgCharaOn("CHA00")
+	: endif
+: endif
+: Return
+//========================================================
+//○鬼灯屯所・桃の部屋
+//========================================================
+*Map03
+: RpgCharaOff("CHA01")
+// 桃の部屋
+: if (WhoLeader( "Momo" ) == false)
+	: RpgMapBaloonOff("Inn")
+	: RpgEventOff("Inn_Momo")
+: endif
+: if (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	//第４章・桃復帰後
+	: if ( Flag ( "MomoReturn" ) == true )
+		: RpgCharaOn("CHA01")
+	: endif
+: endif
+: Return
+//========================================================
+//○鬼灯屯所・黄菜子の部屋
+//========================================================
+*Map04
+: RpgCharaOff("CHA07")
+: RpgCharaOff("CHA07")
+: RpgCharaOff("CHA07")
+: RpgCharaOff("CHA07")
+: if (WhoLeader( "Kinako" ) == false)
+	: RpgMapBaloonOff("Inn")
+	: RpgEventOff("Inn_Kinako")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	//２章のみ
+	: if( $chapter == 2 )
+		: RpgCharaOn("CHA07")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: RpgCharaOn("CHA07")
+: elif (WhoLeader( "Kinako" ) == true)
+	//２章～３章
+	: if( $chapter == 2 )
+		: RpgCharaOn("CHA07")
+	: endif
+	: if( $chapter == 3 )
+		: RpgCharaOn("CHA07")
+	: endif
+: endif
+: Return
+//========================================================
+//○鬼灯屯所・道場
+//========================================================
+*Map06
+: RpgCharaOff("CHA03")
+: RpgCharaOff("CHA03")
+: RpgCharaOff("CHA19")
+: RpgCharaOff("CHA03_1a")
+: RpgCharaOff("CHA03_1b")
+: RpgCharaOff("CHA03_1a")
+: RpgCharaOff("CHA03_1b")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	//１～３章＆５章
+	: if( $chapter == 1 )
+		: RpgCharaOn("CHA03")
+	: endif
+	: if( $chapter == 2 )
+		: RpgCharaOn("CHA03")
+	: endif
+	: if( $chapter == 3 )
+		: RpgCharaOn("CHA03")
+	: endif
+	: if( $chapter == 4 )
+		: RpgCharaOn("CHA19")
+	: endif
+	: if( $chapter == 5 )
+		: RpgCharaOn("CHA03")
+	: endif
+	// 高浜の奴隷市を調査せよ進行時はレオを消す
+	: if ( MissionProgress( "SC_A03_03_1", "InProgress" ) == true )
+		: RpgCharaOff("CHA03")
+	: endif
+	: if ( MissionProgress( "SC_A03_03_2", "InProgress" ) == true )
+		: RpgCharaOff("CHA03")
+	: endif
+	: if ( MissionProgress( "SC_A03_03_3", "InProgress" ) == true )
+		: RpgCharaOff("CHA03")
+	: endif
+	// 反幕派の重要人物を捕らえよ！進行時はレオを消す
+	: if ( MissionProgress( "SC_A03_13_1", "InProgress" ) == true )
+		: RpgCharaOff("CHA03")
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	//第２章・第３章（無黒囚われ時はいない）
+	: if( $chapter == 2 )
+		: RpgCharaOn("CHA03_1a")
+		: RpgCharaOn("CHA03_1b")
+	: endif
+	: if( $chapter == 3 )
+		: RpgCharaOn("CHA03_1a")
+		: RpgCharaOn("CHA03_1b")
+		//奴隷市イベント時はレオ消去
+		: if ( MissionProgress( "SC_A03_03_1", "InProgress" ) == true )
+			: RpgCharaOff("CHA03_1a")
+			: RpgCharaOff("CHA03_1b")
+		: endif
+		: if ( MissionProgress( "SC_A03_03_2", "InProgress" ) == true )
+			: RpgCharaOff("CHA03_1a")
+			: RpgCharaOff("CHA03_1b")
+		: endif
+		: if ( MissionProgress( "SC_A03_03_3", "InProgress" ) == true )
+			: RpgCharaOff("CHA03_1a")
+			: RpgCharaOff("CHA03_1b")
+		: endif
+	: endif
+	//第４章のみ
+	: if( $chapter == 4 )
+		: RpgCharaOff("CHA06")
+	: endif
+	: if( $chapter >= 5 )
+	//第５章のみ
+		: RpgCharaOn("CHA03")
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	//第２章・第３章
+	: if( $chapter == 2 )
+		: RpgCharaOn("CHA03_1a")
+		: RpgCharaOn("CHA03_1b")
+	: endif
+	: if( $chapter == 3 )
+		: RpgCharaOn("CHA03_1a")
+		: RpgCharaOn("CHA03_1b")
+	: endif
+	: if( $chapter == 4 )
+	//第４章のみ
+	//: RpgCharaOff("CHA06")
+		: RpgCharaOn("CHA19")
+	: endif
+	//第５章のみ
+	: if( $chapter == 5 )
+		: RpgCharaOn("CHA03")
+	: endif
+: endif
+//無黒　囚われ時
+: if ( Flag ( "MukuroCaptive" ) == true )
+	: RpgCharaOff("CHA03_1a")
+	: RpgCharaOff("CHA03_1b")
+: endif
+//第５章～
+: if( $chapter >= 5 )
+	: RpgCharaOff("NPC_T02_009")
+: endif
+//桃復帰後
+: if ( Flag ( "MomoReturn" ) == true )
+	: RpgCharaOff("CHA19")
+: endif
+: Return
+
+*Map08
+: if (WhoLeader( "Mukuro" ) == false )	//プレイヤーが無黒の時
+	: RpgMapBaloonOff( "Hevent" )
+: endif
+: Return

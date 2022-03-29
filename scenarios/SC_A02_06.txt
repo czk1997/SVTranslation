@@ -1,0 +1,410 @@
+//========================================================
+//○密談の証拠を手に入れろ！１
+//========================================================
+*sc001
+//●演出：過去回想から戻る
+//●場所：帝都南街道・宿場町・宿屋
+//●演出：黄菜子　目を覚まして窓を開ける
+//Yoshi：センターに黄菜子
+: HideWnd()
+: CharaCostume( "Kinako", 0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Rule_00", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0058" )
+\CN["黄菜子"]
+“好像做了很久以前的梦……”
+
+当时的事情只记得模模糊糊。
+
+这么说来，这里是和局长相遇的驿站町。
+所以才会把以前的事情放在梦里吧。
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0059" )
+\CN["黄菜子"]
+“那么，必须好好完成任务。”
+
+现在，我接受的任务是{永井和男，漫长的一生}
+这是反幕派贵族的调查。
+
+据说和无黑追赶的大叶组有黑色交往
+因为有信息所以必须确认真伪。
+
+: DrawChara( "Kinako",10, 0)
+: PlayVoice( "Voices/vo02_kin0060" )
+\CN["黄菜子"]
+“原来如此。目标是现在进入高浜的地方吗……”
+
+那就不是在这里一动不动的时候了。
+
+就这样进入高浜吧。
+
+//＠サイドエピソード解放：レオと銀のわんこそば対決！
+//●シーンエンド
+: SetMission( "SC_A02_06_1", "InProgress" )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+事件信息更新了。
+
+: SideEpisodeFlagUp( "episode09" )
+<^FF0000>侧面小故事更新了！</color>
+
+: FadeOut( 1.0 )
+// 黄菜子のコス刀ありに変更
+: CharaCostume( "Kinako", 5 )
+: Wait()
+: Party ( "Kinako" )	// パーティーを黄菜子に変更
+: PartyType = "Party03"; Call( "Scenarios/CommonSys*PartySetting" )
+//＠マップ封印：帝都北街道
+//＠マップ解放：帝都南街道
+: FastTravelMapOff( "TeitoKitaKaido" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: DestinationMap( "Map_Town04_01_Takahama" )
+: HideWnd()
+: LoadMap( "Map_Dungeon06_01_TeitoMinamiKaido" )
+
+//========================================================
+//○密談の証拠を手に入れろ！２
+//========================================================
+*sc002
+//●場所：高浜
+//●演出：街に入った後、歩いて近くの茶屋へ。店員がやってくる
+: HideWnd()
+: FadeIn( 1.0 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveRight", 4 )
+: Wait()
+: RpgCharaOn("Mobu00")
+: ShowWnd()
+\CN["茶馆"]
+“您要点什么？”
+
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0061" )
+\CN["黄菜子"]
+“请给我柏饼和凉焙茶。”
+
+//●演出：店員が柏餅を取りに戻る
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaTurn( "Mobu00", "R" )
+: Sleep( 1.0 )
+: RpgCharaTurn( "Mobu00", "L" )
+: ShowWnd()
+\CN["茶馆"]
+“让您久等了，这是柏饼和焙茶。”
+
+: HideWnd()
+: DrawChara( "Kinako", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0062" )
+\CN["黄菜子"]
+“谢谢”
+
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaTurn( "Mobu00", "R" )
+: RpgCharaOff("Mobu00")
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 2	\
+:	"MoveRight", 4	\
+:	"Turn", "Down" )
+: Wait()
+: ShowWnd()
+: DrawChara( "Kinako", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+首先喝凉焙茶来润喉。
+
+//●演技：柏餅を食べています
+: PlayVoice( "Voices/vo02_kin0063" )
+\CN["黄菜子"]
+“啊呜……嗯……唔，唔……”
+
+果然这里的日式点心非常好吃。
+
+一个，一转眼就吃完了。
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0064" )
+\CN["黄菜子"]
+“我想再添一点……”
+
+现在正在任务中。
+
+确认一下包着槲叶糕的叶子。
+
+“路易尼亚那”的信息
+剩下了。
+
+//●演技：心の声です
+: DrawChara( "Kinako",10, 0)
+: PlayVoice( "Voices/vo02_kin0065" )
+\CN["黄菜子"]
+（永井好像在凑屋啊。）
+
+凑屋是大和有名的豪商之一。
+
+看来永井和那个商人有联系呢。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0066" )
+\CN["黄菜子"]
+（潜入宅邸，调查一下吧）
+
+恐怕，现在在谈什么吧。
+很有可能掌握必要的信息。
+
+//●シーンエンド
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: SetMission( "SC_A02_06_1", "Hidden" )
+: SetMission( "SC_A02_06_2", "InProgress" )
+事件信息更新了。
+
+: HideWnd()
+: FadeOut( 1.0 )
+: Wait()
+//イベント出現させる
+: RpgEventOn("SC_A02_06_sc003")
+: RpgMapBaloonOn("SC_A02_06")
+//見張りのモブを配置
+: RpgCharaOn("Mobu01_1")
+: RpgCharaOn("Mobu01_2")
+: RpgCharaOn("Mobu01_3")
+//＠マップ解放：高浜
+: FastTravelMapOn( "Takahama" )
+: DestinationMap( "Map_Town04_07_Takahama" )
+: FadeIn( 1.0 )
+: Wait()
+: Return
+//========================================================
+//○密談の証拠を手に入れろ！３
+//========================================================
+*sc003
+//●場所：高浜・湊屋の屋敷・門前
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0067" )
+\CN["黄菜子"]
+“果然不能正面突破啊……”
+
+这样的话，果然是从后门开始的吧……。
+
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+\CI["开始潜入"]
+\CI["再看看情况"]
+可以潜入的地方有一个目标。
+
+: if ($choice == 0)
+	//●演出：暗転
+	//＠マップ移動：高浜・湊屋の屋敷
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town04_05_Takahama")
+: endif
+//●シーンエンド
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: Return
+
+//--------------------------------------------------------
+
+*sc003_1
+\CI["回高滨"]
+\CI["回不去"]
+回高浜吗？
+
+: if ($choice == 0)
+	: HideWnd()
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town04_01_Takahama", "FromUnderground")
+: else
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 0 )
+: endif
+: Return
+
+//========================================================
+//○密談の証拠を手に入れろ！４
+//========================================================
+*sc004
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+我总算侵入了房子
+从顶棚里往下看。
+
+……………………………………………………。
+
+: HideWnd()
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Town04_07_Takahama", "", "Scenarios/SC_A02_06*sc004_1" )
+
+*sc004_1
+: RpgCharaOff("Player")
+: FadeIn( 1.0 )
+: Wait()
+: PlayBgm("BGM/37_Dungeon")
+: ShowWnd()
+//●演出：裏から確認するような演出
+\CN["永井"]
+“凑屋，那件事……”
+
+\CN["凑佳苗"]
+“是的……关于对大叶组的资金援助，我们正在顺利进行中。”
+
+\CN["永井"]
+“那边的第二代是个很会说话的家伙。
+能处理掉那个顽固的上一代真是太好了”
+
+\CN["凑佳苗"]
+“是啊。クク，第二代继承了大陆系之辈的势力
+因为正在扩大啊”
+
+\CN["永井"]
+“嘛，那家伙的手腕就这样无法抑制，让他暴走了
+不过……”
+
+\CN["永井"]
+“如果将暴走的半格雷等人的后门指向幕府
+发生大暴动。那样的话，幕府也就结束了”
+
+\CN["凑佳苗"]
+“完全就是那样！幕府的颠覆也很近。”
+
+\CN["永井"]
+「啊，这样的话这次我们就夺取天下。
+让大和成为一个不输给任何地方的强大国家吧”
+
+\CN["凑佳苗"]
+“kukuku，那晓晓指的是凑屋
+请多关照”
+
+进行了什么鬼故事和金钱交接。
+
+这样的光景我已经看了无数遍了。
+
+//●演技：心の声です
+//: DrawChara( "Kinako",10, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Kinako", 10, 0 )
+: PlayVoice( "Voices/vo02_kin0068" )
+\CN["黄菜子"]
+（总之，这样可以吗？）
+
+不能久留。赶紧回去吧。
+
+//: EraseChara( "Kinako", 0.5 )
+//●演出：場面転換トランジション
+//＠マップ移動：鬼灯屯所・あざみの部屋
+//Yoshi：右にあざみ、左に黄菜子
+: StopBgm( 1.0 )
+: FadeOut( 0.0 )
+: Wait()
+: RpgCharaOn("Player")
+: LoadMap( "Map_Town02_07_Hozuki", "Azami_Room_Front", "Scenarios/SC_A02_06*sc004_2" )
+
+*sc004_2
+: FadeIn( 1.0 )
+: Wait()
+: StopBgm( 0.0 )
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+我把回来后听到的所有事情都告诉了局长。
+
+: PlayBgm("BGM/01_CM001")
+: PlayVoice( "Voices/vo05_aza0077" )
+\CN["嘲讽"]
+“原来如此。很遗憾还没有找到证据。”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0078" )
+\CN["嘲讽"]
+“让半格雷一起暴走，发动政变吗……”
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0069" )
+\CN["黄菜子"]
+“如果，变成那样的话就不容易了……”
+
+: PlayVoice( "Voices/vo05_aza0079" )
+\CN["嘲讽"]
+“是啊。嘛，半格雷他们会随心所欲地胡闹吧。
+被破坏掠夺，帝都的街道会变得荒芜吧。在流血的情况下
+也有成为的可能性”
+
+: PlayVoice( "Voices/vo05_aza0080" )
+\CN["嘲讽"]
+“——然后，结束后什么也不留下。
+只不过是变成了被大群害虫糟蹋的田地而已”
+
+: PlayVoice( "Voices/vo05_aza0081" )
+\CN["嘲讽"]
+“永井他们在那之后想做什么呢？
+很有可能没有考虑到这一点”
+
+局长睁着眼睛嘟囔着。
+
+希望这个世界不会发生纷争。
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0082" )
+\CN["嘲讽"]
+“嗯，永井这个人物恐怕只是个小东西
+是啊……就这样让他游一会儿吧”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0070" )
+\CN["黄菜子"]
+“可以吗？”
+
+: DrawChara( "Azami", 5, 0)
+: PlayVoice( "Voices/vo05_aza0083" )
+\CN["嘲讽"]
+“啊，说不定会有大人物。”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Azami", 0.0 )
+: SetMission( "SC_A02_06_2", "Successed" )
+: $money += 500	//報酬取得
+//黄菜子→無黒のマップ解放状態へ
+: FastTravelMapOff( "TeitoMinamiKaido" )
+: FastTravelMapOff( "Takahama" )
+: FastTravelMapOn( "TeitoNishikaido" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "Kazusa" )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「外来侵入種駆除１」へ
+//＠シナリオジャンプ：SC_A02_07
+//黄菜子のコス戻す
+: CharaCostume( "Kinako", 0 )
+: Jump( "Scenarios/SC_A02_07" )

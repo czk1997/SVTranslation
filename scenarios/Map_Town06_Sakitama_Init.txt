@@ -1,0 +1,254 @@
+//========================================================
+//○崎珠・外
+//========================================================
+*Map01
+//着替え封印解除
+: Call( "Scenarios/CommonSys*CosSealReset" )
+//--------------------------------------------------------
+// ＮＰＣ配置
+//--------------------------------------------------------
+// リーダーが無黒の時
+: if ( WhoLeader( "Mukuro" ) == true )
+	: RpgCharaOn("NPC_T06_024")
+	: RpgCharaOn("NPC_T06_025")
+	: RpgCharaOn("NPC_T06_026")
+	//イベント
+	//旅の商人と名刀虎徹？発生中
+	: if ( MissionProgress( "SC_C05_50_1", "Opened" ) == true )
+		: RpgCharaOn("SC_C05_50")
+	: endif
+	: if ( CharaCostume( "Mukuro" ) == 1 )
+		: RpgMapBaloonOff( "To06" )
+		: RpgDoorLock( "DoorRanmaru", true )
+	: endif
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: RpgCharaOff("NPC_T06_025")
+	: endif
+	: if ( $chapter == 12 )
+		: RpgCharaOff("NPC_T06_024")
+		: RpgCharaOff("NPC_T06_025")
+		: RpgCharaOff("NPC_T06_026")
+	: endif
+// リーダーが冥の時
+: elif ( WhoLeader( "Mei" ) == true )
+	: RpgCharaOn("NPC_T06_018")
+	// 少女喪失時のみ出現
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mei" ) == false )
+		: RpgCharaOn("NPC_T06_019")
+		: RpgCharaOn("NPC_T06_020")
+	: endif
+	// 蘭丸の家
+	: RpgDoorLock( "DoorRanmaru", true )
+	: RpgMapBaloonOff( "To06" )
+	// 素直になる冥、蘭丸と肌を重ねて―― 発生時
+	: if ( MissionProgress( "SC_C06_50", "Opened" ) == true )
+		: RpgMapBaloonOn( "To06", "Heart" )
+		: RpgDoorLock( "DoorRanmaru", true )
+	: endif
+: endif
+//--------------------------------------------------------
+// イベント配置
+//--------------------------------------------------------
+//白夜ルート
+//紫苑の家
+: if( $chapter >= 8 && $chapter < 10 )
+	: RpgMapBaloonOff( "ShionHouse" )
+: endif
+// 傾国の女と呼ばれている存在　終了後
+: if ( MissionProgress( "SC_C04_12_2", "Successed" ) == true )
+	: RpgDoorLock( "ToTamamo", false )
+	: RpgMapBaloonOn( "ToTamamo" )
+: endif
+//浪人ルート
+: if( $chapter >= 10 )
+	: RpgDoorLock( "ToByakuya", true )
+	: RpgMapBaloonOff( "ToByakuya" )
+: endif
+//白夜を滅ぼせ！　発生中
+: if ( MissionProgress( "SC_D06_03_1", "InProgress" ) == true )
+	: RpgCharaOn("Ryu")
+	: RpgCharaWarp( "Player", "SC_D06_03")
+	: Jump( "Scenarios/SC_D06_03*sc002" )
+: endif
+//龍を倒した後
+: if ( MissionProgress( "SC_D06_03_2", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D06_03*sc004" )
+: endif
+: Return
+//========================================================
+//○居酒屋
+//========================================================
+*Map02
+//--------------------------------------------------------
+// ＮＰＣ配置
+//--------------------------------------------------------
+: if ( $chapter == 7 )
+	: RpgCharaOn("NPC_T06_007")
+: endif
+// みどり＆卍
+: if ( $chapter == 9 )
+	: RpgCharaOn("Midori")
+	: RpgCharaOn("Manji")
+: endif
+// リーダーが無黒の時
+: if ( WhoLeader( "Mukuro" ) == true )
+	// 非処女の場合
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mukuro" ) == false )
+		: RpgCharaOn("NPC_T06_027")
+	: endif
+	//レオとゆきずり夜這いエッチ　発生中
+	: if ( MissionProgress( "SC_C06_51", "Opened" ) == true )
+		: RpgCharaBaloonOn( "NPC_T06_006", "Event" )
+	: endif
+	: if ( CharaCostume( "Mukuro" ) == 1 )
+		: RpgCharaOff("Midori")
+		: RpgCharaOff("Manji")
+	: endif
+: endif
+// リーダーが冥の時
+: if ( WhoLeader( "Mei" ) == true )
+	// 非処女の場合
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mei" ) == false )
+		: RpgCharaOn("NPC_T06_021")
+	: endif
+	: CharaCostume( "Mei", 0 )
+	: Call( "Scenarios/CommonSys*CosSeal" )	// 着替え封印
+: endif
+//--------------------------------------------------------
+// イベント配置
+//--------------------------------------------------------
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( MissionProgress( "SC_C04_50_1", "Opened" ) == true )
+		: RpgCharaBaloonOn("NPC_T06_006","Event")
+	: endif
+: endif
+: Return
+//========================================================
+//○宿屋
+//========================================================
+*Map03
+//--------------------------------------------------------
+// ＮＰＣ配置
+//--------------------------------------------------------
+// リーダーが無黒の時
+: if ( WhoLeader( "Mukuro" ) == true )
+	// 非処女の場合
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mukuro" ) == false )
+		: RpgCharaOn("NPC_T06_028")
+	: endif
+: endif
+// リーダーが冥の時
+: if ( WhoLeader( "Mei" ) == true )
+	// 非処女の場合
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mei" ) == false )
+		: RpgCharaOn("NPC_T06_022")
+	: endif
+	: CharaCostume( "Mei", 0 )
+	: Call( "Scenarios/CommonSys*CosSeal" )	// 着替え封印
+: endif
+: Return
+//========================================================
+//○銭湯
+//========================================================
+*Map04_1
+//男湯イベント　５章～
+: if ( $chapter >= 8 )
+	: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+		: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 && Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) >= 2 && Flag ( "DatsuiMukuro" ) == false )
+			: RpgMapBaloonOn( "SC_S11","Heart" )
+		: endif
+		: if ( Flag ( "DatsuiMukuro" ) == true )
+			: RpgDoorLock( "Door_Men", false )
+			: RpgMapBaloonOn( "SC_S11","Enter" )
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+		: if ( CharaHRank( "Momo", "Immoral" ) >= 2 && Call( "Scenarios/CommonSys*CharaHRank_Momo_Exhibitionist" ) >= 2 && Flag ( "DatsuiMomo" ) == false )
+			: RpgMapBaloonOn( "SC_S11","Heart" )
+		: endif
+		: if ( Flag ( "DatsuiMomo" ) == true )
+			: RpgDoorLock( "Door_Men", false )
+			: RpgMapBaloonOn( "SC_S11","Enter" )
+		: endif
+	: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+		: if ( CharaHRank( "Kinako", "Immoral" ) >= 2 && Call( "Scenarios/CommonSys*CharaHRank_Kinako_Exhibitionist" ) >= 2 && Flag ( "DatsuiKinako" ) == false )
+			: RpgMapBaloonOn( "SC_S11","Heart" )
+		: endif
+		: if ( Flag ( "DatsuiKinako" ) == true )
+			: RpgDoorLock( "Door_Men", false )
+			: RpgMapBaloonOn( "SC_S11","Enter" )
+		: endif
+	// リーダーが冥の時
+	: elif ( WhoLeader( "Mei" ) == true )
+		: Call( "Scenarios/CommonSys*CosSeal" )	// 着替え封印
+	: endif
+: endif
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//========================================================
+//○玉藻の家
+//========================================================
+*Map05
+// 傾国の女と呼ばれている存在　終了後
+: if ( WhoLeader( "Mukuro" ) == true )
+	: if ( CharaCostume( "Mukuro" ) == 1 )
+		: CharaCostume( "Mukuro", 0 )
+	: endif
+: elif ( WhoLeader( "Mei" ) == true )
+	: if ( CharaCostume( "Mei" ) == 1 )
+		: CharaCostume( "Mei", 0 )
+	: endif
+: endif
+: if ( MissionProgress( "SC_C04_12_2", "Successed" ) == true )
+	: RpgCharaOn("Tamamo")
+: endif
+: Return
+//========================================================
+//○蘭丸の家
+//========================================================
+*Map06
+: if ( WhoLeader( "Mukuro" ) == true )
+	: if ( CharaCostume( "Mukuro" ) == 1 )
+		: CharaCostume( "Mukuro", 0 )
+	: endif
+: elif ( WhoLeader( "Mei" ) == true )
+	: if ( CharaCostume( "Mei" ) == 1 )
+		: CharaCostume( "Mei", 0 )
+	: endif
+: endif
+// 見廻組から女衒を守れ！発生中
+: if ( MissionProgress( "SC_C04_09_1", "InProgress" ) == true )
+	: RpgCharaOff("Ranmaru")
+: endif
+// 小夜を探せ　進行中
+: if ( MissionProgress( "SC_C05_11_1", "InProgress" ) == true )
+	: RpgCharaOff("Ranmaru")
+: endif
+: Return
+//========================================================
+//○民家２
+//========================================================
+*Map08
+// 冥がリーダーの時
+: if ( WhoLeader( "Mei" ) == true )
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mei_Immoral" ) >= 2 )
+		: RpgCharaOn("NPC_T06_023")
+		: CharaCostume( "Mei", 0 )
+		: Call( "Scenarios/CommonSys*CosSeal" )	// 着替え封印
+	: endif
+: endif
+: Return
+//========================================================
+//○民家３
+//========================================================
+*Map09
+: if ( WhoLeader( "Mukuro" ) == true )
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mukuro" ) == false )
+		: RpgCharaOn("NPC_T06_032")
+	: endif
+: endif
+: if ( WhoLeader( "Mei" ) == true )
+	: CharaCostume( "Mei", 0 )
+	: Call( "Scenarios/CommonSys*CosSeal" )	// 着替え封印
+: endif
+: Return
+

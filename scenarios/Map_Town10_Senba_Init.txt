@@ -1,0 +1,27 @@
+//========================================================
+//○仙葉　初期化
+//========================================================
+*Map01
+: if ( MissionProgress( "SC_B04_06_1", "InProgress" ) == true )
+	: RpgCharaOn("SC_B04_06")
+	: FastTravelMapOn( "Senba" )
+: endif
+: if ( MissionProgress( "SC_C06_02_03", "InProgress" ) == true )
+	: RpgMapBaloonOn("SC_C06_02")
+: endif
+//裸の場合　強制着衣へ
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: CharaCostume( "Mukuro", 0 )
+: endif
+: if ( CharaCostume( "Momo" ) == 1 )
+	: CharaCostume( "Momo", 0 )
+: endif
+: if ( CharaCostume( "Kinako" ) == 1 )
+	: CharaCostume( "Kinako", 5 )
+: endif
+: if ( CharaCostume( "Mei" ) == 1 )
+	: CharaCostume( "Mei", 0 )
+: endif
+//ＮＰＣ生存チェック
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return

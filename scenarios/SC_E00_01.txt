@@ -1,0 +1,1162 @@
+//========================================================
+//○約束の朝までイチャイチャＨ
+//========================================================
+//●状況：無黒　エッチに慣れています
+//●演出：回想。
+: HideWnd()
+: StopBgm( 0.0 )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Leo", 0 )
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evy_a035_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+“无黑……回去的话，会有很多H……吧。
+到早上为止……一直……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evy_a035_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2218" )
+\CN["无黑色"]
+“哇，笨蛋……！！你在这种时候为止！？”
+
+//●演出：過去回想から明ける。
+//●背景：宿屋・夜
+//Yoshi：背景、和室
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_03", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+在和希拉加的最后一场战斗中，雷欧濒临死亡的时候
+约定“回去的话到早上为止要做很多H哦”。
+
+那个被雷欧牢牢记住了——
+
+//●ＣＧ：レオとラブラブエッチ
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0111001_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/33_H_LOVE")
+: ShowWnd()
+//●演技：すでに３回戦ぐらい終えています
+: PlayVoice( "Voices/vo00_muk4766" )
+\CN["无黑色"]
+“哈、哈、哈……真的要做到早上吗……？”
+
+: PlayBackVoice( "Voices/BGV00_muk_jigo02" )
+\CN["雷欧"]
+“喂！我们约好了吗？”
+
+虽然是休息日，但已经做了几次了。
+
+尽管如此，雷欧的爷爷还是很精神
+浮起血管，勃起得刺痛。
+
+: PlayVoice( "Voices/vo00_muk4767" )
+\CN["无黑色"]
+“你到底有多精神啊？”？
+这边已经摇摇晃晃的了……”
+
+\CN["雷欧"]
+“因为能和最喜欢的女人做爱
+无论多少都是勃起的吧？”
+
+: PlayVoice( "Voices/vo00_muk4768" )
+\CN["无黑色"]
+“所以，所以，你又把这种事直接地……”
+
+但是，被喜欢的男人那样说的话，不可能不高兴。
+
+脸自然而然地笑了。
+
+\CN["雷欧"]
+“害羞吗？”
+
+: PlayVoice( "Voices/vo00_muk4769" )
+\CN["无黑色"]
+“嗯，好吵……！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0211001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——喂。
+
+雷欧的尖端被阴道口覆盖。
+
+\CN["雷欧"]
+“还湿着吗？”
+
+: PlayVoice( "Voices/vo00_muk4770" )
+\CN["无黑色"]
+“当然。今天已经做了几次了……所以……”
+
+不只是那个。
+
+只是对雷欧做出反应，就渐渐地湿了
+羞答答。
+
+\CN["雷欧"]
+“那么，再去一次吧……嗯，橡皮筋……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0111001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4771" )
+\CN["无黑色"]
+“啊……我觉得刚才用的是最后一次了。”
+
+\CN["雷欧"]
+“啊，真的吗？那去买点吧？”
+
+: PlayVoice( "Voices/vo00_muk4772" )
+\CN["无黑色"]
+“要去买的话，你打算去哪里？已经是半夜了。”
+
+\CN["雷欧"]
+“……啊……”
+
+看表的话，日期变了。
+
+: PlayVoice( "Voices/vo00_muk4773" )
+\CN["无黑色"]
+“雷欧，那个，就算没有也……。
+不用开也可以”
+
+\CN["雷欧"]
+“那么，但是……可以吗？那个……”
+
+: PlayVoice( "Voices/vo00_muk4774" )
+\CN["无黑色"]
+“如果你今天就这样结束的话，那也没关系吗？”
+
+这样就结束了，不好。
+我也说了想做就生也可以。
+
+\CN["雷欧"]
+“不，不，不好！因为今天就到早上了！”
+
+//●ＣＧ：レオとラブラブエッチ
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0211001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器が膣口にあてがわれる
+: PlayVoice( "Voices/vo00_muk4775" )
+\CN["无黑色"]
+“雷奥……嗯……”
+
+阴道口处有小鸡丁的前端。
+
+也许是因为没有安装避孕器具，所以热量直接传了出去
+不由得提高了声音。
+
+\CN["雷欧"]
+“无黑，因为可以插……”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 9; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawImage( 9, 0, "EventCG2/eva_b019b_0_0_0000000_1100000_0_0", Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+——呜呜呜呜呜呜呜、呜呜、呜、呜、呜哇！！
+
+//●演技：男性器挿入です
+: PlayVoice( "Voices/vo00_muk4776" )
+\CN["无黑色"]
+“嗯，嗯！啊……啊啊啊，啊，啊，进来了……
+雷欧的爷爷……到里面来……”
+
+: PlayVoice( "Voices/vo00_muk4777" )
+\CN["无黑色"]
+“嗯哈……嗯，嗯，哈……又粗又硬……”……
+好、好烫……嗯……啊啊……！”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi01" )
+明明只是摘掉避孕器具，却不能和生的相比
+传来强烈的热度。
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+“哈，哈，无黑中也非常热……。
+变成这样的托管”
+
+: PlayVoice( "Voices/vo00_muk4778" )
+\CN["无黑色"]
+“呜呜呜……啊，送到里面去了……啊啊啊啊啊啊
+爷爷，要好好地爬到根部……！”
+
+公鸡一边拨开阴道壁一边前进。
+
+然后，满满的爱液包围着雷欧的小精灵
+完全吞没了全部。
+
+\CN["雷欧"]
+“果然，不戴的话，完全不一样啊……。
+直接传达给大家的，非常厉害……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0111001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4779" )
+\CN["无黑色"]
+“啊……我能直接感受到你的……”
+
+在里面拖的小公鸡。
+阴道壁突然收缩，变成1个。
+
+不放开雷欧的话，就会紧紧地缠在一起。
+
+\CN["雷欧"]
+“光是被插上就觉得太舒服了……。
+差不多该习惯了，不要动了”
+
+: PlayVoice( "Voices/vo00_muk4780" )
+\CN["无黑色"]
+“嗯……是你的小公鸡……是生的小公鸡
+女婿，搅拌了很多……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0311001_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一直、一直、一直、一直、一直、一直、不断、不断！
+
+雷欧习惯了的感觉动了腰。
+
+//●演技：ピストンされています
+: PlayVoice( "Voices/vo00_muk4781" )
+\CN["无黑色"]
+“啊啊啊，啊，啊……嗯，啊，啊，啊
+嗯，嗯，啊啊啊啊！啊、嗯、呼啊！”
+
+: PlayVoice( "Voices/vo00_muk4782" )
+\CN["无黑色"]
+“那、那里……里面，如果被小公鸡的前端咕噜咕噜的话……”……
+啊啊……感觉到了……呵呵，嗯……”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi02" )
+\CN["雷欧"]
+“那个，好像是这样啊……嗯……超紧张的。
+而且里面……一擦龟头，就好得不得了……”
+
+: PlayVoice( "Voices/vo00_muk4783" )
+\CN["无黑色"]
+“啊啊啊，啊啊，好饿啊……你心情变好了
+如果能给我的话……那么，我也……”
+
+在这么近的距离里，Leo好像很舒服的在追求我
+变得开心了。
+
+而且，这也让我自己的快感越来越深。
+
+: PlayVoice( "Voices/vo00_muk4784" )
+\CN["无黑色"]
+“嗯，嗯，嗯，嗯……啊，啊，啊……
+嗯，嗯……嗯，嗯……嗯……嗯！”
+
+: PlayVoice( "Voices/vo00_muk4785" )
+\CN["无黑色"]
+“这个姿势……在很深的地方……嗯……小金
+收到了……呃，呃……嗯…嗯…！”
+
+\CN["雷欧"]
+“是啊……哈，哈，但是，这种亲密的感觉
+非常好……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawImage( 9, 0, "EventCG2/eva_b019b_0_0_0000000_1100000_0_0", Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+一下子、一下子、一下子、一下子、一下子、一下子！
+
+有节奏地前后移动腰，刺入阴道深处。
+
+: PlayVoice( "Voices/vo00_muk4786" )
+\CN["无黑色"]
+“啊啊啊啊啊啊啊，奥，奥……在女阴的深处，被格里拉着的话
+真是的……哈，哈……嗯……！”
+
+雷欧的抽插心情很好，禁不住抱了起来。
+
+被突破深处时全身都能跑过去的感觉
+抖了好几次身子。
+
+\CN["雷欧"]
+“嗯……好几次都要把小鸡鸡给勒紧……”
+
+\CN["雷欧"]
+“好像被manko口交了……在下面的嘴巴里的口交
+那家伙……？”
+
+: PlayVoice( "Voices/vo00_muk4787" )
+\CN["无黑色"]
+“所以……那种愚蠢的玩笑……嗯，嗯……
+啊啊啊啊啊……！”
+
+: PlayVoice( "Voices/vo00_muk4788" )
+\CN["无黑色"]
+“呼，嗯，嗯……啊，嗯……啊啊啊啊啊啊啊啊啊！”
+
+雷欧抿嘴一笑，就把我最脆弱的部分用小鸡鸡
+刺激过来。
+
+\CN["雷欧"]
+“这是最好的。如果中了小鸡鸡
+会非常紧张，会变得非常热情”
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！咕嘟咕嘟！嘘！嘘！咕嘟咕嘟！
+
+: PlayVoice( "Voices/vo00_muk4789" )
+\CN["无黑色"]
+“呜哇！嗯，啊啊啊……所以
+那里……因为那里非常脆弱……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0411001_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：軽い絶頂です
+: PlayVoice( "Voices/vo00_muk4790" )
+\CN["无黑色"]
+“拉，嗯，啊，感觉太过了……呃……”……
+呼啊，啊……啊啊啊啊啊！”
+
+\CN["雷欧"]
+“……呜！”
+
+提高声音，轻轻地达成。
+
+: PlayVoice( "Voices/vo00_muk4791" )
+\CN["无黑色"]
+“哈……哈……嗯……哈…哈，哈……”
+
+\CN["雷欧"]
+“现在有点累吗？是吗？”
+
+: PlayVoice( "Voices/vo00_muk4792" )
+\CN["无黑色"]
+“……呜呜……不，我跑了……。
+因为你一直在责备我的弱点……”
+
+: PlayVoice( "Voices/vo00_muk4793" )
+\CN["无黑色"]
+“嗯！所以，等一下……不，刚刚回来……”……
+那、那、那是因为我很脆弱……小、敏感……”
+
+: PlayVoice( "Voices/vo00_muk4794" )
+\CN["无黑色"]
+“啊啊啊，呜，呜啊啊啊啊啊啊！啊，呜……
+哈哈哈……呃，嗯，好饿！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘿嘿！嘿嘿！嘿嘿！嘿嘿！嘿嘿！
+
+正在绝顶的时候，Leo一个劲儿地责备我……。
+
+\CN["雷欧"]
+“呀，糟了……我也差不多该……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0311001_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4795" )
+\CN["无黑色"]
+“哈、哈、哈……雷欧……嗯……”
+
+紧紧抱住。
+
+将手臂缠绕在一起，脚也缠在腰上，再不理了
+使身体紧贴。
+
+\CN["雷欧"]
+“……呃，无黑……那个，那个……嗯，在深处被束缚着……
+等、然后、出来……”
+
+: PlayVoice( "Voices/vo00_muk4796" )
+\CN["无黑色"]
+“拿出来就好了……嗯，嗯……就这样，在我的深处……”
+
+\CN["雷欧"]
+“呃……缠绕着紧紧地系着……我已经……了！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0511001_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4797" )
+\CN["无黑色"]
+“啊，啊……嗯……是啊，拿出来……呼
+我也……好…下次和你一起……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4798" )
+\CN["无黑色"]
+“嗯，嗯……嗯——————！！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawImage( 9, 0, "EventCG2/eva_b019b_0_0_0000000_1100010_0_0", Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+扑通扑通扑通地跳着————！
+
+\CN["雷欧"]
+“啊……呃……被吸入……啊…啊！”
+
+//●演出：射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 9; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawImage( 9, 0, "EventCG2/eva_b019b_0_0_0000000_1100020_0_0", 0.0 )
+: ShowWnd()
+咚！咚！咚！咚！咚！
+
+: PlayVoice( "Voices/vo00_muk4799" )
+\CN["无黑色"]
+“嗯，哈……啊……啊……哈……哈……哈……”
+
+: PlayBackVoice( "Voices/BGV00_muk_jigo01" )
+以绝顶的气势更加激烈地接近雷欧。
+正好没有身体和身体的间隙。
+
+从在阴道内狂暴的小鸡鸡，直接到子宫，浓厚而热
+被注入精液。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b019a_1_0_0311012_1200010_0_"
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4800" )
+\CN["无黑色"]
+“哈……哈…哈……哈……出了很多……。
+嗯……今天明明射精了好几次，却有很强的气势……”
+
+身体还被像是敲击般的射精所震撼。
+
+雷欧在冷静下来之前，一直把精液吐到阴道里。
+
+\CN["雷欧"]
+“呼……非常舒服……”
+
+: PlayVoice( "Voices/vo00_muk4801" )
+\CN["无黑色"]
+“哇，我也……不错……”
+
+虽然是久违的中出，但在子宫上的触感是
+什么也说不出来。
+
+仅此而已，就连意识都快跳出来了
+因为抱着雷欧保持了意识。
+
+//●背景：宿屋・夜
+//Yoshi：背景、和室
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: ShowWnd()
+然后又是小休止。
+
+//●演技：胸に顔を埋めています
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b009_1_1_0200002_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4802" )
+\CN["无黑色"]
+“嗯……呵呵……”
+
+把脸埋在雷欧厚厚的胸板里，有时会把身体委托给小圆。
+
+\CN["雷欧"]
+“呐，无黑……”
+
+: PlayVoice( "Voices/vo00_muk4803" )
+\CN["无黑色"]
+“嗯？又要做吗？”
+
+如果是雷欧要求的话，那不是很乐意。
+
+\CN["雷欧"]
+“不，嘛，我会再做的……。
+突然想起了想做的事情”
+
+: PlayVoice( "Voices/vo00_muk4804" )
+\CN["无黑色"]
+“想做的事情……？
+总觉得，有种讨厌的预感……”
+
+但是，看到他像少年一样兴奋的眼神
+变得不能拒绝。
+
+\CN["雷欧"]
+“你看，我和你都可以自由地{黑夜叉，暗黑妖精}
+已经习惯了吧？”
+
+\CN["雷欧"]
+“如果在黑夜叉、黑精灵中H的话
+什么感觉啊”
+
+: PlayVoice( "Voices/vo00_muk4805" )
+\CN["无黑色"]
+“哈？{黑夜叉，暗黑妖精}……？”
+
+但是，嘛，那样的话可以吗。
+
+而且实际上我也有点兴趣。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+互相一次从床上出来变成了{黑夜叉，暗黑妖精}。
+
+//●ＣＧ：レオと黒夜叉同士でセックス
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_1_0111002_1200000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["雷欧"]
+“哈、哈、糟了……这个真是太兴奋了……”
+
+: PlayBackVoice( "Voices/BGV00_muk_jigo01" )
+那个我也一样。无论如何{黑夜叉，暗黑精灵}化的话
+感情强烈地流露出来。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4806" )
+\CN["无黑色"]
+（女阴烦死了……。
+想要……快点想要……想要雷欧的小精灵……）
+
+把屁股抬高，让雷欧看看。
+
+尽情强调女阴，让雷欧来追求。
+
+\CN["雷欧"]
+“无黑的完全湿了，爱液滴下来了。”
+
+\CN["雷欧"]
+“而且，女人的味道很厉害……
+真是受不了……超级兴奋”
+
+: PlayVoice( "Voices/vo00_muk4807" )
+\CN["无黑色"]
+“雷欧，快点插上……小丁，我想要……”
+
+: PlayVoice( "Voices/vo00_muk4808" )
+\CN["无黑色"]
+“女阴在镇上，静不下来。
+我希望你用你强壮而粗壮的小公鸡来镇定我……”
+
+\CN["雷欧"]
+“我也非常想吐槽你。
+你那讨厌的女阴……”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b028b_1_0_0000000_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嗯……嗯……一直……一直……呜呜呜！
+
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo00_muk4809" )
+\CN["无黑色"]
+“呜呜呜！啊啊啊啊啊啊啊啊啊啊啊！”
+
+: PlayVoice( "Voices/vo00_muk4810" )
+\CN["无黑色"]
+“啊啊啊啊啊啊，小公鸡……我一下子就喜欢上了♥</color>
+啊……啊啊……嗯……”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi01" )
+可能是因为受到黑夜叉、黑精灵化的影响感觉变得敏锐了吧
+小鸡鸡的感觉比刚才更加清楚了。
+
+既硬又热，连硬邦邦的感觉都鲜明。
+简直就像握在手里的时候一样。
+
+\CN["雷欧"]
+“哈，哈，粘膜缠着小鸡鸡
+网络的感觉、紧固之类的非常明白”
+
+\CN["雷欧"]
+“这个太舒服了……腰都停不下来了。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0211002_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！
+
+//●演技：押しつけるようなピストンをされています
+: PlayVoice( "Voices/vo00_muk4811" )
+\CN["无黑色"]
+“恩啊啊……啊，嗯，嗯哈！啊啊啊啊……
+啊，好激烈♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4812" )
+\CN["无黑色"]
+“哦，是小气鬼……恩，是女婿……乱七八糟
+被搅乱了……”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi02" )
+\CN["雷欧"]
+“不好……太兴奋了，调节……”
+
+: PlayVoice( "Voices/vo00_muk4813" )
+\CN["无黑色"]
+“没关系……倒不如说，激烈点比较好……”
+
+: PlayVoice( "Voices/vo00_muk4814" )
+\CN["无黑色"]
+“粗暴一点比较好……哈哈，犯了……”♥</color>
+我想被你……一团糟、侵犯……”
+
+我想做像野兽一样激烈的行为。
+
+感觉比起性更追求交尾吗？
+
+\CN["雷欧"]
+“那正好。
+哈，哈，我好像停不下来了”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0311002_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4815" )
+\CN["无黑色"]
+「啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊」♥</啊，啊，啊，啊
+好饿！”
+
+: PlayVoice( "Voices/vo00_muk4816" )
+\CN["无黑色"]
+“啊——啊，啊……走到最里面……入口也
+全部……女阴全部都有小鸡鸡的感觉♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi03" )
+我想更感受雷欧。再深一点。
+
+\CN["雷欧"]
+“嗯……嗯……好像被吸引了……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "eva_b028a_1_2_0211002_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+嗯，嗯，一直，嗯，嗯，嗯！
+
+: PlayVoice( "Voices/vo00_muk4817" )
+\CN["无黑色"]
+“啊啊啊……啊……哈……哈，好舒服啊！”♥</color>
+小气鬼……非常、很烫……”
+
+: PlayVoice( "Voices/vo00_muk4818" )
+\CN["无黑色"]
+“哈，哈，小公鸡的形状，女阴记住了
+爷爷，我会好好明白的……”
+
+\CN["雷欧"]
+“正好，粘在一起……
+小鸡鸡被抱住了，已经……”
+
+等雷欧稳住我的腰。
+
+: HideWnd()
+: evfile = "eva_b028a_1_2_0111002_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4819" )
+\CN["无黑色"]
+“嗯！好饿！啊！啊！啊！啊！啊！
+哦，奥，在小公鸡的尖上被烤着♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4820" )
+\CN["无黑色"]
+“肚子的深处，被子宫压得很舒服。”♥</color>
+啊啊啊，那个，感觉到了，最有感觉了！”
+
+里面的深处，子宫口被小鸡鸡的尖端摩擦着
+发出很大的声音。
+
+\CN["雷欧"]
+“啊，受不了……女阴的深处，很粗糙呢
+好舒服……无黑……嗯！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0311002_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+Zigo、Zun、Zun
+哇！哇！嘘嘘！！
+
+//●演技：ピストン激しいです
+: PlayVoice( "Voices/vo00_muk4821" )
+\CN["无黑色"]
+“哈，激烈地移动的话，卡住了钾……嗯……”……
+嗯，声音出来了，腰开始动了♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4822" )
+\CN["无黑色"]
+“恩哈，嗯，啊啊啊……哈，嗯，嗯，嗯
+啊啊啊啊啊啊啊啊啊啊啊——！”
+
+腰部被撞击屁股的干燥声音，充分搅拌爱液
+水声响彻房间。
+
+浓厚而甜美的女孩子的味道和强烈的男孩子的味道混合在一起
+淫荡的行为气味充满了房间。
+
+: HideWnd()
+: evfile = "eva_b028a_1_2_0411102_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4823" )
+\CN["无黑色"]
+“哇，好激烈！好激烈……嗯，啊啊啊！
+那个、那个、感觉太过了……啊啊啊啊啊啊啊啊啊！”
+
+: PlayVoice( "Voices/vo00_muk4824" )
+\CN["无黑色"]
+“不，擦了很多……女阴，中，被喋喋不休地说
+嗯……啊啊……嗯……嗯……”
+
+\CN["雷欧"]
+“哈哈哈，嘛，还挺紧的……”
+
+肚子下面热得受不了。
+
+阴道内突然蠢动，勒紧了雷欧的小鸡鸡。
+
+\CN["雷欧"]
+“你之中，心情太好了……嗯…”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0311002_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4825" )
+\CN["无黑色"]
+「呜呜呜呜……好舒服啊♥</啊……啊……
+啊、来、来、来了……好像又来了……”
+
+顶峰感高涨，急速扩大。
+
+: PlayVoice( "Voices/vo00_muk4826" )
+\CN["无黑色"]
+“嗯……嗯……雷、雷欧……好像很……哈
+真的不行了……嗯，好的……啊…”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0411102_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4827" )
+\CN["无黑色"]
+“啊……啊啊……好…好……啊，啊……呜……”……
+嗯……呜呜呜呜呜呜————————！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘎吱嘎吱地嘎吱嘎吱地响！！！
+
+有一种从下往上爬的感觉。
+
+头和视野都是雪白的，身体痉挛着。
+
+\CN["雷欧"]
+“……呃！小鸡鸡快融化了
+女阴变热了……”
+
+\CN["雷欧"]
+“真厉害，这个只是插了几次就够了
+看起来很帅……”
+
+: PlayVoice( "Voices/vo00_muk4828" )
+\CN["无黑色"]
+“啊……啊啊啊啊……啊——啊……啊……”
+
+\CN["雷欧"]
+“啊啊啊……努尔太厉害了，已经……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "eva_b028a_1_2_0311002_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+嗯，一直，一直，一直，一直，一直，一直！
+
+: PlayVoice( "Voices/vo00_muk4829" )
+\CN["无黑色"]
+“等一下……等一下！我很高兴……我很高兴
+现在还在玩儿……不要动…”
+
+本来就很舒服的地方
+再加上快感。
+
+在变得敏感的地方被激烈摩擦
+只是，持续发出甜蜜的声音。
+
+\CN["雷欧"]
+“哈、哈、哈……腰随意活动……我想要无黑
+受不了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0411102_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4830" )
+\CN["无黑色"]
+“啊啊！啊啊啊！所以才这样……”♥</color>
+呜……呜……啊啊啊……啊啊♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4831" )
+\CN["无黑色"]
+“又来了……又来了！
+又来了————————！”
+
+//●ＣＧ差分：挿入・潮
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0511013_1210000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+啊啊啊啊啊啊啊啊————————！！
+
+\CN["雷欧"]
+“呃……好管束啊……吹到潮水……
+太兴奋了，已经……”
+
+: PlayVoice( "Voices/vo00_muk4832" )
+\CN["无黑色"]
+“哈，哈……啊啊……不，明明很帅……
+喂，糟了……”
+
+这是{黑夜叉，暗黑妖精}化的影响吗？
+
+总觉得有什么东西会被吹断……。
+
+: PlayVoice( "Voices/vo00_muk4833" )
+\CN["无黑色"]
+“雷欧……再让我搞得乱七八糟……”♥</color>
+哈……哈………犯了……再犯一点♥</color>」
+
+高高举起屁股，让雷欧强烈要求我。
+
+\CN["雷欧"]
+“啊，再多给你一点……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "eva_b028a_1_2_0311013_1200000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+拖泥带水！嘘！哇！哇！小矮人！
+
+: PlayVoice( "Voices/vo00_muk4834" )
+\CN["无黑色"]
+“恩是啊！啊！啊！嗯！啊啊啊啊！”
+
+每次被激烈地拿出时爱液就会咕嘟咕嘟地溢出来。
+
+\CN["雷欧"]
+“哈，哈，里面好滚滚……也，已经…”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0111013_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：呂律が怪しくなってきます
+: PlayVoice( "Voices/vo00_muk4835" )
+\CN["无黑色"]
+“嗯啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊……！
+这、这个、真是太好了……算了，等一下♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4836" )
+\CN["无黑色"]
+“呃……明明已经玩了好几次了，还……”♥</color>
+停不下来……我停不下来……啊啊啊啊——！”
+
+\CN["雷欧"]
+“哦，我也拿出来吧……”
+
+: PlayVoice( "Voices/vo00_muk4837" )
+\CN["无黑色"]
+“是，拿出来……好，好……”♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4838" )
+\CN["无黑色"]
+“在女阴里，有一个劲地卷着烟，战战兢兢的女阴
+满满的——！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！磨磨蹭蹭！
+
+\CN["雷欧"]
+“无黑……又出来了……！放在里面……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0411113_1200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4839" )
+\CN["无黑色"]
+“嗯，嗯……拿出来……拿出来很多……精液，满满的
+想要……向女阴，往里呼噜，撞上……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4840" )
+\CN["无黑色"]
+“啊，又来了，再见，再见……”♥</color>
+恩啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊————————！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b028b_1_0_0000000_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜呜呜，呜呜呜呜！
+
+\CN["雷欧"]0
+
+“……！”
+
+精液以惊人的气势流入。
+
+: HideWnd()
+: evfile = "eva_b028a_1_2_0211013_1200010_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4841" )
+\CN["无黑色"]
+“啊啊啊……精液被拿出来了，感觉很厉害……。
+精液的粘稠、热度等，全部都能感受到♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4842" )
+\CN["无黑色"]
+“哦，肚子里存起来了……刚才你给我拿出来的
+被冲走了……嗯……啊…啊啊啊啊啊……”
+
+\CN["雷欧"]
+“呜呜……呜……好、好厉害……啊……啊……！”
+
+//●演出：射精
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b028a_1_2_0511013_1200010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+参考翻译！看！杜威！自助餐！
+
+: PlayVoice( "Voices/vo00_muk4843" )
+\CN["无黑色"]
+“嗯……嘛，又来了……哈哈……
+呼，嘘，溢出来太可惜了……”
+
+注入的精液溢出。
+
+\CN["雷欧"]
+“不，不管多少……无限地出发吧……。
+因为你一个劲地、要结束……”
+
+: PlayVoice( "Voices/vo00_muk4844" )
+\CN["无黑色"]
+“因为……小金，感觉太多了……雷欧的小金
+喜欢……女婿擅自……”
+
+意识模糊了，自己也在说什么呢
+我不知道。
+
+: HideWnd()
+: evfile = "eva_b028b_1_0_0000000_1100020_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+//●演技：力が入らない状態です
+: PlayVoice( "Voices/vo00_muk4845" )
+\CN["无黑色"]
+“哈……哈……啊啊……嗯……啊…啊……”
+
+\CN["雷欧"]
+“头晕……就一发，就这么……”
+
+: PlayBackVoice( "Voices/BGV00_muk_jigo02" )
+化为黑暗精灵的H
+耗损迅猛。
+
+说是消耗了生命力而涉及到了行为上也不为过
+也许没有。
+
+: HideWnd()
+: evfile = "eva_b028a_1_2_0111013_1200020_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4846" )
+\CN["无黑色"]
+“哈……哈……呃……但是，但是……乱七八糟的
+心情舒畅♥</眼前一亮……”
+
+\CN["雷欧"]
+“这个，成为习惯的话就糟了……”
+
+消耗很大，因此带来强烈的快感。
+
+因此，孕育着巨大的中毒性。
+
+: PlayVoice( "Voices/vo00_muk4847" )
+\CN["无黑色"]
+“恩……哈、哈、哈……呃，接下来怎么办……？”
+
+无数次的绝顶，让雷欧的精液充满阴道内
+尽管满足了，但也理所当然地意识到了继续。
+
+\CN["雷欧"]
+“不愧是，{黑夜叉，暗黑妖精}的样子
+好像不能一直待到早上啊……”
+
+//●背景：空・夜
+//Yoshi：背景
+: StopBackVoice()
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+两个人互相点头，然后回到原来的样子。
+
+然后，再稍微休息一下
+我们一直交往到早上。
+
+还有，顺便说一下，我们之间增加一个人和家人的是
+这是从这天开始大约10个月后的事情。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+//●シーンエンド
+: Return

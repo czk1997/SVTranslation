@@ -1,0 +1,761 @@
+//========================================================
+//○奴隷市を潰せ！１
+//========================================================
+*sc001
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0624" )
+\CN["无黑色"]
+“奴隶市是在晚上召开的。
+先等到晚上吧……”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: ShowWnd()
+之后，和局长联系后
+为了不被其他人发现，一直等到晚上。
+
+……………………………………………………。
+
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Dungeon09_02_TakahamaPort1F", "", "Scenarios/SC_A03_05*sc001_1")
+
+*sc001_1
+: HideWnd()
+: if ( Flag ( "TakahamaPortEvent0" ) == true )
+	: FadeIn( 1.0 )
+	: Call( "Scenarios/Map_Dungeon_Init*Map_Dungeon09_02" )
+	: Party("Mukuro","Leo")
+	: Participate( 1, true )
+	: PartyType = "Party05"; Call( "Scenarios/CommonSys*PartySetting" )
+	: Wait()
+: else
+	//以下、１回目だけ実施
+	: Flag( "TakahamaPortEvent0", true )
+	: RpgCharaOn("Leo")
+	: FadeIn( 1.0 )
+	: Wait()
+	//●場所：高浜港・レンガの倉庫
+	//●演出：レオ　登場している
+	: DrawChara( "Mukuro", 17, 0, 0, 0.5, 0.0, 3, "RC" )
+	: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 4, "LC" )
+	: ShowWnd()
+	\CN["雷欧"]
+“这里是奴隶市吗……”
+
+因为雷欧赶来了，所以开始任务。
+
+	: DrawChara( "Leo", 0, 0)
+	\CN["雷欧"]
+“老子一下子就崩溃了，去救奴隶的孩子们吧。”
+
+	: DrawChara( "Mukuro", 16, 0)
+	: PlayVoice( "Voices/vo00_muk0625" )
+	\CN["无黑色"]
+“雷欧，你可不能大意。
+因为我觉得对方也很警惕”
+
+	: DrawChara( "Leo", 14, 0)
+	\CN["雷欧"]
+“嘛，无黑的事情我一定会保护你的。
+就当是坐上了大船，请期待一下”
+
+	: DrawChara( "Mukuro", 24, 0)
+	: PlayVoice( "Voices/vo00_muk0626" )
+	\CN["无黑色"]
+“被雷欧这么一说反而让我不安……”
+
+	: DrawChara( "Mukuro", 23, 0)
+	: PlayVoice( "Voices/vo00_muk0627" )
+	\CN["无黑色"]
+“算了，总之先上车吧。
+我觉得会有警卫或贵族的护卫，所以不要放松警惕”
+
+	: DrawChara( "Leo", 0, 0)
+	\CN["雷欧"]
+“好啊！”
+
+	: HideWnd()
+	: EraseChara( "Leo", 0.5 )
+	: EraseChara( "Mukuro", 0.5 )
+	: Wait()
+	: Party("Mukuro","Leo")
+	: Participate( 1, true )
+	: PartyType = "Party05"; Call( "Scenarios/CommonSys*PartySetting" )
+	: ShowWnd()
+雷欧参加了派对。
+
+	//※パーティー説明画面入れる？
+	: FadeOut( 0.5 )
+	: Wait()
+	: RpgCharaOff("Leo")
+	: FadeIn( 0.5 )
+	: Call( "Scenarios/Map_Dungeon_Init*Map_Dungeon09_02" )
+	: Wait()
+//＠システム：赤いレンガ倉庫内だけレオが戦闘に加わる
+: endif
+//●シーンエンド
+: Return
+//========================================================
+//○奴隷市を潰せ！２
+//========================================================
+*sc002
+\CI["一切准备！"]
+\CI["确认一次"]
+: if ( $choice == 0 )
+	: HideWnd()
+	: RpgDoorLock( "Door", false )
+	: RpgDoorOpen( "Door" )
+	: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1 )
+	: Wait()
+	: FadeOut( 1.0 )
+	: Wait()
+	: LoadMap( "Map_Dungeon09_05_TakahamaPortBoss", "", "Scenarios/SC_A03_05*sc002_1")
+: else
+	: HideWnd()
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+	: Wait()
+	: Return
+: endif
+
+*sc002_1
+//●場所：高浜港・レンガの倉庫・地下
+//●状況：地下で奴隷市が行われている。無黒とレオ姿なし
+: HideWnd()
+: RpgCharaOff("Player")
+: FadeIn( 1.0 )
+: RpgCameraFocus( "NPC", "Dorei", 0, 0, 6 )
+: Wait()
+: PlayBgm("BGM/38_Slam")
+: Wait()
+: ShowWnd()
+\CN["奴隶商"]
+“下一个女孩子是兽人种呢。
+只生活在北方国家的稀有价值很高
+是种族之子”
+
+\CN["奴隶女孩"]
+“呜呜……唔……想回家啊……唔…”
+
+\CN["贵族A"]
+“……嗯。你哭着普通的想回家吗？”
+
+\CN["贵族B"]
+“我的心好像还没有坏掉。你很坚强吗？”
+
+\CN["贵族C"]
+“我喜欢稀有种族！50万！”
+
+\CN["贵族D"]
+“100万！”
+
+\CN["贵族E"]
+“150万！”
+
+\CN["奴隶商"]
+“出了150万！那么，还有其他人吗？”
+
+\CN["贵族A"]
+“如果是到200为止的话，无论如何……但是，再看看情况吧。”
+
+\CN["贵族B"]
+“刚才拿到了好的。
+今晚留下来，在画廊里享受吧”
+
+//: DrawChara( "Mukuro", 16, 0, 3, 0.5, 0.0, 3, "RC" )
+: DrawFaceThumbnail( "Mukuro", 16, 0, 3 )
+: PlayVoice( "Voices/vo00_muk0628" )
+\CN["无黑色"]
+“什么，怎么回事……简直像奴隶一样……。
+不快点救出来的话……！”
+
+//: DrawChara( "Leo", 20, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawFaceThumbnail( "Leo", 20, 0, 0 )
+\CN["雷欧"]
+“无黑，冷静一点。现在，如果深入的话，会被当成奴隶的孩子们。”
+也会遭遇危险……”
+
+//: DrawChara( "Leo", 1, 0)
+: DrawFaceThumbnail( "Leo", 1, 0, 0 )
+\CN["雷欧"]
+“既然奴隶是被出卖的东西，别说是生命的危险了，就连伤痕也没有了
+一定是为了不让别人注意到了……”
+
+//: DrawChara( "Mukuro", 39, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawFaceThumbnail( "Mukuro", 39, 0, 0 )
+: PlayVoice( "Voices/vo00_muk0629" )
+\CN["无黑色"]
+“对，是啊……对不起，头上出血了。”
+
+: DrawFaceThumbnail( "Leo", 3, 0, 0 )
+\CN["雷欧"]
+“奴隶们下楼以后才是机会
+瞄准那里”
+
+//: DrawChara( "Mukuro", 17, 0)
+: DrawFaceThumbnail( "Mukuro", 17, 0, 0 )
+: PlayVoice( "Voices/vo00_muk0630" )
+\CN["无黑色"]
+“了解”
+
+如果没有雷欧的话，我一定会原封不动地对他们说
+一定是被砍去了。
+
+那样的话，可能会伤害被当做奴隶的孩子们
+一想到不知道的事情就毛骨悚然。
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 28, 0)
+: DrawFaceThumbnail( "Mukuro", 28, 0, 0 )
+: PlayVoice( "Voices/vo00_muk0631" )
+\CN["无黑色"]
+（雷欧这个人有时候很可靠……）
+
+明明总是很消沉，但一到紧张的场面
+一下子冷静下来。
+
+//●演出：奴隷が舞台袖に引っ込んでいく
+: HideWnd()
+: RpgCharaBatch( "Dorei"	\
+:	"MoveUp", 2 )
+: Wait()
+: RpgCharaOff("Dorei")
+: Wait()
+//: DrawChara( "Mukuro", 17, 0)
+: ShowWnd()
+: DrawFaceThumbnail( "Mukuro", 17, 0, 0 )
+: PlayVoice( "Voices/vo00_muk0632" )
+\CN["无黑色"]
+“雷欧……！”
+
+//: DrawChara( "Leo", 17, 0)
+: DrawFaceThumbnail( "Leo", 17, 0, 0 )
+\CN["雷欧"]
+“去！”
+
+//●演出：無黒＆レオ　奴隷市に乗り込んでいく
+: HideWnd()
+: StopBgm( 1.0 )
+//無黒とレオの表示をONにする
+: RpgCharaOn("Player")
+: RpgCharaOn("Leo")
+: RpgCameraFocus( "NPC", "Player", 0, 0, 8 )
+: Wait()
+: RpgCharaOn("Player")
+: RpgCharaBatch( "Player"	\
+:	"Speed", 2.0	\
+:	"MoveUp", 2 )
+: RpgCharaBatch( "Leo"	\
+:	"MoveUp", 2 )
+: Wait()
+//一斉に振り向かせる
+: RpgCharaTurn("Enemy1", "D")
+: RpgCharaTurn("Enemy2", "D")
+: RpgCharaTurn("Enemy3", "D")
+: RpgCharaTurn("Mobu1", "D")
+: RpgCharaTurn("Mobu1", "D")
+: RpgCharaTurn("Mobu2", "D")
+: RpgCharaTurn("Mobu3", "D")
+: RpgCharaTurn("Mobu4", "D")
+: RpgCharaTurn("Mobu5", "D")
+: RpgCharaTurn("Mobu6", "D")
+: PlayBgm("BGM/18_TM003")
+: ShowWnd()
+: DrawChara( "Leo", 23, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“你们不要在那里动！”
+
+雷欧大声地吸引贵族们的注意。
+
+: DrawChara( "Mukuro", 16, 0 )
+: PlayVoice( "Voices/vo00_muk0633" )
+\CN["无黑色"]
+“御用改！大和地区禁止贩卖人口。”
+
+\CN["奴隶商"]
+“——可恶！难道是鬼灯的人吗！？”
+
+\CN["贵族A"]
+“喂！真聪明！杀了他们也没关系！”！
+因为我花了很多钱雇佣你！”
+
+\CN["贵族保镖A"]
+“……了解”
+
+\CN["贵族的保镖B"]
+“这也是工作嘛。我对你们没有怨恨。”
+
+为了保护贵族而腰间佩刀的男人们朝这边走来。
+
+//●演出：貴族たち逃げ出して、用心棒たちと戦うことになる
+//レオを強制的に戦闘参加へ
+: Participate( 1, true )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+
+*battle
+//――――――――――――――――――――――――――――
+//■戦　闘：用心棒×３
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：用心棒×３,1,1,0,sc003a,sc003b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc003b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Renga", "BGM/22_BM003", 1007, 1007, 1007, "Scenarios/SC_A03_05*battle_end", true)
+
+*battle_end
+: if ( $battleWin == true )
+	: RestoreBgm
+	: Jump( "*sc003a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle" )
+: else
+	: Jump( "*sc003b" )	//敗北した場合
+: endif
+
+//========================================================
+//○奴隷市を潰せ！３Ａ
+//========================================================
+*sc003a
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+//※＠演出：無黒のアクション～レオのアクション。用心棒倒れる
+: RpgCharaOff("Enemy1")
+: RpgCharaOff("Enemy2")
+: RpgCharaOff("Enemy3")
+: RpgCharaOn("Enemy1_1")
+: RpgCharaOn("Enemy2_1")
+: RpgCharaOn("Enemy3_1")
+: FadeIn( 0.5 )
+: Wait()
+\CN["贵族A"]
+“好了，拜托了！放过我吧！”
+
+\CN["贵族B"]
+“只要有钱，我什么都干！这件事对幕府保密……！”
+
+: DrawChara( "Mukuro", 24, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 21, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo00_muk0634" )
+\CN["无黑色"]
+“无聊……”
+
+贵族们这种态度令人唾弃。
+
+虽然有很多这样的人……。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+在那之后不久赶来的同伴们和警察们
+奴隶市的贵族被带走了。
+
+//●演出：時間経過
+//●場所：高浜港・レンガの倉庫前
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_Harbor01_03", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/26_FM004")
+: DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["雷欧"]
+“可恶！跑了几个人……”
+
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk0635" )
+\CN["无黑色"]
+“啊，奴隶商人的男人最后也逃走了……”
+
+趁着骚动很快就消失了。
+
+作为奴隶被带来的孩子都不是大和的人
+都是从国外被掳走的人。
+
+能保护他们真好
+能抓到平心静气利用奴隶市的贵族也很好。
+
+但是，没能斩断各种罪恶的根源很痛苦。
+
+//●勝敗合流地点へ
+//＠ラベルジャンプ：sc003c
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: $money += 1500
+: SetMission( "SC_A03_05_1", "Successed" )
+: Jump( "*sc003c" )
+
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+//========================================================
+//○奴隷市を潰せ！３Ｂ
+//========================================================
+*sc003b
+: PlayBgm("BGM/16_TM001")
+: CharaPartsOn( "Mukuro", 0)
+: DrawChara( "Mukuro", 31, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 19, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["雷欧"]
+“哼……可恶……！在这种地方……”
+
+: DrawChara( "Mukuro", 31, 1)
+: PlayVoice( "Voices/vo00_muk0636" )
+\CN["无黑色"]
+“哈……哈…哈……哈……！”
+
+\CN["贵族保镖A"]
+“不愧是鬼灯，这么年轻就干到这种地步……”
+
+\CN["贵族的保镖B"]
+“但是，对方不好啊。”
+
+护卫并不是在炫耀那方面的技术。
+
+\CN["贵族的保镖C"]
+“看来‘贵族大人’们全都逃走了
+怎么办？”
+
+\CN["贵族保镖A"]
+“已经决定好了。
+男人就算杀了，也要让女人开心”
+
+\CN["贵族的保镖B"]
+“虽说是年轻人，但鬼灯还是出来了。
+不拿到那么点奖金的话就不划算了”
+
+: DrawChara( "Leo", 21, 0, 1)
+\CN["雷欧"]
+“哈……哈………为什么不让……”
+
+就连站着都勉勉强强了吧
+
+不管这种状态如何，雷欧都站在我面前。
+
+\CN["贵族的保镖C"]
+“喂，女人由我来保护吗？
+哥哥，好帅啊”
+
+\CN["贵族的保镖B"]
+“对大叔来说太耀眼了……”
+
+//●演技：涙を堪えています
+: DrawChara( "Mukuro", 33, 1, 2 )
+: PlayVoice( "Voices/vo00_muk0637" )
+\CN["无黑色"]
+“呃……嗯……”
+
+落后于这种程度低的人的自己太可怜了
+我要哭了。
+
+\CN["贵族保镖A"]
+「喂，你这双眼睛是什么？
+不要一个一个地盯着。我很生气”
+
+一个保镖向利奥举起刀。
+
+: DrawChara( "Leo", 17, 1)
+\CN["雷欧"]
+“……”
+
+//●演技：声を絞り出す感じで
+: DrawChara( "Mukuro", 19, 1)
+: PlayVoice( "Voices/vo00_muk0638" )
+\CN["无黑色"]
+“……啊，哎呀，住手——”
+
+\CN["贵族保镖A"]
+“我不会死的！”
+
+//※●演出：血飛沫
+: StopBgm( 0.0 )
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: RpgCharaOff("Enemy2")
+: RpgCharaTurn("Enemy1", "U")
+: RpgCharaTurn("Enemy3", "U")
+: RpgCharaOn("Ryu")
+: Wait()
+――――――――――――――――――
+
+映入眼帘的并不是保镖挥下刀的样子。
+
+挥舞着刀，上半身和下半身变成两半
+是景象。
+
+: HideWnd()
+: DrawChara( "Ryu", 11, 0, 0, 0.0, 0.0, 5, "C" )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["龙"]
+“无黑，雷欧，没事吧？”
+
+: PlayBgm("BGM/10_CM010")
+: DrawChara( "Leo", 4, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+\CN["雷欧"]
+“し、师傅……！？”
+
+: DrawChara( "Mukuro", 18, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlayVoice( "Voices/vo00_muk0639" )
+\CN["无黑色"]
+“龙先生……！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+\CN["贵族的保镖B"]
+“呃，你……”
+
+\CN["贵族的保镖C"]
+“喂，喂……现在，那边的女人说是龙……。
+说到鬼灯之龙……！？”
+
+\CN["贵族的保镖B"]
+“不会吧……不会吧……啊，那个……据说流氓也会哭着泄露出来。”
+
+: DrawChara( "Ryu", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["龙"]
+“放心吧。不会杀不抵抗的人。”
+
+\CN["贵族的保镖C"]
+「…………」
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+龙先生静静地只说了一句话
+保镖们把刀掉在地上，瘫软在地上。
+
+: DrawChara( "Leo", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+\CN["雷欧"]
+“师父……老师！
+因为我还不成熟，所以就算是无黑也这样……”
+
+: DrawChara( "Mukuro", 5, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo00_muk0640" )
+\CN["无黑色"]
+“雷欧，不对……！这么说的话，我也还差得远……”
+
+: DrawChara( "Ryu", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["龙"]
+“两个人都能活着真是太好了。”
+
+: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+“……师傅”
+
+龙先生温柔的话语在各种各样的意义上深入人心。
+
+如果龙先生不来的话，恐怕雷欧就被杀了。
+
+然后，我一定会被他们当做玩具
+是被杀还是被卖呢。
+
+: DrawChara( "Ryu", 0, 0)
+\CN["龙"]
+“今晚好好休息。为明天的排练做准备。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: ShowWnd()
+第二天的排练只有我和Leo准备了特别严格的东西。
+
+但是，非常感谢那个。
+
+任务失败了还有生命。
+不仅如此，五体都很满足。
+
+那是多么幸运的事啊？
+
+: SetMission( "SC_A03_05_1", "Failed" )
+我和雷欧——只要是和鬼灯有关的人谁都知道
+因为是这样。
+
+//--------------------------------------------------------
+//●勝敗合流地点
+//--------------------------------------------------------
+*sc003c
+//●演出：場面転換トランジション
+//●背景：空・夜
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——那时候。
+
+//●視点：第三者視点
+//●背景：街道・夜
+: HideWnd()
+: trackIndex = PlaySe( "SE/Se_Night1", true );
+: SwapImage( 1, 0, "BGImage/BG_Kaido02_03", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition15", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+\CN["奴隶商"]
+“哈、哈、哈……真是可恶！
+幕府的狗来捣乱了！”
+
+\CN["奴隶商"]
+“幕府也太没出息了。就算有人从海外来
+天气晴朗”
+
+掌管高浜奴隶市的奴隶商是一副拼命的样子
+我在漆黑的街道上奔跑。
+
+: StopSe( trackIndex );
+: PlaySe( "SE/Se_Foot01" )
+\CN["奴隶商"]
+“……！是强盗吗……？”
+
+奴隶商在包围自己的杀气漩涡中慌张地停下了脚步。
+
+//●演技：心の声です
+\CN["奴隶商"]
+（数量是那么多吗……这样的话，能逃掉吗？）
+
+奴隶商向来是死里逃生。
+
+这种情况我也经历过好几次。
+
+所以，今晚也绝对会顺利的。
+没有根据但有很强的自信。
+
+//●演出：みどり　登場する
+: PlayBgm("BGM/30_CM015")
+: DrawChara( "Midori", 2, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo10_mid0036" )
+\CN["绿色"]
+“找到这么好的女人，还搞什么野盗……。
+自己眼睛不好吗？”
+
+\CN["奴隶商"]
+“哼……来，你……不会吧——”
+
+//●演出：刺す音
+: HideWnd()
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: PlaySe( "SE/Se_Katana02" )
+: CharaCostume( "Midori", 1 )	// 義手刀に変更
+: DrawChara( "Midori", 2, 0 )
+: Sleep(1.0)
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect03b", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+绿色武器贯穿奴隶商的右脚大腿。
+
+\CN["奴隶商"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！”！
+好痛！好痛！抱抱！死了啊————！”
+
+: HideWnd()
+: EraseChara( "Midori", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0037" )
+\CN["绿色"]
+“大叔，年纪这么大了，不想发出不好看的声音吗？”
+
+: PlayVoice( "Voices/vo10_mid0038" )
+\CN["绿色"]
+“听到这样的声音，不行……。
+太兴奋了，快把我的情绪都抹杀了”
+
+绿看着粘在刀尖上的血
+脸上露出了爽朗的笑容。
+
+\CN["奴隶商"]
+“啊啊啊……啊……啊……啊…啊啊……”
+
+: PlayVoice( "Voices/vo10_mid0039" )
+\CN["绿色"]
+“赚了一笔钱，我的心情可以理解。
+但是，什么事都要讲道理啊”
+
+: PlayVoice( "Voices/vo10_mid0040" )
+\CN["绿色"]
+“我好像不太明白那个啊。”
+
+: PlayVoice( "Voices/vo10_mid0041" )
+\CN["绿色"]
+“总之，之后想让自己问各种各样的事情
+有哟，不会马上就死的……”
+
+: PlayVoice( "Voices/vo10_mid0042" )
+\CN["绿色"]
+“不好好享受是不行的。垃圾。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+发现疑似奴隶商的遗体的是
+那之后过了几天。
+
+像藕一样在身体各处开了一个洞
+手脚的手指和生殖器被削掉了——
+
+尽管如此，只有眼球还完整地残留着……。
+
+//●シーン：「般若」へ
+//＠シナリオジャンプ：SC_A03_06
+: CharaCostume( "Midori", 0 )	// みどりのコスを戻す
+: Jump( "Scenarios/SC_A03_06" )

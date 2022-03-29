@@ -1,0 +1,858 @@
+//========================================================
+//○戦闘敗北レイプ・人間（黄菜子）
+//========================================================
+//ジャンプ処理
+: if ( Flag ( "EnemyHuman" ) == false && Flag ( "EnemyElf" ) == false && Flag ( "EnemyJujin" ) == false )
+	: Jump( "*sc002" )
+: endif
+*sc001
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+在我的体力触底倒下的周围，男人们
+集合了。
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart1" ) endif
+: if ( SceneFlag( "SC_S02_04_1" ) == false ) Jump( "*HscStart1" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart1" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump1" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart1" ) endif
+
+*HscJump1
+: Jump( "Scenarios/HSceneSkip*SC_S02_04_1" )
+
+*HscStart1
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+: Call( "Scenarios/CommonSys*Word" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+\CN["男1"]
+“嘿嘿……虽然对手是个小鬼，但在战斗中非常兴奋。”
+
+\CN["男2"]
+“嘛，偶尔也不错吧。”
+
+一个男人来侵犯我。
+身体无力的我，没有办法做——
+
+//●演出：暗転解除
+//●ＣＧ：Ｈカットイン・寝バック（黄菜子）
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0110002_1000000_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo02_kin1824" )
+\CN["黄菜子"]
+“嗯……啊…呜呜……呜呜……！”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi01" )
+\CN["男1"]
+“噢噢！这个小蝌蚪受不了……。
+小鸡快断掉了……”
+
+: PlayVoice( "Voices/vo02_kin1825" )
+\CN["黄菜子"]
+“啊啊啊……好饿……嗯，硬着头皮……”……
+呜哇……呜……啊，啊啊啊啊……！”
+
+从上面被埋伏，强行到阴道内
+被扭住了。
+
+//●分岐：淫乱度Ｃの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) <= 1 )
+: PlayVoice( "Voices/vo02_kin1826" )
+\CN["黄菜子"]
+“哈，哈……不，不……不，请拔出来……
+不、放弃……嗯……！”
+
+\CN["男1"]
+“啊？输了的你不好吧？”
+
+\CN["男3"]
+“看了什么，我也开始想抽了。
+我对小孩子没兴趣”
+
+\CN["男1"]
+「喂，老老实实地被侵犯吧。
+如果喜欢的话就不会夺去生命”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一、一、一、一、一、一、一、一、一、一、一、一、一！
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0211002_0100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：激しいピストンです
+: PlayVoice( "Voices/vo02_kin1827" )
+\CN["黄菜子"]
+“啊啊啊啊啊啊啊啊啊啊！啊啊啊……呜、咕……
+啊，啊，啊……！”
+
+: PlayVoice( "Voices/vo02_kin1828" )
+\CN["黄菜子"]
+“是啊，如果被那样粗暴对待的话……嗯，嗯……这个，会坏掉的
+啊啊……嗯……啊，啊，啊……呜哇！”
+
+\CN["男1"]
+“哈、哈、哈……这家伙好紧张……。
+话说回来，我以为是处女的话就不一样了。最近的孩子真早啊」
+
+男人一边兴奋，一边一个劲地犯我。
+
+为了不失去意识
+我忍受着像对待东西一样的往返。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin1829" )
+\CN["黄菜子"]
+（哈、哈……希望早点结束……）
+
+\CN["男1"]
+“呀，糟了……我要出去了……”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1830" )
+\CN["黄菜子"]
+“那、娜卡……不，是……要拔……娜卡不行……”
+
+\CN["男1"]
+“败者遵循的是规则吧？
+闭嘴，接受我的精子。反正我不会怀孕的”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+吸溜、吸、咕噜噜、吸溜、吸溜！
+
+//●演技：膣奥に男性器が入って来ます
+: PlayVoice( "Voices/vo02_kin1831" )
+\CN["黄菜子"]
+“嗯……呃，往里走……啊，嗯”
+
+\CN["男1"]
+“我给你……嗯……嗯！”
+
+//●演出：射精
+//●ＣＧ差分：膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0411013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，咻咻！！
+
+: PlayVoice( "Voices/vo02_kin1832" )
+\CN["黄菜子"]
+“呜哇呜！嗯……然后，出来了……”……
+精液被拿出来了……”
+
+在阴道内\V[Kinako Penis]暴走，一边咕噜咕噜地跳动
+注入了精液。
+
+\CN["男1"]
+“啊啊……非常舒服。
+一直系着呢，这家伙……”
+
+\CN["男2"]
+“那么，接下来是我吧……”
+
+: PlayVoice( "Voices/vo02_kin1833" )
+\CN["黄菜子"]
+“哈……哈…嗯……嗯……嗯……”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●淫乱度Ｂ以上の場合
+: else
+: PlayVoice( "Voices/vo02_kin1834" )
+\CN["黄菜子"]
+“哈……哈……小金，进来了……。
+呃……嗯……啊……”
+
+\CN["男1"]
+“好饿……我受不了束缚！”
+
+\CN["男2"]
+“啊，你不是觉得这孩子吗？”
+
+\CN["男1"]
+“一边被侵犯一边感受，明明还是这样的孩子……。
+我以为我一定是处女，但很顺利地进去了”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一、一、一、一、一、一、一、一、一、一、一、一、一！
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：激しいピストンです
+: PlayVoice( "Voices/vo02_kin1835" )
+\CN["黄菜子"]
+“嗯，啊啊，哈！啊，啊，啊……啊啊啊啊……啊啊啊……”……
+啊啊……嗯，嗯……啊…啊”
+
+: PlayVoice( "Voices/vo02_kin1836" )
+\CN["黄菜子"]
+“那个，那么快，娜卡，被蹭了……嗯……啊……
+用咯吱咯吱的小金，被搅拌……”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi02" )
+\CN["男1"]
+“呃……这个小鬼的manko，真烦人……
+小鸡鸡，紧绷到快要断掉了的程度”
+
+男人一边兴奋，一边一个劲地犯我。
+
+而且，我也是被强行强奸的情况
+感觉到了。
+
+小公鸡进到了NAKA里，被挪动了腰……。
+因为和平时做的事情几乎没有区别。
+
+: PlayVoice( "Voices/vo02_kin1837" )
+\CN["黄菜子"]
+“嗯，啊啊啊……呃，好舒服……。
+嗯，啊……啊…啊，啊啊啊啊啊啊啊啊！”
+
+没有抵触感。
+
+普通地感到快感，喘息了。
+
+//●分岐：淫乱度Ａの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) == 3 )
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0211002_0100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1838" )
+\CN["黄菜子"]
+“嗯，啊啊……啊，啊……啊，来了……
+啊，好厉害啊，哈哈，明明是被侵犯了，感觉还不错啊”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo02_kin1839" )
+\CN["黄菜子"]
+“好痛……好痛……好痛……已经不行了……啊……
+嗯……好棒……嗯，呜哇！！”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0311003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+阿飞！阿飞！阿飞！战栗比酷！
+
+\CN["男1"]
+“啊……这、这孩子……吃醋了，manko痉挛了
+有……”
+
+\CN["男2"]
+“明明是个孩子，而且还被强奸了，真是个好球啊
+将来，这家伙可糟了……”
+
+: PlayVoice( "Voices/vo02_kin1840" )
+\CN["黄菜子"]
+“哈……哈……哈……哈……啊……哈……哈……”
+
+//●分岐終了
+: endif
+\CN["男1"]
+“呃……已经出来了……！”
+
+: PlayVoice( "Voices/vo02_kin1841" )
+\CN["黄菜子"]
+“那、那是……嗯…啊，啊啊啊啊啊啊啊！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+吸溜、吸、咕噜噜、吸溜、吸溜！
+
+在说完之前被塞进了阴道里——
+
+\CN["男1"]
+“我给你……嗯……嗯！”
+
+//●演出：射精
+//●ＣＧ差分：膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0411013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，咻咻！！
+
+: PlayVoice( "Voices/vo02_kin1842" )
+\CN["黄菜子"]
+“嗯，啊……然后，出来了……娜卡拿出了精液……”……
+啊……嗯，嗯！”
+
+在阴道内\V[Kinako Penis]暴走，一边咕噜咕噜地跳动
+精液被冲走的话，快感的波浪一下子就来了。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c003_0_0_0211013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo02_kin1843" )
+\CN["黄菜子"]
+“啊，嗯……好棒啊……我要……好棒啊……”……
+啊……啊…啊啊啊啊啊啊啊啊啊啊啊啊————！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+呸！呸！好容易学啊！
+
+\CN["男1"]
+“喂，喂！这家伙被拿出来了，真是太棒了……”
+
+\CN["男2"]
+“我以为只是个小孩子，其实也不是。
+这样看起来像bitch、糟糕、反差勃起”
+
+: PlayVoice( "Voices/vo02_kin1844" )
+\CN["黄菜子"]
+“啊……嗯……哈，哈……哈…啊，啊啊啊啊啊♥</color>」
+
+//●分岐終了
+: endif
+//●演出：暗転
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+————然后。
+
+//●ＣＧ：レイプ後（黄菜子）
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_b006_0_0_0211113_1100010_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: if ( $inExtra == true )
+	: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: endif
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1845" )
+\CN["黄菜子"]
+“啊……啊…啊……啊……啊……啊……啊……啊啊啊……啊啊啊……啊啊……”
+
+: PlayBackVoice( "Voices/BGV02_kin_jigo02" )
+\CN["旅人1"]
+“啊……这是被狠狠地揍了一顿啊。”
+
+\CN["旅人2"]
+“什么，太过分了……马上给我津贴……”
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+我正在倒在路边的时候
+好像是被偶然路过的旅人救了。
+
+多亏了你，我才没有丢掉性命。
+
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_S02_03_1
+//＠拠点復帰
+//●シーンエンド
+*HScene_End1
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S02_04_1" )
+: chara = "Kinako"
+: Call( "Scenarios/CommonSys*LoseRape" )
+: Jump( "Scenarios/CommonSys*LoseReturn" )
+//========================================================
+//○戦闘敗北レイプ・魔物（黄菜子）
+//========================================================
+*sc002
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart2" ) endif
+: if ( SceneFlag( "SC_S02_04_2" ) == false ) Jump( "*HscStart2" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart2" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump2" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart2" ) endif
+
+*HscJump2
+: Jump( "Scenarios/HSceneSkip*SC_S02_04_2" )
+
+*HscStart2
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+体力触底倒下的我——
+
+说是不能动的时候，不知从哪里来了魔物
+我要犯了。
+
+//●演出：暗転解除
+//●ＣＧ：Ｈカットイン・異種姦・オーガ（黄菜子）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: evfile = "evc_c011_0_1_0100002_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+\CN["魔物"]
+“哦哦哦哦哦哦哦……”
+
+: PlayVoice( "Voices/vo02_kin1846" )
+\CN["黄菜子"]
+“呃……嗯……嗯……嗯……嗯……”
+
+魔物强行让我起床，是兴奋勃起的东西
+我在寻找\V[Kinako Omanko]。
+
+: PlayVoice( "Voices/vo02_kin1847" )
+\CN["黄菜子"]
+“啊……啊，硬的东西磨破了……啊，啊…呃……”
+
+这个魔物对我这样做的理由只有一个吗
+没想到。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin1848" )
+\CN["黄菜子"]
+（正准备和我交配……）
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c011_0_0_0211002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayBackVoice( "Voices/BGV02_kin_aegi01" )
+: ShowWnd()
+咕嘟咕嘟、吱、吱……咕嘟……咕嘟咕嘟……！
+
+//●分岐：淫乱度Ｃの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) <= 1 )
+//●演技：ペニスを挿入されています
+: PlayVoice( "Voices/vo02_kin1849" )
+\CN["黄菜子"]
+“呜哇……啊，呜……呜，呜……”
+
+\CN["魔物"]
+“呜哇……”
+
+可以强行把那个塞进娜卡。
+
+: PlayVoice( "Voices/vo02_kin1850" )
+\CN["黄菜子"]
+“呃……好痛……啊，好痛……啊，好痛……啊，好痛
+啊……啊…啊…啊，啊啊……”
+
+在肚子下面使劲推开，可以不断前进。
+
+那几乎要裂开的冲击
+我不能很好地发出声音。
+
+魔物只是将这种状态下的我，发出了和叫嚣声相似的声音
+一边泄露，一边蹂躏着娜卡。
+
+\CN["魔物"]
+“鱼哦哦哦哦哦！”
+
+: PlayVoice( "Voices/vo02_kin1851" )
+\CN["黄菜子"]
+“呃……呃……嗯……！”！
+哦，在里面……是、是、是啊……”
+
+乌鱼！
+
+魔物一边发出呐喊，一边向阴道深处推进。
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Uterus = "evc_c011"; Call( "Scenarios/Effect*UterusEjaculation" );
+: Wait()
+: Call("Scenarios/Common*Shasei")
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c011_0_0_0411013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜呜呜呜呜呜呜！！
+
+: PlayVoice( "Voices/vo02_kin1852" )
+\CN["黄菜子"]
+“嗯，嗯……被娜加拿出来……嗯……嘛，魔物的
+精液，为什么……嗯，嗯……啊……啊……”
+
+\CN["魔物"]
+“哦哦哦哦哦”
+
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咚！咚！咕嘟咕嘟咕嘟！
+
+深入到阴道深处的东西一边乱蹦乱跳
+把散发着强烈气味的精液倒出来，让鼻子都要弯曲了。
+
+//●ＣＧ差分：未挿入・射精精液
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c011_0_1_0311013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["魔物"]
+“呼—呼……”
+
+: PlayVoice( "Voices/vo02_kin1853" )
+\CN["黄菜子"]
+“哈……哈，哈……嗯……满满的，溢出来了……
+这样拿出来的话……已经……”
+
+从阴道内好像拿出了很好地溢出的量。
+
+: PlayVoice( "Voices/vo02_kin1854" )
+\CN["黄菜子"]
+“嘛，还没……？”
+
+魔物似乎还打算犯我。
+
+力量不够，完全无法抵抗。
+所以，只能被魔物随意使唤了……。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●淫乱度Ｂ以上の場合
+: else
+//●演技：ペニスを挿入されています。苦しみがない
+: PlayVoice( "Voices/vo02_kin1855" )
+\CN["黄菜子"]
+“啊……呃………我要进去了……爷爷
+说实话，我进去了……”
+
+\CN["魔物"]
+“呜哇……”
+
+魔物的公鸡一打开入口，就咕噜咕噜地吞了进去
+我走了。
+
+在阴道内展开的触感。
+压迫感让我一瞬间屏住了呼吸。
+
+: PlayVoice( "Voices/vo02_kin1856" )
+\CN["黄菜子"]
+“啊啊，嗯……啊，啊，啊……啊啊啊啊……啊啊啊……
+嗯，嗯……嗯，啊……嗯……！”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi02" )
+用魔物激烈的插值将女阴搅乱
+结束。
+
+: PlayVoice( "Voices/vo02_kin1857" )
+\CN["黄菜子"]
+“肚子的，鼻涕，好像要被压坏了……嗯，嗯……
+我心情变好了……啊，啊啊啊啊”
+
+在没有力量无法动弹的状态下，而且还被魔物侵犯
+明明是这样，却感觉到了。
+
+魔物只是将这种状态下的我，发出了和叫嚣声相似的声音
+一边泄露，一边蹂躏着娜卡。
+
+: PlaySe( "SE/Se_Monster01" )
+\CN["魔物"]
+“鱼哦哦哦哦哦！”
+
+: PlayVoice( "Voices/vo02_kin1858" )
+\CN["黄菜子"]
+“啊……呃，哦，在里面……是，不行……除此之外，爷爷
+进不去……啊…呃……嗯…嗯……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+乌鱼！
+
+魔物一边发出呐喊，一边向阴道深处推进。
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Uterus = "evc_c011"; Call( "Scenarios/Effect*UterusEjaculation" );
+: Wait()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c011_0_0_0411013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜呜呜呜呜呜呜！！
+
+: PlayVoice( "Voices/vo02_kin1859" )
+\CN["黄菜子"]
+“啊啊啊啊啊啊！啊，精液出来了……
+呜哇呜……然后，出来……”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c011_0_0_0311013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1860" )
+\CN["黄菜子"]
+“啊……啊…啊……不，一下子就来了……啊，啊
+好棒……好棒……”
+
+: PlayVoice( "Voices/vo02_kin1861" )
+\CN["黄菜子"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊————啊！！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+阿飞！阿飞！战栗战栗！吓一跳！
+
+被魔物中出而绝顶。
+
+//●分岐：淫乱度Ａの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Immoral" ) == 3 )
+: PlayVoice( "Voices/vo02_kin1862" )
+\CN["黄菜子"]
+“一停不下来……嘛，又来了……”……
+被侵犯，被强行从里面拿出来……真是的……”
+
+又来了新的绝顶之波。
+
+全身循环的精液的热度和快感，又被冲走了。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c011_0_0_0411013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1863" )
+\CN["黄菜子"]
+“啊，啊啊啊……嗯……又来了……啊啊……”……
+啊啊啊……啊……啊啊啊……啊啊……啊……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo02_kin1864" )
+\CN["黄菜子"]
+“好棒！好棒！好棒！好棒！”
+
+//●ＣＧ差分：挿入・膣内射精・潮吹き
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c011_0_0_0211013_1110010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+啊啊啊啊啊啊啊啊啊啊啊！！！
+
+让潮水轰隆地喷射，让身体抽筋
+一连登顶。
+
+//●分岐終了
+: endif
+//●ＣＧ差分：未挿入・射精精液
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_c011_0_1_0311013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["魔物"]
+“呼—呼……”
+
+: PlayVoice( "Voices/vo02_kin1865" )
+\CN["黄菜子"]
+“啊——……啊……啊……啊……啊……啊啊……啊啊……”
+
+从漏掉了小鸡鸡的阴道内用力地漏出精液
+因为绝顶的余韵而变得飘忽不定。
+
+但是，当然，这也不会就此结束。
+
+: PlayVoice( "Voices/vo02_kin1866" )
+\CN["黄菜子"]
+“哈，哈……嗯，算了，再侵犯我吧
+”
+
+魔物似乎还打算犯我。
+
+力量不够，完全无法抵抗。
+所以，只能被魔物随意使唤了……。
+
+//●分岐終了
+: endif
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+魔物直到我失去意识为止
+我已经犯了很多次了。
+
+……………………………………………………。
+
+————然后。
+
+//●ＣＧ：レイプ後（黄菜子）
+: HideWnd()
+: evcha = "Kinako"; evbg = false; evcos = true;
+: evfile = "evc_b006_0_0_0211113_1100010_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: if ( $inExtra == true )
+	: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: endif
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin1845" )
+\CN["黄菜子"]
+“啊……啊…啊……啊……啊……啊……啊……啊啊啊……啊啊啊……啊啊……”
+
+: PlayBackVoice( "Voices/BGV02_kin_jigo01" )
+\CN["旅人1"]
+“啊……这是被狠狠地揍了一顿啊。”
+
+\CN["旅人2"]
+“什么，太过分了……马上给我津贴……”
+
+//●演出：暗転
+: HideWnd()
+: StopBackVoice()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+我正在倒在路边的时候
+好像是被偶然路过的旅人救了。
+
+多亏了你，我才没有丢掉性命。
+
+……………………………………………………。
+
+//＠Ｈシーン終了：SC_S02_03_1
+//＠拠点復帰
+//●シーンエンド
+*HScene_End2
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S02_04_2" )
+: chara = "Kinako"
+: Call( "Scenarios/CommonSys*LoseRape" )
+: Jump( "Scenarios/CommonSys*LoseReturn" )

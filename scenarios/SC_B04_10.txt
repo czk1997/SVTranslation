@@ -1,0 +1,1025 @@
+//========================================================
+//○吉野原遊廓の闇１
+//========================================================
+*sc001
+//●視点：無黒視点
+//●場所：帝都・貧民街・民家
+//●状況：無黒・桃・黄菜子が話を訊いている
+: HideWnd()
+: FadeIn( 1.0 )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+\CN["情报商店"]
+“难怪，小姐……”
+
+: PlayVoice( "Voices/vo02_kin0220" )
+\CN["黄菜子"]
+“是吗……。
+果然，人身贩卖还是很普通的呢”
+
+前几天，桃和银因贩卖人口而成为财阀日野家的户主
+抓住了日野文麻吕。
+
+正在调查他
+日野家背后可能有白夜——
+
+我和桃子和黄菜子负责调查。
+
+//●備考：↓レオと銀の謹慎理由はサイドエピソードで説明
+顺便说一下，雷欧和银因为某种原因现在正在谨慎中。
+所以，桃不是银，而是和我们一起行动。
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0567" )
+\CN["桃子"]
+“吉野原游廓的相关人员主要购买吗……。
+那是当然的啦”
+
+\CN["情报商店"]
+“对你们这些女人来说也是那样，但是以贩卖人口为职业
+对于有的人来说女人是商品。所以，在畅销之前
+受到相应的重视。因为我想卖的贵一点”
+
+\CN["情报商店"]
+“只是，被卖了之后会被当做性奴隶直到死都会被侵犯吗
+是卖到花街柳巷，还是直接在花街柳巷买
+”
+
+\CN["情报商店"]
+“不同文化交流会之后，吉野原可能会以外国人为花魁
+因为一直在做。风俗虽然有国境，但是色情是没有国境的
+是这样啊」
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1194" )
+\CN["无黑色"]
+“还有什么其他知道的吗？”
+
+\CN["情报商店"]
+“不，我掌握的信息就是全部了。
+再怎么我也不能在吉野原收集情报了。
+不管有多少钱都不够”
+
+\CN["情报商店"]
+“如果不从吉野原的人那里支付大的代价的话
+因为得不到任何东西。哪怕只有一个小信息”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0568" )
+\CN["桃子"]
+“嗯。吉野原是个相当严格的地方。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0221" )
+\CN["黄菜子"]
+“谢谢您的信息。这是信息费。”
+
+\CN["情报商店"]
+“嘿嘿，每次都有！果然鬼灯先生值得信赖。
+因为和看回组不同，没有未付”
+
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 5 )
+: RpgCharaBatch( "Kinako"	\
+:	"MoveDown", 5 )
+: RpgCharaBatch( "Momo"	\
+:	"MoveDown", 5 )
+: Wait()
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Town01_15_TeitoSlam", "SC_B04_10", "Scenarios/SC_B04_10*sc001_1")
+
+*sc001_1
+//●演出：無黒たち　外に出てから場面転換
+//●場所：帝都・貧民街
+: RpgCharaOn("Kinako")
+: RpgCharaOn("Momo")
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0569" )
+\CN["桃子"]
+“嗯，这样的话目的地和目的都决定好了。”
+
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0222" )
+\CN["黄菜子"]
+“感觉是在吉野原收集情报。
+从帝都东街道去吧”
+
+//●シーンエンド
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//加津佐と高浜封印
+: FastTravelMapOff( "Kazusa" )
+: FastTravelMapOff( "Takahama" )
+: SideEpisodeFlagUp( "episode26" )
+: SideEpisodeFlagUp( "episode28" )
+: SideEpisodeFlagUp( "episode29" )
+: SideEpisodeFlagUp( "episode68" )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+<^FF0000>侧面小故事更新了！</color>
+
+: FastTravelMapOn( "TeitoHigashiKaido" )
+: SetMission( "SC_B04_10_1", "InProgress" )
+: DestinationMap( "Map_Dungeon10_01_TeitoHigashiKaido" )
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○吉野原遊廓の闇２
+//========================================================
+*sc002
+//●場所：吉野原・楼主の家
+: HideWnd()
+: NowLeader = Leader()	//リーダーを一時記憶
+: Leader(0)	//リーダーを無黒に強制変更
+: RpgCharaMoveTo( "Player", 23, 10 4.0 )
+: Wait()
+: RpgCharaTurn( "Player", "U")
+: RpgCharaTurn( "Roushu", "D")
+: ShowWnd()
+\CN["楼主"]
+“我在听下面的人说话。”
+
+\CN["楼主"]
+“主人们现在在吉野原行动着各种各样的幕府关系的人们
+谢谢……。如果有什么想问我的话……”
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1195" )
+\CN["无黑色"]
+“我有件事想告诉你。”
+
+\CN["楼主"]
+“那就准备相应的价格吧。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0223" )
+\CN["黄菜子"]
+“需要准备什么代价呢？”
+
+\CN["楼主"]
+“是啊……那我就有一个请求了。”
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0570" )
+\CN["桃子"]
+“拜托？是的，如果可以的话我会不惜协助的。”
+
+\CN["楼主"]
+“最近，有个男人破坏了游廓。
+只是，对方是非常身份高的男人……。
+如果放低一点的话，我们的立场也非常危险……”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0571" )
+\CN["桃子"]
+“原来如此。这么说来，对方是和幕府有关的人吗？
+不……从说话的样子来看，应该是财阀家吧？”
+
+\CN["楼主"]
+“正如你所知，对方是财阀家的相关人士。
+我是野原家的长子”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo02_kin0224" )
+\CN["黄菜子"]
+“野野原家的长子吗……。
+没听过好的评价呢”
+
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk1196" )
+\CN["无黑色"]
+“顺便说一下，你在捣乱是怎么回事？”
+
+\CN["楼主"]
+“一到晚上就带着浪人来，随心所欲地做
+谢谢……。和其他客人也发生了争执
+真是的，怎么办才好呢”
+
+\CN["楼主"]
+“如果违抗的话，浪人就会被施以暴力。
+也有被刀斩的花魁……”
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk1197" )
+\CN["无黑色"]
+“为什么，一直放在这里……”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo01_mom0572" )
+\CN["桃子"]
+“对方是财阀啊？如果是和反幕有关系的话那就另当别论了
+幕府不会因为这种事情而动摇。一定不会责怪你的”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0573" )
+\CN["桃子"]
+“而且，行为可能会越来越升级。”
+
+\CN["楼主"]
+“我是左大人……。
+我倒是想安稳地把它赶走……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 10, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk1198" )
+\CN["无黑色"]
+“看来只能我们来护卫了。”
+
+\CN["楼主"]
+“原来如此！确实鬼灯的话还可以想想办法……。
+那就拜托您了。这样下去的话我们会”
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0574" )
+\CN["桃子"]
+“当然啦。不能放过仗着权力胡闹的家伙。”
+不去”
+
+\CN["楼主"]
+“谢谢！
+如果可以的话，今晚开始请您做护卫工作”
+
+\CN["楼主"]
+“准备好了的话，就跟我打招呼。”
+
+: SetMission( "SC_B04_10_1", "Hidden" )
+: SetMission( "SC_B04_10_2", "InProgress" )
+事件信息更新了。
+
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: Leader( NowLeader )
+: RpgCharaOff("Momo")
+: RpgCharaOff("Kinako")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○吉野原遊廓の闇３
+//========================================================
+*sc003
+\CN["楼主"]
+“准备好了吗？”
+
+*select01
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：準備万端だ
+//■選択肢２：もうちょっと待って欲しい
+//――――――――――――――――――――――――――――
+\CI["一切准备就绪"]
+\CI["请再稍等一下"]
+怎么办？
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：準備万端だを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+//仲間を無黒１人だけにする
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: ShowWnd()
+然后，我们为了保护游廓
+要等到晚上。
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+到了晚上，吉野原和白天完全不同
+完全变成了别的城市。
+
+和其他任何城市都有不同的空气感。
+可以说是妖艳吗。
+
+这才是真正的吉野原的姿态吧。
+
+//●場所：吉野原・遊廓部屋
+//●状況：１人で警護している無黒
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_YuukakuZashiki01_04", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: DrawChara( "Mukuro", 42, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1199" )
+\CN["无黑色"]
+“……怎么说呢，像这样，是很难在的地方啊。”
+
+: PlayBackVoice( "Voices/vo53_mob0001" )
+桃子和黄菜子将继续进行信息收集
+我一个人负责警卫。
+
+那倒是不错，但能听到花魁们喘息的声音
+没什么……。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 28, 1)
+: PlayVoice( "Voices/vo00_muk1200" )
+\CN["无黑色"]
+（我知道是做这种事的地方……）
+
+//●分岐：淫乱度Ｃ以下の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
+无论如何都会意识到。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+//●演技：心の声です
+	: DrawChara( "Mukuro", 21, 1)
+	: PlayVoice( "Voices/vo00_muk1201" )
+	\CN["无黑色"]
+（喘息声，听着我也会有奇怪的心情。）
+
+与其说是生杀，不如说是什么……。
+
+变得色情的心情，下面疼痛了。
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 11, 0)
+: PlayVoice( "Voices/vo00_muk1202" )
+\CN["无黑色"]
+“因为是任务啊。要好好振作啊！”
+
+不要有轻浮的情绪。
+正当我这么想的时候——
+
+: StopBackVoice()
+: StopBgm( 1.0 )
+\CN["花魁之声"]
+“哎呀啊啊啊啊啊啊啊啊啊啊啊啊——————！”
+
+//●演出：無黒　声がしてきた方向にダッシュ。場面転換
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom05_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/28_ID01")
+: ShowWnd()
+\CN["浪人A"]
+“我说快点给我吃！
+这里就是那样的地方吧！”
+
+\CN["浪人B"]
+“我们家是财阀野原大人的随从。
+快点把馒头拿出来！”
+
+//●ＳＥ：殴る音
+: HideWnd()
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01" )
+: Wait()
+: layer = 1; time = 0.5; strength = 20; vibrato = 30;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["花魁A"]
+“不，好痛！住手……！”
+
+\CN["花魁B"]
+“请不要粗暴！”
+
+\CN["浪人C"]
+“嘿嘿，那就赶紧脱了对方吧！”
+
+\CN["铃兰大夫"]
+“……那边是和主人们的对手。
+其他孩子都会放过的”
+
+\CN["原野"]
+“一开始就这么说就好了。
+呐，{铃兰太夫，铃兰悠}桑啊」
+
+\CN["原野"]
+“今晚绝对不会让你睡的。”
+
+\CN["铃兰大夫"]
+「…………」
+
+//●演出：無黒　登場する
+: HideWnd()
+: DrawChara( "Mukuro", 17, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1203" )
+\CN["无黑色"]
+“就到此为止吧。”
+
+\CN["浪人A"]
+“啊？你是谁？”
+
+\CN["浪人B"]
+“这个人啊，是财阀家的人！
+啊，我不知道。如果违抗财阀的话就无法生存下去”
+
+\CN["浪人C"]
+“但是，这个姐姐好可爱啊。
+如果让我做的话，我可以保持沉默”
+
+//●演出：浪人たちがにじり寄ってくる
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: PlaySe( "SE/Se_Katana04" )
+: DrawChara( "Mukuro", 16, 0, 5 )
+: PlayVoice( "Voices/vo00_muk1204" )
+\CN["无黑色"]
+“我不会手下留情的。你们全部都要打倒！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：浪人×３
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：浪人×３,1,1,0,sc003a,sc003b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc003b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_WaRoom05_03", "BGM/22_BM003", 1021, 1021, 1021, "Scenarios/SC_B04_10*battle01_end" , true )
+
+*battle01_end
+: if ( $battleWin == true )
+	: Jump( "*sc003a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: Jump( "*sc003b" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+*sc003a
+//●演出：浪人たちが倒れる
+//●演技：心の声です
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05_03", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: PlayBgm("BGM/18_TM003")
+: DrawChara( "Mukuro", 23, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1205" )
+\CN["无黑色"]
+（呼～……我觉得和普通的小混混没什么区别
+真是个厉害的对手啊）
+
+剑术并不优秀。
+
+肌肉力量、敏捷性和身体能力本身
+说是超脱了吧……。
+
+\CN["原野"]
+“喂，喂……可以吗？我可是财阀野野原家的长子哦？
+你不可能把刀对准就没事了吗？”
+
+\CN["原野"]
+“但是，你和刚才的铃兰太夫一样都是美女啊。
+如果要成为我的情妇的话，我可以原谅你”
+
+: DrawChara( "Mukuro", 27, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1206" )
+\CN["无黑色"]
+“我拒绝。我接下来带你去。”
+
+\CN["原野"]
+“带走？啊？我是财阀家。”
+
+\CN["原野"]
+“那樱花的花纹是鬼灯吗……。
+不过鬼灯应该没办法为财阀做点什么……”
+
+\CN["原野"]
+“嘛，因为违抗财阀，你们这些鬼灯也不是免费的
+对不起。如果可以的话带去就好了”
+
+//●演出：桃＆黄菜子　登場する
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Momo", 4, 0, 0, 0.0, 0.0, 4, "RC" )
+: DrawChara( "Kinako", 10, 0, 0, 0.0, 0.0, 2, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: lay = 2; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0575" )
+\CN["桃子"]
+“无黑，这家伙，赶紧带去吧。”
+
+\CN["原野"]
+“这家伙……？我可是财阀家啊？那叫这家伙吗？”？
+如果我出来的话，你也会遭遇不幸的。
+做好觉悟吧”
+
+: JumpLayer( 4, 0, -50, 1, 0.25)
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0576" )
+\CN["桃子"]
+“哈~只是叫了这家伙而已，那是……。
+真是个小洞的男人啊”
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom0577" )
+\CN["桃子"]
+“野野原家也不是这家伙继承家业
+反而更好”
+
+\CN["原野"]
+“哈？”
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0225" )
+\CN["黄菜子"]
+“刚才野野原家户主把家督变成了次子{次晴，つはる}氏
+正式决定了要继承”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0578" )
+\CN["桃子"]
+“然后，好像要和你断绝关系。请节哀顺变。”
+
+\CN["原野"]
+“这是怎么回事……？不是很深吧。”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0226" )
+\CN["黄菜子"]
+“改用。
+野野野原{正晴，まはる}，因为你有违法吸毒的嫌疑
+我会带您去的”
+
+\CN["原野"]
+“哈？违法药物……是我吗？
+喂，臭小鬼，别随便来啊」
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 6, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1207" )
+\CN["无黑色"]
+“原来是拿着药的手啊……。
+但是，竟然能在这么短的时间里调查到这种程度啊”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo02_kin0227" )
+\CN["黄菜子"]
+“有个密告，说是在仙叶港的仓库里有地下仓库。
+以防万一，查了一下发现有很多药……”
+
+\CN["原野"]
+“……酷……你有证据证明我和那里有关系吗？”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo01_mom0579" )
+\CN["桃子"]
+“卖药的人正好路过
+抓住了的话，全部都吐出来了。是你的命令”
+
+\CN["原野"]
+「…………」
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，带着变得成熟的野地去。
+
+在那之后，野野原关于违法药物交易的证据
+像山一样出来了。
+
+野原好像被身为户主的父亲也砍掉，被处死了。
+
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●シーン：「吉野原遊廓の闇４」へ
+//＠ラベル：sc004
+//イベント情報を更新する
+: SetMission( "SC_B04_10_2", "Hidden" )
+: Jump( "*sc004" )
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+*sc003b
+//「吉野原遊廓の闇　敗北」へ
+: SetMission( "SC_B04_10_2", "Hidden" )
+: Jump( "Scenarios/SC_B04_11" )
+
+//-------------------------------------------------------
+//●選択肢２：もうちょっと待って欲しいを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+//●シーンエンド
+: Return
+
+//========================================================
+//○吉野原遊廓の闇４
+//========================================================
+*sc004
+//●場所：吉野原・遊廓
+//●状況：無黒、楼主がいる
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——第二天。
+
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Town11_04_Yoshinohara", "SC_B04_10", "Scenarios/SC_B04_10*sc004_1")
+
+*sc004_1
+: HideWnd()
+: RpgCharaBaloonOff("Roushu")
+: FadeIn( 1.0 )
+: Wait()
+: ShowWnd()
+桃子和黄菜子先一步回到屯所
+我把楼主的来龙去脉都告诉了他。
+
+\CN["楼主"]
+“原来是这样啊……。
+这样一来，吉野原也终于恢复了平静”
+
+\CN["楼主"]
+「和主人们的约定是要遵守的。
+什么都可以问”
+
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1209" )
+\CN["无黑色"]
+“单刀直入地问吧。吉野原正在进行人身买卖。”
+我听说了，那是真的吗？”
+
+\CN["楼主"]
+「真忏悔。对拯救了我们的主人们撒谎
+多么不讲道理啊」
+
+\CN["楼主"]
+“药店的仓库里有隐藏的房间。
+那里就是会场”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk1210" )
+\CN["无黑色"]
+「这样啊。谢谢。
+顺便问一下，知道下一个举办日吗？”
+
+\CN["楼主"]
+“……对不起。我们不知道那里。”
+
+\CN["楼主"]
+“我只是个普通的颜角色。
+可以说是广告塔……”
+
+楼主一脸尴尬的样子。
+
+游廓是游廓，可能会有各种各样复杂的情况。
+
+//●演技：場面転換
+//●場所：吉野原・遊廓外
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: LoadMap( "Map_Town11_01_Yoshinohara", "Roushu", "Scenarios/SC_B04_10*sc004_2")
+
+*sc004_2
+: HideWnd()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1211" )
+\CN["无黑色"]
+“那么，姑且能问一下场所的信息……”
+
+花魁不做亏心事。
+若成为顶层楼主则更胜一筹。
+
+很难想象她在说谎。
+
+: DrawChara( "Mukuro", 0, 0, 3 )
+: PlayVoice( "Voices/vo00_muk1212" )
+\CN["无黑色"]
+“看来只能先去药店的仓库看看了。”
+
+//●シーンエンド
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+
+: SetMission( "SC_B04_10_3", "InProgress" )
+: DestinationMap( "Map_Town11_05_Yoshinohara" )
+: Call( "Scenarios/Map_Town11_Yoshinohara_Init*Map01" )
+: Return
+//========================================================
+//○吉野原遊廓の闇５
+//========================================================
+*sc005
+//●場所：吉野原・薬屋
+//●状況：入ると薬屋の店主が殺されている
+//●演出：無黒　薬屋のところへ
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"Speed", 4.0	\
+:	"MoveUp", 2	\
+:	"MoveRight", 2	\
+:	"MoveUp", 3	\
+:	"MoveLeft", 2 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1213" )
+\CN["无黑色"]
+“……死了吗？”
+
+有讨厌的预感。总之先到里面去……！
+
+//●演出：場面転換トランジション
+//●場所：吉野原・薬屋・倉庫
+//●状況：人が何人か死んでる
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: RpgCharaBatch( "Player"	\
+:	"Speed", 6.0	\
+:	"MoveUp", 2 )
+: Wait()
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Town11_06_Yoshinohara", "", "Scenarios/SC_B04_10*sc005_1")
+
+*sc005_1
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: DrawChara( "Mukuro", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1214" )
+\CN["无黑色"]
+“怎么回事……？发生了什么事？”
+
+//●演出：無黒たち　奥の部屋へ移動する
+//●場所：吉野原・薬屋・倉庫・隠し部屋
+//●状況：エルフも含め全員が血を流して死んでいる
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 2	\
+:	"MoveRight", 2 )
+: Wait()
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Town11_07_Yoshinohara", "", "Scenarios/SC_B04_10*sc005_2")
+
+*sc005_2
+: FadeIn( 1.0 )
+: Wait()
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveRight", 4	\
+:	"Turn", "D" )
+: Wait()
+: ShowWnd()
+: DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1215" )
+\CN["无黑色"]
+“贩卖人口的相关人员都被杀了……”
+
+衣着寒酸的都是女人。
+这恐怕都是精灵吧。
+
+她们也全部被杀了。
+
+//●演出：無黒　倒れている男を調べる
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaTurn( "Player", "R" )
+: ShowWnd()
+\CN["倒下的男人"]
+“……是……是……嗯……喵……是……等等……”
+
+男子留下这么一句话，马上就完事了。
+
+: RpgCharaTurn( "Player", "D" )
+: DrawChara( "Mukuro", 10, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1216" )
+\CN["无黑色"]
+“般若……？难道…！”
+
+//●演出：般若　登場する
+: HideWnd()
+: CharaCostume( "Azami", 4 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaOn("Azami")
+: RpgCharaTurn( "Player", "U" )
+: PlayBgm("BGM/11_CM011")
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["般若"]
+「…………」
+
+后面出现了一个戴着般若面具的男人。
+
+//●演技：心の声です
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1217" )
+\CN["无黑色"]
+（那就是般若……！）
+
+一见面，背部就发抖，脚都要抖了。
+
+\CN["般若"]
+「…………」
+
+由般若来准备。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 16, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1218" )
+\CN["无黑色"]
+（吓得不得了……只好做了！）
+
+*battle02
+//――――――――――――――――――――――――――――
+//■戦　闘：般若
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：勝利不可能。数ターンで終わる
+//――――――――――――――――――――――――――――
+//＠戦闘：般若,1,1,2
+//●状況：戦闘終了後
+//＠戦闘前選択肢（勝敗分岐あり）
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: StoreBgm()
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cellar01", "BGM/22_BM003", 1022, -1, -1, "Scenarios/SC_B04_10*battle02_end" , true )
+
+*battle02_end
+: RestoreBgm
+: DrawChara( "Mukuro", 31, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo00_muk1219" )
+\CN["无黑色"]
+“哈、哈、哈……呃……”
+
+//●演出：無黒　アクション演出
+: HideWnd()
+: Call( "Scenarios/Effect*MukuroAction01" )
+: ShowWnd()
+简直咬不动。
+
+不管我砍多少次，都会把这一切都冲走。
+
+没想到力量相差这么大。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 40, 0)
+: PlayVoice( "Voices/vo00_muk1220" )
+\CN["无黑色"]
+（什么都不攻击，你在想什么？
+完全看不懂……）
+
+\CN["般若"]
+「…………」
+
+//●演出：般若　出て行く
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: RpgCharaBatch( "Azami"	\
+:	"Speed", 6.0	\
+:	"MoveLeft", 4	\
+:	"Turn", "U" )
+: Wait()
+: RpgCharaTurn( "Player", "L" )
+: RpgCharaOff("Azami")
+: DrawChara( "Mukuro", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1221" )
+\CN["无黑色"]
+“……逃走了……？这是怎么回事……？”
+
+完全不知道理由……。
+
+只是，只能呆呆地看着逃走的样子。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「傾国の美女１」へ
+//＠シナリオジャンプ：SC_B04_11
+: FadeOut( 0.0 )
+: $money += 4000
+: SetMission( "SC_B04_10_3", "Successed" )
+//＠プレイヤーキャラ：桃
+: Party( "Momo","Gin" )
+: PartyType = "Party06"; Call( "Scenarios/CommonSys*PartySetting" )
+: Participate( 0, true, 1, true )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "YamatoHigashiKaidoC" )
+: FastTravelMapOn( "TeitoHigashiKaido" )
+: CharaCostume( "Azami", 0 )
+: LoadMap( "Map_Town02_07_Hozuki", "Azami_Room_Front", "Scenarios/SC_B04_12")

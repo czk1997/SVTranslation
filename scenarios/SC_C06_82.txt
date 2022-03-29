@@ -1,0 +1,568 @@
+//========================================================
+//○母子の絆が歪んだ理由
+//========================================================
+*sc001_01
+//＠備考：全年齢版はラベルsc001_02までカット
+//●視点：第三者視点
+//●場所：紫苑と巌の部屋
+//●状況：紫苑と巌がエッチしている
+//●ＣＧ：近親相姦
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b002_0_2_0411013_1100020_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: ShowWnd()
+\CN["严严"]
+“妈妈……好舒服啊，妈妈……！”
+
+: PlayVoice( "Voices/vo12_shi0267" )
+\CN["紫苑"]
+“严酱的……坚强的小矮人，在深处……在大meko的深处
+震耳欲聋♥</嗯，哈，啊啊啊啊啊啊啊啊啊
+
+: PlayVoice( "Voices/vo12_shi0268" )
+\CN["紫苑"]
+“今天已经射精好几次了……
+完全没有退缩……我的{阴道内，内}真的很紧张
+你在胡闹啊♥</color>」
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi02" )
+在离崎珠镇稍远的地方的小房子。
+现在，镝木紫苑和严父子生活在那里。
+
+没什么特别要做的时候，两个人无论白天黑夜都一直在
+在做爱。
+
+\CN["严严"]
+“妈妈……又要出去了……精子，要漏出来了。”
+
+: PlayVoice( "Voices/vo12_shi0269" )
+\CN["紫苑"]
+“那么，又{射精，だ}到了我的肚子里……
+嗯……真是的……哈哈，看的话……
+好，所以♥</color>」
+
+\CN["严严"]
+“嗯……！”
+
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——噗哧！加油！真烦人！！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b002_0_2_0311013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：子宮口を押し広げるぐらい奥に入っています
+: PlayVoice( "Voices/vo12_shi0270" )
+\CN["紫苑"]
+“嗯……啊，呜……嗯，小矮子啪嗒
+颤抖着……！”
+
+\CN["严严"]
+“嗯……！”
+
+//●演出：射精
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b002_0_2_0411013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克！参考翻译！咕嘟咕嘟！
+咚！德彪！漂漂亮亮！
+
+: PlayHSe( "SE/Hse_Nakadashi01" )
+咕嘟咕嘟咕嘟咕嘟咕嘟咕嘟咕嘟咕嘟！！
+
+//●演技：中出しされて感じまくっています
+: PlayVoice( "Voices/vo12_shi0271" )
+\CN["紫苑"]
+“啊啊啊啊啊啊啊！又是精液……太浓了太多了♥</color>」
+
+: PlayVoice( "Voices/vo12_shi0272" )
+\CN["紫苑"]
+“来、好舒服……严酱充满活力、坚强的精子
+来到你的深处……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b002_0_2_0311013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo12_shi0273" )
+\CN["紫苑"]
+“喂，好棒……哦，大的，再来……好棒、好棒、好棒、
+嗯——————————！”
+
+//絶頂
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+阿飞！阿飞！阿飞！阿飞！阿飞！
+
+: PlayBackVoice( "Voices/BGV12_shi_jigo01" )
+用尖锐的气势从岩石中射进子宫的射精
+紫苑一边发出热艳的声音，一边迎来了第几次的绝顶。
+
+//●演技：呼吸が激しく乱れています
+: PlayVoice( "Voices/vo12_shi0274" )
+\CN["紫苑"]
+“哈……哈……哈……哈……哈…哈……啊…啊啊啊啊♥</color>」
+
+分开了血的父母和孩子做性行为，从根本上看
+无非是异常的行为。
+
+: StopBackVoice()
+对他们来说这是日常生活中理所当然的——
+对他们来说是最大限度的爱情表现。
+
+*sc001_02
+//●演出：暗転
+: HideWnd()
+: StopBgm( 0.5 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+但是，从一开始镝木父子的爱情就没有变。
+
+倒不如说，这和普通的母子关系没有什么不同。
+
+父母和孩子这样异常的追求着爱而扭曲
+是以某个大事件为契机的。
+
+……………………………………………………。
+
+*sc001_03
+//●場所：遊廓・和室
+//Yoshi：背景、遊郭座敷・昼
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_YuukakuZashiki01_01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+//●演出：紫苑の立ち絵を出す
+: DrawChara( "Shion", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+在大和有几个被称为花街的色町。
+
+吉野原有大和最大的花街柳巷。
+
+举办“异文化交流会”，在海外文化传入之前的花街柳巷
+有难以理解的惯例和游女的身份制度
+对于使用者来说是门槛很高的地方。
+
+要做爱要经过几次，指定目标的游女
+必须继续。
+
+第一集只是在那个场合。第二次对话终于被允许
+第三次斟酒，第四次可以触碰到手
+第5次以后终于可以把皮肤重叠在一起了。
+
+那就是下等的艺妓对象。
+即使是同一个妓女，如果成为最高等级的“花魁”的话，直到能做爱为止
+据说要花好几年。
+
+原本在游廓玩就是有钱人的商人、贵族、财阀等
+只有富裕的人才能玩。
+
+但是，这是在不同文化交流会举行之前的事情。
+
+不同文化交流会以后，只和女人喝酒、享受性生活
+因为没有很难的规定和规则的店开始生意兴隆
+以前的惯例等已经废除了。
+
+然而，游女的身份却以“等级”之名得以保留。
+花魁至今依旧是最高等级的游女，抱着花魁
+不容易。要等几个月、几年。
+
+//●ＣＧ：遊廓で客とセックス（紫苑）
+//●演出：ＢＧＶ流す
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_2_0111002_1100001_0_"
+: EraseChara( "Shion", 0.0 )
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+镝木紫苑是名为“堇太夫”的花魁——
+
+即使是财阀的人，说话也要等好几年。
+甚至有为了拥抱她而放弃财产的贵族。
+
+: StopBackVoice()
+: StopBgm( 1.0 )
+有一天，紫苑突然从吉野原消失了。
+
+//●演出：場面転換トランジション
+
+*sc001_04
+//●場所：居酒屋
+//Yoshi：背景、茶屋・夜
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Pub01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+//●状況：酒を飲んでいる紫苑とあざみ
+: PlayBgm("BGM/36_ID03")
+: DrawChara( "Azami", 3, 0, 0, 0.5, 0.0, 4, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0748" )
+\CN["嘲讽"]
+“紫苑先生也有很多种呢。”
+
+//●演技：……→お酒を一口、口に含みます
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Shion", 9, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0275" )
+\CN["紫苑"]
+“人有历史。
+……{素颜，无}的时候绝对不能说出来」
+
+: DrawChara( "Shion", 9, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Azami", 4, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo05_aza0749" )
+\CN["嘲讽"]
+“确实。嘛，传说就是这么回事。”
+
+: DrawChara( "Shion", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo12_shi0276" )
+\CN["紫苑"]
+“如果有什么想问我的话，现在就算说也没用。”
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0750" )
+\CN["嘲讽"]
+“是啊……我没什么想问紫苑先生的……。
+那么，紫苑先生，是因为什么原因进入白夜的呢？”
+
+: DrawChara( "Shion", 2, 0)
+: PlayVoice( "Voices/vo12_shi0277" )
+\CN["紫苑"]
+“在意吗？”
+
+: DrawChara( "Azami", 3, 0)
+: PlayVoice( "Voices/vo05_aza0751" )
+\CN["嘲讽"]
+“嗯，我觉得一定要说出来。
+你看，比起我进来，我更想在白夜之前呆着”
+
+//●演技：んっ……んっ……はぁ～……＝酒を飲んでいます
+: DrawChara( "Shion", 1, 0)
+: PlayVoice( "Voices/vo12_shi0278" )
+\CN["紫苑"]
+“嗯……嗯……哈~……。
+要是和主人说也没用。不是以前的朋友”
+
+: DrawChara( "Shion", 0, 1)
+: PlayVoice( "Voices/vo12_shi0279" )
+\CN["紫苑"]
+“有人说突然从花街柳巷消失了
+被地方贵族看中，然后被赎身出了花街柳巷”
+
+: EraseChara( "Shion", 0.5 )
+: EraseChara( "Azami", 0.5 )
+紫苑空着杯子，醉得面颊绯红
+慢慢地静静地开始说话了。
+
+被赎身的紫苑终于到达了西都的西边
+在乘船过的地方有一个很大的岛。
+
+买了紫苑的贵族是掌管那一带的贵族
+和帝都的贵族比起来，就等于没有力量，而且还没到那种程度
+不富裕。
+
+: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo05_aza0752" )
+\CN["嘲讽"]
+“紫苑先生，是顶级的花魁吧？
+说起来不好意思，这种程度的贵族是可以赎身的
+吗？”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Shion", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0280" )
+\CN["紫苑"]
+“不，用正经的做法，首先是不可能的。”
+
+: DrawChara( "Shion", 1, 0)
+: PlayVoice( "Voices/vo12_shi0281" )
+\CN["紫苑"]
+“赎身是财阀的人好不容易才拿到的钱
+从……”
+
+: DrawChara( "Shion", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Azami", 4, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo05_aza0753" )
+\CN["嘲讽"]
+“是啊。但是，如果像紫苑那样的美女的话，财阀们会
+你不是想要多少吗？”
+
+: DrawChara( "Shion", 2, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo12_shi0282" )
+\CN["紫苑"]
+“当时，财阀家掌管着我家的花街柳巷
+所以。就那么简单地出手吧”
+
+没能那么简单地把第一个赚钱的人卖出去。
+
+: DrawChara( "Azami", 25, 0)
+: PlayVoice( "Voices/vo05_aza0754" )
+\CN["嘲讽"]
+“那就更不可思议了。”
+
+嘲讽是地方贵族赎身到这种程度的花魁
+不可思议。
+
+: DrawChara( "Shion", 1, 0)
+: PlayVoice( "Voices/vo12_shi0283" )
+\CN["紫苑"]
+“我也爱那个贵族——因为我爱着丈夫。
+我是为了赎身而竭尽全力的”
+
+: DrawChara( "Azami", 3, 0)
+: PlayVoice( "Voices/vo05_aza0755" )
+\CN["嘲讽"]
+“就算尽力了，你也做了什么？”
+
+: DrawChara( "Shion", 3, 0)
+: PlayVoice( "Voices/vo12_shi0284" )
+\CN["紫苑"]
+“我彻底降低了我的价值。
+我被橡树袭击了，把橡树的孩子藏在了笼子里”
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0756" )
+\CN["嘲讽"]
+“啊。但是紫苑的话，这个程度的价值就会下降。”
+虽然不觉得。如果是橡子的话堕胎就好了”
+
+: DrawChara( "Shion", 0, 0)
+: PlayVoice( "Voices/vo12_shi0285" )
+\CN["紫苑"]
+“如果是人的话也许就是这样。
+但是，因为我流着精灵的血”
+
+: DrawChara( "Shion", 9, 0)
+: PlayVoice( "Voices/vo12_shi0286" )
+\CN["紫苑"]
+“拥有魔物之子的精灵的价值在一瞬间
+堕落在地上吧」
+
+: EraseChara( "Shion", 0.5 )
+: EraseChara( "Azami", 0.5 )
+现在也有很多人因为是精灵而避开结婚。
+还残留着能使用魔术的人和被诅咒的孩子回避的习惯。
+
+紫苑是花魁全盛期的时候更是如此。
+怀孕了，谁都想抱一个有着魔物之子的精灵
+我不认为。
+
+作为花魁的紫苑价值跌落到了地上。
+
+传说游廓里有个身上藏有魔物的精灵
+之前只能放弃紫苑，于是那个贵族提出了赎身申请
+也就是说。
+
+: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo05_aza0757" )
+\CN["嘲讽"]
+“嗯。但是，那样的话紫苑小姐会作为花魁回归。”
+怎么可能呢？”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Shion", 5, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0287" )
+\CN["紫苑"]
+“因为谣言没有传播开来。知道当时情况的人为什么？”
+离开这个世界吧」
+
+: EraseChara( "Shion", 0.5 )
+: DrawChara( "Azami", 11, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo05_aza0758" )
+\CN["嘲讽"]
+“嗯。为什么呢……”
+
+紫苑就是因为这样的原因而被赎身结婚的。
+在那之后，他与那位贵族之间建立了严岛。
+
+温柔的丈夫和可爱的儿子的生活。
+紫苑是幸福的顶峰。
+
+但是，发生了简单地破坏幸福的事情。
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Shion", 2, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0288" )
+\CN["紫苑"]
+“你知道贝希莫斯吗？”
+
+: DrawChara( "Shion", 2, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Azami", 2, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo05_aza0759" )
+\CN["嘲讽"]
+“那倒是，在常识范围内。
+听说我小时候在大和{出现，然后}”
+
+: DrawChara( "Shion", 8, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo12_shi0289" )
+\CN["紫苑"]
+“幕府隐瞒了贝希莫斯出现的事实。
+我的‘幸福、幸福’被贝希莫斯夺走了”
+
+//●演出：場面転換
+: HideWnd()
+: EraseChara( "Shion", 0.0 )
+: EraseChara( "Azami", 0.0 )
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 9, 0, "MiscImage/CutinFg13", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: trackIndex = PlaySe( "SE/Se_FireLoop", true, 0.25 );
+: PlayAnim( "Animations/Anime_LoopFire", true, 0, 0, 1, 1 )
+: Wait()
+: ShowWnd()
+——大约25年前，在位于西都西面的岛上
+出现了巨大的魔物。
+
+: DrawFaceThumbnail( "Shion", 3, 0, 0 )
+: PlayVoice( "Voices/vo12_shi0290" )
+\CN["紫苑"]
+“那个魔物是贝希摩斯，我爱的人、家、朋友都是
+他一瞬间就夺走了重要的东西”
+
+: DrawFaceThumbnail( "Shion", 9, 0, 0 )
+: PlayVoice( "Voices/vo12_shi0291" )
+\CN["紫苑"]
+“我抱着严酱拼命逃跑了。
+我不记得是怎么跑的。因为我已经做好了死的觉悟”
+
+: DrawFaceThumbnail( "Shion", 3, 0, 0 )
+: PlayVoice( "Voices/vo12_shi0292" )
+\CN["紫苑"]
+「但是，无情的贝希莫斯在我面前
+挡住了我的去路”
+
+: DrawFaceThumbnail( "Shion", 8, 0, 0 )
+: PlayVoice( "Voices/vo12_shi0293" )
+\CN["紫苑"]
+“现在也有在梦里做的事情——
+丈夫就在眼前被贝希摩斯吃掉的样子”
+
+: DrawFaceThumbnail( "Azami", 6, 0, 0 )
+: PlayVoice( "Voices/vo05_aza0760" )
+\CN["嘲讽"]
+「…………」
+
+: DrawFaceThumbnail( "Shion", 9, 0, 0 )
+: PlayVoice( "Voices/vo12_shi0294" )
+\CN["紫苑"]
+“那之后就忘我了。
+完全记不住是怎么回事”
+
+: DrawFaceThumbnail( "Shion", 3, 0, 0 )
+: PlayVoice( "Voices/vo12_shi0295" )
+\CN["紫苑"]
+“我不知道为什么{黑夜叉，暗黑精灵}化了
+我杀了贝希莫斯”
+
+//●演出：回想から出る演出
+: HideWnd()
+: StopAnim()
+: StopSe( trackIndex );
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Pub01", 0.0 )
+: ResetLayer(9)
+: DrawChara( "Azami", 24, 0, 0, 0.0, 0.0, 4, "C" )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0761" )
+\CN["嘲讽"]
+“这样啊……有这样的事——”
+
+嘲讽把刚要说的话和酒一起咽了下去。
+
+//●読み：歪な（いびつな）・解って（わかって）
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Shion", 0, 1, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0296" )
+\CN["紫苑"]
+“我完全知道我们之间的关系是不正常的。”
+
+: DrawChara( "Shion", 9, 1)
+: PlayVoice( "Voices/vo12_shi0297" )
+\CN["紫苑"]
+“但是，我已经只剩下严了……”
+
+而且，紫苑也在煽动酒。
+
+——紫苑被贝希摩斯吃掉了自己心爱的丈夫。
+
+在那之后，非常害怕重要的人离开自己
+另外，极度厌恶对重要的人抱有敌意的人
+变成了。
+
+对唯一剩下的亲人严的爱情彻底升级
+总有一天，不只是为了寻求彼此的心，也为了寻求身体的联系
+直到现在。
+
+在别人看来是异常扭曲的父母和子女的爱情
+紫苑和严，对于失去重要之人的两人来说
+关系淡薄比失去生命更可怕。
+
+: DrawChara( "Shion", 9, 1, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Azami", 4, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo05_aza0762" )
+\CN["嘲讽"]
+“紫苑先生，玻璃杯空着呢。要再来一杯吗？”
+
+: DrawChara( "Shion", 10, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo12_shi0298" )
+\CN["紫苑"]
+“是吗~……今晚我有点想醉。
+店主啊，来顶你的推荐吧”
+
+紫苑和嘲讽，都是在眼前失去了重要之人的人们
+互相喝酒了。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

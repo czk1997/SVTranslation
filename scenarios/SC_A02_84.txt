@@ -1,0 +1,705 @@
+//========================================================
+//○お風呂でバッタリ
+//========================================================
+//●場所：鬼灯屯所
+//●服装：無黒・隊士服
+//＠服装：無黒,0
+//●背景：鬼灯屯所・玄関・夕方
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Genkan02", 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Kinako", 5 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Bebi", 0 )
+//●演技：徹夜明け任務で眠いです
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Mukuro", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0489" )
+\CN["无黑色"]
+“啊啊啊……虽然想睡觉，但是必须先洗澡。
+汗黏糊糊的，很恶心……”
+
+这次任务相当艰巨。
+
+从昨天晚上开始，到第二天傍晚才终于
+回到了屯所。
+
+//●演出：黄菜子登場する
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Mukuro", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Kinako", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0087" )
+\CN["黄菜子"]
+“啊！无黑先生，欢迎回来。”
+
+: DrawChara( "Mukuro", 37, 0)
+: PlayVoice( "Voices/vo00_muk0490" )
+\CN["无黑色"]
+“啊，我回来了，黄菜子。
+难道，这就是任务吗？”
+
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0088" )
+\CN["黄菜子"]
+“是的！因为有人动作有点奇怪……”
+
+: DrawChara( "Mukuro",40, 0)
+: PlayVoice( "Voices/vo00_muk0491" )
+\CN["无黑色"]
+“是吗？小心点。”
+
+//●演出：黄菜子　お辞儀をして退場する
+: HideWnd()
+: JumpLayer( 4, 0, -50, 1, 0.25)
+: Wait()
+: SetLayerRelPos( 3, 100, 0, 0.5)
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: ShowWnd()
+那么，我洗澡好好休息吧。
+
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・風呂
+//●服装：無黒・裸
+//＠服装：無黒,1
+//●背景：鬼灯屯所・風呂・夕方
+//Yoshi：背景（夕方差分なし）
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Huro01_01", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: CharaCostume( "Mukuro", 1 )	//無黒・裸に
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 28, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0492" )
+\CN["无黑色"]
+“啊……好舒服……”
+
+洗个澡把汗冲掉泡在澡盆里。
+
+感觉疲劳一下子融化了。
+
+: DrawChara( "Mukuro", 37, 1)
+: PlayVoice( "Voices/vo00_muk0493" )
+\CN["无黑色"]
+“啊啊啊……这样下去可不行啊……。
+好像在浴池里睡着了……”
+
+要是能在这里睡着就好了
+我知道做那个果然会出大事。
+
+如果身体再暖和一点的话会很可惜的
+洗完澡比较好吧。
+
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・廊下
+//●背景：鬼灯屯所・廊下・夕方
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_02", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+——那时候。
+
+//●演出：紅美　登場する
+: HideWnd()
+: DrawChara( "Bebi", 2, 0, 0, 0.0, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0032" )
+\CN["红美"]
+“奇纳哥已经去执行任务了吧……”
+
+: DrawChara( "Bebi", 0, 0)
+: PlayVoice( "Voices/vo07_beb0033" )
+\CN["红美"]
+“嗯？正在泡澡……？这种时候是谁……？”
+
+//●読み：札（ふだ）
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0034" )
+\CN["红美"]
+“刚才打扫的时候可能把牌子搞错了，所以我就来捣乱。
+如果不好好改正的话……”
+
+: DrawChara( "Bebi", 4, 0)
+: PlayVoice( "Voices/vo07_beb0035" )
+\CN["红美"]
+“嗯……这样就可以了。”
+
+//●演出：紅美　退場した後に場面転換
+//●場所：鬼灯屯所・風呂
+//●背景：鬼灯屯所・風呂・夕方
+//Yoshi：背景（夕方差分なし）
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Bebi", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Huro01_01", 0.0 )
+: DrawChara( "Mukuro", 29, 1, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0494" )
+\CN["无黑色"]
+“嗯……嗯……哈……好暖和啊……”
+
+偶尔也想这样慢慢做。
+
+——但是。
+
+//●演技：姉のこと、家族のことを思い出して気持ちが沈む
+: DrawChara( "Mukuro", 39, 1)
+: PlayVoice( "Voices/vo00_muk0495" )
+\CN["无黑色"]
+「…………」
+
+突然想起了和家人一起度过的日子。
+
+那天，白夜袭击了村庄，夺去了所有重要的人
+爸爸妈妈姐姐大家都——
+
+: DrawChara( "Mukuro", 23, 1)
+: PlayVoice( "Voices/vo00_muk0496" )
+\CN["无黑色"]
+“哈……呼……”
+
+睡意一下子消散了。
+
+现在想起当时的事
+心脏的跳动加快，呼吸变得困难。
+
+: DrawChara( "Mukuro", 0, 1)
+: PlayVoice( "Voices/vo00_muk0497" )
+\CN["无黑色"]
+“差不多该上去了吧……”
+
+拍着脸颊让心情平静下来。
+
+我有必须要完成的事情。
+
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・廊下
+//●演出：レオ　登場する
+//Yoshi：背景、夕方
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_02", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 10, 0, 0, 0.0, 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["雷欧"]
+“啊！今天的训练很严格——！”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“但是，今天好可惜啊。
+还有，明明一点点就赢了师傅……”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“啊！谁都没洗澡啊！”
+
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“好！我要第一个洗澡！”
+
+//●演出：レオ　退場する
+//●演出：場面転換トランジション
+//●ＣＧ：レオに着替えを見られる無黒
+//＠evcg：evb_a006_1_1_000000_0000_01001
+: HideWnd()
+: SetLayerRelPos( 5, 100, 0, 0.5)
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(5)
+: x1 = -200; y1 = -464; z1 = 1.75; time = 1.0;
+: x2 = -50; y2 = -464; z2 = 1.75;
+: evbg = true; evcos = false;
+: evfile = "eva_b006_1_1_0100001_1000000_0_"
+: Call( "Scenarios/Common*EvSlideIn" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0498" )
+\CN["无黑色"]
+“嗯————！干得真痛快！”
+
+: HideWnd()
+: time = 1.0
+: Call("Scenarios/Common*EvResetFade")
+: ShowWnd()
+果然泡澡很舒服。
+身体爽快的话心情会很好。
+
+就这样，虽然有点早，但是吃了晚饭后
+好好睡一觉休息吧。
+
+这样想着。
+
+//●ＳＥ：ガラガラガラ。ドアの開く音
+//＠evcg：evb_a006_1_2_000000_0000_01001
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Fusuma01" )
+: evbg = true; evcos = false;
+: evfile = "eva_b006_1_1_0600001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["雷欧"]
+“哼哼，哼哼♪我们是～北国出身的武士♪
+成为地上最强的男人～♪”
+
+更衣室的门突然打开。
+
+而且，还听到了奇怪的歌。
+
+\CN["雷欧"]
+“肯定谁都敌不过老子~♪
+巴厘岛最强、利奥•戈尔斯泰——”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b006_1_1_0200001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：更衣室に入ってきたレオと目が合います
+: PlayVoice( "Voices/vo00_muk0499" )
+\CN["无黑色"]
+“……啊？”
+
+: PlayBgm("BGM/40_Comedy")
+\CN["雷欧"]
+“……啊”
+
+……………………………………………………。
+
+//●分岐：露出開発度Ｂ以上の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) >= 2 )
+	: HideWnd()
+	: evfile = "eva_b006_1_1_0100002_1000000_0_"; Call("Scenarios/Common*EvChange");
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0500" )
+	\CN["无黑色"]
+“……果然在那里一直被看到的话会很不好意思。”
+
+	\CN["雷欧"]
+“啊……不，不……那个……”
+
+	: HideWnd()
+	: evfile = "eva_b006_1_1_0600002_1000000_0_"; Call("Scenarios/Common*EvChange");
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0501" )
+	\CN["无黑色"]
+“你要看到什么时候？那么想看我的裸体吗？”
+
+	\CN["雷欧"]
+“对不起，对不起！无黑，真的对不起！”
+
+	//●ＳＥ：走り去る音
+	: PlaySe( "SE/Se_dash01" )
+雷欧急急忙忙地从更衣室离开。
+
+	: HideWnd()
+	: evfile = "eva_b006_1_1_0100002_1000000_0_"; Call("Scenarios/Common*EvChange");
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0502" )
+	\CN["无黑色"]
+“明明不用慌慌张张跑的。
+那对女人来说是有点打击…”
+
+即使那样，也被雷欧完全看光了。
+
+	//●演技：今更になってはずかしくなってきた
+	: PlayVoice( "Voices/vo00_muk0503" )
+	\CN["无黑色"]
+“被同事看到裸体，真是不好意思……
+但是……嗯……总觉得，心情很奇怪……”
+
+肚子里突然疼起来。
+
+明明已经习惯了被男人看到裸体了……嗯。
+
+	//Yoshi：背景消去
+	//●シーンエンド
+	: HideWnd()
+	: StopBgm( 1.0 )
+	: FadeOut( 1.0 )
+	: Wait()
+	: Call( "Scenarios/CommonSys*CosReturn" )
+	: RpgPlayBgm
+	: Return
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	: HideWnd()
+	: evfile = "eva_b006_1_1_0500003_1000000_0_"; Call("Scenarios/Common*EvChange");
+	: ShowWnd()
+	//●演技：んーーーーー！みたいな感じ。恥ずかしさＭＡＸです
+	: PlayVoice( "Voices/vo00_muk0504" )
+	\CN["无黑色"]
+「～～～～～～～～～～～～～～～！！！」
+
+突然的事情使头脑陷入恐慌。
+
+	\CN["雷欧"]
+“啊，啊，诶……嗯，嗯……啊啊啊……
+嗯……那个……啊…”
+
+	: PlayVoice( "Voices/vo00_muk0505" )
+	\CN["无黑色"]
+“美……美…美……美……”
+
+	//●ＣＧ差分：胸隠し
+	: HideWnd()
+	: evfile = "eva_b006_1_2_0300003_1000000_0_"; Call("Scenarios/Common*EvChange");
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0506" )
+	\CN["无黑色"]
+“啊啊啊啊啊啊啊啊啊啊！别看啊啊啊啊啊——！”
+
+	\CN["雷欧"]
+“没、没、没怎么看……不，真的没关系。”
+
+	\CN["雷欧"]
+“不，并不是不想看……。
+啊，果然是胸部很大啊，腰很细很漂亮啊
+或者，觉得是女孩子的身体之类的……”
+
+	: PlayVoice( "Voices/vo00_muk0507" )
+	\CN["无黑色"]
+「…………」
+
+	\CN["雷欧"]
+“不，不，所以……那个……那个……”
+
+	: PlayVoice( "Voices/vo00_muk0508" )
+	\CN["无黑色"]
+“不是好好看了吗！？
+雷欧的笨蛋啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+	//●ＣＧ差分：桶を投げる
+	: HideWnd()
+	: evfile = "eva_b006_1_2_0400003_1000000_0_"; Call("Scenarios/Common*EvChange");
+	: PlaySe( "SE/Se_Swing01" )
+	: ShowWnd()
+	\CN["雷欧"]
+“啊啊啊啊啊啊啊啊！！”
+
+	//●ＳＥ：ドサリ　倒れる音
+	: HideWnd()
+	: PlaySe( "SE/Se_Down01" )
+	: evfile = "eva_b006_1_2_0500003_1000000_0_"; Call("Scenarios/Common*EvChange");
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0509" )
+	\CN["无黑色"]
+“哈、哈、哈……呜……被看到了……”……
+被雷欧裸体看到了……”
+
+	: PlayVoice( "Voices/vo00_muk0510" )
+	\CN["无黑色"]
+“话说回来，不是挂着正在洗澡的牌子吗！
+为什么要进来啊！？”
+
+	: HideWnd()
+	: evfile = "eva_b006_1_2_0400003_1000000_0_"; Call("Scenarios/Common*EvChange");
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0511" )
+	\CN["无黑色"]
+“去这个笨蛋色鬼变态地狱吧！”
+
+	\CN["雷欧"]
+“……不对……空着……是……是……所以……”
+然后……很…”
+
+	//●演出：時間経過
+	//●服装：無黒・隊士服
+	//＠服装：無黒,0
+	//●場所：鬼灯屯所・食堂
+	//Yoshi：背景、夕方
+	: HideWnd()
+	: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+	: Wait()
+	: CharaCostume( "Mukuro", 0 )
+	: Call("Scenarios/Common*EvDelete")
+	: SwapImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_02", 0.0 )
+	: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+	: Wait()
+	: DrawChara( "Mukuro", 42, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+	: ShowWnd()
+从那之后确认了一下，正如Leo所说的那样
+浴室的牌子是“空房间”……。
+
+	: DrawChara( "Mukuro", 39, 2)
+	: PlayVoice( "Voices/vo00_muk0512" )
+	\CN["无黑色"]
+“唔……明明一定是在洗澡的时候……”
+
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Gin", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+	\CN["银子"]
+“看到了无黑的裸体，自己擅自换了纸币不是吗？
+所以，处男是……”
+
+	: DrawChara( "Leo", 23, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+	\CN["雷欧"]
+“智、智、智、智、智、又不是处男！
+已经开始加油了！干脆利落！”
+
+	: DrawChara( "Leo", 18, 1)
+	\CN["雷欧"]
+“而且如果想看无黑的裸体的话，成为恋人后就堂堂正正地看！
+那是我的策略！”
+
+	: DrawChara( "Leo", 6, 1)
+	\CN["雷欧"]
+“所以说，这次完全是事故！
+啊，被无黑碰上桶的地方好痛啊……”
+
+	: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Mukuro", 6, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk0513" )
+	\CN["无黑色"]
+“所以，从刚才开始就多次道歉说对不起吧。”
+
+	: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+	: PlayVoice( "Voices/vo01_mom0126" )
+	\CN["桃子"]
+“是啊，Leo君。我看到了无黑色的裸体
+太好了！”
+
+	: DrawChara( "Momo", 5, 0)
+	: PlayVoice( "Voices/vo01_mom0127" )
+	\CN["桃子"]
+“无黑的身体真的很好吧？
+胸部感觉也很好，腰也很细
+屁股也感觉很好……”
+
+	: DrawChara( "Mukuro", 20, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk0514" )
+	\CN["无黑色"]
+“也是，桃子！不要在大家面前说那种话！”
+
+	: DrawChara( "Momo", 6, 0)
+	: PlayVoice( "Voices/vo01_mom0128" )
+	\CN["桃子"]
+“啊，因为不是事实啊。”
+
+	: DrawChara( "Momo", 2, 0)
+	: PlayVoice( "Voices/vo01_mom0129" )
+	\CN["桃子"]
+“喂，小银也说不定想看无黑的裸体
+你觉得吗？”
+
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+	\CN["银子"]
+“不，我没什么……”
+
+	: DrawChara( "Momo", 1, 0)
+	: PlayVoice( "Voices/vo01_mom0130" )
+	\CN["桃子"]
+「嗯。那是我的裸体吗？
+我先告诉你，我也很厉害吗？”
+
+	: DrawChara( "Gin", 5, 0)
+	\CN["银子"]
+“哈……那倒是，嘛，我基本上知道……”
+
+	: DrawChara( "Momo", 12, 2)
+	: PlayVoice( "Voices/vo01_mom0131" )
+	\CN["桃子"]
+“我知道，小银，真是的！
+因为是H！男孩子是这样的吗？”
+
+	: DrawChara( "Gin", 9, 0)
+	\CN["银子"]
+“小姐，我和一个只看到那里的裸体就流鼻血倒下的处男
+请不要在一起”
+
+	: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Leo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+	\CN["雷欧"]
+“所以说，你不是处男吧！”
+
+	: DrawChara( "Leo", 4, 1)
+	\CN["雷欧"]
+“流鼻血是因为桶碰到鼻子了……。
+啊，不，真的是对无黑色的裸体很兴奋……啊”
+
+	: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Mukuro", 6, 0, 4, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk0515" )
+	\CN["无黑色"]
+“唔……雷欧的笨蛋！我已经不知道了！”
+
+啊啊啊，光是想起来就脸红！
+羞得不得了！
+
+虽然说了很多遍，但是绝对是把牌子改成了“入浴中”。
+
+其他的谁弄错了“空”了？
+不，我又不可能换那种牌子……。
+
+	//●演出：紅美登場する
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+	: PlayVoice( "Voices/vo07_beb0036" )
+	\CN["红美"]
+“大家看起来都很开心，是不是出了什么事了？”
+
+	: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+	: PlayVoice( "Voices/vo01_mom0132" )
+	\CN["桃子"]
+“听我说，红美！
+雷欧君啊，我偷看了无黑的浴室”
+
+	: DrawChara( "Bebi", 1, 0)
+	: PlayVoice( "Voices/vo07_beb0037" )
+	\CN["红美"]
+“真的是这样吗！？”
+
+	: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+	\CN["雷欧"]
+“所以说是事故！事故！”
+
+	: DrawChara( "Bebi", 5, 0)
+	: PlayVoice( "Voices/vo07_beb0038" )
+	\CN["红美"]
+“……在下，不管利奥是多么愚蠢，好色，还是处男
+明明以为不会做那样的事，却强加于人……”
+
+	: DrawChara( "Leo", 10, 0)
+	\CN["雷欧"]
+“跟处男没关系吧！
+啊，还有……我又不是处男！专利权”
+
+	: DrawChara( "Leo", 4, 0)
+	\CN["雷欧"]
+“训练结束后，我想洗个澡，就去洗澡了
+只是偶然遇到了无黑而已！”
+
+	: DrawChara( "Leo", 8, 0)
+	\CN["雷欧"]
+“已经确认好是‘空着’了，真的吗？”
+
+	: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Mukuro", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk0516" )
+	\CN["无黑色"]
+“所以，我应该好好地把‘入浴中’换成了牌子……”
+
+	: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+	: PlayVoice( "Voices/vo07_beb0039" )
+	\CN["红美"]
+“嗯。训练完雷欧之后就是傍晚了。
+确实，今天在下负责打扫浴室……纸币…啊……”
+
+红美的脸一瞬间变得苍白。
+
+	: DrawChara( "Bebi", 3, 0)
+	: PlayVoice( "Voices/vo07_beb0040" )
+	\CN["红美"]
+「ムクロ，对不起！
+换了牌子，是在下！”
+
+	: DrawChara( "Bebi", 3, 0)
+	: PlayVoice( "Voices/vo07_beb0041" )
+	\CN["红美"]
+“打扫完之后，我想一定是把牌子搞错了……。
+真的非常抱歉！”
+
+	: DrawChara( "Mukuro", 21, 1)
+	: PlayVoice( "Voices/vo00_muk0517" )
+	\CN["无黑色"]
+“……嗯，如果是这样的话……”
+
+因为做了错事，也没有恶意
+不能责怪红美。
+
+虽然这么说，但是很难简单地转换心情。
+
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Leo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+	\CN["雷欧"]
+「…………」
+
+	: DrawChara( "Bebi", 5, 0)
+	: PlayVoice( "Voices/vo07_beb0042" )
+	\CN["红美"]
+“所以，真的很抱歉……”
+
+	: DrawChara( "Leo", 11, 0)
+	\CN["雷欧"]
+「呀，好漂亮啊。这不是小矮子也想做的事
+没有啊。嗯！好潇洒，好潇洒”
+
+	: DrawChara( "Bebi", 2, 0)
+	: PlayVoice( "Voices/vo07_beb0043" )
+	\CN["红美"]
+“Leo……总觉得很恶心。
+然后不是小矮子，而是红美”
+
+	: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Gin", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
+	\CN["银子"]
+“打到的地方也不好吧？
+一想到坏脑袋会变聪明，原来是这个样子啊……”
+
+	: DrawChara( "Leo", 12, 0)
+	\CN["雷欧"]
+“啊？我不想被你说啊！银！
+如果是这样的话，今天就可以解决了吧？”
+
+	: DrawChara( "Gin", 14, 0)
+	\CN["银子"]
+“你说的是今天的组员吗？
+是我压倒性的胜利吧？头撞到记忆飞了吗？”
+
+	: DrawChara( "Momo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+	: PlayVoice( "Voices/vo01_mom0133" )
+	\CN["桃子"]
+“哈~……你们真的是太棒了！”
+
+雷欧和银总是在吵架。
+
+但是，只有今天很害羞，没有时间去在意
+没有。
+
+	//●分岐終了
+	//●シーンエンド
+	: HideWnd()
+	: StopBgm( 1.0 )
+	: FadeOut( 1.0 )
+	: Wait()
+	: Call( "Scenarios/CommonSys*CosReturn" )
+	: RpgPlayBgm
+	: Return
+: endif

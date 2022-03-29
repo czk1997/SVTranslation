@@ -1,0 +1,223 @@
+//========================================================
+//○罪人
+//========================================================
+//●場所：帝都牢屋敷
+//●状況：牢屋に綴じ込まれている無黒。看守が近づいてくる
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_ZashikiRo01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+——帝都监狱
+
+\CN["看守"]
+“喂，66号。决定处罚你了。”
+
+第66号是我的事，这里是对被当成罪犯的人
+好像在叫号码。
+
+//無黒cos6へ変更
+: CharaCostume( "Mukuro", 6 )
+: DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3496" )
+\CN["无黑色"]
+“处罚不是我杀的！
+拜托了，请相信我！”
+
+\CN["看守"]
+“罪人都说同样的话。
+不可能相信”
+
+\CN["看守"]
+“好的，我去。”
+
+//●演出：扉を開けて無黒、連れ出される
+//●演出：出て行ったところで場面転換
+//●場所：刑を執行する場所
+//●演出：無黒　刑を執行する場所に連れて行かれる
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom05", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+\CN["看守"]
+“奉行大人，我带来了66号。”
+
+\CN["奉行"]
+“嗯”
+
+\CN["奉行"]
+“第66号，我决定惩罚你了。”
+
+: DrawChara( "Mukuro", 16, 0, 0 )
+: PlayVoice( "Voices/vo00_muk3497" )
+\CN["无黑色"]
+“所谓惩罚……所以我说了很多遍
+我什么都没做！”
+
+: PlayVoice( "Voices/vo00_muk3498" )
+\CN["无黑色"]
+“杀了那个贵族的不是我！
+请相信我”
+
+\CN["奉行"]
+“有证据证明是你干的。
+逃避是很丢脸的”
+
+: DrawChara( "Mukuro", 9, 0)
+: PlayVoice( "Voices/vo00_muk3499" )
+\CN["无黑色"]
+“证据不可能有那种东西！”
+
+\CN["奉行"]
+“你的刀上有牺牲者的血。
+所以犯人是66号，除了你以外没法考虑”
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk3500" )
+\CN["无黑色"]
+“所以，那个被谁戴上了……！”
+
+\CN["奉行"]
+“那么，有证据吗？”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk3501" )
+\CN["无黑色"]
+“……那，那是”
+
+: DrawChara( "Mukuro", 9, 0)
+: PlayVoice( "Voices/vo00_muk3502" )
+\CN["无黑色"]
+“但是，我没有做的事情是事实！”
+
+\CN["奉行"]
+“没有你没做的证据。
+再多说就没用了”
+
+\CN["奉行"]
+“传达你的刑罚”
+
+: DrawChara( "Mukuro", 7, 0)
+吃多少次都没用。
+我就这样必须接受冤案吗……？
+
+\CN["奉行"]
+“放心吧，交给你的罪不是死罪。”
+
+\CN["奉行"]
+“给你的刑罚是成为囚犯们的安慰者
+决定了。马上执行刑罚”
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: cutinfile = "CutinFg14"; Call("Scenarios/Common*CutinFadeIn");
+: ShowWnd()
+奉行发出了信号，看守就把囚犯们带过来了。
+
+\CN["囚犯1"]
+“喂！如果对方是个长得很丑的女人或者大妈的话
+我本想怎么办，可是真是太好了”
+
+\CN["囚犯2"]
+“穿衣服也知道，啊，牛奶也很大。
+那个女罪犯只是想了一下就{射精，}了」
+
+手脚上套着枷锁。
+而且刀也被拿起了。
+
+无法逃离这个地方。
+
+//●分岐：処女の場合
+: StopBgm( 1.0 )
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == false )
+	: HideWnd()
+	: Call("Scenarios/Common*CutinFadeOut")
+	: DrawChara( "Mukuro", 18, 0, 0, 0.5, 0.0, 3, "C" )
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk3503" )
+	\CN["无黑色"]
+“不，住手……不，不……”
+
+	: DrawChara( "Mukuro", 19, 0)
+	: PlayVoice( "Voices/vo00_muk3504" )
+	\CN["无黑色"]
+“我什么都没做！请相信我！”
+
+	\CN["囚犯1"]
+“嘿嘿，就算没关系，我也不会死的。”
+
+	\CN["囚犯2"]
+“心情太好了，也许会死掉。”
+
+囚犯们一眨眼就包围了我——
+
+	//●演出：暗転
+	: HideWnd()
+	: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: Call( "Scenarios/Common*LayerClean" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: Wait()
+	: ResetLayer(9)
+	: ShowWnd()
+就这样无法抵抗，被囚犯们推倒了。
+
+	//●シーン：「輪姦刑で処女を失う」へ
+	//＠シナリオジャンプ：SC_D04_02 sc001
+	: Jump( "Scenarios/SC_D04_02*sc001" )
+	//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●非処女の場合
+: else
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 39, 0, 0, 0.5, 0.0, 3, "C" )
+	: PlayVoice( "Voices/vo00_muk3505" )
+	\CN["无黑色"]
+（并不是被处决，只是被囚犯们所侵犯。
+如果只是忍耐就好了……）
+
+在这种状态下我能做的事是：
+只能忍受被众多囚犯强行侵犯。
+
+	: DrawChara( "Mukuro", 21, 0)
+	: PlayVoice( "Voices/vo00_muk3506" )
+	\CN["无黑色"]
+“……随你的便。”
+
+	\CN["囚犯1"]
+“哦，我还以为你会反抗，结果太失望了。”
+
+	\CN["囚犯2"]
+“虽然可以侵犯哭喊的女人，但是这样可爱的女人是我的对手
+那什么都可以”
+
+囚犯们一眨眼就包围了我——
+
+	//●演出：暗転
+	: HideWnd()
+	: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: Call( "Scenarios/Common*LayerClean" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: Wait()
+	: ResetLayer(9)
+	: ShowWnd()
+放弃抵抗的我被囚犯们推倒了。
+
+	//●シーン：「輪姦刑で犯される」へ
+	//＠シナリオジャンプ：SC_D04_02 sc002
+	: Jump( "Scenarios/SC_D04_02*sc002" )
+//●分岐終了
+: endif

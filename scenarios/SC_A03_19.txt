@@ -1,0 +1,392 @@
+//========================================================
+//○夜道で浪人たちに襲われて……
+//========================================================
+//●場所：帝都・夜
+//●背景：空・夜
+//Yoshi：背景
+//パーティーを無黒単独に
+: Party("Mukuro")
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——有一天晚上。
+我去了帝都的巡逻。
+
+//●背景：帝都・街並み・夜
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_03", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 38, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0938" )
+\CN["无黑色"]
+“哈~……”
+
+: PlayBgm("BGM/41_Sad")
+最近总觉得任务上的失败变多了。
+
+: DrawChara( "Mukuro", 42, 0)
+: PlayVoice( "Voices/vo00_muk0939" )
+\CN["无黑色"]
+“我倒不是在偷工减料……”
+
+局长和龙先生在内心某处也有间隙
+刚被忠告过。
+
+: DrawChara( "Mukuro", 11, 0)
+: PlayVoice( "Voices/vo00_muk0940" )
+\CN["无黑色"]
+“……必须要振作精神。”
+
+总之不能允许再失败了。
+
+现在，能这样活着，可以说是奇迹
+因为不过分。
+
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+\CN["浪人A"]
+“哈哈哈……”
+
+\CN["浪人B"]
+“喂喂，你现在杀了的家伙
+不是幕府贵族的邦邦吗？”
+
+\CN["浪人A"]
+“……真的吗……但是，喝醉后缠上来的那家伙
+不好吧？”
+
+一群看起来像是浪人的男人聚集在一起做着什么。
+
+乘着夜风漂来的血的味道——
+难道，这些家伙……！
+
+: DrawChara( "Mukuro", 16, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo00_muk0941" )
+\CN["无黑色"]
+“你们在那里做什么？”
+
+: PlayBgm("BGM/16_TM001")
+\CN["浪人A"]
+「！？」
+
+\CN["浪人B"]
+“呀……那樱花的花纹，是鬼灯的东西！”
+
+\CN["浪人C"]
+“既然被看到了也没办法。
+对方是一个女人。{杀，玫瑰}只能死了啊」
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk0942" )
+\CN["无黑色"]
+（人数很多……有点不好）
+
+我想应该是有人杀了一个流血倒在地上的男人吧。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a002_1_0_0100000_1000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["浪人C"]
+“我不会死的！！”
+
+//: DrawChara( "Mukuro", 16, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0943" )
+\CN["无黑色"]
+“哈！”
+
+//※●演出：無黒　アクションシーン
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a002_1_1_0200000_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["浪人C"]
+“酷……”
+
+\CN["浪人A"]
+“别害怕！抱我！抱我！”
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：背景消去
+//――――――――――――――――――――――――――――
+//■戦　闘：浪人×３
+//■タイプ：通常戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：浪人×３,0,1,0,sc002a,sc002b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc002a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc002b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Teito01_03", "BGM/22_BM003", 1017, 1017, 1017, "Scenarios/SC_A03_19*battle_end", true)
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc002a" )	//勝利した場合
+: else
+	: Jump( "*sc002b" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+*sc002a
+//Yoshi：背景
+: HideWnd()
+: CharaPartsOn( "Mukuro", 0)
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Teito01_03", 0.0 )
+: DrawChara( "Mukuro", 0, 0, 2, 0.0, 0.0, 3, "C" )
+: FadeIn( 1.0 )
+: Wait()
+: ShowWnd()
+\CN["浪人A"]
+“呃……呃……鬼灯……幕府的狗啊……”
+
+\CN["浪人B"]
+“你们这些人不就好了吗！只是听凭上司的话尾巴
+挥着的话，饭也不会在住的地方为难的！”
+
+\CN["浪人C"]
+“……反正，我们就这样死在野外……
+快，快给我纹身！对你们来说杀人
+这是怎么回事啊！”
+
+浪人的话打动了我的心。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 35, 0, 2 )
+: PlayVoice( "Voices/vo00_muk0944" )
+\CN["无黑色"]
+（我一直在想住在大和的人们……）
+
+经常会因为这样的理由而被纠缠。
+
+但是，可能是因为这里有很多让我思考的地方吧
+突然意识到了——
+
+\CN["浪人B"]
+“鱼哦哦哦哦哦哦哦哦！！”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Mukuro", 18, 0)
+: PlayVoice( "Voices/vo00_muk0945" )
+\CN["无黑色"]
+“嘘，糟了——”
+
+一时的疏忽，一时的犹豫推迟了判断。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: EraseChara( "Mukuro", 0.0 )
+: Wait()
+: ShowWnd()
+被伤口很浅的男子砍了。
+
+//●演出：無黒　斬られる
+//●戦闘後合流地点へ
+//＠ラベルジャンプ：sc002c
+: Jump( "*sc002c" )
+
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+*sc002b
+//Yoshi：背景
+: HideWnd()
+: CharaPartsOn( "Mukuro", 0)
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Teito01_03", 0.0 )
+: DrawChara( "Mukuro", 0, 0, 2, 0.0, 0.0, 3, "C" )
+: FadeIn( 1.0 )
+: Wait()
+: ShowWnd()
+\CN["浪人A"]
+“哈……没有间隙！”
+
+: DrawChara( "Mukuro", 18, 0, 2)
+: PlayVoice( "Voices/vo00_muk0945" )
+\CN["无黑色"]
+“嘘，糟了——”
+
+\CN["浪人A"]
+“啊啊啊啊啊啊啊啊啊啊啊——————！！”
+
+浪人在他倒下的时候向他砍过来。
+
+——无法避免！
+
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: EraseChara( "Mukuro", 0.0 )
+: Wait()
+: ShowWnd()
+――――――――――――――――――――
+
+//●演出：無黒　斬られる
+//●戦闘後合流地点へ
+//--------------------------------------------------------
+//●戦闘後合流地点
+//--------------------------------------------------------
+*sc002c
+: HideWnd()
+: PlayBgm("BGM/29_ID02")
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["浪人B"]
+“嘿嘿……杀了啊……”
+
+//●演技：斬られて虫の息です
+//: DrawChara( "Mukuro", 30, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Mukuro", 30, 0, 0 )
+: PlayVoice( "Voices/vo00_muk0946" )
+\CN["无黑色"]
+“……呜……呜……哈……哈……呜……”
+
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_04", 1.0 )
+: Wait()
+: ShowWnd()
+出血多，眼睛昏花。
+
+——我会就这样死在这种地方吗？
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 31, 0)
+: DrawFaceThumbnail( "Mukuro", 31, 0, 0 )
+: PlayVoice( "Voices/vo00_muk0947" )
+\CN["无黑色"]
+（嘛，还有……我必须要做的事情……）
+
+还有必须要做的事情————
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 40, 0)
+: DrawFaceThumbnail( "Mukuro", 31, 0, 0 )
+: PlayVoice( "Voices/vo00_muk0948" )
+\CN["无黑色"]
+（……咦？那个……）
+
+到这里为止，是必须要做的事情吗？
+
+为了生活在大和的人们，拼上性命与恶势力战斗
+明明来了，却被大和的人这样斩断了。
+
+那么，我是为了什么而努力的呢？
+那我是为了谁而努力的呢？
+那么，我————————
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+\CN["浪人B"]
+“我不想失去你。”
+
+\CN["浪人A"]
+“啊，怎么办？放着不管也会死的吧……。
+{杀，玫瑰}埋起来？」
+
+\CN["浪人B"]
+“这样啊，我就砍你的头，送给鬼灯吧。”
+
+\CN["浪人C"]
+“你傻吗？做那种事对我们没有好处。
+故意挑衅鬼灯的话是不可能的吧”
+
+\CN["浪人B"]
+“那怎么办呢？
+贵族们一起，是填埋还是沉入海里？”
+
+\CN["浪人C"]
+“反正都要这样的话，就要背负杀贵族的罪了吧？
+如果作为杀贵族而交给警察的话，不是可以拿到酬金吗？”
+
+\CN["浪人A"]
+“……啊啊啊！？原来如此！
+而且这家伙是高位贵族。只是酬金而已”
+
+\CN["浪人B"]
+“这是规定。”
+
+\CN["浪人C"]
+“嘿嘿。明天好像能久违地喝酒了。”
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+失去意识的我就这样被警察带走了。
+
+我的嫌疑是当幕臣的
+杀害贵族岩仓家的长子。
+
+不管说多少次没做，都是我突出的浪人做的
+即使主张，也要坚持我做的。完全没有人相信我——
+
+我就这样被关进了帝都的牢房。
+
+……………………………………………………。
+
+//Yoshi：背景消去
+//●浪人ルート確定
+//●シーン：「罪人」へ
+//＠シナリオジャンプ：SC_D04_01
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_D04_01")

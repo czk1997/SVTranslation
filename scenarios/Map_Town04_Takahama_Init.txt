@@ -1,0 +1,72 @@
+//========================================================
+//○高浜・外
+//========================================================
+*Map01
+: if ( MissionProgress( "SC_A02_06_1", "InProgress" ) == true )
+	: RpgCharaOn("Mobu01_1")
+	: RpgCharaOn("Mobu01_2")
+	: RpgCharaOn("Mobu01_3")
+: elif ( MissionProgress( "SC_A03_03_1", "InProgress" ) == true )
+	: RpgCharaOn("SC_A03_03_sc002b")
+: endif
+: if ( MissionProgress( "SC_A02_06_2", "InProgress" ) == true )
+	: RpgEventOn("SC_A02_06_sc003")
+	: RpgMapBaloonOn("SC_A02_06")
+	: RpgCharaOn("Mobu01_1")
+	: RpgCharaOn("Mobu01_2")
+	: RpgCharaOn("Mobu01_3")
+: endif
+: if ( MissionProgress( "SC_A03_51_2", "InProgress" ) == true )
+	: RpgCharaBaloonOn( "NPC_T04_006" )
+: endif
+//ＮＰＣ設置
+: if ($chapter >= 4)
+	: RpgCharaOff( "NPC_T04_003" )
+: endif
+//ＮＰＣ生存チェック
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//========================================================
+//○高浜・宿屋
+//========================================================
+*Map02
+: if ($chapter >= 3)
+	: RpgCharaOff("NPC_T04_011")
+	: RpgCharaOff("NPC_T04_012")
+: endif
+: Return
+//========================================================
+//○高浜・スラム
+//========================================================
+*Map08
+: if ( MissionProgress( "SC_A03_03_3", "InProgress" ) == true )
+	: RpgCharaOn("Kamakiri")
+	: RpgCharaOn("Mobu01")
+	: RpgCharaOn("Mobu02")
+	: RpgCharaImage( "Mobu01", "51_Mobu11_2")
+	: RpgCharaImage( "Mobu02", "51_Mobu11_2")
+: endif
+//ＮＰＣ配置
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+	: RpgCharaOn("NPC_T04_024")
+: endif
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+	: RpgCharaOn("NPC_T04_023")
+: endif
+//ＮＰＣ生存チェック
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//========================================================
+//○高浜・スラム・居酒屋
+//========================================================
+*Map09
+//ＮＰＣ配置
+: if( $chapter == 3 )
+	: RpgCharaOn("NPC_T04_018")
+: endif
+//イベント自動発生
+: if ( MissionProgress( "SC_A03_03_2", "InProgress" ) == true )
+	: RpgCharaOn("Mogura")
+	: Jump( "Scenarios/SC_A03_03*sc002d" )
+: endif
+: Return

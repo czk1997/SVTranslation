@@ -1,0 +1,354 @@
+//========================================================
+//○あざみと玉藻
+//========================================================
+//●場所：あざみの部屋
+//●状況：玉藻との思い出に浸るあざみ
+//●視点：あざみ視点
+//●背景：和室・昼
+//Yoshi：背景
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 1.0 )
+: Wait()
+: DrawChara( "Azami", 23, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0727" )
+\CN["嘲讽"]
+“头疼……昨天喝多了……”
+
+: PlayBgm("BGM/36_ID03")
+昨天在居酒屋久违地喝了玉藻。
+
+这可能是最后一次喝了
+我好像喝多了。
+
+: DrawChara( "Azami", 25, 0)
+: PlayVoice( "Voices/vo05_aza0728" )
+\CN["嘲讽"]
+“仔细一想，原来和那家伙有各种各样的事啊。”
+
+: EraseChara( "Azami", 0.5 )
+和玉藻相遇是在20多年前。
+大概是被老大捡到的时候吧……。
+
+//●演出：回想に入る演出
+//●背景：白夜のアジト・昼
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: DrawChara( "Daruma", 1, 0, 0, 0.5, 0.0, 2, "C" )
+: PlayBgm("BGM/03_CM003")
+: ShowWnd()
+\CN["达磨"]
+“这是在白夜保护的玉藻。”
+
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 2, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0729" )
+\CN["嘲讽"]
+“呃？什么，玉藻……那个，白面金毛九尾的狐狸……！？”
+
+: DrawChara( "Azami", 2, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 4, "LC")
+: PlayVoice( "Voices/vo22_tam0293" )
+\CN["玉藻"]
+“还有其他被称为‘倾国美女’的情况”
+
+那时候吓了一大跳。
+
+说到玉藻大人，我只觉得它是出现在童话故事里的存在
+没有……。
+
+因为眼前就有这种情况，所以不要吃惊是不合理的
+我想。
+
+//●演出：時間経過トランジション
+//●背景：居酒屋、茶屋・夜
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Tamamo", 0.0 )
+: EraseChara( "Azami", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Chaya01_03", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+和玉藻非常合得来，作为间谍进入鬼灯之后
+我们经常见面一起喝酒。
+
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo22_tam0294" )
+\CN["玉藻"]
+“我们总是在统治者的身边
+告知“能看到的”危机是世代的职责”
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Azami", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0730" )
+\CN["嘲讽"]
+“嗯。那为什么要进入白夜呢？”
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Tamamo", 5, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Azami", 3, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo22_tam0295" )
+\CN["玉藻"]
+“现在的将军是非常贪欲的人。
+我不认为那样的人能统治国家”
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Tamamo", 0, 0, 1, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo22_tam0296" )
+\CN["玉藻"]
+“你觉得现在的将军怎么样？”
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0731" )
+\CN["嘲讽"]
+“是啊。虽然还不太清楚，但还是个能干的人。”
+我想。不管怎么说，帝都的街道即使在平民区也有相应的整备
+因为有”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0297" )
+\CN["玉藻"]
+“我也买了草鞋。那家伙的儿子忠胜也是。”
+有相当的才智”
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Tamamo", 5, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo22_tam0298" )
+\CN["玉藻"]
+「那么，就这些吧。
+我没有真正掌握人心的能力”
+
+: DrawChara( "Azami", 2, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo05_aza0732" )
+\CN["嘲讽"]
+“啊……那我也感觉到了。”
+
+和玉藻说了很多话。
+
+//●演出：時間経過トランジション
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Azami", 0.0 )
+: EraseChara( "Tamamo", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: DrawChara( "Azami", 2, 1, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0733" )
+\CN["嘲讽"]
+“啊，那个，我希望你不要笑……
+{钢铁，钢}向我求婚了……」
+
+这才是无论如何也无法让别人听到的
+秘密的话也被玉藻挑明了。
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Tamamo", 2, 1, 1, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo22_tam0299" )
+\CN["玉藻"]
+「啊，真是可喜可贺啊。
+那么，你已经做好了吗？”
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Azami", 24, 2, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Tamamo", 2, 1, 1, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo05_aza0734" )
+\CN["嘲讽"]
+“ヤ、ヤる是……！？
+那、那是……嘛…那个、交往也还算过得去”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0735" )
+\CN["嘲讽"]
+“怎么说呢，玉藻。还有就是这种说法。”
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Tamamo", 2, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo22_tam0300" )
+\CN["玉藻"]
+“くくく、就好像年轻女孩一样的反应非常有趣。
+不知不觉，我就想知道了”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0301" )
+\CN["玉藻"]
+“那么，你打算什么时候给你庆祝呢？”
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0736" )
+\CN["嘲讽"]
+“怎么样呢……。
+而且从立场上来说，无法判断是否可以接受……”
+
+: DrawChara( "Tamamo", 3, 0)
+: PlayVoice( "Voices/vo22_tam0302" )
+\CN["玉藻"]
+“你不必介意，对你来说只是一次人生。
+无悔的选择——随心而为”
+
+: DrawChara( "Azami", 25, 1)
+: PlayVoice( "Voices/vo05_aza0737" )
+\CN["嘲讽"]
+“是、是吗……”
+
+//●演出：時間経過トランジション
+//●背景：山頂
+//Yoshi：背景
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Azami", 0.0 )
+: EraseChara( "Tamamo", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Summit01_02", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+然后马上——这是10年前左右的事。
+在西都战争中我失去了重要的恋人。
+
+: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0738" )
+\CN["嘲讽"]
+「…………」
+
+在无人知晓的地方悄悄建造的墓前
+好几天都在发呆，心不在焉。
+
+: EraseChara( "Azami", 0.5 )
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo22_tam0303" )
+\CN["玉藻"]
+“我找到了。”
+
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Azami", 2, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo05_aza0739" )
+\CN["嘲讽"]
+“……不好意思。闭嘴。你是被老大拜托的，在这里吗？”
+
+: PlayVoice( "Voices/vo22_tam0304" )
+\CN["玉藻"]
+“不，这是我的独断。”
+
+失去头的鬼灯眼看就要空中解体了。
+后来听说龙一个人到处跑，想办法。
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0740" )
+\CN["嘲讽"]
+“应该已经习惯了人的死。
+到现在为止，身边的人都死了……”
+
+: DrawChara( "Azami", 9, 0)
+: PlayVoice( "Voices/vo05_aza0741" )
+\CN["嘲讽"]
+“但是啊……那个人死了……再也不会被那个人抱在怀里了
+想着不会再有第二次了，就这样……”
+
+心里突然空了一个洞。
+我什么都没想做。
+
+: EraseChara( "Azami", 0.5 )
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Tamamo", 2, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo22_tam0305" )
+\CN["玉藻"]
+“那就休息吧……”
+
+: DrawChara( "Tamamo", 3, 0)
+: PlayVoice( "Voices/vo22_tam0306" )
+\CN["玉藻"]
+“你的丈夫大概是太忍耐了吧。
+想哭的时候就哭，想笑的时候就笑，这些理所当然的事情
+简直就像大罪一样在忍耐着」
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Azami", 27, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0742" )
+\CN["嘲讽"]
+“嗯……可能是……吧……。
+那么……只有一点点——”
+
+那时，玉藻拥抱了我
+我至今还记得在玉藻的胸里大哭的事情。
+
+//●演出：回想から戻る演出
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Azami", 0.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0743" )
+\CN["嘲讽"]
+“想哭的时候就哭，想笑的时候就笑，这些理所当然的事情
+我忍耐着——那是玉藻……不是你吗？”
+
+然后，今天一天结束迎接明天的时候
+玉藻已经不在这个世界上了吧。
+
+怎么说呢，昨天玉藻说“我变成狂暴的魔兽的时候
+杀稻草！”。
+
+因为能看到未来的玉藻说
+一定没错，那家伙一定会成为狂暴的魔兽吧。
+
+: DrawChara( "Azami", 4, 0)
+: PlayVoice( "Voices/vo05_aza0744" )
+\CN["嘲讽"]
+“那家伙，就算再怎么是我
+我会拜托非常残酷的事情的”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0745" )
+\CN["嘲讽"]
+“但是，赌上性命，我一定要完成这个任务……。
+除了我以外还能让你做吗？”
+
+死不是别人，而是玉藻自己所期望的。
+
+那家伙一定是几千年来一直渴望着真正的“死亡”吧。
+
+: DrawChara( "Azami", 24, 0)
+: PlayVoice( "Voices/vo05_aza0746" )
+\CN["嘲讽"]
+“玉藻已经在疯狂的时间里数不胜数了
+送了重要的人几次”
+
+: DrawChara( "Azami", 0, 0)
+: PlayVoice( "Voices/vo05_aza0747" )
+\CN["嘲讽"]
+“那家伙所背负的‘毁灭的轮回’——
+我一定要用我的手来结束这被诅咒的命运”
+
+我下了这样的决心，踏上了不死之山。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

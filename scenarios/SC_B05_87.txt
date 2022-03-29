@@ -1,0 +1,377 @@
+//========================================================
+//○亜久里と下町の少年
+//========================================================
+//●視点：亜久里視点
+//●背景：下町・昼
+//Yoshi：背景
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Aguri", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Village04_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/03_CM003")
+//●演出：亜久里　立ち絵
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0006" )
+\CN["亚久里"]
+“确实，应该在这附近……”
+
+听说帝都下町有一家众所周知的茶店
+来了。
+
+\CN["平民区的男子1"]
+“那个女人，不是很好的女人吗？”
+
+\CN["平民区的男子2"]
+“我倒是更胖一点比较好。
+因为那个更有价值”
+
+听到下流的对话。
+
+//●演技：心の声です
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0007" )
+\CN["亚久里"]
+（原来如此。确实在这个地区女性一个人走路是
+不推荐呢）
+
+特别是晚上很危险吧。
+
+晚上一个人走的话，就像在说请侵犯我一样
+我觉得是什么东西。
+
+一边思考着各种各样的事情，一边寻找目标的店。
+
+\CN["少年的声音"]
+“谁啊————！”
+
+不知从哪里传来求救的声音。
+
+: DrawChara( "Aguri", 0, 0)
+: PlayVoice( "Voices/vo16_agu0008" )
+\CN["亚久里"]
+“……嗯？”
+
+我极力避免和别人接触。
+
+即使眼前有女性被强奸
+我放过你，但是这一天有什么不同。
+
+可以说是反复无常吗？
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Aguri"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+回过神来，他就朝着发出声音的方向跑去。
+
+//●演出：場面転換トランジション
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: ShowWnd()
+\CN["少年"]
+“所以，刚才不是已经道歉了好几次了吗？”。
+对、对不起……你就原谅我吧……”
+
+穿着破破烂烂衣服的少年，的确是半灰色的相貌
+被大人纠缠了。
+
+少年的脸肿了，流着泪皱起了脸
+我土下座在半灰色的男人身上。
+
+\CN["半灰色"]
+“啊？小孩子的土下座根本没有一分钱的价值。
+什么啊！”
+
+\CN["少年"]
+“呜哇，原谅我……”
+
+//●演出：亜久里　立ち絵
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+半格雷踩在少年的头上
+我觉得果然还是看不到这个啊。
+
+\CN["半灰色"]
+“你怎么了？”
+
+半格雷瞪着我
+我一边NITANITA一边过来。
+
+\CN["半灰色"]
+“莫非是这家伙的保护者？”
+
+: DrawChara( "Aguri", 10, 0)
+: PlayVoice( "Voices/vo16_agu0009" )
+\CN["亚久里"]
+“不，不是。”
+
+\CN["半灰色"]
+「嗯。啊，怎么都行。
+身材乍看之下很贫寒，但这样的人会显瘦”
+
+半格雷伸出手来了——
+
+//●演技：魔術を使う。淡々と
+: DrawChara( "Aguri", 0, 0, 1 )
+: PlayVoice( "Voices/vo16_agu0010" )
+\CN["亚久里"]
+“连接{冷冻魔术，弗利兹}”
+
+//●演出：氷系魔術
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Ice02" )
+: PlayAnim( "Animations/AnimeL_Ice02", false, 0, 0, 8, 8 )
+: ShowWnd()
+\CN["半灰色"]
+“啊啊啊……啊，我的手冻住了……”
+
+: DrawChara( "Aguri", 5, 0)
+: PlayVoice( "Voices/vo16_agu0011" )
+\CN["亚久里"]
+“能碰我的只有平底鱼先生……”
+
+\CN["半灰色"]
+「这、这混蛋太多了！
+快点把我的胳膊还给我！”
+
+: DrawChara( "Aguri", 5, 0)
+: PlayVoice( "Voices/vo16_agu0012" )
+\CN["亚久里"]
+“接下来给您冻全身吧？”
+
+\CN["半灰色"]
+“……呜！”
+
+我没打算大声喧哗
+半格雷突然畏缩不前。
+
+\CN["半灰色"]
+“喂，记住啊——！”
+
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_dash01" )
+一边哭着喊着一边离开了。
+
+: PlayBgm("BGM/03_CM003")
+\CN["少年"]
+“啊，啊……啊，有……”
+
+: DrawChara( "Aguri", 1, 0, 0 )
+: PlayVoice( "Voices/vo16_agu0013" )
+\CN["亚久里"]
+“不，没什么……。
+只是碰巧路过而已”
+
+少年不仅脸肿了
+好像还有其他地方受伤了。
+
+右脚折断后向奇怪的方向弯曲。
+胳膊上有很大的刀伤，肋骨也有裂缝。
+
+: DrawChara( "Aguri", 0, 0, 1 )
+: PlayVoice( "Voices/vo16_agu0014" )
+\CN["亚久里"]
+“哎呀呀……”
+
+不能做到这个地步就置之不理。
+
+确认没有人的眼睛后，对少年施加恢复魔术。
+
+\CN["少年"]
+“啊，那个……？不痛……完全不痛！”
+
+看来你治好了呢。
+
+: DrawChara( "Aguri", 0, 0, 0 )
+: PlayVoice( "Voices/vo16_agu0015" )
+\CN["亚久里"]
+“那么，我就这样。”
+
+\CN["少年"]
+“等一下！”
+
+被少年叫住了。
+
+\CN["少年"]
+“我、我、叫做‘弥一、や一’。
+姐姐，有什么我能做的吗？
+只是接受了施舍的话，我就不愿意了”
+
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0016" )
+\CN["亚久里"]
+“不，特别是……”
+
+\CN["弥一"]
+“拜托了！我什么都会做。”
+
+势必会跟着来。
+
+话虽如此，你想让我做什么呢……。
+是啊……——。
+
+: DrawChara( "Aguri", 3, 0)
+: PlayVoice( "Voices/vo16_agu0017" )
+\CN["亚久里"]
+“请问，你知道这家店吗？是茶店吗？”
+
+\CN["弥一"]
+“啊，那我就知道了！我带你去。”
+
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0018" )
+\CN["亚久里"]
+“是吗？那就拜托了。”
+
+//●演出：亜久里　立ち絵消去
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: chara = "Aguri"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+这就是我和下町的少年弥一的相遇。
+
+那天买回来的茶，比拉加先生非常喜欢
+因为您给了我，所以我经常去那家茶店。
+
+//●演出：場面転換トランジション
+//●背景：下町の河原・昼
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_River01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+//●演出：亜久里　立ち絵
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["弥一"]
+“啊！亚久里姐姐！”
+
+去了下町，那个少年弥一看到我很开心地跑了过来
+会来的。
+
+: DrawChara( "Aguri", 0, 0)
+: PlayVoice( "Voices/vo16_agu0019" )
+\CN["亚久里"]
+“弥一，今天带来了点心。”
+
+不知什么时候，他叫我“亚久里姐姐”
+我也叫弥一。
+
+不知什么时候，他看起来像一个年龄相仿的弟弟。
+
+\CN["弥一"]
+“谢谢，姐姐！！
+喂，这个……？”
+
+: DrawChara( "Aguri", 0, 0)
+: PlayVoice( "Voices/vo16_agu0020" )
+\CN["亚久里"]
+“叫做曲奇的西洋点心。”
+
+\CN["弥一"]
+“啊，西洋的！？亚久里姐姐好厉害！！”！！
+喂，可以吃吗？”
+
+: DrawChara( "Aguri", 4, 0)
+: PlayVoice( "Voices/vo16_agu0021" )
+\CN["亚久里"]
+“好的，请吃。”
+
+坐在下町的河滩上，被清爽的风吹拂着
+和弥一聊了一会儿。
+
+幕府派和反幕派的战斗日益激烈。
+现在的状况很适合用血来洗血。
+
+尽管如此，这里还是流淌着平静的时光——
+
+//●演技：心の声です
+: DrawChara( "Aguri", 4, 0)
+: PlayVoice( "Voices/vo16_agu0022" )
+\CN["亚久里"]
+（呵呵。总有一天会在和希拉加大人没有任何争执的地方
+真想安静地生活啊）
+
+\CN["弥一"]
+“亚久里姐姐，看起来很开心呢。”
+
+: DrawChara( "Aguri", 0, 0)
+: PlayVoice( "Voices/vo16_agu0023" )
+\CN["亚久里"]
+“……你看起来是这样吗？”
+
+\CN["弥一"]
+“你看起来脸在微笑？”
+
+我自己完全不知道。
+
+怎么说呢，我觉得“感情”这个东西非常缺乏
+我有自觉。
+
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0024" )
+\CN["亚久里"]
+“差不多该回去了。”
+
+\CN["弥一"]
+“嗯，已经走了吗？”
+
+: DrawChara( "Aguri", 0, 0)
+: PlayVoice( "Voices/vo16_agu0025" )
+\CN["亚久里"]
+“是的，我有工作。”
+
+\CN["弥一"]
+“喂，能再来这里吗？”
+
+: DrawChara( "Aguri", 4, 0)
+: PlayVoice( "Voices/vo16_agu0026" )
+\CN["亚久里"]
+“好的。如果买的茶叶没有了，下次见。”
+
+然后，我买了比拉加先生喜欢的茶后回去。
+
+只买几天后要来这里的量。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//Yoshi：背景消去
+//●シーンエンド
+: HideWnd()
+: FadeOut( 0.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

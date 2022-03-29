@@ -1,0 +1,588 @@
+//========================================================
+//○アイキャッチ処理
+//========================================================
+*Eyecatch
+//データ定義
+//共通ルート
+: if ( $chapter == 1 )
+	: eyecatch_image = "MiscImage/eyecatch01"
+: elif ( $chapter == 2 )
+	: eyecatch_image = "MiscImage/eyecatch02"
+: elif ( $chapter == 3 )
+	: eyecatch_image = "MiscImage/eyecatch03"
+: elif ( $chapter == 4 )
+	: eyecatch_image = "MiscImage/eyecatch04a"
+: elif ( $chapter == 5 )
+	: eyecatch_image = "MiscImage/eyecatch05a"
+: elif ( $chapter == 6 )
+	: eyecatch_image = "MiscImage/eyecatch06a"
+: elif ( $chapter == 7 )
+	: eyecatch_image = "MiscImage/eyecatch04b"
+: elif ( $chapter == 8 )
+	: eyecatch_image = "MiscImage/eyecatch05b"
+: elif ( $chapter == 9 )
+	: eyecatch_image = "MiscImage/eyecatch06b"
+: elif ( $chapter == 10 )
+	: eyecatch_image = "MiscImage/eyecatch04c"
+: elif ( $chapter == 11 )
+	: eyecatch_image = "MiscImage/eyecatch05c"
+: elif ( $chapter == 12 )
+	: eyecatch_image = "MiscImage/eyecatch06c"
+: endif
+//実行
+: DrawImage( 0, 0, "BGImage/Bg_Black", 0.0 )
+: DrawImage( 1, 0, eyecatch_image, 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition03", 1.0, true, 0.0, 0.0)
+: Sleep(2.0)
+: Return
+
+//========================================================
+//○演出時間の定義
+//========================================================
+*EffTime
+: if ( IsEffectEnable() == true )
+	: time = 0.3
+: else
+	: time = 0.0
+: endif
+: Return( time )
+
+//========================================================
+//○立ち絵フェード時間定義
+//========================================================
+*FgFadeTime
+: Return( 0.1 )
+
+//========================================================
+//○レイヤーの掃除
+//========================================================
+*LayerClean
+: ResetLayer(0)
+: ResetLayer(1)
+: ResetLayer(2)
+: ResetLayer(3)
+: ResetLayer(4)
+: ResetLayer(5)
+: ResetLayer(6)
+: ResetLayer(7)
+: ResetLayer(8)
+: AutoFaceThumbnail( true )	// 顔画像表示をデフォルトに
+: Return
+//========================================================
+//○立ち絵フェードイン演出
+//========================================================
+*FgEff
+//各種数値取得
+: if ( type == "WL" )	//左から歩き
+	: x1 = -100; x2 = 100; y1 = 0; y2 = 0; time = 0.4;
+: elif ( type == "DL" )	//左からダッシュ
+	: x1 = -300; x2 = 300; y1 = 0; y2 = 0; time = 0.2;
+: elif ( type == "SDL" )	//左から速いダッシュ
+	: x1 = -300; x2 = 300; y1 = 0; y2 = 0; time = 0.1;
+: elif ( type == "WR" )	//右から歩き
+	: x1 = 100; x2 = -100; y1 = 0; y2 = 0; time = 0.4;
+: elif ( type == "DR" )	//右からダッシュ
+	: x1 = 300; x2 = -300; y1 = 0; y2 = 0; time = 0.2;
+: elif ( type == "SDR" )	//右から速いダッシュ
+	: x1 = 300; x2 = -300; y1 = 0; y2 = 0; time = 0.1;
+: elif ( type == "UP" )	//下から
+	: x1= 0; x2 = 0; y1 = -100; y2 = 100; time = 0.4;
+: else	//フェード
+	: x1 = 0; x2 = 0; time = 0.5;
+: endif
+: FadeOutLayer( lay, 0.0)
+: SetLayerRelPos( lay, x1, y1, 0.0, 0)
+: SetLayerRelPos( lay, x2, y2, time, 0)
+: FadeInLayer( lay, time )
+: Return
+//========================================================
+//○立ち絵フェードアウト演出
+//========================================================
+*FgEffOut
+//各種数値取得
+: if ( type == "WL" )	//左へ歩き
+	: x = -100; y = 0; time = 0.4;
+: elif ( type == "DL" )	//左へダッシュ
+	: x = -300; y = 0; time = 0.2;
+: elif ( type == "SDL" )	//左へスーパーダッシュ
+	: x = -300; y = 0; time = 0.1;
+: elif ( type == "WR" )	//右へ歩き
+	: x = 100; y = 0; time = 0.4;
+: elif ( type == "DR" )	//右へダッシュ
+	: x = 300; y = 0; time = 0.2;
+: elif ( type == "SDR" )	//右へスーパーダッシュ
+	: x = 300; y = 0; time = 0.1;
+: elif ( type == "Down" )	//下へ
+	: x = 0; y = -200; time = 0.4;
+: endif
+: SetLayerRelPos( lay, x, y, time, 0)
+: Wait()
+: EraseChara( chara, time )
+: ResetLayer(lay)
+: Return
+
+//========================================================
+//○立ち絵拡大表示
+//========================================================
+*FgLarge
+//スケールは1.5倍に統一させておく
+//Y座標の取得処理
+: if ( chara == "Mukuro" )
+	: y =-400
+: elif ( chara == "Momo" )
+	: y =-500
+: elif ( chara == "Kinako" )
+	: y =-300
+: elif ( chara == "Leo" )
+	: y =-550
+: elif ( chara == "Gin" )
+	: y =-550
+: elif ( chara == "Azami" )
+	: y =-500
+: elif ( chara == "Ryu" )
+	: y =-600
+: elif ( chara == "Bebi" )
+	: y =-500
+: elif ( chara == "Daruma" )
+	: y =-500
+: elif ( chara == "Mei" )
+	: y =-450
+: elif ( chara == "Midori" )
+	: y =-600
+: elif ( chara == "Mikage" )
+	: y =-400
+: elif ( chara == "Shion" )
+	: y =-500
+: elif ( chara == "Iwao" )
+	: y =-500
+: elif ( chara == "Ranmaru" )
+	: y =-500
+: elif ( chara == "Hiraga" )
+	: y =-500
+: elif ( chara == "Aguri" )
+	: y =-500
+: elif ( chara == "Manji" )
+	: y =-500
+: elif ( chara == "Xeno" )
+	: y =-500
+: elif ( chara == "Elisa" )
+	: y =-500
+: elif ( chara == "Falke" )
+	: y =-500
+: elif ( chara == "Clacier" )
+	: y =-500
+: elif ( chara == "Tamamo" )
+	: y =-500
+: elif ( chara == "Tadakatsu" )
+	: y =-500
+: elif ( chara == "Sayo" )
+	: y =-300
+: elif ( chara == "Fumimaro" )
+	: y =-500
+: elif ( chara == "Kotaro" )
+	: y =-550
+: elif ( chara == "Nina" )
+	: y =-450
+: elif ( chara == "Dominik" )
+	: y =-500
+: elif ( chara == "Ji" )
+	: y =-500
+: elif ( chara == "Sasaki" )
+	: y =-500
+: elif ( chara == "Mimawari" )
+	: y =-500
+: else
+	: y =0
+: endif
+
+//各種数値取得
+: if ( type == "WL" )	//左から歩き
+	: x1 = -100; x2 = 100; time = 0.4;
+: elif ( type == "DL" )	//左からダッシュ
+	: x1 = -300; x2 = 300; time = 0.2;
+: elif ( type == "WR" )	//右から歩き
+	: x1 = 100; x2 = -100; time = 0.4;
+: elif ( type == "DR" )	//右から歩き
+	: x1 = 300; x2 = -300; time = 0.2;
+: else	//フェード
+	: x1 = 0; x2 = 0; time = 0.4;
+: endif
+
+//画像表示
+: z = 1.8
+: SetLayerScale( lay, z, z, 0.0)
+: SetLayerRelPos( lay, x1, y, 0.0)
+: FadeOutLayer( lay, 0 )
+: SetLayerRelPos( lay, x2, 0, time)
+: FadeInLayer( lay, time, 0.0)
+: Return
+
+//========================================================
+//○キャラクターフォーカス
+//========================================================
+*FgFocus
+: if ( fadeout_cha != "None" )
+	: EraseChara( fadeout_cha, 0.5 )
+	: ResetLayer(3)
+: endif
+: DrawChara( fadein_cha, face, hoho, pose, 0.0, 0.0, 3, "C" )
+: chara = fadein_cha; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Return
+//========================================================
+//○立ち絵レイヤー情報をリセット
+//========================================================
+*FgResetLayer
+: ResetLayer(2)
+: ResetLayer(3)
+: ResetLayer(4)
+: ResetLayer(5)
+: ResetLayer(6)
+: Return
+
+//========================================================
+//○立ち絵ポジションチェンジ
+//========================================================
+*FgPosChange
+//座標移動量の取得
+: xpos = 250 * move
+: SetLayerRelPos( beforelay, xpos, 0, time )
+: Wait()
+: DrawChara( chara, face, hoho, pose, 0.0, 0.0, afterlay, pos )
+: Return
+
+//========================================================
+//○立ち絵キャラ入れ替え
+//========================================================
+*FgChange
+: EraseChara( ChaOut, Call("*FgFadeTime") )
+: DrawChara( ChaIn, Face, Hoho, Pose, Call("Scenarios/Common*FgFadeTime"), 0.0, Lay, Pos)
+: Return
+
+//========================================================
+//○レイヤー画像演出
+//========================================================
+*EffImage
+: if ( IsEffectEnable() == false ) time = 0 endif
+: if ( accel == true )
+	: ease = "Liner"
+: else
+	: ease = "InSine"
+: endif
+: DrawImage( lay, 0, file, 0.0)
+: FadeOutLayer( lay, 0 )
+: SetLayerScale( lay, z1, z1)		// サイズ設定
+: SetLayerPos( lay, x1, y1, 0.0)	// ポジション設定
+: SetLayerScale( lay, z2, z2, time, 0.0, ease)
+: SetLayerPos( lay, x2, y2, time, 0.0, ease)
+: FadeInLayer( lay, time)
+: Return
+
+//========================================================
+//○イベントＣＧファイル名決定処理
+//========================================================
+*EvFileName
+//イベントＣＧのフラグを立てる
+: EventCgFlagUp( Substring( evfile, 8 ) )
+: Dir = "EventCG/"
+: if (Substring( evfile, 3 ) == "eva") Dir = "EventCG2/" endif
+: if ( evcos == false )
+	: evcos_num = "0"
+: else
+	: if ( evcha == "Mukuro" )
+		: if ( CharaCostume( evcha ) == 0 || CharaCostume( evcha ) == 3 || CharaCostume( evcha ) == 4 || CharaCostume( evcha ) == 6 )
+			: evcos_num = "0"
+		: elif ( CharaCostume( evcha ) == 1 || CharaCostume( evcha ) == 5 )
+			: evcos_num = "1"
+		: else
+			: evcos_num = "2"
+		: endif
+	: elif ( evcha == "Momo" )
+		: if ( CharaCostume( evcha ) == 0 || CharaCostume( evcha ) == 2 || CharaCostume( evcha ) == 3 )
+			: evcos_num = "0"
+		: else
+			: evcos_num = "1"
+		: endif
+	: elif ( evcha == "Kinako" )
+		: if ( CharaCostume( evcha ) == 0 || CharaCostume( evcha ) == 3 || CharaCostume( evcha ) == 4 || CharaCostume( evcha ) == 5 )
+			: evcos_num = "0"
+		: elif ( CharaCostume( evcha ) == 1 || CharaCostume( evcha ) == 5 )
+			: evcos_num = "1"
+		: else
+			: evcos_num = "2"
+		: endif
+	: elif ( evcha == "Mei" )
+		: if ( CharaCostume( evcha ) == 0 || CharaCostume( evcha ) == 3 || CharaCostume( evcha ) == 4 )
+			: evcos_num = "0"
+		: elif ( CharaCostume( evcha ) == 1 || CharaCostume( evcha ) == 5 )
+			: evcos_num = "1"
+		: else
+			: evcos_num = "2"
+		: endif
+	: else
+		: evcos_num = "0"
+	: endif
+: endif
+: evimage = Dir + evfile + evcos_num
+: Return( evimage )
+
+//========================================================
+//○カットインファイル名決定処理
+//========================================================
+*CutinFileName
+: dir = "MiscImage/"
+: Return( dir + cutinfile )
+
+//========================================================
+//○イベントＣＧ・瞬間フェードイン
+//========================================================
+*EvIn
+: AutoFaceThumbnail( false )
+: fade_cg_now = evfile
+: if( evbg == true )
+	: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: endif
+: DrawImage( 8, 0, Call("*EvFileName"), 0.0)
+: Return
+
+//========================================================
+//○イベントＣＧ・フェードイン
+//========================================================
+*EvFadeIn
+: AutoFaceThumbnail( false )
+: DrawImage( 8, 0, Call("*EvFileName"), Call("*EffTime"))
+: Wait()
+: if( evbg == true )
+	: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: endif
+: Return
+
+//========================================================
+//○イベントＣＧ・変更
+//========================================================
+*EvChange
+: AutoFaceThumbnail( false )
+: if( evbg == true )
+	: DrawImage( 8, 1, Call("*EvFileName"), Call("*EffTime"))
+	: Wait()
+	: SwapImage( 8, 0, Call("*EvFileName"), 0.0)
+	: EraseImage( 8, 1, 0.0)
+: else
+	: SwapImage( 8, 0, Call("*EvFileName"), 0.0)
+	: Wait()
+: endif
+: if( evbg == true )
+	: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: endif
+: Return
+
+//========================================================
+//○イベントＣＧ・スライドイン
+//========================================================
+*EvSlideIn
+: if ( IsEffectEnable() == false ) time = 0 endif
+: AutoFaceThumbnail( false )
+: DrawImage( 8, 0, Call("*EvFileName"), 0.0)
+: FadeOutLayer( 8, 0 )
+: SetLayerScale( 8, z1, z1)
+: SetLayerPos( 8, x1, y1, 0.0)
+: SetLayerScale( 8, z2, z2, time, 0.0, "InSine")
+: SetLayerPos( 8, x2, y2, time, 0.0, "InSine")
+: FadeInLayer( 8, time)
+: Wait()
+: if( evbg == true )
+	: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: endif
+: Return
+
+//========================================================
+//○イベントＣＧ・ズームイン
+//========================================================
+*EvZoomIn
+: AutoFaceThumbnail( false )
+: DrawImage( 8, 0, Call("*EvFileName"), 0.0)
+: FadeOutLayer( 8, 0 )
+: SetLayerScale( 8, 2, 2)
+: SetLayerPos( 8, 0, 0, 0.0)
+: SetLayerScale( 8, 1, 1, Call("*EffTime"), 0.0, "InSine")
+: SetLayerPos( 8, 0, 0, Call("*EffTime"), 0.0, "InSine")
+: FadeInLayer( 8, Call("*EffTime"))
+: Wait()
+: if( evbg == true )
+	: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: endif
+: Return
+
+//========================================================
+//○イベントＣＧ・リセットしてフェードイン
+//========================================================
+*EvResetFade
+: if ( IsEffectEnable() == false )
+	: time = 0.0
+: endif
+: if( evbg == true )
+	: DrawImage( 8, 1, Call("*EvFileName"), 0.0)
+	: FadeOutLayer( 8, 0 )
+	: SetLayerScale( 8, 1, 1, 0.0)
+	: SetLayerPos( 8, 0, 0, 0.0)
+	: FadeInLayer( 8, time)
+	: Wait()
+	: SwapImage( 8, 0, Call("*EvFileName"), 0.0)
+	: EraseImage( 8, 1, 0.0)
+: else
+	: SwapImage( 8, 0, Call("*EvFileName"), 0.0)
+	: FadeOutLayer( 8, 0 )
+	: SetLayerScale( 8, 1, 1, 0.0)
+	: SetLayerPos( 8, 0, 0, 0.0)
+	: FadeInLayer( 8, time)
+	: Wait()
+: endif
+: if( evbg == true )
+	: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: endif
+: Return
+
+//========================================================
+//○イベントＣＧ・消去
+//========================================================
+*EvFadeOut
+: EraseAllImage( 7, Call("*EffTime"), 0.0)
+: EraseAllImage( 8, Call("*EffTime"), 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(8)
+: AutoFaceThumbnail( true )
+: Return
+
+//========================================================
+//○イベントＣＧ・演出用の消去
+//========================================================
+*EvFadeOutEff
+: EraseAllImage( 7, Call("*EffTime"), 0.1)
+: EraseAllImage( 8, Call("*EffTime"), 0.1)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(8)
+: AutoFaceThumbnail( true )
+: Return
+
+//========================================================
+//○イベントＣＧ・瞬間消去
+//========================================================
+*EvDelete
+: EraseAllImage( 7, 0.0, 0.1)
+: EraseAllImage( 8, 0.0, 0.1)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(8)
+: AutoFaceThumbnail( true )
+: Return
+
+//========================================================
+//○イベントＣＧ・カットイン同時消去
+//========================================================
+*EvCutinFadeOut
+: time =  Call("*EffTime")
+: EraseAllImage( 7, time, 0.0)
+: EraseAllImage( 8, time, 0.0)
+: EraseAllImage( 9, time, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(8)
+: ResetLayer(9)
+: AutoFaceThumbnail( true )
+: Return
+
+//========================================================
+//○カットインＣＧ・フェードイン
+//========================================================
+*CutinFadeIn
+: DrawImage( 9, 0, Call("*CutinFileName"), Call("*EffTime") )
+: Wait()
+: Return
+
+//========================================================
+//○カットインＣＧ・スライドイン
+//========================================================
+*CutinSlideIn
+: if ( IsEffectEnable() == true )
+	: cutin_time = time
+: else
+	: cutin_time = 0.0
+: endif
+: DrawImage( 9, 0, Call("*CutinFileName"), 0.0 )
+: SetLayerRelPos( 9, x1, y1, 0.0, 0)
+: SetLayerRelPos( 9, x2, y2, cutin_time, 0)
+: Return
+
+//========================================================
+//○カットインＣＧ・消去
+//========================================================
+*CutinFadeOut
+: EraseAllImage( 9, Call("*EffTime"))
+: Wait()
+: ResetLayer(9)
+//: AutoFaceThumbnail( true )
+: Return
+
+//========================================================
+//○射精フラッシュ
+//========================================================
+*Shasei
+: if ( IsEffectEnable() == true )
+	: FadeOut( 0.1, 255, 255, 255 )
+	: Wait()
+	: FadeIn( 0.1, 255, 255, 255 )
+	: Wait()
+	: FadeOut( 0.1, 255, 255, 255 )
+	: Wait()
+	: FadeIn( 0.1, 255, 255, 255 )
+	: Wait()
+	: FadeOut( 0.1, 255, 255, 255 )
+	: Wait()
+	: FadeIn( 0.1, 255, 255, 255 )
+	: Wait()
+	: FadeOut( 0.5, 255, 255, 255 )
+	: Wait()
+	: FadeIn( 0.5, 255, 255, 255 )
+	: Wait()
+: endif
+: Return
+
+//========================================================
+//○ＣＧシェイク
+//========================================================
+*CgShake
+: if ( IsEffectEnable() == true )
+	: ShakeLayer( layer, time, strength, vibrato, true)
+: endif
+: Return
+
+//========================================================
+//○キャラ点滅で消す
+//========================================================
+*RpgCharaTenmetsu
+: RpgCharaOff( target )
+: Sleep(0.25)
+: RpgCharaOn( target )
+: Sleep(0.25)
+: RpgCharaOff( target )
+: Sleep(0.25)
+: RpgCharaOn( target )
+: Sleep(0.25)
+: RpgCharaOff( target )
+: Sleep(0.25)
+: RpgCharaOn( target )
+: Sleep(0.25)
+: RpgCharaOff( target )
+: Wait()
+: Return
+
+//========================================================
+//○ダークエルフから人に戻る
+//========================================================
+*Cos_Normal
+//※何か演出入れる
+: CharaCostume( cha_cos, 0 )
+: Return

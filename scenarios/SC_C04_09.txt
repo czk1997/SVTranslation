@@ -1,0 +1,889 @@
+//========================================================
+//○見廻組から女衒を守れ！１
+//========================================================
+*sc001
+//●場所：白夜の隠れ家・蘭丸の部屋
+: HideWnd()
+: RpgCharaOff("Ranmaru")
+: RpgCharaOn("Mobu")
+: FadeIn( 0.5 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1 )
+: Wait()
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2623" )
+\CN["无黑色"]
+“咦？兰丸先生呢？
+我是来帮忙工作的……？”
+
+\CN["白夜队士"]
+“是神八代妹妹吗？兰丸先生有留言要告诉你。”
+
+\CN["白夜队士"]
+“现在兰丸先生在高浜。
+所以，我希望你来高浜”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2624" )
+\CN["无黑色"]
+“是高浜吗？我知道了。”
+
+\CN["白夜队士"]
+“我想你应该知道，高浜是从‘帝都南街道’去的
+可以。希望你能成为兰丸大人的力量”
+
+//●シーンエンド
+: DestinationMap( "Map_Town04_01_Takahama" )
+: SetMission( "SC_C04_09_1", "InProgress" )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+事件信息更新了。
+
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Town06_01_Sakitama", "From06", "Scenarios/Map_Town06_Sakitama_Init*Map01")
+//========================================================
+//○見廻組から女衒を守れ！２
+//========================================================
+*sc002
+//●場所：高浜・入口
+//●演出：無黒　前に数歩歩く
+//●背景：港町・外・昼
+: HideWnd()
+: FadeIn( 0.5 )
+: DrawImage( 1, 0, "BGImage/Bg_Harbor01_01", 0.0 )
+: Wait()
+: StopBgm( 0.0 )
+: PlayBgm("BGM/38_Slam")
+: ShowWnd()
+\CN["炫耀女人味1"]
+“呀，住手！我说什么？”
+
+\CN["炫耀女人味2"]
+“你们是传说中的回忆录组吗……？
+可恶……随你的便……”
+
+//: HideWnd()
+//: cutinfile = "CutinFg05"
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+//: Call("Scenarios/Common*CutinFadeIn")
+//: ShowWnd()
+\CN["睡眠组1"]
+“不是随你的便。
+我们是按照将军的命令行动的”
+
+\CN["睡眠组2"]
+“快步走！没人说杀了你不行！”
+所以，杀了也可以啊」
+
+\CN["睡眠组3"]
+“笹木不是说过不要浪费时间伤害别人吗？
+如果让那个人生气的话，我会很害怕的”
+
+//: HideWnd()
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+//: Call("Scenarios/Common*CutinFadeOut")
+//: ShowWnd()
+好容易走到了高浜，有一群穿着白色外褂的家伙
+似乎是强行带走了可疑的男人们。
+
+//●演出：蘭丸　登場する
+: DrawChara( "Ranmaru", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["兰丸"]
+“哎呀，你特地来真不好意思。”
+
+: DrawChara( "Ranmaru", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2625" )
+\CN["无黑色"]
+“姐姐让我去……”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2626" )
+\CN["无黑色"]
+“这种情况，到底是怎么回事？
+明显感觉不是普通的状态……”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“啊。最近，出现了将军直属的组织‘见回组’。”
+”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“‘炫耀女人，夸口’的男人们带走的是
+是一群走狗”
+
+见回组的人给人一种突然看到的感觉，是一帮身材不好的人。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2627" )
+\CN["无黑色"]
+（这些人是直属的护卫
+将军不在乎打扮吗……）
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“好像有什么问题。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2628" )
+\CN["无黑色"]
+“啊，炫耀女人的家伙们，幕府也装出一副从未见过的样子
+应该是这样的。为什么现在才抓住它……？”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“那是因为最近大臣会从维克托尔来
+不是吗？”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“因为维克托尔是严禁奴隶的。
+不是想给人留下一点好印象之类的
+是吗？反正会暴露的”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2629" )
+\CN["无黑色"]
+“那么，你想让我做什么？”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“希望你能帮我保护炫耀自己的女人。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2630" )
+\CN["无黑色"]
+“你是说保护炫耀女人，帮助犯罪吗？”
+
+在大和地区买卖人口基本上是违法的。
+
+如果不违抗幕府的话，可能会被看漏。
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“不行吗？”
+
+//●分岐：悪堕ちＬＶが０～１の場合
+: if( $evilLevel <= 1 )
+	//●演技：葛藤しています
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk2631" )
+	\CN["无黑色"]
+「…………」
+
+从刚才看到的样子来看，回看组也有相当蛮横的样子。
+
+为了弄清楚，还是帮助兰丸比较好吧。
+
+	//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	: DrawChara( "Mukuro", 2, 0)
+	: PlayVoice( "Voices/vo00_muk2632" )
+	\CN["无黑色"]
+“……不，现在才要帮你犯罪。”
+
+到现在为止，已经掌握了好几个人。
+
+从刚才看到的样子来看，回看组也有相当蛮横的样子。
+为了弄清楚，还是帮助兰丸比较好吧。
+
+//●分岐終了
+: endif
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“话虽如此，没想到竟然做到这种程度。”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+（和白夜有关联的女人炫耀也被逮捕了。
+如果发出指示的是组长笹木的话
+应该是很了解背后世界的男人吧）
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2633" )
+\CN["无黑色"]
+“那我应该做什么？”？
+保护高滨残留的女性炫耀就好了吗？”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“嗯，是啊。”
+
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+“高滨港有砖库聚集的地方
+”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“因此，很有可能会被见回组控制在交易现场。
+所以，希望他们能在那里保护那些炫耀女人的人”
+
+去高滨港的砖瓦仓库，如果有巡查组出来的话就打倒。
+那是我应该做的事。
+
+//＠マップ解放：高浜港
+//●シーンエンド
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: SetMission( "SC_C04_09_1", "Hidden" )
+: SetMission( "SC_C04_09_2", "InProgress" )
+: FastTravelMapOn( "TakahamaPort" )
+: DestinationMap( "Map_Dungeon09_01_TakahamaPort" )
+事件信息更新了。
+
+: StopBgm( 0.5 )
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Dungeon09_01_TakahamaPort","","Scenarios/Map_Dungeon_Init*Map_Dungeon09_01" )
+: Return
+
+//========================================================
+//○見廻組から女衒を守れ！３
+//========================================================
+*sc003
+//●場所：高浜・レンガ倉庫前
+//●状況：見張りの男が立っている
+: DrawChara( "Mukuro", 0, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["监视的人"]
+“这里有什么事？”
+
+: PlayVoice( "Voices/vo00_muk2634" )
+\CN["无黑色"]
+“我听说有交易，就来做那个护卫。”
+
+\CN["监视的人"]
+“这样啊。那我可以确认一下设备吗？”
+
+让监视的男子看设备的话
+男人也拿出设备对照起来。
+
+\CN["监视的人"]
+“确认了。不久交易就开始了。
+护卫的人，请多关照”
+
+//●演出：見張りの男が退く
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Flag( "SC_C04_09_sc003", true )
+: RpgCharaOff( "SC_C04_09" )
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○見廻組から女衒を守れ！４
+//========================================================
+*sc004
+\CI["一切准备！"]
+\CI["确认一次"]
+: if ( $choice == 0 )
+	: HideWnd()
+	: RpgDoorLock( "Door", false )
+	: RpgDoorOpen( "Door" )
+	: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1 )
+	: Wait()
+	: FadeOut( 1.0 )
+	: Wait()
+	: LoadMap( "Map_Dungeon09_05_TakahamaPortBoss2", "SC_C04_09_1", "Scenarios/SC_C04_09*sc004_1")
+: else
+	: HideWnd()
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+	: Wait()
+	: Return
+: endif
+
+//●場所：高浜・レンガ倉庫
+//●状況：倉庫の中に行くと取引が行われている
+*sc004_1
+: HideWnd()
+: RpgCharaOff("PLayer")
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/38_Slam")
+: ShowWnd()
+\CN["炫耀女人味的男人"]
+“今天的质量都很好”
+
+\CN["炫耀女人味的男人"]
+“虐待的痕迹很薄
+达到了可以用化妆来掩饰的程度”
+
+正在交涉的炫耀女人的男人。
+
+后面的女人们都穿着整洁的衣服
+并不是说手脚被束缚着。
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawFaceThumbnail( "Mukuro", 1, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2635" )
+\CN["无黑色"]
+（绝对是穿着内衣，光着身子就被手脚束缚得乱七八糟
+本以为是在处理……）
+
+和想象的完全相反。
+
+\CN["花街柳巷的男人"]
+“因为我信任你。
+把女性当做商品来对待会让人产生好感”
+
+\CN["花街柳巷的男人"]
+“对于我们来说，炫耀女人的女人是商品。
+重视那个商品的人可以无条件信任”
+
+\CN["花街柳巷的男人"]
+“实际上，你带来的女人能成长为名声很好的游女
+因为非常多”
+
+\CN["炫耀女人味的男人"]
+“那是，那是。呵呵。只是做了理所当然的事。
+因为商品被说是可以谨慎对待的”
+
+\CN["花街柳巷的男人"]
+“钱已经准备好了。”
+
+进行交款。
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 28, 0)
+: DrawFaceThumbnail( "Mukuro", 28, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2636" )
+\CN["无黑色"]
+（如果这就结束的话，那就太好了……）
+
+: StopBgm( 1.0 )
+外面传来一阵吵吵嚷嚷的声音。
+
+//: EraseChara( "Mukuro", 0.25 )
+//●演出：見廻組が入ってくる（１人はエルフにしておくこと）
+: HideWnd()
+: RpgCharaOn("Mimawarigumi01")
+: RpgCharaOn("Mimawarigumi02")
+: RpgCharaOn("Mimawarigumi03")
+: RpgCharaBatch( "Mimawarigumi01"	\
+:	"MoveUp", 5 )
+: RpgCharaBatch( "Mimawarigumi02"	\
+:	"MoveUp", 5 )
+: RpgCharaBatch( "Mimawarigumi03"	\
+:	"MoveUp", 5 )
+: Wait()
+: RpgCharaTurn( "Zegen", "D" )
+: RpgCharaTurn( "Mobu", "D" )
+: PlayBgm("BGM/12_CM012")
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+\CN["睡眠组1"]
+“是的，到此为止。贩卖人口是违法的。”
+
+\CN["睡眠组2"]
+“不要从那里动啊。”
+
+\CN["睡眠组3"]
+“炫耀坏女人，杀了她，钱和女人都是我们的。
+这个工作做得太好吃了吧”
+
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: EraseChara( "Mimawari", 0.0 )
+: RpgCharaWarp( "Player", "SC_C04_09_2" )
+: FadeIn( 0.5 )
+: Wait()
+: RpgCharaOn("PLayer")
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 5 )
+: Wait()
+: RpgCharaTurn( "Mimawarigumi01", "D" )
+: RpgCharaTurn( "Mimawarigumi02", "D" )
+: RpgCharaTurn( "Mimawarigumi03", "D" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+//●演出：無黒　登場する
+: ShowWnd()
+\CN["睡眠组1"]
+“你怎么了？”
+
+\CN["睡眠组2"]
+“真是个好女人啊。我喜欢这样的女人。”
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk2637" )
+\CN["无黑色"]
+“我讨厌像你们这样的男人。”
+
+//●演出：無黒　刀を抜く
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 23, 0, 5 )
+\CN["睡眠组3"]
+“拔了那个也就是说可以被砍了吧。
+我喜欢斩杀女人，所以不要杀得很舒服”
+
+\CN["睡眠组2"]
+“不要杀我。我对尸体没有兴趣。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2638" )
+\CN["无黑色"]
+“……呼……”
+
+\CN["睡眠组1"]
+“那个姿势，一舔就疼。
+你们，振作起来吧”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：見廻組×３
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：見廻組×３,1,1,0
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc005a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc005b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cellar01", "BGM/22_BM003", 1046, 1046, 1046, "Scenarios/SC_C04_09*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc005a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*sc005b" )	//敗北した場合
+: endif
+//========================================================
+//○見廻組から女衒を守れ！５Ａ
+//========================================================
+*sc005a
+: FadeIn( 0.5 )
+: DrawChara( "Mimawari", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["睡眠组1"]
+“呃……这个女人……很强……”
+
+\CN["睡眠组2"]
+“……可恶……竟然被女人干掉了……”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 1, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk2639" )
+\CN["无黑色"]
+（这真的是将军直属的护卫……？）
+
+没有好好学习技能是一目了然的。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2640" )
+\CN["无黑色"]
+（那附近的地滚球一起——
+总之就是收集了吵架的自豪感吧）
+
+//●演技：心の声です
+//●読み：たちが悪い＝質が悪い　あえて平仮名にしています
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk2641" )
+\CN["无黑色"]
+（在一般人看来，回忆录是不高明地拥有权力的
+比起半格雷他们来，他们的品行还差得多。）
+
+//●分岐：悪堕ちＬＶが３の場合
+: if( $evilLevel == 3 )
+那么，这些家伙们怎么办呢？
+
+不必想。
+
+//●強制的に殺害へ
+//＠ラベルジャンプ：sc005a_select_s2
+	: Jump( "*sc005a_select_s2" )
+//●分岐終了
+: endif
+*sc005a_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc005a_select
+//■選択肢１：見逃してやる
+//■選択肢２：殺しておく
+//――――――――――――――――――――――――――――
+\CI["放过他"]
+\CI["杀死"]
+那么，这些家伙们怎么办呢？
+
+: if ($choice == 1) Jump( "*sc005a_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：見逃してやるを選んだ場合
+//-------------------------------------------------------
+*sc005a_select_s1
+\CN["睡眠组3"]
+“呜……啊，给我记住！”
+
+\CN["睡眠组2"]
+“这份怨恨，一定……！”
+
+//●演出：見廻組　逃げ出して行く
+: HideWnd()
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Mimawarigumi01"	\
+:	"Speed", 6.0	\
+:	"MoveDown", 7 )
+: RpgCharaBatch( "Mimawarigumi02"	\
+:	"Speed", 6.0	\
+:	"MoveRight", 1	\
+:	"MoveDown", 7 )
+: RpgCharaBatch( "Mimawarigumi03"	\
+:	"Speed", 6.0	\
+:	"MoveDown", 7 )
+: Wait()
+: RpgCharaOff("Mimawarigumi01")
+: RpgCharaOff("Mimawarigumi02")
+: RpgCharaOff("Mimawarigumi03")
+: ShowWnd()
+\CN["花街柳巷的男人"]
+“……现在的男人们呢？”
+
+//●仕事：成功
+//●選択肢合流地点へ
+//＠ラベル：sc005a_select_s_end
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+: $money += 5000
+无黑得到了报酬！
+
+: SetMission( "SC_C04_09_2", "Successed" )
+: Jump( "*sc005a_select_s_end" )
+//-------------------------------------------------------
+//●選択肢２：殺しておくを選んだ場合
+//-------------------------------------------------------
+*sc005a_select_s2
+//●演出：無黒　見廻組に近づく
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 2 )
+: Wait()
+: ShowWnd()
+\CN["睡眠组2"]
+“……什、什么……”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk2642" )
+\CN["无黑色"]
+“放心吧。为了不感到疼痛，我会杀了你。”
+
+\CN["睡眠组2"]
+“啊……”
+
+//●演出：斬殺　エフェクト
+: HideWnd()
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: Call( "Scenarios/Effect*Blood01" )
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_1_0200000_1000000_2_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+甩掉一个回忆录组的头。
+
+\CN["睡眠组3"]
+“啊啊啊……对了，是谁……帮帮我……”
+
+\CN["睡眠组1"]
+“笹木先生……话不一样……”
+
+//●演出：斬殺　エフェクト
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+\CN["睡眠组1"]
+「………………」
+
+: HideWnd()
+: RpgCharaOff("Mimawarigumi01")
+: RpgCharaOff("Mimawarigumi02")
+: RpgCharaOff("Mimawarigumi03")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2643" )
+\CN["无黑色"]
+“让你看到奇怪的东西真是不好意思。
+不是很舒服的东西吧？”
+
+被卖的女人们瑟瑟发抖，让我感到恐怖。
+其中也有看到血就会昏厥呕吐的人。
+
+\CN["花街柳巷的男人"]
+“……现在的男人们呢？”
+
+妓院相关人员的男人和炫耀女人的男人{杀害现场，这样的}
+也许是看惯了，满不在乎。
+
+//●仕事：成功
+//●選択肢合流地点へ
+//＠ラベル：sc005a_select_s_end
+: SetMission( "SC_C04_09_2", "Hidden" )
+: SetMission( "SC_C04_09_3", "Successed" )
+: Jump( "*sc005a_select_s_end" )
+//========================================================
+//○見廻組から女衒を守れ！５Ｂ
+//========================================================
+*sc005b
+//●視点：第三者視点
+//: DrawChara( "Mimawari", 0, 0, 1, 0.5, 0.0, 3, "LC" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Cellar01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: ShowWnd()
+\CN["睡眠组1"]
+“啊啊啊啊啊！”
+
+//●演技：斬撃エフェクト
+//●演出：無黒　倒れる
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: cutinfile = "CutinFg05"
+: Call("Scenarios/Common*CutinFadeIn")
+: ShowWnd()
+\CN["睡眠组3"]
+“很危险。
+不能因为是女人就掉以轻心，果然啊”
+
+\CN["睡眠组2"]
+“这个女人，可以让我做吗？
+啊？”
+
+\CN["睡眠组1"]
+“那今晚请我喝一杯吧。”
+
+\CN["睡眠组2"]
+“噢噢！那么，马上——”
+
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+见回组的其中一人打算事事，剩下的两人一边握着刀一边说道
+炫耀女人去游廓的男人那里。
+
+\CN["炫耀女人味的男人"]
+「…………」
+
+\CN["花街柳巷的男人"]
+“到此为止吗……”
+
+: StopBgm( 1.0 )
+炫耀女人的男人失去了表情，妓院的男人露出了绝望的表情。
+
+//●演出：ヒラガと亜久里　登場する
+: HideWnd()
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: ShowWnd()
+\CN["平底片"]
+“真为难啊，你这么任性。”
+
+\CN["睡眠组2"]
+“啊？不要打扰我。这是个好地方。”
+
+\CN["睡眠组3"]
+“隔壁那位装模作样的女人，喜欢那种类型啊。”
+
+: DrawChara( "Aguri", 3, 0, 1)
+: PlayVoice( "Voices/vo16_agu0055" )
+\CN["亚久里"]
+“是吗？我要吐了。”
+
+\CN["睡眠组3"]
+“啊啊，被那种家伙蔑视的话会很兴奋！”
+
+\CN["睡眠组3"]
+“太兴奋了，可能会太粗暴了。”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“看来你们充满了让人不快的才能
+看来您要来啊”
+
+比拉加大叹了一口气。
+
+\CN["睡眠组1"]
+“啊？”
+
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0056" )
+\CN["亚久里"]
+“希拉加大人，这里是我……”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“嗯……”
+
+: DrawChara( "Aguri", 0, 0)
+: PlayVoice( "Voices/vo16_agu0057" )
+\CN["亚久里"]
+“这种程度的小东西我是不会认真的。
+请让我使用魔导器”
+
+: DrawChara( "Hiraga", 6, 0)
+\CN["平底片"]
+“那好吧，就交给你了。”
+
+亚久里站在比拉加的面前与见回组相对。
+
+\CN["睡眠组2"]
+“怎么可能输给这么好的女人呢。”
+
+: HideWnd()
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Mimawari", 0.25 )
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+//●演出：亜久里　ココキュートス詠唱
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*Aguri_Action03" )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Aguri", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+\CN["平底片"]
+“亚久里先生，真棒。
+{八寒地狱，魔方}完全控制住了呢」
+
+: DrawChara( "Aguri", 4, 0)
+: PlayVoice( "Voices/vo16_agu0058" )
+\CN["亚久里"]
+“承蒙夸奖，我感到很光荣。”
+
+: DrawChara( "Aguri", 2, 0)
+: PlayVoice( "Voices/vo16_agu0059" )
+\CN["亚久里"]
+“那么，剩下的垃圾也要打扫了。”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“是的，请多关照。”
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mimawari", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["睡眠组1"]
+“呀，算了……”
+
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mimawari", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["睡眠组3"]
+“哇啊啊啊啊啊啊啊啊！！”
+
+//●演出：氷魔法アニメーション
+: HideWnd()
+: EraseChara( "Mimawari", 0.0 )
+: PlaySe( "SE/Se_AnimeL_Ice03" )
+: PlayAnim( "Animations/AnimeL_Ice03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+剩下的两个人转眼间就结成了冰。
+
+: DrawChara( "Hiraga", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+//: DrawChara( "Aguri", 0, 0, 1, 0.25, 0.0, 5, "L" )
+\CN["平底片"]
+“一个人是精灵，就这样拿走吧。
+剩下的两个人不要了吧”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“亚久里，带着无黑殿赶紧回去吧。
+我还得帮她忙”
+
+: DrawChara( "Hiraga", 6, 0)
+\CN["平底片"]
+“能借给神八代冥殿是非常大的。”
+
+: DrawChara( "Hiraga", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Aguri", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: PlayVoice( "Voices/vo16_agu0060" )
+\CN["亚久里"]
+“知道了。我会小心搬运的。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Hiraga", 0.0 )
+: EraseChara( "Aguri", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+亚久里轻轻地背负着倒下的无黑
+运走。
+
+\CN["平底片"]
+（那个炫耀女人的男人，总觉得有点装腔作势。）
+
+……………………………………………………。
+
+//●仕事：失敗
+: SetMission( "SC_C04_09_2", "Failed" )
+//●分岐：「未知の呪術を解呪せよ」が終了している場合
+//●シーン：「財閥の脱獄を手伝え１」へ
+//＠シナリオジャンプ：SC_C04_11
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●場所移動：白夜のアジト
+//●シーンエンド
+//●分岐終了
+*sc005a_select_s_end
+: FastTravelMapOff( "TakahamaPort" )	//高浜港封印
+: if ( MissionProgress( "SC_C04_10_2", "Successed","Failed" ) == true )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event011", "", "Scenarios/SC_C04_11")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town07_01_Byakuya", "MukuroRoom", "Scenarios/SC_C04_10")
+: endif

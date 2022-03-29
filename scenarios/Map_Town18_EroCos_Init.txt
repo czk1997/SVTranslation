@@ -1,0 +1,23 @@
+//========================================================
+//○エロコス喫茶　初期化
+//========================================================
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: RpgCharaOn("NPC_T17_011a")
+	: RpgCharaOn("NPC_T17_011b")
+//	: RpgCharaOn("NPC_T17_012")
+	: RpgMapBaloonOn( "NPC_T17_012" )
+	: RpgCharaOn("NPC_T17_013")
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: RpgCharaOn("NPC_T17_005a")
+	: RpgCharaOn("NPC_T17_005b")
+//	: RpgCharaOn("NPC_T17_006")
+	: RpgMapBaloonOn( "NPC_T17_006" )
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: RpgCharaOff("NPC_T17_004")
+	: RpgCharaOn("NPC_T17_007")
+	: RpgCharaOn("NPC_T17_008")
+	: RpgCharaOn("NPC_T17_009")
+//	: RpgCharaOn("NPC_T17_010")
+	: RpgMapBaloonOn( "NPC_T17_010" )
+: endif
+: Return

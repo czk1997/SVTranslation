@@ -1,0 +1,3896 @@
+//========================================================
+//○絶体絶命
+//========================================================
+*sc001
+//●状況：無黒ＶＳみどり　桃ＶＳ御影となっている
+//●視点：無黒視点
+//Yoshi：センターにみどり
+: CharaCostume( "Midori", 1 )
+: PlayBgm("BGM/18_TM003")
+//: DrawChara( "Midori",18, 0, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: DrawImage( 1, 0, "BGImage/Bg_Harbor01_03", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0121" )
+\CN["绿色"]
+“真好啊，真好啊，我自己，嗯。{以前}完全不一样。
+好久没有这么激动人心的战斗了”
+
+//: EraseChara( "Midori", 0.5 )
+//Yoshi：センターに無黒（刀）
+//: DrawChara( "Mukuro",46, 0, 5, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1659" )
+\CN["无黑色"]
+“我可没有为战斗而心动的事啊！雷欧！”
+
+//: EraseChara( "Mukuro", 0.5 )
+//●演出：レオ　アクション
+//Yoshi：センターにレオ（黒い刀）
+//: DrawChara( "Leo",19, 0, 1, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["雷欧"]
+“喔！”
+
+//: EraseChara( "Leo", 0.5 )
+根据我的信号，雷欧向望月绿砍去。
+
+//●演出：みどり　レオの攻撃を受け止める
+//Yoshi：左にみどり、右にレオ（黒い刀）
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: DrawChara( "Midori", 5, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Leo",17, 0, 1, 0.0, 0.0, 4, "R" )
+: EraseAllImage( 9, 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0122" )
+\CN["绿色"]
+“呼！我们自己发生了什么事吗？”？
+组合，太棒了，变得很好”
+
+: DrawChara( "Leo",18, 0)
+\CN["雷欧"]
+“只是比以前更加甜蜜而已。”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Midori", 0.5 )
+//Yoshi：センターに無黒
+: PlaySe( "SE/Se_Foot01" )
+: DrawChara( "Mukuro", 6, 2, 2, 0.0, 0.0, 3, "C" )
+: chara = "Mukuro"; lay = 3 ; type = "DL";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo00_muk1660" )
+\CN["无黑色"]
+“因为我们还没有成为那样的朋友！”
+
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: ResetLayer(3)
+: cgkeep = false;
+: Call( "Scenarios/Effect*MukuroAction01" )
+: ShowWnd()
+明明是拼了命的，雷欧却真的……！
+
+//Yoshi：センターにみどり
+: DrawChara( "Midori",12, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0123" )
+\CN["绿色"]
+“你们自己别给我看了！我真的很恼火！”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Midori"; lay = 3; type = "SDL";
+: Call( "Scenarios/Common*FgEffOut")
+: ShowWnd()
+望月依旧以惊人的速度愚弄着。
+
+但是——
+
+//Yoshi：センターにみどり
+//: DrawChara( "Midori",22, 0, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0124" )
+\CN["绿色"]
+“收到了！我不会死的！”
+
+//: EraseChara( "Midori", 0.5 )
+//●演出：斬撃　演出
+: HideWnd()
+: effecttype = "3b"; se = "Se_Stab01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+望月的刺从死角飞进来。
+
+//Yoshi：センターにレオ（黒い刀）
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawChara( "Leo",19, 0, 1, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["雷欧"]
+“让我做吧————！”
+
+//●演出：レオの斬撃をみどりが受け止める
+: HideWnd()
+: EraseChara( "Leo", 0.0 )
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+//Yoshi：センターにみどり
+: DrawChara( "Midori",19, 2, 0, 0.5, 0.0, 3, "C" )
+//●演技：くうううぅは喜んでいる感じです
+: PlayVoice( "Voices/vo10_mid0125" )
+\CN["绿色"]
+“好饿！真让我毛骨悚然，真是的……！”
+
+//●演出：場面転換トランジション
+//●視点：桃視点
+//●演出：御影と桃の魔術の打ち合い×３
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Midori", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: cgkeep = true;
+: Call( "Scenarios/Effect*MomoAction04" )
+: cgkeep = true;
+: Call( "Scenarios/Effect*Mikage_Action03" )
+: cgkeep = true;
+: Call( "Scenarios/Effect*MomoAction01" )
+: cgkeep = false;
+: Call( "Scenarios/Effect*Mikage_Action02" )
+: ShowWnd()
+与织笠御影一步也不退让的魔术的交锋。
+
+能够对抗到这种地步的
+因为能够跨越地狱的考验。
+
+//Yoshi：左に御影
+: DrawChara( "Mikage", 5, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo11_mik0043" )
+\CN["御影"]
+“这么说来，您还没听说您的名字吧？”
+
+//Yoshi：右に桃
+: DrawChara( "Momo", 2, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0870" )
+\CN["桃子"]
+“我觉得只今天见不到，不过还是先告诉你吧。”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0871" )
+\CN["桃子"]
+“我的名字是姬椿桃——从今以后成为大和一的魔术师的女人
+等你记住了再下地狱吧！”
+
+//●演出：桃　上級魔術演出
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Mikage", 0.5 )
+: Wait()
+: Call( "Scenarios/Effect*MomoAnime" )
+//Yoshi：左に御影、右に桃
+: DrawChara( "Mikage", 1, 0, 0, 0.0, 0.0, 3, "L" )
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "R" )
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0044" )
+: ShowWnd()
+\CN["御影"]
+“上级魔术，好像很熟练呢。”
+
+: DrawChara( "Mikage", 5, 2)
+: PlayVoice( "Voices/vo11_mik0045" )
+\CN["御影"]
+“桃子先生，我早就说过了
+因为是我喜欢的，所以想好好疼爱他”
+
+: CharaPartsOn( "Momo", 0 )
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0872" )
+\CN["桃子"]
+“我拒绝！我已经有个下定决心的人了！”
+
+: DrawChara( "Mikage", 7, 0)
+: PlayVoice( "Voices/vo11_mik0046" )
+\CN["御影"]
+“哎呀，那太遗憾了。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a002_1_1_0100000_1000000_1_"
+: Call("Scenarios/Common*EvZoomIn")
+: EraseChara( "Mikage", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: ShowWnd()
+果然很强。
+
+//Yoshi：センターに桃
+//: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "C" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom0873" )
+\CN["桃子"]
+（但是，已经不是绝对敌不过的对手了！）
+
+//: DrawChara( "Momo", 4, 0)
+绝对不放弃。
+
+击退两个白夜的九星渡海！
+
+//●演出：場面転換トランジション
+//●視点：黄菜子視点
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: DrawChara( "Bebi", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Sayo", 3, 0, 0, 0.5, 0.0, 5, "C" )
+: Wait()
+: ShowWnd()
+//Yoshi：左に紅美、右に黄菜子（刀あり）、センターに小夜
+: PlayVoice( "Voices/vo02_kin0362" )
+\CN["黄菜子"]
+“这里的话，没关系的，小夜。”
+
+: PlayVoice( "Voices/vo24_say0185" )
+\CN["小夜"]
+“嗯，嗯……”
+
+在无黑他们战斗的时候，小夜在安全的地方
+我带你去。
+
+: PlayVoice( "Voices/vo07_beb0118" )
+\CN["红美"]
+“在下绝对要保护你！
+我是怀着坐船的心情来的”
+
+//Yoshi：センターに黄菜子（刀あり）
+: EraseChara( "Bebi", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Sayo", 0.5 )
+: DrawChara( "Kinako", 3, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kinako"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+从刚才开始，一直在心里乱跳。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0363" )
+\CN["黄菜子"]
+（为什么白夜会盯着小夜呢？
+为了什么？）
+
+将军已经不在人世了。
+
+对于白夜率领的反幕派来说，建立了现在没有绝对君主的幕府
+掉下来等于儿戏吧。
+
+那么，为什么有必要瞄准小夜的性命呢？
+
+//●演出：回想演出
+//＠SC_B05_11の部分を回想風に
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Rule_00", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: ResetLayer(3)
+: DrawChara( "Midori",14, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Mikage", 5, 0, 0, 0.0, 0.0, 4, "R" )
+: cutinfile = "Refrain"
+: Call("Scenarios/Common*CutinFadeIn")
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Rule_00", 1.0 )
+: Wait()
+//Yoshi：左にみどり、右に御影
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0115" )
+\CN["绿色"]
+“好孩子已经到了睡觉的时间了。”
+
+: PlayVoice( "Voices/vo11_mik0039" )
+\CN["御影"]
+“不会吧，真的在这种地方……。
+真不愧是你啊”
+
+: DrawChara( "Midori", 2, 0)
+: PlayVoice( "Voices/vo10_mid0116" )
+\CN["绿色"]
+“嘛，对我们来说都是无关紧要的事情。
+如果不摆出一副了不起的样子，那就好了”
+
+//●演出：回想から明ける演出
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Rule_00", 1.0 )
+: Wait()
+: EraseChara( "Mikage", 0.5 )
+: EraseChara( "Midori", 0.5 )
+: ResetLayer(9)
+: DrawChara( "Kinako", 2, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Rule_00", 1.0 )
+: Wait()
+//Yoshi：左にみどり、右に御影
+: ShowWnd()
+//Yoshi：センターに黄菜子（刀あり）
+“不会吧，真的在这种地方……”
+
+白夜干部这样说。
+
+这是白夜有什么人要去的地方
+有教过的人的可能性很高。
+
+“如果不摆架子的话——”
+
+这句话，用语气
+可以推测那个人是新加入白夜的人。
+
+然后，刚进公司就见到了干部
+而且要说能做出指示的人物的话——
+
+: DrawChara( "Kinako", 7, 0)
+: PlayVoice( "Voices/vo02_kin0364" )
+\CN["黄菜子"]
+“……难道，在今天的白夜——！？”
+
+//●演出：般若　登場する
+//Yoshi：センターに般若
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: CharaCostume( "Azami", 4 )
+: DrawChara( "Azami", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["般若"]
+「…………」
+
+: PlayBgm("BGM/14_CM014")
+: EraseChara( "Azami", 0.5 )
+//Yoshi：左に紅美、右に黄菜子（刀あり）、センターに小夜
+: DrawChara( "Bebi", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Sayo", 7, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo24_say0186" )
+\CN["小夜"]
+“是般若的面具……！？”
+
+: PlayVoice( "Voices/vo02_kin0365" )
+\CN["黄菜子"]
+“小夜，请下来。”
+
+//Yoshi：センターに黄菜子（刀あり）
+//: DrawChara( "Kinako",20, 0, 0, 0.5, 0.0, 3, "C" )
+//●演出：揚羽　解除
+//: EraseChara( "Kinako", 0.5 )
+//: Wait( )
+//Yoshi：センターに黄菜子（刀なし）
+//: CharaCostume( "Kinako", 0 )
+//: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 3, "C" )
+//: Sleep(1 )
+//: EraseChara( "Kinako", 0.5 )
+//Yoshi：左に般若
+: HideWnd()
+: EraseChara( "Bebi", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Sayo", 0.5 )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*KinakoAgeha" )
+: DrawChara( "Azami", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["般若"]
+「…………」
+
+//Yoshi：右に黄菜子（刀なし）
+//: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 4, "R" )
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Dark01" )
+: PlayAnim( "Animations/AnimeL_Dark01", false, 0, 0, 6, 6 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evc_a001_1_1_0100001_1000000_2_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0366" )
+\CN["黄菜子"]
+“啊啊啊啊啊啊！”
+
+//●演出：黄菜子　アクションシーン
+//: DrawChara( "Kinako", 9, 0)
+: PlaySe( "SE/Se_Swing01" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 8, 8 )
+: Wait()
+我的技能完全被看穿了，所以也不研磨。
+
+//●演出：般若　斬撃
+\CN["般若"]
+「…………」
+
+: HideWnd()
+: DrawChara( "Kinako", 7, 0, 0, 0.0, 0.0, 3, "C")
+: effecttype = "6"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0367" )
+\CN["黄菜子"]
+“哈，好快……！？”
+
+: HideWnd()
+: chara = "Kinako"; lay = 3; type = "SDR";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: PlaySe( "SE/Se_Down01" )
+: ShowWnd()
+虽然接受了是件好事，但是却没有扼杀气势就被踢飞了。
+
+//Yoshi：左に紅美
+: DrawChara( "Bebi", 2, 0, 0, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo07_beb0119" )
+\CN["红美"]
+“キナコーー！没事吧！？”
+
+//Yoshi：右に黄菜子（刀なし）
+: DrawChara( "Kinako",12, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo02_kin0368" )
+\CN["黄菜子"]
+“没关系……这种程度，什么都没有。”
+
+
+: HideWnd()
+: EraseChara( "Bebi", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: Wait()
+//●演出：黄菜子アクションシーン
+: cgkeep = false;
+: Call( "Scenarios/Effect*KinakoAction01" )
+//Yoshi：右に黄菜子（刀なし）
+: DrawChara( "Kinako",19, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+虽说被人看透了，但也不能后退。
+
+//●演出：黄菜子　アクションシーン
+//Yoshi：センターに黄菜子（刀なし）
+: HideWnd()
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: DrawChara( "Kinako", 9, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+我知道这个人的力量比我大几倍。
+
+但是，放弃是不可能的。
+
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0369" )
+\CN["黄菜子"]
+“哈、哈、哈……啊啊啊啊啊啊啊啊啊啊！！”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Kinako"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: cgkeep = true;
+: Call( "Scenarios/Effect*KinakoAction02" )
+: ShowWnd()
+我的技术被淡泊了。
+
+//: DrawChara( "Kinako", 2, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0370" )
+\CN["黄菜子"]
+（如果不中的话，在中之前只需多次挑战！）
+
+: HideWnd()
+: cgkeep = true;
+: Call( "Scenarios/Effect*KinakoAction03" )
+: ShowWnd()
+是的，我会把我的全部都拿出来。
+
+//: EraseChara( "Kinako", 0.5 )
+: cgkeep =false;
+: Call( "Scenarios/Effect*KinakoAction04" )
+//Yoshi：センターに黄菜子（刀なし）
+: DrawChara( "Kinako", 7, 0, 0, 0.5, 0.0, 3, "C" )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+//●演技：スタミナが切れて足がもつれます
+: PlayVoice( "Voices/vo02_kin0371" )
+\CN["黄菜子"]
+“呃……！？”
+
+来这里没有体力了。
+我的腿一瞬间就酸了。
+
+: EraseChara( "Kinako", 0.5 )
+这个人不会放过那个间隙——
+
+//Yoshi：センターに般若
+: HideWnd()
+: DrawChara( "Azami", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: chara = "Azami"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0387" )
+\CN["般若"]
+“——虽然变强了，但还差得远呢。”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: effecttype = "5"; se = "Se_Slash01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: EraseChara( "Azami", 0.0 )
+: ShowWnd()
+//Yoshi：センターに黄菜子（刀なし）
+//: DrawChara( "Kinako", 6, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Kinako", 6, 0, 0 )
+: PlayVoice( "Voices/vo02_kin0372" )
+\CN["黄菜子"]
+“哇啊啊啊啊啊啊啊！！”
+
+//: EraseChara( "Kinako", 0.5 )
+//●演出：場面転換トランジション
+//●演出：達磨（仮面）　登場する
+//Yoshi：センターに達磨（仮面）
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: ResetLayer(9)
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: CharaCostume( "Daruma", 2 )
+: DrawChara( "Daruma", 1, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["假面男"]
+“嗯……”
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Daruma", 0.5 )
+: ResetLayer(3)
+: DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 4, "R" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+//Yoshi：左に銀、右にレオ
+: ShowWnd()
+\CN["银子"]
+“……什么？空气变了。”
+
+\CN["雷欧"]
+“啊，那家伙……”
+
+只要戴着面具的男子一露身影，现场的气氛就会为之一变。
+
+: HideWnd()
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Wait()
+//Yoshi：センターに達磨（仮面）
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 5, "C" )
+//Yoshi：右にみどり
+: Wait()
+: DrawChara( "Midori",12, 0, 0, 0.0, 0.0, 4, "R" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0126" )
+\CN["绿色"]
+“老头，今后会很有趣的。”
+
+//Yoshi：左に御影
+: DrawChara( "Mikage", 4, 0, 0, 0.0, 0.0, 3, "L" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+望月和桃子互相竞争的巫女也一起拉到男人的地方
+集合了。
+
+\CN["达磨"]
+“鬼灯的年轻人也很能干啊。
+望月积累到如此令人兴奋的钻研成果”
+
+: PlayVoice( "Voices/vo11_mik0047" )
+\CN["御影"]
+“没想到您的脑袋会在……。
+因为没有完成任务，所以很不好意思”
+
+\CN["达磨"]
+「没关系，没关系，但对方是
+正因为如此，对方才不能疏忽大意”
+
+//Yoshi：左にレオ、右に無黒（刀）
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Midori", 0.5 )
+: EraseChara( "Mikage", 0.5 )
+: EraseChara( "Daruma", 0.5 )
+: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Mukuro",16, 0, 2, 0.5, 0.0, 4, "R" )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+//●読み：頭（あたま）
+: PlayVoice( "Voices/vo00_muk1661" )
+\CN["无黑色"]
+“不会吧，那家伙居然出来了……”
+
+\CN["雷欧"]
+“是啊。在这里敌方大将亲自登场，到底有多少啊。”
+
+: EraseChara( "Mukuro", 0.5 )
+//Yoshi：右に銀、センターに桃
+: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0874" )
+\CN["桃子"]
+“嗯？敌方的大将是……？
+难道那个人就是传说中的达摩人？”
+
+: DrawChara( "Leo", 7, 0)
+\CN["雷欧"]
+“啊。鬼灯破破烂烂了，再加上我的老妈
+是把收到的刀给折断的混蛋”
+
+: DrawChara( "Gin", 4, 0)
+\CN["银子"]
+「啊，那个假面小子啊。
+变得相当有趣了呢”
+
+: DrawChara( "Leo",20, 0)
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0875" )
+\CN["桃子"]
+“小银，这里是——”
+
+\CN["银子"]
+“我完全知道只能退了。”
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+//Yoshi：右に無黒（刀）
+: DrawChara( "Mukuro",17, 0, 2, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo00_muk1662" )
+\CN["无黑色"]
+“……很遗憾，正如桃和银说的那样。”
+
+以我们现在的力量，打倒加了达磨的3个人
+首先是不可能的。
+
+: DrawChara( "Leo",19, 0)
+\CN["雷欧"]
+“呃！那个时候我就可以自由自在地{黑夜叉，暗黑妖精}
+如果能成为这样的人的话，就很轻松了”
+
+我被说有可能会到{黑夜叉，暗黑妖精}
+明明在，却感觉那一鳞都是未。
+
+//●演出：般若　登場する
+//Yoshi：中に般若、左中に小夜
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Azami", 0, 0, 0, 0.5, 0.0, 3, "C" )
+//: DrawChara( "Sayo", 6, 0, 1, 0.5, 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0388" )
+\CN["般若"]
+“这里，结束了。
+一桥小夜的身份就这样被拘留了”
+
+出现了抱着小夜的般若。
+
+//: EraseChara( "Sayo", 0.5 )
+: EraseChara( "Azami", 0.5 )
+//Yoshi：センターに無黒
+: DrawChara( "Mukuro",46, 0, 2, 0.5, 0.0, 3, "C" )
+: chara = "Mukuro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo00_muk1663" )
+\CN["无黑色"]
+“小夜————！”
+
+//●演出：黄菜子　登場する
+//Yoshi：左中に紅美、右中に黄菜子（刀無し）
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Bebi", 2, 0, 0, 0.0, 0.0, 3, "LC" )
+: DrawChara( "Kinako",14, 0, 0, 0.0, 0.0, 4, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: lay = 4; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+//●演技：黄菜子、立っているのがやっと。大量に出血してる
+: PlayVoice( "Voices/vo02_kin0373" )
+\CN["黄菜子"]
+“哈，哈，哈……还没呢……。
+把小夜还给我……”
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0120" )
+\CN["红美"]
+“奇奈子，不能站起来，太任性了！
+这样下去的话会死的哦！”
+
+: PlayVoice( "Voices/vo02_kin0374" )
+\CN["黄菜子"]
+“这么点……什么都没有……”
+
+控制着一只肚子的黄菜子。
+从那里血溢出来了。
+
+: EraseChara( "Bebi", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+//Yoshi：左に紅美、左中に黄菜子（刀無し）、右中に桃
+: DrawChara( "Bebi", 2, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 4, "C" )
+: DrawChara( "Kinako",14, 0, 0, 0.5, 0.0, 5, "R" )
+: PlayVoice( "Voices/vo01_mom0876" )
+\CN["桃子"]
+“这种程度，不是受了重伤吗？”！
+等一下，马上治疗——”
+
+桃子跑到跟前治疗黄菜子。
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+//Yoshi：左に無黒（刀）
+: DrawChara( "Mukuro",39, 0, 2, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo00_muk1664" )
+\CN["无黑色"]
+“般若是白夜之人吗……。
+为什么，白夜把小夜……！”
+
+//Yoshi：右中に黄菜子（刀あり）、右に桃
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 4, "R" )
+//: CharaCostume( "Kinako", 5 )
+: DrawChara( "Kinako", 9, 0, 0, 0.5, 0.0, 5, "C" )
+//●演技：まだ治療中です
+: PlayVoice( "Voices/vo02_kin0375" )
+\CN["黄菜子"]
+“恐怕……是为了杀小夜……”
+
+正在接受桃子治疗的黄菜子痛苦地挤出了声音。
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk1665" )
+\CN["无黑色"]
+“为了杀人？你和局长的目的是一样的吗……？”
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0376" )
+\CN["黄菜子"]
+“……应该是一样的……因为…般若的真正身份是局长。”
+
+: DrawChara( "Mukuro",15, 0)
+: PlayVoice( "Voices/vo00_muk1666" )
+\CN["无黑色"]
+“诶……！？”
+
+对黄菜子的一句话失去了语言。
+
+般若的真面目是局长……？哈？怎么回事？
+
+//●演出：般若、仮面を取る。あざみの顔が出てくる
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+//Yoshi：センターに般若（あざみ）
+: CharaCostume( "Azami", 5 )
+: DrawChara( "Azami", 5, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0389" )
+\CN["嘲讽"]
+“不愧是黄菜子，果然注意到了吗……”
+
+: PlayBgm("BGM/31_CM016")
+: EraseChara( "Azami", 0.5 )
+//Yoshi：センターに無黒（刀）
+: DrawChara( "Mukuro",15, 0, 2, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1667" )
+\CN["无黑色"]
+“……局长是般若……？为什么……？
+为什么要模仿……！”
+
+因为无法相信的事情而烦恼
+哑然无语。
+
+: EraseChara( "Mukuro", 0.5 )
+//Yoshi：左にレオ、右に桃、センターに紅美
+: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Bebi", 1, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0877" )
+\CN["桃子"]
+“局长居然是白夜的一员……”
+
+: PlayVoice( "Voices/vo07_beb0121" )
+\CN["红美"]
+“简直不敢相信。”
+
+\CN["雷欧"]
+「…………」
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+除了看穿真身的黄菜子以外
+大家和我有着同样的反应。
+
+//Yoshi：左に御影、右にみどり、センターに達磨（仮面）
+: DrawChara( "Mikage", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Midori", 4, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo11_mik0048" )
+\CN["御影"]
+“难道般若先生就是鬼灯里的高千穗痣……”
+
+: DrawChara( "Midori", 19, 0, 0)
+: PlayVoice( "Voices/vo10_mid0127" )
+\CN["绿色"]
+“真的吗……那么，老头子就别对鬼灯局长出手了
+也就是说……。我理解了”
+
+: DrawChara( "Midori", 3, 0)
+: PlayVoice( "Voices/vo10_mid0128" )
+\CN["绿色"]
+“怎么说呢，九星之间的纠纷是不允许的。”
+
+\CN["达磨"]
+“不要出手的理由不只是这些。
+如果互相嘲笑的话，就不会一事无成了”
+
+: EraseChara( "Mikage", 0.5 )
+: EraseChara( "Midori", 0.5 )
+: EraseChara( "Daruma", 0.5 )
+//Yoshi：センターに銀
+: DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["银子"]
+“局长，你以前骗过我们吗？”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 0; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: ShowWnd()
+银跑出去。
+
+//Yoshi：右に般若（あざみ）
+: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo05_aza0390" )
+\CN["嘲讽"]
+“生气是理所当然的，我想说我愿意接受
+但是，我们也有不得了的情况啊」
+
+//Yoshi：左に達磨（仮面）
+: HideWnd()
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 5, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["达磨"]
+“嘲讽，这个男人的对手，我会努力的。
+我想试着双手合十一下”
+
+: EraseChara( "Daruma", 0.5 )
+: EraseChara( "Azami", 0.5 )
+//Yoshi：センターに銀
+: DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["银子"]
+“切……！现在你没什么事！”
+
+//●演出：銀　アクションシーン
+//Yoshi：左に達磨（仮面）、右に銀
+: HideWnd()
+: EraseChara( "Gin", 0.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: Wait()
+: ResetLayer(9)
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+\CN["达磨"]
+“嗯……”
+
+达磨爽快地接住了银拳。
+
+: DrawChara( "Gin",12, 0)
+\CN["银子"]
+“T、你……！”
+
+\CN["达磨"]
+“这把拳，就狗的年龄来说，已经做得很好了。”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“不仅仅是锻炼，还穿过了很多的修罗场
+我们会去拜访的”
+
+//●ＳＥ：骨が軋む音
+//＠メモ：ここで銀の拳が破壊されている
+: HideWnd()
+: PlaySe( "SE/Se_Kubishime" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——奇奇！吓一跳！咕嘟咕嘟！
+
+\CN["银子"]
+“呼呼……呃………”
+
+: DrawChara( "Gin",13, 0)
+\CN["银子"]
+“哇啊啊啊啊啊啊啊啊！！”
+
+//●演出：銀　空振り
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlaySe( "SE/Se_Swing05" )
+: Sleep(0.1)
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.05 )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Daruma", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Daruma", 2, 0, 0, 0.0, 0.0, 3, "C")
+: chara = "Daruma"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: ShowWnd()
+\CN["达磨"]
+“呼，真是了不起的毅力啊。”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“在这里杀人是可惜的卓越人才。”
+
+: HideWnd()
+: EraseChara( "Daruma", 0.5 )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Daruma", 2, 0, 0, 0.5, 0.0, 3, "L")
+: DrawChara( "Gin",11, 0, 0, 0.5, 0.0, 4, "R")
+: ShowWnd()
+\CN["银子"]
+“啊。死不要紧。要好好遵守顺序……”
+
+//●ＳＥ：仮面が割れる音
+: CharaCostume( "Daruma", 0 )
+: EraseChara( "Daruma", 0.5 )
+: EraseChara( "Gin", 0.5 )
+达磨的假面上咔嚓一声裂开露出了本来的面貌。
+
+//Yoshi：左に達磨（仮面無し）
+: DrawChara( "Daruma", 4, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["达磨"]
+“狗的一击，已经划过了吗？”
+
+//●演出：銀　アクションシーン
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a012_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+//: DrawChara( "Gin",13, 0)
+\CN["银子"]
+“啊啊啊啊啊啊啊啊啊啊！！”
+
+银想把拳头敲进去——
+
+//: DrawChara( "Daruma",14, 0)
+\CN["达磨"]
+“好暖和啊！”
+
+//●演出：銀　ぶっとばされる
+: HideWnd()
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: Call("Scenarios/Common*EvDelete")
+: DrawChara( "Gin",12, 0, 0, 0.5, 0.0, 3, "C")
+: ShowWnd()
+\CN["银子"]
+“………！”
+
+//Yoshi：センターに桃
+: HideWnd()
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: DrawChara( "Momo", 8, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0878" )
+\CN["桃子"]
+“小银！”
+
+//: EraseChara( "Momo", 0.5 )
+在吃了达磨的一击被吹跑的银的地方
+桃子跑过来。
+
+//Yoshi：左に銀、右に桃
+: DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["银子"]
+“没关系……。我突然用手臂保护了他……”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0879" )
+\CN["桃子"]
+“胳膊断了。等一下，我马上治疗。”
+
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: PlaySe( "SE/Se_AnimeL_Heal01" )
+: PlayAnim( "Animations/AnimeL_Heal01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+桃子对银施加恢复魔术。
+
+//Yoshi：左に達磨（仮面無し）、右に般若（あざみ）
+: DrawChara( "Daruma", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Azami", 8, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["达磨"]
+“隔了几年才被相对的人看到真实面貌呢？”
+
+: PlayVoice( "Voices/vo05_aza0391" )
+\CN["嘲讽"]
+“这是龙的教育成果。”
+
+: DrawChara( "Daruma",10, 0)
+\CN["达磨"]
+“那个舞台地滚球一定会变强。
+所以非常悲伤。居然不得不在这里杀人”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+「嘲讽吧，蛇带着那个{女子，茄子}先回去吧。
+万一发生什么事也不要紧吧？”
+
+//Yoshi：右中に小夜
+//: DrawChara( "Sayo", 6, 0, 1, 0.5, 0.0, 5, "RC" )
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0392" )
+\CN["嘲讽"]
+“啊，我会的。”
+
+//: EraseChara( "Sayo", 0.5 )
+//＠演出：あざみ　小夜を連れて退場する
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Azami"; lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Daruma"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+//Yoshi：右中のレオ
+: DrawChara( "Leo",19, 0, 1, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Mukuro",0, 0, 2, 0.5, 0.0, 4, "RC" )
+: ShowWnd()
+\CN["雷欧"]
+“放跑了吗！”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "DL"; Call( "Scenarios/Common*FgEffOut");
+: chara = "Mukuro"; lay = 4; type = "DL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: ShowWnd()
+我想和雷欧一起追局长……。
+
+//Yoshi：左中に御影
+: DrawChara( "Mikage", 9, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo11_mik0049" )
+\CN["御影"]
+“我不会打扰你的。”
+
+//＠演出：御影　炎系魔術演出
+: HideWnd()
+: EraseChara( "Mikage", 0.0 )
+: PlaySe( "SE/Se_AnimeL_Fire03" )
+: PlayAnim( "Animations/AnimeL_Fire03", false, 0, 0, 5, 5 )
+: ShowWnd()
+: DrawChara( "Leo",17, 0, 0, 0.5, 0.0, 3, "C")
+\CN["雷欧"]
+“酷……！”
+
+//Yoshi：センターに無黒（刀）
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Mukuro", 46, 0, 2, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1668" )
+\CN["无黑色"]
+“小夜啊——————！”
+
+: EraseChara( "Mukuro", 0.5 )
+用魔术做成的火焰之壁。
+
+对面的局长和小夜的身影渐渐变小
+渐渐看不见。
+
+//Yoshi：センターにレオ
+: DrawChara( "Leo",21, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["雷欧"]
+“呃……！”
+
+//Yoshi：左に御影、右にみどり、センターに達磨（仮面無し）
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Mikage", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Midori",13, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["达磨"]
+“不用那么失望。
+你们就在这里埋葬我吧」
+
+: DrawChara( "Midori",22, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0129" )
+\CN["绿色"]
+“爷爷，下次不要打扰我了。
+请让我直到最后”
+
+: DrawChara( "Mikage", 5, 1)
+: PlayVoice( "Voices/vo11_mik0050" )
+\CN["御影"]
+“公主椿桃小姐，如果你变心了的话
+你可以来找我吗？”
+
+: EraseChara( "Mikage", 0.5 )
+: EraseChara( "Daruma", 0.5 )
+: EraseChara( "Midori", 0.5 )
+//Yoshi：センターに桃
+: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0880" )
+\CN["桃子"]
+“所以说，我有个下定决心的人
+刚才不是说了吗？”
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0881" )
+\CN["桃子"]
+“比起这个，还我小夜！”
+
+: EraseChara( "Momo", 0.5 )
+//Yoshi：左に御影、右にみどり、センターに達磨（仮面無し）
+: DrawChara( "Mikage", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Midori", 3, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["达磨"]
+“那是办不到的。一个人的生命数不尽的多
+如果能挽救的话，就不得不选择那个选项”
+
+: DrawChara( "Daruma",10, 0)
+\CN["达磨"]
+“希望和不期望”
+
+: DrawChara( "Midori",23, 0)
+: PlayVoice( "Voices/vo10_mid0130" )
+\CN["绿色"]
+“已经等不及了！赶紧开始吧。”
+
+明明必须快点追局长的
+一堵很大的墙挡着。
+
+: EraseChara( "Mikage", 0.5 )
+: EraseChara( "Daruma", 0.5 )
+: EraseChara( "Midori", 0.5 )
+//Yoshi：センターに無黒（刀）
+: DrawChara( "Mukuro", 17, 0, 2, 0.5, 0.0, 3, "C" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk1669" )
+\CN["无黑色"]
+（不要着急……首先要考虑从这里活下去。）
+
+怎么办才好？
+只有焦躁越来越严重——
+
+: EraseChara( "Mukuro", 0.5 )
+//Yoshi：センターにみどり
+: DrawChara( "Midori",24, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Midori"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo10_mid0131" )
+\CN["绿色"]
+“去死吧啊啊啊啊啊啊啊啊啊————！！”
+
+: HideWnd()
+: effecttype = "3a"; se = "Se_Stab01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: EraseChara( "Midori", 0.0 )
+: ResetLayer(3)
+//Yoshi：センターに無黒（刀）
+//: DrawChara( "Mukuro", 15, 0, 2, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: DrawFaceThumbnail( "Mukuro", 15, 0, 2 )
+: PlayVoice( "Voices/vo00_muk1670" )
+\CN["无黑色"]
+「……！」
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：センターにレオ
+//: DrawChara( "Leo",23, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Leo", 23, 0, 0 )
+\CN["雷欧"]
+“无黑————！”
+
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：左中にみどり、右に無黒（刀）
+//: DrawChara( "Midori",29, 0, 0, 0.5, 0.0, 3, "LC" )
+//: DrawChara( "Mukuro",16, 0, 2, 0.5, 0.0, 4, "R" )
+绿色武器很快就迫在眉睫。
+
+————躲不开！
+
+//: EraseChara( "Midori", 0.5 )
+//: EraseChara( "Mukuro", 0.5 )
+//●演出：斬撃エフェクト
+: StopBgm( 1.0 )
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: DrawChara( "Midori",25, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+//Yoshi：センターにみどり
+: PlayVoice( "Voices/vo10_mid0132" )
+\CN["绿色"]
+“谁啊！会来打扰我们吗！？”
+
+: EraseChara( "Midori", 0.5 )
+//Yoshi：メッセージフェイスのみファルケ表情指定
+: DrawFaceThumbnail( "Falke", 15, 0, 0 )
+\CN["沥青"]
+“你这是枪的一种吗？别用很有意思的东西。”
+
+//Yoshi：センターに達磨（仮面無し）
+: DrawChara( "Daruma", 8, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["达磨"]
+“……是吗！？”
+
+//Yoshi：センターにファルケ
+: EraseChara( "Daruma", 0.5 )
+: PlayBgm("BGM/50_IDO04")
+: DrawChara( "Falke", 5, 0, 0, 0.0, 0.0, 3, "C" )
+\CN["沥青"]
+“啊，那个，我也可以混合吗？”
+
+//＠演出：ファルケ　登場する
+//: EraseChara( "Falke", 0.5 )
+//Yoshi：センターに無黒（刀）
+//: DrawChara( "Mukuro",34, 0, 2, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Mukuro", 34, 0, 2 )
+: PlayVoice( "Voices/vo00_muk1671" )
+\CN["无黑色"]
+“费尔克先生！？”
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：センターに達磨（仮面無し）
+: EraseChara( "Falke", 0.5 )
+: DrawChara( "Daruma", 2, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["达磨"]
+“呼，据说鱼是世界最强的
+维克托尔骑士团骑士团长，维克托尔国王子
+法尔凯·埃格尔·维克多吗？”
+
+: EraseChara( "Daruma", 0.5 )
+//Yoshi：左にレオ、右にファルケ
+: DrawChara( "Leo", 3, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Falke", 5, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["沥青"]
+“不好意思，我迟到了。”
+
+\CN["雷欧"]
+“如果法尔克先生来了，就没问题了。”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Falke", 0.5 )
+//Yoshi：左に御影、右にみどり、センターに達磨（仮面無し）
+: DrawChara( "Mikage", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Midori", 4, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Daruma", 4, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["达磨"]
+“对手是世界最强的吗？很有趣。”
+
+: DrawChara( "Midori", 8, 0)
+: PlayVoice( "Voices/vo10_mid0133" )
+\CN["绿色"]
+“那是世界最强的吧。真是男子汉啊！”
+
+: DrawChara( "Mikage", 7, 0)
+: PlayVoice( "Voices/vo11_mik0051" )
+\CN["御影"]
+“我不是那种类型。
+本来男人就不可能在那个时候……”
+
+: EraseChara( "Midori", 0.5 )
+: EraseChara( "Mikage", 0.5 )
+: EraseChara( "Daruma", 0.5 )
+//Yoshi：左にレオ、右にファルケ
+: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Falke",14, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["沥青"]
+“你们先退一步，重整姿势。”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“但是……！”
+
+: DrawChara( "Falke",16, 0)
+\CN["沥青"]
+“没关系，去吧！”
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+「…………」
+
+//: DrawChara( "Falke",13, 0)
+对包含了强烈决心的认真的脸什么也不能说。
+
+: EraseChara( "Leo", 0.5 )
+//Yoshi：左に黄菜子（刀あり）
+: DrawChara( "Kinako", 9, 0, 0, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo02_kin0377" )
+\CN["黄菜子"]
+“……正如费尔克先生所说。
+这里就退一次吧”
+
+: PlayVoice( "Voices/vo02_kin0378" )
+\CN["黄菜子"]
+“虽然很遗憾，但是现在的我们只是拖后腿。
+法尔克先生不能认真起来”
+
+黄菜子低着头说。
+
+: DrawChara( "Falke",14, 0)
+\CN["沥青"]
+“就是这样。
+你们的目的不是要打倒这些家伙吗？”
+
+: EraseChara( "Kinako", 0.5 )
+//Yoshi：左に銀、センターにレオ
+: DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["银子"]
+「…………」
+
+: DrawChara( "Falke",16, 0)
+\CN["沥青"]
+“那么，赶紧去！”
+
+\CN["雷欧"]
+“费尔克先生，对不起……”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Falke", 0.5 )
+雷欧向相反的方向跑去。
+
+//Yoshi：センターに無黒（背面・刀）
+: DrawChara( "Mukuro",17, 0, 5, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1672" )
+\CN["无黑色"]
+“桃子、黄菜子，大家都退了！”
+
+: EraseChara( "Mukuro", 0.5 )
+//Yoshi：左に銀、右に桃
+: DrawChara( "Gin", 6, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["银子"]
+“小姐，我去。”
+
+: PlayVoice( "Voices/vo01_mom0882" )
+\CN["桃子"]
+“……嗯，嗯。”
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+//●演出：一斉に退場する
+大家朝着和雷欧相同的方向跑去。
+
+//Yoshi：左にみどり
+: DrawChara( "Midori",12, 0, 0, 0.5, 0.0, 2, "L" )
+: PlayVoice( "Voices/vo10_mid0134" )
+\CN["绿色"]
+“啊，怎么可能放过你！”
+
+//Yoshi：右にファルケ
+: DrawChara( "Falke",23, 0, 0, 0.5, 0.0, 3, "R" )
+\CN["沥青"]
+“从这里开始就不走了。”
+
+: DrawChara( "Midori",17, 0)
+//●演技：内心怯えています
+: PlayVoice( "Voices/vo10_mid0135" )
+\CN["绿色"]
+“什么嘛，我自己。让女孩子更温柔地对待。”
+在学校没有教我吧？”
+
+\CN["沥青"]
+“因为我只知道如何对待敌人。”
+
+//●演出：みどり　下がる
+//Yoshi：左に達磨（仮面無し）、右にファルケ
+//: DrawChara( "Daruma", 9, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Falke",13, 0, 0, 0.5, 0.0, 3, "R" )
+: HideWnd()
+: EraseChara( "Midori", 0.5 )
+: EraseChara( "Falke", 0.5 )
+: DrawChara( "Daruma", 9, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Falke",13, 0, 0, 0.5, 0.0, 4, "R" )
+: ShowWnd()
+\CN["达磨"]
+“让我看看世界最强的力量！
+费尔克・埃格尔哟”
+
+: StopBgm( 1.0 )
+\CN["沥青"]
+“要和那边的老头子斟酌是不可能的吧……。
+没办法啊」
+
+//●演出：ファルケ　ダークエルフ化
+//Yoshi：ファルケ（黒）はCG処理。メッセージフェイス無し
+//: AutoFaceThumbnail( false )
+: PlayBgm("BGM/51_IDO05")
+: HideWnd()
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a100_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“——无法动弹的身体没有价值，只是作为祭品变成了主的血肉
+接受改变的宿命”
+
+\CN["沥青"]
+“——厌倦了的人被迫害了
+——被抛弃的人逃走了
+——只有逃走的人保住了性命”
+
+\CN["沥青"]
+“——弱者成群结队，拥有强大的力量
+从天上奏出的音乐给了他们伟大的基础”
+
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: evfile = "evx_a100_1_1_0200000_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+\CN["沥青"]
+“
+
+//Yoshi：左に御影、右にみどり、センターに達磨（仮面無し）
+//: AutoFaceThumbnail( true )
+//: DrawChara( "Mikage", 8, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Midori", 6, 0, 0, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Daruma", 8, 0, 0, 0.5, 0.0, 5, "C" )
+: HideWnd()
+//: EraseChara( "Daruma", 0.0 )
+//: EraseChara( "Falke", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0052" )
+\CN["御影"]
+“是、{黑夜叉，暗黑妖精}……！？”
+
+//: DrawChara( "Daruma", 0, 0)
+//: DrawChara( "Midori", 7, 0)
+: PlayVoice( "Voices/vo10_mid0136" )
+\CN["绿色"]
+“什么嘛，自己也很帅啊。
+如果做了世界最强的运动的话，至少也要做那个啊」
+
+//: DrawChara( "Midori",11, 0)
+: PlayVoice( "Voices/vo10_mid0137" )
+\CN["绿色"]
+“得物也不是刚才的死海里的东西啊……。
+话说，自己的那个是吧？是神刀吗？”
+
+: HideWnd()
+: DrawChara( "Daruma", 1, 0, 0, 0.5, 0.0, 3, "C")
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["达磨"]
+“织笠、望月、不倒翁也回到据点吧。”
+
+//: DrawChara( "Mikage", 6, 0)
+: DrawChara( "Daruma", 1, 0, 0, 0.5, 0.0, 3, "LC")
+: DrawChara( "Midori",24, 0, 0, 0.5, 0.0, 4, "RC")
+: PlayVoice( "Voices/vo10_mid0138" )
+\CN["绿色"]
+“哈？为什么啊！
+要有机会杀死世界最强！”
+
+\CN["达磨"]
+“逞强的人不能成为有用的东西。呐，绿啊。”
+
+: DrawChara( "Midori", 13, 0)
+: PlayVoice( "Voices/vo10_mid0139" )
+\CN["绿色"]
+“啊？我们家很强吗？不知道说什么。”
+
+: DrawChara( "Daruma", 8, 0)
+\CN["达磨"]
+“我知道这是不会白白送死的主义！”
+
+//: DrawChara( "Mikage", 4, 0)
+: DrawChara( "Midori", 19, 0)
+: PlayVoice( "Voices/vo10_mid0140" )
+\CN["绿色"]
+“……啊，我知道了。
+那么，可以追逃走的家伙吗？
+那程度可以吗？”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“放着不管。我不喜欢无谓的杀生。”
+
+: EraseChara( "Midori", 0.5 )
+: DrawChara( "Mikage", 7, 0, 0, 0.5, 0.0, 4, "RC")
+: PlayVoice( "Voices/vo11_mik0053" )
+\CN["御影"]
+“知道了。我会遵从您的头脑。
+绿，我回去了”
+
+: EraseChara( "Daruma", 0.5 )
+: DrawChara( "Midori",12, 0, 0, 0.5, 0.0, 3, "LC")
+: PlayVoice( "Voices/vo10_mid0141" )
+\CN["绿色"]
+“哈~…真是没意思。真是的。
+就算放任不管，反正还能再见面的”
+
+//●演出：御影とみどり　退場する
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mikage"; lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: PlaySe("SE/Se_Foot01")
+: chara = "Midori"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“你的部下，真是懂事啊。”
+
+\CN["达磨"]
+“把握并接受自己的能力和对方的能力”
+
+\CN["达磨"]
+“正因为是能做到这一点的人，所以我才要在白夜的九星之前
+”
+
+\CN["沥青"]
+“但是，可以吗？我把部下打发走了。”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Daruma", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: chara = "Daruma"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["达磨"]
+“没问题。我想和死神1比1死。”
+
+沥青和达磨互相盯着对方。
+
+\CN["达磨"]
+“我以前被称为世界最强的男人。
+偷工减料的话，一转眼就到那个世界去了”
+
+\CN["达磨"]
+“曾经和{黑夜叉，暗黑妖精}死过。
+他虽然有才能，但却是个沉溺于力量、骄傲自大的笨蛋啊」
+
+达磨微笑着露出挑衅的笑容。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“不用担心，爷爷。”
+
+沥青也一样。
+
+\CN["沥青"]
+（世上真大啊。就算是黑精灵也没什么
+人类会变得如此强大啊）
+
+\CN["达磨"]
+（不愧是世界最强。至今为止看到的{黑夜叉，暗黑妖精}是
+感觉就像是说了另一种。）
+
+然后两个人一起领悟。
+
+今后展开的确实是“互相残杀”
+我要做的事。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 3, "C" )
+//: chara = "Daruma"; lay = 3 ; type = "F";
+//: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["达磨"]
+“我走了。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Daruma", 0.0 )
+: ResetLayer(3)
+: ShowWnd()
+\CN["沥青"]
+“来了！”
+
+\CN["达磨"]
+“哈！！”
+
+//●演出：斬撃アニメーション演出
+: HideWnd()
+: PlayBgm("BGM/14_CM014")
+: effecttype = "1"; se = "Se_Swing01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+达磨先动手。
+
+: HideWnd()
+: PlaySe( "SE/Se_KatanaHit02" )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["沥青"]
+“不要做，爷爷。”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Daruma", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["达磨"]
+“我现在就去收尾，真不愧是。”
+
+//●演出：斬撃アニメーション演出
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+一瞬间的松懈，只有一次判断失误才是生死的界限
+分开了。
+
+那就是现实世界最强和原世界最强的{相互杀戮，战斗}。
+
+不管谁胜谁负都不奇怪——
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0300000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“啊啊啊啊啊啊啊啊！”
+
+与贝希摩斯展开了无数次殊死搏斗的假币
+虽然只有一点点但是占了优势。
+
+\CN["达磨"]
+“感觉这个死亡就在眼前，好长啊。”
+
+//●演出：斬撃アニメーション演出後、場面転換
+//●場所：街道途中の小屋
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: LoadMap( "Map_Dungeon16_07_Koya", "SC_B05_12", "Scenarios/SC_B05_12*sc001_1")
+
+*sc001_1
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: RpgCharaOn("Momo")
+: RpgCharaOn("Kinako")
+: RpgCharaOn("Bebi")
+: Wait()
+: StopBgm( 0.0 )
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+——那个时候，无黑他们在途中发现了小屋
+我在那里休息了。
+
+//Yoshi：左に黄菜子、右に桃
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom0883" )
+\CN["桃子"]
+“这样就没关系了。伤口完全连在一起了。
+不留下伤痕的话，还是被砍了比较好”
+
+: DrawChara( "Kinako",17, 0)
+: PlayVoice( "Voices/vo02_kin0379" )
+\CN["黄菜子"]
+“桃子先生，谢谢您。”
+
+: EraseChara( "Momo", 0.5 )
+//Yoshi：右に紅美
+: DrawChara( "Bebi", 2, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo07_beb0122" )
+\CN["红美"]
+“噢噢！キナコ，太好了！
+因为他那么出血，在下很担心”
+
+: DrawChara( "Kinako", 1, 0)
+: PlayVoice( "Voices/vo02_kin0380" )
+\CN["黄菜子"]
+“呵呵，已经没事了，红美。
+抱歉让你担心了”
+
+桃子刚刚用应急处理结束了的黄菜子的治疗
+完全做完了。
+
+//●演出：場面転換トランジション
+//●場所：街道途中の小屋・前
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Bebi", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_River01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 4, "C" )
+: ShowWnd()
+//Yoshi：右にレオ
+\CN["雷欧"]
+「…………」
+
+//Yoshi：左に無黒
+: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo00_muk1673" )
+\CN["无黑色"]
+“雷欧，你在这种地方吗？”？
+因为很冷，所以最好进去”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“不能那样。
+说不定白夜的追兵会来」
+
+: DrawChara( "Leo",13, 0)
+\CN["雷欧"]
+“现在，能在我们心中好好战斗吗？”
+就我这样吧”
+
+雷欧那样说了之后笑了。
+
+: DrawChara( "Mukuro",38, 0)
+: PlayVoice( "Voices/vo00_muk1674" )
+\CN["无黑色"]
+“不要勉强……”
+
+\CN["雷欧"]
+“我可没有勉强。
+看，你才是要在里面好好休息啊」
+
+: DrawChara( "Mukuro",35, 0)
+: PlayVoice( "Voices/vo00_muk1675" )
+\CN["无黑色"]
+“……Leo”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“无黑……？”
+
+悄悄靠近雷欧。
+
+: layer = 4; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+「～～～～～！！」
+
+把侧腹轻轻地戳了一下，雷欧就痛苦地痛苦起来。
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk1676" )
+\CN["无黑色"]
+“你一直很勉强吧？”
+
+: DrawChara( "Leo",10, 0)
+\CN["雷欧"]
+“什么，这是什么事？对我来说很爽快。”
+
+\CN["雷欧"]
+“刚才的是那个，那个。被最喜欢的女人摸了身体。”
+所以，只是不知不觉地情绪高涨了而已”
+
+尽管如此，我还是情不自禁地抱住了拼命掩饰的雷欧。
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk1677" )
+\CN["无黑色"]
+“你总是这样一个人承担……”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“……呃，无黑……？”
+
+: DrawChara( "Mukuro",36, 0)
+: PlayVoice( "Voices/vo00_muk1678" )
+\CN["无黑色"]
+“偶尔也希望你能依赖我。”
+
+: DrawChara( "Leo",1, 0)
+\CN["雷欧"]
+「…………」
+
+: DrawChara( "Mukuro",35, 0)
+是的，这家伙好像什么都没想，考虑了很多
+明明总是傻乎乎的，关键时刻却一副非常认真的样子。
+
+说‘我一个人就足够了’之类的话
+一个人背负着痛苦和痛苦——
+
+尽管如此还是若无其事地笑着。
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“……无黑…那个”
+
+: DrawChara( "Mukuro",34, 0)
+: PlayVoice( "Voices/vo00_muk1679" )
+\CN["无黑色"]
+“嗯？怎么了？”
+
+: DrawChara( "Leo",11, 0)
+\CN["雷欧"]
+“你啊，果然胸部很大，很柔软啊。
+而且，味道很好闻”
+
+: layer = 4; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Mukuro",46, 1)
+: PlayVoice( "Voices/vo00_muk1680" )
+\CN["无黑色"]
+“笨蛋！为什么你总是……”
+
+被那样说了之后，慌慌张张地离开了身体。
+
+: DrawChara( "Mukuro", 6, 2)
+: PlayVoice( "Voices/vo00_muk1681" )
+\CN["无黑色"]
+“唔……”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+「…………」
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+互相对视。
+
+: DrawChara( "Mukuro", 5, 2, 0, 0.5, 0.0, 3, "C")
+: chara = "Mukuro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo00_muk1682" )
+\CN["无黑色"]
+“嗯……”
+
+怎么说呢，闭上了眼睛——
+
+//●ＳＥ：ドアが開く音
+//●演出：銀が出てくる
+: HideWnd()
+//: EraseChara( "Leo", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: ResetLayer(3)
+: PlaySe( "SE/Se_DoorOpen01" )
+: DrawChara( "Gin", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: DrawFaceThumbnail( "Mukuro", 22, 2, 0 )
+//Yoshi：センターに無黒
+: PlayVoice( "Voices/vo00_muk1683" )
+\CN["无黑色"]
+「！！？」
+
+//Yoshi：左に銀
+\CN["银子"]
+“……啊”
+
+突然，银出现了，吓得我吓得腰都软了。
+
+嗯，那样害羞的地方完全被看到了。
+
+//: EraseChara( "Mukuro", 0.5 )
+//Yoshi：右にレオ
+: DrawChara( "Leo", 9, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Gin", 0, 0, 0, 0.0, 0.0, 3, "L" )
+\CN["雷欧"]
+“你在好地方……！”
+
+: DrawChara( "Gin",18, 0)
+\CN["银子"]
+“……不好意思”
+
+: ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Leo",10, 0)
+\CN["雷欧"]
+“……诶？你现在在干什么？”？
+你不可能向我道歉吧”
+
+: DrawChara( "Gin",22, 0)
+\CN["银子"]
+「…………」
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“喂，你打算去哪里？”
+
+: DrawChara( "Gin", 0, 0)
+\CN["银子"]
+“我想和龙先生说话。”
+
+\CN["雷欧"]
+“啊？话？那家伙是局长一方吧？”？
+肯定只是被杀了吧！”
+
+: DrawChara( "Gin",10, 0)
+\CN["银子"]
+“不说一下就不知道了吧。”
+
+//●ＳＥ：ドン　身体を押す音
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Punch01" )
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Leo", 0.5 )
+银用左手推开雷欧。
+
+: PlayBgm("BGM/57_IDO11")
+: DrawChara( "Leo", 7, 0, 0, 0.5, 0.0, 3, "C")
+\CN["雷欧"]
+“你没听见我说的话吗？
+我告诉你很危险”
+
+: DrawChara( "Leo", 7, 0, 0, 0.5, 0.0, 3, "LC")
+: DrawChara( "Gin", 9, 0, 0, 0.5, 0.0, 4, "RC")
+\CN["银子"]
+“但是，这样下去的话会一贫如洗。
+既然有了白夜，至少需要一点伙伴”
+
+\CN["银子"]
+“如果龙先生能跟着我的话
+胆子很大。不是吗？”
+
+: DrawChara( "Leo",17, 0)
+\CN["雷欧"]
+“虽然是这样……。
+但是，如果不能协商的话怎么办？”
+
+\CN["银子"]
+“那时候就是那个时候。我只是杀了她回来。”
+
+: DrawChara( "Leo",20, 0)
+\CN["雷欧"]
+「…………」
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“什么？”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“那样的话我去。”
+
+: DrawChara( "Gin",10, 0)
+\CN["银子"]
+“啊？你为什么说要去？”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“从刚才开始就很在意，你，右臂
+你受伤了吧？不是折了吗？”
+
+: DrawChara( "Gin",23, 0)
+\CN["银子"]
+“是心理作用吧。看，这条街，什么都没有。”
+
+银举起右臂。
+
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evy_a010_1_1_0000000_00000000_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["雷欧"]
+“不，不是折了吗！不要勉强。
+我替你去，你睡吧！”
+
+//: DrawChara( "Gin",13, 0)
+\CN["银子"]
+“你是笨蛋吗？”
+
+雷欧和银变得很险恶，双方的争论越来越激烈。
+
+//: DrawChara( "Leo", 9, 0)
+\CN["雷欧"]
+“太吵了！
+你不是说我去吗？”
+
+//: DrawChara( "Gin",14, 0)
+\CN["银子"]
+“啊？不是你出场的时候。”
+
+//Yoshi：センターに無黒
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro",46, 0, 0, 0.5, 0.0, 5, "C" )
+: chara = "Mukuro"; lay = 5 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1684" )
+\CN["无黑色"]
+“两个人都放弃吧！
+在这种地方争论有什么用！”
+
+即使想阻止，都觉得头上有血。
+
+不是经常做的东西。
+因为很严重，所以不能笑出来。
+
+: HideWnd()
+//: EraseChara( "Leo", 0.5 )
+//: EraseChara( "Gin", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: ResetLayer(5)
+//●演出：桃、黄菜子、紅美が出てくる
+//Yoshi：センター桃
+: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0884" )
+\CN["桃子"]
+“小银，小雷欧！别吵架了！”
+
+//Yoshi：左に紅美、右に黄菜子
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Kinako", 3, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo07_beb0123" )
+\CN["红美"]
+“这样就糟了！
+这种时候吵架是愚蠢的行为！”
+
+: PlayVoice( "Voices/vo02_kin0381" )
+\CN["黄菜子"]
+“那个，为什么会变成这样呢？”
+
+//Yoshi：左に銀、右にレオ
+//: DrawChara( "Gin",11, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Leo", 7, 0, 0, 0.5, 0.0, 4, "R" )
+: HideWnd()
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evy_a010_1_1_0000000_00000000_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["雷欧"]
+「怎么也不这样啊。
+这副眼镜只是毫无办法而已”
+
+\CN["银子"]
+“哈？
+也许是因为你说了些麻烦话”
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//Yoshi：左に無黒、右に桃
+: HideWnd()
+: DrawChara( "Mukuro", 6, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Momo", 7, 0, 0, 0.0, 0.0, 4, "R" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0885" )
+\CN["桃子"]
+“找茬？”
+
+: PlayVoice( "Voices/vo00_muk1685" )
+\CN["无黑色"]
+“雷欧说银的右臂受伤了……”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+//Yoshi：左に銀、右にレオ
+: DrawChara( "Gin",12, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Leo",17, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["银子"]
+“所以说，没有受伤！”
+
+: DrawChara( "Leo", 23, 0, 0 )
+\CN["雷欧"]
+“被达磨打飞的时候，你不是做了吗？”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+//Yoshi：センターに桃
+: DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0886" )
+\CN["桃子"]
+“咦？但是，那样的话，我马上就用魔术……”
+
+: EraseChara( "Momo", 0.5 )
+//Yoshi：左に銀、右にレオ
+: DrawChara( "Gin", 9, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Leo", 21, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["银子"]
+“没错，小姐用魔术治好了我。
+所以说是你的错觉”
+
+如果是桃子的魔术的话，骨折之类的话，应该能恢复原状。
+
+: DrawChara( "Leo", 7, 0)
+\CN["雷欧"]
+“我不知道。
+我知道一直在训练中拼着命”
+
+: DrawChara( "Leo", 24, 0)
+\CN["雷欧"]
+“现在的你连老师都做不到！”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+//Yoshi：左に紅美、右に黄菜子
+: DrawChara( "Bebi", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Kinako", 3, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo07_beb0124" )
+\CN["红美"]
+“……伤感？”
+
+: DrawChara( "Kinako",19, 1)
+: PlayVoice( "Voices/vo02_kin0382" )
+\CN["黄菜子"]
+“小红美不知道也没关系。”
+
+: EraseChara( "Kinako", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+//Yoshi：左に銀、右にレオ
+: DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Leo", 23, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["雷欧"]
+“啊？所以说交给我吧！”
+
+雷欧抓住了银的胸口。
+
+: DrawChara( "Gin",20, 0)
+\CN["银子"]
+“你这样做是不行的，还是个处男啊！”
+
+银也抓住了雷欧的胸口。
+
+//●ＳＥ：ドン！　力強く押す音
+: PlaySe( "SE/Se_Cloth01" )
+: DrawChara( "Leo",24, 0)
+\CN["雷欧"]
+“……可恶！随你的便！”
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+雷欧粗暴地放开了抓住胸口的手。
+
+//Yoshi：左に桃、右に銀
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C" )
+//: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 4, "R" )
+//●演出：銀　１人でどこかに行こうとする
+: PlayVoice( "Voices/vo01_mom0887" )
+\CN["桃子"]
+“小银，等一下！你打算去哪里？”
+
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["银子"]
+“你不是说龙先生在这儿吗！”
+
+银对桃乱说。
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0888" )
+\CN["桃子"]
+“小银，你不是说不要等了吗！”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+「…………」
+
+: PlayVoice( "Voices/vo01_mom0889" )
+\CN["桃子"]
+“那我也跟着去吧！”
+
+桃子想追上银的话。
+
+: DrawChara( "Gin", 9,0)
+\CN["银子"]
+“小姐，这是命令——”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0890" )
+\CN["桃子"]
+“……诶？”
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“请在这里等。我一定回来。”
+
+//: EraseChara( "Gin", 0.5 )
+//●演出：銀　足早に退場する
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 4; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+//Yoshi：桃の汗ON
+//: CharaPartsOn( "Momo", 0 )
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0891" )
+\CN["桃子"]
+“小银，等一下！小银……！”
+
+: HideWnd()
+: chara = "Momo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: DrawChara( "Leo", 20, 0, 0, 0.0, 0.0, 2, "LC" )
+: chara = "Leo"; lay = 2 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+尽管如此，雷欧还是阻止了想要追上的桃子。
+
+//Yoshi：右にレオ
+//Yoshi：桃の汗OFF
+//: CharaPartsOff( "Momo", 0 )
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0892" )
+\CN["桃子"]
+“Leo君，放开我！小银……小银啊！”
+
+: DrawChara( "Leo", 24, 0, 0 )
+\CN["雷欧"]
+“放着不管吧……只是在讨论吧。”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0893" )
+\CN["桃子"]
+“……小银……说好了……！”
+
+: PlayVoice( "Voices/vo01_mom0894" )
+\CN["桃子"]
+“一定要活在这里……回到我这里来！
+知道了！？”
+
+桃子向银喊叫。
+银没有回头看，只是用右手捂着回应。
+
+//●演出：場面転換トランジション
+//●視点：第三者視点
+//●演出：斬撃エフェクト
+//Yoshi：メッセージフェイス無し
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Call( "Scenarios/Common*LayerClean" )	// レイヤーをキレイにしておく
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+: PlayBgm("BGM/14_CM014")
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_Harbor01_03", 1.0 )
+: Wait()
+: ShowWnd()
+费尔克和达磨反复着一步步退的攻防战。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0200000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“我还以为能一直这样下去呢。”
+
+\CN["达磨"]
+“狗的技术，就算想看完也看不完。
+不愧是世界最强”
+
+\CN["达磨"]
+“但是，已经习惯了狗的动作！”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: PlaySe( "SE/Se_Foot01" )
+: HideWnd()
+: x1 = 200; y1 = 0; z1 = 1.0; time = 0.25;
+: x2 = 0; y2 = 0; z2 = 1.0;
+: evbg = false; evcos = false;
+: evfile = "evx_a026_0_0_2000000_0000000_0_"
+: Call( "Scenarios/Common*EvSlideIn" )
+: Wait()
+: HideWnd()
+: effecttype = "5"; se = "Se_KatanaHit02"; keep = false; evkeep = true;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+在达磨激烈的连击中，Falket将其全部卖掉。
+
+\CN["达磨"]
+“竟然能这么容易地应对我的招数啊。”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: cutinfile = "CutinFg06_2"
+: Call("Scenarios/Common*CutinFadeIn")
+: AutoFaceThumbnail( false )
+: ShowWnd()
+\CN["沥青"]
+“因为我是在讨厌更快的连击的程度下成长的。”
+
+\CN["沥青"]
+“快到连眨眼都不被允许的程度，快到可以连击的家伙！”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+把达磨的技术强行弹开的假币。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0300000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["达磨"]
+“你好像受惠于一位非常好的老师啊。”
+
+\CN["沥青"]
+“啊，既冷酷又严厉，没有宽恕——
+因为他是个热血的地上最强的人”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: effecttype = "1"; se = "Se_Swing03"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+将不断涌出的飞象全部埋葬的刀舞。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a026_1_0_2000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: effecttype = "4"; se = "Se_KatanaHit02"; keep = false; evkeep = true;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["达磨"]
+“嗯……！”
+
+达磨在极限的地方将其防御到底。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0200000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“能行……！”
+
+防御一方的达磨。
+虽然柏油为了破坏那里而开始施大招数。
+
+\CN["达磨"]
+“天真一刀流・影断！”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: effecttype = "1"; se = "Se_Swing01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: AutoFaceThumbnail( false )
+: cutinfile = "CutinFg06_3"
+: Call("Scenarios/Common*CutinFadeIn")
+: ShowWnd()
+\CN["沥青"]
+「――――！！」
+
+在一层纸的地方可以躲开沥青。
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0200000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“危险啊……。如果深入的话
+”
+
+\CN["达磨"]
+“我的‘影断’，第一次看见就被躲开是第一次。”
+
+\CN["沥青"]
+“爷爷，你用的刀，真是太不像话了。”
+
+\CN["达磨"]
+「不是叫狗刀、神刀的东西。
+我的刀与其相反，是邪神创造的刀”
+
+\CN["达磨"]
+“名字叫妖刀村雨”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["沥青"]
+“是邪神的刀吗……怪不得这么凶。”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+新旧世界最强对决——
+比赛一定会在一瞬间结束。
+
+但是，双方都没有让步的样子。
+
+//Yoshi：メッセージフェイスあり
+//●演出：場面転換トランジション
+//●場所：森・夜
+//●視点：第三者視点
+*sc002
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Forest01_03", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: trackIndex = PlaySe( "SE/Se_Night1", true );
+——在街道的途中。
+
+于是龙率领的鬼灯和白夜的联合队将叛逆者无黑他们
+为了杀人而开始行动。
+
+//Yoshi：センターに龍（煙管あり）
+: DrawChara( "Ryu", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["龙"]
+「…………」
+
+\CN["鬼灯队士・男B"]
+“龙先生，真的把他们……”
+
+\CN["龙"]
+“这是局长的命令。”
+
+\CN["鬼灯队士・男A"]
+“……是啊。心情很复杂。”
+
+\CN["白夜队士1"]
+“希希希希。没想到这个老板竟然是那个般若大人。”
+啊……”
+
+\CN["鬼灯队士・男B"]
+「…………」
+
+\CN["白夜队士2"]
+“从今以后不是同志了吗，鬼灯的。
+好好相处吧。嘿嘿”
+
+鬼灯队士加上白夜队士的小队
+以无黑们休息的小屋为目标。
+
+: StopSe( trackIndex );
+: PlaySe( "SE/Se_Wind01" )
+\CN["白夜队士3"]
+“……？风？”
+
+: HideWnd()
+: EraseChara( "Ryu", 0.5 )
+: Wait()
+//●演出：銀が現れる
+//●視点：銀視点
+//Yoshi：左に龍、右に銀
+: DrawChara( "Gin", 8, 0, 0, 0.0, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["银子"]
+“你在这里吗？没必要特意去帝都。”
+
+: PlayBgm("BGM/05_CM005")
+: HideWnd()
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a069_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: EraseChara( "Gin", 0.0 )
+//: DrawChara( "Ryu", 0, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["白夜队士4"]
+“啊，那家伙是风神的银……？”
+
+\CN["银子"]
+“是和白夜的垃圾一起组合的吗？鬼灯也掉到地上了。”
+
+//: DrawChara( "Ryu", 9, 0)
+\CN["龙"]
+“有什么事吗？”
+
+//: DrawChara( "Gin", 9, 0)
+\CN["银子"]
+“不说的话不知道吗？
+我是来和你商量的”
+
+这个大叔，和敌人旋转时的压迫感真是厉害啊。
+
+//: DrawChara( "Gin", 7, 0)
+\CN["鬼灯队士・男A"]
+“银……”
+
+\CN["白夜队士1"]
+“嘿嘿，就一个人来吧。”
+
+\CN["白夜队士2"]
+“不，等一下。也许还有人藏在里面。”
+
+//: DrawChara( "Gin",10, 0)
+\CN["银子"]
+“不要害怕。只有我一个人在这里。”
+
+//: DrawChara( "Ryu", 2, 0)
+\CN["龙"]
+“你一个人吗？我是你们的敌人。”
+你没想到吗？”
+
+//: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“让我问一个问题。
+你真的认为局长是正确的吗？”
+
+//: DrawChara( "Ryu",11, 0)
+\CN["龙"]
+“我认为局长是正确的。
+我们的任务是保护住在大和的人们的生命”
+
+\CN["龙"]
+“无论是公主，只要一个人的生命就可以拯救很多人的生命
+既然这样，那当然是要选那个了”
+
+//: DrawChara( "Ryu", 0, 0)
+//: DrawChara( "Gin",13, 0)
+\CN["银子"]
+“果然，你也和那家伙一样啊。”
+
+//: DrawChara( "Ryu", 2, 0)
+\CN["龙"]
+“我不认为你们说的是错的。
+哪个都正确。自古以来战争就是这样的”
+
+//: DrawChara( "Gin",11, 0)
+\CN["银子"]
+“原来如此。没错。”
+
+//: DrawChara( "Ryu", 0, 0)
+\CN["白夜队士1"]
+“呐，你觉得一个人能坐到这里回来吗？”
+
+\CN["白夜队士2"]
+“这么多人一个人来，真是个大笨蛋啊。”
+
+//: DrawChara( "Gin",23, 0)
+\CN["银子"]
+“是啊。要是跟哪个笨蛋说的话——”
+
+//: DrawChara( "Gin",10, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a069_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“你们这些家伙，我一个人就够了。”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["白夜队士3"]
+“哈哈哈哈哈！你听到了吗？这家伙不是白痴吗？”
+
+\CN["白夜队士4"]
+“这里大概有20个人吧？
+一个人停下脚步让我笑”
+
+: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 3, "C")
+\CN["银子"]
+（果然是这样啊……）
+
+而且，我觉得不交给那个笨蛋真是太好了。
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+（那家伙能成为{黑夜叉，暗黑妖精}。
+对我们来说是王牌啊）
+
+——我不喜欢。
+
+\CN["银子"]
+（真的，我一个人来是正确的答案）
+
+明明只是下了决心而已。
+在之前的战斗中明明消耗了很多，真是不可思议。
+
+\CN["白夜队士5"]
+“嘿嘿，鬼灯他们好像很温柔
+似乎无法成为过去的伙伴”
+
+\CN["白夜队士4"]
+“那我们白夜的人，把这家伙——”
+
+白夜的家伙们朝这边走来。
+
+: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 3, "R")
+: DrawChara( "Ryu",11, 0, 0, 0.5, 0.0, 4, "L")
+\CN["龙"]
+“等等！”
+
+\CN["白夜队士4"]
+「！！」
+
+龙一放声，白夜的家伙们就会缩成一团。
+
+\CN["龙"]
+“退下。这家伙是我来对付的。”
+
+\CN["白夜队士5"]
+“哈？大家一起做确实比较可靠……！”
+
+\CN["龙"]
+“你没听见吗？”
+
+\CN["白夜队士5"]
+“……呜！”
+
+: DrawChara( "Ryu", 9, 0)
+\CN["龙"]
+“右臂骨折了吧？
+你真的以为这样就能赢我吗？”
+
+//●演出：銀　アクション演出
+: HideWnd()
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_3_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlaySe( "SE/Se_Swing05" )
+: Sleep(0.1)
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.05 )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: ShowWnd()
+向挑衅性地说的龙的脸打右拳。
+
+//: DrawChara( "Gin",11, 0)
+\CN["银子"]
+“啊？没有折吗？”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: DrawChara( "Ryu", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["龙"]
+“……呵，是这样啊。”
+
+//Yoshi：龍、ここから煙管なし
+: DrawChara( "Ryu", 8, 0)
+\CN["龙"]
+“那么，我们也没必要偷懒。
+我会让你看到压倒性的力量差距”
+
+斜视过来的龙。
+
+全身都是麻利的压迫感
+我不由得要被吞噬了。
+
+: DrawChara( "Ryu", 4, 0, 0, 0.5, 0.0, 3, "L")
+: DrawChara( "Gin", 4, 0, 0, 0.5, 0.0, 4, "R")
+\CN["银子"]
+“大叔，你是说排练的时候偷懒了吗？”
+
+: DrawChara( "Ryu",40, 0)
+\CN["龙"]
+“认真起来的话会把你们杀掉的……”
+
+: StopBgm( 1.0 )
+空气一瞬间变了。
+
+即使讨厌浓厚而黏在一起的杀气，也会让人意识到“死”。
+
+: HideWnd()
+: EraseChara( "Ryu", 0.5 )
+: EraseChara( "Gin", 0.5 )
+//Yoshi：センターに龍
+//: DrawChara( "Ryu",32, 0, 0, 0.5, 0.0, 3, "C" )
+//●演出：龍　ダークエルフ化演出
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a101_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["龙"]
+“——有个男人爱着大海
+——有一只乌龟被一个男人拯救了
+——某个公主遇到了一个海之男”
+
+\CN["龙"]
+“——海之姬爱上了男人
+——海之男渴望回到陆地
+——然后，玉匣打开了”
+
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: evfile = "evx_a101_1_1_0200000_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+\CN["龙"]
+“
+
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255)
+: Wait()
+: evfile = "evx_a025_1_2_0100000_0000000_1_"; Call("Scenarios/Common*EvIn");
+: CharaCostume( "Ryu", 1 )
+//: DrawChara( "Ryu", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 255, 255, 255)
+: Wait()
+: PlayBgm("BGM/10_CM010")
+: ShowWnd()
+说完什么后
+大叔变成了长着漆黑翅膀的异形者。
+
+//Yoshi：センターに龍（黒夜叉）
+//Yoshi：左に龍（黒夜叉）、右に銀
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Ryu", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 4, "R" )
+: ShowWnd()
+\CN["银子"]
+“难道是黑夜叉，暗黑妖精吗？”
+
+: DrawChara( "Ryu", 1, 0)
+\CN["龙"]
+“你知道{黑夜叉，暗黑妖精}的存在吗？”
+
+\CN["银子"]
+“因为是前几天刚看到的。”
+
+我只是一瞬间看到那家伙的样子而已。
+
+: DrawChara( "Ryu", 5, 0)
+\CN["龙"]
+“我和你看到的{黑夜叉，暗黑妖精}味道不同。
+这样的我比那个人还要强”
+
+: DrawChara( "Gin", 9, 0)
+\CN["银子"]
+“哈？那个人？”
+
+: DrawChara( "Ryu", 9, 0)
+\CN["龙"]
+“——呼，我走了。”
+
+: DrawChara( "Gin",10, 0)
+\CN["银子"]
+「……！」
+
+: HideWnd()
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Ryu", 0.5 )
+: ShowWnd()
+龙一瞬间从我眼前消失了——
+
+//●演出：打撃エフェクト演出
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+//Yoshi：センターに銀
+: DrawChara( "Gin",12, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["银子"]
+“酷……！”
+
+反射性地阻止攻击。
+
+: EraseChara( "Gin", 0.5 )
+//Yoshi：左に龍（黒夜叉）、右に銀
+: DrawChara( "Ryu", 5, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Gin",12, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["龙"]
+“你用刚体术阻止了我的攻击吗？感觉很好。”
+
+\CN["银子"]
+“呃……”
+
+//●演出：打撃エフェクト演出
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 4; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Ryu"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a070_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Call( "Scenarios/Effect*Renda01" )
+: Wait()
+: ShowWnd()
+\CN["白夜队士1"]
+“啊啊啊……什么啊，那个妖怪是！？
+不是那样的人……！”
+
+\CN["鬼灯队士・男A"]
+“啊，那是{黑夜叉，暗黑妖精}……吗？”
+
+\CN["鬼灯队士・男B"]
+“很久以前，在战乱的时代，一个人的{黑夜叉，暗黑妖精}
+有一个故事说，数万个士兵在一夜之间就被消灭了……”
+
+\CN["鬼灯队士・男A"]
+“就是说让我们退出。
+在旁边的话会被牵连到一起死掉”
+
+//Yoshi：左に龍（黒夜叉）、右に銀
+//: DrawChara( "Ryu", 2, 0, 0, 0.5, 0.0, 3, "L" )
+//: DrawChara( "Gin",11, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["龙"]
+“变强了啊”
+
+//: DrawChara( "Gin"13, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a070_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“在这里，我不能输！”
+
+想办法一边弹龙的攻击，一边不断放出拳头。
+
+//: EraseChara( "Gin", 0.5 )
+//●演出：銀　アクション
+//Yoshi：センターに銀
+//: DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_3_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“啊啊啊啊————！！”
+
+身体的机能非常好。
+
+明明在挑战附近绝对的死亡
+丝毫不感到恐怖。
+
+\CN["银子"]
+“哈！”
+
+//: EraseChara( "Gin", 0.5 )
+//●演出：銀の拳が龍に当たる
+: HideWnd()
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: Wait()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+//Yoshi：センターに龍（黒夜叉）
+: DrawChara( "Ryu", 4, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["龙"]
+“好烫！”
+
+: HideWnd()
+: chara = "Ryu"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 5, 5 )
+: Wait()
+: EraseChara( "Ryu", 0.5 )
+: Wait()
+: ResetLayer(3)
+//●演出：銀　ぶっ飛ばされる
+//Yoshi：右に銀
+: DrawChara( "Gin",19, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["银子"]
+“哇！哇！真是的！像铁一样，肚子饿了。”
+
+\CN["白夜队士1"]
+“嘿嘿，我很虚弱！趁现在我……！”
+
+: EraseChara( "Gin", 0.5 )
+一个白夜的人拿着刀冲着膝盖跑了出来。
+
+//Yoshi：センターに龍（黒夜叉）
+: DrawChara( "Ryu", 1, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["龙"]
+“闭嘴看看。”
+
+: PlaySe( "SE/Se_Down01" )
+\CN["白夜队士1"]
+「……！」
+
+那家伙只是被龙盯着就吓得瘫软了。
+
+//: EraseChara( "Ryu", 0.5 )
+//Yoshi：右に銀
+: DrawChara( "Ryu", 1, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Gin",10, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["银子"]
+“哈，哈，哈……”
+
+但是，太糟糕了。腰腿蹒跚。
+
+//Yoshi：左に龍（黒夜叉）
+: DrawChara( "Ryu", 5, 0, 0 )
+\CN["龙"]
+“怎么了？已经结束了吗？”
+
+: DrawChara( "Gin", 4, 0)
+\CN["银子"]
+“哼，是现在开始吧？”
+
+//●演出：銀　アクション演出・必殺技連発
+: HideWnd()
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_3_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: PlaySe( "SE/Se_Kick01" )
+: Sleep(0.1)
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.05 )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“疾风！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_4_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlaySe( "SE/Se_Kick01" )
+: Sleep(0.1)
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.05 )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“狂风！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_4_0300000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlaySe( "SE/Se_Kick01" )
+: Sleep(0.1)
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.05 )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: Wait()
+: ShowWnd()
+\CN["银子"]
+“大岚！！”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Ryu", 2, 0, 0, 0.5, 0.0, 3, "C")
+: ShowWnd()
+\CN["龙"]
+“每一个技能都比平时强好几倍。
+如果不是这个样子的话，可能会被拿走一根”
+
+龙彻底地保护了我的技能。
+
+: DrawChara( "Ryu", 4, 0)
+\CN["龙"]
+“但是，还差得远呢！”
+
+//●演出：回想演出
+//●場所：道場・過去
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Ryu", 0.0 )
+//: EraseChara( "Gin", 0.0 )
+: cutinfile = "Refrain"
+: Call("Scenarios/Common*CutinFadeIn")
+: SwapImage( 1, 0, "BGImage/BG_HozukiDoujyo01", 0.0 )
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+//Yoshi：左に銀
+: DrawChara( "Gin",19, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["银子"]
+“唔……！”
+
+//●演出：銀　倒れる
+: HideWnd()
+: PlaySe( "SE/Se_Down01" )
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 3; type = "Down";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+//Yoshi：右に龍
+: CharaCostume( "Ryu", 0 )
+: DrawChara( "Ryu", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["龙"]
+“银，我不是告诉过你很多次要注意柜台吗？
+你没有武器，所以特别的。”
+
+: DrawChara( "Ryu", 8, 0, 0, 0.5, 0.0, 3, "R" )
+: DrawChara( "Gin",0, 0, 0, 0.5, 0.0, 4, "L" )
+\CN["银子"]
+“哈哈，什么啊，在被反击之前先把他杀了就好了
+是吧？”
+
+\CN["银子"]
+“害怕计数器，不敢吵架。”
+
+: DrawChara( "Ryu",32, 0)
+\CN["龙"]
+“说起来，勇敢和不要命是完全不同的。”
+
+//●演出：回想演出明ける
+//●演出：銀　龍の攻撃を躱して
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: ResetLayer(9)
+: CharaCostume( "Ryu", 1 )
+: EraseChara( "Ryu", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Forest01_03", 0.0 )
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: DrawChara( "Ryu", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: Wait()
+: chara = "Ryu"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlaySe( "SE/Se_Swing05" )
+: Sleep(0.1)
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.05 )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: Wait()
+: EraseChara( "Ryu", 0.5 )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Gin", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+//Yoshi：右に銀、左に龍（黒夜叉）
+\CN["银子"]
+“如果是你的话，我知道是这样的！”
+
+用一张纸躲开龙的计数器。
+
+//: DrawChara( "Ryu", 5, 0)
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a070_1_2_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+\CN["龙"]
+“呼，终于学习了吗……”
+
+//: DrawChara( "Gin",10, 0)
+\CN["银子"]
+“你给我做了好几次啊。”
+
+反击未发而结束的龙。
+
+恐怕这是第一次打倒最后这家伙的机会！
+
+//: DrawChara( "Gin",13, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a070_1_2_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“高岭腐蚀39082；！！”
+
+: HideWnd()
+: Call( "Scenarios/Effect*Renda01" )
+: ShowWnd()
+用左臂使出浑身解数。
+
+//: DrawChara( "Ryu", 7, 0)
+\CN["龙"]
+“哈啊！！”
+
+奇奇……到了这个时期才不想使用刚体术。
+浑身解数的《高岭⇔39082；》被接受了。
+
+但是——
+
+//: DrawChara( "Gin", 2, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a070_1_2_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“哼……”
+
+//: DrawChara( "Ryu", 6, 0)
+\CN["龙"]
+“难道你也读过这样的书吗？
+男子，你是说三天不见就好了吗……”
+
+今后是我真正的目标。
+
+//: DrawChara( "Gin",11, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a071_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“好嘞——”
+
+右臂——在残酷的贫民窟中生存下来，经过艰苦的修行
+为了比什么都重要的女人——
+
+在一起战斗的拳头里注入所有的力量————
+
+//: DrawChara( "Gin",13, 0)
+\CN["银子"]
+“神风————————————！”
+
+\CN["龙"]
+“八重樱流・奥义・{八咫乌，やたか}”
+
+//: DrawChara( "Ryu", 8, 0)
+//●ＳＥ：骨が砕ける音
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a070_1_3_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlaySe( "SE/Se_Swing05" )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
+: Wait()
+: ResetLayer(9)
+: PlaySe( "SE/Se_Fracture" )
+: layer = 8; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Ryu", 6, 0)
+//: Sleep(1 )
+//: DrawChara( "Ryu", 3, 0)
+\CN["龙"]
+“哈哈……！”
+
+//: DrawChara( "Gin",10, 0)
+\CN["银子"]
+“哈，哈，哈……”
+
+//: DrawChara( "Ryu", 0, 0)
+\CN["龙"]
+「…………」
+
+骨头发出吱吱嘎吱的声音
+全身心地投入力量的拳头被敲穿了。
+
+\CN["龙"]
+“——银，真是无可挑剔的拳头。”
+
+//: DrawChara( "Gin", 8, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_6_0400000_00000000_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+「…………」
+
+\CN["龙"]
+“这场比赛，是我输了……”
+
+: HideWnd()
+: DrawChara( "Ryu", 5, 0, 0, 0.0, 0.0, 3, "C")
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+准确地抓住了龙的怀。
+
+但是，还没到一步就吃了龙的招数。
+
+//●ＳＥ：倒れる音
+//●演出：暗転
+: HideWnd()
+: PlaySe( "SE/Se_Down01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+只是一瞬间感受到了前所未有的剧痛
+失去了意识。
+
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●場所：高浜港・夜
+//●視点：第三者視点
+//Yoshi：メッセージフェイス無し
+//: AutoFaceThumbnail( false )
+*sc003
+: PlayBgm("BGM/50_IDO04")
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0500000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“哈！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a026_1_0_2000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: SwapImage( 1, 0, "BGImage/Bg_Harbor01_03", 0.0 )
+: ShowWnd()
+\CN["达磨"]
+“嗯！”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(8)
+: ResetLayer(9)
+: ShowWnd()
+费尔克和达磨的战斗至今，都没有受到很大的伤害。
+
+刀和刀就好像合在一起一样合在一起。
+
+一击即中者为生者。
+生命的交换这个那个地一直展开着。
+
+: DrawChara( "Daruma", 7, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["达磨"]
+“到现在为止一次都没有做错。
+我就那么年轻”
+
+: EraseChara( "Daruma", 0.5 )
+: HideWnd()
+: cutinfile = "CutinFg06_4"
+: Call("Scenarios/Common*CutinFadeIn")
+: ShowWnd()
+\CN["沥青"]
+“爷爷也一样。小时候也要衰老啊。”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: effecttype = "2"; se = "Se_KatanaHit02"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["达磨"]
+“虽然这么说，但是看起来很开心。”
+
+: AutoFaceThumbnail( false )
+\CN["沥青"]
+“你也是。”
+
+\CN["达磨"]
+“大和有句谚语，说是三子之魂百。
+我的性格是很难改变的！”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+尽管在进行极限的杀戮
+每一个嘴角都在歪斜。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a026_1_0_2000000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["达磨"]
+“影子断绝！”
+
+: HideWnd()
+: effecttype = "5"; se = "Se_KatanaHit02"; keep = true; evkeep = true;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["沥青"]
+“哇！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a028_1_4_0500000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["沥青"]
+“啊啊啊啊啊啊啊啊！”
+
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["达磨"]
+“呜……！还是一样沉重而锐利的一击啊。”
+
+: AutoFaceThumbnail( false )
+\CN["沥青"]
+“说是你的剪影，我可是提心吊胆的。
+简直就像是在和死神做对手一样”
+
+: AutoFaceThumbnail( true )
+\CN["达磨"]
+“这是我的台词。死神的镰刀只能看到手臂的一击。
+我好几次都在想，会不会是从三途之川来接我啊」
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+不是要持续一辈子吗？
+被认为是现实世界最强对旧世界最强的战斗。
+
+砍一刀获胜——
+那个瞬间很突然，但是当然会来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a073_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["达磨"]
+“差不多该结束了吧。”
+
+\CN["沥青"]
+“……我也是这么想的。”
+
+\CN["达磨"]
+“我，用最大的技能来埋葬你吧……”
+
+达磨呼的一声开始深呼吸。
+
+\CN["沥青"]
+（好像会有什么不可思议的招数呢）
+
+//: HideWnd()
+//: Call("Scenarios/Common*EvFadeOut")
+//: ShowWnd()
+如果放任不管的话一定会被杀死。
+
+除了迎头赶上以力量取胜以外
+没有活路。
+
+没错，费尔克瞬间领悟到了这把刀。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a026_1_0_2000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["达磨"]
+“——我走了。”
+
+达磨先动手。
+
+即使是达人也无法用眼睛去追逐的神速的动作。
+
+\CN["达磨"]
+“——八岐大蛇！！”
+
+: HideWnd()
+: effecttype = "03a"; se = "Se_Swing01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+法尔克的剑闪和达磨的剑闪。
+
+被称为世界最强的男人和被称为世界最强的男人
+神刀和妖刀交叉着——
+
+//●演出：斬撃演出
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: Call( "Scenarios/Effect*Blood01" )
+: evbg = true; evcos = false;
+: evfile = "evy_a011_1_1_0000000_00000000_"
+: StopBgm( 1.0 )
+: Call("Scenarios/Common*EvIn")
+: ResetLayer(9)
+: ShowWnd()
+与血飞沫一起握着神刀的右臂在空中飞舞。
+
+: HideWnd()
+: ResetLayer(9)
+: ResetLayer(7)
+: Call("Scenarios/Common*EvFadeOut")
+: AutoFaceThumbnail( true )
+: CharaCostume( "Falke", 2 )
+: CharaPartsOn( "Falke", 0 )
+: DrawChara( "Falke", 21, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["沥青"]
+“……”
+
+失去了好使的手臂，回到了原来的柏油
+当场跪坐。
+
+: HideWnd()
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: PlayBgm("BGM/11_CM011")
+: DrawChara( "Daruma", 11, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["达磨"]
+“哈，哈，我是不惜牺牲生命，甚至牺牲自尊的秘技
+即便如此，也只能取下一只手臂……”
+
+: PlaySe( "SE/Se_Down01" )
+: EraseChara( "Daruma", 0.5 )
+然后，达磨也再次抑制着心脏
+我当场跪下了。
+
+达磨所放出的“八岐大蛇”原本并不是用自己的力量来释放的。
+
+第一次可以用被造出来的身体放出
+在达磨看来邪道也是个好招数。
+
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["达磨"]
+（如果不做到这种地步，我们就无法战胜这个男人。）
+
+\CN["达磨"]
+（维克托尔骑士团，骑士团长费尔克。
+那个名字，一辈子记在我的记忆里）
+
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Falke", 20, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["沥青"]
+“你在擅自结束啊。
+这件事要先刺探对方再说”
+
+: DrawChara( "Daruma", 9, 0, 0)
+\CN["达磨"]
+“为什么会失去一只手臂，也失去了一只好使的手臂
+还没有失去斗志……？”
+
+: DrawChara( "Falke", 15, 0, 0 )
+\CN["沥青"]
+“因为家里有我爱的妻子和世界上最可爱的女儿在等着我。”
+
+: DrawChara( "Daruma", 11, 0, 0)
+\CN["达磨"]
+“这样啊……那么——”
+
+与费尔克失去右臂相对
+达磨在刚才的一击中用尽了所有的力量。
+
+但是，双方都还没有放弃这场战斗的打算。
+直到某一方死去为止——
+
+//●演出：ヒラガ＆亜久里　登場する
+: HideWnd()
+: EraseChara( "Falke", 0.5 )
+: EraseChara( "Daruma", 0.5 )
+: Wait()
+: DrawChara( "Hiraga", 0, 0, 0, 0.0, 0.0, 3, "LC" )
+: DrawChara( "Aguri", 0, 0, 0, 0.0, 0.0, 4, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["平底片"]
+“到此为止了，老大。”
+
+最近，没有理由地隐藏了行踪
+比拉加和亚久里出现了。
+
+: DrawFaceThumbnail( "Daruma", 7, 0, 0 )
+\CN["达磨"]
+“呃，最近都没露面，在哪里做什么呢？”
+
+\CN["平底片"]
+“我们这边也有情况。
+消息断绝了，非常抱歉”
+
+\CN["达磨"]
+“那件事请你慢慢说。
+但是，现在就离开吧。我必须和这个人做个了断」
+
+\CN["平底片"]
+“老大，您是我的最高杰作。
+因此，很难认同以上的战斗”
+
+\CN["平底片"]
+“亚久里，麻烦你了。”
+
+: JumpLayer( 4, 0, -50, 1, 0.25)
+: PlayVoice( "Voices/vo16_agu0005" )
+\CN["亚久里"]
+“知道了。”
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Hiraga", 0.0 )
+: EraseChara( "Aguri", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+在达磨背后旋转的亚久里。
+
+\CN["达磨"]
+「……！！」
+
+远不及达人的行动。
+
+但是，现在的达磨已经消耗殆尽了
+我对那个动作也没有反应。
+
+: DrawChara( "Falke", 16, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["沥青"]
+“不能逃啊！”
+
+: HideWnd()
+: EraseChara( "Falke", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Thunder02" )
+: PlayAnim( "Animations/AnimeL_Thunder02", false, 0, 400, 5, 5 )
+: Wait()
+: ShowWnd()
+飞沫瞬间释放魔法。
+
+但是，在魔法爆炸的瞬间
+3个人消失了。
+
+: DrawChara( "Falke", 21, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["沥青"]
+“哈，哈，是电信石吗……？
+大和也有啊，那个”
+
+\CN["沥青"]
+“……是我输了吗……”
+
+//●演出：ファルケ　倒れる
+: HideWnd()
+: PlaySe("SE/Se_Down01")
+: chara = "Falke"; lay = 3; type = "Down";
+: Call( "Scenarios/Common*FgEffOut")
+: ShowWnd()
+——杜莎莉。
+沥青用尽了力气倒在了那个地方。
+
+//Yoshi：メッセージフェイスあり
+//: AutoFaceThumbnail( true )
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+*sc_end
+//●シーン：「激戦の爪痕」へ
+//＠シナリオジャンプ：SC_B05_13
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Dungeon16_07_Koya", "SC_B05_12", "Scenarios/SC_B05_13")

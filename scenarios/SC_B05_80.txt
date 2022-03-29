@@ -1,0 +1,469 @@
+//========================================================
+//○無黒とニーナ
+//========================================================
+//●場所：恵蘇・レオの家
+//Yoshi：背景、昼
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Nina", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Room02_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/36_ID03")
+: ShowWnd()
+//●視点：無黒視点
+——这是我以前访问雷欧的故乡惠苏时的事。
+
+在任务稳定后返回帝都之前
+雷欧叫我回老家。
+
+来是好事，但是雷欧有点事
+似有似无地取了下来。
+
+所以，和雷欧的妈妈妮娜
+只有两个人。
+
+//Yoshi：左に無黒、右にニーナ
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Nina", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo27_nii0083" )
+\CN["尼娜"]
+“无黑，要再来杯茶吗？”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk1976" )
+\CN["无黑色"]
+“啊，对不起。拜托了。”
+
+尼娜是维克托尔出身的精灵
+连我这个女人都被细密的皮肤和美丽的金发所吸引。
+
+还有，因为是同事的母亲吗？
+有什么异常的紧张。
+
+: DrawChara( "Mukuro", 1, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk1977" )
+\CN["无黑色"]
+（这么说来，Leo也长得很漂亮呢。）
+
+总之，雷欧很显眼。
+
+一起在街上巡逻的话
+经常被女孩子打招呼。
+
+: DrawChara( "Mukuro",21, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk1978" )
+\CN["无黑色"]
+（之前也在街上被女孩子包围着呢。
+鼻子向下伸展，很懒散……）
+
+一想起来就烦躁起来。
+
+: DrawChara( "Nina",20, 0)
+: PlayVoice( "Voices/vo27_nii0084" )
+\CN["尼娜"]
+“无黑，对不起我的笨蛋给你添麻烦了。”
+
+: DrawChara( "Mukuro",34, 0)
+: PlayVoice( "Voices/vo00_muk1979" )
+\CN["无黑色"]
+“……啊！不，那个……那是……”
+
+我在想雷欧的事情，突然被那个母亲拒绝了
+脑子转不过来，变得语无伦次。
+
+: DrawChara( "Nina", 6, 0)
+: PlayVoice( "Voices/vo27_nii0085" )
+\CN["尼娜"]
+“从以前开始就是不稳重的孩子。
+呐，无黑，你想看那个孩子小时候的专辑吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk1980" )
+\CN["无黑色"]
+“是的！一定要看！”
+
+: DrawChara( "Nina",16, 0)
+: PlayVoice( "Voices/vo27_nii0086" )
+\CN["尼娜"]
+“呵呵。等一下，我马上拿过来。”
+
+: PlayVoice( "Voices/vo27_nii0087" )
+\CN["尼娜"]
+“我啊，和雷欧带来的女孩一起看那孩子的专辑
+看啊，我想试试看啊」
+
+: DrawChara( "Nina",28, 0)
+: PlayVoice( "Voices/vo27_nii0088" )
+\CN["尼娜"]
+“那孩子从来没有带女孩子来……”
+
+: PlayVoice( "Voices/vo00_muk1981" )
+\CN["无黑色"]
+“是吗？我一定……。
+在帝都也很受女孩子欢迎”
+
+: DrawChara( "Nina",18, 0)
+: PlayVoice( "Voices/vo27_nii0089" )
+\CN["尼娜"]
+“在这种地方，我会相当笨拙的。
+和那个人很像……”
+
+//●演出：ニーナ　去る
+: HideWnd()
+: chara = "Nina"; lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: ShowWnd()
+//: DrawChara( "Mukuro", 0, 0)
+嘟嘟囔囔的“那个人”是指雷欧的父亲吗？
+
+//: DrawChara( "Mukuro",35, 0)
+但是，要调查别人的家庭是不好的。
+
+//●演出：ニーナ　帰ってくる
+//: DrawChara( "Mukuro", 2, 0)
+//Yoshi：右にニーナ
+: DrawChara( "Nina", 2, 0, 0, 0.0, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo27_nii0090" )
+\CN["尼娜"]
+“让您久等了，再见。”
+
+桌子上放着几本厚厚的相册。
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: DrawChara( "Nina", 2, 0, 0, 0.0, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo00_muk1982" )
+\CN["无黑色"]
+“有很多呢。”
+
+: DrawChara( "Nina",14, 0)
+: PlayVoice( "Voices/vo27_nii0091" )
+\CN["尼娜"]
+“对了对了！
+嘛，照片其实是我的兴趣”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk1983" )
+\CN["无黑色"]
+“诶。妮娜，你很喜欢照片呢。”
+
+: DrawChara( "Nina", 6, 0)
+: PlayVoice( "Voices/vo27_nii0092" )
+\CN["尼娜"]
+“是啊。比起喜欢，你看，回忆有多少呢？”
+即使努力，也总会褪色不是吗？”
+
+: DrawChara( "Nina",20, 0)
+: PlayVoice( "Voices/vo27_nii0093" )
+\CN["尼娜"]
+“所以，我想好好把握那天、那时的瞬间。”
+
+那样说的妮娜
+总觉得，他似乎在悲伤地微笑着。
+
+: DrawChara( "Nina",14, 0)
+: PlayVoice( "Voices/vo27_nii0094" )
+\CN["尼娜"]
+“嗯，这是那个孩子出生时的照片
+这是开始跳高的时候的东西”
+
+: DrawChara( "Mukuro", 6, 1)
+: PlayVoice( "Voices/vo00_muk1984" )
+\CN["无黑色"]
+“这、这是Leo……？非常可爱。”
+
+: PlayVoice( "Voices/vo27_nii0095" )
+\CN["尼娜"]
+“真的，从这个时候开始就不是不能冷静下来的孩子呢。
+在高中的时候，家里到处跑，如果能走的话就好了
+到处乱跑……”
+
+: DrawChara( "Mukuro", 9, 0)
+: PlayVoice( "Voices/vo00_muk1985" )
+\CN["无黑色"]
+“哈哈哈……真像是雷欧啊。”
+
+总觉得可以想象那个场面。
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0096" )
+\CN["尼娜"]
+“看这张照片。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk1986" )
+\CN["无黑色"]
+“这是看起来很好吃的肉串……这是什么鱼？”
+
+: PlayVoice( "Voices/vo27_nii0097" )
+\CN["尼娜"]
+“对了对了。虽然是烧烤的时候
+就算你说要选哪一个，这种时候，我也会
+哪一个都不听……”
+
+: PlayVoice( "Voices/vo27_nii0098" )
+\CN["尼娜"]
+“现在也绝对是这样吧？
+如果要选择哪一个的话，哪一个都没有说出来吗？”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk1987" )
+\CN["无黑色"]
+“是的，我一定会告诉你的，那个。
+原来是从以前开始的啊」
+
+: DrawChara( "Nina",30, 0)
+: PlayVoice( "Voices/vo27_nii0099" )
+\CN["尼娜"]
+“是的是的。这种地方真的很顽固呢。
+不管提醒多少次都不行”
+
+: DrawChara( "Nina", 2, 0)
+: PlayVoice( "Voices/vo27_nii0100" )
+\CN["尼娜"]
+“所以呢，无黑。就是那个孩子说的。
+你的事，只有这家伙。所以，今天只有两个人
+我想说一下”
+
+: DrawChara( "Mukuro",36, 1)
+: PlayVoice( "Voices/vo00_muk1988" )
+\CN["无黑色"]
+“对，雷欧是……不，只有我……”……
+那么害羞的事……啊啊……”
+
+为什么呢？
+
+明明只是这么一件事，却感到非常开心
+脸也会变热，而且也会怦然心动。
+
+: DrawChara( "Nina",36, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo27_nii0101" )
+\CN["尼娜"]
+（哎呀，说不定有脉吧？）
+
+//●ＳＥ：ドアの開く音
+//●演出：レオ　登場する
+: HideWnd()
+: EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: PlaySe( "SE/Se_DoorOpen01" )
+//Yoshi：センターにレオ
+: DrawChara( "Leo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: lay = 0; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["雷欧"]
+“我知道了！妈妈，正如你所说，田中的爷爷
+药送到了那里”
+
+//Yoshi：左に無黒
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Leo",5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk1989" )
+\CN["无黑色"]
+“啊，雷欧，打扰你了……”
+
+//Yoshi：右にレオ
+: DrawChara( "Leo",11, 0, 0 )
+\CN["雷欧"]
+“哦哦哦！无黑，你来了吗！？”
+
+: PlayVoice( "Voices/vo00_muk1990" )
+\CN["无黑色"]
+“因为你说要来。
+而且，必须马上回屯所
+因为没有”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“妈妈，如果无黑来了的话，请联系我！
+我把药交给他，然后用短袜回来了”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左にニーナ
+: DrawChara( "Nina",14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo27_nii0102" )
+\CN["尼娜"]
+“呵呵。托您的福，我和无黑酱聊了很多。”
+
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“嗯。那是桌子上放的那张专辑吗？
+妈妈，你没说什么奇怪的话吧？”
+
+: DrawChara( "Nina", 6, 0)
+: PlayVoice( "Voices/vo27_nii0103" )
+\CN["尼娜"]
+“奇怪吗？你的初恋对象亚希搬家的时候
+追着走，迷路了，镇上所有人都在寻找
+什么话？还是说5岁的时候，看恐怖电影——”
+
+: DrawChara( "Leo", 4, 1)
+\CN["雷欧"]
+“啊啊啊啊啊啊！所以你就放弃吧，奶奶！”
+
+: JumpLayer( 6, 0, -50, 1, 0.25)
+: DrawChara( "Nina",15, 0)
+: PlayVoice( "Voices/vo27_nii0104" )
+\CN["尼娜"]
+“谁是老太婆！我要揍你。”
+
+一边吵架，一边好像很开心。
+
+: EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：センターに無黒
+: DrawChara( "Mukuro",42, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk1991" )
+\CN["无黑色"]
+（是父子吗……妈妈，爸爸……）
+
+突然想起被杀的家人，差点哭出来。
+
+然后，也有不知道现在在做什么的姐姐。
+
+//Yoshi：右にレオ
+: DrawChara( "Mukuro",42, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: DrawChara( "Leo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["雷欧"]
+“无黑？没关系吗？脸上看起来很悲伤。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk1992" )
+\CN["无黑色"]
+“嗯？没什么。”
+
+不能说想起家人就想哭。
+
+: DrawChara( "Leo",13, 0)
+\CN["雷欧"]
+“因为我一直在你身边。”
+
+: DrawChara( "Mukuro", 6, 1)
+: PlayVoice( "Voices/vo00_muk1993" )
+\CN["无黑色"]
+“什么！？那个，雷欧……！”……！
+在妮娜小姐面前干什么……！”
+
+//Yoshi：左にニーナ
+: DrawChara( "Mukuro",6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: DrawChara( "Leo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: DrawChara( "Nina",16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+//●読み：お義母さん（おかあさん）
+: PlayVoice( "Voices/vo27_nii0105" )
+\CN["尼娜"]
+“无黑，可以叫我岳母吗？”
+
+: DrawChara( "Mukuro",34, 1)
+: PlayVoice( "Voices/vo00_muk1994" )
+\CN["无黑色"]
+“连妮娜都……！哇，我就是那个……那个…”
+
+: DrawChara( "Leo",14, 0)
+\CN["雷欧"]
+“无黑，你想要几个孩子？”
+
+: layer = 5; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Mukuro",32, 2)
+: PlayVoice( "Voices/vo00_muk1995" )
+\CN["无黑色"]
+“这、孩子……啊，真是的！”！
+所以，在这种地方！雷欧的笨蛋！”
+
+//●ＳＥ：パチーン！
+: PlaySe( "SE/Se_Binta01" )
+——帕奇！
+
+: layer = 4; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“呜哇呜！！”
+
+用平时的调子打了。
+
+: layer = 5; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Mukuro",34, 1)
+: PlayVoice( "Voices/vo00_muk1996" )
+\CN["无黑色"]
+“啊！雷欧，对不起！终于——”
+
+: DrawChara( "Nina",22, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo27_nii0106" )
+\CN["尼娜"]
+（Leo在Leo最关键的地方是装得甜还是傻
+他很有处男的感觉呢……）
+
+: DrawChara( "Nina",26, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo27_nii0107" )
+\CN["尼娜"]
+（如果一直持续感觉到无黑酱的变化的话
+现在早就成为恋人了吗？无黑酱也
+无黑酱也相当的有点蠢呢……）
+
+: DrawChara( "Nina",14, 0)
+//●演技：心の声です
+: PlayVoice( "Voices/vo27_nii0108" )
+\CN["尼娜"]
+（这里是这样的。请温柔地守护他。）
+
+: DrawChara( "Mukuro", 1, 0)
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“什么啊，妈妈，你在笑……”
+
+: DrawChara( "Nina", 0, 0)
+: PlayVoice( "Voices/vo27_nii0109" )
+\CN["尼娜"]
+“我觉得两个人都很年轻。”
+
+最后，在这之后，吃了午饭之后
+我和雷欧一起回了帝都。
+
+妮娜始终在微笑着看着我和雷欧。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Nina", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//Yoshi：背景消去
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

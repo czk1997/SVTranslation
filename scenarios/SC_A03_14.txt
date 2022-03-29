@@ -1,0 +1,681 @@
+//========================================================
+//○春日神社攻防戦１
+//========================================================
+*sc001
+//＠プレイヤーキャラ：桃
+: FadeOut( 1.0 )
+: Wait()
+: Party("Momo","Gin")
+: Participate( 0, true, 1, true )
+: PartyType = "Party06"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+//●場所：鬼灯屯所・桃の部屋
+//●状況：桃の部屋に桃と銀がいる
+//Yoshi：背景、昼
+: LoadMap( "Map_Town02_03_Hozuki", "Return", "Scenarios/SC_A03_14*sc001_1")
+
+*sc001_1
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: Call( "Scenarios/Map_Town02_Hozuki_Init*Map03" )
+: RpgCharaOn( "Gin" )
+: FadeIn( 0.0 )
+: Wait()
+: StopBgm( 0.0 )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+//: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 1.0 )
+//: Wait()
+: PlayBgm("BGM/02_CM002")
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0222" )
+\CN["桃子"]
+“会袭击神社吗……也有受罚的人呢。
+小银，你不这么认为吗？”
+
+局长交给我的任务是‘春日神社，渣渣人’
+这是一家举行与幕府有关的祭神仪式的神社的护卫。
+
+有消息说反幕派会袭击那里
+我要去做护卫。
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“啊？我不太清楚。
+对没有神和佛的东西不知道感谢什么的意义”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0223" )
+\CN["桃子"]
+“真是的！小银的话，真没浪漫啊。”
+
+: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+“就是这样吗？说到浪漫的话
+你女儿不是也不相信吗？”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0224" )
+\CN["桃子"]
+“嗯？来，怎么样？”
+
+幸运的是我还没有神啊佛啊什么的
+我没有陷入过必须依靠的状况。
+
+比起依赖神明，更应该依赖可靠的伙伴
+我也知道可以。
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0225" )
+\CN["桃子"]
+“嘛，如果说被袭击的可能性很高的话
+去保护。那是我们的职责”
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“是啊……那就出发吧。
+春日神社从“大和东街道”去就可以了”
+
+//＠マップ解放：桃、大和東街道
+//●シーンエンド
+: HideWnd()
+: StopBgm( 0.5 )
+: FadeOut( 0.5 )
+: Wait()
+: FastTravelMapOn( "YamatoHigashiKaidoC" )
+: SetMission( "SC_A03_14_1", "InProgress" )
+: DestinationMap("Map_Event002")
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○春日神社攻防戦２
+//========================================================
+*sc002
+\CI["一切准备！小银，我走了！"]
+\CI["好好确认一下比较好哦"]
+我觉得前面有什么。
+
+: if ($choice == 1)
+	: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 1 )
+	: Return
+: endif
+//●背景：春日神社
+//●状況：すでに神社が敵に襲われている
+//Yoshi：背景、夜
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_Jinja02_03", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["银子"]
+“小姐……！”
+
+: PlayBgm("BGM/28_ID01")
+我和小银走到了那里
+神社已经受到了什么人的袭击。
+
+\CN["神主"]
+“没关系！喂，帮帮我……”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0226" )
+\CN["桃子"]
+“已经没关系了。快从这里逃走。”
+
+\CN["神主"]
+“那么，但是，你的神社啊……”
+
+: DrawChara( "Gin", 11, 0)
+\CN["银子"]
+“老头，你想死吗？”
+
+\CN["神主"]
+“啊，啊，啊……呃，好——！”
+
+: DrawChara( "Momo", 13, 0)
+: PlayVoice( "Voices/vo01_mom0227" )
+\CN["桃子"]
+“小银！本来就很可怕的表情，却很厉害！”
+普通人会吓一跳的”
+
+: DrawChara( "Gin", 18, 0)
+\CN["银子"]
+“……呃，没什么了不起的。”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0228" )
+\CN["桃子"]
+「啊，好啊。
+即使坐得不好也很麻烦”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0229" )
+\CN["桃子"]
+“小银，命令啊——
+全体人员，踢散了哟！”
+
+: DrawChara( "Gin", 10, 0)
+\CN["银子"]
+“明白了！”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+*battle
+//――――――――――――――――――――――――――――
+//■戦　闘：魔術師×３
+//■タイプ：通常戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：魔術師×３,0,2,2
+//●状況：戦闘勝利後
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc002_win" ) endif	//勝利後のラベル
+: endif
+: FadeOut( 1.0 )
+: Wait()
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_Jinja02_03", "BGM/22_BM003", 1012, 1012, 1012, "Scenarios/SC_A03_14*battle_end1", true)
+
+*battle_end1
+: RestoreBgm
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: SwapImage( 1, 0, "BGImage/Bg_Jinja02_03", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: if ( $battleWin == true )
+	: Jump( "*sc002_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle" )
+: else
+	: Jump( "Scenarios/SC_S01_01*sc006" )	//敗北した場合
+: endif
+
+*sc002_win
+: DrawChara( "Momo", 7, 1, 0, 0.0, 0.0, 4, "RC" )
+: DrawChara( "Gin", 6, 0, 0, 0.0, 0.0, 3, "LC" )
+: FadeIn( 0.5 )
+: Wait()
+\CN["银子"]
+“小姐，这不是这样的吗……”
+
+: DrawChara( "Momo", 1, 1)
+: PlayVoice( "Voices/vo01_mom0230" )
+\CN["桃子"]
+“真想这样啊。这样总算有办法了吗？”
+
+//●ＳＥ：ドゴーン　爆発する音
+//●演出：爆音と同時に画面を揺らす
+: HideWnd()
+: PlaySe( "SE/Se_Explosion01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: layer = 4; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: layer = 3; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+突然，不知从哪里传来了很大的声音。
+
+: DrawChara( "Gin", 9, 0)
+\CN["银子"]
+“小姐，刚才的是……”
+
+: DrawChara( "Momo", 8, 1)
+: PlayVoice( "Voices/vo01_mom0231" )
+\CN["桃子"]
+“从主殿那边来。小银，我很着急。”
+
+//●演出：場面転換
+//========================================================
+//○春日神社攻防戦３
+//========================================================
+*sc003
+//●背景：春日神社・本堂
+//Yoshi：背景、夜・壊れた本堂、場所移動
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Momo"; lay = 4; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Gin"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_Jinja01_05", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["巫女之女"]
+“哼……真是的，要建立一个麻烦的结界……！
+明明是跟随幕府的垃圾……！”
+
+//●演出：桃と銀がかけつける
+: HideWnd()
+: DrawChara( "Gin", 7, 0, 0, 0.0, 0.0, 3, "RC" )
+: DrawChara( "Momo", 8, 1, 0, 0.0, 0.0, 4, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0232" )
+\CN["桃子"]
+“好的，跟踪！到此为止。”
+
+\CN["巫女之女"]
+“嗯？你们，鬼灯的……！”
+
+: DrawChara( "Momo", 1, 1)
+: PlayVoice( "Voices/vo01_mom0233" )
+\CN["桃子"]
+“名答！
+是你们袭击神社的犯人啊」
+
+\CN["巫女之女"]
+“对了，这是一个笼罩着不洁幕府气息的神社
+因为不可以存在”
+
+: DrawChara( "Momo", 4, 1)
+: PlayVoice( "Voices/vo01_mom0234" )
+\CN["桃子"]
+“{秽，伤}很难去除……。
+嘛，虽然不能一概否定……”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“小姐，怎么办？这家伙，好像不会退的。”
+
+: DrawChara( "Momo", 1, 1)
+: PlayVoice( "Voices/vo01_mom0235" )
+\CN["桃子"]
+“是啊。虽然有点强势，但只能请他老实点。”
+
+\CN["巫女之女"]
+“幕府养的狗能胜过我们吗？
+真希望你能开个玩笑好好休息啊”
+
+: DrawChara( "Momo", 8, 1)
+: PlayVoice( "Voices/vo01_mom0236" )
+\CN["桃子"]
+“小银，小心点。这个人，不是普通的魔术师。”
+
+: DrawChara( "Gin", 10, 0)
+\CN["银子"]
+“知道了！”
+
+\CN["巫女之女"]
+“白夜九星、六白、织笠御影是腹心，{柳泽京子，柳柳柳柳さこ}——
+我来陪你！”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+*battle2
+//――――――――――――――――――――――――――――
+//■戦　闘：柳沢京子
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：柳沢京子,1,1,2,sc004
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc004" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_Jinja01_05", "BGM/22_BM003", 1013, -1, -1, "Scenarios/SC_A03_14*battle_end2", true)
+
+*battle_end2
+: RestoreBgm
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: SwapImage( 1, 0, "BGImage/Bg_Jinja01_05", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: if ( $battleWin == true )
+	: Jump( "*sc004" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle2" )
+: else
+	: Jump( "Scenarios/SC_S01_01*sc006" )	//敗北した場合
+: endif
+//========================================================
+//○春日神社攻防戦４
+//========================================================
+*sc004
+//●状況：戦闘終了後
+\CN["京子"]
+“……呃……呃，喂，喂，嗯……御影……大人……”
+
+//●演出：巫女が倒れる
+: PlaySe( "SE/Se_Down01" )
+名为京子的巫女当场倒下了。
+
+: DrawChara( "Momo", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo01_mom0237" )
+\CN["桃子"]
+“呼～……这样就真的没问题了吧？”
+
+: DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+\CN["银子"]
+「…………」
+
+: DrawChara( "Momo", 4, 1)
+: PlayVoice( "Voices/vo01_mom0238" )
+\CN["桃子"]
+“说是白夜，为什么白夜要去神社？”
+
+: StopBgm( 1.0 )
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“那么，那个理由我完全不知道……”
+
+小银的紧张感越来越浓。
+
+这个样子，好像相当危险的东西出来了。
+
+//●演出：御影　登場する
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Mikage", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0019" )
+\CN["巫女的上司"]
+“你好像很疼爱我们家的人啊。”
+
+: PlayBgm("BGM/30_CM015")
+: DrawFaceThumbnail( "Gin", 9, 0, 0 )
+\CN["银子"]
+“希望你不要找我。
+至少要好好地教育一下部下”
+
+: DrawChara( "Mikage", 2, 0)
+: PlayVoice( "Voices/vo11_mik0020" )
+\CN["巫女的上司"]
+“那太失礼了。”
+
+\CN["京子"]
+“御影……大人……像这样失态……。
+真的非常抱歉……”
+
+//●読み：京子（きょうこ）
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0021" )
+\CN["御影"]
+“呵呵，好啊，京子。
+你在那里好好休息吧」
+
+: DrawChara( "Mikage", 6, 0)
+: PlayVoice( "Voices/vo11_mik0022" )
+\CN["御影"]
+“我来陪这些人。”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+\CN["银子"]
+“小姐……这家伙”
+
+//●読み：卍（まんじ）＝人名です
+: DrawChara( "Momo", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo01_mom0239" )
+\CN["桃子"]
+“我知道。不全力以赴的话真的很糟糕。
+即使是同一个干部，也比之前战斗过的卍强得多”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: PlayVoice( "Voices/vo11_mik0023" )
+\CN["御影"]
+“看穿对方的{实力，力量}也是才能哦。
+我觉得摇着尾巴逃走更明智……”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0024" )
+\CN["御影"]
+“而且，穿着那里漂亮和服的小姐。
+因为是我的喜好，所以不想伤害别人”
+
+: DrawChara( "Momo", 9, 1)
+: PlayVoice( "Voices/vo01_mom0240" )
+\CN["桃子"]
+“对不起，我没有那个兴趣。
+虽然没有否定的打算”
+
+: DrawChara( "Mikage", 2, 0)
+: PlayVoice( "Voices/vo11_mik0025" )
+\CN["御影"]
+“呵呵，如果是这样的话
+两位都只能在这里处理了”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Gin", 0.5 )
+*battle03
+//――――――――――――――――――――――――――――
+//■戦　闘：織笠御影
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：絶対に勝てない
+//――――――――――――――――――――――――――――
+//＠戦闘：織笠御影,1,1,3
+//●特定ターン（３～５ターンぐらい）経過後
+//＠戦闘前選択肢（勝敗分岐なし）
+//勝利不可バトルなのでスキップさせない
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_Jinja01_05", "BGM/22_BM003", 1014, -1, -1, "Scenarios/SC_A03_14*battle_end3", true)
+
+*battle_end3
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc005" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: SwapImage( 1, 0, "BGImage/Bg_Jinja02_03", 0.0 )
+	: FadeIn( 1.0 )
+	: Wait()
+这场战斗，不能逃走！
+
+	: Jump( "*battle03" )
+: else
+	: Jump( "*sc005" )	//敗北した場合
+: endif
+
+//========================================================
+//○春日神社攻防戦５
+//========================================================
+*sc005
+: FadeIn( 0.0 )
+//●演出：御影の魔法に銀が撃墜される
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: PlayBgm("BGM/28_ID01")
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlaySe( "SE/Se_AnimeL_Fire02" )
+: PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 4, 4 )
+: Wait()
+: ShowWnd()
+就算打进火焰的魔术也能轻易躲开。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["银子"]
+“啊啊啊啊啊啊啊啊！！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_a001_1_1_0600000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0026" )
+\CN["御影"]
+“呵！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Katana01" )
+: PlayAnim( "Animations/AnimeL_Defense02", false, 0, 0, 4, 4 )
+: evbg = true; evcos = false;
+: evfile = "evg_a001_1_1_0600000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0241" )
+\CN["桃子"]
+“小银……！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_a001_1_1_0300000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0027" )
+\CN["御影"]
+“战斗的时候，别人的意见不好吧？”
+
+: PlayVoice( "Voices/vo01_mom0243" )
+\CN["桃子"]
+（魔术的手臂和魔力的量，那边好几张都一直很擅长……。
+虽然很不甘心，但是现在的我完全没法反驳……）
+
+\CN["银子"]
+“哇——”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_a001_1_1_0500000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0028" )
+\CN["御影"]
+“我来教你魔术吧。”
+
+//●演出：御影　上級魔術を使う
+//●戦闘終了
+: cgkeep = false;
+: Call( "Scenarios/Effect*Mikage_Action03" )
+: HideWnd()
+: Call("Scenarios/Common*EvDelete")
+//●演出：桃　倒れる
+//●演技：心の声です
+: DrawChara( "Mikage", 9, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: DrawChara( "Gin", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: DrawChara( "Momo", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0244" )
+\CN["桃子"]
+（……现在的是高级魔术……。
+竟然很简单地控制了那个……）
+
+在老师那里修行，即使这样也可以发动一次
+无法进行的上级魔术。
+
+这个人很容易地就掌握了那个。
+
+: DrawChara( "Gin", 12, 0)
+\CN["银子"]
+“哈、哈、哈……切……这样的话……”
+
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: chara = "Momo"; lay = 4; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0245" )
+\CN["桃子"]
+“小银……！？”
+
+小银抱着我跑了起来。
+
+: DrawFaceThumbnail( "Gin", 12, 0 )
+\CN["银子"]
+“小姐，对不起。我不能死在这里。”
+
+: DrawFaceThumbnail( "Momo", 12, 1 )
+: PlayVoice( "Voices/vo01_mom0246" )
+\CN["桃子"]
+「…………」
+
+虽然很后悔，但是我再也做不了什么了。
+
+在失意中失去了意识。
+
+: DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo11_mik0029" )
+\CN["御影"]
+“嘛，看你救了京子
+请特别放过他吧”
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0030" )
+\CN["御影"]
+“那么，必须把这个可憎的神社烧成灰烬。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+那天，历史悠久的神社“春日神社”是白夜九星之一
+被织笠御影燃烧了。
+
+据说第二天早上火熄灭了，之后什么也没留下。
+
+……………………………………………………。
+
+//●キャラ選択画面
+//●選択キャラが残っていない場合
+//●分岐：任務失敗数が３未満の場合
+//●シーン：「残酷な大老を警護せよ１」へ
+//＠シナリオジャンプ：SC_A03_16
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーン：「夜道で浪人たちに襲われて……」へ
+//＠シナリオジャンプ：SC_A03_19
+//●分岐終了
+: $money += 3500
+: SetMission( "SC_A03_14_1", "Successed" )
+: Call( "Scenarios/CommonSys*AllRecovery" )
+: Jump( "Scenarios/CommonSys*Chapter_judge03_2" )

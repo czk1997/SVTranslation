@@ -1,0 +1,1480 @@
+//========================================================
+//○約束よ――ずっと側にいて
+//========================================================
+//●場所：宿場町の宿屋・夜
+//●背景：宿屋
+//Yoshi：背景
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_B04_08" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_B04_08" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: Sleep( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+//●視点：桃視点
+御用改后，在途中的驿站町
+住了一晚就回去了……。
+
+: DrawChara( "Momo", 12, 2, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo01_mom0454" )
+\CN["桃子"]
+“啊……偏偏在这样的日子里，只有一个房间空着
+竟然不在……”
+
+和小银成为了同屋。
+
+不，到现在为止因为任务之类的事情也有很多
+在进入鬼灯之前，一般都会一起睡个小杂鱼……。
+
+明明应该和那个一样的……。
+
+: DrawChara( "Momo", 13, 2)
+: PlayVoice( "Voices/vo01_mom0455" )
+\CN["桃子"]
+“为什么这么紧张……！？
+啊，真是的……绝对很奇怪……脸上好像要冒火了……”
+
+: chara = "Momo"; lay = 4; type = "Down";
+: Call( "Scenarios/Common*FgEffOut")
+: PlaySe( "SE/Se_Cloth01" )
+——米粉！
+
+把脸埋在枕头上。
+
+//●演技：心の声です
+: DrawChara( "Momo", 4, 2, 0, 0.5, 0.0, 3, "C")
+: PlayVoice( "Voices/vo01_mom0456" )
+\CN["桃子"]
+（冷静下来，公主椿桃……只是一起睡而已。）
+
+//●演技：心の声です
+: DrawChara( "Momo", 11, 2)
+: PlayVoice( "Voices/vo01_mom0457" )
+\CN["桃子"]
+（啊，不，睡觉并不是这个意思……。
+那个，我在那边也……没什么……。
+如果是银酱的话，那个……）
+
+虽然已经在一起很久了
+小银是怎么回事呢？
+
+——果然和其他男生一样……。
+
+//●演技：心の声です
+: DrawChara( "Momo", 14, 2)
+: PlayVoice( "Voices/vo01_mom0458" )
+\CN["桃子"]
+（说起来，我原本就是这么认为的吗？
+对于小银来说，是能感受到其魅力的对象吗……）
+
+//●演技：心の声です
+: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0459" )
+\CN["桃子"]
+（我啊，在想什么……啊……！）
+
+//●演技：心の声です
+: DrawChara( "Momo", 4, 2)
+: PlayVoice( "Voices/vo01_mom0460" )
+\CN["桃子"]
+（年纪左右的男女就这样在一个房间里只有两个人
+什么都没有反而……）
+
+但是，到现在为止什么都没有。
+
+到现在为止主要和从者是关系
+不，但是那只是表面上的东西
+没什么特别的，虽然不是突然发生的事情。
+
+啊，脑子里乱七八糟的！
+
+//●演技：心の声です
+: DrawChara( "Momo", 12, 1)
+: PlayVoice( "Voices/vo01_mom0461" )
+\CN["桃子"]
+（……我难道不是这样的对象吗？）
+
+: DrawChara( "Gin", 0, 0, 0, 0.0, 0.0, 2, "RC" )
+: lay = 2; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: DrawChara( "Momo", 12, 1)
+: PlayVoice( "Voices/vo01_mom0462" )
+\CN["桃子"]
+“对于小银来说，不能被当做女人看待
+不是想做的女人吗……”
+
+\CN["银子"]
+“我觉得没那回事……”
+
+: HideWnd()
+: EraseChara( "Momo", 0.0 )
+: ResetLayer(4)
+: DrawChara( "Momo", 13, 2, 0, 0.5, 0.0, 4, "LC")
+: Wait()
+: ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0463" )
+\CN["桃子"]
+“啊！？小木，小银……！？
+什么时候回来的……？”
+
+应该去洗澡的小银
+就在眼前，吓了一跳。
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“这是女儿把脸埋在枕头上，脚开始吧嗒吧嗒的样子。”
+
+呜呜……不觉……！
+不好意思的地方，被好好地看了……！
+
+: DrawChara( "Momo", 11, 2)
+: PlayVoice( "Voices/vo01_mom0464" )
+\CN["桃子"]
+“对，那个……啊，那个，小银……
+你有那样的在意吗？即使是我的对手……”
+
+: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0465" )
+\CN["桃子"]
+“那个，是这样的对象吗……是，你觉得想要拥抱吗？”
+
+被问到这里的话，索性全部都——
+
+: JumpLayer( 2, 0, -50, 1, 0.25)
+: DrawChara( "Gin", 1, 0, 0 )
+\CN["银子"]
+“真是的……”
+
+: DrawChara( "Momo", 3, 2)
+: PlayVoice( "Voices/vo01_mom0466" )
+\CN["桃子"]
+“……小银……！”
+
+: HideWnd()
+: beforelay = 2; afterlay = 2; move = -1; time = 0.5;
+: chara = "Gin"; face = 0; hoho = 0; pose = 0; pos = "C";
+: Call( "Scenarios/Common*FgPosChange" )
+: Wait()
+: PlaySe( "SE/Se_Cloth01" )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: ShowWnd()
+小银轻轻地抱住我，然后——
+
+//●演技：キスです
+//: DrawChara( "Momo", 12, 2)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_a004_1_3_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0467" )
+\CN["桃子"]
+“嗯，嗯……嗯……”
+
+被亲吻。
+
+//: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+「…………」
+
+//: DrawChara( "Momo", 12, 2)
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Kiss", 2) endif
+: PlayVoice( "Voices/vo01_mom0468" )
+\CN["桃子"]
+“嗯……嗯……嗯……哈，哈……嗯……”……
+嗯，嗯……嗯……嗯，嗯……”
+
+我也伸出嘴唇
+好好配合。
+
+//: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“……嗯……是小姐吗？”
+
+//: DrawChara( "Momo", 1, 2)
+: PlayVoice( "Voices/vo01_mom0469" )
+\CN["桃子"]
+“已经停不下来了……脑子一片空白……”……
+只能感觉到小银……”
+
+//: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“我也是……”
+
+//: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0470" )
+\CN["桃子"]
+“嗯……嗯……嗯，嗯……嗯……”……
+小银……嗯，嗯，嗯，嗯……”
+
+我非常能感受到小银。
+
+我想再多做一点。我想再靠近一些。
+更加坚强……更加——
+
+//●演技：最後のんんんッでディープキスに入ります
+//: DrawChara( "Momo", 12, 3)
+: PlayVoice( "Voices/vo01_mom0471" )
+\CN["桃子"]
+“哈、哈、嗯……嗯……嗯！？”
+
+小银的舌头伸进来了。
+
+//: DrawChara( "Momo", 12, 3)
+: PlayVoice( "Voices/vo01_mom0472" )
+\CN["桃子"]
+“嗯……嗯，嗯……嗯，嗯，嗯！”！
+嗯，嗯……哈，嗯……”
+
+//: DrawChara( "Momo", 12, 3)
+: PlayVoice( "Voices/vo01_mom0473" )
+\CN["桃子"]
+“嗯……嗯……嗯，嗯……嗯，嗯，嗯，我是小鲁♥</color>」
+
+舌头缠绕，唾液交替。
+
+接吻这么厉害。
+
+//●演技：心の声です
+//: DrawChara( "Momo", 12, 3)
+: PlayVoice( "Voices/vo01_mom0474" )
+\CN["桃子"]
+（身体轻飘飘的……小银……小银……）
+
+//: DrawChara( "Gin", 7, 1)
+\CN["银子"]
+“……嗯……嗯……”
+
+//: DrawChara( "Momo", 12, 3)
+: PlayVoice( "Voices/vo01_mom0475" )
+\CN["桃子"]
+“嗯……哈，哈，接吻，也很厉害……”♥</color>
+更加……嗯，嗯，嗯，嗯，嗯！”
+
+接吻渐渐变成激烈的东西
+声音一下子变大了。
+
+发出这样的声音
+要说害羞的话会很不好意思。
+
+但是，比起那个更是一个劲地在赌博
+一直很在意心脏的跳动……。
+
+//: DrawChara( "Gin", 6, 1)
+\CN["银子"]
+“……小姐……”
+
+对温柔的呼唤无言地微微点头。
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//●演出：立ち絵　消す
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: PlaySe( "SE/Se_Cloth01" )
+: ShowWnd()
+小银小心翼翼地脱下衣服。
+
+之后被被子推倒了——
+
+//●ＣＧ：桃と銀　初体験（桃）
+//●ＣＧ差分：未挿入
+: StopBgm( 1.0 )
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "ByInvited", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 1) endif
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_1_0110001_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/33_H_LOVE")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0476" )
+\CN["桃子"]
+“……小银……我的裸体，全部都被看到了……”
+
+\CN["银子"]
+「…………」
+
+: PlayVoice( "Voices/vo01_mom0477" )
+\CN["桃子"]
+“怎、怎么样……？我的身体……”
+
+\CN["银子"]
+“很漂亮……很厉害……我看入迷了……”
+
+: PlayVoice( "Voices/vo01_mom0478" )
+\CN["桃子"]
+“是、是吗……好漂亮……这样啊……呵呵”
+
+不管小银和喜欢的男人做对手
+被看到裸体一定会很害羞。
+
+但是，被说看入迷了的话
+无可奈何地高兴起来。
+
+: PlayVoice( "Voices/vo01_mom0479" )
+\CN["桃子"]
+“再看看……虽然有点不好意思，但还是想让你看看……。
+我想让小银……看看我的全部……”
+
+作为贵族的女儿长大的我，变成了自己喜欢的男人
+我做梦也没想到能这样把一切都暴露出来。
+
+总是很从容的小银很紧张
+那个既有趣又可爱，让我充满了内心。
+
+//●ＣＧ差分：未挿入・乳揉み
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "BreastPetting", 1) endif
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_2_0210001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: layer = 8; time = 1.0; strength = 20; vibrato = 40;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+//●演技：乳房を触られています
+: PlayVoice( "Voices/vo01_mom0480" )
+\CN["桃子"]
+“啊啊！嗯……！”
+
+: PlayBackVoice( "Voices/BGV01_mom_aegi04" )
+小银坚硬的手只是轻轻地碰了一下乳房
+身体吓得直哆嗦。
+
+\CN["银子"]
+「……」
+
+: PlayVoice( "Voices/vo01_mom0481" )
+\CN["桃子"]
+“只是有点吃惊而已……。
+按照小银想做的去做，好啊」
+
+\CN["银子"]
+“啊，啊……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_2_0310001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0482" )
+\CN["桃子"]
+“呼……嗯……哈，啊啊啊啊啊啊啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV01_mom_jigo01" )
+可能有点痒……。
+但是，手指接触到的地方会渐渐发热。
+
+\CN["银子"]
+“小姐的胸部又大又软。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_2_0110001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0483" )
+\CN["桃子"]
+“嗯……对，是的……如果小银能满足的话
+嘛……”
+
+: PlayVoice( "Voices/vo01_mom0484" )
+\CN["桃子"]
+“只要喜欢，就可以触摸……哈，哈，小银的
+想做的事情，做……嗯，啊，啊啊啊啊！”
+
+用力地揉搓乳房。
+
+完全没有疼痛。
+对贯穿全身的冲击发出了声音。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_2_0210001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0485" )
+\CN["桃子"]
+“小银……嗯，嗯，嗯，啊啊啊啊！”
+
+: PlayVoice( "Voices/vo01_mom0486" )
+\CN["桃子"]
+“哈，哈，那么大的乳房，可以吗？
+男孩子果然都喜欢胸部吗？”
+
+\CN["银子"]
+“我因为是大小姐所以很兴奋……”
+
+: PlayVoice( "Voices/vo01_mom0487" )
+\CN["桃子"]
+“是、是吗……因为是我的……呵呵……”
+
+\CN["银子"]
+“小姐，胸部很脆弱吧？
+这里什么的，已经——”
+
+//●演技：乳首を弄られます
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_2_0310001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0488" )
+\CN["桃子"]
+“这、这里……呼啊、智、乳头……呜、啊、呜、
+被玩弄了的话……嗯……！啊，感觉到了……”
+
+: PlayVoice( "Voices/vo01_mom0489" )
+\CN["桃子"]
+“啊，嗯，啊啊啊！嗯……哈……啊……
+唔……勃起了，好害羞……”
+
+小银用手指捏乳头
+在手指肚里滚来滚去。
+
+身体一边颤抖一边发出热声。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_2_0410001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0490" )
+\CN["桃子"]
+“嗯，啊，哈……嗯，啊，啊……啊，哈
+嗯……哈哈……啊啊啊，嗯，嗯！”
+
+: PlayVoice( "Voices/vo01_mom0491" )
+\CN["桃子"]
+“哈……哈……啊，呃，啊…啊啊啊啊啊啊！
+小银……光是乳头就太过悲伤了……”
+
+//●演技：軽い絶頂です
+: PlayVoice( "Voices/vo01_mom0492" )
+\CN["桃子"]
+“啊……啊啊……真是让人毛骨悚然……嗯，嗯……”……
+啊，好热啊……来了……嗯，啊，呜哇！”
+
+//●ＣＧ差分：未挿入・乳揉み・愛液
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_2_0310002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+好厉害！好厉害！好厉害！好厉害！好厉害！
+
+\CN["银子"]
+“小姐，现在……？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_2_0110002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0493" )
+\CN["桃子"]
+“哈哈……嗯……嗯……嗯……嗯……
+好像稍微有点被你吸引了……”
+
+被摸了乳头，只是被爱抚了一下就很轻地绝顶了。
+
+\CN["银子"]
+“没有……完全没有。
+这样的话，我很开心……”
+
+\CN["银子"]
+“小姐，我也差不多该……”
+
+//●ＣＧ差分：未挿入・指マン・愛液
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "VaginaPetting", 1) endif
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_3_0210002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——加油！
+
+//●演技：膣口を指で触られています
+: PlayVoice( "Voices/vo01_mom0494" )
+\CN["桃子"]
+“嗯～～～～！”
+
+: PlayVoice( "Voices/vo01_mom0495" )
+\CN["桃子"]
+“嗯，啊，哈哈……啊，小银……那个
+哎呀，呜，啊啊啊啊！”
+
+如果手指碰到了那个人
+肚子下面一下子热起来了。
+
+\CN["银子"]
+“好厉害的湿了。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_3_0110002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0496" )
+\CN["桃子"]
+“呃……不，不要说啊……。
+让你这样做的，是小银啊……”
+
+也有已经轻一点的吗
+我的那只蚕用手指一碰就发出声音
+我被淋湿了。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——中、中、中……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_3_0210002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0497" )
+\CN["桃子"]
+“嗯，啊，嗯，嗯……啊，啊，啊……啊！”
+
+: PlayVoice( "Voices/vo01_mom0498" )
+\CN["桃子"]
+“对，那里，用手指……对，只是被抚摸……啊，啊
+呜呜！我说，不好意思……”
+
+\CN["银子"]
+“不好好准备的话会很疼的。”
+
+: PlayVoice( "Voices/vo01_mom0499" )
+\CN["桃子"]
+“那、那……我知道……”
+
+事到如今，从今以后我要当小银了。
+被小银拥抱了……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_3_0510002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0500" )
+\CN["桃子"]
+“啊啊啊，啊，嗯……啊，啊啊，嗯！”
+
+小鸡叽里咕噜地疼。
+
+爱液满溢到连自己都能明白的程度。
+
+不仅是心，身体也想要小银，想要和她紧紧相连
+反应了。
+
+\CN["银子"]
+“小姐，请放松一下。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——嘘、嘘、努奇……！
+
+//●演技：指が膣内に入ってきています
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_3_0210002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0501" )
+\CN["桃子"]
+“嗯……嗯，嗯……嗯！嗯……嗯……嗯……
+啊……嗯……啊啊啊啊……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+中穗……软绵绵……
+
+小银的手指慢慢地进入{阴道内，内}。
+
+: PlayVoice( "Voices/vo01_mom0502" )
+\CN["桃子"]
+“嗯……啊…啊……啊啊，啊啊啊啊啊啊啊啊啊！”
+
+\CN["银子"]
+“在大小姐中，会变得很热，手指也会紧闭起来……”
+
+: PlayVoice( "Voices/vo01_mom0503" )
+\CN["桃子"]
+“那、那、那是、变成这样了吗……？”
+
+\CN["银子"]
+“……自己做什么呢？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_3_0110002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0504" )
+\CN["桃子"]
+“自己做的时候……栗子、摸、摸乳头……”
+
+: PlayVoice( "Voices/vo01_mom0505" )
+\CN["桃子"]
+“小银，你说什么……！”
+
+甚至会反射性地说这些私人的事情
+已经没有富余了。
+
+\CN["银子"]
+“对不起，不知不觉……”
+
+: PlayVoice( "Voices/vo01_mom0506" )
+\CN["桃子"]
+“呃……完全不是抱歉的感觉……”
+
+\CN["银子"]
+“是吗？
+那么，再稍微在这里放松一下吧”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——啾啾、啾啾、啾啾……！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_3_0410002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0507" )
+\CN["桃子"]
+“嗯，嗯，哈！啊，啊，啊
+哈、嗯、啊、嗯啊啊啊啊啊啊啊啊！”
+
+: PlayVoice( "Voices/vo01_mom0508" )
+\CN["桃子"]
+“哈……哈，嗯，嗯，啊……嗯，嗯！
+小银……音，不是故意的……？”
+
+\CN["银子"]
+“不，没什么……”
+
+嘴里满是讨厌的声音
+小银的手指刺激了入口浅的地方。
+
+或者说是手指被插入时所抱的违和感
+异物感之类的东西总有一天会消失。
+
+用手指解开了，好像渐渐习惯了。
+
+这样的话，就可以好好接受小银了。
+我是这么确信的
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_3_0210002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0509" )
+\CN["桃子"]
+“我觉得已经没问题了……。
+哈，哈，小银的那个，希望能插上……”
+
+\CN["银子"]
+“啊……”
+
+//●ＣＧ差分：未挿入・愛液・男性器
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_1_0110002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+小银的那个突然出现在我面前。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom0510" )
+\CN["桃子"]
+（呃，骗人的……小金是那么大的东西吗！？）
+
+\CN["银子"]
+“嗯？果然很恐怖吗？”
+
+: PlayVoice( "Voices/vo01_mom0511" )
+\CN["桃子"]
+“不是，不是那样的……，我要看真正的小爷爷
+因为是第一次，所以吓了一跳……”
+
+: PlayVoice( "Voices/vo01_mom0512" )
+\CN["桃子"]
+“这么大的真的能进去吗……？”
+
+\CN["银子"]
+“对不起……。但是，已经不能回去了。”
+
+: PlayVoice( "Voices/vo01_mom0513" )
+\CN["桃子"]
+「哇，我也是。不想在这里结束……。
+好不容易做到了这一步，所以……”
+
+: PlayVoice( "Voices/vo01_mom0514" )
+\CN["桃子"]
+“我想好好接受小银成为一体……”
+
+\CN["银子"]
+“小姐，我会慢慢插上去的。”
+
+: PlayVoice( "Voices/vo01_mom0515" )
+\CN["桃子"]
+“嗯……来，小银……”
+
+//●ＣＧ差分：挿入・愛液
+: StopBackVoice()
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0210002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘……呜呜……努奇……呜！
+
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo01_mom0516" )
+\CN["桃子"]
+“啊……嗯，嗯，嗯！”
+
+: PlayBackVoice( "Voices/BGV01_mom_aegi05" )
+\CN["银子"]
+“！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0410002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0517" )
+\CN["桃子"]
+“小银……呃，啊……啊啊啊啊啊啊啊啊…！”
+
+阴道口慢慢扩大。
+
+小腹部突然受到沉重冲击
+一点一点地强烈的压迫感袭来。
+
+: PlayVoice( "Voices/vo01_mom0518" )
+\CN["桃子"]
+“没关系……这种程度，什么都没有……”
+
+: PlayVoice( "Voices/vo01_mom0519" )
+\CN["桃子"]
+“哈，哈，再来一点……不能放弃……。
+嗯……嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+小鸡鸡渐渐进入{阴道内，肚子}。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom0520" )
+\CN["桃子"]
+（呜呜呜……啊，好烫……小银的传过来……）
+
+\CN["银子"]
+“小姐……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0410002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0521" )
+\CN["桃子"]
+“嗯，嗯，啊……哈，哈……
+呃，呃，嗯”
+
+我知道肚子下面会变紧。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom0522" )
+\CN["桃子"]
+（听说第一次做爱会很痛……
+比想象中的还要平静……）
+
+但是，如果是其他人的话果然会很痛吧。
+
+因为对方是小银——
+我想接受，想接受。
+
+: PlayVoice( "Voices/vo01_mom0523" )
+\CN["桃子"]
+“就这样，过来……哈，哈，我没事……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘……嘘……嘘……嘘……嘘……嘘……嘘！
+
+\CN["银子"]
+“恩……！”
+
+: PlayVoice( "Voices/vo01_mom0524" )
+\CN["桃子"]
+“哈……啊啊啊啊……啊！嗯……嗯……
+嗯……是啊，啊啊，嗯！”
+
+\CN["银子"]
+“大小姐中……好厉害，好烫……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0525" )
+\CN["桃子"]
+“是、是吗……嗯，那个……怎么样？”？
+我的{阴道内，内}……舒服吗……？」
+
+\CN["银子"]
+“非常……”
+
+: PlayVoice( "Voices/vo01_mom0526" )
+\CN["桃子"]
+“呐，那……太好了……嗯……小银好好地
+心情变好了……”
+
+: PlayVoice( "Voices/vo01_mom0527" )
+\CN["桃子"]
+“哈……哈……呃，空，啊啊啊啊啊……！
+小银……小银……啊，嗯，嗯，嗯！”
+
+{阴道内，内}更加扩大。
+
+虽然说痛苦很痛苦……。
+
+但是，小银好好地进来了
+能感觉到联系在一起非常开心。
+
+所以——
+
+: PlayVoice( "Voices/vo01_mom0528" )
+\CN["桃子"]
+“就这样……走到最后……”
+
+\CN["银子"]
+“呜……嗯……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——噗哧！肉棒！啧啧！奇奇！加油！
+
+感觉小豆吱吱响，里面被塞进去了。
+
+但是，我一点也不觉得不舒服。
+我想感受更多的小银。
+
+: PlayVoice( "Voices/vo01_mom0529" )
+\CN["桃子"]
+“啊啊啊啊……呃……哈哈，嗯……呃！
+嗯哈、嗯、啊啊啊……哈、哈……”
+
+//●演技：処女喪失です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0410002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0530" )
+\CN["桃子"]
+“呜……嗯……啊啊啊啊啊啊啊啊啊啊啊——！！”
+
+//●ＣＧ差分：挿入・破瓜・愛液
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0511003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+哇，哇！！！
+
+小银一口气走进了我的房间。
+
+: PlayVoice( "Voices/vo01_mom0531" )
+\CN["桃子"]
+“哈……哈……哈……哈……哈…哈…哈……”
+
+\CN["银子"]
+“呼～……小姐……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0211003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0532" )
+\CN["桃子"]
+“好好地，全部放进去了……？
+小银的、我的{阴道内、内}全部……”
+
+\CN["银子"]
+“我的全部都做好了。”
+
+那只小鸡叽里咕噜地疼。
+{阴道内，内}被压迫的感觉很好。
+
+但是，但是——
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0111003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0533" )
+\CN["桃子"]
+“那么大的，好好地放进去了……”
+
+: PlayVoice( "Voices/vo01_mom0534" )
+\CN["桃子"]
+“和小银好好地连在了一起……。
+呵呵……我被小银接受了……”
+
+这让我非常开心，不是开玩笑，而是眼泪夺眶而出
+构成。
+
+在做之前瞥了一眼小银的小金非常胖。
+那个现在，收纳在我的{阴道内，内}不可思议。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0311003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0535" )
+\CN["桃子"]
+“嗯，啊，啊啊……小银的……”……
+我的{阴道内，内}，战战兢兢的……」
+
+在那之后的一段时间里，就这样一直连接着。
+
+虽然是杜松子酒，但是渐渐习惯了
+感觉已经习惯了。
+
+: PlayVoice( "Voices/vo01_mom0536" )
+\CN["桃子"]
+“我可以喜欢小银……”
+
+: PlayVoice( "Voices/vo01_mom0537" )
+\CN["桃子"]
+“好像已经很熟悉了……。
+已经没关系了……小银，可以动了吗……？”
+
+\CN["银子"]
+“啊。但是，如果难受的话请好好说。
+不要忍耐”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！加油！嘘！努布！好！嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0211003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ゆっくりとしたピストンです
+: PlayVoice( "Voices/vo01_mom0538" )
+\CN["桃子"]
+“啊啊啊啊……啊，啊，嗯……哈哈哈，嗯
+啊……啊啊啊啊……”
+
+: PlayVoice( "Voices/vo01_mom0539" )
+\CN["桃子"]
+“小银在动……我的{阴道内，肚子}，小气鬼
+被摩擦了……呼啊，啊，嗯”
+
+\CN["银子"]
+“嗯……呃……哈……哈……”
+
+小银慢慢地动了动腰。
+
+小嘴，虽然听到了讨厌的声音很不好意思。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_4_0411003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0540" )
+\CN["桃子"]
+“嗯，嗯，嗯，嗯啊啊啊！哈，嗯，嗯，嗯
+哈、哈……嗯……！”
+
+: PlayVoice( "Voices/vo01_mom0541" )
+\CN["桃子"]
+“小气鬼、{阴道内、肚子}……很硬的嘴
+然后移动……”
+
+移动的话还有点痛苦，很刺激。
+
+但是，公鸡{阴道内，肚子}咕咕叫的话
+从身体深处什么热的东西涌上来。
+
+: PlayVoice( "Voices/vo01_mom0542" )
+\CN["桃子"]
+“哇啊啊啊！啊，啊啊，嗯……！”！
+哈、哈、嘻、唔、哇啊啊啊啊啊……！”
+
+\CN["银子"]
+“小姐……？”
+
+: PlayVoice( "Voices/vo01_mom0543" )
+\CN["桃子"]
+“不，不是的……只是随便说了声而已……”
+
+: PlayVoice( "Voices/vo01_mom0544" )
+\CN["桃子"]
+“再多活动一下没关系……好的，小银
+别客气……随你喜欢……心情变好……”
+
+//●ＣＧ差分：挿入・乳揉み・破瓜・愛液
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0311003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！嘘！咕嘟咕嘟！嘘！加油！
+祝你好运！祝你好运！加油！嘘！祝你好运！
+
+\CN["银子"]
+“哈……哈……小姐……里面……”
+
+小银痛苦地皱起眉头。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0111003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0545" )
+\CN["桃子"]
+“呐，{阴道内，内}……我呢，怎么样呢……？”
+
+\CN["银子"]
+“怎么说呢……好厉害，好厉害啊，好厉害啊，好厉害啊
+缠绕在一起……动起来的话，心情好得不得了”
+
+: PlayVoice( "Voices/vo01_mom0546" )
+\CN["桃子"]
+“那，那就更不用客气了……
+可以激烈到让我一塌糊涂的程度”
+
+小银能让我心情变好
+我很开心很可爱。
+
+是这样的吧？
+一想到要让小银喜欢我，内心就扑通扑通的。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+努布！慢吞吞！格格！好！嘘！
+
+//●演技：ピストン、激しくなります
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0411003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0547" )
+\CN["桃子"]
+“啊，啊，啊，啊啊啊啊啊啊啊！啊啊啊啊啊
+啊，嗯，啊，嗯，嗯”
+
+: PlayVoice( "Voices/vo01_mom0548" )
+\CN["桃子"]
+“哈，虽然很激烈，但是没关系……被小银搅乱了
+小金，动得很激烈的话，嗯，感觉很厉害呢”
+
+\CN["银子"]
+“哈，哈，哈……嗯，嗯……！”
+
+银酱的腰的动作越来越激烈。
+
+增加了热度的公鸡一边在阴道内摩擦一边来回移动
+每次阴道内都会蠕动。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0211003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom0549" )
+\CN["桃子"]
+（已经不行了……真的……。
+脑子一片空白，什么都想不出来了……）
+
+: PlayVoice( "Voices/vo01_mom0550" )
+\CN["桃子"]
+“嗯————！啊，啊，啊啊啊啊啊啊啊！”
+
+\CN["银子"]
+“已经，差不多该……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0111003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0551" )
+\CN["桃子"]
+“差不多该……嗯啊啊啊啊啊啊啊啊啊啊啊！
+啊————啊————小银……”
+
+\CN["银子"]
+“糟糕，是……射精，好像……”
+
+小银打算弯腰。
+
+那么说来，不带避孕器具就那样气势高涨
+互相寻求了呢。
+
+——和一直放弃的真心喜欢的人结婚。
+
+那么，我想更贪婪一些。
+我想好好地接受小银的事情直到最后。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0411003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0552" )
+\CN["桃子"]
+“不出门也可以……{阴道内，内}给我……
+哈、哈……精液、{阴道内、内}排出……”
+
+\CN["银子"]
+“然后，但是……”
+
+: PlayVoice( "Voices/vo01_mom0553" )
+\CN["桃子"]
+“好的……让我全部接受小银的……”
+
+\CN["银子"]
+“……我知道了。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0311003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！嘘！嘘！格格！呼呼！
+嘘！嘘！嘘！努奇！小矮人！嘘！
+
+: PlayVoice( "Voices/vo01_mom0554" )
+\CN["桃子"]
+“嗯！啊啊啊啊！啊，啊啊啊啊啊啊啊啊啊啊！”！
+小银过来……就这样……”
+
+//●演技：絶頂です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0411003_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0555" )
+\CN["桃子"]
+“啊啊啊，啊啊啊……啊…嗯……嗯……”……
+啊啊啊啊啊啊啊啊啊————————————！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・乳揉み・破瓜・愛液・射精精液
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(20,30)) endif
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0511003_1101010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克！别克！别克！咕嘟咕嘟！
+
+在到发根为止好好地收纳着的状态下
+公鸡咕咚咕咚地乱蹦。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0211003_1101010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0556" )
+\CN["桃子"]
+“啊……好热啊……流了过来……嗯……”……
+哈……哈……呜……呜……”
+
+\CN["银子"]
+“——小姐……嗯！”
+
+//●演出：射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call ( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——咚！咚！咚！咕嘟咕嘟！
+
+//●ＣＧ差分：挿入・乳揉み・破瓜・愛液・射精後精液
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_5_0111013_1101020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0557" )
+\CN["桃子"]
+“哇，好厉害……还没出来……感觉好像进入了里面。
+肚子……{阴道内，肚子}变暖和了……」
+
+: PlayVoice( "Voices/vo01_mom0558" )
+\CN["桃子"]
+“嗯……嗯，哈，哈……在里面。
+从爷爷那里……嗯，以非常大的气势出来……恩”
+
+\CN["银子"]
+“哈……哈……”
+
+银酱气喘吁吁地流着汗。
+
+一看到那张脸就觉得很可爱
+满溢出无可奈何的泪水。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b001_1_1_0411013_1101010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0559" )
+\CN["桃子"]
+“小银……”♥</color>」
+
+在背上尽情地转动手臂紧紧抱住。
+
+: PlayVoice( "Voices/vo01_mom0560" )
+\CN["桃子"]
+“你的背这么宽啊。”
+
+\CN["银子"]
+“是吗？”
+
+: PlayVoice( "Voices/vo01_mom0561" )
+\CN["桃子"]
+“心脏在跳动吗？
+难道小银也很紧张吗？”
+
+\CN["银子"]
+“啊，当然啦……。
+抱着喜欢的女人不可能不紧张”
+
+: PlayVoice( "Voices/vo01_mom0562" )
+\CN["桃子"]
+“是吗，是吗……呵呵，因为和喜欢的女人在一起所以很紧张……。
+那个小银……”
+
+\CN["银子"]
+“怎么了……？”
+
+: PlayVoice( "Voices/vo01_mom0563" )
+\CN["桃子"]
+“不……没什么。”
+
+虽然语气粗鲁，但我很珍惜
+传来了，高兴得想打闹。
+
+//●演出：場面転換トランジション
+//●ＣＧ：まったり事後（桃）
+//●演技：事後、まったりしています
+: HideWnd()
+: StopBackVoice()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b002_1_1_0100002_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 1.0 )
+: PlayBgm("BGM/48_Goodnight")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0564" )
+\CN["桃子"]
+“嗯……嗯……嗯，脑袋还在发呆。
+而且下面也很麻利……”
+
+行为结束后，在小银的枕边悠闲地休息。
+
+\CN["银子"]
+“好的，对不起……我控制不住了……”
+
+: PlayVoice( "Voices/vo01_mom0565" )
+\CN["桃子"]
+“这样啊。你那么着迷……”
+
+嘛，我也说过要激烈一些。
+
+啊啊啊……回想起来，我们真的很厉害
+玩得很开心呢……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b002_1_1_0200002_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0566" )
+\CN["桃子"]
+“小银……最喜欢了……”
+
+\CN["银子"]
+“我也是……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evb_b002_1_1_0300002_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+脸颊贴在小银火热的胸板上。
+
+就这样把脸埋在脸上，委身于睡梦之中。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+: CharaAddSkill( "Momo", 50802 )
+: CharaSetPassiveSkill1( "Momo", 50802 )
+学会了被动技能“最佳伴侣”。
+※如果不装备“最佳合作伙伴”的话
+有被敌人H攻击的可能性。请注意。</color>
+
+//シーン登録
+: SceneFlagUp( "SC_B04_08" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaLostVirgin( "Momo", 100 ) endif
+: if ( $inExtra == false ) CharaSexHistory( "Momo", 100 ) endif
+//＠Ｈシーン終了：SC_B04_08
+//●シーン：「般若」へ
+//＠シナリオジャンプ：SC_B04_09
+//桃　非処女に
+: Flag( "NonVirgin_Momo", true )
+: Flag( "Love_Momo", true )
+//桃復帰フラグ
+: Flag( "MomoReturn", true )
+: Jump( "Scenarios/SC_B04_09" )

@@ -1,0 +1,368 @@
+//========================================================
+//○般若
+//========================================================
+//●視点：第三者視点
+//●背景：貴族の屋敷・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——第二天。
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Room01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition15", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: ShowWnd()
+\CN["贵族"]
+“真是的，真是倒霉……”
+
+贵族是前几天，在被重用的奴隶市露面的男人。
+
+//●分岐：奴隷市を潰せ！　成功の場合
+: if ( MissionProgress( "SC_A03_05_1", "Successed" ) == true )
+	\CN["贵族"]
+“多亏了你，我花费了多余的费用，也没有得到奴隶。
+又踩又踢不是指这个吗”
+
+被捕入狱后，却让幕府的人掌握了巨额资金
+所以，马上就出来了。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	\CN["贵族"]
+“虽然可以拼命逃跑
+没有活着的感觉”
+
+鬼灯打进来说是“御用改”的时候
+一溜烟儿地跑了。
+
+//●分岐終了
+: endif
+\CN["贵族"]
+“‘狗共，鬼灯’在动，这是可恶的将军说
+也就是说没有了眼光……”
+
+\CN["贵族"]
+“虽说想在其他国家看到好的一面
+禁止贩卖奴隶真是令人费解。真没出息”
+
+\CN["贵族"]
+「你们做奴隶的不是大和的人
+到底什么不好，我无法理解……”
+
+自从举办了不同文化交流会之后
+外国人来大和了。
+
+大和人是首位，外国人比那个低很多。
+有这种想法的人很多，这个贵族也是其中之一。
+
+\CN["贵族"]
+“啊————！我生气了！”
+
+\CN["贵族"]
+「好！今天要把奴隶们尽情地玩弄到极致。
+如果不杀掉一两个人的话，是无法平息的”
+
+对方是外国人奴隶。即使杀了也丝毫没有罪恶感。
+对于他们这样的人来说，感觉就像杀了蛆虫和害虫一样。
+
+如果那样决定的话——就是贵族站起来的瞬间。
+
+//●演出：ドアが開いて般若が登場する
+: StopBgm( 0.0 )
+: PlaySe( "SE/Se_DoorOpen01" )
+//あざみ　般若に
+: CharaCostume( "Azami", 4 )
+: DrawChara( "Azami", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["贵族"]
+「！！？」
+
+: PlayBgm("BGM/14_CM014")
+贵族连话都说不出来，瘫软了。
+
+\CN["贵族"]
+“啊……啊…啊……啊…啊……”
+
+贵族男子面前站着一个戴着般若面具的人。
+
+身穿血色的盔甲
+伫立在那里，一言不发。
+
+\CN["贵族"]
+“哈，般若的脸……哦，你难道是……”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe("SE/Se_Foot01")
+: chara = "Azami"; lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: DrawImage( 1, 0, "BGImage/BG_Red", 0.0 )
+//※●演出：般若の斬撃　血飛沫が舞う
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+第二天，在贵族宅邸地下的所有奴隶都受到了保护。
+
+然后，作为宅邸的主人的贵族、媳妇、两个儿子、
+而且还发现了近10个佣人全部的尸体。
+
+落在贵族身旁的一张纸。
+
+在画着般若面具的纸上写着『天诛，天诛』的
+写了两个字。
+
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●視点：あざみ視点
+//●背景：幕府・将軍の間
+//Yoshi：背景（幕府部屋・昼）
+: HideWnd()
+: CharaCostume( "Azami", 0 )
+: DrawImage( 1, 0, "BGImage/BG_BakuhuRoom01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/24_FM002")
+: ShowWnd()
+——幕府将军之间
+
+//●演出：あざみ　登場する
+: DrawChara( "Azami", 6, 0, 0, 0.0, 0.0, 3, "RC" )
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo05_aza0130" )
+\CN["嘲讽"]
+“将军，您叫我吗？”
+
+//●演出：将軍の紹介
+: DrawChara( "Tadakatsu", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["将军"]
+“你知道吗？昨天又出了《般若，般若》
+高滨的贵族被杀了……”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0131" )
+\CN["嘲讽"]
+“……是的，我知道。”
+
+: DrawChara( "Tadakatsu", 19, 0)
+\CN["将军"]
+“到了这个月，白夜干部、九星一白、般若
+被杀的贵族是第五个！你们这些鬼灯在干什么！”
+
+在高滨被杀的贵族是参加了那个奴隶市的贵族
+买了好几个外国奴隶的人。
+
+//●演技：犯人はあざみ本人ですが淡々と話してください
+//●演技：心の声です
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0132" )
+\CN["嘲讽"]
+（据说每个人都有强大力量的白夜干部集团
+九星，其中被认为是首位的“般若”）
+
+//●演技：心の声です
+//●読み：一白（いっぱく）
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0133" )
+\CN["嘲讽"]
+（但是……至今为止没有人见过《般若》。
+也被称为梦幻的一白……）
+
+//●演技：心の声です
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0134" )
+\CN["嘲讽"]
+（在杀人现场留下的画有般若一面的纸。
+上面记载的“天诛”一词显示了般若的罪行。）
+
+: DrawChara( "Tadakatsu", 4, 0)
+\CN["将军"]
+“般若的出现，说明白夜终于认真起来了
+无非是想打败幕府”
+
+: DrawChara( "Tadakatsu", 18, 0)
+\CN["将军"]
+“无论做出多大的牺牲都无所谓。要尽快将白夜毁灭。
+这是比什么都优先的命令！你知道吗？”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0135" )
+\CN["嘲讽"]
+“……我知道了。”
+
+: DrawChara( "Tadakatsu", 19, 0)
+\CN["将军"]
+“可是，为什么还不知道他们的住处呢？”？
+为什么还放任不管呢？”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0136" )
+\CN["嘲讽"]
+“……对不起。我们也每天都在忙着白夜的脚步。”
+虽然在追，但是没抓住……”
+
+: DrawChara( "Tadakatsu", 18, 0)
+\CN["将军"]
+“没出息……真是没出息……！
+你们这些鬼灯到底要花多少费用啊
+不是在想吗！”
+
+//●演技：心の声です
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0137" )
+\CN["嘲讽"]
+（般若是神出鬼没的暗杀者——
+将军也难怪会变成这样……）
+
+过去的白夜总算退出来了。
+但是，被称为梦幻的般若出现后事态发生了变化。
+
+没有一个人见过般若
+没有一个人是被般若袭击而存活下来的
+指示着。
+
+如果被盯上的话，肯定会被杀的。
+
+: DrawChara( "Tadakatsu", 4, 0)
+\CN["将军"]
+“你们这些鬼灯都太不可靠了。
+所以，我正在准备代替你们的新的护卫部队”
+
+: DrawChara( "Tadakatsu", 11, 0)
+\CN["将军"]
+“在那支部队完成之前能捕到般若
+如果做不到的话，今后就把帝都的治安维持交给他们了”
+
+: DrawChara( "Tadakatsu", 16, 0)
+\CN["将军"]
+“如果不愿意的话，就尽快杀了般若，把他的首级交给我
+交给我吧！你明白吗
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0138" )
+\CN["嘲讽"]
+“……我知道了。”
+
+//●演出：あざみ　退場した後に場面転換
+//●背景：帝都・昼
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: DrawChara( "Azami", 1, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0139" )
+\CN["嘲讽"]
+“哈~……话说回来还是‘般若’啊……”
+
+对于般若的事情，我也感到棘手。
+
+//●演技：心の声です
+//●演技：あの子＝黄菜子のことです
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0140" )
+\CN["嘲讽"]
+（那么，怎么样呢？
+嗯，考虑到今后的事情，‘那个孩子’也差不多该——）
+
+如果能保持现状的话，这是最好的。
+
+但是，情况变了。
+用现在的做法是不行的吧。
+
+: HideWnd()
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Azami", 7, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0141" )
+\CN["嘲讽"]
+“……哈~…真的很困扰……”
+
+实际上，般若的出现并不是最近的事情。
+
+很久以前——那才是，在我进入鬼灯之前就叫做般若
+存在过。
+
+《画着般若面具的纸》《天诛这个词》
+只不过这些成了公开的消息传到了将军耳朵里
+这是最近发生的事。
+
+//●演技：心の声です
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0142" )
+\CN["嘲讽"]
+（话说回来，还是新的部队呢……）
+
+自从般若出现后，幕府就从全国各地赶来了
+不问身分，招募有本事的人。
+
+正因为如此，将军才对白夜怀着恐惧心焦虑不安
+是这样的吧。
+
+//●演技：心の声です
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0143" )
+\CN["嘲讽"]
+（好像会有很多麻烦的事情啊……）
+
+据说距今几百年前的大和是一个战争不断的时代。
+
+每分钟，不，每秒，有人在流血。
+书上记载着当时是那样动荡的时代。
+
+在不久的将来，大和又会变成那样的时代吧。
+这次不仅国内，其他国家也被卷入其中。
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0144" )
+\CN["嘲讽"]
+“——现在正是努力的时候啊。”
+
+为了不让那样的时代来临，做什么都可以。
+
+但是，这并不是鬼灯局长的职责。
+说到底这只是“高千穗痣应该做的事”。
+
+//Yoshi：背景消去
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Azami"; lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEffOut")
+//●シーン：「般若を探せ！１」へ
+//＠シナリオジャンプ：SC_A03_07
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: Jump( "Scenarios/SC_A03_07" )

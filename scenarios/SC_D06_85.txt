@@ -1,0 +1,707 @@
+//========================================================
+//○性に溺れし哀れな狐
+//========================================================
+//●背景：黒画面
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D06_85" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D06_85" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: ShowWnd()
+——落入幕府将军一桥忠胜手中的玉藻。
+
+她作为将军的妾，赋予了她的睿智，得到了宠爱。
+
+曾经，几代前的玉藻作为倾国美女，把大和作为战乱的世界
+指引过。
+
+记载着用强大的魔术毁灭了
+那是国家为了方便自己而编辑的东西
+不过。
+
+将玉藻放在一旁的当权者沉溺在玉藻的魅力中
+疏于统治的结果，招致了国民的反对。
+
+而且，全国所有地方都发生了革命
+这是理由。
+
+——而且，现代的将军一桥忠胜也不例外……。
+
+//●ＣＧ：将軍とセックス・騎乗位（玉藻）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_1_0100001_1100000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0408" )
+\CN["玉藻"]
+“将军的小鸡鸡，已经勃起得这么坚强了……。
+快点，做我的漫画……”
+
+把漫画展开。
+
+\CN["将军"]
+「你的manko真恶心。
+开得那么大……”
+
+: PlayVoice( "Voices/vo22_tam0409" )
+\CN["玉藻"]
+“太大了，只不过是将军的小鸡鸡的大小而已……。
+希望你能早点把这个洞埋起来……”
+
+\CN["将军"]
+“呵呵呵。确实有淫靡的香味。
+被那种味道吸引，我也想插进去，所以很烦”
+
+然后，将军大人把回到笑道口的小鸡鸡的头
+猜对。
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0201001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——噗哧噗哧！！！
+
+//●演技：挿入されている状態です
+: PlayVoice( "Voices/vo22_tam0410" )
+\CN["玉藻"]
+“恩啊啊啊！啊，啊，啊…！”
+
+: PlayBackVoice( "Voices/BGV22_tam_aegi02" )
+一口气推到根部。
+
+\CN["将军"]
+“哈哈，好像很着迷啊。
+这只色狐……”
+
+: PlayVoice( "Voices/vo22_tam0411" )
+\CN["玉藻"]
+「呼啊……呜呜呜呜呜呜啊」♥</啊，啊……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0101001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：魔羅→チンポに呼称変更しています
+: PlayVoice( "Voices/vo22_tam0412" )
+\CN["玉藻"]
+“小鸡鸡……将军的小鸡鸡、蕨菜的馒头
+啊，嗯……被埋得满满的啊♥</color>」
+
+\CN["将军"]
+“来房间的话，不要洗澡，直接要求。
+我也不讨厌这种东西”
+
+\CN["将军"]
+“今晚也要好好疼爱他。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+超棒、超棒、超棒、超棒、超棒、超棒、超棒、超棒！
+
+帝都城，只为蕨菜准备的，将军以外的人可以进去
+在不被允许的房间里。
+
+深夜，体液混合在一起的声音和肉相互碰撞的声音
+一边演奏，一边贪图性。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0401001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：下から突き上げられています
+: PlayVoice( "Voices/vo22_tam0413" )
+\CN["玉藻"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊”♥</啊，嗯，嗯，嗯，嗯♥</color>」
+
+坚强挺起的小鸡鸡像挖出了蕨菜的{阴道内，内}一样
+往返过来。
+
+今天早上醒来时，索子就开始寻求将军的小鸡鸡
+欢天喜地地反复收缩。
+
+\CN["将军"]
+“你那么期待吗。
+这么说来，脱掉衣服的瞬间，爱液就漏出来了”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0301001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0414" )
+\CN["玉藻"]
+“哈，哈，从早上开始就一直想要啊……。
+好不容易才被插进去，就自然地做出反应……”
+
+\CN["将军"]
+“呼……今天一整天都在自慰吗？”
+
+: PlayVoice( "Voices/vo22_tam0415" )
+\CN["玉藻"]
+“嗯，不是不做吗……哈，哈，稍微
+因为想在小鸡鸡上心情变好……一直忍耐着……”
+
+: PlayVoice( "Voices/vo22_tam0416" )
+\CN["玉藻"]
+“那么，终于能戴上小鸡鸡了……漫画
+嗯……很高兴……快感一下子涌上来♥</color>」
+
+\CN["将军"]
+“呵呵……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——咕噜咕噜！
+
+将军一边跑来跑去，一边举起了草鞋的身体
+把腰用力地顶上来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0501011_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo22_tam0417" )
+\CN["玉藻"]
+“啊啊啊啊……啊啊啊……啊，突然
+啊，抑制不住……来了……啊啊啊啊啊啊啊！”
+
+没能为意料之外的强烈快感做准备，很轻就达到了。
+
+\CN["将军"]
+“只是稍微突一下就成功了吗？还是那么敏感啊。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0101011_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0418" )
+\CN["玉藻"]
+“本来只是看到将军的小鸡鸡
+因为身体会疼……”
+
+: PlayVoice( "Voices/vo22_tam0419" )
+\CN["玉藻"]
+“在这种状态下，会受到强烈的责备而无法忍受吧。”
+
+\CN["将军"]
+“你的manko还为我服务。
+托你的福，我才失去了其他女人的抱心”
+
+成为我的妾数日后，将军后宫解散了
+现在每晚都会到我身边来。
+
+一开始我很讨厌，一直忍耐着
+随着次数的增加，厌恶感也渐渐淡薄
+不知什么时候，我开始从草绳那里激烈地寻求。
+
+心境的变化是被安排好的
+谋划那个的对方也在研究中。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0101001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo22_tam0420" )
+\CN["玉藻"]
+（是比拉加干的吧……。
+但是，比起一直抱有厌恶感，稍微好一些吧）
+
+\CN["将军"]
+（不愧是希拉加。一直使用那家伙调好的药的结果
+这个女人迷上了你。）
+
+\CN["将军"]
+（荣国的智慧和倾国的美女，两方面都有妖狐。
+如果是你的话，我会好好掌握的……）
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+慢吞吞！嘘！嘘！啧啧！嘘！
+嘘！嘘！嘘！努布布！好！格格！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0401001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0421" )
+\CN["玉藻"]
+“呜，啊啊啊啊，呜，呜啊呜啊”♥</color>
+然后，从下面开始，激烈的，蕨菜的包子，刚刚好”
+
+: PlayVoice( "Voices/vo22_tam0422" )
+\CN["玉藻"]
+“好厉害！从下往上擦，变得敏感的话
+明明这么说……啊，好饿啊♥</color>」
+
+在激烈的冲刺中，快乐的热情再次燃起。
+
+\CN["将军"]
+“哈哈哈，哈……越戳越紧，越紧
+入口勒紧得很厉害，被吸进去的感觉真的很好……”
+
+一边兴奋地呼吸，一边把腰往上顶
+和着那个，笑也摇了腰。
+
+已经可以说是野兽之间的交尾了
+夜里疯了。
+
+: PlayVoice( "Voices/vo22_tam0423" )
+\CN["玉藻"]
+「啊，好舒服啊……！啊啊啊啊！
+感觉肉棒……蕨菜的{阴道内，内}，擦破……」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0301001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0424" )
+\CN["玉藻"]
+“啊，好像又来了……哈，哈，嗯……
+又是将军的小鸡鸡了……”
+
+\CN["将军"]
+“呵呵。比作为主人的我还想先做呢？”？
+刚才也擅自去了？”
+
+: PlayVoice( "Voices/vo22_tam0425" )
+\CN["玉藻"]
+“嗯……不，希望你不要使坏了
+马上就要到那里了，大的上来了……”
+
+: PlayVoice( "Voices/vo22_tam0426" )
+\CN["玉藻"]
+“拜托了……嗯，嗯……我想让我开心。
+真是忍无可忍啊……”
+
+为了不被不断往上爬的绝顶感所牵引
+拼命忍耐。
+
+\CN["将军"]
+“还没有。等我心情好了之后……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！乌七八糟！啧啧！
+努布！嘘！嘘！嘘！咕嘟咕嘟！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0201001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0427" )
+\CN["玉藻"]
+“呃，呃……嗯！啊……啊…啊……呃……”……
+嗯，嗯！”
+
+: PlayVoice( "Voices/vo22_tam0428" )
+\CN["玉藻"]
+“还没呢……？还不能说不行吗？”
+
+\CN["将军"]
+“还差得远呢。因为我看起来还不太好。”
+
+\CN["将军"]
+“用大量的小鸡鸡将用爱液黏在一起的密罐充分地放进去
+让我尝尝吧”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+真烦人！好！兹堡卢鲁鲁鲁！
+
+: PlayVoice( "Voices/vo22_tam0429" )
+\CN["玉藻"]
+“呜……呜……嗯……！
+子宫口中了小鸡鸡♥</color>」
+
+极力忍耐快要达成。
+
+\CN["将军"]
+“manko一直在重复着恶心和蠕动。
+和小鸡鸡纠缠在一起最舒服了”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0301001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0430" )
+\CN["玉藻"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color>
+身体开始发酸……这样的话，已经……”
+
+: PlayVoice( "Voices/vo22_tam0431" )
+\CN["玉藻"]
+“哈、哈、い、い、い……”♥</嗯，啊啊啊啊啊♥</color>
+再忍耐下去，太痛苦了吧……”
+
+\CN["将军"]
+“呼哧呼哧，紧实的起伏很大。
+你的manko是为我而制作的名器啊」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0101001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0432" )
+\CN["玉藻"]
+“那、那……哈、哈、多用在将军身上
+拿过来……就变成将军的小鸡鸡了……”
+
+: PlayVoice( "Voices/vo22_tam0433" )
+\CN["玉藻"]
+“啊，拜托你了……好想得到许可啊……啊啊，好厉害。
+一边感受将军的小鸡鸡，一边想尽情玩耍♥</color>」
+
+\CN["将军"]
+“呵呵，你说的真可爱。
+因为还有一点，所以要忍耐”
+
+\CN["将军"]
+“还有一点，我好像也能射精呢。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！格格！努哈！嘘！嘘！
+狸猫！好！骗人！慢吞吞！
+
+随着激烈程度的提升，乳房一边大幅度地晃动
+一味地抑制住快感。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0401001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0434" )
+\CN["玉藻"]
+“哈……哈……嗯……嗯……嗯！”
+
+\CN["将军"]
+“你那么想吃香吗？啊，玉藻啊。”
+
+: PlayVoice( "Voices/vo22_tam0435" )
+\CN["玉藻"]
+“啊，从刚才开始就一直在说……真想说……”……。
+太忍耐了，快疯了”
+
+\CN["将军"]
+“尽管如此，我还是好好遵守我的话。
+现在我爱你爱得不得了”
+
+: PlayVoice( "Voices/vo22_tam0436" )
+\CN["玉藻"]
+“如果爱得不得了的话，就拼命地笑吧
+虽然是我想要的东西……”
+
+\CN["将军"]
+「呼。太傲慢了没法享受。
+但是，我也差不多到了……”
+
+\CN["将军"]
+“在小鸡鸡上紧紧缠着的阴道褶。
+我和你看起来很投缘……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0201001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0437" )
+\CN["玉藻"]
+“哈、哈、哈……那是因为，每天、每天、
+如果侥幸的话……自然会变成那样的……”
+
+一边被按住双手一边被侵犯的日子——
+
+从那天开始，每天都有数不清的幸福
+不断重复。
+
+有比拉加的帮助，我的身体完全被这个男人俘虏了
+变成这样。
+
+\CN["将军"]
+“哈、哈、哈……我也变得很帅……”
+
+: PlayVoice( "Voices/vo22_tam0438" )
+\CN["玉藻"]
+“啊啊啊，嗯……啊，快点回来……。
+快点回去，我也♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+哼哼、中、咕、咕嘟、ぬ中、中！
+
+将军在向射精的冲刺中从下面猛冲上去。
+蕨为了让将军早日射精而一味地在腰部打滑
+让……下去。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0401001_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0439" )
+\CN["玉藻"]
+“哦哦哦哦…啊，啊……嗯，嗯……嗯……”♥</color>
+快点，精液{射精，だ}……我也想要笑啊♥</color>」
+
+\CN["将军"]
+“呃……我拿出来……嗯……嗯！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0311011_1100010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜、呜呜、呜呜呜、呜呜呜呜呜呜！
+
+//●演技：膣内射精されています
+: PlayVoice( "Voices/vo22_tam0440" )
+\CN["玉藻"]
+“啊……啊……嗯……是吧……”♥</在笑的{阴道内，内}
+小鸡鸡暴走了♥</气势汹汹、精子、射精♥</color>」
+
+: PlayVoice( "Voices/vo22_tam0441" )
+\CN["玉藻"]
+“呃，呃……已经可以了吧……？
+嗯……嗯，嗯……嗯♥</color>」
+
+: PlayBackVoice( "Voices/BGV22_tam_aegi03" )
+一边接受精液，一边询问。
+
+\CN["将军"]
+“好吧……尽情地，好好地……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0111011_1100010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0442" )
+\CN["玉藻"]
+“啊……啊啊啊啊……啊，终于能玩了……”♥</color>
+哈哈，我一直在忍耐……”
+
+好不容易才寸止的快乐之块
+终于能接受了。
+
+: PlayVoice( "Voices/vo22_tam0443" )
+\CN["玉藻"]
+“哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦，好的。”♥</嗯……嗯
+啊……啊…哦哦哦哦♥</color>」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0511011_1100010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo22_tam0444" )
+\CN["玉藻"]
+“呃……已经不行了……已经不行了……”♥</color>
+呜呜呜呜呜——————————！”
+
+//●ＣＧ差分：挿入・膣内射精・潮
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0511011_1110010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！！
+
+\CN["将军"]
+“一边吹着海风一边很开心。
+不是说我的小鸡鸡心情那么好吗”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0211011_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂後です
+: PlayVoice( "Voices/vo22_tam0445" )
+\CN["玉藻"]
+“啊啊啊啊……啊啊啊……啊——啊——啊……”
+
+: PlayVoice( "Voices/vo22_tam0446" )
+\CN["玉藻"]
+“啊，停不下来啊……嘛，又来了……”♥</color>
+啊……啊，又……真是的……啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV22_tam_aegi04" )
+迫近的快乐之波不断涌来。
+
+{阴道内，内}被{射精，だ}了的精液的热
+在内部震动的小鸡鸡的动作使人喘不过气来
+持续被嘲笑。
+
+\CN["将军"]
+“嗯……好像被manko吃了小鸡……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0311011_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0447" )
+\CN["玉藻"]
+「恩啊啊啊啊啊啊啊啊啊啊啊」♥</啊啊啊啊啊啊♥</啊，对了♥</啊，对了♥</啊，对了♥</color>」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0511011_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：連続絶頂です
+: PlayVoice( "Voices/vo22_tam0448" )
+\CN["玉藻"]
+“再见了……<color=59a0>♥</边走边干吧♥</color>
+让我们一起来吧♥</就这样吧♥</color>」
+
+一边大声地叫喊着欢喜仿佛响彻城中
+重蹈覆辙。
+
+我剩下的人生就这样在将军身边
+每夜都是这样被拥抱的吧。
+
+那才是，直到衰败为止，没有尽头。
+
+//●演出：ダイダラボッチフラッシュバック
+: HideWnd()
+: FadeOut( 0.1, 255, 255, 255 )
+: Wait()
+: cutinfile = "Cutin03_03"; Call("Scenarios/Common*CutinFadeIn");
+: Sleep(0.1)
+: FadeIn( 0.1, 255, 255, 255 )
+: Wait()
+: ShowWnd()
+一瞬间，脑海里浮现出丑陋怪物的身影。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo22_tam0449" )
+\CN["玉藻"]
+（——那到底是什么？）
+
+这不是无关紧要的事情。
+
+\CN["将军"]
+“哈、哈、哈……那么，就这样继续下去吧。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_b002_1_2_0111011_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0450" )
+\CN["玉藻"]
+“当然。
+今晚也要把我的身体吃尽就好了”
+
+: PlayVoice( "Voices/vo22_tam0451" )
+\CN["玉藻"]
+“我也是，请让我尽情地享受幸福吧。”
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_D06_85" )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

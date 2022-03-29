@@ -1,0 +1,446 @@
+//========================================================
+//○帝都西街道
+//========================================================
+*Map_Dungeon01_01_001
+//帝都西の森
+: if ( MissionProgress( "SC_A02_50_2","InProgress","Successed" ) == true )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Dungeon08_01_TeitoNishiForest" )
+: else
+	: RpgCharaBatch( "Player"	\
+:		"MoveDown", 1 )
+	: Wait()
+	: Jump( "Scenarios/Map_Event*Closed" )
+: endif
+//========================================================
+//○大葉組の屋敷・ボス前
+//========================================================
+*Map_Dungeon04_03_001
+: RpgCharaTurn( "Player", "Up")
+//――――――――――――――――――――――――――――
+//＠通常選択肢,Map_Dungeon04_03_001_select
+//■選択肢１：準備はできている！
+//■選択肢２：一度、確認する
+//――――――――――――――――――――――――――――
+\CI["準備はできている！"]
+\CI["一度、確認する"]
+ここから先、何かが起こりそうな気がする。
+
+: if ($choice == 1) Jump( "*Map_Dungeon04_03_001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：準備はできている！を選んだ場合
+//-------------------------------------------------------
+*Map_Dungeon04_03_001_select_s1
+: HideWnd()
+: RpgDoorOpen( "Boss" )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 3 )
+: Wait()
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon04_04_Oobagumi3F", "", "Scenarios/SC_A02_01*sc003" )
+
+//-------------------------------------------------------
+//●選択肢２：一度、確認するを選んだ場合
+//-------------------------------------------------------
+*Map_Dungeon04_03_001_select_s2
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: Return
+
+//========================================================
+//○帝都北街道・飯田隆盛の屋敷へ
+//========================================================
+*Map_Dungeon03_03_001
+: if ( MissionProgress( "SC_A02_04_2", "InProgress" ) == true )
+	: HideWnd()
+	: FadeOut( 1.0 )
+	: Wait()
+	: LoadMap( "Map_Dungeon05_01_Iida")
+: else
+	: Jump( "Scenarios/Map_Event*Closed" )
+: endif
+
+//========================================================
+//○帝都南街道
+//========================================================
+*Map_Dungeon06_01_001
+//密談の証拠を手に入れろ！　進行中の場合
+: if ( Flag ( "Party04" ) == true )
+	今、高浜に用はない。
+
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: endif
+
+: FadeOut( 1.0 )
+: Wait()
+: if ( MissionProgress( "SC_A02_06_1", "InProgress" ) == true )
+	: LoadMap( "Map_Town04_01_Takahama", "SC_A02_06", "Scenarios/SC_A02_06*sc002" )
+: elif ( MissionProgress( "SC_A03_03_1", "InProgress" ) == true )
+	: LoadMap( "Map_Town04_01_Takahama", "", "Scenarios/SC_A03_03*sc002a" )
+: elif ( MissionProgress( "SC_C04_09_1", "InProgress" ) == true )
+	: LoadMap( "Map_Town04_01_Takahama", "", "Scenarios/SC_C04_09*sc002" )
+: else
+	: LoadMap( "Map_Town04_01_Takahama","","Scenarios/Map_Town04_Takahama_Init*Map01")
+: endif
+: Return
+
+//========================================================
+//○永登呂山・ボス前
+//========================================================
+*Map_Dungeon07_07_001
+: if ( MissionProgress( "SC_A02_07", "Successed", "Failed" ) == true )
+	: Jump( "Scenarios/Map_Event*Closed" )
+: endif
+//――――――――――――――――――――――――――――
+//＠通常選択肢,Map_Dungeon04_03_001_select
+//■選択肢１：準備はできている！
+//■選択肢２：一度、確認する
+//――――――――――――――――――――――――――――
+\CI["準備はできている！"]
+\CI["一度、確認する"]
+ここから先、何かが起こりそうな気がする。
+
+: if ($choice == 1) Jump( "*Map_Dungeon07_07_001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：準備はできている！を選んだ場合
+//-------------------------------------------------------
+*Map_Dungeon07_07_001_select_s1
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1 )
+: Wait()
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Dungeon07_08_Nagatoro3_Boss", "", "Scenarios/SC_A02_07*sc002" )
+
+//-------------------------------------------------------
+//●選択肢２：一度、確認するを選んだ場合
+//-------------------------------------------------------
+*Map_Dungeon07_07_001_select_s2
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: Return
+
+//========================================================
+//○高浜港・レンガ倉庫
+//========================================================
+*Map_Dungeon09_01
+//奴隷市を潰せ！発生中
+: if ( MissionProgress( "SC_A03_05_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_A03_05" )
+: endif
+//囚われの無黒を救い出せ　発生中
+: if ( MissionProgress( "SC_A03_10_2", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_A03_10*sc003" )
+: endif
+: Return
+//========================================================
+//○高浜港・レンガ倉庫・Ｂ２Ｆ
+//========================================================
+*Map_Dungeon09_04
+//奴隷市を潰せ！発生中
+: if ( MissionProgress( "SC_A03_05_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_A03_05*sc002" )
+: endif
+//見廻組から女衒を守れ！発生中
+: if ( MissionProgress( "SC_C04_09_2", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_C04_09*sc004" )
+: endif
+//: Jump( "Scenarios/Map_Event*Closed" )
+: Return
+
+//========================================================
+//○神那街道
+//========================================================
+*Map_Dungeon12_01_001
+: Jump( "Scenarios/Map_Event*Closed" )
+
+*Map_Dungeon12_01_002
+: Jump( "Scenarios/Map_Event*Closed" )
+
+*Map_Dungeon12_01_003
+: if ( MissionProgress( "SC_A03_09_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_A03_09*sc002" )
+: elif ( MissionProgress( "SC_D05_17_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D05_17" )
+: else
+	: Jump( "Scenarios/Map_Event*Closed" )
+: endif
+: Return
+//========================================================
+//○那須野山・頂上
+//========================================================
+*Map_Dungeon14_04_Nasunoyama
+: if ( MissionProgress( "SC_A03_10_1", "InProgress" ) == true )
+	: RpgEventOn("SC_A03_10")
+: endif
+: Return
+
+//========================================================
+//○大和東街道・北ルート
+//========================================================
+//立て看板
+*Map_Dungeon16_03_001
+←　厚海
+→　春日神社
+
+: Return
+//--------------------------------------------------------
+
+//厚海へ
+*Map_Dungeon16_03_002
+: if ( MissionProgress( "SC_A03_13_1", "InProgress" ) == true )
+	: FadeOut(0.5)
+	: Wait()
+	: LoadMap( "Map_Town09_01_Atsuumi", "", "Scenarios/SC_A03_13*sc002")
+: else
+	: Call( "Scenarios/Map_Event*Closed" )
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: endif
+: Return
+
+*Map_Dungeon16_03_003
+: if ( MissionProgress( "SC_A03_14_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_A03_14*sc002" )
+: else
+	: Call( "Scenarios/Map_Event*Closed" )
+	: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 1 )
+: endif
+: Return
+//========================================================
+//○大和東街道・東西ルート
+//========================================================
+//看板
+*Map_Dungeon16_02_001
+←　西都方面
+↑　不死の山
+
+: Return
+
+//看板２
+*Map_Dungeon16_02_002
+ここより先、不死の山
+許可無き者の立ち入りを禁ず
+
+: Return
+
+//========================================================
+//○北海街道
+//========================================================
+*Map_Dungeon18_00_001
+: if ( Flag ( "EsoEvent" ) == false )
+	: LoadMap( "Map_Town12_01_Eso", "", "Scenarios/SC_B04_05*sc003")
+: else
+	: LoadMap( "Map_Town12_01_Eso" )
+: endif
+: Return
+
+//========================================================
+//○北霊山
+//========================================================
+*Map_Dungeon19_04_001
+: if ( Flag ( "HokureizanEvent" ) == true )
+	: Call( "Scenarios/Map_Event*Closed" )
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+	: Return
+: else
+	: LoadMap( "Map_Dungeon19_05_Hokureizan" )
+: endif
+
+//========================================================
+//○現し身の洞窟Ｃフロア
+//========================================================
+//ボス前
+*Map_Dungeon26_03_001
+: if ( MissionProgress( "SC_B05_05_1", "InProgress" ) == true )
+	\CI["準備できてます！"]
+	\CI["もう１度、確認しましょう"]
+	この先に何かありそうですが……。
+
+	: if ($choice == 0)
+		: RpgCharaMove( "Player", "D", 1)
+		: FadeOut( 0.5 )
+		: Wait()
+		: LoadMap( "Map_Dungeon26_04_UtsushimiCaveBoss", "", "Scenarios/SC_B05_05*sc003")
+	: else
+		: Return
+	: endif
+: else
+	: Jump( "Scenarios/Map_Event*Closed" )
+: endif
+
+//========================================================
+//○不死の山
+//========================================================
+*Map_Dungeon28_06_001
+: if ( MissionProgress( "SC_B05_08_2", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_B05_08*sc004" )
+: elif ( MissionProgress( "SC_B06_02_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_B06_02*sc003" )
+: elif ( MissionProgress( "SC_B06_02_2", "InProgress" ) == true )
+	: FadeOut( 0.5 )
+	: Wait()
+	: LoadMap( "Map_Dungeon28_07_Fushinoyama", "", "Scenarios/Map_Dungeon_Init*Map_Dungeon28_07" )
+: elif ( MissionProgress( "SC_C06_06_1", "InProgress" ) == true )
+	: if( CharaHasSkill( "Mukuro", 10 ) == false )
+		: HideWnd()
+		: PlaySe( "SE/Se_Effect01" )
+		: FadeOut( 0.5, 255, 255, 255 )
+		: Wait()
+		: FadeIn( 0.5, 255, 255, 255 )
+		: ShowWnd()
+		決戦前に挑む覚悟が無黒と冥の力を覚醒させる。
+
+		: CharaAddSkill( "Mukuro", 10 )
+		無黒は『八重桜流・奥義・八咫烏』が
+		使えるようになった。
+
+		: CharaAddSkill( "Mei", 607 )
+		冥は『奥義・月今宵』が
+		使えるようになった。
+
+:		RpgCharaBatch( "Player"	\
+:			"MoveDown", 1 )
+		: Wait()
+		: Return
+	: endif
+	: Jump( "Scenarios/SC_C06_06" )
+: elif ( MissionProgress( "SC_D06_04_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D06_04*sc003" )
+: endif
+: Return
+
+//異空間移動
+*Map_Dungeon28_07_001
+: RpgCharaTurn( "Player", "D" )
+: PlaySe( "SE/Se_Effect01" )
+: FadeOut( 0.5, 255, 255, 255 )
+: Wait()
+: LoadMap("Map_Dungeon29_01_Ikukan")
+
+//ラスボス前
+*Map_Dungeon28_03_001
+\CI["準備できている！"]
+\CI["準備は念入りに……"]
+この先、何かありそう……。
+
+: if ($choice == 1) Return endif
+//シーン開始処理
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+//リーダーを強制的に無黒にする。強制的に着衣に！
+: Leader( 0 )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Azami", 3 )
+: RpgCharaTurn( "Player", "D" )
+: RpgCharaOn("Momo")
+: RpgCharaOn("Kinako")
+: RpgCharaOn("Leo")
+: RpgCharaOn("Gin")
+: RpgCharaOn("Azami")
+: RpgCharaOn("Ryu")
+: RpgCharaOn("Daruma")
+: RpgCharaOn("Mei")
+: RpgCharaOn("Ranmaru")
+: RpgCharaOn("Falke")
+: Jump( "Scenarios/SC_B06_07" )
+
+//========================================================
+//○異空間
+//========================================================
+*Map_Dungeon29_01_001
+: LoadMap( "Map_Dungeon28_07_Fushinoyama", "SC_B06_05", "Scenarios/Map_Dungeon_Init*Map_Dungeon28_07")
+
+//========================================================
+//○大和東街道小屋
+//========================================================
+//体力回復
+*Map_Dungeon16_07_001
+: Jump( "Scenarios/Map_Event*Inn" )
+
+//イベント
+*Map_Dungeon16_07_002
+: if ( MissionProgress( "SC_B05_14_1", "InProgress" ) == true )1
+	: Jump( "Scenarios/SC_B05_14*sc002" )
+: elif ( Flag ( "" ) == true )
+
+: else
+	: RpgMapBaloonOn("SC_B05_14a","Down")
+	: RpgMapBaloonOn("SC_B05_14b","Down")
+	: LoadMap( "Map_Dungeon16_02_YamatoHigashiKaid", "FromKoya", "Scenarios/Map_Dungeon_Init*Map_Dungeon16_02")
+: endif
+: Return
+
+//========================================================
+//○織笠神社の道・看板
+//========================================================
+*Map_Dungeon33_01_001
+←　冷泉の社
+↓　織笠神社
+
+: Return
+//========================================================
+//○妖精の森
+//========================================================
+*Map_Dungeon21_03_001
+: if ( MissionProgress( "SC_B05_03_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_B05_03*sc002" )
+: elif ( MissionProgress( "SC_C05_02_1", "InProgress" ) == true )
+	: Jump("Scenarios/SC_C05_02*sc002")
+: elif ( MissionProgress( "SC_D06_50_1", "Opened" ) == true )
+	: Jump( "Scenarios/SC_D06_50" )
+: else
+	: Return
+: endif
+//========================================================
+//○帝都西教会
+//========================================================
+*Map_Dungeon38_02_001
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Dungeon38_03_TeitoNishiKyokai" )
+//========================================================
+//○茨木街道・看板
+//========================================================
+*Map_Dungeon43_02_001
+ここより先、明里村
+
+: Return
+//========================================================
+//○タイラントボアの巣穴
+//========================================================
+*Map_Dungeon40_03_001
+: if ( MissionProgress( "SC_D04_06_1", "InProgress" ) == false )
+	: Jump( "Scenarios/Map_Event*Closed" )
+: else
+	: LoadMap( "Map_Dungeon40_04_AbareInoshishi" )
+: endif
+: Return
+//========================================================
+//○ヒラガの研究所
+//========================================================
+*Map_Dungeon31_01_1
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+: HideWnd()
+: FadeOut( 0.25 )
+: Wait()
+: LoadMap( "Map_Dungeon31_02_HiragaLabo" )
+: else
+この先に用はない。
+
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: Return
+: endif

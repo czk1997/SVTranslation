@@ -1,0 +1,2087 @@
+//========================================================
+//○素直になる冥、蘭丸と肌を重ねて――
+//========================================================
+*sc001_01
+: if ( MissionProgress( "SC_C06_50", "Opened" ) == false ) Return endif
+: if (WhoLeader( "Mei" ) == false ) Return endif
+//●状況：冥操作時
+//●場所：崎珠・蘭丸の長屋・前
+这里是以兰丸为据点的长屋。
+
+//●演出：思い出す演出
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: DrawChara( "Ranmaru", 4, 0, 0, 0.0, 0.0, 3, "LC" )
+: DrawChara( "Mei", 10, 1, 0, 0.0, 0.0, 4, "RC" )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["兰丸"]
+“……冥酱”
+
+: DrawChara( "Ranmaru", 0, 0, 0)
+: DrawChara( "Mei", 10, 1, 0)
+: PlayVoice( "Voices/vo09_mei0466" )
+\CN["冥"]
+“兰丸……只要一点点就好……就这样……
+我已经不知道该怎么办了……”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“如果我可以的话……”
+
+: DrawChara( "Mei", 4, 1)
+: PlayVoice( "Voices/vo09_mei0467" )
+\CN["冥"]
+“……对不起。”
+
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Mei", 0.0 )
+: EraseChara( "Ranmaru", 0.0 )
+: EraseAllImage( 1, 0.0 )
+: DrawChara( "Mei", 10, 2, 0, 0.0, 0.0, 3, "RC" )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+//●演出：戻る
+: PlayVoice( "Voices/vo09_mei0578" )
+\CN["冥"]
+「～～～～～～～～」
+
+想起前几天的事，脸上就要冒火了。
+真想在那附近打个滚。
+
+//●演技：心の声です
+: DrawChara( "Mei", 4, 1)
+: PlayVoice( "Voices/vo09_mei0579" )
+\CN["冥"]
+（兰丸抱紧了那样的我，包容了我……）
+
+我无法忘记那个温暖。
+每次想起的时候，脸和心都会热起来。
+
+//セックス回数１０回以上の場合、イベント発生させない
+: if ( CharaHParam( "Mei", "Sex" ) >= 10 )
+……不行啊。现在的我不喜欢那个家伙。
+
+回顾自己，不应该说出自己的想法
+我想。
+
+	: EraseChara( "Mei", 0.5 )
+	: FadeOut( 0.5 )
+	: Wait()
+	: RpgMapBaloonOff( "To06" )
+	: SetMission( "SC_C06_50", "Hidden" )
+	: FadeIn( 0.5 )
+	: Wait()
+	: Return
+: endif
+//●分岐：フラグ［冥・恋愛経験あり］が０の場合
+//●初期設定：冥に彼氏がいない場合
+: DrawChara( "Mei", 7, 1)
+: PlayVoice( "Voices/vo09_mei0580" )
+\CN["冥"]
+“……我不讨厌这种心情。”
+
+因为到现在为止没有这样的经验。
+
+说实话，我完全不知道现在这是什么心情
+不知所措。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●初期設定：冥に彼氏がいた場合
+//彼氏がいたことはあったし、真剣に恋愛していたと思う。
+//だけど、その時よりもずっとドキドキする。
+//●分岐終了
+//●演技：心の声です
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0581" )
+\CN["冥"]
+（大和的存亡之战即将开始。）
+
+完全没有活着就能回去的保证。
+
+*select01
+: EraseChara( "Mei", 0.5 )
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：想いをちゃんと伝える
+//■選択肢２：もう少し慎重に考えてから
+//――――――――――――――――――――――――――――
+\CI["把想法好好地传达给你"]
+\CI["再慎重考虑一下"]
+正因为如此，才有必须要好好传达给兰丸的事情
+我想应该有……。
+
+: if ($choice == 1)
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+	: Wait()
+	: Return
+: endif
+: StopBgm( 1.0 )
+: RpgDoorLock( "DoorRanmaru", false)
+: RpgDoorOpen( "DoorRanmaru" )
+: Wait()
+: RpgCharaMove( "Player", "D", 1 )
+: Wait()
+: LoadMap( "Map_Town06_06_Sakitama", "", "Scenarios/SC_C06_50*select01_s1")
+//-------------------------------------------------------
+//●選択肢１：想いをちゃんと伝えるを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+//●演出：冥　蘭丸の家に入っていく
+//●場所：蘭丸の家の中
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 8	\
+:	"MoveLeft", 2 )
+: Wait()
+: RpgCharaTurn( "Ranmaru", "R" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_C06_50" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_C06_50" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: CharaCostume( "Mei", 0 )	// 強制着衣
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayBgm("BGM/36_ID03")
+: ShowWnd()
+\CN["兰丸"]
+“咦？冥，怎么了？”
+
+//●演技：緊張しています
+: DrawChara( "Mei", 4, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0582" )
+\CN["冥"]
+“啊，不，那个……只是，偶然路过附近……”
+
+不对……。
+我不是为了说这种话而特意鼓起勇气的！
+
+: DrawChara( "Ranmaru", 16, 0, 0)
+\CN["兰丸"]
+“这样啊。但是，我很高兴能看到冥酱的脸。”
+
+虽然本人和平时一样对待
+什么啊，这是……？
+
+//●演技：心の声です
+: DrawChara( "Mei", 12, 1, 0)
+: PlayVoice( "Voices/vo09_mei0583" )
+\CN["冥"]
+（可能是意识到了吧，看不到兰丸的脸……）
+
+: DrawChara( "Ranmaru", 4, 0, 0)
+\CN["兰丸"]
+「冥酱，怎么了？」
+
+忧心忡忡地看了看。
+
+: DrawChara( "Mei", 3, 2)
+: PlayVoice( "Voices/vo09_mei0584" )
+\CN["冥"]
+“哇，笨蛋！说是很近……”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“但是，脸很红。说不定发烧了……”
+
+兰丸轻轻地把右手贴在我的额头上——
+
+: DrawChara( "Mei", 11, 2)
+: PlayVoice( "Voices/vo09_mei0585" )
+\CN["冥"]
+“啊……啊…啊啊……等等，兰丸……！？”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“嗯，我觉得不发烧……”
+
+步调完全被打乱了。
+
+不，嘛，兰丸本人倒是和往常一样。
+
+: DrawChara( "Mei", 10, 3)
+: PlayVoice( "Voices/vo09_mei0586" )
+\CN["冥"]
+“你不是说没关系吗！”
+
+不由得怒吼起来。
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“啊，对不起……”
+
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0587" )
+\CN["冥"]
+“啊，啊……不，我才是对不起。
+我不是为了说这种话才来这里的”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“嗯？”
+
+啊啊！我非常紧张。
+我觉得互相残杀还比较放松。
+
+: DrawChara( "Mei", 12, 1)
+: PlayVoice( "Voices/vo09_mei0588" )
+\CN["冥"]
+“所以，来这里是为了确认……”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“嗯，要确认一下吗？
+小冥，虽然很少见地耍小聪明，发生了什么事吗？”
+
+: DrawChara( "Mei", 13, 1)
+: PlayVoice( "Voices/vo09_mei0589" )
+\CN["冥"]
+“那、那是……啊，真是的！真是太棒了！”
+
+胡思乱想啦，计划好啦
+没有那样的余裕。
+
+: DrawChara( "Mei", 3, 2, 0)
+: PlayVoice( "Voices/vo09_mei0590" )
+\CN["冥"]
+“你总是对我说，喜欢，但是……”
+那个……真的，是这么想的吗……？”
+
+: DrawChara( "Ranmaru", 16, 0, 0)
+\CN["兰丸"]
+“那是当然的。其他的暂且不论，对冥
+我总是很认真的”
+
+: DrawChara( "Mei", 5, 2, 1)
+: PlayVoice( "Voices/vo09_mei0591" )
+\CN["冥"]
+“哇，我也是啊……你不是讨厌我吗……”……
+我、喜欢……也许是因为…”
+
+说出来就明白了。
+不是喜欢，而是喜欢。
+
+: DrawChara( "Ranmaru", 3, 0, 0)
+\CN["兰丸"]
+“这样啊。我可能喜欢。”
+
+: DrawChara( "Mei", 12, 2, 0)
+: PlayVoice( "Voices/vo09_mei0592" )
+\CN["冥"]
+“不是的……我喜欢你。我是喜欢你的……”
+想……”
+
+: DrawChara( "Ranmaru", 2, 0, 0)
+\CN["兰丸"]
+“冥酱……”
+
+兰丸一直鼓励着我。
+
+在西都的时候，也总是来见我
+给了我。
+
+我太过执着于复仇
+远离了自己。
+
+: DrawChara( "Mei", 4, 1, 0)
+: PlayVoice( "Voices/vo09_mei0593" )
+\CN["冥"]
+“……事到如今了啊，这样啊。”
+
+因为现在我明白了自己的心情！
+这样传达着。连我自己都觉得很任性。
+
+: DrawChara( "Ranmaru", 4, 0, 0)
+\CN["兰丸"]
+「完全不是事到如今的事。
+怎么办，太开心了，说不出好的话来”
+
+总是飘忽不定的兰丸慌慌张张的样子很新鲜。
+
+: DrawChara( "Mei", 7, 1)
+: PlayVoice( "Voices/vo09_mei0594" )
+\CN["冥"]
+“说不出话来，小说家没问题吗？”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“哈哈哈……嘛，那是……反正是个不卖座的小说家。”
+
+: DrawChara( "Mei", 1, 2)
+: PlayVoice( "Voices/vo09_mei0595" )
+\CN["冥"]
+“兰丸……”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“冥酱”
+
+不知从哪边靠近互相拥抱。
+
+: StopBgm( 1.0 )
+可以说是温柔的力量吗？
+被那个包裹着的话，心脏会很激动也很安心。
+
+//●演技：キスです
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b004_0_3_0101001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Mei", 0.0 )
+: PlayBgm("BGM/33_H_LOVE")
+//: DrawChara( "Mei", 10, 3, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0596" )
+\CN["冥"]
+“嗯……”
+
+不是大脑，而是感情在身体上跳动。
+
+//●演技：「……」で唇をゆっくり離します
+//: EraseChara( "Mei", 0.5 )
+//: DrawChara( "Mei", 7, 2, 0, 0.5, 0.0, 3, "RC" )
+: HideWnd()
+: evfile = "eve_b004_0_1_0100001_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0597" )
+\CN["冥"]
+“……接吻了啊……。
+竟然和你接吻，总觉得，心情很奇怪”
+
+//: DrawChara( "Ranmaru", 17, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["兰丸"]
+“嗯，好像在做梦。”
+
+//: DrawChara( "Mei", 2, 2)
+: PlayVoice( "Voices/vo09_mei0598" )
+\CN["冥"]
+“啊，我也有这种心情……”
+
+兰丸突然掐出自己的脸颊。
+
+//: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“……好痛……这不是梦。”
+
+//●演技：キスです
+//: EraseChara( "Mei", 0.5 )
+//: EraseChara( "Ranmaru", 0.5 )
+//: DrawChara( "Mei", 7, 3, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evfile = "eve_b004_0_3_0101001_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0599" )
+\CN["冥"]
+“啊。嗯……嗯……嗯……嗯……嗯……”
+
+光接吻就让头脑沸腾。
+
+//: DrawChara( "Mei", 10, 3)
+: PlayVoice( "Voices/vo09_mei0600" )
+\CN["冥"]
+“呜……呜……嗯……嗯……嗯……啊呜……嗯……嗯……
+嗯……嗯……哈…嗯……嗯……”
+
+//: DrawChara( "Mei", 5, 3)
+: HideWnd()
+: evfile = "eve_b004_0_1_0100001_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0601" )
+\CN["冥"]
+“哈、哈、哈……脑袋都快晕了……”
+
+//: EraseChara( "Mei", 0.5 )
+//: DrawChara( "Ranmaru", 2, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["兰丸"]
+“嗯，我也尽量控制着。
+再这样下去的话，冥酱……”
+
+//: EraseChara( "Ranmaru", 0.5 )
+//: DrawChara( "Mei", 7, 3, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evfile = "eve_b004_0_3_0101001_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0602" )
+\CN["冥"]
+“这样啊。嗯……嗯，中……嗯……嗯……”……
+嗯……嗯，嗯……嗯……呜……呜♥</color>」
+
+强行吻兰丸。
+
+如果再压抑下去的话，就不明白～的意思了
+不是。
+
+但是——不，正因为如此。
+
+: HideWnd()
+: evfile = "eve_b004_0_1_0100001_0000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+//: DrawChara( "Mei", 2, 3)
+: PlayVoice( "Voices/vo09_mei0603" )
+\CN["冥"]
+“如果是你的话，没关系。
+倒不如说，你能这么想我很开心……”
+
+互相传达自己的想法，突然这么说太过匆忙了
+我知道，但是停不下来。
+
+//: EraseChara( "Mei", 0.5 )
+//: DrawChara( "Ranmaru", 0, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["兰丸"]
+“真的可以吗？”
+
+//: EraseChara( "Ranmaru", 0.5 )
+//: DrawChara( "Mei", 4, 3, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo09_mei0604" )
+\CN["冥"]
+“啊，你喜欢我也没关系。
+我想让你来做……”
+
+//: EraseChara( "Mei", 0.5 )
+//●演出：Ｈシーン開始
+//●ＣＧ：蘭丸の愛撫（冥）
+*sc001_02
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b005_1_1_0110001_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：乳房を揉まれています
+: PlayVoice( "Voices/vo09_mei0605" )
+\CN["冥"]
+“嗯，59a0”♥</啊……啊，嗯，嗯……啊，嗯！”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi04" )
+兰丸把我的衣服只穿了一下
+把手伸进去，揉了乳房。
+
+\CN["兰丸"]
+“你太强了吗？”
+
+: PlayVoice( "Voices/vo09_mei0606" )
+\CN["冥"]
+“不……完全没有那样的事……”
+
+//●分岐：冥・乳を揉まれた経験がない場合
+: if ( CharaHParam( "Mei", "BreastPetting" ) == 0 )
+	: PlayVoice( "Voices/vo09_mei0607" )
+	\CN["冥"]
+“就这样……那个，被男人摸乳房了
+这是你第一次……所以，有点吃惊……”
+
+	\CN["兰丸"]
+“对，对……我还是第一次……”
+
+//●分岐終了
+: endif
+: PlayVoice( "Voices/vo09_mei0608" )
+\CN["冥"]
+“嗯……吓了一跳，发出了奇怪的声音……。
+非常害羞……”
+
+\CN["兰丸"]
+“我还想多听听这种声音，因为我非常兴奋。”
+
+: PlayVoice( "Voices/vo09_mei0609" )
+\CN["冥"]
+“这是因为我很兴奋……你……喵，嗯……
+对、那么温柔……嗯……啊啊啊、嗯♥</color>」
+
+——呼，呼。
+
+兰丸的手看起来很纤细。
+
+豆子碎了，硬邦邦的，有男人在战斗。
+
+: PlayVoice( "Voices/vo09_mei0610" )
+\CN["冥"]
+“你的手，还真是厚颜无耻啊。”
+
+\CN["兰丸"]
+“是吗？”
+
+: PlayVoice( "Voices/vo09_mei0611" )
+\CN["冥"]
+“锻炼是必不可少的……我非常喜欢这种手。”
+
+\CN["兰丸"]
+“这样啊。能被冥这样说我最开心了。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b005_1_1_0211001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0612" )
+\CN["冥"]
+「嗯，59a0」♥</啊，啊…嗯！
+然后，兰丸，如果乳房被揉成那样的话……总觉得，很奇怪……”
+
+: PlayVoice( "Voices/vo09_mei0613" )
+\CN["冥"]
+“对，还有……呃，嗯，啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color>
+声音出来了……啊，啊……哈，嗯！”
+
+兰丸每次用力揉乳房的时候都会发出奇怪的声音。
+
+身体热。被摸到的地方很奇怪。
+
+\CN["兰丸"]
+“小冥，我希望你心情变好。”
+
+——真是太棒了！
+
+: HideWnd()
+: evfile = "eve_b005_1_1_0311001_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0614" )
+\CN["冥"]
+“那里……如果用手指紧紧地抱住乳头的话
+啊，嗯，啊啊啊啊！”
+
+用手指把乳头紧紧地夹在一起，感觉很刺眼。
+
+\CN["兰丸"]
+“这里舒服吗？”
+
+: PlayVoice( "Voices/vo09_mei0615" )
+\CN["冥"]
+“那、那是……身体麻了……战战兢兢的
+啊……嗯……啊……”
+
+有时，被用力吸引的话身体会弹起。
+
+\CN["兰丸"]
+“小冥，你对这里很敏感吧？”
+
+//●分岐：冥・乳を揉まれた経験がない場合
+: if ( CharaHParam( "Mei", "BreastPetting" ) == 0 )
+	: PlayVoice( "Voices/vo09_mei0616" )
+	\CN["冥"]
+“我不知道……可是，乳头什么的，哈哈
+因为你是第一次被别人这样触摸……”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●冥・乳を揉まれた経験がある場合
+: else
+	: PlayVoice( "Voices/vo09_mei0617" )
+	\CN["冥"]
+“是的，可能是这样……但是，我以为是被你碰了……
+感觉很厉害……”
+
+//●分岐終了
+: endif
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b005_1_1_0110001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0618" )
+\CN["冥"]
+“嗯，哈哈……真琴，我会做的……。
+哈，哈……那里……嗯，啊啊啊啊！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——比酷、比酷、比酷。
+
+更加强烈的震动来了。
+
+\CN["兰丸"]
+“下面也可以碰吗？”
+
+: PlayVoice( "Voices/vo09_mei0619" )
+\CN["冥"]
+“哈……哈……啊，随你的便就好了……。
+如果是你的话，无论别人做什么，我都不讨厌”
+
+\CN["兰丸"]
+（小冥，要是天然地这么说的话
+好厉害啊……。如果没有意识到这一点的话，我会很辛苦的。）
+
+兰丸的手伸到了下半身。
+
+//●ＣＧ差分：アソコに手
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b005_1_2_0211001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——喂。
+
+//●演技：下着の中に手を突っ込まれて陰部に触れられています
+: PlayVoice( "Voices/vo09_mei0620" )
+\CN["冥"]
+“恩！哈……啊啊啊啊啊啊，啊啊啊啊！”
+
+\CN["兰丸"]
+（小冥，已经这么湿了。
+乳房弱吗？）
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+中、中、中。
+
+: PlayVoice( "Voices/vo09_mei0621" )
+\CN["冥"]
+“不，不，住手……不要发出那样的声音……。
+嗯，啊……手指被摩擦了……啊啊啊啊啊啊♥</color>」
+
+: PlayVoice( "Voices/vo09_mei0622" )
+\CN["冥"]
+“嗯，敏感的地方，被碰了的话……啊，啊，啊
+声音，发出……力量，消失了……”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi01" )
+兰丸的手指在擦我的指甲。
+
+用我的爱液变成了努鲁的手指
+接触到阴道口和阴核。
+
+: PlayVoice( "Voices/vo09_mei0623" )
+\CN["冥"]
+“这种地方，明明被兰丸碰了很不好意思……
+嗯，啊啊啊啊！也想要更多
+好……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman02" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+中、中、中、中。
+
+\CN["兰丸"]
+“声音，一点点变大了吧？”
+
+: HideWnd()
+: evfile = "eve_b005_1_2_0411001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0624" )
+\CN["冥"]
+“因为你……摸起来很恶心，嗯……啊
+手指碰了克利特里斯……啊，嗯！”
+
+\CN["兰丸"]
+“冥酱的声音好可爱啊”
+
+: HideWnd()
+: evfile = "eve_b005_1_2_0111001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0625" )
+\CN["冥"]
+“啊，真可爱……所以，如果你总是这么说的话
+哎呀，嗯……啊，嗯啊啊啊！”
+
+\CN["兰丸"]
+“我只是在说我真心想的事情吧？”
+
+用在耳边平静的语调说的话
+仅此就让人毛骨悚然。
+
+身体不舒服就委托给兰丸了。
+
+: HideWnd()
+//手マン
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+ぬち、口、茶、中、中。
+
+: PlayVoice( "Voices/vo09_mei0626" )
+\CN["冥"]
+“好饿……！啊，好痛……嗯……！”
+
+\CN["兰丸"]
+“出来了很多。
+差不多该摸这边了吧”
+
+: HideWnd()
+: evfile = "eve_b005_1_2_0311001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0627" )
+\CN["冥"]
+“这、这个……嗯……呃……手指、触摸克里特里斯……
+是、是、不行……碰了那里……嗯！”
+
+兰丸用手指巧妙地卷起阴核，轻轻地将里面刺痛的部分
+用指尖触碰。
+
+//: HideWnd()
+//: evbg = true; evcos = false;
+//: evfile = "eve_b005_1_2_0311001_1100000_0_"
+//: Call("Scenarios/Common*EvChange")
+//: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0628" )
+\CN["冥"]
+“嗯，嗯，啊啊啊啊啊！那里，不行……！”！
+碰了之后……哈、哈、吉恩就麻了……”
+
+: PlayVoice( "Voices/vo09_mei0629" )
+\CN["冥"]
+“那里太敏感了……嗯，啊啊啊啊！
+会变得很奇怪，所以……”
+
+\CN["兰丸"]
+“嗯。心情好到让人觉得奇怪。”
+
+: PlayVoice( "Voices/vo09_mei0630" )
+\CN["冥"]
+“嗯！你，怎么会这样……啊，啊，嗯……”……
+啊，不行啊……太害羞了……啊，啊啊啊啊”
+
+执拗地，兰丸认真地玩弄着我的那个。
+
+看着我的反应一个劲地责备我。
+
+//●演出：時間経過トランジション
+: StopBackVoice()
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b005_1_2_0411001_1100000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0631" )
+\CN["冥"]
+“哈、哈、哈……脑袋摇摇晃晃的……”
+
+: PlayVoice( "Voices/vo09_mei0632" )
+\CN["冥"]
+“这，这样的话，会有很多爱液出来
+内衣脏了……嗯……不好意思……”
+
+在被触摸的过程中，虽然心情很好，但也会变得悲伤。
+
+渐渐地感到焦躁
+腰晃来晃去。
+
+: PlayVoice( "Voices/vo09_mei0633" )
+\CN["冥"]
+“兰丸，差不多该……”
+
+\CN["兰丸"]
+“……可以吗？”
+
+//●分岐：冥が非処女の場合はsc001_03bへ
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMei") == true ) Jump( "*sc001_03b" ) endif
+*sc001_03a
+: PlayVoice( "Voices/vo09_mei0634" )
+\CN["冥"]
+“嗯，嗯……因为你对我很温柔……。
+我想你的那个一定会好好地{插入，是}的”
+
+//●ＣＧ：蘭丸と後背位セックス（冥）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_1_0110001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0635" )
+\CN["冥"]
+“这，这样可以吗？”
+
+匍匐着面向屁股。
+
+\CN["兰丸"]
+“……嗯，可以……顺便问一下，你是在哪里知道的？”
+
+: PlayVoice( "Voices/vo09_mei0636" )
+\CN["冥"]
+“诶……那，那是……很久以前父亲藏起来的书
+看，那个还留在记忆里……”
+
+咦？这个难道很奇怪吗？
+
+//●ＳＥ：衣擦れの音
+: PlaySe( "SE/Se_Cloth01" )
+\CN["兰丸"]
+“……嗯”
+
+把兰丸穿的衣服咯吱咯吱地响
+从做好的间隙中，小金很有气势地出来。
+
+//●演技：男性器を見て驚きます。処女の反応です
+: PlayVoice( "Voices/vo09_mei0637" )
+\CN["冥"]
+“啊，那是男人的……！？”
+
+怎么说呢，和想象的不一样。
+
+\CN["兰丸"]
+“如果责怪冥的话，会非常兴奋。
+抱在怀里的话，味道很好闻……”
+
+: HideWnd()
+: evfile = "eve_b006_1_1_0410001_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0638" )
+\CN["冥"]
+“啊，是香味……你，是在闻我的味道吗！？”
+
+\CN["兰丸"]
+“嗯，味道很甜。”
+
+: PlayVoice( "Voices/vo09_mei0639" )
+\CN["冥"]
+“～～～～～！哇，笨蛋！唔，这么说来，是在泡澡
+还没出汗……”
+
+事到如今才在意起来。
+
+\CN["兰丸"]
+“小冥，不用在意也没关系。”
+
+: HideWnd()
+: evfile = "eve_b006_1_1_0110001_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0640" )
+\CN["冥"]
+“嗯，嗯……既然来到了这里，就不能后退了……
+而且，我也不打算退出”
+
+: PlayVoice( "Voices/vo09_mei0641" )
+\CN["冥"]
+“但是，那么大的真的是我{阴道内，内}
+{插入，是}吗……？」
+
+\CN["兰丸"]
+“果然很恐怖吗？”
+
+: PlayVoice( "Voices/vo09_mei0642" )
+\CN["冥"]
+“是啊。我还以为你的{插入，是}没有呢。”
+非常恐怖”
+
+虽然知道第一次的性行为会产生强烈的疼痛
+我有信心能忍耐疼痛。
+
+如果不能接受兰丸的话怎么办？
+那是唯一的不安。
+
+\CN["兰丸"]
+「冥酱，没关系，我会慢慢来的。
+交给我吧”
+
+: PlayVoice( "Voices/vo09_mei0643" )
+\CN["冥"]
+“啊，啊……只是，毕竟是第一次……。
+那个，如果可以的话，希望你温柔……”
+
+\CN["兰丸"]
+“嗯，交给我吧。”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0211002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+一吻……一吻……一吻……一吻……！
+
+//●演技：男性器が挿入されています
+: PlayVoice( "Voices/vo09_mei0644" )
+\CN["冥"]
+“嗯，啊……嗯……嗯……嗯……啊…啊…！”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi05" )
+\CN["兰丸"]
+“冥酱……嗯……！”
+
+从那里的入口开始，沉重的疼痛蔓延开来。
+
+: PlayVoice( "Voices/vo09_mei0645" )
+\CN["冥"]
+“呃……嗯，嗯……啊啊…兰丸，嗯……”
+
+\CN["兰丸"]
+“哇，好小……嗯……！”
+
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "eve_b006_1_2_0311002_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+——吸溜、吱、吱、吱、吱、吱、吱！吱！
+
+: PlayVoice( "Voices/vo09_mei0646" )
+\CN["冥"]
+“嗯……等等，兰丸，没什么大不了的……。
+哈、哈、没关系……就这样……”
+
+阴道内被强行打开。
+
+但是，不是不能忍耐的。
+倒不如说这种程度能和兰丸合为一体的话就比较轻松了。
+
+\CN["兰丸"]
+“嗯，嗯……那再往前走一点……”
+
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咕嘟，吱……吱……吱…吱……吱……吱……吱……吱……！
+
+: PlayVoice( "Voices/vo09_mei0647" )
+\CN["冥"]
+“嗯，嗯……嗯，我知道……。
+硬的是……嗯，兰丸的小金，能前进了”
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0211002_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0648" )
+\CN["冥"]
+“啊，嗯，嗯！啊……啊…恩，啊，啊
+嗯，呃……嗯……！哈，嗯！”
+
+越来越重的感觉在扩大。
+
+说白了，是超出想象的疼痛。
+但是——
+
+\CN["兰丸"]
+“就这样，一口气到最后……”
+
+: PlayVoice( "Voices/vo09_mei0649" )
+\CN["冥"]
+“嗯……来吧……。
+这是你第一次……我希望你能好好收下”
+
+: PlayVoice( "Voices/vo09_mei0650" )
+\CN["冥"]
+“啊……啊啊啊………{插入，是}……展开……
+到里面来……”
+
+//●演技：処女喪失です
+: PlayVoice( "Voices/vo09_mei0651" )
+\CN["冥"]
+“啊，啊……啊啊啊……呜呜呜哇！！”
+
+//●ＣＧ差分：挿入・破瓜
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311002_1001000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+好烦！！！
+
+: PlayVoice( "Voices/vo09_mei0652" )
+\CN["冥"]
+“哇，好饿……！”
+
+当全身剧痛蔓延的时候
+知道了小鸡鸡一口气跑到里面{插入，是}。
+
+\CN["兰丸"]
+“哈、哈、冥……”
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0111002_1001000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0653" )
+\CN["冥"]
+“好好地{插入，是}了呢……。
+呵呵，原来是和你连在一起啊」
+
+压迫感比想象中还要厉害。
+
+阴道内的小鸡丁一动，疼痛就会扩散开来。
+
+\CN["兰丸"]
+「恩。冥酱中非常温暖。
+跟小鸡鸡纠缠起来”
+
+: PlayVoice( "Voices/vo09_mei0654" )
+\CN["冥"]
+“哇，在我心中……！？嗯，被这么一说的话
+非常害羞……”
+
+: PlayVoice( "Voices/vo09_mei0655" )
+\CN["冥"]
+“但是，如果你心情好的话，那就太好了。”
+
+兰丸一边兴奋一边说很舒服。
+
+只是这样，不安就全部消失了。
+
+兰丸能和我做爱心情变好吗？
+因为那是最不安的。
+
+: PlayVoice( "Voices/vo09_mei0656" )
+\CN["冥"]
+“嗯……爷爷，还真是长大了呢。”
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0311002_1001000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0657" )
+\CN["冥"]
+“一边战战兢兢，一边打开我的{阴道内，内}
+嗯……啊，啊……肚子下面会变热”
+
+\CN["兰丸"]
+“嗯。只是放进去就感觉无限感慨。
+就算一动不动，心情也非常好……”
+
+: PlayVoice( "Voices/vo09_mei0658" )
+\CN["冥"]
+“喜欢你，让你心情变好
+可以吗？”
+
+: PlayVoice( "Voices/vo09_mei0659" )
+\CN["冥"]
+“你心情变好的话，我也会很舒服的。
+而且——…”
+
+\CN["兰丸"]
+“嗯？但是，还是不要太勉强比较好……”
+
+: PlayVoice( "Voices/vo09_mei0660" )
+\CN["冥"]
+“我没有勉强。
+只是，我想更加感受你……”
+
+: PlayVoice( "Voices/vo09_mei0661" )
+\CN["冥"]
+“如果你{阴道内，内}来了{插入，是}的话
+心情变得非常温暖。所以，我要和你更加坚强
+想要联系在一起……”
+
+第一次的性生活好像没有想象的那么富裕。
+
+把心里的话一五一十地说出来。
+
+\CN["兰丸"]
+“那么，慢慢来……”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0211002_1001000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！嘘！啧啧！嘘！嘘！嘘！
+
+: PlayVoice( "Voices/vo09_mei0662" )
+\CN["冥"]
+“恩……啊…啊…啊…啊啊…小鸡鸡、{阴道内、肚子}、
+来来往往，好像被公鸡抚摸着……”
+
+: PlayVoice( "Voices/vo09_mei0663" )
+\CN["冥"]
+“啊，嗯，嗯，嗯……啊啊啊…啊啊啊啊啊，啊
+啊……哈，嗯……嗯，嗯！”
+
+就像小鸡鸡在阴道内抚摸一样以缓慢的速度来回移动。
+
+只允许兰丸侵入的地方
+刚想着能收到，从下腹部开始背上就有软软的东西
+跑过去。
+
+: PlayVoice( "Voices/vo09_mei0664" )
+\CN["冥"]
+“哈……嗯啊……等等，兰丸……恩”
+
+: PlayVoice( "Voices/vo09_mei0665" )
+\CN["冥"]
+“再让我感受一下你……再深一点……”……
+把你……刻进我这一生都会留下的程度……”
+
+如果激烈运动的话，应该知道会疼的
+尽管如此，我还是想要更激烈的。
+
+\CN["兰丸"]
+“哈……哈……被这么说的话，我已经
+没有控制的自信”
+
+\CN["兰丸"]
+“小冥太可爱了，好像停不下来了……”
+
+: PlayVoice( "Voices/vo09_mei0666" )
+\CN["冥"]
+“恩哈哈……嗯……不要停，好的……”
+
+: PlayVoice( "Voices/vo09_mei0667" )
+\CN["冥"]
+“如果你能要求我到无法抑制的程度的话……。
+恩……那边的人，高兴得不得了……”
+
+\CN["兰丸"]
+“我也要更加地好好地……”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311002_1001000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！好！努奇！好烦！！
+
+//●演技：さっきよりも深いところにまで男性器が入ってます
+: PlayVoice( "Voices/vo09_mei0668" )
+\CN["冥"]
+“嗯……呃……啊…啊…啊…啊……啊……啊……啊……
+啊啊啊啊啊啊！”
+
+比刚才更深的地方有小鸡鸡{插入，是}过来。
+
+小公鸡的前脸在肚子里咯噔咯噔地打过来
+从那里开始在身体中蔓延的淡淡的麻木让人感觉非常舒服。
+
+\CN["兰丸"]
+“哈！哈！哈！冥！嗯！哈！”
+
+//●演技：ピストンが激しくなります
+: PlayVoice( "Voices/vo09_mei0669" )
+\CN["冥"]
+“兰丸……啊啊啊啊啊啊啊啊啊啊啊啊！小金
+热的、{阴道内、内}、擦了很多……」
+
+: PlayVoice( "Voices/vo09_mei0670" )
+\CN["冥"]
+“越是被坚强，越是被坚强……嗯，哈哈！
+能感受到你……真是难以忍受……”
+
+\CN["兰丸"]
+“呜呜……真是的，已经系好了……。
+冥酱，自己把屁股伸出来……”
+
+: PlayVoice( "Voices/vo09_mei0671" )
+\CN["冥"]
+“是吗，是吗……嗯……模仿那样的……”
+
+因为是无意识做的事情所以很吃惊
+不知为什么非常害羞。
+
+\CN["兰丸"]
+“多亏了你，我非常兴奋。”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0411002_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+剧毒！剧毒！嘘！嘘！啧啧！努奇！
+
+: PlayVoice( "Voices/vo09_mei0672" )
+\CN["冥"]
+“啊，啊，啊……嗯，嗯……嘛，又变激烈了
+嗯……呃……啊啊……”
+
+: PlayVoice( "Voices/vo09_mei0673" )
+\CN["冥"]
+“小气鬼、{阴道内、肚子}、被摩擦了……兰丸的、大的、
+里面，猜中了的话……啊，呜哇！”
+
+\CN["兰丸"]
+「哈、哈、冥酱的……根和尖、竿的正中间、
+同时收紧……被褶皱包裹着，快要被吸入了”
+
+\CN["兰丸"]
+“这可…嗯……不好好坚持的话，马上
+好像会被拿走……”
+
+: PlayVoice( "Voices/vo09_mei0674" )
+\CN["冥"]
+“马上……嗯，不太清楚
+我的话，如果能心情变得那么好的话……”
+
+\CN["兰丸"]
+“嗯。心情太好了……嗯，嗯……”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+小狗、小狗、一直、一直、一直、咕噜噜、呜噜！
+
+: PlayVoice( "Voices/vo09_mei0675" )
+\CN["冥"]
+“啊啊，啊，啊……嗯……啊啊啊……啊啊啊……啊啊啊……”……
+啊……我发出了很厉害的声音……”
+
+有痛就有痛。
+
+但是，习惯了这样的行为后，快感会上升。
+
+\CN["兰丸"]
+“哈、哈、哈……呜……”
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0111002_1101000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0676" )
+\CN["冥"]
+“呵呵，看到你心情很好的样子
+好开心……嗯，啊，啊啊啊啊啊！”
+
+: PlayVoice( "Voices/vo09_mei0677" )
+\CN["冥"]
+“快感一个接一个地涌来……哈，哈，一直
+虽然为了不被冲走而压抑着……嗯，嗯，嗯”
+
+第一次做爱就变得很帅。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311002_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0678" )
+\CN["冥"]
+“嗯哈，哈，嗯……大的往上翘……。
+慢慢地，从下面上来……”
+
+//●演技：絶頂するのを我慢しています
+: PlayVoice( "Voices/vo09_mei0679" )
+\CN["冥"]
+“ら、兰丸……我……嗯……呃……呃……呃……呃…”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi01" )
+\CN["兰丸"]
+“小冥，已经无法忍受了……”
+
+: PlayVoice( "Voices/vo09_mei0680" )
+\CN["冥"]
+“那么，那……一起吧……。
+因为是第一次做爱，所以一起……”
+
+想分享，想传达的意思。
+
+\CN["兰丸"]
+“嗯！我也和冥酱一起……”
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0411002_1101000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0681" )
+\CN["冥"]
+“嗯，啊，啊，啊……兰丸……啊，啊，啊，啊”
+
+\CN["兰丸"]
+“哈、哈、哈……冥……冥……”
+
+互相呼唤名字，加强交往。
+
+抽插变得激烈，粘糊糊的声音变大。
+
+: PlayVoice( "Voices/vo09_mei0682" )
+\CN["冥"]
+“嗯……兰丸……我喜欢你……嗯，好饿！”
+
+\CN["兰丸"]
+“我也是……从很久以前开始就喜欢，渐渐地喜欢上了”
+
+在感情用事的状态下互相传达喜欢的心情的话
+感觉快感达到了顶峰。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0211002_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0683" )
+\CN["冥"]
+“啊，好像很帅……兰丸，已经……了！”
+
+\CN["兰丸"]
+“喂，我也，快拿出来吧……”
+
+: PlayVoice( "Voices/vo09_mei0684" )
+\CN["冥"]
+“……如果{射精，だ}的话，{阴道内，内}{射精，だ}”
+
+: PlayVoice( "Voices/vo09_mei0685" )
+\CN["冥"]
+“直到最后的最后……嗯，我想被你满足……。
+第一次献给你的话，我想好好地做到最后，一直
+因为我是这么想的……”
+
+\CN["兰丸"]
+“嗯，嗯……！我把它全部拿出来……”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！
+哇！哇！啪！
+
+一边拨弄着敲击肉的激烈敲击声
+兰丸在我的阴道内反复进行射精的激烈抽插。
+
+\CN["兰丸"]
+“哈、哈……啊、呜”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0411002_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0686" )
+\CN["冥"]
+“嗯……好棒……好棒啊……。
+兰丸、是、{射精，是}做……精液、尽情、{阴道内、内}
+{射精，所以}”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo09_mei0687" )
+\CN["冥"]
+“啊啊啊啊……嗯，嗯……啊…啊…啊…啊……啊……啊……
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+
+//●演出：射精
+//●ＣＧ差分：挿入・破瓜・膣内射精
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311013_1101010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克、别克、德彪乌！
+
+: PlayBackVoice( "Voices/BGV09_mei_jigo01" )
+{阴道内，肚子}小鸡鸡用力弹出来的瞬间
+热的感觉在身体中蔓延。
+
+//●ＣＧ差分：挿入・射精後精液
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0411013_1101020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0688" )
+\CN["冥"]
+“嗯，啊啊啊啊……啊，啊，我，我知道……。
+兰丸的精子流出来了……”
+
+\CN["兰丸"]
+“哈——……哈——……好像被吸入了……。
+感觉真的变成了一个”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咚，咚，咚，咚，咚，咚，咚。
+
+小鸡像脉搏一样跳得很大
+把精液放在阴道里。
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0111013_1101020_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0689" )
+\CN["冥"]
+“呼……嗯，哈……啊啊啊，哈……
+嘛，好像还在{射精}呢」
+
+\CN["兰丸"]
+“完全收不住。”
+
+: PlayVoice( "Voices/vo09_mei0690" )
+\CN["冥"]
+“没关系。不如说，全部都好好地，在我的{阴道内，内}里
+{射精，だ}希望你切了……」
+
+兰丸一边轻轻摇晃着腰，一边注入剩下的精液。
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0311013_1101020_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0691" )
+\CN["冥"]
+“恩，嗯……肚子很暖和，很满足……。
+哈，哈，脑袋里变白了，什么都想不出来了”
+
+\CN["兰丸"]
+“我也是。如果这是梦的话，一辈子都不醒也没关系。”
+能想到的程度……”
+
+{射精，だ}结束后还保持着联系。
+
+两个人一起享受着筋疲力尽和快感的余韵
+我品味着彼此结合的喜悦。
+
+//●演出：暗転
+: HideWnd()
+: StopBackVoice()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_C06_50_1
+: Jump( "*HScene_End" )
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●冥が非処女の場合
+*sc001_03b
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_1_0110001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0692" )
+\CN["冥"]
+“这么湿的话，没关系……。
+想快点和你……那个，做，做……”
+
+匍匐着面向屁股。
+
+\CN["兰丸"]
+“……冥？你很积极吧？”
+
+: PlayVoice( "Voices/vo09_mei0693" )
+\CN["冥"]
+“呃……怎么说呢，没能好好地看脸……。
+太害羞了，好像要起火了……”
+
+明明不是没有经验的生女儿
+兰丸是对手的话会很紧张。
+
+//●ＳＥ：衣擦れの音
+: PlaySe( "SE/Se_Cloth01" )
+\CN["兰丸"]
+“……嗯”
+
+把兰丸穿的衣服咯吱咯吱地响
+从做好的间隙中，小金很有气势地出来。
+
+: PlayVoice( "Voices/vo09_mei0694" )
+\CN["冥"]
+“小气鬼，已经那么大了……”
+
+血管凸出，勃起成银。
+
+\CN["兰丸"]
+“如果责怪冥的话，会非常兴奋。
+抱在怀里的话，味道很好闻……”
+
+: HideWnd()
+: evfile = "eve_b006_1_1_0410001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0638" )
+\CN["冥"]
+“啊，是香味……你，是在闻我的味道吗！？”
+
+\CN["兰丸"]
+“嗯，味道很甜。”
+
+: PlayVoice( "Voices/vo09_mei0639" )
+\CN["冥"]
+“～～～～～！哇，笨蛋！唔，这么说来，是在泡澡
+还没出汗……”
+
+事到如今才在意起来。
+
+\CN["兰丸"]
+“小冥，不用在意也没关系。”
+
+: PlayVoice( "Voices/vo09_mei0695" )
+\CN["冥"]
+“这样啊。嘛，我也很在意。”
+
+我非常想和兰丸做爱。
+
+: PlayVoice( "Voices/vo09_mei0696" )
+\CN["冥"]
+“咯吱咯吱的小鸡鸡，快点变成我的女婿……。
+我希望你能插我，我很开心……”
+
+\CN["兰丸"]
+“嗯。那我就去插了。”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咔嚓……咔哧……咔哧……咔哧咔哧……！
+
+//●演技：男性器が挿入されています
+: PlayVoice( "Voices/vo09_mei0697" )
+\CN["冥"]
+「嗯，59a0」♥</哦，好大啊♥</啊啊……啊啊啊……”
+
+: PlayVoice( "Voices/vo09_mei0698" )
+\CN["冥"]
+“慢慢地{插入，是}出来……女阴，一边展开
+胖公鸡，快来了……嗯，饿了♥</color>」
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi01" )
+顽强勃起的小鸡鸡一口气跑到里面{插入，是}。
+
+\CN["兰丸"]
+“哈、哈、冥……”
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0111002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0699" )
+\CN["冥"]
+“嗯哈，嗯……里面{插入，是}了……。
+呵呵，终于做了啊”
+
+\CN["兰丸"]
+「恩。冥酱中非常温暖。
+跟小鸡鸡纠缠起来”
+
+: PlayVoice( "Voices/vo09_mei0700" )
+\CN["冥"]
+“这样啊。如果你觉得我很舒服就好了……。
+你的也是，嗯……{阴道内，内}痒痒的」
+
+至今为止，有人说我的女阴是名器或是最高的
+虽然有……。
+
+兰丸一边兴奋一边说很舒服
+我非常开心。
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0311002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0657" )
+\CN["冥"]
+“一边战战兢兢，一边打开我的{阴道内，内}
+嗯……啊，啊……肚子下面会变热”
+
+经验不是那么多
+如果是兰丸那样的尺寸的话会有一点压迫感。
+
+\CN["兰丸"]
+“嗯。只是放进去就感觉无限感慨。
+就算一动不动，心情也非常好……”
+
+: PlayVoice( "Voices/vo09_mei0658" )
+\CN["冥"]
+“喜欢你，让你心情变好
+可以吗？”
+
+\CN["兰丸"]
+“那么，慢慢来……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0662" )
+\CN["冥"]
+“恩……啊…啊…啊…啊啊…小鸡鸡、{阴道内、肚子}、
+来来往往，好像被公鸡抚摸着……”
+
+: PlayVoice( "Voices/vo09_mei0663" )
+\CN["冥"]
+“啊，嗯，嗯，嗯……啊啊啊…啊啊啊啊啊，啊
+啊……哈，嗯……嗯，嗯！”
+
+: PlayBackVoice( "Voices/BGV09_mei_aegi02" )
+就像小鸡鸡在阴道内抚摸一样以缓慢的速度来回移动。
+
+我以为兰丸会一边发出含蓄的声音
+从小腹部到背部有个稀里哗啦的东西跑过去。
+
+: PlayVoice( "Voices/vo09_mei0664" )
+\CN["冥"]
+“哈……嗯啊……等等，兰丸……恩”
+
+: PlayVoice( "Voices/vo09_mei0701" )
+\CN["冥"]
+“呃，好舒服……哈，啊，小矮子{阴道内，肚子}啊
+被推开了，嗯，好像要扩大成兰丸的形状了……”
+
+被当做兰丸的东西的感觉增加了快感。
+
+\CN["兰丸"]
+“哈……哈……被这么说的话，我已经
+没有控制的自信”
+
+\CN["兰丸"]
+“小冥太可爱了，好像停不下来了……”
+
+: PlayVoice( "Voices/vo09_mei0666" )
+\CN["冥"]
+“恩哈哈……嗯……不要停，好的……”
+
+: PlayVoice( "Voices/vo09_mei0667" )
+\CN["冥"]
+“如果你能要求我到无法抑制的程度的话……。
+恩……那边的人，高兴得不得了……”
+
+\CN["兰丸"]
+“我也要更加地好好地……”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！好！努奇！好烦！！
+
+//●演技：さっきよりも深いところにまで男性器が入ってます
+: PlayVoice( "Voices/vo09_mei0668" )
+\CN["冥"]
+“嗯……呃……啊…啊…啊…啊……啊……啊……啊……
+啊啊啊啊啊啊！”
+
+比刚才更深的地方有小鸡鸡{插入，是}过来。
+
+小公鸡的前脸在肚子里咯噔咯噔地打过来
+从那里开始在身体中蔓延的淡淡的麻木让人感觉非常舒服。
+
+\CN["兰丸"]
+“哈！哈！哈！冥！嗯！哈！”
+
+//●演技：ピストンが激しくなります
+: PlayVoice( "Voices/vo09_mei0669" )
+\CN["冥"]
+“兰丸……啊啊啊啊啊啊啊啊啊啊啊啊！小金
+热的、{阴道内、内}、擦了很多……」
+
+: PlayVoice( "Voices/vo09_mei0670" )
+\CN["冥"]
+“越是被坚强，越是被坚强……嗯，哈哈！
+能感受到你……真是难以忍受……”
+
+\CN["兰丸"]
+“呜呜……真是的，已经系好了……。
+冥酱，自己把屁股伸出来……”
+
+: PlayVoice( "Voices/vo09_mei0671" )
+\CN["冥"]
+“是吗，是吗……嗯……模仿那样的……”
+
+因为是无意识做的事情所以很吃惊
+不知为什么非常害羞。
+
+\CN["兰丸"]
+“多亏了你，我非常兴奋。”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+剧毒！剧毒！嘘！嘘！啧啧！努奇！
+
+: PlayVoice( "Voices/vo09_mei0672" )
+\CN["冥"]
+“啊，啊，啊……嗯，嗯……嘛，又变激烈了
+嗯……呃……啊啊……”
+
+: PlayVoice( "Voices/vo09_mei0673" )
+\CN["冥"]
+“小气鬼、{阴道内、肚子}、被摩擦了……兰丸的、大的、
+里面，猜中了的话……啊，呜哇！”
+
+\CN["兰丸"]
+「哈、哈、冥酱的……根和尖、竿的正中间、
+同时收紧……被褶皱包裹着，快要被吸入了”
+
+\CN["兰丸"]
+“这可…嗯……不好好坚持的话，马上
+好像会被拿走……”
+
+: PlayVoice( "Voices/vo09_mei0702" )
+\CN["冥"]
+“嗯……是吗……兰丸，你不用忍耐。
+想变得活泼的话，什么时候都可以……”
+
+\CN["兰丸"]
+“嗯。但是，好不容易和冥做爱了。
+我还想……”
+
+小狗、小狗、一直、一直、一直、咕噜噜、呜噜！
+
+: PlayVoice( "Voices/vo09_mei0675" )
+\CN["冥"]
+“啊啊，啊，啊……嗯……啊啊啊……啊啊啊……啊啊啊……”……
+啊……我发出了很厉害的声音……”
+
+被兰丸责备的话，讨厌的声音就会随便发出。
+
+\CN["兰丸"]
+“哈、哈、哈……呜……”
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0111002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0676" )
+\CN["冥"]
+“呵呵，看到你心情很好的样子
+好开心……嗯，啊，啊啊啊啊啊！”
+
+: PlayVoice( "Voices/vo09_mei0677" )
+\CN["冥"]
+“快感一个接一个地涌来……哈，哈，一直
+虽然为了不被冲走而压抑着……嗯，嗯，嗯”
+
+我也已经快要干劲十足了。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0703" )
+\CN["冥"]
+“呃，看起来很帅……嗯…兰丸，好像已经很帅了……”
+
+\CN["兰丸"]
+“小冥，我已经无法忍受了……”
+
+: PlayVoice( "Voices/vo09_mei0704" )
+\CN["冥"]
+“那么，那么……一起……兰丸，一起去吧……”
+
+\CN["兰丸"]
+“嗯！我也和冥酱一起……”
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0411002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0681" )
+\CN["冥"]
+“嗯，啊，啊，啊……兰丸……啊，啊，啊，啊”
+
+\CN["兰丸"]
+“哈、哈、哈……冥……冥……”
+
+互相呼唤名字，加强交往。
+
+抽插变得激烈，粘糊糊的声音变大。
+
+: PlayVoice( "Voices/vo09_mei0682" )
+\CN["冥"]
+“嗯……兰丸……我喜欢你……嗯，好饿！”
+
+\CN["兰丸"]
+“我也是……从很久以前开始就喜欢，渐渐地喜欢上了”
+
+在感情用事的状态下互相传达喜欢的心情的话
+感觉快感达到了顶峰。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0683" )
+\CN["冥"]
+“啊，好像很帅……兰丸，已经……了！”
+
+\CN["兰丸"]
+“喂，我也，快拿出来吧……”
+
+: PlayVoice( "Voices/vo09_mei0684" )
+\CN["冥"]
+“……如果{射精，だ}的话，{阴道内，内}{射精，だ}”
+
+: PlayVoice( "Voices/vo09_mei0705" )
+\CN["冥"]
+“因为我想好好地{阴道内，内}接受你的精液……。
+哈，嗯……想被你满足……”
+
+\CN["兰丸"]
+“嗯，嗯……！我把它全部拿出来……”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！
+哇！哇！啪！
+
+一边拨弄着敲击肉的激烈敲击声
+兰丸在我的阴道内反复进行射精的激烈抽插。
+
+\CN["兰丸"]
+“哈、哈……啊、呜”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0686" )
+\CN["冥"]
+“嗯……好棒……好棒啊……。
+兰丸、是、{射精，是}做……精液、尽情、{阴道内、内}
+{射精，所以}”
+
+: PlayVoice( "Voices/vo09_mei0706" )
+\CN["冥"]
+「啊啊啊啊啊……好棒！好棒……兰丸，真是太棒了……！
+啊啊啊，好棒……嗯……嗯……嗯……嗯……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo09_mei0707" )
+\CN["冥"]
+“恩啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊————！！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克、别克、德彪乌！
+
+{阴道内，肚子}小鸡鸡用力弹出来的瞬间
+热的感觉在身体中蔓延。
+
+//●ＣＧ差分：挿入・射精後精液
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0411013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0688" )
+\CN["冥"]
+“嗯，啊啊啊啊……啊，啊，我，我知道……。
+兰丸的精子流出来了……”
+
+\CN["兰丸"]
+“哈——……哈——……好像被吸入了……。
+感觉真的变成了一个”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咚，咚，咚，咚，咚，咚，咚。
+
+小鸡像脉搏一样跳得很大
+把精液放在阴道里。
+
+: HideWnd()
+: evfile = "eve_b006_1_2_0111013_1100020_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0689" )
+\CN["冥"]
+“呼……嗯，哈……啊啊啊，哈……
+嘛，好像还在{射精}呢」
+
+\CN["兰丸"]
+“完全收不住。”
+
+: PlayVoice( "Voices/vo09_mei0690" )
+\CN["冥"]
+“没关系。不如说，全部都好好地，在我的{阴道内，内}里
+{射精，だ}希望你切了……」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b006_1_2_0311013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：最後、食いしばるような感じで絶頂です
+: PlayVoice( "Voices/vo09_mei0708" )
+\CN["冥"]
+“对，而且，还有余韵……我也，又……
+变成这样……嗯，嗯……嗯，嗯……嗯，酷
+嗯——————！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+兰丸一边轻轻摇晃着腰，一边注入剩下的精液
+配合那个，我也再去了。
+
+: PlayVoice( "Voices/vo09_mei0709" )
+\CN["冥"]
+“啊————啊，哈，哈……嗯…啊啊啊啊”
+
+: PlayVoice( "Voices/vo09_mei0691" )
+\CN["冥"]
+“恩，嗯……肚子很暖和，很满足……。
+哈，哈，脑袋里变白了，什么都想不出来了”
+
+\CN["兰丸"]
+“我也是。如果这是梦的话，一辈子都不醒也没关系。”
+能想到的程度……”
+
+{射精，だ}结束后还保持着联系。
+
+两个人一起享受着筋疲力尽和快感的余韵
+我品味着彼此结合的喜悦。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠フラグ：蘭丸と結ばれる,1
+//＠Ｈシーン終了：SC_C06_50_2
+//●分岐終了
+//●場所移動：蘭丸の家の前
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_C06_50" )
+//ここでＨ記録代入する
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "WithElf", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Kiss", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "EjaculateVagina", RandomRange(20,30)) endif
+: SetMission( "SC_C06_50", "Successed" )
+//処女の場合
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMei") == false )
+	: Flag( "NonVirgin_Mei", true )
+	: Flag( "Love_Mei", true )
+	: if ( $inExtra == false ) CharaSexHistory( "Mei", 301 ) endif
+	: if ( $inExtra == false ) CharaLostVirgin( "Mei", 301 ) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mei", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaSexHistory( "Mei", 302 ) endif
+: endif
+: Flag( "Love_Mei", true )
+: LoadMap( "Map_Town06_01_Sakitama", "From06", "Scenarios/Map_Town06_Sakitama_Init*Map01")

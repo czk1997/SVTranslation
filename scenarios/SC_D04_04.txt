@@ -1,0 +1,297 @@
+//========================================================
+//○白夜、牢屋敷襲来
+//========================================================
+//●場所：帝都牢屋敷
+//●視点：第三者視点
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——某个没有月亮的夜晚，发生了那个事件……。
+
+//●演出：爆発エフェクト
+//●背景：牢屋敷・外観・夜
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Yashiki01_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+\CN["囚犯1"]
+“什么，什么，什么！？发生了什么？”
+
+\CN["看守1"]
+“酷……是入侵者！必须快点叫警察……！”
+
+\CN["看守2"]
+“在监狱里做这种事……目的是什么……！？
+抢劫吗……？”
+
+: HideWnd()
+//: CharaCostume( "Manji", 1 )
+: DrawChara( "Manji", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+\CN["卍"]
+“遗憾的是，这不是泷。”
+
+//●演出：斬殺エフェクト
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+\CN["看守2"]
+“……不是……是！”
+
+\CN["卍"]
+“不，不好。从某种意义上来说，我只是个临时工。”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: CharaCostume( "Midori", 1 )
+: DrawChara( "Midori", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo10_mid0490" )
+\CN["绿色"]
+「卍、白日不灭、{杀、バラ}不行。
+没什么时间”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["卍"]
+“切！命令我！”
+
+白夜的干部特意出动，袭击了帝都的监狱。
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+\CN["警察1"]
+“你们干的吗？这样的事我就原谅——”
+
+//●演出：斬殺エフェクト
+: HideWnd()
+: Call( "Scenarios/Effect*Blood01" )
+: DrawChara( "Midori", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0491" )
+\CN["绿色"]
+“‘战场，青鱼’会喋喋不休地说话
+遇到那样的事。能变得聪明一点真是太好了”
+
+: DrawChara( "Midori", 19, 0)
+: PlayVoice( "Voices/vo10_mid0492" )
+\CN["绿色"]
+“啊，死了也没什么意义啊♪”
+
+//●演出：場面転換トランジション
+//●場所：座敷牢
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+//: EraseChara( "Manji", 0.0 )
+: EraseChara( "Midori", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_ZashikiRo01_04", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: CharaCostume( "Ranmaru", 0 )
+: DrawChara( "Ranmaru", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["兰丸"]
+“只有监牢做得非常坚固呢。”
+
+\CN["囚犯1"]
+“好了，拜托了……！从这里拿出来！”
+
+\CN["囚犯2"]
+“嘿嘿，虽然不太清楚，但是这是个逃跑的机会。”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“我会把钥匙弄坏的，剩下的就随你的便吧。
+我照顾不了那么多”
+
+//●演出：斬撃エフェクト
+//蘭丸cos1へ変更
+: HideWnd()
+: CharaCostume( "Ranmaru", 1 )
+: DrawChara( "Ranmaru", 5, 0)
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: ShowWnd()
+兰丸非常容易地斩断了牢房的钥匙。
+
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+“虽然好久没斩铁了，但是进展顺利真是太好了。”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“那么，把剩下的门也好好地弄坏吧。”
+
+//蘭丸cos0へ戻し
+: CharaCostume( "Ranmaru", 0 )
+//●演出：蘭丸　退場する
+: PlaySe("SE/Se_Foot01")
+: chara = "Ranmaru"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+\CN["囚犯3"]
+“哦哦，我们是自由的！”
+
+\CN["囚犯4"]
+“快点走！聚乙烯来了又会倒箱的。”
+
+囚犯们争先恐后地冲进狭窄的入口
+跑出去。
+
+//●演出：無黒　立ち絵表示
+//無黒cos6へ変更
+: CharaCostume( "Mukuro", 6 )
+: DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+无黑有看守和幕臣跟随性奴隶的
+平时被关进了个别的坐牢。
+
+//●視点：無黒視点
+//蘭丸cos1へ変更
+: CharaCostume( "Ranmaru", 1 )
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["兰丸"]
+“这是你的刀吧？”
+
+: DrawChara( "Mukuro", 37, 0)
+: PlayVoice( "Voices/vo00_muk3639" )
+\CN["无黑色"]
+“啊，谢谢……”
+
+: CharaCostume( "Mukuro", 0 )
+接受男人的刀。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk3640" )
+\CN["无黑色"]
+（沉在手里。
+这么说来，这是几天没拿刀了？）
+
+: DrawChara( "Mukuro", 28, 0)
+这个好像要花时间找回直觉。
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“你不慌张吧。”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3641" )
+\CN["无黑色"]
+“我知道即使着急也没有意义。
+他们会模仿袭击监狱。警察可以对付
+又不可能”
+
+: PlayVoice( "Voices/vo00_muk3642" )
+\CN["无黑色"]
+“而且，乘着这个骚动逃不掉啊
+就算能越狱，也活不下去吧”
+
+即使逃跑也只是垂头丧气地死去。
+那样的话，还是做囚犯比较好。
+
+嘛，趁着这个混乱不越狱的家伙
+我想这里一个人也没有。
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“嗯。那你就留在这里吗？”
+
+: DrawChara( "Mukuro", 2, 0, 3 )
+: PlayVoice( "Voices/vo00_muk3643" )
+\CN["无黑色"]
+“真是愚蠢的问题啊。肯定会逃走的。”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk3644" )
+\CN["无黑色"]
+“谢谢你的刀。谢谢你。”
+
+//●演出：無黒　退場する
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "WR"; Call( "Scenarios/Common*FgEffOut");
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+“不客气”
+
+
+//蘭丸cos0へ戻し
+
+//●演出：場面転換トランジション
+//●背景：牢屋敷・外観・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: CharaCostume( "Ranmaru", 0 )
+: DrawImage( 1, 0, "BGImage/BG_Yashiki01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Midori", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Manji", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0493" )
+\CN["绿色"]
+“喂，卍，不要抢走我们的猎物！”
+
+\CN["卍"]
+“{杀，玫瑰}因为是随便的，所以没什么关系。”
+
+: DrawChara( "Midori", 13, 0)
+: PlayVoice( "Voices/vo10_mid0494" )
+\CN["绿色"]
+“啊？你在跟谁说话？”？
+那是祸从口出吧？贯彻了吗？”
+
+\CN["卍"]
+“……薯片”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+出去后战斗过的白夜们
+将赶来的警察和看守一个接一个地杀死
+看见了。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 17, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo00_muk3645" )
+\CN["无黑色"]
+（那的确是白夜的……。
+最好不要管它。）
+
+自己的技术太迟钝了，被发现的话也许会被杀。
+
+好不容易逃了却死了，对不起。
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+小心不要被他们发现
+成功逃出了帝都的牢房。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//Yoshi：背景消去
+//＠フラグ：脱獄,1
+: Flag( "PrisonBreak", true )
+//●シーン：「浪人生活開始」へ
+//＠シナリオジャンプ：SC_D04_05
+: Jump( "Scenarios/SC_D04_05" )

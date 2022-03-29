@@ -1,0 +1,2107 @@
+//========================================================
+//○謹慎の理由
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Azami", 0 )
+: CharaCostume( "Ryu", 0 )
+: CharaCostume( "Bebi", 0 )
+: CharaCostume( "Sayo", 0 )
+: CharaCostume( "Ji", 1 )
+//●場所：鬼灯屯所近く
+//●視点：小夜視点
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Genkan01", 1.0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+——几天前。
+
+像往常一样去鬼灯的屯所玩的话
+从门口传来了小小的眼看就要消失的叫声。
+
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Sayo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo24_say0091" )
+\CN["小夜"]
+“你看，Leo，小狗被扔了。”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“你是弃犬吗？真是的，别做那么过分的事。”
+
+小狗的毛掉了很多地方在秃头
+总之很脏。
+
+: HideWnd()
+: cutinfile = "evx_a037_1_1_0100000_0000000_0_0"
+: Call("Scenarios/Common*CutinFadeIn")
+: ShowWnd()
+\CN["小狗"]
+“咕噜るる……”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“哇……！明明不用露出那么可怕的表情。
+因为并不是要拿着吃”
+
+: DrawChara( "Sayo", 1, 0)
+: PlayVoice( "Voices/vo24_say0092" )
+\CN["小夜"]
+“呵呵，这个人不可怕。来吧……”
+
+\CN["小狗"]
+“呼呼♪呼呼♪”
+
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+小狗舔了我的手之后，蹭了我的身体。
+
+: DrawChara( "Sayo", 4, 0)
+: PlayVoice( "Voices/vo24_say0093" )
+\CN["小夜"]
+“雷欧，这孩子真可爱。”
+
+: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“是啊。那我也稍微抚摸一下吧——”
+
+\CN["小狗"]
+“撞！”
+
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“痛啊！”
+
+: DrawChara( "Sayo", 3, 0)
+: PlayVoice( "Voices/vo24_say0094" )
+\CN["小夜"]
+“雷欧，这孩子可能饿了。”
+
+: DrawChara( "Leo", 10, 0)
+\CN["雷欧"]
+“那，我明白了……。
+好了，告诉他要离开他”
+
+: DrawChara( "Sayo", 2, 0)
+: PlayVoice( "Voices/vo24_say0095" )
+\CN["小夜"]
+“啊！喂！那个，名字……。
+是啊。必须先考虑名字”
+
+: DrawChara( "Leo", 10, 0)
+\CN["雷欧"]
+“没关系……有了……”
+
+: DrawChara( "Sayo", 1, 0)
+: PlayVoice( "Voices/vo24_say0096" )
+\CN["小夜"]
+“是啊。狮子丸……嗯，狮子丸比较好。
+很勇敢”
+
+: DrawChara( "Sayo", 8, 0)
+: PlayVoice( "Voices/vo24_say0097" )
+\CN["小夜"]
+“狮子丸，把雷欧放开。”
+
+\CN["小狗"]
+“汪！”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“说起来……你要好好听sayo的话啊。”
+
+: DrawChara( "Sayo", 2, 0)
+: PlayVoice( "Voices/vo24_say0098" )
+\CN["小夜"]
+“不是你，是狮子丸吧？”
+
+\CN["狮子丸"]
+“哇————嗯♪”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“是狮子丸吗……。请sayo取的名字
+好像很喜欢呢”
+
+: DrawChara( "Sayo", 1, 0)
+: PlayVoice( "Voices/vo24_say0099" )
+\CN["小夜"]
+“嘿嘿♪太好了。”
+
+我想在幕府养狮子丸的爷爷
+虽然拜托了很多次，但是被反对说不行。
+
+所以，我就拜托小聪明在鬼灯的庭院里养了它。
+
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所の庭
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Sayo", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/40_Comedy")
+: ShowWnd()
+\CN["狮子丸"]
+“汪汪！”
+
+过了一周的时候，狮子丸和大家很亲近
+大家都很疼爱狮子丸啊。
+
+: DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "R" )
+: PlayVoice( "Voices/vo01_mom0763" )
+\CN["桃子"]
+“是的，狮子丸，是点心。
+这是小银给我做的狗用点心”
+
+\CN["狮子丸"]
+“拥抱拥抱拥抱”
+
+: DrawChara( "Sayo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo24_say0100" )
+\CN["小夜"]
+“银，真厉害。狮子丸吃得很香。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["雷欧"]
+“诶，你给狗做点心啊。”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“……因为是女儿说的，所以没办法只是做了。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "R" )
+: PlayVoice( "Voices/vo01_mom0764" )
+\CN["桃子"]
+“这个可爱的项圈是公主吗？”
+
+: DrawChara( "Sayo", 2, 0)
+: PlayVoice( "Voices/vo24_say0101" )
+\CN["小夜"]
+“是啊，我是用零用钱给你买的。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 36, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo00_muk1526" )
+\CN["无黑色"]
+“这么可爱的孩子要扔了，真让人难以理解。”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: PlayVoice( "Voices/vo02_kin0280" )
+\CN["黄菜子"]
+“真是的。来这边吧。好的。”
+
+//●演出：紅美が現れて腹を見せる獅子丸
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["狮子丸"]
+“……！不行！”
+
+: DrawChara( "Bebi", 2, 0)
+: PlayVoice( "Voices/vo07_beb0079" )
+\CN["红美"]
+“为什么要马上让在下露出肚子呢。
+明明什么都没做就在耍我……”
+
+: DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+\CN["银子"]
+“应该是野生的本能吧……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["雷欧"]
+“好，好……”
+
+\CN["狮子丸"]
+“撞！”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“一直在！所以说很痛！”！
+你为什么一下子就咬我啊」
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Sayo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo24_say0102" )
+\CN["小夜"]
+“可恶！狮子丸！不能咬雷欧。”
+
+: HideWnd()
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: cutinfile = "evx_a037_1_1_0100000_0000000_0_0"
+: Call("Scenarios/Common*CutinFadeIn")
+: ShowWnd()
+\CN["狮子丸"]
+“嗯。”
+
+鬼灯的大家也喜欢狮子丸
+你非常疼爱我。
+
+//●演出：場面転換トランジション
+//●背景：空・夕方
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawImage( 1, 0, "BGImage/BG_Sky02", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+但是，有一天，狮子丸的样子总觉得很奇怪。
+
+: HideWnd()
+: PlayBgm("BGM/03_CM003")
+: SwapImage( 1, 0, "BGImage/BG_Houzuki_Genkan02", Call("Scenarios/Common*EffTime") )
+: DrawChara( "Sayo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: DrawChara( "Ji", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: ShowWnd()
+\CN["老头儿"]
+“小夜先生，差不多该回去了。”
+
+: DrawChara( "Sayo", 3, 0)
+: PlayVoice( "Voices/vo24_say0103" )
+\CN["小夜"]
+“嗯，爷爷。还有一点……”
+
+: DrawChara( "Ji", 10, 0)
+\CN["老头儿"]
+“不成。不马上回去的话会被将军骂的。”
+
+父亲对我一点兴趣也没有
+我讨厌在外面玩。
+
+来鬼灯玩也是因为有人跟我一起拜托过我
+终于有种苦涩的感觉。
+
+: DrawChara( "Sayo", 4, 0)
+: PlayVoice( "Voices/vo24_say0104" )
+\CN["小夜"]
+“狮子丸，明天再来玩。”
+
+: HideWnd()
+: cutinfile = "evx_a037_1_1_0100000_0000000_0_0"
+: Call("Scenarios/Common*CutinFadeIn")
+: ShowWnd()
+\CN["狮子丸"]
+“嗯~”
+
+所以，分别的时候总是很痛苦。
+
+狮子丸的话，会非常悲伤地哭的。
+
+\CN["狮子丸"]
+「…………」
+
+: DrawChara( "Sayo", 7, 0)
+: PlayVoice( "Voices/vo24_say0105" )
+\CN["小夜"]
+“狮子丸，怎么了？”
+
+但是，这一天和平时不一样。
+
+狮子丸不想离开我
+咬着下摆拉过来的。
+
+: DrawChara( "Sayo", 8, 0)
+: PlayVoice( "Voices/vo24_say0106" )
+\CN["小夜"]
+“没关系，狮子丸。马上就能再见面了。”
+
+\CN["狮子丸"]
+“嗯……”
+
+那时候狮子丸含泪的眼睛
+我不会再忘记的。
+
+: StopBgm( 1.0 )
+: HideWnd()
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+因为——————
+
+//●演出：時間経過
+//●場所：屯所内・昼
+//●視点：第三者視点
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——第二天早上，见回组的男人们来到鬼灯的屯所。
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Genkan01", 1.0 )
+: Wait()
+: PlayBgm("BGM/12_CM012")
+: ShowWnd()
+: DrawChara( "Ryu", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+\CN["田村"]
+“这次我们年轻人给你们添麻烦了，真不好意思。
+我觉得这些家伙也在反省。啊”
+
+\CN["小河"]
+“老师！”
+
+\CN["横山"]
+“恶恶恶”
+
+: DrawChara( "Ryu", 2, 0)
+\CN["龙"]
+“以后请注意。”
+
+鬼灯队士取缔了在居酒屋胡闹的人
+其实是一群见回组的人。
+
+于是，我就来谢罪说给你添麻烦了，就是这样。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ryu", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Leo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["雷欧"]
+“那些家伙，在小看我……”
+
+: DrawChara( "Gin", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+\CN["银子"]
+“我又不是小孩子，这种程度会变得很热血。”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“你才是脑子里浮着血管……”
+
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: PlayVoice( "Voices/vo01_mom0765" )
+\CN["桃子"]
+“小银，雷欧，冷静点。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "C" )
+: PlayVoice( "Voices/vo00_muk1527" )
+\CN["无黑色"]
+“是啊。龙先生也在压制着呢
+我们生气的话就白费了”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "L" )
+: PlayVoice( "Voices/vo01_mom0766" )
+\CN["桃子"]
+“无黑，你也是！拜托了，不要拔刀。”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0767" )
+\CN["桃子"]
+“而且，公主差不多该来玩儿了。
+不能以生硬的气氛来迎接吧？”
+
+总之先形式上道歉
+见回组的人回去了……。
+
+//●演出：場面転換トランジション
+//●場所：屯所・庭・昼
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Houzuki_Genkan01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["田村"]
+“因为你们太麻烦了，所以我不得不低头了
+可是”
+
+\CN["小河"]
+“我说对不起。”
+
+\CN["横山"]
+“不过鬼灯看起来很了不起，我真的不喜欢。”
+
+一边恶语伤人一边回去的见回组的男人们。
+
+\CN["田村"]
+“哦，怎么了？你养了小狗吗？”
+
+\CN["小河"]
+“啊，因为我很生气，所以这家伙有点痛
+不会让你遭遇的吧？鬼灯的家伙们都很珍视
+受伤的话一定会来PANI的”
+
+\CN["横山"]
+“好啊，那个！！”
+
+赞同的男人和
+
+\CN["田村"]
+“我不知道，不管怎么样。”
+
+装作阻止的样子笑嘻嘻的男人。
+
+然后，一个男人靠近了狮子丸。
+
+: StopBgm( 1.0 )
+//: EraseChara( "Mimawari", 0.5 )
+\CN["狮子丸"]
+“咕噜鲁鲁……”
+
+: PlayBgm("BGM/30_CM015")
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["小河"]
+“啊？”
+
+\CN["狮子丸"]
+“哇哇哇哇！”
+
+狮子丸朝着见回组的男人吠了一声——
+
+\CN["小河"]
+“别叫了，我还是狗啊！”
+
+//●演出：男が犬を蹴る
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+\CN["狮子丸"]
+“喂！”
+
+男子气得把狮子丸踢飞。
+
+\CN["横山"]
+“喂喂，刚才不是杀了你吗？”
+
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mimawari", 0, 0, 1 )
+\CN["小河"]
+“没关系，竟然向人类吠，真是个狂妄的臭狗。”
+
+为了不让惨叫声漏出来，为了不让嘴巴张开，紧紧抓住——、
+
+\CN["狮子丸"]
+“——！”
+
+: HideWnd()
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+见回组的男子用刀刺穿了狮子丸的脚。
+
+\CN["小河"]
+“嘿嘿……这是对我怒吼的惩罚……！”
+
+//●演出：刺す演出
+: HideWnd()
+: Call( "Scenarios/Effect*Blood05" )
+: Call( "Scenarios/Effect*Blood05" )
+: Call( "Scenarios/Effect*Blood05" )
+: ShowWnd()
+——扎什、扎什、扎什！
+
+\CN["横山"]
+“你真可怜啊。”
+
+\CN["狮子丸"]
+「！！！」
+
+狮子丸虽然为想办法开口而烦恼，但是男人却不让他那样做。
+
+\CN["小河"]
+“你有四条腿，所以不需要一条腿吧。”
+
+: HideWnd()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: Call( "Scenarios/Effect*Blood01" )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["狮子丸"]
+“哇！”
+
+男子用刀将后腿一刀斩断。
+
+\CN["横山"]
+“那么，我就把眼珠子。”
+
+//●演出：刺す演出
+: HideWnd()
+: PlaySe("SE/Se_Sting01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect03b", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition03", 1.0, true, 0.0, 0.0)
+: Wait()
+: Call( "Scenarios/Effect*Blood01" )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["狮子丸"]
+“恩恩恩恩！！”
+
+\CN["横山"]
+“好有趣啊，这个”
+
+\CN["小河"]
+“嘿嘿，虽然已经不是要痛骂的时候了。
+嘛，我们做了也没留下证据就好了”
+
+\CN["横山"]
+“啊，要是恨的话，只是稍微喝醉了胡闹就没精打采了。”
+你恨笨蛋队士啊。嘿嘿”
+
+: HideWnd()
+: Call( "Scenarios/Effect*Blood05" )
+: ShowWnd()
+男人们即使狮子丸不动了也用刀咬住了。
+
+在身体里，刺得像个洞一样
+削耳朵、剜眼睛、捏舌头。
+
+即使狮子丸打垮了，还是咯咯地笑着挥舞着刀。
+
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+\CN["田村"]
+“喂！有人来了。我马上回去。”
+
+\CN["小河"]
+“哦，是啊。”
+
+\CN["横山"]
+“啊，真痛快。
+但是，总觉得很兴奋”
+
+\CN["小河"]
+“那么，等一下再到彩城去玩吧。”
+
+\CN["横山"]
+“真好啊，那个。从早上开始就有在做的地方吧。”
+
+: PlaySe( "SE/Se_dash02" )
+就在见回组的男人们从屯所的门出来的同时
+幕府的马车停在了屯所。
+
+小夜的爷爷像往常一样把小夜放在鬼灯的屯所
+带来的。
+
+: DrawChara( "Ji", 1, 0, 0, 0.0, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["老头儿"]
+“现在是见回组的……？”
+
+//●演出：場面転換トランジション
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ji", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Sayo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo24_say0107" )
+\CN["小夜"]
+“谢谢，爷爷。
+今天带来了狮子丸喜欢的东西”
+
+: DrawChara( "Sayo", 4, 0)
+: PlayVoice( "Voices/vo24_say0108" )
+\CN["小夜"]
+“狮子丸一定会很高兴的。
+昨天分手的时候，因为看起来很寂寞所以很在意
+”
+
+: DrawChara( "Sayo", 1, 0)
+: PlayVoice( "Voices/vo24_say0109" )
+\CN["小夜"]
+“狮子丸，来了。”
+
+狮子丸总是一声尖锐地叫着
+摇摇摆摆着尾巴，在小夜的地方
+应该会来的。
+
+但是，当然，今天不会变成那样——
+
+: DrawChara( "Sayo", 0, 0)
+: PlayVoice( "Voices/vo24_say0110" )
+\CN["小夜"]
+“啊？大家都聚在一起了。
+发生了什么事吗？”
+
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Sayo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["雷欧"]
+“哦，纱绘，你来了吗？今天真早啊。”
+
+: DrawChara( "Sayo", 1, 0)
+: PlayVoice( "Voices/vo24_say0111" )
+\CN["小夜"]
+“是的，因为想见狮子丸，所以早上很早就起床了。”
+
+: DrawChara( "Sayo", 0, 0)
+: PlayVoice( "Voices/vo24_say0112" )
+\CN["小夜"]
+“但是，总觉得大家都聚在一起了……。
+发生了什么事吗？”
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“嗯，我也出去散步了……嗯？”
+
+那个时候，鼻子好使的Leo闻到了血的味道。
+
+: DrawChara( "Sayo", 10, 0)
+: PlayVoice( "Voices/vo24_say0113" )
+\CN["小夜"]
+“雷欧？你一副吓人的样子怎么了？”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“你在这里等着。”
+
+//●演出：レオ　ダッシュさせる
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: ShowWnd()
+小夜这么一说，雷欧就跑到大家都聚集的地方。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_02", 0.0 )
+: EraseChara( "Sayo", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 21, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["雷欧"]
+「…………！」
+
+: PlayBgm("BGM/29_ID02")
+浑身是血，脚被撕破了，耳朵也没有了
+小夜送的项圈被狮子丸的血染红了。
+
+映入眼帘的光景实在太凄惨了
+雷欧失言了。
+
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "L" )
+: PlayVoice( "Voices/vo00_muk1528" )
+\CN["无黑色"]
+“桃子……！”
+
+//●演技：悔しさを押し殺しながら
+: DrawChara( "Mukuro", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom0768" )
+\CN["桃子"]
+“……已经……晚了……”
+
+如果是桃之魔术的话，也许会有无黑的视线
+桃子颤抖着握着的拳头，这样回答。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["银子"]
+「…………」
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: PlayVoice( "Voices/vo02_kin0281" )
+\CN["黄菜子"]
+“唔……唔……这种事绝对……”……
+不能原谅……”
+
+黄菜子忍不住流泪。
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo07_beb0080" )
+\CN["红美"]
+“……对狮子丸做出这种事的家伙
+在下——我来杀你……”
+
+红美的眼睛通红，牙齿和指甲都露出了。
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+「…………」
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 36, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "RC" )
+: PlayVoice( "Voices/vo00_muk1529" )
+\CN["无黑色"]
+“雷欧？”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“小夜已经来了。
+……我会从我的口中告诉他”
+
+: DrawChara( "Mukuro", 42, 0)
+: PlayVoice( "Voices/vo00_muk1530" )
+\CN["无黑色"]
+“我知道了……请多关照。”
+
+//●演出：時間経過
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+雷欧告诉小夜狮子丸死了
+之后，狮子丸的遗体被厚葬在屯所的庭院里。
+
+在很喜欢狮子丸，睡得很好的地方
+建了一个小坟墓。
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_02", 1.0 )
+: DrawChara( "Leo", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Sayo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0114" )
+\CN["小夜"]
+“对不起……狮子丸。昨天我再好好照顾他一下。”
+嗯……狮子丸……狮子丸……嗯……嗯……嗯……”
+
+: DrawChara( "Sayo", 6, 0, 0 )
+: PlayVoice( "Voices/vo24_say0115" )
+\CN["小夜"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊——！”
+
+小夜把脸埋在了雷奥的胸里哭着喊。
+
+: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+「…………」
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+雷欧只是温柔地抱住它，接受它。
+
+: DrawChara( "Kinako", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo02_kin0282" )
+\CN["黄菜子"]
+“唔……狮子丸…唔……呜……”
+
+: DrawChara( "Mukuro", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1531" )
+\CN["无黑色"]
+“……呃……为什么没能早点注意到呢？”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom0769" )
+\CN["桃子"]
+“……”
+
+特别喜欢狮子丸的队员们
+忍住眼泪，流着眼泪。
+
+//●演出：時間経過
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Ji", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Leo", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“……啊，爷爷。小夜的事，请多关照。”
+
+: DrawChara( "Ji", 5, 0)
+\CN["老头儿"]
+“知道了。”
+
+雷欧拜托爷爷哭累了睡着的小夜。
+
+: DrawChara( "Ji", 10, 0)
+\CN["老头儿"]
+“那个……Leo大人，早上来这里的时候
+我看见见回组的人从门出来了”
+
+: DrawChara( "Ji", 10, 0)
+\CN["老头儿"]
+“好像被溅到了血
+所以才注意到了”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“……是这样吗。
+果然，今天早上那群家伙把狮子丸给——”
+
+: EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
+爷爷对雷奥说了一句话，就把小夜坐在马车上离开了。
+
+//●演出：レオ　去ってから場面転換
+//●演出：背景画像いくつかスライドさせる
+//●場所：見廻組・屯所前
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: Sleep(0.5)
+: PlayBgm("BGM/19_TM004")
+: SwapImage( 1, 0, "BGImage/BG_Houzuki_Genkan03", 0.5 )
+: Wait()
+: DrawChara( "Leo", 20, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+「…………」
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 20, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+「…………」
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 20, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+「…………」
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_TeitoUra01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 20, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+「…………」
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Yashiki02_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 20, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+——见回组屯所前
+
+//: DrawChara( "Leo", 20, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["雷欧"]
+“这里啊。原来有一群人在这里啊。”
+
+见回组是将军直属的部队。
+
+如果让回走组的人受伤或反抗的话
+被怀疑有反幕嫌疑，立即处刑。
+
+即使是同样是幕府组织的鬼灯队士
+更进一步说，就连财阀家也会变成这样。
+
+//●演出：銀　登場する
+: DrawChara( "Leo", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: DrawChara( "Gin", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["银子"]
+“放过他吧。有个正气的家伙竟然要去见回组打人。”
+不是要做的事”
+
+: DrawChara( "Leo", 12, 0)
+\CN["雷欧"]
+“那就是说，你不是认真的。”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+「话说，你回去吧。
+这里我一个人就足够了”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“是吗……”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“那么，你来这里干什么呢？”？
+容易理解的跟踪。跟踪狂吗？”
+
+: DrawChara( "Gin", 14, 0)
+\CN["银子"]
+“啊？谁来跟踪你啊。
+那肯定是散步吧”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“……随你的便，别拖后腿。”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“你才是，不要打扰我。”
+
+一边这样说着，雷欧和银开始放松身体。
+
+: HideWnd()
+: StopBgm( 0.25 )
+//: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_Effect00" )
+: evbg = true; evcos = false;
+: evfile = "evx_a061_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: ShowWnd()
+//: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“去吗——”
+
+//: DrawChara( "Gin", 4, 0)
+\CN["银子"]
+“喂！”
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//●演出：場面転換トランジション
+//: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/06_CM006")
+: ShowWnd()
+: DrawChara( "Leo", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["见回组守门的男子1"]
+“这里是见回组的屯所。鬼灯那家伙？有什么事吗？”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“今天早上有三个人来鬼灯的地方吧？
+让我看看他们”
+
+\CN["见回组的守门男子2"]
+“啊？为什么不听鬼灯那家伙的命令呢？”
+不行啊」
+
+\CN["见回组守门的男子1"]
+“嘿嘿，是啊。要是你低头求我的话。”
+我可以考虑一下。嘿嘿”
+
+: DrawChara( "Leo", 7, 0)
+\CN["雷欧"]
+“今天早上来鬼灯的三个人，把他们带到这里来。”
+
+\CN["见回组守门的男子1"]
+“哈？为什么不听鬼灯那家伙的话呢？”
+不行吗？”
+
+\CN["见回组的守门男子2"]
+“本来去给鬼灯道歉的家伙
+不知道是谁～”
+
+: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+“……那就好，你们没什么事。”
+
+比雷欧拔刀还快——
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“……”
+
+//●演出：銀　門番をぶん殴ってぶっ飛ばす
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: ShowWnd()
+\CN["见回组守门的男子1"]
+“嗯~哦~！！”
+
+\CN["见回组的守门男子2"]
+“鬼灯下戴着sugoro眼镜的黑发……。
+你是风神的银吗……？你在干什么……！”
+
+//: DrawChara( "Gin", 3, 0)
+\CN["银子"]
+“嗯？只是在动身体。”
+
+//●演出：銀　門番をぶん殴ってぶっ飛ばす
+: HideWnd()
+: cgkeep = false;
+: Call( "Scenarios/Effect*GinAction01" )
+: ShowWnd()
+\CN["见回组的守门男子2"]
+“唔……！”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["睡眠组3"]
+“有人在入口暴走！”
+
+\CN["睡眠组4"]
+“见面吧！见面吧！是敌人袭击！”
+
+: DrawChara( "Leo", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+\CN["雷欧"]
+“喂，人家好不容易想安稳地解决。”
+
+: DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+\CN["银子"]
+“温和？我常说。{刀，猎物}明明是想拔出来的。”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“这样的话，太好了。你也可以一起……”
+
+//: DrawChara( "Leo", 22, 0, 1 )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a061_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: ShowWnd()
+\CN["雷欧"]
+“去吧！我来这边，你去那边！”
+
+//: DrawChara( "Gin", 14, 0)
+\CN["银子"]
+“啊？你不是命令我的。”
+
+\CN["睡眠组3"]
+“开始争论什么了。”
+
+\CN["睡眠组4"]
+“没关系！有人被揍了，这帮家伙。”
+都是些优秀的反幕混蛋。就在这里肃清吧！”
+
+\CN["睡眠组5"]
+“哦哦哦哦哦哦哦哦哦！！”
+
+里面的见回组的伙伴袭击了雷欧和银。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Leo", 23, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: DrawChara( "Gin", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: ShowWnd()
+\CN["雷欧银"]
+“喂！我要打死你！”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Gin"; lay = 4; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+我朝着有很多雷欧和银的见回组走去。
+
+//: DrawChara( "Leo", 23, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0200000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["雷欧"]
+“啊啊啊啊啊啊啊！！”
+
+//: DrawChara( "Gin", 13, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["银子"]
+“啊啊啊啊啊！”
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash03", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: PlaySe( "SE/Se_Down01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+见回组的男人们向雷欧他们几个人挑战
+被简单地吹跑。
+
+\CN["睡眠组7"]
+“呃，呃……这群家伙是什么！？”
+
+\CN["睡眠组8"]
+“总之住手！不要再放进去了！”
+
+: DrawChara( "Leo", 8, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["雷欧"]
+“这样啊，巡礼组有多少人啊？”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C")
+\CN["银子"]
+“我不知道。所有人只要一秒沉下去就好了。”
+
+: DrawChara( "Leo", 18, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+\CN["雷欧"]
+“啊，是啊。”
+
+//●演出：レオと銀が敵をぶっ飛ばしまくっていく
+: HideWnd()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: Call( "Scenarios/Effect*LeoAction01" )
+: Call( "Scenarios/Effect*GinAction01" )
+: PlaySe( "SE/Se_Down01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["睡眠组9"]
+“呜啊啊啊！”
+
+\CN["睡眠组10"]
+“呀，真糟糕……真的，很糟糕。”
+
+\CN["睡眠组11"]
+“谁叫笹木来啊！”！
+我们是做不到的！”
+
+\CN["睡眠组12"]
+“笹木先生现在正在去将军那里。
+联系不上啊”
+
+\CN["见回组守门的男子1"]
+“这些家伙们，今天早上去鬼灯道歉的家伙们
+他说他有事”
+
+\CN["睡眠组10"]
+“谁啊，那些家伙！快交给我！”！
+再不那样做就停不下来了！真的是糟糕”
+
+\CN["睡眠组11"]
+“确实，应该是田村先生、小川和横山三个人……”
+
+\CN["睡眠组12"]
+“所以，快点带我来！
+这里会被搞得乱七八糟的！”
+
+\CN["睡眠组13"]
+“那两个人，我还以为在什么地方见过呢
+不是雷神的雷欧和风神的银吗！？”
+
+\CN["睡眠组13"]
+“那个怪物都惹你生气的笨蛋在哪里！”
+
+雷欧和银闹得天翻地覆。
+
+一边将所有映入眼帘的人都扫得一干二净
+在巡视组的屯所里乱跑。
+
+\CN["田村"]
+“……那些家伙，鬼灯的？”
+
+\CN["小河"]
+“你们这些家伙，搞得乱七八糟。
+你知道会怎么样吗！？”
+
+: DrawChara( "Gin", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+\CN["银子"]
+“喂，今天早上来我家的家伙没露出这样的表情吗？”
+
+: DrawChara( "Leo", 18, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+\CN["雷欧"]
+“我记得很清楚。确实是这些家伙。”
+
+雷欧和银今天早上盯着鬼灯里来的男人们
+男人们捞起屁股捣年糕。
+
+趁着这个机会，其他的相亲组的人慌慌张张地逃走了。
+
+\CN["田村"]
+“给我弄得乱七八糟的！
+你们来干什么！”
+
+: DrawChara( "Leo", 21, 0)
+\CN["雷欧"]
+“肯定是狮子丸的苍蝇吧！”
+
+\CN["横山"]
+“哈？只不过是狗的苍蝇……？
+你们在说什么？”
+
+\CN["横山"]
+“可以吗？这个真是太时尚了！”
+
+\CN["田村"]
+“我们是将军直属的部队。
+因为是反幕派而被处死的吧？
+实际上我们几个人都因此而{杀，玫瑰}了”
+
+: DrawChara( "Gin", 11, 0)
+\CN["银子"]
+“……然后？”
+
+\CN["小河"]
+“什么，目的是什么……！？
+我们的节目搞得这么糟……！”
+
+一边流着眼泪，一边用黑乎乎的表情向雷欧叫。
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“有一个女孩子因为你们的所作所为而流下了眼泪。
+向那家伙低头道歉”
+
+\CN["田村"]
+“我们做的是什么？”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“别装傻了。我把我家的狮子丸——杀死了小狗
+是你们吧？”
+
+\CN["小河"]
+“我不知道。证据也是那样的吗！？”
+
+\CN["横山"]
+“对了！对了！你没有证据就被揍了吗？
+这可得向鬼灯索取赔偿啊」
+
+\CN["田村"]
+“而且万一我们做了
+就是那只狗杀了一只也好，坏事也好，什么也好
+”
+
+\CN["田村"]
+“你们一定要被处死的！
+我会一点一点地装出痛苦的样子杀了你”
+
+: DrawChara( "Leo", 21, 0)
+\CN["雷欧"]
+“你们这些家伙，无论腐烂到哪里都不要讨厌……”
+
+: DrawChara( "Gin", 9, 0)
+\CN["银子"]
+“就算是我长大的贫民窟，也很少有人堕落到这种程度。”
+
+\CN["小河"]
+“对方只有两个人。大家一起合作的话就轻松取胜了！”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“大家都说轻松获胜，你们有眼睛吗？”
+
+指着银倒在后面的那些看热闹的人。
+
+见回组的3人拔出刀，向雷欧和银袭击。
+
+//: EraseChara( "Gin", 0.5 )
+//: DrawChara( "Mimawari", 0, 0, 1, 0.5, 0.0, 2, "LC" )
+\CN["田村"]
+“呸！去死吧！”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：カキン！　金属音
+: PlaySe("SE/Se_KatanaHit01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Gin", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0200000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+//: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+「…………」
+
+雷欧爽快地接受了周围男人的剑戟
+
+//: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“——雷声”
+
+//●演出：斬撃（電撃）エフェクト
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a002_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: Call( "Scenarios/Effect*LeoAction01" )
+: ShowWnd()
+\CN["田村"]
+“……哦，我的刀，变成两半…？”
+
+//: DrawChara( "Leo", 23, 0)
+\CN["雷欧"]
+“哈哈！”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+\CN["田村"]
+“啊啊啊……啊，手臂……手臂……我的手臂啊！”
+
+: DrawChara( "Leo", 17, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["雷欧"]
+“别哭了，太吵了。”
+
+右手拿着刀，溅着血沫落到地上。
+雷欧表情一点也没有变，把男人的好使的手臂斩飞了。
+
+\CN["田村"]
+“喂，我的手臂……你，绝对不准！”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+\CN["田村"]
+“哇啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawChara( "Leo", 21, 0)
+: ShowWnd()
+\CN["雷欧"]
+“好烦啊。不要这么叫。”
+
+一只手扑过来的男人——
+剩下的手臂被雷欧毫不留情地砍掉。
+
+失去双臂的男人发狂了，就这样失去了意识。
+
+//●演出：場面転換トランジション
+//●演出：打撃エフェクト連打
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: DrawChara( "Gin", 14, 0, 0, 0.0, 0.0, 4, "RC" )
+: DrawChara( "Mimawari", 0, 0, 1, 0.0, 0.0, 2, "LC" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["小河"]
+“啊……是……啊……是……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: Call( "Scenarios/Effect*Renda01" )
+: Wait()
+: EraseChara( "Mimawari", 0.0)
+: EraseChara( "Gin", 0.0 )
+: ShowWnd()
+银和鲁莽地袭击过来的对手
+打着拳头的雨。
+
+: HideWnd()
+: ImpactLayer( 8, 0.2, 0.2, 1, 0.1 )
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Gin", 13, 0)
+\CN["银子"]
+“我！”
+
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Action01" )
+: PlayAnim( "Animations/AnimeL_Action01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["小河"]
+「…………！！！」
+
+他把全力的拳头打到了对方的脸上。
+
+: HideWnd()
+: DrawChara( "Gin", 8, 0, 0, 0.0, 0.0, 3, "C")
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["银子"]
+“眼珠意外的很硬呢。”
+
+: DrawChara( "Mimawari", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+\CN["横山"]
+“……不，不管怎样都太残酷了……。
+眼睛飞出来……塌了……脸陷进去了……
+下巴的骨头碎了……”
+
+剩下的三人组中有一人
+看到被银弄丢了脸的男人的惨状脸变得刷白
+滔滔不绝地说。
+
+: DrawChara( "Gin", 14, 0)
+\CN["银子"]
+“啊？你在说什么努尔？”？
+你这家伙做了更过分的事吧”
+
+: HideWnd()
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Leo", 22, 0, 1, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["雷欧"]
+“我们家狮子丸的手脚分开，拔掉头发
+眼睛都被剜出来了……”
+
+\CN["横山"]
+“多，不过是狗的时候吧！？
+所以为什么我们要遭遇这么残酷的事情！”
+
+剩下的一个人一边嚎啕大哭一边向雷欧他们诉说。
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“算了，别说了。”
+
+\CN["横山"]
+“啊啊啊啊……”
+
+: PlaySe( "SE/Se_Down01" )
+雷欧拿起刀，那个男人坐下了
+尿漏了。
+
+//: DrawChara( "Gin", 11, 0, 0, 0.5, 0.0, 4, "LC" )
+\CN["睡眠组14"]
+“只不过是小狗被杀了而已……。
+这些家伙是疯子吗……”
+
+\CN["睡眠组15"]
+“我没犯什么罪。
+你疯了吧？”
+
+见回组的男人们说的那样杀了狗也没有罪。
+
+不仅如此，将军直属的组织也破破烂烂了
+雷欧和银肯定会被处死的吧。
+
+//●演出：小夜・爺・あざみ　登場
+: StopBgm( 1.0 )
+: HideWnd()
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//: DrawChara( "Sayo", 3, 0, 0, 0.5, 0.0, 6, "C" )
+: DrawChara( "Azami", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0322" )
+\CN["嘲讽"]
+“雷欧，银，就到此为止吧！”
+
+: PlayBgm("BGM/09_CM009")
+: DrawChara( "Azami", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Sayo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Leo", 4, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["雷欧"]
+“局长……！？而且是sayo……！？”
+
+//: EraseChara( "Leo", 0.5 )
+//: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 5, "R" )
+: DrawFaceThumbnail( "Gin", 7, 0, 0 )
+\CN["银子"]
+「…………」
+
+小夜带着的老爷爷和鬼灯局长，高千穗
+带我到现场来了。
+
+\CN["睡眠组14"]
+“这是什么孩子？穿着好衣服，是贵族的女儿吗？”
+
+\CN["睡眠组15"]
+“莫非是那个？狗主人的孩子吗？”
+
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Sayo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: chara = "Sayo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0116" )
+\CN["小夜"]
+“爷爷今天早上在鬼灯里看到的男人们是这三个人没错吧？”
+
+你不知道小夜的事情吧
+小夜一边听着，一边毅然地问了爷爷。
+
+: HideWnd()
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Sayo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: DrawChara( "Ji", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+\CN["老头儿"]
+“没错。”
+
+\CN["睡眠组16"]
+“这老头子，你在说什么？”
+
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo05_aza0323" )
+\CN["嘲讽"]
+“我想不会吧，你们这些人是谁？”
+你不知道吗？”
+
+\CN["睡眠组14"]
+“啊？不可能知道吧。这样的老头子和小孩子啊。”
+
+//●演技：心の底から呆れています
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0324" )
+\CN["嘲讽"]
+“哈~……你是认真说的吗……？
+事后后悔也不知道”
+
+连自己的主君的家人和侍从都不知道
+我从心底感到惊讶。
+
+: StopBgm( 1.0 )
+\CN["男声"]
+「你们低下头来。
+这位小姐是谁？您不知道吗？”
+
+: PlayBgm("BGM/12_CM012")
+低沉而涩，总觉得让人感到威严的声音从后面传来
+听得见。
+
+//●演出：笹木　登場する
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+//: DrawChara( "Mimawari", 0, 0, 0, 0.5, 0.0, 1, "L" )
+\CN["田村"]
+“呃，组长！”
+
+见回组的男人们一起低头。
+
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“嗯？组长？”
+
+//: EraseChara( "Mimawari", 0.5 )
+: DrawChara( "Leo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayVoice( "Voices/vo05_aza0325" )
+\CN["嘲讽"]
+“啊，这是{笹木幸三郎，来吧}。
+见回组的组长，是最高层的人”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
+\CN["银子"]
+“和其他的海参完全不同。有气氛。”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+\CN["竹叶"]
+“这到底是怎么回事？”
+
+笹木朝着回访组提问。
+
+\CN["田村"]
+「这、这是那里的……鬼灯的混蛋们带着{因缘，绫濑}过来
+我暴走了！”
+
+//●演技：感情的が溢れそうになりそうなのを我慢しています
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Sayo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
+: PlayVoice( "Voices/vo24_say0117" )
+\CN["小夜"]
+“……”
+
+\CN["睡眠组14"]
+“笹木先生，那边的孩子都是什么？”
+
+: DrawChara( "Sasaki", 0, 0)
+\CN["竹叶"]
+“你们少说话！”
+
+笹木大喝一声，周围的人发现自己犯了很大的错误
+大家都注意到自己做的事情而闭口不言。
+
+: DrawChara( "Sasaki", 0, 0)
+\CN["竹叶"]
+“小夜大人，部下们做出如此无礼的行为真是对不起。”
+
+跪着，向着小夜深深地低头。
+
+\CN["睡眠组14"]
+“那么，小夜大人……？不会吧……将军的……？”
+
+\CN["睡眠组15"]
+“一、一、公主啊……！？”
+
+——看不起自己是小孩子的女人其实是将军的女儿。
+知道了那个事实后，回忆录组的男人们脸色苍白。
+
+然后，自己做的事情是无法挽回的
+注意到了这一点，身体瑟瑟发抖。
+
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Sasaki", 0, 0)
+\CN["竹叶"]
+“你们要正确地回答，不要把全部的事情都隐藏起来。
+做了虚假报告的话会怎么样？你知道吧？”
+
+\CN["田村"]
+“……是的。”
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Sasaki", 0.0 )
+: EraseChara( "Mimawari", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+之后，受伤的人在被送到治疗所的期间
+在笹木的催促下，回乡组的男人们发现了自己做的事
+全都说了。
+
+在自己喝醉了胡闹的时候被带走，反恨着
+杀了狮子丸，如果知道小夜是可爱的狗的话
+没做过这样的事等等。
+
+//＠背景戻す
+//Yoshi：背景消去
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Yashiki02_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["竹叶"]
+“……是吗？”
+
+\CN["田村"]
+“我并没有让她知道公主是可爱的狗
+我觉得鬼灯不好”
+
+来自完全没有反省过的男人们的报告。
+
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["雷欧"]
+“……这帮家伙，根本就没有腐烂的地方。
+你没有人心吗？”
+
+: DrawChara( "Gin", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+\CN["银子"]
+「…………」
+
+: DrawChara( "Sayo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: PlayVoice( "Voices/vo24_say0118" )
+\CN["小夜"]
+“雷欧，银，不行啊！”
+
+: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+「…………」
+
+雷欧和银都快被打到了。
+
+但是，考虑到小夜的事情而涌上来的愤怒
+握着拳头，咬紧牙关，几乎要出血了
+拼命压抑着。
+
+//●演技：子供っぽさを抑え淡々と。必死に泣くのを堪えています
+: DrawChara( "Sayo", 10, 0)
+: PlayVoice( "Voices/vo24_say0119" )
+\CN["小夜"]
+“狮子丸啊，被扔掉的毛到处都掉了
+身体脏得厉害，直哆嗦”
+
+: DrawChara( "Sayo", 8, 0)
+: PlayVoice( "Voices/vo24_say0120" )
+\CN["小夜"]
+“尽管如此，我还是哭着要活下去。
+小瞬，小静，为了寻找而拼命……”
+
+: DrawChara( "Sayo", 9, 0)
+: PlayVoice( "Voices/vo24_say0121" )
+\CN["小夜"]
+“狮子丸啊，真是个好孩子啊……。
+得到鬼灯的大家的疼爱，毛色也变得光润
+变得有精神地到处跑……”
+
+小夜抑制着淡淡的感情涌上来——
+
+尽管如此，也要向前看，不要被男人们盯着
+对话下去。
+
+//●演出：小夜の胸元が赤く光る（アポロンの矢が目覚めそうになる）
+: DrawChara( "Sayo", 8, 0)
+: PlayVoice( "Voices/vo24_say0122" )
+\CN["小夜"]
+“狮子丸啊，看起来很开心。
+你非常幸福地向我撒娇”
+
+: DrawChara( "Sayo", 11, 0)
+: PlayVoice( "Voices/vo24_say0123" )
+\CN["小夜"]
+“为什么狮子丸必须被杀？”
+
+: DrawChara( "Sayo", 6, 0)
+: PlayVoice( "Voices/vo24_say0124" )
+\CN["小夜"]
+“狮子丸到底在对你们做什么！？”
+
+小夜拼命地喊。
+
+一边忍耐着不哭出来
+为了传达给男人们。
+
+//●演技：小夜がずっと探していた人物だと確信します
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo05_aza0326" )
+\CN["嘲讽"]
+「……！？」
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+\CN["田村"]
+“公主，这是因为鬼灯那些让人难以理解的家伙不好。”
+
+\CN["田村"]
+“刚才也说过了，如果知道是公主养的狗的话
+我没做那样愚蠢的事。所以，鬼灯那家伙”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 17, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["雷欧"]
+“你别再开口了。”
+
+雷欧拔出了刀，但是爷爷把雷欧停下，静静地摇头。
+
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+\CN["竹叶"]
+“公主，这些家伙的处分可以委托给我吗？”
+
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["银子"]
+“喂，你，这不是不对吗？”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: DrawChara( "Sasaki", 0, 0)
+\CN["竹叶"]
+“但是，如果你们两个人做的事情公开出来的话
+我觉得会给其他队员添麻烦吧？
+喂？高千穗局长？”
+
+: DrawChara( "Leo", 21, 0)
+\CN["雷欧"]
+“轮回组到底腐烂到什么程度了……”
+
+我是无法抑制的雷欧。
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0327" )
+\CN["嘲讽"]
+“我们家没有一个会觉得这样很麻烦的家伙。
+笹木组长？”
+
+我几乎要说我怎么了
+从容不迫地回答。
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Sayo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: PlayVoice( "Voices/vo24_say0125" )
+\CN["小夜"]
+“我知道了，笹木。这样就好了……。
+这些人的处理就交给你了」
+
+: DrawChara( "Sasaki", 0, 0)
+\CN["竹叶"]
+“谢谢”
+
+: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+“那好……你，就这样……”
+
+: DrawChara( "Sayo", 3, 0)
+: PlayVoice( "Voices/vo24_say0126" )
+\CN["小夜"]
+“没关系，就算他们死了，狮子丸也已经——”
+
+: DrawChara( "Sayo", 8, 0)
+: PlayVoice( "Voices/vo24_say0127" )
+\CN["小夜"]
+“所以，很疼爱狮子丸，把它变成了最喜欢狮子丸的鬼灯
+不希望给你添麻烦”
+
+: DrawChara( "Leo",21, 0)
+\CN["雷欧"]
+“困惑了，你……”
+
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayVoice( "Voices/vo05_aza0328" )
+\CN["嘲讽"]
+“雷欧，想想公主的心情。”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“……”
+
+头上冒着血狂暴的雷欧。
+我反省了小夜比自己更成熟。
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Azami", 0.0 )
+: EraseChara( "Sayo", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: ShowWnd()
+——在那之后。
+
+雷欧和银被淤青榨干
+只接受了几天的禁闭处分，其他什么也没有责备。
+
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・庭
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+然后，决定对杀死狮子丸的男人们进行处分的那一天
+小夜们在狮子丸的墓前双手合十。
+
+//●読み：件（くだん）
+: DrawChara( "Sayo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: DrawChara( "Azami", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo05_aza0329" )
+\CN["嘲讽"]
+“虽然这三个人是案件中的一员，但从回忆录组中开除户籍以及剥夺武士身份
+受到了帝都永久驱逐的处分”
+
+: DrawChara( "Sayo", 9, 0)
+: PlayVoice( "Voices/vo24_say0128" )
+\CN["小夜"]
+“是的……”
+
+被雷欧砍掉双臂的男子治疗来不及
+总算保住了一条命，但手臂并没有紧贴在一起。
+
+另外，被银打碎了脸下巴骨的男子治疗也推迟了
+变成了丑恶的妖怪般的假发。
+
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“这样的话我可不能接受……”
+
+就算男人们被处死了，狮子丸也不会复活。
+但是，谁都无法接受这种甜蜜的处分……。
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0330" )
+\CN["嘲讽"]
+“嗯，这应该是我知道的地方吧。
+那之后，那些家伙好像被某个贵族当做奴隶买了”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“奴隶吗……”
+
+听说是作为奴隶卖的，雷欧和其他人都
+好像有点不理解的样子。
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0331" )
+\CN["嘲讽"]
+“被卖的地方有点小，嘛，是个有脾气的贵族。
+好像是以饲养魔物为兴趣”
+
+然后，使用那个魔物做生意的杂耍。
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+\CN["银子"]
+“那么，在那里卖的怎么样？”
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0332" )
+\CN["嘲讽"]
+“杂耍，在疯子贵族们面前
+好像被橡树吃了。就这样活着……”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“……是吗？”
+
+就这样，一连串的事件就结束了。
+
+见回组的笹木采取的行动最终还是自己的
+面子优先。
+
+是非常令人不快的事件。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

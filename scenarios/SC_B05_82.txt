@@ -1,0 +1,417 @@
+//========================================================
+//○こういう時間がずっと続けばいいのに
+//========================================================
+//●場所：帝都・昼
+//●視点：桃視点
+//●演出：雨が降っている
+//Yoshi：背景、和室
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Momo", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: trackIndex = PlaySe( "SE/Se_Rain01", true, 0.35 );
+: DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "RC" )
+: ShowWnd()
+//Yoshi：左に銀、右に桃
+: PlayVoice( "Voices/vo01_mom0916" )
+\CN["桃子"]
+“小银，今天好像下雨了……”
+
+\CN["银子"]
+“是啊。”
+
+今天我和小银不在。
+
+所以我想约会
+不凑巧下雨了。
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0917" )
+\CN["桃子"]
+“没办法，偶尔在房间里悠闲一下也没办法。”
+也许不错呢”
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“如果女儿那样就好的话，我也一样。”
+
+把头放在他的肩上，只是毫无意义的发呆
+我只是在听雨声。
+
+嗯。果然，偶尔也会这样悠闲地度过
+打发时间也不错。
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“这样啊，小姐，昨天环视时买了什么
+你买了什么？”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0918" )
+\CN["桃子"]
+“昨天买的是掏耳朵，掏耳朵。
+之前用的东西丢了……”
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom0919" )
+\CN["桃子"]
+“……啊！对了！
+小银，我来帮你掏耳朵”
+
+\CN["银子"]
+“没关系，我没什么。”
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0920" )
+\CN["桃子"]
+“没关系，没关系。
+我对挖耳很有自信”
+
+: PlayVoice( "Voices/vo01_mom0921" )
+\CN["桃子"]
+“不管是无黑还是黄菜子，都迷上了我的耳语
+因为也有来房间的时候”
+
+: DrawChara( "Gin",18, 0)
+\CN["银子"]
+“……真的吗？”
+
+: DrawChara( "Momo",13, 0)
+: PlayVoice( "Voices/vo01_mom0922" )
+\CN["桃子"]
+“啊，那双眼睛，我绝对怀疑。
+我会让你为我的挖耳技巧而心醉的！”
+
+: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+「…………」
+
+//: EraseChara( "Momo", 0.5 )
+//●演出：桃　一度退場させる
+: HideWnd()
+: chara = "Momo"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: EraseChara( "Gin", 0.5 )
+: ShowWnd()
+所以，我去拿昨天买的耳朵。
+
+//●演出：桃　戻す
+//Yoshi：右に桃
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo01_mom0923" )
+\CN["桃子"]
+“看，小银，快来这里。”
+
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 3, "LC")
+\CN["银子"]
+“嗯？这里是？”
+
+: chara = "Momo"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo01_mom0924" )
+\CN["桃子"]
+“所以，膝盖枕啊，膝盖枕。把头放在这里……”
+
+轻拍大腿催促。
+
+: DrawChara( "Gin",18, 0)
+\CN["银子"]
+“……诶”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom0925" )
+\CN["桃子"]
+“不枕膝盖的话就不能掏耳朵吧。
+你看，别害羞，快点儿！”
+
+: DrawChara( "Gin",23, 0)
+\CN["银子"]
+「…………」
+
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: ResetLayer(4)
+: ShowWnd()
+不情愿地把头放在我膝盖上。
+
+: DrawChara( "Momo", 2, 0, 0, 0.5, 0.0, 4, "C")
+: chara = "Momo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo01_mom0926" )
+\CN["桃子"]
+“呵呵，哪个，请给我看看你的耳朵……”
+
+掏耳朵眼儿。
+这、这是——
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0927" )
+\CN["桃子"]
+“我在攒很多。
+小银，你不怎么掏耳朵吗？”
+
+: DrawFaceThumbnail( "Gin", 5, 0, 0 )
+\CN["银子"]
+“是啊，是啊。”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0928" )
+\CN["桃子"]
+“呵呵……这个好像有打扫的价值……。
+好啊，小银。我会让你彻底变漂亮的”
+
+: DrawFaceThumbnail( "Gin", 16, 0, 0 )
+\CN["银子"]
+“啊，那个，小姐。真的没关系吗？”
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0929" )
+\CN["桃子"]
+“所以说没关系！请相信我。”
+
+: DrawFaceThumbnail( "Gin", 22, 0, 0 )
+\CN["银子"]
+「…………」
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0930" )
+\CN["桃子"]
+“那我就干了。
+小银，不能动啊”
+
+//: DrawChara( "Gin",23, 0)
+首先拿着小银的耳垂。
+
+果然，男孩和女孩是不一样的。
+我的耳朵是长耳朵，所以又不一样了。
+
+: PlayVoice( "Voices/vo01_mom0931" )
+\CN["桃子"]
+“首先，像这样在耳廓的背面
+抚摸耳朵……”
+
+: DrawFaceThumbnail( "Gin", 21, 0, 0 )
+\CN["银子"]
+「……！」
+
+: DrawChara( "Momo",12, 0)
+: PlayVoice( "Voices/vo01_mom0932" )
+\CN["桃子"]
+“所以，不必那么害怕。”
+
+: DrawFaceThumbnail( "Gin", 19, 0, 0 )
+\CN["银子"]
+“……没什么好害怕的。”
+
+: DrawChara( "Momo", 0, 0)
+但是，那个小银变成了啤酒
+很可爱，感觉很奇怪。
+
+//: DrawChara( "Gin",23, 0)
+: PlayVoice( "Voices/vo01_mom0933" )
+\CN["桃子"]
+“那我去掏耳朵吧。”
+
+——正理，正理。
+
+: DrawFaceThumbnail( "Gin", 22, 0, 0 )
+\CN["银子"]
+「…………」
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0934" )
+\CN["桃子"]
+“看，放松一下。”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0935" )
+\CN["桃子"]
+“嗯……呵呵，有很多。
+为了不洗掉耳垢，仔细地慢慢地……”
+
+小心不要受伤。
+
+\CN["银子"]
+“……嗯”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom0936" )
+\CN["桃子"]
+“小银，不要那么紧张。
+还是我的大腿太舒服了？”
+
+: DrawFaceThumbnail( "Gin", 5, 0, 0 )
+\CN["银子"]
+“嘛……的确，小姐的大腿很舒服。”
+
+: DrawChara( "Momo",11, 1)
+: PlayVoice( "Voices/vo01_mom0937" )
+\CN["桃子"]
+“是吗？是吗？这样啊，我的大腿也很舒服。”
+
+//: DrawChara( "Gin",23, 0)
+//: DrawChara( "Momo", 0, 0)
+擦掉耳垢放在纸巾上
+再往耳洞里掏耳朵反复做。
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0938" )
+\CN["桃子"]
+“出来了很多。真的很有打扫的价值。”
+
+好像有相当多的积淀，能完全消除耳垢
+乐得不得了。
+
+\CN["银子"]
+「…………」
+
+: PlayVoice( "Voices/vo01_mom0939" )
+\CN["桃子"]
+“怎么样？偶尔掏耳朵也不错吧？”
+
+: DrawFaceThumbnail( "Gin", 4, 0, 0 )
+\CN["银子"]
+“是啊。”
+
+//: DrawChara( "Gin",23, 0)
+小银把脸沉在我的大腿上。
+
+耳洞变大是缓解紧张的证据。
+好像好好放松了真是太好了。
+
+: DrawChara( "Momo", 1, 0)
+//●演技：耳穴に優しく息を吹きかけています
+: PlayVoice( "Voices/vo01_mom0940" )
+\CN["桃子"]
+“那就完成吧……呼～～”
+
+往耳朵上吹一口气。
+
+: DrawFaceThumbnail( "Gin", 19, 0, 0 )
+\CN["银子"]
+“……！”
+
+小银战战兢兢地忍耐着身体颤抖着
+一看，连我都觉得毛骨悚然。
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0941" )
+\CN["桃子"]
+“那么，接下来是反对的耳朵。”
+
+\CN["银子"]
+“……淡”
+
+小银懒洋洋地站着
+换换姿势。
+
+//: DrawChara( "Gin",23, 0)
+好像耳朵不是很坏
+和刚开始不一样，耳朵很舒服。
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0942" )
+\CN["桃子"]
+“呵呵，这里也积了很多耳垢呢。”
+
+: DrawChara( "Momo", 0, 0)
+——正理、正理、正理。
+
+: DrawFaceThumbnail( "Gin", 22, 0, 0 )
+\CN["银子"]
+“……嗯……”
+
+: PlayVoice( "Voices/vo01_mom0943" )
+\CN["桃子"]
+“这边也是这样……。
+呵呵，慢慢地拨开耳垢”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0944" )
+\CN["桃子"]
+“嗯……这是很大的发现……。
+慢慢地、慢慢地……嗯……嗯……”
+
+: DrawChara( "Momo", 4, 0)
+发现了很大的耳垢。
+
+为了不让它过去
+一点一点地往上提。
+
+\CN["银子"]
+「…………」
+
+: PlayVoice( "Voices/vo01_mom0945" )
+\CN["桃子"]
+“还有一点……嗯……呃……嗯……！”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom0946" )
+\CN["桃子"]
+「呼～…掉了。你看，掉了这么大的。
+怎么样？非常流畅吧？”
+
+\CN["银子"]
+「…………」
+
+: DrawChara( "Momo", 3, 0)
+嗯？没有反应。
+
+: PlayVoice( "Voices/vo01_mom0947" )
+\CN["桃子"]
+“小银？”
+
+: DrawFaceThumbnail( "Gin", 23, 0, 0 )
+\CN["银子"]
+「…………Ｚｚｚ」
+
+侧耳倾听，传来小小的鼾声。
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom0948" )
+\CN["桃子"]
+“哎呀，小银，你好像睡着了。呵呵。”
+
+正因为如此，我的耳朵才更舒服吧？
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom0949" )
+\CN["桃子"]
+“还是说，大腿舒服地睡着了？”
+
+: PlayVoice( "Voices/vo01_mom0950" )
+\CN["桃子"]
+“呵呵，睡觉的时候表情有点可爱呢
+小银”
+
+一边慢慢抚摸着头一边享受着睡脸。
+
+从家里出来后，我和小银都能过得很悠闲
+几乎没有时间。
+
+: DrawChara( "Momo", 0, 1)
+: PlayVoice( "Voices/vo01_mom0951" )
+\CN["桃子"]
+“这样的时间一直持续就好了……”
+
+听着外面淤塞的天空降下的雨声
+望着最重要的人的睡颜。
+
+: HideWnd()
+: StopSe( trackIndex );
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

@@ -1,0 +1,379 @@
+//========================================================
+//○ＮＰＣ殺害１・一般人１
+//========================================================
+*sc001
+//●殺害処理
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+: DrawFaceThumbnail( "Mukuro", 23, 0, 0 )
+: PlayVoice( "Voices/vo00_muk6157" )
+\CN["无黑色"]
+“……呼”
+
+//●シーンエンド
+: if( Move == true )
+	: LoadMap( KillMapData, KillWarp, Init)
+: else
+	: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: endif
+: Return
+//========================================================
+//○ＮＰＣ殺害２・一般人２
+//========================================================
+*sc002
+: DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk6158" )
+\CN["无黑色"]
+“碍眼……消失吧。”
+
+\CN["ＮＰＣ"]
+“诶……？”
+
+//●殺害処理
+//●ＳＥ：倒れる音
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+\CN["ＮＰＣ"]
+“……看不见了……来了……不想死……”
+
+看到以前不想死的样子
+即使那是极恶的人，心里也会莫名地痛。
+
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+但是，现在——
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Mukuro", 26, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk6159" )
+\CN["无黑色"]
+“呵呵……”
+
+看到对生有着执念，却遗憾死去的人
+无可奈何地情绪高涨起来了。
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○ＮＰＣ殺害３・一般人３
+//========================================================
+*sc003
+//●ＳＥ：刀を抜く音
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 25, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["ＮＰＣ"]
+“……呃？那个……”
+
+//●殺害処理
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: keep = true; cgkeep = true;
+: Call( "Scenarios/Effect*Blood03" )
+: evfile = "eva_a002_1_1_0100000_1000000_2_"; Call("Scenarios/Common*EvIn");
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk6160" )
+\CN["无黑色"]
+“看到别人一事无成的样子，就别提心吊胆了。”
+
+//●シーンエンド
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: Return
+
+//========================================================
+//○ＮＰＣ殺害４・ゴロツキ系１
+//========================================================
+*sc004
+//●ＳＥ：刀を抜く音
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["ＮＰＣ"]
+“喂，喂……等等，你，那是……！？”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk6161" )
+\CN["无黑色"]
+“你也杀了我很多吧？
+被杀一次不也很好吗？”
+
+\CN["ＮＰＣ"]
+“不，大概一次……”
+
+//●殺害処理
+//●シーンエンド
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: Return
+
+//========================================================
+//○ＮＰＣ殺害５・ゴロツキ系２
+//========================================================
+*sc005
+//●ＳＥ：刀を抜く音
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["ＮＰＣ"]
+“拔刀，你在干什么？”
+
+//●殺害処理
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: keep = true; cgkeep = true;
+: Call( "Scenarios/Effect*Blood03" )
+: evfile = "eva_a002_1_1_0100000_1000000_2_"; Call("Scenarios/Common*EvIn");
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk6162" )
+\CN["无黑色"]
+“因为刀是杀人的工具。”
+
+//●シーンエンド
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: Return
+
+//========================================================
+//○ＮＰＣ殺害６・ゴロツキ系３
+//========================================================
+*sc006
+//●ＳＥ：刀を抜く音
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["ＮＰＣ"]
+“什么？那是真的吗？玩具？”？
+话说，反正是胸罩吧？为什么要杀人呢——”
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk6163" )
+\CN["无黑色"]
+“适可而止，闭嘴。真刺耳。”
+
+//●殺害処理
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: keep = true; cgkeep = true;
+: Call( "Scenarios/Effect*Blood03" )
+: evfile = "eva_a002_1_1_0100000_1000000_2_"; Call("Scenarios/Common*EvIn");
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+\CN["ＮＰＣ"]
+“……对吧，骗人的……对吧……”
+
+//●ＳＥ：倒れる音
+: PlaySe( "SE/Se_Down01" )
+\CN["ＮＰＣ"]
+“……不想……”
+
+面有难以置信的表情死去。
+
+笑嘻嘻的狸猫脸会变成这样绝望的表情
+好舒服啊。
+
+//●シーンエンド
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: Return
+
+//========================================================
+//○ＮＰＣ殺害７・セクハラ後１
+//========================================================
+*sc007
+: DrawChara( "Mukuro", 24, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk6164" )
+\CN["无黑色"]
+“人生最后的行动，竟然是对女性的性骚扰……”
+
+\CN["ＮＰＣ"]
+“哈……？”
+
+//●殺害処理
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+一看到沉入血海的男子，就毛骨悚然。
+
+: DrawFaceThumbnail( "Mukuro ", 26, 0, 0 )
+: PlayVoice( "Voices/vo00_muk6165" )
+\CN["无黑色"]
+“他摸了我的身体。
+这样的想法不让我做不行啊」
+
+//●シーンエンド
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: Wait()
+: Return
+
+//========================================================
+//○ＮＰＣ殺害８・セクハラ後２
+//========================================================
+*sc008
+: DrawChara( "Mukuro", 30, 1, 2, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk6166" )
+\CN["无黑色"]
+“适可而止！”
+
+//●殺害処理
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["ＮＰＣ"]
+“啊……啊……啊……啊…啊，只不过，碰了身体
+只是……到这里为止……”
+
+: DrawFaceThumbnail( "Mukuro", 27, 0, 0 )
+: PlayVoice( "Voices/vo00_muk6167" )
+\CN["无黑色"]
+“闭嘴！”
+
+越是垃圾的家伙生命力越强，很难死。
+和那个黑的不快害虫一样啊。
+
+//●シーンエンド
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: Wait()
+: Return
+
+//========================================================
+//○ＮＰＣ殺害９・Ｈした後１
+//========================================================
+*sc009
+: DrawChara( "Mukuro", 29, 3, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk6168" )
+\CN["无黑色"]
+“那么，最后完成了吗？”
+
+\CN["ＮＰＣ"]
+“做完了？能帮我做更舒服的事情吗？”
+
+: DrawChara( "Mukuro", 41, 3)
+: PlayVoice( "Voices/vo00_muk6169" )
+\CN["无黑色"]
+“啊，真是太舒服了。”
+
+//●殺害処理
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+\CN["ＮＰＣ"]
+“……啊…啊……”
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk6170" )
+\CN["无黑色"]
+“呼哧呼哧……做爱后的杀人，无法用语言表达
+心情舒畅。好像变成习惯了”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○ＮＰＣ殺害１０・Ｈした後２
+//========================================================
+*sc010
+//●殺害処理
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: Call( "Scenarios/CommonSys*NpcKillingAct" )
+: ShowWnd()
+\CN["ＮＰＣ"]
+「…………」
+
+行为结束歇口气后，斩杀对方。
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Mukuro", 27, 3, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk6171" )
+\CN["无黑色"]
+“因为我没想过要第二次。”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○ＮＰＣ殺害１１・皆殺し
+//========================================================
+*sc011
+//●殺害処理
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: Call("Scenarios/CommonSys*NpcKillingAct")
+: DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+\CN["周围的人1"]
+“哇啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！”
+
+\CN["周围的人2"]
+“一、一、杀人！？”
+
+只不过是杀了一个人，周围就乱哄哄的。
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk6172" )
+\CN["无黑色"]
+“我讨厌麻烦的事情
+要全部杀掉吗……”
+
+//●殺害演出
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+把在场的人们一个一个地杀了。
+
+周围一片鲜血染红
+有着认真精神的人一进入就会失去意识
+变成了凄惨的地方。
+
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+// 風呂に入っている場合、例外処理
+: if ( Call( "Scenarios/CommonSys*BathRoom" ) == true )
+	// 着替えフラグをリセット
+	: if ( Flag ( "BathCosChange" ) == true )
+		: CharaCostume( "Mukuro", 0 )
+		: FlagDown( "BathCosChange" )
+	: endif
+	// パーティーを元に戻す処理
+	: Call( "Scenarios/CommonSys*PartyReset" )
+: endif
+//外に移動させる処理
+: LoadMap( KillMapData, KillWarp, Init)

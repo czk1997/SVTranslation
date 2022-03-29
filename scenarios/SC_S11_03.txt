@@ -1,0 +1,267 @@
+//========================================================
+//○男湯、潜入します
+//========================================================
+*sc000
+//露出開発度Ｂ以上で*sc001開始
+: if ( $chapter < 5 )
+从这里开始是男浴室，所以不能进去
+
+	: Return
+: endif
+: if ( CharaHRank( "Kinako", "Immoral" ) < 2 )
+从这里开始是男浴室，所以不能进去
+
+	: Return
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Exhibitionist" ) < 2 )
+从这里开始是男浴室，所以不能进去
+
+	: Return
+: endif
+//白夜第４章のみ
+: if ( $chapter == 7 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+: if ( Flag ( "DatsuiKinako" ) == true ) Return endif
+*sc001
+//●場所：男湯
+//●演技：心の声です
+: DrawChara( "Kinako", 8, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin2314" )
+\CN["黄菜子"]
+（从这里开始就是男浴室……）
+
+在至今为止被男人多次赤身裸体时
+看到裸体的话，肚子里会变得很饿
+来了。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 4, 1)
+: PlayVoice( "Voices/vo02_kin2315" )
+\CN["黄菜子"]
+（男浴室里当然只有男人……。
+那里只有一个女孩子，而且还光着身子进去了……）
+
+一定会很受关注的
+肯定会遭到不好的视线。
+
+但是，只要脑子里浮现出这样的场面
+小腹部突然疼了起来。
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：男湯に入るなんてありえません！
+//■選択肢２：男湯、入ってみたいです！
+//――――――――――――――――――――――――――――
+\CI["不可能进男浴室！"]
+\CI["男浴室，我想进去看看！"]
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：男湯に入るなんてありえません！を選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+不管怎么说，进男浴室是不可能的！
+我在想什么呢。
+
+//●シーンエンド
+: Return
+//-------------------------------------------------------
+//●選択肢２：男湯、入ってみたいです！を選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+: if ( $inExtra == true )
+	: HideWnd()
+	: DrawImage( 1, 0, "BGImage/BG_School01_01", 1.0 )
+	: ShowWnd()
+: endif
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: DrawChara( "Kinako", 17, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin2316" )
+\CN["黄菜子"]
+“男浴室，我想进去看看……”
+
+光着身子进入男人们的身体里。
+我非常想踏入这种异常的状况。
+
+//●演出：黄菜子　男湯に入って行く
+//＠場所移動：男湯
+//●演出：男湯に移動後、脱衣場へ
+: HideWnd()
+: EraseChara( "Kinako", 0.5 )
+: Wait()
+: if ( $inExtra == false )
+: RpgDoorLock( "Door_Men", false )
+: RpgDoorOpen( "Door_Men" )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 8	\
+:	"MoveRight", 2	\
+:	"Turn", "U" )
+: Wait()
+: endif
+: ShowWnd()
+\CN["男1"]
+“嗯？有女孩子进来了。”
+
+\CN["男2"]
+“你不是和父亲一起来的吗？
+但是，一个人进不去的年龄怎么看都看不见……”
+
+//●ＣＧ：野外で脱衣
+//●ＣＧ差分：着衣（半脱ぎ）
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evc_b004_0_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：脱衣を開始しています
+: PlayVoice( "Voices/vo02_kin2317" )
+\CN["黄菜子"]
+“嗯……”
+
+\CN["男1"]
+“咦！？那孩子，真的……？”
+
+\CN["男2"]
+“不过是小孩子的裸体，别让我惊慌失措。
+你是短袜系吗？”
+
+\CN["男1"]
+“你才是，在好好看啊。”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin2318" )
+\CN["黄菜子"]
+（……那些人，好好地看着我……
+我脱掉衣服的时候，被看到了……）
+
+只是让他穿了点衣服
+心脏扑通扑通地跳。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin2319" )
+\CN["黄菜子"]
+（不能一直呆着。
+现在开始要洗澡了，不脱衣服的话……）
+
+一直穿着衣服很奇怪。
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：下着
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evc_b004_0_2_0200001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Kinako", 1 )
+: ShowWnd()
+脱掉衣服，穿上兜裆布。
+
+\CN["男2"]
+“……是萨拉西啊。”
+
+\CN["男1"]
+“看，你不是好好看了吗？”
+
+\CN["男2"]
+“那是，啊……”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin2320" )
+\CN["黄菜子"]
+（……甩开兜裆布，把兜裆布也脱了……
+全部都给大家看了……）
+
+这也是自己给别人看的感觉。
+
+心脏的高音越来越大
+小腹部受到了沉重的冲击……。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin2321" )
+\CN["黄菜子"]
+（嗯……光是想象一下就能看到，就变成了馒头、null
+变成这样了……）
+
+然后取下内衣赤身裸体。
+我不能犹豫。
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：全裸
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evc_b004_0_3_0300001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["男2"]
+“那孩子，终于光着身子……。
+我是第一次看到那个年代的孩子的裸体……哎，什么
+我很兴奋”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin2322" )
+\CN["黄菜子"]
+（……终于脱光了……。
+男人们，一直在看着我……嗯……）
+
+感受到视线的话会很激动。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin2323" )
+\CN["黄菜子"]
+（因为是来洗澡的，所以必须早点去……。
+不光明正大的话就不行……）
+
+//●ＣＧ：消去
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: CharaCanCostumeChange( "Kinako", true )
+: ShowWnd()
+可以换服装了。
+<color=FF0000>※服装变更是从“菜单”中的“角色”开始的
+可以变更。也有不可更改的地方。</color>
+
+: CharaAddHSkill( "Kinako", 1000 )
+: CharaAddHSkill( "Kinako", 1001 )
+H技能“改变服装”和
+学会了“曝光自慰”。
+
+: HideWnd()
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S11_03" )
+//●演出：浴室に移動する
+//●シーンエンド
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 3	\
+:	"MoveUp", 2 )
+: Wait()
+//脱衣イベントフラグＯＮ
+: Flag( "DatsuiKinako", true )
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Exhibitionist", 1) endif
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Kinako", 6000 ) endif
+: FadeOut( 0.5 )
+: Wait()
+: mapId = RpgMapID()
+: if ( mapId == 6 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town01_07_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map07" )
+: elif ( mapId == 45 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town05_08_Saito", "", "Scenarios/Map_Town05_Saito_Init*Map08" )
+: elif ( mapId == 58 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town06_04_Sakitama3" )
+: endif

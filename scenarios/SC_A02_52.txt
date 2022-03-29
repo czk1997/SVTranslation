@@ -1,0 +1,382 @@
+//========================================================
+//○町長をパイズリでスッキリさせてあげる
+//========================================================
+//●状況：無黒・淫乱度Ｂ以上
+//●場所：加津佐・町長の家
+: Call( "Scenarios/CommonSys*Word" )
+: DrawChara( "Mukuro", 1, 1, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0409" )
+\CN["无黑色"]
+“男人对这种东西感兴趣是作为男人理所当然的。
+而且，好像还是现役……”
+
+\CN["镇长"]
+“嗯……这个，这个……嘛……。
+那个，我也不是男人啊」
+
+关于在女孩面前读到色情书籍这件事
+先放一放——
+
+: DrawChara( "Mukuro", 29, 2, 0 )
+: PlayVoice( "Voices/vo00_muk0410" )
+\CN["无黑色"]
+“如果不均匀的话
+可以让他清爽一点吗……？”
+
+看到股间鼓起来的时候
+我也着火了。
+
+\CN["镇长"]
+“……可以拜托你吗？
+最近也没能去店里什么的，完全没有……”
+
+\CN["镇长"]
+“如果可以的话，希望你能用你的大乳房来对待。”
+
+: DrawChara( "Mukuro", 2, 2, 0 )
+: PlayVoice( "Voices/vo00_muk0411" )
+\CN["无黑色"]
+“啊，我知道了。斜眼看了好几次我的胸部
+我看了，那就按你希望的乳房……”
+
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Clothes01" )
+让他把衣服穿上后，\ V[Mukuro Penis]就飞出来了
+鼓得直哆嗦。
+
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：このままパイズリを始める
+//■選択肢２：服を全部脱いでからパイズリする
+//――――――――――――――――――――――――――――
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 1) endif
+: Call( "Scenarios/CommonSys*CosMemory" )
+: StopBgm( 1.0 )
+\CI["就这样开始裁缝"]
+\CI["把衣服脱光再脱"]
+衣服怎么办……？
+
+: if ($choice == 0)
+	//-------------------------------------------------------
+	//●選択肢１：このままパイズリを始めるを選んだ場合
+	//-------------------------------------------------------
+	*select01_s1
+	//●服装：無黒・隊士服
+	//＠服装：無黒,0
+	//●選択肢合流地点へ
+	//＠ラベル：select01_s_end
+	: EraseChara( "Mukuro", 0.5 )
+: else
+	//-------------------------------------------------------
+	//●選択肢２：服を全部脱いでからパイズリするを選んだ場合
+	//-------------------------------------------------------
+	*select01_s2
+	//●演技：服を脱いでいます
+	: DrawChara( "Mukuro", 29, 2)
+	: PlayVoice( "Voices/vo00_muk0412" )
+	\CN["无黑色"]
+“嗯……嗯……”
+
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+	//●演出：脱衣
+	//●服装：無黒・裸
+	//＠服装：無黒,1
+	: HideWnd()
+	: PlaySe( "SE/Se_Cloth01" )
+	: SetLayerRelPos( 3, 0, 100, 0.5)
+	: EraseChara( "Mukuro", 0.5 )
+	: Wait()
+	: ResetLayer(3)
+	: CharaCostume( "Mukuro", 1 )
+	: ShowWnd()
+	\CN["镇长"]
+「……！」
+
+脱光衣服赤身裸体，镇长睁大眼睛吃惊。
+
+	//●選択肢合流地点へ
+	//＠ラベル：select01_s_end
+: endif
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*select01_s_end
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_A02_52" ) == false ) Jump( "*HscStart") endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_A02_52" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: PlayBgm("BGM/35_H_IMMORAL")
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastJob", 1) endif
+//●ＣＧ：Ｈカットイン・パイズリ
+//●演技：パイズリしています
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c024_0_1_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0413" )
+\CN["无黑色"]
+“嗯……嗯……嗯……小金
+元气满满……呼啊…啊…呜…嗯♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi04" )
+\CN["镇长"]
+“啊啊啊…啊……啊，好厉害……”……
+柔软……滑溜溜……”
+
+: PlayVoice( "Voices/vo00_muk0414" )
+\CN["无黑色"]
+“呵呵，听说是镇长……嗯……夹在胸部里的话
+变得这么精神……”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c024_0_1_0500002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0415" )
+\CN["无黑色"]
+“嗯，嗯，嗯……在胸部里暴走了……嗯……”……
+渐渐地，变成了面包……”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——太棒了！好！纽伦！新闻！
+
+\CN["镇长"]
+“啊啊啊……好厉害，很厉害……嗯……啊……”
+
+\V[Mukuro Penis]扑通一声跳起来的话，前端会有黏糊糊的汤
+溢出来了。
+
+: PlayVoice( "Voices/vo00_muk0416" )
+\CN["无黑色"]
+“呵呵，汤从前面出来了……。
+小金也渐渐变热了……”
+
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c024_0_1_0400002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayVoice( "Voices/vo00_muk0417" )
+\CN["无黑色"]
+“我会让你的乳房更丰满……。
+嗯，嗯，嗯……雪子……雪子……嗯……”
+
+\CN["镇长"]
+“啊啊啊……那、那么……小，小鸡鸡的好地方
+呃……被当做乳房来对待……”
+
+就像把乳房按在\V[Mukuro Penis]上一样
+上下移动。
+
+用力地弹回乳肉，感觉很舒服。
+
+: PlayVoice( "Voices/vo00_muk0418" )
+\CN["无黑色"]
+“嗯，哈，哈……嗯，嗯……”
+
+: PlayVoice( "Voices/vo00_muk0419" )
+\CN["无黑色"]
+“强壮的小公鸡，汤也满满的……
+胸部难受的样子♥</color>」
+
+\CN["镇长"]
+“可是，因为……心情太好了……哈哈，已经……”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c024_0_1_0500002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0420" )
+\CN["无黑色"]
+“已经……要拿出来了？射精，要射精了吗？”
+
+\CN["镇长"]
+“……啊”
+
+大的大人好像很着急似的直摇头的样子让人毛骨悚然。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c024_0_1_0400002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0421" )
+\CN["无黑色"]
+“好啊……。我会让你心情舒畅地射精……”
+
+: PlayVoice( "Voices/vo00_muk0422" )
+\CN["无黑色"]
+“嗯，嗯，嗯……嗯，啊，嗯……”……
+小气鬼膨胀成面包了♥</color>」
+
+\CN["镇长"]
+“啊啊啊……也，已经……嗯……然后，拿出来吧……”
+
+: PlayVoice( "Voices/vo00_muk0423" )
+\CN["无黑色"]
+“哈，哈，哈……可以射精……嗯，嗯……
+就这样……我的胸部，让我做……”
+
+用乳房紧紧地包住\V[Mukuro Penis]。
+
+从根部向上堆积的东西要好好处理
+运转下去。
+
+\CN["镇长"]
+“啊啊啊……然后，出来……啊…啊…啊…啊啊……啊啊……！”
+
+//●演出：射精
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Sotodashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c024_0_1_0200003_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+德彪乌乌！别管！看！别克！
+德彪！乌布！
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c024_0_1_0500023_1000020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["镇长"]
+“哈……哈……哈……哈……”
+
+: PlayVoice( "Voices/vo00_muk0424" )
+\CN["无黑色"]
+“嗯……好厉害，出了很多……。
+积了这么多啊……”
+
+\CN["镇长"]
+“啊啊……托您的福，真是太爽了……”
+
+呛人的精液气味难闻。
+
+: PlayVoice( "Voices/vo00_muk0425" )
+\CN["无黑色"]
+“那么，用精液弄脏的小精灵，会变漂亮的。”
+
+\CN["镇长"]
+“……嘿嘿？”
+
+//●ＣＧ：Ｈカットイン・パイズリフェラ２
+: StopBackVoice()
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c026_0_1_0000000_0100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：お掃除フェラです
+: PlayVoice( "Voices/vo00_muk0426" )
+\CN["无黑色"]
+“啊呜……嗯……嗯…嗯…嗯…嗯，嗯……嗯
+嗯……嗯……”
+
+: PlayVoice( "Voices/vo00_muk0427" )
+\CN["无黑色"]
+“嗯……嗯，嗯，嗯……嗯，嗯……
+呃，中华……呃，れ，れ，れ，珠理奈♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_fera02" )
+\CN["镇长"]
+“啊啊啊……！但是，刚拿出来……呃……”
+
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateOral", RandomRange(5,10)) endif
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c026_0_1_0000000_0100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0428" )
+\CN["无黑色"]
+“嗯……嗯……非常……呃，非常浓的精液……”♥</color>
+我会喝到最后的♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_fera04" )
+将残留在竿子根部的精液提取出来
+咽下去。
+
+镇长一边苦闷着，一边将浓厚的精液射精给喝了。
+
+//●演出：暗転
+: HideWnd()
+: StopBackVoice()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_A02_52
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_A02_52" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 9 ) endif
+//●演出：暗転解除
+: RpgPlayBgm()
+: HideWnd()
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Wait()
+: CharaPartsOn( "Mukuro", 0,1,2,3)
+: DrawChara( "Mukuro", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["镇长"]
+“哈……哈………非常舒服……呼～……”
+
+\CN["镇长"]
+“这么舒服的裁判员和口交都很棒。”
+
+: PlayVoice( "Voices/vo00_muk0429" )
+\CN["无黑色"]
+“呵呵，如果能让我变得清爽就好了……”
+
+//●服装戻す：無黒
+//●シーンエンド
+: SetMission( "SC_A02_51_2", "Hidden" )
+: SetMission( "SC_A02_51_3", "Successed" )
+: $money += 300	//報酬取得
+: FadeOut( 0.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: LoadMap( "Map_Town03_01_Kazusa", "House1" )

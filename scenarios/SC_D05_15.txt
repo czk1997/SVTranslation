@@ -1,0 +1,898 @@
+//========================================================
+//○帝都に向かえ１
+//========================================================
+*sc001
+//●場所：西都
+: CharaCostume( "Kinako", 5 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: PlayBgm("BGM/08_CM008_inst")
+: ShowWnd()
+//: DrawFaceThumbnail( "Mukuro", 0, 0, 0 )
+带着黄菜子，我们先回到西都——
+
+眼镜店不见后
+工作很辛苦。
+
+//●分岐：桃の淫乱度がＡの場合
+//●ＣＧ：Ｈカットイン・騎乗位セックス
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) == 3 )
+	: HideWnd()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c002_0_0_0411002_1100000_0_"
+	: SwapImage( 1, 0, "BGImage/Bg_WaRoom04_01", Call("Scenarios/Common*EffTime") )
+	: Call("Scenarios/Common*EvFadeIn")
+	: ShowWnd()
+	//●演技：騎乗位セックスしています
+	: PlayVoice( "Voices/vo01_mom1453" )
+	\CN["桃子"]
+“啊啊，好舒服……”♥</啊，嗯
+喂，看起来很帅……喂，可以吗？就这样，你的
+可以用小鸡鸡咬吗？”
+
+	\CN["男人"]
+“啊哈哈，褶皱蜿蜒缠绕着……啊，我也是……”
+
+	: PlayVoice( "Voices/vo01_mom1454" )
+	\CN["桃子"]
+“嗯……好啊，我去也可以。”♥</color>
+一起加油吧……嗯……用精液，让我生机勃勃……”
+
+	: HideWnd()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c002_0_0_0211002_1100000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo01_mom1455" )
+	\CN["桃子"]
+「这是什么？」♥</要穿的话♥</要穿的话♥</color>
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color><color=#f59aa0>♥</color><color=#f59aa0>♥</color>」
+
+	//●演出：射精
+	//●ＣＧ差分：膣内射精
+	: HideWnd()
+	: Call("Scenarios/Common*Shasei")
+	: PlayHSe( "SE/Hse_Nakadashi01" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c002_0_0_0411013_1100010_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+——呜呜呜呜呜呜呜呜呜呜呜呜！！
+
+	: PlayVoice( "Voices/vo01_mom1456" )
+	\CN["桃子"]
+“哈，哈，好热啊……好厉害，出了好多啊<color=59a0>♥</color>」
+
+	: HideWnd()
+	: Call("Scenarios/Common*EvFadeOut")
+	: ShowWnd()
+即使找不到工作，也要到镇上去抓男人
+可以挣相应的钱。
+
+	//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●演出：桃　魔術演出
+: else
+	: HideWnd()
+	: SwapImage( 1, 0, "BGImage/BG_Village04_01", 1.0 )
+	: Wait()
+	: ShowWnd()
+	: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 3, "C" )
+	: PlayVoice( "Voices/vo01_mom1457" )
+	\CN["桃子"]
+「呼。这样就可以了。
+只要有驱除魔物的工作就很感谢了”
+
+虽然不如眼镜店的时候
+有能勉强吃下去的工资。
+
+	: EraseChara( "Momo", 0.0 )
+//●分岐終了
+: endif
+//●分岐：無黒の淫乱度Ａの場合
+//●ＣＧ：Ｈカットイン・パイズリフェラＢ
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) == 3 )
+	: HideWnd()
+	: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+	: Wait()
+	: evcha = "Mukuro"; evbg = false; evcos = true;
+	: evfile = "eva_c025_0_0_0501002_1000000_0_"
+	: Call("Scenarios/Common*EvIn")
+	: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+	: Wait()
+	: ShowWnd()
+	\CN["贵族"]
+“啊啊啊……被乳房夹住了……哈哈，受不了。”
+
+	//●演技：パイズリしています
+	: PlayVoice( "Voices/vo00_muk4527" )
+	\CN["无黑色"]
+“嗯……嗯……小矮人，变得通红了。”♥</color>
+想拿出来的话，随时拿出来也可以……”
+
+	\CN["贵族"]
+“然后，出来……我受不了……”
+
+	\CN["贵族"]
+“呃……啊……嗯……！”
+
+	//●演出：射精
+	//●ＣＧ差分：射精
+	: HideWnd()
+	: Call("Scenarios/Common*Shasei")
+	: PlayHSe( "SE/Hse_Nakadashi01" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Mukuro"; evbg = false; evcos = true;
+	: evfile = "eva_c025_0_0_0701003_1100010_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+咻咻！呸！噗噗噗噗！
+
+	: PlayVoice( "Voices/vo00_muk4528" )
+	\CN["无黑色"]
+“呼……非常多的精液……。
+小矮人，要好好地变漂亮啊”
+
+	: PlayVoice( "Voices/vo00_muk4529" )
+	\CN["无黑色"]
+“啊……嗯……嗯…珠理奈……中出拳了♥</color>」
+
+	: HideWnd()
+	: Call("Scenarios/Common*EvFadeOut")
+	: ShowWnd()
+通过眼镜店和关系好的居酒屋的店长
+贵族来搭话，挣钱本身
+什么都成。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●場所：薬屋
+: else
+	: HideWnd()
+	: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+	: Wait()
+	: SwapImage( 1, 0, "BGImage/BG_WaRoom02_01", 0.0 )
+	: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+	: Wait()
+	: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "C" )
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk4530" )
+	\CN["无黑色"]
+“这是我要的材料，这样对吗？”
+
+	\CN["药店"]
+“嗯，没错。
+最近，森林里的魔物也变得凶暴了，很难接近。
+得救了”
+
+	: DrawChara( "Mukuro", 0, 0)
+虽然找到工作很辛苦
+但是，大体上能挣到能吃下去的钱。
+
+嘛，到了关键时刻，还有其他赚钱的手段。
+
+	: EraseChara( "Mukuro", 0.5 )
+	//●分岐終了
+: endif
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+就这样，一边设法挣着日资
+和以前一样，生活在西都。
+
+然后，黄菜子说——
+
+//●演出：場面転換トランジション
+//●背景：宿場町・夜
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_SyukubaVillage01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+指某位幕臣贵族回家途中的事情。
+
+\CN["贵族"]
+“……啊，好累。真是的，最近的年轻人中有很多自大的家伙
+我很为难。啊？”
+
+\CN["贵族护卫1"]
+“是的，是的。”
+
+\CN["贵族的护卫2"]
+“……嘘！有什么事吗？”
+
+//●演出：黄菜子　登場する
+//Kinakocos5へ変更
+: CharaCostume( "Kinako", 5 )
+: DrawChara( "Kinako", 11, 0, 1, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo02_kin0757" )
+\CN["黄菜子"]
+「…………」
+
+\CN["贵族"]
+“不只是个小孩子吗？
+背着一把大刀……”
+
+//●演技：暗殺者モードです
+: DrawChara( "Kinako", 21, 0)
+: PlayVoice( "Voices/vo02_kin0758" )
+\CN["黄菜子"]
+“……是西都贵族若岛新左卫门吧？”
+
+\CN["贵族护卫1"]
+“你啊，就算是小孩子也不想变成若岛大人
+说话不礼貌——…”
+
+//●演出：黄菜子アクション
+//●ＳＥ：倒れる音
+: HideWnd()
+: EraseChara( "Kinako", 0.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+黄菜子在护卫傲慢地说着话的时候拔出了妖刀扬羽
+立刻把护卫的身体劈成两半。
+
+: DrawChara( "Kinako", 25, 0, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0759" )
+\CN["黄菜子"]
+“那个人是若岛新左卫门，你特意告诉我
+非常感谢”
+
+\CN["贵族的护卫2"]
+“啊，那个小鬼，最近传说中的杀手……。
+身材矮小，在敲长刀吧——”
+
+//●演出：斬殺エフェクト
+//●ＳＥ：倒れる音
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a002_1_1_0200000_1000000_1_"
+: Call("Scenarios/Common*EvIn")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: ShowWnd()
+//: DrawChara( "Kinako", 21, 0, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0760" )
+\CN["黄菜子"]
+“接下来是你。”
+
+\CN["贵族"]
+“啊啊啊……为什么杀手要盯着你？
+你没有什么坏事……”
+
+贵族只是对高举沾满鲜血的妖刀的黄菜子吓了一跳
+不小心尿漏了。
+
+即使看到了一个初老的男人那不三不四的样子
+黄菜子表情一点都没有变，拿着刀
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Kinako", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0761" )
+\CN["黄菜子"]
+“不知道理由。
+因为杀了你是我的工作”
+
+//●演出：斬殺エフェクト
+//●ＳＥ：倒れる音
+: HideWnd()
+: EraseChara( "Kinako", 0.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+黄菜子斩杀了无抵抗的贵族男子。
+
+在浓血的味道中，黄菜子好像什么都没发生过一样
+放下刀，混入黑夜。
+
+黄菜子并没有完全恢复过来。
+现在晚上也会被噩梦魇住。
+
+但是，已经恢复到可以生存的程度。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+——有一天，我和桃子和黄菜子三个人去了老居酒屋
+被叫出来了。
+
+//●演出：場面転換トランジション
+//●場所：帝都・居酒屋
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: LoadMap( "Map_Town05_03_Saito", "Kuchiireya", "Scenarios/SC_D05_15*sc001_1")
+
+*sc001_1
+//リーダーを無黒に！
+: Leader( 0 )
+: Flag( "Kuchiireya_off", false )
+: Call("Scenarios/map_town05_saito_init*Map03_1")	//初期化
+: RpgCharaOn("Momo2")
+: RpgCharaOn("Kinako")
+: RpgCharaTurn( "Kuchiireya", "D" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["眼镜店"]
+“哟！好久不见了，无黑，桃子。
+还有，那个小姑娘还是第一次见啊」
+
+那里有应该被杀了的眼镜的入口店。
+
+: DrawChara( "Momo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo01_mom1458" )
+\CN["桃子"]
+“……怎么回事？你不是死了吗？”
+
+\CN["眼镜店"]
+“嘛，发生了各种各样的事。我是特意从天国回来的。”
+
+: DrawChara( "Mukuro", 41, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: PlayVoice( "Voices/vo00_muk4531" )
+\CN["无黑色"]
+“不是天堂，是地狱的错吗？”
+
+不能放手高兴。
+
+那具尸体毫无疑问是真的。
+
+: DrawChara( "Mukuro", 23, 0)
+也就是说，这家伙还活着
+因为有人成为了这家伙的替身。
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo02_kin0762" )
+\CN["黄菜子"]
+“是吗？我没能收拾好……”
+
+\CN["眼镜店"]
+“嘛，我也有活着的智慧，像是特技之类的东西
+安年”
+
+\CN["眼镜店"]
+“特长是什么秘密啊。是顶级秘密啊。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo01_mom1459" )
+\CN["桃子"]
+“那么，特意来到我们面前
+你带来了什么特别麻烦的工作？”
+
+\CN["眼镜店"]
+“桃子，你答对了一半！
+我带了工作，但是不知道是否麻烦”
+
+\CN["眼镜店"]
+“这是帝都贵族的工作。
+怎么说呢，是有想让你帮忙的事情啊”
+
+\CN["眼镜店"]
+“那也要指定我们三个人。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo02_kin0763" )
+\CN["黄菜子"]
+“帝都的贵族为什么对在西都的我们？
+还有，我也很在意我们的事情”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo01_mom1460" )
+\CN["桃子"]
+“确实如黄菜子所说。
+那个真的没问题吗？不是陷阱吗？”
+
+\CN["眼镜店"]
+“我也是这么想的，这次好好调查了一下，对方是
+我觉得认真的家伙没问题”
+
+\CN["眼镜店"]
+“那么，作为我来说，你们到帝都为止
+我想让你去……”
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom1461" )
+\CN["桃子"]
+“嗯，怎么办？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4532" )
+\CN["无黑色"]
+“只见面不也可以吗？
+所以，如果是奇怪的家伙，不接受工作就好了”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1462" )
+\CN["桃子"]
+“那也是。去看看吧。”
+
+因此，我们决定再次回到帝都。
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+事件信息更新了。
+
+: if ( MissionProgress( "SC_D04_50", "Opened" ) == true )
+	: SetMission( "SC_D04_50", "Hidden" )
+活动『口入屋枕营业』开始了
+消失了。
+
+: endif
+//＠マップ解放：大和東街道
+//●シーンエンド
+: FastTravelMapOn( "YamatoHigashiKaidoB" )
+: Party( "Mukuro","Momo","Kinako" )
+: PartyType = "Party09"; Call( "Scenarios/CommonSys*PartySetting" )
+: SetMission( "SC_D05_15_1", "InProgress" )
+: DestinationMap( "Map_Town01_01_Teito" )
+: FadeOut( 0.5 )
+: Wait()
+: Flag( "Kuchiireya_off", true )
+: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+//========================================================
+//○帝都に向かえ２
+//========================================================
+*sc002
+//●場所：帝都
+//●演出：無黒・桃・黄菜子　数歩歩く
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: HideWnd()
+: StopBgm( 0.0 )
+: RpgCharaBatch( "Mimawarigumi01"	\
+:	"MoveDown", 2 )
+: RpgCharaBatch( "Mimawarigumi02"	\
+:	"MoveDown", 2 )
+: RpgCharaBatch( "Mimawarigumi03"	\
+:	"MoveDown", 2 )
+: Wait()
+: PlayBgm("BGM/12_CM012")
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 5, "C" )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "L" )
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "R" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1463" )
+\CN["桃子"]
+“哎呀，好像马上就来了啊。”
+
+\CN["睡眠组1"]
+“哎呀，要进入帝都的城镇，需要‘审查’吗？”
+
+\CN["睡眠组2"]
+“3个人都很可爱啊。呵呵……”
+
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0764" )
+\CN["黄菜子"]
+“怎么办？要砍吗？”
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk4533" )
+\CN["无黑色"]
+“我不想在和委托人见面之前引起太大的骚动
+但是……”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1464" )
+\CN["桃子"]
+“是啊。这群家伙是看走狗的吧？”？
+如果可能的话，我就不想和幕府扯上关系了”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+桃子说的话我也同意。
+黄菜子也静静地点头。
+
+//●分岐：３人の淫乱度がＢ未満の場合
+//●選択肢が出現しない
+//＠ラベルジャンプ：sc002_select_s1
+//●分岐終了
+: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 && CharaHRank( "Momo", "Immoral" ) >= 2 && CharaHRank( "Kinako", "Immoral" ) >= 2 )
+	: Jump( "*sc002_select" )
+: else
+	: Jump( "*sc002_select_s1" )
+: endif
+*sc002_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002_select
+//■選択肢１：強行突破だな
+//■選択肢２：大人しく従おう
+//――――――――――――――――――――――――――――
+\CI["强行突破啊"]
+\CI["老实地顺从吧"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc002_select_s2" ) endif
+
+//-------------------------------------------------------
+//●選択肢１：強行突破だなを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s1
+//●演出：３人刀を抜く
+: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 4, "C" )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Kinako", 10, 0, 0, 0.5, 0.0, 2, "R" )
+\CN["睡眠组1"]
+“我们是天下的轮回组？
+你知道反抗会怎么样吗？”
+
+: DrawChara( "Kinako", 11, 0)
+: PlayVoice( "Voices/vo02_kin0765" )
+\CN["黄菜子"]
+“如果能退的话就放过了……”
+
+黄菜子的开关打开了。
+
+\CN["睡眠组1"]
+“哈？小鬼在说什么……”
+
+: DrawFaceThumbnail( "Mimawari", 0, 0, 0 )
+\CN["睡眠组2"]
+“……这个小鬼，好像很厉害……”
+
+: HideWnd()
+: StopBgm( 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: Wait()
+//●演出：奥からヒラガと亜久里がやってくる
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Aguri", 0, 0, 0, 0.5, 0.0, 2, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: ShowWnd()
+\CN["平底片"]
+“哎呀，怎么这么吵啊。”
+
+: PlayVoice( "Voices/vo16_agu0280" )
+\CN["亚久里"]
+“好久不见。”
+
+: EraseChara( "Aguri", 0.5 )
+: DrawChara( "Mukuro", 34, 0, 0, 0.5, 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4534" )
+\CN["无黑色"]
+“咦？希拉加？”
+
+当比拉加和他的助手来的时候，不知道为什么身边的人
+打开道路，开始低头。
+
+\CN["睡眠组3"]
+“希拉加大人，这三个人……”
+
+\CN["平底片"]
+“是我的客人。您没有做无礼的事吧？”
+
+\CN["睡眠组1"]
+“……嗯”
+
+\CN["睡眠组2"]
+“对，对了，我们有巡视。
+对不起！失礼了！”
+
+: HideWnd()
+: EraseChara( "Hiraga", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_dash01" )
+: ShowWnd()
+一群人慌张张地走开。
+
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["平底片"]
+“那么，在这里站着说什么呢
+让我们在我的研究室里谈谈吧”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Hiraga", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，就去了平野绫的研究室……。
+
+//●シーン：「帝都に向かえ３」へ
+//＠ラベルジャンプ：sc003
+: Jump( "*sc003" )
+//-------------------------------------------------------
+//●選択肢２：大人しく従おうを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s2
+//●シーン：「門番の見廻組から身体検査を受ける」へ
+//＠シナリオジャンプ：SC_D05_16
+: Jump( "Scenarios/SC_D05_16" )
+//========================================================
+//○帝都に向かえ３
+//========================================================
+*sc003
+//●場所：ヒラガの研究室
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Laboratory01_01", 1.0 )
+: Wait()
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 5, "RC" )
+: PlayBgm("BGM/36_ID03")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1465" )
+\CN["桃子"]
+“我想先确认一下，把我们叫到帝都
+贵族是指你吗？”
+
+\CN["平底片"]
+“是的。有很多事情
+我要成为帝都的贵族”
+
+\CN["平底片"]
+“我现在的立场不是黑医，而是幕府方面的贵族‘平贺’。”
+
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo02_kin0766" )
+\CN["黄菜子"]
+“所谓幕府一方，就是说已经过了白夜了吗？”
+
+黄菜子叽里咕噜地说出一件不得了的话。
+
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Mukuro", 30, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk4535" )
+\CN["无黑色"]
+“比拉加，你是白夜的一员吗？”
+
+: DrawChara( "Hiraga", 6, 0)
+\CN["平底片"]
+“那边的小姑娘是骗不了的。
+作为白夜的干部、九星的一员所属”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“正如刚才说的那样，情况发生了很多变化。
+幕府决定帮助一桥将军”
+
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1466" )
+\CN["桃子"]
+“所以才成为了贵族。
+嘛，不问情况是礼仪，所以不要再深入了
+但是”
+
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Mukuro", 27, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4536" )
+\CN["无黑色"]
+“比拉加——不，应该叫平贺大人吗？”
+
+\CN["平底片"]
+“不，平底片就可以了。那边比较好说话。
+不需要敬语”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4537" )
+\CN["无黑色"]
+「知道了。那么，希拉加，你叫我们到{帝都，这里}来了
+请告诉我理由”
+
+\CN["平底片"]
+“我有件事想托你们帮个忙。”
+
+估计到我们的胳膊了吗……。
+不知是什么委托，总算有了预想。
+
+\CN["平底片"]
+“我有两件事想拜托你。
+首先，通过了白夜，被瞄准了生命”
+
+\CN["平底片"]
+“即使是我也不能乖乖地被杀。
+所以我想先下手……”
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk4538" )
+\CN["无黑色"]
+“那倒是没关系，但这种工作不是鬼灯做的工作
+没有吗？”
+
+虽然大体上可以预料到
+试着问一下，包括确认的意思。
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“鬼灯前几天坏了。受到了白夜的袭击。”
+
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1467" )
+\CN["桃子"]
+“……骗人的……可是鬼灯怎么会塌下来……”
+
+桃子明显受到了打击。
+
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4539" )
+\CN["无黑色"]
+“所有人都死了吗？”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“不，据我所知，是局长和副局长，还有主队队员的
+尸体好像没有找到”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk4540" )
+\CN["无黑色"]
+“是吗，果然还活着啊……”
+
+听到那个，我就放心了。
+桃子也同样在叹气。
+
+活着的时候一半开心，一半是将来的敌人
+半分不安的心情很复杂。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4541" )
+\CN["无黑色"]
+“如果是这样的话，我想帮忙……。
+顺便问一下，你知道对方是谁吗？”
+
+\CN["平底片"]
+“现在，我知道它在表面上移动
+九星的{五黄，おう}的卍桑呢」
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Hiraga", 0.5 )
+: DrawChara( "Momo", 11, 0, 0, 0.5, 0.0, 5, "RC" )
+: DrawChara( "Kinako", 10, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom1468" )
+\CN["桃子"]
+“卍确实是那个半灰色的人啊。”
+
+//●演技：卍に恨みがある黄菜子。暗殺者モード
+: DrawChara( "Kinako", 11, 0)
+: PlayVoice( "Voices/vo02_kin0767" )
+\CN["黄菜子"]
+“身材魁梧的男人……”
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+黄菜子的脸变成了暗杀者的脸。
+卍到底发生了什么呢。
+
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4542" )
+\CN["无黑色"]
+“那么，还有一个呢？”
+
+\CN["平底片"]
+“这是作为幕府的贵族的工作
+白夜的干部，摧毁了九星六白的织笠御影所在的织笠神社
+我想要”
+
+\CN["平底片"]
+“因为是反幕派的神社，所以作为幕府不能放任不管
+因为好像不去……”
+
+: EraseChara( "Hiraga", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 6, "C" )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 5, "L" )
+: DrawChara( "Kinako", 11, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom1469" )
+\CN["桃子"]
+“织笠御影确实是那个巫女吧？”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0768" )
+\CN["黄菜子"]
+“在白夜中也是争夺1、2的魔术使用者。”
+
+在鬼灯里的时候，曾在战场上见过面。
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4543" )
+\CN["无黑色"]
+“如果是来自比拉加的委托的话，没有拒绝的理由。
+桃、黄菜子，你们呢？”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1470" )
+\CN["桃子"]
+“嗯？我可以另外做。”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0769" )
+\CN["黄菜子"]
+“……我也没关系。”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Hiraga", 5, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["平底片"]
+“谢谢。
+那么，我告诉你敌人的所在”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“首先，卍先生，他现在是以河内为据点的
+我想如果能攻入那里收拾一下就好了……”
+
+\CN["平底片"]
+“不过，织笠先生如果可能的话，请留下来捕捉
+我也很开心”
+
+: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 26, 0, 0, 0.5, 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4544" )
+\CN["无黑色"]
+“我知道了。我想说要妥善处理
+因为对方是对手啊。如果不从一开始就打算杀他而战斗的话
+我会被杀的”
+
+\CN["平底片"]
+“是的，我很清楚。
+所以，如果可能的话”
+
+因此，我们接受了来自比拉加的委托。
+
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Hiraga", 0.0 )
+事件信息更新了。
+
+//＠マップ解放：神那街道
+//＠マップ解放：織笠神社
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: Flag( "Kuchiireya_off", true )
+: SetMission( "SC_D05_15_1", "Successed" )
+: SetMission( "SC_D05_17_1", "InProgress" )
+: SetMission( "SC_D05_18_1", "InProgress" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "HiragaLavo" )
+: FastTravelMapOn( "KannaKaido" )
+: FastTravelMapOn( "Orikasa" )
+: DestinationMap( "Map_Event016" )
+: LoadMap( "Map_Town01_01_Teito", "Yadoya", "Scenarios/Map_Town01_Teito_Init*Map01")

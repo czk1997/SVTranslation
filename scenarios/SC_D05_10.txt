@@ -1,0 +1,525 @@
+//========================================================
+//○ヤクザの用心棒１
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["眼镜店"]
+“这是保镖的工作。”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1354" )
+\CN["桃子"]
+“保镖？
+”
+
+\CN["眼镜店"]
+“不愧是。真敏锐啊……。
+嘛，我倒是没打算隐瞒”
+
+\CN["眼镜店"]
+“某个流氓组织的组长去世了。
+然后，要办葬礼，那是护卫的工作”
+
+\CN["眼镜店"]
+“世界上那些人的葬礼
+其他组可以攻进，或者是{警察，decosu}一起
+我一定会抓住你的”
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom1355" )
+\CN["桃子"]
+“也就是说，根据场合的不同，必须和流氓和警察战斗
+不可以吧。嗯，怎么办呢？”
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：引き受ける
+//■選択肢２：よく考える
+//――――――――――――――――――――――――――――
+\CI["承担"]
+\CI["仔细考虑"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：引き受けるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1356" )
+\CN["桃子"]
+“主要的工作是在葬礼期间，保护这一组就可以了吧？
+那样的话，嘛，可以另外做了”
+
+\CN["眼镜店"]
+“能帮我做吗？那我就说明一下内容。”
+
+\CN["眼镜店"]
+“说想要守护的是、{下总、もう}组中、
+这里很有名的{清纯，きよしこ}见面后在这个笠下
+相当的组啊」
+
+\CN["眼镜店"]
+“{清纯，きよしこ}会倒闭后，力量也几乎没有了
+但是呢。嗯，我想让你保护那个组长的葬礼
+”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom1357" )
+\CN["桃子"]
+“明白。那么，去哪里好呢？”
+
+\CN["眼镜店"]
+“熊野街道中有去南方的街道
+那一带有一套宅邸”
+
+\CN["眼镜店"]
+“详细情况可以问一下组里的人。
+我来联系你”
+
+//＠マップ解放：熊野街道（桃）
+//●シーンエンド
+: EraseChara( "Momo", 0.5 )
+事件信息更新了。
+
+: SetMission( "SC_D05_10_1", "InProgress" )
+: DestinationMap( "Map_Event015" )
+: Return
+
+*sc001_1
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["眼镜店"]
+“熊野街道中有去南方的街道
+那一带有一套宅邸”
+
+\CN["眼镜店"]
+“详细情况可以问一下组里的人。
+我来联系你”
+
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：よく考えるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+: DrawChara( "Momo", 11, 0)
+\CN["眼镜店"]
+「せやな。嘛，好好考虑一下也许比较好。
+有兴趣的话，再打招呼啊」
+
+: EraseChara( "Momo", 0.5 )
+: Return
+//●シーンエンド
+
+//========================================================
+//○ヤクザの用心棒２
+//========================================================
+*sc002
+: if ( MissionProgress( "SC_D05_10_1", "InProgress" ) == false )
+	: Jump( "Scenarios/Map_Event*Closed" )
+: endif
+*sc002_1
+: if ( CharaCostume( "Momo" ) == 1 )
+果然光着身子去是不可能的……。
+
+	: Return
+: endif
+\CI["就这样向前冲"]
+\CI["好好确认一下比较好吧"]
+前面好像有下总组的房子……。
+
+: if ($choice == 1) Return endif
+//●場所：下総組の屋敷
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Yashiki02_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/02_CM002")
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+\CN["下总组的男子1"]
+“穿着和服，红发美女……说不定，她在西都
+眼镜店说的女人是你吗？”
+
+: DrawChara( "Momo", 1, 0, 0)
+: PlayVoice( "Voices/vo01_mom1358" )
+\CN["桃子"]
+“对，是的。因为有你们组长的葬礼
+我是为了保护那个才来的」
+
+\CN["下总组的男子2"]
+“嗯……没有这样的女人。”
+
+\CN["下总组的男子1"]
+“但是，我是精灵。魔术的使用者是眼镜的入口店。”
+正在听。很可靠吧”
+
+\CN["下总组的男子2"]
+“是啊。因为是大叔的最后时刻，还有组的最后时刻。
+我想依靠你”
+
+说到预想的那样，和预想的一样。
+下总组好像已经决定要解散了。
+
+\CN["下总组的男子1"]
+“这是眼镜店介绍的。我想一定会可靠的。”
+
+//●演技：心の声です
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1359" )
+\CN["桃子"]
+（诶，那个人，很受信赖呢。）
+
+\CN["下总组的男子2"]
+“大叔的葬礼按计划在明天中午举行。
+谁来郑重地迎接这位客人啊」
+
+//●演出：桃　連れられて屋敷に入って行く
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: chara = "Momo"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+被组里的人带到宅邸的房间。
+
+因为给我准备了一个有点贵的旅店感觉的房间
+我决定在那里住一晚。
+
+//●演出：時間経過トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+——第二天。
+
+//●背景：和風屋敷・外観・昼
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Yashiki02_01", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["下总组的男子1"]
+“就是在这里和我们一起监视。”
+
+\CN["下总组的男子2"]
+“嘛，因为今天也是解散的一组。
+我觉得没有什么可以攻过来的闲人”
+
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1360" )
+\CN["桃子"]
+“是啊。我也希望是这样。”
+
+\CN["下总组的男子2"]
+“嗯？有什么事吗？”
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom1361" )
+\CN["桃子"]
+“嗯，是女人的直觉吗？
+总觉得要发生什么事”
+
+是的，从早上开始就有种奇妙的沙沙的感觉。
+
+根据至今为止的经验，这种时候
+绝对会发生什么不好的事情。
+
+\CN["下总组的男子1"]
+“是女人的直觉吗……。
+不过，还是小心点比较好”
+
+//●演出：時間経過トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+然后过了一会儿，在宅邸里举行葬礼。
+
+\CN["下总组的男子2"]
+“好像什么都没发生啊。
+你女人的直觉好像也和他不一样”
+
+: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1362" )
+\CN["桃子"]
+“是啊。嘛，我倒是有希望被排除在外的直觉……”
+
+这样对话的时候。
+
+//●演出：発砲エフェクト
+//●ＳＥ：銃の発砲音
+: StopBgm( 0.25 )
+: PlaySe( "SE/Se_Gun01" )
+: EraseChara( "Momo", 0.5 )
+\CN["下总组的男子1"]
+“唔……！”
+
+: PlayBgm("BGM/28_ID01")
+一起护卫的男子被射击。
+
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo01_mom1363" )
+\CN["桃子"]
+“敌人袭击……！？”
+
+受枪击的男子伤势很深。
+但是，这似乎不是关乎生命的东西。
+
+//●演出：桃　魔術演出
+: HideWnd()
+: EraseChara( "Momo", 0.0 )
+: cgkeep = false;
+: Call( "Scenarios/Effect*MomoAnime" )
+: ShowWnd()
+向着子弹来的方向释放魔术。
+
+\CN["男人"]
+“唔……！”
+
+被魔术扣留的大概是2、3个人吧？
+
+隐藏在树林里的男人们出现了。
+
+: HideWnd()
+: cutinfile = "CutinFg05"; Call("Scenarios/Common*CutinFadeIn");
+: ShowWnd()
+\CN["睡眠组1"]
+“喂，有魔术师吗？”
+
+\CN["睡眠组2"]
+“那个妖精的女人啊。不是个超级美人吗？”。
+虽然被飞到西都什么地方闹得很凶，但是心情很好”
+
+\CN["下总组的男子2"]
+“是，你们是谁……！”
+
+\CN["睡眠组3"]
+“正因为如此，西都的乡下人呢。
+居然不知道天下的前途”
+
+\CN["睡眠组1"]
+“对了对了，大男子们是将军直属的部队，是天下的回访组。
+葬礼嘛，你这家伙可不是个黑道人物啊」
+
+\CN["睡眠组2"]
+“啊，我会停止模仿别人，老实地被消灭的。”
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1364" )
+\CN["桃子"]
+“我没想到你会在这里问我相亲组的名字。
+你们在全国任何地方都想给你们添麻烦啊」
+
+所谓的“见回组”，是最近来到帝都的家伙
+正如他所说，这是一桥将军直属的护卫部队。
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1365" )
+\CN["桃子"]
+“将军直属部队的人为什么会来西都？”
+是吗？莫非你被降职了？”
+
+\CN["睡眠组1"]
+“哇……好吵！我们并不是那样的……”
+
+\CN["睡眠组2"]
+“真是个自大的女人。
+我会犯到什么都说不出来的程度的”
+
+对方的这个反应。
+被降职是图星吧。
+
+: DrawChara( "Momo", 5, 0)
+……无所谓。
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1366" )
+\CN["桃子"]
+“如果要妨碍葬礼的话就不饶恕了。
+但是，如果就这样卷着尾巴逃走的话，我会放过你的”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom1367" )
+\CN["桃子"]
+“那么，怎么办呢？我给你特别选择。”
+
+反正答案已经定下来了……。
+
+\CN["睡眠组3"]
+“精灵的女人会给我贴上去贴上去。”
+
+\CN["睡眠组1"]
+“踏踏实实地摆弄这句话很开心。”
+
+: DrawChara( "Momo", 4, 0)
+看周围的男人们好像完全没有退缩的意思。
+
+: PlayVoice( "Voices/vo01_mom1368" )
+\CN["桃子"]
+“用我的魔术把所有人都揍飞。
+如果把刀指向的话，就要做好死的觉悟啊」
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：見廻組×３
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：ヤクザの用心棒３　へ
+//■敗　北：見廻組の慰み者　へ
+//――――――――――――――――――――――――――――
+//＠戦闘：見廻組×３,2,2,0,sc003,lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*lose" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Yashiki02_01", "BGM/22_BM003", 1046, 1046, 1046, "Scenarios/SC_D05_10*battle01_end" , true )
+
+*battle01_end
+
+: if ( $battleWin == true )
+	: StopBgm( 0.0 )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: RestoreBgm
+	: Jump( "*lose" )	//敗北した場合
+: endif
+
+*sc003
+//●演出：見廻組　倒れていく
+//●ＳＥ：倒れる音
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Yashiki02_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Down01" )
+: ShowWnd()
+\CN["一群人"]
+「…………」
+
+: PlayBgm("BGM/02_CM002")
+: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1369" )
+\CN["桃子"]
+“呼～……像我这样一个柔弱的女孩子里有几个
+居然会来，真是差劲的家伙啊”
+
+那么，这些家伙怎么办呢？
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1370" )
+\CN["桃子"]
+“嘛，这家伙连杀人的价值都没有
+放着不管吧”
+
+我讨厌这样的家伙弄脏手。
+
+拿起武器后，交给流氓们。
+
+//●背景：空・昼
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: EraseChara( "Momo", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+然后没有其他组袭击
+组长的葬礼顺利进行到了最后。
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Momo", 11, 0, 0 )
+: PlayVoice( "Voices/vo01_mom1371" )
+\CN["桃子"]
+（大家都哭得很厉害呢）
+
+看到大男人们都在流泪
+这里的组长应该很受欢迎吧。
+
+明明已经是倒闭的一组了，却拿出高额的资金，特地雇保镖
+差不多。
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Momo", 4, 0, 0 )
+: PlayVoice( "Voices/vo01_mom1372" )
+\CN["桃子"]
+（正义和邪恶，真的，已经不太清楚了。）
+
+在鬼灯里的时候，对自己做的事情完全没有迷惑。
+我觉得自己做的事幕府才是正确的。
+
+但是，来到西都，早已动摇了。
+
+自己真的做了正确的事情吗？
+我变得非常不安，迷茫的事情变多了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//＠場所移動：西都
+//＠仕事成功
+: SetMission( "SC_D05_10_1", "Successed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+//●シーン：「変態貴族相手に両穴処女オークション」へ
+//＠シナリオジャンプ：SC_D05_11
+: if ( MissionProgress( "SC_D05_08_1", "Successed", "Failed" ) == true )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_12")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif
+
+*lose
+//●シーン：「見廻組の慰み者」へ
+//＠シナリオジャンプ：SC_D05_11
+: Jump( "Scenarios/SC_D05_11" )

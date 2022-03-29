@@ -1,0 +1,271 @@
+//========================================================
+//○浪人生活開始
+//========================================================
+*sc000
+: $chapter = 10	// 章の設定
+: Flag( "RouninRootIn", true )
+: HideWnd()
+: Call( "Scenarios/Common*Eyecatch" )
+: FadeOut( 0.0 )
+: SetMission( "SC_A03_50_1", "Hidden" )
+: if ( MissionProgress( "SC_A03_50_2", "Successed" ) == false )
+	: SetMission( "SC_A03_50_2", "Hidden" )
+: endif
+//パーティーを無黒単独に
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: LoadMap( "Map_Town05_03_Saito_Yadoya", "Awake", "Scenarios/SC_D04_05*sc001")
+
+*sc001
+//●状況：飛び出してフラフラしているうちに西都に辿り着いた無黒
+//●場所：西都・宿の部屋
+//●服装：無黒・下着
+//●演技：寝起きです
+//無黒cos3へ変更
+: CharaCostume( "Mukuro", 3 )
+: RpgCharaOn("Mobu01")
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 3, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3646" )
+\CN["无黑色"]
+“嗯……睡得真好啊~……”
+
+比起帝都，一直往西走的地方的城市『{西都，请}』
+
+漂流到那里，大概一个月左右吧？
+
+//●分岐：フラグ［脱獄］が１の場合
+//●囚人を経験している場合
+: if ( Flag ( "PrisonBreak" ) == true )
+	: DrawChara( "Mukuro", 2, 0)
+虽然手臂很迟钝，但在来到西都的途中或是继续工作着
+我已经完全恢复了直觉。
+
+//●分岐終了
+: endif
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: RpgCharaMove( "Player", "R", 1 )
+: Wait()
+: ShowWnd()
+\CN["男人"]
+「…………」
+
+: DrawChara( "Mukuro", 27, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk3647" )
+\CN["无黑色"]
+“真是个不甘心的家伙……”
+
+剥下白眼倒下的男人
+半夜，来夜袭的男人的习惯的尽头。
+
+//●分岐：淫乱度Ｂ以上の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+	: DrawChara( "Mukuro", 26, 0)
+	: PlayVoice( "Voices/vo00_muk3648" )
+	\CN["无黑色"]
+“如果昨天做的工作不是枕头工作的话
+我按照你的愿望给你弄了……”
+
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 24, 0)
+因为太累了，进到房间里来袭击卧病
+瞬间，斩杀了他。
+
+鬼灯下的起床后立即活动身体的训练
+大有裨益。
+
+//無黒cos0へ戻し
+: HideWnd()
+//無黒強制的にＨパラメーターＣ以上へ
+: if ( CharaHRank( "Mukuro", "Immoral" ) == 0 )
+	: CharaSetHRank( "Mukuro", "Immoral", "C" )
+: endif
+: if ( CharaHRank( "Mukuro", "OralSex" ) == 0 )
+	: CharaSetHRank( "Mukuro", "OralSex", "C" )
+: endif
+: if ( CharaHRank( "Mukuro", "Breast" ) == 0 )
+	: CharaSetHRank( "Mukuro", "Breast", "C" )
+: endif
+: if ( CharaHRank( "Mukuro", "Vagina" ) == 0 )
+	: CharaSetHRank( "Mukuro", "Vagina", "C" )
+: endif
+: if ( CharaHRank( "Mukuro", "Anal" ) == 0 )
+	: CharaSetHRank( "Mukuro", "Anal", "C" )
+: endif
+: if ( CharaHRank( "Mukuro", "Exhibitionist" ) == 0 )
+	: CharaSetHRank( "Mukuro", "Exhibitionist", "C" )
+: endif
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: CharaCostume( "Mukuro", 0 )
+: RpgCharaWarp( "Player", "SC_D04_05")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+//●演出：無黒　着替えた後、下に降りていく。
+//●服装：無黒・隊士服
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+\CN["客栈"]
+“哟。昨天睡得好吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3649" )
+\CN["无黑色"]
+“我觉得这样的破旅馆不可能睡得好……”
+
+\CN["客栈"]
+“那部分不是以合理的价格留宿吗？”
+
+虽说是微乎其微，但也足以凌驾于雨露之上
+我很高兴没有什么贵的。
+
+而且根据情况可以免费住宿
+没钱的时候很感谢。
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk3650" )
+\CN["无黑色"]
+“对了对了，昨天出现了一只大虫子，所以就杀了它。
+对不起，请善后处理”
+
+\CN["客栈"]
+「嘿嘿。{尸体，roku}的处理。
+我经常去你的房间。因为天气变暖了”
+
+旅店的主人也习惯了收拾尸体。
+
+在西都下町中屈指可数的危险地区
+说人没有不死的日子也不过分。
+
+在这里每天都会发生大大小小的事件。
+
+\CN["客栈"]
+“无黑，今天呢？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3651" )
+\CN["无黑色"]
+“和平时一样，只是从入口店拿到工作而已。”
+
+\CN["客栈"]
+“是吗？真能干啊。等，小心啊。”
+
+: if ( MissionProgress( "SC_A01_50", "Opened" ) == true )
+	: SetMission( "SC_A01_50", "Hidden" )
+活动“由著名的色情涂鸦技师制作的dild”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A01_51", "Opened" ) == true )
+	: SetMission( "SC_A01_51", "Hidden" )
+活动“亲手撕破处女膜”开始了
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A01_52", "Opened" ) == true )
+	: SetMission( "SC_A01_52", "Hidden" )
+活动“给贵族男人处女”开始了
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_51_1", "Opened" ) == true )
+	: SetMission( "SC_A02_51_1", "Hidden" )
+活动“向加津佐的镇长发送物品”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_51_2", "InProgress" ) == true )
+	: SetMission( "SC_A02_51_2", "Hidden" )
+活动“向加津佐的镇长发送物品”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_50_1", "Opened" ) == true )
+	: SetMission( "SC_A02_50_1", "Hidden" )
+活动“来取史莱姆的粘液”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_50_2", "InProgress" ) == true )
+	: SetMission( "SC_A02_50_2", "Hidden" )
+活动“来取史莱姆的粘液”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_53", "Opened" ) == true )
+	: SetMission( "SC_A02_53", "Hidden" )
+活动“贵族的性接待请求”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A03_51_1", "Opened" ) == true )
+	: SetMission( "SC_A03_51_1", "Hidden" )
+活动“希望得到恋爱小说”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A03_51_2", "InProgress" ) == true )
+	: SetMission( "SC_A03_51_1", "Hidden" )
+活动“希望得到恋爱小说”
+消失了。
+
+: endif
+//●演出：無黒　外に出る
+//●シーンエンド
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: FadeOut( 0.5 )
+: Wait()
+//ファストトラベル調整
+: Call( "Scenarios/CommonSys*AllRecovery" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Saito" )
+: RpgCharaOff("Mobu01")
+: LoadMap( "Map_Town05_03_Saito", "Kuchiireya", "Scenarios/SC_D04_05*sc002")
+
+*sc002
+: HideWnd()
+: Call("Scenarios/Map_Town05_Saito_Init*Map03_1")	//初期化
+: RpgCharaTurn( "Kuchiireya", "D" )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+\CN["眼镜店"]
+“哦！无黑，你来了个好地方。
+想交给你的工作有几个？”
+
+这个外表十分可疑的男人
+被称为“眼镜入口店”的入口店。
+
+据本人说，人才派遣业就是以人才派遣业为生的。
+
+那么，我基本上是从这个男人那里得到工作的
+赚日钱。
+
+\CN["眼镜店"]
+“那么，这是我想要的工作——”
+
+//サブイベント解放処理
+: SetMission( "SC_D04_50", "Opened" )
+: SetMission( "SC_D04_51", "Opened" )
+: SetMission( "SC_D04_53", "Opened" )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+\CI["承包打退联合王国"]
+\CI["承包失散者的保镖"]
+\CI["获得兼光！承包商"]
+你做什么工作？
+
+: if ($choice == 0)
+	: Jump( "Scenarios/SC_D04_06" )
+: elif ($choice == 1)
+	: Jump( "Scenarios/SC_D04_08" )
+: else
+	: Jump( "Scenarios/SC_D04_09" )
+: endif

@@ -1,0 +1,344 @@
+//========================================================
+//○追い込まれる鬼灯
+//========================================================
+//●視点：第三者視点
+: $chapter = 5	// 章の設定
+: RpgCharaOff("Player")
+: FadeIn( 0.0 )
+: Wait()
+: HideWnd()
+: Call( "Scenarios/Common*Eyecatch" )
+: EraseAllImage(1,1.0)
+: Wait()
+: ShowWnd()
+——鬼灯被一个达磨的手破坏成半坏状态。
+
+这不仅使幕府，而且降低了帝都人民的信赖度
+足够了。
+
+//●背景：帝都
+//Yoshi：背景、夕方
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Teito01_02", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition14", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+//●状況：無黒とレオが見回りしている
+\CN["帝都人1"]
+“鬼灯只是一个反幕派的家伙在发呆
+好像被打败了”
+
+\CN["帝都人2"]
+“哇……真没出息。真的没关系吗？”
+
+: DrawChara( "Leo", 20, 0, 0, 0.0, 0.0, 2, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["雷欧"]
+「…………」
+
+\CN["帝都人3"]
+“哇……对视了。
+别瞪我，别乱发脾气！”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“……明明什么都不知道。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo00_muk1532" )
+\CN["无黑色"]
+“实际上，我们是被白夜的达磨一个人打败的。
+我什么都不能还嘴”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“那倒是知道。”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk1533" )
+\CN["无黑色"]
+“着急也是没办法的。一步一步踏实地恢复信赖是不行的。”
+”
+
+在帝都的街道上走的话，街上的人们会说这样的话
+被说了。
+
+//●演出：場面転換トランジション
+//●状況：桃と銀が見回りしている
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_TeitoUra01_02", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["帝都人4"]
+“（悄悄地……）”
+
+: DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0770" )
+\CN["桃子"]
+“哈~……。真的，你说了很多你喜欢的话呢。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“让他说就好了。”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0771" )
+\CN["桃子"]
+“啊？意外的很冷静。我还以为会开车呢。”
+
+: DrawChara( "Gin", 16, 0)
+\CN["银子"]
+“那么，嘛……”
+
+银和雷欧一起向见回组进攻后
+被桃子狠狠地骂了一顿。
+
+最后，因为他心中哭着说“别让我担心”
+作为银也只能反省了。
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0772" )
+\CN["桃子"]
+“如果白夜破灭了的话，就什么也不会说了吧
+虽然是到那时为止的艰辛……”
+
+: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+“是啊。”
+
+那个时候，因为要做别的任务，所以不能在现场集合
+没能做成的桃和银。
+
+特别是桃子，很早以前就痛感自己能力不足
+心情复杂。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Chaya01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["饭店的老板"]
+“哦！黄菜子，最近没来店里，所以很担心。”
+
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0283" )
+\CN["黄菜子"]
+“对不起……我觉得会给店里添麻烦。”
+
+\CN["饭店的老板"]
+“啊，是那件事吗？不用在意。”
+
+\CN["饭店的老板"]
+“我和常客们到现在为止鬼灯都在拼命地燃烧着身体
+我知道他是不是为了帝都而来的”
+
+\CN["饭店的老板"]
+“那些喋喋不休的家伙们
+只是在发泄压力”
+
+其中也有这样表示理解的人。
+
+正因为如此，鬼灯的每个人都没有完全折断。
+
+他们说自己做的事情并没有错。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: EraseChara( "Kinako", 0.0 )
+: ShowWnd()
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●背景：宿屋・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_03", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: ShowWnd()
+//●状況：将軍と一夜を過ごした後。あざみ裸
+: CharaPartsOn( "Azami", 0)
+: CharaCostume( "Azami", 1 )
+: DrawChara( "Tadakatsu", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["将军"]
+「你们这些家伙，真是狼狈不堪。
+被白夜的家伙玩弄到那种地步，这是松懈的证据”
+
+: EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 24, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0333" )
+\CN["嘲讽"]
+“您这么一说，我真是头疼啊。”
+
+夜幕。这是只有幕府和贵族的伟人在密会上使用的旅馆
+事情结束后的嘲讽被将军骂得狗血喷头。
+
+即便如此，将军也多少能冷静下来
+这是今晚的行为中的嘲讽献身的结果吧。
+
+//●演技：心の声です
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0334" )
+\CN["嘲讽"]
+（将军自己也很清楚，编组是大失败的
+存在。绝对不会弄破鬼灯）
+
+总觉得和将军长期交往的嘲讽
+我知道将军是个非常胆小的人。
+
+见回组的兵力最高的笹木幸三郎是相当有实力的人
+远不及自己和龙。仔细一看，和无黑和雷欧是势均力敌
+也就是说吧。
+
+见回组虽然经常发生纠纷，但却毫无用处
+将军完全知道那件事。
+
+因为是自己计划并组织起来做的
+不能轻易拆卸。
+
+如果那样做的话，不仅是民众，连财阀、贵族也会
+我知道会被抛弃。
+
+先不说作为人的内在和容器的大小
+只有头脑好。
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Tadakatsu", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["将军"]
+“总之我要求的是尽快镇压反幕派。
+只要打败般若和白夜就可以了”
+
+: DrawChara( "Tadakatsu", 4, 0)
+\CN["将军"]
+「嘲讽啊，我觉得已经没有缓期了。
+如果不能镇压反幕派的话，我还有别的想法”
+
+: EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 2, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0335" )
+\CN["嘲讽"]
+“是的，我知道。”
+
+话虽如此，这也只是嘴吧。
+
+将军竟然一句话也不说“鬼灯解体”
+因为没有发出。
+
+//●演技：心の声です
+: DrawChara( "Azami", 5, 2)
+: PlayVoice( "Voices/vo05_aza0336" )
+\CN["嘲讽"]
+（嘛，比起反幕派，我更在意的是
+有啊）
+
+高千穗的淤青早在多年前就开始令人担忧了。
+
+不同文化交流会的时候从其他国家叫做“阿波罗之弓”
+拥有能让大陆崩溃的威力的神器
+因为听说流传下来了。
+
+住在北方的一个商人得到了它
+后来那个商人被处刑的时候幕府没收了。
+
+//●演技：心の声です
+: DrawChara( "Azami", 6, 2)
+: PlayVoice( "Voices/vo05_aza0337" )
+\CN["嘲讽"]
+（但是，无论调查幕府内的哪个地方，《阿波罗之弓》都是
+没找到……）
+
+根据各种各样的穴位进行调查的结果，阿波罗的弓神器
+给予了“阿波罗之箭”这种禁咒的力量
+知道了。
+
+找不到阿波罗的弓
+有人得到了阿波罗的箭。
+
+//●演技：心の声です
+: DrawChara( "Azami", 25, 2)
+: PlayVoice( "Voices/vo05_aza0338" )
+\CN["嘲讽"]
+（不会是那个孩子吧……）
+
+嘲讽本来就不是那样的吗？
+有人注意着看了。
+
+然后，因为某件事那个人物的感情混乱
+显示了阿波罗箭的一部分力量。
+
+//●演技：心の声です
+: DrawChara( "Azami", 1, 2)
+: PlayVoice( "Voices/vo05_aza0339" )
+\CN["嘲讽"]
+（还有很多不明白的地方，把大和吹跑了
+我知道有足够的力量）
+
+: DrawChara( "Azami", 6, 2)
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0340" )
+\CN["嘲讽"]
+（在那力量发挥之前，无论做什么都必须停止。）
+
+//●演技：心の声です
+: DrawChara( "Azami", 17, 2)
+: PlayVoice( "Voices/vo05_aza0341" )
+\CN["嘲讽"]
+（我知道了阿波罗箭的秘密，那时候我才是——）
+
+: DrawChara( "Tadakatsu", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Azami", 17, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["将军"]
+“呵呵，你还敢嘲笑吗？”
+
+: DrawChara( "Azami", 26, 2)
+: PlayVoice( "Voices/vo05_aza0342" )
+\CN["嘲讽"]
+“是的，正如将军所愿……”
+
+嘲讽改变了决心，再次被将军拥抱。
+
+//●演出：暗転
+: CharaCostume( "Azami", 0 )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: EraseChara( "Azami", 0.0 )
+: EraseChara( "Tadakatsu", 0.0 )
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「玉藻の忠告」へ
+//＠シナリオジャンプ：SC_B05_02
+: Jump( "Scenarios/SC_B05_02" )

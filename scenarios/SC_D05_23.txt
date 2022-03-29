@@ -1,0 +1,613 @@
+//========================================================
+//○色町の最凶母子を始末せよ！１
+//========================================================
+*sc001
+//●視点：無黒視点
+//●背景：黒画面
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: ShowWnd()
+因为意外的事{黑夜叉，黑精灵}化了的我和黄菜子。
+
+对希拉加说这件事的话，就是使用能力有效的魔导具
+多亏了你给我做的，我和黄菜子都很自在
+{黑夜叉，暗黑精灵}化了。
+
+然后，说到桃，就是在比拉加拿着的魔术书上
+有像传说中的魔术一样的东西，练习并学会了。
+
+//＠システム：無黒・黄菜子　自在にダークエルフ化できる
+
+//＠システム：桃　カタストロフィを覚える
+然后几天后——
+
+//●場所：ヒラガの研究所
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Laboratory01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/03_CM003")
+: ShowWnd()
+我们被集合在了比拉加的研究所。
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk4597" )
+\CN["无黑色"]
+“那么，接下来又是什么请求呢？”
+
+只要有钱，哪个委托都可以。
+那样的事情一个一个地放在心上是做不到的。
+
+\CN["平底片"]
+“说话快真是帮了我大忙。
+总觉得吉野原好像被白夜夺走了”
+
+//●読み：吉野原（よしのはら）
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk4598" )
+\CN["无黑色"]
+“吉野原是色町吧？
+你打算占领那种地方干什么？”
+
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo01_mom1516" )
+\CN["桃子"]
+“啊，没有黑的话就不知道了。
+那样色情的街道是相当重要的地方”
+
+旁边黄菜子也静静地点着头。
+
+\CN["平底片"]
+“我想我是切身体会并理解的，世上只有漂亮的事
+不是。倒不如说肮脏的事情更多”
+
+\CN["平底片"]
+“色町是各种各样欲望交织的城市——
+如果被抓住了这一点，作为幕府来说是相当痛苦的”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4599" )
+\CN["无黑色"]
+“我知道了。那么，那个占据着的家伙是谁？”？
+从口气上看应该是白夜的干部级别……”
+
+\CN["平底片"]
+「是的。和九星{七红，七咳嗽}的镝木紫苑先生
+同样是九星{九紫，黄瓜}的镝木严的母子呢」
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1517" )
+\CN["桃子"]
+“哎呀，你们父子俩都是干部啊。”
+
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R")
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L")
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo02_kin0811" )
+\CN["黄菜子"]
+“我不太记得那两个人
+镝木紫苑先生应该是强力魔术的使用者”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1518" )
+\CN["桃子"]
+「啊，魔术的。
+和之前战斗过的织笠御影哪个更厉害呢？”
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom1519" )
+\CN["桃子"]
+“按顺序来说，织笠御影好像更高……。
+确实是第六个或者是什么吧？”
+
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+“九星的座次不一定是实力顺序。
+贡献度上织笠更高，但其实力恐怕
+紫苑更高吧”
+
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+“而且，儿子严先生是屈指可数的力量战士。
+据说是破坏的产物，请注意”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk4600" )
+\CN["无黑色"]
+“明白了。总之先去吉野原看看吧。
+确实是要经过帝都东街道吧？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“是的，我觉得那里最方便。”
+
+//＠マップ解放：帝都東街道
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+
+: CharaAddSkill( "Mukuro", 10 )
+: CharaAddHSkill( "Mukuro", 806 )
+: CharaAddSkill( "Momo", 124 )
+: CharaAddSkill( "Kinako", 207 )
+: CharaAddHSkill( "Kinako", 806 )
+无黑、桃、黄菜子掌握了新的技能。
+
+: CharaCanDarkelfChange( "Mukuro", true )
+: CharaCanDarkelfChange( "Kinako", true )
+服装变更使得{黑夜叉，暗黑妖精}化成为可能。
+<color=FF0000>※服装变更是从“菜单”中的“角色”开始的
+可以变更。也有不可更改的地方。</color>
+
+: SetMission( "SC_D05_23_1", "InProgress" )
+: FastTravelMapOn( "Yoshinohara" )
+: DestinationMap( "Map_Town11_01_Yoshinohara" )
+: FadeOut( 0.5 )
+: Wait()
+: Party( "Mukuro","Momo","Kinako" )
+: Participate( 0, true, 1, true, 2, true )
+: PartyType = "Party09"; Call( "Scenarios/CommonSys*PartySetting" )
+: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○色町の最凶母子を始末せよ！２
+//========================================================
+*sc002
+\CI["冲锋而去"]
+\CI["好好准备之后"]
+在那里胡闹的好像是镝木父子……。
+
+// 強制的に帝都に戻す
+: if ( $choice == 1 )
+要不要回到帝都重新振作一下。
+
+	: LoadMap( "Map_Town01_01_Teito" )
+: endif
+//●場所：吉野原
+//●演出：町の中央部で巌が暴れている
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Yuukaku01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+\CN["严严"]
+“哦哦哦哦哦哦哦哦哦哦！”
+
+//●演出：巌に警察がぶっ飛ばされる
+: HideWnd()
+: Call( "Scenarios/Effect*Renda01" )
+: ShowWnd()
+\CN["警察"]
+“哇啊啊啊啊啊啊啊啊啊啊啊啊！”
+
+企图控制严严严的警察被打飞了。
+
+: DrawChara( "Shion", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo12_shi0302" )
+\CN["紫苑"]
+“幕府的狗们怎么看待严酱呢？”
+早有一亿年”
+
+\CN["严严"]
+“嘿嘿……”
+
+//: EraseChara( "Shion", 0.5 )
+大汉在当街胡闹。
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Kinako", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo00_muk4601" )
+\CN["无黑色"]
+“黄菜子，那两个人……？”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0812" )
+\CN["黄菜子"]
+“是的。恐怕是镝木紫苑和镝木严的母子吧。”
+我觉得”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1520" )
+\CN["桃子"]
+“那真的是父子吗？
+就算不像也要有个限度不是吗？”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Shion", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+母亲镝木紫苑竟然生过孩子
+年轻得令人难以置信。
+
+\CN["严严"]
+“呼呼……”
+
+: DrawFaceThumbnail( "Momo", 7, 0, 0 )
+: PlayVoice( "Voices/vo01_mom1521" )
+\CN["桃子"]
+“糟糕……好像注意到了这边。”
+
+//●分岐：誰か１人でも全裸がいる場合
+: if ( CharaCostume( "Mukuro" ) == 1 || CharaCostume( "Momo" ) == 1 || CharaCostume( "Kinako" ) == 1 )
+	: DrawChara( "Shion", 3, 0)
+	: PlayVoice( "Voices/vo12_shi0303" )
+	\CN["紫苑"]
+“在吉野原裸奔的{女子，おなご}真是让人吃惊啊。
+不关心低价出售自己”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●全員着衣の場合
+: else
+	: DrawChara( "Shion", 10, 0)
+	: PlayVoice( "Voices/vo12_shi0304" )
+	\CN["紫苑"]
+“严酱很兴奋啊。
+呵呵，真是美女云集啊”
+
+//●分岐終了
+: endif
+//●分岐：黄菜子がダークエルフ化していない場合
+: if ( CharaCostume( "Kinako" ) != 2 )
+	: DrawChara( "Shion", 2, 0)
+	: PlayVoice( "Voices/vo12_shi0305" )
+	\CN["紫苑"]
+“咦？带着长刀的女儿，黄兰的女儿吗？
+在看不见的时候，好像已经很糟糕了”
+
+	: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+	: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 5, "RC" )
+	//●読み：黄蘭（おうらん）
+	: PlayVoice( "Voices/vo01_mom1522" )
+	\CN["桃子"]
+“……黄兰？”
+
+	: DrawChara( "Kinako", 10, 0, 0, 0.5, 0.0, 4, "LC" )
+	: PlayVoice( "Voices/vo02_kin0813" )
+	\CN["黄菜子"]
+“是我妈妈。”
+
+感觉好像问了桃子不能问的事情
+装出一副很坏的样子。
+
+	: DrawChara( "Kinako", 2, 0)
+	: PlayVoice( "Voices/vo02_kin0814" )
+	\CN["黄菜子"]
+“已经是很久以前的事了。
+比起那个，现在是那两个人”
+
+	: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+	: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+	//●分岐終了
+: endif
+: DrawChara( "Shion", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0306" )
+\CN["紫苑"]
+“兰丸所说的要注意的3人组是指主人们
+不是吗。那么，我们也必须认真挑战……”
+
+//●演出：紫苑　ダークエルフ化
+: HideWnd()
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//●演出：巌　封印が解かれる
+: PlaySe( "SE/Se_Effect01" )
+: FadeOut( 0.5, 255, 255, 255 )
+: Wait()
+: FadeIn( 0.5, 255, 255, 255 )
+: Wait()
+: CharaCostume( "Shion", 2 )
+: DrawChara( "Shion", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["严严"]
+“哦哦哦哦哦哦哦哦哦！”
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom1523" )
+\CN["桃子"]
+“那个，两个人都变成了{黑夜叉，暗黑妖精}吧？”
+
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0815" )
+\CN["黄菜子"]
+“是的。那也感觉到了相当强大的力量。那就是两个人……”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4602" )
+\CN["无黑色"]
+“一开始就飞走。
+因为不是偷工减料就能生存的对手”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：鏑木紫苑＆鏑木巌（ダークエルフ）
+//■タイプ：ボス戦（逃走可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：鏑木紫苑＆鏑木巌（ダークエルフ）,2,0,2
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Yuukaku01_01", "BGM/22_BM003", 1081, 1082, -1, "Scenarios/SC_D05_23*battle01_end" , true )
+
+*battle01_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: CharaCostume( "Shion", 0 )
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+//●状況：戦闘勝利後
+//●演出：無黒・アクション演出
+//●演出：黄菜子・アクション演出
+*sc003
+: CharaCostume( "Shion", 0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Yuukaku01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*MukuroAction01" )
+: cgkeep = false;
+: Call( "Scenarios/Effect*KinakoAction01" )
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+\CN["严严"]
+“哦~哦~！！”
+
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 31, 1, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4603" )
+\CN["无黑色"]
+“哈，是，是现在！”
+
+: DrawChara( "Kinako", 2, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0816" )
+\CN["黄菜子"]
+“桃子，拜托了！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 8, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom1524" )
+\CN["桃子"]
+“交给我吧！”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+魔法咏唱结束的桃。
+为了不被卷入其中，用黄菜子的信号在侧面展开。
+
+//●演出：桃・終焉魔術演出
+: HideWnd()
+: cgkeep = false;
+: Call( "Scenarios/Effect*MomoAction08" )
+: ShowWnd()
+桃最大的魔术吞没了镝木严。
+
+: DrawFaceThumbnail( "Iwao", 0, 0, 0 )
+\CN["严严"]
+“呃……啊……啊………”
+
+//●ＳＥ：倒れる音
+: PlaySe( "SE/Se_Down01" )
+镝木岩的巨大身躯随着巨大的声响倒下
+地面轻轻摇动。
+
+然后，就这样一动不动了。
+
+: DrawChara( "Mukuro", 26, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: PlayVoice( "Voices/vo00_muk4604" )
+\CN["无黑色"]
+“好像终于掉下来了。”
+
+//●演技：息子の死を前にして理性を失っています
+//紫苑ダークエルフのまま
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Shion", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0307" )
+\CN["紫苑"]
+“啊啊啊……不，严酱……不，不喜欢……
+严酱……严酱……呜啊啊啊！”
+
+: PlayVoice( "Voices/vo12_shi0308" )
+\CN["紫苑"]
+“谁、谁……谁都可以……我的事情不管发生什么
+没关系的……”
+
+: PlayVoice( "Voices/vo12_shi0309" )
+\CN["紫苑"]
+“什么都做……所以才要救严酱！”
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+镝木紫苑紧紧抱住了动弹不得的严体
+明明在敌人面前，却用悲痛的声音哭喊着。
+
+: DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: PlayVoice( "Voices/vo01_mom1525" )
+\CN["桃子"]
+“……无黑”
+
+*battle01_select
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//――――――――――――――――――――――――――――
+//＠通常選択肢,battle01_select
+//■選択肢１：ヒラガの元に連れて行くべく気絶させた
+//■選択肢２：これ以上悲しませぬよう殺してあげた
+//――――――――――――――――――――――――――――
+\CI["我本应该带他去看希拉加，却使他晕倒了"]
+\CI["杀了他不让他再伤心了"]
+我对那样的镝木紫苑——
+
+: if ($choice == 1) Jump( "*battle01_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：ヒラガの元に連れて行くべく気絶させたを選んだ場合
+//-------------------------------------------------------
+*battle01_select_s1
+//●演出：斬撃エフェクト
+//●ＳＥ：打撃音
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+——太好了！
+
+: PlayVoice( "Voices/vo12_shi0310" )
+\CN["紫苑"]
+“……严……酱……我的可爱……严了……嗯……”
+
+//●ＳＥ：倒れる音
+: PlaySe( "SE/Se_Down01" )
+为了依靠心爱的儿子的遗体
+镝木紫苑倒下了。
+
+: DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo00_muk4605" )
+\CN["无黑色"]
+“剩下的就交给比拉加吧。”
+
+: PlayVoice( "Voices/vo01_mom1526" )
+\CN["桃子"]
+“是啊，那很好。”
+
+: PlayVoice( "Voices/vo02_kin0817" )
+\CN["黄菜子"]
+「…………」
+
+孩子在眼前为死亡哭泣的样子是母亲的身影。
+
+不管形状如何，都剥夺了妈妈爱的孩子。
+但是，如果因此而一次又一次地后悔或精神消沉的话
+今后不能活下去。
+
+我们选择了那样的道路，现在也继续走着
+强烈地感受到了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+…………………………………………………。
+
+//＠フラグ：紫苑生存,1
+//●シーン：「大和のために、己を犠牲に」へ
+//＠シナリオジャンプ：SC_B05_24
+: Flag( "Shion_Live", true )
+: Jump( "*End" )
+//-------------------------------------------------------
+//●選択肢２：これ以上悲しませぬよう殺してあげたを選んだ場合
+//-------------------------------------------------------
+*battle01_select_s2
+//＠殺害,1
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+//: EraseChara( "Mukuro", 0.0 )
+//: EraseChara( "Momo", 0.0 )
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0310" )
+\CN["紫苑"]
+“……严……酱……我的可爱……严了……嗯……”
+
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+为了依靠心爱的儿子的遗体
+镝木紫苑倒下了，就这样，像是在儿子后面追着一样气绝了。
+
+: DrawChara( "Mukuro", 37, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4606" )
+\CN["无黑色"]
+“剩下的就交给警察吧……”
+
+这是互相残杀的结果。
+
+我们幸存下来，这对母子无法生存。
+
+: DrawChara( "Mukuro", 39, 0)
+——只是这样而已。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//紫cos0へ戻し
+//●シーン：「大和のために、己を犠牲に」へ
+//＠シナリオジャンプ：SC_B05_24
+*End
+: $money += 10000
+我得到了报酬。
+
+: CharaCostume( "Shion", 0 )
+: SetMission( "SC_D05_23_1", "Successed" )
+: FadeOut( 0.0 )
+: Wait()
+//吉野原　封印
+: FastTravelMapOff( "Yoshinohara" )
+: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_24")

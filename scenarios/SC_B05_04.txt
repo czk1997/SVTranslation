@@ -1,0 +1,847 @@
+//========================================================
+//○それぞれの課題～姫椿桃の場合～１
+//========================================================
+*sc001
+//●場所：桃の部屋
+//Yoshi：センターに桃
+: Party( "Momo" )
+: PartyType = "Party02"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "YamatoHigashiKaidoC" )
+: FastTravelMapOn( "TeitoHigashiKaido" )
+: FastTravelMapOn( "NasunoYama" )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0784" )
+\CN["桃子"]
+“这次只有我一个人啊……”
+
+老师交给我的课题是
+作为魔术师独立生活。
+
+“一个人去魔术师的墓地接受考验吧。”
+老师这样说。
+
+: DrawChara( "Momo",12, 0)
+: PlayVoice( "Voices/vo01_mom0785" )
+\CN["桃子"]
+“为了成为一流魔术师而去的地方是魔术师的墓地吗……。
+笑不出来呢”
+
+但是，必须要克服这个考验。
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0786" )
+\CN["桃子"]
+“无法使用上级魔术的我，今后绝对会成为累赘
+成为。只有那个绝对讨厌！”
+
+有一天也没忘记的事情。
+
+: EraseChara( "Momo", 0.5 )
+
+//●演出：過去回想に入る演出
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——那是在和白夜九星巫女织笠御影战斗的时候。
+
+//--------------------------------------------------------
+//●SC_A03_14　戦闘後をそのまま持ってくる
+//●演出：御影の魔法に銀が撃墜される
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: PlayBgm("BGM/28_ID01")
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlaySe( "SE/Se_AnimeL_Fire02" )
+: PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 4, 4 )
+: Wait()
+: ShowWnd()
+就算打进火焰的魔术也能轻易躲开。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["银子"]
+“啊啊啊啊啊啊啊啊！！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_a001_1_1_0600000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0026" )
+\CN["御影"]
+“呵！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Katana01" )
+: PlayAnim( "Animations/AnimeL_Defense02", false, 0, 0, 4, 4 )
+: evbg = true; evcos = false;
+: evfile = "evg_a001_1_1_0600000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0241" )
+\CN["桃子"]
+“小银……！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_a001_1_1_0300000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0027" )
+\CN["御影"]
+“战斗的时候，别人的意见不好吧？”
+
+: PlayVoice( "Voices/vo01_mom0243" )
+\CN["桃子"]
+（魔术的手臂和魔力的量，那边好几张都一直很擅长……。
+虽然很不甘心，但是现在的我完全没法反驳……）
+
+\CN["银子"]
+“哇——”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_a001_1_1_0500000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0028" )
+\CN["御影"]
+“我来教你魔术吧。”
+
+//--------------------------------------------------------
+//●演技：過去回想から戻る演出
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition13", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvFadeOut")
+: ResetLayer(1)
+: ResetLayer(0)
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/02_CM002_inst")
+: ShowWnd()
+//Yoshi：センターに桃
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0787" )
+\CN["桃子"]
+“我绝对不会输的。那个时候，我和小银都
+只不过是运气好就能生存下来……”
+
+小银和我约定了要一直和我在一起。
+所以我也————
+
+: PlayVoice( "Voices/vo01_mom0788" )
+\CN["桃子"]
+“不能只是在后面被保护的‘小姐’。
+我想成为站在我旁边的伙伴”
+
+所以一定要克服这个考验
+我要成为一流的魔术师给你看！
+
+: SetMission( "SC_B05_04_1", "InProgress" )
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+
+//＠マップ解放：魔術師の墓場への道
+//●シーンエンド
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: FastTravelMapOn( "MajyutsushiHakaba" )
+: DestinationMap( "Map_Dungeon24_01_Majyutsushinohakaba" )
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○それぞれの課題～姫椿桃の場合～２
+//========================================================
+*sc002
+: RpgCharaBaloonOff("Kusunoha")
+: if ( Flag ( "NarakuEvent" ) == true ) Jump( "*sc002_1" ) endif
+//●場所：魔術師の墓場
+//※備考：葛の葉の立ち絵は玉藻の立ち絵を流用する
+//●演出：葛の葉が現れる
+//Yoshi：左に玉藻
+: DrawChara( "Tamamo", 1, 0, 1, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["葛叶"]
+“精灵之女啊，你来得真好啊。”
+
+//Yoshi：右に桃
+: ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Momo", 3, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0789" )
+\CN["桃子"]
+“老师，为什么在这里！？
+而且精灵的女儿为什么会这么叫！？”
+
+: DrawChara( "Tamamo", 2, 0)
+\CN["葛叶"]
+“我叫葛叶，这是第一次见到你。”
+
+\CN["葛叶"]
+“据我观察，‘老师’是指现世的笑吗？”
+
+: DrawChara( "Momo",12, 0)
+: PlayVoice( "Voices/vo01_mom0790" )
+\CN["桃子"]
+“现世……？呃，也就是说，你是老师的——
+玉藻的前世可以吗？”
+
+: DrawChara( "Tamamo", 0, 0)
+\CN["葛叶"]
+「再见。我的肉体在几百年前就已经灭亡的新时代
+好像转世了啊」
+
+: DrawChara( "Tamamo", 5, 0)
+\CN["葛叶"]
+“而且即使在现世，令人忌讳的轮回还在继续吗……”
+
+: PlayVoice( "Voices/vo01_mom0791" )
+\CN["桃子"]
+“可恶的轮回？”
+
+: DrawChara( "Tamamo", 0, 0)
+\CN["葛叶"]
+“无论几代人都在灭亡和重生的世界里不断重复着。
+那就是我被诅咒的轮回——宿命啊」
+
+: CharaPartsOn( "Momo", 0 )
+: DrawChara( "Momo", 4, 0)
+说不出话来。
+
+只能一味地看到世界的灭亡和重生
+这就是宿命，太痛苦了。
+
+: DrawChara( "Tamamo", 2, 0)
+\CN["葛叶"]
+“嘛，暂且把我的事情放在一边吧。
+你的主被今世的笑说而来到这里
+不是为了接受考验吗”
+
+\CN["葛叶"]
+“这里为什么被称为魔术师的墓地呢？——
+大概想象到了吧？”
+
+: CharaPartsOff( "Momo", 0 )
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0792" )
+\CN["桃子"]
+“是说很多魔术师都是接受考验而丧命的吧？”
+
+\CN["葛叶"]
+“是的，没错。”
+
+: PlayVoice( "Voices/vo01_mom0793" )
+\CN["桃子"]
+“嗯。顺便问一下，试炼是什么？
+能告诉我吗？”
+
+: DrawChara( "Tamamo", 0, 0)
+\CN["葛叶"]
+“没关系，试炼是极其简单的。
+落入地狱的底部，从那里爬上来。
+这样就可以了”
+
+\CN["葛叶"]
+「只是，在地狱的底部有三个被称为地狱三众的鬼
+不打倒那些家伙的话就不可能爬上去”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0794" )
+\CN["桃子"]
+“这样啊。好像不容易啊。”
+
+\CN["葛叶"]
+「活着从这里爬上来的人
+只有一只手能数的程度”
+
+: DrawChara( "Tamamo", 1, 0)
+\CN["葛叶"]
+“即使这样，你也要挑战这个地狱的考验吗？”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0795" )
+\CN["桃子"]
+“当然啦！
+有即使赌上性命也无法后退的理由”
+
+: DrawChara( "Tamamo", 2, 0)
+\CN["葛叶"]
+「呼。真是愚蠢的问题啊。
+好吧。那么，准备好了就跟稻草打招呼”
+
+//●シーンエンド
+: RpgCharaBaloonOn("Kusunoha")
+: Flag( "NarakuEvent", true )
+: Return
+//--------------------------------------------------------
+
+//Yoshi：センターに玉藻
+*sc002_1
+: RpgCharaBaloonOff("Kusunoha")
+: DrawChara( "Tamamo", 0, 0, 1, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Momo", 0, 0, 1, 0.5, 0.0, 4, "RC" )
+\CN["葛叶"]
+“准备好向地狱底层挑战了吗？”
+
+*select01
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：準備万端よ！
+//■選択肢２：あとちょっと待って！
+//――――――――――――――――――――――――――――
+: EraseChara( "Tamamo", 0.5 )
+: EraseChara( "Momo", 0.5 )
+\CI["一切准备都做好了！"]
+\CI["再稍等一下！"]
+怎么办？
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：準備万端よ！を選んだ場合
+//-------------------------------------------------------
+*select01_s1
+//Yoshi：センターに玉藻
+: DrawChara( "Tamamo", 2, 0, 1, 0.5, 0.0, 3, "LC" )
+\CN["葛叶"]
+「好吧。那就从现在开始主要给予你深渊的考验。」
+
+\CN["葛叶"]
+“活着就能再次相遇——”
+
+//●演出：ホワイトアウト
+//●場所移動：奈落の底
+: HideWnd()
+: EraseChara( "Tamamo", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Effect01" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon25_01_Narakunosoko", "", "Scenarios/SC_B05_04*select01_s1_1")
+
+*select01_s1_1
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+//Yoshi：センターに桃
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0796" )
+\CN["桃子"]
+“啊，这里是地狱的底部啊……”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0797" )
+\CN["桃子"]
+“我不想在这么恶心的地方呆太久。
+必须快点通过试炼回来！”
+
+//●シーンエンド
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：あとちょっと待って！を選んだ場合
+//-------------------------------------------------------
+*select01_s2
+//●シーンエンド
+: RpgCharaBaloonOn("Kusunoha")
+: Return
+
+//========================================================
+//○それぞれの課題～姫椿桃の場合～３
+//========================================================
+*sc003
+//●場所：奈落の底
+: HideWnd()
+: RpgCharaMoveTo( "Player", 20, 3, 4.0 )
+: Wait()
+: RpgCharaTurn( "Player", "U" )
+: Wait()
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayBgm("BGM/37_Dungeon")
+: ShowWnd()
+\CN["地狱三众之一"]
+「ククク，接受地狱考验的人要来已经很久了」
+
+\CN["地狱三众・其贰"]
+“是啊。这是几年没见了呢？”
+
+//Yoshi：センターに桃
+: DrawChara( "Momo", 9, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0798" )
+\CN["桃子"]
+“你们就是施加试炼的人，地狱三众。”
+
+: DrawChara( "Momo", 0, 0)
+\CN["地狱三众"]
+“的确如此。你能感受到巨大的觉悟。
+这种人往往是可以期待的”
+
+\CN["地狱三众・其贰"]
+“上次来的是个很贪婪的女人。
+虽然一很快就把他干掉了”
+
+\CN["地狱三众之一"]
+“我们要打倒地狱三众，从这里出去的话，考验就结束了。
+”
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom0799" )
+\CN["桃子"]
+“我是这么听说的。
+那么，具体怎么办才好呢？”
+
+\CN["地狱三众・其贰"]
+“很简单，要和我们1比1战斗下去
+胜者试炼成功。死了只会失败”
+
+\CN["地狱三众"]
+“就是这么回事。女人啊，准备好了吗？”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0800" )
+\CN["桃子"]
+“当然啦。一开始谁是对方呢？”
+
+\CN["地狱三众之一"]
+“真是个胆子大的女人，我很喜欢。
+我来做你的对手吧”
+
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：奈落三衆・其ノ壱
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：奈落三衆,1,1,0,sc003_win01,sc003_lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003_win01" ) endif	//勝利後のラベル
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_Cave01", "BGM/22_BM003", 1025, -1, -1, "Scenarios/SC_B05_04*battle01_end" , true )
+
+*battle01_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003_win01" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: Jump( "*sc003_lose" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+*sc003_win01
+//Yoshi：センターに桃
+: CharaPartsOn( "Momo", 0 )
+: DrawChara( "Momo",10, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["地狱三众之一"]
+“……不，不是要做吗……。好久没失败了。”
+
+\CN["地狱三众・其贰"]
+“那么，接下来我就是你的对手了。”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0801" )
+\CN["桃子"]
+“哈，哈，好啊。路上小心。”
+
+: EraseChara( "Momo", 0.5 )
+*battle02
+//――――――――――――――――――――――――――――
+//■戦　闘：奈落三衆・其ノ弐
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：奈落三衆・其ノ弐,1,1,0,sc003_win02,sc003_lose
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003_win02" ) endif	//勝利後のラベル
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_Cave01", "BGM/22_BM003", 1026, -1, -1, "Scenarios/SC_B05_04*battle02_end" , true )
+
+*battle02_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003_win02" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle02" )
+: else
+	: Jump( "*sc003_lose" )	//敗北した場合
+: endif
+
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+*sc003_win02
+//Yoshi：センターに桃
+: CharaPartsOn( "Momo", 0 )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["地狱三众・其贰"]
+“……不愧是你……我敌不过你。”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0802" )
+\CN["桃子"]
+“赢了只是运气好而已……。
+你就是最后一次了吧”
+
+\CN["地狱三众"]
+“再见。我最后出场的是通过了考验的人
+自高千穗的嘲讽以来”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0803" )
+\CN["桃子"]
+“啊，不会是局长吧。
+虽然没见过他在使用魔术”
+
+在那不可估量的强大的一端通过了地狱的考验
+有吗？
+
+如果是那样的话，会突然有干劲。
+
+\CN["地狱三众"]
+“来吧，用你的全部力量来。”
+
+//●演出：桃に回復魔術をかける
+: CharaPartsOff( "Momo", 0 )
+: DrawChara( "Momo", 3, 1)
+: PlayVoice( "Voices/vo01_mom0804" )
+\CN["桃子"]
+“好厉害……这是什么？充满了魔力……！”
+
+: DrawChara( "Momo", 0, 0)
+\CN["地狱三众"]
+“引出了你的潜在能力。
+在这种状态下打倒我，把力量变成自己的东西”
+
+//＠システム：桃、一時的にパワーアップ（特殊バフ処理？）
+: EraseChara( "Momo", 0.5 )
+*battle03
+//――――――――――――――――――――――――――――
+//■戦　闘：奈落三衆・其ノ参
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：奈落三衆・其ノ参,1,1,0,sc003_win03,sc003_lose
+//●状況：戦闘終了後
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003_win03" ) endif	//勝利後のラベル
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_Cave01", "BGM/22_BM003", 1027, -1, -1, "Scenarios/SC_B05_04*battle03_end" , true )
+
+*battle03_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003_win03" )	//勝利した場合
+: else
+	: Jump( "*sc003_lose" )	//敗北した場合
+: endif
+
+*sc003_win03
+//Yoshi：センターに桃
+: CharaPartsOn( "Momo", 0 )
+: DrawChara( "Momo",10, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0805" )
+\CN["桃子"]
+“哈，哈，哈……，也，真不愧是……
+界限……”
+
+身体摇摇晃晃的。
+
+魔力快要用尽了，光是站着就够了。
+
+\CN["地狱三众"]
+“……你的全部——甩开剩下的东西，撞到我身上吧。”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0806" )
+\CN["桃子"]
+“是的……！”
+
+//●演出：桃　炎系上級魔術を放つ
+: EraseChara( "Momo", 0.5 )
+: cgkeep = false;
+: Call( "Scenarios/Effect*MomoAction01" )
+到现在为止怎么也发动不了
+上级魔术发动了。
+
+火焰的旋涡吞没了地狱之人。
+
+: DrawChara( "Momo",10, 0, 0, 0.5, 0.0, 3, "RC")
+: PlayVoice( "Voices/vo01_mom0807" )
+\CN["桃子"]
+“哈，哈，哈……现在的，是我的全部
+不，是超越界限的力量吧……”
+
+\CN["地狱三众"]
+「…………」
+
+: PlayVoice( "Voices/vo01_mom0808" )
+\CN["桃子"]
+“已经，一根手指都动不了了……全部都拿出来了……”
+
+\CN["地狱三众"]
+“你叫什么名字？”
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0809" )
+\CN["桃子"]
+“公主椿桃，哟”
+
+\CN["地狱三众"]
+“合格了！公主椿桃！”
+
+//●演出：奈落消える
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: RpgCharaOff( "Enemy01" )
+: RpgCharaOff( "Enemy02" )
+: RpgCharaOff( "Enemy03" )
+: Sleep(0.25)
+: RpgCharaOn( "Enemy01" )
+: RpgCharaOn( "Enemy02" )
+: RpgCharaOn( "Enemy03" )
+: Sleep(0.25)
+: RpgCharaOff( "Enemy01" )
+: RpgCharaOff( "Enemy02" )
+: RpgCharaOff( "Enemy03" )
+: Sleep(0.25)
+: RpgCharaOn( "Enemy01" )
+: RpgCharaOn( "Enemy02" )
+: RpgCharaOn( "Enemy03" )
+: Sleep(0.25)
+: RpgCharaOff( "Enemy01" )
+: RpgCharaOff( "Enemy02" )
+: RpgCharaOff( "Enemy03" )
+: Sleep(0.25)
+: RpgCharaOn( "Enemy01" )
+: RpgCharaOn( "Enemy02" )
+: RpgCharaOn( "Enemy03" )
+: Sleep(0.25)
+: RpgCharaOff( "Enemy01" )
+: RpgCharaOff( "Enemy02" )
+: RpgCharaOff( "Enemy03" )
+: Wait()
+: ShowWnd()
+强有力地吼叫着，地狱三人众消失了。
+
+: DrawChara( "Momo", 2, 0, 0, 0.5, 0.0, 3, "RC")
+: PlayVoice( "Voices/vo01_mom0810" )
+\CN["桃子"]
+“这样啊。合格了吗……这样一来，我也是大家的——”
+
+碍手碍脚。成为力量。
+
+可以在重要的小银旁边排队。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: EraseChara( "Momo", 0.0 )
+: ShowWnd()
+——刚一放心，意识就中断了。
+
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●場所：魔術師の墓場
+: PlaySe( "SE/Se_Effect01" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon24_01_Majyutsushinohakaba", "Event", "Scenarios/SC_B05_04*sc003_win03_1")
+
+*sc003_win03_1
+: FadeIn( 0.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: RpgCharaBaloonOff("Kusunoha")
+: Wait()
+: StopBgm( 0.0 )
+//Yoshi：右に桃
+: CharaPartsOff( "Momo", 0 )
+: DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom0811" )
+\CN["桃子"]
+“嗯……啊，咦？这里是魔术师的墓地……？”
+
+: PlayBgm("BGM/02_CM002")
+跳进恢复意识的我的眼睛里的
+这是魔术师墓地的风景。
+
+//Yoshi：左に玉藻
+: DrawChara( "Tamamo", 0, 0, 1, 0.5, 0.0, 3, "LC" )
+\CN["葛叶"]
+“终于醒了啊。
+但是，他却克服了考验回来了”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0812" )
+\CN["桃子"]
+“这样啊，我回来了。这不是梦啊。”
+
+和第三个人战斗时身体的感觉一样。
+充满了魔力。
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0813" )
+\CN["桃子"]
+“谢谢你的多方关照。”
+
+: DrawChara( "Tamamo", 2, 0)
+\CN["葛叶"]
+「如果是你们的话，就切断草鞋令人厌恶的轮回之环
+也许会从宿命中解放出来”
+
+\CN["葛叶"]
+「把现世的笑，交给你的主吧」
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0814" )
+\CN["桃子"]
+“当然啦！大家开心是最好的。”
+
+\CN["葛叶"]
+“是啊。啊，没错。”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: EraseChara( "Tamamo", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: ShowWnd()
+老师经常带着挑衅的微笑
+葛叶的身影瞬间融化在空中。
+
+: SetMission( "SC_B05_04_1", "Successed" )
+……………………………………………………。
+
+桃子学会了新的技能。
+
+//＠システム：桃　上級魔術を覚える
+//＠余っているキャラクター選択肢表示する。
+//＠余っているキャラがいない場合は次のシーンへ
+//●シーンエンド
+: CharaAddSkill( "Momo", 104)
+: CharaAddSkill( "Momo", 107)
+: CharaAddSkill( "Momo", 110)
+: CharaAddSkill( "Momo", 113)
+: CharaAddSkill( "Momo", 116)
+: CharaAddSkill( "Momo", 50602 )
+: if ( MissionProgress( "SC_B05_03_1", "Successed", "Failed" ) == true )
+	: if ( MissionProgress( "SC_B05_05_1", "Successed", "Failed" ) == true )
+		: FadeOut( 0.0 )
+		: LoadMap( "Map_Event000", "", "Scenarios/SC_B05_06")
+	: else
+		: FadeOut( 0.0 )
+		: LoadMap( "Map_Town02_04_Hozuki", "SC_B05_05", "Scenarios/SC_B05_05")
+	: endif
+: elif ( MissionProgress( "SC_B05_05_1", "Successed", "Failed" ) == true )
+	: FadeOut( 0.0 )
+	: LoadMap( "Map_Town02_02_Hozuki", "SC_B05_03", "Scenarios/SC_B05_03")
+: else
+	\CI["各自的课题～神八代无黑的情况～"]
+	\CI["各自的课题～有栖川黄菜子的情况～"]
+你开始说什么？
+
+	: if ($choice == 0)
+		: FadeOut( 0.0 )
+		: LoadMap( "Map_Town02_02_Hozuki", "SC_B05_03", "Scenarios/SC_B05_03")
+	: else
+		: FadeOut( 0.0 )
+		: LoadMap( "Map_Town02_04_Hozuki", "SC_B05_05", "Scenarios/SC_B05_05")
+	: endif
+: endif
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+*sc003_lose
+//●演出：桃　倒れる
+已经到这里了吗。魔力变空了。
+
+\CN["地狱三众"]
+“到这里为止都做得很好，真遗憾。”
+
+//●演出：血まみれ演出
+: HideWnd()
+: PlaySe( "SE/Se_Slash01" )
+: DrawImage( 1, 0, "BGImage/BG_Red", 1.0 )
+: Call( "Scenarios/Effect*Blood01" )
+: Wait()
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+//●演技：夢が晴れるような演出
+//●場所：魔術師の墓場
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Rule_00", 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon23_01_Majyutsushinohakaba", "Event", "Scenarios/SC_B05_04*sc003_lose_1")
+
+*sc003_lose_1
+//Yoshi：センターに桃
+: DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom08BL15" )
+\CN["桃子"]
+“啊，咦？我……应该在地狱的底部……？
+在那里被打败了……咦？”
+
+: EraseChara( "Momo", 0.5 )
+回过神来发现自己被送回了魔术师的墓地。
+
+虽然完全不知道发生了什么
+好像还活着可以再挑战。
+
+//●シーンエンド
+: Return

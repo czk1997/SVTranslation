@@ -1,0 +1,317 @@
+//========================================================
+//○お前、分かってるじゃねぇか
+//========================================================
+//●背景：帝都
+//Yoshi：背景、昼
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Ranmaru", 0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1466" )
+\CN["无黑色"]
+“嗯……？这个是手帕吗……。
+是谁掉的？”
+
+//●演出：蘭丸　登場する
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Ranmaru", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+\CN["一只眼睛藏起来的男人"]
+“咦？我还以为掉在这里了呢。”
+
+//●演出：無黒　蘭丸に話しかける
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Ranmaru", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo00_muk1467" )
+\CN["无黑色"]
+“那个，这手帕掉了吗？”
+
+: DrawChara( "Ranmaru", 3, 0)
+\CN["一只眼睛藏起来的男人"]
+“啊！那、那是我的！
+难道是你捡到的？”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["一只眼睛藏起来的男人"]
+“谢谢！真的非常感谢！
+这是我从重要的人那里得到的手帕”
+
+: PlaySe( "SE/Se_Cloth01" )
+男人一边感激，一边紧握着我的双手。
+
+: DrawChara( "Mukuro", 9, 0)
+: PlayVoice( "Voices/vo00_muk1468" )
+\CN["无黑色"]
+“不，不，只是做了理所当然的事。”
+
+//●演出：レオ　登場する
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 8, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Leo"; lay = 3; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+“喂，你在干什么……”
+
+: DrawFaceThumbnail( "Ranmaru", 4, 0, 0 )
+\CN["一只眼睛藏起来的男人"]
+「？」
+
+: DrawChara( "Leo", 7, 0)
+\CN["雷欧"]
+“所以，我在问那个女人在干什么。”
+
+: HideWnd()
+: EraseChara( "Leo", 0.0 )
+: ResetLayer(3)
+: DrawChara( "Ranmaru", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC")
+: DrawChara( "Leo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC")
+: ShowWnd()
+\CN["一只眼睛藏起来的男人"]
+“哈~突然吵起来了
+帝都的男人好性急啊」
+
+: DrawChara( "Leo", 9, 0)
+\CN["雷欧"]
+“所以，你要一直握着他的手！”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["一只眼睛藏起来的男人"]
+“哎呀，这太失礼了……”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 36, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo00_muk1469" )
+\CN["无黑色"]
+“Leo，不是的。冷静点。”
+
+: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“无黑，既然我来了就不用担心了。
+确实是个很厉害的家伙……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["一只眼睛藏起来的男人"]
+“诶~……。好像不是单纯的鲁莽君啊。”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo00_muk1470" )
+\CN["无黑色"]
+“雷欧，你不是说要冷静吗？”！
+听好了，这个人呢——”
+
+一边安慰兴奋的雷欧
+给他说了一五一十。
+
+//●演出：場面転換トランジション
+//●場所：茶屋・昼
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evy_a003_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/26_FM004")
+//: DrawChara( "Ranmaru", 0, 0, 0, 0.5, 0.0, 4, "RC" )
+//: DrawChara( "Leo", 24, 0, 0, 0.5, 0.0, 5, "LC" )
+: ShowWnd()
+\CN["雷欧"]
+“真的，对不起！看我这么快……”
+
+//: DrawChara( "Ranmaru", 17, 0)
+\CN["一只眼睛藏起来的男人"]
+“好啊，好啊。谁都会犯错误的。”
+
+//: DrawChara( "Ranmaru", 2, 0)
+\CN["一只眼睛藏起来的男人"]
+“而且我也和你站在同一立场的话
+可能变成那样了呢”
+
+//: DrawChara( "Leo", 13, 0)
+\CN["雷欧"]
+“だべ！如果喜欢的女人被其他男人握住了的话，就是啊。”
+
+//: EraseChara( "Ranmaru", 0.5 )
+//: DrawChara( "Mukuro", 20, 2, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1471" )
+\CN["无黑色"]
+“这么丢脸的事，不要大声说……”
+
+那之后，误会的雷欧以下跪的气势谢罪。
+
+因为过意不去，让我请你吃点什么吧
+来到了往常的茶馆。
+
+\CN["店员"]
+“让您久等了，这是豆沙水果凉粉和香草冰淇淋。”
+
+//: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“谢谢。还有——”
+
+\CN["店员"]
+“是的，雷欧。是酱油吧。”
+
+//: DrawChara( "Leo", 16, 0)
+\CN["雷欧"]
+“山治！”
+
+因为这里也是鬼灯们常去的店
+店员也知道利奥的喜好。
+
+//: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk1472" )
+\CN["无黑色"]
+“雷欧，你还是老样子啊。”
+
+//: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“所以说，这个很好吃。”
+
+雷欧在冰淇淋上滴酱油。
+
+//: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk1473" )
+\CN["无黑色"]
+“这种吃法，虽说是大和广
+我觉得只有你……”
+
+//: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“没什么。我觉得还有很多其他的。”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Ranmaru", 17, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["一只眼睛藏起来的男人"]
+“我也可以要酱油吗？
+浇在冰淇淋上的话会变成像御手洗团子一样的味道”
+
+//: DrawChara( "Leo", 11, 0)
+\CN["雷欧"]
+“噢噢！你不是知道吗！”
+
+//: DrawChara( "Ranmaru", 16, 0)
+\CN["一只眼睛藏起来的男人"]
+“是啊。香草冰淇淋是酱油吧。”
+
+两个人紧紧握手。
+
+//: EraseChara( "Ranmaru", 0.5 )
+//: DrawChara( "Mukuro", 36, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1474" )
+\CN["无黑色"]
+“如果御手洗团子好的话，就用普通的御手洗团子
+吃就行了吧？”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Ranmaru", 2, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["一只眼睛藏起来的男人"]
+“嗯，不是那样的啊。
+说到底只是像御手洗团子而已”
+
+//: DrawChara( "Leo", 13, 0)
+\CN["雷欧"]
+“是的是的。感觉是无法言喻的美味。”
+
+//: EraseChara( "Leo", 0.5 )
+//: EraseChara( "Ranmaru", 0.5 )
+//●演出：時間経過
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+//: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 5, "LC" )
+//: DrawChara( "Ranmaru", 3, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["一只眼睛藏起来的男人"]
+“我是以这种感觉来接近你的
+会以‘是’这种感觉被躲开的吧”
+
+//: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“啊，有那个啊。我也是，总是——”
+
+看来这两个人也喜欢吃
+马好像很合得来，把我甩在一边，谈得很热烈。
+
+吃完的时候意气相投。
+
+//: EraseChara( "Leo", 0.5 )
+//: EraseChara( "Ranmaru", 0.5 )
+//●演出：場面転換トランジション
+//●場所：茶屋の外
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: SwapImage( 1, 0, "BGImage/BG_Chaya01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["一只眼睛藏起来的男人"]
+“谢谢您的款待。谢谢您的款待。”
+
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“不不不，非常开心。
+对了对了，现在才刚刚开始，你的名字是？
+我是雷欧”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["一只眼睛藏起来的男人"]
+“我叫润一郎。
+我住在高浜，因为帝都有事”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+「这样啊。那么，如果有任务去高浜的话
+我会联系你的。去哪里玩吧”
+
+: DrawChara( "Ranmaru", 17, 0)
+\CN["润一郎"]
+“嗯，好的。”
+
+//●演出：蘭丸　去って行く
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Ranmaru"; lay = 4; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1475" )
+\CN["无黑色"]
+“雷欧，你看起来很开心啊。”
+
+: DrawChara( "Leo", 13, 0)
+\CN["雷欧"]
+“啊。这么合得来的家伙，可能还是第一次吧。”
+
+天真无邪地笑着的雷欧。
+有了可以成为好朋友的对象，真的很开心吧。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

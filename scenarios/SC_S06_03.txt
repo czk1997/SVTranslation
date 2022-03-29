@@ -1,0 +1,158 @@
+//========================================================
+//○遊廓・エロコス喫茶（黄菜子）
+//========================================================
+*sc001
+//＠最初の１回目だけ発生する
+//●服装：黄菜子・エロコス
+: Call("Scenarios/Map_Town18_EroCos_Init")
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: if ( CharaCostume( "Kinako" ) == 2 )
+	: ShowWnd()
+{黑夜叉，暗黑妖精}这样的话很难做
+恢复原状后换完衣服。
+: endif
+: CharaCostume( "Kinako", 4 )
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Wait()
+: if ( Flag ( "EroCosWorksKinako" ) == true ) Return endif
+: DrawChara( "Kinako", 4, 1, 1, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin2117" )
+\CN["黄菜子"]
+“这是这里的制服……几乎都是整个看上去的……”
+
+胸部甚至把乳轮藏得很对不起。
+兜裆布是穿惯了的，所以很好……。
+
+\CN["母版"]
+“黄菜子，很适合你呢。
+嗯，嗯。非常可爱哦”
+
+: DrawChara( "Kinako", 8, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin2118" )
+\CN["黄菜子"]
+“啊，谢谢……。
+那么，我应该在这里做什么呢？”
+
+\CN["母版"]
+“不用想得那么难。
+带着点的东西去，和客人聊天…”
+
+从老板那里学到了很多工作的事情。
+
+: DrawChara( "Kinako", 4, 1)
+: PlayVoice( "Voices/vo02_kin2119" )
+\CN["黄菜子"]
+“知道了！我会努力做好的。”
+
+: EraseChara( "Kinako", 0.5 )
+之后，老板教了我一番工作
+打工开始了。
+
+//●エロコス喫茶バイト開始
+//●シーンエンド
+: Flag( "EroCosWorksKinako", true )
+: Return
+
+//--------------------------------------------------------
+
+*sc002
+//●場所：エロコス喫茶
+\CN["母版"]
+“嗯？怎么了？”
+
+*sc002_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002_select
+//■選択肢１：服装を変えたい
+//■選択肢２：仕事を終了する
+//■選択肢３：何もない
+//――――――――――――――――――――――――――――
+\CI["想换衣服"]
+\CI["结束工作"]
+\CI["什么也没有"]
+: if ($choice == 1) Jump( "*sc002_select_s2" ) endif
+: if ($choice == 2) Jump( "*sc002_select_s3" ) endif
+//-------------------------------------------------------
+//●選択肢１：服装を変えたいを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s1
+//●分岐：［服装］エロコスの場合
+	: if ( CharaCostume( "Kinako" ) == 4 )
+	//: CharaCostume( 2, 4 )
+	: DrawChara( "Kinako", 8, 1, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo02_kin2120" )
+	\CN["黄菜子"]
+“我想把这些全部脱掉，赤身裸体地接待客人
+不行吗？”
+
+	\CN["母版"]
+“嗯？如果黄菜子想那样做的话，那就没关系了。”
+
+	: DrawChara( "Kinako", 17, 1)
+	: PlayVoice( "Voices/vo02_kin2121" )
+	\CN["黄菜子"]
+“谢谢！那我把这个脱了。”
+
+	//●服装：黄菜子・全裸
+	//●分岐終了地点へ
+	: HideWnd()
+	: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: PlaySe( "SE/Se_Cloth01" )
+	: CharaCostume( "Kinako", 1 )
+	: ShowWnd()
+//●分岐：それ以外の場合
+//●全裸の場合
+: else
+	: DrawChara( "Kinako", 4, 1, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo02_kin2122" )
+	\CN["黄菜子"]
+“那个……果然还是想穿制服接待客人……”
+
+	\CN["母版"]
+“明白。好的，这个。”
+
+我从老板那里收到服装。
+
+	//●服装：黄菜子・エロコス
+	: HideWnd()
+	: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: PlaySe( "SE/Se_Cloth01" )
+	: CharaCostume( "Kinako", 4 )
+	: ShowWnd()
+//●分岐終了
+: endif
+//●シーンエンド
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：仕事を終了するを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s2
+
+\CN["母版"]
+“已经结束了吗？知道了。辛苦了。”
+
+//●バイト終了処理
+//報酬はエロ仕事回数を軸に計算する
+: chara = "Kinako"; Call( "Scenarios/CommonSys*EroCosMoney" )
+
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: Call( "Scenarios/CommonSys*PartyReset" )
+: CharaCostume( "Kinako", 0 )	//服装戻す
+: LoadMap( "Map_Town05_09_Saito", "EroCosReturn" )
+
+//-------------------------------------------------------
+//●選択肢３：何もないを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s3
+\CN["母版"]
+“这样啊。嘛，有什么事的话跟我说。”
+
+//●シーンエンド
+: Return

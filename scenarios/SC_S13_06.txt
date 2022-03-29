@@ -1,0 +1,452 @@
+//========================================================
+//○出産（魔獣豚）
+//========================================================
+: if ( $inExtra == false )
+	:if ( CharaCanDarkelfChange( "Mukuro" ) == false ) Jump( "*sc000" ) endif
+	\CI["正常分娩"]
+	\CI["在暗黑精灵化的状态下生产"]
+生孩子呢？
+
+	: if ($choice == 0)
+		: CharaCostume( "Mukuro", 1 )
+	: else
+		: CharaCostume( "Mukuro", 2 )
+	: endif
+: endif
+*sc000
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_S13_06" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_S13_06" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●ＣＧ：出産２（無黒）
+//＠evcg：eva_b042
+//●①ボテ腹で苦しんでいる
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+//: evfile = "eva_b042_1_1_0111101_1100000_0_"
+: evfile = "eva_b048_1_1_0211101_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7106" )
+\CN["无黑色"]
+「呼呜哇……呜……！嗯，呜！
+哈哈！哈、哈、哈……啊、啊！”
+
+: PlayBackVoice( "Voices/BGV00_muk_jigo02" )
+肚子里迸发出难以忍受的剧痛。
+
+在快要生出来的膨胀的肚子里
+从感觉上可以知道婴儿要出来了。
+
+: PlayVoice( "Voices/vo00_muk7107" )
+\CN["无黑色"]
+“哈……嗯……嗯，嗯…嗯，嗯！”！
+嗯，唔……哼！啊，哈哈……啊啊啊！”
+
+……能不能忍受疼痛，这是另一回事。
+
+\CN["职员"]
+“胎儿已经完全成长了，很快就会出生的。”
+
+虽然没有回答的余地……但不用说我也知道。
+
+不，今天不生的话就麻烦了。
+
+: PlayVoice( "Voices/vo00_muk7108" )
+\CN["无黑色"]
+「呜、呜……嗯、嗯！呜……！！
+哈！不好意思……呜、呜……呜…呜……！”
+
+阵痛这么大，现在还没生下来的话……
+再过一天也受不了。
+
+: PlayVoice( "Voices/vo00_muk7109" )
+\CN["无黑色"]
+“呼！呼、呜……呜！唔…嗯…嗯~！
+哈！啊啊啊啊啊啊啊啊啊！哈，呜！”
+
+//●②陣痛が始まって出産開始
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+//: evfile = "eva_b042_1_1_0211102_1100000_0_"
+: evfile = "eva_b048_1_1_0111101_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7110" )
+\CN["无黑色"]
+“哈、唔！！呜、唔……哼！？
+嗯，呃……啊，啊！”
+
+这样想的疼痛，更加强烈了。
+
+: PlayVoice( "Voices/vo00_muk7111" )
+\CN["无黑色"]
+“哇！啊！啊！？肚子裂开了……好饿！？
+呜呜！嗯，呜……嗯，嗯！？”
+
+不用我使劲，婴儿就要出去了。
+
+: HideWnd()
+: evfile = "eva_b048_1_1_0311101_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7112" )
+\CN["无黑色"]
+“恩，嗯……嗯，嗯！嗯，嗯！”！！
+嗯，嗯……啊，啊？！哎！啊，是啊！”
+
+那个动作很痛，很辛苦……。
+
+那个……一点点地，变得心情舒畅。
+
+: PlayVoice( "Voices/vo00_muk7113" )
+\CN["无黑色"]
+“嗯，啊……！？什么，这个……呃！！
+呼呼！嗯，哈哈……啊，啊啊！！”
+
+从内侧扩散开来的感觉和疼痛。
+
+只是痛而已
+不知什么时候，快感变了。
+
+: PlayVoice( "Voices/vo00_muk7114" )
+\CN["无黑色"]
+“对、对、这个……嗯！嗯！嗯！！！”！！
+这、这样的、很奇怪！嗨！？”
+
+\CN["职员"]
+“有什么异常吗？算了，既然生了不同种族的孩子
+多多少少有些异常”
+
+: PlayVoice( "Voices/vo00_muk7115" )
+\CN["无黑色"]
+“哦，奇怪，好可爱！这个，这样的，嗯~！！
+不，明明很痛，但是很痛苦……但是，不！”
+
+: HideWnd()
+: evfile = "eva_b048_1_1_0211101_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7116" )
+\CN["无黑色"]
+“呃，好……！好，好心情，好……好！！
+什、什、什、什！啊！？哇，啊啊啊！”
+
+\CN["职员"]
+“嗯？……这种程度的异常的话
+无视也没问题吧”
+
+\CN["职员"]
+“我是推测，是精神防卫机构什么的吧。
+没有必要在意吧？”
+
+: HideWnd()
+: evfile = "eva_b048_1_1_0111101_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7117" )
+\CN["无黑色"]
+“来，不要在意，不行，不行……哎，好吧！？”！？
+这个、这个、我们的……哦！忍耐、忍耐……诶！”
+
+\CN["职员"]
+“如之前所说，孕育不同种族
+本身就不正常，只是小事”
+
+: PlayVoice( "Voices/vo00_muk7118" )
+\CN["无黑色"]
+「这样啊……啊啊啊！？但是……嗯，啊！！
+哈！唔……唔，呜！嗯……嗯！！”
+
+//●③頭が出てくる
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu03" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+//: evfile = "eva_b042_1_8_0411102_1100000_0_"
+: evfile = "eva_b048_1_2_0111101_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咕嘟咕嘟……呜呜呜呜！！
+
+: PlayVoice( "Voices/vo00_muk7119" )
+\CN["无黑色"]
+“呜呜！呜呜……呜呜！呜呜呜！
+嗯！啊！！啊，哈哈！？”
+
+漫画尽情地展开……其中，稍微有点空气进入。
+
+\CN["职员"]
+“你脑子露出来了，再差一点。”
+
+不用说，婴儿的一部分
+虽然知道是外出了……。
+
+: HideWnd()
+: evfile = "eva_b048_1_2_0211101_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7120" )
+\CN["无黑色"]
+「呼～呼～！呜、呜……呜～！
+哈哈！哈！啊，啊！哈……啊啊！”
+
+包围着身体，完全无法理解异样的快乐。
+
+: PlayVoice( "Voices/vo00_muk7121" )
+\CN["无黑色"]
+“啊，身体怪怪的！啊，怪怪的！”！
+这、这是！！好舒服，好舒服……诶！”
+
+在犹豫的时候，婴儿也一点一点地要出去。
+
+: PlayVoice( "Voices/vo00_muk7122" )
+\CN["无黑色"]
+「呜呜！？呜呜，呜呜！呜呜！！
+啊！！啊，哈！啊！啊！！”
+
+每动一次，全部都会变成快感……
+疼痛几乎不知道了。
+
+\CN["职员"]
+“光看就觉得比通常的生孩子轻松多了。
+痛苦越是减弱越好”
+
+: PlayVoice( "Voices/vo00_muk7123" )
+\CN["无黑色"]
+「呜呜呜呜！！呜呜！呜呜呜，呜呜！！
+哎呀！！呃、变……这、这、这是你们的“哦！？”
+
+//●④身体が出てくる
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu03" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+//: evfile = "eva_b042_1_8_0311102_1100000_0_"
+: evfile = "eva_b048_1_2_0311101_1100000_0_"; Call("Scenarios/Common*EvChange");
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嗯……嗯…呜、呜、呜……呜、呜……呜、呜……！
+
+: PlayVoice( "Voices/vo00_muk7124" )
+\CN["无黑色"]
+“好烦！？呜、呜……呜、呜！！！！”！！
+哦，哦！！哼……嗯！？！”
+
+自己也知道已经扩大到了极限以上。
+
+: PlayVoice( "Voices/vo00_muk7125" )
+\CN["无黑色"]
+“诶！？好！好……好……好！？
+哈哈！嗯……嗯！”
+
+婴儿正在从我的身体里出来。
+这一点我很清楚……。
+
+: HideWnd()
+: evfile = "eva_b048_1_2_0211101_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7126" )
+\CN["无黑色"]
+“哼！呜、唔！嗯…嗯，嗯！嗯！”！
+啊，啊！哈！哈……啊！！”
+
+完全不能理解自己的身体。
+
+把婴儿放在身上，直到肚子变大为止都知道。
+
+: PlayVoice( "Voices/vo00_muk7127" )
+\CN["无黑色"]
+“嗯~好！好，好！好！好！好！好！好！！！
+啊，啊！不，那个！嗯，是吗……是吧！”
+
+但是……生下来的时候，竟然会这么舒服……！
+
+: PlayVoice( "Voices/vo00_muk7128" )
+\CN["无黑色"]
+“嗯~嗯~哦！？嗯，可以了！！！”！！
+然后呢！嘿！嗯，嗯……嗯！”
+
+: PlayVoice( "Voices/vo00_muk7129" )
+\CN["无黑色"]
+“这个，这个，这个，这个！嗯……！嗯！！
+呜呜！嗯……嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu03" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evfile = "eva_b048_1_2_0311101_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+咕噜咕噜……一直、一直……！呜哇！
+嘘……呜！！ZUN、ウウウ！！
+
+: PlayVoice( "Voices/vo00_muk7130" )
+\CN["无黑色"]
+“呃！？嗯，嗯！嗯，嗯，嗯！嗯！
+好嘞！好嘞！我……呜！”
+
+: PlayVoice( "Voices/vo00_muk7131" )
+\CN["无黑色"]
+“嗯！嗯！嗯！嗯！然后呢，嗯！！
+嗯~嗯~！！”
+
+//●⑤生まれる
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu03" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+//: evfile = "eva_b042_1_9_0411113_1100001_0_"
+: evfile = "eva_b048_1_3_0411101_1100001_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+唔，ググ……呜哇哇哇！！
+帆布包！哇！噗噗，噗哼哼！！
+
+: PlayVoice( "Voices/vo00_muk7132" )
+\CN["无黑色"]
+“哇！？嗯，哦！哦，哦！哦！
+嗯~！哦，你好！？”
+
+: PlayBackVoice( "Voices/BGV00_muk_jigo03" )
+极度的什么被尽情地抽出的触觉。
+
+如果那是婴儿跳出来的冲击
+勉强能理解。
+
+: PlayVoice( "Voices/vo00_muk7133" )
+\CN["无黑色"]
+“呼，唔！唔，唔！唔！唔，唔！！
+嗯，嘿嘿！！嗯！？！”
+
+紧接着，惊人的冲击全部变成了快乐……
+生孩子的同时，精神错乱。
+
+: PlayVoice( "Voices/vo00_muk7134" )
+\CN["无黑色"]
+「呜呜！呜呜！呜呜！呜呜，呜呜！呜呜，呜呜！！
+嗯~！哦哦哦哦哦！？”
+
+虽然快感让身体几次跳跃……但是没有不安。
+
+关键的婴儿顺利地生出来了
+不管我怎么样。
+
+: PlayVoice( "Voices/vo00_muk7135" )
+\CN["无黑色"]
+“哦哦哦哦哦哦！！嗯~哦！真的哦！
+是、是！嗨！！好～好～！！”
+
+一阵余韵震动着身体和喉咙……
+我吼叫着度过了结束之前的时间。
+
+//●⑥出産後の余韻
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+//: evfile = "eva_b042_1_9_0511113_1100002_0_"
+: evfile = "eva_b048_1_3_0311102_1100002_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7136" )
+\CN["无黑色"]
+！
+啊……嗯，嗯！呼、呼……嗯、嗯……！”
+
+在停止颤抖的时候，喉咙和体力都枯竭了……。
+
+\CN["职员"]
+“……不管过程如何，好像是平安出生的。”
+
+用像自言自语一样的声音……
+他从心底里说，自己平安地生了孩子。
+
+: PlayVoice( "Voices/vo00_muk7137" )
+\CN["无黑色"]
+“呜呜……呜呜，快生下来……呜！呜呜……！
+啊、赤、小……没事……等、的……？！”
+
+\CN["职员"]
+“……是的，是个很有精神的婴儿。”
+
+: PlayVoice( "Voices/vo00_muk7138" )
+\CN["无黑色"]
+“嗯，啊……啊……！太好了……”
+
+虽然想办法把脸转向婴儿……但这已经是极限了。
+
+身体的负担比想象的要大。
+
+: PlayVoice( "Voices/vo00_muk7139" )
+\CN["无黑色"]
+“嗯……嗯……也、已经……啊、是……！”……！
+原……吗，不…”
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_S13_01_5
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Childbirth", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", RandomRange(5,10)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BirthMagicBeast", 1) endif
+//シーン登録
+: SceneFlagUp( "SC_S13_06" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 67, "Map_Town16_01_HiragaLavo") endif
+//コスチュームを戻す
+: CharaCostume( "Mukuro", 0 )
+//服装変更解放
+: if ( Flag ( "CosSealMukuro" ) == true )
+	: CharaCanCostumeChange( "Mukuro", true )
+	: Flag( "CosSealMukuro", false )
+: endif
+: if ( Flag ( "NPC_T18_003" ) == true )
+	: CharaCanDarkelfChange( "Mukuro", true )
+	: Flag( "NPC_T18_003", false )
+: endif
+//マップ初期化
+: Flag( "BirthPig", true )
+: mapId = RpgMapID()
+: if mapId == 86
+	: Call( "Scenarios/Map_Town16_HiragaLavo_Init*Map01" )
+: endif
+: RpgPlayBgm()
+: Return

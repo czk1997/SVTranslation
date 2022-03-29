@@ -1,0 +1,500 @@
+//========================================================
+//○宿場町から白夜を追い払え１
+//========================================================
+*sc001
+//●背景：日東街道・宿場町
+//Yoshi：背景、夜
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_SyukubaVillage01_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/28_ID01")
+: ShowWnd()
+——位于日东街道的驿站町。
+
+那里现在是白夜九星、七红的镝木紫苑和九紫的镝木严
+镝木父子的手受到了毁灭性的打击。
+
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["严严"]
+“哇啊啊啊啊啊！！”
+
+//●演出：巌　周りの人間を次々とぶっ飛ばしていく
+: HideWnd()
+: Call( "Scenarios/Effect*Renda01" )
+: ShowWnd()
+\CN["警察A"]
+“唔……嗯！”
+
+\CN["警察B"]
+「…………」
+
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Shion", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0043" )
+\CN["紫苑"]
+“两个人都一次处理，严酱，真不愧是。”
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Iwao", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["严严"]
+“呼！呼！”
+
+\CN["宿场町的男子A"]
+「…………」
+
+\CN["宿场町的男子B"]
+「…………」
+
+\CN["宿场町的女人A"]
+“啊……啊…啊……啊……”
+
+\CN["宿场町的女人B"]
+「…………」
+
+在驿站镇上的男人一个不剩全部被屏住了呼吸。
+
+可爱的女人被镝木严侵犯，奄奄一息，除此之外的女人
+全体凄惨地断气了。
+
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["严严"]
+“哈，哈……一个劲儿地杀人，太兴奋了
+小鸡鸡好痛苦啊”
+
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: DrawChara( "Shion", 10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlayVoice( "Voices/vo12_shi0044" )
+\CN["紫苑"]
+“呵呵，严酱的小弟弟，真是太棒了。
+我会立刻让你轻松的”
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+//●ＣＧ：息子のペニスを咥える母親
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_2_3_0211003_1000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：フェラチオ。男性器を咥え込んでいます
+: PlayVoice( "Voices/vo12_shi0045" )
+\CN["紫苑"]
+“啊——嗯……嗯…嗯…嗯…嗯…珠理奈……嗯……嗯……”……
+嗯……嗯…嗯……嗯…嗯……嗯……嗯，嗯，嗯，嗯，我知道了”
+
+: PlayVoice( "Voices/vo12_shi0046" )
+\CN["紫苑"]
+“严酱这么坚强……嗯，我很成熟
+嗯，嗯，嗯，嗯，中，珠理奈♥</color>」
+
+\CN["严严"]
+“啊啊啊……妈妈，好舒服啊……”
+
+在驿站町的所有人的遗体前
+镝木父子像往常一样进行着异常失真的行为。
+
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・あざみの部屋
+//●状況：あざみの部屋に無黒・あざみ・隊士数名
+//●読み：日東街道（おおすかいどう）・宿場町（しゅくばまち）
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: LoadMap( "Map_Town02_07_Hozuki", "Azami_Room_Front", "Scenarios/SC_B04_03*sc001_1")
+
+*sc001_1
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: RpgCharaOn("Mobu1")
+: RpgCharaOn("Mobu2")
+: RpgCharaOn("Mobu3")
+: Wait()
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+//: PlayVoice( "Voices/vo05_aza0270" )
+//\CN["あざみ"]
+//「諜報から入った情報によると、日東街道の宿場町は
+//　白夜九星のうち２人が出張ってきて、いまや壊滅状態に
+//　あるとのことだ……」
+从谍报得到情报
+日东街道的驿站町，白夜九星中有两个人出来
+现在已经处于毁灭状态。
+
+\CN["鬼灯队士・男B"]
+“都杀了吗……真残忍。
+白夜也终于认真起来了吗……”
+
+\CN["鬼灯队士・女A"]
+“那么，幕府就是说要杀了他们啊。”
+
+: DrawChara( "Azami", 0, 0)
+: PlayVoice( "Voices/vo05_aza0271" )
+\CN["嘲讽"]
+“嘛，这里的驿站町对幕府来说是重要的据点之一。
+就算居民都被杀了也不能轻易放弃
+”
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0272" )
+\CN["嘲讽"]
+“也就是说，对方是九星中的两个人。
+虽然会是很辛苦的战斗，但还是拜托你了”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1032" )
+\CN["无黑色"]
+“是的！这样的外路，我不能原谅！”
+
+\CN["鬼灯队士・男B"]
+“将军引以为豪的见回组不参加这次任务吗？”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo05_aza0273" )
+\CN["嘲讽"]
+“嗯，有各种各样的事。请体谅我……。
+因为对方是白夜干部。是我们出场的时候”
+
+\CN["鬼灯队士・女A"]
+“是这样吗……我明白了，局长。
+虽然有各种各样的想法，但是竟然放任危险的家伙不管
+在樱花图案上是不可能做到的”
+
+//＠マップ解放：無黒、日東街道
+//●シーンエンド
+: FastTravelMapOn( "NittouKaido" )
+: DestinationMap( "Map_Dungeon17_02_NittouKaido" )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: SetMission( "SC_B04_03_1", "InProgress" )
+: SetMission( "SC_B04_50_1", "Opened" )
+: SideEpisodeFlagUp( "episode20" )
+: SideEpisodeFlagUp( "episode21" )
+: SideEpisodeFlagUp( "episode22" )
+: SideEpisodeFlagUp( "episode23" )
+: SideEpisodeFlagUp( "episode24" )
+: SideEpisodeFlagUp( "episode25" )
+//: SideEpisodeFlagUp( "episode26" )
+事件信息更新了。
+<^FF0000>侧面小故事更新了！</color>
+
+: if ( MissionProgress( "SC_A01_50", "Opened" ) == true )
+	: SetMission( "SC_A01_50", "Hidden" )
+活动“由著名的色情涂鸦技师制作的dild”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A01_51", "Opened" ) == true )
+	: SetMission( "SC_A01_51", "Hidden" )
+活动“亲手撕破处女膜”开始了
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A01_52", "Opened" ) == true )
+	: SetMission( "SC_A01_52", "Hidden" )
+活动“给贵族男人处女”开始了
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_51_1", "Opened" ) == true )
+	: SetMission( "SC_A02_51_1", "Hidden" )
+活动“向加津佐的镇长发送物品”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_51_2", "InProgress" ) == true )
+	: SetMission( "SC_A02_51_2", "Hidden" )
+活动“向加津佐的镇长发送物品”
+消失了。
+
+: endif
+//鬼灯の前に移動
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+//========================================================
+//○宿場町から白夜を追い払え２
+//========================================================
+*sc002
+//●場所：日東街道・宿場町
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+\CN["鬼灯队士・女A"]
+“呃……这是什么……”
+
+\CN["鬼灯队士・男B"]
+“做这种事，只能认为是被乌贼咬了……”
+
+: DrawChara( "Mukuro", 15, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1033" )
+\CN["无黑色"]
+“多么残忍的事啊……。
+真的是别人做的吗……？”
+
+周围全是血的味道。
+那里的尸体像垃圾一样被扔掉。
+
+他们全部都在被挖开或者切开生殖器
+那个被累积起来了。
+
+//●演出：紫苑と巌　登場する
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: StopBgm( 1.0 )
+: RpgCharaOn("Shion")
+: RpgCharaOn("Iwao")
+: RpgCharaBatch( "Shion"	\
+:	"MoveDown", 4 )
+: RpgCharaBatch( "Iwao"	\
+:	"MoveDown", 4 )
+: Wait()
+: PlayBgm("BGM/28_ID01")
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Shion", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["严严"]
+“还……幸存下来……是存在的吧……？”
+
+: DrawChara( "Shion", 1, 0)
+: PlayVoice( "Voices/vo12_shi0047" )
+\CN["紫苑"]
+“不是活下来，而是想去死吧。
+樱花的花纹——鬼灯的各位，欢迎光临”
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+“鬼灯……？喂，妈妈，可以杀了吗？”
+
+: DrawChara( "Shion", 5, 0)
+: PlayVoice( "Voices/vo12_shi0048" )
+\CN["紫苑"]
+“严酱喜欢就好。
+不管是杀还是犯，严酱都喜欢……”
+
+\CN["鬼灯队士・男B"]
+“小心点……真的很糟糕……。
+这群家伙就是镝木紫苑和严、白夜九星两个人”
+
+\CN["鬼灯队士・女A"]
+“啊啊，无黑……绝对不能大意啊……。
+稍微放松一下就会被杀……”
+
+//●読み：他所様（よそさま）
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Shion", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_a001_1_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0049" )
+\CN["紫苑"]
+“主人，我不佩服别人直呼其名……”
+
+//※●演出：紫苑　魔術を使う
+: HideWnd()
+: cgkeep = false;
+: Call( "Scenarios/Effect*Shion_Action01" )
+: ShowWnd()
+\CN["鬼灯队士・女A"]
+“呀，やば……什么，这个魔力……！？”
+
+//: EraseChara( "Shion", 0.5 )
+: HideWnd()
+//: DrawImage( 1, 0, "BGImage/BG_SyukubaVillage01_01", 0.0 )
+: DrawChara( "Iwao", 1, 0, 0, 0.0, 0.0, 2, "C" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["严严"]
+“哦哦哦哦哦哦哦哦哦！”
+
+//●※演出：巌　攻撃してくる
+//: EraseChara( "Iwao", 0.5 )
+: HideWnd()
+: Call( "Scenarios/Effect*Renda01" )
+: ShowWnd()
+\CN["鬼灯队士・男B"]
+「……！！」
+
+\CN["鬼灯队士・女A"]
+“哇啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+两个前辈在大个子面前毫无办法地倒下了。
+
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["严严"]
+“你……像那个可怕的女人……。
+但是，我觉得你好像能赢”
+
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1034" )
+\CN["无黑色"]
+“……呜！”
+
+这家伙，出奇的强大——
+但是，不能逃走。
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk1035" )
+\CN["无黑色"]
+“我有件事要为我做！
+不能在这种地方退缩！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：鏑木巌
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：鏑木巌,1,1,0,sc003,sc003b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc003b" )	// 敗北後のラベル
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_SyukubaVillage01_01", "BGM/22_BM003", 1018, -1, -1, "Scenarios/SC_B04_03*battle_end", true)
+
+*battle_end
+: if ( $battleWin == true )
+	: Jump( "*sc003a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*sc003b" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+//========================================================
+//○宿場町から白夜を追い払え３
+//========================================================
+*sc003a
+//●場所：日東街道・宿場町
+: HideWnd()
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: FadeIn( 0.15 )
+: Wait()
+: StopBgm( 0.0 )
+: ShowWnd()
+\CN["严严"]
+“呼！呼！
+yu、不原谅……这个女人，杀了她……”
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+“认真起来……光是杀掉是不行的……”
+
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 40, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1036" )
+\CN["无黑色"]
+“什么，什么……这种气氛……？”
+
+: PlayBgm("BGM/11_CM011")
+身体发冷。手脚瑟瑟发抖。
+
+我有一种非常讨厌的预感。
+我感受到了前所未有的强烈威胁和恐怖。
+
+//●演技：詠唱です
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Shion", 9, 0, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_a001_1_1_0200001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0050" )
+\CN["紫苑"]
+“沉入黑夜的咒缚之锁，用你的力量封印住威胁之力——”
+
+//※●演出：紫苑　魔術演出
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Dark01" )
+: PlayAnim( "Animations/AnimeL_Dark01", false, 0, 0, 6, 6 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_a001_1_1_0300001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["严严"]
+“……呜……呜……妈妈……为什么？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_a001_1_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0051" )
+\CN["紫苑"]
+“严酱，这是脑子里禁止的吧。”
+
+: HideWnd()
+: DrawChara( "Iwao", 0, 0, 0, 0.0, 0.0, 2, "LC" )
+: DrawChara( "Shion", 2, 0, 0, 0.0, 0.0, 3, "RC" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0052" )
+\CN["紫苑"]
+“和神八代的气氛一样啊……。
+把严酱逼到这种地步真是了不起啊”
+
+: DrawChara( "Shion", 0, 0)
+: PlayVoice( "Voices/vo12_shi0053" )
+\CN["紫苑"]
+“我觉得好像又能在什么地方见到你……”
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+「…………」
+
+//●演出：紫苑と巌　退場する
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Shion"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: chara = "Iwao"; lay = 2; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: ShowWnd()
+母亲牵着儿子离开了驿站。
+
+: DrawChara( "Mukuro", 40, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1037" )
+\CN["无黑色"]
+“……呃”
+
+以我现在的实力是不可能生存下来的。
+如果对方退了的话，就不会再追了。
+
+我只能望着两个人的身影。
+
+那样的自己太没出息了
+只是紧握着拳头。
+
+//●シーン：「雪の街へ１」へ
+//＠シナリオジャンプ：SC_B04_05
+: $money += 4000
+: SetMission( "SC_B04_03_1", "Successed" )
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Town02_07_Hozuki", "Azami_Room_Front", "Scenarios/SC_B04_05")
+
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+*sc003b
+: Jump( "Scenarios/SC_B04_04" )

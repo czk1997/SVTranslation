@@ -1,0 +1,323 @@
+//========================================================
+//○公衆トイレで覗かれて……
+//========================================================
+//●場所：帝都・公衆トイレ
+: if (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: Return
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: Return
+: elif (WhoLeader( "Mei" ) == true)	//プレイヤーが黄菜子の時
+	: Return
+: endif
+: if ( $chapter < 3 ) Return endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) == 0 ) Return endif
+: if ( MissionProgress( "SC_A03_52_1", "Successed" ) == true ) Return endif
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+公共厕所。怎么办？
+现在去洗手间吗？
+
+//●分岐：露出開発度Ｄの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) == 0 )
+	: DrawChara( "Mukuro", 7, 0)
+不，还是不要在这里做比较好。
+听说有偷窥的家伙。
+
+	//●シーンエンド
+	: HideWnd()
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+	: Wait()
+	: Return
+: endif
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：大丈夫だろう。していこう
+//■選択肢２：やっぱりやめておこう
+//――――――――――――――――――――――――――――
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+\CI["还是算了吧"]
+\CI["没关系吧。西行"]
+虽然有传言说有偷窥的人……。
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：やっぱりやめておこうを選んだ場合
+//-------------------------------------------------------
+//●シーンエンド
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: Return
+//-------------------------------------------------------
+//●選択肢２：大丈夫だろう。していこうを選んだ場合
+//-------------------------------------------------------
+//--------------------------------------------------------
+//●Ｈシーン開始
+//--------------------------------------------------------
+*select01_s2
+: Call( "Scenarios/CommonSys*CosMemory" )
+//ダークエルフから戻る処理
+: HideWnd()
+: if ( CharaCostume( "Mukuro" ) == 2 )
+	: CharaCostume( "Mukuro", 0 )
+: endif
+: StopBgm( 1.0 )
+//ドアを開ける処理
+: RpgDoorLock("SC_A03_52", false )
+: RpgDoorOpen("SC_A03_52")
+: RpgCharaMove("Player", "D", 1 )
+: Wait()
+//暗転
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_A03_52" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false; virgin = true;
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_A03_52" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	\CI["穿着衣服"]
+	\CI["赤身裸体"]
+厕所是……？
+
+	: if ($choice == 1)
+		: CharaCostume( "Mukuro", 1 )
+	: endif
+: endif
+//●演出：無黒　便座に座る
+//●ＣＧ：トイレでオシッコ
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 1) endif
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b001_1_0_0000000_1000000_1_"
+: Call("Scenarios/Common*EvZoomIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+//●演技：オシッコしようとしています
+: PlayVoice( "Voices/vo00_muk0961" )
+\CN["无黑色"]
+“呼～……嗯……嗯……嗯……嗯……”
+
+跨座便器坐下，用力向下腹部。
+
+: PlayVoice( "Voices/vo00_muk0962" )
+\CN["无黑色"]
+“嗯……差不多该出发了……”
+
+\CN["偷窥鬼"]
+（嘿嘿，这里是只有认识的人才知道的窥探点啊）
+
+嗯？总觉得，外面好像有什么气息……？
+
+\CN["偷窥鬼"]
+（哇！好可爱的孩子！
+而且，那个不是鬼灯的孩子嘛！哇……太棒了！）
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b001_1_0_0110001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0963" )
+\CN["无黑色"]
+“不对……不是心理作用……。
+被谁看见了”
+
+\CN["偷窥鬼"]
+（啊啊啊…鬼灯女的生manko……啊啊啊……
+受不了……）
+
+我感觉到了从哪里传来的视线。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk0964" )
+\CN["无黑色"]
+（居然能好好地看到这么丢脸的地方……）
+
+不要尿尿，就这样赶紧出去在外面偷窥
+我必须抓住他。
+
+但是——
+
+//●分岐：露出開発度Ｂ以上の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) >= 2 )
+	//●演技：心の声です
+	: HideWnd()
+	: evcha = "Mukuro"; evbg = true; evcos = true;
+	: evfile = "eva_b001_1_0_0210001_1100000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0965" )
+	\CN["无黑色"]
+（明明被看到那个人应该很害羞……太厉害了
+里面变热了……）
+
+\V[Mukuro Omanko]变得非常热了
+自己也明白了。
+
+只是感受到视线，就莫名地心跳不已。
+
+	//●演技：心の声です
+	: PlayVoice( "Voices/vo00_muk0966" )
+	\CN["无黑色"]
+（一个陌生人看到我丢脸的地方
+也许他很兴奋。）
+
+那样想的话，已经不行了。
+停不下来了。
+
+//●分岐終了
+: endif
+: PlayVoice( "Voices/vo00_muk0967" )
+\CN["无黑色"]
+“啊呜……然后，出来……尿要出来了……”
+
+: PlayVoice( "Voices/vo00_muk0968" )
+\CN["无黑色"]
+“啊啊……嗯……啊…啊…啊啊……啊！”
+
+//●演出：放尿
+//●ＣＧ差分：放尿
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: PlayHSe( "SE/Hse_Nyou" )
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_b001_1_0_0100001_1000100_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——JORORO。
+
+\CN["偷窥鬼"]
+（哦哦！真的有小便！
+哈哈哈……有那么可爱的孩子在尿尿呢！）
+
+\CN["偷窥鬼"]
+（从manko那里，“那么——”的气势很好地出来了……。
+啊啊，果然看到女人小便的样子很兴奋啊。
+那个蹲下的屁股的形状啊……）
+
+: PlayVoice( "Voices/vo00_muk0969" )
+\CN["无黑色"]
+“嗯……停不下来……出了很多……。
+哈、哈……也许被谁看见了
+明明……”
+
+: PlayVoice( "Voices/vo00_muk0970" )
+\CN["无黑色"]
+“啊……嗯……嘛，还出来……嗯……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Nyou" )
+: ShowWnd()
+乔伯乔巴。
+
+在不认识的人看来
+这么响着就尿了。
+
+//●ＣＧ差分：放尿後
+//●分岐：露出開発度Ｃの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Exhibitionist" ) >= 2 )
+	: HideWnd()
+	: evcha = "Mukuro"; evbg = true; evcos = true;
+	: evfile = "eva_b001_1_0_0310013_1100100_1_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0971" )
+	\CN["无黑色"]
+“哈，哈……这个，看得很清楚吧？
+我尿尿的地方，到最后都……”
+
+害羞的心情当然很强烈。
+
+但是，与此同时从身体深处传来了更热的东西
+跑上来了。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	: HideWnd()
+	: evcha = "Mukuro"; evbg = true; evcos = true;
+	: evfile = "eva_b001_1_0_0000001_1000100_1_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk0972" )
+	\CN["无黑色"]
+“嗯……被看到了最后……。
+这么害羞的地方，全部……我已经不想了……”
+
+如果觉得这样丢脸的话，就不要用公共厕所了
+即使没有也会后悔。
+
+//●分岐終了
+: endif
+
+\CN["偷窥鬼"]
+（哈哈……太兴奋了……。
+差不多该逃了吧……）
+
+//●ＳＥ：ダッシュする音
+: PlaySe( "SE/Se_dash01" )
+//: DrawChara( "Mukuro", 42, 1, 0, 0.5, 0.0, 3, "C" )
+听到外面有人跑出去的声音……。
+
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+被偷窥的事情并不是心理作用
+搞清楚了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_A03_52
+*HScene_End
+//※回想はここで切る
+: HideWnd()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_A03_52" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 17 ) endif
+//●シーンエンド
+: SetMission( "SC_A03_52_1", "Successed" )
+: RpgMapBaloonOff( "SC_A03_52" )
+: RpgCharaMove("Player", "U")
+: RpgDoorLock("SC_A03_52", true )
+: EraseImage( 0, 0, 1.0)
+: Wait()
+: RpgPlayBgm
+: Return

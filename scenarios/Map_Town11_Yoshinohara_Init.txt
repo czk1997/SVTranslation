@@ -1,0 +1,90 @@
+//========================================================
+//○吉野原・外
+//========================================================
+*Map01
+// 色町の最凶母子を始末せよ！　発生時
+: if ( MissionProgress( "SC_D05_23_1", "InProgress" ) == true )
+	: RpgCharaOn("Shion")
+	: RpgCharaOn("Iwao")
+	: RpgCharaWarp( "Player", "SC_D05_23" )
+	: Jump( "Scenarios/SC_D05_23*sc002" )
+: endif
+: if ( CharaCostume( "Mukuro" ) == 1 || CharaCostume( "Momo" ) == 1 || CharaCostume( "Kinako" ) == 1 || CharaCostume( "Mei" ) == 1 )
+	: CharaCostume( "Mukuro", 0 )
+	: CharaCostume( "Momo", 0 )
+	: CharaCostume( "Kinako", 0 )
+	: CharaCostume( "Mei", 0 )
+	この街を裸で歩くことは禁忌とされている。
+
+: endif
+// 吉野原遊廓の闇　進行時
+: if ( MissionProgress( "SC_B04_10_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("Roushu","Event")
+	: RpgDoorLock( "To_Roushu", false )
+	//吉野原をファストトラベルに加える処理
+	: if ( Flag ( "YoshinoharaFastTravel" ) == false )
+		: FastTravelMapOn( "Yoshinohara" )
+		: Flag( "YoshinoharaFastTravel", true )
+	: endif
+: endif
+: if ( MissionProgress( "SC_B04_10_2", "InProgress" ) == true )
+	: RpgMapBaloonOn("Roushu","Event")
+	: RpgDoorLock( "To_Roushu", false )
+: endif
+: if ( MissionProgress( "SC_B04_10_3", "InProgress" ) == true )
+	: RpgMapBaloonOn("Kusuriya","Event")
+	: RpgDoorLock( "To_Kusauriya", false )
+: endif
+// 遊廓のケツモチ　進行時
+: if ( MissionProgress( "SC_C04_03_1", "InProgress" ) == true )
+	: RpgMapBaloonOn("Roushu","Event")
+	: RpgDoorLock( "To_Roushu", false )
+: endif
+//: if ( MissionProgress( "SC_C04_03_1", "Successed", "Failed" ) == true || MissionProgress( "SC_C04_03_2", "Successed", "Failed" ) == true )
+//	: RpgMapBaloonOn("Roushu","Event")
+//	: RpgDoorLock( "To_Roushu", false )
+//: endif
+// 白夜ルートと浪人ルート時は東街道に抜けさせない
+: if ( $chapter >= 7 )
+	: RpgMapBaloonOff("FromTeitoHigashi0(L)")
+	: RpgMapBaloonOff("FromTeitoHigashi0(C)")
+	: RpgMapBaloonOff("FromTeitoHigashi0(R)")
+	: RpgEventOff("ToTeitoHigashi03(L)")
+	: RpgEventOff("ToTeitoHigashi03(C)")
+	: RpgEventOff("ToTeitoHigashi03(R)")
+: endif
+// 紫苑出現
+: if( $chapter == 10 )
+	: RpgCharaOn("CHA12")
+: endif
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: RpgCharaOn("NPC_T11_011")
+	: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 )
+		: RpgCharaOn("NPC_T11_012")
+	: endif
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		: RpgCharaOff("NPC_T11_011")
+	: endif
+: endif
+// ＮＰＣ生存チェック
+//: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+
+//========================================================
+//○吉野原・宿屋
+//========================================================
+*Map02
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 )
+		: RpgCharaOn("NPC_T11_013")
+	: endif
+	: if ( Flag ( "Love_Mukuro" ) == true )
+		: RpgCharaBaloonOn( "NPC_T11_007", "Heart" )
+	: endif
+: endif
+: Return
+//========================================================
+//○吉野原・薬屋
+//========================================================
+*Map05
+: Jump( "Scenarios/SC_B04_10" )

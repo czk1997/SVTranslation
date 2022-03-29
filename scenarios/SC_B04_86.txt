@@ -1,0 +1,583 @@
+//========================================================
+//○お風呂女子会～大和編～
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 1 )
+: CharaCostume( "Momo", 1 )
+: CharaCostume( "Kinako", 1 )
+: CharaCostume( "Azami", 1 )
+: CharaCostume( "Sayo", 1 )
+//●場所：女風呂
+//●背景：女風呂
+//Yoshi：背景
+//レイヤー数確保のため、通常と違う表示方法を用いる
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Huro01_01", 1.0 )
+: Wait()
+: Sleep(0.5)
+: AutoFaceThumbnail( false )
+: DrawImage( 2, 0, "EventCG/evx_b001_1_1_0100000_0000000_0_0", 0.5 )
+: Wait()
+: PlayBgm("BGM/40_Comedy")
+: ShowWnd()
+//●視点：無黒視点
+//●状況：鬼灯の女隊士同士で女風呂に入っている。桃と銀、付き合っている
+//●ＣＧ：女子風呂（鬼灯編）
+//: DrawChara( "Momo", 6, 1, 0 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0745" )
+\CN["桃子"]
+“呼～……极乐、极乐～♪”
+
+//●演技：鼻歌です
+//: DrawChara( "Kinako", 1, 1, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo02_kin0266" )
+\CN["黄菜子"]
+「～～～♪」
+
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Kinako", 0.5 )
+//: DrawChara( "Sayo", 1, 1, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo24_say0080" )
+\CN["小夜"]
+“这就是澡堂啊。浴室好大啊。”
+
+//: DrawChara( "Mukuro", 10, 1, 0, 0.5, 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo00_muk1515" )
+\CN["无黑色"]
+“……嗯”
+
+和鬼灯的大家还有来玩的公主一起
+我来到了屯所附近的澡堂。
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Sayo", 0.5 )
+//: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0746" )
+\CN["桃子"]
+“无黑，怎么了？”
+
+//: EraseChara( "Momo", 0.5 )
+//: DrawChara( "Mukuro", 6, 0, 0, 0.5, 0.0, 2, "C" )
+: PlayVoice( "Voices/vo00_muk1516" )
+\CN["无黑色"]
+“不，我有点在意……”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo02_kin0267" )
+\CN["黄菜子"]
+“有什么在意的吗？”
+
+//: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1517" )
+\CN["无黑色"]
+“啊。桃子和黄菜子两个人，最近有点气氛
+真是奇怪啊”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Kinako", 0.5 )
+//: DrawChara( "Sayo", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo24_say0081" )
+\CN["小夜"]
+“啊，我也是这么想的。”
+
+//: EraseChara( "Sayo", 0.5 )
+\CN["鬼灯队士・女B"]
+“是啊。特别是桃子吧。
+看，就是这个地方啊～”
+
+//●演技：乳房を揉まれています
+//: DrawChara( "Momo", 10, 2, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: DrawImage( 3, 0, "EventCG/evx_b002_1_1_0100000_0000000_0_0", 0.0 )
+: FadeOutLayer( 3, 0 )
+: SetLayerScale( 3, 2, 2)
+: SetLayerPos( 3, 0, 0, 0.0)
+: SetLayerScale( 3, 1, 1, Call("Scenarios/Common*EffTime"), 0.0, "InSine")
+: SetLayerPos( 3, 0, 0, Call("Scenarios/Common*EffTime"), 0.0, "InSine")
+: FadeInLayer( 3, Call("Scenarios/Common*EffTime"))
+: Wait()
+: layer = 3; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0747" )
+\CN["桃子"]
+“嗯！嗯，突然间做了什么……！？
+那、那是不行的……太敏感了……呵呵，啊，啊啊啊啊啊！”
+
+前辈突然开始揉桃子的胸。
+
+\CN["鬼灯队士・女B"]
+“桃子，原本胸部就很大
+你又长大了一点吧？”
+
+\CN["鬼灯队士・女A"]
+“因为如果被男人揉搓的话，奶就会变大。”
+
+//: EraseChara( "Momo", 0.5 )
+//: DrawChara( "Sayo", 7, 1, 0, 0.5, 0.0, 3, "RC" )
+: HideWnd()
+: DrawImage( 4, 0, "EventCG/evx_b002_1_2_0100000_0000000_0_0", 0.0 )
+: FadeOutLayer( 4, 0 )
+: SetLayerRelPos( 4, 0, 100, 0.0 )
+: SetLayerRelPos( 4, 0, -100, Call("Scenarios/Common*EffTime") )
+: FadeInLayer( 4, Call("Scenarios/Common*EffTime"))
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0082" )
+\CN["小夜"]
+“是吗？那就让男人来帮你揉吧
+长大了吗？”
+
+//: DrawChara( "Sayo", 1, 2)
+: PlayVoice( "Voices/vo24_say0083" )
+\CN["小夜"]
+“那我也请雷欧帮我揉了。”
+
+//: DrawChara( "Mukuro", 22, 2, 3, 0.5, 0.0, 2, "LC" )
+: HideWnd()
+: DrawImage( 5, 0, "EventCG/evx_b002_1_3_0100000_0000000_0_0", 0.0 )
+: FadeOutLayer( 5, 0 )
+: SetLayerRelPos( 5, -50, 0, 0.0 )
+: SetLayerRelPos( 5, 50, 0, Call("Scenarios/Common*EffTime") )
+: FadeInLayer( 5, Call("Scenarios/Common*EffTime"))
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1518" )
+\CN["无黑色"]
+「……！！」
+
+//●演技：心の声です
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Sayo", 0.5 )
+//: DrawChara( "Kinako", 3, 1, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: DrawImage( 6, 0, "EventCG/evx_b002_1_4_0100000_0000000_0_0", 0.0 )
+: FadeOutLayer( 6, 0 )
+: SetLayerRelPos( 6, 50, 0, 0.0 )
+: SetLayerRelPos( 6, -50, 0, Call("Scenarios/Common*EffTime") )
+: FadeInLayer( 6, Call("Scenarios/Common*EffTime"))
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0268" )
+\CN["黄菜子"]
+（我的也帮我按摩的话，会稍微大一点吗？
+泽诺君果然还是喜欢大一点的吧？）
+
+//●演技：心の声です
+//: DrawChara( "Kinako", 6, 2)
+: layer = 6; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: PlayVoice( "Voices/vo02_kin0269" )
+\CN["黄菜子"]
+（呜呜、哇、我怎么会这样想……！）
+
+//: EraseChara( "Kinako", 0.5 )
+: HideWnd()
+//ＣＧを消去
+: AutoFaceThumbnail( true )
+: EraseImage( 2, 0, 0.5 )
+: EraseImage( 3, 0, 0.5 )
+: EraseImage( 4, 0, 0.5 )
+: EraseImage( 5, 0, 0.5 )
+: EraseImage( 6, 0, 0.5 )
+: Wait()
+: DrawChara( "Momo", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0748" )
+\CN["桃子"]
+“黄菜子和公主，长大是从现在开始的
+不用着急”
+
+: DrawChara( "Momo", 5, 1)
+: PlayVoice( "Voices/vo01_mom0749" )
+\CN["桃子"]
+“而且男生中也有喜欢小的人
+好像有很多呢”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1519" )
+\CN["无黑色"]
+“是，是吗！？”
+
+: DrawChara( "Sayo", 4, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo24_say0084" )
+\CN["小夜"]
+“那么，如果雷欧喜欢胸部小的话
+长大了就麻烦了”
+
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0317" )
+\CN["嘲讽"]
+“话说回来，被男人揉搓的话会变大，这是迷信吧？
+但是，桃现在和银相爱的是
+虽然能很好地传达出来”
+
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 13, 3, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: Wait()
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0750" )
+\CN["桃子"]
+“什么啊！？我和小银居然相爱了……！？
+我要！局长，你和以前没什么不同吧？”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 12, 1, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlayVoice( "Voices/vo00_muk1520" )
+\CN["无黑色"]
+“黄菜子，你在说那种话，你觉得怎么样？”
+
+: DrawChara( "Kinako", 5, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: PlayVoice( "Voices/vo02_kin0270" )
+\CN["黄菜子"]
+“是啊……距离感完全不同。
+有时会用眼睛和眼睛互相示意”
+
+不愧是情报。好好地看着呢。
+
+//: EraseChara( "Kinako", 0.5 )
+//: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Sayo", 8, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo24_say0085" )
+\CN["小夜"]
+“有时桃子的眼睛会变成心形。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 14, 3, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo01_mom0751" )
+\CN["桃子"]
+“那，没那回事！呐，无黑？”
+
+//: EraseChara( "Sayo", 0.5 )
+: DrawChara( "Mukuro", 37, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Momo", 14, 3, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo00_muk1521" )
+\CN["无黑色"]
+“啊？对我来说总觉得和以前不一样啊……”
+
+\CN["鬼灯队士・女B"]
+“银君那边很难有间隙呢。
+如果让我调查那个孩子的话，感觉会很认真”
+
+: DrawChara( "Momo", 6, 1)
+: PlayVoice( "Voices/vo01_mom0752" )
+\CN["桃子"]
+“对吧！小银就是这样的！”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Sayo", 5, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawFaceThumbnail( "Sayo", 5, 0, 0 )
+: PlayVoice( "Voices/vo24_say0086" )
+\CN["小夜"]
+“桃子的话，好像很开心呢。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+桃子在银被夸奖的时候看起来很开心。
+
+嗯，我觉得这个从以前开始就有这样的地方。
+仔细想想，可是。
+
+//: EraseChara( "Sayo", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+: HideWnd()
+: AutoFaceThumbnail( false )
+: ResetLayer(2)
+: ResetLayer(3)
+: ResetLayer(4)
+: DrawImage( 2, 0, "EventCG/evx_b001_1_1_0100000_0000000_0_0", 0.5 )
+: ShowWnd()
+\CN["鬼灯队士・女B"]
+“喂，黄菜子，还有其他注意到的事情吗？”
+
+: HideWnd()
+: DrawImage( 3, 0, "EventCG/evx_b003_1_1_0100000_0000000_0_0", 0.5 )
+: ShowWnd()
+//: DrawChara( "Kinako", 3, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo02_kin0271" )
+\CN["黄菜子"]
+“……嗯，其他还有……”
+
+//: DrawChara( "Momo", 0, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0753" )
+\CN["桃子"]
+“黄菜子，手下留情啊。”
+
+//: DrawChara( "Kinako", 7, 0)
+: PlayVoice( "Voices/vo02_kin0272" )
+\CN["黄菜子"]
+“啊！虽然不是每天都这样，但是桃桑晚饭的时候
+向风真先生眨眼两次的日子，总是
+晚上去了什么地方，是什么特训的信号吗？”
+
+//●演技：時々夜に抜け出して宿でエッチしてるのを隠そうとしている
+//: DrawChara( "Momo", 14, 2)
+: PlayVoice( "Voices/vo01_mom0754" )
+\CN["桃子"]
+“嗯……那，那是……那个，嘛，就像特训一样
+怎么可能……嗯……”
+
+\CN["鬼灯队士・女B"]
+“黄菜子，不管怎么说都太尖锐了……。
+不愧是鬼灯的情报No.1”
+
+//: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0273" )
+\CN["黄菜子"]
+「？」
+
+//: EraseChara( "Kinako", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//: DrawChara( "Azami", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0318" )
+\CN["嘲讽"]
+“还有，我在意的是黄菜子和维克托尔骑士团的
+是个叫Zno的男孩啊”
+
+//: EraseChara( "Azami", 0.5 )
+//: DrawChara( "Kinako", 7, 2, 1, 0.5, 0.0, 2, "RC" )
+: HideWnd()
+: SwapImage( 3, 0, "EventCG/evx_b003_1_1_0200000_0000000_0_0", 0.0 )
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0274" )
+\CN["黄菜子"]
+“呼！？哇，是我和泽诺吗……？”
+
+: HideWnd()
+: DrawImage( 4, 0, "EventCG/evx_b003_1_2_0100000_0000000_0_0", 0.0 )
+: FadeOutLayer( 4, 0 )
+: SetLayerRelPos( 4, -50, 0, 0.0 )
+: SetLayerRelPos( 4, 50, 0, Call("Scenarios/Common*EffTime") )
+: FadeInLayer( 4, Call("Scenarios/Common*EffTime"))
+: Wait()
+: ShowWnd()
+//: DrawChara( "Momo", 6, 1, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo01_mom0755" )
+\CN["桃子"]
+“嗯。黄菜子，Zno君来屯所的话会是什么呢？”
+你看起来很开心呢”
+
+//: DrawChara( "Kinako", 4, 1)
+: PlayVoice( "Voices/vo02_kin0275" )
+\CN["黄菜子"]
+“是，是吗？我没什么，是的，和平时一样……”
+
+//: EraseChara( "Kinako", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//: DrawChara( "Mukuro", 41, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1522" )
+\CN["无黑色"]
+“这么说来也是。早上开始就心神不定。”
+
+//: DrawChara( "Sayo", 1, 1, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo24_say0087" )
+\CN["小夜"]
+“知道了谢乃来了，黄菜子一直在笑
+”
+
+//: EraseChara( "Sayo", 0.5 )
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Kinako", 6, 2, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0276" )
+\CN["黄菜子"]
+“嗯，无黑到公主为止……！”
+
+: HideWnd()
+: EraseImage( 3, 0, 0.5 )
+: EraseImage( 4, 0, 0.5 )
+: Wait()
+: ShowWnd()
+\CN["鬼灯队士・女B"]
+“啊，这么说来，无黑酱最近也有点变了吧？
+和你发生什么事了吗？”
+
+//: EraseChara( "Kinako", 0.5 )
+//: DrawChara( "Momo", 5, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0756" )
+\CN["桃子"]
+“啊！我也是这么想的。
+有时我会一直盯着你看”
+
+//: DrawChara( "Sayo", 10, 1, 1, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo24_say0088" )
+\CN["小夜"]
+“呜呜～……是吗？无黑！”
+
+//: EraseChara( "Momo", 0.5 )
+//: DrawChara( "Mukuro", 22, 2, 0, 0.5, 0.0, 3, "RC" )
+: HideWnd()
+: ResetLayer(3)
+: DrawImage( 3, 0, "EventCG/evx_b004_1_1_0100000_0000000_0_0", 0.5 )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1523" )
+\CN["无黑色"]
+“诶！？我把雷欧……？
+不，并不是发生了什么特别的事情……”
+
+而且我一直盯着雷欧？
+
+我不记得做过那样的事……。
+
+//: EraseChara( "Sayo", 0.5 )
+//: EraseChara( "Mukuro", 0.5 )
+\CN["鬼灯队士・女B"]
+“桃子，无黑酱的那个说不定……”
+
+//: DrawChara( "Momo", 1, 1, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0757" )
+\CN["桃子"]
+“是啊。我想大概是在无意识中做的吧。”
+
+\CN["鬼灯队士・女B"]
+“呵呵，但是可能是雷欧的努力终于有了成果。”
+
+//: EraseChara( "Momo", 0.5 )
+//: DrawChara( "Sayo", 9, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo24_say0089" )
+\CN["小夜"]
+“无黑，我绝对不会输的！”
+
+//: DrawChara( "Mukuro", 5, 2, 3, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo00_muk1524" )
+\CN["无黑色"]
+“所以，所以我没什么……”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Sayo", 0.5 )
+//ＣＧを消去
+: AutoFaceThumbnail( true )
+: EraseImage( 2, 0, 0.5 )
+: EraseImage( 3, 0, 0.5 )
+: Wait()
+: DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0758" )
+\CN["桃子"]
+“如果无黑好好地意识到了自己的心情，之后就
+”
+
+\CN["鬼灯队士・女A"]
+“那桃子好像是那样的吗？”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 12, 1)
+: PlayVoice( "Voices/vo01_mom0759" )
+\CN["桃子"]
+“啊……哇，我就是那样的女人
+并不是说……”
+
+\CN["鬼灯队士・女B"]
+“呵呵。不过我很在意
+已经不行了吗？和银君一起”
+
+: DrawChara( "Momo", 13, 3)
+: PlayVoice( "Voices/vo01_mom0760" )
+\CN["桃子"]
+“什么……！？不，说是不好了……前辈！？”
+
+: DrawChara( "Momo", 13, 3, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 35, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk1525" )
+\CN["无黑色"]
+“……是吗，是吗，桃？你已经和银了——”
+
+: DrawChara( "Momo", 14, 2 )
+: PlayVoice( "Voices/vo01_mom0761" )
+\CN["桃子"]
+“那、那是、那个……那个、怎么说呢……。
+嘛，那个啊那个，发生了各种各样的事情，那个……”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 17, 1, 0, 0.0, 0.0, 3, "C" )
+: chara = "Kinako"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo02_kin0277" )
+\CN["黄菜子"]
+「桃先生！刚开始的时候怎么样？
+果然是风真先生……？”
+
+: DrawChara( "Kinako", 4, 1)
+: PlayVoice( "Voices/vo02_kin0278" )
+\CN["黄菜子"]
+“那个，虽然说很疼，但是真的……？”
+
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Sayo", 3, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0090" )
+\CN["小夜"]
+“第一次……？疼吗？是什么事？”
+
+: DrawChara( "Azami", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo05_aza0319" )
+\CN["嘲讽"]
+“我觉得这对公主来说还是稍微早一点的话题……”
+
+局长若无其事地将小夜姬远离话题。
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 3, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Kinako", 17, 1, 0, 0.0, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0762" )
+\CN["桃子"]
+“き、黄菜子……？你真积极啊……”
+
+: DrawChara( "Kinako", 5, 2, 0 )
+: PlayVoice( "Voices/vo02_kin0279" )
+\CN["黄菜子"]
+“啊……！？不好意思……不知不觉”
+
+: HideWnd()
+//: DrawChara( "Azami", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_b001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0320" )
+\CN["嘲讽"]
+“真好，青春啊。”
+
+//: DrawChara( "Azami", 27, 0)
+: PlayVoice( "Voices/vo05_aza0321" )
+\CN["嘲讽"]
+“希望这样的日子今后也能一直持续下去
+我只要这样就好了……”
+
+局长嘟嘟囔囔的声音传到耳朵里。
+
+作为局长来说，难得有寂寞或者悲伤的感觉
+我觉得很杂乱。
+
+//●シーンエンド
+: HideWnd()
+: AutoFaceThumbnail( true )
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

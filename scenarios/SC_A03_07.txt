@@ -1,0 +1,149 @@
+//========================================================
+//○般若を探せ！１
+//========================================================
+*sc001
+//＠プレイヤーキャラ：黄菜子
+//●視点：黄菜子視点
+//●背景：帝都・貧民街
+//●演出：貧民街にやってくる黄菜子
+//Yoshi：背景、昼
+: HideWnd()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+// パーティー　黄菜子・コスチュームを刀ありへ
+: Party( "Kinako" )
+: PartyType = "Party03"; Call( "Scenarios/CommonSys*PartySetting" )
+: CharaCostume( "Kinako", 5 )
+: DrawImage( 1, 0, "BGImage/BG_Village02_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/26_FM004")
+: ShowWnd()
+现在我接受的任务是‘调查般若’
+这个任务。
+
+//●演技：心の声です
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako",10, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo02_kin0091" )
+\CN["黄菜子"]
+（般若——白夜干部中君临榜首的人……）
+
+被称为“虚幻的一白”，谁也不知道它的存在。
+白夜干部，甚至是九星的人们。
+
+: PlayVoice( "Voices/vo02_kin0092" )
+\CN["黄菜子"]
+“般若的信息——用普通的手段很难得到。”
+
+那就采取不普通的手段吧。
+
+贫民街有个自称“{雉鸡，きじ}”的入口店。
+
+这个时间的话应该在家吧
+跟他交涉一下吧。
+
+用手掌轻轻地贴在脸颊上，转换了心情。
+
+//Yoshi：背景消去
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+事件信息更新了。
+
+//＠マップ解放：黄菜子、帝都
+//●シーンエンド
+: FadeOut( 1.0 )
+: Wait()
+: StopBgm( 1.0 )
+//イベント更新
+: SetMission( "SC_A03_07_1", "InProgress" )
+//無黒のマップ全部封印
+: FastTravelMapOff( "TeitoNishikaido" )
+: FastTravelMapOff( "TeitoKitaKaido" )
+: FastTravelMapOff( "Kazusa" )
+: FastTravelMapOff( "Nagatoro" )
+: FastTravelMapOff( "TakahamaPort" )
+: DestinationMap( "Map_Town01_19_TeitoSlam" )
+: LoadMap( "Map_Town01_15_TeitoSlam" )
+//========================================================
+//○般若を探せ！２
+//========================================================
+*sc002
+//●場所：帝都・貧民街・民家
+//Yoshi：背景、昼
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雉鸡"]
+“啊，今天有什么事吗？”
+
+: PlayVoice( "Voices/vo02_kin0094" )
+\CN["黄菜子"]
+“{雉鸡，雉鸡}有件事想请教一下……”
+
+我想交信息费的定金。
+
+\CN["雉鸡"]
+“嗯，现在比起钱，我更想让你帮忙
+有啊」
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0095" )
+\CN["黄菜子"]
+“你想让我帮忙吗？”
+
+有点为难了。
+
+要是能击退魔物或潜入魔物就好了……。
+
+\CN["雉鸡"]
+“别那么不安的表情。我不是故意杀人的。”
+
+\CN["雉鸡"]
+“穿过东街道的地方有一个‘精灵之森’的地方
+你知道吗？”
+
+听说这里是精灵居住的森林
+我没有实际去过。
+
+\CN["雉鸡"]
+“听说在那里的一棵叫精灵树的树上结了果实
+我想去确认一下真伪”
+
+\CN["雉鸡"]
+“听说精灵森林里有很多魔物栖息。
+到底是一个入口店，直接去接见的话风险很高。
+只能让可信的人来看看”
+
+\CN["雉鸡"]
+“因此去了‘精灵之森’，发现了‘精灵树的果实’
+请拿过来。如果可以的话，我会提供你想要的信息。
+无论用什么方法都可以”
+
+: DrawChara( "Kinako",17, 0)
+: PlayVoice( "Voices/vo02_kin0096" )
+\CN["黄菜子"]
+“……我知道了，如果这样就好了。”
+
+{雉鸡，きじ}也有总是提供信息的情况。
+
+如果那么困难的话就必须要帮忙。
+这是在帝都从事谍报工作的人的{规矩，礼仪}。
+
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+
+//Yoshi：背景消去
+//＠マップ解放：帝都東街道
+//●シーンエンド
+: FastTravelMapOn( "TeitoHigashiKaido" )
+: $money += 1000
+: SetMission( "SC_A03_07_1", "Successed" )
+: SetMission( "SC_A03_08_1", "InProgress" )
+: DestinationMap( "Map_Dungeon11_04_SeireiForestBoss" )
+: FadeOut( 1.0 )
+: LoadMap( "Map_Town01_15_TeitoSlam", "Kiji" )
+: Return

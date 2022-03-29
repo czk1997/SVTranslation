@@ -1,0 +1,619 @@
+//========================================================
+//○反幕巫女を始末せよ！１
+//========================================================
+*sc001
+: if ( MissionProgress( "SC_D05_18_1", "InProgress" ) == false )
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1)
+: Wait()
+: Jump( "Scenarios/Map_Event*Closed" )
+: endif
+\CI["准备好了"]
+\CI["好好确认之后"]
+从这里开始就是织笠神社……。
+
+: if ($choice == 1)
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1 )
+: Wait()
+: Return
+: endif
+*sc001_1
+//●場所：織笠神社・入口
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: ShowWnd()
+\CN["御影的部下A"]
+“从这里一步也不过去。走开吧。”
+
+\CN["御影的部下B"]
+“我知道你们会来这里。
+下次一定要干完”
+
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlayVoice( "Voices/vo00_muk4557" )
+\CN["无黑色"]
+“是织笠御影的部下吗……”
+
+: PlayVoice( "Voices/vo02_kin0781" )
+\CN["黄菜子"]
+“确实，所有人都应该是魔术师。
+无黑先生，桃先生，小心点！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：御影の部下×２
+//■タイプ：通常戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：柳沢京子・河村雪乃,1,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc001_win" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_Jinja02_01", "BGM/21_BM002", 1077, 1078, -1, "Scenarios/SC_D05_18*battle01_end" , true )
+
+*battle01_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc001_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+//●状況：戦闘勝利後
+*sc001_win
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: ShowWnd()
+\CN["御影的部下A"]
+“呃……御影大人……”
+
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1485" )
+\CN["桃子"]
+“无黑，这些孩子怎么办？”
+
+//＠分岐：悪堕ちＬＶ３の場合
+//＠ラベルジャンプ：battle01_select_s2
+//＠分岐終了
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: if ( $evilLevel == 3 ) Jump( "*battle01_select_s2" ) endif
+*battle01_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,battle01_select
+//■選択肢１：放っておいていいんじゃないか？
+//■選択肢２：殺しておこう
+//――――――――――――――――――――――――――――
+\CI["可以放着不管吗？"]
+\CI["杀了他吧"]
+怎么办？
+
+: if ($choice == 1) Jump( "*battle01_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：放っておいていいんじゃないか？を選んだ場合
+//-------------------------------------------------------
+*battle01_select_s1
+: DrawChara( "Mukuro", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk4558" )
+\CN["无黑色"]
+“放着不管吧。没必要特意杀了。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo02_kin0782" )
+\CN["黄菜子"]
+“是啊。好像魔力已经用尽了，没关系吗……”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//●演出：無黒たち　神社に乗り込んでいく
+//●シーンエンド
+: Jump( "*sc002" )
+//-------------------------------------------------------
+//●選択肢２：殺しておこうを選んだ場合
+//-------------------------------------------------------
+*battle01_select_s2
+: DrawChara( "Mukuro", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk4559" )
+\CN["无黑色"]
+“这是肯定的。因为我讨厌和织笠御影战斗的时候被打扰。”
+
+//●演出：斬殺エフェクト
+//＠殺害,2
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: value = 2; Call("Scenarios/CommonSys*Murder")
+: ShowWnd()
+把刀插在要害处的话，就会漏出隐藏的声音而绝命。
+
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0783" )
+\CN["黄菜子"]
+“赶紧吧。应该在这里面。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//●演出：無黒たち　神社に乗り込んでいく
+//●シーンエンド
+//========================================================
+//○反幕巫女を始末せよ！２
+//========================================================
+*sc002
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Orikasa01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+//●場所：織笠神社
+: PlayVoice( "Voices/vo11_mik0270" )
+\CN["御影"]
+“啊，好久不见了。原鬼灯的各位。”
+
+: DrawChara( "Mikage", 1, 0)
+: PlayVoice( "Voices/vo11_mik0271" )
+\CN["御影"]
+“还有，那位小姐一定是暗杀失败而死的
+我以为……”
+
+: DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1486" )
+\CN["桃子"]
+“织笠御影，作为一个魔术师，你是
+我想差不多该解决了吧”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0272" )
+\CN["御影"]
+“我会好好记住你的，公主椿。
+其实很喜欢呢”
+
+: DrawChara( "Mikage", 2, 0)
+: PlayVoice( "Voices/vo11_mik0273" )
+\CN["御影"]
+“美丽鲜艳的头发，细腻光滑的皮肤——
+因为我想好好享受一次直到消气为止”
+
+织笠御影一边舔着嘴唇，一边露出艳丽的微笑。
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom1487" )
+\CN["桃子"]
+“我对那边的世界也有兴趣
+我不想理你啊。看起来很危险……”
+
+桃子露出蓝色的脸，做出自己抱住自己身体的动作。
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0274" )
+\CN["御影"]
+“哎呀，太遗憾了。”
+
+: DrawChara( "Mikage", 9, 0)
+: PlayVoice( "Voices/vo11_mik0275" )
+\CN["御影"]
+“但是，如果我是女生的话，也有说不合理
+我不讨厌”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+*battle02
+//――――――――――――――――――――――――――――
+//■戦　闘：織笠御影
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：織笠御影,2,2,2
+//●状況：戦闘勝利後
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc002_win" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Orikasa01_01", "BGM/22_BM003", 1033, -1, -1, "Scenarios/SC_D05_18*battle02_end" , true )
+
+*battle02_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc002_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle02" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle02" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+*sc002_win
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Orikasa01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+//●演技：戦闘後、呼吸が乱れいます
+: DrawChara( "Mikage", 6, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 23, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0276" )
+\CN["御影"]
+“哈，哈，和鬼灯的时候没法比
+看来你增强了力量啊”
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk4560" )
+\CN["无黑色"]
+“是吗？虽然没有实感。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom1488" )
+\CN["桃子"]
+“无黑，黄菜子，退下！”
+
+有着桃色张力的声音响彻四方，我和黄菜子不受桃子的阻碍
+左右展开。
+
+//●演出：桃　上級電撃魔術演出
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*MomoAction03" )
+: DrawChara( "Mikage", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0277" )
+\CN["御影"]
+“上级魔术的话，我也很擅长。”
+
+//●演出：御影　上級電撃魔術演出
+: HideWnd()
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*Mikage_Action03" )
+: ShowWnd()
+桃与织笠御影的魔术相互碰撞。
+
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo01_mom1490" )
+\CN["桃子"]
+“啊啊啊啊啊啊！”
+
+//●演技：魔力合戦。力比べ的な感じです
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo11_mik0279" )
+\CN["御影"]
+“呃………我的魔术被压制了……！？”
+
+: DrawChara( "Mikage", 8, 0)
+: PlayVoice( "Voices/vo11_mik0280" )
+\CN["御影"]
+“啊，不可能……我竟然会输……”
+
+: DrawFaceThumbnail( "Mukuro", 6, 0, 0 )
+: PlayVoice( "Voices/vo00_muk4561" )
+\CN["无黑色"]
+“桃子！就这样剪下去！”
+
+: DrawFaceThumbnail( "Momo", 7, 0, 0 )
+: PlayVoice( "Voices/vo01_mom1491" )
+\CN["桃子"]
+“不用说！”
+
+桃子的输出进一步提高。
+
+//●演技：ヒステリックな本性が出て来ます
+: DrawChara( "Mikage", 10, 0)
+: PlayVoice( "Voices/vo11_mik0281" )
+\CN["御影"]
+“呜哇……骗人的……我和这样的臭小子一起……”
+
+: PlayVoice( "Voices/vo11_mik0282" )
+\CN["御影"]
+“不可能……不可能……竟然输给这种人
+绝对不可能的……！”
+
+: PlayVoice( "Voices/vo11_mik0283" )
+\CN["御影"]
+“啊，哈哈，你给我适可而止吧……马上就败露了
+这个，有垃圾啊啊啊啊啊啊啊！！”
+
+织笠御影变成了黑蜘蛛，想要抵抗桃子。
+
+: HideWnd()
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1492" )
+\CN["桃子"]
+“呵呵，最后给你一句话。”
+
+//: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom1493" )
+\CN["桃子"]
+“连女人都会着迷的女人真的是很强的女人——
+只有死的时候才能优雅美丽地散落的淑女”
+
+: PlayVoice( "Voices/vo11_mik0284" )
+\CN["御影"]
+“哇啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊————！”
+
+: HideWnd()
+: StopBgm( 0.5 )
+: Call( "Scenarios/Effect*ThunderMagic" )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+桃之魔术吞没了织笠御影。
+
+//●演出：場面転換トランジション
+: PlayBgm("BGM/02_CM002")
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: DrawChara( "Momo", 10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlayVoice( "Voices/vo01_mom1494" )
+\CN["桃子"]
+“哈哈，说实话很糟糕。已经完全没有魔力了。”
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0784" )
+\CN["黄菜子"]
+“无黑，怎么办？”
+
+: DrawChara( "Mukuro", 38, 0)
+: PlayVoice( "Voices/vo00_muk4562" )
+\CN["无黑色"]
+“是啊……”
+
+*battle02_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,battle02_select
+//■選択肢１：捕縛してヒラガに連絡する
+//■選択肢２：危険だから殺しておこう
+//――――――――――――――――――――――――――――
+\CI["捕获后联系希拉加"]
+\CI["危险，杀了他吧"]
+如果可能的话，希望能活捉到比拉加
+我说过……。
+
+: if ($choice == 1) Jump( "*battle02_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：捕縛してヒラガに連絡するを選んだ場合
+//-------------------------------------------------------
+*battle02_select_s1
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4563" )
+\CN["无黑色"]
+“我说过尽可能地让比拉加活下去
+没有必要杀了吧”
+
+总之，部下们一起用绳子绑好。
+
+然后联系比拉加。
+
+//●演出：時間経過トランジション
+//●演出：ヒラガと亜久里　登場している
+: StopBgm( 0.5 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+过了一会儿，比拉加和他的助手来了。
+
+: PlayBgm("BGM/15_ESM04")
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
+\CN["平底片"]
+“你没有杀死我，而是抓住了我。
+非常感谢”
+
+: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk4564" )
+\CN["无黑色"]
+“你打算怎么对待她？
+啊，不，对不起。不问才是礼仪啊”
+
+: DrawChara( "Mukuro", 7, 0)
+\CN["平底片"]
+“是啊。因为是机密事项，如果可以的话。”
+非常感谢”
+
+\CN["平底片"]
+“那么，亚久里先生，把织笠先生搬过去吧。”
+
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0281" )
+\CN["亚久里"]
+“知道了。”
+
+//●演出：ヒラガと亜久里、御影のところへ行きテレポートで消える
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+比拉加和助手带着织笠御影消失了。
+
+{移动石，电话石}使用
+我觉得我回到了研究所。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlayVoice( "Voices/vo01_mom1495" )
+\CN["桃子"]
+「那我们也回去吧。
+喂，顺便去崎珠吃点好吃的再回去吧”
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0785" )
+\CN["黄菜子"]
+“肚子饿扁了。”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk4565" )
+\CN["无黑色"]
+“是啊。那就不直接回帝都去崎珠吧。”
+
+//＠フラグ：御影生存,1
+//●演出：無黒たち退場してから暗転
+//＠分岐：「卍からヒラガを守れ！」が終了している場合
+//●シーン：「対決　白夜九星」へ
+//＠シナリオジャンプ：SC_D05_19
+//＠分岐：それ以外の場合
+//＠場所移動：帝都
+//●シーンエンド
+//＠分岐終了
+: HideWnd()
+: SetMission( "SC_D05_18_1", "Successed" )
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Flag( "Mikage_Live", true )
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: if ( MissionProgress( "SC_D05_17_1", "Successed", "Failed" ) == true )
+	: FadeOut( 0.0 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_19")
+: else
+	: FadeOut( 0.0 )
+	: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")
+: endif
+//-------------------------------------------------------
+//●選択肢２：危険だから殺しておこうを選んだ場合
+//-------------------------------------------------------
+*battle02_select_s2
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4566" )
+\CN["无黑色"]
+“为什么希拉加想让织笠御影活下来呢？”
+虽然不知道，但是我觉得危险人物应该在这里杀了”
+
+//●演出：斬殺エフェクト
+//●ＳＥ：刺す音
+//＠殺害,3
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+\CN["御影的部下A"]
+“御影大人……”
+
+//●演技：死にかけながらです
+: PlayVoice( "Voices/vo11_mik0285" )
+\CN["御影"]
+“我才是……对不起……请……。
+我没能保护你们……”
+
+白夜的干部，有能力的魔术师织笠御影。
+
+她无法坚守爱慕自己的部下
+和部下们一起度过了短暂的一生。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//＠分岐：「卍からヒラガを守れ！」が終了している場合
+//●シーン：「対決　白夜九星」へ
+//＠シナリオジャンプ：SC_D05_19
+//＠分岐：それ以外の場合
+//＠場所移動：帝都
+//●シーンエンド
+//＠分岐終了
+: SetMission( "SC_D05_18_1", "Successed" )
+: if ( MissionProgress( "SC_D05_17_1", "Successed", "Failed" ) == true )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_19")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")
+: endif

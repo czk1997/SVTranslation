@@ -1,0 +1,874 @@
+//========================================================
+//○商人伊勢商左衛門を追え１
+//========================================================
+*sc001
+//●場所：白夜の隠れ家
+//●視点：第三者視点
+//●状況：冥と蘭丸が２人で話をしている
+//※背景仮
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+——白夜藏身之处的秘密房间。
+
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+在只有九星人才能进入的房间里
+冥和兰丸在说话。
+
+: PlayVoice( "Voices/vo09_mei0220" )
+\CN["冥"]
+“那么，你知道那个家伙的去向了吗？”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“嗯，怎么说呢。
+不愧是有名的商人。怎么也抓不住尾巴啊」
+
+冥好像有人奉达磨的命令追着他
+把情报收集交给了兰丸。
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0221" )
+\CN["冥"]
+“原来如此。你这么棘手，真是太麻烦了。”
+对方好像没什么错吧”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“是啊。因为他原本就是以杀人为业的人。
+因为相当喜欢女人，如果说那是空隙的话就是空隙吧”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0222" )
+\CN["冥"]
+“嗯……这样的话，有一个很适合这份工作的人。”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“莫非是妹妹？”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0223" )
+\CN["冥"]
+“啊，那家伙客观地看是个美人，而且很有本领。
+如果对方喜欢女人的话，无黑是最合适的吧？”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“是的。”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“那么，我收集的信息，整理一下冥酱的设备
+我会送你的”
+
+: DrawChara( "Mei", 4, 0)
+: PlayVoice( "Voices/vo09_mei0224" )
+\CN["冥"]
+“请多关照。还有，那个‘冥酱’还真是马马虎虎。”
+我说了好几次要不要算了……”
+
+: DrawChara( "Ranmaru", 17, 0)
+\CN["兰丸"]
+“嗯？那就只在两个人独处的时候吧。”
+
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0225" )
+\CN["冥"]
+“所以，不是那样的问题……。
+只是对你说是浪费吗？”
+
+初次见面的时候兰丸就称呼冥为“冥酱”。
+
+冥不适合自己这么可爱的称呼
+而且总觉得有点不好意思，说请不要这样做。
+
+但是兰丸却一点也不停
+最近一直在放弃。
+
+//●演出：場面転換トランジション
+//●視点：無黒視点
+//●場所：白夜の隠れ家・冥の部屋
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: EraseChara( "Mei", 0.0 )
+: EraseChara( "Ranmaru", 0.0 )
+: ShowWnd()
+——有一天，姐姐叫我来房间。
+
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Town07_02_Byakuya", "Return", "Scenarios/SC_C04_06*sc001_1")
+
+*sc001_1
+: HideWnd()
+: FadeIn( 0.5 )
+: RpgCharaTurn( "Mei", "D" )
+: Wait()
+: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2512" )
+\CN["无黑色"]
+“姐姐，你说什么？”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0226" )
+\CN["冥"]
+“希望能和某个商人接触进行交易。”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2513" )
+\CN["无黑色"]
+“交易？”
+
+//●演出：伊勢商左衛門　伊勢が苗字で名前が商左衛門です
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0227" )
+\CN["冥"]
+“啊，对方是个叫‘伊势商左卫门’的商人
+我想让他得到那个男人拿着的某个壶”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2514" )
+\CN["无黑色"]
+“壶？难道是很贵的东西？”
+
+价值几百万的东西。
+
+//: DrawChara( "Mei", 0, 0)
+//: PlayVoice( "Voices/vo09_mei0228" )
+//\CN["冥"]
+//「値段が高いってものじゃない。
+//　めちゃくちゃ『古代武将の頭蓋』が入った壺で
+//　危険なものらしい」
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0229" )
+\CN["冥"]
+“兰丸说，很久以前的恶灵被神符之类的东西封印着
+如果因为什么拍子而掉下来的话，好像会很麻烦”
+
+//●読み：件（くだん）
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2515" )
+\CN["无黑色"]
+“知道了。但是，那件商人在哪里？”？
+姐姐知道吗？”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0230" )
+\CN["冥"]
+“根据兰丸的调查，那家伙是从帝都南街道到高浜
+好像在去”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0231" )
+\CN["冥"]
+“所以，最好在街道上接触。
+因为如果去了高滨，很有可能会迷路”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2516" )
+\CN["无黑色"]
+“明白。这样的话，我马上去南街道。”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0232" )
+\CN["冥"]
+“啊，拜托你了。{伊势商左卫门，救赎吧猫}的
+我会把外表发送给你的设备”
+
+//＠マップ解放：帝都南街道
+//●シーンエンド
+: SetMission( "SC_C04_06_1", "InProgress" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: DestinationMap( "Map_Dungeon06_01_TeitoMinamiKaido" )
+//処女だったらイベント発生
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == false )
+	: SetMission( "SC_C04_51_1", "Opened" )
+: endif
+事件信息更新了。
+
+: Return
+//========================================================
+//○商人伊勢商左衛門を追え２
+//========================================================
+*sc002
+//●場所：帝都南街道・小屋前
+//●状況：小屋の前に商人がいる
+//●演出：伊勢商左衛門　伊勢が苗字で名前が商左衛門です
+: HideWnd()
+: RpgCharaMoveTo( "Player", 24, 39)
+: Wait()
+: RpgCharaTurn( "Player", "U" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2517" )
+\CN["无黑色"]
+“你在{伊势商左卫门，救赎吧猫}中
+没错吧？”
+
+\CN["伊势商左卫门"]
+「啊，怎么看都是。鹫{伊势商左卫门，伊势店猫}
+但是……”
+
+我想一定会被警戒的。
+我爽快地承认了。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk2518" )
+\CN["无黑色"]
+（和姐姐寄来的照片特征一致。
+我觉得这个人没错……）
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2519" )
+\CN["无黑色"]
+“我有个请求，把你拿着的罐子卖给我。”
+想要。以要价收取”
+
+\CN["伊势商左卫门"]
+“你也瞄准这个壶吗？
+以要价收取……据说后面有一个很大的组织
+不是吗？”
+
+\CN["伊势商左卫门"]
+“和贵族有牵连是没错的
+财阀……幕府相关人员……反幕派……就是这一点吧？”
+
+用估价的眼光看这边。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2520" )
+\CN["无黑色"]
+（嘛，据说白夜也不能玫瑰
+虽然不是这样……）
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2521" )
+\CN["无黑色"]
+（而且，为了得到壶，要让这个男人活下去
+未被说）
+
+是谈判，还是强行……？
+
+我在想什么呢。
+
+//＠分岐：処女の場合
+//＠ラベルジャンプ：sc002a
+//＠分岐：それ以外の場合
+//＠ラベルジャンプ：sc002b
+//＠分岐終了
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == true )
+	: Jump( "*sc002b" )
+: endif
+//--------------------------------------------------------
+//●分岐：処女の場合
+//--------------------------------------------------------
+*sc002a
+\CN["伊势商左卫门"]
+“不好意思，不能卖。
+如果你不是生女儿的话，我还考虑过呢”
+
+\CN["伊势商左卫门"]
+“嘛，现在不卖了。
+在高滨商谈，如果那件事吹了的话，就卖给他吧
+不错啊……”
+
+//●分岐：悪堕ちＬＶ悪堕ちＬＶが２未満の場合
+: if( $evilLevel < 2 )
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk2522" )
+	\CN["无黑色"]
+（不能在这里逃走……。这是不得已的……）
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 24, 0)
+	: PlayVoice( "Voices/vo00_muk2523" )
+	\CN["无黑色"]
+（无需谈判，只要杀了就行。
+这个更舒服。）
+
+//●分岐終了
+: endif
+\CN["伊势商左卫门"]
+“我告诉你，我可是很强的哦？
+你好像也不是普通人啊……”
+
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：伊勢商左衛門
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：伊勢商左衛門,1,1,0,sc003a,sc003b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc003b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_River01_01", "BGM/22_BM003", 1045, -1, -1, "Scenarios/SC_C04_06*battle01_end" , true )
+
+*battle01_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*sc003b" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+//========================================================
+//○商人伊勢商左衛門を追え３Ａ
+//========================================================
+*sc003a
+//●演出：無黒　斬撃アクション
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["伊势商左卫门"]
+“……呃……这只鹫，居然变成了这样的小姑娘……。
+真是昏庸的东西……”
+
+: DrawChara( "Mukuro", 1, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo00_muk2524" )
+\CN["无黑色"]
+“所以才成为商人的吧？”
+
+\CN["伊势商左卫门"]
+“……确实。
+没有能依靠刀的强大……”
+
+//●分岐：悪堕ちＬＶが３の場合
+//●強制的に殺害へ
+//＠ラベルジャンプ：sc003a_select_s2
+//●分岐終了
+*sc003a_select
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: if( $evilLevel == 3 ) Jump( "*sc003a_select_s2" ) endif
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc003a_select
+//■選択肢１：壺だけを奪う
+//■選択肢２：殺して壺を奪う
+//――――――――――――――――――――――――――――
+\CI["只抢夺罐子"]
+\CI["杀光"]
+那么，怎么办呢……？
+
+: if ($choice == 1) Jump( "*sc003a_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：壺だけを奪うを選んだ場合
+//-------------------------------------------------------
+*sc003a_select_s1
+//●演出：斬撃エフェクト
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: PlaySe( "SE/Se_Down01" )
+: RpgCharaTurn( "SC_C04_06", "U" )
+: ShowWnd()
+\CN["伊势商左卫门"]
+“……哈哈！”
+
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk2525" )
+\CN["无黑色"]
+“放心吧，我不想夺去你的生命……”
+
+摸伊势商左卫门的行李，取出罐子。
+
+: DrawChara( "Mukuro", 11, 0)
+: PlayVoice( "Voices/vo00_muk2526" )
+\CN["无黑色"]
+“这就是那个壶吗……。
+确实酿成了什么不吉利的东西”
+
+碰了的瞬间，我觉得这个很糟糕。
+
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk2527" )
+\CN["无黑色"]
+“我不想永远拥有这样的东西。
+赶紧拿走吧」
+
+//●演出：無黒　退場してから暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: EraseChara( "Mukuro", 0.0 )
+: RpgCharaOff("Player")
+: CharaCostume( "Midori", 0 )
+: ShowWnd()
+……………………………………………………。
+
+//●演出：暗転解除
+//●演出：みどりがやってくる
+: RpgCharaOn("Midori")
+: HideWnd()
+: EraseImage( 0, 0, 1.0)
+: Wait()
+: PlayBgm("BGM/30_CM015")
+: DrawChara( "Midori", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0217" )
+\CN["绿色"]
+“姐姐也是姐姐，妹妹也是妹妹。比如说要把目标弄活之类的。”
+格罗太甜了，我要吐了……”
+
+: DrawChara( "Midori", 16, 0)
+: PlayVoice( "Voices/vo10_mid0218" )
+\CN["绿色"]
+“看，起来了。
+自己在那种地方睡觉的话会感冒的”
+
+: RpgCharaTurn( "SC_C04_06", "D" )
+\CN["伊势商左卫门"]
+“……嗯……嗯……哦，你是望月绿！？”
+
+: DrawChara( "Midori", 17, 0)
+: PlayVoice( "Voices/vo10_mid0219" )
+\CN["绿色"]
+“对女士真是失礼啊。
+用不着那么害怕”
+
+: DrawChara( "Midori", 2, 0)
+: PlayVoice( "Voices/vo10_mid0220" )
+\CN["绿色"]
+“你本来就是卍字的家伙吧？
+我以前见过”
+
+: DrawChara( "Midori", 16, 0)
+: PlayVoice( "Voices/vo10_mid0221" )
+\CN["绿色"]
+“真是的，卍也太蠢了。
+居然被原来的部下轻易地偷走了危险的罐子”
+
+\CN["伊势商左卫门"]
+「…………」
+
+: DrawChara( "Midori", 18, 0)
+: PlayVoice( "Voices/vo10_mid0222" )
+\CN["绿色"]
+“所以，不要那么害怕。现在马上{杀，散开}。”
+没有理由的家伙”
+
+//●演技：拷問んでやる＝遊んでやる　当て字です
+: DrawChara( "Midori", 17, 0)
+: PlayVoice( "Voices/vo10_mid0223" )
+\CN["绿色"]
+“最近有点无聊。
+我会给你很多{拷问，啊}的，所以很期待的时候]
+//●演出：みどり　伊勢商左衛門を殴る
+: HideWnd()
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["伊势商左卫门"]
+“……酷！”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: RpgCharaOff("Midori")
+: ShowWnd()
+……………………………………………………。
+
+: $money += 5000
+无黑得到了报酬
+
+//●演出：伊勢商左衛門　倒れれて暗転
+//●仕事：成功
+//●選択肢合流地点へ
+//＠ラベル：sc003a_select_s_end
+: SetMission( "SC_C04_06_1", "Successed" )
+: RpgCharaOn("Player")
+: Jump( "*sc003a_select_s_end" )
+//-------------------------------------------------------
+//●選択肢２：殺して壺を奪うを選んだ場合
+//-------------------------------------------------------
+*sc003a_select_s2
+//●演出：血飛沫エフェクト
+: AddKill(1)
+: HideWnd()
+: Call( "Scenarios/Effect*Blood01" )
+: RpgCharaImage( "SC_C04_06", "51_Mobu18b")
+: ShowWnd()
+\CN["伊势商左卫门"]
+「…………」
+
+//●分岐：悪堕ちＬＶが３未満の場合
+: if( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 39, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk2528" )
+	\CN["无黑色"]
+“不好意思，这也是工作。”
+
+我知道不杀就会被杀
+砍了人之后有种说不出的感觉。
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	//●演技：殺害して快感を感じている
+	: DrawChara( "Mukuro", 26, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk2529" )
+	\CN["无黑色"]
+“呵呵。是个很有杀人价值的家伙。”
+
+正因为对方相当厉害，所以杀人时的反应是
+是特别的东西。
+
+//●分岐終了
+: endif
+确认好死了之后再找行李。
+
+: DrawChara( "Mukuro", 11, 0)
+: PlayVoice( "Voices/vo00_muk2526" )
+\CN["无黑色"]
+“这就是那个壶吗……。
+确实酿成了什么不吉利的东西”
+
+碰了的瞬间，我觉得这个很糟糕。
+
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk2527" )
+\CN["无黑色"]
+“我不想永远拥有这样的东西。
+赶紧拿走吧」
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: RpgCharaOff("Player")
+: CharaCostume( "Midori", 0 )
+: ShowWnd()
+……………………………………………………。
+
+//●演出：暗転解除
+//●演出：みどりがやってくる
+: RpgCharaOn("Midori")
+: HideWnd()
+: EraseImage( 0, 0, 1.0)
+: Wait()
+: PlayBgm("BGM/30_CM015")
+: DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0224" )
+\CN["绿色"]
+“那家伙毫不犹豫地就杀人了……”
+
+绿调查伊势商左卫门的尸体。
+
+: DrawChara( "Midori", 3, 0)
+: PlayVoice( "Voices/vo10_mid0225" )
+\CN["绿色"]
+“你是为了不痛苦而杀人的吗？”。
+和冥没什么两样啊。血是要争的吗？”
+
+: DrawChara( "Midori", 9, 0)
+: PlayVoice( "Voices/vo10_mid0226" )
+\CN["绿色"]
+“嗯，我有点不满意……。
+和冥一样，是不适合我的类型”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: RpgCharaOff("Midori")
+: RpgCharaOn("Player")
+: ShowWnd()
+……………………………………………………。
+
+: $money += 5000
+无黑得到了报酬
+
+//●演出：暗転
+//●仕事：成功
+//●選択肢合流地点へ
+//＠ラベル：sc003a_select_s_end
+: SetMission( "SC_C04_06_1", "Hidden" )
+: SetMission( "SC_C04_06_2", "Successed" )
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*sc003a_select_s_end
+//●シーン：「見廻組」へ
+//＠シナリオジャンプ：SC_C04_08
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_C04_08")
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+//========================================================
+//○商人伊勢商左衛門を追え３Ｂ
+//========================================================
+*sc003b
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+//●演技：大きなダメージを受けて倒れます
+: DrawChara( "Mukuro", 31, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2530" )
+\CN["无黑色"]
+“咕……呜……呜……呜……！”
+
+//●演出：無黒　倒れる
+: PlaySe("SE/Se_Down01")
+: RpgCharaTurn( "Player", "U" )
+: chara = "Mukuro"; lay = 0; type = "Down"; Call( "Scenarios/Common*FgEffOut");
+\CN["伊势商左卫门"]
+“哈哈哈……呃……我好像也受了重伤。
+不赶紧治疗的话……”
+
+//●演出：伊勢商左衛門　小屋に向かおうとする
+\CN["伊势商左卫门"]
+「！？」
+
+//●演出：伊勢商左衛門　倒れる
+: PlaySe( "SE/Se_Down01" )
+: StopBgm( 0.5 )
+: RpgCharaTurn( "SC_C04_06", "U" )
+伊势商左卫门正要进附近的小屋
+突然，前倾倒下了。
+
+几秒钟之间，就像被打到陆地上的鱼一样
+身体弹起，就那样不动了。
+
+//●演出：蘭丸　登場する
+: HideWnd()
+: RpgCharaOn("Ranmaru")
+: RpgCharaBatch( "Ranmaru"	\
+:	"Speed", 4.0	\
+:	"MoveDown", 8	\
+:	"MoveRight", 4 )
+: Wait()
+: CharaCostume( "Ranmaru", 1 )
+: PlayBgm("BGM/08_CM008")
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+\CN["兰丸"]
+“……嗯，你已经死了。
+这个人果然没错。之前在卍君那里的人啊」
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“原来的部下把壶偷走了，卍君，太松弛了。
+多亏了你，我的工作才转到这里来”
+
+兰丸寻找伊势商左卫门的行李，拿出了那个罐子。
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“嗯……这个真的很糟糕啊……。
+赶紧拿回去强化封印吧」
+
+//●演出：蘭丸　無黒のところへ
+: HideWnd()
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Ranmaru"	\
+:	"MoveDown", 1	\
+:	"Turn", "Right" )
+: Wait()
+: ShowWnd()
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["兰丸"]
+“太好了。没有造成致命伤。”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“因为是冥的妹妹，不好好带回去的话……”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●仕事：失敗
+//●シーン：「見廻組」へ
+//＠シナリオジャンプ：SC_C04_08
+: SetMission( "SC_C04_06_1", "Failed" )
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_C04_08")
+//--------------------------------------------------------
+//●分岐：非処女の場合
+//--------------------------------------------------------
+*sc002b
+\CN["伊势商左卫门"]
+“是啊。可以卖给你
+这就看你了”
+
+脸上现出低微的笑容。
+
+//●分岐：淫乱度Ｃ以下の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk2531" )
+	\CN["无黑色"]
+“就看我了？什么意思？”
+
+	\CN["伊势商左卫门"]
+“不说清楚的话好像不知道。
+就是说让我去做”
+
+	\CN["伊势商左卫门"]
+“如果让我做的话，可以卖给你。”
+
+	//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	: DrawChara( "Mukuro", 28, 0)
+	: PlayVoice( "Voices/vo00_muk2532" )
+	\CN["无黑色"]
+“原来如此。如果你想卖的话，就让我去买。”
+
+	\CN["伊势商左卫门"]
+“感觉很好，帮了大忙了。”
+
+//●分岐終了
+: endif
+\CN["伊势商左卫门"]
+“因为你是我喜欢的。
+那里有感觉正好的小屋”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk2533" )
+\CN["无黑色"]
+（如果让他做爱的话，他会把壶卖给我……。
+那样的话，那样就可以了……怎么办？）
+
+*sc002b_select
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002b_select
+//■選択肢１：エッチしてもいい
+//■選択肢２：確約がない。力ずくで奪う
+//――――――――――――――――――――――――――――
+\CI["可以做爱"]
+\CI["没有保证。用武力抢夺"]
+嗯……。
+
+: if ($choice == 1) Jump( "*sc002b_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：エッチしてもいいを選んだ場合
+//-------------------------------------------------------
+*sc002b_select_s1
+//●シーン：「商人説得のため身体を張る」へ
+//＠シナリオジャンプ：SC_C04_07
+: Jump( "Scenarios/SC_C04_07" )
+//-------------------------------------------------------
+//●選択肢２：確約がない。力ずくで奪うを選んだ場合
+//-------------------------------------------------------
+*sc002b_select_s2
+: DrawChara( "Mukuro", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk2534" )
+\CN["无黑色"]
+“不好意思，我拒绝那样做。
+就算答应了，你也不会卖罐子的”
+
+\CN["伊势商左卫门"]
+“是吗？好像没被信任，真遗憾。没办法。”
+
+\CN["伊势商左卫门"]
+“嘛，在高滨商谈，如果那件事吹了的话
+我可以和你好好谈一谈”
+
+那么，我要做的事情只有一个。
+
+//●分岐：悪堕ちＬＶが２未満の場合
+: if( $evilLevel < 2 )
+//●演技：心の声です
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk2535" )
+	\CN["无黑色"]
+（不能在这里逃走……。这是不得已的……）
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 24, 0)
+	: PlayVoice( "Voices/vo00_muk2536" )
+	\CN["无黑色"]
+（无需谈判，只要杀了就行。
+这个更舒服。）
+
+//●分岐終了
+: endif
+\CN["伊势商左卫门"]
+“我告诉你，我可是很强的哦？
+你好像也不是普通人啊……”
+
+//●伊勢商左衛門と戦闘へ
+//＠ラベル：battle01
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Jump( "*battle01" )

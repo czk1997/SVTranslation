@@ -1,0 +1,339 @@
+//========================================================
+//○胸がきゅーってするのです
+//========================================================
+//●場所：鬼灯屯所
+//●状況：精霊樹の実を手に入れろ！の数日後
+//●視点：黄菜子視点
+//●背景：鬼灯屯所・食堂
+//Yoshi：背景、昼
+//服装を記憶
+: StopBgm( 0.5 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Azami", 0 )
+: CharaCostume( "Ryu", 0 )
+: CharaCostume( "Bebi", 0 )
+: CharaCostume( "Daruma", 0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 1.0 )
+//Yoshi：左に紅美、右に黄菜子
+: Wait()
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayBgm("BGM/40_Comedy")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0191" )
+\CN["黄菜子"]
+“哈……”
+
+: PlayVoice( "Voices/vo07_beb0057" )
+\CN["红美"]
+“奇奈子，没事吧？
+总觉得好像没什么精神似的……”
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0192" )
+\CN["黄菜子"]
+“……啊！嗯，没关系的，红美。”
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Bebi", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: DrawChara( "Leo", 5, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Mukuro",42, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+//Yoshi：左にレオ、右に無黒
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1009" )
+\CN["无黑色"]
+“啊，最近的黄菜子，哪里不对劲吗？”？
+是不是经常发呆了……”
+
+\CN["鬼灯队士・男G"]
+“但是，在任务进行的时候，我还是像往常一样集中精力
+我觉得这不是身体不好”
+
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“难道是得了什么奇怪的病……？”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+//●演技：黄菜子が恋をしていると気づいていない人たちに呆れ
+//Yoshi：左に桃
+: DrawChara( "Momo",12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: PlayVoice( "Voices/vo01_mom0294" )
+\CN["桃子"]
+“……你们是认真说的吗？”
+
+: DrawChara( "Momo", 0, 0)
+\CN["鬼灯队士・女B"]
+“大家都很迟钝呢。嘛，说到病的话就是病了吧？”？
+恋爱病是什么？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk1010" )
+\CN["无黑色"]
+“诶……黄菜子啊……”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom0295" )
+\CN["桃子"]
+“也许黄菜子是初恋吧？”
+
+: PlayVoice( "Voices/vo01_mom0296" )
+\CN["桃子"]
+“啊啊啊！多么酸甜啊！？
+喂，小银，你不这么认为吗？”
+
+//Yoshi：左に銀、センターに桃
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 6, 0)
+: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+\CN["银子"]
+“……对不起，我没兴趣。”
+
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Momo",12, 0)
+: PlayVoice( "Voices/vo01_mom0297" )
+\CN["桃子"]
+“真是的！小银的话不太起劲啊！”
+
+\CN["鬼灯队士・女B"]
+（桃子和小银。这两个人很复杂呢。
+话说，不可能因为这个就不交往了吧）
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左に桃、右にレオ、センターに無黒
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Leo",11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["雷欧"]
+“真的吗！我去问一下黄菜子！”
+
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0298" )
+\CN["桃子"]
+“等一下，Leo君！现在悄悄地放着比较好！
+不记住敏感的东西的话，会被无黑讨厌的吧？”
+
+: layer = 4; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Leo",10, 0)
+\CN["雷欧"]
+“嗯……！那、那、那就麻烦了……”
+
+: DrawChara( "Mukuro",34, 0)
+: PlayVoice( "Voices/vo00_muk1011" )
+\CN["无黑色"]
+“哇，我没什么……。
+话说回来，桃子，为什么会出现我呢？”
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0299" )
+\CN["桃子"]
+“总觉得啊！”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+\CN["鬼灯队士・女B"]
+“啊哈哈……这两个人是这边的两个人……已经
+总觉得……”
+
+\CN["鬼灯队士・男G"]
+“呼……黄菜子是初恋吗……嗯……”
+
+\CN["鬼灯队士・男A"]
+“诶。那么，对方是哪里的什么时候？”？
+让大叔们稍微看清一下吧”
+
+\CN["鬼灯队士・男B"]
+“啊。我不认为黄菜子会爱上那个马马虎虎的家伙
+慎重起见”
+
+\CN["鬼灯队士・男B"]
+“喂，谍报班、对方的机关、经历、女性关系等等
+其他的一切，我都去调查一下吧”
+
+\CN["鬼灯队士・男G"]
+“知道了。我想仔细调查一下。”
+
+\CN["鬼灯队士・女B"]
+“哇……开始了，大叔们的那个”
+
+\CN["鬼灯队士・女B"]
+“但是，我也有点……不，可能很在意。
+所以我来帮你吧♪”
+
+\CN["鬼灯队士・男G"]
+“非常感谢”
+
+//Yoshi：センターに桃
+: DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0300" )
+\CN["桃子"]
+“啊！我也是！我也很在意！”！
+喜欢黄菜子的男孩是怎么样的？”
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0301" )
+\CN["桃子"]
+“总觉得，像年纪相近的哥哥一样的男孩子
+感觉到了吧”
+
+\CN["鬼灯队士・女B"]
+“不，意外的，可能是比较老练的大叔类型。
+喂，无黑？”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左にレオ、右に無黒
+: DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+//●演技：イメージ＝ゼップのような男性です
+: PlayVoice( "Voices/vo00_muk1012" )
+\CN["无黑色"]
+“嗯……是喜欢黄菜子的人吗……。
+平时很酷，实际上却很重感情，这样的男性
+没有吗？”
+
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“诶！？无黑是那种男人的类型吗！？
+真的吗？这样啊，这样啊……。那么，我不是很从容嘛！”
+
+: DrawChara( "Mukuro",21, 1)
+: PlayVoice( "Voices/vo00_muk1013" )
+\CN["无黑色"]
+“哇，我没什么……那个，这样说还太早吗？”
+现在还不是那个时候吗……”
+
+\CN["鬼灯队士・女B"]
+“呵呵。大家都是青春啊。
+我不知道Leo君哪里比较悠闲……”
+
+//●演出：場面転換トランジション
+//Yoshi：センターに黄菜子
+//●演技：心の声です
+//●演技：ここ＝胸。胸がきゅーってしている
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: DrawChara( "Kinako", 3, 1, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0193" )
+\CN["黄菜子"]
+（唔……又来了……。这里就是奇迹……）
+
+任务的时候完全没有这样的事
+这样什么都没做的时候，突然那个男孩的脸
+浮现在脑海里。
+
+前几天，在精灵之森保护我不受强盗之害的男孩
+一想到他，我的心就怦怦直跳
+总觉得心里七上八下的。
+
+//●演技：心の声です
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Kinako",12, 1)
+: PlayVoice( "Voices/vo02_kin0194" )
+\CN["黄菜子"]
+（呜呜……我哪里不对劲吗？
+想到了泽诺君，身体就暖和起来了）
+
+这种感觉是有生以来第一次。
+
+只是一想到对方，就心跳加速
+无法冷静下来的是。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 0, 1)
+: PlayVoice( "Voices/vo02_kin0195" )
+\CN["黄菜子"]
+（桃小姐、无黑小姐等等，大家都有这样的心情
+有吗？）
+
+我也想问一下，但是好像不能问
+总觉得非常着急。
+
+但是——
+
+: DrawChara( "Kinako",20, 1)
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0196" )
+\CN["黄菜子"]
+（虽然不平静，但并不是讨厌的心情）
+
+这样做并不是不愉快。
+
+这个身份不明的第一次的心情——
+总有一天，我会知道的吧？
+
+//●演技：心の声です
+: DrawChara( "Kinako",20, 2)
+: PlayVoice( "Voices/vo02_kin0197" )
+\CN["黄菜子"]
+（杰诺君，我还想再见你……）
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：センターに紅美
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo07_beb0058" )
+\CN["红美"]
+「キナコ？脸涨得通红很厉害吧？
+难道发烧了？”
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左に紅美、右に黄菜子
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Kinako", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo02_kin0198" )
+\CN["黄菜子"]
+“嗯，不，没什么，红美！”
+
+: PlayVoice( "Voices/vo07_beb0059" )
+\CN["红美"]
+“那倒没关系……”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0199" )
+\CN["黄菜子"]
+“啊！差不多该到巡逻的时间了！
+我去一下”
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0060" )
+\CN["红美"]
+“嗯。小心点。”
+
+//●演出：黄菜子　退場する
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+泽诺说他是属于维尔骑士团的
+如果那样的话，也许还能在什么地方见到。
+
+我希望是这样
+现在好好地努力自己的任务吧。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

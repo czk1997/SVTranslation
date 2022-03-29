@@ -1,0 +1,618 @@
+//========================================================
+//○縁切り～黄菜子編～１
+//========================================================
+//パーティーを黄菜子単独にする
+: Party( "Kinako" )
+: PartyType = "Party03"; Call( "Scenarios/CommonSys*PartySetting" )
+: FastTravelMapOn( "YoseiForest" )
+: SetMission( "SC_D05_22_1", "InProgress" )
+: DestinationMap( "Map_Dungeon21_03_YoseinoMori" )
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Dungeon21_01_YoseinoMori", "", "Scenarios/SC_D05_22*sc001")
+
+*sc001
+//●場所：妖精の森・入口
+//●演出：黄菜子　数歩歩く
+//黄cos5へ変更
+: Call( "Scenarios/Map_Dungeon_Init*Map_Dungeon21_01" )
+: CharaCostume( "Kinako", 5 )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0787" )
+\CN["黄菜子"]
+“这里有那个人……”
+
+: DrawChara( "Kinako", 10, 0)
+我被委派的工作是关于望月绿的。
+
+根据比拉加先生的调查，望月绿现在
+这里好像来到了妖精之森。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0788" )
+\CN["黄菜子"]
+（杀死红美的人……从我这里夺走了重要的人……）
+
+光是想想就觉得光是想起来呼吸都快停止了。
+
+//●演技：深呼吸しています
+: DrawChara( "Kinako", 20, 1)
+: PlayVoice( "Voices/vo02_kin0789" )
+\CN["黄菜子"]
+“是……是……是……是……”
+
+反复深呼吸，设法保持平静。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0790" )
+\CN["黄菜子"]
+（不能感情用事）
+
+告诉自己。
+
+据说愤怒会产生巨大的力量，但因人而异。
+我要是把愤怒暴露出来的话，就会大大削弱自己
+我知道。
+
+什么都不想，什么也不觉得——是的……。
+
+//＠マップ解放：妖精の森（黄菜子）
+//●シーンエンド
+事件信息更新了。
+
+: Return
+//========================================================
+//○縁切り～黄菜子編～２
+//========================================================
+*sc002
+//●場所：妖精の森・奥
+//●演出：黄菜子　数歩歩く
+//●演技：殺気に気づきます
+: RpgMapBaloonOff("SC_D05_22")
+: StopBgm( 0.25 )
+: DrawChara( "Kinako", 29, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0791" )
+\CN["黄菜子"]
+「……！」
+
+//●演出：木の上からみどりが襲いかかってくる
+//●演出：刺突エフェクト
+//●ＳＥ：カキン！　金属音
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaOn( "Midori" )
+: RpgCharaBatch( "Player"	\
+:	"Speed", 10.0	\
+:	"MoveRight", 2	\
+:	"Turn", "U" )
+: Wait()
+: RpgCharaTurn( "Player", "D" )
+: HideWnd()
+: effecttype = "3a"; se = "Se_Sting01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+//みどりcos1へ変更
+: CharaCostume( "Midori", 1 )
+: DrawChara( "Midori", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayBgm("BGM/30_CM015")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0550" )
+\CN["绿色"]
+“不愧是我们公司的预料啊。
+居然能简单防止我们的突然袭击啊”
+
+: DrawChara( "Kinako", 21, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo02_kin0792" )
+\CN["黄菜子"]
+“杀气腾腾，在说什么？”
+
+而且，是以我能防御的速度故意放出的刺。
+
+: DrawChara( "Midori", 8, 0)
+: PlayVoice( "Voices/vo10_mid0551" )
+\CN["绿色"]
+“不要告诉我，活下去了就活下去。
+报、联、相，很重要吗？”
+
+//●演技：無言でみどりを斬りにかかります
+: DrawChara( "Kinako", 30, 0)
+: PlayVoice( "Voices/vo02_kin0793" )
+\CN["黄菜子"]
+「…………」
+
+//●演出：斬撃エフェクト
+//●ＳＥ：空振り音
+: HideWnd()
+: effecttype = "1"; se = "Se_Swing01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+//●演技：いきなり黄菜子から攻撃されて慌てて交わします
+: DrawChara( "Midori", 12, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0552" )
+\CN["绿色"]
+“等一下，突然砍过来，很奇怪吧？
+自己不是叫精神病的家伙吗？”
+
+: DrawChara( "Kinako", 29, 0)
+: PlayVoice( "Voices/vo02_kin0794" )
+\CN["黄菜子"]
+“我不想只被你说……”
+
+抑制怒气上扬。
+
+如果在这里感情用事的话，等待我的就是绝对的死亡——
+为了讨伐红美的敌人必须冷静。
+
+: DrawChara( "Midori", 29, 0)
+: PlayVoice( "Voices/vo10_mid0553" )
+\CN["绿色"]
+“是的，是的，那个安静的杀气。我很冷。”
+
+: DrawChara( "Midori", 21, 0)
+: PlayVoice( "Voices/vo10_mid0554" )
+\CN["绿色"]
+“你不是别的。认真的和、{杀，玫瑰}不做的是。”
+像我这样的人”
+
+//●演出：みどり　ダークエルフ化
+//みどりcos6へ変更
+: HideWnd()
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*MidoriDE" )
+: DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Kinako", 36, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0795" )
+\CN["黄菜子"]
+“……不会吧，那个身影……！？”
+
+消灭生物的天敌{存在，东西}——
+{黑夜叉，暗黑精灵}。
+
+我以为一定是虚构的{存在，东西}……。
+
+: DrawChara( "Midori", 7, 0)
+: PlayVoice( "Voices/vo10_mid0555" )
+\CN["绿色"]
+“这么吃惊的小中，竟然知道这是什么
+是吗。不愧是元鬼灯的一流谍报啊」
+
+: DrawChara( "Midori", 0, 0)
+: PlayVoice( "Voices/vo10_mid0556" )
+\CN["绿色"]
+“嘛，就算知道了，你也只是被我{杀，玫瑰}杀了而已
+不过……！”
+
+//●演出：みどりの瞬間移動。斬撃エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: EraseChara( "Midori", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: HideWnd()
+: effecttype = "3a"; se = "Se_Sting01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+//●演技：斬られます
+: DrawChara( "Kinako", 25, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo02_kin0796" )
+\CN["黄菜子"]
+“嗯……！”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo10_mid0557" )
+\CN["绿色"]
+“太棒了！{黑夜叉，暗黑精灵}化后我们家被瞄准了要害
+躲开了，自己还是第一次！哈哈，自豪一下吧”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 33, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0797" )
+\CN["黄菜子"]
+（刚才的动作完全看不见……）
+
+攻击也是本能地让身体动起来的感觉。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 23, 0)
+: PlayVoice( "Voices/vo02_kin0798" )
+\CN["黄菜子"]
+（而且，对方的利物是妖刀的一种。
+如果继续受到攻击的话，只能慢慢地死去……）
+
+刚才受的伤口烫伤了
+带来了剧痛。
+
+如果继续接受这个的话肯定会死的。
+现在的我没有办法。
+
+应该只有绝望……。
+应该是那样，但是——
+
+//●演技：心の声です
+: DrawChara( "Kinako", 10, 0, 0)
+: PlayVoice( "Voices/vo02_kin0799" )
+\CN["黄菜子"]
+（感觉心情很微妙很平静……）
+
+对死亡也没有恐惧。
+也没有怨恨敌人。
+
+深深地沉入海底的感觉
+说出来就可以了吗？
+
+//: DrawChara( "Midori", 5, 0)
+: DrawFaceThumbnail( "Midori", 5, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0558" )
+\CN["绿色"]
+“什么呀，发呆。已经放弃了吗？
+不管怎么说，都太快了吧！”
+
+望月绿向满是间隙的我发起了攻击。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0800" )
+\CN["黄菜子"]
+（动作清晰可见……）
+
+刚才完全追不上的动作
+简直就像发送陀螺的影像一样被播放着。
+
+肌肉活动的声音、骨头活动的声音、虫子鸣叫的声音、鸟捕食的声音、
+然后，我清楚地知道了我迅速的心跳——
+
+//●演出：黄菜子　ダークエルフ化
+//黄cos2へ変更
+: StopBgm( 0.25 )
+: HideWnd()
+: EraseChara( "Kinako", 0.0 )
+: cgkeep = true;
+: Call( "Scenarios/Effect*KinakoDE" )
+: PlayBgm("BGM/03_CM003")
+//●読み：黒夜叉化（ダークエルフ化）
+//: DrawChara( "Midori", 4, 0)
+: evbg = true; evcos = false;
+: evfile = "evc_a003_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0559" )
+\CN["绿色"]
+「哇！？自己，那个{黑夜叉，暗黑妖精}化了吧！？
+这果然出乎我的意料”
+
+//: DrawChara( "Kinako", 5, 0)
+: PlayVoice( "Voices/vo02_kin0801" )
+\CN["黄菜子"]
+“这样啊。现在我变成了黑夜叉，黑精灵。”
+嗯……呵呵”
+
+就算没有意识到也会笑出来。
+
+: HideWnd()
+: DrawChara( "Midori", 5, 0, 0, 0.0, 0.0, 2, "LC")
+: DrawChara( "Kinako", 16, 0, 0, 0.0, 0.0, 3, "RC")
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0560" )
+\CN["绿色"]
+“你笑什么？”
+
+: PlayVoice( "Voices/vo02_kin0802" )
+\CN["黄菜子"]
+“在笑吗？是吗……。
+我以为这样就可以杀了你……”
+
+: DrawChara( "Midori", 1, 0)
+: PlayVoice( "Voices/vo10_mid0561" )
+\CN["绿色"]
+“我被{杀，玫瑰}弄得很自大啊。
+但是，这样终于有嚼劲的家伙，{杀，玫瑰}快要让他吃了！」
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：望月みどり（ダークエルフ）
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：望月みどり（ダークエルフ）,2,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_River01_01", "BGM/22_BM003", 1080, -1, -1, "Scenarios/SC_D05_22*battle" , true )
+
+*battle
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: CharaCostume( "Midori", 0 )
+		: CharaCostume( "Kinako", 0 )
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+*sc003
+//●状況：戦闘勝利後
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Midori", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo10_mid0562" )
+\CN["绿色"]
+“那、那样的笨蛋啊……我们家……不来的小鬼……
+{黑夜叉，暗黑精灵}的家伙……」
+
+//みどりcos0へ戻し
+//●ＳＥ：倒れる音
+//●演出：みどり　倒れて元の姿に戻ります
+: CharaCostume( "Midori", 0 )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_Down01" )
+——杜莎莉。
+望月绿发出很大的声音，向前倒下。
+
+剥下白眼失去意识的望月绿。
+
+: DrawChara( "Kinako", 13, 1, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0803" )
+\CN["黄菜子"]
+“哈……哈、哈、哈……{黑夜叉，暗黑精灵}
+消耗很厉害……摇摇晃晃地做……”
+
+是强大力量的反动吧。
+全身的肌肉都在叫苦不迭。
+
+: DrawChara( "Kinako", 2, 1, 0)
+: PlayVoice( "Voices/vo02_kin0804" )
+\CN["黄菜子"]
+“还不能倒下……我要把这个人——”
+
+*battle01_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,battle01_select
+//■選択肢１：殺さないでおきましょう
+//■選択肢２：殺します
+//――――――――――――――――――――――――――――
+\CI["不要杀了吧"]
+\CI["杀死，杀死"]
+怎么办？
+
+: if ($choice == 1) Jump( "*battle01_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：殺さないでおきましょうを選んだ場合
+//-------------------------------------------------------
+*battle01_select_s1
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0805" )
+\CN["黄菜子"]
+“……现在，我不能在这里杀这个人……”
+
+我丝毫没有慈悲的意思。
+
+应该有很多人恨这个人。
+
+所以，我不能在这里杀了我，只有我才能完成什么
+不去。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+通过设备联系了希拉里
+马上就来到这里，回收了望月绿。
+
+我不知道希拉加会怎么做那个人。
+
+但是，比起死，我更希望你遭受更残酷的待遇。
+我不能不那样希望。
+
+……………………………………………………。
+
+//＠フラグ：みどり生存,1
+//●分岐：無黒と桃のイベントが終了している場合
+//●シーン：「色町の最凶母子を始末せよ！１」へ
+//＠シナリオジャンプ：SC_D05_23
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●キャラクター選択肢へ
+//●分岐終了
+: Flag( "Midori_Live", true )
+: Jump( "*End" )
+//-------------------------------------------------------
+//●選択肢２：殺しますを選んだ場合
+//-------------------------------------------------------
+*battle01_select_s2
+//●演出：血飛沫エフェクト
+//●ＳＥ：刺す音
+: HideWnd()
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0563" )
+\CN["绿色"]
+“嗯……”
+
+从昏迷的望月绿中，隐含的悲鸣声泄漏出来。
+
+//●演技：黄菜子　淡々と感情無く話す感じです
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Kinako", 10, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0806" )
+\CN["黄菜子"]
+“没关系，我已经把要害摘掉了。”
+
+: PlayVoice( "Voices/vo10_mid0564" )
+\CN["绿色"]
+“这、这个……”
+
+不幸的是她醒了。
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0807" )
+\CN["黄菜子"]
+“也许就这样失去意识的人会幸福地死去。”
+
+//●演出：血飛沫エフェクト
+//●ＳＥ：刺す音
+: HideWnd()
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+好几次好几次，不杀的程度刺刀。
+
+: PlayVoice( "Voices/vo10_mid0565" )
+\CN["绿色"]
+“哈……如果{杀，玫瑰}的话，就不好了……”
+
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0808" )
+\CN["黄菜子"]
+“你想死吗？”
+
+: PlayVoice( "Voices/vo10_mid0566" )
+\CN["绿色"]
+“这是为什么呢……身体要动的话，就去抵抗吧
+我会决定的……”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0809" )
+\CN["黄菜子"]
+“是吗……”
+
+//●演出：血飛沫エフェクト
+//●ＳＥ：刺す音
+: HideWnd()
+: EraseChara( "Kinako", 0.0 )
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+我要把她捅到手掌上。
+
+就像机器一样没有感情，平淡地。
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Kinako", 8, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0810" )
+\CN["黄菜子"]
+“所谓仇恨，就是愚蠢而虚幻的东西吧……”
+
+即使看到满身是血满是洞的穷途末路的望月绿
+我什么都不想。
+
+只是，死了啊。是我杀的啊。
+只浮现出了这样的感想。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//黄cos0へ戻し
+//●分岐：無黒と桃のイベントが終了している場合
+//●シーン：「色町の最凶母子を始末せよ！１」へ
+//＠シナリオジャンプ：SC_D05_23
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●キャラクター選択肢へ
+//●分岐終了
+*End
+: $money += 7500
+我得到了报酬。
+
+: CharaCostume( "Kinako", 0 )
+: SetMission( "SC_D05_22_1", "Successed" )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 1 )
+	\CI["因缘~公主椿桃篇~开始"]
+	\CI["因缘～有栖川黄菜子篇～开始"]
+开始哪个故事？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_21" )
+	: else
+		: Jump( "Scenarios/SC_D05_22" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 2 )
+	\CI["因缘~神八代无黑篇开始~"]
+	\CI["因缘～有栖川黄菜子篇～开始"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_20" )
+	: else
+		: Jump( "Scenarios/SC_D05_22" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 3 )
+	\CI["因缘~神八代无黑篇开始~"]
+	\CI["因缘~公主椿桃篇~开始"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_20" )
+	: else
+		: Jump( "Scenarios/SC_D05_21" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 4 )
+	: Jump( "Scenarios/SC_D05_22" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 5 )
+	: Jump( "Scenarios/SC_D05_21" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 6 )
+	: Jump( "Scenarios/SC_D05_20" )
+: else
+	: FadeOut( 0.0 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_23")
+: endif
+: Return

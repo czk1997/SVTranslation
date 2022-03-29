@@ -1,0 +1,2123 @@
+//========================================================
+//○戦闘開始（通常）
+//========================================================
+*BattleScriptNormal
+//バトル開始までの処理
+: Call( "*BattleRapeFlagReset" )
+: HideWnd()
+//最初だけ出す
+: if ( Flag ( "BattleExplain" ) == false )
+	: DrawImage( 1, 0, "MiscImage/tutorial02", Call("Scenarios/Common*EffTime") )
+	: Wait()
+	: Flag( "BattleExplain", true )
+	戦闘に関して。
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+//戦闘開始に必要なデータの取得
+: bgimage = Call( "*GetBattleBg" )	//背景画像の取得
+//敵ＩＤの取得
+: enemy = Call( "*GetEnemyID" )
+//イージーモード時の処理
+: if ( Flag ( "EasyMode" ) == true )
+	: enemy += 10000
+: endif
+//戦闘終了後の処理シナリオ取得
+: BattleEndScenario = "Scenarios/Battle*BattleEnd" + "_" + EnemyLabel
+: EscapeEnable()	//逃走可能
+: BeginBattle( bgimage, "BGM/21_BM002", enemy, enemy, enemy, BattleEndScenario )
+: Return(true)
+
+//========================================================
+//○戦闘開始（ボス戦）
+//========================================================
+*BattleScriptBoss
+: Call( "*BattleRapeFlagReset" )
+: EscapeDisable()	//逃走不可に
+: Return
+
+//========================================================
+//○戦闘Ｈ変数のリセット
+//========================================================
+*BattleRapeFlagReset
+: FlagDown("BattleRapeVoiceMukuro")
+: FlagDown("BattleRapeVoiceMomo")
+: FlagDown("BattleRapeVoiceKinako")
+: FlagDown("BattleRapeVoiceMei")
+: FlagDown("BattleRapeMukuro")
+: FlagDown("BattleRapeMomo")
+: FlagDown("BattleRapeKinako")
+: FlagDown("BattleRapeMei")
+: FlagDown("BattleRapeAnalMukuro")
+: FlagDown("BattleRapeAnalMomo")
+: FlagDown("BattleRapeAnalKinako")
+: FlagDown("BattleRapeAnalMei")
+: FlagDown("BattleRapeFeraMukuro")
+: FlagDown("BattleRapeFeraMomo")
+: FlagDown("BattleRapeFeraKinako")
+: FlagDown("BattleRapeFeraMei")
+: FlagDown("BattleRapeMonsterMukuro")
+: FlagDown("BattleRapeMonsterMomo")
+: FlagDown("BattleRapeMonsterKinako")
+: FlagDown("BattleRapeMonsterMei")
+: FlagDown("BattleRapeBeastMukuro")
+: FlagDown("BattleRapeBeastMomo")
+: FlagDown("BattleRapeBeastKinako")
+: FlagDown("BattleRapeBeastMei")
+: Return
+
+//========================================================
+//○通常戦　終了処理
+//========================================================
+*BattleEnd
+//BGMを戻す
+: RpgPlayBgm
+: Call("*BattleRape")	//バトルレイプ処理
+: if ( $battleWin == true )	//勝利
+	// 白夜ルート＆浪人ルート時は殺害処理を入れる
+	: if ( $chapter >= 7 )
+		: Call( "*Murder" )
+	: endif
+	: RpgCharaOff(EnamySymbol)	//チップ消す
+	: Call( "Scenarios/CommonSys*LoseFlagReset" )
+	: Return(true)
+: elif ( $battleEscape == true )	//逃走
+	: RpgCharaOff(EnamySymbol)	//チップ消す
+	: Call( "Scenarios/CommonSys*LoseFlagReset" )
+	: Return(true)
+: else	//敗北
+	//無黒囚われ時の処理
+	: if ( MissionProgress( "SC_A03_10_1", "InProgress" ) == true )
+		: Jump( "Scenarios/SC_A03_11" )
+	: endif
+	//敗北レイプ処理
+	: if ( Call("*LoseRapeSet") == true )
+		//テレポートストーンを持っている時の処理
+		: if ( ItemCount( "Teleporter" ) >= 1 )
+			\CI["移動石を使って逃げる"]
+			\CI["諦める"]
+			どうする？
+			: if ($choice == 0)
+				: Call( "Scenarios/CommonSys*LoseFlagReset" )	// 敗北フラグリセット
+				: AddItem( "Teleporter", -1 )
+				: Jump( "*LoseEscape" )
+			: else
+				: Jump( "*LoseRape" )
+			: endif
+		: else
+			: Jump( "*LoseRape" )
+		: endif
+	: else
+		: Call( "Scenarios/CommonSys*LoseFlagReset" )	// フラグリセット
+		: Jump( "*LoseEscape" )
+	: endif
+: endif
+: Return(true)
+//========================================================
+//○戦闘背景取得処理
+//========================================================
+*GetBattleBg
+: mapId = RpgMapID()
+: if( mapId == 34 )
+	: Return( "BGImage/BG_Renga" )
+: elif( mapId == 35 )
+	: Return( "BGImage/BG_Renga" )
+: elif( mapId == 36 )
+	: Return( "BGImage/BG_Renga" )
+: elif( mapId == 82 )
+	: Return( "BGImage/BG_Village01_01" )
+: elif( mapId == 89 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 90 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 91 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 92 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 93 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 94 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 95 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 96 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 97 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 98 )
+	: Return( "BGImage/BG_Yashiki01_01" )
+: elif( mapId == 99 )
+	: Return( "BGImage/BG_WaRoom01_01" )
+: elif( mapId == 100 )
+	: Return( "BGImage/Bg_WaRoom05" )
+: elif( mapId == 101 )
+	: Return( "BGImage/Bg_WaRoom05" )
+: elif( mapId == 102 )
+	: Return( "BGImage/Bg_WaRoom04_01" )
+: elif( mapId == 103 )
+	: Return( "BGImage/BG_ZashikiRo01_01" )
+: elif( mapId == 104 )
+	: Return( "BGImage/BG_Village03_01" )
+: elif( mapId == 105 )
+	: Return( "BGImage/BG_Room04" )
+: elif( mapId == 106 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 107 )
+	: Return( "BGImage/BG_Summit01_01" )
+: elif( mapId == 108 )
+	: Return( "BGImage/BG_Mountain02" )
+: elif( mapId == 109 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 110 )
+	: Return( "BGImage/BG_Mountain02" )
+: elif( mapId == 111 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 112 )
+	: Return( "BGImage/BG_Mountain02" )
+: elif( mapId == 113 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 114 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 115 )
+	: Return( "BGImage/BG_Forest01_01" )
+: elif( mapId == 116 )
+	: Return( "BGImage/BG_Forest01_01" )
+: elif( mapId == 117 )
+	: Return( "BGImage/Bg_Harbor01_01" )
+: elif( mapId == 118 )
+	: Return( "BGImage/BG_Renga" )
+: elif( mapId == 119 )
+	: Return( "BGImage/BG_Renga" )
+: elif( mapId == 120 )
+	: Return( "BGImage/BG_Renga" )
+: elif( mapId == 121 )
+	: Return( "BGImage/BG_YuukakuStage01" )
+: elif( mapId == 122 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 123 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 124 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 125 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 126 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 127 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 128 )
+	: Return( "BGImage/BG_Mountain01_01" )
+: elif( mapId == 129 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 130 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 131 )
+	: Return( "BGImage/BG_House01_01" )
+: elif( mapId == 132 )
+	: Return( "BGImage/BG_House01_01" )
+: elif( mapId == 133 )
+	: Return( "BGImage/BG_WaRoom01_01" )
+: elif( mapId == 134 )
+	: Return( "BGImage/BG_WaRoom01_01" )
+: elif( mapId == 135 )
+	: Return( "BGImage/Bg_WaRoom05" )
+: elif( mapId == 136 )
+	: Return( "BGImage/BG_Summit01_02" )
+: elif( mapId == 137 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 138 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 139 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 140 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 141 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 142 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 143 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 144 )
+	: Return( "BGImage/BG_Kaido02_02" )
+: elif( mapId == 145 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 146 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 147 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 148 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 149 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 150 )
+	: Return( "BGImage/BG_Room06_01" )
+: elif( mapId == 151 )
+	: Return( "BGImage/BG_Mountain02" )
+: elif( mapId == 152 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 153 )
+	: Return( "BGImage/BG_Mountain02" )
+: elif( mapId == 154 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 155 )
+	: Return( "BGImage/BG_Forest01_02" )
+: elif( mapId == 156 )
+	: Return( "BGImage/BG_Forest01_02" )
+: elif( mapId == 157 )
+	: Return( "BGImage/BG_Forest01_02" )
+: elif( mapId == 158 )
+	: Return( "BGImage/BG_Village01_02" )
+: elif( mapId == 159 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 160 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 161 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 162 )
+	: Return( "BGImage/BG_Mountain01_01" )
+: elif( mapId == 163 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 164 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 165 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 166 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 167 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 168 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 169 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 170 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 171 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 172 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 173 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 174 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 175 )
+	: Return( "BGImage/BG_Ikukan" )
+: elif( mapId == 176 )
+	: Return( "BGImage/BG_Ikukan" )
+: elif( mapId == 177 )
+	: Return( "BGImage/BG_Ikukan" )
+: elif( mapId == 178 )
+	: Return( "BGImage/BG_Ikukan" )
+: elif( mapId == 179 )
+	: Return( "BGImage/BG_Mountain01_01" )
+: elif( mapId == 180 )
+	: Return( "BGImage/BG_Mountain01_01" )
+: elif( mapId == 181 )
+	: Return( "BGImage/BG_Mountain01_01" )
+: elif( mapId == 182 )
+	: Return( "BGImage/BG_River01_01" )
+: elif( mapId == 183 )
+	: Return( "BGImage/BG_Mountain02" )
+: elif( mapId == 184 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 185 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 186 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 187 )
+	: Return( "BGImage/BG_Forest01_03" )
+: elif( mapId == 188 )
+	: Return( "BGImage/BG_ZashikiRo01_01" )
+: elif( mapId == 189 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 190 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 191 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 192 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 193 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 194 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 195 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 196 )
+	: Return( "BGImage/BG_Village03_01" )
+: elif( mapId == 197 )
+	: Return( "BGImage/BG_Room07_01" )
+: elif( mapId == 198 )
+	: Return( "BGImage/BG_Cellar01" )
+: elif( mapId == 199 )
+	: Return( "BGImage/BG_Cellar01" )
+: elif( mapId == 200 )
+	: Return( "BGImage/BG_Cellar01" )
+: elif( mapId == 201 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 202 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 203 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 204 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 205 )
+	: Return( "BGImage/BG_Mountain02_1" )
+: elif( mapId == 206 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 207 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 208 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 209 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 210 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 211 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 212 )
+	: Return( "BGImage/BG_Yashiki01_01" )
+: elif( mapId == 213 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 214 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 215 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 216 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 217 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 218 )
+	: Return( "BGImage/BG_Cave02" )
+: elif( mapId == 219 )
+	: Return( "BGImage/BG_River01_01" )
+: elif( mapId == 220 )
+	: Return( "BGImage/BG_River01_01" )
+: elif( mapId == 221 )
+	: Return( "BGImage/BG_River01_01" )
+: elif( mapId == 222 )
+	: Return( "BGImage/BG_River01_01" )
+: elif( mapId == 223 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 224 )
+	: Return( "BGImage/BG_Kouya01_01" )
+: elif( mapId == 225 )
+	: Return( "BGImage/BG_House01_01" )
+: elif( mapId == 226 )
+	: Return( "BGImage/BG_Yashiki02_01" )
+: elif( mapId == 227 )
+	: Return( "BGImage/BG_Summit01_01" )
+: elif( mapId == 228 )
+	: Return( "BGImage/BG_Mountain02" )
+: elif( mapId == 229 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 230 )
+	: Return( "BGImage/BG_Mountain02" )
+: elif( mapId == 231 )
+	: Return( "BGImage/Bg_Cave01" )
+: elif( mapId == 234 )
+	: Return( "BGImage/BG_WaRoom02_01" )
+: elif( mapId == 236 )
+	: Return( "BGImage/BG_WaRoom01_01" )
+: elif( mapId == 237 )
+	: Return( "BGImage/BG_WaRoom01_01" )
+: elif( mapId == 238 )
+	: Return( "BGImage/BG_WaRoom01_01" )
+: else	//未指定箇所があった場合の処理
+	: Return( "BGImage/BG_Black" )
+: endif
+//========================================================
+//○敵ＩＤの取得処理
+//========================================================
+*GetEnemyID
+: mapId = RpgMapID()
+: Level = Call( "*GetEnemyLevel" )
+: if ( Enemytype == "Slime" )
+	: if ( Level == 1 ) Return(0) endif
+	: if ( Level == 4 ) Return(1) endif
+	: if ( Level == 10 ) Return(2) endif
+	: if ( Level == 14 ) Return(3) endif
+	: if ( Level == 15 ) Return(4) endif
+: elif ( Enemytype == "Goblin" )
+	: if ( Level == 1 ) Return(10) endif
+	: if ( Level == 6 ) Return(11) endif
+	: if ( Level == 8 ) Return(12) endif
+	: if ( Level == 13 ) Return(13) endif
+	: if ( Level == 15 ) Return(14) endif
+: elif ( Enemytype == "Bee" )
+	: if ( Level == 1 ) Return(20) endif
+	: if ( Level == 11 ) Return(21) endif
+: elif ( Enemytype == "Gorotsuki" )
+	: if ( Level == 2 ) Return(31) endif
+	: if ( Level == 3 ) Return(60) endif
+	: if ( Level == 7 ) Return(140) endif
+	: if ( Level == 11 ) Return(61) endif
+	: if ( Level == 12 ) Return(33) endif
+	: if ( Level == 14 ) Return(34) endif
+	: if ( Level == 15 ) Return(35) endif
+	// マップごとによる例外処理
+	: if ( mapId >= 132 && mapId < 135 )	//浪人バージョン
+		: if ( Level == 9 ) Return(141) endif
+		: if ( Level == 14 ) Return(142) endif
+	: else	// ゴロツキバージョン
+		: if ( Level == 9 ) Return(32) endif
+		: if ( Level == 14 ) Return(34) endif
+	: endif
+: elif ( Enemytype == "Oobagumi" )
+	: Return(30)
+: elif ( Enemytype == "Dog" )
+	: if ( Level == 2 ) Return(40) endif
+	: if ( Level == 8 ) Return(41) endif
+	: if ( Level == 14 ) Return(42) endif
+: elif ( Enemytype == "Tar" )
+	: if ( Level == 4 ) Return(70) endif
+	: if ( Level == 11 ) Return(71) endif
+: elif ( Enemytype == "Devil" )
+	: if ( Level == 4 ) Return(80) endif
+	: if ( Level == 12 ) Return(81) endif
+	: if ( Level == 15 ) Return(82) endif
+: elif ( Enemytype == "Oak" )
+	: if ( Level == 5 ) Return(90) endif
+	: if ( Level == 8 ) Return(91) endif
+	: if ( Level == 9 ) Return(92) endif
+	: if ( Level == 12 ) Return(93) endif
+	: if ( Level == 13 ) Return(94) endif
+	: if ( Level == 14 ) Return(95) endif
+	: if ( Level == 15 ) Return(96) endif
+: elif ( Enemytype == "Snake" )
+	: if ( Level == 5 ) Return(110) endif
+	: if ( Level == 8 ) Return(111) endif
+	: if ( Level == 11 ) Return(112) endif
+: elif ( Enemytype == "Pig" )
+	: if ( Level == 5 ) Return(120) endif
+	: if ( Level == 6 ) Return(121) endif
+	: if ( Level == 13 ) Return(122) endif
+: elif ( Enemytype == "Bird" )
+	: if ( Level == 6 ) Return(130) endif
+	: if ( Level == 11 ) Return(131) endif
+: elif ( Enemytype == "Rounin" )
+	: if ( Level == 7 ) Return(140) endif
+	: if ( Level == 9 ) Return(141) endif
+	: if ( Level == 14 ) Return(142) endif
+: elif ( Enemytype == "Therianthrope" )
+	: if ( Level == 7 ) Return(150) endif
+	: if ( Level == 12 ) Return(151) endif
+: elif ( Enemytype == "Majyutsushi" )
+	: if ( Level == 10 ) Return(170) endif
+	: if ( Level == 13 ) Return(171) endif
+: elif ( Enemytype == "Horse" )
+	: if ( Level == 2 ) Return(180) endif
+	: if ( Level == 3 ) Return(181) endif
+	: if ( Level == 10 ) Return(182) endif
+	: if ( Level == 11 ) Return(183) endif
+	: if ( Level == 15 ) Return(184) endif
+: elif ( Enemytype == "Ninja" )
+	: if ( Level == 10 ) Return(190) endif
+	: if ( Level == 11 ) Return(191) endif
+: elif ( Enemytype == "Sahagin" )
+	: if ( Level == 11 ) Return(210) endif
+	: if ( Level == 13 ) Return(211) endif
+: elif ( Enemytype == "Shokushu" )
+	: if ( Level == 12 ) Return(220) endif
+	: if ( Level == 14 ) Return(221) endif
+	: if ( Level == 15 ) Return(222) endif
+: elif ( Enemytype == "Kunoichi" )
+	: if ( Level == 13 ) Return(230) endif
+: elif ( Enemytype == "Minotauros" )
+	: if ( Level == 15 ) Return(240) endif
+: elif ( Enemytype == "Skelton" )
+	: if ( Level == 14 ) Return(250) endif
+: elif ( Enemytype == "Zombie" )
+	: if ( Level == 14 ) Return(260) endif
+: elif ( Enemytype == "Mimawari" )
+	: if ( Level == 14 ) Return(270) endif
+: elif ( Enemytype == "SamuraiWomen" )
+	: if ( Level == 14 ) Return(280) endif
+: elif ( Enemytype == "Ihojin" )
+	: if ( Level == 12 ) Return(160) endif
+: endif
+: Return(0)	//保険
+//========================================================
+//○戦闘後犯されの処理
+//========================================================
+*BattleRape
+//戦闘後に犯され履歴を代入する
+: if ( Flag ( "BattleRapeMukuro" ) == true )
+	: chaId = "Mukuro"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10000 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10001 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10001 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeMomo" ) == true )
+	: chaId = "Momo"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10000 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10001 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10001 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeKinako" ) == true )
+	: chaId = "Kinako"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10000 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10001 ) endif
+:	elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10001 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeMei" ) == true )
+	: chaId = "Mei"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10000 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10001 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10001 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeAnalMukuro" ) == true )
+	: chaId = "Mukuro"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10003 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10004 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10005 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeAnalMomo" ) == true )
+	: chaId = "Momo"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10003 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10004 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10005 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeAnalKinako" ) == true )
+	: chaId = "Kinako"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10003 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10004 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10005 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeAnalMei" ) == true )
+	: chaId = "Mei"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10003 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10004 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10005 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeFeraMukuro" ) == true )
+	: chaId = "Mukuro"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10006 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10007 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10008 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeFeraMomo" ) == true )
+	: chaId = "Momo"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10006 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10007 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10008 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeFeraKinako" ) == true )
+	: chaId = "Kinako"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10006 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10007 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10008 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeFeraMei" ) == true )
+	: chaId = "Mei"
+	: if ( Flag ( "EnemyHuman" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10006 ) endif
+	: elif ( Flag ( "EnemyElf" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10007 ) endif
+	: elif ( Flag ( "EnemyJujin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10008 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeMonsterMukuro" ) == true )
+	: chaId = "Mukuro"
+	: if ( Flag ( "EnemyOak" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10009 ) endif
+	: elif ( Flag ( "EnemyEgg" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10010 ) endif
+	: elif ( Flag ( "EnemyTentacle" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10011 ) endif
+	: elif ( Flag ( "EnemyDog" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10012 ) endif
+	: elif ( Flag ( "EnemyPig" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10013 ) endif
+	: elif ( Flag ( "EnemyHorse" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10014 ) endif
+	: elif ( Flag ( "EnemyGoblin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10015 ) endif
+	: elif ( Flag ( "EnemyOther" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10016 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeMonsterMomo" ) == true )
+	: chaId = "Momo"
+	: if ( Flag ( "EnemyOak" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10009 ) endif
+	: elif ( Flag ( "EnemyEgg" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10010 ) endif
+	: elif ( Flag ( "EnemyTentacle" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10011 ) endif
+	: elif ( Flag ( "EnemyDog" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10012 ) endif
+	: elif ( Flag ( "EnemyPig" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10013 ) endif
+	: elif ( Flag ( "EnemyHorse" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10014 ) endif
+	: elif ( Flag ( "EnemyGoblin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10015 ) endif
+	: elif ( Flag ( "EnemyOther" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10016 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeMonsterKinako" ) == true )
+	: chaId = "Kinako"
+	: if ( Flag ( "EnemyOak" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10009 ) endif
+	: elif ( Flag ( "EnemyEgg" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10010 ) endif
+	: elif ( Flag ( "EnemyTentacle" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10011 ) endif
+	: elif ( Flag ( "EnemyDog" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10012 ) endif
+	: elif ( Flag ( "EnemyPig" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10013 ) endif
+	: elif ( Flag ( "EnemyHorse" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10014 ) endif
+	: elif ( Flag ( "EnemyGoblin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10015 ) endif
+	: elif ( Flag ( "EnemyOther" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10016 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeMonsterMei" ) == true )
+	: chaId = "Mei"
+	: if ( Flag ( "EnemyOak" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10009 ) endif
+	: elif ( Flag ( "EnemyEgg" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10010 ) endif
+	: elif ( Flag ( "EnemyTentacle" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10011 ) endif
+	: elif ( Flag ( "EnemyDog" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10012 ) endif
+	: elif ( Flag ( "EnemyPig" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10013 ) endif
+	: elif ( Flag ( "EnemyHorse" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10014 ) endif
+	: elif ( Flag ( "EnemyGoblin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10015 ) endif
+	: elif ( Flag ( "EnemyOther" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10016 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeBeastMukuro" ) == true )
+	: chaId = "Mukuro"
+	: if ( Flag ( "EnemyOak" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10009 ) endif
+	: elif ( Flag ( "EnemyEgg" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10010 ) endif
+	: elif ( Flag ( "EnemyTentacle" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10011 ) endif
+	: elif ( Flag ( "EnemyDog" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10012 ) endif
+	: elif ( Flag ( "EnemyPig" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10013 ) endif
+	: elif ( Flag ( "EnemyHorse" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10014 ) endif
+	: elif ( Flag ( "EnemyGoblin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10015 ) endif
+	: elif ( Flag ( "EnemyOther" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10016 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeBeastMomo" ) == true )
+	: chaId = "Momo"
+	: if ( Flag ( "EnemyOak" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10009 ) endif
+	: elif ( Flag ( "EnemyEgg" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10010 ) endif
+	: elif ( Flag ( "EnemyTentacle" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10011 ) endif
+	: elif ( Flag ( "EnemyDog" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10012 ) endif
+	: elif ( Flag ( "EnemyPig" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10013 ) endif
+	: elif ( Flag ( "EnemyHorse" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10014 ) endif
+	: elif ( Flag ( "EnemyGoblin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10015 ) endif
+	: elif ( Flag ( "EnemyOther" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10016 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeBeastKinako" ) == true )
+	: chaId = "Kinako"
+	: if ( Flag ( "EnemyOak" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10009 ) endif
+	: elif ( Flag ( "EnemyEgg" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10010 ) endif
+	: elif ( Flag ( "EnemyTentacle" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10011 ) endif
+	: elif ( Flag ( "EnemyDog" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10012 ) endif
+	: elif ( Flag ( "EnemyPig" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10013 ) endif
+	: elif ( Flag ( "EnemyHorse" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10014 ) endif
+	: elif ( Flag ( "EnemyGoblin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10015 ) endif
+	: elif ( Flag ( "EnemyOther" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10016 ) endif
+	: endif
+: elif ( Flag ( "BattleRapeBeastMei" ) == true )
+	: chaId = "Mei"
+	: if ( Flag ( "EnemyOak" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10009 ) endif
+	: elif ( Flag ( "EnemyEgg" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10010 ) endif
+	: elif ( Flag ( "EnemyTentacle" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10011 ) endif
+	: elif ( Flag ( "EnemyDog" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10012 ) endif
+	: elif ( Flag ( "EnemyPig" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10013 ) endif
+	: elif ( Flag ( "EnemyHorse" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10014 ) endif
+	: elif ( Flag ( "EnemyGoblin" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10015 ) endif
+	: elif ( Flag ( "EnemyOther" ) == true )
+		: if ( $inExtra == false ) CharaSexHistory( chaId, 10016 ) endif
+	: endif
+: endif
+//フラグの全リセット
+: FlagDown("BattleRapeMukuro")
+: FlagDown("BattleRapeMomo")
+: FlagDown("BattleRapeKinako")
+: FlagDown("BattleRapeMei")
+: FlagDown("BattleRapeAnalMukuro")
+: FlagDown("BattleRapeAnalMomo")
+: FlagDown("BattleRapeAnalKinako")
+: FlagDown("BattleRapeAnalMei")
+: FlagDown("BattleRapeFeraMukuro")
+: FlagDown("BattleRapeFeraMomo")
+: FlagDown("BattleRapeFeraKinako")
+: FlagDown("BattleRapeFeraMei")
+: FlagDown("BattleRapeMonsterMukuro")
+: FlagDown("BattleRapeMonsterMomo")
+: FlagDown("BattleRapeMonsterKinako")
+: FlagDown("BattleRapeMonsterMei")
+: FlagDown("BattleRapeBeastMukuro")
+: FlagDown("BattleRapeBeastMomo")
+: FlagDown("BattleRapeBeastKinako")
+: FlagDown("BattleRapeBeastMei")
+: Return
+//========================================================
+//○戦闘終了後の処理シナリオ
+//========================================================
+*BattleEnd_Bee01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bee02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bee03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bee04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bee05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bee06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bee07
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee07"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bee08
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee08"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bee09
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bee09"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Devil01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Devil01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Devil02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Devil02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Devil03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Devil03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Devil04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Devil04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Devil05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Devil05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Dog01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Dog01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Dog02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Dog02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Dog03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Dog03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Dog04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Dog04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Dog05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Dog05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Dog06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Dog06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Goblin01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Goblin01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Goblin02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Goblin02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Goblin03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Goblin03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Goblin04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Goblin04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Goblin05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Goblin05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Goblin06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Goblin06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Gorotsuki01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Gorotsuki01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Gorotsuki02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Gorotsuki02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Gorotsuki03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Gorotsuki03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Gorotsuki04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Gorotsuki04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Gorotsuki05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Gorotsuki05"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Gorotsuki06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Gorotsuki06"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Horse01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Horse01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Horse02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Horse02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Horse03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Horse03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Horse04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Horse04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Horse05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Horse05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Majyutsushi01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Majyutsushi01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Majyutsushi02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Majyutsushi02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Majyutsushi03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Majyutsushi03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Majyutsushi04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Majyutsushi04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Majyutsushi05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Majyutsushi05"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Minotauros01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Minotauros01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Minotauros02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Minotauros02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Minotauros03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Minotauros03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Minotauros04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Minotauros04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Minotauros05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Minotauros05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Minotauros06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Minotauros06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ninja01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ninja01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ninja02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ninja02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ninja03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ninja03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ninja04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ninja04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ninja05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ninja05"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oak01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oak01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oak02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oak02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oak03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oak03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oak04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oak04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oak05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oak05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oak06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oak06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Pig01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Pig01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Pig02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Pig02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Pig03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Pig03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Pig04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Pig04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Pig05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Pig05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Pig06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Pig06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Pig07
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Pig07"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Pig08
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Pig08"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Rounin01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Rounin01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Rounin02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Rounin02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Rounin03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Rounin03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Rounin04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Rounin04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Rounin05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Rounin05"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Sahagin01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Sahagin01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Sahagin02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Sahagin02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Sahagin03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Sahagin03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Sahagin04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Sahagin04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Sahagin05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Sahagin05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Sahagin06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Sahagin06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Shokushu01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Shokushu01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Shokushu02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Shokushu02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Shokushu03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Shokushu03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Shokushu04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Shokushu04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Shokushu05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Shokushu05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Slime01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Slime01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Slime02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Slime02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Slime03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Slime03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Slime04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Slime04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Slime05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Slime05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Slime06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Slime06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Snake01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Snake01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Snake02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Snake02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Snake03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Snake03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Snake04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Snake04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Snake05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Snake05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Snake06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Snake06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Snake07
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Snake07"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Snake08
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Snake08"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar07
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar07"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar08
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar08"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar09
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar09"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Tar10
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Tar10"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Therianthrope01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Therianthrope01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Therianthrope02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Therianthrope02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Therianthrope03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Therianthrope03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Therianthrope04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Therianthrope04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Therianthrope05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Therianthrope05"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Therianthrope06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Therianthrope06"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi07
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi07"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi08
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi08"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Oobagumi09
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Oobagumi09"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Mimawari01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Mimawari01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Mimawari02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Mimawari02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Mimawari03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Mimawari03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Mimawari04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Mimawari04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Mimawari05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Mimawari05"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Mimawari06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Mimawari06"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Mimawari07
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Mimawari07"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Mimawari08
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Mimawari08"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird06"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird07
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird07"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird08
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird08"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Bird09
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Bird09"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin05"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin06"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin07
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin07"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin08
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin08"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin09
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin09"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin10
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin10"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin11
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin11"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin12
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin12"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin13
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin13"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin14
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin14"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Ihojin15
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Ihojin15"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Kunoichi01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Kunoichi01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Kunoichi02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Kunoichi02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Kunoichi03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Kunoichi03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Kunoichi04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Kunoichi04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Kunoichi05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Kunoichi05"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Kunoichi06
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Kunoichi06"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Zombie01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Zombie01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Zombie02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Zombie02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Zombie03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Zombie03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Zombie04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Zombie04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Zombie05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Zombie05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Skelton01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Skelton01"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Skelton02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Skelton02"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Skelton03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Skelton03"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Skelton04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Skelton04"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_Skelton05
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "Skelton05"
+: MurderAct = false
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_SamuraiWomen01
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "SamuraiWomen01"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_SamuraiWomen02
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "SamuraiWomen02"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_SamuraiWomen03
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "SamuraiWomen03"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//----------------------------------------------
+*BattleEnd_SamuraiWomen04
+: EnamySymbol = Call( "*GetEnemyLevel" ) + "_" + "SamuraiWomen04"
+: MurderAct = true
+: Jump( "*BattleEnd" )
+//========================================================
+//○敵のレベル取得
+//========================================================
+*GetEnemyLevel
+: mapId = RpgMapID()
+// 共通・鬼灯ルート
+: if mapId == 89	//帝都西街道
+	: Return(1)
+: elif mapId >= 90 && mapId <= 93	//帝都西の洞窟
+	: Return(1)
+: elif mapId == 94	//帝都北街道
+	: if ( $chapter >= 7 )	//白夜ルート時
+		: Return(13)
+	: elif ( MissionProgress( "SC_A03_50_2", "InProgress" ) == true )
+		: Return(6)
+	: else
+		: Return(2)
+	: endif
+: elif mapId == 95	//帝都北街道・Ａルート
+	: if ( $chapter >= 8 )	//白夜ルート時
+		: Return(14)
+	: else
+		: Return(2)
+	: endif
+: elif mapId == 96	//帝都北街道・Ｂルート
+	: if ( $chapter >= 8 )	//白夜ルート時
+		: Return(14)
+	: else
+		: Return(3)
+	: endif
+: elif mapId == 97	//帝都北街道・Ｃルート
+	: if ( MissionProgress( "SC_C05_09_1", "InProgress","Successed","Failed" ) == true )
+		: Return(14)
+	: else
+		: Return(14)
+	: endif
+: elif mapId >= 98 && mapId <= 103	//大葉組の屋敷
+	: Return(2)
+: elif mapId == 106	//帝都南街道
+	: if( $chapter < 3 )
+		: Return(4)
+	: elif( $chapter >= 3 )
+		: Return(6)
+	// 白夜ルート時
+	: elif( $chapter >= 7 )
+		: Return(12)
+	: endif
+: elif mapId >= 34 && mapId <= 36	//高浜・地下水路
+	: Return(4)
+: elif mapId >= 107 && mapId <= 114	//永登呂山
+	: Return(5)
+: elif mapId >= 115 && mapId <= 116	//帝都西の森
+	: Return(2)
+: elif mapId >= 117 && mapId <= 121	//高浜港
+	// 白夜ルート時
+	: if ( $chapter >= 7 )
+		: Return(13)
+	// 共通・鬼灯ルート時
+	: else
+		: Return(7)
+	: endif
+: elif mapId >= 122 && mapId <= 124	//帝都東街道
+	: if ( MissionProgress( "SC_B04_10_1", "InProgress", "Successed", "Failed" ) == true )
+		: Return(13)
+	: elif ( $chapter >= 9 )	//白夜ルート最終章時
+		: Return(15)
+	: elif ( $chapter >= 4 )
+		: Return(12)
+	: else
+		: Return(8)
+	: endif
+: elif mapId >= 125 && mapId <= 127	//妖精の森
+	: Return(8)
+: elif mapId == 129	//神那街道１
+	// 白夜ルート時
+	: if ( $chapter >= 8 )
+		: Return(14)
+	: else
+		: Return(9)
+	: endif
+: elif mapId == 130	//神那街道２
+	: if ( $chapter >= 8 )
+		: Return(14)
+	: else
+		: Return(11)
+	: endif
+: elif mapId >= 132 && mapId <= 135	//清水組
+	: Return(9)
+: elif mapId >= 136 && mapId <= 139	//那須野山
+	// 浪人ルート時
+	: if ( $chapter >= 11 )
+		: Return(15)
+	// 白夜ルート時
+	: elif ( $chapter >= 7 )
+		: Return(14)
+	// 鬼灯ルート
+	: elif ( MissionProgress( "SC_B04_10_1", "InProgress", "Successed", "Failed" ) == true )
+		: Return(13)
+	: else
+		: Return(9)
+	: endif
+: elif mapId >= 140 && mapId <= 141	//大和東街道・東西ルート
+	// 浪人ルート時
+	: if ( $chapter == 12 )
+		: Return(15)
+	: elif ( $chapter == 11 )
+		: Return(14)
+	// 白夜ルート時
+	: elif ( $chapter >= 8 )
+		: Return(15)
+	: else
+		: Return(14)
+	: endif
+: elif mapId == 142	//大和東街道・北ルート
+	: Return(10)
+: elif mapId >= 236 && mapId <= 238	//住吉家のカラクリ屋敷
+	: Return(10)
+: elif mapId == 143	//日東街道
+	: Return(11)
+: elif mapId == 144	//北国街道
+	: Return(12)
+: elif mapId >= 145 && mapId <= 150	//北霊山
+	: Return(12)
+: elif mapId >= 155 && mapId <= 157	//妖精の森
+	: if ( $chapter >= 11 )
+		: Return(15)
+	: else
+		: Return(14)
+	: endif
+: elif mapId >= 159 && mapId <= 162	//魔術師の墓場への道
+	: Return(14)
+: elif mapId >= 164 && mapId <= 167	//現し身の洞窟
+	: Return(14)
+: elif mapId >= 168 && mapId <= 178	//不死の山
+	: Return(15)
+// 白夜ルート専用
+: elif mapId >= 179 && mapId <= 183	//恐山＆ヒラガ研究所への道＆水上渓谷
+	: Return(11)
+: elif mapId >= 184 && mapId <= 187	//織笠神社への道＆冷泉の社
+	: Return(13)
+: elif mapId >= 188 && mapId <= 195	//芦立洞窟・帝都牢屋敷
+	: Return(14)
+: elif mapId >= 196 && mapId <= 200	//帝都西の教会
+	: Return(14)
+: elif mapId >= 201 && mapId <= 205	//雲の道
+	: Return(15)
+// 浪人ルート専用
+: elif mapId >= 206 && mapId <= 209	//タイラントボアの巣穴
+	: Return(11)
+: elif mapId >= 210 && mapId <= 212	//播磨街道
+	: Return(11)
+: elif mapId >= 213 && mapId <= 214	//茨木街道
+	: Return(12)
+: elif mapId >= 215 && mapId <= 218	//美濃部洞窟
+	: Return(13)
+: elif mapId == 82
+	: Return(12)
+: elif mapId >= 219 && mapId <= 224	//六角山・熊野街道
+	: Return(13)
+: elif mapId == 227 //西都南湿原
+	: Return(13)
+: elif mapId >= 228 && mapId <= 231	//丹羽峠
+	: Return(14)
+: elif mapId >= 151 && mapId <= 154	//鷹緒山
+	: Return(15)
+: endif
+: Return
+//========================================================
+//○敵タイプの敗北後のフラグ取得
+//========================================================
+*GetEnemyType
+: if( Enemytype == "Bee" )
+	: Flag( "EnemyOther", true )	//敗北レイプなし
+: elif( Enemytype == "Devil" )
+	: Flag( "EnemyOther", true )	//敗北レイプなし
+: elif( Enemytype == "Dog" )
+	: Flag( "EnemyDog", true )		//犬魔物
+: elif( Enemytype == "Goblin" )
+	: Flag( "EnemyGoblin", true )	//ゴブリン
+: elif( Enemytype == "Gorotsuki" )
+	//人かエルフ　ランダム
+	: Rand = RandomRange(0,100)
+	: if ( Rand >= 70 )
+		: Flag( "EnemyElf", true )
+	: else
+		: Flag( "EnemyHuman", true )
+	: endif
+: elif( Enemytype == "Horse" )
+	: Flag( "EnemyHorse", true )	//馬魔物
+: elif( Enemytype == "Majyutsushi" )
+	: Flag( "EnemyElf", true )		//エルフ
+: elif( Enemytype == "Mimawari" )
+	//人かエルフ　ランダム
+	: Rand = RandomRange(0,100)
+	: if ( Rand >= 70 )
+		: Flag( "EnemyElf", true )
+	: else
+		: Flag( "EnemyHuman", true )
+	: endif
+: elif( Enemytype == "Minotauros" )
+	: Flag( "EnemyGoblin", true )	//ゴブリン
+: elif( Enemytype == "Ninja" )
+	: Flag( "EnemyHuman", true )	//人間系
+: elif( Enemytype == "Oak" )
+	: Flag( "EnemyOak", true )		//オーク
+: elif( Enemytype == "Pig" )
+	: Flag( "EnemyPig", true )		//豚魔物
+: elif( Enemytype == "Rounin" )
+	: Flag( "EnemyHuman", true )	//人間系
+: elif( Enemytype == "Sahagin" )
+	: Flag( "EnemyEgg", true )		//卵生
+: elif( Enemytype == "Shokushu" )
+	: Flag( "EnemyTentacle", true )	//触手
+: elif( Enemytype == "Slime" )
+	: Flag( "EnemyEgg", true )		//卵生
+: elif( Enemytype == "Snake" )
+	: Flag( "EnemyOther", true )	//敗北レイプなし
+: elif( Enemytype == "Tar" )
+	: Flag( "EnemyEgg", true )		//卵生
+: elif( Enemytype == "Therianthrope" )
+	: Flag( "EnemyJujin", true )	//獣人系
+: elif( Enemytype == "Rounin" )
+	//人かエルフ　ランダム
+	: Rand = RandomRange(0,100)
+	: if ( Rand >= 70 )
+		: Flag( "EnemyElf", true )
+	: else
+		: Flag( "EnemyHuman", true )
+	: endif
+: else	//漏れがあった時の保険
+	: Flag( "EnemyOther", true )	//敗北レイプなし
+: endif
+: Return
+//========================================================
+//○ボス戦前選択肢　※勝敗分岐なしの場合
+//========================================================
+*BattleSelect00
+//ＢＧＭを記憶
+: StoreBgm
+//イベント戦闘設定で決める
+: if IsEventBattleLose( "Off" ) == true
+	: BattleSkip = false
+	: Return
+: endif
+: ShowWnd()
+\CI["戦闘を行う"]
+\CI["勝ったことにする"]
+戦闘はどうしますか？
+
+: if( $choice == 0 )
+	: BattleSkip = false
+: else
+	: BattleSkip = true
+: endif
+: Return
+
+//========================================================
+//○ボス戦前選択肢　※勝敗分岐ありの場合
+//========================================================
+*BattleSelect01
+//ＢＧＭを記憶
+: StoreBgm
+//イベント戦闘設定で決める
+: if IsEventBattleLose( "Off" ) == true
+	: BattleSkipWin = false
+	: BattleSkiplose = false
+	: Return
+: endif
+: if IsEventBattleLose( "On" ) == true
+	: BattleSkipWin = false
+	: BattleSkiplose = true
+	: Return
+: endif
+//選択肢パターン
+: ShowWnd()
+: if ( Flag ( "EasyMode" ) == true )
+	\CI["戦闘を行う"]
+	\CI["勝ったことにする"]
+	\CI["負けたことにする"]
+	戦闘はどうしますか？
+
+	: if( $choice == 0 )
+		: BattleSkipWin = false
+		: BattleSkiplose = false
+	: elif( $choice == 1 )
+		: BattleSkipWin = true
+		: BattleSkiplose = false
+	: else
+		: BattleSkipWin = false
+		: BattleSkiplose = true
+	: endif
+: else
+	\CI["戦闘を行う"]
+	\CI["負けたことにする"]
+	戦闘はどうしますか？
+
+	: if( $choice == 0 )
+		: BattleSkipWin = false
+		: BattleSkiplose = false
+	: else
+		: BattleSkipWin = false
+		: BattleSkiplose = true
+	: endif
+: endif
+: Return
+
+//========================================================
+//○敗北レイプ発生条件
+//========================================================
+*LoseRapeSet
+//敵がレイプなしの敵の場合
+: if ( Flag ( "EnemyOther" ) == true ) Return( false ) endif
+//パーティー的に起こらない場合
+: if ( Flag ( "Party05" ) == true || Flag ( "Party06" ) == true )
+	: Return( false )
+: endif
+//ルート制限
+: if ( $chapter <= 3 )
+	: if ( Flag ( "Party02" ) == true || Flag ( "Party03" ) == true )
+		: Return( false )
+	: endif
+: endif
+: if ( Flag ( "HozukiRootIn" ) == true )
+	: if ( Flag ( "Party02" ) == true || Flag ( "Party03" ) == true || Flag ( "Party09" ) == true )
+		: Return( false )
+	: endif
+: endif
+: Return( true )
+
+//========================================================
+//○敗北逃走処理
+//========================================================
+*LoseEscape
+: if ( Flag ( "Party01" ) == true )
+	: Jump( "Scenarios/SC_S01_01*sc001" )
+: elif ( Flag ( "Party02" ) == true )
+	: Jump( "Scenarios/SC_S01_01*sc002" )
+: elif ( Flag ( "Party03" ) == true )
+	: Jump( "Scenarios/SC_S01_01*sc003" )
+: elif ( Flag ( "Party04" ) == true )
+	: Jump( "Scenarios/SC_S01_01*sc004" )
+: elif ( Flag ( "Party05" ) == true )
+	: Jump( "Scenarios/SC_S01_01*sc005" )
+: elif ( Flag ( "Party06" ) == true )
+	: Jump( "Scenarios/SC_S01_01*sc006" )
+: elif ( Flag ( "Party07" ) == true )
+	: Jump( "Scenarios/SC_S01_01*sc007" )
+: elif ( Flag ( "Party08" ) == true )
+	: Jump( "Scenarios/SC_S01_01*sc008" )
+: else
+	: Jump( "Scenarios/SC_S01_01*sc009" )
+: endif
+
+//========================================================
+//○敗北レイプ処理
+//========================================================
+*LoseRape
+: if ( Flag ( "Party01" ) == true )
+	: if ( Flag ( "NonVirgin_Mukuro" ) == false )
+		: Jump( "Scenarios/SC_S02_01" )
+	: else
+		: Jump( "Scenarios/SC_S02_02" )
+	: endif
+: elif ( Flag ( "Party02" ) == true )
+	: Jump( "Scenarios/SC_S02_03" )
+: elif ( Flag ( "Party03" ) == true )
+	: Jump( "Scenarios/SC_S02_04" )
+: elif ( Flag ( "Party04" ) == true )
+	: if ( Flag ( "NonVirgin_Mei" ) == false )
+		: Jump( "Scenarios/SC_S02_05" )
+	: else
+		: Jump( "Scenarios/SC_S02_06" )
+	: endif
+: else
+	: if (WhoLeader( "Mukuro" ) == true)
+		: if ( Flag ( "NonVirgin_Mukuro" ) == false )
+			: Jump( "Scenarios/SC_S02_01" )
+		: else
+			: Jump( "Scenarios/SC_S02_02" )
+		: endif
+	: elif (WhoLeader( "Momo" ) == true)
+		: Jump( "Scenarios/SC_S02_03" )
+	: elif (WhoLeader( "Kinako" ) == true)
+		: Jump( "Scenarios/SC_S02_04" )
+	: elif (WhoLeader( "Mei" ) == true)
+		: if ( Flag ( "NonVirgin_Mei" ) == false )
+			: Jump( "Scenarios/SC_S02_05" )
+		: else
+			: Jump( "Scenarios/SC_S02_06" )
+		: endif
+	: endif
+: endif
+: Return
+//========================================================
+//○殺人処理
+//========================================================
+*Murder
+//無黒以外はリターン
+: if (WhoLeader( "Mukuro" ) == false )
+	: Return
+: endif
+//人間以外ならリターンさせる
+: if MurderAct == true
+	\CI["トドメをさす"]
+	\CI["放っておく"]
+	どうしますか？
+
+	: if ($choice == 1) Return endif
+		: AddKill( 1 )
+		: HideWnd()
+		: keep = false; cgkeep = false;
+		: Call( "Scenarios/Effect*Blood04" )
+		: ShowWnd()
+: endif
+//殺害数に応じたイベント発生処理
+//【サブ】旅の商人と名刀虎徹？
+: if( $chapter >= 8 && $chapter <= 9)
+	: if( $evilLevel >= 2 )
+		: if ( MissionProgress( "SC_C05_50_1", "Opened" ) == false )
+			: if ( MissionProgress( "SC_C05_50_1", "Successed" ) == false && MissionProgress( "SC_C05_50_2", "Successed" ) == false )
+				: SetMission( "SC_C05_50_1", "Opened" )
+			: endif
+		: endif
+	: endif
+: endif
+: Return

@@ -1,0 +1,1388 @@
+//========================================================
+//○マップ移動（ファストトラベル）
+//========================================================
+*MapMove
+//ボテ腹状態時は起動させない
+: if ( CharaCostume( "Mukuro" ) == 5 )
+	こんな状態でここを出るわけにはいかない。
+	出産してからでないと……。
+
+	: Return
+: endif
+//ファストトラベル処理
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: FadeIn( 0.0 )
+: FastTravel
+: Return
+//========================================================
+//○立ち入り禁止箇所（汎用）
+//========================================================
+*Closed
+: if (WhoLeader( "Momo" ) == true)
+	この先に用はないわね。
+: elif (WhoLeader( "Kinako" ) == true)
+	この先に用事はありません。
+: else
+	ここから先に行く必要は無さそうだ。
+: endif
+: Return
+//========================================================
+//○風呂屋　張り紙
+//========================================================
+*Furoya
+: if ( Flag ( "ByakuyaRootIn" ) == true )
+	臨時休業中
+: endif
+: Return
+//========================================================
+//○体力回復
+//========================================================
+*Inn
+//――――――――――――――――――――――――――――
+//■選択肢１：休んでいく
+//■選択肢２：まだいい
+//――――――――――――――――――――――――――――
+\CI["休んでいく"]
+\CI["まだいい"]
+休憩して体力を回復させていきますか？
+
+: if ($choice == 1) Jump( "*Inn_s2" ) endif
+
+//-------------------------------------------------------
+//●選択肢１：休んでいくを選んだ場合
+//-------------------------------------------------------
+*Inn_s1
+: Call( "Scenarios/CommonSys*Inn_Free" )
+: RpgCharaTurn( "Player", "D" )
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：まだいいを選んだ場合
+//-------------------------------------------------------
+*Inn_s2
+: Return
+
+//========================================================
+//○男湯イベント
+//========================================================
+*Otokoyu
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: Jump( "Scenarios/SC_S11_01" )
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: Jump( "Scenarios/SC_S11_02" )
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: Jump( "Scenarios/SC_S11_03" )
+: else
+	男湯に入るわけにはいかないな。
+: endif
+: Return
+
+//男湯に入る
+*Enter_Otokoyu
+//ダークエルフ時、風呂に入れないようにしておく
+//演出的に不都合が多いため
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		{黒夜叉,ダークエルフ}のままだとくつろげない。
+		{黒夜叉,ダークエルフ}化を解いた方がいい。
+
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1)
+	: Return
+	: endif
+: elif (WhoLeader( "Momo" ) == true)
+	//桃はダークエルフにはなれない
+: elif (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		{黒夜叉,ダークエルフ}のままだとくつろげない。
+		{黒夜叉,ダークエルフ}化を解いた方がいい。
+
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1)
+		: Return
+	: endif
+: else
+	: if ( CharaCostume( "Mei" ) == 2 )
+		{黒夜叉,ダークエルフ}のままだとくつろげない。
+		{黒夜叉,ダークエルフ}化を解いた方がいい。
+
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1)
+		: Return
+	: endif
+: endif
+//――――――――――――――――――――――――――――
+//＠通常選択肢,OnnaYu_Event_select
+//■選択肢１：お風呂に入る
+//■選択肢２：お風呂に入らない
+//――――――――――――――――――――――――――――
+\CI["お風呂に入る"]
+\CI["お風呂に入らない"]
+お風呂に入りますか？
+
+: if ($choice == 1)
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: Return
+: endif
+//-------------------------------------------------------
+//●選択肢１：お風呂に入るを選んだ場合
+//-------------------------------------------------------
+: HideWnd()
+: if (WhoLeader( "Mukuro" ) == true)
+
+: if ( CharaCostume( "Mukuro" ) == 0 )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveRight", 2	\
+:	"Turn", "Up")
+: Wait()
+: PlaySe("SE/Se_Clothes01")
+: Sleep( 1.0 )
+: CharaCostume( "Mukuro", 1 )	//全裸に
+: Sleep( 0.5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 2	\
+:	"MoveUp", 2	)
+: Wait()
+: endif
+
+: elif (WhoLeader( "Momo" ) == true)
+
+: if ( CharaCostume( "Momo" ) == 0 )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveRight", 2	\
+:	"Turn", "Up")
+: Wait()
+: PlaySe("SE/Se_Clothes01")
+: Sleep( 1.0 )
+: CharaCostume( "Momo", 1 )	//全裸に
+: Sleep( 0.5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 2	\
+:	"MoveUp", 2	)
+: Wait()
+: endif
+
+: elif (WhoLeader( "Kinako" ) == true)
+: if ( CharaCostume( "Kinako" ) == 0 || CharaCostume( "Kinako" ) == 5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveRight", 2	\
+:	"Turn", "Up")
+: Wait()
+: PlaySe("SE/Se_Clothes01")
+: Sleep( 1.0 )
+: CharaCostume( "Kinako", 1 )	//全裸に
+: Sleep( 0.5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 2	\
+:	"MoveUp", 2	)
+: Wait()
+: endif
+
+: else
+: if ( CharaCostume( "Mei" ) == 0 )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveRight", 2	\
+:	"Turn", "Up")
+		: Wait()
+		: PlaySe("SE/Se_Clothes01")
+		: Sleep( 1.0 )
+		: CharaCostume( "Mei", 1 )	//全裸に
+	: Sleep( 0.5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 2	\
+:	"MoveUp", 2	)
+	: Wait()
+	: endif
+: endif
+: FadeOut( 0.5 )
+: Wait()
+: mapId = RpgMapID()
+: if ( mapId == 6 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town01_07_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map07" )
+: elif ( mapId == 45 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town05_08_Saito", "", "Scenarios/Map_Town05_Saito_Init*Map08" )
+: elif ( mapId == 58 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town06_04_Sakitama3" )
+: endif
+: Return
+
+//男湯から出る
+*Out_Otokoyu
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: mapId = RpgMapID()
+: if ( mapId == 7 )
+	//パーティーを元に戻す
+	: Call( "Scenarios/CommonSys*PartyReset" )
+	: LoadMap( "Map_Town01_06_Teito", "Sento_Male", "Scenarios/Map_Town01_Teito_Init*Map06" )
+: elif ( mapId == 47 )
+	//パーティーを元に戻す
+	: Call( "Scenarios/CommonSys*PartyReset" )
+	: LoadMap( "Map_Town05_06_Saito", "Sento_Male", "Scenarios/Map_Town05_Saito_Init*Map06" )
+: elif ( mapId == 262 )
+	//パーティーを元に戻す
+	: Call( "Scenarios/CommonSys*PartyReset" )
+	: LoadMap( "Map_Town06_04_Sakitama", "Sento_Male", "Scenarios/Map_Town06_Sakitama_Init*Map04_1" )
+: endif
+: Return
+
+//========================================================
+//○女湯に入るイベント
+//========================================================
+*OnnaYu_Event
+//ダークエルフ時、風呂に入れないようにしておく
+//演出的に不都合が多いため
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 2 )
+		{黒夜叉,ダークエルフ}のままだとくつろげない。
+		{黒夜叉,ダークエルフ}化を解いた方がいい。
+
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1)
+	: Return
+	: endif
+: elif (WhoLeader( "Momo" ) == true)
+	//桃はダークエルフにはなれない
+: elif (WhoLeader( "Kinako" ) == true)
+	: if ( CharaCostume( "Kinako" ) == 2 )
+		{黒夜叉,ダークエルフ}のままだとくつろげない。
+		{黒夜叉,ダークエルフ}化を解いた方がいい。
+
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1)
+		: Return
+	: endif
+: else
+	: if ( CharaCostume( "Mei" ) == 2 )
+		{黒夜叉,ダークエルフ}のままだとくつろげない。
+		{黒夜叉,ダークエルフ}化を解いた方がいい。
+
+	: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1)
+		: Return
+	: endif
+: endif
+//――――――――――――――――――――――――――――
+//＠通常選択肢,OnnaYu_Event_select
+//■選択肢１：お風呂に入る
+//■選択肢２：お風呂に入らない
+//――――――――――――――――――――――――――――
+\CI["お風呂に入る"]
+\CI["お風呂に入らない"]
+お風呂に入りますか？
+
+: if ($choice == 1)
+	: Jump( "*OnnaYu_Event_select_s2" )
+: endif
+//-------------------------------------------------------
+//●選択肢１：お風呂に入るを選んだ場合
+//-------------------------------------------------------
+*OnnaYu_Event_select_s1
+: HideWnd()
+: if (WhoLeader( "Mukuro" ) == true)
+
+: if ( CharaCostume( "Mukuro" ) == 0 )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveLeft", 2	\
+:	"Turn", "Up")
+: Wait()
+: PlaySe("SE/Se_Clothes01")
+: Sleep( 1.0 )
+: CharaCostume( "Mukuro", 1 )	//全裸に
+: Flag( "BathCosChange", true )	//着替えをしたというフラグ
+: Sleep( 0.5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveRight", 2	\
+:	"MoveUp", 2	)
+: Wait()
+: endif
+
+: elif (WhoLeader( "Momo" ) == true)
+
+: if ( CharaCostume( "Momo" ) == 0 )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveLeft", 2	\
+:	"Turn", "Up")
+: Wait()
+: PlaySe("SE/Se_Clothes01")
+: Sleep( 1.0 )
+: CharaCostume( "Momo", 1 )	//全裸に
+: Flag( "BathCosChange", true )	//着替えをしたというフラグ
+: Sleep( 0.5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveRight", 2	\
+:	"MoveUp", 2	)
+: Wait()
+: endif
+
+: elif (WhoLeader( "Kinako" ) == true)
+: if ( CharaCostume( "Kinako" ) == 0 || CharaCostume( "Kinako" ) == 5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveLeft", 2	\
+:	"Turn", "Up")
+: Wait()
+: PlaySe("SE/Se_Clothes01")
+: Sleep( 1.0 )
+: CharaCostume( "Kinako", 1 )	//全裸に
+: Flag( "BathCosChange", true )	//着替えをしたというフラグ
+: Sleep( 0.5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveRight", 2	\
+:	"MoveUp", 2	)
+: Wait()
+: endif
+
+: else
+: if ( CharaCostume( "Mei" ) == 0 )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveLeft", 2	\
+:	"Turn", "Up")
+		: Wait()
+		: PlaySe("SE/Se_Clothes01")
+		: Sleep( 1.0 )
+		: CharaCostume( "Mei", 1 )	//全裸に
+		: Flag( "BathCosChange", true )	//着替えをしたというフラグ
+	: Sleep( 0.5 )
+: RpgCharaBatch( "Player"	\
+:	"MoveRight", 2	\
+:	"MoveUp", 2	)
+	: Wait()
+	: endif
+: endif
+//風呂に移動する
+: FadeOut( 0.0 )
+: Wait()
+//パーティーを単独にする
+: Call( "Scenarios/CommonSys*PartyAlone" )
+//お風呂に移動する
+: mapId = RpgMapID() 
+: if( mapId == 6 )	//帝都
+	: LoadMap( "Map_Town01_08_Teito","", "Scenarios/Map_Town01_Teito_Init*Map08")
+: elif( mapId == 58 )	//崎珠
+	: LoadMap( "Map_Town06_04_Sakitama2","", "")
+: elif( mapId == 45 )	//西都
+	: LoadMap( "Map_Town05_07_Saito","", "")
+: endif
+//-------------------------------------------------------
+//●選択肢２：お風呂に入らないを選んだ場合
+//-------------------------------------------------------
+*OnnaYu_Event_select_s2
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1)
+: Return
+//========================================================
+//○女湯から出るイベント
+//========================================================
+*Onnayu_Out
+//――――――――――――――――――――――――――――
+//＠通常選択肢,Event07_01_select
+//■選択肢１：風呂から出る
+//■選択肢２：まだ出ない
+//――――――――――――――――――――――――――――
+\CI["風呂から出る"]
+\CI["まだ出ない"]
+風呂から出ますか？
+
+: if ($choice == 1) Jump( "*Event07_01_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：風呂から出るを選んだ場合
+//-------------------------------------------------------
+*Event07_01_select_s1
+//場所移動させる
+: FadeOut( 0.0 )
+: Wait()
+: mapId = RpgMapID()
+: if( mapId == 8 )	//帝都
+	: LoadMap( "Map_Town01_06_Teito", "Sento_Female", "Scenarios/Map_Event*Onnayu_Out_1" )
+: elif( mapId  == 261 )	//崎珠
+	: LoadMap( "Map_Town06_04_Sakitama", "Sento_Female", "Scenarios/Map_Event*Onnayu_Out_1" )
+: elif( mapId == 46 )	//西都
+	: LoadMap( "Map_Town05_06_Saito", "Sento_Female", "Scenarios/Map_Event*Onnayu_Out_1" )
+: endif
+//着替えをした場合、コスチューム戻す
+*Onnayu_Out_1
+: mapId = RpgMapID()
+: if( mapId == 6 )	//帝都
+	: Call( "Scenarios/Map_Town01_Teito_Init*Map06" )
+: elif( mapId  == 58 )	//崎珠
+	: Call( "Scenarios/Map_Town06_Sakitama_Init*Map04_1" )
+: elif( mapId == 45 )	//西都
+	: Call( "Scenarios/Map_Town05_Saito_Init*Map06" )
+: endif
+: HideWnd()
+: FadeIn( 1.0 )
+: if ( Flag ( "BathCosChange" ) == true )
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"MoveLeft", 2	\
+:	"Turn", "Up")
+	: Wait()
+	: PlaySe("SE/Se_Clothes01")
+	: Sleep( 1.0 )
+	: if (WhoLeader( "Mukuro" ) == true)
+		: CharaCostume( "Mukuro", 0 )
+	: elif (WhoLeader( "Momo" ) == true)
+		: CharaCostume( "Momo", 0 )
+	: elif (WhoLeader( "Kinako" ) == true)
+		: CharaCostume( "Kinako", 5 )
+	: else
+		: CharaCostume( "Mei", 0 )
+	: endif
+	: RpgCharaTurn( "Player", "Down" )
+: endif
+: Wait()
+: FlagDown( "BathCosChange" )
+//パーティーを元に戻す
+: Call( "Scenarios/CommonSys*PartyReset" )
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：まだ出ないを選んだ場合
+//-------------------------------------------------------
+*Event07_01_select_s2
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1)
+: Return
+//========================================================
+//○西都の口入屋
+//========================================================
+*Kuchiireya
+//優先度高い処理
+: if (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: Jump("*Kuchiireya4")
+: endif
+: if ( MissionProgress( "SC_D04_52", "Opened" ) == true )
+	\CI["仕事の話をする"]
+	\CI["稼ぎの良い仕事を紹介して貰う"]
+	: if ($choice == 1) Jump( "Scenarios/SC_D04_52" ) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 && Flag ( "KuchiireyaH" ) == false )
+	\CI["仕事の話をする"]
+	\CI["身体で仕事を融通してもらう"]
+	: if ($choice == 1) Jump( "Scenarios/SC_D04_50" ) endif
+: endif
+//通常処理
+: if( $chapter == 11 ) Jump("*Kuchiireya3") endif
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04c_1" ) == 7 ) Jump("*Kuchiireya2") endif
+: if ( MissionProgress( "SC_D04_09_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D04_08*sc001_2" )
+: endif
+: if ( MissionProgress( "SC_D04_08_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D04_08*sc001_2" )
+: endif
+: if ( MissionProgress( "SC_D04_06_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D04_06*sc001_2" )
+: endif
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["メガネの口入屋"]
+「今、自分に紹介できる仕事なんやけど……」
+
+//選択肢
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04c_1" ) == 0 )
+	\CI["タイラントボア退治を請け負う"]
+	\CI["はぐれ者の用心棒を請け負う"]
+	\CI["兼光を手に入れろ！を請け負う"]
+	どの仕事を行いますか？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D04_06" )
+	: elif ($choice == 1)
+		: Jump( "Scenarios/SC_D04_08" )
+	: else
+		: Jump( "Scenarios/SC_D04_09" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_1" ) == 1 )
+	\CI["はぐれ者の用心棒を請け負う"]
+	\CI["兼光を手に入れろ！を請け負う"]
+	どの仕事を行いますか？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D04_08" )
+	: else
+		: Jump( "Scenarios/SC_D04_09" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_1" ) == 2 )
+	\CI["タイラントボア退治を請け負う"]
+	\CI["兼光を手に入れろ！を請け負う"]
+	どの仕事を行いますか？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D04_06" )
+	: else
+		: Jump( "Scenarios/SC_D04_09" )
+	: endif
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_1" ) == 3 )
+	\CI["タイラントボア退治を請け負う"]
+	\CI["はぐれ者の用心棒を請け負う"]
+	どの仕事を行いますか？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D04_06" )
+	: else
+		: Jump( "Scenarios/SC_D04_08" )
+	: endif
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_1" ) == 4 )
+	: Jump( "Scenarios/SC_D04_09" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_1" ) == 5 )
+	: Jump( "Scenarios/SC_D04_08" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_1" ) == 6 )
+	: Jump( "Scenarios/SC_D04_06" )
+: endif
+: Return
+
+//--------------------------------------------------------
+
+*Kuchiireya2
+: if ( MissionProgress( "SC_D04_11_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D04_11*sc001_1" )
+: endif
+: if ( MissionProgress( "SC_D04_13_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D04_13*sc001_1" )
+: endif
+: if ( MissionProgress( "SC_D04_14_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D04_15*sc001_1" )
+: endif
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["メガネの口入屋"]
+「今、自分に紹介できる仕事なんやけど……」
+
+//選択肢
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 0 )
+	\CI["出世欲に塗れた男"]
+	\CI["指名手配の辻斬り退治"]
+	\CI["異邦人に乗っ取られた町"]
+	どの仕事を行いますか？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D04_11" )
+	: elif ($choice == 1)
+		: Jump( "Scenarios/SC_D04_13" )
+	: else
+		: Jump( "Scenarios/SC_D04_15" )
+	: endif
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 1 )
+	\CI["指名手配の辻斬り退治"]
+	\CI["異邦人に乗っ取られた町"]
+	どの仕事を行いますか？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D04_13" )
+	: else
+		: Jump( "Scenarios/SC_D04_15" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 2 )
+	\CI["出世欲に塗れた男"]
+	\CI["異邦人に乗っ取られた町"]
+	どの仕事を行いますか？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D04_11" )
+	: else
+		: Jump( "Scenarios/SC_D04_15" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 3 )
+	\CI["出世欲に塗れた男"]
+	\CI["指名手配の辻斬り退治"]
+	どの仕事を行いますか？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D04_11" )
+	: else
+		: Jump( "Scenarios/SC_D04_13" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 4 )
+	: Jump( "Scenarios/SC_D04_15" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 5 )
+	: Jump( "Scenarios/SC_D04_13" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04c_2" ) == 6 )
+	: Jump( "Scenarios/SC_D04_11" )
+: endif
+: Return
+
+//--------------------------------------------------------
+
+*Kuchiireya3
+: if ( MissionProgress( "SC_D05_04_3", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D05_05*sc001_2" )
+: endif
+: if ( MissionProgress( "SC_D05_02_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D05_02*sc001_1" )
+: endif
+: if ( MissionProgress( "SC_D05_04_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D05_04*sc001_1" )
+: endif
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["メガネの口入屋"]
+「今、自分に紹介できる仕事なんやけど……」
+
+: if ( MissionProgress( "SC_D05_02_1", "Successed", "Failed" ) == true )
+	: Jump( "Scenarios/SC_D05_04" )
+: elif ( MissionProgress( "SC_D05_04_2", "Successed", "Failed" ) == true || MissionProgress( "SC_D05_04_3", "Successed", "Failed" ) == true || MissionProgress( "SC_D05_04_4", "Successed", "Failed" ) == true )
+	: Jump( "Scenarios/SC_D05_02" )
+: endif
+\CI["六角山の魔物退治"]
+\CI["幕臣大岡佐吉を殺せ"]
+どの仕事を行いますか？
+
+: if ($choice == 0)
+	: Jump( "Scenarios/SC_D05_02" )
+: else
+	: Jump( "Scenarios/SC_D05_04" )
+: endif
+: Return
+//--------------------------------------------------------
+
+*Kuchiireya4
+: if ( MissionProgress( "SC_D05_08_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D05_08*sc001_1" )
+: endif
+: if ( MissionProgress( "SC_D05_10_1", "InProgress" ) == true )
+	: Jump( "Scenarios/SC_D05_10*sc001_1" )
+: endif
+\CN["メガネの口入屋"]
+「今、桃ちゃんに紹介できる仕事なんやけど……」
+
+: if ( MissionProgress( "SC_D05_08_1", "Successed", "Failed" ) == true )
+	: Jump( "Scenarios/SC_D05_10" )
+: elif ( MissionProgress( "SC_D05_10_1", "Successed", "Failed" ) == true )
+	: Jump( "Scenarios/SC_D05_08" )
+: endif
+\CI["魔物の残党退治"]
+\CI["ヤクザの用心棒"]
+どの仕事を行いますか？
+
+: if ($choice == 0)
+	: Jump( "Scenarios/SC_D05_08" )
+: else
+	: Jump( "Scenarios/SC_D05_10" )
+: endif
+: Return
+//========================================================
+//○出産
+//========================================================
+*Birth
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["ヒラガ"]
+「どうやら、すでに臨月を迎えているようですね。
+　もう、出産なさいますか？」
+
+\CI["出産してしまう"]
+\CI["まだ出産しない"]
+どうする？
+
+: if ($choice == 1)
+	\CN["ヒラガ"]
+	「そうですか。
+	　無理は禁物。産気づいたら知らせてくださいね」
+
+	: Return
+: endif
+//出産シーン処理
+: if IsBirthSkip( "Off" ) == true
+	: Call( "Scenarios/CommonSys*Birth" )
+: elif IsBirthSkip( "On" ) == true
+	: Call( "Scenarios/CommonSys*BirthSkip" )
+: else
+	\CI["出産シーンを見る"]
+	\CI["出産シーンをスキップする"]
+	出産シーンをどうしますか？
+	: if ($choice == 0 )
+		: Call( "Scenarios/CommonSys*Birth" )
+	: else
+		: Call( "Scenarios/CommonSys*BirthSkip" )
+	: endif
+: endif
+: FadeOut( 0.5 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: Call( "Scenarios/Map_Town16_HiragaLavo_Init*Map01" )
+: FadeIn( 0.5 )
+: Wait()
+: RpgPlayBgm()
+: Return
+//========================================================
+//○パッシブスキル屋（貞操帯）
+//========================================================
+*PassiveSkillShopTeisou
+: SkillName="貞操帯"; SkillMoney = 100; SkillId = 50800
+『\V[SkillName]』
+敵からＨ攻撃を仕掛けられなくなります。
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋１（攻撃）
+//========================================================
+*PassiveSkillShop01
+: chap = Call( "Scenarios/CommonSys*Time" )
+: if ( chap >= 0 && chap <= 2 )
+	: SkillName="攻撃こそ最大の防御"; SkillMoney = 500; SkillId = 50001
+	『\V[SkillName]』
+	戦闘中、攻撃力が20％アップし防御力が20％ダウン。
+: elif ( chap >= 3 && chap <= 4 )
+	: SkillName="師範"; SkillMoney = 5000; SkillId = 50004
+	『\V[SkillName]』
+	戦闘中、攻撃力が20％アップします。
+: elif ( chap >= 5 )
+	: SkillName="達人の領域"; SkillMoney = 10000; SkillId = 50005
+	『\V[SkillName]』
+	戦闘中、攻撃力が30％アップします。
+: endif
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋２（防御）
+//========================================================
+*PassiveSkillShop02
+: chap = Call( "Scenarios/CommonSys*Time" )
+: if ( chap >= 0 && chap <= 3 )
+	: SkillName="守りの心得"; SkillMoney = 500; SkillId = 50100
+	『\V[SkillName]』
+	戦闘中、防御力が10％アップします。
+: elif ( chap >= 3 && chap <= 4 )
+	: SkillName="使命感"; SkillMoney = 5000; SkillId = 50101
+	『\V[SkillName]』
+	戦闘中、防御力が20％アップします。
+: elif ( chap >= 5 )
+	: SkillName="守護者"; SkillMoney = 10000; SkillId = 50102
+	『\V[SkillName]』
+	戦闘中、防御力が30％アップします。
+: endif
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋３（魔術）
+//========================================================
+*PassiveSkillShop03
+: chap = Call( "Scenarios/CommonSys*Time" )
+: if ( chap >= 3 && chap <= 4 )
+	: SkillName="一流魔術師"; SkillMoney = 5000; SkillId = 50201
+	『\V[SkillName]』
+	戦闘中、魔力が20％アップします。
+: elif ( chap >= 5 )
+	: SkillName="賢者の証"; SkillMoney = 10000; SkillId = 50202
+	『\V[SkillName]』
+	戦闘中、魔力が30％アップします。
+: endif
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋４（魔術防御）
+//========================================================
+*PassiveSkillShop04
+: chap = Call( "Scenarios/CommonSys*Time" )
+: if ( chap >= 3 && chap <= 4 )
+	: SkillName="耐魔の精神"; SkillMoney = 5000; SkillId = 50300
+	『\V[SkillName]』
+	戦闘中、魔術防御力が15％アップします。
+: elif ( chap >= 5 )
+	: SkillName="不屈の精神"; SkillMoney = 10000; SkillId = 50301
+	『\V[SkillName]』
+	戦闘中、魔術防御力が30％アップします。
+: endif
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋５（敏捷）
+//========================================================
+*PassiveSkillShop05
+: chap = Call( "Scenarios/CommonSys*Time" )
+: if ( chap >= 3 && chap <= 4 )
+	: SkillName="韋駄天"; SkillMoney = 5000; SkillId = 50400
+	『\V[SkillName]』
+	戦闘中、敏捷性と回避率が15％アップします。
+
+: elif ( chap >= 5 )
+	: SkillName="鎌鼬"; SkillMoney = 10000; SkillId = 50401
+	『\V[SkillName]』
+	戦闘中、敏捷性と回避率が30％アップします。
+: endif
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋（特殊１）
+//========================================================
+*PassiveSkillShopSp01
+: SkillName="灼熱の祝福"; SkillMoney = 15000; SkillId = 50500
+『\V[SkillName]』
+炎属性・雷属性・土属性攻撃のダメージを軽減します。
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋（特殊２）
+//========================================================
+*PassiveSkillShopSp02
+: SkillName="永久凍土の守り"; SkillMoney = 15000; SkillId = 50501
+『\V[SkillName]』
+氷属性・風属性攻撃のダメージを軽減します。
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋（特殊３）
+//========================================================
+*PassiveSkillShopSp03
+: SkillName="共用肉便器"; SkillMoney = 15000; SkillId = 50502
+『\V[SkillName]』
+H攻撃のダメージを軽減します。
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○パッシブスキル屋（特殊４）
+//========================================================
+*PassiveSkillShopSp04
+: SkillName="癒しの加護"; SkillMoney = 20000; SkillId = 50503
+『\V[SkillName]』
+戦闘中ターン毎にHPが回復します。
+: Jump( "*SkillBuy" )
+
+//========================================================
+//○スキルを買う処理
+//========================================================
+*SkillBuy
+//すでに覚えている場合はリターンする
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	:if ( CharaHasSkill( "Mukuro", SkillId ) == false ) Jump( "*SkillLearn" ) endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	:if ( CharaHasSkill( "Momo", SkillId ) == false ) Jump( "*SkillLearn" ) endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	:if ( CharaHasSkill( "Kinako", SkillId ) == false ) Jump( "*SkillLearn" ) endif
+: elif (WhoLeader( "Mei" ) == true)	//プレイヤーが冥の時
+	:if ( CharaHasSkill( "Mei", SkillId ) == false ) Jump( "*SkillLearn" ) endif
+: endif
+すでにこのスキルは覚えている。
+
+: Return
+
+*SkillLearn
+: if( $money < SkillMoney )	// 金が足りない場合
+	魔導器の使用料は\V[SkillMoney]両か……。
+	お金が足りない。
+
+	: Return
+: endif
+\CI["スキルを覚える"]
+\CI["やめておく"]
+使用料金は\V[SkillMoney]両です。
+
+: if ($choice == 1) Return endif
+//スキルを覚える処理
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: CharaAddSkill( "Mukuro", SkillId )
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: CharaAddSkill( "Momo", SkillId )
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: CharaAddSkill( "Kinako", SkillId )
+: elif (WhoLeader( "Mei" ) == true)	//プレイヤーが冥の時
+	: CharaAddSkill( "Mei", SkillId )
+: endif
+『\V[SkillName]』を覚えました。
+
+: $money -= SkillMoney
+: Return
+//========================================================
+//○パッシブスキル説明の男
+//========================================================
+*PassiveSkillSetsumei
+\CN["男"]
+「この魔導器は『パッシブスキル』っていうスキルを
+　身につけられる特別な魔導器なんだ」
+
+\CI["パッシブスキル？"]
+\CI["そうか、分かった"]
+: if ($choice == 1) Return endif
+
+\CN["男"]
+「パッシブスキルっていうのは与えるダメージが増えたり、
+　受けるダメージが減ったりする特殊なスキルでな。
+　スキルを装備することで効果を発揮するんだ」
+
+\CN["男"]
+「例えば『先陣突入』というパッシブスキルがあって、
+　これは身につけていると戦闘中、攻撃力と防御力が
+　わずかに上がるってものなんだ」
+
+\CN["男"]
+「簡単に言えば『装備』みてぇなもんだな。
+　だからパッシブスキルもスキルと同じく装備しないと意味が
+　ないぞ」
+
+: Return
+//========================================================
+//○デリヘル開始
+//========================================================
+*DeliveryHealth
+//ルート分岐以降　無黒の淫乱度Ｂ以上で登場する
+\CN["女"]
+「ねぇ、気持ちいいことして
+　すごく稼げる方法、知りたくない？」
+
+\CI["興味がある"]
+\CI["別にどうでもいい"]
+どうする？
+
+: if ( $choice == 0 )
+	\CN["女"]
+	「これ『夜伽ライン』っていう簡易デバイスなのだけど、
+	　これを使ったらエッチしたい男がすぐに見つかるの」
+
+	\CN["女"]
+	「これのおかげで売りするの、すごく楽になったのよ」
+
+	\CN["女"]
+	「これで出会った男と結婚することになったから、
+	　もう使わないし、あなたにあげるわ」
+
+	: AddItem( "Delehel", 1 )
+	『夜伽ライン』を手に入れた。
+
+	※アイテムの『夜伽ライン』を使用すると
+	デリヘルができるようになりました。
+
+	: HideWnd()
+	: FadeOut( 0.5 )
+	: Wait()
+	: RpgCharaOff("DeliveryHealth")
+	: FadeIn( 0.5 )
+	: Wait()
+: else
+	\CN["女"]
+	「そう。ならいいわ」
+
+: endif
+: Return
+//========================================================
+//○ＨアニメＮＰＣ・セックス
+//========================================================
+*HNPC_SexMukuro
+\CN["男"]
+「へへへ、裸でうろついているってことは、
+　いいってことだよな！」
+
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: PlayAnim( "Animations/00_Mukuro_13_Back_2", false, 0, 0, 1, 1 )
+	//Ｈ履歴更新
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+	: if ( $inExtra == false ) CharaSexHistory( "7000", "Mukuro" ) endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: PlayAnim( "Animations/01_Momo_33_Sexm", false, 0, 0, 1, 1 )
+	//Ｈ履歴更新
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Rape", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Exhibitionist", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(10,15)) endif
+	: if ( $inExtra == false ) CharaSexHistory( "7000", "Momo" ) endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: PlayAnim( "Animations/02_Kinako_43_Sex", false, 0, 0, 1, 1 )
+	//Ｈ履歴更新
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "WithHuman", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Rape", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Sex", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Exhibitionist", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateVagina", RandomRange(10,15)) endif
+	: if ( $inExtra == false ) CharaSexHistory( "7000", "Momo" ) endif
+: endif
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: RpgCharaOff("HNPC_Sex")
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+: Return
+//========================================================
+//○ＨＮＰＣ　ミミック
+//========================================================
+*HNPC_Mimic
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	嫌な予感がする……。
+
+	: if ( Call( "Scenarios/CommonSys*ShowNonVirginMukuro" ) == false )
+		……開けるのはやめておこう。
+
+		: Return
+	: endif
+	\CI["宝箱を開ける"]
+	\CI["宝箱を開けない"]
+	: if ( $choice == 0 )
+		: PlaySe( "SE/Se_Chest01" )
+		: RpgCharaTurn( "HNPC_Mimic", "L" )
+		: Wait()
+		: Sleep( 0.15 )
+		: RpgCharaTurn( "HNPC_Mimic", "R" )
+		: Wait()
+		: Sleep( 0.15 )
+		: RpgCharaTurn( "HNPC_Mimic", "U" )
+		: Wait()
+		: Sleep( 0.15 )
+		: RpgCharaTurn( "HNPC_Mimic", "D" )
+		: Jump( "Scenarios/SC_N02_01*NPCH01_059" )
+	: else
+		……開けるのはやめておこう。
+
+		: Return
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	嫌な予感がするわね……。
+
+	: if ( Call( "Scenarios/CommonSys*ShowNonVirginMomo" ) == false )
+		……開けるのはやめておこう。
+
+		: Return
+	: endif
+	\CI["宝箱を開ける"]
+	\CI["宝箱を開けない"]
+	: if ( $choice == 0 )
+		: PlaySe( "SE/Se_Chest01" )
+		: RpgCharaTurn( "HNPC_Mimic", "L" )
+		: Wait()
+		: Sleep( 0.15 )
+		: RpgCharaTurn( "HNPC_Mimic", "R" )
+		: Wait()
+		: Sleep( 0.15 )
+		: RpgCharaTurn( "HNPC_Mimic", "U" )
+		: Wait()
+		: Sleep( 0.15 )
+		: RpgCharaTurn( "HNPC_Mimic", "D" )
+		: Jump( "Scenarios/SC_N02_02*NPCH02_035" )
+	: else
+		……開けるのはやめておこう。
+
+		: Return
+	: endif
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	……いやな予感がします。
+	触れない方がよさそうですね。
+
+: else	//プレイヤーが冥の時
+	触れてはいけない気がする……。
+
+: endif
+: Return
+//========================================================
+//○ＨＮＰＣ　スライム
+//========================================================
+*HNPC_Slime
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( Call( "Scenarios/CommonSys*ShowNonVirginMukuro" ) == false )
+		: PlaySe( "SE/Se_AnimeL_Sword01" )
+		: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+		: Wait()
+		: RpgCharaOff("HNPC_Slime")
+		: Return
+	: else
+		: Call( "Scenarios/SC_N02_01*NPCH01_060" )
+		: RpgCharaOff("HNPC_Slime")
+		: RpgPlayBgm()
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: PlaySe( "SE/Se_AnimeL_Fire01" )
+	: PlayAnim( "Animations/AnimeL_Fire01", false, 0, 0, 6, 6 )
+	: Wait()
+	: RpgCharaOff("HNPC_Slime")
+	: Return
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: if ( Call( "Scenarios/CommonSys*ShowNonVirginMukuro" ) == false )
+		: PlaySe( "SE/Se_AnimeL_Sword01" )
+		: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+		: Wait()
+		: RpgCharaOff("HNPC_Slime")
+		: Return
+	: else
+		: Call( "Scenarios/SC_N02_03*NPCH03_036" )
+		: RpgCharaOff("HNPC_Slime")
+		: RpgPlayBgm()
+	: endif
+: else	//プレイヤーが冥の時
+	: PlaySe( "SE/Se_AnimeL_Sword01" )
+	: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 6, 6 )
+	: Wait()
+	: RpgCharaOff("HNPC_Slime")
+	: Return
+: endif
+: Return
+//========================================================
+//○野外放尿
+//========================================================
+*NPCH01_062
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: if ( CharaHRank( "Mukuro", "Immoral" ) >= 2 )
+		: Jump( "Scenarios/SC_N02_01*NPCH01_062" )
+	: endif
+: endif
+	特に尿意は感じない。
+
+: Return
+//========================================================
+//○オナニーのぞき見
+//========================================================
+*NPCH01_063
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: Jump( "Scenarios/SC_N02_01*NPCH01_063" )
+: else
+	: PlayBackVoice( "Voices/vo54_mob0001" )
+	――扉の向こうから声が聞こえてくる。
+
+	激しいエッチをしているのが
+	隙間から見えた。
+
+	: StopBackVoice()
+	: Return
+: endif
+//========================================================
+//○露出
+//========================================================
+*Roshutsu
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時
+	: Jump( "Scenarios/SC_N02_01*NPCH01_066" )
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時
+	: Jump( "Scenarios/SC_N02_02*NPCH02_036" )
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時
+	: Jump( "Scenarios/SC_N02_03*NPCH03_037" )
+: endif
+//========================================================
+//○エロスキル屋
+//========================================================
+*EroSkillShop
+\CN["怪しい男"]
+「へへへ。おもしろい魔導器を手に入れたんだ。
+　エロい女の経験を共有できるっていう
+　代物みてぇなんだが……」
+
+\CN["怪しい男"]
+「どうだい？　試しに買ってみねぇかい？」
+
+: Jump( "Scenarios/CommonSys*HskiiShop" )
+: Return
+//========================================================
+//○自分で産んだ子と対面
+//========================================================
+*NPCH01_068
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 5 ) Return endif
+	: RpgCharaTurn( "Player", "U" )
+	: if ( CharaHParam( "Mukuro", "BirthHuman" ) >= 1 )
+		自分で産んだ子に会いに行きますか？
+
+		\CI["会いに行く"]
+		\CI["今はいい"]
+		: if ( $choice == 1 ) Return endif
+		: Jump( "Scenarios/SC_N02_01*NPCH01_068" )
+	: else
+		: Return
+	: endif
+: else
+	: Return
+: endif
+
+*NPCH01_069
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 5 ) Return endif
+	: RpgCharaTurn( "Player", "U" )
+	: if ( Flag ( "BirthOrk" ) == true )
+		自分で産んだオークに会いに行きますか？
+
+		\CI["会いに行く"]
+		\CI["今はいい"]
+		: if ( $choice == 1 ) Return endif
+		: Jump( "Scenarios/SC_N02_01*NPCH01_069" )
+	: else
+		: Return
+	: endif
+: else
+	: Return
+: endif
+
+*NPCH01_070
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 5 ) Return endif
+	: RpgCharaTurn( "Player", "U" )
+	: if ( Flag ( "BirthDog" ) == true )
+		自分で産んだ妖犬に会いに行きますか？
+
+		\CI["会いに行く"]
+		\CI["今はいい"]
+		: if ( $choice == 1 ) Return endif
+		: Jump( "Scenarios/SC_N02_01*NPCH01_070" )
+	: else
+		: Return
+	: endif
+: else
+	: Return
+: endif
+
+*NPCH01_071
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 5 ) Return endif
+	: RpgCharaTurn( "Player", "U" )
+	: if ( Flag ( "BirthPig" ) == true )
+		自分で産んだ魔獣豚に会いに行きますか？
+
+		\CI["会いに行く"]
+		\CI["今はいい"]
+		: if ( $choice == 1 ) Return endif
+		: Jump( "Scenarios/SC_N02_01*NPCH01_071" )
+	: else
+		: Return
+	: endif
+: else
+	: Return
+: endif
+
+*NPCH01_072
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( CharaCostume( "Mukuro" ) == 5 ) Return endif
+	: RpgCharaTurn( "Player", "U" )
+	: if ( Flag ( "BirthHorse" ) == true )
+		自分で産んだ妖馬に会いに行きますか？
+
+		\CI["会いに行く"]
+		\CI["今はいい"]
+		: if ( $choice == 1 ) Return endif
+		: Jump( "Scenarios/SC_N02_01*NPCH01_072" )
+	: else
+		: Return
+	: endif
+: else
+	: Return
+: endif
+
+//========================================================
+//○妊娠告知
+//========================================================
+*norticePregnant
+//リーダーを強制的に無黒へ
+: NowLeader = Leader()
+: Leader( 0 )	// リーダーを強制的に無黒に
+……………………………………………………。
+
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: DrawImage( 8, 0, "EventCG/Pregnant01_0", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: Sleep( 1.0 )
+: DrawImage( 9, 0, "EventCG/Pregnant02_0", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawImage( 8, 0, "EventCG/Pregnant02_0", 0.0 )
+: EraseAllImage( 9, 0.0 )
+: Sleep( 1.0 )
+: DrawImage( 9, 0, "EventCG/Pregnant03_0", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawImage( 8, 0, "EventCG/Pregnant03_0", 0.0 )
+: EraseAllImage( 9, 0.0 )
+: ShowWnd()
+無黒は孕んでしまった。
+
+//リーダーを戻す
+: Leader( NowLeader )
+: Return
+
+*nearBirth
+: Leader( 0 )	// リーダーを強制的に無黒に
+: CharaCostume( "Mukuro", 5 )
+: DrawChara( "Mukuro", 31, 3, 0, 0.5, 0.0, 3, "RC" )
+……っ！！
+
+お腹に強く重い痛みを感じたと思ったら……。
+
+中からぐーっと押し広げるように
+大きくなっていた。
+
+――無黒は臨月を迎えた。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+\CI["すぐに出産する"]
+\CI["施設に移動する"]
+
+: if ( $choice == 1 )
+	: HideWnd()
+	: FadeOut( 0.25 )
+	: Wait()
+	//パーティーを無黒のみにする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	//服装変更ができる場合の処理
+	: if CharaCanCostumeChange( "Mukuro" ) == true
+		//戻す用にフラグを立てる
+		: Flag( "CosSealMukuro", true )
+		//着替えを封印
+		: CharaCanCostumeChange( "Mukuro", false )
+	: endif
+	//ダークエルフ化の処理
+	: if CharaCanDarkelfChange( "Mukuro" ) == true
+		//戻す用にフラグを立てる
+		: Flag( "NPC_T18_003", true )
+		//ダークエルフを封印
+		: CharaCanDarkelfChange( "Mukuro", false )
+	: endif
+	: LoadMap( "Map_Town16_01_HiragaLavo" )
+: endif
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+: if IsBirthSkip( "Off" ) == true
+	: Call( "Scenarios/CommonSys*Birth" )
+: elif IsBirthSkip( "On" ) == true
+	: Call( "Scenarios/CommonSys*BirthSkip" )
+: else
+	\CI["出産シーンを見る"]
+	\CI["出産シーンをスキップする"]
+	出産シーンをどうしますか？
+	: if ($choice == 0 )
+		: Call( "Scenarios/CommonSys*Birth" )
+	: else
+		: Call( "Scenarios/CommonSys*BirthSkip" )
+	: endif
+: endif
+: Return
+
+*childbirth
+……！！
+お腹がすごく張っている。今にも生まれてしまいそうだ。
+
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.5 )
+: Wait()
+\CI["出産シーンを見る"]
+\CI["出産シーンをスキップする"]
+出産シーンをどうしますか？
+
+: if ($choice == 0 )
+	: Call( "Scenarios/CommonSys*Birth" )
+: else
+	: Call( "Scenarios/CommonSys*BirthSkip" )
+: endif
+: Return

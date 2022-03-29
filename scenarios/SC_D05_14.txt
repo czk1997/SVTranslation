@@ -1,0 +1,1156 @@
+//========================================================
+//○黄菜子の絶望
+//========================================================
+//●状況：「変態貴族相手に両穴処女オークション」の後
+//●視点：黄菜子視点
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D05_14" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D05_14" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: ShowWnd()
+——这是几天前发生的事情。
+
+//●ＣＧ：逆さづり拷問（黄菜子）
+//●ＣＧ差分：全裸・媚薬・竹筒挿入
+: HideWnd()
+: CharaCostume( "Kinako", 1 )
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_3_0111002_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+//●演技：処女を失った後。逆さづりで拷問。アソコに竹筒を挿入されています
+: PlayVoice( "Voices/vo02_kin0699" )
+\CN["黄菜子"]
+“呃……呃……啊，哈，嗯……嗯……”
+
+\CN["白夜队士·男1"]
+“已经能顺利地进入manko了呢。
+明明是很粗的竹筒，却一口吞下了”
+
+\CN["白夜队士·男2"]
+“但是，我会努力的。如果是普通的女人的话，会在很早之前崩溃的。”
+明明已经用了很厉害的谄媚药，但还是会努力的”
+
+\CN["白夜队士·男1"]
+“嘛，不久就会生根的吧？
+话说，即使是小孩子的对手，这样也会越来越有趣
+来了。快觉醒了”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+祝你好运！格格！朱佛！咕嘟咕嘟！啧啧！
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_3_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0700" )
+\CN["黄菜子"]
+“嗯！啊……嗯……嗯……嗯……！”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0701" )
+\CN["黄菜子"]
+（好烫……那个很烫，哈哈，一直在琴酒。
+肚子里疼得疼，已经……）
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi04" )
+自从贵族出卖了处女，被剥夺之后
+一直在做这样的事情。
+
+被鞭子抽到身体上，或是被竹笋涂上献媚药，除去异物
+会被推到各种各样的地方。
+
+因为已经习惯了，所以能在那里放点什么
+没有疼痛本身。
+
+只是，被屈辱削去了心。
+
+\CN["白夜队士·男3"]
+“对了对了，在崎珠上找到有趣的东西吧。
+这个好像是电ma吧？”
+
+\CN["白夜队士·男2"]
+“这是什么？用在什么地方？”
+
+\CN["白夜队士·男3"]
+“先打开开关……”
+
+//●ＳＥ：電マの音
+: PlayHSe( "SE/Hse_Vibe" )
+\CN["白夜队士·男3"]
+“哇哦哦哦哦！我在发抖！？”
+
+\CN["白夜队士·男1"]
+“那怎么办？”
+
+\CN["白夜队士·男3"]
+“好像是这样贴在manko上用的。”
+
+//●ＣＧ差分：全裸・媚薬・竹筒挿入・電マ押し当て
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0702" )
+\CN["黄菜子"]
+“嗯……啊…啊…啊啊，嗯……啊…啊……
+嗯……啊…啊…啊呜……嗯！”
+
+: PlayVoice( "Voices/vo02_kin0703" )
+\CN["黄菜子"]
+“那、那个……啊、啊……嗯……啊啊啊……哈……
+呜……呜……呜……！”
+
+被涂了媚药，变得敏感到不可能的地方
+猜得着。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0704" )
+\CN["黄菜子"]
+（不，不好……哈，不能感觉到……嗯……
+心情变好了……绝对不行……）
+
+只是被猜中了，就快要绝顶了。
+
+这样，持续受到振动的话，比到现在为止都
+一直给人强烈的快感。
+
+//●演技：気持ちよくならないよう必死に食いしばっています
+: PlayVoice( "Voices/vo02_kin0705" )
+\CN["黄菜子"]
+“嗯！嗯！哈！哈……嗯，嗯……
+唔……呜呜！”
+
+\CN["白夜队士·男3"]
+“这样也没什么反应吗？
+话说，这家伙不是患了无感症吗？”
+
+\CN["白夜队士·男1"]
+“不，我拼命忍耐着。这张脸好厉害……。
+糟糕……”
+
+\CN["白夜队士·男2"]
+“你真的醒了。但是，不要随便出手。
+之后会被卍桑杀掉的”
+
+\CN["白夜队士·男1"]
+“哇。这家伙又是剥指甲又是拔牙什么的。”
+这也是被禁止的。虽然不知道理由……”
+
+: PlayVoice( "Voices/vo10_mid0504" )
+\CN["绿色"]
+「せやで。那个孩子以后不能帮上忙。
+让他受伤不能战斗什么的根本没有意义”
+
+//●ＣＧ：背景消去
+//●背景：牢屋
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_ZashikiRo01_01", 0.0 )
+: DrawChara( "Midori", 1, 0, 0, 0.0, 0.0, 3, "C" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["白夜队士·男1"]
+“望月先生……！？”
+
+: DrawChara( "Midori", 2, 0)
+: PlayVoice( "Voices/vo10_mid0505" )
+\CN["绿色"]
+“对了，望月先生来看拷问了。”
+
+: DrawFaceThumbnail( "Kinako", 14, 3, 0 )
+: PlayVoice( "Voices/vo02_kin0706" )
+\CN["黄菜子"]
+“哈——……哈、哈、哈……”
+
+如果就那样继续下去的话，我不知道会怎么样。
+
+就在那个时候，抓住我的罪魁祸首被黑布掩盖了
+我拉着什么来了。
+
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0506" )
+\CN["绿色"]
+“还有，把孩子吊起来，让杏哮喘很兴奋之类的，自己
+是那种兴趣吗？真讨厌啊」
+
+\CN["白夜队士·男2"]
+“不，我没什么……”
+
+: DrawChara( "Midori", 6, 0)
+: PlayVoice( "Voices/vo10_mid0507" )
+\CN["绿色"]
+“这种程度的话没关系。”
+
+\CN["白夜队士·男3"]
+「……虽然很在意，但是为了拷问这孩子的意图
+有什么事吗？”
+
+: DrawChara( "Midori", 8, 0)
+: PlayVoice( "Voices/vo10_mid0508" )
+\CN["绿色"]
+“这个小鬼杀人了，真是有才能啊。”
+
+: DrawChara( "Midori", 13, 0)
+: PlayVoice( "Voices/vo10_mid0509" )
+\CN["绿色"]
+“但是，虽然不知道是什么，但是很窝囊
+我想让你醒过来”
+
+\CN["白夜队士·男1"]
+“但是，这家伙怎么也不屈服……。
+要是普通的家伙早就坏了也不奇怪
+应该做了……”
+
+: DrawChara( "Midori", 12, 0)
+: PlayVoice( "Voices/vo10_mid0510" )
+\CN["绿色"]
+“那是那个吧？反正卍的笨蛋都向我们出钱了
+贵族什么的卖那个小鬼的处女，赚小钱什么的
+是吗？”
+
+\CN["白夜队士·男1"]
+「…………」
+
+: DrawChara( "Midori", 14, 0)
+: PlayVoice( "Voices/vo10_mid0511" )
+\CN["绿色"]
+“那也没关系。
+如果在那种程度上就坏了然后醒过来的话，就很轻松了”
+
+\CN["白夜队士·男2"]
+“对不起，我一点也不泄气。
+不是普通的精神力吗……”
+
+//●読み：黄蘭（おうらん）＝人名
+: DrawChara( "Midori", 5, 0)
+: PlayVoice( "Voices/vo10_mid0512" )
+\CN["绿色"]
+“这是假的。因为她是黄兰的女儿。
+我觉得这样就不会泄气了”
+
+: DrawChara( "Midori", 14, 0)
+: PlayVoice( "Voices/vo10_mid0513" )
+\CN["绿色"]
+“那么，接下来就交给我吧。
+让我看看这个小鬼的酷刑”
+
+\CN["白夜队士·男3"]
+“噢噢！绿先生马上……！”
+
+\CN["白夜队士·男2"]
+“可以看到被称为拷问之鬼的望月的拷问！？”
+
+: DrawChara( "Midori", 12, 0)
+: PlayVoice( "Voices/vo10_mid0514" )
+\CN["绿色"]
+“鬼是很失礼的吗？我们家是很优秀的淑女吗？”
+
+\CN["白夜队士·男2"]
+“是、对不起！！”
+
+//●ＣＧ：逆さづり拷問（黄菜子）
+//●ＣＧ差分：全裸・媚薬・竹筒挿入
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_3_0111002_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Midori", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0707" )
+\CN["黄菜子"]
+“哈……哈……”
+
+: PlayVoice( "Voices/vo10_mid0515" )
+\CN["绿色"]
+“好久不见了。今天给你惊喜嘉宾
+我已经准备好了”
+
+: PlayVoice( "Voices/vo10_mid0516" )
+\CN["绿色"]
+“开门！”
+
+: PlaySe( "SE/Se_Cloth01" )
+望月绿高声叫着，把黑布取了出去。
+
+: CharaCostume( "Bebi", 1 )
+: DrawFaceThumbnail( "Bebi", 10, 0, 0 )
+\CN["红美"]
+「…………」
+
+被关在了可以把野狗关起来的牢笼里
+小红美遍体鳞伤地躺着。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_3_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0708" )
+\CN["黄菜子"]
+“哎，红美！？”
+
+: PlayVoice( "Voices/vo10_mid0517" )
+\CN["绿色"]
+“前天，我去头和鬼灯玩了。
+那个时候很吵，带我过来吧”
+
+: PlayVoice( "Voices/vo10_mid0518" )
+\CN["绿色"]
+“这是你最重要的怪物吧？”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_3_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0709" )
+\CN["黄菜子"]
+“不，请住手！我做什么都可以
+所以，不要对红美出手！”
+
+: PlayVoice( "Voices/vo10_mid0519" )
+\CN["绿色"]
+“呵呵。‘不要出手’？要命令我们吗？”
+
+: PlayVoice( "Voices/vo02_kin0710" )
+\CN["黄菜子"]
+“对不起……拜托了……请一定要把手伸向那个孩子
+请不要拿出来”
+
+: PlayVoice( "Voices/vo10_mid0520" )
+\CN["绿色"]
+“嗯，能好好道歉就好了。
+卍之类的，我想让其他的白痴们学习一下啊」
+
+: PlayVoice( "Voices/vo10_mid0521" )
+\CN["绿色"]
+“然后，他说什么都做，好小气啊，好羡慕啊
+从现在开始30秒内，为了让我们更容易理解，试试吧？”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_3_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0711" )
+\CN["黄菜子"]
+“……诶？”
+
+: PlayVoice( "Voices/vo10_mid0522" )
+\CN["绿色"]
+“嗯？你不知道什么意思吗？”？
+意思是达到了顶峰”
+
+: PlayVoice( "Voices/vo02_kin0712" )
+\CN["黄菜子"]
+“是、那样的……突然这样的话，不行……”
+
+: PlayVoice( "Voices/vo10_mid0523" )
+\CN["绿色"]
+“是的。那么——”
+
+//●演出：みどり　義手を外して紅美を刺す
+//●演出：刺突エフェクト
+//●ＳＥ：刺す音
+: HideWnd()
+: effecttype = "3a"; se = "Se_Sting01"; keep = false; evkeep = true;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+: DrawFaceThumbnail( "Bebi", 7, 0, 0 )
+: PlayVoice( "Voices/vo07_beb0204" )
+\CN["红美"]
+“唔……！”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_3_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0713" )
+\CN["黄菜子"]
+“呀，请住手！我不会对红美出手的
+你不是跟我约好了吗？”
+
+: PlayVoice( "Voices/vo10_mid0524" )
+\CN["绿色"]
+“我说过要做那个，什么都做
+很帅啊」
+
+: PlayVoice( "Voices/vo10_mid0525" )
+\CN["绿色"]
+“我们家在白夜像圣母一样温柔的绿很有名。
+对自己来说会有特别的机会”
+
+: PlayVoice( "Voices/vo10_mid0526" )
+\CN["绿色"]
+「せやか……那么，给你1分钟吧。
+趁着这段时间，给我们看个痛快吧。
+然后，这家伙就跑了」
+
+: PlayVoice( "Voices/vo02_kin0714" )
+\CN["黄菜子"]
+“嗯……对，那到底是……”
+
+: PlayVoice( "Voices/vo10_mid0527" )
+\CN["绿色"]
+“嗯。那就特别服务吧。
+那边的你小子很淘气，帮我一下”
+
+\CN["白夜队士·男1"]
+“我知道了。
+喂，刚才那个电ma的家伙，借给我吧”
+
+\CN["白夜队士·男3"]
+“看吧。”
+
+: PlayVoice( "Voices/vo10_mid0528" )
+\CN["绿色"]
+“如果不能卷起来的话，这个魔物{杀，玫瑰}就很容易了。
+好好加油吧”
+
+: PlayVoice( "Voices/vo10_mid0529" )
+\CN["绿色"]
+“开始吧。”
+
+//●ＣＧ差分：全裸・媚薬・竹筒挿入・電マ
+//●ＳＥ：電マの音
+: HideWnd()
+: PlayHSe( "SE/Hse_Vibe" )
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+布迪汀！！！
+
+和刚才一样颤抖的电ma被安抚着。
+
+: PlayVoice( "Voices/vo02_kin0715" )
+\CN["黄菜子"]
+“嗯！啊……啊，啊……嗯……啊啊……”
+
+: DrawFaceThumbnail( "Bebi", 6, 0, 0 )
+: PlayVoice( "Voices/vo07_beb0205" )
+\CN["红美"]
+「呀，快住手！
+不要对kinako做过分的事！”
+
+//●演技：ドスを利かせる感じでお願いします
+: PlayVoice( "Voices/vo10_mid0530" )
+\CN["绿色"]
+“啊？”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0716" )
+\CN["黄菜子"]
+“红美，不行……我……没关系……”
+
+//●演出：可能ならフォント小さく
+\CN["白夜队士·男2"]
+<size=70%>“哇……真是不可思议……”</size>
+
+\CN["白夜队士·男3"]
+<size=70%>“但是，非常兴奋”</size>
+
+: PlayVoice( "Voices/vo10_mid0531" )
+\CN["绿色"]
+“看吧，我自己，是很好的墨鱼。让我看看鱼叉吧。
+别理我，这家伙，快死了吧？”
+
+一边将刀尖贴在红美的额头上一边说道。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0717" )
+\CN["黄菜子"]
+（如果不让她看到她的话，她真的会被杀……。
+如果没有乌贼的话……一边被那个人看到，一边不拼命干的话）
+
+\CN["白夜队士·男1"]
+「…………」
+
+故意错开男人感觉到的重点。
+
+: PlayVoice( "Voices/vo10_mid0532" )
+\CN["绿色"]
+“我没有必要欺负自己。要好好地克林特利斯
+猜对了。我才不喜欢这种卑鄙的人呢……”
+
+\CN["白夜队士·男1"]
+“不好意思！”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0511002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0718" )
+\CN["黄菜子"]
+“呜呜呜呜！呜呜呜、嗯……哈、哈、呜、
+没有乌贼的话……要集中精神……啊…啊…啊啊啊……啊啊……啊啊……”
+
+刚才还忍耐了那么多……。
+
+焦灼难当。身体没有反应。
+
+: PlayVoice( "Voices/vo02_kin0719" )
+\CN["黄菜子"]
+“哈，哈，嗯……嗯，啊…嗯……”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0720" )
+\CN["黄菜子"]
+“嗯……嗯，嗯……呃！拜托了……
+我……心情变好了……不那样做的话……”
+
+为了让心情稍微好一点，最好能达到顶峰
+在这种状态下拼命摇晃身体。
+
+\CN["白夜队士·男3"]
+“那样的孩子自己在摇着腰。
+而且被吊着……”
+
+\CN["白夜队士·男2"]
+“真是太不道德了。”
+
+: PlayVoice( "Voices/vo02_kin0721" )
+\CN["黄菜子"]
+“啊，哈……嗯，嗯……啊，啊……
+哈……哈…呜，呜哇！”
+
+: PlayVoice( "Voices/vo10_mid0533" )
+\CN["绿色"]
+“啊，从孩子的脸上，渐渐变成了母脸。
+嗯。就是这个样子”
+
+//●演技：言いなりに――→刺されます
+: DrawFaceThumbnail( "Bebi", 1, 0, 0 )
+: PlayVoice( "Voices/vo07_beb0206" )
+\CN["红美"]
+「キナコウ……在下是没问题的！
+对于这些不讲道理的家伙们——”
+
+//●ＳＥ：刺す音
+: PlaySe( "SE/Se_Stab02" )
+: DrawFaceThumbnail( "Bebi", 6, 0, 0 )
+: PlayVoice( "Voices/vo07_beb0207" )
+\CN["红美"]
+“嗯，嗯……！”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0722" )
+\CN["黄菜子"]
+“呀，请住手！
+请不要伤害红美……”
+
+: PlayVoice( "Voices/vo10_mid0534" )
+\CN["绿色"]
+“这个笨蛋说了什么让人不快的话啊。
+话说，还有时间在意这些吗？”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0723" )
+\CN["黄菜子"]
+（快一点……不这么做的话，这个人真的会把红美
+杀了……。快点儿，不墨鱼的话……）
+
+全神贯注地——
+羞耻什么的怎样都无所谓。
+
+现在为了小红美！
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：感じてきています
+: PlayVoice( "Voices/vo02_kin0724" )
+\CN["黄菜子"]
+“啊啊啊啊！啊……嗯，嗯，啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi01" )
+然后，终于有了快感。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0725" )
+\CN["黄菜子"]
+（这样的话，就想办法……嗯……就这样……！）
+
+尽可能地摇晃腰身，用被称为电ma的东西
+摩擦最能感觉到的部分。
+
+\CN["白夜队士·男1"]
+“明明是个小孩子，却露出好色的表情。”
+
+\CN["白夜队士·男1"]
+“糟了……小鸡儿勃起了。
+我变得非常想去看看”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0511002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0726" )
+\CN["黄菜子"]
+“啊啊……嗯……感觉一下……从下面开始
+好烫……好厉害，上来了……”
+
+: PlayVoice( "Voices/vo02_kin0727" )
+\CN["黄菜子"]
+“渐渐扩大……嗯……哈，哈，哇，我……”
+
+\CN["白夜队士·男2"]
+“啊，有色情的汤出来了。就算是小孩，果然也是女人啊。
+要好好弄湿啊」
+
+//●演技：絶頂しそうになっています
+: PlayVoice( "Voices/vo02_kin0728" )
+\CN["黄菜子"]
+“嗯！啊，嗯，嗯，啊啊啊啊！”！
+嗯……嗯……呃，大的，过来……”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo02_kin0729" )
+\CN["黄菜子"]
+“啊……啊……啊……嗯……嗯！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘿嘿！嘿嘿！嘿嘿！嘿嘿！嘿嘿！
+
+身体颤抖着，头上直奔着敏锐的感觉。
+我成功登顶了。
+
+: PlayVoice( "Voices/vo02_kin0730" )
+\CN["黄菜子"]
+“哈、哈、这、这样……不错吧……？”
+
+//●演技：威嚇するような感じの『はぁ？』でお願いします
+: PlayVoice( "Voices/vo10_mid0535" )
+\CN["绿色"]
+“哈？”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0731" )
+\CN["黄菜子"]
+“然后，所以……现在我很兴奋……”
+我给你看了，红美……”
+
+: PlayVoice( "Voices/vo10_mid0536" )
+\CN["绿色"]
+“你在说什么？”？
+你有好好听我说的话吗？”
+
+: PlayVoice( "Voices/vo10_mid0537" )
+\CN["绿色"]
+“我只是说让你看看我的干劲。
+还有，我不知道你会好好告诉我“如果是鲑鱼子的话就是鲑鱼子”
+
+: PlayVoice( "Voices/vo10_mid0538" )
+\CN["绿色"]
+“那么，重新来过吧。已经没有时间了。”
+
+: PlayVoice( "Voices/vo02_kin0732" )
+\CN["黄菜子"]
+“但是，但是……现在才刚刚好……”
+
+//●ＳＥ：刺す音
+//●演技：刺されています
+: HideWnd()
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0208" )
+\CN["红美"]
+“呼呼！”
+
+望月绿以呼的感觉对红美说
+扎大针。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0733" )
+\CN["黄菜子"]
+“我知道了……我会更加努力的……！”……！
+所以，再也……”
+
+: PlayHSe( "SE/Hse_Vibe" )
+——好臭好赞！！
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0111002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0734" )
+\CN["黄菜子"]
+“嗯！嗯！嗯！嗯，嗯，啊啊啊！”
+
+: PlayVoice( "Voices/vo02_kin0735" )
+\CN["黄菜子"]
+“这，这样的话，又……因为变得敏感了
+啊啊啊……”
+
+刚开始玩，还很敏感。
+
+: PlayVoice( "Voices/vo02_kin0736" )
+\CN["黄菜子"]
+“呃，啊啊，呜哇！哇，好舒服啊
+来……不，好像很有活力……”
+
+: PlayBackVoice( "Voices/BGV02_kin_aegi02" )
+必须快点乌贼！
+
+\CN["白夜队士·男1"]
+“哦！比刚才更积极了。”
+
+\CN["白夜队士·男2"]
+“为了保护重要的宠物而拼命努力的少女。
+滚滚而来”
+
+: PlayVoice( "Voices/vo02_kin0737" )
+\CN["黄菜子"]
+“啊，好棒！哈哈，好的，现在开始就很有活力了……”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0738" )
+\CN["黄菜子"]
+“好棒……好棒……呜……啊啊啊啊啊啊啊啊！！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+阿飞！阿飞！阿飞！阿飞！阿飞！
+
+这样的话，应该没什么怨言的……。
+
+: PlayVoice( "Voices/vo10_mid0539" )
+\CN["绿色"]
+“呃，还有5套，要不要试试？
+剩下10秒，2秒1次就可以了”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0739" )
+\CN["黄菜子"]
+“诶……那个，那种……”
+
+: PlayVoice( "Voices/vo10_mid0540" )
+\CN["绿色"]
+“9……8…看，好急啊！
+顺便说一下，我知道{演技，fukashi}”
+
+: PlayVoice( "Voices/vo02_kin0740" )
+\CN["黄菜子"]
+“嗯……嗯，嗯，嗯……如果不再多点乌贼的话……！
+真想……好棒……拜托了……请多关照……”
+
+: PlayVoice( "Voices/vo02_kin0741" )
+\CN["黄菜子"]
+“红美酱要被杀了……拜托了，请再多
+请让我开心！”
+
+\CN["白夜队士·男1"]
+“喂，喂……”
+
+\CN["白夜队士·男3"]
+“孩子拼命地喊着要让他生气之类的话，然后摇着腰。
+勃起过多裤子都快破了”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0111003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo02_kin0742" )
+\CN["黄菜子"]
+“啊，好棒！好棒！好棒……好棒！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+阿飞！阿飞！嘿嘿！嘿嘿！吓我一跳！
+
+已经是黑社会了。
+
+: PlayVoice( "Voices/vo02_kin0743" )
+\CN["黄菜子"]
+“嗯，现在很帅……！我很喜欢……看
+我有好好地干劲十足啊！”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0744" )
+\CN["黄菜子"]
+“啊啊啊啊……嗯，嗯……啊啊啊，好棒，好棒……
+又来了——————！”
+
+//●ＣＧ差分：尿
+: HideWnd()
+: PlayHSe( "SE/Hse_Nyou" )
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0511013_1100100_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["白夜队士·男1"]
+“哇！漏了！”
+
+: PlayVoice( "Voices/vo02_kin0745" )
+\CN["黄菜子"]
+“啊啊啊……啊，尿出来了……但是……”……
+再不墨鱼的话……再、再、再——”
+
+忘我地叫着浑身发抖。
+丝毫没有觉得害羞的余地。
+
+我不太清楚你是不是愿意
+我在拼命。
+
+\CN["白夜队士·男1"]
+“喂，我要去。”
+
+\CN["白夜队士·男2"]
+“眼泪啦、鼻涕啦，可爱的脸变得乱七八糟。”
+
+: PlayVoice( "Voices/vo10_mid0541" )
+\CN["绿色"]
+“3……2…1……好的，结束了！”
+
+: StopBackVoice()
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0511113_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：過呼吸気味でお願いします。テキスト無視でＯＫ
+: PlayVoice( "Voices/vo02_kin0746" )
+\CN["黄菜子"]
+“哈————！哈——！哈！哈、哈、哈”
+
+: PlayVoice( "Voices/vo10_mid0542" )
+\CN["绿色"]
+“是的，辛苦了。真是干劲十足啊。
+真是太兴奋了”
+
+: PlayVoice( "Voices/vo02_kin0747" )
+\CN["黄菜子"]
+“那么，小红美……”
+
+: PlayVoice( "Voices/vo10_mid0543" )
+\CN["绿色"]
+“但是，太可惜了。还有一点。”
+
+望月绿舔了大针状的武器——
+
+//●演出：血飛沫エフェクト
+//●ＳＥ：刺す音
+: HideWnd()
+: keep = true; cgkeep = true;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0311103_1100000_0_"
+: Call("Scenarios/Common*EvIn")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+//●演技：紅美が目の前で殺されて言葉を失います
+: PlayVoice( "Voices/vo02_kin0748" )
+\CN["黄菜子"]
+“啊……啊……啊……啊……啊………”
+
+大针贯穿了红美的身体。
+
+胸部有个大洞的身体紧紧地躺着
+漂泊在血海
+
+: PlayVoice( "Voices/vo10_mid0544" )
+\CN["绿色"]
+“啊，脖子已经飞了吗？”。
+就算力量有多大也不要紧。忍耐”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0211103_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0749" )
+\CN["黄菜子"]
+“嗯……骗人的……可是，我要是好好做的话……帮帮我
+说要给我……”
+
+: PlayVoice( "Voices/vo10_mid0545" )
+\CN["绿色"]
+“我们不要撒谎。
+一开始不是说过如果我们满意了吗？”
+
+: PlayVoice( "Voices/vo10_mid0546" )
+\CN["绿色"]
+“然后，是无法令人满意的结果。”
+
+: PlayVoice( "Voices/vo02_kin0750" )
+\CN["黄菜子"]
+“不……红美……嗯………”……
+为什么，这么残酷的事情……”
+
+: PlayVoice( "Voices/vo10_mid0547" )
+\CN["绿色"]
+“太过分了？你在说什么甜言蜜语？”？
+这么天真的想法，自己会拿刀吗？”
+
+: PlayVoice( "Voices/vo10_mid0548" )
+\CN["绿色"]
+“话说，如果自己没被抓到的话，还有就是自己把自己家给抓了
+满足了的话，这家伙就不会死了？”
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0511103_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0751" )
+\CN["黄菜子"]
+“啊……啊…啊……啊……”
+
+因为我就这样被抓住了——
+因为我没能实现这个人的愿望——
+
+所以，红美最后什么也说不完
+惨遭杀害。
+
+: PlayVoice( "Voices/vo10_mid0549" )
+\CN["绿色"]
+“自己的{责任，责任}太任性了。那里，不能搞错了。”
+
+: PlayVoice( "Voices/vo02_kin0752" )
+\CN["黄菜子"]
+“对不起，对不起……红美……是我的……是我的错……”
+
+眼前一片模糊，天色越来越暗。
+呼吸变得困难，只能听到心脏的声音。
+
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_b002_1_2_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0753" )
+\CN["黄菜子"]
+“啊……啊…啊啊……啊……啊………………”
+
+然后——
+
+//●演出：回想あけるトランジション
+//●状況：現実に戻って来ます
+//●視点：無黒視点
+//●背景：小屋・夜
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_D05_14" )
+//: DrawChara( "Kinako", 13, 0, 0, 0.5, 0.0, 2, "C" )
+: AutoFaceThumbnail( false )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0754" )
+\CN["黄菜子"]
+“哇啊啊啊啊啊啊啊啊啊————————！”
+
+: AutoFaceThumbnail( true )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 1.0 )
+: DrawChara( "Mukuro", 16, 0, 0, 0.5, 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4524" )
+\CN["无黑色"]
+“黄菜子……！？”
+
+: PlayBgm("BGM/41_Sad")
+: CharaCostume( "Kinako", 0 )
+: DrawChara( "Mukuro", 16, 0, 0, 0.5, 0.0, 5, "RC" )
+: DrawChara( "Kinako", 12, 1, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo02_kin0755" )
+\CN["黄菜子"]
+“啊啊啊……啊，是我……都怪我……啊…啊…”
+
+突然发狂起来的黄菜子
+脸青得直打哆嗦。
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk4525" )
+\CN["无黑色"]
+“黄菜子，是我。是无黑的。你知道吗？”
+
+: DrawChara( "Kinako", 6, 1)
+: PlayVoice( "Voices/vo02_kin0756" )
+\CN["黄菜子"]
+“……对不起……对不起……如果我没抓到的话
+这样的事……”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo22_tam0338" )
+\CN["玉藻"]
+“桃子，让这家伙睡着吧。”
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom1451" )
+\CN["桃子"]
+“{睡眠魔术，睡眠}！”
+
+//●演出：睡眠魔術演出。黄菜子眠る
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Tamamo", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Down01" )
+: PlayAnim( "Animations/AnimeL_Down01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+由于桃子的魔术黄菜子简单地睡着了。
+
+: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 5, "C" )
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 4, "L" )
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "R" )
+: PlayVoice( "Voices/vo01_mom1452" )
+\CN["桃子"]
+“黄菜子……”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4526" )
+\CN["无黑色"]
+“……到底是谁把黄菜子弄到这种地步？”
+
+总之，黄菜子遭受了相当大的损失
+知道了。
+
+: PlayVoice( "Voices/vo22_tam0339" )
+\CN["玉藻"]
+“看来有必要耐心地看……”
+
+//●背景：空・夜
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Tamamo", 0.5 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+到底不能就这样放任不管。
+
+我们把黄菜子领回，先等状态稳定下来
+我照顾了你。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「帝都に向かえ１」へ
+//＠シナリオジャンプ：SC_D05_15
+//黄菜子Ｈパラメーター調整
+: CharaSetHRank( "Kinako", "Immoral", "C" )
+: CharaSetHRank( "Kinako", "OralSex", "C" )
+: CharaSetHRank( "Kinako", "Breast", "C" )
+: CharaSetHRank( "Kinako", "Vagina", "C" )
+: CharaSetHRank( "Kinako", "Anal", "C" )
+: CharaSetHRank( "Kinako", "Exhibitionist", "C" )
+: Jump( "Scenarios/SC_D05_15" )

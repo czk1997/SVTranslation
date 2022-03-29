@@ -1,0 +1,705 @@
+//========================================================
+//○幕府の終わり
+//========================================================
+*sc001
+//●視点：第三者視点
+//●背景：空
+//登場人物服装指定しておく
+: CharaCostume( "Azami", 4 )
+: CharaCostume( "Daruma", 2 )
+: CharaCostume( "Mei", 0 )
+: CharaCostume( "Midori", 0 )
+: CharaCostume( "Mikage", 0 )
+: CharaCostume( "Shion", 0 )
+: CharaCostume( "Iwao", 0 )
+: CharaCostume( "Ranmaru", 0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: ShowWnd()
+以监狱被袭击为契机
+幕府的向心力渐渐堕落到了地上。
+
+支持幕府的贵族和财阀们也害怕暗杀和报复反幕派
+也有人抛弃幕府，倒向反幕派或逃往海外。
+
+//●場所：白夜の隠れ家
+//●状況：幹部会議
+//: DrawChara( "Ranmaru", 0, 0, 0, 0.25, 0.0, 2, "L" )
+//: DrawChara( "Mikage", 5, 0, 0, 0.25, 0.0, 3, "LC" )
+//: DrawChara( "Manji", 0, 0, 0, 0.25, 0.0, 4, "RC" )
+//: DrawChara( "Iwao", 0, 0, 0, 0.25, 0.0, 5, "R" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a053_1_2_0000000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+\CN["兰丸"]
+“也就是说，幕府已经停止运作了
+不过分”
+
+//: DrawChara( "Mikage", 9, 0)
+: PlayVoice( "Voices/vo11_mik0206" )
+\CN["御影"]
+“现在是机会！
+我想哪怕一天也要从这个世界上消失”
+
+对幕府怀有极大怨恨的织笠御影
+好像是想攻入帝都城也没有办法的样子。
+
+\CN["卍"]
+“老实说，幕府什么的怎样都无所谓……。
+现在能随心所欲地做才是最开心的”
+
+\CN["严严"]
+「Ｚｚｚ」
+
+//: EraseChara( "Mikage", 0.25 )
+//: EraseChara( "Ranmaru", 0.25 )
+//: DrawChara( "Shion", 0, 0, 0, 0.25, 0.0, 5, "LC" )
+: PlayVoice( "Voices/vo12_shi0198" )
+\CN["紫苑"]
+“老实说，我也不在乎幕府会变成什么样。”
+
+//: DrawChara( "Shion", 1, 0)
+: PlayVoice( "Voices/vo12_shi0199" )
+\CN["紫苑"]
+“如果能和严酱一起过上安稳的生活
+除此之外，没有必要了”
+
+//: DrawChara( "Midori", 18, 0, 0, 0.5, 0.0, 4, "L" )
+: PlayVoice( "Voices/vo10_mid0289" )
+\CN["绿色"]
+“我自己会说的。在街上闹腾到那种破破烂烂为止。”
+说是没有必要……”
+
+//: DrawChara( "Shion", 4, 0)
+: PlayVoice( "Voices/vo12_shi0200" )
+\CN["紫苑"]
+“我只是在做严酱想做的事情。
+不要抱怨了”
+
+//: EraseChara( "Midori", 0.25 )
+//: EraseChara( "Shion", 0.25 )
+//: EraseChara( "Manji", 0.25 )
+//: EraseChara( "Iwao", 0.25 )
+//: DrawChara( "Hiraga", 0, 0, 0, 0.25, 0.0, 3, "C" )
+\CN["平底片"]
+“即便放任不管，幕府也只会走向灭亡。”
+
+//: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“鬼灯隐藏着自己的影子，轮回组变成了肆无忌惮的暴徒
+有呢”
+
+那是前几天和亚久里一起去下町时发生的事
+我想起来了。
+
+在帝都的下町，有着被巡查组掠夺或破坏的行为
+进行的事情……。
+
+//: EraseChara( "Hiraga", 0.25 )
+//: DrawChara( "Mei", 1, 0, 0, 0.25, 0.0, 3, "RC" )
+//: DrawChara( "Daruma", 0, 0, 0, 0.25, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo09_mei0413" )
+\CN["冥"]
+“那么，头，今天到底是什么理由呢？”
+收集到了吗？”
+
+//: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“终于要开始做了。
+在那之前，有人想介绍给你们”
+
+//: EraseChara( "Daruma", 0.25 )
+//: EraseChara( "Mei", 0.25 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Byakuya", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: CharaCostume( "Azami", 4 )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+//●演出：般若　登場する
+\CN["般若"]
+「…………」
+
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Shion", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo12_shi0201" )
+\CN["紫苑"]
+“咦？一白的般若竟然在这里露面
+诚，真是少见啊。这是什么风？”
+
+对于般若的登场，大家都惊讶不已
+和般若相识的紫苑毫不客气地开口了。
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_Cloth01" )
+于是般若慢慢地成为了铠甲和标志
+摘下般若的脸。
+
+: CharaCostume( "Azami", 5 )
+//: DrawChara( "Azami", 0, 0, 0, 0.25, 0.0, 3, "R" )
+: DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo10_mid0290" )
+\CN["绿色"]
+“喂喂，般若的真面目是……诶！？真的吗？
+等一下……那是什么……”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C")
+: PlayVoice( "Voices/vo11_mik0207" )
+\CN["御影"]
+“没想到，一白般若的真面目竟然是你……”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C")
+: PlayVoice( "Voices/vo09_mei0414" )
+\CN["冥"]
+“鬼灯的局长，高千穗嘲讽……。
+没想到你是白夜的一员”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 27, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C")
+: PlayVoice( "Voices/vo05_aza0640" )
+\CN["嘲讽"]
+“嘛，发生了各种各样的事情。”
+
+: DrawChara( "Azami", 27, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Daruma", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+\CN["达磨"]
+“般若——不，不，高千穗原本就不是鬼灯
+我是属于白夜的”
+
+: DrawChara( "Azami", 5, 0)
+: PlayVoice( "Voices/vo05_aza0641" )
+\CN["嘲讽"]
+“有点理由。
+进入鬼灯之后，得到了幕府的情报”
+
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo10_mid0291" )
+\CN["绿色"]
+“那就是那个吗？是SPA吗？”
+
+: DrawChara( "Azami", 24, 0)
+: PlayVoice( "Voices/vo05_aza0642" )
+\CN["嘲讽"]
+“是间谍吗……嘛，就是这么回事。”
+
+: DrawChara( "Midori", 3, 0)
+: PlayVoice( "Voices/vo10_mid0292" )
+\CN["绿色"]
+“头，这是我们公司的工作吗？
+我们家，姑且算是元一吧？从什么时候开始？”
+
+: DrawChara( "Azami", 0, 0)
+: PlayVoice( "Voices/vo05_aza0643" )
+\CN["嘲讽"]
+“是啊。是从什么时候开始的呢……。
+你进入白夜之前的事是确实的”
+
+: DrawChara( "Midori", 0, 0)
+: PlayVoice( "Voices/vo10_mid0293" )
+\CN["绿色"]
+“啊，我还没做过野一的时候，听说过。
+请注意鬼灯的局长及其腹心”
+
+: DrawChara( "Midori", 16, 0)
+: PlayVoice( "Voices/vo10_mid0294" )
+\CN["绿色"]
+“那个，你做了自己的事吗？”
+
+: DrawChara( "Azami", 26, 0)
+: PlayVoice( "Voices/vo05_aza0644" )
+\CN["嘲讽"]
+“啊？因为是很久以前的事了，所以忘了。”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+白夜的干部们知道一白是般若的。
+
+//: DrawChara( "Shion", 0, 0, 0, 0.25, 0.0, 3, "LC" )
+//: DrawChara( "Ranmaru", 0, 0, 0, 0.25, 0.0, 4, "RC" )
+但是，知道鬼灯的局长高千穗痣的真面目是
+除了达磨以外，紫苑和比痣先进入白夜的紫苑
+只有负责情报的兰丸。
+
+//: EraseChara( "Ranmaru", 0.25 )
+//: EraseChara( "Shion", 0.25 )
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["严严"]
+“……呵呵……好吵啊……”
+
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["卍"]
+“真是轻松啊。终于醒了。”
+
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo05_aza0645" )
+\CN["嘲讽"]
+“好久不见，严。
+身体变大了啊」
+
+: DrawChara( "Iwao", 1, 0)
+: layer = 2; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+\CN["严严"]
+“……啊，真是嘲讽……！？啊，妈妈啊——！”
+
+: chara = "Iwao"; lay = 2; type = "DL"; Call( "Scenarios/Common*FgEffOut");
+一看到绣球的身影，严就慌张张地绕到紫苑后面。
+
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: DrawChara( "Shion", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Azami", 24, 0)
+: PlayVoice( "Voices/vo05_aza0646" )
+\CN["嘲讽"]
+“喂喂，我从你还是小孩子的时候开始
+明明知道，被那样害怕的话会受伤的”
+
+: DrawChara( "Shion", 0, 0)
+: PlayVoice( "Voices/vo12_shi0202" )
+\CN["紫苑"]
+“严酱从小就不擅长应对淤青。”
+
+: DrawChara( "Azami", 27, 0)
+: PlayVoice( "Voices/vo05_aza0647" )
+\CN["嘲讽"]
+“我只是稍微教了点礼貌而已。”
+
+\CN["严严"]
+“呜呜……”
+
+严在年幼的时候，调皮的话会被嘲讽狠狠地骂
+过去也有过，现在的痣也有着恐怖心理。
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["卍"]
+“严只会让人如此害怕，这家伙果然是个糟糕的家伙
+”
+
+: DrawChara( "Midori", 19, 0)
+: PlayVoice( "Voices/vo10_mid0295" )
+\CN["绿色"]
+“卍、和你一起快3秒了吧？”
+
+\CN["卍"]
+“好吵啊。那你呢？”
+
+: DrawChara( "Midori", 4, 0)
+: PlayVoice( "Voices/vo10_mid0296" )
+\CN["绿色"]
+“我们家？来吧，怎么样？我不知道怎么做。”
+
+: DrawChara( "Midori", 16, 0)
+: PlayVoice( "Voices/vo10_mid0297" )
+\CN["绿色"]
+“也就是说，局长……不是，是高千穗先生吗……。
+之后要不要和我一起玩？”
+
+//: DrawChara( "Azami", 4, 0)
+: DrawFaceThumbnail( "Azami", 4, 0, 0 )
+: PlayVoice( "Voices/vo05_aza0648" )
+\CN["嘲讽"]
+“这之后我有事，下次见。”
+
+\CN["卍"]
+“被拒绝了。
+而且加‘さん’什么的……”
+
+: DrawChara( "Midori", 0, 0)
+: PlayVoice( "Voices/vo10_mid0298" )
+\CN["绿色"]
+“那是因为，那边比我们的名次还要高。”
+
+: DrawChara( "Midori", 17, 0)
+: PlayVoice( "Voices/vo10_mid0299" )
+\CN["绿色"]
+“还有，卍，自己不是叫我‘你’了吗？
+好好听了吗？啊？”
+
+\CN["卍"]
+“……切……我瘦了，望月先生。”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["兰丸"]
+“小绿，这种地方很严肃吧。”
+
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0415" )
+\CN["冥"]
+“我是直呼其名的。”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“啊，这么说来，我也被人直呼其名了。”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+\CN["达磨"]
+“那么，差不多该进入正题了吧？”
+
+对于达磨的一句话，至今为止喋喋不休的干部们
+默然关注。
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“从现在开始，幕府——帝都城就要攻陷了。”
+
+//: DrawChara( "Azami", 0, 0, 0, 0.25, 0.0, 2, "L" )
+: DrawChara( "Daruma", 0, 0, 0)
+\CN["达磨"]
+“目标是取将军一桥忠胜的首级。”
+
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["达磨"]
+“和我一起来的人是高千穗，还有——”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“神八代”
+
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: lay = 3; type = "WR"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo09_mei0416" )
+\CN["冥"]
+“啊！”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“然后是望月”
+
+: DrawChara( "Midori", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo10_mid0300" )
+\CN["绿色"]
+“头，必须要这样！
+嘿嘿，能让幕府下台什么的，真是太期待了♪”
+
+\CN["达磨"]
+“然后，织笠！以上，只有5个人进攻帝都城！”
+
+: DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
+: lay = 5; type = "WR"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo11_mik0208" )
+\CN["御影"]
+“啊啊啊……我竟然能担任这样的角色……。
+尽我所有的魔术之力，让可恶的幕府成为尘土吧”
+
+\CN["达磨"]
+“其他人在这里待命。为了以防万一，可以吗？”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Shion", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: PlayVoice( "Voices/vo12_shi0203" )
+\CN["紫苑"]
+“我没什么特别在意的。
+让我像往常一样放松”
+
+\CN["卍"]
+“我也无所谓。”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“我有研究。”
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+前往帝都城的人、剩下的人，各自陈述自己的想法——、
+
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["达磨"]
+“那么明早就开始实施帝都城袭击。各方面都不要怠慢准备。”
+
+: DrawChara( "Ranmaru", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["兰丸"]
+“还有一个。大家，这件事是只属于我们的秘密。
+因为不知道情报会从哪里泄漏出来”
+
+兰丸叮嘱。
+
+话虽如此，干部不允许的信息
+没有一个会泄露的笨蛋。
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+情报泄露会导致确实的死亡。
+我很清楚那件事。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——然后，第二天。
+
+达磨、嘲讽、冥、绿、御影5人在幕府所在的帝都城
+乘上了……。
+
+//●演出：場面転換トランジション
+//●場所：帝都城
+: HideWnd()
+: CharaCostume( "Azami", 0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_BakuhuRoom01_01", 1.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0301" )
+\CN["绿色"]
+“虽然很有干劲，但是这是怎么回事？”
+
+: DrawChara( "Mikage", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo11_mik0209" )
+\CN["御影"]
+“完全感觉不到人的气息……”
+
+: DrawChara( "Midori", 9, 0)
+: PlayVoice( "Voices/vo10_mid0302" )
+\CN["绿色"]
+“高千穗先生，你说我们要进攻的情报
+是放在幕府那里放跑的吗？”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: PlayVoice( "Voices/vo05_aza0649" )
+\CN["嘲讽"]
+“如果我站在将军的立场上，然后出城的话
+幕府啊，早就崩溃了”
+
+: DrawChara( "Midori", 0, 0)
+: PlayVoice( "Voices/vo10_mid0303" )
+\CN["绿色"]
+“せやな……就是这样啊。”
+
+//●演出：５人　さらに奥に進んでいく
+//●演出：場面転換トランジション
+//●状況：部屋に入ると将軍がすでに死んでいた
+//●演出：あざみが将軍のところに駆け寄る
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: LoadMap( "Map_Event009", "", "Scenarios/SC_C05_10*sc001_1")
+
+*sc001_1
+: RpgCharaOff("Player")
+: RpgCharaOff("Ji")
+: RpgCharaOn("Mei")
+: RpgCharaOn("Daruma")
+: RpgCharaOn("Midori")
+: RpgCharaOn("Mikage")
+: RpgCharaOn("Azami")
+: RpgCharaTurn( "Shogun", "U" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+: DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo05_aza0650" )
+\CN["嘲讽"]
+“……没有脉。我死了。”
+
+: DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo10_mid0304" )
+\CN["绿色"]
+“啊，那是不可能的……。
+幕府掉了，明明鼓足干劲来的，真是不可能啊”
+
+: PlayVoice( "Voices/vo05_aza0651" )
+\CN["嘲讽"]
+“好像被谁暗杀了。真是被杀了啊……。
+从遗体的情况来看，是昨天晚上被杀了吗？”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo09_mei0417" )
+\CN["冥"]
+“那么，城里没有人留下来的是……”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["达磨"]
+“大概是知道将军被杀后逃走了吧。”
+
+: DrawChara( "Azami", 27, 0)
+: PlayVoice( "Voices/vo05_aza0652" )
+\CN["嘲讽"]
+“因为你们想做什么就做什么
+离开幕府的家伙，真是太多了”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0653" )
+\CN["嘲讽"]
+“说起来城里基本上没什么人。
+也被警卫人员抛弃了吧”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo11_mik0210" )
+\CN["御影"]
+“在这么大的地方，只有一个人，连保镖都没放就被暗杀了。
+感觉不错……说了欲望，我更希望看到地狱
+但是……”
+
+: DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: PlayVoice( "Voices/vo10_mid0305" )
+\CN["绿色"]
+“将军死了，接下来怎么办？
+虽然有各种各样的东西都是背水印的”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 5, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo09_mei0418" )
+\CN["冥"]
+“死了也没办法。”
+
+//●演出：冥　部屋を出て行こうとする
+: HideWnd()
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: RpgCharaBatch( "Mei"	\
+:	"MoveDown", 1 )
+: Wait()
+: DrawChara( "Mikage", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Mei", 5, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0211" )
+\CN["御影"]
+「冥先生，去哪里？」
+
+//●備考：冥の本来の目的は自分の村を滅ぼした奴を突き止めること。
+//●　　　幕府が関係しているんじゃないかと疑っている。
+: DrawChara( "Mei", 3, 0)
+: PlayVoice( "Voices/vo09_mei0419" )
+\CN["冥"]
+“我想多看看。
+也许有什么吧”
+
+//●演出：冥　部屋から出て行く
+: HideWnd()
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Mei"	\
+:	"Speed", 4.0	\
+:	"MoveDown", 7 )
+: Wait()
+: RpgCharaOff("Mei")
+: Wait()
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0212" )
+\CN["御影"]
+“在这里已经没有意义了，我也要告辞了。”
+
+: DrawChara( "Midori", 19, 0)
+: PlayVoice( "Voices/vo10_mid0306" )
+\CN["绿色"]
+「せや。啊，但是，真的是消化不良啊。
+回去后卍但是如果真是笨蛋的话可不行啊」
+
+: HideWnd()
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//●演出：御影とみどり　出て行く
+: RpgCharaBatch( "Midori"	\
+:	"Speed", 4.0	\
+:	"MoveDown", 7 )
+: RpgCharaBatch( "Midori"	\
+:	"Speed", 4.0	\
+:	"MoveDown", 7 )
+: Wait()
+: RpgCharaOff("Mikage")
+: RpgCharaOff("Midori")
+: RpgCharaTurn( "Azami", "D" )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["达磨"]
+“关于狗所说的公主的事，城内似乎没有这种迹象
+没有感觉到”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0654" )
+\CN["嘲讽"]
+“很有可能是亲信的爷爷藏起来了。
+总之要尽快找到”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“将军被暗杀的现在，已经被什么人杀害了
+可能性是？”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0655" )
+\CN["嘲讽"]
+「没有。如果公主死了的话
+大和应该已经灭亡了”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嗯。那么，有寻找公主的目的吗？”
+
+: DrawChara( "Azami", 26, 0)
+: PlayVoice( "Voices/vo05_aza0656" )
+\CN["嘲讽"]
+“玉藻在这里吧？
+借用他的力量的话，公主在哪里都可以简单地
+应该知道”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0657" )
+\CN["嘲讽"]
+“不久红色的月亮就要来了。
+已经不能再悠闲了。手已经打好了”
+
+//●演出：達磨・あざみ　部屋から出て行く
+//●演出：暗転
+//●シーン：「行方不明のお姫様１」へ
+//＠シナリオジャンプ：SC_C05_11
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: RpgCharaOn("Player")
+: LoadMap( "Map_Town07_06_Byakuya", "Def", "Scenarios/SC_C05_11")

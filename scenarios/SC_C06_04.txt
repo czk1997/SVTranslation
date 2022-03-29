@@ -1,0 +1,841 @@
+//========================================================
+//○大和の危機、鬼灯と白夜が手を取り合う
+//========================================================
+//●視点：無黒視点
+//●場所：崎珠・玉藻の家
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/09_CM009")
+: ShowWnd()
+这是在收集三种神器交给玉藻大人几天后的事情。
+
+我和桃子们，还有不知为何连姐姐和嘲讽局长也
+我在玉藻大人使用的家里集合了。
+
+: DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Ryu", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo05_aza0660" )
+\CN["嘲讽"]
+“啊，大家好久不见了。看起来很健康比什么都好。”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1099" )
+\CN["桃子"]
+“好久不见，不是啦！
+局长，还有龙先生，突然就不见了
+我非常担心！”
+
+: CharaCostume( "Kinako", 5 )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0577" )
+\CN["黄菜子"]
+“是的！至少写点什么吧
+请留下来！”
+
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo07_beb0190" )
+\CN["红美"]
+“正如奇纳哥所说的那样！太见外了！”
+
+突然失踪的嘲讽局长和龙先生
+突然出现了。
+
+所以，桃子和黄菜子们也有感情爆发的感觉吧。
+气势汹汹。
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ryu", 33, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["龙"]
+“对不起。因为有很多急事……”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“跟局长的话等一下再说
+为什么白夜的家伙在这里？”
+
+: DrawChara( "Mukuro", 34, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3192" )
+\CN["无黑色"]
+“我和姐姐今天早上，希望玉藻小姐能来这里
+只是被说了而已”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["兰丸"]
+“因为我被老板说要直接去。”
+
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0543" )
+\CN["冥"]
+“……是啊。”
+
+嗯，这几天姐姐的样子有点奇怪。
+
+应该说没有了闪闪发光的感觉
+说得不好的话，总觉得有点难以理解。
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“啊，你这么烦躁，吃小鱼吗？”
+
+: DrawChara( "Gin", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“不要啊。”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“我以为不是那样的，但是……”
+果然，你是白夜的人啊？”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["兰丸"]
+“果然注意到了。”
+
+: DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“啊啊啊”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3193" )
+\CN["无黑色"]
+“你认识雷欧和兰丸吗？”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“你认识吗？马布达奇？”
+
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["兰丸"]
+“嗯，我和Leo是在帝都的咖啡店偶然认识的
+食物的喜好和女人的喜好很相似，所以意气相投了”
+
+世界好像很宽广很狭窄啊。
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0661" )
+\CN["嘲讽"]
+“嘛，总之先按顺序说明一下。
+首先是这样。因为玉藻和公主们啊」
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0662" )
+\CN["嘲讽"]
+“我想你们也已经听过玉藻了
+公主的身体里有着阿波罗的箭也没有的力量
+睡着了”
+
+为了取出那个，我们收集了三种神器。
+首先，我会事先向姐姐说明一部分的始末。
+
+: DrawChara( "Azami", 4, 0)
+: PlayVoice( "Voices/vo05_aza0663" )
+\CN["嘲讽"]
+“那么，现在开始把公主中的阿波罗之箭
+要举行取出的仪式啊」
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1100" )
+\CN["桃子"]
+“这样啊。所以小夜他们不在这里啊。”
+
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0578" )
+\CN["黄菜子"]
+“拿出力量……如果能顺利结束就好了……”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0664" )
+\CN["嘲讽"]
+“关于那个使用了希拉加开发的魔导器。
+关于魔力的提取好像已经在实用中了
+我自信满满地说不会失败的”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["银子"]
+“不能相信吗？”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0665" )
+\CN["嘲讽"]
+“只能相信了。如果比拉加失败了，别说公主了。”
+我们全部都死了。用巨大的力量来毁灭大和”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["兰丸"]
+“可以确认一个吗？”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“听说阿波罗的箭乱跑的话，大和就会因为他的力量而灭亡
+虽然有，但是还没能抓住印象……”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0666" )
+\CN["嘲讽"]
+“玉藻说，超强力的炸弹爆炸了，一瞬间周围一片空白
+说是烧成了原野。如果那里什么都不留下的话”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo09_mei0544" )
+\CN["冥"]
+“确实说话太大了，很难想象……”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1101" )
+\CN["桃子"]
+“因为是老师说的，所以真的是那样吧。
+只是说了‘看到了’那样的话……”
+
+: DrawChara( "Kinako", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0579" )
+\CN["黄菜子"]
+“如果我们不颠覆未来，大和就没有未来。
+不能失败……”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["雷欧"]
+“那么，我们接下来做什么好呢？”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0667" )
+\CN["嘲讽"]
+“现在开始说明那个。虽说如此，也没什么难的。
+不是用脑子，放心吧”
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0668" )
+\CN["嘲讽"]
+“如果成功地从公主那里取出阿波罗的箭
+这次就要看你的力量该怎么办了”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["兰丸"]
+“不能随便拿出来扔掉，果然”
+
+: DrawChara( "Mei", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0545" )
+\CN["冥"]
+“其他人——能操纵力量的人继承了这股力量
+是这样吗？”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0669" )
+\CN["嘲讽"]
+“不愧是白夜干部，真敏锐。
+从公主身上拔出的阿波罗的箭的力量由玉藻来承担
+”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1102" )
+\CN["桃子"]
+“老师……！？嘛，老师的话就算有那么大的力量
+我觉得应该没问题……”
+
+//●演出：↓フォント小さく
+: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“<size=70%>那个老太婆……怎么会……一点都不喜欢</size>”
+
+我觉得银好像在嘟嘟囔囔地说什么
+好像没人听见。
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0670" )
+\CN["嘲讽"]
+“一旦唤醒阿波罗的力量，就会对其力量作出反应，释放出强大的力量
+拿着的家伙好像会出现”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["雷欧"]
+“拥有强大力量的家伙们，就像是发生在维克托尔一样
+就是说贝希莫斯集团出现了吗？”
+
+\CN["雷欧"]
+“你看，之前费尔克说过的那家伙。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0671" )
+\CN["嘲讽"]
+“啊，也有这种可能性，会出现别的{存在，东西}
+可能性也很高”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1103" )
+\CN["桃子"]
+“老师，你没看见我在出什么吗？”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0672" )
+\CN["嘲讽"]
+“怎么样？说不定你会明白的，我们
+也不知道不能传达”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3194" )
+\CN["无黑色"]
+“也就是说，我们应该做的事
+就是说要从那些拥有强大力量的人那里保护大和？”
+
+: DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom1104" )
+\CN["桃子"]
+“但是，要去哪里呢？”？
+一句话叫做大和也就相当大了”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0673" )
+\CN["嘲讽"]
+“这一点不用担心。玉藻提取力量的地方——
+因为想去不死之山看看啊」
+
+//●演技：心の声です
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0546" )
+\CN["冥"]
+（无论是发生的地方，还是头几天提到的大和
+未曾有过的危机就是这样吗……）
+
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["雷欧"]
+“也就是说，sayo和jii是在不死之山上的吧？
+我知道要做，那就赶紧去吧”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0674" )
+\CN["嘲讽"]
+“啊。还有，这次就以鬼灯和白夜的面子来协助了。”
+因为是这样。你们好好相处吧」
+
+//●演技：レオ銀＝コンビ名みたいなニュアンスです
+: DrawChara( "Azami", 4, 0)
+: PlayVoice( "Voices/vo05_aza0675" )
+\CN["嘲讽"]
+“特别是雷欧银，你们的头脑很好清醒啊。”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“啊？和白夜合作？”
+
+: DrawChara( "Gin", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“局长，头被乌贼咬了吗？”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1105" )
+\CN["桃子"]
+“因为，白夜是反幕派，一直在和我们战斗……。
+那种事，事到如今，不可能再合作了……”
+
+//●演技：元白夜のメンバーなので色々複雑です
+: DrawChara( "Kinako", 3, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0580" )
+\CN["黄菜子"]
+「…………」
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo05_aza0676" )
+\CN["嘲讽"]
+“但是，你们不是和无黑合作过吗？”？
+被玉藻说了，收集三种神器的时候之类的”
+
+: DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom1106" )
+\CN["桃子"]
+“那是无黑的。听说她是白夜所属的时候
+说实话，我很生气……”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo07_beb0191" )
+\CN["红美"]
+“大叔，不要沉默，说点什么吧！”
+
+: DrawChara( "Ryu", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["龙"]
+“嗯？没关系吧。
+没有幕府的现在，我们有对立的理由吗？”
+
+: DrawChara( "Ryu", 19, 0)
+\CN["龙"]
+“原本就是这样的事态。
+没有对立的意义”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Bebi", 2, 0)
+: PlayVoice( "Voices/vo07_beb0192" )
+\CN["红美"]
+“唔……那、那、那、虽然是这样……但是……”
+
+和嘲讽局长和龙先生不同，其他的还是不能接受
+说的样子。
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mei", 5, 0, 0, 0.5, 0.0, 3, "C" )
+	: PlayVoice( "Voices/vo09_mei0547" )
+	\CN["冥"]
+“无聊……事到如今再说是幕府派还是反幕派
+有什么用。已经结束了”
+
+	: EraseChara( "Mei", 0.5 )
+	: DrawChara( "Mukuro", 6, 0, 3, 0.5, 0.0, 4, "RC" )
+	: PlayVoice( "Voices/vo00_muk3195" )
+	\CN["无黑色"]
+“姐姐……！”
+
+	: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 3, "LC" )
+	: PlayVoice( "Voices/vo01_mom1107" )
+	\CN["桃子"]
+“什么……！？你懂什么？”？
+不管怎么说，因为是无黑的姐姐……”
+
+姐姐吐出的东西让桃子很生气。
+
+	: EraseChara( "Momo", 0.5 )
+	: EraseChara( "Mukuro", 0.5 )
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 24, 0, 3, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo00_muk3196" )
+	\CN["无黑色"]
+“为这样的事情争吵，真是愚蠢。”
+
+	: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 4, "LC" )
+	: PlayVoice( "Voices/vo01_mom1108" )
+	\CN["桃子"]
+“无黑……！？现在怎么了……”
+
+	: EraseChara( "Momo", 0.5 )
+	: EraseChara( "Mukuro", 0.5 )
+	: DrawChara( "Mukuro", 16, 0, 0, 0.5, 0.0, 3, "C" )
+	: PlayVoice( "Voices/vo00_muk3197" )
+	\CN["无黑色"]
+“我说我傻。
+说大和灭亡的时候，真是无聊
+拘泥也没有意义”
+
+	: EraseChara( "Mukuro", 0.5 )
+	: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+	\CN["雷欧"]
+「…………」
+
+	: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo01_mom1109" )
+	\CN["桃子"]
+“你说我傻……无聊是什么意思！”
+
+	: DrawChara( "Momo", 7, 0)
+	: PlayVoice( "Voices/vo01_mom1110" )
+	\CN["桃子"]
+“那是因为你背叛鬼灯，去了白夜
+虽然可以这么说……”
+
+	: EraseChara( "Leo", 0.5 )
+	: DrawChara( "Gin", 23, 0, 0, 0.5, 0.0, 2, "LC" )
+	\CN["银子"]
+“小姐，就到此为止吧。
+那家伙说的没错”
+
+	: DrawChara( "Momo", 3, 0)
+	: PlayVoice( "Voices/vo01_mom1111" )
+	\CN["桃子"]
+“连小银都……”
+
+银阻止了快要加热的桃子。
+
+	: EraseChara( "Momo", 0.5 )
+	: EraseChara( "Gin", 0.5 )
+//●分岐終了
+: endif
+: DrawChara( "Kinako", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0581" )
+\CN["黄菜子"]
+“确实现在不是吵架的时候。
+如果想吵架的话，之后多少都可以”
+
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo07_beb0193" )
+\CN["红美"]
+“キナコ……可以的话可以吗？”
+
+: DrawChara( "Kinako", 1, 0)
+: PlayVoice( "Voices/vo02_kin0582" )
+\CN["黄菜子"]
+“嗯！因为我们应该做的是大和的人
+不要悲伤”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1112" )
+\CN["桃子"]
+“……对不起。正如黄菜子说的那样。
+头上冒了血……”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo07_beb0194" )
+\CN["红美"]
+“我觉得比起桃子，雷欧更热
+请客”
+
+: DrawChara( "Leo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+\CN["雷欧"]
+“嗯？是吗？嘛，关于这件事我也有很多
+有考虑的地方。老实说，我一直烦恼到最近”
+
+: HideWnd()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Bebi", 0, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0195" )
+\CN["红美"]
+“……诶！？雷欧在烦恼吗……？”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ryu", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+\CN["龙"]
+“呼！”
+
+: DrawChara( "Momo", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlayVoice( "Voices/vo01_mom1113" )
+\CN["桃子"]
+“骗人的……雷欧……？”
+
+: DrawChara( "Mukuro", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo00_muk3198" )
+\CN["无黑色"]
+“你在烦恼吗？你在想？是什么风把你吹来的？”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“喂喂，你们啊……”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo02_kin0583" )
+\CN["黄菜子"]
+“雷欧，你吃了什么不好的东西吗？”？
+那个，准备了很有效的药……？”
+
+: DrawChara( "Leo", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+\CN["雷欧"]
+“所以说，不是那样的。
+话说，黄菜子，连你也……”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“不，除了你想的事情或者天崩地裂的前兆以外，其他什么都可以
+不过”
+
+: DrawChara( "Azami", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo05_aza0677" )
+\CN["嘲讽"]
+“实际上，这是天崩地裂的前兆。笑不出来……”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["雷欧"]
+“我一直认为幕府是正确的
+所以才在幕府派的鬼灯里”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“但是，最近发生了很多事情，我不认为幕府是正确的。
+话虽如此，但我觉得反幕派是正确的”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["兰丸"]
+“正如Leo所说的，他们都说自己是最正确的。”
+正因为这样想，所以才会产生纷争”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“我从心底里觉得做的是正确的
+刹车失灵了，不回头就迷失了自己”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“嗯，怎么说呢，我也说不好。
+以“正确”为理由拔刀是不行的
+”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo09_mei0548" )
+\CN["冥"]
+“嗯。那你为什么要挥刀呢？”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“那是，一个啊，{义姐，呐}桑！
+这是为了保护所爱之人”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 17, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0549" )
+\CN["冥"]
+“谁是你的{义姐，喂}呢？”
+
+: DrawChara( "Ranmaru", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["兰丸"]
+“嘛，小冥，冷静下来……”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 8, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk3199" )
+\CN["无黑色"]
+“Leo，结果你还是和往常一样啊。”
+
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo01_mom1114" )
+\CN["桃子"]
+“喂，是雷欧啊……”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+\CN["雷欧"]
+“并不是总是这样。
+结果，在我心里清楚地知道是这样的
+”
+
+: DrawChara( "Azami", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo05_aza0678" )
+\CN["嘲讽"]
+“不是挺好的吗？那才是武士。”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“嘛，我从一开始就没有动摇。我是贯彻初衷的。”
+
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1115" )
+\CN["桃子"]
+“小银，是吗？
+呐，小银为了什么在战斗呢？”
+
+: DrawChara( "Gin", 18, 0)
+\CN["银子"]
+“那、那……没关系吧，现在。”
+
+: DrawChara( "Momo", 6, 1)
+: PlayVoice( "Voices/vo01_mom1116" )
+\CN["桃子"]
+“嗯。莫非是为了我？”
+
+: DrawChara( "Gin", 16, 1)
+\CN["银子"]
+“……没有评论。”
+
+好像有什么情况了。这才是。
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ryu", 33, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["龙"]
+“很多人一起移动很显眼，不太好。
+决定分成几个部分进入不死之山”
+
+: DrawChara( "Ryu", 23, 0)
+\CN["龙"]
+“有栖川，还有红美，你们两个人行动比较好
+应该很容易做吧”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0584" )
+\CN["黄菜子"]
+“是的，我知道了。”
+
+: DrawChara( "Bebi", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo07_beb0196" )
+\CN["红美"]
+“交给我吧！”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ryu", 33, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["龙"]
+“下次，雷欧和兰丸，你们看起来关系很好。”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["兰丸"]
+“啊，我不是和冥酱在一起吗？”
+
+: DrawChara( "Leo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“诶……？我和兰丸？我和无黑不是吗？”
+
+果然，两个人会抱怨。
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo09_mei0550" )
+\CN["冥"]
+“无黑，我早就在想，你和这个男人交往吧
+在吗？那个，是男女交往的吗？”
+
+: DrawChara( "Mukuro", 8, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk3200" )
+\CN["无黑色"]
+“不，不是那样的……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["雷欧"]
+“对，就是这样……我们应该是相爱的……”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo09_mei0551" )
+\CN["冥"]
+“真是的，一看到这家伙就有种和兰丸接触的感觉。”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["兰丸"]
+“是吗？我觉得我更聪明。”
+
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“啊？那是我的台词。”
+
+利奥和兰丸似乎很开心地开始交谈。
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+//●分岐：淫乱度Ｂ以上の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 2, 1, 3, 0.5, 0.0, 3, "C" )
+	: PlayVoice( "Voices/vo00_muk3201" )
+	\CN["无黑色"]
+（但是，嘛，如果能说到那种程度的话
+可以做一次左右吗？）
+
+虽然也有五官相当端正的
+奇怪的是，有吸引人的东西是事实。
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 37, 1)
+	: PlayVoice( "Voices/vo00_muk3202" )
+	\CN["无黑色"]
+（怎么说呢，下半身自然会有反应的话
+说出来就好了吗？）
+
+对雷欧有这种感情的感觉
+不能否定。
+
+	: EraseChara( "Mukuro", 0.5 )
+//●分岐終了
+: endif
+: DrawChara( "Ryu", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["龙"]
+“然后，还有我和局长的搭档和神八代姐妹的组合
+山茶女和银平时的搭档，决定各自行动”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1117" )
+\CN["桃子"]
+“明白了！那小银，马上准备出发吧！”
+
+: DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“我明白了。”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0679" )
+\CN["嘲讽"]
+“肯定会出现至今为止都没有与之交往过的次元强敌。
+大家千万不要大意啊」
+
+//●シーン：「憂愁のサムライ、達磨が生まれた日」へ
+//＠シナリオジャンプ：SC_C06_05
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Azami", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: Jump( "Scenarios/SC_C06_05" )

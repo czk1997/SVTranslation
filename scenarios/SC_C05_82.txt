@@ -1,0 +1,496 @@
+//========================================================
+//○幕府への恨み。御影が白夜にいる理由
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+*sc001_01
+//●場所：織笠神社
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_01", 1.0 )
+: ShowWnd()
+//●視点：無黒視点
+——这是前几天为了帮御影先生去神社的时候发生的事。
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom05", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mikage", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0213" )
+\CN["御影"]
+“无黑先生，谢谢您特地前来。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3171" )
+\CN["无黑色"]
+“不，只是姐姐让我帮忙而已……”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0214" )
+\CN["御影"]
+“呵呵，这种有点冷淡的地方
+和冥先生一模一样呢”
+
+: DrawChara( "Mukuro", 36, 0)
+: PlayVoice( "Voices/vo00_muk3172" )
+\CN["无黑色"]
+“是吗？”
+
+//: DrawChara( "Mukuro", 0, 0)
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+御影给人一种稳重的姐姐的印象。
+
+只是，其他队员，特别是从男人那里听到的是
+讨厌大男人啦，惹他生气啦，真是太可怕啦
+轻蔑的眼神让人毛骨悚然之类的东西。
+
+听女人说温柔啦，漂亮啦，姐姐大人之类的话。
+
+我知道部下巫女对我的信赖很大。
+
+另外，也有个人在意的事情。
+
+: DrawChara( "Mikage", 4, 1,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo11_mik0215" )
+\CN["御影"]
+“无黑先生，有什么事吗？
+如果被那样盯着看的话，会害羞的”
+
+: DrawChara( "Mikage", 4, 1, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 34, 0,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: PlayVoice( "Voices/vo00_muk3173" )
+\CN["无黑色"]
+“啊，不，对不起。
+以前就很在意……”
+
+: DrawChara( "Mikage", 1, 0)
+: PlayVoice( "Voices/vo11_mik0216" )
+\CN["御影"]
+“有什么在意的吗？是什么呢？”
+
+: DrawChara( "Mukuro", 21, 0)
+: PlayVoice( "Voices/vo00_muk3174" )
+\CN["无黑色"]
+“啊……那个，如果不好回答的话也没关系……”
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0217" )
+\CN["御影"]
+“呵呵。不用那么敬畏。
+不管怎么说，请听我说”
+
+既然你这么说了，难得来一次问问吧。
+
+: DrawChara( "Mukuro", 36, 0)
+: PlayVoice( "Voices/vo00_muk3175" )
+\CN["无黑色"]
+“我还以为御影为什么会进入白夜呢……”
+
+御影先生对幕府怀有非同寻常的仇恨
+因为传达过来了，所以很在意……。
+
+问的瞬间，部下们用吃惊的眼光看着我。
+
+难道是不能问的事情吗。
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0218" )
+\CN["御影"]
+“没关系。
+无黑就是这样帮我的忙
+我来告诉你吧”
+
+御影小姐温柔地微笑着说
+紧张的空气松弛了。
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0219" )
+\CN["御影"]
+“无黑是距今10年前幕府举办的‘神社选拔’
+你知道吗？”
+
+: DrawChara( "Mukuro", 38, 0)
+: PlayVoice( "Voices/vo00_muk3176" )
+\CN["无黑色"]
+“对不起……我不知道。”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0220" )
+\CN["御影"]
+“呵呵，是吧。
+因为幕府从历史上抹杀了那个事实”
+
+: DrawChara( "Mikage", 7, 0)
+: PlayVoice( "Voices/vo11_mik0221" )
+\CN["御影"]
+“如果没有对自己不利的事实
+因为是他们的做法……”
+
+进入白夜后我才知道我是个无知的人。
+只把漂亮的部分囫囵吞枣。
+
+//●読み：祀って（まつって）
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0222" )
+\CN["御影"]
+“‘神社选拔’是指表面上没有祭祀神的神社
+”
+
+//●演出：回想に入る
+*sc001_02
+//●視点：御影視点
+//●状況：過去シーン。御影９歳
+: AutoFaceThumbnail( false )
+: StopBgm( 1.0 )
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Mikage", 0.0 )
+: SwapImage( 1, 0, "BGImage/Bg_Jinja02_04", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: ShowWnd()
+那天，我从神社的神主的父亲那里
+今天『神社选拔』有来自幕府的伟人来，所以去玩了
+被说请呆着离开了神社。
+
+父亲是个非常笃信的人，我从小就崇拜神
+这样教我。
+
+//●演技：御影９歳です
+: PlayVoice( "Voices/vo11_mik0223" )
+\CN["御影"]
+“父亲，神社选拔是什么？”
+
+\CN["御影之父"]
+“明明没有祭祀神，却自称是神社的神社
+会消失的”
+
+: PlayVoice( "Voices/vo11_mik0224" )
+\CN["御影"]
+“那我们就没问题了。
+因为，无论是父亲还是母亲，都要永远珍惜神
+现在开始”
+
+\CN["母亲"]
+“呵呵，是啊。我想马上就结束了。”
+在那之前玩吧”
+
+: PlayVoice( "Voices/vo11_mik0225" )
+\CN["御影"]
+“好！”
+
+这是看到最喜欢的父母的最后一个样子
+这是最后说的话。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: Sleep(1.0)
+: SwapImage( 1, 0, "BGImage/BG_Sky02", 1.0 )
+: Wait()
+: ShowWnd()
+然后，和城里的朋友玩到很晚
+我回到了神社——
+
+//●演出：炎アニメ　ループ演出（可能なら）
+: PlayBgm("BGM/16_TM001")
+: trackIndex = PlaySe( "SE/Se_FireLoop", true, 0.25 );
+: PlayAnim( "Animations/Anime_LoopFire", true, 0, 0, 1, 1 )
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_02", 0.0 )
+//: DrawChara( "Mikage", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo11_mik0226" )
+\CN["御影"]
+“神社着火了……？”
+
+在熊熊燃烧的火焰中，全身灼伤般的热气
+肺几乎要燃烧起来那样的热空气，神社发出很大的声音崩溃了
+燃烧的样子——、
+
+那个情景我一辈子都不会忘记吧。
+
+//: DrawChara( "Mikage", 3, 0)
+: PlayVoice( "Voices/vo11_mik0227" )
+\CN["御影"]
+“爸爸……！妈妈————！”
+
+我正要找父亲和母亲的时候。
+
+\CN["男1"]
+“哦，燃烧着燃烧着。”
+
+\CN["男2"]
+“即使这样，和巫女一起做也是最棒的。
+只有处女，最棒的就是看到痛苦的呼喊”
+
+不认识的男人们从神社过来了。
+
+\CN["男1"]
+“嗯？还活着吗？”
+
+\CN["男2"]
+「啊，不是小孩子啊。
+但是，那张脸，好像在哪里见过似的”
+
+\CN["男1"]
+“啊！和组长想侵犯而打耳光的女人一模一样。
+看，这是神主的妻子”
+
+\CN["男2"]
+“是的是的！被欺负的组长强行犯了，然后勒紧脖子
+杀了之后还继续犯的女人吗？”
+
+\CN["男1"]
+“千影不是名字吗？
+你看，神主喊着“千影”，妻子哭着说
+不是看到了被侵犯或被杀的地方吗？”
+
+\CN["男2"]
+“咦！噗噗噗，想起来也笑。
+好像会成为下酒菜”
+
+//: DrawChara( "Mikage", 6, 0)
+: PlayVoice( "Voices/vo11_mik0228" )
+\CN["御影"]
+「…………」
+
+男人们在我面前咯咯地笑着说的内容
+听了之后，眼前一片漆黑。
+
+千影是母亲的名字。
+母亲被眼前的盖斯一起一边羞辱一边杀害了
+很快就领悟到了。
+
+//: DrawChara( "Mikage", 8, 0)
+: PlayVoice( "Voices/vo11_mik0229" )
+\CN["御影"]
+“你们……绝对……不原谅……”
+
+\CN["男1"]
+“你怎么生气了，这孩子。怎么办？”
+
+\CN["男2"]
+“抓住它卖给奴隶商不就行了吗？
+因为，看看这家伙的耳朵吧”
+
+\CN["男1"]
+「啊！不是妖精吗！
+现在有人用高价买精灵的明信片吧？
+抓住这家伙卖出去的话，一辈子都不能玩了”
+
+男人们的手伸向了我。
+
+//: DrawChara( "Mikage", 10, 0)
+: PlayVoice( "Voices/vo11_mik0230" )
+\CN["御影"]
+“别碰我！”
+
+明明是处于放心状态，却很讨厌被男人碰
+的吧。强烈拒绝了。
+
+\CN["男1"]
+“是个自大的臭小鬼。”
+
+\CN["男2"]
+“绝对不要让他受伤。要是留下伤口的话，卖价就会下降。”
+
+//: DrawChara( "Mikage", 8, 0)
+: PlayVoice( "Voices/vo11_mik0231" )
+\CN["御影"]
+“……不，不……”
+
+还很小的魔术都没能使用的我
+成年男人，也不可能反抗武士的对手。
+
+即使想逃跑，身体也一动也不动。
+
+\CN["男1"]
+“老实点吧。这样的话，我会好好对待的。”
+
+一个男人伸出手——、
+
+//●演出：斬殺　エフェクト
+: HideWnd()
+: StopBgm( 0.5 )
+: StopAnim()
+: StopSe( trackIndex );
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: AutoFaceThumbnail( false )
+: ShowWnd()
+红色的雨下得很猛
+鼻子被强烈的铁味填满了。
+
+//: DrawChara( "Mikage", 3, 0)
+: PlayVoice( "Voices/vo11_mik0232" )
+\CN["御影"]
+“……诶？”
+
+我不知道发生了什么。
+只是，向我伸出手的男人，还有旁边的男人突然浑身是血
+我倒在地上。
+
+//: EraseChara( "Mikage", 0.5 )
+//●演出：達磨（仮面あり）　登場する
+: HideWnd()
+: AutoFaceThumbnail( true )
+: EraseAllImage( 9, 0.0 )
+: CharaCostume( "Daruma", 2)
+: PlayBgm("BGM/14_CM014")
+: trackIndex = PlaySe( "SE/Se_FireLoop", true, 0.25 );
+: PlayAnim( "Animations/Anime_LoopFire", true, 0, 0, 1, 1 )
+: DrawImage( 1, 0, "BGImage/Bg_Jinja02_02", 0.0 )
+: DrawChara( "Daruma", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["达磨"]
+“竟然要对这样的孩子出手……。
+不可置之度外”
+
+//: DrawChara( "Mikage", 8, 0, 0, 0.5, 0.0, 2, "LC" )
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo11_mik0233" )
+\CN["御影"]
+“啊……啊…啊……啊…啊…啊啊啊啊啊……”
+
+被杀的话，真的想吓到了腰
+我从那里不能动了。
+
+: AutoFaceThumbnail( true )
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+“对不起。因为很紧急。
+不是给像狗一样的孩子看的好东西啊”
+
+//: DrawChara( "Mikage", 3, 0)
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo11_mik0234" )
+\CN["御影"]
+“啊……啊…那个……啊啊……”
+
+//: EraseChara( "Mikage", 0.5 )
+在那里我失去了意识。
+
+: AutoFaceThumbnail( true )
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嗯。总之，还是让他在什么地方休息比较好。
+回头再考虑一下自己的动作吧”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“但是，在那之前好像还有必须要做的事情。”
+
+//●演出：暗転
+: HideWnd()
+: StopAnim
+: chara = "Daruma"; lay = 0; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: StopBgm( 1.0 )
+: StopSe( trackIndex );
+: PlaySe("SE/Se_Foot01")
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+几天后，我来到了和头一起烧光的神社。
+
+于是，在火灾的废墟中发现了父母的一部分遗体
+我不得不接受父母的死了。
+
+之后，头帮我调查了很多
+燃起神社从我这里夺走重要人们的人们
+我知道这是幕府的命令。
+
+//●演出：回想から戻る
+//●視点：無黒視点
+*sc001_03
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05", 1.0 )
+: DrawChara( "Mukuro", 7, 0, 0, 0.0, 0.0, 3, "RC" )
+: DrawChara( "Mikage", 4, 0, 0, 0.0, 0.0, 2, "LC" )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0235" )
+\CN["御影"]
+“这是我恨幕府的理由。”
+
+: DrawChara( "Mukuro", 38, 0)
+: PlayVoice( "Voices/vo00_muk3177" )
+\CN["无黑色"]
+“对不起，让你说了很辛苦的话……”
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0236" )
+\CN["御影"]
+“请不要在意。
+这是我想说的话”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0237" )
+\CN["御影"]
+“不全是坏事。”
+
+: DrawChara( "Mikage", 1, 0)
+: PlayVoice( "Voices/vo11_mik0238" )
+\CN["御影"]
+“幸运的是，我拥有魔术的才能——{战场，行路}
+神给予了我树立的资格”
+
+: PlayVoice( "Voices/vo11_mik0239" )
+\CN["御影"]
+“作为头的力量，尽可能反复进行渗血的特训的结果
+{现在，现在}有九星・六白的我」
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0240" )
+\CN["御影"]
+“而且，现在我能和大家一起度过……”
+
+御影的话里，部下的巫女们
+眼睛水汪汪的。
+
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0241" )
+\CN["御影"]
+“无黑先生，越是重要的东西越是脆弱、容易消失。
+不是坏了，而是消失了……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+村子里被什么人袭击，失去了家人，失去了重要的人的我
+那句话很有意思。
+
+如果坏了，就有修复的机会。
+但是，实际上没有那样的机会。
+
+所以，不是坏而是消失。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

@@ -1,0 +1,408 @@
+//========================================================
+//○姉との再会、そして――
+//========================================================
+//●場所：帝都近くの山・夜
+//●背景：山・夜
+//Yoshi：背景
+: HideWnd()
+: PlayBgm("BGM/41_Sad")
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_03", 1.0 )
+: Wait()
+: ShowWnd()
+穿着衣服，只带着爱刀出了屯所。
+
+然后摇摇晃晃地走到帝都的街道外面。
+
+什么都不想，只是迈着大步前进而已。
+
+: HideWnd()
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0918" )
+\CN["无黑色"]
+“你来过这种地方吗……”
+
+暂时在这里发呆吧。
+夜风凉飕飕的，很舒服。
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk0919" )
+\CN["无黑色"]
+“……真的，我已经不知道很多了。”
+
+这不是我现在想的。
+
+最近在内心深处发闷
+应该说那是因为和姐姐的再会而一下子燃烧起来的吧。
+
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk0920" )
+\CN["无黑色"]
+“什么是对的，什么是错的……？”
+
+到目前为止，自己在鬼灯的任务是为了幕府而尽力
+相信这是对大和有益的事情而行动。
+
+所以，我应该做的事是
+所谓“排除妨碍和平世界的东西”
+我把那个作为信念。
+
+: DrawChara( "Mukuro", 39, 0, 3, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk0921" )
+\CN["无黑色"]
+“……真的这样可以吗？这样可以吗？”
+
+自问自答。
+
+那个姐姐作为白夜的一员行动着
+怎么也上钩。
+
+姐姐是个非常讨厌拐弯抹角的人
+不要放过或原谅那些不正当的事情。
+
+那样的姐姐在白夜里陪着她。
+
+: DrawChara( "Mukuro", 42, 0)
+: PlayVoice( "Voices/vo00_muk0922" )
+\CN["无黑色"]
+“我做的事……鬼灯里做的事
+实际上不是错了吗？”
+
+——至今为止一直认为正义的事情
+——至今为止一直想着能为大家做些什么
+
+其实是弄错了吧？
+
+我突然这么想了。
+
+//●演出：冥　登場する
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: StopBgm( 0.25 )
+: DrawChara( "Mei", 1, 0, 0, 0.5, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayBgm("BGM/42_CM019")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0030" )
+\CN["冥"]
+“好像掉在哪里了，还是老样子啊，无黑。”
+
+: DrawChara( "Mei", 1, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Mukuro", 33, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0923" )
+\CN["无黑色"]
+“喂，姐姐……！？”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0031" )
+\CN["冥"]
+“不要那么警惕。
+我不是来杀你的”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk0924" )
+\CN["无黑色"]
+“那么，这么晚来干什么呢？
+看样子，你一直在找我吗？”
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0032" )
+\CN["冥"]
+“我想和你说两句话。”
+
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk0925" )
+\CN["无黑色"]
+“话……？那我也想问姐姐的事
+有很多”
+
+为什么进入白夜？
+为什么到现在为止什么也没告诉我？
+想问的事情堆积如山。
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0033" )
+\CN["冥"]
+“直截了当地询问——
+无黑，你不打算辞去鬼灯来找我吗？”
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk0926" )
+\CN["无黑色"]
+“哈？姐姐，你在开什么玩笑？”
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0034" )
+\CN["冥"]
+“开玩笑？我是当真的？
+你知道我不擅长那样的事吗？”
+
+: DrawChara( "Mukuro", 36, 0)
+: PlayVoice( "Voices/vo00_muk0927" )
+\CN["无黑色"]
+“……你是认真问的吗？”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0035" )
+\CN["冥"]
+“当然。因为心好像有很大的动摇。
+自己不是做了正确的事情吗？这样迷惑着
+是吧？”
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk0928" )
+\CN["无黑色"]
+“那、那是……”
+
+被指得哑口无言。
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0036" )
+\CN["冥"]
+“如果你犹豫的话，请在白夜来——找我。
+告诉你你想知道的事情”
+
+: DrawChara( "Mukuro", 40, 0)
+: PlayVoice( "Voices/vo00_muk0929" )
+\CN["无黑色"]
+“姐姐……”
+
+如果没有大老的话，那一定办不到
+我回答了吧。
+
+即使现在在这里交锋。
+
+但是——
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk0930" )
+\CN["无黑色"]
+（真正正确的是鬼灯——还是白夜……？）
+
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Mei", 0.5 )
+: Wait()
+: ShowWnd()
+现在的幕府所做的事，真的是正确的吗？
+
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select02
+//■選択肢１：これまでのことを振り返る
+//■選択肢２：姉さんについていく
+//――――――――――――――――――――――――――――
+\CI["回首往事"]
+\CI["跟着姐姐走"]
+我真正应该做的事情——
+就这样实现可以吗？
+
+: if ($choice == 1) Jump( "*select02_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：これまでのことを振り返るを選んだ場合
+//-------------------------------------------------------
+*select02_s1
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——闭上眼睛，回顾至今为止的事情。
+
+//●演出：桃＆銀→黄菜子＆紅美→あざみ＆龍→レオの順にＦＢ
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: cutinfile = "CutinFg04_1"
+: x1 = -100; x2 = 100; y1 = 0; y2 = 0; time = 0.5;
+: Call("Scenarios/Common*CutinSlideIn")
+: Wait()
+: Sleep( 0.5 )
+: cutinfile = "CutinFg04_2"
+: x1 = -100; x2 = 100; y1 = 0; y2 = 0; time = 0.5;
+: Call("Scenarios/Common*CutinSlideIn")
+: Wait()
+: Sleep( 0.5 )
+: cutinfile = "CutinFg04_3"
+: x1 = -100; x2 = 100; y1 = 0; y2 = 0; time = 0.5;
+: Call("Scenarios/Common*CutinSlideIn")
+: Wait()
+: Sleep( 0.5 )
+: cutinfile = "CutinFg04_4"
+: x1 = -100; x2 = 100; y1 = 0; y2 = 0; time = 0.5;
+: Call("Scenarios/Common*CutinSlideIn")
+: Wait()
+: Sleep( 0.5 )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+最先浮现出来的是
+这不是我至今为止做的事。
+
+鬼灯的伙伴们的脸一个接一个地浮现出来。
+
+//●演技：自分の行動原理に気がつきます
+: HideWnd()
+: PlayBgm("BGM/01_CM001")
+: DrawImage( 1, 0, "BGImage/BG_Mountain01_03", 0.5 )
+: DrawChara( "Mukuro", 28, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Mei", 14, 0, 0, 0.5, 0.0, 4, "LC" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0931" )
+\CN["无黑色"]
+“——这样啊，我……哈哈，是这样啊……这么简单的事情
+”
+
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk0932" )
+\CN["无黑色"]
+“姐姐，对不起。果然跟不上姐姐。
+因为我是鬼灯的队员”
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0037" )
+\CN["冥"]
+“你明白什么是正确的吗？”
+
+: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk0933" )
+\CN["无黑色"]
+“不，我不知道。完全不知道。”
+
+我应该做的事情真的是对的吗？
+我不知道那个，也没有确信。
+
+但是——
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk0934" )
+\CN["无黑色"]
+“我明白了我想做的事情。
+所以，我就留在这里——鬼灯里”
+
+我想做的事——
+我想和同甘共苦的伙伴一起走下去。想在一起。
+只是这样。
+
+: DrawChara( "Mei", 2, 0)
+: PlayVoice( "Voices/vo09_mei0038" )
+\CN["冥"]
+“呼……好吧。
+正因为如此，才有了互相残杀”
+
+姐姐这样说着，脸上露出了大胆的笑容。
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0039" )
+\CN["冥"]
+“无黑，今天按照约定什么也不做。就这样退去。”
+
+//●演技：無黒に対して『貴様』呼ばわりします
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0040" )
+\CN["冥"]
+“但是，下次见面的时候一定是敌人。
+我毫不留情地砍掉{贵様，・}」
+
+//●演出：冥　退場する
+: HideWnd()
+//: EraseChara( "Mei", 0.5 )
+: PlaySe("SE/Se_Foot01")
+: chara = "Mei"; lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+//: EraseChara( "Mukuro", 0.5 )
+: Sleep(0.5)
+: DrawChara( "Mukuro", 42, 0, 3, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0935" )
+\CN["无黑色"]
+“姐姐……”
+
+看着飘向黑暗中融化的姐姐的背影。
+
+下次见面的时候是敌人——
+虽然是这个世界上唯一有血缘关系的家人，但那是不会改变的。
+
+我是鬼灯的一员，姐姐是白夜的一员
+肯定不会有相容的事吧……。
+
+//●演出：暗転
+//●鬼灯ルート確定
+//●シーン：「ヴィクトール騎士団」へ
+//＠シナリオジャンプ：SC_B04_01
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: Jump( "Scenarios/SC_B04_01" )
+
+//-------------------------------------------------------
+//●選択肢２：姉さんについていくを選んだ場合
+//-------------------------------------------------------
+*select02_s2
+
+: DrawChara( "Mukuro", 28, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Mei", 14, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo00_muk0936" )
+\CN["无黑色"]
+“……嗯”
+
+姐姐的邀请，让我直摇头。
+我把姐姐伸出的手拿走了。
+
+: DrawChara( "Mei", 2, 0, 1, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo09_mei0041" )
+\CN["冥"]
+“跟我来，无黑。
+你知道现在的大和陷入了多大的麻烦状况吗
+告诉你”
+
+: DrawChara( "Mukuro", 42, 0, 3, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0937" )
+\CN["无黑色"]
+「…………」
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: EraseChara( "Mei", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+那天，我什么也不说，也不跟你道别
+象从鬼灯里逃出来一样地退出了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●白夜ルート確定
+//●シーン：「無黒の白夜入り」へ
+//＠シナリオジャンプ：SC_C04_01
+: Jump( "Scenarios/SC_C04_01" )

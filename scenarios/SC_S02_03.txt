@@ -1,0 +1,1101 @@
+//========================================================
+//○戦闘敗北レイプ・人間（桃）
+//========================================================
+//ジャンプ処理
+: if ( Flag ( "EnemyHuman" ) == false && Flag ( "EnemyElf" ) == false && Flag ( "EnemyJujin" ) == false )
+	: Jump( "*sc002" )
+: endif
+*sc001
+//●状況：敗北後。桃、非処女
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+居然就这样放过了失败、精疲力尽的我
+好像不可能……。
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart1" ) endif
+: if ( SceneFlag( "SC_S02_03_1" ) == false ) Jump( "*HscStart1" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart1" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump1" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart1" ) endif
+
+*HscJump1
+: Jump( "Scenarios/HSceneSkip*SC_S02_03_1" )
+
+*HscStart1
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+: Call( "Scenarios/CommonSys*Word" )
+//●ＣＧ：Ｈカットイン・正常位セックス（桃）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_1_0110001_1100000_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom2490" )
+\CN["桃子"]
+“不，住手吧……那，就是这样……！”
+
+\CN["男人"]
+“嗯？那是怎么回事？”
+
+我知道事到如今抵抗也没用了。
+
+虽然我知道……。
+
+\CN["男人"]
+“即使这样，身体也很好……。
+奶也很大，屁股也很大。但是腰却变细了……”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom2491" )
+\CN["桃子"]
+（虽然很想抵抗，但是魔力已经用尽了……）
+
+纯粹的腕力，我和普通的女孩子没有什么区别
+力不能及。
+
+但是，总会被这个男人侵犯。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom2492" )
+\CN["桃子"]
+（如果让他H，这样就可以解决的话，那就很便宜了……）
+
+在那之后，一定会遭遇不幸。
+
+是作为奴隶被卖，还是被弄得七零八落
+是会被杀的地方吗。
+
+\CN["男人"]
+“哈哈，我已经忍不住了……！
+因为他在战斗后很兴奋……”
+
+\CN["男人"]
+“如果不让你的manko来镇我的话……！”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嗯，嘿嘿嘿！
+
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo01_mom2493" )
+\CN["桃子"]
+“嗯……啊啊啊啊……！啊啊啊………”……
+啊……嗯……嗯……！”
+
+: PlayBackVoice( "Voices/BGV01_mom_aegi02" )
+被投入\V[Momo Penis]，不由得发出了声音。
+
+\CN["男人"]
+“哈，哈，意外的，好像是那个意思吧？
+manko，普通地湿了，扑通一声就进去了”
+
+: PlayVoice( "Voices/vo01_mom2494" )
+\CN["桃子"]
+“嗯……嗯……只是防卫本能而已……。
+难道你不知道吗？”
+
+\CN["男人"]
+“我没听说过。万一临死的时候，我会保护子孙的。”
+为了留下什么呢？”
+
+为了保护阴道不受异物污染，好像分泌了爱液
+我想告诉你，但是没有那么多的空闲。
+
+\CN["男人"]
+“嘛，怎么说呢。
+话虽如此，你的manko，根部已经很紧了
+非常舒服”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！智波！哇！剧毒！嘘！
+
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0110002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストンされています
+: PlayVoice( "Voices/vo01_mom2495" )
+\CN["桃子"]
+“呜、呜、啊啊……呜！呜、哈、啊啊、
+哈、哈……啊、啊、啊……”
+
+: PlayVoice( "Voices/vo01_mom2496" )
+\CN["桃子"]
+“嗯，啊啊……对，不要动得那么快……”……
+啊、啊……啊……因为我不喜欢被人粗暴对待”
+
+\CN["男人"]
+“把manko弄湿了，没有说服力。”
+
+//●分岐：淫乱度Ｃの場合
+//●桃　多少、感じてはいるといった程度です
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) <= 1 )
+	: PlayVoice( "Voices/vo01_mom2497" )
+	\CN["桃子"]
+“所以，所以说，湿了不是因为有别的感觉吗？”
+没有……嗯……啊，嗯……嗯……！”
+
+	\CN["男人"]
+“嗯？虽然喘着气说，但是没有说服力。”
+
+男子高兴地继续挥着腰。
+
+虽然完全没有疼痛什么的
+和我感觉的有点不同。
+
+	: PlayVoice( "Voices/vo01_mom2498" )
+	\CN["桃子"]
+“哈……哈……快点结束……嗯……
+啊，嗯……嗯，嗯……”
+
+	\CN["男人"]
+“你的manko真舒服啊。
+虽然我想永远都能满足……”
+
+想到一直被这样的男人侵犯就毛骨悚然。
+
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Piston02" )
+	: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: ShowWnd()
+嘘！嘘！加油！啧啧！慢吞吞！
+
+	: PlayVoice( "Voices/vo01_mom2499" )
+	\CN["桃子"]
+“嗯，啊，啊……是，太激烈了……！”……！
+更加温柔……嗯，哈，呜！”
+
+	\CN["男人"]
+“哈哈，manko，系紧啦感觉啦心情太好了
+我的腰停不下来”
+
+	\CN["男人"]
+“呀，糟了……已经不好了……哈，哈…嗯……”
+
+{阴道内，肚子}收纳的小鸡鸡不断地发烧
+拿走。
+
+抽奖的话每一次都会增加气势
+他告诉我他想让我出去。
+
+	//●演技：心の声です
+	: PlayVoice( "Voices/vo01_mom2500" )
+	\CN["桃子"]
+（没什么要放在里面的
+因为到现在也有……）
+
+输了的我不好。
+如果这种程度的事情能解决的话，我甘愿接受。
+
+	\CN["男人"]
+“我才不会抵抗呢。一个劲地感受，根本谈不上。”
+是吗？”
+
+	: PlayVoice( "Voices/vo01_mom2501" )
+	\CN["桃子"]
+“没有感觉，所以……嗯，哈，嗯……
+那么，赶紧拿出来……只想让它结束……”
+
+	\CN["男人"]
+「这样啊。啊，是这么舒服的manko
+虽然1、2次也不会结束……嗯…！”
+
+	: HideWnd()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c001_0_0_0211002_1100000_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	//●演技：男性器を膣奥に押し込まれます
+	: PlayVoice( "Voices/vo01_mom2502" )
+	\CN["桃子"]
+“嗯……啊，啊啊啊啊啊啊啊…啊啊……啊！”
+
+男子腰里使劲一把，让小公鸡往里走。
+
+插入一下子变深，小鸡鸡的前端在阴道里
+送到了。
+
+	\CN["男人"]
+“我拿出来……呃……好饿！”
+
+	//●演出：射精
+	//●ＣＧ差分：挿入・膣内射精
+	: HideWnd()
+	: Uterus = "evb_c001"; Call( "Scenarios/Effect*UterusEjaculation" );
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c001_0_0_0311013_1100010_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+呜呜，呜呜，呜呜，呜呜，呜呜，呜呜，呜呜，呜呜
+呼，呜呜呜呜，呜呜呜呜！！
+
+	: PlayVoice( "Voices/vo01_mom2503" )
+	\CN["桃子"]
+“嗯，嗯……嗯，出来了很多……”……
+哈……啊，啊……啊，呜，啊啊啊……”
+
+	\CN["男人"]
+“啊啊啊……呀，糟了！真是太舒服了！”！
+从里面出来的话，入口和里面会一下子紧闭起来……”
+
+	//●演出：射精
+	: HideWnd()
+	: PlayHSe( "SE/Hse_Nakadashi01" )
+	: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: evcha = "Momo"; evbg = false; evcos = true;
+	: evfile = "evb_c001_0_0_0411013_1100010_0_"
+	: Call("Scenarios/Common*EvChange")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo01_mom2504" )
+	\CN["桃子"]
+“哈，嗯……嘛，还打算出！？
+要出多少啊……”
+
+	\CN["男人"]
+“你的manko就是这么舒服……”
+
+不要就这样拔小鸡鸡
+心情舒畅地持续射精。
+
+只是，怎么打开这个状况才好呢？
+我一边忍耐，一边想着那件事……。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●淫乱度Ｂ以上
+//●桃　すごく感じてしまっています
+: else
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom2505" )
+\CN["桃子"]
+“恩哈……啊啊啊啊啊，哈……啊，啊……啊啊啊
+啊啊啊啊……嗯啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV01_mom_aegi03" )
+\CN["男人"]
+“好厉害，别出声了……！
+虽然说不喜欢被粗暴对待，但是要好好感受
+不是有吗？”
+
+男子高兴地继续下来。
+
+虽然很不甘心，但是心情变好了。
+感觉被强行侵犯了。
+
+: PlayVoice( "Voices/vo01_mom2506" )
+\CN["桃子"]
+“啊啊啊啊啊啊啊！啊，啊，啊……啊，呜呜
+呃，好舒服……啊…嗯……呜呜哇！”
+
+\CN["男人"]
+“果然心情很好啊。连自己说的都没有
+汤汁”
+
+对于渐渐上升的快感，不由得说出了“很舒服”的话
+泄露了。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！加油！啧啧！慢吞吞！
+
+: PlayVoice( "Voices/vo01_mom2507" )
+\CN["桃子"]
+“恩啊啊啊啊啊啊啊啊啊啊啊，好激烈……女婿
+小鸡鸡、小嘴、蹭我♥</color>」
+
+: PlayVoice( "Voices/vo01_mom2508" )
+\CN["桃子"]
+“啊，啊啊啊啊啊，啊，感觉太多了……不行……”……
+明明被侵犯了，明明是强迫自己却心情变好了♥</color>」
+
+忘记被强迫的事情
+快要沉溺在快感里了。
+
+\CN["男人"]
+“啊哈，manko在颤抖……。
+难道不是很帅吗？”
+
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom2509" )
+\CN["桃子"]
+“呃……嗯……嗯……是啊，是啊……不好意思吗？
+嗯……好像很帅的样子……”
+
+: PlayVoice( "Voices/vo01_mom2510" )
+\CN["桃子"]
+“是你的小鸡鸡……嗯，嗯……嗯，嗯
+啊……好棒啊……好棒啊……啊啊啊啊♥</color>」
+
+越想越无法抑制自己的绝顶感。
+
+快感的电流一直在麻利地跑
+全身一直在颤抖，头也开始发胀……。
+
+\CN["男人"]
+“真的很有活力呢。那就这样吧！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+斯文！嘘！嘘！好！加油！嘘！
+嘘！嘘！嘘！嘘！嘘！嘘！
+
+{阴道内，内}搅拌，像打阴道里头一样地敲打。
+
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom2511" )
+\CN["桃子"]
+“啊，啊啊啊……！我要去，我要去，我要去
+好、好……好啊……好啊…好啊……好啊…”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo01_mom2512" )
+\CN["桃子"]
+“啊……呃……呃……嗯……嗯……嗯！！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0110003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+阿飞！阿飞！战栗比酷！阿飞！阿飞！
+别克！吓我一跳！吓一跳！哼哼哼！
+
+一边激烈地颤抖着身体，一边达到了顶峰。
+
+\CN["男人"]
+“呀，糟了……已经不好了……哈，哈…呜……呜……
+小曼痉挛了，我也到极限了……”
+
+{阴道内，肚子}收纳的小鸡鸡不断地发烧
+拿走。
+
+抽奖的话每一次都会增加气势
+他告诉我他想让我出去。
+
+: PlayVoice( "Voices/vo01_mom2513" )
+\CN["桃子"]
+“什么，拿出来……放进去也可以啊！”！
+就这样……嗯……中出，做……”
+
+\CN["男人"]
+“一开始就露出本性了。
+正如我所想的那样，他是个混蛋”
+
+: PlayVoice( "Voices/vo01_mom2514" )
+\CN["桃子"]
+“哈，不管怎么说都可以啊……嗯……啊……啊♥</color>
+那么，赶紧拿出来……嗯，嗯，嗯♥</color>」
+
+\CN["男人"]
+“哈……嗯……嗯……然后，出来……正如您所希望的那样
+我会好好射精的！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——ZUZUKU、GOOD、ZUKU、ZUKU！！
+
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom2515" )
+\CN["桃子"]
+“嗯，啊啊啊，啊，进到里面去了……”……
+哈……嗯……呜哇……”
+
+男子腰里使劲一把，让小公鸡往里走。
+
+插入一下子变深，小鸡鸡的前端在阴道里
+送到了。
+
+\CN["男人"]
+“我拿出来……呃……好饿！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Uterus = "evb_c001"; Call( "Scenarios/Effect*UterusEjaculation" );
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0211013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜，呜呜，呜呜，呜呜，呜呜，呜呜，呜呜，呜呜
+呼，呜呜呜呜，呜呜呜呜！！
+
+: PlayVoice( "Voices/vo01_mom2516" )
+\CN["桃子"]
+“嗯——————！然后，出来了……满满的，出来了……
+精液出来了……啊啊啊……啊啊……啊啊……”
+
+\CN["男人"]
+“啊啊啊……呀，糟了！真是太舒服了！”！
+从里面出来的话，入口和里面会一下子紧闭起来……”
+
+//●演出：射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0411013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，咻咻！
+
+: PlayVoice( "Voices/vo01_mom2517" )
+\CN["桃子"]
+“嗯，嗯，嘛，还没出来……嗯，嗯……
+出了很多……精液，溢出来了……”
+
+//●分岐：淫乱度Ａの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) == 3 )
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_0_0311013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom2518" )
+\CN["桃子"]
+“啊……啊啊…啊，啊，啊，又来了……”……
+嗯，好的……中出了，又开始了♥</color>」
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo01_mom2519" )
+\CN["桃子"]
+“哦哦哦哦哦哦，好疼啊……好、嗯……呜……”……
+哦哦哦哦哦，啊啊啊啊啊啊啊啊啊啊！！”
+
+//●ＣＧ差分：挿入・膣内射精・潮
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c001_0_1_0211013_1110010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！！
+
+: PlayVoice( "Voices/vo01_mom2520" )
+\CN["桃子"]
+“嘘，潮吹了……不，潮吹了……啊，是啊……
+啊……啊…嗯，呜……哈……”
+
+//●分岐終了
+: endif
+\CN["男人"]
+“啊，好舒服啊！”
+
+: PlayVoice( "Voices/vo01_mom2521" )
+\CN["桃子"]
+“哈——……哈……嗯……哈……哈……哈……哈”
+
+不要就这样拔小鸡鸡
+心情舒畅地持续射精。
+
+只是，怎么打开这个状况才好呢？
+我一边忍耐，一边想着那件事……。
+
+//●分岐終了
+: endif
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+没有办法做，之后也一直被侵犯。
+
+//●ＣＧ：レイプ後（桃）
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_b010_0_1_0311012_1100010_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：散々犯された後、呼吸が乱れに乱れています
+: PlayVoice( "Voices/vo01_mom2522" )
+\CN["桃子"]
+“啊……啊啊……啊，哈哈……啊…啊…啊…啊……啊……
+哈——啊，哈……嗯……啊，啊…啊啊”
+
+: PlayBackVoice( "Voices/BGV01_mom_jigo02" )
+\CN["男人"]
+“哈……哈……哈……果然，杀了他很可惜啊。
+带回去，成为我的奴隶……”
+
+在渐渐淡薄的意识中，听到了男人在说什么。
+
+\CN["男人"]
+“啧……看来还是退了比较好……”
+
+\CN["旅人"]
+“逃跑了吗……。
+嗯，这是很残酷的。”
+
+\CN["旅人"]
+“在这里遇到也是一种缘分，我来帮你……”
+
+//●演出：暗転
+: HideWnd()
+: StopBackVoice()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+看来，发现我的旅人
+好像是个亲切的人。
+
+好像把失去意识的我搬到了附近的城镇。
+
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_S02_03_1
+//＠拠点復帰
+//●シーンエンド
+*HScene_End1
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S02_03_1" )
+: chara = "Momo"
+: Call( "Scenarios/CommonSys*LoseRape" )
+: Jump( "Scenarios/CommonSys*LoseReturn" )
+//========================================================
+//○戦闘敗北レイプ・魔物（桃）
+//========================================================
+*sc002
+//●状況：敗北後。桃、非処女
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+居然就这样放过了失败、精疲力尽的我
+好像不可能……。
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart2" ) endif
+: if ( SceneFlag( "SC_S02_03_2" ) == false ) Jump( "*HscStart2" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart2" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump2" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart2" ) endif
+
+*HscJump2
+: Jump( "Scenarios/HSceneSkip*SC_S02_03_2" )
+
+*HscStart2
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+: Call( "Scenarios/CommonSys*Word" )
+//●ＣＧ：Ｈカットイン・異種姦・オーク
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_1_0110001_1000000_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom2523" )
+\CN["桃子"]
+“呜、呜……啊！我疏忽大意了……”
+
+身体没有力量。
+好像受到了超出想象的伤害。
+
+: PlayVoice( "Voices/vo01_mom2524" )
+\CN["桃子"]
+“哈，哈，这孩子是我发情的……”
+
+: PlayVoice( "Voices/vo01_mom2525" )
+\CN["桃子"]
+“能和任何种族交往……精灵的特性
+好像真的有呢……”
+
+//●ＳＥ：魔物の吠える声
+: PlaySe( "SE/Se_Monster01" )
+——格鲁鲁鲁鲁！
+
+魔物发出威吓的声音\V[Momo Penis]变成\V[Momo Omanko]
+接近。
+
+: PlayVoice( "Voices/vo01_mom2526" )
+\CN["桃子"]
+“嗯……呃……真的放进去了吗……？
+那种东西，怎么能进去……没有……啊，啊……啊啊……”
+
+: PlayVoice( "Voices/vo01_mom2527" )
+\CN["桃子"]
+“啊，进来了……魔物的，进来了……哦哦哦哦……
+啊啊啊啊……啊啊……嗯！”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_2_0211002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+很好吃！！
+
+//●演技：魔物の生殖器（普通の女性の腕ぐらいの太さ）挿入です
+: PlayVoice( "Voices/vo01_mom2528" )
+\CN["桃子"]
+“呜……呜……啊啊啊啊啊啊啊啊啊！！”！！
+呃……嗯……嗯——————！”
+
+: PlayBackVoice( "Voices/BGV01_mom_aegi02" )
+魔物一口气把小鸡鸡刺进根部。
+
+: PlayVoice( "Voices/vo01_mom2529" )
+\CN["桃子"]
+“嗯……哈，哈，这个，这样的东西进来了……
+哦，好大……{阴道内，肚子}变大了……」
+
+: PlayVoice( "Voices/vo01_mom2530" )
+\CN["桃子"]
+“只是被插了而已……哈，哈……意识好像要飞走了
+如果就这样动的话……”
+
+但是，这家伙的目的是不用考虑的生殖。
+因为不是快乐的目的……。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嗯，嗯，嗯，嗯，嗯！
+
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_2_0400002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：激しくピストンされています
+: PlayVoice( "Voices/vo01_mom2531" )
+\CN["桃子"]
+“呼，嗯，啊啊啊……啊，嗯，嗯，嗯，嗯！”！
+哈、哈……啊、啊啊、呜哇！”
+
+魔物伸出腰来，蹂躏{阴道内，内}。
+
+: PlayVoice( "Voices/vo01_mom2532" )
+\CN["桃子"]
+“噢噢！啊啊啊啊！呜呜呜哇！
+嗯，等等……呃，嗯，嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+太棒了！！纯棉！嘘！好大！！
+
+//●分岐：淫乱度Ｃの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) <= 1 )
+: PlayVoice( "Voices/vo01_mom2533" )
+\CN["桃子"]
+“ひ、ひ、ひかり……啊……呜、唔……啊啊啊……”……
+已经，不要动了……那个，坏了……”
+
+话虽如此，魔物也只是不断地抽奖给Gamushara。
+
+只是，为了给我配种，我拿出了公鸡
+一味地重复。
+
+: PlayVoice( "Voices/vo01_mom2534" )
+\CN["桃子"]
+“呜、呜、这个、因为会坏掉……呜……好激烈
+{阴道内，内}……好大啊……」
+
+也许很舒服吧。
+魔物发出了和人一样的声音。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一、一、一、一、二、四、一！
+
+: PlayVoice( "Voices/vo01_mom2535" )
+\CN["桃子"]
+“嗯，呃，嗯，嗯，啊，啊……哈…”
+
+//●ＳＥ：魔物の吠える声
+: PlaySe( "SE/Se_Monster01" )
+——哦哦哦哦哦哦哦哦哦。
+
+魔物开始发出低沉的声音。
+
+: PlayVoice( "Voices/vo01_mom2536" )
+\CN["桃子"]
+“ひ、ひ、支票……是很激烈的……啊、啊、这个、这个……
+不会吧，对我……嗯，啊，啊啊啊啊……”
+
+速度和气势都会增加的抽奖，魔物马上就要射精了
+告诉他好像不会做。
+
+: PlayVoice( "Voices/vo01_mom2537" )
+\CN["桃子"]
+“不行，不行……不能拿出来……不对，要拔出来……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+吸、吸、吸、吸、吸、吸、吸！
+
+魔物还把公鸡往里塞。
+
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_2_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：性器を膣奥に押し込まれています
+: PlayVoice( "Voices/vo01_mom2538" )
+\CN["桃子"]
+“哇……啊…啊……啊、啊、啊……嗯！”
+
+{阴道内，内}一口气冲进去，前端碰到子宫口
+欲广而来。
+
+: PlayVoice( "Voices/vo01_mom2539" )
+\CN["桃子"]
+“啊……啊…啊……那，不要放到那种里面去……”……
+达、达美……等一下……”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_2_0411013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻！
+
+: PlayVoice( "Voices/vo01_mom2540" )
+\CN["桃子"]
+“啊……呐，{阴道内，内}……嗯，嗯……嗯，嗯
+嗯……粘稠的精液……嗯，嗯……呜”
+
+//●ＳＥ：魔物の雄叫び
+: PlaySe( "SE/Se_Monster01" )
+大绿洲！！！
+
+: PlayVoice( "Voices/vo01_mom2541" )
+\CN["桃子"]
+“嗯，嗯，嗯，满满的，进到里面去了……啊啊……”……
+啊啊啊……嗯……啊…呃……呃……呜……”
+
+尽管如此，他还是毫不留情地持续注入精液。
+
+肚子变得砰砰的那样的量心情舒畅的声音
+一边漏着，一边以刺痛的气势放了出来。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+: PlayVoice( "Voices/vo01_mom2542" )
+\CN["桃子"]
+「嗯，啊，好！
+这、这样的、无法忍受……嗯，啊，恩♥</color>」
+
+对Gamushara的抽插开始感到快感。
+
+{阴道内，内}被用力擦伤
+每次都会因为快感而兴奋不已……。
+
+: PlayVoice( "Voices/vo01_mom2543" )
+\CN["桃子"]
+“嗯……呜……啊啊啊啊啊啊啊啊…啊，好舒服
+哈、啊、呃……嗯…啊啊啊啊啊啊啊♥</color>」
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一、一、一、一、二、四、一！
+
+: PlayVoice( "Voices/vo01_mom2544" )
+\CN["桃子"]
+“嗯……<color=59a0>♥</啊，啊……哈，哈♥</color>
+啊，呜……嗯……啊…呜…呜，呜♥</color>」
+
+尽管被魔物强迫
+为突然涌上来的绝顶感而烦恼。
+
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_2_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom2545" )
+\CN["桃子"]
+“啊，不行啊……呃，这个，这样啊……这样啊
+不行啊……好棒啊♥</真、真的♥</color>」
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo01_mom2546" )
+\CN["桃子"]
+“好嘞！嗯……好、嗯……啊…嗯……”……
+啊啊啊啊啊啊啊啊啊啊啊！！”
+
+阿飞！战栗比酷！吓一跳！！
+
+//●ＳＥ：魔物の吠える声
+: PlaySe( "SE/Se_Monster01" )
+——哦哦哦哦哦哦哦哦哦。
+
+绝顶的同时，魔物开始发出低沉的声音。
+
+就算我一个人，魔物的活塞也不会停止
+调整呼吸的不久，被持续的快乐玩弄……。
+
+//●分岐：淫乱度Ａの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Immoral" ) == 3 )
+: HideWnd()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_2_0411003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+
+: PlayVoice( "Voices/vo01_mom2547" )
+\CN["桃子"]
+“嗯……哇，哇，好厉害……嗯……好……”……
+然后……我、要出去了……”
+
+: PlayVoice( "Voices/vo01_mom2548" )
+\CN["桃子"]
+“好疼！嗯，好疼啊……
+哇……啊，哦哦哦哦哦——————！”
+
+//●ＣＧ差分：挿入・潮
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_2_0211013_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+快看，快看！！
+
+即使这样，在反复的抽签中也会有气势的潮水
+一边使之飞散，一边使身体痉挛。
+
+在魔物卷起来的漫画里面
+推进过来。
+
+//●分岐終了
+: endif
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_c011_0_2_0411013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻！
+
+: PlayVoice( "Voices/vo01_mom2549" )
+\CN["桃子"]
+“嗯，啊啊啊……哦…嗯，嗯，嗯……
+啊……呜……哈……啊啊…呜……呜……”
+
+//●ＳＥ：魔物の雄叫び
+: PlaySe( "SE/Se_Monster01" )
+大绿洲！！！
+
+: PlayVoice( "Voices/vo01_mom2550" )
+\CN["桃子"]
+“哦哦哦~哦~哦~哦~啊啊啊啊啊……
+出得太多了……用精液、漫画、满满的♥</color>」
+
+尽管如此，他还是毫不留情地持续注入精液。
+
+肚子变得砰砰的那样的量心情舒畅的声音
+一边漏着，一边以刺痛的气势放了出来。
+
+//●分岐終了
+: endif
+//●演出：暗転
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+在那之后，魔物也一直在侵犯我
+精液在阴道里放了好几次。
+
+……………………………………………………。
+
+//●ＣＧ：レイプ後（桃）
+: HideWnd()
+: if ( $inExtra == true )
+	: DrawImage( 1, 0, "BGImage/BG_Mountain01_01", 0.0 )
+: endif
+: evcha = "Momo"; evbg = false; evcos = true;
+: evfile = "evb_b010_0_1_0311012_1100010_0_"
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：散々犯された後、呼吸が乱れに乱れています
+: PlayVoice( "Voices/vo01_mom2551" )
+\CN["桃子"]
+“啊哈……哈……哈……哈……哈……哈…………呃……
+哈哈哈……啊…啊……啊啊……啊……啊…啊……啊……”
+
+: PlayBackVoice( "Voices/BGV01_mom_jigo02" )
+\CN["旅人"]
+“……偶然发现了，这太过分了。”
+
+\CN["旅人"]
+“在这里遇到也是一种缘分，我来帮你……”
+
+//●演出：暗転
+: HideWnd()
+: StopBackVoice()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+看来，发现我的旅人
+好像是个亲切的人。
+
+好像把失去意识的我搬到了附近的城镇。
+
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_S02_03_2
+//＠拠点復帰
+//●シーンエンド
+*HScene_End2
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S02_03_2" )
+: chara = "Momo"
+: Call( "Scenarios/CommonSys*LoseRape" )
+: Jump( "Scenarios/CommonSys*LoseReturn" )

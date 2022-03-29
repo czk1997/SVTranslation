@@ -1,0 +1,1052 @@
+//========================================================
+//○力を求めた者の末路１
+//========================================================
+*sc001
+//●視点：第三者視点
+//●場所：不死の山・頂上
+//●状況：ヒラガと亜久里と将軍がいる。
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Summit01_05", 1.0 )
+: Wait()
+: DrawChara( "Tadakatsu", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayBgm("BGM/12_CM012")
+: ShowWnd()
+\CN["将军"]
+“有必要来这样的地方吗？比拉加啊。”
+
+: DrawChara( "Tadakatsu", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["平底片"]
+“是的，我想想万一的事。
+亚久里先生也在等着我”
+
+: DrawFaceThumbnail( "Aguri", 0, 0, 0 )
+: PlayVoice( "Voices/vo16_agu0284" )
+\CN["亚久里"]
+“是的，没有疏忽。”
+
+: DrawChara( "Tadakatsu", 9, 0)
+\CN["将军"]
+“说到亚久里，就是你的这个吧。
+这样黑暗的女人……你也变了。
+这么说来，8代前的将军也有这样的兴趣——”
+
+: DrawChara( "Hiraga", 4, 0)
+\CN["平底片"]
+“将军大人，和我一起笑着逃不掉的事情
+有一两个哦？”
+
+//将軍cos1へ変更
+: CharaCostume( "Tadakatsu", 1 )
+: DrawChara( "Tadakatsu", 1, 0, 0)
+\CN["将军"]
+“……对不起，失言了。”
+
+希拉里平静的愤怒甚至让蛮横的将军也谢罪。
+
+: DrawChara( "Tadakatsu", 0, 0)
+\CN["将军"]
+（我的直觉告诉你，让比拉加生气是我的毁灭
+直接联系的话。以后应该注意。）
+
+: DrawChara( "Hiraga", 2, 0)
+\CN["平底片"]
+（他基本上是个胆小鬼。
+嘛，这对我来说是非常方便的……）
+
+\CN["平底片"]
+（因为胆小，所以有时会选择疯狂的选择。
+必须要小心啊）
+
+希拉加和将军互相试探对方的心思。
+
+//将軍cos0へ戻し
+: CharaCostume( "Tadakatsu", 0 )
+: DrawChara( "Tadakatsu", 0, 0, 0)
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“将军大人，最后确认一下，真的要接受魔导手术吗？”
+是吧？也就是说要舍弃别人的身体”
+
+: DrawChara( "Tadakatsu", 15, 0)
+\CN["将军"]
+“不拘泥于人。
+如果能得到比谁都强大的力量的话，我就心甘情愿了”
+
+压制着反幕派势力。
+
+即便如此，将军最害怕的还是暗杀
+我一直在寻找保护自己的方法。
+
+{权力，力量}越得到，对他人的信赖就越淡薄
+到了现在，连自己组织的见回组都成了碍事的存在
+我在考虑。
+
+\CN["平底片"]
+“真的可以相信我吗？”
+
+: DrawChara( "Tadakatsu", 11, 0)
+\CN["将军"]
+“你因为我的死而遭受损失。
+正因为如此，才值得信任”
+
+: DrawChara( "Hiraga", 6, 0)
+\CN["平底片"]
+“呵呵。嘛，正如您说的那样。
+我所期望的只有我和亚久里的平稳”
+
+将军知道是短暂的交往。
+
+一个叫比拉加的男人总是希望“平静”。
+
+只要不加以威胁，就会成为最强大的伙伴
+就是这样。
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“那么，开始吧。虽然是手术，但是要用手术刀
+我不会切的”
+
+\CN["平底片"]
+“通过将提取出的密度很高的魔力注入细胞中，使细胞
+通过变异，变成拥有更强肉体的存在
+可以重生”
+
+: DrawChara( "Tadakatsu", 9, 0)
+\CN["将军"]
+“虽然不知道难不难，但不是很痛吗？”
+
+\CN["平底片"]
+“睡觉的时候就结束了。
+下次醒来的时候，应该会变成别的存在”
+
+: DrawChara( "Tadakatsu", 16, 0)
+\CN["将军"]
+“是吗……我很期待清醒。”
+
+//●演出：将軍　カプセルに入って行く
+: HideWnd()
+: chara = "Tadakatsu"; lay = 0; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: ShowWnd()
+将军走进了希拉加准备的魔导器胶囊。
+
+\CN["平底片"]
+“那么，亚久里先生，开始吧。”
+
+//●演出：ヒラガ　魔導器を動かす
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Hiraga", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●演出：時間経過トランジション
+//●視点：無黒視点
+//●場所：帝都・宿屋
+//●状況：朝食を食べています
+: HideWnd()
+: FadeOut( 0.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 1.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Kinako", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0837" )
+\CN["黄菜子"]
+“咕嘟咕嘟……”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1548" )
+\CN["桃子"]
+“呐，虽然现在已经很厉害了，但是西都和帝都是食物的味道
+之类的，很不一样吧”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4637" )
+\CN["无黑色"]
+“是啊。乌冬面啊荞麦面啊，汤汁完全不一样啊。”
+
+攻入白夜的据点，大概一个月左右吧。
+
+: DrawChara( "Mukuro", 0, 0)
+: DrawChara( "Momo", 11, 0)
+: DrawChara( "Kinako", 0, 0)
+\CN["妇女"]
+“啊啊啊啊啊啊啊啊啊————！”
+
+\CN["睡眠组1"]
+“稍微碰了一下屁股，别叫苦了。”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1549" )
+\CN["桃子"]
+“又是回访组……真是没品啊。”
+
+: PlayVoice( "Voices/vo02_kin0838" )
+\CN["黄菜子"]
+“放着不管是最好的。”
+
+或许是因为在帝都的街道上反幕派完全变得成熟了吧
+见回组的人得意忘形，为所欲为。
+
+\CN["睡眠组1"]
+“喂！那边的女人们，来这边聊聊吧。”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom1550" )
+\CN["桃子"]
+“对不起，你们和我们
+因为好像没有足够的知性可以聊天……”
+
+桃子突然挑衅。
+
+\CN["睡眠组1"]
+“你……！”
+
+\CN["睡眠组2"]
+“喂，住手。那三个人，不是最近传说中的家伙吗？”
+
+\CN["睡眠组1"]
+“……传言……不会吧……”
+
+见回组的男子脸色发青——
+
+//●ＳＥ：テーブルを叩く音
+: PlaySe( "SE/Se_Punch01" )
+\CN["睡眠组1"]
+“钱放在这里。”
+
+粗暴地把钱砸到桌子上
+像逃跑一样从店里出去。
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom1551" )
+\CN["桃子"]
+“哎呀，要好好付钱啊。”
+
+: DrawChara( "Mukuro", 9, 0)
+: PlayVoice( "Voices/vo00_muk4638" )
+\CN["无黑色"]
+“桃子，你又来了……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+嗯，嘛，就这样像往常一样
+是吃早饭的时候。
+
+//●ＳＥ：デバイスの音
+: PlaySe( "SE/Se_Device01" )
+突然，我和桃子和黄菜子，各自的设备响了。
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk4639" )
+\CN["无黑色"]
+“来自比拉加？”
+
+: DrawChara( "Kinako", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R")
+: PlayVoice( "Voices/vo02_kin0839" )
+\CN["黄菜子"]
+“我也来了。”
+
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L")
+: PlayVoice( "Voices/vo01_mom1552" )
+\CN["桃子"]
+「啊，我也来了。
+总之，先来研究所看看平时的内容”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0840" )
+\CN["黄菜子"]
+“那么，我们马上去研究所吧。”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4640" )
+\CN["无黑色"]
+“是啊。不工作的人不应该吃。
+因为对希拉里有很多照顾”
+
+: HideWnd()
+: StopBgm( 0.5 )
+: chara = "Momo"; lay = 2; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: chara = "Mukuro"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: chara = "Kinako"; lay = 4; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+//========================================================
+//○力を求めた者の末路２
+//========================================================
+*sc002
+: SwapImage( 1, 0, "BGImage/BG_Laboratory01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+//●場所：ヒラガの研究所
+: PlayBgm("BGM/15_ESM04")
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["平底片"]
+“欢迎光临。我一直在等你。”
+
+\CN["平底片"]
+“对了对了，多亏了大家的帮助
+反幕派也变得相当老实了”
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: DrawChara( "Kinako", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom1553" )
+\CN["桃子"]
+“取而代之的是，虽然相亲组给大家添了很多麻烦。”
+
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+“……被这么说的话，是很痛的地方。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4641" )
+\CN["无黑色"]
+“如果不伤害我们的话，那就好了。”
+
+最近和刚才的食堂一样
+有时会从身边的人那里避开我们。
+
+: DrawChara( "Mukuro", 12, 0)
+尽管如此，其中也有不知道的人
+以心情来应对。
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0841" )
+\CN["黄菜子"]
+“那么，这次的工作是什么呢？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“实际上我想在不死之山进行大规模的魔导器实验。
+因此，如果你们发生什么事的话
+我想拜托保镖”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1554" )
+\CN["桃子"]
+“发生什么事时的护卫？现在还不得要领呢。”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“我瞒着你们也没办法吗……”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“现在开始要说的话，我想请你不要说别的——”
+
+: DrawChara( "Mukuro", 0, 0, 0)
+: PlayVoice( "Voices/vo00_muk4642" )
+\CN["无黑色"]
+“啊，我至少知道保密义务。”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“不愧是。
+前几天，对将军实施了魔导手术”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1555" )
+\CN["桃子"]
+“魔导手术……？将军到底哪里不好？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“这是用魔导器做的手术。
+目的是为了强化肉体吧”
+
+//●分岐：子宮改造手術を受けている場合
+: if ( Flag ( "Birth" ) == true )
+	: DrawChara( "Mukuro", 10, 0)
+轻轻地触摸腹部。
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 23, 0)
+	: PlayVoice( "Voices/vo00_muk4643" )
+	\CN["无黑色"]
+（我也曾请{以前}用魔导手术对子宫进行了改造……）
+
+确实是使用魔导器的
+应该是重塑细胞之类的东西。
+
+//●分岐終了
+: endif
+: DrawChara( "Kinako", 7, 0)
+: PlayVoice( "Voices/vo02_kin0842" )
+\CN["黄菜子"]
+“肉体强化？肌肉量增加了吗？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“让细胞本身发生变化。
+简单来说就不是人了”
+
+//●読み：止めて（とめて）
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4644" )
+\CN["无黑色"]
+“……魔导手术失败导致将军暴走
+如果有的话，就算杀了也想要阻止，是这样吗？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“是的，没错。”
+
+表情一点也没变，信口开河。
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1556" )
+\CN["桃子"]
+“特意拜托我们的话，可能会失败
+是不是很贵？”
+
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+“以防万一——就是这么回事。”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4645" )
+\CN["无黑色"]
+“虽然不是人类，但是会变成什么样的存在呢？
+我想问一下”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“虽然没有特别的名字，但是我是{人造魔族，伊维尔罗伊德}
+命名了”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0843" )
+\CN["黄菜子"]
+“顺便说一下，如果魔导手术失败了会怎么样呢？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“虽然只是预测，但是会变成没有知性的怪物吧。”
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom1557" )
+\CN["桃子"]
+“也就是说，如果变成怪物的话，就想要杀人。
+为什么特意去做那种危险的事情呢……”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom1558" )
+\CN["桃子"]
+“嘛，考虑到那位将军的性格，就有种‘啊’的感觉……”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4646" )
+\CN["无黑色"]
+“那么，我们先去哪里好呢？”
+
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
+\CN["平底片"]
+“如果能去不死之山的山顶就好了。
+我们做好准备后也会追上的”
+
+//: DrawChara( "Kinako", 0, 0)
+//: PlayVoice( "Voices/vo02_kin0844" )
+//\CN["黄菜子"]
+//「不死の山なら、大和東街道を通って行くことができます」
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk4647" )
+\CN["无黑色"]
+“明白。那我们也马上去吧。”
+
+//＠分岐：フラグ［あざみ生存］が１の場合
+//＠サイドエピソード解放：略奪されし者、高千穂あざみのその後
+//＠分岐終了
+//＠サイドエピソード解放：性に溺れし哀れな狐
+//＠サイドエピソード解放：悲劇の姫君
+: SetMission( "SC_D06_04_1", "InProgress" )
+: FastTravelMapOn( "Fushinoyama" )
+: FastTravelMapOn( "Kumonomichi" )
+: DestinationMap( "Map_Dungeon28_07_Fushinoyama" )
+: if ( Flag ( "Azami_Live" ) == true )
+	: SideEpisodeFlagUp( "episode65" )
+: endif
+: SideEpisodeFlagUp( "episode66" )
+: SideEpisodeFlagUp( "episode67" )
+: SetMission( "SC_D06_50_1", "Opened" )
+: SetMission( "SC_D06_51_1", "Opened" )
+: SetMission( "SC_D06_52_1", "Opened" )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+事件信息更新了。
+<^FF0000>侧面小故事更新了！</color>
+
+//●シーンエンド
+: HideWnd()
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")
+//========================================================
+//○力を求めた者の末路３
+//========================================================
+*sc003
+\CI["准备好了"]
+\CI["好好确认一下"]
+在这之前，希拉加他们……。
+
+: if ($choice == 1) Return endif
+//●場所：大和東街道・不死の山・頂上
+//●状況：ヒラガと亜久里　すでに準備している
+//●演出：無黒たち　歩いてやってくる
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Summit01_05", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/15_ESM04")
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4648" )
+\CN["无黑色"]
+“让你久等了。”
+
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["平底片"]
+“不不不，还有点富余。没关系。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1559" )
+\CN["桃子"]
+“那里像胶囊一样的东西是什么？”
+
+\CN["平底片"]
+“这里是实施魔导手术的魔导器。”
+
+\CN["平底片"]
+“现在，在这里面等着一桥将军醒来的时候。
+难道是羽化前的蝴蝶吗？”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1560" )
+\CN["桃子"]
+“将军与其说是蝴蝶，不如说是蛾……”
+
+\CN["平底片"]
+“马上就要到了。
+各位，先做好准备吧——”
+
+//●演出：無黒たち　戦闘準備する
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 23, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: DrawChara( "Kinako", 3, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0845" )
+\CN["黄菜子"]
+“……无黑先生，那个，我说不好……”
+
+: DrawChara( "Mukuro", 30, 0)
+: PlayVoice( "Voices/vo00_muk4649" )
+\CN["无黑色"]
+“我从刚才开始也有点心神不定，战战兢兢的。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//●ＳＥ：風の音
+: PlaySe( "SE/Se_Wind01" )
+突然刮风。
+
+: DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom1561" )
+\CN["桃子"]
+“吹这样温热的风的时候
+会发生不吉利的事情吧……”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+\CN["平底片"]
+「…………」
+
+//: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+一定有在场的所有人都能感受到的东西吧。
+
+紧张的空气在流动————
+
+//●演出：カプセルから将軍が出てくる
+: DrawChara( "Tadakatsu", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["将军"]
+「…………」
+
+: EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom1562" )
+\CN["桃子"]
+“真的是那个一桥将军吗？
+虽然感觉到了不可思议的魔力”
+
+作为魔术师的桃子很快地
+注意到一桥将军惊人的魔力量。
+
+: StopBgm( 1.0 )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawFaceThumbnail( "Tadakatsu", 19, 0, 0 )
+\CN["将军"]
+“哦~哦~哦~哦~”
+
+: PlayBgm("BGM/16_TM001")
+: DrawChara( "Kinako", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0846" )
+\CN["黄菜子"]
+“总觉得，情况很奇怪！”
+
+: DrawChara( "Mukuro", 6, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4650" )
+\CN["无黑色"]
+“大家，退下！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//●演出：全員一歩下がる
+: DrawFaceThumbnail( "Tadakatsu", 19, 0, 0 )
+\CN["将军"]
+“哇啊啊啊啊啊啊啊啊！！”
+
+将军发出痛苦的声音——
+
+//●演技：将軍の攻撃からヒラガを守る
+: DrawChara( "Aguri", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo16_agu0285" )
+\CN["亚久里"]
+“希拉加大人……！”
+
+//●演出：将軍、ヒラガに向かって魔術を放つ。爆発エフェクト
+: HideWnd()
+: EraseChara( "Aguri", 0.0 )
+: PlaySe( "SE/Se_AnimeXL_Explode01" )
+: PlayAnim( "Animations/AnimeXL_Explode01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+将军向希拉加放出的魔术。
+助手瞬间庇护了希拉里。
+
+//●演出：爆発が明けた後、亜久里変身している
+//あぐりcos2へ変更
+: CharaCostume( "Aguri", 2 )
+: DrawChara( "Hiraga", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["平底片"]
+“亚久里，你受伤了吗？”
+
+: DrawChara( "Aguri", 1, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: PlayVoice( "Voices/vo16_agu0286" )
+\CN["亚久里"]
+“这么点事，没什么。”
+
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1563" )
+\CN["桃子"]
+“助手……？他的样子……”
+
+: DrawChara( "Hiraga", 6, 0)
+\CN["平底片"]
+“这是亚久里先生的战斗态势。
+怎么样？很棒吧？”
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+\CN["将军"]
+“哈……哈…唔……唔…唔……唔…啊！”
+
+: DrawChara( "Mukuro", 30, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4651" )
+\CN["无黑色"]
+“呐，希拉加，那个痛苦的样子。”
+
+: DrawChara( "Hiraga", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["平底片"]
+“这是完全被力量吞噬者的下场。
+好像不适应魔导手术”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom1564" )
+\CN["桃子"]
+“那就是说你失败了吧？”
+
+\CN["平底片"]
+“不，不是失败。
+我只是不适应他”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo02_kin0847" )
+\CN["黄菜子"]
+“将军会变成什么样？”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“恐怕细胞会变异成怪物吧。”
+
+: DrawChara( "Hiraga", 7, 0)
+\CN["平底片"]
+“变成了名为迪达拉波奇的怪物——”
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+\CN["将军"]
+“哇啊啊啊啊……啊啊……哇……”
+
+\CN["将军"]
+“哦哦哦哦哦哦哦哦哦！”
+
+将军用外面的声音高喊着——
+
+//●演出：将軍　ダイダラボッチ化
+: StopBgm( 1.0 )
+: PlayBgm("BGM/28_ID01")
+: cutinfile = "Cutin03_03"; Call("Scenarios/Common*CutinFadeIn");
+\CN["凹模波奇"]
+“噗……噗……噗……”
+
+: DrawFaceThumbnail( "Momo", 3, 0, 0, )
+: PlayVoice( "Voices/vo01_mom1565" )
+\CN["桃子"]
+“那就是大斑鱼啊……。
+好大啊”
+
+: DrawFaceThumbnail( "Mukuro", 41, 0, 5 )
+: PlayVoice( "Voices/vo00_muk4652" )
+\CN["无黑色"]
+“说大，其实已经是巨人了……”
+
+: DrawFaceThumbnail( "Kinako", 10, 0, 1 )
+: PlayVoice( "Voices/vo02_kin0848" )
+\CN["黄菜子"]
+“杀了那个可以吗？”
+
+: DrawFaceThumbnail(  "Hiraga", 5, 0, 0 )
+\CN["平底片"]
+“……是的，不能就这样放任不管。
+很遗憾”
+
+想必比拉加也能预想到会变成这样吧。
+
+: PlaySe( "SE/Se_Monster01" )
+\CN["凹模波奇"]
+“哦哦哦哦哦！”
+
+: HideWnd()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Kinako", 9, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0849" )
+\CN["黄菜子"]
+“我来！”
+
+: DrawChara( "Mukuro", 6, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4653" )
+\CN["无黑色"]
+“桃子，黄菜子，我去！”
+
+//あぐりcos0へ戻し
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：ダイダラボッチ
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：力を求めた者の末路４　へ
+//■敗　北：バッドエンド　へ
+//――――――――――――――――――――――――――――
+//＠戦闘：ダイダラボッチ,2,2,0,sc004,lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc004" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*lose" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Summit01_05", "BGM/20_BM001", 1085, -1, -1, "Scenarios/SC_D06_04*battle_end" , true )
+
+*battle_end
+: StopBgm( 0.0 )
+: if ( $battleWin == true )
+	: Jump( "*sc004" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Summit01_05", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: Jump( "*lose" )	//敗北した場合
+: endif
+//========================================================
+//○力を求めた者の末路４
+//========================================================
+*sc004
+//●状況：勝利後
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Summit01_05", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Monster01" )
+: ShowWnd()
+\CN["凹模波奇"]
+“鱼哦哦哦哦哦哦哦哦！！”
+
+迪达拉波奇发出了临终的叫声。
+
+//●演出：ダイダラボッチ　将軍に戻る
+: DrawChara( "Mukuro", 1, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4654" )
+\CN["无黑色"]
+“……！将军变成了原来的样子……”
+
+: DrawChara( "Aguri", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo16_agu0287" )
+\CN["亚久里"]
+“请退下。他已经——”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo02_kin0850" )
+\CN["黄菜子"]
+“会变成光的颗粒消失……”
+
+: PlayBgm("BGM/41_Sad")
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+: DrawFaceThumbnail( "Tadakatsu", 13, 0, 0 )
+\CN["将军"]
+“哈……哈……啊……啊，身体……燃烧着……
+痛苦……好像全身的骨头都碎了……”
+
+\CN["将军"]
+“好痛……好痛苦……哈哈，救救我……我不想死……”……
+讨厌……还没……还没开始……我要永远把大和……”
+
+: DrawChara( "Hiraga", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["平底片"]
+“……我已经帮不上忙了。”
+
+希拉里淡淡地说道。
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+//●演出：可能なら粒子となって消えていく演出
+: DrawChara( "Tadakatsu", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["将军"]
+“不想消失……希拉加……拜托了……帮帮我……”
+
+: EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
+那个将军下跪，抬起头来。
+
+用眼泪和鼻涕把脸弄得乱七八糟——
+
+看着像是迷路的孩子的脸
+形成将军形象的粒子消失在不死山的天空中。
+
+: DrawChara( "Mukuro", 41, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4655" )
+\CN["无黑色"]
+“……连一根骨头都不留，会消失吗？”
+
+: DrawChara( "Hiraga", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["平底片"]
+“这是{人造魔族，伊维尔罗伊德}的临终……”
+
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+//●演技：自分もイービルロイドなので思うところがある
+: DrawChara( "Aguri", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo16_agu0288" )
+\CN["亚久里"]
+「…………」
+
+: EraseChara( "Aguri", Call("Scenarios/Common*FgFadeTime") )
+//●演技：心の声です
+: DrawChara( "Mukuro", 28, 0)
+: PlayVoice( "Voices/vo00_muk4656" )
+\CN["无黑色"]
+（即便是有如此影响力的人，也会暗中死去。
+然后，死了之后一切都结束了……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4657" )
+\CN["无黑色"]
+（人迎来真正死亡的时候，即使是被谁遗忘的时候
+我听说过……）
+
+但是，我不这么认为。
+死了就完了。
+
+那么巨大的身躯一片肉也不剩地闪闪发光地消失了
+的话，会让我稍微思考一下。
+
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: PlayVoice( "Voices/vo01_mom1566" )
+\CN["桃子"]
+“老实说，虽然不是很喜欢的人
+这样的话，总觉得有点郁闷呢……”
+
+因为获得了巨大的权力而变得孤独
+我同情一个谁都不相信就这样结束了一生的男人。
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["平底片"]
+“总之先回去休息一下吧。”
+
+: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk4658" )
+\CN["无黑色"]
+“是啊……”
+
+//●演出：全員　退場してからゆっくりと暗転
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: CharaCostume( "Aguri", 0 )
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+//●浪人ルート　エンディング分岐
+//●分岐：悪堕ちＬＶが３の場合
+//●シーン：「大和の支配者」へ
+//＠シナリオジャンプ：SC_D07_03
+//●分岐：無黒・桃・黄菜子の淫乱度がＡの場合
+//●シーン：「エロティックスローライフ」へ
+//＠シナリオジャンプ：SC_D07_02
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーン：「自由を手にした３人の女浪人」へ
+//＠シナリオジャンプ：SC_D07_01
+//●分岐終了
+: ShowWnd()
+\CI["看"]
+\CI["跳过"]
+看片尾曲吗？
+
+: if ( $choice == 0 )
+	: HideWnd()
+	: FadeIn( 0.0 )
+	: PlayAnim( "Animations/Ending", false, 0, 0, 1, 1 )
+	: Wait()
+: endif
+: if ( $evilLevel == 3 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D07_03")
+: elif ( CharaHRank( "Mukuro", "Immoral" ) == 3 && CharaHRank( "Momo", "Immoral" ) == 3 && CharaHRank( "Kinako", "Immoral" ) == 3 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D07_02")
+: else
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D07_01")
+: endif
+
+*lose
+//●ＳＥ：獣の雄叫び
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Summit01_05", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Monster01" )
+: ShowWnd()
+\CN["凹模波奇"]
+「――――――――――」
+
+//●演出：無黒・桃・黄菜子　ぶっとばされる
+//●演出：ダークエルフ化している場合は元に戻す
+: if ( CharaCostume( "Mukuro" ) == 2 )
+	: CharaCostume( "Mukuro", 0 )
+: endif
+: if ( CharaCostume( "Kinako" ) == 2 )
+	: CharaCostume( "Kinako", 5 )
+: endif
+: DrawChara( "Kinako", 31, 1, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo02_kin0851" )
+\CN["黄菜子"]
+“哈、哈……已经没力气了……”
+
+黄菜子没有站起来的力量。
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: PlayVoice( "Voices/vo01_mom1567" )
+\CN["桃子"]
+“魔力已经空了呢。
+这样的话，我就只能是一个柔弱的女孩子了……”
+
+桃子微微一笑，一个人发牢骚。
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 31, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4659" )
+\CN["无黑色"]
+“……到此为止吗……”
+
+谁都没有战斗的力量。
+
+为了杀死我们，慢慢地靠近
+在迪达拉波奇面前失去了意识——
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●分岐：悪堕ちＬＶが３の場合
+//●浪人ルート・バッドエンド１へ
+//●シーン：「反逆者の罪を着せられて」へ
+//＠シナリオジャンプ：SC_D07_04
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●浪人ルート・バッドエンド２へ
+//●シーン：「支配者の妾たち」へ
+//＠シナリオジャンプ：SC_D07_05
+//●分岐終了
+: FadeOut( 0.0 )
+: Wait()
+: if ( $evilLevel == 3 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D07_04")
+: else
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D07_05")
+: endif

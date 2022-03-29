@@ -1,0 +1,246 @@
+//========================================================
+//○物憂げな少女
+//========================================================
+//●場所：鬼灯屯所
+//Yoshi：背景、台所・昼
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Azami", 0 )
+: CharaCostume( "Ryu", 0 )
+: CharaCostume( "Bebi", 0 )
+: CharaCostume( "Falke", 0 )
+: CharaCostume( "Elisa", 0 )
+: CharaCostume( "Xeno", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 1.0 )
+: Wait()
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: Wait()
+: PlayBgm("BGM/03_CM003")
+: ShowWnd()
+//●視点：黄菜子視点
+//Yoshi：センタ―に黄菜子
+//●演技：ゼノがヴィクトールに帰ったことでため息
+: PlayVoice( "Voices/vo02_kin0451" )
+\CN["黄菜子"]
+“哈~……”
+
+\CN["鬼灯队士・女A"]
+“最近，黄菜子，真没精神啊。”
+
+\CN["鬼灯队士・女B"]
+“那是当然的。因为初恋的他回到了祖国。”
+当然，会的”
+
+\CN["鬼灯队士・女C"]
+“即便如此，黄菜子小姐的任务仍然是完美完成的
+好厉害”
+
+//●演出：回想入る
+//●場所：鬼灯屯所・入口・過去
+//Yoshi：背景、玄関・昼
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: cutinfile = "Refrain"
+: Call("Scenarios/Common*CutinFadeIn")
+: SwapImage( 1, 0, "BGImage/BG_Houzuki_Genkan01", 0.0 )
+: DrawChara( "Dominik", 5, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Azami", 0, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["多米尼克"]
+“鬼灯的各位，承蒙关照了。”
+
+: PlayVoice( "Voices/vo05_aza0428" )
+\CN["嘲讽"]
+“彼此彼此。
+谢谢你们让我们的人来练习”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Dominik", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左にファルケ、右に銀、センターにレオ
+: DrawChara( "Falke",10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["雷欧"]
+“谢谢你，费尔克先生。
+我一定会变得更强的”
+
+: DrawChara( "Falke", 5, 0)
+\CN["沥青"]
+“啊。雷欧和还有银，你们的话会变得更强。”
+
+\CN["银子"]
+“……小聪明”
+
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左にゼノ、右に黄菜子
+: DrawChara( "Xeno", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+//●演技：別れ。寂しそうにしています
+: PlayVoice( "Voices/vo02_kin0452" )
+\CN["黄菜子"]
+「…………」
+
+: DrawChara( "Xeno", 3, 0)
+\CN["奇诺"]
+“黄菜子，我还会再来大和的。”
+
+: PlayVoice( "Voices/vo02_kin0453" )
+\CN["黄菜子"]
+“真的吗？还会再来吗？”
+
+\CN["奇诺"]
+“嗯，我保证。”
+
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左にイライザ、右にファルケ
+: DrawChara( "Elisa", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Falke", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo19_era0121" )
+\CN["伊拉伊萨"]
+“啊，虽然有点舍不得，但是差不多该出发了。
+赶不上船了”
+
+: DrawChara( "Falke", 9, 0)
+\CN["沥青"]
+“我知道了，但是伊拉伊萨，就这样穿着和服回去吗？”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0122" )
+\CN["伊拉伊萨"]
+“哇！怎么这么喜欢啊。”
+
+: DrawChara( "Falke", 0, 0)
+//Yoshi：センターにドミニク
+: DrawChara( "Dominik", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["多米尼克"]
+“你真的想让未婚妻看看吗？”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Dominik", 5, 0)
+: DrawChara( "Elisa", 3, 1)
+: PlayVoice( "Voices/vo19_era0123" )
+\CN["伊拉伊萨"]
+“什么啊！？不对！没什么。”
+
+: DrawChara( "Elisa", 5, 2)
+: PlayVoice( "Voices/vo19_era0124" )
+\CN["伊拉伊萨"]
+“这个非常好穿，已经习惯了。
+就这些。嘛，如果他想看的话我也
+嘛，也不坏吧……”
+
+: DrawChara( "Falke", 5, 0)
+\CN["沥青"]
+“烦人，脸是红色的？”
+
+: DrawChara( "Elisa", 8, 0)
+: PlayVoice( "Voices/vo19_era0125" )
+\CN["伊拉伊萨"]
+「松了一口气。话说，你，好好地和克莱西娅在史黛拉
+你给他买了特产吧？”
+
+: DrawChara( "Falke",12, 0)
+\CN["沥青"]
+“当然啦！已经安排好装货了。”
+
+: DrawChara( "Dominik", 4, 0)
+\CN["多米尼克"]
+“那么，差不多该告辞了。”
+
+: EraseChara( "Dominik", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+//Yoshi：左にゼノ、右に黄菜子
+: DrawChara( "Xeno", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+\CN["奇诺"]
+“……黄菜子，再见。”
+
+: DrawChara( "Kinako",12, 0)
+: PlayVoice( "Voices/vo02_kin0454" )
+\CN["黄菜子"]
+“恩！我会写信的！
+请再来大和！绝对哦！”
+
+//●演出：回想から戻る
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseAllImage( 9, 0.0 )
+: ResetLayer(9)
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 0.0 )
+: EraseChara( "Xeno", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+前几天，维克托尔骑士团的各位
+我回了维克托尔。
+
+在大和之间是什么
+因为每天都在屯所……。
+
+一不在就觉得很寂寞。
+心里好像有个洞。
+
+//Yoshi：右に黄菜子
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0455" )
+\CN["黄菜子"]
+（泽诺君说他还会再来……）
+
+我不能永远寂寞。
+
+//Yoshi：左に紅美
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo07_beb0148" )
+\CN["红美"]
+“奇奈子，没事吧？
+最近，我总是无精打采的……”
+
+: DrawChara( "Kinako", 1, 0)
+: PlayVoice( "Voices/vo02_kin0456" )
+\CN["黄菜子"]
+“嗯，我没事。
+红美，一起去吃饭吧？”
+
+: DrawChara( "Bebi", 6, 0)
+: PlayVoice( "Voices/vo07_beb0149" )
+\CN["红美"]
+“噢噢！别在老铺子里请客。”
+
+红美，不能让大家担心。
+
+总之，先去平时吃的定食店填饱肚子吧
+好吧。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: EraseChara( "Bebi", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

@@ -1,0 +1,291 @@
+//========================================================
+//○逃げた魔物を退治せよ１
+//========================================================
+: if ( MissionProgress( "SC_B04_50_2", "InProgress" ) == true ) Jump( "*select01_s2" ) endif
+*sc001
+//※備考：無黒１人の時のみ発生するサブイベント
+//●場所：帝都・居酒屋
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["醉鬼"]
+“恩……。嘻哈……唔…我已经不行了……”……
+呜呜……啊…！”
+
+好像相当醉了……。
+
+*select01
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：話を訊いてみる
+//■選択肢２：放っておこう
+//――――――――――――――――――――――――――――
+\CI["打听"]
+\CI["放着不管吧"]
+怎么办？
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：話を訊いてみるを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+\CN["酒馆的老板"]
+“啊，那个人是经营生物的商人。
+什么都不小心把从东方国家运来的珍稀野兽放掉
+好像糟了”
+
+\CN["酒馆的老板"]
+“但是，好像是拼命逃到这里来的……”
+
+\CN["醉鬼"]
+“呜呜……怎么办才好……。
+只听说是罕见的牛
+竟然那么凶暴……”
+
+: DrawChara( "Mukuro", 1, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1333" )
+\CN["无黑色"]
+“顺便说一下，那只野兽现在怎么样了……？
+有人捕获了吗？”
+
+\CN["醉鬼"]
+「…………」
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk1334" )
+\CN["无黑色"]
+“不会吧，就这样放任不管……？
+这不是相当危险吗？”
+
+也许什么都不知道的人会受害
+不能置之不理。
+
+\CN["醉鬼"]
+“啊，我也是……但是，那样危险的牛，我一个人
+怎么也办不到……”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk1335" )
+\CN["无黑色"]
+“为什么没有马上通知你？”
+
+\CN["醉鬼"]
+“而且，如果告诉你的话，我也不能白饶你……。
+嗯……我已经不知道该怎么办了……”
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk1336" )
+\CN["无黑色"]
+“那只野兽在哪里逃走了？快告诉我！”
+
+\CN["醉鬼"]
+“是神那街道的森林。在从高浜运输的途中……”
+
+在神那街道的森林吗……。
+
+在受害者出来之前必须赶紧走。
+
+//●フラグ：逃げた魔物退治,1
+//●シーンエンド
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: SetMission( "SC_B04_50_1", "Hidden" )
+: SetMission( "SC_B04_50_2", "InProgress" )
+: ShowWnd()
+事件信息更新了。
+
+: Return
+//-------------------------------------------------------
+//●選択肢２：放っておこうを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["醉鬼"]
+“嗯……我已经怎么办了……？”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○逃げた魔物を退治せよ２
+//========================================================
+*sc002
+//●場所：神那街道・森
+: RpgMapBaloonOff("SC_B04_50")
+: PlaySe( "SE/Se_Monster01" )
+: DrawChara( "Mukuro", 15, 0, 2, 0.5, 0.0, 3, "RC" )
+\CN["米诺托"]
+“哇，哇，好大啊……！”
+
+: PlayVoice( "Voices/vo00_muk1337" )
+\CN["无黑色"]
+“好像变成了魔物。
+而且，我没见过这样的魔物……”
+
+//●演出：ミノタウロス　無黒に気がつく
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: PlaySe( "SE/Se_Monster01" )
+: RpgCharaToPlayer( "SC_B04_50", "U", 4.0 )
+: Wait()
+: RpgCharaTurn( "SC_B04_50", "D" )
+: Wait()
+: ShowWnd()
+注意到了这里的米诺托向我袭来。
+
+//●演出：無黒　刀で受け止めて吹き飛ばされる
+: HideWnd()
+: DrawChara( "Mukuro", 31, 0, 5, 0.5, 0.0, 3, "RC" )
+: Wait()
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1338" )
+\CN["无黑色"]
+“这是什么力量……。一不小心就会被打败……”
+
+: PlaySe( "SE/Se_Monster01" )
+\CN["米诺托"]
+“哇！”
+
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：ミノタウロス
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：ミノタウロス,1,1,0,sc002a,sc002b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc002a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc002b" )	// 敗北後のラベル
+: endif
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_01", "BGM/22_BM003", 1023, -1, -1, "Scenarios/SC_B04_50*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc002a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*sc002b" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+*sc002a
+//●演出：無黒　トドメを刺す
+: FadeIn( 0.5 )
+: Wait()
+: HideWnd()
+: Call( "Scenarios/Effect*MukuroAction01" )
+: PlaySe( "SE/Se_Monster01" )
+: RpgCharaTurn( "SC_B04_50", "U" )
+: ShowWnd()
+\CN["米诺托"]
+“哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦！”
+
+米诺托发出了临终的惨叫
+倒地不动。
+
+//●演出：見廻組がやってくる
+: HideWnd()
+//: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: RpgCharaOn("Mobu1")
+: RpgCharaOn("Mobu2")
+: RpgCharaToPlayer( "Mobu1", "LD", 4.0)
+: RpgCharaToPlayer( "Mobu2", "RD", 4.0)
+: Wait()
+: RpgCharaTurn( "Mobu1", "U" )
+: RpgCharaTurn( "Mobu2", "U" )
+: RpgCharaTurn( "Player", "D" )
+: ShowWnd()
+: DrawChara( "Mukuro", 0, 0, 3, 0.5, 0.0, 3, "RC" )
+\CN["回看组的男人1"]
+“那个魔物是我们一直在追的！”
+
+\CN["走红运的男人2"]
+“鬼灯的女人，走开！
+这家伙好像能成为很好的临时收入啊……”
+
+: DrawChara( "Mukuro", 24, 0, 3 )
+: PlayVoice( "Voices/vo00_muk1339" )
+\CN["无黑色"]
+“……随你的便。”
+
+如果有人不被暴露在危险中的话，那就好。
+
+//●演出：無黒　立ち去ってから場面転換
+//●場所：帝都・居酒屋
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: LoadMap( "Map_Town01_05_Teito", "SC_B04_50_1", "Scenarios/SC_B04_50*sc002a_1")
+
+*sc002a_1
+: HideWnd()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: RpgCharaOff("SC_B04_50")
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+\CN["酒馆的老板"]
+“啊，无黑，刚才是个商人，我去见回组了
+被带去了……”
+
+: DrawChara( "Mukuro", 42, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1340" )
+\CN["无黑色"]
+“是吗……。
+嘛，我想应该会以严重警告结束的……”
+
+\CN["酒馆的老板"]
+“嘛，总之，这个是给无黑酱的谢礼。
+我会交给你的”
+
+: AddItem( "HpSpMedicenL", 5 )
+无黑作为谢礼收到了五个“御神酒”
+
+//＠アイテム、何か貰える
+//●演出：無黒　酒場から出て行って暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+虽然是那个商人，但是把人们暴露在危险中却保持沉默
+所以，我觉得多少给我点针灸就好了。
+
+但是，在那之后，根据我所听到的，他被背负了反幕罪
+作为惩罚，他好像被身边的人打到了死。
+
+……………………………………………………。
+
+//●シーンエンド
+: SetMission( "SC_B04_50_2", "Successed" )
+: LoadMap( "Map_Town01_01_Teito", "Izakaya", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+*sc002b
+: Jump( "Scenarios/SC_B04_51" )

@@ -1,0 +1,748 @@
+//========================================================
+//○財閥屋敷強襲１
+//========================================================
+*sc001
+//●場所：白夜の隠れ家・冥の部屋
+//●視点：無黒視点
+//●状況：冥の部屋に無黒と蘭丸がいる
+: HideWnd()
+//強制着衣
+: CharaCostume( "Mukuro", 0 )
+: RpgCharaOn("Ranmaru")
+: RpgCharaTurn( "Mei", "D" )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+//: DrawChara( "Ranmaru", 0, 0, 0, 0.25, 0.0, 3, "L" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0330" )
+\CN["冥"]
+“——也就是说，今后会更加忙。”
+
+被姐姐叫去，听到了会议的内容。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2895" )
+\CN["无黑色"]
+“不马上进入幕府吗？”
+
+很久以前我就在想，因为鬼灯有破坏一半的力量
+据说可以简单地攻入帝都城并击落。
+
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0331" )
+\CN["冥"]
+“没那么简单。”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 2, 0 , 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+\CN["兰丸"]
+“是的是的。总之就是要削弱幕府的力量。
+有必要把一桥将军的向心力和影响力降低到地上”
+
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+“如果不是那样的话，击溃之后就很麻烦了。”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo09_mei0332" )
+\CN["冥"]
+“并不是为了打败幕府。
+目的是推翻幕府，创造新时代”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2896" )
+\CN["无黑色"]
+“以推翻幕府为目的
+难道不是为了击溃大和吗？”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+\CN["兰丸"]
+“就是这样。”
+
+的确，姐姐们说得很对。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2897" )
+\CN["无黑色"]
+“那么，我应该做什么呢？”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“首先必须要摧毁协助幕府的财阀。”
+
+//●読み：四位（よつばし）
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo09_mei0333" )
+\CN["冥"]
+“那么，我们就把高浜方面的财阀、四位家给毁掉吧
+被命令了”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2898" )
+\CN["无黑色"]
+“这么说来，去高浜袭击房子就好了吗？”
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0334" )
+\CN["冥"]
+“就是这样。
+已经有几个人要去了，请协助他们”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+\CN["兰丸"]
+“第四位家的宅邸在神那街道呢～。
+无黑，请多关照”
+
+//＠マップ解放：神那街道
+//●シーンエンド
+: HideWnd()
+: CharaAddSkill( "Mukuro", 806 )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: FastTravelMapOn( "KannaKaido" )
+: SetMission( "SC_C05_05_1", "InProgress" )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+学会了技能『{黑夜叉，暗黑精灵}化』。
+只有在战斗时才能变成黑夜叉、黑精灵。</color>
+
+: LoadMap( "Map_Town06_01_Sakitama", "FromByakuya", "Scenarios/Map_Town06_Sakitama_Init*Map01")
+//========================================================
+//○財閥屋敷強襲２
+//========================================================
+*sc002
+\CI["已经做好了上车的准备！"]
+\CI["以防万一确认之后……"]
+第四位家的宅邸在前面……。
+
+: if ($choice == 1) Return endif
+//●場所：神那街道・四位家の屋敷
+//●状況：無黒　屋敷の周りに見廻組に気づいて隠れる
+//●演技：心の声です
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.0 )
+: Wait()
+//強制着衣
+//: CharaCostume( "Mukuro", 0 )
+: DrawImage( 1, 0, "BGImage/BG_Yashiki01_01", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: PlayBgm("BGM/37_Dungeon")
+//: DrawChara( "Mukuro", 16, 0, 2, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: DrawFaceThumbnail( "Mukuro", 16, 0, 2 )
+: PlayVoice( "Voices/vo00_muk2899" )
+\CN["无黑色"]
+（那白色的袴，是相亲组的人吗……！？）
+
+鬼灯半坏了，作为护卫被配置了
+是那种感觉吗？
+
+然后，在附近没事的人先到宅子里集合
+应该是被见回组杀害的人们吧。
+
+//●ＳＥ：デバイスの音
+: PlaySe( "SE/Se_Device01" )
+——皮皮皮。
+设备收到姐姐的联络。
+
+//＠音声加工：電話からの声
+//: DrawChara( "Mei", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawFaceThumbnail( "Mei", 0, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0335" )
+\CN["冥"]
+“无黑，你觉得怎么样？
+刚才去的人好像没有联系啊」
+
+//: DrawChara( "Mukuro", 23, 0)
+: DrawFaceThumbnail( "Mukuro", 23, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2900" )
+\CN["无黑色"]
+“见回组在屋里乱哄哄的
+我觉得先到的白夜的人们都被杀了”
+
+把看到的感觉传达给姐姐。
+
+: if ( CharaCostume( "Mukuro" ) == 1 )
+一边曝光一边接受姐姐的指挥。
+虽然是非常不道德的心情……。
+: endif
+//＠音声加工：電話からの声
+//: DrawChara( "Mei", 1, 0)
+: DrawFaceThumbnail( "Mei", 1, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0336" )
+\CN["冥"]
+“嗯。那就交给你了。
+你一个人也没关系吧」
+
+//: DrawChara( "Mukuro", 2, 0)
+: DrawFaceThumbnail( "Mukuro", 2, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2901" )
+\CN["无黑色"]
+“知道了。我试试看。”
+
+//: EraseChara( "Mei", 0.5 )
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+到了白夜一个人工作的人很多
+总会有办法的吧。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	//●演技：心の声です
+	: DrawFaceThumbnail( "Mukuro", 24, 0, 0 )
+	: PlayVoice( "Voices/vo00_muk2902" )
+	\CN["无黑色"]
+（不需要见回组那样被杀的无能。
+妨碍工作）
+
+到了白夜一个人工作的情况很多
+这个更容易做。
+
+//●分岐終了
+: endif
+//: Flag( "ShiikeEvent", true )
+//●シーンエンド
+//: FadeOut( 0.5 )
+//: Wait()
+//: Return
+//========================================================
+//○財閥屋敷強襲３
+//========================================================
+*sc003
+\CI["准备好了！"]
+\CI["再次确认"]
+从这里开始，感觉好像要发生什么事情了。
+
+: if ($choice == 1) Return endif
+//●場所：神那街道・四位家の屋敷
+//●状況：屋敷に乗り込む無黒
+//●分岐：［服装］着衣の場合
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Garden01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: ShowWnd()
+: if( Call( "Scenarios/CommonSys*CosWear" ) == true )
+	: DrawChara( "Mimawari", 0, 0, 0, 0.5, 0.0, 3, "LC" )
+	: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 4, "RC" )
+	\CN["睡眠组1"]
+“嗯？一个女人干什么？”
+
+	\CN["睡眠组2"]
+“第四位不是哪里的女人吗？”
+
+	\CN["睡眠组3"]
+“不不不不，我说谢谢。你看看衣服。这么寒碜。”
+打扮得很帅啊？这不就是追求零用钱的卖女吗？”
+
+	\CN["睡眠组2"]
+“呐，一起做开心的事吧？”
+
+这些家伙，自己喋喋不休地说着话
+你以为我没听见吗？
+
+	: DrawChara( "Mukuro", 28, 0)
+	: PlayVoice( "Voices/vo00_muk2903" )
+	\CN["无黑色"]
+“如果是这样的话，那就只是一群笨蛋了。
+看来只有这些人啊……”
+
+	: DrawChara( "Mukuro", 23, 0, 5)
+	//●演出：無黒　刀を抜く
+	: DrawChara( "Mimawari", 0, 0, 1)
+	\CN["睡眠组1"]
+“{刀，那个}拔出来是怎么回事
+你知道吗？嘿嘿……”
+
+//●分岐：［服装］全裸の場合
+: else
+	\CN["睡眠组1"]
+“怎么了？赶上了吗？”
+
+	\CN["睡眠组2"]
+“这样啊，连声音都发不出来吗？一定很害怕吧。
+已经没关系了”
+
+	//●ＣＧ：Ｈカットイン・乳揉みセクハラ（無黒）
+	//＠evcg：evc_a027
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+	: HideWnd()
+	: evcha = "Mukuro"; evbg = false; evcos = true;
+	: evfile = "eva_c027_0_1_0210002_1000000_0_"
+	: Call("Scenarios/Common*EvFadeIn")
+	: ShowWnd()
+	//●演技：突然、乳房を揉みしだかれます
+	: PlayVoice( "Voices/vo00_muk2904" )
+	\CN["无黑色"]
+“呃……<^f59a0>♥</变成……啊，哈……嗯，恩♥</color>」
+
+	: PlayBackVoice( "Voices/BGV00_muk_aegi04" )
+	\CN["睡眠组2"]
+“灵敏度不是很好吗？”
+
+	: PlayVoice( "Voices/vo00_muk2905" )
+	\CN["无黑色"]
+“啊啊啊，呃，突然……呼啊，嗯，哈……恩♥</color>」
+
+	\CN["睡眠组1"]
+“你真是没办法啊……”
+
+	\CN["睡眠组3"]
+“这家伙，不动就感觉到了。呐，乳是什么感觉？”
+
+	\CN["睡眠组2"]
+“柔软，有适度的张力。
+这是我多年的直觉，绝对不是假奶！”
+
+回过班的男人沉迷于揉我的乳房。
+
+	//●演技：心の声です
+	: PlayVoice( "Voices/vo00_muk2906" )
+	\CN["无黑色"]
+（真是个笨蛋……）
+
+	//●ＣＧ消去
+	//●演出：斬撃エフェクト・刀を弾かれる
+	: StopBackVoice()
+	: HideWnd()
+	: effecttype = "4"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+	: Call( "Scenarios/Effect*TransitionAttack" )
+	: ShowWnd()
+明明想斩杀突然打了揉乳房的男子
+被别的男人的刀挡住。
+
+	: DrawChara( "Mimawari", 0, 0, 1, 0.5, 0.0, 3, "LC" )
+	\CN["睡眠组1"]
+“真是的，小心点。”
+
+	\CN["睡眠组2"]
+“不好意思，下次我请你吃点什么。”
+
+	: DrawChara( "Mukuro", 23, 0, 5, 0.5, 0.0, 4, "RC" )
+	: PlaySe("SE/Se_Foot01")
+	: lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
+	: PlayVoice( "Voices/vo00_muk2907" )
+	\CN["无黑色"]
+“真想小心一点啊。”
+
+	\CN["睡眠组1"]
+“啊，光着身子来到这里，真漂亮啊
+因为我的身体”
+
+	\CN["睡眠组1"]
+“使用性感的刺客？不，我不知道。
+全裸行动的家伙，你还是第一次。只是变态吗？”
+
+	: DrawChara( "Mukuro", 8, 1)
+	: PlayVoice( "Voices/vo00_muk2908" )
+	\CN["无黑色"]
+“这样做的话，真的被反应了的话，真是不好意思啊。
+如果能像那边那个笨蛋一样爆发小鸡鸡的话，我会很开心的”
+
+	\CN["睡眠组1"]
+“如果你不是变态的话，可能是勃起了。”
+
+男子用手扶着刀柄放出杀气。
+
+	//●分岐終了
+: endif
+\CN["睡眠组2"]
+“绝对不要杀她。这么漂亮，奶也很好的女人
+因为很少有。你马上会杀人的……”
+
+\CN["睡眠组1"]
+“我知道了。{杀，散开}是在尽全力之后做的。”
+
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：見廻組×３
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：見廻組×３,1,1,0,sc004a,sc004b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc004a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc004b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Garden01_01", "BGM/22_BM003", 1031, 1031, 1031, "Scenarios/SC_C05_05*battle01_end" , true )
+
+*battle01_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc004a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: Jump( "*sc004b" )	//敗北した場合
+: endif
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+*sc004a
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Garden01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: ShowWnd()
+//●シーンエンド
+//●分岐：［服装］ダークエルフの場合
+: if ( CharaCostume( "Mukuro" ) == 2 )
+	\CN["睡眠组1"]
+“哇，怪物……！？”
+
+	\CN["睡眠组2"]
+“啊……啊啊……救我……我什么都会做……”
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk2909" )
+	\CN["无黑色"]
+（没想到，会变成这种程度的家伙的对手{黑夜叉，暗黑妖精}
+真没出息……）
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	\CN["睡眠组3"]
+“呃，太强了……”
+
+	\CN["睡眠组2"]
+“……吵架的话，明明没有输过……”
+
+	: DrawChara( "Mukuro", 28, 0)
+	: PlayVoice( "Voices/vo00_muk2910" )
+	\CN["无黑色"]
+“只是你们太弱了。”
+
+//●分岐終了
+: endif
+//●分岐：悪堕ちＬＶが３の場合
+//●強制的に殺害シーンへ
+//＠ラベルジャンプ：sc004a_select_s2
+//●分岐終了
+: if ( $evilLevel == 3 ) Jump( "*sc004a_select_s2" ) endif
+\CN["睡眠组3"]
+“好了，拜托了……只有生命……！”
+
+*sc004a_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc004a_select
+//■選択肢１：見逃してやる
+//■選択肢２：殺すに決まっている
+//――――――――――――――――――――――――――――
+\CI["放过他"]
+\CI["一定要杀了"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc004a_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：見逃してやるを選んだ場合
+//-------------------------------------------------------
+*sc004a_select_s1
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk2911" )
+\CN["无黑色"]
+“快点从这里消失吧。我不想白白杀人。”
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: PlaySe( "SE/Se_dash01" )
+: ShowWnd()
+这么说来，看周围的人一溜烟地逃走了。
+
+我没有杀人的兴趣。
+姐姐一定会说我很甜吧……。
+
+//●選択肢合流地点へ
+//＠ラベル：sc004a_select_s_end
+: Jump( "*sc004a_select_s_end" )
+
+//-------------------------------------------------------
+//●選択肢２：殺すに決まっているを選んだ場合
+//-------------------------------------------------------
+*sc004a_select_s2
+: DrawChara( "Mukuro", 30, 0)
+: PlayVoice( "Voices/vo00_muk2912" )
+\CN["无黑色"]
+“去死吧……”
+
+//●演出：斬殺エフェクト
+//＠殺害,3
+: HideWnd()
+: value = 3; Call("Scenarios/CommonSys*Murder")
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+我没有兴趣看对方痛苦的样子。
+挥刀如死。
+
+//●分岐：悪堕ちＬＶが３の場合
+: if( $evilLevel == 3 )
+	: DrawFaceThumbnail( "Mukuro", 0, 0, 0 )
+	: PlayVoice( "Voices/vo00_muk2913" )
+	\CN["无黑色"]
+“呵呵……总觉得很舒服……”
+
+挥刀就能结束一生。
+
+也许开始对夺去生命的行为感到快感了。
+
+//●分岐終了
+: endif
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+//●選択肢合流地点へ
+//＠ラベル：sc004a_select_s_end
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*sc004a_select_s_end
+: PlayVoice( "Voices/vo00_muk2914" )
+\CN["无黑色"]
+“……房子里的回访组好像很有气势。”
+
+之后只要抓到或杀死主人就可以了。
+那是我的职责。
+
+: StopBgm( 0.5 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_WaRoom01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2915" )
+\CN["无黑色"]
+“我觉得这里是主人的房间……”
+
+里面没有人的迹象。
+说不定，已经——
+
+//●場所：四位家の屋敷
+//●背景：洋風屋敷・部屋・昼
+//Yoshi：背景、本棚の部屋
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "DR"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_WaRoom05", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+一进入房间，和我预想的一样没有人。
+
+: DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo00_muk2916" )
+\CN["无黑色"]
+“……逃了吗？”
+
+无论是看回组来了还是先下手。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2917" )
+\CN["无黑色"]
+“到底是谁下了这样的手？”
+
+最能想到的是鬼灯中的谁——
+局长或者黄菜子等掌握了情报。
+
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk2918" )
+\CN["无黑色"]
+“或者这边的信息泄露了。
+白夜里有背叛者……”
+
+那也是很有可能的。
+白夜中有人向幕府方面透露了消息
+就这样被制定了对策。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk2919" )
+\CN["无黑色"]
+“如果是这样的话，在幕府或者是回访组中
+也有头脑敏锐的人
+不事先考虑一下的话……”
+
+刚才袭击过来的警视组暂且不提，诱饵——
+不，可能只是个不能听命令的笨蛋。
+
+//●演出：場面転換トランジション
+//●場所：大和東街道・昼
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Kouya01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+——无黑潜入宅邸的时候
+件四位家的现任家长，第四位菊治郎在大和东街道
+我坐着马车跑着。
+
+\CN["第四位"]
+“——是吗，屋子里白夜的暗杀者……嗯，汇报辛苦了。”
+
+在设备上听到事情的始末后，松了一口气。
+
+\CN["第四位"]
+“那是很危险的。我听从了他的忠告才是正确的。
+把零用钱给你真是太好了”
+
+据说几天前，因为有人命中注定，还是离开帝都比较好
+从一个幕臣那里接受了忠告。
+
+定期把钱交给那个幕臣，希望自己方便
+得到了方便。
+
+\CN["第四位"]
+“傍晚的时候好容易走到了驿站町。
+总之，先把自己藏在名护屋或西都吧”
+
+//●ＳＥ：馬のいななき
+: PlaySe( "SE/Se_Horse" )
+帝都安定下来后回去就好了。
+这样想的话，马就会发出很大的叫声。
+
+\CN["第四位"]
+“什么事……！？”
+
+第四位慌张张地从马车上探出身子
+
+//●演出：斬殺エフェクト
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+喷泉。
+
+在地面上滚动的头部贴着奇怪的表情
+我眺望着那个样子。
+
+//●演出：般若登場させる
+: StopBgm( 1.0 )
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: CharaCostume( "Azami", 4 )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+\CN["般若"]
+「…………」
+
+//●演出：暗転
+//●シーン：「聖人神父を殺害せよ１」へ
+//＠シナリオジャンプ：SC_C05_07
+//●シーンエンド
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Azami"; lay = 3; type = "WR"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: CharaCostume( "Azami", 0 )
+: SetMission( "SC_C05_05_1", "Successed" )
+: $money += 5000
+: FadeOut( 1.0 )
+: Wait()
+: Party( "Mei" )	//操作キャラを冥に変更する
+: PartyType = "Party04"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )	//マップ封印
+: FastTravelMapOn( "Sakitama" )
+: FastTravelMapOn( "Ashidate" )
+: LoadMap( "Map_Town07_02_Byakuya", "Return2", "Scenarios/SC_C05_07")
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+*sc004b
+//●演出：無黒　倒れる
+//: DrawChara( "Mimawari", 0, 0, 1, 0.5, 0.0, 3, "LC" )
+: StopBgm( 0.0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Garden01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: if ( CharaCostume( "Mukuro" ) == 2 )
+	: CharaCostume( "Mukuro", 0 )
+力量用尽，{黑夜叉，暗黑妖精}化解开了。
+: endif
+\CN["睡眠组1"]
+“他是个非常厉害的家伙。
+我一个人可能被杀了”
+
+\CN["睡眠组2"]
+「那么，赶紧犯了吧。
+这家伙会搬到院子里帮忙”
+
+\CN["睡眠组3"]
+“哦！”
+
+//●演出：暗転
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●分岐：処女の場合
+//●シーン：「敗者の定め、見廻組処女輪姦」へ
+//＠シナリオジャンプ：SC_C05_06 sc001
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーン：「敗者の定め、見廻組輪姦」へ
+//＠シナリオジャンプ：SC_C05_06 sc002
+//●分岐終了
+: if ( Call("Scenarios/CommonSys*ShowNonVirginMukuro") == false )
+	: Jump( "Scenarios/SC_C05_06*sc001" )
+: else
+	: Jump( "Scenarios/SC_C05_06*sc002" )
+: endif

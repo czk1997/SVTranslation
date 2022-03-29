@@ -1,0 +1,1027 @@
+//========================================================
+//○小夜姫と無黒を救い出せ１
+//========================================================
+*sc001
+//●場所：鬼灯屯所
+//＠プレイヤーキャラ：桃
+//●視点：第三者視点
+//●状況：桃、黄菜子、あざみ、龍、紅美が集まっている
+//●演出：そこにレオがダッシュで入ってくる
+: HideWnd()
+: FadeIn( 1.0 )
+: RpgCharaOff("Player")
+: RpgCharaOn("Momo")
+: RpgCharaOn("Kinako")
+: RpgCharaOn("Leo")
+: RpgCharaOn("Gin")
+: RpgCharaOn("Azami")
+: RpgCharaOn("Ryu")
+: RpgCharaOn("Bebi")
+: Wait()
+: RpgCharaBatch( "Leo"	\
+:	"Speed", 6.0	\
+:	"MoveUp", 6 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Leo", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: ShowWnd()
+\CN["雷欧"]
+“哈哈哈……无黑和sayo没事吧……！？”
+
+去寻找小夜的鬼灯们
+联络说“无黑和小夜被见回组抓住了”
+受到嘲笑聚集在屯所。
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0357" )
+\CN["嘲讽"]
+“来自贫民窟的人的联络。无黑和公主是相亲组。”
+因为发生了纠纷而被抓住了”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0358" )
+\CN["嘲讽"]
+“只说要点的话就是这种感觉。”
+
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0818" )
+\CN["桃子"]
+“又是相亲组吗……希望你适可而止啊。”
+
+桃子皱起眉头露出焦躁的样子。
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "L" )
+: PlayVoice( "Voices/vo07_beb0104" )
+\CN["红美"]
+“他们不是武士而是武士！
+只是无所事事而已！”
+
+: DrawChara( "Leo", 21, 0)
+\CN["雷欧"]
+“比起这个，无黑和sayo被带到哪里去了？
+幕府？幕府啊？我马上就去！”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
+: PlayVoice( "Voices/vo02_kin0326" )
+\CN["黄菜子"]
+“现在情报部队的大家正在收集情报
+好像不是被幕府带走的”
+
+//●ＳＥ：デバイスの音
+: trackIndex = PlaySe( "SE/Se_Device01", true );
+黄菜子那样说了也会响起嘲讽的设备。
+
+: StopSe( trackIndex );
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Azami", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayVoice( "Voices/vo05_aza0359" )
+\CN["嘲讽"]
+“啊，明白了。那我现在马上去那边。”
+
+//●読み：西都（さいと）
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0360" )
+\CN["嘲讽"]
+“现在，有人从谍报部队那里看到了巡查组的地方，接到了联络
+进去了。好像是从大和东街道向西都方向经过的”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ryu", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["龙"]
+“去西都？到底是为了什么？”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“现在不是在这种地方乱想的时候！”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo01_mom0819" )
+\CN["桃子"]
+“是啊。正如Leo所说，我不能一动不动。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "R" )
+: PlayVoice( "Voices/vo02_kin0327" )
+\CN["黄菜子"]
+“是的！我得赶紧去找！”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "C" )
+: PlayVoice( "Voices/vo07_beb0105" )
+\CN["红美"]
+“奇奈子，在下也会陪你的！”
+
+//●演出：全員、飛び出して行く
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaMoveTo( "Momo", 24, 19, 6.0 )
+: RpgCharaMoveTo( "Gin", 23, 20, 6.0 )
+: RpgCharaMoveTo( "Leo", 23, 19, 6.0 )
+: RpgCharaMoveTo( "Bebi", 23, 18, 6.0 )
+: RpgCharaMoveTo( "Kinako", 24, 18, 6.0 )
+: Wait()
+: RpgCharaOff("Momo")
+: RpgCharaOff("Gin")
+: RpgCharaOff("Leo")
+: RpgCharaOff("Bebi")
+: RpgCharaOff("Kinako")
+: ShowWnd()
+: DrawChara( "Ryu", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+\CN["龙"]
+“喂……那家伙……”
+
+: DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo05_aza0361" )
+\CN["嘲讽"]
+「可靠不是很好吗。
+正因为如此，伙伴才更重要吧”
+
+: DrawChara( "Ryu", 24, 0)
+\CN["龙"]
+“那我们中年组努力做后援吧。”
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0362" )
+\CN["嘲讽"]
+“我们是中年组……？那是指谁和谁？”
+
+: DrawChara( "Ryu", 28, 0)
+\CN["龙"]
+“那么？”
+
+: StopBgm( 1.0 )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: SetMission( "SC_B05_08_1", "InProgress" )
+: DestinationMap( "Map_Dungeon16_01_YamatoHigashiKaid" )
+事件信息更新了。
+
+//●演出：暗転
+//●場所移動：鬼灯屯所前
+//＠パーティー：桃・銀
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Party( "Momo","Gin" )
+: Participate( 0, true, 1, true )
+: PartyType = "Party06"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "YamatoHigashiKaidoC" )
+: FastTravelMapOn( "TeitoHigashiKaido" )
+: FastTravelMapOn( "NasunoYama" )
+: FastTravelMapOn( "MajyutsushiHakaba" )
+: FastTravelMapOn( "YamatoHigashiKaidoA" )
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○小夜姫と無黒を救い出せ２
+//========================================================
+*sc002
+//●場所：大和東街道・峠の茶屋
+//●状況：黄菜子が茶屋の店員と話し込んでいる
+//●演出：桃＆銀　話し込んでいるところへ
+//黄菜子と紅美　桃のところへ
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1 )
+: Wait()
+: RpgCharaOn("Gin")
+: RpgCharaBatch( "Kinako"	\
+:	"MoveDown", 2	\
+:	"MoveRight", 2	\
+:	"Turn", "D" )
+: RpgCharaBatch( "Bebi"	\
+:	"MoveDown", 2	\
+:	"MoveRight", 2	\
+:	"Turn", "D" )
+: Wait()
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0328" )
+\CN["黄菜子"]
+“啊！桃先生和风真先生！”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0820" )
+\CN["桃子"]
+“黄菜子，你听到什么好消息了吗？”
+
+//●読み：西都（さいと）
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0329" )
+\CN["黄菜子"]
+“有人问店员有什么可疑的人没通过这里吗？”
+我问了一下，好像巡礼组去了西都
+好像没有”
+
+//●読み：不死の山（ふしのやま）
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0330" )
+\CN["黄菜子"]
+“见回组是那边的方向——恐怕是‘不死之山’吧
+”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "R" )
+: PlayVoice( "Voices/vo07_beb0106" )
+\CN["红美"]
+“不死之山在哪里？”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0331" )
+\CN["黄菜子"]
+“因为很久以前有个伟人把长生不老药埋在了山的某个地方，所以
+是被命名为“不死之山”的地方”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0821" )
+\CN["桃子"]
+“嘛，只是单纯的童话而已。
+为了做什么特意去不死之山呢？”
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["银子"]
+“嗯，是去山里埋的吗？
+……不，那样的话，帝都等地应该也有很多山”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom0822" )
+\CN["桃子"]
+“总之，先去不死之山吧！”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0332" )
+\CN["黄菜子"]
+“那我联系一下雷欧。”
+
+: SetMission( "SC_B05_08_1", "Hidden" )
+: SetMission( "SC_B05_08_2", "InProgress" )
+: DestinationMap( "Map_Dungeon28_07_Fushinoyama" )
+: AddParty( "Kinako" )
+: Participate( 0, true, 1, true, 2, true )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+黄菜子参加了派对。
+事件信息更新了。
+
+//＠システム：黄菜子がパーティーに加わる
+//●シーンエンド
+: FadeOut( 1.0 )
+: Wait()
+: RpgCharaOff("Kinako")
+: RpgCharaOff("Bebi")
+: RpgCharaOff("Gin")
+: RpgEventOff("SC_B05_08")
+: FadeIn( 1.0 )
+: Wait()
+: Return
+
+//========================================================
+//○小夜姫と無黒を救い出せ３
+//========================================================
+*sc003
+//●場所：不死の山
+//●演出：黄菜子が何かに気がつく
+: HideWnd()
+: NowLeader = Leader()
+: Leader( 0 )	// リーダーを強制的に桃に！
+: RpgCharaOn("Kinako")
+: RpgCharaOn("Gin")
+: RpgCharaOn("Bebi")
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0333" )
+\CN["黄菜子"]
+“这是马车车轮的痕迹。
+无黑和公主乘坐的马车在登山
+好像没错”
+
+: DrawChara( "Gin", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["银子"]
+“……这就是勃拉夫的可能性吗？”
+
+//●演技：匂いを嗅いでいます
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
+: PlayVoice( "Voices/vo07_beb0107" )
+\CN["红美"]
+“完了……我觉得没有。
+因为微微残留着MUKURO和SAYO的味道”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom0823" )
+\CN["桃子"]
+“呵呵，不愧是红美啊！很可靠啊。
+那么，就这样爬山吧”
+
+//●シーンエンド
+: FadeOut( 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Bebi", 0.0 )
+: RpgCharaOff("Kinako")
+: RpgCharaOff("Gin")
+: RpgCharaOff("Bebi")
+: Flag( "FushiEvent01", true )
+: Leader( NowLeader )
+: FadeIn( 1.0 )
+: Wait()
+: Return
+
+//========================================================
+//○小夜姫と無黒を救い出せ４
+//========================================================
+*sc004
+//●場所：不死の山
+\CI["准备好了"]
+\CI["再次确认"]
+感觉前面有什么……。
+
+: if ($choice == 1)
+	: Return
+: endif
+//●演出：レオが駆けつける
+: HideWnd()
+: NowLeader = Leader()
+: Leader( 0 )	// リーダーを強制的に桃に！
+: RpgCharaOn("Gin")
+: RpgCharaOn("Kinako")
+: RpgCharaTurn( "Player", "D" )
+: RpgCharaOn("Leo")
+: RpgCharaBatch( "Leo"	\
+:	"Speed", 4.0	\
+:	"MoveUp", 7 )
+: Wait()
+: DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Leo", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["雷欧"]
+“等一下！”
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“太晚了，我正要放着呢。”
+
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“哈，不好意思……。
+这样也全速赶来了」
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
+: PlayVoice( "Voices/vo02_kin0334" )
+\CN["黄菜子"]
+“……各位，在前面有很多人。”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“和数量没有关系。不管有多少人，我一个人就够了。”
+
+: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“我一定会把无黑和sayo都平安救出的。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["银子"]
+“反正有的都是些走马观花的人吧？”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom0824" )
+\CN["桃子"]
+“但是，粗心大意是大敌啊，小银。
+因为关系到无黑和公主自身的安全，所以不允许失败”
+
+: DrawChara( "Gin", 9, 0)
+\CN["银子"]
+“应该不会大意的。
+不管对手是谁，我都会全力击溃的”
+
+银酱眼睛像饿了的野兽一样闪闪发光。
+
+明明是这样的状况却让人大吃一惊。
+
+//●演技：心の声です
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0825" )
+\CN["桃子"]
+（必须要振作精神！）
+
+啪嗒啪嗒地拍脸颊鼓劲。
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0826" )
+\CN["桃子"]
+“那么，我们走吧！”
+
+: HideWnd()
+: StopBgm( 0.5 )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Mountain02_1", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/12_CM012")
+//●演出：桃たち先を進んで行って場面転換＆場所移動
+//●状況：笹木が立ち塞がっている
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["竹叶"]
+“哦，我不会让你从这里先去的。”
+
+//●読み：笹木幸三郎（ささき こうざぶろう）
+: DrawChara( "Kinako", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo02_kin0335" )
+\CN["黄菜子"]
+“是见回组组长笹木幸三郎先生吧。
+我在那之后有事，请让我过去”
+
+: DrawChara( "Sasaki", 0, 0)
+\CN["竹叶"]
+“我应该说过不让你先走了吗？”
+
+//●演出：黄菜子　刀を抜く
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0336" )
+\CN["黄菜子"]
+“那就没办法了。我会尽力通过的。”
+
+: PlaySe( "SE/Se_Katana01" )
+黄菜子拔出刀摆好架势。
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+//●演技：心の声です
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo01_mom0827" )
+\CN["桃子"]
+（这么说来，我、黄菜子就是这样和人交往的
+第一次看到拔刀的地方吧）
+
+以前老师和局长黄菜子很厉害的样子
+我说过，是这件事吗。
+
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["雷欧"]
+“只是拔出了刀，就有这种压迫感吗……”
+
+\CN["雷欧"]
+“黄菜子，真的吗……。
+你把那种力量藏在哪里了？”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "RC" )
+: PlayVoice( "Voices/vo07_beb0108" )
+\CN["红美"]
+“花子厉害的是在下，一开始就知道了。”
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo02_kin0337" )
+\CN["黄菜子"]
+“我知道你藏在里面。请大家出来。”
+
+: DrawChara( "Sasaki", 0, 0)
+\CN["竹叶"]
+“原来如此。嘛，没必要隐瞒。”
+
+//●演出：男たちが現れる
+: HideWnd()
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//: cutinfile = "CutinFg05_1"
+//: x1 = -100; x2 = 0; y1 = 0; y2 = 0; time = 0.5;
+: PlaySe( "SE/Se_Foot01" )
+//: Call("Scenarios/Common*CutinSlideIn")
+: ShowWnd()
+笹木发出了什么信号，周围的男人们纷纷露出了稻草。
+
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+\CN["银子"]
+“有几个人记得在哪里见过。”
+
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["睡眠组1"]
+“那个眼镜，不是在地下格斗场的银吗？”
+
+\CN["睡眠组2"]
+“因为看不见了，我以为他一定死了
+不会是成为幕府的狗吧。笑”
+
+: DrawChara( "Gin", 9, 0)
+\CN["银子"]
+“幕府的狗和大婶他们的回忆录也是一样的吧。”
+
+\CN["睡眠组2"]
+“对了，我们现在是相亲组。
+完全忘记了”
+
+: EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo01_mom0828" )
+\CN["桃子"]
+“小银，这些人是……？”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“在地下驰名的家伙随处可见。
+恐怕是从那个地方带钱来的吧”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0829" )
+\CN["桃子"]
+“嗯。没有将军直接组织。
+堕落得很厉害啊」
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["竹叶"]
+“见回组和你们不同，是完全实力主义。”
+
+也就是说不能装作什么样子吧。
+
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+\CN["银子"]
+“小姐，怎么办？
+这群家伙虽然是垃圾，但是只有手臂有很多”
+
+: PlayVoice( "Voices/vo01_mom0830" )
+\CN["桃子"]
+“是啊。嘛，我觉得和小银的想法是一样的。”
+
+眼神交流，互相微笑。
+
+//●演出：桃　炎系魔術演出
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: PlayBgm("BGM/18_TM003")
+: cgkeep = true
+: Call( "Scenarios/Effect*MomoAction01" )
+: ShowWnd()
+\CN["睡眠组3"]
+“那个大奶，一下子就乱七八糟的！”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+用炎之魔术打开突破口。
+
+: DrawChara( "Leo", 0, 0, 0, 0.0, 0.0, 3, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["雷欧"]
+“桃子，你不是很会做嘛！”
+
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: PlayVoice( "Voices/vo01_mom0831" )
+\CN["桃子"]
+“雷欧，你在发呆！你先去！”
+
+: DrawChara( "Leo", 20, 0)
+\CN["雷欧"]
+「…………」
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["银子"]
+“你说快去无黑公主那里！”！
+不要发呆”
+
+//●演出：黄菜子　揚羽解放
+: HideWnd()
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Call( "Scenarios/Effect*KinakoAgeha" )
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0338" )
+\CN["黄菜子"]
+“雷欧！正如桃先生所说的那样！快点！”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["雷欧"]
+“对不起，大家！我一定会救回来的！”
+
+//●演出：レオ　駆け抜けてから暗転
+//●場所：不死の山・頂上
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe("SE/Se_Foot01")
+: chara = "Leo"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Summit01_04", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+——那个时候，不死之山的山顶上。
+
+//●背景：山頂・昼
+//＠メモ：無黒＆小夜はメッセージフェイスのみで
+//●視点：無黒視点
+//●ＳＥ：ドサリ。地面に倒される音
+: HideWnd()
+: PlayBgm("BGM/30_CM015")
+: PlaySe( "SE/Se_Down01" )
+: layer = 1; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——杜莎莉。
+
+//●演技：馬車から強引に降ろされ地面に叩きつけられます
+: DrawFaceThumbnail( "Mukuro", 31, 0, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1588" )
+\CN["无黑色"]
+“……！”
+
+//●演技：馬車から強引に降ろされ地面に叩きつけられます
+: DrawFaceThumbnail( "Sayo", 5, 0, 0, 0 )
+: PlayVoice( "Voices/vo24_say0143" )
+\CN["小夜"]
+“有了……不要粗暴啊。”
+
+小夜和小夜都被捆绑着的御者男子粗暴地从马车上卸下
+在坚硬的地面上捣屁股饼。
+
+: DrawFaceThumbnail( "Mukuro", 16, 0, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1589" )
+\CN["无黑色"]
+“特意带你到这种地方来，你打算干什么？”
+
+\CN["御者"]
+「…………」
+
+和我同住小夜的御者男子什么也不回答
+回到马车里去。
+
+然后，从后面的马车上下来了一个男人。
+
+: CharaCostume( "Tadakatsu", 0 )
+: DrawChara( "Tadakatsu", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["将军"]
+“这是多少年没吸到山上的空气了？”
+
+: DrawFaceThumbnail( "Sayo", 2, 0, 0, 0 )
+: PlayVoice( "Voices/vo24_say0144" )
+\CN["小夜"]
+“爸爸，你为什么要做这种事？”
+
+: DrawChara( "Tadakatsu", 15, 0)
+\CN["将军"]
+“没有回答的义务。”
+
+将军俯视小夜。
+
+那视线冷冰冰的让人吃惊，不是父亲对女儿的看法
+没有。
+
+: DrawFaceThumbnail( "Sayo", 9, 0, 0, 0 )
+: PlayVoice( "Voices/vo24_say0145" )
+\CN["小夜"]
+“你是想杀我吧？”
+
+: DrawChara( "Tadakatsu", 4, 0)
+\CN["将军"]
+“你是从谁那里听说的？”
+
+: DrawFaceThumbnail( "Sayo", 6, 0, 0, 0 )
+: PlayVoice( "Voices/vo24_say0146" )
+\CN["小夜"]
+“半夜和谁说话
+我好好地听说了！”
+
+: DrawChara( "Tadakatsu", 10, 0)
+\CN["将军"]
+“这样啊。嘛，被问到的话也没办法。
+你今天就死在这里”
+
+: DrawFaceThumbnail( "Mukuro", 16, 0, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1590" )
+\CN["无黑色"]
+“将军，你为什么要杀小夜？”
+
+: DrawChara( "Tadakatsu", 16, 0)
+\CN["将军"]
+“为什么？你不要提无聊的问题。
+我想杀你，所以一定要杀了你”
+
+！
+
+将军堂堂正正的一句话完全失言了。
+
+但是，那样的话有不明白的地方。
+想杀小夜的理由也是……。
+
+: DrawFaceThumbnail( "Mukuro", 6, 0, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1591" )
+\CN["无黑色"]
+“如果想杀人的话，为什么特意带我到这么远的地方呢？”
+有必要吗？”
+
+: DrawChara( "Tadakatsu", 15, 0)
+\CN["将军"]
+“这个理由我更想听。
+但是，根据这本书记载，小夜必须在不死之山上杀人
+好像不行啊」
+
+越来越不明白意思。
+毫无条理。
+
+: DrawFaceThumbnail( "Mukuro", 16, 0, 0, 0 )
+: PlayVoice( "Voices/vo00_muk1592" )
+\CN["无黑色"]
+“小夜在干什么？”
+
+: DrawChara( "Tadakatsu", 10, 0)
+\CN["将军"]
+“我什么都没做。但是，那家伙今后可能会成为危险因素。”
+因为。必须趁现在杀了他”
+
+//●演出：回想に入る演出
+//●視点：第三者視点
+//●背景：和風屋敷・部屋・夜
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
+: SwapImage( 1, 0, "BGImage/BG_BakuhuRoom01_03", 0.0 )
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/24_FM002")
+: ShowWnd()
+——几天前的晚上。
+
+将军悄悄地把学者叫到了幕府。
+
+: DrawChara( "Tadakatsu", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["将军"]
+“你知道这本书上写的内容吗？
+好像是上一代从维克托尔买来的东西”
+
+\CN["学者"]
+“好像写着阿波罗的箭。
+以使用者的生命为代价，放飞的话就能将大陆本身
+似乎是威力可以归为无的古代魔术”
+
+: DrawChara( "Tadakatsu", 10, 0)
+\CN["将军"]
+“啊，这样的东西……。
+那么，能使用那个魔术的人在大和吗？”
+
+\CN["学者"]
+“阿波罗的箭是由阿波罗的弓给予的。
+那个人，使用力量的时候，会让红色的花纹寄宿在自己身上”
+
+: DrawChara( "Tadakatsu", 1, 0)
+\CN["将军"]
+“嗯……？红色的花纹……？
+确实，小夜的女服务员在小夜的胸前有红色奇怪的痣
+好像在说……”
+
+: DrawChara( "Tadakatsu", 0, 0)
+\CN["将军"]
+“我不太清楚，小夜将来会毁灭大和
+是说有可能会使用魔术吗？”
+
+\CN["学者"]
+“如果这本书上写的是真的，那就是小夜公主的
+如果胸前有红色花纹的话，可能性不是0吗？”
+
+: DrawChara( "Tadakatsu", 1, 0)
+\CN["将军"]
+“原来如此……那么——”
+
+有一点点可能性就要杀了
+将军这样想着。
+
+: DrawChara( "Tadakatsu", 0, 0)
+\CN["将军"]
+“假设。假设小夜有阿波罗之箭
+现在死了会怎么样？”
+
+\CN["学者"]
+“……呃……阿波罗的箭在使用者死后会自动发动
+”
+
+: DrawChara( "Tadakatsu", 15, 0)
+\CN["将军"]
+“真是麻烦的魔术啊……”
+
+这样也不能轻易杀死。
+
+自己今后必须一边害怕小夜一边生活
+不可以吗？那真是对不起。
+
+将军的头上满是这件事……。
+
+\CN["学者"]
+“有点模糊，看不清楚
+在灵验的地方断命，成为新的使用者
+我会过去吧——”
+
+: DrawChara( "Tadakatsu", 0, 0)
+\CN["将军"]
+“灵验的地方？这种地方在大和吗？”
+
+\CN["学者"]
+“是啊……不死之山就是这样的地方
+我听说过”
+
+: DrawChara( "Tadakatsu", 2, 0)
+\CN["将军"]
+“不死之山啊……嗯，在那里的确是不可能的事。”
+没有啊。据说埋葬着长生不老药的故事
+就剩下了吧”
+
+: DrawChara( "Tadakatsu", 5, 0)
+\CN["将军"]
+“把小夜杀在不死之山就好了”
+
+将军为了尽早得出这样的结论并付诸实施
+于是命令幕臣马上抓住小夜……。
+
+\CN["幕臣"]
+“将军！我找不到小夜姬大人！”
+
+: DrawChara( "Tadakatsu", 18, 0)
+\CN["将军"]
+“那个丫头，让我费心了……！
+寻找！无论如何都要找小夜！”
+
+//●演出：回想から戻る演出
+//●場所：不死の山
+//●状況：桃・銀・黄菜子が見廻組たちに立ち向かう
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
+: SwapImage( 1, 0, "BGImage/BG_Mountain02_1", 0.0 )
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/12_CM012")
+: ShowWnd()
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["竹叶"]
+“那么，我得处理好你们后马上追上那个男人。”
+
+\CN["竹叶"]
+“将军得到了能对抗所有威胁的力量
+您说了”
+
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0832" )
+\CN["桃子"]
+“啊，是吗？那我就担心你一个人。”
+
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["银子"]
+“是啊。
+因为我不知道那个笨蛋一个人会做出什么”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo02_kin0339" )
+\CN["黄菜子"]
+“桃先生，风真先生，你可不能大意啊。”
+
+\CN["睡眠组1"]
+“笹木，你可以喜欢那个巨乳女吗？”
+
+\CN["睡眠组2"]
+“我更喜欢小鬼。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["竹叶"]
+“是的。{杀，玫瑰}一犯就喜欢。”
+
+//●読み：頭（あたま）
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo01_mom0833" )
+\CN["桃子"]
+“会说一些诸如乳大、侵犯他人等粗俗的话。
+看回组的头和那里的地滚石没什么区别吗？”
+
+//: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 5, "LC" )
+: PlayVoice( "Voices/vo02_kin0340" )
+\CN["黄菜子"]
+“我去——如果不想受伤的话，请从这里离开。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0834" )
+\CN["桃子"]
+“小银，命令啊——
+他们全部都会把你揍飞的」
+
+: DrawChara( "Gin", 10, 0)
+\CN["银子"]
+“明白了！”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+*battle
+//――――――――――――――――――――――――――――
+//■戦　闘：笹木幸三郎
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北時リターン処理しておく
+//――――――――――――――――――――――――――――
+//＠戦闘：笹木幸三郎,1,1,1
+//●状況：戦闘終了後
+//●シーン：「こういう時、どっちも取るのがオレだろ？」へ
+//＠シナリオジャンプ：SC_B05_09
+//強制的に全員戦闘参加
+: Participate( 0, true, 1, true, 2, true)
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc004_win" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain02_1", "BGM/22_BM003", 1030, 1031, 1031, "Scenarios/SC_B05_08*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc004_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle" )
+: else
+	: Jump( "*sc004_lose" )	//敗北した場合
+: endif
+
+*sc004_win
+: FadeIn( 0.0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Jump( "Scenarios/SC_B05_09" )
+
+*sc004_lose
+: FadeIn( 0.0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+\CI["再战"]
+\CI["重做"]
+怎么办？
+
+: if ($choice == 0)
+	: Jump( "*battle" )
+: else
+	: RpgCharaOff("Kinako")
+	: RpgCharaOff("Gin")
+	: RpgCharaOff("Leo")
+	: LoadMap( "Map_Dungeon28_01_Fushinoyama" )
+: endif

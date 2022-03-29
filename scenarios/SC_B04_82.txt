@@ -1,0 +1,238 @@
+//========================================================
+//○気づいてしまった本当の気持ち
+//========================================================
+//●場所：鬼灯屯所・桃の部屋・夜
+//●背景：鬼灯屯所・桃の部屋・夜
+//Yoshi：背景
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05", 1.0 )
+: Wait()
+: PlayBgm("BGM/48_Goodnight")
+: ShowWnd()
+//●視点：桃視点
+——有一天。
+
+: CharaCostume( "Momo", 0 )
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0710" )
+\CN["桃子"]
+“这种东西现在很流行呢……”
+
+: PlaySe( "SE/Se_Book01" )
+工作结束洗完澡后
+我读了同事推荐的恋爱小说。
+
+故事以越过大海的国家为舞台，讲述了大小姐和随从之间的恋爱故事。
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom0711" )
+\CN["桃子"]
+“这位随从，说话态度都非常绅士，很有礼貌。
+大小姐也这样，很可爱……”
+
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom0712" )
+\CN["桃子"]
+“但是，这个和我和小银完全相反呢。”
+
+虽然大小姐和随从者的立场相似
+性格完全不同。或者说完全相反。
+
+但是有很多共鸣的地方，不知不觉就入迷了。
+
+//●演出：時間経過
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo01_mom0713" )
+\CN["桃子"]
+“原来如此。身份不同的恋爱啊……”
+
+大小姐从第一次见到表演者开始就一见钟情
+随从者渐渐地喜欢上了大小姐
+说起来。
+
+但是，大小姐却被强行订婚了
+虽然是要求随从者提出私奔的提案。
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0714" )
+\CN["桃子"]
+“如果喜欢的两个人就这样结合在一起就好了
+不顺利嘛”
+
+但是，贵族社会并没有那么顺利。
+
+作为贵族的女儿有着自己的职责
+那个羁绊折磨着两个人。
+
+//●演出：場面転換トランジション
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Momo", 4, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+就这样，一个劲儿地读下去。
+
+明明不是自己的事，却要投入感情
+成为了为2人的恋爱顺利进行而应援的一方。
+
+: DrawChara( "Momo", 3, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo01_mom0715" )
+\CN["桃子"]
+“接吻了呢……。
+啊呜……总觉得，像是自己的事情一样
+变得害羞了呢”
+
+如果我和小银的话会怎么样呢？
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 11, 2)
+: PlayVoice( "Voices/vo01_mom0716" )
+\CN["桃子"]
+“……来，接吻什么的……？
+啊……啊，没有啊……不愧是……嗯……”
+
+想象一下。
+
+因为是小银，所以像这部小说的表演者一样聪明
+不是感觉而是强行咬着我的嘴唇——
+
+: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0717" )
+\CN["桃子"]
+“……啊啊啊……总觉得变热了……”
+
+光是想象一下就脸红。
+
+——小银强行夺走我的嘴唇。
+
+我觉得那个不坏，不如说是好的
+有自己。
+
+: DrawChara( "Momo", 4, 2)
+: PlayVoice( "Voices/vo01_mom0718" )
+\CN["桃子"]
+“嗯，不好好集中精神说话的话……！”
+
+: PlaySe( "SE/Se_Book01" )
+之后也会继续读下去。
+
+两个人结合私奔……。
+然后一边逃离追上来的追捕者
+好容易走到没有人的地方。
+
+在古老的教堂里，只有大小姐和随从
+在那里举行只有两个人的婚礼。
+
+: DrawChara( "Momo", 6, 2)
+: PlayVoice( "Voices/vo01_mom0719" )
+\CN["桃子"]
+“教堂里只有两个人的婚礼。
+这样很好呢，很浪漫……”
+
+说实话，我有点憧憬。
+
+最重要的是，和真心喜欢的人在一起
+我非常羡慕。
+
+: DrawChara( "Momo", 0, 2)
+: PlayVoice( "Voices/vo01_mom0720" )
+\CN["桃子"]
+“呵呵，能好好结合真是太好了。”
+
+: PlaySe( "SE/Se_Book01" )
+剩下的几页，好好读一下吧。
+
+写着什么呢？
+果然是指两个人之后的生活吧。
+
+满怀期待地翻下一页——
+
+: DrawChara( "Momo", 3, 2)
+: PlayVoice( "Voices/vo01_mom0721" )
+\CN["桃子"]
+“嗯，长吻之后，慢慢地被床推倒
+变成我出生的样子——诶，诶……”
+
+由此开始的是所谓的男女关系吗
+是确认爱的感觉的场景。
+
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Momo", 13, 2)
+: PlayVoice( "Voices/vo01_mom0722" )
+\CN["桃子"]
+“……那个，那种……这个，这么详细……！？
+嘛，张开大腿，慢慢地接受吧……”
+
+要是，万一啊……小银和我万一，这个，这个
+成为了亲密的关系，那样的话，我一定会——
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 14, 2)
+: PlayVoice( "Voices/vo01_mom0723" )
+\CN["桃子"]
+“啊……我在想这种色情的事情……。
+那也是，我和小银，在做的地方……”
+
+只是想想就没有意义了。
+
+因为，不管我有多么希望，多么想要
+因为是无法实现的事情。
+
+: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0724" )
+\CN["桃子"]
+“因为，我是贵族的女儿——。
+虽然现在是这样做的，但是总有一天，不完成任务的话
+因为不好的日子也许会到来”
+
+我的任性无法通过
+不得不放弃的日子会到来吧。
+
+: DrawChara( "Momo", 4, 2)
+: PlayVoice( "Voices/vo01_mom0725" )
+\CN["桃子"]
+“不能像恋爱小说那样，很遗憾。”
+
+但是，即便如此还是会做梦。
+
+——和喜欢的人接吻。
+——和喜欢的人合上身体。
+——在喜欢的人身边迎接早晨。
+
+无法实现的梦幻。
+
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0726" )
+\CN["桃子"]
+“稍微冷静一下头脑吧……”
+
+//●演出：桃の立ち絵を消す
+: chara = "Momo"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+在屯所的庭院里乘凉，冷静地思考。
+
+如果不那样做的话，今晚就睡不着了。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

@@ -1,0 +1,1481 @@
+//========================================================
+//○反幕派の重要人物を捕らえよ！１
+//========================================================
+*sc001
+//プレイヤーを無黒に
+: Party("Mukuro")
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoNishikaido" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "Kazusa" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: FastTravelMapOn( "Nagatoro" )
+: FastTravelMapOn( "Takahama" )
+: FastTravelMapOn( "KannaKaido" )
+//●場所：どこかの旅館
+//●演出：無黒　登場する
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_WaRoom02_03", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition14", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/18_TM003")
+: DrawChara( "Mukuro", 17, 0, 2, 0.0, 0.0, 3, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0832" )
+\CN["无黑色"]
+“御用改了！老实点吧。”
+
+\CN["反幕派的武士A"]
+“……呃……幕府的狗！”
+
+\CN["反幕派的武士B"]
+“再见！再见！”
+
+//: DrawChara( "Mukuro", 23, 0)
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: evbg = false; evcos = false;
+: evfile = "eva_a002_0_0_0100000_1000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0833" )
+\CN["无黑色"]
+“其他人都被拘留了。剩下的只有你们！”
+
+//: DrawChara( "Mukuro", 16, 0)
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "eva_a002_0_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0834" )
+\CN["无黑色"]
+“觉悟吧————！”
+
+: HideWnd()
+//※●演出：無黒　アクション演出
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash02", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+//●分岐：『囚われの無黒を救い出せ』が失敗の場合
+: if ( MissionProgress( "SC_A03_10_1", "Failed" ) == true || MissionProgress( "SC_A03_10_2", "Failed" ) == true )
+	\CN["鬼灯队士・男A"]
+“真了不起，我刚被囚禁回来
+已经能那样动了……”
+
+	\CN["鬼灯队士・女F"]
+“……那个孩子真坚强。”
+
+前几天，我被白夜的干部打败，被监禁在某个仓库里。
+
+然后，在那里被玩弄了很多，总算是活了回来。
+
+我不想再遭遇那种事了，如果说不害怕的话
+变成谎言。
+
+	//※●演出：無黒　アクション演出
+但是，我停不下来。
+
+因为我有必须要做的事情。
+
+//●分岐終了
+: endif
+//●背景：空・夜
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Mukuro", 0, 0, 3, 0.5, 0.0, 3, "C" )
+最近，感觉来自幕府的出动命令一下子增加了。
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 10, 0)
+: DrawFaceThumbnail( "Mukuro", 10, 0, 0 )
+: PlayVoice( "Voices/vo00_muk0835" )
+\CN["无黑色"]
+（维克托尔的大使马上就要到了……。
+应该是想拒绝后顾之忧吧）
+
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: LoadMap( "Map_Town02_07_Hozuki", "Azami_Room_Front", "Scenarios/SC_A03_13*sc001_1")
+
+*sc001_1
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・あざみの部屋
+//●演出：無黒があざみの元へ歩いて行く
+: HideWnd()
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0165" )
+\CN["嘲讽"]
+“辛苦了。怎么样？”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk0836" )
+\CN["无黑色"]
+“是的，正如报告所说。”
+
+把任务成果报告局长。
+
+今天这帮家伙在维克托尔大使到达大和的时机
+在计划着瞄准恐怖行动的时候被揭发了。
+
+//●読み：明日（あす）
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0166" )
+\CN["嘲讽"]
+“无黑，刚完成任务的时候不好意思
+希望从明天早上开始就有新的任务”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0167" )
+\CN["嘲讽"]
+“反幕派中也有一个需要注意的人物‘东乡，合集’
+似乎终于开始公开行动了”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk0837" )
+\CN["无黑色"]
+“那个东乡是吗！？”
+
+——{东乡隆，隆隆}
+他是高滨的贵族，也是反幕派的中心人物之一。
+
+如果现在幕府倒台，将军更迭
+据说是下届将军候选人之一。
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0168" )
+\CN["嘲讽"]
+“将军也下达了捉东乡的命令。
+现在，我在{厚海，热海}，希望你捉住我」
+
+//●演技：厚海＝熱海がモデル。温泉街です
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk0838" )
+\CN["无黑色"]
+“{厚海，热海}吗？真是吞吞吞的东西啊……。
+你在治疗温泉吗？”
+
+厚海一直在帝都向西的地方
+在山间的温泉街上，有很多温泉疗养客人，十分热闹。
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0169" )
+\CN["嘲讽"]
+“哎，十有八九是陷阱吧。”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0170" )
+\CN["嘲讽"]
+“怎么说呢，传言东乡背后有白夜
+也许是想以东乡为诱饵把这里叫出来”
+
+正如局长所说，这个任务很有可能会出现白夜。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk0839" )
+\CN["无黑色"]
+“大意大敌，对吧。那么，明天早上出发去厚海！”
+
+: DrawChara( "Azami", 0, 0)
+: PlayVoice( "Voices/vo05_aza0171" )
+\CN["嘲讽"]
+“啊，拜托了。还有，雷欧已经去了
+希望在那里会合”
+
+//●演出：無黒　退場する
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+沿着名为“大和东街道”的大街道好不容易走到厚海
+可以。
+
+明天必须早点出发。
+今天就休息吧。
+
+事件信息更新了。
+
+//＠マップ解放：無黒、大和東街道・北ルート
+//＠マップ移動：鬼灯屯所・入口
+//●シーンエンド
+: FadeOut( 1.0 )
+: Wait()
+: FastTravelMapOn( "YamatoHigashiKaidoC" )
+: SetMission( "SC_A03_13_1", "InProgress" )
+: DestinationMap( "Map_Town09_01_Atsuumi" )
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+//========================================================
+//○反幕派の重要人物を捕らえよ！２
+//========================================================
+*sc002
+//●場所：厚海
+//発生は１回だけ
+: if ( Flag ( "AtsuumiEvent0" ) == true )
+	: Return
+: endif
+: HideWnd()
+: RpgCharaOn("Leo")
+: FadeIn( 1.0 )
+: Wait()
+: Flag( "AtsuumiEvent0", true )
+: RpgCharaBatch( "Leo"	\
+:	"MoveDown", 2 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+\CN["雷欧"]
+“噢噢！无黑！
+什么？寂寞的时候来见我了吗？”
+
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“难得的温泉街，怎么样？一起泡温泉吧？”
+
+//●分岐：淫乱度Ｃ以下の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
+	: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+	: DrawChara( "Mukuro", 20, 2)
+	: PlayVoice( "Voices/vo00_muk0840" )
+	\CN["无黑色"]
+“哈？喂，一起去泡温泉，你说什么？”
+
+	: DrawChara( "Leo", 4, 0)
+	\CN["雷欧"]
+“开玩笑也是开玩笑！别那么生气。”
+
+	: DrawChara( "Mukuro", 11, 2)
+	: PlayVoice( "Voices/vo00_muk0841" )
+	\CN["无黑色"]
+“唔……雷欧的笨蛋……”
+
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk0842" )
+	\CN["无黑色"]
+“局长让我和雷欧汇合
+你在听什么？”
+
+	: DrawChara( "Leo", 2, 0)
+	\CN["雷欧"]
+“东乡的别墅在城镇的北部，所以晚上会进行重用
+嗯。其他的队员也会在那之前到达”
+
+	: DrawChara( "Mukuro", 0, 0)
+	: PlayVoice( "Voices/vo00_muk0843" )
+	\CN["无黑色"]
+“原来如此。那就是说要等到晚上吗？”
+
+	: DrawChara( "Leo", 13, 0)
+	\CN["雷欧"]
+“就是这么回事！没黑，难得的温泉街啊
+和我约会吧，成为！”
+
+	: DrawChara( "Mukuro", 21, 1)
+	: PlayVoice( "Voices/vo00_muk0844" )
+	\CN["无黑色"]
+“对，是啊。约会暂且不论，在街上徘徊
+收集信息也许很好。就这么办吧」
+
+	: DrawChara( "Leo", 4, 0)
+	\CN["雷欧"]
+“这样啊……果然不行啊……嗯？
+现在，怎么了……？”
+
+	: DrawChara( "Mukuro", 36, 1)
+	: PlayVoice( "Voices/vo00_muk0845" )
+	\CN["无黑色"]
+“所以，我说了没关系……”
+
+	: DrawChara( "Mukuro", 22, 2)
+	: PlayVoice( "Voices/vo00_muk0846" )
+	\CN["无黑色"]
+“我告诉你，这不是约会！
+只是情报收集而已！这一点，你要好好明白
+想要你放在那里”
+
+	: DrawChara( "Leo", 11, 1)
+	\CN["雷欧"]
+“太好了！约会……啊，实现了愿望，和无黑初次约会……。
+神啊，真的，山治！”
+
+	: DrawChara( "Mukuro", 6, 2)
+	: PlayVoice( "Voices/vo00_muk0847" )
+	\CN["无黑色"]
+“所以说，这不是约会……！太棒了！”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	: DrawChara( "Mukuro", 3, 0)
+	: PlayVoice( "Voices/vo00_muk0848" )
+	\CN["无黑色"]
+“是啊。任务结束后一起进去吗？”
+
+	: DrawChara( "Leo", 6, 1)
+	\CN["雷欧"]
+“诶！？啊……不好意思……我开玩笑了……”
+
+	: PlayVoice( "Voices/vo00_muk0842" )
+	\CN["无黑色"]
+“局长让我和雷欧汇合
+你在听什么？”
+
+	\CN["雷欧"]
+“东乡的别墅在城镇的北部，所以晚上会进行重用
+嗯。其他的队员也会在那之前到达”
+
+	: PlayVoice( "Voices/vo00_muk0843" )
+	\CN["无黑色"]
+“原来如此。那就是说要等到晚上吗？”
+
+	: DrawChara( "Mukuro", 2, 0)
+	: PlayVoice( "Voices/vo00_muk0849" )
+	\CN["无黑色"]
+“这样的话，逛街也不错。
+雷欧，怎么办？一起来吗？”
+
+	: DrawChara( "Leo", 13, 1)
+	\CN["雷欧"]
+“哦，哦！当然！
+没黑的人邀请我去约会，真是太开心了！”
+
+//●分岐終了
+: endif
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("Leo")
+: FadeIn( 0.5 )
+: Wait()
+//レオを仲間に入れる
+: Party( "Mukuro", "Leo" )
+: Participate( 0, true, 1, true )
+: PartyType = "Party05"; Call( "Scenarios/CommonSys*PartySetting" )
+: Return
+//========================================================
+//○反幕派の重要人物を捕らえよ！３
+//========================================================
+*sc003
+//●場所：厚岸・東郷の別荘
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["雷欧"]
+“这里就是东乡的别墅……”
+
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select01
+//■選択肢１：もう少し厚岸の町をぶらつく
+//■選択肢２：御用改めまで待機する
+//――――――――――――――――――――――――――――
+\CI["再在街上闲逛一会儿"]
+\CI["待命待命"]
+……………………。
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+
+//-------------------------------------------------------
+//●選択肢１：もう少し厚岸の町をぶらつくを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“是啊！嘿嘿，约会继续进行！”
+
+//●シーンエンド
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：御用改めまで待機するを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["雷欧"]
+「这样啊。那就回旅馆待到晚上吧。
+稍微休息一下身体比较好”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk0850" )
+\CN["无黑色"]
+“啊，据局长说白夜好像在背后。
+好好调整身体状况比较好”
+
+//●分岐：『囚われの無黒を救い出せ』が失敗の場合
+: if ( MissionProgress( "SC_A03_10_1", "Failed" ) == true || MissionProgress( "SC_A03_10_2", "Failed" ) == true )
+	//＠フォント小さく
+	: DrawChara( "Leo", 6, 0)
+	\CN["雷欧"]
+<size=70%>“是啊。我再也不想让你遭遇危险了
+我必须更加、更加坚强……”
+
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk0851" )
+	\CN["无黑色"]
+“嗯？Leo，你说了什么？”
+
+	: DrawChara( "Leo", 3, 0)
+	\CN["雷欧"]
+“不，没什么。赶紧去住宿吧。”
+
+//●分岐終了
+: endif
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，和Leo一起去厚岸的旅馆
+决定休息到晚上。
+
+……………………………………………………。
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+——晚上。
+
+//●演出：暗転解除
+//※余裕があれば夜マップ
+//●状況：夜、鬼灯隊士が集まっている。
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Yashiki02_03", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/18_TM003")
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+在东乡的别墅前接到联络的队员们
+聚集在一起。
+
+\CN["鬼灯队士・男A"]
+“啊，让你久等了。”
+
+\CN["鬼灯队士・女A"]
+“其实应该让他再等一会比较好……。
+喂？无黑？”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“真的，就是那个！再晚一天的话，就和无黑在一起
+明明是在调情我……”
+
+//●分岐：淫乱度Ｃ以下の場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
+	: DrawChara( "Mukuro", 6, 2)
+	: PlayVoice( "Voices/vo00_muk0852" )
+	\CN["无黑色"]
+“哈？怎么可能和你亲热呢……”
+
+	\CN["鬼灯队士・女B"]
+“野猪，其实我中午的时候已经到这里了吧？”
+
+	\CN["鬼灯队士・女B"]
+“这样的话，Leo和无黑两个人很开心地约会
+因为在做，所以很吃惊……”
+
+	: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+	: Call( "Scenarios/Common*CgShake" )
+	: Wait()
+	: DrawChara( "Mukuro", 20, 2)
+	: PlayVoice( "Voices/vo00_muk0853" )
+	\CN["无黑色"]
+“什么！？从哪里……！？”
+
+	\CN["鬼灯队士・女B"]
+“我的任务是谍报活动。
+这样的话，就是早饭前的事了♪”
+
+	: DrawChara( "Leo", 11, 0)
+	\CN["雷欧"]
+“如果拍了照片之后把数据放到设备上
+送我吧”
+
+	\CN["鬼灯队士・女B"]
+“好！”
+
+	: DrawChara( "Leo", 13, 0)
+	\CN["雷欧"]
+“真漂亮！”
+
+	: JumpLayer( 3, 0, -50, 1, 0.25)
+	: DrawChara( "Mukuro", 36, 2)
+	: PlayVoice( "Voices/vo00_muk0854" )
+	\CN["无黑色"]
+“等一下……呼，两个人都在说什么蠢话……！
+现在才要重做御用！”
+
+	\CN["鬼灯队士・女B"]
+“所以啊。太用力是不好的。
+看，放松，放松”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+: else
+	: DrawChara( "Mukuro", 29, 0)
+	: PlayVoice( "Voices/vo00_muk0855" )
+	\CN["无黑色"]
+“先不说是在调情
+也许想在温泉悠闲地度过一天”
+
+	\CN["鬼灯队士・男A"]
+“哇……我也开始说无黑了啊”
+
+	\CN["鬼灯队士・女B"]
+“Leo君，无黑酱变得越来越厉害了吧？
+没关系吗？”
+
+	: DrawChara( "Leo", 0, 0)
+	\CN["雷欧"]
+“这样才有做的价值！
+我要用我的双手攻克难攻不落的无黑城”
+
+	\CN["鬼灯队士・男A"]
+“看来两个人都没有精神啊。”
+
+//●分岐終了
+: endif
+: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“嗯，那么，一下子就有种干净利落的感觉
+要去吗！”
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk0856" )
+\CN["无黑色"]
+“雷欧，你可不能大意啊？”
+
+: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“哇！哇！
+也有可能对方超糟糕”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk0857" )
+\CN["无黑色"]
+“这样啊……那就好了。我走了，雷欧。”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“喔！”
+
+//●演出：レオたち、攻め込んでいく。場面転換
+//: DrawChara( "Mukuro", 17, 0, 2, 0.5, 0.0, 4, "RC" )
+//: DrawChara( "Leo", 19, 0, 1, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+“御用改！觉悟吧——————！”
+
+\CN["东乡的部下A"]
+“呃，是个坏蛋！”
+
+\CN["东乡的部下B"]
+“真的吗……。
+鬼灯真的来了……幕府的狗们来了！”
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_WaRoom01_03", 0.0 )
+: DrawChara( "Mukuro", 17, 0, 2, 0.0, 0.0, 4, "RC" )
+: DrawChara( "Leo", 19, 0, 1, 0.0, 0.0, 3, "LC" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["鬼灯队士・男A"]
+「无黑，雷欧，这里就交给我们吧你们
+去东乡！”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“喂！冲啊，无黑！”
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk0858" )
+\CN["无黑色"]
+“明白了！”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 4; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Leo"; lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+: ShowWnd()
+把乱战的场面交给前辈们
+和雷欧一起猛跑。
+
+//●演出：場面転換トランジション
+//●ＳＥ：乱暴にドアを開ける音
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom05_03", 1.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlaySe("SE/Se_Foot01")
+: DrawChara( "Mukuro", 17, 1, 2, 0.0, 0.0, 4, "RC" )
+: lay = 4; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: DrawChara( "Leo", 21, 0, 1, 0.0, 0.0, 3, "LC" )
+: lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+“高滨贵族，东乡隆！御用！”
+
+\CN["东乡"]
+“好吵啊，喂……。
+好不容易有人来治疗温泉，却很悠闲”
+
+\CN["东乡"]
+「哈～……。以为会有Can的味道呢
+幕府的狗们啊」
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“……无黑，小心点。”
+
+: DrawChara( "Mukuro", 17, 1)
+: PlayVoice( "Voices/vo00_muk0859" )
+\CN["无黑色"]
+“我知道。”
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Midori", 7, 0, 0, 0.0, 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayBgm("BGM/30_CM015")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0043" )
+\CN["绿色"]
+“什么呀，我们自己。注意到了吗？”
+
+长着绿色头发的女人出现了。
+
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Midori", 0.0 )
+: DrawChara( "Leo", 1, 0, 1, 0.0, 0.0, 3, "L" )
+: DrawChara( "Mukuro", 0, 0, 2, 0.0, 0.0, 4, "R" )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+“那种败露的杀气，怎么可能没注意到呢。”
+
+: DrawChara( "Mukuro", 16, 1)
+: PlayVoice( "Voices/vo00_muk0860" )
+\CN["无黑色"]
+“……Leo……这家伙，是那个时候的！”
+
+: DrawChara( "Leo", 21, 0)
+\CN["雷欧"]
+“没错。这种说话方式，这种氛围
+怎么可能忘记……”
+
+在我和雷欧的第一个任务中阻挡着的白夜的家伙
+让我舔舐了无与伦比的恐怖和辛酸。
+
+回想起来，被这家伙夺去了生命
+成为能活到今天的契机。
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: PlayVoice( "Voices/vo10_mid0044" )
+\CN["绿色"]
+“你们知道我们家吗？”
+
+: DrawChara( "Mukuro", 17, 1)
+: PlayVoice( "Voices/vo00_muk0861" )
+\CN["无黑色"]
+“啊，怎么可能忘记。”
+
+: DrawChara( "Leo", 22, 0, 0, 0.0, 0.0, 2, "C" )
+\CN["雷欧"]
+“你好像忘了。
+因为婆婆忘性很强，所以很帅吧”
+
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Midori", 22, 0)
+: PlayVoice( "Voices/vo10_mid0045" )
+\CN["绿色"]
+“谁是笨蛋，我要杀了你，这个混蛋！”
+
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“呀，无黑，那个老太婆生气了。”
+
+: DrawChara( "Mukuro", 24, 1)
+: PlayVoice( "Voices/vo00_muk0862" )
+\CN["无黑色"]
+“我觉得如果称呼女性为婆婆当然会生气……”
+
+: DrawChara( "Midori", 23, 0)
+: PlayVoice( "Voices/vo10_mid0046" )
+\CN["绿色"]
+“你这家伙，不会让你轻松地死去的……”
+
+//みどり　義手刀にする
+: CharaCostume( "Midori", 1 )
+: PlaySe( "SE/Se_Katana02" )
+: JumpLayer( 5, 0, -50, 1, 0.25)
+: DrawChara( "Midori", 18, 0)
+: PlayVoice( "Voices/vo10_mid0047" )
+\CN["绿色"]
+「慢慢地，慢慢地，敲诈杀死你
+做好觉悟！”
+
+取下假手，尖锐的针就会露出来。
+
+——那一天，一个接一个地夺去前辈们生命的可憎的针。
+
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Leo", 22, 0, 1)
+\CN["雷欧"]
+“啊！和那个时候不一样啊……。
+我绝对不会输给你！”
+
+雷欧准备刀。
+
+: DrawChara( "Mukuro", 17, 1)
+: PlayVoice( "Voices/vo00_muk0863" )
+\CN["无黑色"]
+“是啊……反正，不把这家伙打倒的话
+因为我不能活着回去……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+*battle
+//――――――――――――――――――――――――――――
+//■戦　闘：望月みどり
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//――――――――――――――――――――――――――――
+//＠戦闘：望月みどり,1,1,0,sc004a,sc004b
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc004a" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*sc004b" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_WaRoom05_03", "BGM/22_BM003", 1011, -1, -1, "Scenarios/SC_A03_13*battle_end", true)
+
+*battle_end
+: RestoreBgm
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom05_03", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: if ( $battleWin == true )
+	: Jump( "*sc004a" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle" )
+: else
+	: Jump( "*sc004b" )	//敗北した場合
+: endif
+//========================================================
+//○反幕派の重要人物を捕らえよ！４Ａ
+//========================================================
+//--------------------------------------------------------
+//●分岐：勝利した場合
+//--------------------------------------------------------
+*sc004a
+: PlayBgm("BGM/17_TM002")
+//●演出：無黒　アクションシーン
+//●演出：レオ　アクションシーン
+//●演技：ってぇな＝痛ぇな
+: DrawChara( "Midori", 26, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: PlayVoice( "Voices/vo10_mid0048" )
+\CN["绿色"]
+“哈哈哈……呃，你这家伙……”
+
+: DrawChara( "Leo", 18, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“变得没有余裕了，老太婆。”
+
+: DrawChara( "Mukuro", 16, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: PlayVoice( "Voices/vo00_muk0864" )
+\CN["无黑色"]
+“雷欧，你是个疏忽大意的大敌！我不知道你会来干什么。”
+
+两个人总算逼到了这里。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 42, 1)
+: PlayVoice( "Voices/vo00_muk0865" )
+\CN["无黑色"]
+（真的被逼到绝境了吗？有种非常讨厌的预感……）
+
+: DrawChara( "Midori", 23, 1)
+: PlayVoice( "Voices/vo10_mid0049" )
+\CN["绿色"]
+“那个黑发的女人，一看就很生气啊……
+光看脸就恶心”
+
+: DrawChara( "Midori", 29, 1)
+: PlayVoice( "Voices/vo10_mid0050" )
+\CN["绿色"]
+“和我们最讨厌的家伙长得很像啊？
+眼睛珠子，我真想用这个挖苦他”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“绝对不会让你做的！
+无黑一定会由我来保护的！”
+
+: DrawChara( "Leo", 11, 0)
+\CN["雷欧"]
+“啊，刚才的台词很帅吧？吓了一跳吗？”
+
+//●演出：みどりがレオに攻撃を仕掛ける
+//: DrawChara( "Midori", 24, 1)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0300000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Midori", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0051" )
+\CN["绿色"]
+“我不会死的！”
+
+//: DrawChara( "Mukuro", 34, 1)
+: PlayVoice( "Voices/vo00_muk0866" )
+\CN["无黑色"]
+“雷欧……！”
+
+: HideWnd()
+: PlaySe("SE/Se_Swing02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect03b", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+女人趁着雷欧一瞬间的间隙开始攻击。
+
+//: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“哇！”
+
+//●演出：レオのアクション
+: HideWnd()
+: PlaySe( "SE/Se_KatanaHit01" )
+: evbg = true; evcos = false;
+: evfile = "evx_a002_1_1_0300000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: Call("Scenarios/Common*CutinFadeOut")
+//※斬撃エフェクト
+: ShowWnd()
+看来，雷欧是故意制造间隙的
+像是在等着一样挥刀。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Midori", 25, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0052" )
+\CN["绿色"]
+“啧……！好危险啊……。
+这个臭小鬼……一个一个，真让人生气！”
+
+: HideWnd()
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Leo", 8, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: ShowWnd()
+\CN["雷欧"]
+“呃……我还以为我刚才就结束了呢……。
+你们这不是糟蹋了我们帅气的地方吗！”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 6, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk0867" )
+\CN["无黑色"]
+（从那种状态中，他能从容躲开……？）
+
+: DrawFaceThumbnail( "Midori", 22, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0053" )
+\CN["绿色"]
+“啊，已经不行了。已经不能忍耐了……。
+自己们，现在就想在这里认真地杀了他们……”
+
+: StopBgm( 1.0 )
+突然，现场的气氛变了。
+
+冷得令人讨厌。
+感觉从上面受到了很大的压迫。
+
+: DrawChara( "Mukuro", 17, 1)
+: PlayVoice( "Voices/vo00_muk0868" )
+\CN["无黑色"]
+“雷奥……小心点……”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“啊，哎呀，总觉得很糟糕……”
+
+//＠演出：みどり　ダークエルフ化詠唱
+//: DrawChara( "Midori", 24, 1)
+: Call( "Scenarios/Effect*MidoriDE2" )
+: HideWnd()
+: evbg = true; evcos = false;
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: evfile = "evx_a096_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0054" )
+\CN["绿色"]
+“——水性……”
+
+: PlaySe( "SE/Se_Device01" )
+——皮皮皮皮。
+设备的声音突然响起。
+
+//●演出：蘭丸　割り込んでくる
+//: HideWnd()
+//: Call("Scenarios/Common*EvFadeOut")
+//: DrawChara( "Ranmaru", 3, 0, 0, 0.0, 0.0, 6, "C" )
+//: PlaySe("SE/Se_Foot01")
+//: lay = 6; type = "WL";
+//: Call( "Scenarios/Common*FgEff")
+//: ShowWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawFaceThumbnail( "Ranmaru", 3, 0, 0 )
+\CN["兰丸"]
+“小绿，跟踪！不行，随你的便。”
+
+//●合流地点へ
+//＠フラグ：反幕派の重要人物を捕らえよ成功
+//＠ラベルジャンプ：sc004c
+: $money += 3500
+: SetMission( "SC_A03_13_1", "Successed" )
+: Jump( "*sc004c" )
+//========================================================
+//○反幕派の重要人物を捕らえよ！４Ｂ
+//========================================================
+//--------------------------------------------------------
+//●分岐：敗北した場合
+//--------------------------------------------------------
+*sc004b
+//●演出：みどり　アクションシーン
+: PlayBgm("BGM/11_CM011")
+//: DrawChara( "Mukuro", 31, 1, 2, 0.5, 0.0, 4, "R" )
+//: DrawChara( "Leo", 21, 1, 1, 0.5, 0.0, 3, "RC" )
+//: DrawChara( "Midori", 22, 1, 0, 0.5, 0.0, 5, "LC" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0300000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0055" )
+\CN["绿色"]
+“啊啊啊啊啊啊啊啊啊啊啊！！”
+
+//: DrawChara( "Leo", 24, 1)
+\CN["雷欧"]
+“啊啊啊啊！”
+
+//●演出：みどりがレオをぶっ飛ばす
+//: DrawChara( "Mukuro", 32, 1)
+: PlayVoice( "Voices/vo00_muk0869" )
+\CN["无黑色"]
+“利昂————！”
+
+我看到了尖锐的针准确地抓住了雷欧。
+
+血色减退。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: CharaPartsOn( "Mukuro", 0)
+: DrawChara( "Mukuro", 16, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0870" )
+\CN["无黑色"]
+“呜……你居然……把雷欧……！”
+
+: DrawChara( "Midori", 29, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: PlayVoice( "Voices/vo10_mid0056" )
+\CN["绿色"]
+“你这杀气腾腾的，真让人毛骨悚然。”
+
+: DrawChara( "Midori", 13, 1)
+: PlayVoice( "Voices/vo10_mid0057" )
+\CN["绿色"]
+“但是，自己越看越觉得烦躁。
+真的，我是一边慢慢地安慰着一边杀人的”
+
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Midori", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 17, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["雷欧"]
+“哈，嘛，等一下……还差得远吗？
+这边啊……”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Leo", 17, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo10_mid0058" )
+\CN["绿色"]
+“啊，真能干啊自己。一下子躲开了啊……”
+
+: DrawChara( "Leo", 20, 1)
+\CN["雷欧"]
+“嘿嘿……在喜欢的女人面前倒下之类的，真是太难看了
+我做不到……”
+
+: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“如果倒下的话，就把脸埋在无黑的乳汁里倒下吧……”
+
+: DrawChara( "Mukuro", 19, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo00_muk0871" )
+\CN["无黑色"]
+“这种时候，你在说什么傻话！”
+
+: DrawChara( "Midori", 23, 1)
+: PlayVoice( "Voices/vo10_mid0059" )
+\CN["绿色"]
+“在想要杀人的时候，如果能让我看到这样的亲昵
+真是的，真恶心……”
+
+一边这样说着，一边笑着。
+
+我和雷欧都跟不上这家伙的速度
+像喜欢的那样被玩弄着。
+
+//●演出：蘭丸　登場する
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Device01" )
+——皮皮皮皮。
+设备的声音响起。
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: ShowWnd()
+: DrawFaceThumbnail( "Ranmaru", 3, 0, 0 )
+\CN["兰丸"]
+“好的，到此为止了。”
+
+//●合流地点へ
+: SetMission( "SC_A03_13_1", "Failed" )
+//--------------------------------------------------------
+//●合流地点
+//--------------------------------------------------------
+*sc004c
+: PlayBgm("BGM/28_ID01")
+: DrawChara( "Midori", 0, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo10_mid0060" )
+\CN["绿色"]
+“什么呀，兰丸啊……别在那个地方打扰我啊！对吧？
+你也一起打死了吗？”
+
+: DrawFaceThumbnail( "Ranmaru", 17, 0, 0 )
+\CN["兰丸"]
+“希望你能原谅我啊。
+我也不想和你较量啊」
+
+: DrawFaceThumbnail( "Ranmaru", 2, 0, 0 )
+\CN["兰丸"]
+“现在马上退出。这是你的命令。”
+
+: DrawChara( "Midori", 13, 1)
+: PlayVoice( "Voices/vo10_mid0061" )
+\CN["绿色"]
+“……啧……那就干巴巴的……。
+因为不能给头脑面子啊”
+
+: DrawChara( "Midori", 10, 1)
+: PlayVoice( "Voices/vo10_mid0062" )
+\CN["绿色"]
+“我们自己捡了命啊。
+下次见面的时候我会毫不留情的杀掉你，你要做好觉悟吗？”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Midori"; lay = 5; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: DrawChara( "Leo", 18, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 16, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+\CN["雷欧"]
+“啊，那是我的台词。”
+
+: DrawFaceThumbnail( "Midori", 2, 0 )
+: PlayVoice( "Voices/vo10_mid0063" )
+\CN["绿色"]
+“呐，我们的名字是？”
+
+: DrawChara( "Leo", 12, 0)
+\CN["雷欧"]
+“老子是雷欧！是地上最强的男人！
+好好记住啊，大妈！”
+
+: DrawChara( "Leo", 22, 0)
+\CN["雷欧"]
+“然后，这个世界上最可爱的女人是无黑的
+将来会成为我的妻子的女人”
+
+: ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Mukuro", 6, 1)
+: PlayVoice( "Voices/vo00_muk0872" )
+\CN["无黑色"]
+“哈？老婆，雷欧！你在说什么傻话！”
+
+: DrawFaceThumbnail( "Midori", 16, 0 )
+: PlayVoice( "Voices/vo10_mid0064" )
+\CN["绿色"]
+“无黑的雷欧……我会记住的。”
+
+: DrawFaceThumbnail( "Midori", 11, 0 )
+: PlayVoice( "Voices/vo10_mid0065" )
+\CN["绿色"]
+“我——白夜，四绿的望月绿将你们斩杀
+这帮家伙，不许被其他人杀死”
+
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+名为望月绿的女子从房间里飒爽地出去。
+
+当然，我和雷欧都要追，我不会做傻事的。
+
+不管怎么说，本来的目的是——
+
+: PlayBgm("BGM/01_CM001_inst")
+\CN["东乡"]
+“喂，喂！你是什么意思……？
+竟然丢下我逃走……”
+
+\CN["东乡"]
+“你觉得我至今为止在白夜出资了多少？”
+
+望月绿走的同时，白夜的所有人
+好像是一齐打捞上来的，外面的骚动消失了。
+
+//●読み：東郷隆（とうごうたかし）
+: DrawChara( "Mukuro", 17, 0, 5, 0.0, 0.0, 3, "C" )
+: chara = "Mukuro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo00_muk0873" )
+\CN["无黑色"]
+“东乡隆，快死了！我要把你带走！”
+
+\CN["东乡"]
+“酷……这样的话，就没办法了……”
+
+\CN["东乡"]
+“我也是{刀，这家伙}一个一直活到现在的武士
+所以啊。我要斩断你们，从这里突破给你们看”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Leo", 8, 0, 1, 0.0, 0.0, 3, "C" )
+: chara = "Leo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+“真是个不干脆的大叔啊……”
+
+正因为说是活下来了，所以才有相应的气氛。
+
+\CN["东乡"]
+“哦哦哦哦哦哦哦哦哦哦！”
+
+: StopBgm( 1.0 )
+: PlaySe("SE/Se_Katana02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+――――――――――――――――――――
+
+: HideWnd()
+: ResetLayer(3)
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawChara( "Elisa", 7, 0, 0, 0.0, 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 5; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: PlayBgm("BGM/45_ID06")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0008" )
+\CN["红发的女人"]
+“真不好意思……这家伙让我来做一下！”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Elisa"; lay = 5; type = "SDL";
+: Call( "Scenarios/Common*FgEffOut")
+突然有人在我和雷欧之间飞快地通过了。
+
+: DrawFaceThumbnail( "Leo", 21, 0)
+\CN["雷欧"]
+“什么？真快啊……。
+比刚才那个望月还快吧？”
+
+: PlaySe("SE/Se_Foot01")
+: DrawChara( "Elisa", 20, 0, 0, 0.0, 0.0, 5, "C" )
+: chara = "Elisa"; lay = 5 ; type = "SDR";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["东乡"]
+“什么——！”
+
+: PlayVoice( "Voices/vo19_era0009" )
+\CN["红发的女人"]
+“嘿嘿，来大和之后一直很老实呢。
+久违的战斗——滚滚而起，真是没办法啊」
+
+//●演出：イライザ　東郷を瞬殺する
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+\CN["东乡"]
+「――――――――！！！」
+
+//●ＳＥ：倒れる音
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+: DrawChara( "Elisa", 6, 0)
+: PlayVoice( "Voices/vo19_era0010" )
+\CN["红发的女人"]
+“喂喂喂，小呆，你摆得很好，我很期待呢
+就这个程度吗？”
+
+\CN["东乡"]
+“……（战栗）”
+
+东乡吹着泡沫昏厥，背着鲜艳的红发
+站在那里的是一个眼神锐利的女人。
+
+: HideWnd()
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(5)
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["雷欧"]
+“呼~不是要做嘛，姐姐。”
+
+//●演技：レオに速攻でゼップの面影を感じます
+: DrawChara( "Elisa", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo19_era0011" )
+\CN["红发的女人"]
+“对吧？你好像在哪里见过……？”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“嗯？难道我被说服了吗？”？
+对不起……因为我有无黑”
+
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Elisa", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Mukuro", 20, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: ImpactLayer( 5, 0.1, 0.1, 1, 0.25)
+: PlayVoice( "Voices/vo00_muk0874" )
+\CN["无黑色"]
+“所以我不是说了不要那样说吗！”
+
+: DrawChara( "Elisa", 4, 0)
+: PlayVoice( "Voices/vo19_era0012" )
+\CN["红发的女人"]
+“喂，喂，真好啊，真好啊，年轻啊。”
+
+: DrawChara( "Elisa", 3, 0)
+: PlayVoice( "Voices/vo19_era0013" )
+\CN["红发的女人"]
+“呐，这样啊，那个男人，可以在这里拿吗？”
+
+: DrawChara( "Elisa", 6, 0)
+: PlayVoice( "Voices/vo19_era0014" )
+\CN["红发的女人"]
+“小知和小呆，直接拿出来找我们吧，嘛
+怎么说呢，必须要在丢失前加上啊」
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk0875" )
+\CN["无黑色"]
+“嗯，果然，那是……。
+那个男人，东乡隆是我们也在追的人物”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0015" )
+\CN["红发的女人"]
+“呐，那就拜托你了！你这家伙，呃
+蛤仔……不，是不是在嘲笑？像老板一样的人
+我会好好说的”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“向局长……？”
+
+: DrawChara( "Mukuro", 1, 1)
+: PlayVoice( "Voices/vo00_muk0876" )
+\CN["无黑色"]
+“姑且用设备确认一下。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+就地用设备联系局长谈情况。
+
+: DrawFaceThumbnail( "Azami", 2, 0, 0 )
+: PlayVoice( "Voices/vo05_aza0172" )
+\CN["嘲讽"]
+“把红头发扎在后面的人，会说‘我讨厌你’
+是维克托尔骑士团的人。这样啊，已经到那边了
+啊……”
+
+: PlayVoice( "Voices/vo05_aza0173" )
+\CN["嘲讽"]
+“东乡通过贩卖人身，对维克托尔的兽人出手
+好像在。好像在那边被通缉了”
+
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk0877" )
+\CN["无黑色"]
+“那么，东乡的身份就交给伊拉伊萨吧
+可以收起来吗？”
+
+: DrawFaceThumbnail( "Azami", 0, 0, 0 )
+: PlayVoice( "Voices/vo05_aza0174" )
+\CN["嘲讽"]
+“啊，没问题。所以和幕府也有谈话。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Elisa", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo19_era0016" )
+\CN["伊拉伊萨"]
+“怎么样？不是说了可以吗？”
+
+: DrawChara( "Mukuro", 35, 0)
+: PlayVoice( "Voices/vo00_muk0878" )
+\CN["无黑色"]
+“是的……对不起。”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0017" )
+\CN["伊拉伊萨"]
+“嗯，嗯，不，没关系的！
+呃，你们是说鬼灯吗？
+下次可以再见面了”
+
+//●背景：空・夜
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+然后，伊拉伊萨带着东乡隆
+就那样去了什么地方。
+
+任务顺利完成。
+局长跟我说了可以在温泉悠闲地呆一晚上
+我决定在温泉旅馆住一晚后，再回到鬼灯。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+: HideWnd()
+: CharaCostume( "Midori", 0 )
+//●キャラ選択画面
+//●選択キャラが残っていない場合
+//●分岐：任務失敗数が３未満の場合
+//●シーン：「残酷な大老を警護せよ１」へ
+//＠シナリオジャンプ：SC_A03_16
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーン：「夜道で浪人たちに襲われて……」へ
+//＠シナリオジャンプ：SC_A03_19
+//●分岐終了
+//無黒単独に設定
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: Jump( "Scenarios/CommonSys*Chapter_judge03_1" )

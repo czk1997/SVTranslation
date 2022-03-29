@@ -1,0 +1,686 @@
+//========================================================
+//○鏑木紫苑と鏑木巌　血の繋がった親子の異常愛
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_C04_83" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_C04_83" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●場所：宿場町の宿屋
+//●視点：第三者視点
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——位于西都和帝都中间的旅馆。
+这里住着一对长得不像的母子。
+
+//●背景：宿場町・外・昼
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_SyukubaVillage01_01", 1.0 )
+: Wait()
+: ShowWnd()
+中午到达驿站町的镝木严和镝木紫苑的母子。
+这两个人都受到了很大的关注。
+
+无论从哪里看都只觉得是异形的儿子镝木严。
+他虽然受到了关注，但是谁也不想去看他。
+
+如果有什么关系的话就没有生命。
+能稍微懂一点气氛的人是这么觉得的。
+
+还有一位母亲镝木紫苑。
+被她成熟后一尘不染的美貌所吸引的男人
+很多。
+
+紫苑曾经在吉野原作为妓女工作。
+以美貌和被称为最高的技巧，成为传说中的花魁
+被说了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●ＣＧ：近親相姦
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_1_0111001_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+//●演技：乳房を揉まれています
+: PlayVoice( "Voices/vo12_shi0147" )
+\CN["紫苑"]
+“呃，啊啊啊，啊啊啊……哈…嗯……嗯……嗯
+啊……啊啊啊…啊，嗯……”
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi01" )
+\CN["严严"]
+“呼……呼……妈妈的胸部很柔软，很舒服。
+我会吸到你的手上”
+
+严在事情开始后，首先是紫苑的柔软的手
+把手伸向有吸着质感的乳房。
+
+: HideWnd()
+: evfile = "evh_b002_0_1_0211001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0148" )
+\CN["紫苑"]
+“嗯……严酱的小弟弟非常坚强
+真是太棒了。战战兢兢、痛苦地坐着♥</color>」
+
+父母和子女一进入旅馆的房间，马上就开始了性行为。
+
+有血缘关系的父子两人接触禁忌的是
+因为严迎来了精通。
+
+紫苑、严、纠葛什么都没有，恋人之间自然会变成那样
+轻轻松松地越过了底线。
+
+\CN["严严"]
+“妈妈……”
+
+: HideWnd()
+: evfile = "evh_b002_0_1_0111001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0149" )
+\CN["紫苑"]
+“严酱，如果想被插上的话，就永远选我的omiko
+打进小肉丸……”
+
+紫苑的阴道口恶心地蠢动，象睡一样地爱液
+溢出来了。
+
+从踏入客栈开始，就期待着会变成这样
+为了能一直接受爱子，身体要做好准备
+开始做了。
+
+\CN["严严"]
+“嗯……我已经快给妈妈的女婿小鸡鸡了
+我简直想呆着……”
+
+: PlayVoice( "Voices/vo12_shi0150" )
+\CN["紫苑"]
+“呵呵，我会好好插你的。
+严酱就这样轻松地死去了”
+
+紫苑用熟练的手法严严，成年男性的手臂粗细
+把可能有的极粗阴茎拿到手上，强加于自己的秘部。
+
+\CN["严严"]
+“啊啊……妈妈的那边，是肥胖子……”
+
+: PlayVoice( "Voices/vo12_shi0151" )
+\CN["紫苑"]
+“我想疼爱既坚强又可爱的小弟弟
+你的内心很痛啊」
+
+: HideWnd()
+: evfile = "evh_b002_0_1_0211001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0152" )
+\CN["紫苑"]
+“哇，好烫，疯了的omiko，严酱的小气鬼来安慰我吧
+胆小鬼……”
+
+\CN["严严"]
+“嗯！妈妈的女阴，小鸡鸡，想心情舒畅……。
+想早点进入妈妈的怀抱！”
+
+严发出了兴奋的撒娇的声音。
+
+紫苑一听到那个声音就心潮澎湃，充满母性。
+
+用自己的身体使严心情舒畅
+相信这是对孩子的爱情表现。
+
+严里什么都想为他做。
+
+//●演技：２行目で挿入開始です
+: HideWnd()
+: evfile = "evh_b002_0_1_0111001_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0153" )
+\CN["紫苑"]
+“严酱，就这样……慢慢地，插在{阴道内，内}里……
+嗯……啊啊……啊……啊啊啊啊……”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0211002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——嘘、嘘、咕嘟。
+
+紫苑的阴道口柔软地伸展，严的凶恶的极粗的阴茎
+包进去。
+
+//●演技：挿入です
+: PlayVoice( "Voices/vo12_shi0154" )
+\CN["紫苑"]
+“啊……啊啊啊……啊，好大……哈，哈……呃，呃
+嗯……啊，啊啊……嗯……嗯，是啊”
+
+: PlayVoice( "Voices/vo12_shi0155" )
+\CN["紫苑"]
+“哈，嗯，嗯，嗯，粗……嗯
+因为马上插到里面……”
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi02" )
+\CN["严严"]
+“啊啊啊……妈妈的女阴，我来勒紧……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——google！努奇！奇奇！嘘！嘘！
+
+: PlayVoice( "Voices/vo12_shi0156" )
+\CN["紫苑"]
+“啊，还有一点点全部……嗯……，{插入，是}出来。
+{阴道深处，放置}严酱……」
+
+//●演技：根元まで挿入されます
+: HideWnd()
+: evfile = "evh_b002_0_2_0311002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0157" )
+\CN["紫苑"]
+“嗯……嗯……嗯…嗯，嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+紫苑冷冷清清的娇声
+把严阴茎吞没到底。
+
+\CN["严严"]
+“妈妈的女阴拥抱着小鸡鸡。”
+
+: PlayVoice( "Voices/vo12_shi0158" )
+\CN["紫苑"]
+“……嗯……因为严酱很胖……哈、哈、
+这里是面包店♥</color>」
+
+已经叼进严阴茎好几年的紫苑的女阴
+随着大小变软了。
+
+\CN["严严"]
+“褶皱……缠绕在一起……不，我……”
+
+: HideWnd()
+: evfile = "evh_b002_0_2_0411002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0159" )
+\CN["紫苑"]
+“我不会忍耐……。好像是严酱喜欢的……”
+
+: PlayVoice( "Voices/vo12_shi0160" )
+\CN["紫苑"]
+“……啊，不管是什么事情……嗯，嗯，嗯
+像往常一样，接受，所以……”
+
+\CN["严严"]
+“嗯，嗯……妈妈，我去动一下……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！慢吞吞！加油！嘘！嘘！
+
+严则忠实于想要心情变好的本能而摆动着腰。
+
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：激しくピストンされています
+: PlayVoice( "Voices/vo12_shi0161" )
+\CN["紫苑"]
+“嗯，嗯啊，啊！啊！啊啊
+嗯……啊，嗯，嗯！”
+
+\CN["严严"]
+“啊，妈妈果然是最棒的。”
+
+\CN["严严"]
+“哈、哈、哈、就算拼了命……也一点都没坏
+能让我心情舒畅”
+
+被严犯的女人大半不能安然无恙。被毁。
+
+用和中等身材的男人的手臂差不多粗的阴茎
+因为要花好几个小时才能被抽奖。
+
+: PlayVoice( "Voices/vo12_shi0162" )
+\CN["紫苑"]
+“我是妈妈。
+当然要把我爱的儿子的公鸡迎进来”
+
+: PlayVoice( "Voices/vo12_shi0163" )
+\CN["紫苑"]
+“严酱，不用客气……嗯，哈，啊啊啊啊♥</color>
+只是喜欢而已，只是期待着而已……”
+
+\CN["严严"]
+“嗯！妈妈，会更激烈的。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！慢吞吞！呼呼！嘘！
+嘘！嘘！啧啧！格格！呼呼！
+
+在铺好的被子上，巨大的岩石像要掉地板一样
+摇晃身体。
+
+: HideWnd()
+: evfile = "evh_b002_0_2_0211002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0164" )
+\CN["紫苑"]
+“对、对……没关系……啊，再戳一点
+按照自己的喜好行动……”
+
+: PlayVoice( "Voices/vo12_shi0165" )
+\CN["紫苑"]
+“唔，呃，我……因为不会坏……严酱的
+最喜欢严酱心情变好的……”
+
+\CN["严严"]
+“哈哈哈，妈妈，妈妈啊……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！努迪瓦！格格！
+嘘！嘘！嘘！咕嘟咕嘟！
+
+: PlayVoice( "Voices/vo12_shi0166" )
+\CN["紫苑"]
+“啊啊啊啊啊！严酱的小弟弟，又硬又强壮
+omiko……子宫的入口，突过来……”
+
+: PlayVoice( "Voices/vo12_shi0167" )
+\CN["紫苑"]
+“啊，啊，啊，来，好舒服……嗯，啊啊啊……
+{阴道内，内}，挖出来……来……嗯……嗯……！」
+
+很多女性无法忍受严严严的抽插而失去意识。
+
+然而，紫苑即使是只追求快感的粗暴抽奖
+感受到父子之间的联系，感到很大的幸福感和快感。
+
+\CN["严严"]
+“妈妈啊……妈妈啊……哈……好舒服啊……”
+
+: HideWnd()
+: evfile = "evh_b002_0_2_0311002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0168" )
+\CN["紫苑"]
+“哇，我也是……严酱如果心情好的话……哈
+我很开心……仅此而已…”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！慢吞吞！努布！啧啧！嘘！
+
+: PlayVoice( "Voices/vo12_shi0169" )
+\CN["紫苑"]
+“啊啊啊啊！啊！啊！好的！好的♥</color>
+严酱……我有这种感觉……啊啊啊♥</color>」
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi03" )
+岩一心一意地继续挥着腰。
+
+以削减紫苑的阴道内那样的激烈使阴茎往返。
+
+: PlayVoice( "Voices/vo12_shi0170" )
+\CN["紫苑"]
+“啊啊，严酱让我呼吸那么乱……
+你是不是迷上我的身体了♥</color>」
+
+//●演技：ラスト、軽く絶頂しています
+: PlayVoice( "Voices/vo12_shi0171" )
+\CN["紫苑"]
+“呃，想到那个的话……啊…我也是，哈哈
+我来了……嗯……啊…啊…啊啊啊啊啊啊啊啊啊！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0411002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——嘿嘿！嘿嘿！嘿嘿！
+紫苑无法忍受累积下来的快感，浑身发抖。
+
+\CN["严严"]
+“妈妈好厉害……小鸡鸡，有很多东西缠绕在一起
+紧紧地勒紧，颤抖着……”
+
+: PlayVoice( "Voices/vo12_shi0172" )
+\CN["紫苑"]
+“啊，啊，啊，不，现在不小心掉了……”
+
+紫苑在某种程度上可以自由自在地达到顶峰。
+
+妓女和妓女即使心情不好也能做出绝顶的演技的人
+虽然有很多人，但紫苑甚至可以欺骗自己。
+
+对紫苑来说，性只是工作和工作。
+但是，那是对方是客人的情况下的话。
+
+: PlayVoice( "Voices/vo12_shi0173" )
+\CN["紫苑"]
+“严酱的小气鬼，感觉太多了……我的omiko
+为了让严酱心情舒畅，擅自蠢动起来
+不是有吗♥</color>」
+
+对方严的话紫苑可以好好地进行令人心情舒畅的性生活。
+
+已经从母亲的脸变成了女人的脸。
+
+: HideWnd()
+: evfile = "evh_b002_0_2_0411002_1100000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0174" )
+\CN["紫苑"]
+“哈……哈，哈……哈……小公鸡好像很痛苦……
+膨胀、颤抖……嗯，啊啊啊啊啊啊啊啊♥</color>」
+
+\CN["严严"]
+“啊，已经拿出来了……出来了…妈妈，精液要出来了……”
+
+: PlayVoice( "Voices/vo12_shi0175" )
+\CN["紫苑"]
+“啊，{射精，だ}可以……{阴道内，内}，严酱的精神
+精子、满满的精液……{射精，だ}你这家伙”
+
+: PlayVoice( "Voices/vo12_shi0176" )
+\CN["紫苑"]
+“我的……给你…啊，嗯，啊啊，是啊，{射精，だ}”
+不用忍耐……”
+
+\CN["严严"]
+“嗯……我会……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！慢吞吞！嘘！好！嘘！
+剧毒！努哈！嘘！加油！嘘！
+
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0511002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0177" )
+\CN["紫苑"]
+“啊啊啊啊啊！啊，太激烈了，{阴道内，内}
+快要卷起来了♥</啊，是啊，omiko，坏掉了♥</color>」
+
+\CN["严严"]
+“哈哈哈…然后，出来……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——超棒的哦哦哦哦哦哦哦哦哦哦哦哦哦！！！
+
+在射精之前，严将阴茎一口气往里推。
+
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0311002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0178" )
+\CN["紫苑"]
+“哦哦哦哦哦哦……！打开！”♥</color>
+用公鸡打开子宫口，啊……嗯……
+嗯……！”
+
+: PlayVoice( "Voices/vo12_shi0179" )
+\CN["紫苑"]
+“我、{射精}没关系♥</充分的色彩……
+来……来吧……新鲜的精子，在我的子宫里♥</color>」
+
+\CN["严严"]
+“出来了……出来了……啊啊……啊啊啊啊……啊啊啊啊……啊啊啊啊……！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0411013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呼！好烫好烫好烫！咻咻！
+
+: PlayVoice( "Voices/vo12_shi0180" )
+\CN["紫苑"]
+“啊啊啊啊啊！”♥</我要来了♥</热精液
+在里面溢出来了♥</color>」
+
+: PlayBackVoice( "Voices/BGV12_shi_jigo01" )
+强行撬开的子宫口。
+精液在里面不断地被释放。
+
+//●演技：完全にスイッチ入って下品に乱れ始めます
+: PlayVoice( "Voices/vo12_shi0181" )
+\CN["紫苑"]
+“哦哦哦哦哦，啊啊啊啊……小矮子，弹得很好……
+出来，被子宫注入精液♥</color>」
+
+//●演出：射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！呼！咻咻！呜哇呜！
+
+: PlayVoice( "Voices/vo12_shi0182" )
+\CN["紫苑"]
+“嘛，又在{射精}呢♥</啊啊……也，已经不行了……
+忍耐、禁止♥</color>」
+
+紫苑的身体紧紧地绷紧。
+
+严感觉阴道内会紧紧收缩
+配合射精摆动腰。
+
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0311013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂直前です
+: PlayVoice( "Voices/vo12_shi0183" )
+\CN["紫苑"]
+“嗯，嗯，嗯，嗯，嗯，嗯……嗯，嗯
+嗯……嗯……嗯，嗯，嗯，嗯，嗯♥</color>」
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo12_shi0184" )
+\CN["紫苑"]
+“嗯，呜呜呜呜呜呜————————！！！
+啊啊啊啊啊啊啊啊啊————————！？”
+
+//●演出：絶頂
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0411013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+阿飞！阿飞！阿飞！惊悚比酷！
+嘎嘎嘎嘎地嘎嘎嘎嘎地嘎嘎嘎嘎地嘎吱嘎吱地响！！！
+
+紫苑在绝顶上狂暴地颤抖着身体。
+
+\CN["严严"]
+“妈妈，真是的呢……嗯……！”
+
+为了不让严严严的阴茎褪去那样的紫苑
+用力抱住。
+
+: PlayVoice( "Voices/vo12_shi0185" )
+\CN["紫苑"]
+“啊啊啊啊啊啊啊！啊，好恐怖……啊呜……啊啊啊啊
+啊……啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color>」
+
+: PlayVoice( "Voices/vo12_shi0186" )
+\CN["紫苑"]
+“哈，哈————————————————停不下来了……”♥</color>
+又来了，等一下……好了好了♥</color>」
+
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = false; evcos = false;
+: evfile = "evh_b002_0_2_0511013_1110020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+紫苑被严严严拥抱着，却不断重复着绝顶。
+
+\CN["严严"]
+“啊啊啊啊啊……”
+
+然后严严被压迫得几乎要压垮阴茎
+感受到巨大的快感和充足感，发出了声音。
+
+//●演技：呼吸が激しく乱れています
+: HideWnd()
+: evfile = "evh_b002_0_2_0311013_1100020_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0187" )
+\CN["紫苑"]
+“啊——啊——啊——啊哈哈♥</啊哈哈哈哈哈♥</color>」
+
+\CN["严严"]
+“妈妈……我还想……”
+
+: PlayVoice( "Voices/vo12_shi0188" )
+\CN["紫苑"]
+“对，不是那样的……严酱的小弟弟，完全没有退缩
+直到我用尽全力为止，我的omiko，我才要用……”
+
+\CN["严严"]
+“嗯！”
+
+拥有无穷无尽体力和性欲的严再次开始动起腰来。
+
+——父母和子女之间扭曲的爱情表现。
+
+对于追求无论到哪里都强烈联系的紫苑和严来说
+即使是有血缘关系的父母和子女的性行为这种异常性爱
+除了牵手、抚摸头之类的肌肤接触之外没有其他的了。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_C04_83" )
+: HideWnd()
+: FadeOut( 0.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

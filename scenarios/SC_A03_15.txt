@@ -1,0 +1,775 @@
+//========================================================
+//○怪しげなカラクリ工場１
+//========================================================
+*sc001
+//＠プレイヤーキャラ：黄菜子
+//●場所：鬼灯屯所
+//●状況：あざみ、龍、黄菜子たち諜報部隊が集まっている
+//Yoshi：右に龍、左にあざみ
+: HideWnd()
+: FadeOut( 0.0 )
+: Party("Kinako")
+: PartyType = "Party03"; Call( "Scenarios/CommonSys*PartySetting" )
+: CharaCostume( "Kinako", 5 )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: FastTravelMapOn( "Takahama" )
+: FastTravelMapOn( "TeitoHigashiKaido" )
+: LoadMap( "Map_Town02_07_Hozuki", "Azami_Room_Front", "Scenarios/SC_A03_15*sc001_1")
+
+*sc001_1
+: RpgCharaOn("Ryu")
+: RpgCharaOn("Bebi")
+: RpgCharaOn("Mobu1")
+: RpgCharaOn("Mobu2")
+: RpgCharaOn("Mobu3")
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: StopBgm( 0.0 )
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: PlayBgm("BGM/03_CM003")
+: Wait()
+: DrawChara( "Ryu", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+\CN["龙"]
+“在建在大和东街道尽头的机关宅邸里制造杀戮兵器
+听说在做……”
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0175" )
+\CN["嘲讽"]
+“将军好像很在意这件事。
+嘛，我也很在意呢……”
+
+: DrawChara( "Azami", 1, 0)
+\CN["鬼灯队士・女E"]
+“我向周围的人打听了一下，知道详情的人是
+”
+
+\CN["鬼灯队士・女B"]
+“我也试着去了一下驿站町，但是完全没有。
+大家都说害怕得不敢靠近……”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0176" )
+\CN["嘲讽"]
+“原来如此……那么，还是只能直接潜入了吧。
+但是，场所就是场所啊”
+
+: DrawChara( "Ryu",22, 0)
+\CN["龙"]
+“怎么说呢，是因为住吉家咬着一个财阀家……”
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0177" )
+\CN["嘲讽"]
+“这样的话，就不是我们家潜入能力最好的黄菜子了
+好难受啊。黄菜子，可以拜托你吗？”
+
+//Yoshi：右に黄菜子
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0132" )
+\CN["黄菜子"]
+“好的！交给我吧！”
+
+//Yoshi：センターに紅美
+: DrawChara( "Bebi", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo07_beb0047" )
+\CN["红美"]
+“奇奈子，不在家的话就交给在下吧！”
+
+: DrawChara( "Kinako", 1, 0)
+: PlayVoice( "Voices/vo02_kin0133" )
+\CN["黄菜子"]
+“嗯！红美，请多关照。”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0178" )
+\CN["嘲讽"]
+“好！那么，黄菜子潜入其他地方做备份！
+大家，拜托了！总觉得有种讨厌的预感”
+
+//●演出：リフレッシュ
+ //＠マップ解放：黄菜子、大和東街道
+//●シーンエンド
+: StopBgm( 0.5 )
+: FadeOut( 0.5 )
+: Wait()
+: FastTravelMapOn( "Sumiyoshi" )
+: SetMission( "SC_A03_15_1", "InProgress" )
+: DestinationMap("Map_Dungeon16_04_Sumiyoshi")
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○怪しげなカラクリ工場２
+//========================================================
+*sc002
+: if ( Flag ( "KarakuriEvent0" ) == true )
+	: RpgCharaTurn( "Player", "U" )
+从后门上车吧。
+
+	: LoadMap( "Map_Dungeon16_05_Sumiyoshi")
+: endif
+
+//●場所：大和東街道・住吉家のカラクリ屋敷
+//●読み：住吉家（すみよしけ）
+//Yoshi：センターに黄菜子
+: RpgCharaTurn( "Player", "U" )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0134" )
+\CN["黄菜子"]
+“这里是住吉家的栗子屋……”
+
+果然不能从正面潜入。
+
+: DrawChara( "Kinako",10, 0)
+: PlayVoice( "Voices/vo02_kin0135" )
+\CN["黄菜子"]
+“从后门偷偷地……这样的感觉吗？
+总之先去看看吧”
+
+//●演出：場面転換トランジション
+//●場所：住吉家のカラクリ屋敷・裏口
+//●演出：黄菜子　侵入してくる
+//Yoshi：センターに黄菜子
+: HideWnd()
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaMoveTo("Player", 25, 4, 6.0)
+: RpgCharaTurn( "Player", "L" )
+: Wait()
+: DrawChara( "Kinako",10, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0136" )
+\CN["黄菜子"]
+“……没有人的迹象。好像没有人。”
+
+周围好像没什么特别的……。
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0137" )
+\CN["黄菜子"]
+“那边的墙壁，好像有点奇怪……？”
+
+: PlaySe( "SE/Se_Fusuma01" )
+一调查墙壁，门就出来了。
+
+//●演出：黄菜子　壁を調べると扉が発見される
+: DrawChara( "Kinako", 7, 0)
+: PlayVoice( "Voices/vo02_kin0138" )
+\CN["黄菜子"]
+“是隐藏门吗……。
+这里面肯定有什么东西”
+
+//●シーンエンド
+: HideWnd()
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon16_05_Sumiyoshi", "", "Scenarios/SC_A03_15*sc003")
+
+//========================================================
+//○怪しげなカラクリ工場３
+//========================================================
+*sc003
+//●場所：住吉家のカラクリ屋敷
+//●ＳＥ：機械の音
+//Yoshi：センターに黄菜子
+: RpgCharaOn("Enemy")
+: FadeIn( 1.0 )
+: Wait()
+: DrawChara( "Kinako", 7, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["克里克士兵"]
+“发现并排除侵入者”
+
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0139" )
+\CN["黄菜子"]
+“这个看起来不容易通过呢……”
+
+那么，只有一件事要做。
+只能把那个计谋弄坏了。
+
+//※黄菜子　アクション演出入れる
+: HideWnd()
+: cgkeep = false;
+: Call( "Scenarios/Effect*KinakoAction01" )
+: target = "Enemy"
+: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: DrawChara( "Kinako", 3, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0140" )
+\CN["黄菜子"]
+“这样危险的东西进城的话
+会很糟糕的……”
+
+完全是黑色。
+也许就这样报告也可以……。
+
+: DrawChara( "Kinako",10, 0)
+: PlayVoice( "Voices/vo02_kin0141" )
+\CN["黄菜子"]
+“再详细调查一下吧。”
+
+现在的机关士兵有可能是诱饵。
+
+也许再好好调查一下比较好。
+
+//●シーンエンド
+: Flag( "KarakuriEvent0", true )
+: Return
+
+//========================================================
+//○怪しげなカラクリ工場４
+//========================================================
+*sc004
+//Yoshi：センターに黄菜子
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1	\
+:	"Turn", "U" )
+: Wait()
+: RpgCharaOn("Enemy1")
+: DrawChara( "Kinako",10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0142" )
+\CN["黄菜子"]
+“不好意思，我想让你通过那里。”
+
+\CN["穿着黑色长袍的人"]
+“……唔唔……这个……呃……嘿嘿…”
+
+返回的是呻吟般的东西。
+——然后。
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Kinako"; lay = 3; type = "SDR";
+: Call( "Scenarios/Common*FgEffOut")
+//※アニメーション演出
+: PlaySe( "SE/Se_AnimeL_Thunder03" )
+: PlayAnim( "Animations/AnimeL_Thunder03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+\CN["来历不明的东西"]
+“老太婆！！”
+
+: DrawChara( "Kinako",10, 0, 0, 0.0, 0.0, 3, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo02_kin0143" )
+\CN["黄菜子"]
+“……”
+
+现在的是魔术？
+但是，看不出是在咏唱。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0144" )
+\CN["黄菜子"]
+（僵尸……感觉又不一样……）
+
+我觉得这里面有非常危险的东西。
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0145" )
+\CN["黄菜子"]
+“总之，必须要想办法解决眼前的事情啊……！”
+
+*battle
+//――――――――――――――――――――――――――――
+//■戦　闘：得体の知れないモノ
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：得体の知れないモノ,1,1,
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc005" ) endif	//勝利後のラベル
+: endif
+: FadeOut( 1.0 )
+: Wait()
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cellar01", "BGM/22_BM003", 1015, -1, -1, "Scenarios/SC_A03_15*battle03_end", true)
+*battle03_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc005" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle" )
+: else
+	: FadeIn( 1.0 )
+	: Wait()
+	: Jump( "Scenarios/SC_S01_01*sc003" )	//敗北した場合
+: endif
+//========================================================
+//○怪しげなカラクリ工場５
+//========================================================
+*sc005
+//●状況：戦闘終了後
+//●演出：奥の扉が開いて黒ローブがぞろぞろ出てきて囲まれる
+: RpgCharaOn("Enemy2")
+: RpgCharaOn("Enemy3")
+: RpgCharaOn("Enemy4")
+: RpgCharaOn("Enemy5")
+: RpgCharaOn("Enemy6")
+: FadeIn( 1.0 )
+: Wait()
+: DrawChara( "Kinako",19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0146" )
+\CN["黄菜子"]
+「……！」
+
+完全被包围了。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0147" )
+\CN["黄菜子"]
+（……没有退路……怎么办……）
+
+完全被切断了退路。
+
+即使只有1只也能在非常接近的地方倒下
+这就是……。
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0148" )
+\CN["黄菜子"]
+“我不能死在这种地方！”
+
+无论多么绝望的情况也不能放弃。
+
+为鬼灯的大家带回必要的情报
+那是我应该做的事！
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//●演出：黄菜子　揚羽解放詠唱　途中で終了
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2388" )
+\CN["黄菜子"]
+“——早上的羽毛是担心自己{苍，葵}的颜色
+——暮之羽是将自身烧焦的{朱，あか}的颜色
+——晚上的羽毛是隐藏身体的‘黑暗、黑暗’的颜色”
+
+//●演出：入口側にいる黒ローブが突然倒れて消える
+//Yoshi：右にファルケ、左にゼノ
+: HideWnd()
+: StopBgm( 1.0 )
+: RpgCharaOn("Falke")
+: RpgCharaOn("Xeno")
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Falke", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Xeno", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayBgm("BGM/50_IDO04")
+: ShowWnd()
+\CN["骑士之男"]
+“真的吗，这个……。{人造魔族，伊维尔罗伊德}
+人来人往”
+
+\CN["奇诺"]
+“果然情报是正确的，费尔克先生”
+
+//●演出：ファルケとゼノが登場
+//Yoshi：センターに黄菜子
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0149" )
+\CN["黄菜子"]
+“啊……！？Zno君……！”
+
+入口是前几天在森林里救了我的男孩子和
+站着一个非常可靠的男人。
+
+//Yoshi：右にファルケ、左にゼノ
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Falke",13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Xeno", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+\CN["沥青"]
+“那么，再见。”
+
+: DrawChara( "Xeno", 6, 0)
+\CN["奇诺"]
+“费尔克先生，请让我来做这个！”
+
+: DrawChara( "Falke", 9, 0)
+\CN["沥青"]
+“啊！真少见啊，你自己主动……”
+
+: DrawChara( "Xeno", 4, 0)
+\CN["奇诺"]
+“偶尔……”
+
+\CN["沥青"]
+“是吗，那孩子，你认识吗？”？
+我叫了你的名字”
+
+: DrawChara( "Xeno", 2, 0)
+\CN["奇诺"]
+“是的。以前在精灵森林里偶然……”
+
+: DrawChara( "Falke",12, 0)
+\CN["沥青"]
+“诶，那个孩子就是那个……。
+伊莉莎一边笑着说“春天来了”
+说了，黄菜子是孩子吗？”
+
+: DrawChara( "Xeno",11, 2)
+\CN["奇诺"]
+“之前也说过了，不对！
+你看，我当上参谋后，运动不足
+所以我想先运动一下身体……”
+
+: DrawChara( "Falke", 5, 0)
+\CN["沥青"]
+“呵呵。每天都进行那么严格的训练，运动不足。”
+
+: DrawChara( "Xeno", 5, 0)
+\CN["奇诺"]
+“……费尔克先生，脸上长得很难看……。
+我会告诉史黛拉的哦？”
+
+: DrawChara( "Falke", 8, 0)
+\CN["沥青"]
+“好，对不起！只有那个……！”
+
+: DrawChara( "Xeno", 4, 0)
+\CN["奇诺"]
+“那么，要做吗？”
+
+//●演出：ゼノ　動く。アクションシーン
+: HideWnd()
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: RpgCharaBatch( "Xeno"	\
+:	"Speed", 12.0	\
+:	"MoveLeft", 1	\
+:	"MoveDown", 1	\
+:	"MoveLeft", 3 )
+: Wait()
+: RpgCharaTurn( "Xeno", "U" )
+: RpgCharaTurn( "Enemy4", "D" )
+: RpgCharaTurn( "Enemy5", "D" )
+: RpgCharaTurn( "Enemy6", "D" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a027_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["奇诺"]
+“哈！”
+
+//※●演出：斬撃エフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash02", false, 0, 0, 1, 1 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a027_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+:// EraseChara( "Xeno", 0.5 )
+//●演技：心の声です
+//Yoshi：センターに黄菜子
+//: DrawChara( "Kinako", 7, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0150" )
+\CN["黄菜子"]
+（之前也想过，但是速度和力量……）
+
+怎样锻炼才能达到这个地步呢？
+
+说起来，感觉和根本的东西不一样。
+
+//: EraseChara( "Kinako", 0.5 )
+//Yoshi：右にファルケ、左にゼノ
+: RpgCharaOff("Enemy4")
+: RpgCharaWarp( "Player", "Warp03" )
+: PlaySe("SE/Se_Swing03")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: HideWnd()
+: Call("Scenarios/Common*EvCutinFadeOut")
+: DrawChara( "Xeno", 4, 0, 0, 0.0, 0.0, 4, "L" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "DL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["奇诺"]
+“哎呀！”
+
+: DrawChara( "Falke", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+\CN["沥青"]
+“不，我来帮你吧？”
+
+: DrawChara( "Xeno", 5, 0)
+\CN["奇诺"]
+“一个人没问题！”
+
+//: DrawChara( "Xeno", 7, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a027_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: EraseChara( "Xeno", 0.0 )
+: EraseChara( "Falke", 0.0 )
+: ShowWnd()
+\CN["奇诺"]
+“啊啊啊啊！”
+
+//※●演出：斬撃エフェクト
+: HideWnd()
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash02", false, 0, 0, 1, 1 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a027_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//: DrawChara( "Falke",12, 0)
+\CN["沥青"]
+“喂，我很有干劲。”
+
+//: EraseChara( "Falke", 0.5 )
+//Yoshi：右に黄菜子
+//: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 3, "R" )
+: PlayVoice( "Voices/vo02_kin0151" )
+\CN["黄菜子"]
+“哇，我也一起……！”
+
+//Yoshi：左にファルケ
+: HideWnd()
+: RpgCharaWarp( "Enemy5", "Warp01" )
+: RpgCharaWarp( "Enemy6", "Warp02" )
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "R" )
+: DrawChara( "Falke", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: ShowWnd()
+\CN["沥青"]
+“等一下。”
+
+//●演出：ファルケ　黄菜子の近くへ
+: DrawChara( "Falke", 4, 0)
+\CN["沥青"]
+“这里能让他一个人做吗？”
+
+: DrawChara( "Kinako",12, 0)
+: PlayVoice( "Voices/vo02_kin0152" )
+\CN["黄菜子"]
+“但是……”
+
+: DrawChara( "Falke",12, 0)
+\CN["沥青"]
+“别担心。这帮黑色的家伙，{人造魔族，伊维尔罗伊德}。”
+我是这么说的。那样的数量，Zno的话一个人想办法
+应该能做到的”
+
+: DrawChara( "Kinako", 3, 0)
+: PlayVoice( "Voices/vo02_kin0153" )
+\CN["黄菜子"]
+“哈，是的……”
+
+虽然Zno君也是这样，但是这个男人的存在感很强。
+
+只是站着，好像压倒了周围的一切
+我觉得。
+
+: DrawChara( "Xeno", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["奇诺"]
+“费尔克，请不要对黄菜子说多余的话。”
+
+//●演出：ゼノ　再び戦いの場所へ
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a027_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: EraseChara( "Xeno", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Falke", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0154" )
+\CN["黄菜子"]
+“明明动了那么多，却连一点气都没有……”
+
+//●演技：心の声です
+//: DrawChara( "Falke", 2, 0)
+\CN["沥青"]
+（诶。这孩子能清楚地看到Zno的动作。
+嘛，虽然不是在意的地方……）
+
+//: EraseChara( "Kinako", 0.5 )
+//: EraseChara( "Falke", 0.5 )
+//Yoshi：センターにゼノ
+//: DrawChara( "Xeno", 7, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["奇诺"]
+“啊啊啊啊啊啊啊！”
+
+//※演出：斬撃エフェクト
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash02", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: evbg = true; evcos = false;
+: evfile = "evx_a027_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+然后Zno君一个接一个地说{人造魔族，伊维尔罗伊德}
+把别人说的话打倒——
+
+: HideWnd()
+: StopBgm( 1.0 )
+: RpgCharaWarp( "Player", "Warp05" )
+: RpgCharaWarp( "Xeno", "Warp04" )
+: RpgCharaWarp( "Falke", "Warp06" )
+: RpgCharaOff("Enemy1")
+: RpgCharaOff("Enemy2")
+: RpgCharaOff("Enemy3")
+: RpgCharaOff("Enemy4")
+: RpgCharaOff("Enemy5")
+: RpgCharaOff("Enemy6")
+: Call("Scenarios/Common*EvFadeOut")
+: PlayBgm("BGM/03_CM003")
+: DrawChara( "Xeno", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: ShowWnd()
+\CN["奇诺"]
+“……呼。结束了。”
+
+//●演出：ゼノがイービルロイド全員を滅ぼしている
+//Yoshi：右に黄菜子、左にファルケ
+: DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: DrawChara( "Falke", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: PlayVoice( "Voices/vo02_kin0155" )
+\CN["黄菜子"]
+“哇，好厉害……Zno君……”
+
+\CN["奇诺"]
+“这点事没什么。因为是很普通的事……”
+
+: DrawChara( "Falke", 5, 0)
+\CN["沥青"]
+“嗯。因为总是那么讨厌出汗之类的。”
+明明说过啊」
+
+: layer = 5; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Xeno", 6, 1)
+\CN["奇诺"]
+“法……，费尔克先生！”
+
+: DrawChara( "Falke",12, 0)
+\CN["沥青"]
+「就算这样，Zno也要做啊。
+你也不能放在角落里啊。这个……”
+
+: JumpLayer( 5, 0, -50, 1, 0.25)
+: DrawChara( "Xeno", 4, 1)
+\CN["奇诺"]
+“所以，所以……那个，我没什么……。
+这种说法对黄菜子很失礼”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Kinako", 6, 1)
+: PlayVoice( "Voices/vo02_kin0156" )
+\CN["黄菜子"]
+“呃……Zno君，我没什么……”
+
+: DrawChara( "Falke",11, 0)
+\CN["沥青"]
+“嗯。不，年轻啊。真青春啊。”
+
+: DrawChara( "Kinako", 0, 0)
+: DrawChara( "Falke", 0, 0)
+\CN["沥青"]
+“那我就把这里全部看完
+那孩子——嗯，是黄菜子吗？
+发给我。是鬼灯队的队员吧？”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0157" )
+\CN["黄菜子"]
+“哈，是！但是，我也在这里调查……”
+
+: DrawChara( "Xeno", 2, 0)
+\CN["奇诺"]
+“黄菜子，这里的调查决定由维克托尔全部进行
+是啊。鬼灯局长高千穗先生也得到了许可”
+
+: DrawChara( "Kinako", 7, 0)
+: PlayVoice( "Voices/vo02_kin0158" )
+\CN["黄菜子"]
+“向局长……？啊…”
+
+确认了设备后，局长发来了信息。
+
+“维克托尔骑士团朝这边走了
+合流后要服从指示”。
+
+: DrawChara( "Xeno", 3, 0)
+\CN["奇诺"]
+“黄菜子，我送你去帝都。”
+
+: DrawChara( "Kinako", 0, 1)
+: PlayVoice( "Voices/vo02_kin0159" )
+\CN["黄菜子"]
+“嗯，嗯……谢谢你……”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+结果，在这里的机关公馆里发现了{人造魔族，伊维尔罗伊德}
+我只知道是做的。
+
+这件事归维克托尔管辖
+我们不能再进去了。
+
+但是，交给费尔克他们的话绝对没问题。
+只有那个可以断言是不可思议的。
+
+……………………………………………………。
+
+//●キャラ選択画面
+//●選択キャラが残っていない場合
+//●分岐：任務失敗数が３未満の場合
+//●シーン：「残酷な大老を警護せよ１」へ
+//＠シナリオジャンプ：SC_A03_16
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーン：「夜道で浪人たちに襲われて……」へ
+//＠シナリオジャンプ：SC_A03_19
+//●分岐終了
+: $money += 3500
+: SetMission( "SC_A03_15_1", "Successed" )
+: CharaCostume( "Kinako", 0 )
+: Jump( "Scenarios/CommonSys*Chapter_judge03_3" )

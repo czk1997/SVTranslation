@@ -1,0 +1,736 @@
+//========================================================
+//○縁切り～無黒編～１
+//========================================================
+//パーティーを無黒単独にする
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: FastTravelMapOn( "TakaoYama" )
+: SetMission( "SC_D05_20_1", "InProgress" )
+: DestinationMap( "Map_Dungeon20_03_Takaoyama" )
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Dungeon20_01_Takaoyama", "", "Scenarios/SC_D05_20*sc001")
+
+*sc001
+//●場所：鷹尾山・入口
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4571" )
+\CN["无黑色"]
+“这里有姐姐……”
+
+我被希拉加拜托的是九星
+神八代冥的始末。
+
+: DrawChara( "Mukuro", 40, 0)
+: PlayVoice( "Voices/vo00_muk4572" )
+\CN["无黑色"]
+“没想到姐姐是属于白夜的，而且还是干部。
+……一想，脑袋就要裂开了”
+
+不知是什么意思。
+
+白夜夺走了我们的故乡——重要的东西。
+
+那个充满正义感的姐姐给了这样的组织
+怎么也不相信。
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk4573" )
+\CN["无黑色"]
+“……别多想了。
+我只是完成被拜托的事情而已”
+
+如果不那样果断的话，自己就无法保证。
+
+//＠マップ解放：北霊山（無黒）
+//●シーンエンド
+事件信息更新了。
+
+: Return
+
+//========================================================
+//○縁切り～無黒編～２
+//========================================================
+*sc002
+//●場所：鷹尾山・山頂
+//●状況：山頂に冥がいる
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Summit01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mei", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+	: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo09_mei0778" )
+	\CN["冥"]
+“你是无黑的吗……？气氛真是大变啊。”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mei", 14, 0, 0, 0.5, 0.0, 2, "LC" )
+	: DrawChara( "Mukuro", 23, 0, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo09_mei0779" )
+	\CN["冥"]
+“你……难道是无黑吗？
+好像杀了很多人啊」
+
+//●分岐終了
+: endif
+//●分岐：［服装］全裸の場合
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: DrawChara( "Mei", 20, 0, 0 )
+	: DrawChara( "Mukuro", 23, 0, 0 )
+	: PlayVoice( "Voices/vo09_mei0780" )
+	\CN["冥"]
+“而且，竟然赤身裸体地爬山。
+看起来，也不是被谁抢走了衣服
+是不是变成了严重的变态？”
+
+姐姐用一双看脏东西的眼睛看。
+
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 38, 0)
+: PlayVoice( "Voices/vo00_muk4574" )
+\CN["无黑色"]
+“……没想到姐姐会在白夜{与，组}”
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0781" )
+\CN["冥"]
+“我没有打算{与，组}。
+只是有想弄清楚的事情而已”
+
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0782" )
+\CN["冥"]
+“我听说你是在风传中穿过鬼灯
+没想到他会堕落到这种地步”
+
+: DrawChara( "Mukuro", 41, 0)
+: PlayVoice( "Voices/vo00_muk4575" )
+\CN["无黑色"]
+“没落了吗……不能否定。”
+
+: DrawChara( "Mukuro", 28, 0)
+现在的我只是淡淡地处理眼前的事情——
+因为他们过着没有梦想没有目标的、刹那间的生活。
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0783" )
+\CN["冥"]
+“我不知道你来这里干什么……”
+
+//●演出：冥　刀を抜く
+: DrawChara( "Mei", 5, 0, 1 )
+姐姐拔刀。
+
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk4576" )
+\CN["无黑色"]
+“如果可以的话，我不想和姐姐互相残杀。”
+
+//●演出：無黒　刀を抜く
+: DrawChara( "Mukuro", 23, 0, 5 )
+为了应对我也拔刀。
+
+: DrawChara( "Mei", 4, 0)
+: PlayVoice( "Voices/vo09_mei0784" )
+\CN["冥"]
+“啊，那是我也是。想和亲妹妹厮杀的姐姐什么的。”
+因为不可能在啊」
+
+//●演技：冥の一人称『お前』→『貴様』無黒を敵とみなします
+: DrawChara( "Mei", 5, 0)
+: PlayVoice( "Voices/vo09_mei0785" )
+\CN["冥"]
+「但是，现在的你如果就这样放任不管的话，会有更多的人
+会杀了吧。那么，干脆用我的手杀了你”
+
+: DrawChara( "Mei", 3, 0)
+: PlayVoice( "Voices/vo09_mei0786" )
+\CN["冥"]
+“那是作为姐姐的责任。”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：神八代冥
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：神八代冥,2,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Summit01_01", "BGM/22_BM003", 1054, -1, -1, "Scenarios/SC_D05_20*battle01_end" , true )
+
+*battle01_end
+: if ( $battleWin == true )
+	: StopBgm( 0.0 )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○縁切り～無黒編～３
+//========================================================
+*sc003
+//●状況：戦闘勝利後
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Summit01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/42_CM019")
+: DrawChara( "Mei", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0787" )
+\CN["冥"]
+“我以为你的技术很迟钝，结果正好相反。”
+
+: DrawChara( "Mukuro", 26, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4577" )
+\CN["无黑色"]
+“姐姐是不是太迟钝了？
+以前应该是压倒我的”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0788" )
+\CN["冥"]
+“正因为如此，你的剑才追上我。
+是为了让自己活下去而拼命的剑吗……”
+
+: DrawChara( "Mukuro", 23, 0)
+姐姐非常坚强。
+稍一疏忽就会丧命。
+
+面对毫无泄气的杀戮
+体力和精神力都消耗了很多。
+
+与之相比——
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4578" )
+\CN["无黑色"]
+（姐姐的那份从容，难道还没有全力以赴吗？）
+
+: DrawChara( "Mei", 7, 0)
+: PlayVoice( "Voices/vo09_mei0789" )
+\CN["冥"]
+“不能在这里被杀。
+我还有没做完的事啊」
+
+: DrawChara( "Mukuro", 30, 0)
+: PlayVoice( "Voices/vo00_muk4579" )
+\CN["无黑色"]
+「……！」
+
+脊梁发冷。
+
+从来没有感受过的感觉——
+一味地煮着恐怖的感觉支配着我。
+
+//●演出：冥　ダークエルフ化
+//冥cos2へ変更
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*MeiDE" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+//: DrawChara( "Mukuro", 40, 0)
+: DrawFaceThumbnail( "Mukuro", 40, 0, 0 )
+: PlayVoice( "Voices/vo00_muk4580" )
+\CN["无黑色"]
+“姐姐……那个样子……”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0790" )
+\CN["冥"]
+“是黑夜叉，暗黑妖精。
+你大概也听说过他的名字吧？”
+
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: PlayVoice( "Voices/vo00_muk4581" )
+\CN["无黑色"]
+“难道不是出现在童话故事里的虚构的存在吗？”
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0791" )
+\CN["冥"]
+“如果只是那样想的话，那就好。
+但是，既然我做到了，你的死是绝对的”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 40, 0)
+: PlayVoice( "Voices/vo00_muk4582" )
+\CN["无黑色"]
+（{黑夜叉，暗黑妖精}之类的，虚构的存在——
+但是，眼前出现的却是非常奇怪的怪物，这是事实）
+
+只是面对面就{解，か}了。
+
+——手脚颤抖。
+腰好像要松了，被盯上的话就要漏出来了。
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0792" )
+\CN["冥"]
+“我走了——”
+
+//●演出：冥　アクション演出
+//●演出：斬撃エフェクト
+//●ＳＥ：カキン！　金属音
+: HideWnd()
+: EraseChara( "Mei", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: cgkeep = false;
+: Call( "Scenarios/Effect*MeiAction01" )
+: Wait()
+: DrawChara( "Mukuro", 31, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4583" )
+\CN["无黑色"]
+“哇……！”
+
+即使在最后关头阻止姐姐的剑戟
+完全输了力气，被踢飞了。
+
+: ChaOut = "Mukuro"; ChaIn = "Mei"; Face = 3; Hoho = 0; Pose = 0; Lay = 3; Pos = "C";
+: Call( "Scenarios/Common*FgChange" )
+: PlayVoice( "Voices/vo09_mei0793" )
+\CN["冥"]
+「呼。接住我的一击，居然连刀都不掉。
+你的刀，好像是相当有名的刀啊」
+
+: ChaOut = "Mei"; ChaIn = "Mukuro"; Face = 30; Hoho = 0; Pose = 2; Lay = 3; Pos = "C";
+: Call( "Scenarios/Common*FgChange" )
+: PlayVoice( "Voices/vo00_muk4584" )
+\CN["无黑色"]
+“哈，哈，只是在仓库捡的刀啊。”
+
+: ChaOut = "Mukuro"; ChaIn = "Mei"; Face = 18; Hoho = 0; Pose = 0; Lay = 3; Pos = "C";
+: Call( "Scenarios/Common*FgChange" )
+: PlayVoice( "Voices/vo09_mei0794" )
+\CN["冥"]
+“现在，你知道力量的差距了吧？
+无黑，你没有下次”
+
+姐姐再次振作起来。
+
+刚才的手下留情。
+如果有比那个更快的一击，我一定会被杀的。
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Mukuro", 37, 0, 0 )
+: PlayVoice( "Voices/vo00_muk4585" )
+\CN["无黑色"]
+（这种感觉，让身体感受到绝对的死亡
+应该收起来了吧）
+
+心脏扑通扑通地剧烈跳动。
+像是拼命呼喊着还想活着一样——
+
+: DrawChara( "Mei", 5, 0, 0)
+: PlayVoice( "Voices/vo09_mei0795" )
+\CN["冥"]
+“告别了。”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Mei"; lay = 3; type = "DL"; Call( "Scenarios/Common*FgEffOut");
+姐姐跑出来。
+
+//●読み：陽隠一刀流・肆の太刀（ひがくれいっとうりゅう・よんのたち）
+: HideWnd()
+: evcha = "Mei"; evbg = true; evcos = true;
+: evfile = "eve_a001_1_1_0200000_1000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0796" )
+\CN["冥"]
+“——阳隐一刀流·肆之太刀”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4586" )
+\CN["无黑色"]
+（这就是死亡的瞬间吗？）
+
+姐姐的样子看起来特别缓慢。
+动作的一个一个都清楚了。
+
+尽管如此，我的身体却不动。
+完全没有反应。
+
+——想要接受“死亡”。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4587" )
+\CN["无黑色"]
+（没有特别想做的事情，也没有特别想做的目标。
+只是，我只是活着而已。）
+
+但是————
+
+: PlayVoice( "Voices/vo09_mei0797" )
+\CN["冥"]
+“{天满月，附著甜蜜}！”
+
+姐姐的剑闪逼近了。
+
+//●演出：無黒　ダークエルフ化演出
+: HideWnd()
+: StopBgm( 0.25 )
+: cgkeep = false;
+//●演出：斬撃エフェクト
+//●ＳＥ：カキン！　金属音
+: Call( "Scenarios/Effect*MukuroDE" )
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: DrawChara( "Mei", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0798" )
+\CN["冥"]
+“到了最后关头了吗……和我那时一样。
+不愧是我妹妹”
+
+//無黒cos2へ変更
+: PlayBgm("BGM/01_CM001")
+: DrawChara( "Mukuro", 34, 0, 2)
+: PlayVoice( "Voices/vo00_muk4588" )
+\CN["无黑色"]
+“达到了……？”
+
+轻轻地看了看手掌
+映入眼帘的是从未见过的手掌。
+
+: DrawChara( "Mukuro", 38, 0)
+: PlayVoice( "Voices/vo00_muk4589" )
+\CN["无黑色"]
+“虽然不太清楚，但是变成了{黑夜叉，暗黑妖精}
+是吗？确实涌现出了强大的力量……”
+
+但是，那样的事，怎样都好。
+如果这样就可以和姐姐势均力敌的话，这样就可以了。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+*battle02
+//――――――――――――――――――――――――――――
+//■戦　闘：神八代冥（ダークエルフ）
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：神八代冥（ダークエルフ）,2,2,2
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc004" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Summit01_01", "BGM/22_BM003", 1089, -1, -1, "Scenarios/SC_D05_20*battle02_end" , true )
+
+*battle02_end
+: if ( $battleWin == true )
+	: StopBgm( 0.0 )
+	: Jump( "*sc004" )	//勝利した場合
+: elif ( $battleEscape == true )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+这场战斗，不能逃走！
+
+	: Jump( "*battle02" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle02" )
+	: else
+		: CharaCostume( "Mukuro", 0 )
+		: CharaCostume( "Mei", 0 )
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+*sc004
+//●状況：戦闘勝利後
+//●演出：冥　ダークエルフ化が切れる
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Summit01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/01_CM001")
+: CharaCostume( "Mei", 0 )
+: DrawChara( "Mei", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0799" )
+\CN["冥"]
+“哈，哈，好像是我输了……”
+
+//●ＳＥ：倒れる音
+: PlaySe( "SE/Se_Down01" )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+姐姐回到原来的样子，扑通一声倒在了地上。
+
+: DrawFaceThumbnail( "Mei", 7, 1, 0 )
+: PlayVoice( "Voices/vo09_mei0800" )
+\CN["冥"]
+“随你的便……”
+
+然后，也没有乞命，躺在地上成了一个大字
+显示出不设防的姿态。
+
+: DrawChara( "Mukuro", 38, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk4590" )
+\CN["无黑色"]
+“……姐姐”
+
+{黑夜叉，暗黑精灵}的力量总之消耗很大。
+虽然总算赢了，但这样站着还是很勉强。
+
+*battle02_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,battle02_select
+//■選択肢１：姉さんを殺すなんてできない
+//■選択肢２：殺す
+//――――――――――――――――――――――――――――
+\CI["杀不了姐姐"]
+\CI["杀了你！！"]
+——那么，怎么办呢？
+
+: if ($choice == 1) Jump( "*battle02_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：姉さんを殺すなんてできないを選んだ場合
+//-------------------------------------------------------
+*battle02_select_s1
+
+//●演技：気絶しています
+: PlayVoice( "Voices/vo09_mei0801" )
+\CN["冥"]
+「…………」
+
+姐姐就这样用尽力气昏过去了。
+
+: DrawChara( "Mukuro", 2, 0, 0)
+: PlayVoice( "Voices/vo00_muk4591" )
+\CN["无黑色"]
+“怎么可能杀……”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后联系比拉加。
+
+过了一会儿，比拉加来了，带着晕倒的姐姐
+不知道去了哪里。
+
+……………………………………………………。
+
+//無黒cos0へ戻し
+//＠フラグ：冥生存,1
+//＠服装：無黒・着衣
+//＠システム：無黒・ダークエルフ化が可能になる
+//●分岐：桃と黄菜子のイベントが終了している場合
+//●シーン：「色町の最凶母子を始末せよ！１」へ
+//＠シナリオジャンプ：SC_D05_23
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●キャラクター選択肢へ
+//●分岐終了
+: Flag( "Mei_Live", true )
+: CharaCostume( "Mukuro", 0 )
+: Jump( "*End" )
+//-------------------------------------------------------
+//●選択肢２：殺すを選んだ場合
+//-------------------------------------------------------
+*battle02_select_s2
+: DrawChara( "Mukuro", 40, 1)
+: PlayVoice( "Voices/vo00_muk4592" )
+\CN["无黑色"]
+“姐姐，再见……”
+
+//＠殺害,1
+//●演出：斬殺エフェクト
+//●ＳＥ：刺す音
+: HideWnd()
+: value = 1; Call("Scenarios/CommonSys*Murder")
+: EraseChara( "Mukuro", 0.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+一戳心脏，姐姐就发出了小小的呻吟声
+那之后就再也不动了。
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 37, 1, 2, 0.5, 0.0, 3, "C" )
+	: PlayVoice( "Voices/vo00_muk4593" )
+	\CN["无黑色"]
+“……不要比想象中来得多。”
+
+杀人不是第一次。
+
+	: DrawChara( "Mukuro", 33, 1)
+	: PlayVoice( "Voices/vo00_muk4594" )
+	\CN["无黑色"]
+“对不起……姐姐……真的很抱歉……”
+
+之后和姐姐的回忆又复活了
+席地而泣。
+
+	: DrawChara( "Mukuro", 32, 1)
+只是为了“活着”而杀了亲生姐姐。
+那个重量比想象中重得多
+压了半天。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 26, 1, 2, 0.5, 0.0, 3, "C" )
+	: PlayVoice( "Voices/vo00_muk4595" )
+	\CN["无黑色"]
+“意外地什么都没想呢……。
+我还以为会有更多的感受”
+
+	: DrawChara( "Mukuro", 24, 0)
+明明亲手杀死了姐姐，却什么也不想。
+和杀了那一带的大叔没什么区别。
+
+	: DrawChara( "Mukuro", 25, 0)
+	: PlayVoice( "Voices/vo00_muk4596" )
+	\CN["无黑色"]
+“去吗……”
+
+//●分岐終了
+: endif
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+不能就这样放置尸体
+在山顶风景好的地方挖个坑填上
+给他立了个小墓碑。
+
+……………………………………………………。
+
+//無黒cos0へ戻し
+: CharaCostume( "Mukuro", 0 )
+//＠服装：無黒・着衣
+//●分岐：桃と黄菜子のイベントが終了している場合
+//●シーン：「色町の最凶母子を始末せよ！１」へ
+//＠シナリオジャンプ：SC_D05_23
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●キャラクター選択肢へ
+//●分岐終了
+*End
+//※無黒のダークエルフ化解放
+: $money += 7500
+我得到了报酬。
+
+: FastTravelMapOff( "TakaoYama" )
+: SetMission( "SC_D05_20_1", "Successed" )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 1 )
+	\CI["因缘~公主椿桃篇~开始"]
+	\CI["因缘～有栖川黄菜子篇～开始"]
+开始哪个故事？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_21" )
+	: else
+		: Jump( "Scenarios/SC_D05_22" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 2 )
+	\CI["因缘~神八代无黑篇开始~"]
+	\CI["因缘～有栖川黄菜子篇～开始"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_20" )
+	: else
+		: Jump( "Scenarios/SC_D05_22" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 3 )
+	\CI["因缘~神八代无黑篇开始~"]
+	\CI["因缘~公主椿桃篇~开始"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_20" )
+	: else
+		: Jump( "Scenarios/SC_D05_21" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 4 )
+	: Jump( "Scenarios/SC_D05_22" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 5 )
+	: Jump( "Scenarios/SC_D05_21" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 6 )
+	: Jump( "Scenarios/SC_D05_20" )
+: else
+	: FadeOut( 0.0 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_23")
+: endif
+: Return

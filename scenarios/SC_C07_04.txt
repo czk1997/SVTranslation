@@ -1,0 +1,273 @@
+//========================================================
+//○傾国の魔女
+//========================================================
+//●状況：玉藻戦　敗北後
+//Yoshi：背景、山の頂上・曇り
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Summit01_05", 1.0 )
+: Wait()
+: PlayBgm("BGM/48_Goodnight")
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Azami", 0 )
+: CharaCostume( "Mei", 0 )
+: ShowWnd()
+到此为止吗……。
+力量用尽，{黑夜叉，暗黑精灵}的身姿
+变得不在了。
+
+: DrawChara( "Mei", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0774" )
+\CN["冥"]
+“呃……到此为止了吗……”
+
+: DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo00_muk3492" )
+\CN["无黑色"]
+“……没力气……在这种地方……”
+
+无计可施。
+我已经不知道该做什么了。
+
+: DrawChara( "Azami", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo05_aza0772" )
+\CN["嘲讽"]
+“不愧是留有记录的……。
+魔力还在膨胀……真是个荒唐的家伙啊”
+
+局长信口开河。
+
+大家都跪着。
+
+虽然没有放弃得到的东西
+没有一个人能站起来。
+
+//●演出：場面転換トランジション
+//●演技：戦闘を繰り返して息があがっている状態です
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Mei", 0.0 )
+: EraseChara( "Azami", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Midori", 3, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0489" )
+\CN["绿色"]
+“哈，哈……那只白色的狐狸，真是太糟糕了。
+我想{杀，や}合在一起啊」
+
+: DrawChara( "Mikage", 6, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo11_mik0267" )
+\CN["御影"]
+“现在不是说悠闲话的时候。
+身体从内心冷却般的魔力——心潮澎湃”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["严严"]
+“呜呜呜……”
+
+: DrawChara( "Shion", 3, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo12_shi0301" )
+\CN["紫苑"]
+“严酱很害怕……？
+这不寻常的魔力，难道是——”
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Iwao", 0.0 )
+: EraseChara( "Shion", 0.0)
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["雷欧"]
+“喂喂，那家伙，zete，糟了！
+我必须去救无黑……！”
+
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo02_kin0613" )
+\CN["黄菜子"]
+“无黑先生，局长……”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["银子"]
+“爸爸，真的……”
+
+: DrawChara( "Momo", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom1149" )
+\CN["桃子"]
+“……老师”
+
+这里的任何人都可以说是九尾狐狸的无限
+感受着魔力——
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Gin", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Forest01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Hiraga", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["平底片"]
+“看来玉藻大人无法抑制‘阿波罗之箭’的力量
+”
+
+//保険かけておく
+: if ( CharaCostume( "Aguri" ) == 2 )
+	: DrawChara( "Aguri", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: else
+	: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: endif
+: PlayVoice( "Voices/vo16_agu0261" )
+\CN["亚久里"]
+“也就是说‘阿波罗之箭’会发动
+是吗？”
+
+\CN["平底片"]
+“嗯。那个样子的话，什么时候发动都可以。”
+不觉得奇怪吗……”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“亚久里先生，已经，{大和，这里}不行了吧。”
+
+希拉加考虑了阿波罗之箭发动的可能性。
+
+然后，有事的时候，只有自己和亚久里才能从大和身上逃脱出来
+正在进行准备。
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“去吧。”
+
+: PlayVoice( "Voices/vo16_agu0262" )
+\CN["亚久里"]
+“知道了。”
+
+//●演出：ヒラガと亜久里　テレポートで退場する
+//●演出：場面転換トランジション
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Heal01" )
+: PlayAnim( "Animations/AnimeL_Heal01", false, 0, 0, 6, 6 )
+: Wait()
+: FadeOutLayer( 2, 0.25, 0.0, "BGImage/Transition01", 1.0)
+: FadeOutLayer( 3, 0.25, 0.0, "BGImage/Transition01", 1.0)
+: Wait()
+: EraseChara( "Hiraga", 0.0 )
+: EraseChara( "Aguri", 0.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Summit01_05", 1.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+//●分岐：フラグ［蘭丸と結ばれる］が１の場合
+: if ( Flag ( "Love_Mei" ) == true )
+	: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 3, "RC" )
+	: DrawChara( "Mei", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+	: ShowWnd()
+	: PlayVoice( "Voices/vo09_mei0775" )
+	\CN["冥"]
+“无黑，不要露出那种表情。”
+
+姐姐用刀代替拐杖站了起来。
+
+	: DrawChara( "Mukuro", 9, 0)
+	: PlayVoice( "Voices/vo00_muk3493" )
+	\CN["无黑色"]
+“姐姐，为什么……？”
+
+	: DrawChara( "Mei", 19, 0)
+	: PlayVoice( "Voices/vo09_mei0776" )
+	\CN["冥"]
+“因为还有没做完的事情。
+无法轻易放弃……”
+
+	: DrawChara( "Mukuro", 34, 0)
+	: PlayVoice( "Voices/vo00_muk3494" )
+	\CN["无黑色"]
+“没做完的事？”
+
+	: DrawChara( "Mei", 7, 1)
+	: PlayVoice( "Voices/vo09_mei0777" )
+	\CN["冥"]
+“啊。嘛，还有各种各样的呢……”
+
+不知为什么脸红了。
+
+	: EraseChara( "Mukuro", 0.5 )
+	: EraseChara( "Mei", 0.5 )
+//●分岐終了
+: endif
+//: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo05_aza0773" )
+\CN["嘲讽"]
+“……对不起，玉藻。我没能救你……”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3495" )
+\CN["无黑色"]
+「…………」
+
+局长的眼里含着淡淡的泪水——
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_Monster01" )
+\CN["九尾之狐"]
+“啊啊啊啊啊啊啊啊啊啊啊！”
+
+九尾的狐狸发出巨大的咆哮——
+
+//●演出：爆発演出　派手なのがあれば
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_AnimeXL_Explode01" )
+: PlayAnim( "Animations/AnimeXL_Explode01", false, 0, 0, 6, 6 )
+: DrawImage( 9, 0, "BGImage/BG_Red", 0.0, 0.25 )
+: Wait()
+//: PlayBackVoice( "Voices/BGV00_muk_jigo01", 0.25 )
+: trackIndex = PlaySe( "SE/Se_FireLoop", true, 0.25 );
+: PlayAnim( "Animations/Anime_LoopFire", true, 0, 0, 1, 1 )
+: ShowWnd()
+这天，大和这个岛国消失了。
+
+就像从一开始就不存在一样
+什么都没留下，从这个世界上消失了。
+
+: HideWnd()
+: StopBackVoice()
+: StopAnim()
+: StopSe( trackIndex );
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●エンディング：バッドエンド２
+//＠タイトルへ戻る
+: FadeOut( 1.0 )
+: Wait()
+: if ( $inExtra == true ) Return endif
+: SharedFlag( "GameClear", true )
+: AfterStoryFlagUp( "Ending09" )
+: Call( "Scenarios/CommonSys*HanimeRefAllOpen")
+: LoadScene( "Title" )

@@ -1,0 +1,609 @@
+//========================================================
+//○高千穂あざみ
+//========================================================
+//●状況：あざみの過去（２２年前）
+//●視点：あざみ視点
+//●背景：黒画面
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ShowWnd()
+鬼灯局长・高千穗在嘲讽的同时
+般若九星。
+
+我，高千穗痣能熟练使用两个面具
+我活到现在。
+
+……………………………………………………。
+
+//●場所：どこかの街道・過去
+: PlayBgm("BGM/41_Sad")
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Kaido02_04", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+大概是20年前左右吧。
+
+当时的我并不是特别隶属于某个地方
+我从一个爱管闲事的人那里得到了工作，每天都过得很辛苦。
+
+//●演技：あざみ１４才です
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo05_aza0393" )
+\CN["嘲讽"]
+“哈~……”
+
+我所承担的工作是保护某人或杀死某人
+说的类型很多。
+
+因为要赚钱，所以请让我做吧，卖女不是更能赚钱吗
+当然会这么说，但我也没有去插手这件事。
+
+//●演出：暗転
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+过着完全看不见未来的日子的我。
+
+那样的我迎来了转机
+那是我承包某个暗杀工作的时候。
+
+//●背景：どこかの宿場町
+//Yoshi：背景、夜
+: StopBgm( 1.0 )
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_SyukubaVillage01_03", 1.0 )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0394" )
+: AutoFaceThumbnail( false )
+\CN["嘲讽"]
+“委托人不明，报酬乱七八糟的，没有破格的暗杀工作……”
+
+这种委托对象多为国家。
+
+: PlayVoice( "Voices/vo05_aza0395" )
+: AutoFaceThumbnail( false )
+\CN["嘲讽"]
+“暗杀对象是相当有权力者……财阀关系吗？
+还是反幕派组织是对手？”
+
+: PlayVoice( "Voices/vo05_aza0396" )
+\CN["嘲讽"]
+“不管怎么说，千万不要大意啊。”
+
+不管怎么说，失败是直接关系到死亡的。
+
+然后，我去了入口店指定的地方。
+
+//●演技：悪臭に口を押さえます
+: PlayVoice( "Voices/vo05_aza0397" )
+\CN["嘲讽"]
+“……呃……太过分了，是血的味道啊。”
+
+血的味道几乎要疯了。
+
+到处都是尸体。
+看来，接受这份工作的不只是我一个人。
+
+: PlayVoice( "Voices/vo05_aza0398" )
+\CN["嘲讽"]
+「……！」
+
+突然，全身像从来没有感觉过的寒冷的东西在奔跑。
+
+——糟糕。遇害。
+
+我马上就被这样直觉了。
+
+//＠達磨：仮面
+: PlayBgm("BGM/14_CM014")
+: CharaCostume( "Daruma", 2 )
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["达磨"]
+“又是杀手吗……”
+
+在我面前现身的假面男。
+
+那是当时开始兴起的反幕派白夜的头目
+达磨就是那个人。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0399" )
+\CN["嘲讽"]
+（光是见面就手脚发抖……。
+我不知道这样的流氓竟然在大和。）
+
+如果从远处看这家伙的话
+我一定是一溜烟地逃走了吧。
+
+而且就算支付违约金也一定会拒绝委托。
+
+只靠政策和自尊是活不下去的。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0400" )
+\CN["嘲讽"]
+（那么，没有必要考虑怎么办吗？）
+
+我无论如何都想活下去离开这个地方。
+
+那怎么办呢？
+
+不管眼前的这家伙有多强，都要杀掉——
+这是唯一的手段。
+
+//: PlayVoice( "Voices/vo05_aza0401" )
+//\CN["あざみ"]
+//「ハアアアアァァァァッ！！」
+//●演出：斬撃　エフェクト
+: EraseChara( "Daruma", 0.5 )
+: PlayVoice( "Voices/vo05_aza0402" )
+\CN["嘲讽"]
+“啊啊啊啊啊啊啊啊啊！”
+
+//●演出：斬撃　エフェクト
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = true;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+: DrawChara( "Daruma", 2, 0, 0, 0.5, 0.0, 3, "C")
+\CN["达磨"]
+“哈！”
+
+//●ＳＥ：カラン、カラン　刀を飛ばされる音
+: HideWnd()
+: PlaySe( "SE/Se_KatanaDrop01" )
+: evbg = true; evcos = false;
+: evfile = "evy_a018_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：刀を弾き飛ばされてしまいます
+: PlayVoice( "Voices/vo05_aza0403" )
+\CN["嘲讽"]
+“……嗯！”
+
+挥刀欲杀。
+
+但是，这些全都被躲开了
+轻易地就把刀弹跑了。
+
+//: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+「…………」
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0404" )
+\CN["嘲讽"]
+（速度和力量在所有方面都有不同吗……）
+
+这样的话，我就不要死在这里了。
+可以说生存的可能性是0。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0405" )
+\CN["嘲讽"]
+（那么，怎么从这里活下去呢？）
+
+//: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“如果能将糠的刀法好好地洗练的话，就相当厉害了。
+在这里杀人实在是太可惜了”
+
+//: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“然后，不要轻易选择死亡，而是这样被逼入绝境
+”
+
+: PlayVoice( "Voices/vo05_aza0406" )
+\CN["嘲讽"]
+“……你想说什么？”
+
+//: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“没关系，到我这里来。”
+
+: PlayVoice( "Voices/vo05_aza0407" )
+\CN["嘲讽"]
+“拒绝了吗？”
+
+//: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“那里的尸体堆里只增加了尸体。”
+
+: PlayVoice( "Voices/vo05_aza0408" )
+\CN["嘲讽"]
+「这样啊。那之前有件事想告诉你。
+你是什么人？”
+
+//: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“唔是在不知道我的情况下去暗杀的吗？”
+
+: PlayVoice( "Voices/vo05_aza0409" )
+\CN["嘲讽"]
+“嘛，因为是这样的工作。
+不管对方是好人还是坏人都没有关系”
+
+//: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“我是白夜的达磨。能让我听听你的回答吗？”
+
+: PlayVoice( "Voices/vo05_aza0410" )
+\CN["嘲讽"]
+“是回复吗……已经决定好了。”
+
+如果不和达磨联手的话，我只会在这里被杀。
+
+不管是幕府还是反幕，对我来说都是无关紧要的事。
+对反幕派的白夜所给予的事完全没有抵抗。
+
+: PlayVoice( "Voices/vo05_aza0411" )
+\CN["嘲讽"]
+“我的名字叫高千穗。嘛，就是那个。请多关照。”
+
+//: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嗯”
+
+: StopBgm( 1.0 )
+和达磨握手，就这样我成了白夜的一员。
+
+//
+//●演出：場面転換トランジション
+//●演出：あざみ　アクションシーン
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: EraseChara( "Daruma", 0.0 )
+: Call("Scenarios/Common*EvDelete")
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05", 0.0 )
+: FadeIn( 0.5 )
+: PlayBgm("BGM/11_CM011")
+: AutoFaceThumbnail( false )
+: ShowWnd()
+\CN["贵族"]
+“……你……净做这种事……走上正路的话
+不要想……”
+
+: PlayVoice( "Voices/vo05_aza0412" )
+\CN["嘲讽"]
+“出生在美丽道路上的这位，从来没有走过。
+所以，肯定不会死得很好吧……”
+
+然后我按照命令继续杀人。
+
+没必要知道那家伙是做什么的人。
+我一直这样想。
+
+在切实完成被交付的工作的过程中
+我马上被白夜的干部提拔了。
+
+然后不久达磨的右臂——
+上升到白夜九星。
+
+//●演出：場面転換トランジション
+//●場所：白夜のアジト
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0413" )
+\CN["嘲讽"]
+“……间谍？”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嗯”
+
+有一天，达磨命令我成为幕府的间谍。
+
+: PlayVoice( "Voices/vo05_aza0414" )
+\CN["嘲讽"]
+“放间谍，真不像话。”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“今后跟随幕府者、反对幕府者之间的争斗
+会更加激化的吧。为了确实地打击幕府是正确的
+我觉得信息是不可缺少的”
+
+: PlayVoice( "Voices/vo05_aza0415" )
+\CN["嘲讽"]
+“嘛，如果是命令的话就做。
+那么，我该做什么呢？”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“为了应对激化的反幕运动，幕府准备建立新的治安维持组织
+”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“希望那个组织的入队考试合格后能钻进去。”
+
+: PlayVoice( "Voices/vo05_aza0416" )
+\CN["嘲讽"]
+“嗯。不过，如果是这样的命令的话也没关系。
+确实正确的信息是必要的”
+
+在白夜活动之前，我一直在想那个。
+正确的信息对于生存来说是非常宝贵的。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Daruma", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+然后我去了帝都。
+
+: PlayBgm("BGM/09_CM009")
+——问的只有自己的志向
+
+看到他用这样的话招募队员
+我要参加入伍考试了。
+
+\CN["考试的男人3"]
+“啊，那家伙，难道……是新渡户龙吗……？”
+
+\CN["男考生4"]
+“新渡户，那个，不动明王的……！？
+喂喂，连流氓都参加了啊……”
+
+\CN["龙"]
+「…………」
+
+\CN["男考生1"]
+「啊，你不是在骗人吗。
+还活着吗？一定是死了吧”
+
+\CN["考试的男人2"]
+“听说我成了有钱人的妾。”
+
+: PlayVoice( "Voices/vo05_aza0417" )
+\CN["嘲讽"]
+“什么嘛，那个传言。荒唐也要有个限度啊……”
+
+曾经作为浪人胸无点墨的时候见过面
+有几个家伙。
+
+考试给人一种看身手的感觉，不难及格。
+我作为鬼灯的队员潜入了幕府一侧。
+
+然后——
+
+\CN["领袖人物"]
+“我们从将军那里得到了‘鬼灯’的称号，今后，将继续维护大和的治安
+为了保护而组织起来”
+
+\CN["领袖人物"]
+“然后，我『{立石钢铁，立石はね}』担任局长
+和工作相成了。大家请多关照”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0418" )
+\CN["嘲讽"]
+（诶~……那个人没有领导。）
+
+鬼灯初代局长立石钢铁——
+那个人的第一印象是“看起来很吵的男人”。
+
+——就这样开始了我的双重生活。
+
+//\CN["龍"]
+//「――八重桜流剣術・餓狼」
+//●演出：龍　アクションシーン
+//: PlayVoice( "Voices/vo05_aza0419" )
+//\CN["あざみ"]
+//「天真一刀流・一文字」
+//●演出：あざみ　アクションシーン
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evy_a028_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+鬼灯开始活动后，每天都在战斗
+到底重复了多少次的离别呢。
+
+立石局长、我和龙——
+
+这三个人成了鬼灯的枢纽，成了反幕派
+被人盯上了。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+另一方面，和达磨悄悄地在人的眼睛里相遇
+传达了鬼灯得到的信息。
+
+: DrawChara( "Daruma", 3, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["达磨"]
+“嗯。辛苦了。”
+
+: DrawChara( "Daruma", 0, 0)
+: AutoFaceThumbnail( true )
+\CN["达磨"]
+“那么，我们就来嘲讽吧。现在你怎么看幕府呢？”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo05_aza0420" )
+\CN["嘲讽"]
+“啊……直截了当地说，就是一个劲地脏啊。
+那么被问到反幕派漂亮吗，那也是
+虽然是感觉”
+
+如果被问到幕府组织和反幕组织的区别是什么
+只能说是想法不同。
+
+那是很久以前就有的。
+
+实际上，做的事情没有太大的区别。
+
+无论哪一个都抱着“为了大和”的大义名分，自己就是“正义”
+这样深信的话终于能行动了。
+
+往往是那样的。
+那个从我年轻的时候到现在还没有什么变化。
+
+: PlayVoice( "Voices/vo05_aza0421" )
+: AutoFaceThumbnail( false )
+\CN["嘲讽"]
+“那是那件事。”
+
+: DrawChara( "Daruma", 3, 0)
+: AutoFaceThumbnail( true )
+\CN["达磨"]
+「我知道。当鬼灯和我们白夜相接的时候
+是吗？”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“把我们看做敌人，全力以赴。
+当然，我们只是抱着杀死我们的决心认真地互相残杀而已”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“即使我们的同胞被杀了，那也是。
+那家伙的命运不过是到此为止”
+
+: PlayVoice( "Voices/vo05_aza0422" )
+: AutoFaceThumbnail( false )
+\CN["嘲讽"]
+“嗯。我这样完全没关系，可以吗？”？
+好不容易凑到一起的家伙可能会不在了？”
+
+: DrawChara( "Daruma", 1, 0)
+: AutoFaceThumbnail( true )
+\CN["达磨"]
+“没关系，和畜生一样是弱肉强食。
+只有在其中生存下来的人才能构成”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嘛，虽然不知道时间过了会怎么样。”
+
+不要怀疑我是白夜的一员。
+
+正因为如此，作为鬼灯的一员活动的时候
+与白夜相对也不加任何顾虑的约定
+达磨。
+
+所以，我一直在想对方是白夜还是谁
+一次也没有动过心。
+
+//●演出：回想から戻る
+//●状況：現在。黄昏れているあざみ
+: StopBgm( 1.0 )
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 1.0, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Daruma", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Pub01", 0.0 )
+: FadeIn( 1.0, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+: CharaCostume( "Azami", 0 )
+: DrawChara( "Azami", 24, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo05_aza0423" )
+\CN["嘲讽"]
+“不由得想起了以前的事。”
+
+: PlayBgm("BGM/08_CM008")
+鬼灯托付给龙，我现在作为白夜侧的人在移动。
+
+作为白夜九星一白的般若。
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0424" )
+\CN["嘲讽"]
+“钢铁先生……”
+
+前局长——曾经相爱的男人
+好久没想起来了。
+
+那个人去世的时候，我每天都和那个人一起度过
+虽然也有一边回忆一边消沉的时候……。
+
+: DrawChara( "Azami", 24, 0)
+: PlayVoice( "Voices/vo05_aza0425" )
+\CN["嘲讽"]
+“时间真是既温柔又残酷啊。”
+
+十年前发生的西都战争使那个人丧命。
+
+钢铁先生去世后，我继承了鬼灯的局长。
+之后一边忍受着失去的悲伤和丧失感，一边忘我地
+我努力了。
+
+总是在旁边有龙支撑着，无黑、桃、雷欧和银
+有了卓越的人才，在那里加入了黄菜子和红美。
+
+不知什么时候鬼灯成了我发自内心笑出来的地方。
+
+但是，那也已经结束了。
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0426" )
+\CN["嘲讽"]
+“在赤月之日，一切都结束了……”
+
+那一天，我一定会如玉藻的预言那样离开这个世界。
+我自己也不知道为什么，但我是这么想的。
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0427" )
+\CN["嘲讽"]
+“那么，不切换的话……”
+
+不能用“高千穗痣”来判断。
+
+正因为如此，作为“般若”而行动起来
+正确的选择，进行合理的选择。
+
+赤月之日，我为了不让大和灭亡
+必须杀死公主。
+
+//●分岐：淫乱度Ａの場合
+//●シーン：「赤い月が昇る夜、未来を勝ち取る戦い１」へ
+//＠シナリオジャンプ：SC_B06_01
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーン：「眠れない夜１」へ
+//＠シナリオジャンプ：SC_B05_16
+//●分岐終了
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5 )
+: Wait()
+: EraseChara( "Azami", 0.0 )
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) == 3 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_B06_01")
+: else
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_B05_16")
+: endif

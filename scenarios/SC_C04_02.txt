@@ -1,0 +1,368 @@
+//========================================================
+//○恐山肝試し１
+//========================================================
+*sc001
+//●場所：白夜の隠れ家・冥の部屋
+//SC_C04_01から続いてくる
+: DrawChara( "Mei", 0, 0, 0)
+: DrawChara( "Mukuro", 0, 0, 0)
+: PlayVoice( "Voices/vo09_mei0205" )
+\CN["冥"]
+“这与其说是工作，不如说是接近考试的意思。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2447" )
+\CN["无黑色"]
+“考试……？”
+
+//●読み：織笠（おりかさ）
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0206" )
+\CN["冥"]
+“{恐山，畏惧}这座山，是织笠……那个，穿着巫女服
+指穿着的女人。那家伙说了
+总觉得好像是一座带有灵力的山”
+
+//●読み：雀ノ涙（すずめのなみだ）
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0207" )
+\CN["冥"]
+“然后，把山顶上的一块叫做‘雀之泪’的石头拿来
+这就是这次的工作或者考试”
+
+也就是说，像试胆和试胆一样吗……。
+也就是说——
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk2448" )
+\CN["无黑色"]
+“姐姐，不只是拿石头回来吗？”
+没有吧？”
+
+这么说姐姐嘴角露出微笑。
+
+: DrawChara( "Mei", 19, 0)
+: PlayVoice( "Voices/vo09_mei0208" )
+\CN["冥"]
+“据说恐山上不仅有凶暴的野兽，还有亡灵们聚集在一起
+有”
+
+: DrawChara( "Mukuro", 4, 0)
+: PlayVoice( "Voices/vo00_muk2449" )
+\CN["无黑色"]
+“就算是亡灵们的对手，如果是我的刀的话也能斩断。
+为了不给姐姐脸上抹黑，我一定会让她成功的”
+
+我的爱刀是在鬼灯仓库偶然发现的。
+虽然不知道是什么道理，但只能用魔术来打倒
+能斩杀不能做到的亡灵。
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0209" )
+\CN["冥"]
+“我期待着能参加这个考试
+因为是这样。不要辜负期待”
+
+//＠マップ解放：恐山
+//●シーンエンド
+: SetMission( "SC_C04_02_1", "InProgress" )
+: FastTravelMapOn( "Osoreyama" )
+: DestinationMap( "Map_Dungeon30_03_Osoreyama" )
+事件信息更新了。
+
+: Return
+//--------------------------------------------------------
+//●２回目以降～
+//--------------------------------------------------------
+*sc001_1
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Mei", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: PlayVoice( "Voices/vo09_mei0208" )
+\CN["冥"]
+“据说恐山上不仅有凶暴的野兽，还有亡灵们聚集在一起
+有”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0209" )
+\CN["冥"]
+“我期待着能参加这个考试
+因为是这样。不要辜负期待”
+
+//●シーンエンド
+: Return
+
+//========================================================
+//○恐山肝試し２
+//========================================================
+*sc002
+//●場所：恐山・入口
+//●演出：無黒　数歩前へ
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 5	\
+:	"MoveLeft", 1 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2450" )
+\CN["无黑色"]
+“……！确实，这正如姐姐所说。”
+
+踏上脚的一瞬间，全身发抖。
+
+山拒绝我来。
+可以说是那种感觉吗？
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 21, 0, 5)
+: PlayVoice( "Voices/vo00_muk2451" )
+\CN["无黑色"]
+（从后面感觉到……大概是那个吧。
+是考验我之类的吧）
+
+总之，可以放任不管吗。
+
+//●演出：無黒　山に入って行く。あとから巫女服の女が出てくる
+: HideWnd()
+: RpgCharaOn("Mobu")
+: ShowWnd()
+\CN["白夜队士"]
+“……不好意思……那个女人……怎么回事啊……。
+被那样的人监视着，御影大人……呜……”
+
+\CN["白夜队士"]
+“但是……被御影大人期待的东西！
+我一定会完成的！”
+
+//●演出：巫女服の女退場する
+: FadeOut( 0.5 )
+//●シーンエンド
+: Flag( "SC_C04_02_sc002", true )
+: RpgCharaOff("Mobu")
+: FadeIn( 0.5 )
+: Wait()
+: Return
+
+//========================================================
+//○恐山肝試し３
+//========================================================
+*sc003
+//●場所：恐山・頂上
+//●状況：雀ノ涙を手に取っている
+//●読み：雀ノ涙（すずめのなみだ）
+: DrawChara( "Mukuro", 1, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2452" )
+\CN["无黑色"]
+“这是‘麻雀的眼泪’吗……第一次看到{矿石，石}。”
+
+看起来像翡翠。
+但是，所包含的魔力却相差了一位数。
+
+{恐山，这里}以外不能得到的东西吧。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk2453" )
+\CN["无黑色"]
+（之后只要把这个带回去就好了……）
+
+//●演出：無黒　２～３歩下がると光が集まり亡霊になる
+: HideWnd()
+: RpgCharaTurn( "Player", "D" )
+: PlaySe( "SE/Se_AnimeL_Dark01" )
+: PlayAnim( "Animations/AnimeL_Down01", false, 0, 0, 6, 6 )
+: Wait()
+: RpgCharaOn("Boss1")
+: RpgCharaOn("Boss2")
+: RpgCharaOn("Boss3")
+: ShowWnd()
+\CN["亡灵"]
+“哦哦哦哦哦哦哦哦哦哦哦”
+
+从地下挤出的怨声。
+
+这附近聚集了很多亡灵的样子吧。
+
+: DrawChara( "Mukuro", 23, 0, 5)
+: PlayVoice( "Voices/vo00_muk2454" )
+\CN["无黑色"]
+“不打倒那个的话，‘麻雀的眼泪’就不可能到手。”
+
+//●演出：無黒　立ち向かっていく
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：恐山の亡霊
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし（通常敗北）
+//――――――――――――――――――――――――――――
+//＠戦闘：恐山の亡霊,1,1,1
+//●状況：戦闘終了後
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc004" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_01", "BGM/22_BM003", 1043, 1043, 1043, "Scenarios/SC_C04_02*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc004" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "Scenarios/SC_S01_01*sc001" )	//敗北した場合
+: endif
+//========================================================
+//○恐山肝試し４
+//========================================================
+*sc004
+//●演出：亡霊が消え去る
+//●演出：無黒　祭壇から雀ノ涙を手に入れる
+: RpgCharaOff("Boss1")
+: RpgCharaOff("Boss2")
+: RpgCharaOff("Boss3")
+: DrawChara( "Mukuro", 0, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2455" )
+\CN["无黑色"]
+“这样就好了。我只是把它拿到姐姐那里了。”
+
+//●場所移動：白夜の隠れ家・冥の部屋
+//●演出：無黒　冥のところに移動する
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: LoadMap( "Map_Town07_02_Byakuya", "Return", "Scenarios/SC_C04_02*sc004_1")
+
+*sc004_1
+: HideWnd()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: RpgCharaOn("Ranmaru")
+: RpgCharaTurn( "Mei", "D" )
+: Wait()
+: DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2456" )
+\CN["无黑色"]
+“姐姐，‘麻雀的眼泪’这样可以吗？”
+
+把“雀之泪”交给姐姐。
+
+: DrawChara( "Mei", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo09_mei0210" )
+\CN["冥"]
+“啊，这样没错。无黑，你很努力啊。”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["兰丸"]
+“真不愧是这样。不过话说回来，这把刀连亡灵都能斩啊。
+在哪里找到的？”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk2457" )
+\CN["无黑色"]
+“在鬼灯的仓库里。
+因为非常适合手，所以只能一直使用……”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“大概是隐藏的名刀吧……。
+因为亡灵会被斩，所以不是普通的刀
+我觉得不会错的……”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC")
+: PlayVoice( "Voices/vo09_mei0211" )
+\CN["冥"]
+“总有一天，还是调查一下比较好。”
+
+//●演出：暗転
+//●視点：第三者視点
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Mei", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——那时候。
+
+//●場所：織笠神社・御影の部屋
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Orikasa01_03", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+\CN["白夜队士"]
+“御影大人，我回来了。”
+
+: DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo11_mik0083" )
+\CN["御影"]
+“辛苦了。神八代无黑的实力怎么样？”
+
+\CN["白夜队士"]
+“……我觉得他是相当有实力的人。
+我也很快就注意到跟踪了……”
+
+: DrawChara( "Mikage", 0, 0)
+: PlayVoice( "Voices/vo11_mik0084" )
+\CN["御影"]
+“是啊。
+从使用的刀中也感受到了神秘的力量……”
+
+//●演技：心の声です
+: DrawChara( "Mikage", 4, 0)
+: PlayVoice( "Voices/vo11_mik0085" )
+\CN["御影"]
+（她打倒的亡灵，那是京子也苦战的等级。
+神八代无黑——好好记住她的名字吧）
+
+//●演出：暗転
+: SetMission( "SC_C04_02_1", "Successed" )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+: $money += 3000
+无黑收到了报酬。
+
+//●分岐：遊廓のケツモチと研究者の手伝いクリア済の場合
+//●シーン：「商人伊勢商左衛門を追え１」へ
+//＠シナリオジャンプ：SC_C04_05
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーンエンド
+//●分岐終了
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 7 )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_C04_06")
+: else
+	: DestinationMap( "Map_Town07_02_Byakuya" )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town07_01_Byakuya", "MukuroRoom", "Scenarios/Map_Town07_Byakuya_Init*Map01")
+: endif

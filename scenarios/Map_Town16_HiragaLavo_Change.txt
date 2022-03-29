@@ -1,0 +1,32 @@
+//========================================================
+//○ヒラガの研究所　初期化
+//========================================================
+: RpgMapBaloonOff( "NPCH01_068" )
+: RpgMapBaloonOff( "NPCH01_070" )
+: RpgMapBaloonOff( "NPCH01_071" )
+: RpgMapBaloonOff( "NPCH01_072" )
+: RpgMapBaloonOff( "NPCH01_069" )
+: RpgCharaOn("NPC_T18_002")
+: RpgCharaOn("NPC_T18_003")
+: if (WhoLeader( "Mukuro" ) == true)	//プレイヤーが無黒の時	
+	: if ( CharaHParam( "Mukuro", "BirthHuman" ) >= 1 )
+		: RpgMapBaloonOn( "NPCH01_068" )
+	: endif
+	: if ( Flag ( "BirthDog" ) == true )
+		: RpgMapBaloonOn( "NPCH01_070" )
+	: endif
+	: if ( Flag ( "BirthPig" ) == true )
+		: RpgMapBaloonOn( "NPCH01_071" )
+	: endif
+	: if ( Flag ( "BirthHorse" ) == true )
+		: RpgMapBaloonOn( "NPCH01_072" )
+	: endif
+	: if ( Flag ( "BirthOrk" ) == true )
+		: RpgMapBaloonOn( "NPCH01_069" )
+	: endif
+: elif (WhoLeader( "Momo" ) == true)	//プレイヤーが桃の時	
+	: RpgCharaOff("NPC_T18_002")
+: elif (WhoLeader( "Kinako" ) == true)	//プレイヤーが黄菜子の時	
+	: RpgCharaOff("NPC_T18_003")
+: endif
+: Return

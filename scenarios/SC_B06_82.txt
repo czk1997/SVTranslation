@@ -1,0 +1,966 @@
+//========================================================
+//○改革の前夜
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_B06_82" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_B06_82" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+这是在没有黑痣和龙的面前
+作为敌人挡住去路的前一天晚上的故事——
+
+//●演出：場面転換トランジション
+//●視点：あざみ視点
+//●背景：居酒屋
+//Yoshi：背景、夜
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Pub01", 0.0 )
+: DrawChara( "Ryu", 22, 0, 0, 0.0, 0.0, 2, "LC" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/36_ID03")
+: ShowWnd()
+\CN["龙"]
+“局长，你是不是喝多了？”
+
+: DrawChara( "Azami", 23, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo05_aza0574" )
+\CN["嘲讽"]
+“……不是那样的……嗯……。
+今晚不喝的话就没法喝……”
+
+明天，我们鬼灯将完全成为无黑他们的敌人。
+
+必须把这把刀朝向无黑他们。
+如果发生战斗的话，当然会杀了。
+
+: DrawChara( "Ryu", 28, 0)
+\CN["龙"]
+“……我理解你的心情。”
+
+: DrawChara( "Azami", 1, 2)
+: PlayVoice( "Voices/vo05_aza0575" )
+\CN["嘲讽"]
+「…………」
+
+有一个名为“为了大和”的大义名分。
+
+但是，虽说如此，也不可能简单地转换。
+
+: DrawChara( "Azami", 2, 2)
+: PlayVoice( "Voices/vo05_aza0576" )
+\CN["嘲讽"]
+“还没有下定决心呢……。
+店长，再来一杯！”
+
+\CN["店长"]
+“是的。”
+
+空玻璃杯里装满了酒。
+
+: DrawChara( "Azami", 3, 2)
+: PlayVoice( "Voices/vo05_aza0577" )
+\CN["嘲讽"]
+“……嗯……嗯……嗯……”
+
+然后，喝完后酒精会一下子循环。
+
+: DrawChara( "Azami", 25, 3)
+: PlayVoice( "Voices/vo05_aza0578" )
+\CN["嘲讽"]
+“……嗯……”
+
+: DrawChara( "Ryu", 20, 0)
+\CN["龙"]
+“坏了吗？”
+
+\CN["店长"]
+“好像啊。”
+
+: DrawChara( "Ryu", 30, 0)
+\CN["龙"]
+“明明明天是很重要的日子……啊～…”
+
+: DrawChara( "Azami", 24, 3)
+: PlayVoice( "Voices/vo05_aza0579" )
+\CN["嘲讽"]
+“没什么坏的。店长，再来一杯……”
+
+实际上，醉是醉了，但是没有醉。
+虽然被击溃了会比较轻松。
+
+\CN["店长"]
+“龙先生，要用二楼吗？”
+
+: DrawChara( "Ryu", 22, 0)
+\CN["龙"]
+“是啊。照这个样子的话，也许还是让他睡着比较好。”
+不知道……”
+
+顺便说一下，这里的居酒屋的2楼就是所谓的单人房间。
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ryu", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["龙"]
+“那么，店主。不好意思，我要租一间房间。”
+
+\CN["店长"]
+“是的。”
+
+//●演出：場面転換トランジション
+//●背景：和風部屋・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+被龙抱回了2楼的房间。
+
+那里已经铺好了被子
+放着类似避孕器具的东西，房间真的很干净
+营造出一种氛围。
+
+微微飘浮的香味能激发性欲。
+
+: DrawChara( "Ryu", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Azami", 0, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["龙"]
+「…………」
+
+: DrawChara( "Azami", 26, 2)
+: PlayVoice( "Voices/vo05_aza0580" )
+\CN["嘲讽"]
+“真恶心……”
+
+龙让我睡在被子里。
+
+: DrawChara( "Ryu", 22, 0)
+\CN["龙"]
+“今晚可以在这里休息。
+喝醉了的现在还能睡吗？”
+
+: DrawChara( "Azami", 1, 2)
+: PlayVoice( "Voices/vo05_aza0581" )
+\CN["嘲讽"]
+“……没什么喝醉的。”
+
+: DrawChara( "Ryu", 28, 0)
+\CN["龙"]
+“是吗？”
+
+龙只说了这句话，打算回到下面。
+
+//●演技：龍の裾を掴んでいます
+: DrawChara( "Azami", 2, 2)
+: PlayVoice( "Voices/vo05_aza0582" )
+\CN["嘲讽"]
+“……啊”
+
+: DrawChara( "Ryu", 20, 0)
+\CN["龙"]
+「？」
+
+: DrawChara( "Azami", 25, 2)
+: PlayVoice( "Voices/vo05_aza0583" )
+\CN["嘲讽"]
+“希望你再在我身边一点……不行吗？”
+
+: DrawChara( "Ryu", 30, 0)
+\CN["龙"]
+“……我知道了。”
+
+因为我会说这样的话
+就连龙也吃了吧。
+
+一瞬间，浮现出困惑的表情。
+
+: DrawChara( "Ryu", 22, 0)
+\CN["龙"]
+“喂，局长？”
+
+盘腿坐在龙的怀里。
+
+: DrawChara( "Azami", 26, 2)
+: PlayVoice( "Voices/vo05_aza0584" )
+\CN["嘲讽"]
+“可以吧？就这些吧……”
+
+: DrawChara( "Azami", 0, 2)
+: PlayVoice( "Voices/vo05_aza0585" )
+\CN["嘲讽"]
+“还有，现在不是局长
+请像以前那样叫我‘嘲讽’。就是这种心情”
+
+我不知道为什么会说这种话。
+
+但是，只有龙啊。
+本来的我，能看到高千穗的痣的是。
+
+: DrawChara( "Ryu", 28, 0)
+\CN["龙"]
+“你是不是喝醉了？”
+
+: DrawChara( "Azami", 27, 2)
+: PlayVoice( "Voices/vo05_aza0586" )
+\CN["嘲讽"]
+“也许……。所以，希望你更加坚强地拥抱我……”
+
+: DrawChara( "Ryu", 24, 0)
+\CN["龙"]
+「…………」
+
+龙察觉到了各种各样的事情，悄悄地抱住了我。
+
+那个人死后，只为了工作，对不喜欢的男人
+被拥抱起来。
+
+说到底是为了消除性欲的游戏。
+这样劝说自己，总算做了些什么。
+
+: DrawChara( "Azami", 3, 2)
+: PlayVoice( "Voices/vo05_aza0587" )
+\CN["嘲讽"]
+“谢谢你一直以来都陪伴着这样的我。”
+
+: DrawChara( "Ryu", 30, 0)
+\CN["龙"]
+“这是我喜欢做的事。”
+
+: DrawChara( "Azami", 0, 2)
+: PlayVoice( "Voices/vo05_aza0588" )
+\CN["嘲讽"]
+“这样啊……那今晚……”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_Cloth01" )
+: CharaCostume( "Azami", 1 )
+让她只穿衣服，让乳房露出来。
+
+: DrawChara( "Azami", 0, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: chara = "Azami"; lay = 3 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
+: DrawFaceThumbnail( "Ryu", 22, 0, 0 )
+\CN["龙"]
+“你好像醉得一塌糊涂？”
+
+: DrawChara( "Azami", 26, 2)
+: PlayVoice( "Voices/vo05_aza0589" )
+\CN["嘲讽"]
+“……啊，是啊。可能醉得一塌糊涂。
+所以，只有今晚——”
+
+在龙的锻炼下坚强的胸膛里垂涎欲滴。
+
+: DrawFaceThumbnail( "Ryu", 24, 0, 0 )
+\CN["龙"]
+「…………」
+
+: HideWnd()
+: StopBgm( 0.25 )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: evbg = false; evcos = false;
+: evfile = "evd_b004_0_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/33_H_LOVE")
+: ShowWnd()
+然后，龙也再次抱紧了我——
+
+//●演技：キスです
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evd_b004_0_2_0200001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0590" )
+\CN["嘲讽"]
+“呜……呜……”
+
+: PlayVoice( "Voices/vo05_aza0591" )
+\CN["嘲讽"]
+“喂……嗯……嗯，嗯……嗯……嗯……”
+
+接受了龙的吻，我也开始接吻。
+
+力量一下子消失的时候，龙温柔地脱下了衣服。
+
+然后，就那样被被子推倒。
+
+//●ＣＧ：あざみと龍　一夜だけの……（あざみ）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_1_0100002_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0592" )
+\CN["嘲讽"]
+“嗯……哈…啊！”
+
+龙的坚硬而坚硬的手温柔地抚摸着乳房。
+
+: PlayVoice( "Voices/vo05_aza0593" )
+\CN["嘲讽"]
+“那个，那个好舒服……再摸一下…嗯，啊……
+啊啊啊……！”
+
+\CN["龙"]
+“啊……”
+
+龙的手指埋没在乳房里。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_1_0300002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0594" )
+\CN["嘲讽"]
+“嗯、嗯、啊……哈、哈……那、感觉到了……”……
+更……啊…啊…啊……啊啊啊！”
+
+//●演出：ここからＢＧＶ流す
+: PlayBackVoice( "Voices/BGV05_aza_aegi01" )
+确实抑制住了心情舒畅的地方的爱抚心情太好了
+声音擅自泄漏出来。
+
+\CN["龙"]
+“明白……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_1_0400002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0595" )
+\CN["嘲讽"]
+“嗯……呃，乳头，要是被吓到了
+嗯，啊，啊啊啊啊！”
+
+\CN["龙"]
+“嗯……”
+
+: PlayVoice( "Voices/vo05_aza0596" )
+\CN["嘲讽"]
+“嗯……啊…啊…啊啊，嗯，嗯，嗯！”
+
+一边揉搓一边的乳房
+另一个乳头被舌头转动。
+
+在相当成熟的样子的爱抚下身体颤抖着。
+
+\CN["龙"]
+“嗯……嗯……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_1_0200002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0597" )
+\CN["嘲讽"]
+“呜，龙……乳头是……恩，啊，啊啊啊啊！
+心情太好了……感觉一个劲地……”
+
+: PlayVoice( "Voices/vo05_aza0598" )
+\CN["嘲讽"]
+“乳头好舒服……被挖开也好，被舌头咬也好
+两个都太舒服了……恩，啊，啊！”
+
+我知道乳头越来越硬。
+
+\CN["龙"]
+“变得很硬了。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_1_0300002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0599" )
+\CN["嘲讽"]
+“哈，哈，你……对女人的对待，太习惯了吧……？”
+
+\CN["龙"]
+“也不是那样的……嗯…”
+
+只是被玩弄乳房，身体就会变得很热。
+
+我自己也明白了，那个女孩开始用爱液滋润自己。
+
+\CN["龙"]
+「…………」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_1_0400002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0600" )
+\CN["嘲讽"]
+“啊，啊啊啊……嗯，啊……啊…恩！”
+
+对不淡泊的网状乳房的爱抚
+只是，我只是快感地颤抖着。
+
+在认真慢慢地，一味地被持续下去的过程中
+身体疼得直哆嗦，想要龙的东西。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_1_0100002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0601" )
+\CN["嘲讽"]
+“嗯……龙，渐渐变得悲伤起来……。
+这次是你的……希望你在这里心情舒畅……”
+
+自己强调那个，摇动下半身引诱龙。
+
+突然飘来的雌的味道，我自己也没有办法
+说明发情了。
+
+\CN["龙"]
+「…………」
+
+龙默默地着手避孕。
+
+把手放在那里，静静地摇头。
+
+因为我想没有避孕器具，就那样让它变成龙。
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0300003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——口羽。
+
+龙把勃起的小鸡鸡压在阴道口的话爱液就会溢出。
+
+//●演技：挿入です
+: PlayVoice( "Voices/vo05_aza0602" )
+\CN["嘲讽"]
+“嗯……啊…嗯……嗯……！”
+
+入口以龙的又大又粗的小鸡鸡的形状打开
+龙向前推进腰，把小鸡鸡埋在阴道内。
+
+: PlayVoice( "Voices/vo05_aza0603" )
+\CN["嘲讽"]
+“啊，啊啊啊……嗯……恩啊啊啊啊！”
+
+\CN["龙"]
+“嗯……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——滴溜溜地！好！好狡猾！
+
+龙的小鸡鸡{插入，是}到阴道深处
+快感之余不禁叫出声来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0100003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0604" )
+\CN["嘲讽"]
+“你的……太大太胖了……”……
+我还以为manko会裂开……”
+
+\CN["龙"]
+“……即使是在淤青中，因为非常热，好像也会融化。”
+
+从相遇的时候开始，就有种若即若离的绝妙距离感
+一直保持着的我们。
+
+也许是因为这样的状况吧，没想到能越过那条线
+不要发呆。
+
+: PlayVoice( "Voices/vo05_aza0605" )
+\CN["嘲讽"]
+“嗯……啊……恩……嗯，还变大了……”
+
+: PlayVoice( "Voices/vo05_aza0606" )
+\CN["嘲讽"]
+“龙之小鸡鸡……嗯，啊……嗯！
+里面的……肚子都送到了……”
+
+龙插着小鸡鸡不动。
+
+在阴道内停留的小鸡鸡渐渐地身体
+感觉渐渐适应了。
+
+\CN["龙"]
+“我会移动的……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0400003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！格格！加油！慢吞吞！嘘！
+
+//●演技：ピストンされています
+: PlayVoice( "Voices/vo05_aza0607" )
+\CN["嘲讽"]
+“啊啊啊啊……啊，啊，啊，{阴道内，内}比较大的是
+来来回回……manko，蔓延开来……”
+
+: PlayVoice( "Voices/vo05_aza0608" )
+\CN["嘲讽"]
+「恩是啊，啊，恩！啊，啊，啊……恩！
+哈、哈……啊、啊……嗯！”
+
+: PlayBackVoice( "Voices/BGV05_aza_aegi02" )
+\CN["龙"]
+“哇……太厉害了，我给你系上……像是Kali的地方……”
+
+慢慢地在阴道内擦一样的抽签
+全身微微颤抖。
+
+褶皱缠绕在龙的小鸡鸡身上，激烈地反复收缩。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0200003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0609" )
+\CN["嘲讽"]
+“哈、哈、一擦……就这样，马上……”
+
+: PlayVoice( "Voices/vo05_aza0610" )
+\CN["嘲讽"]
+“心情变得太好了……啊，啊，啊啊啊啊啊啊！”
+
+\CN["龙"]
+“嗯……”
+
+身体越来越敏感。
+
+好好记住龙的小鸡鸡的形状的话
+快感逐渐膨胀。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0300003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！
+
+//●演技：ピストン速くなります
+: PlayVoice( "Voices/vo05_aza0611" )
+\CN["嘲讽"]
+“哈，恩，啊啊啊……！啊，呜！”！
+嗯！啊啊啊，嗯，好饿！”
+
+: PlayVoice( "Voices/vo05_aza0612" )
+\CN["嘲讽"]
+“哈，要是能快点动的话……呃，啊啊，磨蹭了……啊
+嗯……哈…”
+
+激烈的活塞上不断溢出爱液。
+
+\CN["龙"]
+“哈哈哈！”
+
+被强壮的小鸡鸡狠狠地责备了一顿
+快感膨胀起来。
+
+: PlayVoice( "Voices/vo05_aza0613" )
+\CN["嘲讽"]
+「恩啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！
+哈……哈…嗯……嗯……啊啊……啊！”
+
+\CN["龙"]
+“恩！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——真烦人！！
+
+小鸡鸡钻进里边。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0100003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0614" )
+\CN["嘲讽"]
+“嗯，嗯，啊啊啊！里面好厉害……”……
+一口气……嗯……啊啊……”
+
+龟头碰到子宫口。
+
+在那里咯吱咯吱地摩擦的话，下半身整体就会麻痹——
+
+: PlayVoice( "Voices/vo05_aza0615" )
+\CN["嘲讽"]
+“啊啊啊，呃，嗯！啊……啊…啊啊啊…啊啊啊啊啊
+然后，如果子宫被甘油的话……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0200003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0616" )
+\CN["嘲讽"]
+“呃……呜……呜……啊啊啊、呃、嗯……呃
+看起来好棒……那里是……啊啊啊啊，嗯，啊啊啊啊！”
+
+\CN["龙"]
+“紧固又变强了……。
+根什么的一下子紧紧地抱住”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0400003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！咕嘟咕嘟！嘘！嘘！嘘！
+
+: PlayVoice( "Voices/vo05_aza0617" )
+\CN["嘲讽"]
+“恩，啊，啊啊……嗯，嗯，啊啊……
+啊……啊…啊…啊……啊，已经……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0200003_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0618" )
+\CN["嘲讽"]
+“啊，好棒……呃……好棒…好棒……好棒……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo05_aza0619" )
+\CN["嘲讽"]
+“嗯————————————！”
+
+//●ＣＧ差分：挿入、潮
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0300013_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克！别克！看！噗哧！
+啊啊啊啊啊啊啊啊啊啊啊啊啊！！
+
+: PlayBackVoice( "Voices/BGV05_aza_jigo01" )
+身体大幅度弯曲的瞬间
+我一边吹着潮水一边往上爬。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0100013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂後
+: PlayVoice( "Voices/vo05_aza0620" )
+\CN["嘲讽"]
+“哈，哈……哈……哈……哈……这、这么
+好激烈啊……好厉害，好久不见……”
+
+: PlayVoice( "Voices/vo05_aza0621" )
+\CN["嘲讽"]
+“潮，猛烈地吹着……
+简直让人窒息……”
+
+眼前一亮。
+
+把身体交给激烈得几乎要冲洗一切的绝顶。
+只有现在，我想沉醉在一时的快感中。
+
+: PlayVoice( "Voices/vo05_aza0622" )
+\CN["嘲讽"]
+“龙，继续……把我弄得乱七八糟……”
+
+也许比想象中还要醉。
+从自己嘴里说出这样的话很吃惊。
+
+\CN["龙"]
+“……啊”
+
+龙给那样的我看男人的脸。
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0400013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！嘘！嘘！格格！噗噗！
+好！嘘！嘘！呼呼！嘘！
+
+: PlayVoice( "Voices/vo05_aza0623" )
+\CN["嘲讽"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！”！
+哈，嗯，嗯，嗯……啊，嗯，嗯！”
+
+: PlayBackVoice( "Voices/BGV05_aza_aegi03" )
+再次开始抽奖。
+
+小鸡鸡被很好地拿出，好几次刺子宫口。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0100013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0624" )
+\CN["嘲讽"]
+“啊，啊啊，啊，刚才才去的……
+潮，明明是刚刚吹起的……”
+
+: PlayVoice( "Voices/vo05_aza0625" )
+\CN["嘲讽"]
+“嘛，又来了……好几次，好几次，心情都停不下来。
+嗯，呃，嗯，嗯，啊，啊啊啊啊啊啊啊啊啊啊啊！”
+
+\CN["龙"]
+“哈，哈……好厉害的收尾……我也是好久不见了
+差不多到极限了……”
+
+龙这样说着，想坐下。
+
+: PlayVoice( "Voices/vo05_aza0626" )
+\CN["嘲讽"]
+“哈，没关系……就这样继续下去
+{阴道内，内}可以{射精，だ}…]
+: PlayVoice( "Voices/vo05_aza0627" )
+\CN["嘲讽"]
+“奥，再戳一点……我要被你的小鸡鸡给叮了
+心情太好了，会变得很奇怪……！”
+
+\CN["龙"]
+“我，我知道了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0200013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——嘘！好！剧毒！剧毒！剧毒！
+
+: PlayVoice( "Voices/vo05_aza0628" )
+\CN["嘲讽"]
+“啊啊啊……啊啊……嗯，啊，啊……”
+
+: PlayVoice( "Voices/vo05_aza0629" )
+\CN["嘲讽"]
+“啊，好像又好棒……又好棒了……嗯，啊，哈
+啊啊啊啊啊啊啊！”
+
+\CN["龙"]
+“哈哈……我也……”
+
+{阴道内，内}的收缩变得激烈。
+
+龙也到了极限了吧，而且抽奖是为了最后冲刺而进行的激烈战斗
+逐渐变成东西。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0300013_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0630" )
+\CN["嘲讽"]
+“嗯！好棒！好棒！好棒！好棒……啊，哈哈……
+龙……{阴道内，内}{射精，だ}做……！」
+
+\CN["龙"]
+“啊……啊…那就这样……”
+
+: PlayVoice( "Voices/vo05_aza0631" )
+\CN["嘲讽"]
+“嗯，啊，啊……好棒……好棒……好棒……”……
+呃，呃……啊……啊……啊……啊……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo05_aza0632" )
+\CN["嘲讽"]
+“好棒……好棒……好棒，好棒！！”
+
+//●演出：射精
+//●ＣＧ差分：挿入、射精精液
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0400013_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+德彪鲁鲁鲁鲁！别克！参考翻译！
+
+: PlayBackVoice( "Voices/BGV05_aza_jigo02" )
+一起绝顶。
+
+在痉挛的阴道内注入龙的热精液
+沉溺在眼前一片空白的快感中。
+
+缠住阴道粘膜射精颤动的小鸡鸡
+榨取精液。
+
+//●ＣＧ差分：挿入、射精後精液
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0200013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：射精後です
+: PlayVoice( "Voices/vo05_aza0633" )
+\CN["嘲讽"]
+“哈……哈……嗯……啊，好烫……啊…啊……啊……
+啊啊啊啊啊……！”
+
+: PlayVoice( "Voices/vo05_aza0634" )
+\CN["嘲讽"]
+“势头很好，嗖的一声流了过来……嗯……
+一转眼{阴道内，内}，精液变得满满的」
+
+被深深地插入，以仿佛撞到深处的气势
+被射精。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b002_1_2_0100013_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0635" )
+\CN["嘲讽"]
+“哈、哈、哈……好多{射精，是}啊。
+这个，不是堆得乱七八糟的吗？”
+
+\CN["龙"]
+“……是啊。最近很忙。”
+
+: PlayVoice( "Voices/vo05_aza0636" )
+\CN["嘲讽"]
+“从明天开始，忙得连休息的时间都没有了。”
+
+: PlayVoice( "Voices/vo05_aza0637" )
+\CN["嘲讽"]
+“所以，在空出来之前，我的{阴道内，内}
+{射精，だ}就可以了。还积着很多吧？”
+
+\CN["龙"]
+“……啊”
+
+并不是迟钝到龙对我的感情都没有察觉到。
+
+我觉得我和龙都已经到了好的年龄了，害怕变化。
+
+今后的行动都关系到大和的未来。
+我有种已经回不去了的预感。
+
+所以最后并不是这样被龙抱着。
+
+最后的最后有点傻傻，我也要坦诚的面对自己的心情
+因此，我只是这样想。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_B06_82" )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

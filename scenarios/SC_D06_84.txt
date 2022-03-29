@@ -1,0 +1,630 @@
+//========================================================
+//○敗北者の行く末、高千穂あざみのその後
+//========================================================
+//●背景：黒画面
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D06_84" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D06_84" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: ShowWnd()
+这是在和无黑他们战斗后，高千穂活了下来，之后的故事。
+
+她在被希拉加完全提取了魔力之后
+{黑夜叉，暗黑精灵}完全失去了化的力量。
+
+然后，现在的高千穗的痣是——
+
+//●視点：あざみ視点
+//●状況：あざみ、囚人たちの壁尻肉便器になっています
+//●ＣＧ：囚人たちの性欲処理肉便器（あざみ）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBackVoice( "Voices/BGV05_aza_jigo01" )
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+\CN["囚犯1"]
+「呼～。变漂亮了。打扫厕所的值班也不轻松啊。
+又臭又脏，快死了……”
+
+\CN["囚犯2"]
+“哦，那么，可以用了吗？
+已经、{射精、也}快要被打败了」
+
+//●演技：心の声です
+//●演技：何日も犯された後で、追い詰められている状態です
+: PlayVoice( "Voices/vo05_aza0795" )
+\CN["嘲讽"]
+（……今天又要开始了吗……）
+
+在大和某处的牢房——
+
+在这里身体就这样无法动弹，被囚犯们玩弄
+那么，到底过了多久了呢？
+
+混杂着污物的味道和性的味道的空间。
+对于继承了精灵之血的我来说，仅此就头痛。
+
+\CN["囚犯1"]
+“冷静点。打扫卫生的人是第一个，这是规定吧。
+所以，是我来的”
+
+\CN["囚犯2"]
+“哇，我知道了。快点给我滚啊。”
+
+\CN["囚犯3"]
+“喂，终于打扫完了吗……”
+
+\CN["囚犯4"]
+“哇……已经排好队了。今天明明早就来了。”
+
+从这里看不出外面的情况
+听到囚犯们吵闹的声音。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_2_0200001_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：膣口に男性器をあてがわれます
+: PlayVoice( "Voices/vo05_aza0796" )
+\CN["嘲讽"]
+“嗯，恩……”
+
+为了应对即将到来的冲击，咬紧牙关。
+
+\CN["囚犯1"]
+“对了对了。刚洗好的人妖，还没完全湿的地方
+插起来很舒服啊」
+
+\CN["囚犯1"]
+“一开始是非常漂亮的manko。
+”
+
+//●ＣＧ差分：マンコ挿入
+: StopBackVoice()
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0100002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咕嘟咕嘟、吸溜、咕嘟咕嘟！！
+
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo05_aza0797" )
+\CN["嘲讽"]
+“嗯……啊，小鸡鸡，{插入，是}出来了
+嗯，一口气往里……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0300002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0798" )
+\CN["嘲讽"]
+“呃，嗯……啊…啊…啊…啊啊啊啊啊啊啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV05_aza_aegi01" )
+\CN["囚犯1"]
+“嗯！虽然表面上是用旧了的格罗曼
+{阴道内，内}还可以…入口和中间非常厉害
+我会拧紧的”
+
+为了防止囚犯们踢破墙壁来到这里
+相应地做得很结实。
+
+尽管如此，我的声音好像漏到了外面……。
+
+\CN["囚犯2"]
+“声音很可爱呢。
+但是，到底是什么样的痛苦呢”
+
+\CN["囚犯3"]
+“算了吧。反正是个超级丑八怪。
+还有，反正是大妈吧？”
+
+\CN["囚犯4"]
+“这个皮肤的弹力好像不是老太婆。”
+
+\CN["囚犯5"]
+“可爱的孩子会被放哨的家伙吃掉，就算是吃剩下的
+只要来这里就好了”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——呼呼！嘘！嘘！嘘！
+
+//●演出：ピストン（やや激しい）です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0200002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0799" )
+\CN["嘲讽"]
+“突然……嗯，开始动了……恩啊
+明明……但是，感觉被淋湿了……”
+
+: PlayVoice( "Voices/vo05_aza0800" )
+\CN["嘲讽"]
+“嗯，啊，啊啊啊！啊，啊，啊……
+嗯，嗯！啊、啊……呜呜呜！”
+
+: PlayBackVoice( "Voices/BGV05_aza_aegi02" )
+如果{插入，是}来小鸡鸡的话，身体会有反应。
+不管有没有加入感情……。
+
+\CN["囚犯1"]
+“只是稍微动了一下，就被淋湿了。”
+
+\CN["囚犯1"]
+“不知道是谁的小鸡鸡，竟然做出这样的反应
+真是个无可救药的色鬼啊」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0300002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0801" )
+\CN["嘲讽"]
+“恩！嗯，嗯，嗯，呜呜！”！
+啊，manko……{阴道内，内}，被摩擦，感觉到了……」
+
+: PlayVoice( "Voices/vo05_aza0802" )
+\CN["嘲讽"]
+“……真是的，真没出息……哈哈，这么快……
+嗯……感觉到了，竟然变成了这样……”
+
+妖精的血是那样使的吗？
+
+这种行为让人心情舒畅
+身体记住了。
+
+\CN["囚犯1"]
+“哈哈哈，差不多该出发了……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+斯文！斯文！嘘嘘！咕嘟咕嘟！嘘！
+啧啧！啧啧！嘘！慢吞吞！嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0400002_1100000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：さらにピストンが激しくなります
+: PlayVoice( "Voices/vo05_aza0803" )
+\CN["嘲讽"]
+“突然……嗯，变得激烈了……manko变得乱七八糟
+然后……呜……啊，里面也粗暴地打了小鸡鸡”
+
+: PlayVoice( "Voices/vo05_aza0804" )
+\CN["嘲讽"]
+“嗯，啊，嗯，嗯！啊，嗯，嗯，嗯
+嗯啊啊啊啊！哈哈哈，啊啊啊啊……！”
+
+阴道里头如果小鸡鸡的前头碰上的话身体中
+甜蜜的电灯飞驰而过。
+
+全身颤抖的甘美，让人觉得发出粗野的声音。
+
+\CN["囚犯1"]
+“……嗯………我拿出来……”
+
+//●演出：射精
+//●ＣＧ差分：マンコ挿入・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0411013_1100010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻！呼！呼！小动作！
+
+: PlayVoice( "Voices/vo05_aza0805" )
+\CN["嘲讽"]
+“呜呜呜呜呜！啊……啊啊啊啊……啊啊，啊，啊
+精液流入……”
+
+下半身急速扩散的热度。
+对肚子里突然出现的冲击，快感急速膨胀起来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0511013_1100010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo05_aza0806" )
+\CN["嘲讽"]
+“嗯……呃，来了……抑制不住……！”！
+我……呜…呜……啊啊啊啊啊啊啊啊啊啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV05_aza_jigo02" )
+一边发出近乎悲鸣的声音一边达到了。
+
+//●ＣＧ差分：未挿入・射精後（マンコ）
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_2_0300013_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["囚犯1"]
+“哦哦哦哦哦……超级，痉挛了。
+第一次就这样，没问题吗？”
+
+\CN["囚犯2"]
+“这是平常的事吧。我会把他摔倒吗……”
+
+//●演技：絶頂後、呼吸が乱れています
+: PlayVoice( "Voices/vo05_aza0807" )
+\CN["嘲讽"]
+“哈……哈……哈……哈……哈…哈，哈……
+啊……呃，喂，屁股上……”
+
+: PlayVoice( "Voices/vo05_aza0808" )
+\CN["嘲讽"]
+“是、{插入，是}了……嗯……嗯……啊啊……嗯
+呜呜呜呜呜呜！！”
+
+//●ＣＧ差分：アナル挿入・射精後（マンコ）
+: PlayBackVoice( "Voices/BGV05_aza_aegi03" )
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu03" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_4_0300003_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+垂るる、ず、ぬ中、谢谢！！
+
+发硬热的小鸡鸡很有气势地钻进了小洞里。
+
+: PlayVoice( "Voices/vo05_aza0809" )
+\CN["嘲讽"]
+“ケツ……肛门，被挖开了……哈哈哈……明明是ケツ
+简单的小鸡鸡、{插入，是}掉了……”
+
+\CN["囚犯2"]
+“哈，好啊……阿纳尔这个入口很紧，里面很硬
+粘糊糊的感觉很好……”
+
+\CN["囚犯2"]
+“哪个，再往里……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+哇哇哇哇，哇啦哇啦，哇啦哇啦，哇啦！！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_4_0400003_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0810" )
+\CN["嘲讽"]
+“啊啊啊啊！啊……啊啊……呜呜呜，呜哇！
+啊，啊啊啊啊啊！”
+
+: PlayVoice( "Voices/vo05_aza0811" )
+\CN["嘲讽"]
+“屁股……像火烧一样热……肚子都快破了
+明明很痛苦……”
+
+第一次被侵犯屁股的时候只有痛苦。
+
+但是，习惯是很可怕的
+不知不觉地被人侵犯了屁股洞，什么也感觉不到了。
+
+——不，不仅如此……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_4_0300003_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0812" )
+\CN["嘲讽"]
+“嗯，嗯，感觉到了……哈，哈
+屁股上被小鸡鸡叮了……很舒服……
+我想了……”
+
+\CN["囚犯2"]
+“呵呵，这个洞也成熟了很多，感觉很好啊。
+从那边的墙壁传来愉快的声音”
+
+\CN["囚犯3"]
+“最近好像在阿纳尔也感觉乱七八糟。
+不仅仅是声音，我还想看看假发呢”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+啧啧！啧啧！嘘！嘘！咕嘟咕嘟！
+
+一边让屁股孔扩大，一边摩擦肠内的粘膜
+反复抽奖。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_4_0100003_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0813" )
+\CN["嘲讽"]
+“哈，哈，这个内容是由小鸡鸡做出的
+感觉……不安，但是，那个……嗯！”
+
+我觉得这种不可思议的感觉很舒服。
+
+: PlayVoice( "Voices/vo05_aza0814" )
+\CN["嘲讽"]
+“呃，嗯……这个，这样啊……明明屁股被咬了……
+阿纳尔，变得敏感了……”
+
+刚才也有被里面拿出来搞砸的时候吗
+光是在kets里面摩擦就觉得很有活力。
+
+: PlayVoice( "Voices/vo05_aza0815" )
+\CN["嘲讽"]
+“哈、哈、哈、明明不想干
+停不下来……嗯，嗯……嗯，嗯”
+
+: PlayVoice( "Voices/vo05_aza0816" )
+\CN["嘲讽"]
+“在这里，不能说是好球……但是……嗯……忍耐……”……
+哈……呜…呜……呜…哈…哈……”
+
+越是忍耐，越是对讽刺的事情越有快感。
+
+\CN["囚犯2"]
+“在kets里面，有种蠢蠢欲动的感觉。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！啧啧！慢吞吞！嘘！加油！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_4_0300003_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0817" )
+\CN["嘲讽"]
+“啊，好帅啊……被责备了……。
+屁股好痛……好痛……好痛……好痛……”
+
+强烈的情感涌上心头，一下子蔓延开来。
+
+身体开始颤抖的同时，快感一个劲地涌来
+来了——
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_4_0400013_1100020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo05_aza0818" )
+\CN["嘲讽"]
+“好……好…好…好……用屁股……好…好…好、好……”
+我……呜呜呜呜呜呜呜呜！！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+阿飞！阿飞！阿飞！阿飞！阿飞！阿飞！
+吓得浑身发抖！！
+
+无法忍受，在尻穴里呆住了……。
+
+\CN["囚犯2"]
+“呃……然后，出来了……！”
+
+//●ＣＧ差分：アナル挿入・射精後（マンコ）・アナル射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_4_0411013_1100030_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克乌鱼！参考翻译！咚！杜克！
+别克！咚！咚！咕嘟咕嘟！
+
+: PlayVoice( "Voices/vo05_aza0819" )
+\CN["嘲讽"]
+“哈、哈、哈……不、被我射精了……
+腹中直接拿出精液……”
+
+//●ＣＧ差分：アナル挿入・射精後（マンコ）・アナル射精・潮
+: HideWnd()
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_4_0511013_1110040_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo05_aza0820" )
+\CN["嘲讽"]
+“啊……啊……嘛，下次再来……呃，呃……
+啊啊啊啊啊啊啊啊啊啊啊啊————啊！！”
+
+平时，大量的精液被注入出的地方。
+
+\CN["囚犯3"]
+“这个女人，在肛门里被精液拿出来吹着潮水。”
+
+\CN["囚犯4"]
+“一定很荒唐，是淫乱吧。”
+
+//●ＣＧ差分：未挿入・射精後（マンコ・アナル）
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_2_0311013_1100050_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0821" )
+\CN["嘲讽"]
+“嗯……哈，哈……manko也可以
+即使是屁股，也会像吹潮水那样干巴巴的……”
+
+: PlayVoice( "Voices/vo05_aza0822" )
+\CN["嘲讽"]
+“明明今天才刚刚开始……
+因为是初出茅庐，所以这么拼命……可能受不了”
+
+不知不觉地，说了泄气话。
+
+//●ＣＧ差分：マンコ挿入・射精後（マンコ・アナル）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0211003_1100060_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0823" )
+\CN["嘲讽"]
+“呜呜呜呜！哇，又插入了……啊啊啊
+呜……呜，敏感到极点的时候，小鸡鸡啊”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0411003_1100060_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0824" )
+\CN["嘲讽"]
+“啊……嗯，嗯啊啊啊啊啊！
+啊……啊啊…呃……啊，啊，恩恩！”
+
+\CN["囚犯3"]
+“我喜欢这样的男人。
+打进的话，好好地系上又好”
+
+——每天都是在阴道、屁股孔等地方被侵犯。
+
+就连我，肉体上，精神上都受不了。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0825" )
+\CN["嘲讽"]
+（……输了的是我。
+所以，不管别人做什么我都不会抱怨的……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0826" )
+\CN["嘲讽"]
+（到底能做到什么时候呢？）
+
+看不到终点的是地狱。
+然后，这样的想法今后必须一直持续下去。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evd_b003_1_3_0111003_1100060_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo05_aza0827" )
+\CN["嘲讽"]
+（……怎么也办不到吗）
+
+于是，我放弃了，慢慢地闭上眼睛
+今天也为了处理囚犯们的性欲而被玩弄身体
+有了。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_D06_84" )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

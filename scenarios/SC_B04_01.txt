@@ -1,0 +1,552 @@
+//========================================================
+//○ヴィクトール騎士団
+//========================================================
+//アイキャッチ
+: $chapter = 4	// 章の設定
+: Flag( "HozukiRootIn", true )	// 鬼灯ルート突入
+: HideWnd()
+: Call( "Scenarios/Common*Eyecatch" )
+: EraseAllImage(1,1.0)
+: Wait()
+//●場所：鬼灯屯所
+//●背景：空・昼
+//Yoshi：背景
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+作为维克托尔国的大使，与多米尼克・艾梅尔特大臣
+维克托尔骑士团来到了大和。
+
+幕府将军和多米尼克大臣的会谈顺利进行
+没有什么特别的麻烦，顺利地结束了。
+
+……………………………………………………。
+
+//●背景：鬼灯屯所・食堂
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0309" )
+: ShowWnd()
+\CN["桃子"]
+“我还以为反幕派一定会来揍我呢
+和维克托尔的会谈进行得很顺利真是太好了”
+
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["雷欧"]
+“那是因为，那个费尔克先生在做护卫呢？
+明明有世界最强的男人，却有笨蛋攻击
+是吧”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1025" )
+\CN["无黑色"]
+“我觉得成功和失败是次要的。
+只要有歹徒袭击的事实
+这样就可以了”
+
+: DrawChara( "Leo", 15, 0)
+\CN["雷欧"]
+“啊，就是这样啊。不愧是无黑，真是博学啊。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom0310" )
+\CN["桃子"]
+“这么说来，局长和龙先生呢？”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo02_kin0204" )
+\CN["黄菜子"]
+“两位是多米尼克大臣视察大和
+我去做护卫了”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["雷欧"]
+“啊，是维克托尔骑士团和鬼灯的前两名护卫啊。
+真是非常豪华的面子啊”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0311" )
+\CN["桃子"]
+“当然啦。像大和这样的小岛国，维克托尔什么的。”
+要是被大国盯上，变成战争的话，可就受不了了
+没有啊」
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“是啊。真的不想和世界最强的男人为敌。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["银子"]
+“虽然我真的很想尝试一下。”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0312" )
+\CN["桃子"]
+“真是的！小银！别说大话了。”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 7, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo00_muk1026" )
+\CN["无黑色"]
+“是啊。即使不是这样，最近国内总是慌慌张张的。”
+有啊。如果以现在的状态被他国进攻的话，就不堪一击了”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo07_beb0064" )
+\CN["红美"]
+“如果发生战争的话，在下也会保护kinako的。”
+
+: DrawChara( "Kinako", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo02_kin0205" )
+\CN["黄菜子"]
+“嗯！谢谢你，红美。”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["雷欧"]
+“哦，那就必须要吐出一个火焰了。”
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0065" )
+\CN["红美"]
+“哼！在下认真起来的话，雷欧什么的完全是焦黑的
+我请客。这样也可以吗？”
+
+: DrawChara( "Leo", 9, 0)
+\CN["雷欧"]
+“啊，很有趣。稍微做一下吧。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0206" )
+\CN["黄菜子"]
+“太好了！红美，不能吵架哦。
+还有，雷欧也不能欺负红美”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+\CN["雷欧"]
+“不好意思，黄菜子。”
+
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayVoice( "Voices/vo07_beb0066" )
+\CN["红美"]
+“脸上无光地撒娇”
+
+: EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0313" )
+\CN["桃子"]
+“呵呵。雷欧将来一定会被无黑的屁股铺上的。”
+我是这么想的”
+
+: DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“是啊。”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo00_muk1027" )
+\CN["无黑色"]
+“哈？呃，我怎么会在屁股上垫呢……”
+
+: DrawChara( "Momo", 5, 1)
+: PlayVoice( "Voices/vo01_mom0314" )
+\CN["桃子"]
+“嗯。也就是说，决定要粘在一起了吧？”
+
+: layer = 4; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Mukuro", 20, 1)
+: PlayVoice( "Voices/vo00_muk1028" )
+\CN["无黑色"]
+“……呜哇……不对！
+我不是这么说的！”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——会谈结束后，有一天稍微悠闲了一点。
+
+他们简直像暴风雨一样来了。
+
+//●ＳＥ：ドアの開く音
+//●演出：イライザ、ゼノ　登場
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/26_FM004")
+: DrawChara( "Elisa", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0018" )
+\CN["伊拉伊萨"]
+“诶～！这就是鬼灯的藏身地啊。
+啊，果然和骑士团的那个完全不一样啊”
+
+: DrawChara( "Xeno", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Elisa", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["奇诺"]
+“副队长，拜托了，请老实点。
+还有，我觉得先打招呼吧……”
+
+: DrawChara( "Elisa", 5, 0)
+: PlayVoice( "Voices/vo19_era0019" )
+\CN["伊拉伊萨"]
+“哦，对了对了，就是那个！”
+
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo01_mom0315" )
+\CN["桃子"]
+“那个……说不定，狮子的徽章——
+维克托尔骑士团的……？”
+
+: DrawChara( "Elisa", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo19_era0020" )
+\CN["伊拉伊萨"]
+“喂！我是维克托尔骑士团的伊拉萨。
+请多关照”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Xeno", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["奇诺"]
+“对不起，我迟到了，我是泽诺・肖伯。
+我担任维克托尔骑士团的参谋”
+
+: HideWnd()
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 17, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0207" )
+\CN["黄菜子"]
+“啊！泽诺君！”
+
+: DrawChara( "Xeno", 2, 0)
+\CN["奇诺"]
+“黄菜子……”
+
+//●演技：桃と無黒、ちょっと離れたところでコソコソ話
+: PlayVoice( "Voices/vo01_mom0316" )
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 6, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["桃子"]
+“喂喂，难道不是那个孩子吗？”？
+传说中黄菜子的初恋对象……”
+
+: DrawChara( "Mukuro", 4, 1)
+: PlayVoice( "Voices/vo00_muk1029" )
+\CN["无黑色"]
+“啊，没错吧。”
+
+大家都说{恋爱方面，这样的事情}很迟钝、迟钝
+甚至连被说的我都明白了。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Elisa", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo19_era0021" )
+\CN["伊拉伊萨"]
+“啊！Zno，你不是在干吗！”！
+那个孩子——呃……kinako……是吧？”
+
+: DrawChara( "Kinako", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: Wait()
+: JumpLayer( 4, 0, -50, 1, 0.25)
+: PlayVoice( "Voices/vo02_kin0208" )
+\CN["黄菜子"]
+“我是有栖川黄菜子……哦，请多关照。”
+
+: DrawChara( "Elisa", 5, 0)
+: PlayVoice( "Voices/vo19_era0022" )
+\CN["伊拉伊萨"]
+“你，那个，是精灵之森吗？
+是在那里和你在一起的孩子吧？”
+
+: DrawChara( "Kinako", 5, 1)
+: PlayVoice( "Voices/vo02_kin0209" )
+\CN["黄菜子"]
+“哈，是！在那里第一次见到了zeno君
+得到了强盗们的帮助……那个…”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0023" )
+\CN["伊拉伊萨"]
+“特别是这么可爱的孩子啊……。
+明明总是说讨厌累
+那是因为，我会鼓起干劲瞬间杀了你啊」
+
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Xeno", 10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+\CN["奇诺"]
+“啊，伊拉伊萨……！我并没有这个打算
+女孩子被袭击的话，帮助她是理所当然的”
+
+: HideWnd()
+: DrawChara( "Kinako", 3, 2)
+: layer = 4; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0210" )
+\CN["黄菜子"]
+“啊……！不好意思……客人来了。
+我马上给您准备茶……”
+
+: HideWnd()
+//: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+//●演出：黄菜子、慌てて移動してこける
+//●演技：慌てて移動して転びかけます
+: DrawChara( "Kinako", 7, 0, 0 )
+: Wait()
+: ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0211" )
+\CN["黄菜子"]
+“啊……！？”
+
+黄菜子绊倒了脚，差点摔倒在那里……。
+
+: PlaySe( "SE/Se_Cloth01" )
+: DrawChara( "Xeno", 3, 0, 0 )
+\CN["奇诺"]
+“黄菜子，没事吧？”
+
+什么时候动的？
+名为“Zno”的少年瞬间支持着黄菜子。
+
+//●演技：ゼノに支えられています
+: DrawChara( "Kinako", 4, 2)
+: PlayVoice( "Voices/vo02_kin0212" )
+\CN["黄菜子"]
+“嗯，嗯……谢谢……”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0317" )
+\CN["桃子"]
+“真厉害啊，维克托尔的男孩子……。
+那个年纪还能像那样保护女孩子”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Xeno", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+\CN["奇诺"]
+“黄菜子什么都没有真是太好了”
+
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo01_mom0318" )
+\CN["桃子"]
+“外国的男孩子都是那种感觉吗？”
+
+: DrawChara( "Elisa", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo19_era0024" )
+\CN["伊拉伊萨"]
+“并不是大家。
+奇诺的那个，只是因为他是天然的……”
+
+: DrawChara( "Elisa", 3, 0)
+: PlayVoice( "Voices/vo19_era0025" )
+\CN["伊拉伊萨"]
+“我所认识的男人，完全不坦率
+经常吵架吧？”
+
+: DrawChara( "Elisa", 4, 0)
+: PlayVoice( "Voices/vo19_era0026" )
+\CN["伊拉伊萨"]
+“嘛，在别人看来，那只是单纯的玩笑而已
+但是啊”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//●演出：ファルケ　登場
+: DrawChara( "Falke", 10, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayBgm("BGM/50_IDO04")
+: ShowWnd()
+\CN["沥青"]
+“啊，真烦人。知道的男人是谁？”
+
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Falke", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Elisa", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo19_era0027" )
+\CN["伊拉伊萨"]
+“啊？那肯定是你吧。
+话说，为什么没马上进来呢？”
+
+: DrawChara( "Falke", 11, 0)
+\CN["沥青"]
+“这种建筑在维克托尔没有。
+也想给史黛拉和克里西亚看
+拍了照片”
+
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 0, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1030" )
+\CN["无黑色"]
+“现在，柏油……？
+也就是说，那个人被称为世界最强……？”
+
+: DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["雷欧"]
+“啊……啊…啊……那个人，是费尔克……”
+
+雷欧闪着眼睛朝着费尔克先生跑去。
+
+: DrawChara( "Leo", 11, 0)
+\CN["雷欧"]
+“那个费尔克先生！哦，我叫雷欧！”！
+我非常尊敬费尔克先生……”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Falke", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["沥青"]
+“喂！谢谢你。”
+
+: JumpLayer( 2, 0, -50, 1, 0.25)
+: JumpLayer( 4, 0, -50, 1, 0.25)
+费尔克爽朗地微笑着和雷欧握手。
+
+: DrawChara( "Leo", 16, 1)
+\CN["雷欧"]
+“这、这是世界最强的……光是握手就知道……。
+很厉害的宾格传来了……”
+
+: DrawChara( "Falke", 4, 0)
+\CN["沥青"]
+“你好像也在锻炼呢。
+有时间的话，可以帮我安排一下吗？”
+
+: DrawChara( "Leo", 14, 1)
+\CN["雷欧"]
+“一定要！！请多关照！”
+
+: EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Elisa", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo19_era0028" )
+\CN["伊拉伊萨"]
+“啊！骗人的假币！
+那么，我也要找人……是啊…”
+
+: DrawChara( "Elisa", 4, 0)
+: PlayVoice( "Voices/vo19_era0029" )
+\CN["伊拉伊萨"]
+“嗯……我果然还是选了Zno的这个啊……”
+
+伊拉伊萨竖起小指前后移动。
+
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kinako", 6, 2, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: PlayVoice( "Voices/vo02_kin0213" )
+\CN["黄菜子"]
+“这、这个……啊…我还……那个……”
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Xeno", 14, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Elisa", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["奇诺"]
+“副队长，你经常这么说吧？
+请不要做那种下流的事！”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0030" )
+\CN["伊拉伊萨"]
+「不是挺好的吗。
+因为这里不是那么坚固的地方”
+
+: DrawChara( "Xeno", 12, 1)
+\CN["奇诺"]
+“不是那个问题！
+而且，这样对黄菜子很失礼……”
+
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0319" )
+\CN["桃子"]
+“泽诺君也对黄菜子很着迷
+黄菜子也完全暴露出恋爱中的少女……”
+
+: DrawChara( "Momo", 5, 1)
+: PlayVoice( "Voices/vo01_mom0320" )
+\CN["桃子"]
+“无黑，雷欧，你在发呆的话
+会被那两个人抢先的吧？”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 16, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["雷欧"]
+“真的……！？无黑，不能发呆！
+我们也快点变成情侣……！”
+
+: DrawChara( "Mukuro", 5, 2)
+: PlayVoice( "Voices/vo00_muk1031" )
+\CN["无黑色"]
+“桃子，这样啊，对我来说还太早了！”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+维克托尔骑士团的人们第一次来到屯所的日子
+感觉大家都很兴奋。
+
+雷欧像孩子一样活泼
+虽然银也说不感兴趣，但还是意识到了费尔克。
+
+维克托尔骑士团的3人在大和期间
+经常在屯所露面。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「見廻組誕生」へ
+//＠シナリオジャンプ：SC_B04_02
+: Jump( "Scenarios/SC_B04_02" )

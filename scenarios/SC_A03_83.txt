@@ -1,0 +1,1232 @@
+//========================================================
+//○親殺し
+//========================================================
+//●状況：３年前
+//●場所：鬼灯屯所・黄菜子の部屋・夜
+//●視点：黄菜子
+//●背景：空・夜
+//Yoshi：背景
+//服装を記憶
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+//●演技：悪夢にうなされています
+//Yoshi：メッセージフェイスのみ
+: CharaCostume( "Kinako", 5 )
+: DrawFaceThumbnail( "Kinako",20, 0, 0, 0 )
+: PlayVoice( "Voices/vo02_kin0167" )
+\CN["黄菜子"]
+“嗯……嗯……嗯……”
+
+因为那天看到了杀人的现场
+我像往常一样做了以前的梦。
+
+非常痛苦又悲伤，然后——
+绝对不能忘记的回忆。
+
+//Yoshi：背景消去
+//●演出：過去回想
+//●場所：白夜の施設・過去
+: PlaySe( "SE/Se_Effect00" )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition13", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_HozukiDoujyo01", 1.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition13", 1.0 )
+: Wait()
+: PlayBgm("BGM/03_CM003")
+: ShowWnd()
+当时我在白夜的训练设施。
+
+\CN["白夜的训练生A"]
+“……唔……”
+
+//●ＳＥ：倒れる音
+: PlaySe( "SE/Se_Down01" )
+: HideWnd()
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako",10, 0, 1, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo02_kin0168" )
+\CN["黄菜子"]
+“……谢谢”
+
+: EraseChara( "Kinako", 0.5 )
+\CN["白夜的训练生B"]
+“那孩子是黄兰大人的女儿吧？”
+
+\CN["白夜的训练生C"]
+“不愧是白夜九星，是四绿黄兰大人的女儿。
+甚至连那个年纪活跃在一线的武士都敌不过……”
+
+母亲的{有栖川黄兰，有栖川黄兰}
+白夜的干部，是九星之一。
+
+而且，作为女儿的我在懂事之前
+在白夜进行了战斗训练。
+
+\CN["黄兰"]
+“你们这些家伙，现在正在训练中呢？有闲工夫喋喋不休地聊天吗？”
+好像有？”
+
+\CN["白夜的训练生A"]
+“希奇！！！黄兰大人！？”
+
+\CN["黄兰"]
+“在那里说话的家伙，全部都是假装1万次”
+
+\CN["白夜的训练生B"]
+“嗯，那个。”
+
+\CN["黄兰"]
+“你没听见吗？”
+
+\CN["白夜的训练生C"]
+“好的，对不起！我马上去做！”
+
+我不太清楚，但是妈妈是白夜
+好像担当着培养战斗员的任务。
+
+\CN["黄兰"]
+“嗯。黄菜子，看来进步很大了。”
+
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako", 2, 0, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0169" )
+\CN["黄菜子"]
+“没那回事，还差得远呢……”
+
+\CN["黄兰"]
+“是啊。刚才的训练也完全感觉到杀气
+没有。你太天真了”
+
+: DrawChara( "Kinako",12, 0)
+: PlayVoice( "Voices/vo02_kin0170" )
+\CN["黄菜子"]
+“……对不起。”
+
+: EraseChara( "Kinako", 0.5 )
+对我来说妈妈只是个严厉的人。
+
+有栖川黄兰的女儿也很受关注
+妈妈对我严格要求，免得出丑
+接过来了。
+
+但是，尽管如此，我还是不讨厌妈妈
+为了有一天能得到妈妈的认可而拼命努力着。
+
+——但是，有一天它再也不能实现了
+突然来了。
+
+//●演出：場面転換トランジション
+//●場所：白夜の施設・過去
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["白夜的训练生A"]
+“喂喂，今天不是特别热闹吗？”
+
+\CN["白夜的训练生B"]
+“是啊。看啊，干部们来看了。
+这样啊，这就是升格考试啊……”
+
+: PlayBgm("BGM/11_CM011")
+这天在升格考试中包括我在内共有5个训练生
+我要参加考试。
+
+考试就是徒有虚名，所有人都能合格的人
+训练生们都是这么想的。
+
+因为考试失败回来的训练生
+因为到现在为止都没有一个人。
+
+//Yoshi：左に卍、右に蘭丸
+: DrawChara( "Manji", 0, 0, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Ranmaru", 0, 0, 0, 0.5, 0.0, 4, "R" )
+\CN["卍"]
+“呃……。啊，如果有能用的家伙的话，就给我吧。
+话说，为什么你在这里？兰丸”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“嗯？有点在意的孩子呢。看情况。”
+
+\CN["卍"]
+“在意的孩子？难道是那家伙吗？”？
+有栖川大妈的女儿之类的？”
+
+: DrawChara( "Ranmaru", 3, 0)
+\CN["兰丸"]
+“是啊。猜对了。”
+
+\CN["卍"]
+“真的吗！你是萝莉控吗？
+竟然对那样的孩子感兴趣……”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“嗯。萝莉控什么的无所谓……”
+
+\CN["兰丸"]
+“她很强，恐怕比你好多了。”
+
+\CN["卍"]
+“啊？你的眼睛坏了吗？”
+
+\CN["卍"]
+“那样的孩子比我强吗？什么噱头？”
+
+: DrawChara( "Ranmaru",17, 0)
+\CN["兰丸"]
+“虽然不是噱头。”
+
+\CN["卍"]
+“啊？”
+
+: EraseChara( "Manji", 0.5 )
+: EraseChara( "Ranmaru", 0.5 )
+\CN["白夜的训练生C"]
+“哇……兰丸和卍，又在吵架了。”
+
+\CN["白夜的训练生D"]
+“九星之间的关系好像很不好……”
+
+\CN["白夜的训练生A"]
+“啊，考上了，然后一个劲儿地立功
+将来进入九星吧」
+
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako", 0, 0, 1, 0.5, 0.0, 3, "C" )
+\CN["白夜的训练生B"]
+“嘿嘿，黄菜子啊，你知道吗？
+九星六白的织笠御影是史上最年轻的，进入了九星
+好像是。像是魔术的大天才啊」
+
+\CN["白夜的训练生A"]
+“黄菜子的话，不是可以更新吗？”
+
+: DrawChara( "Kinako", 4, 0)
+: PlayVoice( "Voices/vo02_kin0171" )
+\CN["黄菜子"]
+“……是啊……如果合格了，我会努力的。”
+
+: EraseChara( "Kinako", 0.5 )
+我一直在心里乱跳。
+
+但是，这个对话是他们最后的对话
+果然没想到。
+
+\CN["黄兰"]
+“现在开始考试。
+叫到名字的话请到这边来”
+
+然后，从妈妈嘴里喊出了第一个考试者。
+
+\CN["黄兰"]
+“什么东西都可以用。
+如果能给我一击的话就合格了”
+
+\CN["黄兰"]
+“这里是战场——把我当作敌人来对待吧。”
+
+\CN["白夜的训练生A"]
+“我知道了。那我就用惯了的那家伙吧。”
+
+他选择的是一把木刀。
+是持续锻炼到把手处渗进血的东西。
+
+\CN["黄兰"]
+“……真的可以这样吗？”
+
+\CN["白夜的训练生A"]
+“是的。和我一起进行了至今为止的严格训练。”
+因为是伙伴”
+
+\CN["黄兰"]
+“那就好。”
+
+//Yoshi：左に卍、右に蘭丸
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawChara( "Manji", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Ranmaru", 1, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["卍"]
+“哈哈哈，那家伙是笨蛋吧？”？
+选木刀……肯定会死的！”
+
+\CN["兰丸"]
+「…………」
+
+: EraseChara( "Ranmaru", 0.5 )
+: EraseChara( "Manji", 0.5 )
+\CN["黄兰"]
+「那么，开始吧。裁判，暗号。」
+
+\CN["审判"]
+“开始——”
+
+: StopBgm( 1.0 )
+\CN["白夜的训练生"]
+“势均力敌————”
+
+//※●演出：血飛沫
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: PlayBgm("BGM/29_ID02")
+: ShowWnd()
+\CN["黄兰"]
+“你的伙伴好像没有保护你啊。”
+
+周围充满了浓厚的血的味道。
+
+开始的信号很快训练生就沉入了血海。
+
+\CN["白夜的训练生B"]
+“不会吧，不会吧……死了……”
+
+\CN["白夜的训练生C"]
+“是、那样的、因为、这是训练……”
+
+\CN["黄兰"]
+“我应该说过。
+这里是战场，我觉得我是敌人”
+
+\CN["黄兰"]
+“那家伙在战场上把自己的生命托付给了木刀。
+结果，被我砍死了”
+
+\CN["黄兰"]
+“——就是这么回事。”
+
+//Yoshi：センターに卍
+: DrawChara( "Manji", 0, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["卍"]
+“哎呀哎呀，那个阿姨，真是没用啊。
+嘛，之前也做过了，因为没有后续所以很焦躁吧”
+
+\CN["黄兰"]
+“……卍、你……！”
+
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Manji", 0, 0, 1)
+\CN["卍"]
+“哎呀！九星之间的吵架是禁止的吧？
+你脑子里是这么说的吧？”
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Manji", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()//Yoshi：センターに黄菜子
+: DrawChara( "Kinako",36, 0, 1, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo02_kin0172" )
+\CN["黄菜子"]
+“妈妈把人……”
+
+妈妈杀了好几个人
+我听说过。
+
+但是，果然亲眼看到那个现场的话
+只是，受到了打击……。
+
+: EraseChara( "Kinako", 0.5 )
+\CN["黄兰"]
+“下一个！”
+
+\CN["白夜的训练生B"]
+“希伊耶！”
+
+下一个训练生瘫倒在地上。
+
+\CN["黄兰"]
+“真没出息……”
+
+//※●演出：血飛沫
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+\CN["白夜的训练生B"]
+“啊……啊…………”
+
+母亲毫不留情地杀害了要逃跑的人。
+
+\CN["黄兰"]
+“下一个！”
+
+\CN["白夜的训练生C"]
+“啊啊啊……啊啊啊啊……”
+
+\CN["黄兰"]
+“只要给我一击，我就能活下去。
+像刚才那家伙一样想逃跑的话也可以”
+
+\CN["黄兰"]
+“当时作为迄今为止经受过严格训练的一员，我也很努力地工作着
+我会杀了你不痛苦的”
+
+下一个训练生手里拿着日本刀。
+
+\CN["白夜的训练生C"]
+「哇啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！
+啊啊啊啊啊啊啊啊啊啊啊啊！”
+
+疯狂地哭喊着
+我要去面对妈妈……。
+
+\CN["黄兰"]
+“气势是可以评价的。但是，{精神，心}的软弱是没有问题的。
+”
+
+//※●演出：血飛沫
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+鲁莽挥舞着刀的训练生
+被妈妈砍断断断了呼吸。
+
+//Yoshi：左に卍、右に蘭丸
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawChara( "Manji", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Ranmaru", 1, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["兰丸"]
+「…………」
+
+\CN["卍"]
+“哎呀，这下，今年也是0吧。”
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Manji", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+//●演出：血飛沫
+: ShowWnd()
+\CN["白夜的训练生D"]
+“啊……啊……”
+
+: PlaySe( "SE/Se_Down01" )
+然后，下一个训练生也选择了战斗
+我突然被妈妈杀死了。
+
+\CN["黄兰"]
+“接下来是你吗，黄菜子。”
+
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako",12, 0, 1, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo02_kin0173" )
+\CN["黄菜子"]
+“妈妈，你为什么杀了大家？
+明明应该是伙伴，为什么……！”
+
+\CN["黄兰"]
+“伙伴？你在说什么甜言蜜语？”？
+看着死去的人们的变化，尽管如此
+你傻得不知道吗？”
+
+: DrawChara( "Kinako", 3, 0)
+\CN["黄兰"]
+“眼前有个敌人夺取了生命。
+仅仅这样就让周围的人看不见的疯狂”
+
+\CN["黄兰"]
+“如果他们去战场看看。
+会变成什么样，比看火更清楚。
+一定会拖后腿，把很多朋友卷进来”
+
+//Yoshi：センターに蘭丸
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: DrawChara( "Ranmaru", 4, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["兰丸"]
+“嘛，我说的话就是这么回事……”
+
+//Yoshi：センターに黄菜子
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: DrawChara( "Kinako", 3, 0, 1, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["黄兰"]
+「那么，黄菜子。接下来轮到你了。
+拿刀吗？还是选择安宁的死亡？
+可以选择”
+
+: DrawFaceThumbnail( "Manji", 0, 0, 0 )
+\CN["卍"]
+「哇哈哈，那个阿姨好过分啊。
+女儿不是也打算杀的吗。哇，乱七八糟
+变得有趣了！”
+
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako",10, 0, 1)
+: PlayVoice( "Voices/vo02_kin0174" )
+\CN["黄菜子"]
+“如果给妈妈一次，那就结束了吧？”
+
+\CN["黄兰"]
+“啊，对了。这样就合格了。
+你在白夜作为武士被迎接，进入我的指挥之下”
+
+: DrawChara( "Kinako", 9, 0)
+: PlayVoice( "Voices/vo02_kin0175" )
+\CN["黄菜子"]
+“那我就选这个。”
+
+于是我选择了现在也很喜欢用的刀“扬羽”。
+
+\CN["黄兰"]
+“呼。谁都拔不出的名刀啊。你在想什么？”
+
+\CN["黄兰"]
+「难道是为了不杀我或是为了做那种愚蠢的事情吗？」
+你不是在想吗？”
+
+//Yoshi：左に卍、右に蘭丸
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: DrawChara( "Manji", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Ranmaru", 3, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["卍"]
+“那个小鬼，真的是被乌贼咬了嘛！
+那个阿姨的对手，那么大的刀，而且到现在谁都没有
+是没有拔过的那个吧？”
+
+\CN["兰丸"]
+“是啊。选择主人的名刀——或是妖刀
+是被说的刀啊」
+
+//Yoshi：センターに黄菜子
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Manji", 0.0 )
+: DrawChara( "Kinako",10, 0, 1, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["黄兰"]
+“就算是女儿也不会原谅。好不容易才注意到的。”
+在战场上选择与身体不相称的刀的笨蛋啊」
+
+\CN["黄兰"]
+“就算是恳求也要用怜悯之情，一瞬间就把你的头跳出来。”
+
+: StopBgm( 1.0 )
+\CN["审判"]
+“——开始！”
+
+: PlayBgm("BGM/16_TM001")
+在开始的信号中，妈妈按照宣言的那样盯着我的脖子。
+
+: HideWnd()
+: DrawChara( "Kinako", 9, 0)
+: PlaySe("SE/Se_Foot01")
+: chara = "Kinako"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_a001_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0176" )
+\CN["黄菜子"]
+“是啊！”
+
+//●ＳＥ：刀合わせの音
+//※斬撃エフェクト
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+: PlaySe( "SE/Se_Katana02" )
+\CN["黄兰"]
+“呼……”
+
+: PlayVoice( "Voices/vo02_kin0177" )
+\CN["黄菜子"]
+“因为他说他是在盯着我的脖子。”
+
+\CN["黄兰"]
+“不愧是我的女儿……但是……！”
+
+//●演出：刀エフェクト
+: PlaySe("SE/Se_Swing02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect05", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe( "SE/Se_Katana02" )
+\CN["黄兰"]
+“没想到这边也能防止……”
+
+: HideWnd()
+: Call("Scenarios/Common*EvCutinFadeOut")
+: DrawChara( "Kinako", 9, 0, 1, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0178" )
+\CN["黄菜子"]
+“我总觉得能理解妈妈的动作。”
+
+接下来要做什么？
+
+总觉得明白了，果然是血缘关系
+是因为这个吗？
+
+//Yoshi：センターに蘭丸
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: DrawChara( "Ranmaru", 1, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["兰丸"]
+（莫非，那个孩子对黄兰的脾气很在意吗？
+那个毛病被识破了，最近工作失败了吗
+但是啊……）
+
+//Yoshi：センターに黄菜子
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Kinako",10, 0, 1, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 0; type = "DL";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: PlaySe( "SE/Se_KatanaHit02" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["黄兰"]
+“黄菜子，光靠防御是无法生存的。”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0179" )
+\CN["黄菜子"]
+“我知道！”
+
+现在我的技能就是和妈妈面对面砍
+我知道只会遭到反击。
+
+: HideWnd()
+: DrawChara( "Kinako", 9, 0)
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 8, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.15, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe( "SE/Se_KatanaHit01" )
+: Sleep(0.20)
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.15, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe( "SE/Se_KatanaHit01" )
+: Sleep(0.20)
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.15, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe( "SE/Se_KatanaHit01" )
+: Call("Scenarios/Common*EvCutinFadeOut")
+: ShowWnd()
+//●演出：斬っては防ぐを何度か繰り返す
+\CN["黄兰"]
+“哇，我的女儿，真让人烦躁。”
+
+//Yoshi：左に卍、右に蘭丸
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: DrawChara( "Manji", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Ranmaru", 1, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["卍"]
+“嘿嘿，那个大妈，快疯了！
+这下，那个孩子也结束了啊。长大后会变成美人
+但是真想拥有啊」
+
+\CN["卍"]
+“和身体不相称，选择那么大的刀的时候只是
+我是笨蛋。就像是在请求杀人一样”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“嗯……”
+
+\CN["兰丸"]
+（那孩子身体怎么样呢？）
+
+\CN["兰丸"]
+（明明扬羽是一把非常重的刀，却轻轻地挥舞着
+感觉……）
+
+//Yoshi：センターに黄菜子
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Manji", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evc_a001_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo02_kin0180" )
+\CN["黄菜子"]
+（这把刀看起来很轻。）
+
+感觉和训练中使用的东西一样重。
+
+: HideWnd()
+: DrawChara( "Kinako", 7, 0, 1, 0.0, 0.0, 3, "C" )
+: chara = "Kinako"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+\CN["黄兰"]
+“不被刀挥舞是很了不起的。”
+
+\CN["黄兰"]
+“如果好好选择适合自己的东西的话
+也许已经分出胜负了。选择错误”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0181" )
+\CN["黄菜子"]
+“不，没有错。”
+
+: DrawChara( "Kinako",10, 0)
+我在防御攻击的时候确信过。
+
+妈妈瞄准对方脖子的时候
+一定要向后退一步。
+
+\CN["黄兰"]
+“啊啊啊啊啊啊啊！”
+
+//●演技：心の声です
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0182" )
+\CN["黄菜子"]
+（退了一步……就是现在！）
+
+//●演出：斬撃エフェクト
+: PlaySe("SE/Se_Foot01")
+: chara = "Kinako"; lay = 3; type = "SDL";
+: Call( "Scenarios/Common*FgEffOut")
+用力压低姿势，躲开对头的斩击
+进入怀中。
+
+\CN["黄兰"]
+“酷……”
+
+//: DrawChara( "Kinako", 9, 0)
+//●演出：斬撃エフェクト
+: PlaySe("SE/Se_Swing03")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+用力甩开一直放在鞘里的大刀。
+
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: PlaySe( "SE/Se_Down01" )
+: HideWnd()
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["黄兰"]
+“………………呃！！”
+
+//Yoshi：左に卍、右に蘭丸
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawChara( "Manji", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Ranmaru", 3, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["卍"]
+“嘛，真的吗……那个小鬼，有栖川的阿姨
+撞飞了……”
+
+\CN["兰丸"]
+“啊，果然啊。
+那个孩子被扬羽喜欢了」
+
+\CN["卍"]
+“啊？你说什么被扬羽喜欢了？”？
+小说写得太多了，现实和虚构混杂在一起
+变成这样了吗？”
+
+: DrawChara( "Ranmaru",17, 0)
+\CN["兰丸"]
+“不管怎么说都可以。妖刀扬羽对黄菜子说
+我觉得你是主人……嗯。我觉得是那样的”
+
+//Yoshi：センターに黄菜子
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Ranmaru", 0.0 )
+: EraseChara( "Manji", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: DrawChara( "Kinako", 2, 0, 1, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0183" )
+\CN["黄菜子"]
+“妈妈，这是我们约定的一瓶。
+算了，这种事算了吧”
+
+: StopBgm( 1.0 )
+: DrawChara( "Kinako",10, 0)
+到此结束。
+虽然我觉得不要再争了……。
+
+: PlayBgm("BGM/28_ID01")
+: DrawChara( "Kinako", 7, 0)
+\CN["黄兰"]
+“哈哈哈，别得意忘形了，有个小姑娘啊！！”
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: DrawChara( "Manji", 0, 0, 0, 0.0, 0.0, 3, "L" )
+: DrawChara( "Ranmaru", 4, 0, 0, 0.0, 0.0, 4, "R" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["卍"]
+“啊……啊，完全是生气啊。”
+
+\CN["兰丸"]
+“这是黄兰先生的坏习惯。
+转来转去，周围就看不见了”
+
+\CN["卍"]
+“那个孩子，真的死了啊……”
+
+: PlaySe( "SE/Se_Katana02" )
+: CharaCostume( "Ranmaru", 1 )
+: JumpLayer( 4, 0, -20, 1, 0.15)
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“嗯……。不停下来就很麻烦了。”
+
+//●演出：蘭丸　移動する
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Ranmaru"; lay = 4; type = "DR";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Manji", 0.0 )
+: DrawChara( "Kinako",19, 0, 1, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+
+//Yoshi：センターに黄菜子
+\CN["黄兰"]
+“啊啊啊啊啊啊啊啊啊啊！！”
+
+//●演出：刀　振り回す
+: HideWnd()
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 8, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.15, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe( "SE/Se_KatanaHit01" )
+: Sleep(0.20)
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.15, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe( "SE/Se_KatanaHit01" )
+: Sleep(0.20)
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.15, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe( "SE/Se_KatanaHit01" )
+: Call("Scenarios/Common*EvCutinFadeOut")
+: DrawChara( "Kinako", 6, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0184" )
+\CN["黄菜子"]
+“妈妈，住手！我们已经决出胜负了！”
+
+\CN["黄兰"]
+“你说过吗？这里是战场。”
+
+: DrawChara( "Kinako",19, 0)
+\CN["黄兰"]
+“是生是死？是互相残杀的场所！！”
+
+//●演出：刀　振り回す
+: HideWnd()
+: PlaySe("SE/Se_Swing01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect05", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.15, 0.1, "BGImage/BattleEffectTransition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+大概，刚才说了些什么
+也许是你偷工减料了。
+
+展开了无法比拟的强力快速斩击
+我很容易集中精力防止。
+
+//●演技：体勢を崩してしまいます
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawChara( "Kinako", 7, 0)
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0185" )
+\CN["黄菜子"]
+“啊……！”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Kinako"; lay = 3; type = "Down";
+: Call( "Scenarios/Common*FgEffOut")
+脚下被什么东西抓住了，身体崩溃了。
+
+//Yoshi：センターに蘭丸
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Ranmaru",15, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["兰丸"]
+“嘛，太糟糕了！黄兰先生，住手！”
+
+//Yoshi：センターに黄菜子
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Ranmaru"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawChara( "Kinako", 7, 0, 1, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["黄兰"]
+“去死吧啊啊啊啊啊啊啊啊！！”
+
+妈妈真的是想杀我而把刀挥下来。
+
+感觉很不可思议。
+周围的动作变得非常缓慢——
+
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Effect00" )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+那个时候，突然觉得脑内有什么东西在说话。
+
+//●演出：黄菜子　揚羽詠唱
+//●演出：斬撃
+: Call( "Scenarios/Effect*KinakoAgeha" )
+: HideWnd()
+//※血飛沫エフェクト
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: DrawImage( 9, 0, "BGImage/BG_Red", 1.0 )
+: Wait()
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evc_a002_1_1_0200000_1000000_1_"
+: Call("Scenarios/Common*EvIn")
+: FadeOutLayer( 9, 1.0, 0.0, "BGImage/Transition16", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ShowWnd()
+慢慢地睁开眼睛。
+
+//Yoshi：センターに蘭丸
+//: DrawChara( "Ranmaru", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayBgm("BGM/29_ID02")
+\CN["兰丸"]
+「…………」
+
+//: EraseChara( "Ranmaru", 0.5 )
+//: Wait( ) 
+//Yoshi：センターに黄菜子
+//: DrawChara( "Kinako", 0, 0, 1, 0.5, 0.0, 3, "C" )
+视野红彤彤。全身染上了红色的水滴。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawImage( 1, 0, "BGImage/BG_HozukiDoujyo01", 0.0 )
+: DrawChara( "Kinako",37, 0, 1, 0.0, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0186" )
+\CN["黄菜子"]
+“啊……啊…啊……啊……啊…啊…啊…啊…啊……啊……”
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: DrawChara( "Manji", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["卍"]
+“……呜哇……呜……呜……真是两半啊……”
+
+: EraseChara( "Manji", 0.5 )
+妈妈上半身和下半身分成两半
+事情断了。
+
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako",36, 0, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0187" )
+\CN["黄菜子"]
+“我、我……是我……杀了我……妈妈……”……
+我……啊…啊…啊…啊…啊…啊……啊……啊……啊……啊……”
+
+: DrawChara( "Kinako",29, 0)
+: PlayVoice( "Voices/vo02_kin0188" )
+\CN["黄菜子"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——这一天，我有生以来第一次杀人。
+
+我亲手残杀了亲生母亲。
+
+用心交换保护了生命。
+
+……………………………………………………。
+
+//●演出：暗転解除
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom05", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition13", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/41_Sad")
+: ShowWnd()
+之后，我被分配到了以白夜暗杀为中心的队伍。
+
+\CN["贵族"]
+“那件事怎么样了？”
+
+\CN["贵族的佣人"]
+“这是一家蚕批发店，据说销售额只有上百分之三
+我们正在调整七成以税的形式交给这里”
+
+\CN["贵族"]
+“嗯。如果想逃跑的话，把家人作为人质就好了。
+确实有一个10岁的女儿。把他拐走
+只要交涉就行了”
+
+//●演出：黄菜子　登場する
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako",11, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["贵族的佣人"]
+“来，你是什么家伙！？从哪里进来的！？”
+
+: PlayVoice( "Voices/vo02_kin0189" )
+\CN["黄菜子"]
+「…………」
+
+//●ＣＧ：有栖川黄菜子　アクションシーン
+//●演出：斬撃シーン
+: HideWnd()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+//※血飛沫
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+\CN["贵族的佣人"]
+“……啊…啊……啊……啊……啊……”
+
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["贵族"]
+“不会吧……白夜的……？
+听说有个小暗杀者……”
+
+\CN["贵族"]
+“只要是想要的东西什么都给你！
+所以，放过我吧！就算杀了我对你也没有任何好处
+没有吧？什么？”
+
+: PlayVoice( "Voices/vo02_kin0190" )
+\CN["黄菜子"]
+“命令，所以……”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Kinako"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Red", 0.0 )
+//※血飛沫
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+又是幕府的相关人员，又是贵族，又是商人——
+按照上面的命令一直在杀谁。
+
+那一天，在驿町为了局长的性命而失败
+什么都不想，挥刀割断生命的每一天
+平淡地度过了。
+
+//●演出：回想から開ける
+//●場所：鬼灯屯所・黄菜子の部屋・夜
+//Yoshi：センターに紅美
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition14", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawChara( "Bebi", 2, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0055" )
+\CN["红美"]
+“……キナコ……又在呻吟了。”
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0056" )
+\CN["红美"]
+“在下一直在kinako的旁边……。
+所以，安心睡觉就好了”
+
+: EraseChara( "Bebi", 0.5 )
+被恶梦魇住的夜晚红美悄悄地
+你会进我的被子里来。
+
+然后，抱住红美的话，痛苦的心情就会缓和
+多亏了你，我才能好好地迎接早晨。
+
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

@@ -1,0 +1,305 @@
+//========================================================
+//○小さな芽
+//========================================================
+//●場所：鬼灯屯所
+//●視点：第三者視点
+//●背景：空・昼
+//Yoshi：背景
+: CharaCostume( "Leo", 1 )
+: CharaCostume( "Kotaro", 0 )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+————然后。
+
+//●背景：鬼灯屯所
+//Yoshi：背景、和室・昼
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/36_ID03")
+: ShowWnd()
+\CN["鬼灯队士・男G"]
+“局长，帝都2丁目有强盗。”
+
+\CN["鬼灯队士・女B"]
+“帝都贫民窟地区卖的孩子杀了客人。”
+
+: DrawChara( "Leo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["雷欧"]
+“是！太棒了！太棒了！”！
+为什么每天都这样事件不断！”
+
+从给作为局长的Leo提供情报的队员那里
+街上的纠纷频繁地被报告。
+
+: DrawChara( "Leo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Kotaro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["甲太郎"]
+“最近的半格雷都是最麻烦的。
+那些家伙，完全被乌贼咬了”
+
+有一天，伊藤甲太郎突然出现在屯所。
+在向银复仇的时候，他就在这里呆着。
+
+不活动身体的话会变迟钝
+也就是说他在帮我工作。
+
+: EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1061" )
+\CN["桃子"]
+“最近，也有人因为害怕小银和伊藤而逃走
+虽然有很多……。只有这样才姑息吗……”
+
+\CN["银子"]
+“小姐，这样还不错。
+明明知道坏事是坏事，却还在干”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Kotaro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Leo", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“是啊。半格雷也是，不过反幕府派的残余们是最棒的。”
+很麻烦”
+
+\CN["甲太郎"]
+“正义是相信我而不怀疑的家伙吗？”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“对了对了。他们说不能再做了。”
+因为没有划分线……”
+
+: EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["银子"]
+“那就这样吧，我也站不起来了
+不过我只是在最后发牢骚而已”
+
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1062" )
+\CN["桃子"]
+“嘛，即使这样也慢慢变好了呢！
+继续下去的话，和平的帝都总有一天会来的”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["雷欧"]
+“啊！桃子，说了好话！我也这么想。”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1063" )
+\CN["桃子"]
+“是吧！？但是，首先必须要做到最好。
+没有将军不好”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1064" )
+\CN["桃子"]
+“将军的孩子在公共场合只有小夜一个人
+如果按照规则的话，小夜就是下一任将军了吧”
+
+女人不可能成为将军！
+反对的幕臣占了大半。
+
+虽说如此，也没有适合将军的人物
+将军不在的状态还在继续。
+
+//●演出：場面転換トランジション
+//●場所：帝都・小高い丘
+//●視点：無黒視点
+//●背景：小高い山・昼
+//Yoshi：背景、河川・昼
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_River01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+——帝都附近山上的小墓地。
+
+在那里埋葬了迄今为止殉职的鬼灯队士们。
+
+除了嘲讽局长和龙先生之外，爷爷和达磨也……。
+
+大家都是带着信念战斗的人。
+
+虽说是敌对，但尸体曝露在原野上是不可能的
+出于武士的自尊心没能做到。
+
+: PlayBgm("BGM/48_Goodnight")
+: DrawChara( "Sayo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+//●演技：泣きそうになっています
+: PlayVoice( "Voices/vo24_say0223" )
+\CN["小夜"]
+“……爷爷”
+
+战斗结束后终于平静下来的小夜
+终于能好好地接受爷爷的死了。
+
+但是，这样的话悲伤也不会马上消失
+小夜双手合十的眼角流着一缕眼泪。
+
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo00_muk2375" )
+\CN["无黑色"]
+“小夜……”
+
+: DrawChara( "Sayo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo24_say0224" )
+\CN["小夜"]
+“没关系，无黑。”
+
+: DrawChara( "Sayo", 8, 0)
+: PlayVoice( "Voices/vo24_say0225" )
+\CN["小夜"]
+“刚才，我向爷爷报告过。”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk2376" )
+\CN["无黑色"]
+“这样啊。我可以问你报告了什么吗？”
+
+: DrawChara( "Sayo", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo24_say0226" )
+\CN["小夜"]
+“嗯！那个，我想成为武士。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2377" )
+\CN["无黑色"]
+“……武士？”
+
+小夜说的话让人吃惊。
+
+但是，这不是心血来潮
+看了小夜的脸就知道了。
+
+: DrawChara( "Sayo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo24_say0227" )
+\CN["小夜"]
+“光是看到重要的人受伤就很讨厌。
+我也想变得像你们一样……”
+
+: DrawChara( "Sayo", 9, 0)
+: PlayVoice( "Voices/vo24_say0228" )
+\CN["小夜"]
+“不仅仅是被保护着
+我想站在一旁为重要的人战斗！”
+
+: DrawChara( "Mukuro", 34, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo00_muk2378" )
+\CN["无黑色"]
+“这样啊。顺便问一下，你打算怎么处理幕府？”
+
+: DrawChara( "Sayo", 2, 0)
+: PlayVoice( "Voices/vo24_say0229" )
+\CN["小夜"]
+“现在头脑顽固的人在说什么烦心事呢。
+但是，这也已经结束了”
+
+: DrawChara( "Sayo", 4, 0)
+: PlayVoice( "Voices/vo24_say0230" )
+\CN["小夜"]
+“因为，我要当将军。”
+
+: DrawChara( "Mukuro", 41, 0)
+: PlayVoice( "Voices/vo00_muk2379" )
+\CN["无黑色"]
+“将军啊……刚才说要当武士什么的
+没有吗？”
+
+我知道小夜在说什么，所以硬要问一下。
+
+: DrawChara( "Sayo", 1, 0)
+: PlayVoice( "Voices/vo24_say0231" )
+\CN["小夜"]
+“将军也好，武士也好，我都要成为你们的对手。”
+
+//: DrawChara( "Mukuro", 4, 0, 0, 0.5, 0.0, 2, "LC" )
+:// PlayVoice( "Voices/vo00_muk2380" )
+//\CN["無黒"]
+//「そっか……」
+小夜的回答和预想的一样
+然后是期待的东西。
+
+: DrawChara( "Sayo", 4, 0)
+: PlayVoice( "Voices/vo24_say0232" )
+\CN["小夜"]
+“果然我一个人什么都不会
+虽然必须要得到很多人的帮助……”
+
+关于幕府的政治问题
+实际上已经和玉藻大人说过话了。
+
+后来我从桃子那里听说过
+小夜似乎有调动人的才能。
+
+而且，玉藻大人也充满干劲地说很有趣。
+
+让那个玉藻大人干劲十足，应该相当不错吧。
+
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk2381" )
+\CN["无黑色"]
+“我告诉你，我的指导很严格。”
+
+//●演技：小悪魔的。冗談っぽく
+: DrawChara( "Sayo", 8, 0)
+: PlayVoice( "Voices/vo24_say0233" )
+\CN["小夜"]
+“啊？我想让雷欧教我手脚
+我是这么想的？”
+
+调皮地说。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo00_muk2382" )
+\CN["无黑色"]
+“明天——不，从今天开始彻底锻炼。
+小夜，做好觉悟吧”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Sayo", 1, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo24_say0234" )
+\CN["小夜"]
+“我希望！无黑，我绝对不会输！”
+
+//Yoshi：背景消去
+//●エンディング：処女ＥＮＤ
+//＠アフターエピソード「最初で最後。結ばれた夜の出来事」　解放
+//＠タイトルへ戻る
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: if ( $inExtra == true ) Return endif
+: ResetLayer(9)
+: ShowWnd()
+: AfterStoryFlagUp( "AfterStory04" )
+结束后的轶事“最初也是最后。结合之夜的事情”解放
+
+: FadeOut( 1.0 )
+: Wait()
+: SharedFlag( "GameClear", true )
+: AfterStoryFlagUp( "Ending02" )
+: Call( "Scenarios/CommonSys*HanimeRefAllOpen")
+: LoadScene( "Title" )

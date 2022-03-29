@@ -1,0 +1,616 @@
+//========================================================
+//○敗北者の行く末、望月みどりのその後
+//========================================================
+//●背景：黒画面
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D06_82" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D06_82" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: ShowWnd()
+和无黑他们战斗后，望月绿幸存下来，之后的故事。
+
+她在被希拉加完全提取了魔力之后
+{黑夜叉，暗黑精灵}完全失去了化的力量。
+
+然后，现在的望月绿是————
+
+//●視点：みどり視点
+//●ＣＧ：魔獣姦ショー（みどり）
+//●ＣＧ差分：魔獣なし・暗闇
+//魔獣なし差分ありません（YaO.）
+//: HideWnd()
+//: evbg = true; evcos = false;
+//: evfile = "evf_b002_1_1_0200001_1000000_1_"
+//: Call("Scenarios/Common*EvFadeIn")
+//: ShowWnd()
+: HideWnd()
+: CharaCostume( "Midori", 0 )
+: SwapImage( 1, 0, "BGImage/BG_Cellar01", 1.0 )
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+: DrawFaceThumbnail( "Midori", 0, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0567" )
+\CN["绿色"]
+“啧……睁开眼睛的话，会变成很了不起的事情啊。
+我想一定是被{杀，玫瑰}杀了……”
+
+我们被弄活了。
+
+: PlayVoice( "Voices/vo10_mid0568" )
+\CN["绿色"]
+“虽然不知道怎么了，但是{黑夜叉，暗黑妖精}化了很危险
+”
+
+双手双脚固定不动。
+那个也很硬朗。
+
+也就是说，现在我们家是忍耐的家伙。
+别把俎上的鲤鱼给他。
+
+\CN["男声"]
+“大家久等了。”
+
+从外面传来什么热闹的声音。
+到底是怎么回事啊。
+
+无所谓，那么，怎么办才好呢
+仔细一想——
+
+//●ＳＥ：扉（金属）の開く音
+//●ＣＧ差分：魔獣なし
+//: HideWnd()
+//: evbg = true; evcos = false;
+//: evfile = "evf_b002_1_1_0100001_1000000_2_"
+//: Call("Scenarios/Common*EvChange")
+//: ShowWnd()
+: DrawFaceThumbnail( "Midori", 12, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0569" )
+\CN["绿色"]
+“哇……好耀眼……这是什么？”
+
+被突然闯进来的耀眼的光蒙住了眼睛。
+
+\CN["贵族1"]
+“啊，接下来那个女人。
+虽然乳和屁股都是贫相，但是这样就很难了”
+
+\CN["贵族2"]
+“呐，呐，那个假发，好像在哪里见过？”
+
+\CN["司仪"]
+“各位，让您久等了。”
+
+\CN["司仪"]
+“装饰今天压轴的是那个有名的反幕派组织
+白夜的暗杀者——望月绿小姐！”
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Midori", 4, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0570" )
+\CN["绿色"]
+（哈？トリ？这家伙在说什么？）
+
+好好看看周围。
+
+我们被拘留在舞台中心
+周围边笑边看的人从穿着上看
+也就是说是那个人啊。
+
+: DrawFaceThumbnail( "Midori", 3, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0571" )
+\CN["绿色"]
+“……我不喜欢。”
+
+如果手脚能够自由活动的话，现在在这里的家伙们全部都
+都杀光了。
+
+\CN["贵族3"]
+“也是，望月绿……！？
+那么危险的家伙，带过来真的没问题吗？”
+
+贵族们惊慌失措。
+
+//: HideWnd()
+//: evbg = true; evcos = false;
+//: evfile = "evf_b002_1_1_0200001_1000000_2_"
+//: Call("Scenarios/Common*EvChange")
+//: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo10_mid0572" )
+\CN["绿色"]
+（我们家是那么害怕的吗？
+明明摆出一副可爱的脸？）
+
+\CN["司仪"]
+“不用担心。武器已经拿起了，双手双脚也要伸开。”
+被牢牢地拘束着”
+
+\CN["司仪"]
+“这个锁链使用的是黑曜石，是力引以为豪的兽人
+因为是连一点伤都不能脱的坚固的东西”
+
+主持人大叔这么一说，贵族们一起发出了放心的叹息
+漏出来。
+
+\CN["贵族1"]
+“到现在为止，你让我吓了很多。感觉很好。”
+
+\CN["贵族2"]
+“白夜的杀手今后会被侵犯。
+非常期待”
+
+//: HideWnd()
+//: evbg = true; evcos = false;
+//: evfile = "evf_b002_1_1_0100001_1000000_2_"
+//: Call("Scenarios/Common*EvChange")
+//: ShowWnd()
+: DrawFaceThumbnail( "Midori", 1, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0573" )
+\CN["绿色"]
+“一旦知道安全的话，就不会告诉我想说的话……”
+
+说是看到了被侵犯的样子
+怎么说，被这些家伙侵犯了？
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo10_mid0574" )
+\CN["绿色"]
+（嘛，这样就好了。
+只不过是做爱而已。那种心情真不错啊）
+
+虽然是这么轻松的心情。
+
+\CN["司仪"]
+“那么，差不多该开始了吧。”
+
+后面有沙沙的沉重声音。
+
+: PlaySe( "SE/Se_Monster01" )
+\CN["魔兽"]
+“哦~哦~”
+
+//: HideWnd()
+//: evbg = true; evcos = false;
+//: evfile = "evf_b002_1_1_0200001_1000000_2_"
+//: Call("Scenarios/Common*EvChange")
+//: ShowWnd()
+//●演技：心の声です
+: DrawFaceThumbnail( "Midori", 4, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0575" )
+\CN["绿色"]
+（什么？是什么呻吟声？）
+
+从后面很低，明显能听到野兽的呻吟声。
+
+\CN["贵族1"]
+“哦哦哦！那只猪现在开始会被侵犯吗？”
+
+\CN["贵族2"]
+“暗杀者，你看你……”
+
+: PlayVoice( "Voices/vo10_mid0576" )
+\CN["绿色"]
+“猪……？”
+
+果然，到了这里就知道会被做什么了。
+
+//●ＣＧ差分：豚あり
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0100001_1000000_2_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["魔兽"]
+“咕噜鲁鲁鲁鲁……”
+
+马上从后面传来野兽的呻吟声。
+
+\CN["司仪"]
+“哎呀，这孩子好像很喜欢望月呢。
+已经勃起了。真想交配啊」
+
+\CN["贵族4"]
+“猪魔兽的小鸡鸡就是那种钻头一样的形状。”
+
+\CN["魔兽"]
+“哦~哦~哦~”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——啾啾……啾……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0200002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：膣口を広げられていく
+: PlayVoice( "Voices/vo10_mid0577" )
+\CN["绿色"]
+“呜呜……啊…呜……呜…啊，好烫啊，进来……”
+
+: PlayBackVoice( "Voices/BGV10_mid_aegi01" )
+\CN["贵族2"]
+“那个女人，现在开始和野兽交配。”
+
+\CN["贵族3"]
+“看到被野兽侵犯的女人最兴奋了。”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+磨磨蹭蹭地——
+朱格、小咕、小咕……小咕……小咕、小咕！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0300002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：膣奥まで挿入されてしまいます
+: PlayVoice( "Voices/vo10_mid0578" )
+\CN["绿色"]
+“啊……啊……呃……啊啊啊啊啊啊啊啊啊！”
+
+比人的肉还大的猪小鸡鸡进到里面来。
+
+长的小鸡鸡埋在阴道内全部
+下腹部有强烈的压迫感。
+
+: PlayVoice( "Voices/vo10_mid0579" )
+\CN["绿色"]
+“呼……啊，呃……嗯，太长了……娜卡，被摩擦了
+啊，啊，啊……嗯……嗯！”
+
+: PlayVoice( "Voices/vo10_mid0580" )
+\CN["绿色"]
+“嗯，嗯，嗯！好像是人肉被挖出了……
+哈哈……也许，很辛苦……”
+
+虽说被野兽侵犯了，但也没什么了不起的
+还不至于发狂。
+
+也有把小鸡扔进狗仔身上的事
+和人类、精灵、兽人没什么区别。
+
+: PlayVoice( "Voices/vo10_mid0581" )
+\CN["绿色"]
+“说到小鸡鸡的尺寸，形状完全不同……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘嘘！加油！嘘！慢吞吞！骗人！
+嘘！嘘！啪！噗！噗！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0200002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：激しくピストンされています
+: PlayVoice( "Voices/vo10_mid0582" )
+\CN["绿色"]
+“ひぐ、啊、啊啊……嗯、啊、唔、唔……！”
+
+\CN["贵族2"]
+“那只猪激烈地摇着腰。”
+
+\CN["贵族4"]
+“那个女人，一边作为魔兽一边喘息，是多么色情啊？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0100002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0583" )
+\CN["绿色"]
+“一、啊、呃、嗯、嗯……哈、嗯、哈、哈、
+是不是太激烈了，自己……”
+
+: PlayVoice( "Voices/vo10_mid0584" )
+\CN["绿色"]
+“不管我们家的馒头有多舒服……那么
+擦了的话，就要坏了……”
+
+在激烈的存取里（上）内容快要被拖出来了。
+
+每次动作都会从身体深处发出强烈的麻痹
+传遍全身。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0300002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0585" )
+\CN["绿色"]
+“呃，啊啊啊啊啊啊！啊……啊啊啊……啊啊啊啊……啊啊啊……
+呜……嗯，嗯！”
+
+: PlayVoice( "Voices/vo10_mid0586" )
+\CN["绿色"]
+“啊，不行……肚子好痛苦，呼吸……嗯，呃……！”
+
+: PlayBackVoice( "Voices/BGV10_mid_aegi02" )
+\CN["贵族5"]
+“manko，好大……”
+
+\CN["贵族6"]
+“好厉害啊。被那样的东西打入冷宫还满不在乎……。
+不愧是长耳啊。因为任何生物都会被淘汰”
+
+\CN["魔兽"]
+“噢噢噢噢噢！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+哇！哇！嘘！嘘！嘘！嘘！
+
+猪的魔兽一边大声叫着，一边又拿出了小鸡鸡
+激烈起来。
+
+入口处是一直被展开的状态
+在阴道内被搅乱。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0400002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0587" )
+\CN["绿色"]
+“渐渐习惯了猪小鸡鸡……可能会有这种感觉……”……
+小穴全部都被侵犯了，好舒服啊♥</color>」
+
+: PlayVoice( "Voices/vo10_mid0588" )
+\CN["绿色"]
+“嗯！啊！啊！啊，啊
+嗯……嗯……哈…嗯……嗯！”
+
+没有什么强弱。
+
+只是被粗暴地乱骂着娜卡
+娜卡一个劲儿地热轧，不断地收缩。
+
+: PlayVoice( "Voices/vo10_mid0589" )
+\CN["绿色"]
+“嗯，啊啊……哈…啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color>
+这、声音、出来了……我们家，感觉很闷……”
+
+\CN["贵族7"]
+“那个女人，真是太狡猾了。”
+
+\CN["贵族8"]
+“被魔兽侵犯的女人，都是边哭边喊边坏的。
+那明明很有趣，真没意思”
+
+可以听到观众们叽叽喳喳的声音。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0300002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0590" )
+\CN["绿色"]
+“我听到了，你说怎么样都无所谓……哈哈，反正
+我们现在什么都做不了呢……”
+
+: PlayVoice( "Voices/vo10_mid0591" )
+\CN["绿色"]
+「那么，被猪的魔兽强奸，manko，乱七八糟的
+只是被搅乱，心情变好而已……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+中穗！哼！狗熊！好嘞！咕！
+
+舒服的波浪在身体中飞来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0400002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0592" )
+\CN["绿色"]
+“啊，好棒啊……我好像被魔兽侵犯了。”
+
+声音擅自发出。按捺不住。
+
+: PlayVoice( "Voices/vo10_mid0593" )
+\CN["绿色"]
+“啊啊啊啊啊啊啊啊啊啊啊啊……嗯……”……
+好、好……好…好……好…好……好……好……好……好……好……好……好…好……好…好…好…好……好……好…好……好……好……好……好……好……我……我……我
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0300002_1000000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo10_mid0594" )
+\CN["绿色"]
+“啊……啊啊啊……嗯……嗯……嗯……嗯……”
+我、呜呜呜呜呜————————————————！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・水
+: HideWnd()
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0300012_1100000_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜，呜呜，呜呜呜呜呜！！
+
+绝顶的瞬间，埋在阴道内的小鸡鸡激烈地暴跳如雷。
+
+: PlayVoice( "Voices/vo10_mid0595" )
+\CN["绿色"]
+“噢噢噢噢噢噢……然后，出来……我爱的女阴有什么
+被挤得满满的……！”
+
+: PlayVoice( "Voices/vo10_mid0596" )
+\CN["绿色"]
+“啊啊啊啊啊，啊，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！”！
+哈，哈……嗯……啊…嗯……嗯……”
+
+我以为是精液，其实不是。
+
+在阴道内大量排出像爽快感水一样的液体
+从缝隙中以惊人的气势溢出。
+
+: PlaySe( "SE/Se_Monster02" )
+\CN["魔兽"]
+“大叔！！！”
+
+魔兽大吼——
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0211012_1000010_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+好饿！咻咻！咻咻！
+
+: PlayVoice( "Voices/vo10_mid0597" )
+\CN["绿色"]
+“呜哇呜哇！哇，好大的气势出现在娜加……
+啊……啊…啊……肚子，鼓起来了……”
+
+: PlayBackVoice( "Voices/BGV10_mid_jigo01" )
+推开子宫口，以刺痛子宫的气势
+被甩出精液。
+
+一瞬间子宫就充满了，气势很好地流出。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0311012_1000010_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：呼吸を激しく乱しています
+: PlayVoice( "Voices/vo10_mid0598" )
+\CN["绿色"]
+“哈，哈……嗯……哈……啊……啊……
+呼——……嗯……嗯……哈，哈……”
+
+: PlayVoice( "Voices/vo10_mid0599" )
+\CN["绿色"]
+“噗噗……精液出得太多了，吃饱了
+好像要说出口了……”
+
+\CN["贵族4"]
+「好吧，那里面放了那么多啊
+会孕育出恶魔之子吧」
+
+\CN["魔兽5"]
+「话说，精灵连魔兽的孩子都能孕育吗？
+这样的话，会产生怎样的孩子呢？”
+
+观众们一边嘲笑，一边欣赏着我们被侵犯的样子。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo10_mid0600" )
+\CN["绿色"]
+（这样的事情会一直持续下去吗……。
+真是有点——不，真是太难受了，这是）
+
+但是，我们已经没有力量了。
+
+现在，如果手脚被这样束缚的话
+连刚出生的婴儿都不能{杀，玫瑰}。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evf_b002_1_1_0411012_1000010_2_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo10_mid0601" )
+\CN["绿色"]
+（……别想了。发疯疯了……）
+
+什么都做不了，就这样死吧，对谁{杀，玫瑰}
+只能抱着能得到的期待。
+
+至少在那个时候，要是能给我刺几下就好了。
+
+这么说来，我们败北了，怎么能这么奢侈呢。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+: SceneFlagUp( "SC_D06_82" )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

@@ -1,0 +1,554 @@
+//========================================================
+//○狂った親子のいつもの日常
+//========================================================
+*sc001
+//服装を記憶
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Shion", 0 )
+: CharaCostume( "Iwao", 0 )
+//●視点：第三者視点
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——这是西都常见的日常故事。
+
+//●場所：西都の民家・昼
+//●背景：和風民家・部屋・壊れ・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_BoroRoom01_01", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayBgm("BGM/16_TM001")
+: Wait()
+: ShowWnd()
+\CN["严严"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊！”
+
+//※●演出：殴打エフェクト
+: HideWnd()
+: Call( "Scenarios/Effect*Renda01" )
+: ShowWnd()
+大汉在发狂。
+
+\CN["男A"]
+“希伊耶！呼、呼……原谅我……”
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+“可恶……”
+
+//※●演出：殴打エフェクト・血飛沫×３
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: DrawChara( "Iwao", 1, 0)
+: ShowWnd()
+\CN["严严"]
+“哈哈哈哈哈哈哈哈哈哈哈哈哈！！”
+
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+大汉抓住了那附近的男子，一个劲地打脸。
+
+一边发出愉快的声音，一边男子事发还很开心
+一个劲地打着脸。
+
+\CN["女A"]
+“啊……啊…啊……是，是谁啊……啊…”
+
+: PlayHSe( "SE/Hse_Nyou" )
+和她在一起的女人瘫了，开始失禁了。
+
+乘风而来，尿的臭味让大汉感到不快。
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+“……你……我的喜好……不对…”
+
+: PlaySe( "SE/Se_Cloth01" )
+\CN["女A"]
+「！！？」
+
+: PlaySe( "SE/Se_Kubishime" )
+: layer = 3; time = 1.0; strength = 10; vibrato = 10;
+: Call( "Scenarios/Common*CgShake" )
+大个子用手抓住女人的脖子。
+
+大个子的手能紧紧抓住纤细的女人的脖子
+有大小。
+
+//●ＳＥ：骨が軋む音
+: PlaySe( "SE/Se_Kubishime" )
+\CN["女A"]
+“啊……啊………啊……啊……啊……啊……啊……”
+
+女人痛苦地挣扎着，只是像在空中游泳一样
+只能看到。
+
+\CN["妇女"]
+「――――――――」
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+“垃圾”
+
+: PlaySe( "SE/Se_Fracture" )
+男子非常容易地握住女人的脖子。
+
+当然，被打碎脖子的女人一点也不动
+轻飘飘地浮在空中。
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+“那么——”
+
+大汉把变成尸体的男女扔到地上
+拿着一把能把牛一刀两断的牛马刀来——
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+“呼……”
+
+//●ＳＥ：斬撃音
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+//●演出：赤画面に変更する
+//●背景：赤画面
+//Yoshi：背景
+: HideWnd()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect05", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: Call( "Scenarios/Effect*Blood01" )
+: SwapImage( 1, 0, "BGImage/BG_Red", 0.0 )
+: Call("Scenarios/Common*CutinFadeOut")
+: Wait()
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+大个子高兴地哼着小曲
+用刀切下刚杀了的男女的头——
+
+: StopBgm( 1.0 )
+家门前的头盖山——
+今天，在自己杀了十几个人的头盖山的顶端
+高兴地堆了起来。
+
+//●演出：時間経過
+//●場所：西都の民家・昼
+//●背景：和風民家・部屋・壊れ・昼
+//●演出：紫苑が登場する
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_BoroRoom01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Shion", 0, 0, 0, 0.0, 0.0, 2, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+——几分钟后，一位身着光鲜亮丽的女性走进了大汉家。
+
+看到她的瞬间，大个子破颜露出非常高兴的表情
+变成了。
+
+: PlayVoice( "Voices/vo12_shi0014" )
+\CN["紫苑"]
+“哎呀哎呀，又华丽地做了呢。”
+
+: DrawChara( "Iwao", 1, 0, 0, 0.0, 0.0, 3, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["严严"]
+“啊……！妈妈！”
+
+大个子对女性露出了灿烂的笑容，朝着女性的身边跑去。
+
+: JumpLayer( 2, 0, -50, 1, 0.25)
+: DrawChara( "Shion", 1, 0)
+: PlayVoice( "Voices/vo12_shi0015" )
+\CN["紫苑"]
+“好嘞好嘞，严酱。
+让你感到寂寞真是抱歉”
+
+: DrawChara( "Iwao", 0, 0)
+\CN["严严"]
+“没关系……没关系……玩着玩具。”
+
+: DrawChara( "Shion", 0, 1)
+: PlayVoice( "Voices/vo12_shi0016" )
+\CN["紫苑"]
+“呵呵，严酱真是个好孩子啊。”
+
+所谓的玩具就是严酱的大个子
+杀后堆积起来的男女。
+
+母亲至今为止曾训斥过儿子严
+我没有责备自己的行为，一直养大了。
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+而且，不仅如此——
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_A03_86" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = true
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_A03_86" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●ＣＧ：息子のペニスを咥える母親（紫苑）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_1_0100002_1000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+\CN["严严"]
+“呐……妈妈，我是小鸡鸡……”
+
+: PlayVoice( "Voices/vo12_shi0017" )
+\CN["紫苑"]
+“哇，真是个精力充沛、健壮的小矮人啊。
+这样膨胀的话，一定很痛苦吧”
+
+\CN["严严"]
+“嗯……真的很痛苦……希望妈妈能快点开心。”
+
+: PlayVoice( "Voices/vo12_shi0018" )
+\CN["紫苑"]
+「啊，当然啦。
+你给我看一个更坚强的小矮人”
+
+\CN["严严"]
+“嗯……”
+
+严在母亲的嘴边，用猛烈勃起的阴茎
+摆在面前。
+
+紫苑毫不犹豫地把脸靠近……。
+
+//●ＣＧ差分：男性器舐め
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_2_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を舌で舐めています
+: PlayVoice( "Voices/vo12_shi0019" )
+\CN["紫苑"]
+“呃……嗯……呃……呃……呃……嗯……嗯……”
+哈、哈……嗯……ちゃ……れろ……”
+
+: PlayBackVoice( "Voices/BGV12_shi_fera01" )
+\CN["严严"]
+“啊啊啊……啊……啊啊……”
+
+紫苑只是在勃起的阴茎上轻轻地吐舌头
+严则透露出令人心情舒畅的声音。
+
+: PlayVoice( "Voices/vo12_shi0020" )
+\CN["紫苑"]
+“呵呵呵，是个热得舌头都快烫伤了的小弟弟……。
+我忍到这种地步了”
+
+: PlayVoice( "Voices/vo12_shi0021" )
+\CN["紫苑"]
+“小中、小中、嗯……嗯……呃……呃……呃……嗯……”……
+呜呜……中、中、中、中……”
+
+从龟头到雁首。
+
+紫苑被称为传说中的花魁。
+到现在为止，已经有好几个男人被俘虏了
+对儿子毫不吝惜地使用着。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_2_0200002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0022" )
+\CN["紫苑"]
+“严酱的小气鬼，真的充满了活力……。
+从前端溢出了苦涩的汁……”
+
+\CN["严严"]
+“呜……妈妈，对不起啊。
+非常舒服……”
+
+//●読み：男の子（おのこ）
+: PlayVoice( "Voices/vo12_shi0023" )
+\CN["紫苑"]
+“哼哼，{男孩子，竹笋}变成这样是自然规律。
+精神的证据。没必要在意什么”
+
+: PlayVoice( "Voices/vo12_shi0024" )
+\CN["紫苑"]
+“只要用我的舌头变得舒服就可以了。
+嗯……嗯…嗯……呃……呃，被，被……”
+
+\CN["严严"]
+“唔……啊…啊…啊啊啊……！”
+
+刚才还满不在乎地杀人的大汉居然拿出来了
+你不觉得吗？声音很细。
+
+阴茎的前端开始溢出毒舌和刮板
+紫苑红着脸，高兴地用舌头捞取。
+
+\CN["严严"]
+“哈……哈…妈妈，小鸡鸡，还想要……”
+
+: PlayVoice( "Voices/vo12_shi0025" )
+\CN["紫苑"]
+“我明白了。那么，下次就用我的嘴……”
+
+//●ＣＧ差分：咥え
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_3_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+紫苑张着大嘴，嘴里含着严严严严的阴茎。
+
+: PlayVoice( "Voices/vo12_shi0026" )
+\CN["紫苑"]
+“嗯……嗯……嗯……嗯……嗯……”
+
+: PlayBackVoice( "Voices/BGV12_shi_fera02" )
+\CN["严严"]
+“啊啊啊……妈妈的嘴，好温暖……”
+
+看着严森森的表情，紫苑高兴地眯着眼睛。
+
+: PlayVoice( "Voices/vo12_shi0027" )
+\CN["紫苑"]
+“呜呜呜……呜呜呜……嗯……呜呜…呜……呜……呜……”……
+我明白了……嗯……嗯……嗯……我明白了♥</color>」
+
+: PlayVoice( "Voices/vo12_shi0028" )
+\CN["紫苑"]
+“哈，嗯……嗯，嗯……嗯…嗯，我知道了……”……
+嗯……真是的♥</color>」
+
+紫苑一边张大嘴巴，一边细心服务。
+
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_2_0200002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器をいったん、口から離します
+: PlayVoice( "Voices/vo12_shi0029" )
+\CN["紫苑"]
+“嗯，哈……嘴里好像要烫伤了……。
+充满了雄壮的香味……”
+
+//＠真田：紫苑の台詞は漢字を変更。『昂奮』は意図的。
+//●読み：昂奮（こうふん）
+: PlayVoice( "Voices/vo12_shi0030" )
+\CN["紫苑"]
+“呼……呼……我也相当兴奋……已经”
+
+沾满了眼前的唾液和盖子的阴茎。
+紫苑被从那里释放出来的强烈男子气息弄得眼睛都是花。
+
+//●ＣＧ差分：咥え
+//●演技：男性器を咥えます
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_3_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0031" )
+\CN["紫苑"]
+“嗯……嗯……嗯……嗯…嗯…嗯…嗯…嗯……嗯
+嗯，嗯，我知道了”
+
+: PlayVoice( "Voices/vo12_shi0032" )
+\CN["紫苑"]
+
+
+: PlayBackVoice( "Voices/BGV12_shi_fera03" )
+\CN["严严"]
+“啊啊啊……妈妈，已经……差不多该……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_3_0200002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0033" )
+\CN["紫苑"]
+“恩，啊，哈……哈……不忍耐也可以……。
+不放在我嘴里……”
+
+: PlayVoice( "Voices/vo12_shi0034" )
+\CN["紫苑"]
+“我会把它全部吞下
+嗯……嗯…嗯……嗯，嗯，嗯，嗯”
+
+\CN["严严"]
+“……啊…啊…啊…啊……啊！”
+
+严严快感地发出呻吟，紫苑让严心情舒畅
+为了慎重起见，一个劲地动舌头。
+
+绝对不会对游廓的客人
+只为自己真正重要的人尽心尽力。
+
+: PlayVoice( "Voices/vo12_shi0035" )
+\CN["紫苑"]
+“戴着胸罩，嗯，嗯，嗯，嗯……啊啊啊！
+中华、れ、れろ……中华、收缩”
+
+\CN["严严"]
+“啊啊啊啊啊……真的，妈妈……要出去了……嗯……要！”
+
+//●演出：射精
+//●ＣＧ差分：咥え、膣内射精
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_3_0311003_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+参考翻译！看！德彪！别克！
+咕嘟咕嘟！
+
+//●演技：口内射精されています
+: PlayBackVoice( "Voices/BGV12_shi_fera04" )
+: PlayVoice( "Voices/vo12_shi0036" )
+\CN["紫苑"]
+“呜呜呜呜————————嗯，嗯，嗯！”！
+嗯……嗯，嗯，嗯……”
+
+//●演技：心の声です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_3_0011003_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0037" )
+\CN["紫苑"]
+（严酱的精液非常浓……。
+让他这样积攒下来，让他有了痛苦的回忆）
+
+//●演技：精飲しています
+: PlayVoice( "Voices/vo12_shi0038" )
+\CN["紫苑"]
+“嗯……嗯……嗯……嗯……啊啊，好厉害……”……
+嗯……嗯…嗯，嗯……嗯……嗯……小王子……”
+
+所以，如果不好好地把堆积起来的东西吸出来的话——
+
+紫苑闭着嘴接受严严的精液并将其吞下。
+
+\CN["严严"]
+“啊啊……妈妈，好舒服啊……”
+
+: PlayVoice( "Voices/vo12_shi0039" )
+\CN["紫苑"]
+“嗯……嗯，嗯……嗯……嗯……”
+
+//●ＣＧ差分：舐め、射精後精液
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_2_0211013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を口から離す
+: PlayVoice( "Voices/vo12_shi0040" )
+\CN["紫苑"]
+“嗯哈、哈、哈……嗯哼……”……
+非常浓的精液，满满的{射精，だ}好软啊……”
+
+: PlayVoice( "Voices/vo12_shi0041" )
+\CN["紫苑"]
+“精液竟然滴到这种程度……。
+哇，好好地用舌头漂亮地……呜，呜……”
+
+\CN["严严"]
+“啊啊啊……妈妈，那个好舒服啊”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b001_1_2_0011013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0042" )
+\CN["紫苑"]
+“嗯……嗯……呃……呃…严酱的精液非常美味……
+嗯……嗯…嗯……嗯，嗯……”
+
+紫苑仔细地舔阴茎前端溢出的精液。
+
+这就是母子——镝木父子的日常生活。
+
+母亲和儿子平时不经意的普通交流
+是的。
+
+//●演出：暗転
+: HideWnd()
+: StopBackVoice()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+*HScene_End
+: HideWnd()
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_A03_86" )
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

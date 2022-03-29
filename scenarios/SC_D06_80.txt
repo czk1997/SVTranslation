@@ -1,0 +1,964 @@
+//========================================================
+//○敗北者の行く末、織笠御影のその後
+//========================================================
+//●背景：黒画面
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D06_80" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D06_80" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: ShowWnd()
+被无黑们同情的织笠御影之后的故事——
+
+她在被希拉加完全提取了魔力之后
+成为了一个没有任何力量的精灵之女。
+
+之后，她变成了没有魔力的空壳
+被奴隶商人卖……。
+
+//●視点：御影視点
+//●状況：地下で大勢の男たちに廻される御影
+//●ＣＧ：大勢の男たちに犯される（御影）
+//●ＣＧ差分：着衣・未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_1_0000001_1000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+//●演技：御影はヒステリーモードです。口調が荒くなります
+: PlayVoice( "Voices/vo11_mik0286" )
+\CN["御影"]
+“唔……呃，呀……啊啊……！”
+
+: PlayBackVoice( "Voices/BGV11_mik_aegi03" )
+在和神八代无黑他们的战斗中失败的我。
+
+虽然生命没有被夺走，但回过神来，在这样的地下
+被带来了。
+
+\CN["男1"]
+“意外的是，你的胸部好大啊。哦，好有张力啊！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_1_0200001_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：乳房を乱暴に揉まれています
+: PlayVoice( "Voices/vo11_mik0287" )
+\CN["御影"]
+“呃……不，住手！
+不要用脏手碰我！”
+
+对于最讨厌男人这种生物的我来说
+晒皮肤，接触皮肤，恶心得让人恶心。
+
+身上的各个地方好像都出了荨麻疹。
+
+\CN["男2"]
+“你是巫女吧。再清秀一点吧。”
+
+\CN["男3"]
+“快滚，我等你。”
+
+\CN["男1"]
+“对了，别慌。反正跑不了。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0288" )
+\CN["御影"]
+（可恶！只要使用魔术，就和这样的格斯一起……）
+
+醒来后首先注意到的不协调感是：
+魔力变成0。
+
+魔术完全不发动的我没有战斗力。
+和那一带的小姑娘没有什么不同。
+
+\CN["男2"]
+“那么——”
+
+//●ＣＧ差分：着衣・挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0300002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——虞美人。
+
+男人把那个放在阴道口上。
+
+//●演技：男性器を膣口にあてがわれています
+: PlayVoice( "Voices/vo11_mik0289" )
+\CN["御影"]
+“呜哇……不要靠近那么脏的东西！”
+
+这样的话，还不如将身体放在蜈蚣等毒虫爬行的地方
+太好了。
+
+\CN["男2"]
+“啊，果然是巫女所以才是处女吧？”
+
+\CN["男1"]
+“不，能吃处女吗？啊，连猜拳都
+如果不输的话……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+唔……嘴……好咕嘟！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0400002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：御影は処女です。強い痛みがあります
+: PlayVoice( "Voices/vo11_mik0290" )
+\CN["御影"]
+“……啊！啊……嗯，好痛……呜……呜……！”
+
+强行撬开还没有弄湿的阴道入口。
+强烈的疼痛从背后渗出了汗珠。
+
+\CN["男3"]
+“你想不被处女对象弄湿插进去吗？”
+
+\CN["男2"]
+“那是当然的。因为那边会更兴奋。”
+
+\CN["男1"]
+“不要太粗暴，把manko弄坏了。”
+
+\CN["男2"]
+“那就看这个女人了……嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——虞美人、虞美人、小狐狸、小姑娘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0200002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0291" )
+\CN["御影"]
+“呃……啊…呃……不…不，不……”
+啊啊啊，嗯！”
+
+: PlayVoice( "Voices/vo11_mik0292" )
+\CN["御影"]
+“快住手……这些野兽们……！
+在此之上，{侵入，是}……呃，唔……来了……”
+
+\CN["男2"]
+“第一次买的东西果然很窄啊。
+”
+
+咬紧牙关忍耐着快要昏过去的疼痛。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0100002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0293" )
+\CN["御影"]
+（就算被剥夺纯洁，也绝对不会屈服！）
+
+晕过去会更舒服。
+对了。如果不醒就迎来死亡的话
+不用受苦。
+
+虽然我知道。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0294" )
+\CN["御影"]
+（……如果对方是女生的话，屈服也不错）
+
+但是，对方是男人……。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0295" )
+\CN["御影"]
+（被男人屈服而死，绝对不要！
+如果是那样的话，我一定要忍受所有的痛苦！）
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一直、一直、一直、不断地、不断地、不断地、不断地！
+
+\CN["男2"]
+“不放松的话，馒头会坏掉的。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0400002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0296" )
+\CN["御影"]
+“嗯……啊，啊哈……哈，呜……嗯”
+
+: PlayVoice( "Voices/vo11_mik0297" )
+\CN["御影"]
+“{插入，是}，出来了，出来了……嗯，嗯……
+呃……啊…呃，呜……”
+
+\CN["男2"]
+“那么，差不多该打通了。”
+
+腹部从内侧受到了沉重的钝器殴打般的冲击。
+
+为了排除野兽的那个而剧烈蠢动的阴道肉。
+一边强行撬开它，一边前进——
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002b_1_2_0000000_1001000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：破瓜です
+: PlayVoice( "Voices/vo11_mik0298" )
+\CN["御影"]
+“嗯……啊…啊…啊……呜呜呜哇！！”
+
+//●ＣＧ差分：着衣・挿入・破瓜
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0211102_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+叽叽、叽叽、咕噜咕噜……嗯……嗯……嗯！
+
+被剥夺纯洁，一口气贯彻到底。
+
+: PlayVoice( "Voices/vo11_mik0299" )
+\CN["御影"]
+“唔唔唔，嗯，啊……哈……嗯，唔……
+嗯……哈…哈…”
+
+将涌上来的、无可奈何的冲动吞噬。
+
+虽然想哭着喊，但是绝对不想哭着喊。
+
+\CN["男2"]
+“比想象中的反应还差。明明已经把处女膜打出来了。”
+
+\CN["男1"]
+“不是因为你的小鸡太小了吗？”
+
+\CN["男2"]
+“啊？真没想到。之前的花街柳巷也挺大的。”
+”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0111002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0300" )
+\CN["御影"]
+“哈，哈……快点把脏的去掉……。
+心情不好，受不了……”
+
+\CN["男3"]
+“被强奸，被处女抛弃，真是个强势的女人啊。”
+
+\CN["男2"]
+“用小鸡鸡让不屈服的女人服从是很有趣的。
+真是太兴奋了”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘、嘘、嘘……嘘、嘘、嘘、嘘、嘘、嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0411102_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストン（ゆっくり）されています
+: PlayVoice( "Voices/vo11_mik0301" )
+\CN["御影"]
+“嗯……啊……嗯，嗯……嗯……呜………”……
+啊，啊啊啊……哈哈……嗯……”
+
+: PlayVoice( "Voices/vo11_mik0302" )
+\CN["御影"]
+“嗯，不要动！{阴道内，内}不要摩擦
+恶心……不，讨厌……”
+
+阴茎被摩擦到阴道内
+不仅仅是厌恶感，甚至感到恐怖。
+
+忍不住说出了无情的话。
+
+\CN["男2"]
+“又窄又窄……因为是处女，所以系得很紧。”
+
+\CN["男1"]
+“那么，我也请让我好好享受乳吧。
+这个稍微硬一点的乳房啊」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_2_0011002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0303" )
+\CN["御影"]
+“呜……好痛苦……不要碰我的胸部……呜，呜”
+
+: PlayVoice( "Voices/vo11_mik0304" )
+\CN["御影"]
+“呃，好恶心……也，已经不行了……呃，噗……”……
+好像要吐了……”
+
+\CN["男3"]
+“那我会想办法的。”
+
+//●ＣＧ差分：着衣・挿入・フェラ・破瓜
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_3_0311102_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：無理矢理、男性器を咥えさせられています
+: PlayVoice( "Voices/vo11_mik0305" )
+\CN["御影"]
+“嗯哼哼！？”
+
+: PlayBackVoice( "Voices/BGV11_mik_fera01" )
+性器官被强行塞在嘴里。
+
+: PlayVoice( "Voices/vo11_mik0306" )
+\CN["御影"]
+“噗哼……嗯…嗯，嗯，嗯……嗯！”
+
+\CN["男3"]
+“你看，再忍耐一下。小鸡鸡，好好品尝一下。”
+
+: PlayVoice( "Voices/vo11_mik0307" )
+\CN["御影"]
+“……嗯，嗯……嗯，嗯……嗯！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_3_0111002_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+//●演技：心の声なので咥えていない感じでお願いします
+: PlayVoice( "Voices/vo11_mik0308" )
+\CN["御影"]
+（呜、呜……臭味……肮脏…鼻子弯曲……。
+不……不…不，不……）
+
+不仅被侵犯，还被粗暴地揉搓乳房。
+
+身体各处都被男人{侵，おか}着
+一有意识就要疯了。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002b_1_2_0000000_1101000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0309" )
+\CN["御影"]
+“嗯……嗯……嗯……嗯……嗯……嗯……嗯……”……
+嗯，嗯，嗯……”
+
+\CN["男2"]
+“就算那么讨厌，也会因为什么原因把馒头弄湿
+别烦了……渐渐地，存取顺畅了……”
+
+//●演技：（）は訳です。読まなくてＯＫです
+: PlayVoice( "Voices/vo11_mik0310" )
+\CN["御影"]
+“啊，真的微笑……嘿嘿嘿，嘿嘿嘿……
+（不对，没那回事……不可能被淋湿……）”
+
+\CN["男3"]
+“说话的时候牙齿会碰上的。要好好做！”
+
+: PlayVoice( "Voices/vo11_mik0311" )
+\CN["御影"]
+“嗯！嗯，嗯，嗯，嗯……嗯，嗯
+嗯……嗯……嗯！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_3_0211102_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0312" )
+\CN["御影"]
+（哈、哈、好痛苦……头脑变得奇怪……。
+嗯，啊啊啊啊！快点结束……）
+
+\CN["男1"]
+“你不是渐渐有感觉了吗？
+乳头看，这么丰满”
+
+即使说了卑鄙的话，也没有反驳的勇气了。
+
+现在想的只是希望早点结束。
+
+因为——
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0313" )
+\CN["御影"]
+（这样的话，我就和这个怪物一起……
+向男人们屈服……）
+
+痛感自己很甜。
+
+卑鄙卑鄙卑鄙卑鄙的男人们的蹂躏
+已经无法忍受了。
+
+\CN["男2"]
+“嗯……变得很帅了……。
+果然，第一次必须要中出啊”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_3_0311102_1000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0314" )
+\CN["御影"]
+“嗯————！嗯……嗯，嗯！”
+
+\CN["男3"]
+“啊，那太好了。舌头在动。”
+
+\CN["男2"]
+“manko也开始抽搐了，即使讨厌
+本能在追求精液吧。那么……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+一下子、一下子、一下子、一下子、一下子、一下子、一下子、一下子！
+
+抽插变得激烈，从阴道内的入口到里面擦擦。
+
+刺痛和伤口像涂盐一样蔓延的疼痛
+被挤压腹部的压迫感变得没有力量了。
+
+: PlayVoice( "Voices/vo11_mik0315" )
+\CN["御影"]
+“嗯……嗯，嗯，嗯……”
+
+\CN["男2"]
+“啊哈哈哈……那就好了……嗯……！”
+
+//●演出：射精
+//●ＣＧ差分：着衣・挿入・フェラ・膣内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_3_0011013_1000010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜、呜呜、呜呜呜呜……咚、咚、呜呜。
+怎、怎、怎、怎么啰嗦、呜呜呜呜！！
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0316" )
+\CN["御影"]
+（是、{射精，是}被做……那个在{阴道内，内}胡闹
+精液……热的{阴道内，内}扩散……）
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_3_0211113_1000010_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0317" )
+\CN["御影"]
+“嗯————————！”
+
+\CN["男2"]
+“哇……女阴，给我勒得乱七八糟。”
+
+\CN["男3"]
+“哈哈哈，我也……嗯……我要出……”
+
+//●演出：射精
+//●ＣＧ差分：着衣・挿入・フェラ・膣内射精・口内射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_3_0311113_1000020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呼呼，咚，咚，咚，咚，咚，咚，咚，咚！
+
+//●演技：口内射精されています
+: PlayVoice( "Voices/vo11_mik0318" )
+\CN["御影"]
+“嗯，嗯！嗯……嗯…嗯，嗯！”
+
+: PlayBackVoice( "Voices/BGV11_mik_fera02" )
+一口暖洋洋的粘液扩散开来。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0319" )
+\CN["御影"]
+（精液、口中也有{射精，だ}）放置着的腥味
+满满的……）
+
+\CN["男3"]
+“看，不要{呕吐}。要好好喝。”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_3_0411113_1000020_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0320" )
+\CN["御影"]
+“嗯——————！嗯……呜呜……呜……呜……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+酷酷！酷酷！酷酷！酷酷！酷酷！
+
+男人们发出笼中的声音，身体颤抖着
+从口中，被从阴道口注入精液。
+
+//●ＣＧ差分：着衣・未挿入
+: StopBackVoice()
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_1_0211113_1000030_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：口から男性器が離れる。全力疾走した後さらに走らされた感じです
+: PlayVoice( "Voices/vo11_mik0321" )
+\CN["御影"]
+“咳咳！咳咳！咳咳！咳咳……！哈——哈——
+哈、哈、哈…”
+
+: PlayBackVoice( "Voices/BGV11_mik_jigo01" )
+\CN["男1"]
+“那么，接下来轮到我了。”
+
+\CN["男4"]
+“作为生女儿的巫女明天早上会变成什么样呢？
+光是想象就能射精”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0322" )
+\CN["御影"]
+（哈、哈、哈……也……可能不行了……。
+我再也受不了了。只能放弃……）
+
+就时间来说，应该还没过半个小时
+感觉被玩弄了好几个小时几十个小时。
+
+什么时候解放？本来就有被解放的时候吗？
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_1_0111013_1000030_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0323" )
+\CN["御影"]
+（干脆，坏了会比较轻松……。
+屈服的一方……）
+
+\CN["男3"]
+“那么，接下来是我。看，给你烤肉。”
+
+: PlayVoice( "Voices/vo11_mik0324" )
+\CN["御影"]
+“那、那样的事……”
+
+\CN["男3"]
+“快点！快看！”
+
+: PlayVoice( "Voices/vo11_mik0325" )
+\CN["御影"]
+“呃……”
+
+没有反抗的勇气。
+
+按照别人说的那样抬起腰
+屁股朝着男人伸出来。
+
+\CN["男3"]
+“什么啊。比想象中更坦率的提高了。”
+
+\CN["男4"]
+“其实刚才的心情很好吧？”
+
+\CN["男3"]
+“呵呵。那就多教我做爱的好处吧。”
+必须要做啊」
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●背景：空・昼
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: ShowWnd()
+然后，我一个劲地被男人蹂躏。
+好几天好几天，连时间过去都不知道了。
+
+无论是尊严还是意志——
+一直以来支撑着我的东西都坏了。
+
+其中只有一个是新得到的。
+
+那是因为，我从心底觉得被侵犯是件很舒服的事
+变得能够思考了。
+
+//●ＣＧ差分：全裸・挿入・ぶっかけ
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_5_0511102_1100040_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：淫乱化しています
+: PlayVoice( "Voices/vo11_mik0326" )
+\CN["御影"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊”♥</小鸡鸡……小鸡鸡，真舒服啊♥</color>」
+
+: PlayBackVoice( "Voices/BGV11_mik_aegi02" )
+\CN["男5"]
+“仅仅几天就不是别人了吗？”
+
+\CN["男6"]
+“那么严厉又狭窄的manko现在已经成熟了呢。
+这样就很舒服了”
+
+\CN["男5"]
+“是啊。凯茨也很高兴地叼着小鸡鸡呢。”
+
+: PlayVoice( "Voices/vo11_mik0327" )
+\CN["御影"]
+“嗯，59a0”♥</女阴和屁股都很舒服啊♥</color>
+用小鸡鸡慢慢地……我的洞，全部都犯了♥</color>」
+
+\CN["男5"]
+“嘿嘿嘿”
+
+//●演出：ピストン演出
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_5_0111002_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+身体里和外面都沾满了精液
+我恳求他自己去犯。
+
+感觉阴道口扩大，感觉被摩擦阴道内，被撬开屁股孔
+被戳到肚子的感觉，被射精的感觉，被口中注入
+用舌头品尝小鸡鸡的感觉——
+
+这一切都让我心情很好，很可爱——
+我像空气一样寻求着那些。
+
+\CN["男6"]
+“……看起来很不错……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_5_0011002_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0328" )
+\CN["御影"]
+“不，请叫我……哈，嗯……
+请给我精子……”
+
+\CN["男5"]
+“女阴是哪个女阴？”
+
+: PlayVoice( "Voices/vo11_mik0329" )
+\CN["御影"]
+“我都想要……决明子也想要精液啊！”♥</color>
+嗯，啊啊啊……对了，请{射精，だ}做……”
+
+: PlayVoice( "Voices/vo11_mik0330" )
+\CN["御影"]
+“女阴什么时候都可以啊……啊，啊
+请对我{射精，だ}，让我变得清爽一点吧♥</color>」
+
+\CN["男6"]
+“请拿出来给我做个痛快吧。
+真不愧是淫乱的巫女啊。服务精神很强”
+
+\CN["男5"]
+“哈、哈、哈、那我就把它放出来吧。
+好好收下吧！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_5_0511102_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0331" )
+\CN["御影"]
+“啊，不好意思。”♥</请给我颜色♥</请给我精子、射精♥</color>
+不管是哪个女阴，都……中出，做♥</color>」
+
+//●演出：射精
+//●ＣＧ差分：全裸・挿入・膣内射精・腸内射精・ぶっかけ
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_5_0211113_1100050_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜，呜呜呜呜呜呜！
+
+: PlayVoice( "Voices/vo11_mik0332" )
+\CN["御影"]
+「恩哈哈啊♥</然后，出来了♥</color>
+不管是女阴还是屁股馒头，都有很多热的东西出来♥</color>」
+
+: PlayVoice( "Voices/vo11_mik0333" )
+\CN["御影"]
+“啊啊啊啊啊啊啊……啊，好舒服……里面出来的很舒服。
+什么都想不出来了♥</染好了……感觉像精子一样”
+
+精液的热量，粘糊糊的触感渗透到身体
+带来了强烈的绝顶感。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_5_0511113_1100050_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo11_mik0334" )
+\CN["御影"]
+“呃，呃……呃，呃，呃……呃……”♥</color>
+啊、呜呜呜呜呜呜呜呜呜————————！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+阿飞！阿飞！战栗战栗！吓我一跳！
+
+\CN["男7"]
+“呼，呼，真是受不了……光是看着就已经……”
+
+\CN["男8"]
+“受不了……呃………拿出来吧……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_5_0211113_1100050_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂直後。呼吸が乱れています
+: PlayVoice( "Voices/vo11_mik0335" )
+\CN["御影"]
+“哈哈哈，啊，请挂上……。
+只靠里面是不够的……”
+
+: PlayVoice( "Voices/vo11_mik0336" )
+\CN["御影"]
+“把精液泼到身体上……嗯……也要更加
+请涂满精液”
+
+//●演出：射精
+//●ＣＧ差分：全裸・挿入・膣内射精・腸内射精・ぶっかけ追加
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_5_0211113_1100060_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜，呜呜，呜呜！！
+
+一边让阴道内和肛门内的精液溢出
+请让我用精液洗澡。
+
+\CN["男10"]
+“哈哈，那么，我就在这里……想射精到嘴里。”
+
+//●演技：男性器を咥えさせられています
+: PlayVoice( "Voices/vo11_mik0337" )
+\CN["御影"]
+“好的……请随便吃……。
+呜呜……呜呜……！”
+
+在这种状态下把小鸡鸡塞进嘴里。
+
+//●演出：射精
+//●ＣＧ差分：全裸・挿入・膣内射精・腸内射精・口内射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evg_b002a_1_6_0011013_1100070_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻！咚！咚！咚！
+
+在张开腮帮子的瞬间，口中会释放出精液。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo11_mik0338" )
+\CN["御影"]
+（#f59a0）♥</彩色精液很好喝……这种臭味让人受不了♥</color>
+男人安放的气味，让人头昏眼花，心情很好♥</color>）
+
+//●演技：精液を飲み込んでいます
+: PlayVoice( "Voices/vo11_mik0339" )
+\CN["御影"]
+“嗯……嗯……嗯……嗯……好…好…我知道了♥</color>
+嗯……嗯……嗯……”
+
+一边品尝着口中射精的精液一边咽下去。
+
+浑身上下都是精液。
+我觉得甚至可以从毛孔里把精液泄漏出来。
+
+\CN["男11"]
+“呐，还可以吧？你还没变老吧？”
+
+: PlayVoice( "Voices/vo11_mik0340" )
+\CN["御影"]
+“哈，是的……我还想再多做一点……”♥</color>」
+
+作为性欲消除用的东西来对待的日子看不到结束。
+
+但是，我已经什么都不想了。
+
+死啊活啊，那种事怎么样都无所谓。
+
+只是不断重复着被侵犯到顶峰。
+这个循环一定会一直持续到我用尽全力死去吧。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_D06_80" )
+: HideWnd()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

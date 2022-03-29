@@ -1,0 +1,714 @@
+//========================================================
+//○幕府官僚の用心棒とエッチする
+//========================================================
+//●演出：暗転
+//●状況：無黒　淫乱度Ｂ以上
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后我和一个保镖一起
+为了不被任何人看见，我去了茂密的深处。
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D05_06" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D05_06" )
+
+*HscStart
+: nakadashi = false
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●背景：森・昼
+//Yoshi：背景
+//●ＣＧ：Ｈカットイン・セックス・後背位３
+//●ＣＧ差分：未挿入
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Forest01_01", Call("Scenarios/Common*EffTime") )
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_2_0400001_1100000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+\CN["保镖1"]
+“manko，不是已经被淋湿了吗？”
+
+只是突出屁股，强调女阴
+爱液一下子溢出来沿着大腿传了出去。
+
+: PlayVoice( "Voices/vo00_muk4458" )
+\CN["无黑色"]
+“呵呵，你说的也是。小鸡鸡，勃起得很厉害。”♥</color>」
+
+\CN["保镖1"]
+“你真的很想让你吐槽吗？”
+
+: PlayVoice( "Voices/vo00_muk4459" )
+\CN["无黑色"]
+“啊，你们不是也很想马上用吗？”？
+应该花不了多少时间吧……？”
+
+我只是随便说说我的想法。
+
+\CN["保镖1"]
+“啊，确实那个寄生虫混蛋突然出去了
+因为很有可能说出口来”
+
+一边这么说，一边保镖的男子从下面脱掉。
+
+屹立的小鸡鸡咕咚咕咚地上下移动着。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_2_0400001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4460" )
+\CN["无黑色"]
+“已经充满了忍耐力。
+感觉好像是在聚积的地方积着呢”
+
+\CN["保镖1"]
+「啊。这几天，完全没有空。
+堆积在一起，鸡蛋快要破裂了”
+
+//●ＣＧ差分：挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0601001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——中。
+
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 1) endif
+//●演技：男性器が膣口にあてがわれています
+: PlayVoice( "Voices/vo00_muk4461" )
+\CN["无黑色"]
+“啊啊啊啊！”♥</吝啬鬼，好硬♥</color>
+别让我着急……嗯，希望你快点打进来♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi01" )
+\CN["保镖1"]
+“君……从女阴那里，有很强烈的雌的味道。”
+
+\CN["保镖1"]
+“你的manko不是吃了很多小鸡鸡吗？
+有着非常色情的味道，还皱巴巴地邀请小鸡鸡
+讨厌”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0400001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4462" )
+\CN["无黑色"]
+“贝拉好吵……赶紧把公鸡扔进去……”
+
+把屁股再伸出来，快点插上小饭团
+讨价还价。
+
+\CN["保镖1"]
+“那我走了。嗯……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——呜哇呜……呜…呜…呜呜哇哇！！
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0601001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を挿入されています
+: PlayVoice( "Voices/vo00_muk4463" )
+\CN["无黑色"]
+“嗯……啊……啊，我进来了……”♥</color>
+啊……哈…啊啊……啊啊♥</啊啊啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi02" )
+只要有个小矮人进来，就会大声喊出来。
+
+\CN["保镖1"]
+「喂喂，你这么大声的话，屋里的其他家伙会
+也许会来吧？”
+
+: PlayVoice( "Voices/vo00_muk4464" )
+\CN["无黑色"]
+“那么，没办法了吧？啊，哈哈，这么生气的
+如果被插上了公鸡，声音就会不由自主地出来……”
+
+: PlayVoice( "Voices/vo00_muk4465" )
+\CN["无黑色"]
+“恩……啊啊啊……嗯♥</啊，哈哈，哈哈♥</color>
+啊……啊啊啊…小矮人……真是一副空荡荡的样子♥</color>」
+
+大小一般，但硬度很高。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0701001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4466" )
+\CN["无黑色"]
+（说是在攒啊……。
+如果从这边开始剧烈运动的话，可能马上就会使之倾斜……）
+
+\CN["保镖1"]
+“好舒服……明明只是被插着而已。”
+
+\CN["保镖1"]
+“阴道内的褶皱缠绕在小鸡鸡身上，好烫……
+紧张起来……！”
+
+: PlayVoice( "Voices/vo00_muk4467" )
+\CN["无黑色"]
+“恩！小矮人，在发狂……”♥</color>」
+
+阴道内的小肉棒来回移动，在阴道壁的各种地方
+猜对了。
+
+: PlayVoice( "Voices/vo00_muk4468" )
+\CN["无黑色"]
+“请不要在行动前拿出来……。
+哈，哈，好好心情舒畅吧”
+
+\CN["保镖1"]
+“我知道。
+但是，如果不小心的话就要出来了”
+
+\CN["保镖1"]
+“要走了……嗯……嗯……嗯……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！努奇！啾啾！慢吞吞！
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0301001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：緩いピストンです
+: PlayVoice( "Voices/vo00_muk4469" )
+\CN["无黑色"]
+“哈……啊…嗯……嗯♥</嗯，在动♥</color>
+嗯……啊…嗯♥</color>」
+
+\CN["保镖1"]
+“ケツ也是……因为锻炼过了，所以要绷紧
+”
+
+: PlayVoice( "Voices/vo00_muk4470" )
+\CN["无黑色"]
+“这个，我喜欢这样做。”♥</像动物一样……嗯♥</color>
+从后面撞过来的，真是太可怕了♥</color>」
+
+\CN["保镖1"]
+“嘿嘿，打上去的话，会撞到紧实的屁股肉
+因为心情非常好……嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——呜呜呜呜！咕！咕嘟！要哭了！
+
+有了气势，小矮人潜入了阴道深处。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0501001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：軽い絶頂です
+: PlayVoice( "Voices/vo00_muk4471" )
+\CN["无黑色"]
+「恩，啊啊，好饿啊」♥</color>
+啊啊，啊，啊啊啊啊啊啊啊啊啊啊啊啊♥</color>」
+
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘿嘿！嘿嘿！吓一跳！吓我一跳！
+
+\CN["保镖1"]
+“现在好像很轻啊。{阴道内，内}在颤抖。”
+
+: PlayVoice( "Voices/vo00_muk4472" )
+\CN["无黑色"]
+“哈，哈，因为，如果突然插到里面的话♥</color>
+心情好啊，一下子就来了……无法忍耐……”
+
+\CN["保镖1"]
+“啊，真是受不了啊……想动就忍不住了。”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0400001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4473" )
+\CN["无黑色"]
+“那就走吧……是个硬邦邦的小矮子
+女阴，擦干，搅动♥</color>」
+
+试着放松身体，把身体交给这个男人。
+
+\CN["保镖1"]
+“那就让我尽情吧。”
+
+保镖的男人紧紧地抱住我的腰——
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！努哈！嘘！嘘！嘘！
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0601001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストンが早くなります
+: PlayVoice( "Voices/vo00_muk4474" )
+\CN["无黑色"]
+“啊，嗯，啊，啊啊啊♥</啊，对了♥</啊啊啊啊啊♥</color>」
+
+: PlayVoice( "Voices/vo00_muk4475" )
+\CN["无黑色"]
+「啊，真是胆小啊♥</哦，女阴，女阴激烈地摩擦着
+啊啊啊……里面，满满当当地打了一下♥</color>」
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi03" )
+绝顶后敏感的阴道内变得僵硬
+公鸡激烈地来回走。
+
+混杂着分泌汁的粘稠声音在其中回响
+这样更能提高快感——
+
+: PlayVoice( "Voices/vo00_muk4476" )
+\CN["无黑色"]
+“嗯……哦，比刚才还大，感觉很舒服
+我来了♥</color>」
+
+\CN["保镖1"]
+“哇！{阴道内，内}好厉害，会收缩……。
+小鸡鸡的前端有什么粗糙的东西，感觉太舒服了……”
+
+保镖的男子气喘吁吁。
+一次又一次地小痛苦地一边呻吟一边继续抽奖。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0701001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4477" )
+\CN["无黑色"]
+“一、呃……呃……i、i、是……”♥</color>
+嗯，呃，嗯♥</color>」
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0601002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4478" )
+\CN["无黑色"]
+「好、好、好、好、好————————！」♥</color><color=#f59aa0>♥</color><color=#f59aa0>♥</color>」
+
+//●ＣＧ差分：挿入・潮
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0601002_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——呜呜呜呜呜！！惊悚比酷！
+
+: PlayVoice( "Voices/vo00_muk4479" )
+\CN["无黑色"]
+“啊……啊啊……啊，好疼……一边吹着海风一边吹着
+心情舒畅♥</啊，嗯，啊啊啊啊啊啊啊♥</color>」
+
+\CN["保镖1"]
+“呀，糟了……太紧了……”……
+嗯，已经……要出来了……嗯……”
+
+*select01
+//――――――――――――――――――――――――――――
+//＠時限式選択肢,select01
+//■選択肢１：このまま中出しさせてあげる
+//■選択肢２：腰をずらして膣外に
+//――――――――――――――――――――――――――――
+\CI["就这样让你从里面拿出来"]
+\CI["挪腰到阴道外"]
+怎么办？
+
+: if ($choice == 1) Jump( "*select01_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：このまま中出しさせてあげるを選んだ場合
+//-------------------------------------------------------
+*select01_s1
+: PlayVoice( "Voices/vo00_muk4480" )
+\CN["无黑色"]
+“就这样放在里面……嗯，啊，啊啊啊啊啊♥</color>」
+
+自己把腰伸出来，注意不要掉下去
+引向深处。
+
+\CN["保镖1"]
+“啊……呐，进入根部……然后，出来
+恩！”
+
+*select01_s1_01
+//●中出し合流地点
+//＠フラグ：膣内射精,1
+//●演出：射精
+: nakadashi = true
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0301012_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——咚！咚！咚！
+
+//●分岐：危険日の場合
+: if ( Call( "Scenarios/CommonSys*CharaIsMenstrual_Mukuro_UnsafeDay" ) == true )
+	: PlayVoice( "Voices/vo00_muk4481" )
+	\CN["无黑色"]
+“啊啊啊……然后，出来了……精子里出了女阴♥</color>
+明明是很危险的日子，我却让他从里面出来了♥</color>」
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●危険日でない場合
+: else
+	: PlayVoice( "Voices/vo00_muk4482" )
+	\CN["无黑色"]
+「嗯……嗯♥</在女阴里（上）精液，喉咙出的♥</color>
+啊啊，啊，来势很好……往里走了很多呢♥</color>」
+
+//●分岐終了
+: endif
+\CN["保镖1"]
+“啊啊啊！受不了！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精
+: HideWnd()
+: nakadashi = false
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0401012_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+扑通一声！嘘！呼！呜呜呜呜！
+
+: PlayVoice( "Voices/vo00_muk4483" )
+\CN["无黑色"]
+“嗯……恩♥</但是，我只是说你在攒……
+子宫……嗯，啊，嗯，嗯……充满了♥</color>」
+
+\CN["保镖1"]
+“嗯……！”
+
+保镖的男人配合着射精
+慢慢地挪动小拳。
+
+: PlayVoice( "Voices/vo00_muk4484" )
+\CN["无黑色"]
+“啊啊啊啊啊啊，啊，现在，我是个很帅的女阴
+如果被软糖了，就真的♥</color>」
+
+精液擦到阴道内很舒服——
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0601012_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo00_muk4485" )
+\CN["无黑色"]
+“啊，啊，啊，嗯，嗯……嗯，又去了……”……
+啊啊啊啊啊啊啊啊啊啊啊啊啊——————！”
+
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["保镖1"]
+“恩！我受不了！”
+
+一边大声喊着，一边一个劲地兴奋起来。
+
+//●選択肢合流地点へ
+//＠ラベル：select01_s_end
+: CharaPartsOn( "Mukuro",0,1,4 )
+: Jump( "*select01_s_end" )
+//-------------------------------------------------------
+//●選択肢２：腰をずらして膣外にを選んだ場合
+//-------------------------------------------------------
+*select01_s2
+//＠フラグ：ぶっかけ,1
+//●分岐：危険日の場合
+: nakadashi = false
+: if ( Call( "Scenarios/CommonSys*CharaIsMenstrual_Mukuro_UnsafeDay" ) == true )
+	//●演技：腰をずらして男性器を抜き出しています
+	: PlayVoice( "Voices/vo00_muk4486" )
+	\CN["无黑色"]
+“嗯，哈哈，今天是危险的日子……
+虽然很可惜……嗯……！”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●危険日じゃない場合
+: else
+	//●演技：腰をずらして男性器を抜き出しています
+	: PlayVoice( "Voices/vo00_muk4487" )
+	\CN["无黑色"]
+“啊哈，好像要射精了，什么啊……。
+那么……嗯，嗯……嗯！”
+
+另外放进去也没关系——
+
+	//●分岐終了
+: endif
+//●ＣＧ差分：未挿入
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0000002_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+滑溜溜的！！
+
+绝顶后用气势大幅度地移动着懒散的身体
+把公鸡从女阴里拔出来。
+
+\CN["保镖1"]
+“啊……饿了”
+
+//●演出：射精
+//●ＣＧ差分：未挿入・ぶっかけ
+: HideWnd()
+: nakadashi = false
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Sotodashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c008_0_0_0701002_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+哇——！嘘！嘘！呼！
+
+\CN["保镖1"]
+“哈哈哈，好，好舒服啊……”
+
+: PlayVoice( "Voices/vo00_muk4488" )
+\CN["无黑色"]
+“……屁股上放满了精液……又烫又黏糊糊……
+正因为积蓄了，精液，非常的量……”
+
+保镖朝着屁股猛地浇上精液
+下半身被精液粘稠了。
+
+//●選択肢合流地点へ
+//＠ラベル：select01_s_end
+//--------------------------------------------------------
+//●選択肢合流地点
+//--------------------------------------------------------
+*select01_s_end
+//●ＣＧ：消去
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 13, 2, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4490" )
+\CN["无黑色"]
+“呼……嗯……哈、哈、哈……”
+
+\CN["保镖1"]
+“哈……哈………腰好疼……”……
+非常舒服”
+
+//: EraseChara( "Mukuro", 0.5 )
+//●演出：無黒　刀を抜く
+: DrawChara( "Mukuro", 26, 2, 2 )
+: PlayVoice( "Voices/vo00_muk4491" )
+\CN["无黑色"]
+“仅仅一次就变得贪婪，难道不是运动不足吗？”
+
+\CN["保镖1"]
+“啊……？”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：打撃音
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+在刀峰上尽情敲打，夺走了保镖的意识。
+
+: DrawChara( "Mukuro", 26, 0, 2, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk4492" )
+\CN["无黑色"]
+“只让他养了一次，他就不会放手。
+保镖不合格吗？”
+
+那么，剩下的一个人和，回到刚才的地方。
+
+//●演出：無黒　退場する
+//●演出：場面転換トランジション
+//●場所：磯辺充三の屋敷前
+: HideWnd()
+: StopBgm( 0.5 )
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 0; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 30, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4493" )
+\CN["无黑色"]
+“……被谁杀了。”
+
+还有一个保镖被某人杀害了。
+
+//●演出：屋敷から口入屋が出てくる
+\CN["眼镜店"]
+“多亏了无黑酱，我才能玩得很开心。”
+
+: DrawChara( "Mukuro", 34, 0)
+: PlayVoice( "Voices/vo00_muk4494" )
+\CN["无黑色"]
+“口入屋，你为什么会在这里……？”
+
+\CN["眼镜店"]
+“我觉得不要用我的手来耍我。
+一个保镖，一边听着无黑的好色的声音
+因为很苦闷，所以就简单地{杀，玫瑰}了」
+
+\CN["眼镜店"]
+“嗯，之后我还想问矶边各种各样的事情呢。
+好像要忙起来了”
+
+//●演出：メガネの口入屋　去って行く
+: DrawChara( "Mukuro", 41, 0)
+: PlayVoice( "Voices/vo00_muk4495" )
+\CN["无黑色"]
+“H的时候，一切都结束了吗……。
+又不是失败了，算了，可以吗？”
+
+//●演出：無黒　去って行く
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//＠Ｈシーン終了：SC_D05_06
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//裸だった場合、露出値を＋しておく
+: if ( CharaCostume( "Mukuro" ) == 1 ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+//シーン登録
+: SceneFlagUp( "SC_D05_06" )
+//Ｈ履歴更新
+: if ( nakadashi == true )
+	: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 50, "Map_Event014" ) endif
+: else
+	: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 51, "Map_Event014" ) endif
+: endif
+//＠仕事成功
+//＠六角山の魔物退治１を全部クリアしている場合
+//＠桃の操作へ
+//●シーンエンド
+: SetMission( "SC_D05_04_3", "Hidden" )
+: SetMission( "SC_D05_04_4", "Successed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: FadeOut( 0.0 )
+: if ( MissionProgress( "SC_D05_02_1", "Successed", "Failed" ) == true )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_07")
+: else
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif

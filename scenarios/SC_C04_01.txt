@@ -1,0 +1,575 @@
+//========================================================
+//○無黒の白夜入り
+//========================================================
+*sc001
+//アイキャッチ
+: $chapter = 7	// 章の設定
+: Flag( "ByakuyaRootIn", true )	// 白夜ルートIN
+: SetMission( "SC_A03_50_1", "Hidden" )
+: if ( MissionProgress( "SC_A03_50_2", "Successed" ) == false )
+	: SetMission( "SC_A03_50_2", "Hidden" )
+: endif
+: HideWnd()
+: Call( "Scenarios/Common*Eyecatch" )
+: EraseAllImage(1,1.0)
+: Wait()
+//●場所：白夜の隠れ家
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: lay = 2; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+\CN["白夜队士・男A"]
+“什么！？那个，你，鬼灯的……！？”
+
+\CN["白夜队士・女A"]
+「冥先生，这是怎么回事？
+为什么鬼灯的家伙和冥先生在一起？”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 1, 0, 0)
+: PlayVoice( "Voices/vo00_muk2441" )
+\CN["无黑色"]
+（有几个人在哪里见过……）
+
+一看到我的脸，就用鬼一样的表情瞪着我
+有几个人。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["卍"]
+“喂喂，神八代啊
+为什么要带鬼灯的家伙来？”
+
+\CN["冥"]
+「…………」
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo10_mid0207" )
+\CN["绿色"]
+“噗噗噗，卍，被无视了，真是好笑。”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“……啊？”
+
+: DrawChara( "Midori", 16, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0208" )
+\CN["绿色"]
+“嗯？你有意见的话，干脆说出来吧？”？
+绿先生听多少就听多少”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“……薯片”
+
+: DrawChara( "Midori", 19, 0)
+: PlayVoice( "Voices/vo10_mid0209" )
+\CN["绿色"]
+“什么呀，我还是一如既往的胆小鬼啊。”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo11_mik0079" )
+\CN["御影"]
+“你是鬼灯的……确实是神八代无黑。
+冥小姐的妹妹”
+
+身穿巫女服的女人。
+语调和语言虽然很有礼貌，但却不受欢迎
+总觉得传来了。
+
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo09_mei0193" )
+\CN["冥"]
+“安静点。现在开始说明情况。”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+\CN["白夜队士们"]
+「「「…………」」」
+
+: StopBgm( 1.0 )
+姐姐一句话吵吵闹闹的一瞬间就安静下来了。
+
+//●演出：達磨＆蘭丸　登場する
+: PlayBgm("BGM/14_CM014")
+: DrawChara( "Daruma", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Ranmaru", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["兰丸"]
+「啊，那孩子是冥的妹妹啊。
+气氛很像呢”
+
+: DrawChara( "Daruma", 2, 0, 0)
+\CN["达磨"]
+“神八代啊，虽说是妹妹，但还是把鬼灯的队员带到了这里
+能告诉我理由吗？”
+
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: PlayVoice( "Voices/vo09_mei0194" )
+\CN["冥"]
+“是的。首先无黑已经不是鬼灯的队员了。”
+
+“不是鬼灯队士”姐姐的一句话
+一瞬间，响起了喊声。
+
+: DrawChara( "Daruma", 4, 0)
+\CN["达磨"]
+“嗯。那是诚吗？神八代无黑。”
+
+//●演技：達磨の迫力に気圧されています
+: HideWnd()
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: Wait()
+: layer = 3; time = 0.25; strength = 5; vibrato = 10;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2442" )
+\CN["无黑色"]
+“……！？”
+
+到现在为止无论碰上怎样的强敌都没有感觉到
+感受到强烈的压迫感，一瞬间失去了语言。
+
+: DrawChara( "Mukuro", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC")
+\CN["达磨"]
+“回答我。”
+
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk2443" )
+\CN["无黑色"]
+“是的，姐姐说的是实话。
+我已经不是鬼灯的人了”
+
+//: EraseChara( "Mei", 0.25 )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Ranmaru", 0.25 )
+: DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: PlayVoice( "Voices/vo10_mid0210" )
+\CN["绿色"]
+「就算放弃了也真的是太好了。可能是随便一点吧。
+呐，卍，你觉得怎么样？”
+
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+\CN["卍"]
+“啊？我对你的头撒谎说害怕的话，那就这样吧
+这是带来的神八代的责任啊。我都会犯的”
+
+: DrawChara( "Midori", 2, 0)
+: PlayVoice( "Voices/vo10_mid0211" )
+\CN["绿色"]
+“嘛，凭你的力量，就算和冥相互残杀
+虽然只干了1分钟”
+
+: DrawChara( "Midori", 17, 0)
+: PlayVoice( "Voices/vo10_mid0212" )
+\CN["绿色"]
+“如果撒谎的话，我会严刑拷打的。
+无黑其实很早之前就开始关注了”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo11_mik0080" )
+\CN["御影"]
+“绿先生，卍先生，在您的头前。
+请谨言慎行”
+
+: DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+\CN["达磨"]
+“……神八代无黑，我知道了糠说的话没有虚伪。”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+「神八代冥啊，流奈打算怎么做妹妹？
+我来告诉你。”
+
+//●読み：私の下（わたしのもと）
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
+: PlayVoice( "Voices/vo09_mei0195" )
+\CN["冥"]
+“啊！如果能被原谅的话，今后作为白夜的队员
+我想让你在我手下工作”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嗯。神八代无黑，唔有这个觉悟吗？”
+
+: DrawChara( "Mukuro", 39, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C")
+: PlayVoice( "Voices/vo00_muk2444" )
+\CN["无黑色"]
+“老实说，没有什么觉悟。”
+
+: DrawChara( "Mei", 3, 0)
+: PlayVoice( "Voices/vo09_mei0196" )
+\CN["冥"]
+“……无黑！？”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“哇……”
+
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ranmaru", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+\CN["兰丸"]
+“诶。你能在我面前告诉我吗？不愧是冥的妹妹。”
+
+: HideWnd()
+: DrawChara( "Mikage", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R")
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0081" )
+\CN["御影"]
+“不知道……那个小姑娘，朝着头
+多么无礼的事啊……！”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Midori", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
+: PlayVoice( "Voices/vo10_mid0213" )
+\CN["绿色"]
+“御影，冷静点。血压上升。”
+
+: DrawChara( "Mei", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo09_mei0197" )
+\CN["冥"]
+“非常抱歉，没有黑色是不礼貌的。”
+
+姐姐虽然道歉了，但是和周围的人不同，好像不着急。
+
+好像一开始就知道我会这样回答。
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "L" )
+\CN["达磨"]
+“好的。如果说有觉悟的话
+”
+
+: DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+\CN["兰丸"]
+“嘛，因为不能在头上撒谎呢～”
+
+: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo11_mik0082" )
+\CN["御影"]
+“居然全部都预料到了……。
+不愧是头脑和才干不同”
+
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+\CN["卍"]
+“因为讨厌那样可爱的孩子被杀啊。
+如果要杀的话，就杀了他，不是杀了他一发吗？”
+
+: DrawChara( "Midori", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
+: PlayVoice( "Voices/vo10_mid0214" )
+\CN["绿色"]
+“嗯，这个这样就变得有趣了，可以吗？”。
+头在前面那个胆量吗……是啊”
+
+: DrawChara( "Midori", 17, 0)
+: PlayVoice( "Voices/vo10_mid0215" )
+\CN["绿色"]
+“卍、自己稀里糊涂的话，就把干部的宝座给那家伙
+被剥夺”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“啊？你在说什么？”
+
+: DrawChara( "Midori", 13, 0)
+: PlayVoice( "Voices/vo10_mid0216" )
+\CN["绿色"]
+“这是我们好不容易忠告过的
+你的态度是什么？你在小看我吗？”
+
+: DrawChara( "Manji", 0, 0)
+\CN["卍"]
+“嗯，好无聊啊。谁都没说那种话吧。”
+
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["达磨"]
+“神八代无黑啊，为什么会跟着姐姐神八代冥呢。
+能告诉我理由吗？”
+
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: PlayVoice( "Voices/vo00_muk2445" )
+\CN["无黑色"]
+“我对幕府有想法，我想知道哪个才是正确的
+因为我想用自己的眼睛看清”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嗯。哪个正确呢……？”。
+还很蓝呢。但是，这样想也不坏”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“好吧，我承认我们是白夜队士。
+神八代冥，就让它附在希望之路的冥之下吧」
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo09_mei0198" )
+\CN["冥"]
+“好的，谢谢。”
+
+那个姐姐怎么跟到这里？
+我很感兴趣。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+这样，我姑且算是白夜队士
+决定在姐姐手下挥刀。
+
+: SetMission( "SC_C04_01_1", "InProgress" )
+: SideEpisodeFlagUp( "episode41" )
+: SideEpisodeFlagUp( "episode42" )
+: SideEpisodeFlagUp( "episode43" )
+: SideEpisodeFlagUp( "episode44" )
+: SideEpisodeFlagUp( "episode45" )
+: DestinationMap( "Map_Town07_02_Byakuya" )
+事件信息更新了。
+<^FF0000>侧面小故事更新了！</color>
+
+: if ( MissionProgress( "SC_A01_50", "Opened" ) == true )
+	: SetMission( "SC_A01_50", "Hidden" )
+活动“由著名的色情涂鸦技师制作的dild”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A01_51", "Opened" ) == true )
+	: SetMission( "SC_A01_51", "Hidden" )
+活动“亲手撕破处女膜”开始了
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A01_52", "Opened" ) == true )
+	: SetMission( "SC_A01_52", "Hidden" )
+活动“给贵族男人处女”开始了
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_51_1", "Opened" ) == true )
+	: SetMission( "SC_A02_51_1", "Hidden" )
+活动“向加津佐的镇长发送物品”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_51_2", "InProgress" ) == true )
+	: SetMission( "SC_A02_51_2", "Hidden" )
+活动“向加津佐的镇长发送物品”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_50_1", "Opened" ) == true )
+	: SetMission( "SC_A02_50_1", "Hidden" )
+活动“来取史莱姆的粘液”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_50_2", "InProgress" ) == true )
+	: SetMission( "SC_A02_50_2", "Hidden" )
+活动“来取史莱姆的粘液”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A02_53", "Opened" ) == true )
+	: SetMission( "SC_A02_53", "Hidden" )
+活动“贵族的性接待请求”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A03_51_1", "Opened" ) == true )
+	: SetMission( "SC_A03_51_1", "Hidden" )
+活动“希望得到恋爱小说”
+消失了。
+
+: endif
+: if ( MissionProgress( "SC_A03_51_2", "InProgress" ) == true )
+	: SetMission( "SC_A03_51_2", "Hidden" )
+活动“希望得到恋爱小说”
+消失了。
+
+: endif
+
+//＠マップ解放：崎珠
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )	//ファストトラベル初期化する
+: FastTravelMapOn( "Sakitama" )
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: LoadMap( "Map_Town07_06_Byakuya", "Def", "Scenarios/Map_Town07_Byakuya_Init*Map06")
+//--------------------------------------------------------
+//●冥との通常会話
+//--------------------------------------------------------
+*sc002
+//●場所：白夜の隠れ家・冥の部屋
+//＠分岐：セルフスイッチＡがＯＮの場合
+//＠ラベルジャンプ：sc002_1
+//＠分岐終了
+: if ( Flag ( "SC_C04_01_sc002" ) == true ) Jump( "*sc002_1" ) endif
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo09_mei0199" )
+\CN["冥"]
+“我想让你先完成简单的工作。”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0200" )
+\CN["冥"]
+“就算不说我也知道
+不允许失败。要铭记在心”
+
+失败有时会直接导致死亡。
+那个在鬼灯里的时候也没变。
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0201" )
+\CN["冥"]
+“还有，把这个拿去吧。”
+
+姐姐送了我很常见的东西。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk2446" )
+\CN["无黑色"]
+“这是设备吗？”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0202" )
+\CN["冥"]
+“啊。你在鬼灯里的时候也用过吧？”
+
+设备在离开鬼灯的时候放了下来。
+因为拿着的话居所就会漏出来。
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0203" )
+\CN["冥"]
+“使用方法不用一一说明也能明白吧？”
+
+//※サブイベント解放させる
+: SetMission( "SC_C04_50_1", "Opened" )
+操作姐姐给的设备
+马上让我认证。
+
+*sc002_1
+: if ( Flag ( "SC_C04_01_sc002" ) == false )
+	: DrawChara( "Mei", 1, 0)
+	: Flag( "SC_C04_01_sc002", true )
+	: SetMission( "SC_C04_01_1", "Hidden" )
+: else
+	: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC")
+	: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: endif
+: PlayVoice( "Voices/vo09_mei0204" )
+\CN["冥"]
+“那么，这是希望你来做的工作——”
+
+//＠備考：クリア済の選択肢は消える
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002_1_select
+//■選択肢１：恐山肝試し
+//■選択肢２：遊廓のケツモチ
+//■選択肢３：研究者の手伝い
+//――――――――――――――――――――――――――――
+: if( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 0 )
+	\CI["试胆"]
+	\CI["花街柳巷"]
+	\CI["研究人员的帮助"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_C04_02" )
+	: elif ($choice == 1)
+		: Jump( "Scenarios/SC_C04_03" )
+	: else
+		: Jump( "Scenarios/SC_C04_04" )
+	: endif
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 1 )
+	\CI["花街柳巷"]
+	\CI["研究人员的帮助"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_C04_03" )
+	: else
+		: Jump( "Scenarios/SC_C04_04" )
+	: endif
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 2 )
+	\CI["试胆"]
+	\CI["研究人员的帮助"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_C04_02" )
+	: else
+		: Jump( "Scenarios/SC_C04_04" )
+	: endif
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 3 )
+	\CI["试胆"]
+	\CI["花街柳巷"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_C04_02" )
+	: else
+		: Jump( "Scenarios/SC_C04_03" )
+	: endif
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 4 )
+	: Jump( "Scenarios/SC_C04_04" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 5 )
+	: Jump( "Scenarios/SC_C04_03" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 6 )
+	: Jump( "Scenarios/SC_C04_02" )
+: endif
+: Return

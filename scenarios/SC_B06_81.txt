@@ -1,0 +1,1463 @@
+//========================================================
+//○世界最強が垣間見せる弱さ
+//========================================================
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Falke", 3 )
+: CharaCostume( "Clacier", 0 )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_B06_81" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = true
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_B06_81" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●場所：宿屋・夜
+//●視点：ファルケ視点
+//●背景：洋風民家・部屋・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Room01_03", 1.0 )
+: Wait()
+//●ＳＥ：がちゃーん。ガラスが割れる音
+: PlaySe( "SE/Se_Break01" )
+//: DrawChara( "Falke", 6, 0, 0, 0.5, 0.0, 2, "C" )
+: DrawFaceThumbnail( "Falke", 6, 0, 0 )
+: ShowWnd()
+\CN["沥青"]
+“呼～…这可比想象中不方便多了。”
+
+//●演出：クレイシアが部屋に入ってくる
+: HideWnd()
+: PlayBgm("BGM/36_ID03")
+//: EraseChara( "Falke", 0.5 )
+: DrawChara( "Clacier", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0015" )
+\CN["克里西亚"]
+“刚才的声音，柏油，没事吧！？”
+
+被玻璃破裂的声音吓到的克莱西娅
+慌慌张张张地走进房间来。
+
+应该在维克托尔
+玉藻桑是为了让我不乱来而魔术的家伙
+带来了。
+
+: EraseChara( "Clacier", 0.5 )
+: DrawFaceThumbnail( "Falke", 1, 0, 0 )
+\CN["沥青"]
+“没什么。我想喝杯茶。”
+
+: DrawChara( "Clacier", 5, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo21_cle0016" )
+\CN["克里西亚"]
+「那样的事我来做。
+你好好休息吧”
+
+: DrawFaceThumbnail( "Falke", 3, 0, 0 )
+\CN["沥青"]
+“不，就这些。”
+
+: DrawChara( "Clacier", 1, 0)
+: PlayVoice( "Voices/vo21_cle0017" )
+\CN["克里西亚"]
+“没关系，没关系。
+我问了玉藻。如果再晚一点治疗的话
+听说很危险”
+
+: DrawFaceThumbnail( "Falke", 8, 0, 0 )
+\CN["沥青"]
+“不，还没到那种程度……”
+
+: DrawChara( "Clacier", 4, 0)
+: PlayVoice( "Voices/vo21_cle0018" )
+\CN["克里西亚"]
+“真的，要战斗的话就乱来
+从以前开始就没变过吧”
+
+: DrawFaceThumbnail( "Falke", 9, 0, 0 )
+\CN["沥青"]
+“是吗？”
+
+嘛，不管是在孤儿院还是在骑士团学校的时候
+感觉一直被说同样的话。
+
+//: EraseChara( "Falke", 0.5 )
+//: EraseChara( "Clacier", 0.5 )
+: DrawChara( "Clacier", 2, 1, 0)
+: PlayVoice( "Voices/vo21_cle0019" )
+\CN["克里西亚"]
+“这么说来，好久没有像这样两个人独处了。”
+
+//: EraseChara( "Clacier", 0.5 )
+: DrawFaceThumbnail( "Falke", 10, 0, 0 )
+\CN["沥青"]
+“啊……这么说来，是啊。
+史黛拉，已经睡了吗？”
+
+想不到的时间，果然让人担心的是可爱的爱女史黛拉。
+
+: DrawFaceThumbnail( "Falke", 9, 0, 0 )
+\CN["沥青"]
+“说起来，就算是晚上，维克托尔也不是晚上吧？
+有时差这种东西”
+
+//●演技：ステラ＝娘の名前です
+//: EraseChara( "Falke", 0.5 )
+: DrawChara( "Clacier", 0, 0, 0)
+: PlayVoice( "Voices/vo21_cle0020" )
+\CN["克里西亚"]
+“是啊，维克托尔应该还接近傍晚。
+史黛拉不是在午睡吗？”
+
+//: DrawChara( "Falke", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawFaceThumbnail( "Falke", 1, 0, 0 )
+\CN["沥青"]
+“那家伙有没有感到寂寞？没事吧？”
+
+: DrawChara( "Clacier", 2, 0)
+: PlayVoice( "Voices/vo21_cle0021" )
+\CN["克里西亚"]
+“没关系，我把它交给爸爸了。
+是不是让莫妮卡和丽塔玩了？”
+
+: DrawFaceThumbnail( "Falke", 4, 0, 0 )
+\CN["沥青"]
+“……对，是吧……”
+
+史黛拉最喜欢丽塔了。
+
+如果是委托给龙格的话，就不用担心了。
+现在，史黛拉已经被溺爱了吧。
+
+//: EraseChara( "Falke", 0.5 )
+//: EraseChara( "Clacier", 0.5 )
+: DrawChara( "Clacier", 3, 0, 0)
+: PlayVoice( "Voices/vo21_cle0022" )
+\CN["克里西亚"]
+“我可以详细地问一下费尔克的手臂吗？”
+
+//: EraseChara( "Clacier", 0.5 )
+//: DrawChara( "Falke", 2, 0, 0, 0.5, 0.0, 2, "C" )
+: DrawFaceThumbnail( "Falke", 2, 0, 0 )
+\CN["沥青"]
+“嗯？是啊。老实说，没有什么帅气的话。”
+但是……”
+
+//: DrawChara( "Falke", 14, 0)
+: DrawFaceThumbnail( "Falke", 14, 0, 0 )
+\CN["沥青"]
+“达摩和爷爷战斗，我失去了右臂——”
+
+对克里西亚说了全部的话。
+
+虽然用魔术治疗过
+也曾被妖刀斩断被诅咒侵蚀过吗
+切掉的手臂没有紧贴在一起。
+
+因为没有了好使的手臂，剑不能很好地挥了。
+
+//: DrawChara( "Falke", 4, 0)
+: DrawFaceThumbnail( "Falke", 4, 0, 0 )
+\CN["沥青"]
+“不过，这并不是什么理由
+从杰普先生那里继承的神刀
+交给了雷欧哦”
+
+//: EraseChara( "Falke", 0.5 )
+: DrawChara( "Clacier", 0, 0, 0)
+: PlayVoice( "Voices/vo21_cle0023" )
+\CN["克里西亚"]
+“你是说雷欧君是杰普先生的遗孤吗？”
+
+//: EraseChara( "Clacier", 0.5 )
+//: DrawChara( "Falke", 12, 0, 0, 0.5, 0.0, 2, "C" )
+: DrawFaceThumbnail( "Falke", 12, 0, 0 )
+\CN["沥青"]
+“是的是的。”
+
+说起来神刀这个家伙是自己选择主人的。
+
+{布都御魂，两颗玉}自己也以雷欧为主
+接受了。
+
+//: DrawChara( "Falke", 5, 0)
+: DrawFaceThumbnail( "Falke", 5, 0, 0 )
+\CN["沥青"]
+“因为雷欧是杰普先生的遗孤。
+一定能熟练地使用神刀{布都御魂，河豚玉}吧」
+
+//: DrawChara( "Falke", 3, 0)
+: DrawFaceThumbnail( "Falke", 3, 0, 0 )
+\CN["沥青"]
+“虽然应该做的事情已经做好了……
+怎么说呢，这样……嗯，很郁闷啊”
+
+心情不好。
+被自己也不太明白的感情所折磨。
+
+//●演技：ファルケを抱きしめます。胸に顔を埋めさせる感じです
+//: EraseChara( "Falke", 0.5 )
+: DrawChara( "Clacier", 2, 0, 0)
+: chara = "Clacier"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+//: DrawChara( "Falke", 3, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo21_cle0024" )
+\CN["克里西亚"]
+“沥青……”
+
+//: DrawChara( "Falke", 9, 0)
+: DrawFaceThumbnail( "Falke", 9, 0, 0 )
+\CN["沥青"]
+“……克雷西亚？”
+
+突然，克雷西亚抱住了我。
+
+: DrawChara( "Clacier", 2, 0)
+: PlayVoice( "Voices/vo21_cle0025" )
+\CN["克里西亚"]
+“偶尔……？”
+
+: DrawChara( "Clacier", 0, 0)
+: PlayVoice( "Voices/vo21_cle0026" )
+\CN["克里西亚"]
+“在柏油路上，我一直没有停下来，一直在战斗。
+偶尔好好休息一下也很重要吧？”
+
+//: DrawChara( "Falke", 2, 0)
+: DrawFaceThumbnail( "Falke", 2, 0, 0 )
+\CN["沥青"]
+「…………」
+
+那么说来，像这样让古莱西亚拥抱
+什么时候没见了呢？
+
+成为骑士团长在维克托尔的各处走动
+时而来时而来，时而与邻国发生争执。
+
+明明和贝希莫斯战斗的日子已经结束了
+我一直置身于战斗的场所，一个劲地走着。
+
+: DrawChara( "Clacier", 5, 0)
+: PlayVoice( "Voices/vo21_cle0027" )
+\CN["克里西亚"]
+「…………」
+
+愉快的沉默时间。
+
+克里西亚温柔的味道、安心的温暖、
+包裹着的柔软让人感到安心。
+
+//: EraseChara( "Clacier", 0.5 )
+//: EraseChara( "Falke", 0.5 )
+//: DrawChara( "Falke", 2, 0, 0, 0.5, 0.0, 2, "C" )
+: DrawFaceThumbnail( "Falke", 2, 0, 0 )
+\CN["沥青"]
+（克莱西亚一定会看透我的全部……）
+
+模棱两可的是失去了好使的手臂
+也不是不能随心所欲地挥剑了。
+
+//: DrawChara( "Falke", 1, 0)
+: DrawFaceThumbnail( "Falke", 1, 0, 0 )
+\CN["沥青"]
+（这样啊。这样好好地失败还是第一次。）
+
+在训练之类的地方被训练过的，从Zip那里有好几次。
+
+这是我有生以来第一次在赌上性命的真正战斗中输掉
+那是出乎意料的打击。
+
+//: DrawChara( "Falke", 3, 0)
+: DrawFaceThumbnail( "Falke", 3, 0, 0 )
+\CN["沥青"]
+“那个……”
+
+//: EraseChara( "Falke", 0.5 )
+: DrawChara( "Clacier", 0, 0, 0)
+: PlayVoice( "Voices/vo21_cle0028" )
+\CN["克里西亚"]
+“什么？”
+
+//: EraseChara( "Clacier", 0.5 )
+//: DrawChara( "Falke", 12, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawFaceThumbnail( "Falke", 12, 0, 0 )
+\CN["沥青"]
+“……胸部好舒服”
+
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Clacier", 1, 1, 0)
+: PlayVoice( "Voices/vo21_cle0029" )
+\CN["克里西亚"]
+“真是的！要是沾上沥青的话……”
+
+完全没有惊讶的感觉。
+
+感觉被包围着安心的同时
+身体明明是这个时候却做出了反应。
+
+//●演技：キスです
+: DrawChara( "Clacier", 4, 2)
+: PlayVoice( "Voices/vo21_cle0030" )
+\CN["克里西亚"]
+“假币……嗯……嗯……”
+
+//: DrawChara( "Falke", 2, 0)
+: DrawFaceThumbnail( "Falke", 2, 0, 0 )
+\CN["沥青"]
+「…………」
+
+一接吻，心情就一下子高涨起来。
+
+//: DrawChara( "Falke", 4, 0)
+: DrawFaceThumbnail( "Falke", 4, 0, 0 )
+\CN["沥青"]
+“克雷西亚……”
+
+//: EraseChara( "Falke", 0.5 )
+//: EraseChara( "Clacier", 0.5 )
+: DrawChara( "Clacier", 0, 2, 0)
+: PlayVoice( "Voices/vo21_cle0031" )
+\CN["克里西亚"]
+“假币，今晚就交给我全部吧……”
+
+//●演技：キスです
+: DrawChara( "Clacier", 5, 2)
+: PlayVoice( "Voices/vo21_cle0032" )
+\CN["克里西亚"]
+“嗯……嗯……嗯……嗯……嗯……”
+
+//: EraseChara( "Clacier", 0.5 )
+//: DrawChara( "Falke", 1, 1, 0, 0.5, 0.0, 2, "C" )
+: DrawFaceThumbnail( "Falke", 1, 0, 0 )
+\CN["沥青"]
+“……恩”
+
+//●演技：ディープキスです
+//: EraseChara( "Falke", 0.5 )
+: DrawChara( "Clacier", 4, 3, 0)
+: PlayVoice( "Voices/vo21_cle0033" )
+\CN["克里西亚"]
+“假币……啊……嗯，嗯，嗯，嗯……嗯……
+嗯，嗯，嗯，嗯，我知道了，我知道了♥</color>」
+
+从克雷西亚那里积极地缠绕着舌头。
+
+舌头的粘稠和粗糙的触感。
+
+被舔粘膜激发兴奋。
+
+: DrawChara( "Clacier", 0, 2)
+: PlayVoice( "Voices/vo21_cle0034" )
+\CN["克里西亚"]
+“哈，哈……嗯，嗯，嗯……哈，哈……”
+
+: DrawChara( "Clacier", 2, 3)
+: PlayVoice( "Voices/vo21_cle0035" )
+\CN["克里西亚"]
+“舌头……好舒服……嗯，嗯……嗯……嗯……”
+我明白了……嗯……嗯……我知道了……”
+
+一边将身体交给克里西亚，一边反复亲吻。
+
+只有我们在安静的房间里
+缠绕的声音响起，让人兴奋。
+
+//: EraseChara( "Clacier", 0.5 )
+//: DrawChara( "Falke", 3, 1, 0, 0.5, 0.0, 2, "C" )
+: DrawFaceThumbnail( "Falke", 3, 0, 0 )
+\CN["沥青"]
+“恩哈……哈……哈……是……克雷西亚……”
+
+//: EraseChara( "Falke", 0.5 )
+//●ＣＧ：王女のご奉仕パイズリ（クレイシア）
+//●ＣＧ差分：微笑
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255 )
+: Wait()
+: EraseChara( "Clacier", 0.0 )
+: ResetLayer(3)
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_1_0110001_1000000_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.5, 255, 255, 255 )
+: Wait()
+: PlayBgm("BGM/33_H_LOVE")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0036" )
+\CN["克里西亚"]
+“我会让你心情舒畅的
+请轻松地使用假币”
+
+\CN["沥青"]
+“……嗯”
+
+克莱西亚丰满的乳房已经把我那激动至极的东西
+包容我。
+
+: PlayVoice( "Voices/vo21_cle0037" )
+\CN["克里西亚"]
+“油敷变得很烫……”
+
+\CN["沥青"]
+“呃……那个，那个……”
+
+//●ＣＧ差分：微笑
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_1_0210001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0038" )
+\CN["克里西亚"]
+“乳房和舌头都可以使用，让你心情舒畅。”
+
+: PlayVoice( "Voices/vo21_cle0039" )
+\CN["克里西亚"]
+“柏油一直待在那里……。
+我会全部做的……”
+
+\CN["沥青"]
+“哦，哦……”
+
+: PlayBackVoice( "Voices/BGV21_cle_aegi01" )
+从两侧用乳房温柔地包围着。
+
+大而有张力的物体突然变形
+我去吸我的小鸡鸡。
+
+: PlayVoice( "Voices/vo21_cle0040" )
+\CN["克里西亚"]
+“嗯，嗯……是乳房，就这样……嗯……”……
+呵呵，油路的公鸡，越来越大了”
+
+: PlayVoice( "Voices/vo21_cle0041" )
+\CN["克里西亚"]
+“嗯，嗯，嗯……变成面包，好像要烫伤胸部了
+那么热……”
+
+\CN["沥青"]
+“那、那是……非常舒服……”……
+还有，如果你的乳房被咬了，一定会很兴奋的”
+
+被软乎乎地移动。
+
+来自小鸡鸡的愉快刺激令人心旷神怡。
+
+//●演技：最後、男性器の先っぽを舐めます
+: PlayVoice( "Voices/vo21_cle0042" )
+\CN["克里西亚"]
+“那么，差不多该先走了……嗯…”
+
+//●ＣＧ差分：舐め
+: StopBackVoice()
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0111001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：舌で舐めています
+: PlayVoice( "Voices/vo21_cle0043" )
+\CN["克里西亚"]
+“嗯……呃……呃……嗯……”
+
+: PlayBackVoice( "Voices/BGV21_cle_fera01" )
+\CN["沥青"]
+“呃，呃……！”
+
+: PlayVoice( "Voices/vo21_cle0044" )
+\CN["克里西亚"]
+“我刚才在喝啤酒。我被胸部和舌头咬了。”
+舒服吗？”
+
+\CN["沥青"]
+“非常……”
+
+舌尖只需轻轻抚摸龟头，腰部就扑哧扑哧直响。
+
+脚尖冰冷的感觉让人心情很好
+交给克里西亚。
+
+: PlayVoice( "Voices/vo21_cle0045" )
+\CN["克里西亚"]
+“嗯……嗯……渐渐变硬了。
+舌头和胸部……嗯……嗯……嗯♥</color>」
+
+: PlayVoice( "Voices/vo21_cle0046" )
+\CN["克里西亚"]
+“上下边嚼边……嗯，嗯，嗯
+先，舔我……滚……滚……”
+
+\CN["沥青"]
+“克莱西亚……那个，非常舒服……”
+
+将整个小鸡鸡温暖柔软的乳房轻轻地包住
+刺激舌头感觉到的部分。
+
+像这样忍气吞声也不坏。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0211001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0047" )
+\CN["克里西亚"]
+“哈，哈……嗯，嗯……呃……从前面开始
+透明的……出来了……”
+
+: PlayVoice( "Voices/vo21_cle0048" )
+\CN["克里西亚"]
+“嗯，嗯，嗯，嗯……感觉到了柏油，心情很好
+我知道是这样的……嗯，嗯，我知道了♥</color>」
+
+\CN["沥青"]
+“哈……哈…嗯……嗯……”
+
+和kuni以一定的节奏用乳肉处理小鸡鸡。
+
+在那里用重音舌头的触觉混杂提高快感。
+
+: PlayVoice( "Voices/vo21_cle0049" )
+\CN["克里西亚"]
+“嗯，嗯……小金，好烫……”
+
+: PlayVoice( "Voices/vo21_cle0050" )
+\CN["克里西亚"]
+“滚开，滚开，滚开……用舌头，舔也好舔也好
+渐渐变热了……”
+
+\CN["沥青"]
+“啊，你的舌头和胸部太舒服了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0111001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0051" )
+\CN["克里西亚"]
+“呵呵，那就太好了。”
+
+: PlayVoice( "Voices/vo21_cle0052" )
+\CN["克里西亚"]
+“那么，小鸡鸡，我就叼到你的嘴里……”
+
+克莱西亚把拿着乳房的手拿过来
+更用力地夹住小鸡鸡。
+
+//●ＣＧ差分：咥え
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0310001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を咥え込みます
+: PlayVoice( "Voices/vo21_cle0053" )
+\CN["克里西亚"]
+“嗯……嗯……嗯…嗯……嗯，嗯，嗯，嗯♥</color>」
+
+克雷西亚叼进小鸡鸡。
+
+: PlayVoice( "Voices/vo21_cle0054" )
+\CN["克里西亚"]
+“知道了……嗯，嗯，嗯，嗯……”……
+呃，珠露露，嗯……嗯♥</color>」
+
+: PlayVoice( "Voices/vo21_cle0055" )
+\CN["克里西亚"]
+“哈、哈、呼、是……不上啊……”
+（哈、哈、好厉害、好硬……热得受不了……）
+
+小鸡鸡的竿部分用汗湿润的乳肉包住
+继续被使用。
+
+龟头和钾的附近是粘土的粘稠和温暖
+包在嘴里，刺激舌头舒服的部分。
+
+\CN["沥青"]
+“呃，呃……克雷西亚，心情非常好……。
+哦，我也总算是……”
+
+//●ＣＧ差分：微笑
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0110001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を一度離します
+: PlayVoice( "Voices/vo21_cle0056" )
+\CN["克里西亚"]
+“嗯哈……呵呵，我最初是这么说的，但是假币一直开着
+”
+
+//●読み：労わさせて（ねぎらわさせて）
+: PlayVoice( "Voices/vo21_cle0057" )
+\CN["克里西亚"]
+“今晚我一直在努力买假币，辛苦了。”
+
+\CN["沥青"]
+“啊，啊…我知道了。”
+
+一看就说不出话来。
+
+//●ＣＧ差分：舐め
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0211001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器、舐めています
+: PlayVoice( "Voices/vo21_cle0058" )
+\CN["克里西亚"]
+“……嗯，嗯，嗯……嗯，珠鲁……
+中……哈、哈……被、被、被、哎呀呀♥</color>」
+
+: PlayVoice( "Voices/vo21_cle0059" )
+\CN["克里西亚"]
+“忍汁什么的溢出来了，有很强烈的味道……。
+我也总觉得很兴奋……”
+
+红着脸颊，木讷的粘土。
+
+乳头也勃起了
+一接触身体就会有硬邦邦的感觉。
+
+//●ＣＧ差分：咥え
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0110001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を再び咥え込みます
+: PlayVoice( "Voices/vo21_cle0060" )
+\CN["克里西亚"]
+“嗯……嗯……嗯……嗯……嗯……”♥</color>」
+
+就这样，克莱西亚张大了嘴
+叼进小鸡鸡的尖。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0210001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0061" )
+\CN["克里西亚"]
+“嗯，嗯，嗯，嗯……中，小玲，嗯……”……
+嗯，嗯，嗯，嗯，嗯♥</color>」
+
+\CN["沥青"]
+“哈，哈，舌头缠得很尖……”
+
+缓急的舌头的动作和用乳房来处理的心情很好
+重叠在一起，肚子的深处开始疼起来。
+
+: PlayVoice( "Voices/vo21_cle0062" )
+\CN["克里西亚"]
+“小金，好激动……嗯，嗯……嗯
+嗯，嗯，嗯，嗯，嗯，嗯……”
+
+: PlayVoice( "Voices/vo21_cle0063" )
+\CN["克里西亚"]
+“嗯……嗯……嗯，我、小忠、小悠♥</color>」
+
+嘴像吸上来似的被动了起来。
+
+\CN["沥青"]
+“哈……哈……哈……”
+
+也有积存的东西吗
+早就往上冲了。
+
+//●演技：男性器を離します
+: StopBackVoice()
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_1_0110001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0064" )
+\CN["克里西亚"]
+“嗯哈……用满满的忍耐汁把乳房弄成贝贝
+成了……”
+
+: PlayVoice( "Voices/vo21_cle0065" )
+\CN["克里西亚"]
+“前端，好厉害……已经，变成这样的面包了
+膨胀着”
+
+\CN["沥青"]
+“啊……堆积得很厉害……”
+
+: PlayVoice( "Voices/vo21_cle0066" )
+\CN["克里西亚"]
+「这样啊。那我就把你的积蓄放轻松了。
+首先，和乳房一起吃……”
+
+//●演技：男性器を咥えます
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0210001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0067" )
+\CN["克里西亚"]
+“嗯……嗯……知道了，嗯，嗯……
+嗯，嗯，嗯，嗯，嗯♥</color>」
+
+: PlayVoice( "Voices/vo21_cle0068" )
+\CN["克里西亚"]
+“如果觉得冷的话，请随时过来……。
+嗯，嗯，嗯……小鲁鲁鲁♥</color>」
+
+: PlayBackVoice( "Voices/BGV21_cle_fera01" )
+舌头的动作更加激烈。
+
+\CN["沥青"]
+“呜……克雷西亚……”
+
+: PlayVoice( "Voices/vo21_cle0069" )
+\CN["克里西亚"]
+“你最喜欢柏油、小金这个地方吧？”
+
+: PlayVoice( "Voices/vo21_cle0070" )
+\CN["克里西亚"]
+“嗯……老实说，我知道了，我知道了。”♥</color>」
+
+克莱西娅拼命地动着舌头。
+
+忍耐汁和唾液混合变成了粘糊糊的小鸡鸡
+一边发出粘糊糊的声音
+一直被当做乳房来对待。
+
+\CN["沥青"]
+“也、已经……差不多该……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0110001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0071" )
+\CN["克里西亚"]
+“嗯……平……放在嘴里……”
+
+: PlayVoice( "Voices/vo21_cle0072" )
+\CN["克里西亚"]
+“嗯，嗯，嗯，嗯，嗯，嗯！”
+
+\CN["沥青"]
+“呃……呃……克雷西亚……啊啊啊啊……”
+
+: PlayVoice( "Voices/vo21_cle0073" )
+\CN["克里西亚"]
+“哈、哈、嗯、珠、嗯……嗯，嗯，嗯……嗯，嗯……嗯，嗯……
+纯朴，中华，谢谢♥</color>」
+
+为了让我心情舒畅地射精
+乳房和嘴激烈地活动着。
+
+\CN["沥青"]
+“……呃，呃……唔…”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0210001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0074" )
+\CN["克里西亚"]
+“老师，我，我要听你说……嗯，嗯，嗯……
+嗯……”
+
+\CN["沥青"]
+“然后，出来……啊……嗯……嗯……！”
+
+//●演出：射精
+//●ＣＧ差分：咥え・口内射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0310001_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+别克乌鱼！别管！呜哇呜哇！
+
+//●演技：口内射精中です
+: PlayVoice( "Voices/vo21_cle0075" )
+\CN["克里西亚"]
+“嗯……嗯！？嗯！”
+
+一边用乳房紧紧夹着
+一口气把往克里西亚嘴里涌来的感情吐出来。
+
+//●演技：心の声です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0210001_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0076" )
+\CN["克里西亚"]
+（ンンン……！精液非常有气势……。
+因为沥青的精液积了很多，所以很浓……）
+
+一边被叼着，一边嘎吱嘎吱地用力脉动。
+
+//●演技：精飲です
+: PlayVoice( "Voices/vo21_cle0077" )
+\CN["克里西亚"]
+“我知道了……嗯……嗯……嗯……抱歉……”
+
+克莱西亚发出咕噜咕噜的声音
+把我出的精液喝下去。
+
+: PlayVoice( "Voices/vo21_cle0078" )
+\CN["克里西亚"]
+“嗯……知道了……嗯……恩……恩……恩……”……
+嗯……呜……嗯……”
+
+//●ＣＧ差分：微笑
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b002_1_2_0110001_1000020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：精飲終わりです
+: PlayVoice( "Voices/vo21_cle0079" )
+\CN["克里西亚"]
+“恩……嗯……嗯……哈…哈，哈…啊……。
+油，出来了很多很浓的东西呢……”
+
+\CN["沥青"]
+“哈……哈……乱七八糟，心情很好。”
+
+话虽如此，仅仅射精一次的话
+勃起始终无法平息。
+
+: PlayVoice( "Voices/vo21_cle0080" )
+\CN["克里西亚"]
+“小气鬼，还那么大呢。”
+
+: PlayVoice( "Voices/vo21_cle0081" )
+\CN["克里西亚"]
+“我也变得非常想要了。
+柏油，就这样躺在床上……”
+
+\CN["沥青"]
+“啊，我知道了……”
+
+//●ＣＧ：王女のご奉仕セックス（クレイシア）
+//●ＣＧ差分：未挿入
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_1_0110001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+按照他说的那样躺在床上
+脱下内衣的克莱西娅从上面跨了过来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_1_0210001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0082" )
+\CN["克里西亚"]
+“嗯……嗯……小丁，一擦……嗯
+啊啊啊啊！”
+
+: PlayVoice( "Voices/vo21_cle0083" )
+\CN["克里西亚"]
+“我的女阴，舔了柏油的小鸡鸡
+仅仅是乳房，就变成了这样的肌肉男”
+
+: PlayBackVoice( "Voices/BGV21_cle_aegi01" )
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——中、中、中。
+
+女阴一碰上就和讨厌的声音一起
+爱液缠绕在一起。
+
+\CN["沥青"]
+“克莱西亚的女阴，变得非常性感。”
+
+: PlayVoice( "Voices/vo21_cle0084" )
+\CN["克里西亚"]
+“因为……存起来的不只是你一个人吗？”？
+我也一直……”
+
+\CN["沥青"]
+“这样啊。但是不能马上插进去吗？”
+
+: PlayVoice( "Voices/vo21_cle0085" )
+\CN["克里西亚"]
+“嗯，嗯，小金的感觉，我想更加熟悉……”
+
+: PlayVoice( "Voices/vo21_cle0086" )
+\CN["克里西亚"]
+“嗯，啊，嗯……嗯，啊，嗯……”
+
+克莱西娅用缓慢的腰姿
+把女阴蹭到小鸡鸡身上。
+
+从下面仰望的克里西亚的脸已经被烧光了
+酿成了艳丽的魅力。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_1_0110001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0087" )
+\CN["克里西亚"]
+“哈，嗯，这里，现在开始要放柏油的
+这么一想，里面就开始疼了……”
+
+: PlayVoice( "Voices/vo21_cle0088" )
+\CN["克里西亚"]
+“这样做……嗯，擦擦的话……会不断地变得好色
+酱油溢出来了……停不下来了……”
+
+渐渐变热的阴道褶里夹着小鸡鸡。
+
+刚刚射精的时候变得敏感了
+因为被人贪婪地摩擦，所以受不了。
+
+\CN["沥青"]
+“哈，哈……克雷西亚，差不多该在你的心中了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_1_0210001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0089" )
+\CN["克里西亚"]
+“嗯……我也忍不住了……”
+
+克莱西亚这样说后，立刻停止了摇晃腰部。
+
+: PlayVoice( "Voices/vo21_cle0090" )
+\CN["克里西亚"]
+“那就插上吧……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——口羽。
+
+将小鸡鸡的前端贴在浮起腰并热熟了的阴道口上。
+
+: PlayVoice( "Voices/vo21_cle0091" )
+\CN["克里西亚"]
+“恩……嗯，嗯……我要进去了……沥青的喀哒喀哒
+成了叔叔……因为要插在女阴里……”
+
+//●演技：男性器が挿入されます
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_1_0310001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0092" )
+\CN["克里西亚"]
+“嗯……嗯，嗯……嗯————！”
+
+//●演出：挿入
+//●ＣＧ差分：挿入
+: StopBackVoice()
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0310001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——超好吃的！
+
+: PlayBackVoice( "Voices/BGV21_cle_aegi02" )
+龟头被热粘膜包裹的话，从那里会有很好的气势
+整个小鸡被包围。
+
+\CN["沥青"]
+“呜……里面很烫……”
+
+阴道壁缠绕在小鸡鸡上拧紧。
+
+即使生了一个孩子，阴道也不松紧。
+
+倒不如说，感觉变得紧紧地系上了。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0110001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0093" )
+\CN["克里西亚"]
+“嗯，嗯……哈，哈，一口气全部放进去了<color=#59a0>♥</color>」
+
+: PlayVoice( "Voices/vo21_cle0094" )
+\CN["克里西亚"]
+“我感觉到了柏油的爷爷……很深的地方
+所以，从前面开始，全部……感觉到了……”
+
+褶皱缠绕着，激烈的蠕动让人心情舒畅
+受不了。
+
+一直连接在一起一动不动的话，阴道内会慢慢变成我的小鸡鸡
+有种适应的感觉。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0210001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0095" )
+\CN["克里西亚"]
+“哈，哈，只是连接着而已……女婿全部
+真是忍不住……”
+
+: PlayVoice( "Voices/vo21_cle0096" )
+\CN["克里西亚"]
+“我想更多地感受到柏油爷爷……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！努哈！啾啾！加油！嘘！
+
+克莱西亚开始慢慢地摇晃着腰。
+
+//●演技：緩く腰を動かしています
+: PlayVoice( "Voices/vo21_cle0097" )
+\CN["克里西亚"]
+“嗯，嗯，嗯……哈，哈，啊，啊，嗯！”！
+啊……啊…啊……嗯！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0310001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0098" )
+\CN["克里西亚"]
+“来，好舒服……啊，啊，啊……中了钾……”……
+啊、啊、啊啊啊……！”
+
+: PlayVoice( "Voices/vo21_cle0099" )
+\CN["克里西亚"]
+“好久不见的小气鬼……腰，停不下来……擅自行动……”……
+声音也发出了很多……嗯，啊，啊啊啊啊啊！”
+
+在发出甜蜜的声音的同时，克雷西亚的动作也渐渐加快了速度
+增加。
+
+\CN["沥青"]
+“哈……恩……一边紧闭着，一边摩擦着……”……
+非常舒服……”
+
+往上一看，一个大乳房在晃来晃去。
+
+从相互连接的部分开始，水气带着的声音
+出来了。
+
+房间里藏着的水芹的甜蜜香气中充满了淫荡性的味道
+混杂在一起，不管它是不是，都会让我兴奋起来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0410001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0100" )
+\CN["克里西亚"]
+「恩！啊啊！啊！被从下面推上去的话
+不行，不行……因为是我做的……”
+
+: PlayVoice( "Voices/vo21_cle0101" )
+\CN["克里西亚"]
+“我很老实……嗯，休息一下……
+嗯……是啊，所以……猜到里面……恩……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+基西！嘘！好！基西！祝你好运！嘘！
+
+受不了了，我也开始动了腰。
+
+把腰从床到阴道最深的地方推进小鸡鸡。
+
+: PlayVoice( "Voices/vo21_cle0102" )
+\CN["克里西亚"]
+“啊啊啊啊，啊，里面，打得好厉害……
+那、那里、深处……是、不行……有啊……”
+
+: PlayVoice( "Voices/vo21_cle0103" )
+\CN["克里西亚"]
+“啊，感觉太过了……会变得很奇怪……嗯
+啊啊啊……小气鬼，又{阴道内，肚子}变大了」
+
+//●演技：軽い絶頂です
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0310001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0104" )
+\CN["克里西亚"]
+“啊……呃，嗯……哈，啊啊，嗯……
+嗯，嗯，啊啊啊啊啊啊啊！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+克莱西亚大声地仰起身体。
+
+阴道内微微颤动。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0210001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0105" )
+\CN["克里西亚"]
+“哈……哈……真是的，沥青！
+拜托你了，不要动……
+今晚我想为你做……”
+
+: PlayVoice( "Voices/vo21_cle0106" )
+\CN["克里西亚"]
+“只是躺着而已……还有就是我……。
+嗯，嗯，啊啊……恩，啊啊啊啊啊……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！好！嘘！嘘！嘘！
+奇奇！加油！嘘！小矮人！
+
+\CN["沥青"]
+“嗯……”
+
+克雷西亚不情愿地弯腰。
+
+前后有节奏地移动着
+用溶化了的阴道肉处理小鸡鸡。
+
+: PlayVoice( "Voices/vo21_cle0107" )
+\CN["克里西亚"]
+“柏油怎么样？舒服吗？”
+
+\CN["沥青"]
+“嗯……克雷西亚的动作，真是太恶心了
+心情很好，而且很兴奋”
+
+: PlayVoice( "Voices/vo21_cle0108" )
+\CN["克里西亚"]
+“嗯……嗯，好像是。
+刚才，公鸡在叫啤酒”
+
+: PlayVoice( "Voices/vo21_cle0109" )
+\CN["克里西亚"]
+“再多活动一下吧……。
+啊、呜、啊啊……哈、哈、嗯！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston01" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0410001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嘘！嘘！嘘！嘘！嘘！嘘！
+
+: PlayVoice( "Voices/vo21_cle0110" )
+\CN["克里西亚"]
+“啊，啊，啊，嗯，嗯，嗯……！
+啊啊啊、啊、嗯……！哈、嗯、嗯！”
+
+而且，腰的动作比刚才快。
+
+大幅度地摇晃着乳房，让讨厌的声音变大
+把小鸡鸡拿出来。
+
+\CN["沥青"]
+“……哈、哈、哈……”
+
+强力的系紧，用爱液变软的时候
+在持续被使用的过程中，射出了射精感。
+
+小腹部慢慢地来了，热的块儿再次涌上来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0210001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0111" )
+\CN["克里西亚"]
+“好像很舒服的样子……
+哈……哈…………喜欢的话就心情舒畅……”
+
+: PlayVoice( "Voices/vo21_cle0112" )
+\CN["克里西亚"]
+“啊，啊，嗯，嗯！啊，嗯……哈
+小气鬼，比刚才更加战战兢兢了♥</color>」
+
+: PlayVoice( "Voices/vo21_cle0113" )
+\CN["克里西亚"]
+“再多感受一下……我的女婿，小鸡鸡
+心情舒畅……”
+
+紧紧地贴上阴道粘膜，向昂昂的小鸡鸡
+带来快感。
+
+\CN["沥青"]
+“啊，啊啊啊……克雷西亚，如果系得那么紧的话……”
+
+: PlayVoice( "Voices/vo21_cle0114" )
+\CN["克里西亚"]
+“嗯，嗯……我知道柏油好像很有活力。”
+
+: PlayVoice( "Voices/vo21_cle0115" )
+\CN["克里西亚"]
+“我也是，又来了……哈哈，刚才有点不对劲
+因为女阴很敏感……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0310001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+祝你好运！嘘！嘘！嘘！咕嘟咕嘟！
+
+\CN["沥青"]
+“哈，哈……克雷西亚……下次一起……”
+
+: PlayVoice( "Voices/vo21_cle0116" )
+\CN["克里西亚"]
+“嗯……好啊……我也想和柏油一起吃。”
+
+克莱希娅把手放在我的胸前
+开始专心致志地摆动腰。
+
+阴道褶摩擦着钾，我敏感的地方就是这样
+因为会刺激我，所以我才咬紧牙关忍耐。
+
+: PlayVoice( "Voices/vo21_cle0117" )
+\CN["克里西亚"]
+“嗯！已经……出来了……”……
+看起来很不错……”
+
+: PlayVoice( "Voices/vo21_cle0118" )
+\CN["克里西亚"]
+“沥青……沥青……啊啊啊……真恶心
+看起来好棒……好棒……假币呢？差不多可以了吧？”
+
+\CN["沥青"]
+“啊啊啊……已经到极限了。”
+
+克里西亚的阴道内一边激烈痉挛一边强健小鸡鸡
+我来收紧。
+
+我也从下往上提腰，龟头在克莱西娅的阴道里
+责备下去。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0410001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0119" )
+\CN["克里西亚"]
+“恩啊，啊啊啊啊，嗯！啊，啊，啊，啊，啊，啊，啊，啊，啊，啊，啊，啊，啊，啊，啊，啊，啊
+嗯，嗯……啊，啊啊啊啊啊……”
+
+: PlayVoice( "Voices/vo21_cle0120" )
+\CN["克里西亚"]
+“哈哈，如果被下面的人那样说的话……会很……”……
+一起……一起…！”
+
+\CN["沥青"]
+“哈啊哈……也、也唔……”
+
+: PlayVoice( "Voices/vo21_cle0121" )
+\CN["克里西亚"]
+“嗯……拿出来了……{阴道内，内}拿出精液……
+想和你在一起……”
+
+: PlayVoice( "Voices/vo21_cle0122" )
+\CN["克里西亚"]
+“我要……我要……！法兰克
+啊啊啊，啊啊啊……嗯……嗯……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo21_cle0123" )
+\CN["克里西亚"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊————————！”
+
+//●演出：射精
+//●ＣＧ差分：膣内射精
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0310001_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——德彪乌乌！别克！别克！别管！
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咚！咚！咚！咚！咚！咚！
+
+: PlayVoice( "Voices/vo21_cle0124" )
+\CN["克里西亚"]
+“啊啊啊，嗯，啊……啊…啊啊啊啊啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV21_cle_jigo02" )
+\CN["沥青"]
+“……恩”
+
+把刚才刚出的气势磅礴的精液
+射精到阴道内很深。
+
+黏附的粘膜一边脉动一边促进舒服的射精。
+
+//●ＣＧ差分：射精後精液
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evl_b003_1_2_0410011_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+参考翻译！别克！多布多布！
+
+: PlayVoice( "Voices/vo21_cle0125" )
+\CN["克里西亚"]
+“哈，嗯，啊……好舒服……”……
+很多、很热的{阴道内、内}都出来了……」
+
+: PlayVoice( "Voices/vo21_cle0126" )
+\CN["克里西亚"]
+“小气鬼，一边嘀咕着……嗯……
+精液，被吸走了……”
+
+克雷西亚一屁股坐下，接住了我的射精。
+
+\CN["沥青"]
+“哈、哈、哈……能收紧吗，好舒服……”
+
+//: HideWnd()
+//: evbg = true; evcos = false;
+//: evfile = "evl_b003_1_2_0210011_1100030_0_"
+//: Call("Scenarios/Common*EvChange")
+//: ShowWnd()
+: PlayVoice( "Voices/vo21_cle0127" )
+\CN["克里西亚"]
+“嗯……精液，随便拿出来就可以了……。
+我的女阴……尽情……嗯……”
+
+\CN["沥青"]
+“哦，哦……”
+
+射精治好后，克雷西亚再次摆动腰
+然后我又把精液洒到了阴道内。
+
+然后，我到黎明为止在克里西亚的阴道内好几次尽头
+把积压的东西全部吐出来了。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_B06_81" )
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

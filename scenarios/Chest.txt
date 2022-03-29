@@ -1,0 +1,337 @@
+//----------------------------------------------------------
+//お金を増やす系
+//----------------------------------------------------------
+*Money100
+: $money += 100
+100两入手了！
+
+: Return
+
+*Money200
+
+: $money += 200
+200两入手了！
+
+: Return
+
+*Money500
+
+: $money += 500
+500两入手了！
+
+: Return
+
+//----------------------------------------------------------
+//傷薬系（ＨＰ回復）系
+//----------------------------------------------------------
+//傷薬
+*HpMedicenS
+: AddItem("HpMedicenS", 1)
+「伤药」入手了！
+
+: Return
+
+//高級傷薬
+*HpMedicenM
+: AddItem("HpMedicenM", 1)
+「高级伤药」入手了！
+
+: Return
+
+//最高級傷薬
+*HpMedicenL
+: AddItem("HpMedicenL", 1)
+「最高级伤药」入手了！
+
+: Return
+
+//----------------------------------------------------------
+//スキル果実系（ＳＰ回復）系
+//----------------------------------------------------------
+//スキル果実の粉末
+*SpMedicenS
+: AddItem("SpMedicenS", 1)
+「技能果实的粉末」入手了！
+
+: Return
+
+//スキルの葉
+*SpMedicenM
+: AddItem("SpMedicenM", 1)
+「技能的叶」入手了！
+
+: Return
+
+//スキル果実
+*SpMedicenL
+: AddItem("SpMedicenL", 1)
+「技能果实」入手了！
+
+: Return
+
+//----------------------------------------------------------
+//酒・雫（ＨＰ＆ＳＰ回復）系
+//----------------------------------------------------------
+//霊酒
+*HpSpMedicenS
+: AddItem("HpSpMedicenS", 1)
+「零酒」入手了！
+
+: Return
+
+//御神酒
+*HpSpMedicenL
+: AddItem("HpSpMedicenL", 1)
+「御神酒」入手了！
+
+: Return
+
+//妖精の涙
+*HpMedicenAll
+: AddItem("HpMedicenAll", 1)
+「妖精之泪」入手了！
+
+: Return
+
+//神々の雫
+*HpSpMedicenAll
+: AddItem("HpSpMedicenAll", 1)
+「神之泪」入手了！
+
+: Return
+
+//----------------------------------------------------------
+//丸薬（戦闘不能状態回復）系
+//----------------------------------------------------------
+//蘇生の丸薬
+*DebuffCure00
+: AddItem("DebuffCure00", 1)
+「复生药」入手了！
+
+: Return
+
+//幻の丸薬
+*DebuffCure01
+: AddItem("DebuffCure01", 1)
+「幻药」入手了！
+
+: Return
+
+//----------------------------------------------------------
+//状態異常回復系
+//----------------------------------------------------------
+//毒消し
+*DebuffCure02
+: AddItem("DebuffCure02", 1)
+「祛毒药」入手了！
+
+: Return
+
+//目薬
+*DebuffCure03
+: AddItem("DebuffCure03", 1)
+「眼药」入手了！
+
+: Return
+
+//気付け薬
+*DebuffCure04
+: AddItem("DebuffCure04", 1)
+「兴奋剂」入手了！
+
+: Return
+
+//リラックスハーブ
+*DebuffCure05
+: AddItem("DebuffCure05", 1)
+「放松药草」入手了！
+
+: Return
+
+//不思議なベル
+*DebuffCure06
+: AddItem("DebuffCure06", 1)
+「不可思议的药丸」入手了！
+
+: Return
+
+//マズイ薬
+*DebuffCure07
+: AddItem("DebuffCure07", 1)
+「激活药」入手了！
+
+: Return
+
+//激辛の実
+*DebuffCure08
+: AddItem("DebuffCure08", 1)
+「辛辣的水果」入手了！
+
+: Return
+
+//万能薬
+*DebuffCure09
+: AddItem("DebuffCure09", 1)
+「万能药」入手了！
+
+: Return
+
+//----------------------------------------------------------
+//団子（状態強化）系
+//----------------------------------------------------------
+//バーサクキノコ
+*BuffAdd00
+: AddItem("BuffAdd00", 1)
+「狂战士蘑菇」入手了！
+
+: Return
+
+//力の団子
+*BuffAdd01
+: AddItem("BuffAdd01", 1)
+「力量团子」入手了！
+
+: Return
+
+//守りの団子
+*BuffAdd02
+: AddItem("BuffAdd02", 1)
+「守护团子」入手了！
+
+: Return
+
+//速さの団子
+*BuffAdd03
+: AddItem("BuffAdd03", 1)
+「速度团子」入手了！
+
+: Return
+
+//魔力団子
+*BuffAdd04
+: AddItem("BuffAdd04", 1)
+「魔力团子」入手了！
+
+: Return
+
+//対魔団子
+*BuffAdd05
+: AddItem("BuffAdd05", 1)
+「对魔团子」入手了！
+
+: Return
+
+//----------------------------------------------------------
+//魔石（耐性強化）系
+//----------------------------------------------------------
+//炎の魔石
+*BuffAdd06
+: AddItem("BuffAdd06", 1)
+「火之魔石」入手了！
+
+: Return
+
+//氷の魔石
+*BuffAdd07
+: AddItem("BuffAdd07", 1)
+「水之魔石」入手了！
+
+: Return
+
+//雷の魔石
+*BuffAdd08
+: AddItem("BuffAdd08", 1)
+「雷之魔石」入手了！
+
+: Return
+
+//風の魔石
+*BuffAdd09
+: AddItem("BuffAdd09", 1)
+「风之魔石」入手了！
+
+: Return
+
+//土の魔石
+*BuffAdd10
+: AddItem("BuffAdd10", 1)
+「土之魔石」入手了！
+
+: Return
+
+//仕込みローション
+*BuffAdd11
+: AddItem("BuffAdd11", 1)
+「卫生棒」入手了！
+
+: Return
+
+//----------------------------------------------------------
+//その他
+//----------------------------------------------------------
+//移動石
+*Teleporter
+: AddItem("Teleporter", 1)
+「移动石」入手了！
+
+: Return
+
+//ピル
+*Pill
+: AddItem("Pill", 1)
+「避孕药」入手了！
+
+: Return
+
+//周期調整薬
+*SexualCycleItem
+: AddItem("SexualCycleItem", 1)
+「月经调整药」入手了！
+
+: Return
+
+//----------------------------------------------------------
+//魂（エロステータス増加）系
+//----------------------------------------------------------
+//ヤリマンビッチの魂
+*HparamPlus00
+: AddItem("HparamPlus00", 1)
+「放荡婊子之魂」入手了！
+
+: Return
+
+//変態アナル女の魂
+*HparamPlus01
+: AddItem("HparamPlus01", 1)
+「变态肛门女灵魂」入手了！
+
+: Return
+
+//チンポを咥えまくった女の魂
+*HparamPlus02
+: AddItem("HparamPlus02", 1)
+「吮吸肉棒的女人的灵魂」入手了！
+
+: Return
+
+//おっぱいで天下を取った女の魂
+*HparamPlus03
+: AddItem("HparamPlus03", 1)
+「用胸部获得天下的女人的灵魂」入手了！
+
+: Return
+
+//イキまくり敏感女の魂
+*HparamPlus04
+: AddItem("HparamPlus04", 1)
+「敏感女人的灵魂」入手了！
+
+: Return
+
+//公衆便女の魂
+*HparamPlus05
+: AddItem("HparamPlus05", 1)
+「公众便女的灵魂」入手了！
+
+: Return
+

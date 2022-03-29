@@ -1,0 +1,237 @@
+//========================================================
+//○男湯に入ってみるわね
+//========================================================
+*sc000
+//露出開発度Ｂ以上で*sc001開始
+: if ( $chapter < 5 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+: if ( CharaHRank( "Momo", "Immoral" ) < 2 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Exhibitionist" ) < 2 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+//白夜第４章のみ
+: if ( $chapter == 7 )
+从这里开始是男浴室。不能进去啊。
+
+	: Return
+: endif
+: if ( Flag ( "DatsuiMomo" ) == true ) Return endif
+*sc001
+//●場所：男湯
+//●演技：心の声です
+: DrawChara( "Momo", 11, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom3055" )
+\CN["桃子"]
+（……之后就是男浴室了……）
+
+在多次被看到裸体的过程中，对于被看到
+变得有了高涨感。
+
+//●演技：心の声です
+: DrawChara( "Momo", 12, 1)
+: PlayVoice( "Voices/vo01_mom3056" )
+\CN["桃子"]
+（现在开始进入男浴室……然后，对在场的人说
+会被看到我的裸体的……）
+
+仅仅是想象一下，就不可思议地情绪高涨起来。
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：もう一度考え直す
+//■選択肢２：ここまで来たら引き返せない
+//――――――――――――――――――――――――――――
+\CI["再重新考虑一下吧"]
+\CI["到了这里就下不去了"]
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：もう一度考え直すを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+不管怎么说，那样的事怎么也做不到。
+
+//●シーンエンド
+: Return
+//-------------------------------------------------------
+//●選択肢２：ここまで来たら引き返せないを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+: if ( $inExtra == true )
+	: HideWnd()
+	: DrawImage( 1, 0, "BGImage/BG_School01_01", 1.0 )
+	: ShowWnd()
+: endif
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: DrawChara( "Momo", 1, 1, 0, 0.0, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom3057" )
+\CN["桃子"]
+“是啊……既然来到了这里，就不可能回去了。”
+
+: EraseChara( "Momo", 0.5 )
+//●演出：桃　男湯に入っていく
+//＠場所移動：男湯
+//●演出：男湯に移動後、脱衣場へ
+: HideWnd()
+: Wait()
+: if ( $inExtra == false )
+: RpgDoorLock( "Door_Men", false )
+: RpgDoorOpen( "Door_Men" )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 8	\
+:	"MoveRight", 2	\
+:	"Turn", "U" )
+: Wait()
+: endif
+: ShowWnd()
+\CN["男1"]
+“诶？这里是男浴室吧……？为什么……？”
+
+\CN["男2"]
+“不会吧，那个姐姐，去男浴室……？”
+
+//●ＣＧ：露出プレイ
+//●ＣＧ差分：着衣
+//＠evcg：evb_b011
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_1_0100001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3058" )
+\CN["桃子"]
+（换衣服的人盯着我看……）
+
+明明还什么都没脱，只是因为那视线而心跳加速。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3059" )
+\CN["桃子"]
+（嗯，一动不动可不好啊。衣服要脱了。
+我是来洗澡的……）
+
+就这样留在这里很不自然。
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：下着
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_2_0300001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Momo", 2 )
+: ShowWnd()
+脱下衣服穿内衣。
+
+\CN["男1"]
+“喂喂，那个孩子，真的假的……”
+
+\CN["男2"]
+“胸部好大啊……”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3060" )
+\CN["桃子"]
+（感觉到了很厉害的视线……嗯，被看到了……）
+
+接下来内衣也……。
+
+//●ＣＧ差分：下着脱ぐ
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_5_0400001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+故意强调屁股，手搭内衣。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3061" )
+\CN["桃子"]
+（这个，脱掉的话，还能看到漫画……）
+
+明明应该有很多次见过
+总觉得是非常特别的事情……。
+
+//●ＳＥ：パンツを脱ぐ音
+//●ＣＧ差分：全裸
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_3_0300001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Momo", 1 )
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3062" )
+\CN["桃子"]
+（在这种地方……全部脱掉了……。
+被看到了，我非常清楚……真是毛骨悚然……）
+
+感觉到了在这里的男人们的色情视线
+心情变好了。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3063" )
+\CN["桃子"]
+（还远远不止这些呢。
+不洗澡的话……）
+
+//●ＣＧ：消去
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: CharaCanCostumeChange( "Momo", true )
+: ShowWnd()
+可以换服装了。
+<color=FF0000>※服装变更是从“菜单”中的“角色”开始的
+可以变更。也有不可更改的地方。</color>
+
+: CharaAddHSkill( "Momo", 1000 )
+: CharaAddHSkill( "Momo", 1001 )
+H技能“改变服装”和
+学会了“曝光自慰”。
+
+: HideWnd()
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S11_02" )
+//●演出：浴室に移動する
+//●シーンエンド
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 3	\
+:	"MoveUp", 2 )
+: Wait()
+//脱衣イベントフラグＯＮ
+: Flag( "DatsuiMomo", true )
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Exhibitionist", 1) endif
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaSexHistory( "Momo", 6000 ) endif
+: FadeOut( 0.5 )
+: Wait()
+: mapId = RpgMapID()
+: if ( mapId == 6 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town01_07_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map07" )
+: elif ( mapId == 45 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town05_08_Saito", "", "Scenarios/Map_Town05_Saito_Init*Map08" )
+: elif ( mapId == 58 )
+	//パーティーを単独にする
+	: Call( "Scenarios/CommonSys*PartyAlone" )
+	: LoadMap( "Map_Town06_04_Sakitama3" )
+: endif

@@ -1,0 +1,323 @@
+//========================================================
+//○大和の支配者
+//========================================================
+//●視点：第三者視点
+//●背景：黒画面
+//Yoshi：背景
+: HideWnd()
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: ShowWnd()
+——几个月后。
+
+//●背景：田舎の村・昼
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Village01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/26_FM004")
+: ShowWnd()
+\CN["男1"]
+“帝都好像将军去世了。”
+
+\CN["男2"]
+“呵呵。嘛，跟我们没关系。
+因为这里只是个农村啊”
+
+那个事件之后几个月。
+将军一桥忠胜的死不仅在帝都，在地方也广为流传。
+
+\CN["男3"]
+“之前，我从一个男人那里听说你是看帝都来的商人
+但是，好像很糟糕的样子”
+
+\CN["男4"]
+“将军死了还在狂风暴雨吗？”
+
+\CN["男3"]
+“不，好像有非常危险的3人组。”
+
+\CN["男4"]
+「啊。是吗，年轻人啊，你从高滨到这边
+转移过来了吧？帝都什么样的感觉
+你知道吗？”
+
+//●演出：蘭丸　登場する
+: CharaCostume( "Ranmaru", 0 )
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["兰丸"]
+“嗯？没什么特别的……。
+因为也有稍微离开大和的时候”
+
+\CN["男3"]
+“呼……是不是漂洋过海了呢。
+没有了，又去这样的乡村？”
+
+\CN["兰丸"]
+“嗯，是为了寻求安稳而去旅行的感觉吧。”
+
+兰丸的头上好像有一只Hiraga在里面做什么
+接到命令要调查一下，直到最近都去了国外。
+
+: DrawChara( "Ranmaru", 1, 0, 0 )
+\CN["兰丸"]
+（回到大和就什么都没有了。
+简直就像是帮助乌龟的男人的故事。）
+
+\CN["兰丸"]
+（将军死了，幕府死了
+希拉里也失踪了，而且那三个人……）
+
+: DrawChara( "Ranmaru", 3, 0, 0 )
+\CN["兰丸"]
+（刚才有人说是非常危险的3人组
+我想正是如此
+
+\CN["兰丸"]
+（我的话，无论做什么她们都停不下来了。
+不，在大和的人是不是谁都停不下来呢？）
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——现在帝都好像要被女精灵3人组压制了。
+
+//●状況：全員悪堕ちＭＡＸです
+//●演出：桃　炎魔術演出
+: HideWnd()
+: PlayBgm("BGM/41_Sad")
+: cgkeep = true;
+: Call( "Scenarios/Effect*MomoAction01" )
+: ShowWnd()
+被桃放出的火焰魔术吞噬的人们
+甚至连临终魔也无法传达而燃烧殆尽
+变成了在周围飞舞的灰。
+
+: PlayVoice( "Voices/vo01_mom1618" )
+\CN["桃子"]
+“呼～……。这就结束了。无黑，那边呢？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4717" )
+\CN["无黑色"]
+“啊，大概吧……”
+
+\CN["男1"]
+“这、这群家伙……太强了……”
+
+: PlayVoice( "Voices/vo00_muk4718" )
+\CN["无黑色"]
+“……没能收拾好吗？”
+
+//●演出：斬殺エフェクト
+//●ＳＥ：刺す音
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+无黑毫无表情地刺杀了勉强活着的男人。
+
+//●演出：黄菜子　アクション演出
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a001_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvIn")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0885" )
+\CN["黄菜子"]
+“哈！”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：カキン！　金属音
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = true;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["男2"]
+“呃……这孩子，哪里有那种力量！？”
+
+\CN["男3"]
+“别以为那家伙是个小鬼！那是恶魔！”
+
+: PlayVoice( "Voices/vo02_kin0886" )
+\CN["黄菜子"]
+“恶魔真是失礼啊。”
+
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: keep = false; cgkeep = true;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+\CN["男2"]
+“唔……！”
+
+\CN["男3"]
+“快用魔术治疗吧……！”
+
+: PlayVoice( "Voices/vo02_kin0887" )
+\CN["黄菜子"]
+“妖刀扬羽斩下的伤口无法通过魔术等恢复。
+请放弃”
+
+: PlayVoice( "Voices/vo02_kin0888" )
+\CN["黄菜子"]
+“这边也结束了。”
+
+//●演出：黄菜子　退場する
+//●ＣＧ：悪堕ちした３人（無黒・桃・黄菜子）
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a009_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4719" )
+\CN["无黑色"]
+“这里也马上就要掉下来了。”
+
+: PlayVoice( "Voices/vo01_mom1619" )
+\CN["桃子"]
+“总觉得太简单了，没有咬头呢。”
+
+: PlayVoice( "Voices/vo02_kin0889" )
+\CN["黄菜子"]
+“桃先生，如果疏忽大意的话会被杀的。”
+
+: PlayVoice( "Voices/vo01_mom1620" )
+\CN["桃子"]
+“呵呵，黄菜子，没关系。
+我完全知道。是这样的吧？”
+
+//●演出：魔術弓演出
+//●ＳＥ：刺す音
+: PlaySe( "SE/Se_MagicArrow" )
+\CN["男4"]
+“呃……！”
+
+至少有一把大刀和瞄准桃子飞出来的男人
+目瞪口呆地被魔术之箭贯穿而死。
+
+: PlayVoice( "Voices/vo02_kin0890" )
+\CN["黄菜子"]
+“无黑居然突然说出那种话来
+吓了一跳”
+
+: PlayVoice( "Voices/vo00_muk4720" )
+\CN["无黑色"]
+“嗯？嘛，我觉得讨厌无聊的生活方式。”
+
+: PlayVoice( "Voices/vo01_mom1621" )
+\CN["桃子"]
+“所以呢，那你能想到支配大和吗？”
+
+: PlayVoice( "Voices/vo00_muk4721" )
+\CN["无黑色"]
+“如果不是那样的话，我觉得现在的我们没有刺激。
+不是吗？”
+
+: PlayVoice( "Voices/vo01_mom1622" )
+\CN["桃子"]
+“呵呵，确实。你说得对。”
+
+: PlayVoice( "Voices/vo02_kin0891" )
+\CN["黄菜子"]
+“是的！”
+
+//●ＣＧ差分：映像化
+//●ＳＥ：ザザッという無線のような音
+//●状況：ヴィクトールから映像を見ているファルケたち
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a009_1_2_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+那个时候，远渡重洋的国家——
+拥有世界闻名的骑士团的维克托尔王国
+有人守护着大和的事态。
+
+: PlayVoice( "Voices/vo19_era0258" )
+\CN["伊拉伊萨"]
+“嗯，从中提琴送来的影像就是这个吗。
+那些家伙，不是在鬼灯这种武士聚集的家伙
+没有吗？”
+
+\CN["沥青"]
+「…………」
+
+: PlayVoice( "Voices/vo19_era0259" )
+\CN["伊拉伊萨"]
+“那么，队长怎么办？这群家伙。
+因为是他国的事情，所以就无视他吧？”
+
+\CN["沥青"]
+“烦人，你想怎么办？”
+
+: PlayVoice( "Voices/vo19_era0260" )
+\CN["伊拉伊萨"]
+“啊，用不着问吧？”
+
+: PlayVoice( "Voices/vo19_era0261" )
+\CN["伊拉伊萨"]
+“那些家伙们，有着和相遇时无法比拟的力量。
+从画面上看出来的，应该相当不错吧”
+
+\CN["奇诺"]
+“……哈…。这样一来，脑部副队长呢。”
+
+: PlayVoice( "Voices/vo19_era0262" )
+\CN["伊拉伊萨"]
+“啊？你说了什么？你真是个聪明的参谋啊？”
+
+\CN["沥青"]
+“实际上，不亲眼看到是不知道的
+不能放任不管啊」
+
+被称为世界最强的男人，Falke Egel。
+那个男人拿起曾经最强继承的刀站了起来。
+
+: PlayVoice( "Voices/vo19_era0263" )
+\CN["伊拉伊萨"]
+“一定要这样！Zno，交给我安排船了！”
+
+\CN["奇诺"]
+“好的好的……”
+
+对于想要支配大和的无黑他们
+维克托尔骑士团站了起来。
+
+//●演出：暗転
+//Yoshi：背景消去
+//●エンディング：悪堕ちＥＮＤ
+//＠タイトルへ戻る
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: if ( $inExtra == true ) Return endif
+: FadeOut( 0.0 )
+: Wait()
+: SharedFlag( "GameClear", true )
+: AfterStoryFlagUp( "Ending12" )
+: Call( "Scenarios/CommonSys*HanimeRefAllOpen")
+: LoadScene( "Title" )

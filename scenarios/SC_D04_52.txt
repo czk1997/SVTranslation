@@ -1,0 +1,930 @@
+//========================================================
+//○変態貴族の変わった趣味
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["眼镜店"]
+“啊……这个嘛，就是那个啊……。
+虽然是超狂热的委托，但是付款是好的”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4176" )
+\CN["无黑色"]
+“如果付款好的话，我只想问问你。”
+
+\CN["眼镜店"]
+“好潇洒啊。在从西都镇出来一点的地方。”
+有住在宅子里的贵族，那家伙有点
+我有那种兴趣中的癖好”
+
+\CN["眼镜店"]
+“那么，我是委托你来回应那个的。”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk4177" )
+\CN["无黑色"]
+“回应性癖的话，只要做爱就可以了吧？”
+
+: DrawChara( "Mukuro", 7, 0)
+那样的话，嘛，虽然也觉得可以做。
+但是，眼镜的入口店到这里涩好像有什么背面。
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：考え直した方がいいかも
+//■選択肢２：金払いがいいならやる！
+//――――――――――――――――――――――――――――
+\CI["也许重新考虑一下比较好"]
+\CI["如果付钱好的话就给你！"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：考え直した方がいいかもを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+\CN["眼镜店"]
+“せやな。嘛，说实话，我没怎么推荐。”
+
+//●シーンエンド
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：金払いがいいならやる！を選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4178" )
+\CN["无黑色"]
+“那么，可以做。请告诉我内容。”
+
+\CN["眼镜店"]
+“详细情况不去委托人那里的话就不知道。
+嘛，这是满足贵族要求的工作”
+
+\CN["眼镜店"]
+“但是，真的可以吗？”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk4179" )
+\CN["无黑色"]
+“如果被要求玩和生命有关的游戏的话
+总算逃回来了。那也可以吗？”
+
+\CN["眼镜店"]
+「嘛，如果是无黑的话，那就没问题了吧。
+那就和对方联系吧”
+
+//●演出：無黒　退場する
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——于是，我去了眼镜店带我去的宅邸
+虽然是这样……。
+
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D04_52" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D04_52" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+//●背景：洋風屋敷・昼
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Room01_01", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayBgm("BGM/40_Comedy")
+: ShowWnd()
+\CN["贵族"]
+“请你喝精液。”
+
+: DrawChara( "Mukuro", 22, 0)
+: PlayVoice( "Voices/vo00_muk4180" )
+\CN["无黑色"]
+“……呃？那个，那是委托吗？”
+
+果然还是很困惑。
+
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk4181" )
+\CN["无黑色"]
+“不，那样的话，没关系……”
+
+喝精液没有什么抵抗力。
+
+内容是狂热，我想是什么委托呢
+简单得令人失望。
+
+\CN["贵族"]
+“那太好了。那就拜托你了。”
+
+委托人的男人微笑着说：“啪，啪。”
+把手指揉熟了。
+
+听到信号，好像在别的房间待机的男人们
+几个人都进了房间。
+
+: DrawChara( "Mukuro", 38, 0)
+: PlayVoice( "Voices/vo00_muk4182" )
+\CN["无黑色"]
+“难道说你能喝到现在来的所有人的精液吗？”
+
+\CN["贵族"]
+“嗯。大概就是这种感觉。”
+
+: DrawChara( "Mukuro", 39, 0)
+嗯？大概吧……？
+
+\CN["贵族"]
+“那么，继续吧——”
+
+\CN["贵族的随从者1"]
+“啊！”
+
+在我困惑的眼前——
+在什么都没放的桌子上，准备了大啤酒杯。
+
+: DrawChara( "Mukuro", 34, 0)
+: PlayVoice( "Voices/vo00_muk4183" )
+\CN["无黑色"]
+“那个，这到底是什么？”
+
+\CN["贵族"]
+“正如刚才说的那样，我希望他们的精液能全部喝完
+我想。用这个大啤酒杯？”
+
+: DrawChara( "Mukuro", 38, 0)
+: PlayVoice( "Voices/vo00_muk4184" )
+\CN["无黑色"]
+“嗯，呃……也就是说，把这个啤酒杯里储存的精液
+喝吗？不是口交吗？”
+
+\CN["贵族"]
+“是的。但是，一般让他们自慰的是
+真是太可怜了，连吐精的帮忙都成了你
+如果能得到的话……”
+
+//●ＣＧ：アナル舐め手コキ
+//●ＣＧ差分：手コキ
+: HideWnd()
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 5) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 3) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithTherianthrope", 2) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "HandFootJob", 30) endif
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0000001_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+在混乱的我面前，男人把公鸡团出来
+以跨上大啤酒杯的姿势待命。
+
+: PlayVoice( "Voices/vo00_muk4185" )
+\CN["无黑色"]
+“用手让他做就行了啊。”
+
+终于理解了男人的意图。
+
+首先，在大啤酒杯里放上貌似佣人的男人们的精液……。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0100001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4186" )
+\CN["无黑色"]
+“那我就去……”
+
+\CN["贵族的随从者1"]
+「…………」
+
+就算帮着公鸡，男人也什么都不说。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0000001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4187" )
+\CN["无黑色"]
+（这样的话，稍微有点反应比较好
+虽然会燃烧……）
+
+算了，算了。
+总之，用手把鸡素烧开就可以了。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：手コキしています
+: PlayVoice( "Voices/vo00_muk4188" )
+\CN["无黑色"]
+“嗯……嗯……呃……这个、这个……嗯……”
+
+\CN["贵族的随从者1"]
+“……”
+
+: PlayVoice( "Voices/vo00_muk4189" )
+\CN["无黑色"]
+“啊……。刚才还在跳。”♥</color>
+呵呵……这个人的弱点是……这附近吗……？”
+
+很少有人会因为受到小矮人的刺激而毫无反应。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0100002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4190" )
+\CN["无黑色"]
+“嗯……嗯……相当敏感啊……”♥</color>
+这里，你能感受到吗？”
+
+: PlayVoice( "Voices/vo00_muk4191" )
+\CN["无黑色"]
+“这个……这个……这个……小气鬼在跳……”♥</color>
+这样做舒服吗？”
+
+\CN["贵族的随从者1"]
+“呃……嗯……”
+
+压低声音忍耐着心情舒畅。
+
+看了这些，更是这样
+我想欺负他。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0100002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4192" )
+\CN["无黑色"]
+“嗯，嗯……呵呵……先上的汤出来了。”♥</color>
+用这个，很光滑……嗯，嗯”
+
+\CN["贵族的随从者1"]
+“啊……”
+
+男人的腰发直。
+
+更加增加了量的鲣鱼包进小饭团。
+
+用那个吧，稍微发出点声音，然后把小鸡鸡
+处理。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4193" )
+\CN["无黑色"]
+“小矮人，好烫啊。吓得直哆嗦……”♥</color>
+用手这么难……差不多该拿出来了吧？”
+
+不言而喻的事情。
+
+\CN["贵族的随从者1"]
+「…………」
+
+直到这个人不说话为止
+因为小鸡鸡反应很敏感。
+
+: PlayVoice( "Voices/vo00_muk4194" )
+\CN["无黑色"]
+“嗯，不用忍耐……。
+想拿出来的话，可以随便拿出来”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0100002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4195" )
+\CN["无黑色"]
+“我……嗯……我会让你心情舒畅地射精的。”♥</color>
+嗯，嗯……这个、这个、这个♥</color>」
+
+手的动作越来越激烈。
+
+\CN["贵族的随从者1"]
+“啊……”
+
+从男人漏出来的隐秘的声音中
+我知道已经达到了极限。
+
+: PlayVoice( "Voices/vo00_muk4196" )
+\CN["无黑色"]
+「看，拿出来就行了。朝着这里，心情舒畅
+就这样吧……”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4197" )
+\CN["无黑色"]
+“嗯……嗯……看，这个，这个……满满的鱼竿
+用忍耐汁……然后，在这里，把雁的地方……”
+
+\CN["贵族的随从者1"]
+“啊啊啊……”
+
+男人的腰瑟瑟发抖。
+
+即使射精，也要把精液全部倒进啤酒杯里
+调整龟头的朝向。
+
+//●演出：射精
+//●ＣＧ差分：手コキ・射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Sotodashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0100013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜哇！！噗哧！咻咻！！
+
+\CN["贵族的随从者1"]
+“嗯……是……嗯……”
+
+男子心情舒畅地吐着热气腾腾的气息
+往大啤酒杯里放精液。
+
+就在这时，突然闻到了放着的味道
+身体热疼了。
+
+——现在要忍耐。工作不是做爱。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0000013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4198" )
+\CN["无黑色"]
+“呵呵，出了好多啊。是为了今天才存钱的吗？”
+
+\CN["贵族的随从者1"]
+「…………」
+
+还是老样子，不说话。
+
+但是，悲伤地微微转动了头，就是这么回事吧。
+
+//●ＣＧ：消去
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 27, 1, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4199" )
+\CN["无黑色"]
+“怎么办？把这个喝干就好了吗？”
+
+向贵族确认。
+
+\CN["贵族"]
+“不，等所有人都拿出来了。
+我想喝一大杯精液”
+
+: DrawChara( "Mukuro", 30, 0)
+: PlayVoice( "Voices/vo00_muk4200" )
+\CN["无黑色"]
+“一杯啤酒吗……”
+
+因为是喝精液，所以要口交让他射精
+我一开始以为是喝那个。
+
+一下子喝了一大杯精液
+真不愧是我从来没做过。
+
+: DrawChara( "Mukuro", 28, 0)
+眼镜的入口店相当，说是狂热的意思
+终于明白了。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk4201" )
+\CN["无黑色"]
+（但是，这样的话应该能做点什么……）
+
+我决定继续工作。
+
+\CN["贵族的随从者2"]
+「…………」
+
+下一个男人和刚才那个男人一样在我面前屁股对着我。
+
+//●ＣＧ：アナル舐め手コキ
+//●ＣＧ差分：手コキ
+
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0000001_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["贵族的随从者2"]
+“那么，请多关照。”
+
+: PlayVoice( "Voices/vo00_muk4202" )
+\CN["无黑色"]
+“啊……我知道了……”
+
+刚要说话，吓了我一跳。
+
+刚才的人好像只是单纯的沉默而已。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0100001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4203" )
+\CN["无黑色"]
+“那么，我来处理小矮人。”
+
+把手放在眼前的小弟弟上，慢慢地开始擦。
+
+\CN["贵族的随从者2"]
+“嗯……原来如此，这是……好本领……”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4204" )
+\CN["无黑色"]
+“这样啊……嗯，嗯，感觉很舒服的地方，还有
+如果有疼的地方的话，请告诉我”
+
+: PlayVoice( "Voices/vo00_muk4205" )
+\CN["无黑色"]
+“为了能让人心情舒畅地射精，我会不断地磨练自己
+所以……嗯……嗯……这个、这个……”
+
+\CN["贵族的随从者2"]
+“嗯啊……嗯，很……”
+
+还有一种压抑着刚才快感的感觉
+那是那个，很开心。
+
+但是，果然，有反应的话很容易做。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0100002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4206" )
+\CN["无黑色"]
+“嗯……嗯……这个，这个……这里怎么样？
+舒服吗？”
+
+\CN["贵族的随从者2"]
+“嗯，嗯……”
+
+小金变得很烫，还提心吊胆的。
+
+: PlayVoice( "Voices/vo00_muk4207" )
+\CN["无黑色"]
+“小气鬼，哪里最舒服？”
+
+\CN["贵族的随从者2"]
+“有点事想拜托你……。
+哦，能帮我舔屁股吗……？”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_0_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4208" )
+\CN["无黑色"]
+“诶？把屁股……？”
+
+\CN["贵族的随从者2"]
+“是的，我喜欢被人舔……”
+
+\CN["贵族"]
+“能帮我舔一下吗？”
+
+在贵族的支持下。
+
+: PlayVoice( "Voices/vo00_muk4209" )
+\CN["无黑色"]
+“哇，我知道了……如果这样心情变好的话……”
+
+//●ＣＧ差分：アナル舐め
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0101002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：アナルを舐めています
+: PlayVoice( "Voices/vo00_muk4210" )
+\CN["无黑色"]
+“嗯……嗯……嗯……嗯……嗯……”
+
+: PlayBackVoice( "Voices/BGV00_muk_fera01" )
+用舌头扎在眼前磨的肛门上。
+
+\CN["贵族的随从者2"]
+“哦哦哦哦…！”
+
+腰部抽动着，小矮子瑟瑟发抖。
+
+: PlayVoice( "Voices/vo00_muk4211" )
+\CN["无黑色"]
+“中、中、中、中……被、嗯、嗯……
+嗯，嗯，中野♥</color>」
+
+\CN["贵族的随从者2"]
+“啊啊啊……啊，好舒服……啊啊…啊啊……”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0201002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4212" )
+\CN["无黑色"]
+“嗯，嗯，嗯……呵呵，发出了像女人一样的声音……”♥</color>
+嗯，嗯，嗯，嗯，嗯，嗯♥</color>」
+
+我受不了这样的反应
+我会着迷地舔它。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0301003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4213" )
+\CN["无黑色"]
+“嗯，嗯，嗯，嗯。哦，小火鸡，小火鸡，小火鸡。”
+（嗯，嗯，嗯，嗯。嗯，屁股，抽搐，然后呢。）
+
+\CN["贵族的随从者2"]
+“呜哇，呜……啊啊啊……啊，糟了……”
+
+: PlayVoice( "Voices/vo00_muk4214" )
+\CN["无黑色"]
+“恩哈、哈、哈……中、中、中……呜……呜……”……
+嗯，嗯，嗯♥</color>」
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0201003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4215" )
+\CN["无黑色"]
+“小火，小太阳，小矮子，小矮子，小矮子。”
+（就这样，一边舔屁股，一边用小肉棒、手抽筋……）
+
+被舐屁股的孔，相当心情好吗？
+
+忍汁会溢出来
+一直持续发出悲伤的声音。
+
+: PlayVoice( "Voices/vo00_muk4216" )
+\CN["无黑色"]
+“嗯，嗯，嗯，嗯……嗯，嗯……嗯……”……
+嗯，嗯，嗯，嗯，嗯，嗯，嗯，嗯♥</color>」
+
+渐渐掌握了诀窍。
+
+一边舔屁股上的洞，一边用沾满忍耐汁的手
+为了肿胀而不断地使用勃起的小矮子。
+
+\CN["贵族的随从者2"]
+“啊啊啊……也已经出来了！
+出来了……！”
+
+知道他快要射精了
+用和刚才一样的要领搭配啤酒杯。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0301003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4217" )
+\CN["无黑色"]
+「嗯，嗯，嘿嘿嘿……嗯，好可怕啊♥</color>
+我要、我要、我要、我要、我要♥</color>」
+
+\CN["贵族的随从者2"]
+“啊，啊，啊……然后，出来……嗯……！”
+
+//●演出：射精
+//●ＣＧ差分：手コキ・アナル舐め・射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Sotodashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0301013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+好烫！！别管！噗哧！！
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4218" )
+\CN["无黑色"]
+（气势汹汹地射精……。那么厉害的射精
+如果在女阴里被这么对待的话♥</color>）
+
+: StopBackVoice()
+一想起来，下腹部就很顺。
+但是，现在要忍耐。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c031_0_1_0101013_1000010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4219" )
+\CN["无黑色"]
+“嗯哈……嗯……。呵呵，好像很舒服的样子呢。
+出了很多很浓的”
+
+像是慢慢地从鱼竿上拿出来一样地移动手的话
+呼，嗖的一声塞满了啤酒杯。
+
+//●ＣＧ：消去
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 25, 2, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["贵族的随从者3"]
+“接下来是我。拜托了。”
+
+: DrawChara( "Mukuro", 26, 2)
+: PlayVoice( "Voices/vo00_muk4220" )
+\CN["无黑色"]
+“啊。我会把精液充分地处理出来。”
+
+然后，一个人，又一个人。
+
+让在场的贵族全体随从们用手打气
+我射精了。
+
+//●演出：時間経過トランジション
+//●ＣＧ：ザーメンジョッキ
+: HideWnd()
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_0_0000002_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+在所有人都挤完的时候，精液也积满了。
+
+: PlayVoice( "Voices/vo00_muk4221" )
+\CN["无黑色"]
+“……这样看来，满满一杯精液
+总觉得好厉害啊”
+
+胖乎乎的，却很无聊
+散发着性臭。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_0_0100002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4222" )
+\CN["无黑色"]
+（不能一直闻味道啊……）
+
+我只能用手处理那么多的公鸡。
+
+看了各种形状的勃起小鸡鸡，摸了一下
+说实话，我现在非常想用。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_0_0000002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4223" )
+\CN["无黑色"]
+“喝这个就可以了吧？”
+
+\CN["贵族"]
+“好的。一下子。”
+
+看了委托人的情况，他静静地点了点头
+催促我喝精液。
+
+: PlayVoice( "Voices/vo00_muk4224" )
+\CN["无黑色"]
+“……这么多的精液，能喝下去吗？”
+
+我有点犹豫了
+事到如今没有理由辞职。
+
+大口吸气后，提心吊胆地吻着啤酒杯。
+
+//●ＣＧ差分：ジョッキ飲み
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateOral", RandomRange(350,500)) endif
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_1_0100003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：精飲です
+: PlayVoice( "Voices/vo00_muk4225" )
+\CN["无黑色"]
+“嗯……呃……嗯……”
+
+: PlayBackVoice( "Voices/BGV00_muk_fera04" )
+下定决心，往嘴里注入精液。
+
+: PlayVoice( "Voices/vo00_muk4226" )
+\CN["无黑色"]
+“嗯……嗯……嗯……嗯……嗯……嗯……嗯……”……
+嗯……嗯……嗯……嗯……嗯……”
+
+接下来是嘴、喉咙、食道——
+顺序，身体感受到精液。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_1_0200003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4227" )
+\CN["无黑色"]
+（喝嘴里被射精的时候，虽然不在意）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4228" )
+\CN["无黑色"]
+（像这样一口气喝下堆积起来的东西的话
+感觉有点奇怪……）
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_1_0100003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4229" )
+\CN["无黑色"]
+“这、呃……嗯……嗯……嗯……嗯……嗯……
+嗯……嗯…嗯，嗯……嗯…嗯…嗯……”
+
+我觉得好像是从嘴里被侵犯了胃。
+
+有种说不出的感觉。
+
+\CN["贵族"]
+“哦哦哦哦，真的在喝！
+满满一杯精液……啊啊……”
+
+斜眼看了一下贵族，一副非常兴奋的样子
+你在看我。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_1_0301103_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk4230" )
+\CN["无黑色"]
+（真的，看到这样的样子会很兴奋。
+小矮子那么大啊♥</color>）
+
+一边使裤裆鼓起来
+一味地凝视着这边。
+
+——还有一点。好像可以全部喝干。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_1_0100003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：最後、飲み干しています
+: PlayVoice( "Voices2/vo00_muk4231" )
+\CN["无黑色"]
+“嗯……紧紧地……嗯……嗯，呃……
+嗯……嗯……嗯……小王子……嗯啊！”
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_0_0100013_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●ジョッキ飲み干し
+//: PlayVoice( "Voices/vo00_muk4232" )
+//\CN["無黒"]
+//「はぁ、はぁ、んはぁ……はぁはぁ、う、ぷっ……、
+//　ちゃんと、飲み干した……はぁ……はぁ……」
+: StopBackVoice()
+\CN["贵族"]
+“啊，喝得真厉害！”
+
+果然量太多了
+我感觉肚子像靠了一样。
+
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c038_0_0_0000013_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4233" )
+\CN["无黑色"]
+“哈，嗯……嗯……果然，太多了……噗”
+
+重新看大啤酒杯。
+即使是普通的饮料，也不是一口气喝的量。
+
+\CN["贵族"]
+“哎呀……太棒了
+这就是我所期待的，很完美”
+
+包括看起来很开心的委托人在内
+在场的所有人好像都不想对我出手。
+
+从这个意义上来说，怎么也感觉不到消化不良。
+
+但是，嘛，如果工作顺利能拿到报酬的话
+这样可以吗。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_D04_52
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//裸だった場合、露出値を＋しておく
+: if ( CharaCostume( "Mukuro" ) == 1 ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+//シーン登録
+: SceneFlagUp( "SC_D04_52" )
+//Ｈ履歴更新
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJobIncome", 20000) endif
+: $money += 20000
+: SetMission( "SC_D04_52", "Successed" )
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 47 ) endif
+无黑收到了报酬。
+
+: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")

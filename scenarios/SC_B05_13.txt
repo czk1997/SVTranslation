@@ -1,0 +1,757 @@
+//========================================================
+//○激戦の爪痕
+//========================================================
+*sc001
+//●場所：小屋・夜
+//●視点：無黒視点
+//●背景：空・夜
+: HideWnd()
+//パーティーを無黒単独に
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: RpgCharaOn("Momo")
+: RpgCharaOn("Kinako")
+: RpgCharaOn("Bebi")
+: RpgCharaOn("Leo")
+: RpgCharaTurn( "Momo", "R" )
+: RpgCharaTurn( "Kinako", "R" )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: FadeIn( 0.25 )
+: Wait()
+: StopBgm( 0.0 )
+: ShowWnd()
+——几个小时后。
+
+//●背景：消去
+: HideWnd()
+: PlayBgm("BGM/48_Goodnight")
+: EraseImage( 1, 0, 1.0)
+: Wait()
+: ResetLayer(1)
+: DrawChara( "Leo", 20, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["雷欧"]
+「…………」
+
+银出去后，小屋里没有一个人说话
+只是流动着杀气腾腾的空气。
+
+//●ＳＥ：扉を開く音
+//●演出：イライザ　登場する
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_DoorOpen01" )
+: RpgCharaOn("Elisa")
+: RpgCharaOn("Xeno")
+: RpgCharaBatch( "Elisa"	\
+:	"Speed", 4.0	\
+:	"MoveUp", 5 )
+: RpgCharaBatch( "Xeno"	\
+:	"Speed", 4.0	\
+:	"MoveUp", 5 )
+: Wait()
+: RpgCharaTurn( "Player", "D" )
+: RpgCharaTurn( "Momo", "D" )
+: RpgCharaTurn( "Leo", "D" )
+: RpgCharaTurn( "Kinako", "D" )
+: RpgCharaTurn( "Bebi", "D" )
+: DrawChara( "Elisa", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0099" )
+\CN["伊拉伊萨"]
+“哇！为什么你们在这里？”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk1686" )
+\CN["无黑色"]
+“伊拉伊萨先生，为什么会在这里……！？”
+
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Elisa", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo19_era0100" )
+\CN["伊拉伊萨"]
+“有点各种各样的事啊。
+说起来，什么啊，大家都是湿气重的脸吗？
+这里是葬礼会场吗？啊？”
+
+: DrawChara( "Xeno", 8, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["奇诺"]
+“对不起，突然。”
+
+: EraseChara( "Xeno", 0.5 )
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0895" )
+\CN["桃子"]
+“维克托尔骑士团的各位应该都回国了吧……？”
+
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Elisa", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Xeno", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo19_era0101" )
+\CN["伊拉伊萨"]
+“啊，我回来了。然后，又来了。”
+
+: DrawChara( "Xeno", 1, 0)
+\CN["奇诺"]
+“有点在意的报告
+今天来了”
+
+: DrawChara( "Elisa", 5, 0)
+: PlayVoice( "Voices/vo19_era0102" )
+\CN["伊拉伊萨"]
+“我有件事想问你们知不知道
+那就往后推，你们这边！”
+
+: EraseChara( "Elisa", 0.5 )
+: EraseChara( "Xeno", 0.5 )
+伊拉伊萨向外面招手。
+
+\CN["维尔骑士团A"]
+“那我就搬了。”
+
+: DrawFaceThumbnail( "Xeno", 1, 0, 0 )
+\CN["奇诺"]
+“请多关照。”
+
+: HideWnd()
+: RpgCharaOn("Mobu1")
+: RpgCharaOn("Mobu2")
+: RpgCharaBatch( "Elisa"	\
+:	"MoveRight", 1	\
+:	"MoveUp", 1	\
+:	"Turn", "D" )
+: RpgCharaBatch( "Xeno"	\
+:	"MoveLeft", 1	\
+:	"MoveUp", 1	\
+:	"Turn", "D" )
+: RpgCharaBatch( "Mobu1"	\
+:	"MoveUp", 5 )
+: RpgCharaBatch( "Mobu2"	\
+:	"MoveUp", 6	\
+:	"Turn", "L" )
+: Wait()
+: RpgCharaOn("Gin2")
+: ShowWnd()
+好像骑士团骑士的人们进了小屋。
+
+: HideWnd()
+: RpgCharaBatch( "Momo"	\
+:	"Speed", 6.0	\
+:	"MoveLeft", 1	\
+:	"MoveDown", 3	\
+:	"MoveRight", 1 )
+: Wait()
+//: EraseChara( "Elisa", 0.5 )
+//: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0896" )
+\CN["桃子"]
+“小银……！？”
+
+: DrawChara( "Leo", 4, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["雷欧"]
+「……！！」
+
+身体中受伤的银被运来
+桃子慌慌张张跑过来。
+
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Elisa", 2, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo19_era0103" )
+\CN["伊拉伊萨"]
+“我们的魔道士进行了治疗
+恐怕今晚是山吧……”
+
+//●演出：過去回想
+//●場所：森の中・過去
+//●視点：第三者視点
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition13", 1.0 )
+: Wait()
+: cutinfile = "Refrain"
+: Call("Scenarios/Common*CutinFadeIn")
+: EraseChara( "Elisa", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Forest01_03", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Gin", 22, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Gin", 22, 0, 0 )
+\CN["银子"]
+「…………」
+
+银受到龙的招数负着濒死的重伤倒下了。
+
+//: EraseChara( "Gin", 0.5 )
+: CharaCostume( "Ryu", 0 )
+: DrawChara( "Ryu", 1, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["龙"]
+（如果你的拳头没有碎
+倒在地上的确实是我……）
+
+: DrawChara( "Ryu", 28, 0)
+\CN["龙"]
+（太棒了，银。如果你的状态万全的话
+我的攻击一定是没有收到的。）
+
+最后的最后，右手的骨头无法承受银的力量，变得粉碎
+因为碎了所以没能把威力保持到最后。
+
+\CN["鬼灯队士・男A"]
+“龙先生能成为{黑夜叉，暗黑妖精}也很吃惊……”
+
+\CN["鬼灯队士・男B"]
+“我是将那{黑夜叉，暗黑精灵}逼到这里的银
+好可怕啊。因为，那家伙只是个普通的人啊？”
+
+: DrawChara( "Ryu", 3, 0)
+\CN["龙"]
+“啊。所以，这场比赛实际上是我输了。
+只能说漂亮”
+
+\CN["白夜队士1"]
+“哈哈哈哈哈，赶快杀了你！”
+
+\CN["白夜队士2"]
+“仔细一想，我被风神狠狠地骂了一顿。
+嘿嘿，太难看了。啊！？”
+
+白夜队士们嘲笑倒下的银很难看。
+
+而且鬼灯的人们暴露出厌恶感。
+
+: DrawChara( "Ryu", 36, 0)
+\CN["龙"]
+“有什么好笑的？”
+
+\CN["白夜队士3"]
+“……啊…那、那是”
+
+: DrawChara( "Ryu", 38, 0)
+\CN["龙"]
+“你们没有资格嘲笑这家伙。”
+
+龙视为敌人时使用的“贵様”一词。
+
+白夜的人们被其中包含的宁静的愤怒吓得发抖。
+
+: DrawChara( "Ryu", 10, 0)
+\CN["龙"]
+「……！」
+
+\CN["鬼灯队士・男1"]
+“龙先生？”
+
+: DrawChara( "Ryu", 34, 0)
+\CN["龙"]
+“要回去吗……”
+
+\CN["白夜队士3"]
+“哈？喂，你在说什么？”？
+先刺死狗再说吧！”
+
+: DrawChara( "Ryu", 3, 0)
+\CN["龙"]
+“你想死吗？”
+
+\CN["白夜队士3"]
+“哈？”
+
+//●演出：イライザ　登場する
+: HideWnd()
+: EraseChara( "Ryu", 0.5 )
+: Wait()
+: DrawChara( "Elisa", 19, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0104" )
+\CN["伊拉伊萨"]
+“好像做了什么有趣的事情，来看看吧
+什么啊？已经结束了吗？”
+
+\CN["鬼灯队士・男A"]
+“啊，伊拉伊萨……！？”
+
+\CN["鬼灯队士・男B"]
+“还有后面的是维克托尔骑士团吗……。
+与贝希莫斯对手持续战斗的世界最强骑士团
+被说……”
+
+\CN["白夜队士2"]
+“对，我不想和那些家伙战斗！我要逃走！”
+
+\CN["白夜队士3"]
+“我听说过那个红发的女人！”
+
+\CN["白夜队士3"]
+“以维克托尔骑士团的副团长一边嘲笑着敌人
+被炸得七零八落的女人！”
+
+: DrawChara( "Elisa", 13, 0)
+: PlayVoice( "Voices/vo19_era0105" )
+\CN["伊拉伊萨"]
+“谁啊？在说这种奇怪的谣言的家伙。
+没做过那种事”
+
+: PlaySe( "SE/Se_dash01" )
+首先，白夜的人们一起逃走。
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Ryu", 32, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["龙"]
+“我要退了。”
+
+: PlaySe( "SE/Se_dash01" )
+: EraseChara( "Ryu", 0.5 )
+接着，龙在殿前努力，鬼灯的队员们撤退了。
+
+: DrawChara( "Xeno", 4, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["奇诺"]
+“副队长，可以放跑吗？”
+
+: DrawChara( "Elisa", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo19_era0106" )
+\CN["伊拉伊萨"]
+“不是挺好的吗？
+之后再问为什么龙和银会拼在一起——”
+
+: DrawChara( "Elisa", 4, 0)
+: PlayVoice( "Voices/vo19_era0107" )
+\CN["伊拉伊萨"]
+“总之必须要进行应急处理。
+给我看一下吧”
+
+\CN["维尔骑士团B"]
+“啊……！这是重伤。”
+
+//●演出：過去回想明ける
+//●視点：無黒視点
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition13", 1.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_B05_13*sc001_1")
+
+*sc001_1
+//: ResetLayer(1)
+//: ResetLayer(9)
+//: EraseChara( "Elisa", 0.0 )
+//: EraseChara( "Xeno", 0.0 )
+//: RpgCharaOff("Mobu1")
+//: RpgCharaOff("Mobu2")
+//: RpgCharaWarp( "Player", "Mukuro" )
+//: RpgCharaWarp( "Momo", "Momo" )
+//: RpgCharaWarp( "Kinako", "Kinako" )
+//: RpgCharaWarp( "Leo", "Leo" )
+//: RpgCharaWarp( "Xeno", "Xeno" )
+//: RpgCharaWarp( "Elisa", "Elisa" )
+//: RpgCharaWarp( "Bebi", "Bebi" )
+//: RpgCharaOn("Gin3")
+//: RpgCharaOff("Gin2")
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Room07_02", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition14", 1.0 )
+: Wait()
+: StopBgm( 0.0 )
+: ShowWnd()
+: DrawChara( "Elisa", 5, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo19_era0108" )
+\CN["伊拉伊萨"]
+“也就是说，先尽可能的治疗一下吧
+”
+
+//●演技：ショックを受けているだけで泣いてはいない。我慢している。
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0897" )
+\CN["桃子"]
+“小银……明明约好了要好好回去的
+明明说是要去商量的……为什么会这样……”
+
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Leo", 6, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["雷欧"]
+「…………」
+
+: DrawChara( "Mukuro", 36, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk1687" )
+\CN["无黑色"]
+“能清楚地告诉我银的状态吗？”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Xeno", 8, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["奇诺"]
+「…………」
+
+: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Xeno", 8, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Elisa", 8, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo19_era0109" )
+\CN["伊拉伊萨"]
+“Zno，你要老实告诉我。隐瞒也没什么意义。”
+
+: DrawChara( "Xeno", 1, 0)
+\CN["奇诺"]
+“活着真是不可思议。
+尤其是右臂的骨头粉碎，完全没有再生的希望……”
+
+: EraseChara( "Xeno", 0.5 )
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0898" )
+\CN["桃子"]
+“那、那样的……小银……”
+
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Kinako", 3, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo02_kin0383" )
+\CN["黄菜子"]
+“呜呜……为什么大家都会这样……”
+
+: DrawChara( "Mukuro", 42, 0, 3, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk1688" )
+\CN["无黑色"]
+“桃子，没事吧……”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0899" )
+\CN["桃子"]
+“是的，没关系。
+小银想要保护我们
+受了这么大的伤啊」
+
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Momo", 0, 0, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0900" )
+\CN["桃子"]
+“现在无论如何都要做能做的事……”
+
+苍白的脸，即使如此还是很坚强的桃子。
+
+桃子想对银施加恢复魔术的话。
+
+//●演出：玉藻　登場
+: StopBgm( 1.0 )
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+//: RpgPlayAnim( "AnimeS_Warp01" )
+//: Wait()
+//: RpgCharaOn("Tamamo")
+//: RpgCharaTurn( "Tamamo", "L" )
+: PlaySe( "SE/Se_AnimeL_Heal04" )
+: PlayAnim( "Animations/AnimeL_Heal04", false, 0, 0, 6, 6 )
+: Wait()
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0124" )
+\CN["玉藻"]
+“桃子，那就来不及了。”
+
+: PlayBgm("BGM/41_Sad")
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0901" )
+\CN["桃子"]
+“诶……！？老师……！？”
+
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Mukuro", 40, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1689" )
+\CN["无黑色"]
+“我觉得好像突然出现了……”
+
+//●演技：野暮用＝ケガしたファルケを救出していた
+: DrawChara( "Tamamo", 2, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo22_tam0125" )
+\CN["玉藻"]
+“正确答案是无黑。有点野暮用。
+{跨次元、交叉防御}使用这样的魔术来到了这里」
+
+: EraseChara( "Tamamo", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0902" )
+\CN["桃子"]
+“老师，你特地来干什么？”
+
+全体成员都对玉藻怀有敌意。
+
+因为有局长寄来的刺客的可能性。
+
+//●読み：袂（たもと）
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Tamamo", 2, 0, 1, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo22_tam0126" )
+\CN["玉藻"]
+「放心吧。我已经知道她和痣和达磨他们的衣袖了。
+我来这里是有求于你们的”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0127" )
+\CN["玉藻"]
+“嘛，现在好像不是那个时候。
+那现在还得让快死的小鬼做什么啊」
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom0903" )
+\CN["桃子"]
+“医生，请告诉我治小银的方法！
+如果是为了这个，我什么都会做！”
+
+//●読み：灯火（ともしび）
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Tamamo", 5, 0, 0, 0.5, 0.0, 4, "C" )
+: PlayVoice( "Voices/vo22_tam0128" )
+\CN["玉藻"]
+“小僧的生命是风前的灯火。
+这样下去的话，不到早上的话，生命就会枯竭吧”
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Leo", 17, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["雷欧"]
+“啊……！这该死的……”
+
+: StopBgm( 1.0 )
+: DrawChara( "Mukuro", 6, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk1690" )
+\CN["无黑色"]
+“雷欧！你这个时候……！”
+
+: PlayBgm("BGM/11_CM011")
+: DrawChara( "Leo", 18, 0)
+\CN["雷欧"]
+“一旦摆出一副威风冲出去，就会被这么没礼貌的对待
+来吧。真是无情啊」
+
+//●演技：レオの心境を悟っているような無言
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Elisa", 5, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo19_era0110" )
+\CN["伊拉伊萨"]
+「…………」
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Kinako", 7, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo02_kin0384" )
+\CN["黄菜子"]
+“雷欧，你为什么现在要做那种事……？”
+
+: DrawChara( "Bebi", 2, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo07_beb0125" )
+\CN["红美"]
+“雷欧，你在说什么？”
+
+: DrawChara( "Bebi", 1, 0)
+: PlayVoice( "Voices/vo07_beb0126" )
+\CN["红美"]
+“说了也不知道是好是坏，这是武士的、
+不要放在男人的风头上！”
+
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Xeno", 5, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["奇诺"]
+“看错了。”
+
+雷欧的话让黄菜子流下了眼泪，红美剥下了牙
+泽诺挥舞拳头，毫不掩饰自己的愤怒。
+
+另一方面，桃子好像受到了银的病情的冲击
+好像不是那个地方……。
+
+: EraseChara( "Xeno", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+: DrawChara( "Leo", 7, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["雷欧"]
+“不要说那些孩子们自以为是的话。”
+
+: DrawChara( "Leo", 12, 0)
+\CN["雷欧"]
+“这个笨蛋打扮得很帅，一个人去哪里
+一个人擅自输了，差点死掉。
+不只是这些吗……”
+
+雷欧脸上浮现出一丝笑容。
+
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Xeno", 16, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["奇诺"]
+“雷欧……”
+
+: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["雷欧"]
+“嗯？”
+
+//●演出：ゼノがレオを殴る
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 3, 3 )
+: Wait()
+: ShowWnd()
+绝之拳打穿了雷欧的脸。
+
+: DrawChara( "Xeno", 6, 0, 0, 0.5, 0.0, 3, "LC" )
+\CN["奇诺"]
+“我没想到你是那样的人。”
+
+: DrawChara( "Leo", 5, 0, 0, 0.5, 0.0, 2, "RC" )
+\CN["雷欧"]
+「…………」
+
+雷欧一边按住被打的地方一边站起来。
+
+: DrawChara( "Leo", 24, 0)
+\CN["雷欧"]
+“切……不舒服。我要睡了。”
+
+: HideWnd()
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0127" )
+\CN["红美"]
+“雷欧，你还说那种事……！？”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“喂，小矮子。不要和我说话。”
+
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Bebi", 0.5 )
+: DrawChara( "Bebi", 1, 0, 0, 0.5, 0.0, 4, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo07_beb0128" )
+\CN["红美"]
+“……没想到他是那样的家伙，太狂妄了！”
+
+: DrawChara( "Momo", 11, 0, 0, 0.5, 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo01_mom0904" )
+\CN["桃子"]
+「…………」
+
+: EraseChara( "Bebi", 0.5 )
+: DrawChara( "Mukuro", 1, 0, 3, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk1691" )
+\CN["无黑色"]
+“桃子？”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0905" )
+\CN["桃子"]
+“……对不起。没关系。请继续刚才的请求。”
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Xeno", 9, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["奇诺"]
+“是的……。最高位的回复魔法，即使是rezarect也要用手来施
+没有……”
+
+: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Tamamo", 2, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo22_tam0129" )
+\CN["玉藻"]
+“嘛，那样的话，用更高级的回复魔术不就好了吗？”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0130" )
+\CN["玉藻"]
+“古代魔术，不，有被禁咒消除的魔术。
+那个名字也叫做『{苏生魔术，live}』」
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Elisa", 13, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo19_era0111" )
+\CN["伊拉伊萨"]
+“好像很厉害啊，那个。你知道吗？”
+
+: DrawChara( "Xeno", 8, 0, 0, 0.5, 0.0, 3, "LC" )
+\CN["奇诺"]
+“禁咒之类的东西真是太可恶了，完全——”
+
+: EraseChara( "Xeno", 0.5 )
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Tamamo", 0, 0, 1, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo22_tam0131" )
+\CN["玉藻"]
+“这个魔术甚至有可能牺牲自己的生命。
+在这种场合下有成功的可能性的只有桃子，你自己”
+
+: EraseChara( "Tamamo", 0.5 )
+: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0906" )
+\CN["桃子"]
+“哇，是我吗……我来做！”！
+拜托了，那个魔术，对我……！”
+
+: DrawChara( "Tamamo", 0, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo22_tam0132" )
+\CN["玉藻"]
+“桃子，你就把头借给我吧。”
+
+玉藻用自己的额头抵住桃子的额头。
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0133" )
+\CN["玉藻"]
+“这个做法是邪道，但是现在没有时间。”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0907" )
+\CN["桃子"]
+“……直接流到脑子里。
+{苏生魔术，lieve}的咏唱和使用方法都一样]
+过了一会儿，玉藻先生慢慢地从桃子上取下额头。
+
+//: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Tamamo", 3, 0, 0 )
+: PlayVoice( "Voices/vo22_tam0135" )
+\CN["玉藻"]
+“桃子，小僧能不能得救，全看你了。”
+
+: DrawChara( "Momo", 0, 0, 1 )
+: PlayVoice( "Voices/vo01_mom0908" )
+\CN["桃子"]
+“好的，谢谢老师。
+我一定会帮助小银的”
+
+: DrawChara( "Tamamo", 2, 0, 1 )
+: PlayVoice( "Voices/vo22_tam0136" )
+\CN["玉藻"]
+“要两个人独处啊。
+不用担心。桃子的话一定能救小僧和银吧」
+
+因为在魔术中桃子的潜在能力超过了自己
+玉藻小姐啪嗒一声漏了出来。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Tamamo", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーンエンド
+: Jump( "Scenarios/SC_B05_14" )

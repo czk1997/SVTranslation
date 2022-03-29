@@ -1,0 +1,944 @@
+//========================================================
+//○神八代姉妹の淫らな夜
+//========================================================
+//●場所：宿屋
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Mei", 0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_C06_84" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_C06_84" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+——那是发生在和姐姐一起喝酒那天的事情。
+
+……………………………………………………。
+
+//●立ち絵：無黒（着衣）、冥（着衣）
+//●演技：いきなりキスをされています。
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_01", 1.0 )
+: PlayBgm("BGM/35_H_IMMORAL")
+: Wait()
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3319" )
+\CN["无黑色"]
+“姐姐，嗯，嗯，嗯。”
+
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Mei", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo09_mei0710" )
+\CN["冥"]
+“嗯……哈…嗯……”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 18, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3320" )
+\CN["无黑色"]
+“姐姐，突然间那个……嗯……嗯……嗯……
+嗯哼……中…嗯……”
+
+把完全醉了的姐姐搬到房间里。
+
+姐姐就这样毫不犹豫地堵住了我的嘴唇。
+
+尝试将身体推开
+我和姐姐的锻炼方法太不一样了，吓了我一跳。
+
+//●演技：酔っていますが、自分ではシラフのように行動しています。
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo09_mei0711" )
+\CN["冥"]
+“这是姐妹间的交流，这点不要在意。”
+
+: DrawChara( "Mukuro", 36, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3321" )
+\CN["无黑色"]
+“有这样的交流……
+嗯、中、珠、珠……哈、哈……”
+
+: DrawChara( "Mei", 7, 1)
+: PlayVoice( "Voices/vo09_mei0712" )
+\CN["冥"]
+“再张开嘴……把舌头缠在一起……”
+
+: DrawChara( "Mukuro", 5, 2)
+: PlayVoice( "Voices/vo00_muk3322" )
+\CN["无黑色"]
+“嗯，小拳，小拳，小拳”
+
+无论是抵抗的时间，还是思考的瞬间，都不会给予我。
+
+但是姐姐那粗糙的舌头却毫不留情地钻了进去。
+
+: DrawChara( "Mukuro", 21, 1)
+: PlayVoice( "Voices/vo00_muk3323" )
+\CN["无黑色"]
+“喂，姐姐……噗……哈，嗯，啾，啾啾……
+不行……姐妹就是这样……嗯，嗯，哈…”
+
+即使嘴上拒绝了，身体里也开始火热起来。
+
+//●演技：心の声です
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_c035_0_0_0101002_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//: DrawChara( "Mukuro", 18, 2, 3, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3324" )
+\CN["无黑色"]
+（说谎……为什么只是和姐姐接吻……）
+
+//●演技：心の声です
+//: DrawChara( "Mukuro", 35, 1)
+: PlayVoice( "Voices/vo00_muk3325" )
+\CN["无黑色"]
+（酒来了……？
+还是……因为和姐姐接吻了……？）
+
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Mei", 4, 1, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo09_mei0713" )
+\CN["冥"]
+“哈……哈……已经忍不住了……！”
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mukuro", 42, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3326" )
+\CN["无黑色"]
+“姐姐……？”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//: EraseChara( "Mei", 0.5 )
+: DrawChara( "Mei", 2, 2, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo09_mei0714" )
+\CN["冥"]
+“无黑，在这边……！”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 20, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3327" )
+\CN["无黑色"]
+“呀！？”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+被姐姐强行拉着
+然后————
+
+//●ＣＧ：無黒×冥姉妹レズ・シックスナイン
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0101001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+回过神来，发现姐姐从被子上盖了起来。
+
+: PlayVoice( "Voices/vo00_muk3328" )
+\CN["无黑色"]
+“哈、哈……姐姐……这是……”
+
+: PlayVoice( "Voices/vo09_mei0715" )
+\CN["冥"]
+“正如你所看到的，我只是在舔你的女阴。
+你也有过好几次这样的经验吧？”
+
+: PlayVoice( "Voices/vo00_muk3329" )
+\CN["无黑色"]
+“那是……没错，但是……”……
+没想到姐姐……竟然和姐姐在一起……”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi04" )
+我一点也没想过那种事。
+
+重启后的姐姐只是憧憬
+你比我帅得多了……。
+
+: PlayVoice( "Voices/vo09_mei0716" )
+\CN["冥"]
+“呵呵，细节我一句也没说。
+现在就集中在眼前吧”
+
+: PlayVoice( "Voices/vo00_muk3330" )
+\CN["无黑色"]
+“眼，眼前的事是姐姐的……很女气…”
+
+//●演技：無黒の女性器を舐め始めます。
+: PlayVoice( "Voices/vo09_mei0717" )
+\CN["冥"]
+“所以面对它就好了……就是这样……。
+嗯……嗯…”
+
+//●演技：冥に女性器を舐められています。
+: PlayVoice( "Voices/vo00_muk3331" )
+\CN["无黑色"]
+“啊啊啊啊，啊，嗯……！？”
+
+突然袭击女阴，感觉粗糙。
+
+刚才还在嘴里交换的舌头
+这次要像画我的条纹一样爬下去。
+
+: PlayVoice( "Voices/vo00_muk3332" )
+\CN["无黑色"]
+“姐姐……那里很脏……”
+
+: PlayVoice( "Voices/vo00_muk3333" )
+\CN["无黑色"]
+“那样舔的话……
+嗯……嗯……哈……姐姐啊”
+
+: PlayVoice( "Voices/vo09_mei0718" )
+\CN["冥"]
+“因为是妹妹重要的地方。不会脏的……
+嗯，嗯，嗯，嗯……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_2_0101001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3334" )
+\CN["无黑色"]
+“嗯！？”
+
+从上到下都可以舔到密裂
+喘息声不绝于耳。
+
+: PlayVoice( "Voices/vo09_mei0719" )
+\CN["冥"]
+“呵呵呵……什么啊，不是好好地感受到了吗？”
+
+: PlayVoice( "Voices/vo00_muk3335" )
+\CN["无黑色"]
+“但是……嗯……这样啊……”
+
+: PlayVoice( "Voices/vo09_mei0720" )
+\CN["冥"]
+“今天喝多了……这都是因为酒。
+所以我和无黑都不是谁的错”
+
+: PlayVoice( "Voices/vo00_muk3336" )
+\CN["无黑色"]
+“姐姐……”
+
+: PlayVoice( "Voices/vo09_mei0721" )
+\CN["冥"]
+“所以，只要心情好就好。”
+
+: PlayVoice( "Voices/vo00_muk3337" )
+\CN["无黑色"]
+“……如果姐姐这么说的话……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0101001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3338" )
+\CN["无黑色"]
+“嗯……嗯……”
+
+战战兢兢，但是确实把舌头伸向了姐姐的秘部。
+
+: PlayVoice( "Voices/vo09_mei0722" )
+\CN["冥"]
+“嗯……呵呵……终于有那个意思了吗？”
+
+//●演技：冥の女性器を舐め始めます。
+: PlayVoice( "Voices/vo00_muk3339" )
+\CN["无黑色"]
+“这是……这是姐姐的……女婿……”
+
+第一次在这么近的地方看到。
+用自己的舌头舔了姐姐的女阴。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3340" )
+\CN["无黑色"]
+（和我的……感觉哪里不一样……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3341" )
+\CN["无黑色"]
+（而且姐姐……刚才发出甜蜜的声音……）
+
+: PlayVoice( "Voices/vo00_muk3342" )
+\CN["无黑色"]
+“中浦……中…中…中…中…”
+
+: PlayVoice( "Voices/vo00_muk3343" )
+\CN["无黑色"]
+“姐姐的这里……非常漂亮……”……
+还有感觉到的声音……想再听听……”
+
+: PlayVoice( "Voices/vo09_mei0723" )
+\CN["冥"]
+“嗯！嗯，无黑才是突然迷上的……恩，哈哈”
+
+: PlayVoice( "Voices/vo09_mei0724" )
+\CN["冥"]
+“我也不能输啊……我也要更加……”
+
+: PlayVoice( "Voices/vo09_mei0725" )
+\CN["冥"]
+“中……中…中、中、中、平”
+
+动真格的姐姐。
+
+于是到现在为止，能够熟练使用舌头的人
+那个矛头完全变成了别的部位。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_2_0101001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：クリトリスを刺激されています。
+: PlayVoice( "Voices/vo00_muk3344" )
+\CN["无黑色"]
+“啊啊啊！？姐姐，那边不行……很敏感。”
+
+: PlayVoice( "Voices/vo00_muk3345" )
+\CN["无黑色"]
+“栗子……有克利特里斯，嗯，哪里……！”
+
+: PlayVoice( "Voices/vo09_mei0726" )
+\CN["冥"]
+“哇……无黑这里特别容易感觉到吗……”
+
+: PlayVoice( "Voices/vo00_muk3346" )
+\CN["无黑色"]
+“谁都是这样……”
+
+: PlayVoice( "Voices/vo09_mei0727" )
+\CN["冥"]
+“确实是这样，但其中也有特别容易感受到的一类吧？”
+
+: PlayVoice( "Voices/vo00_muk3347" )
+\CN["无黑色"]
+“……那么，我也……！”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi01" )
+这次我以和姐姐竞争的形式向眼前的阴核伸展舌头。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0101001_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0728" )
+\CN["冥"]
+“……嗯……呃，呃……”
+
+: PlayVoice( "Voices/vo00_muk3348" )
+\CN["无黑色"]
+“嗯，中浦，中水……怎么样……？”
+
+: PlayVoice( "Voices/vo09_mei0729" )
+\CN["冥"]
+“……这种程度，感觉还差得远呢……嗯”
+
+: PlayVoice( "Voices/vo00_muk3349" )
+\CN["无黑色"]
+“啊啊啊啊啊……！这个，这样的话，我也会更加……
+珠、中、中、中、嗯……”
+
+我们姐妹俩互相爱抚，把脸埋在那里。
+
+姐妹之间混杂的声音在住宿的室内回响。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0201001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3350" )
+\CN["无黑色"]
+（嗯……！这个……姐姐，真的在责备我……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3351" )
+\CN["无黑色"]
+（我的克利特里斯……被舌尖摔倒了……）
+
+: PlayVoice( "Voices/vo00_muk3352" )
+\CN["无黑色"]
+“嗯……啊，啊啊，嗯……！
+太厉害了……全身变得敏感了，嗯……！”
+
+: PlayVoice( "Voices/vo09_mei0730" )
+\CN["冥"]
+“嗯……？从这边滴下来的是……爱液吧？”
+
+: PlayVoice( "Voices/vo00_muk3353" )
+\CN["无黑色"]
+“恩，哈，知道了，别问我，姐姐……”
+
+: PlayVoice( "Voices/vo09_mei0731" )
+\CN["冥"]
+“我觉得很容易感受到……嗯，嗯……”
+
+故意用难听的声音这么说的姐姐。
+
+就这样，把垂下来的爱液捞上来。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0101001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3354" )
+\CN["无黑色"]
+“嗯……！”
+
+: PlayVoice( "Voices/vo09_mei0732" )
+\CN["冥"]
+“虽然不甜，但也不咸。
+但是也不坏……感觉很不可思议”
+
+: PlayVoice( "Voices/vo00_muk3355" )
+\CN["无黑色"]
+“呃，不要冷静地说……嗯，嗯，嗯。”
+
+: PlayVoice( "Voices/vo00_muk3356" )
+\CN["无黑色"]
+“啊……嗯……在入口的地方，舔了一下……”……
+啊，啊啊啊啊！”
+
+: PlayVoice( "Voices/vo09_mei0733" )
+\CN["冥"]
+“嗯……中噗……噗……。
+原来如此，这里面好像也完全解开了呢”
+
+: PlayVoice( "Voices/vo00_muk3357" )
+\CN["无黑色"]
+“哈……哈…嗯……嗯……！
+呐，姐姐……那里还……”
+
+: PlayVoice( "Voices/vo09_mei0734" )
+\CN["冥"]
+「那么，就在这里精心准备吧。
+念珠、念珠、念珠”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0201001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3358" )
+\CN["无黑色"]
+“嗯！？是啊，啊啊！是啊！”
+
+: PlayBackVoice( "Voices/BGV00_muk_aegi01" )
+姐姐的舌头终于侵入了阴道内。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3359" )
+\CN["无黑色"]
+（姐姐的舌头很烫……而且很粗糙……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3360" )
+\CN["无黑色"]
+（翻滚着……在女阴里，在动……！）
+
+别的生物进入了。
+感觉会陷入那样的错觉。
+
+: PlayVoice( "Voices/vo00_muk3361" )
+\CN["无黑色"]
+“姐姐，那个，真的不行……！
+因为心情很好……心情太好了，都快来了”
+
+: PlayVoice( "Voices/vo09_mei0735" )
+\CN["冥"]
+“如果想让你放弃的话，你也要同样责备我啊。”
+
+: PlayVoice( "Voices/vo00_muk3362" )
+\CN["无黑色"]
+“嗯，加油！嗯，我知道了！”
+
+: PlayVoice( "Voices/vo09_mei0736" )
+\CN["冥"]
+“嗯，嗯！？嗯，嗯，嗯，好的……
+无黑，那个很舒服……”
+
+: PlayVoice( "Voices/vo09_mei0737" )
+\CN["冥"]
+“就这样，{阴道内，内}也挖了……呜啊……！
+对了对了……那个，状态怎么样……嗯……！”
+
+为了不输给姐姐
+我也故意发出声音来吸姐姐的女阴。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_3_0311002_2200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3363" )
+\CN["无黑色"]
+（姐姐的这里，光是吸着就疼……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3364" )
+\CN["无黑色"]
+（我的爱抚……我是这么觉得的……）
+
+平时绝对看不到的姐姐的样子。
+
+已经十二分兴奋的身体
+血液从深处更加咕嘟咕嘟地循环着。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_3_0411002_2200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3365" )
+\CN["无黑色"]
+“姐姐……姐姐……呃
+我……已经不行了……女阴已经到极限了……”
+
+: PlayVoice( "Voices/vo09_mei0738" )
+\CN["冥"]
+“嗯……好像是这样……？
+{阴道内，内}多次收缩……勒紧我的舌头]
+: PlayVoice( "Voices/vo09_mei0739" )
+\CN["冥"]
+“但是我也……如果能再继续下去的话……”
+
+: PlayVoice( "Voices/vo00_muk3366" )
+\CN["无黑色"]
+“嗯，嗯……！就这样……姐姐的这里
+我会让你变漂亮的……啾，啾，啾！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_3_0311002_2200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3367" )
+\CN["无黑色"]
+“好烫！小咕，好烫！！”
+
+: PlayVoice( "Voices/vo09_mei0740" )
+\CN["冥"]
+“嗯……！
+里面的东西被抽出来……用无黑的嘴，感觉很多……”
+
+完全上升了的体温和灵敏度。
+没有办法阻止它，只是沉溺于快乐之中。
+
+: PlayVoice( "Voices/vo09_mei0741" )
+\CN["冥"]
+“嗯，珠理奈！珠理奈！珠理奈，珠理奈！”
+
+: PlayVoice( "Voices/vo09_mei0742" )
+\CN["冥"]
+“已经很帅了……！
+就这样被我使唤着，好球……！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_3_0411002_2200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3368" )
+\CN["无黑色"]
+“嗯！啊，啊啊，啊啊啊啊啊！”！
+好……嗯，好厉害……啊啊啊”
+
+: PlayVoice( "Voices/vo00_muk3369" )
+\CN["无黑色"]
+“要是被吸得那么响的话……！”……！
+在女阴中，如果用舌头被刮来挠去的话……”
+
+扑哧扑哧地下半身疼得厉害
+尽管如此，姐姐的舌尖还是从阴道内的入口一直往里走。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_3_0311002_2200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3370" )
+\CN["无黑色"]
+“啊……嗯，好……真的是……！”
+
+: PlayVoice( "Voices/vo00_muk3371" )
+\CN["无黑色"]
+“嗯！啊！嗯！嗯！
+啊、啊、嗯、好、好、好……！”
+
+//●ＣＧ：無黒、絶頂差分
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_3_0411002_2200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+——咕、咕、咕、咕、咕！！
+
+//●演技：絶頂しています。
+: PlayVoice( "Voices/vo00_muk3372" )
+\CN["无黑色"]
+“啊啊啊，嗯，嗯，嗯，嗯！”
+
+: PlayBackVoice( "Voices/BGV00_muk_jigo01" )
+就像是被电冲走了一样
+麻利和麻木在全身奔跑。
+
+: PlayVoice( "Voices/vo00_muk3373" )
+\CN["无黑色"]
+“嗯……嗯……嗯……！”
+
+: PlayVoice( "Voices/vo00_muk3374" )
+\CN["无黑色"]
+“嗯！姐姐也……嗯…嗯！”
+
+即使刚刚达到顶峰
+继续刺激眼前姐姐的女阴。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0101001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0743" )
+\CN["冥"]
+“啊！啊，感觉到了……没错，那就是……！”
+
+: PlayVoice( "Voices/vo09_mei0744" )
+\CN["冥"]
+“哇，我也要去了……就这样……哈…！”
+
+: PlayVoice( "Voices/vo00_muk3375" )
+\CN["无黑色"]
+“呃……姐姐也就这样心情变好了……！
+嗯，啾啾，啾啾！”
+
+: PlayVoice( "Voices/vo09_mei0745" )
+\CN["冥"]
+“嗯！嗯！好棒！好棒……好棒，哈哈啊！”
+
+//●ＣＧ：冥、絶頂差分
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0201001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂しています。
+: PlayVoice( "Voices/vo09_mei0746" )
+\CN["冥"]
+“嗯，嗯……嗯，嗯！”
+
+姐姐也不停地颤抖着。
+
+: PlayVoice( "Voices/vo00_muk3376" )
+\CN["无黑色"]
+“嗯哈……啊啊……啊啊……！”……！
+呐，姐姐也……好像很帅……嗯……”
+
+两个人呼吸急促，沉浸在绝顶的余韵中。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3377" )
+\CN["无黑色"]
+（怎么办……明明刚刚才回来……）
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk3378" )
+\CN["无黑色"]
+（身体……完全没有变冷……想和姐姐再这样做）
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0101001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0747" )
+\CN["冥"]
+“无黑，这不就结束了吗？”
+
+: PlayVoice( "Voices/vo09_mei0748" )
+\CN["冥"]
+“嗯，嗯，嗯，嗯，嗯，嗯，嗯。
+这边也……还……还在偷偷摸摸呢？”
+
+: PlayVoice( "Voices/vo00_muk3379" )
+\CN["无黑色"]
+“嗯……姐姐，在那里……！
+女婿……女婿，嗯……！”
+
+: PlayVoice( "Voices/vo00_muk3380" )
+\CN["无黑色"]
+“我才刚开始……因为我被淋了很多……！”
+
+比至今为止
+搅拌满是爱液的女阴的姐姐。
+
+敏感度进一步增加的阴道内
+仅仅这样就在巨大的快感中持续颤抖。
+
+: PlayVoice( "Voices/vo00_muk3381" )
+\CN["无黑色"]
+“我也……我也要更加…！”
+
+: PlayVoice( "Voices/vo00_muk3382" )
+\CN["无黑色"]
+“嗯，是的！是的！是的，是我的，是我的！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0201001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0749" )
+\CN["冥"]
+“嗯啊啊，啊，嗯，嗯！？”
+
+: PlayVoice( "Voices/vo09_mei0750" )
+\CN["冥"]
+“变激烈了……！
+啊啊啊，嗯，嗯……！”
+
+我也会不服输地继续用力爱抚。
+
+于是姐姐也渐渐开始觉得坦率了。
+
+: PlayVoice( "Voices/vo00_muk3383" )
+\CN["无黑色"]
+“姐姐……再感受一下……？
+我会更加心情舒畅的……嗯…！”
+
+: PlayVoice( "Voices/vo09_mei0751" )
+\CN["冥"]
+“啊，别说傻话了……。
+那是我的台词……嗯，嗯，中噗！”
+
+我们都不拉
+互相舔对方的女阴。
+
+朱佛！朱格！朱鲁！古吉布布！
+
+: PlayVoice( "Voices/vo00_muk3384" )
+\CN["无黑色"]
+“嗯！嗯！啊！啊，啊，嗯！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0101001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0752" )
+\CN["冥"]
+“舌头在里面……我的女阴，犯了……！”
+
+: PlayVoice( "Voices/vo09_mei0753" )
+\CN["冥"]
+“嗯，啊，啊啊啊啊……！”……！
+在敏感的地方……继续责备的话……呜……！”
+
+我也好，姐姐也好，都融化在脑子里了。
+
+完全任凭醉意和气势
+完全沉溺于快乐中，互相寻求继续爱抚。
+
+: PlayVoice( "Voices/vo00_muk3385" )
+\CN["无黑色"]
+“恩哈……姐姐……我很奇怪……！”……！
+被舔了很多女阴，变得很奇怪……”
+
+: PlayVoice( "Voices/vo00_muk3386" )
+\CN["无黑色"]
+“只有心情好的事情……嗯……
+已经无法想象了……哈哈……！”
+
+: PlayVoice( "Voices/vo09_mei0754" )
+\CN["冥"]
+“别在意，无黑……就这样交给我吧……”……
+你只要心情好就好了……嗯…！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0201001_1100000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3387" )
+\CN["无黑色"]
+“嗯，嗯……又犯了……”……
+这个……再上来一次，嗯……！”
+
+配合姐姐的舌头
+阴道内反复有微细的反应。
+
+: PlayVoice( "Voices/vo00_muk3388" )
+\CN["无黑色"]
+“啊啊啊，啊，已经……这个，真是太棒了……！”
+
+: PlayVoice( "Voices/vo09_mei0755" )
+\CN["冥"]
+“这边也感觉不错……又很帅……！”
+
+: PlayVoice( "Voices/vo00_muk3389" )
+\CN["无黑色"]
+“嗯……姐姐，就这样……！”
+
+: PlayVoice( "Voices/vo09_mei0756" )
+\CN["冥"]
+“啊，我知道……嗯，嗯，嗯，嗯！”
+
+: PlayVoice( "Voices/vo00_muk3390" )
+\CN["无黑色"]
+“恩，啊啊啊，姐姐，已经……啊啊啊！”
+
+女阴最深处毫不留情地颤抖
+来到了停不下来的地方。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_3_0411002_2200000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3391" )
+\CN["无黑色"]
+“呃……！嗯，啊啊，嗯！？”
+
+: PlayVoice( "Voices/vo00_muk3392" )
+\CN["无黑色"]
+「イゴ、又是イっちゃ、ん、ひー！
+用姐姐的舌头……想成为姐姐……！”
+
+: PlayVoice( "Voices/vo09_mei0757" )
+\CN["冥"]
+“我也和无黑一起……就这样…嗯……！”
+
+互相大口地吸着女阴，然后。
+
+//●ＣＧ差分：潮吹き
+: HideWnd()
+//潮吹き
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Shio" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "eva_b043_1_1_0101001_1110000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜呜呜！！！
+
+//●演技：絶頂しています。
+: PlayVoice( "Voices/vo00_muk3393" )
+\CN["无黑色"]
+“啊啊啊啊，嗯，啊啊啊啊啊啊啊——！”
+
+//●演技：絶頂しています。
+: PlayVoice( "Voices/vo09_mei0758" )
+\CN["冥"]
+“嗯！嗯！嗯！嗯，嗯，嗯，嗯！”
+
+一切都染上了雪白，头脑完全短路。
+
+有那么大的快感
+我也……然后姐姐也筋疲力尽地躺在床上。
+
+: PlayVoice( "Voices/vo00_muk3394" )
+\CN["无黑色"]
+“啊啊啊……哈哈……太厉害了……”
+
+: PlayVoice( "Voices/vo00_muk3395" )
+\CN["无黑色"]
+“姐姐……一直在责备我……”……
+好几次，好几次，心情都变好了……”
+
+: PlayVoice( "Voices/vo09_mei0759" )
+\CN["冥"]
+“……你也确实在责备我的弱点……。
+心情好得……我都不能手下留情了……”
+
+: PlayVoice( "Voices/vo00_muk3396" )
+\CN["无黑色"]
+“这样啊……是吗，怎么了……”
+
+这样的事也被姐姐认可了，很开心。
+
+仅此而已
+果然在自己心中的姐姐是特别的。
+
+: PlayVoice( "Voices/vo00_muk3397" )
+\CN["无黑色"]
+“呜……呜……”
+
+筋疲力尽，就那样直喘着气。
+
+: PlayVoice( "Voices/vo09_mei0760" )
+\CN["冥"]
+“呵呵……这种地方和以前没什么区别……”
+
+: PlayVoice( "Voices/vo09_mei0761" )
+\CN["冥"]
+“我可爱的妹妹……我最重要的……”
+
+: StopBackVoice()
+直到早上起床的那一瞬间，我的身边一直持续着温柔的温暖。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//＠Ｈシーン終了：SC_C06_52
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_C06_84" )
+: HideWnd()
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

@@ -1,0 +1,383 @@
+//========================================================
+//○雷神と呼ばれた男の本気
+//========================================================
+//●場所：エルフの里
+//●状況：悪堕ちＬＶがＭＡＸ状態で発生するイベント
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: PlayVoice( "Voices/vo00_muk4660" )
+\CN["无黑色"]
+“桃子、黄菜子，从这里开始先让我一个人去好吗？”
+
+: DrawChara( "Kinako", 10, 0)
+: PlayVoice( "Voices/vo02_kin0852" )
+\CN["黄菜子"]
+“如果无黑先生想这么做的话，我倒没什么……”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1568" )
+\CN["桃子"]
+“我也可以。但是，为什么突然？”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4661" )
+\CN["无黑色"]
+“没有什么特别的理由。
+如果借你的话来说的话，那就是女人的直觉吧”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1569" )
+\CN["桃子"]
+“是的。那就没办法了。”
+
+//●演出：無黒　１人で奥に歩いて行く。
+//●状況：奥でレオが佇んでいる
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: LoadMap( "Map_Dungeon22_01_ElfnoSato", "", "Scenarios/SC_D06_50*sc001_1" )
+
+*sc001_1
+: HideWnd()
+: RpgCharaOn("Leo2")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 4 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Forest01_01", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: PlayBgm("BGM/01_CM001")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4662" )
+\CN["无黑色"]
+“雷欧，你怎么会在这种地方……”
+
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	: DrawChara( "Leo", 0, 0, 0, 0.5, 0.0, 2, "LC" )
+	\CN["雷欧"]
+“哟，无黑。好厉害，好久不见。”
+
+//●分岐：［服装］全裸の場合
+: elif ( CharaCostume( "Mukuro" ) == 1 )
+	: DrawChara( "Leo", 6, 1, 0, 0.5, 0.0, 2, "LC" )
+	\CN["雷欧"]
+“……啊…！”
+
+	: DrawChara( "Mukuro", 29, 0)
+	: PlayVoice( "Voices/vo00_muk4663" )
+	\CN["无黑色"]
+“不必移开视线。
+想看的话，可以随便看”
+
+	: DrawChara( "Leo", 1, 0)
+	\CN["雷欧"]
+「…………」
+
+//●分岐：［服装］ダークエルフの場合
+: else
+	: DrawChara( "Leo", 2, 0, 0, 0.5, 0.0, 2, "LC" )
+	\CN["雷欧"]
+“无黑，那个样子……。那是，{黑夜叉，暗黑妖精}……”
+
+	: DrawChara( "Mukuro", 26, 0)
+	: PlayVoice( "Voices/vo00_muk4664" )
+	\CN["无黑色"]
+“我曾经差点死过。
+以此为契机，能成为{黑夜叉，暗黑妖精}
+”
+
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4665" )
+\CN["无黑色"]
+“你在这里做什么？”
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“我想你大概也知道，但是鬼灯不见了
+发生了各种各样的事啊”
+
+\CN["雷欧"]
+“我觉得在精灵之乡能得到什么。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4666" )
+\CN["无黑色"]
+「这样啊。那你得到了什么？」
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“那么？”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“呐，无黑。我有想问的事情。”
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk4667" )
+\CN["无黑色"]
+“嗯？”
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“你至今为止杀了多少人？”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4668" )
+\CN["无黑色"]
+“……多少……我都不记得了。
+杀了人的数量一个一个没数过”
+
+不管怎么说，只是随意挥刀而已。
+
+//●演出：レオ　刀を抜く
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Leo", 3, 0, 1 )
+\CN["雷欧"]
+“呐，你知道吗？
+我真的很喜欢你”
+
+//●演出：無黒　刀を抜く
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 28, 0, 2)
+: PlayVoice( "Voices/vo00_muk4669" )
+\CN["无黑色"]
+“认真地向喜欢的人拔刀之类的
+虽然我不认为这是精神正常的事情”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“再这样下去，你就变成普通的‘杀人鬼、野兽’了
+因为不想看。我会用这双手阻止你的”
+
+: DrawChara( "Mukuro", 41, 0)
+: PlayVoice( "Voices/vo00_muk4670" )
+\CN["无黑色"]
+“就算现在的你能杀了我？”
+
+: DrawChara( "Leo", 19, 0)
+\CN["雷欧"]
+“啊，我要杀了你。你要用我的一切！”
+
+//●分岐：［服装］ダークエルフの場合
+: if ( CharaCostume( "Mukuro" ) == 2 )
+	: DrawChara( "Leo", 20, 0)
+	\CN["雷欧"]
+“{黑夜叉，暗黑妖精}能成为的不只是你哦。”
+
+//●分岐終了
+: endif
+: HideWnd()
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: cgkeep = false;
+: Call( "Scenarios/Effect*LeoDE" )
+: DrawChara( "Leo", 3, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+//●分岐：［服装］ダークエルフじゃない場合
+: if ( CharaCostume( "Mukuro" ) != 2 )
+	: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+	: ShowWnd()
+	: PlayVoice( "Voices/vo00_muk4671" )
+	\CN["无黑色"]
+“{黑夜叉，暗黑妖精}吗……。
+那我也只能以此来对抗了”
+
+	: DrawChara( "Leo", 1, 0)
+	\CN["雷欧"]
+“如果是你的话，已经可以变成{黑夜叉，暗黑妖精}了
+”
+
+	//●演出：無黒　ダークエルフ化演出
+	: HideWnd()
+	: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+	: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: cgkeep = false;
+	: Call( "Scenarios/Effect*MukuroDE" )
+//●分岐終了
+: endif
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：レオ（ダークエルフ）
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：レオ（ダークエルフ）,2,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc002" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Forest01_01", "BGM/04_CM004", 1086, -1, -1, "Scenarios/SC_D06_50*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc002" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+*sc002
+//●状況：戦闘勝利後
+//●演出：レオ　人間の姿に戻る
+//レオcos0へ戻し
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Forest01_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/48_Goodnight")
+: CharaCostume( "Leo", 0 )
+: DrawChara( "Leo", 17, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+\CN["雷欧"]
+“……哈……哈……可恶……是我输了吗……”
+
+: DrawChara( "Mukuro", 30, 1, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
+: PlayVoice( "Voices/vo00_muk4672" )
+\CN["无黑色"]
+“只有一纸啊……真危险。”
+
+不管谁赢了都不奇怪的战斗。
+
+: DrawChara( "Mukuro", 27, 0, 2)
+: PlayVoice( "Voices/vo00_muk4673" )
+\CN["无黑色"]
+“怎么办？”
+
+如果想作为武士切腹而死的话
+我想介错他。
+
+因为我们是曾经并肩作战的伙伴。
+我觉得那样的慈悲是可以施给你的。
+
+: DrawChara( "Leo", 18, 1)
+\CN["雷欧"]
+“如果可以的话，不是切腹……
+我想用你的手来刺死我”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4674" )
+\CN["无黑色"]
+“真的这样可以吗？”
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“拜托了……”
+
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4675" )
+\CN["无黑色"]
+「…………」
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+把刀反手拿过来，变成大字躺着的雷欧
+面向————
+
+//●演出：斬殺エフェクト
+//●ＳＥ：刺す音
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+\CN["雷欧"]
+「…………！」
+
+打一个心，打一个鸡眼。
+
+雷欧只是一瞬间歪了脸
+总是对我露出绰绰有余的笑容
+死了。
+
+//●演出：場面転換トランジション
+//●演出：桃と黄菜子が待っているところに戻る無黒
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon21_03_YoseinoMori", "SC_D06_50", "Scenarios/SC_D06_50*sc002_1")
+
+*sc002_1
+: CharaCostume( "Mukuro", 0 )
+: RpgCharaOn("Momo")
+: RpgCharaOn("Kinako")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: StopBgm( 0.0 )
+: PlayBgm("BGM/41_Sad")
+: DrawChara( "Mukuro", 39, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
+: DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0853" )
+\CN["黄菜子"]
+“……无黑先生？”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom1570" )
+\CN["桃子"]
+“没关系吗？难道里面发生了什么事？”
+
+: DrawChara( "Mukuro", 37, 0)
+: PlayVoice( "Voices/vo00_muk4676" )
+\CN["无黑色"]
+“不，什么都没有。”
+
+只有一点分别。
+
+曾经的伙伴，现在的敌人——
+我亲手杀死了一个爱我的男人。
+
+只有那个事实。
+
+//＠無黒用の便利なスキルを覚えられるアイテム入手
+//＠場所移動：帝都
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: SetMission( "SC_D06_50_1", "Successed" )
+: FadeOut( 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Kinako", 0.0 )
+: Party( "Mukuro","Momo","Kinako" )
+: Participate( 0, true, 1, true, 2, true )
+: PartyType = "Party09"; Call( "Scenarios/CommonSys*PartySetting" )
+: LoadMap( "Map_Town01_01_Teito", "", "Scenarios/Map_Town01_Teito_Init*Map01")

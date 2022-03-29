@@ -1,0 +1,1648 @@
+//========================================================
+//○無黒　アクションシーン01
+//========================================================
+*MukuroAction01
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: PlayAnim( "Animations/Anime_Action_Mukuro01_1", false, 0, 0, 1, 1 )
+: elif ( CharaCostume( "Mukuro" ) == 2 )
+	: PlayAnim( "Animations/Anime_Action_Mukuro01_2", false, 0, 0, 1, 1 )
+: else
+	: PlayAnim( "Animations/Anime_Action_Mukuro01_0", false, 0, 0, 1, 1 )
+: endif
+: Wait()
+: Return
+//========================================================
+//○無黒　ダークエルフ化
+//========================================================
+*MukuroDE
+: HideWnd()
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a091a_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Mukuro01", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk7280" )
+\CN["無黒"]
+「――月の国の姫は輝く竹より見いだされた
+　――月の国の姫は優しき夫婦に育てられた
+　――月の国の姫は絶世の美しさを身につけた」
+
+: PlayVoice( "Voices/vo00_muk7281" )
+\CN["無黒"]
+「――そして、姫は地の国の帝に求愛された
+　――しかし、姫は愛を交わすことを許されなかった
+　――十五夜、姫は月の国へ還る。帝に望みを託して」
+
+: PlayVoice( "Voices/vo00_muk7282" )
+\CN["無黒"]
+「――≪　{解　　除,アクティベート}　≫」
+
+: HideWnd()
+: StopAnim()
+: PlaySe( "SE/CutinAnimeSe_MukuroActivate" )
+: PlayAnim( "Animations/Anime_Activate_Mukuro02", false, 0, 0, 1, 1 )
+: Sleep(0.2)
+: CharaCostume( "Mukuro", 2 )
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+: Return
+//========================================================
+//○桃　バースト
+//========================================================
+*MomoAction01
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMomo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3128" )
+\CN["桃"]
+「全てを燃やし尽くす炎の精霊よ――
+　我が{命,めい}に従い邪悪なる者を焼き尽くせ」
+
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3129" )
+\CN["桃"]
+「≪{煉獄魔術,バースト}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*FireMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○桃　ブリザード
+//========================================================
+*MomoAction02
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMomo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3130" )
+\CN["桃"]
+「全てを凍らせる純粋無垢なる氷の精霊よ――
+　我が{命,めい}に従い邪悪なる者に{永久,とわ}の眠りを与えたまえ」
+
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3131" )
+\CN["桃"]
+「≪{烈寒魔術,ブリザード}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*IceMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+
+//========================================================
+//○桃　ライトニング
+//========================================================
+*MomoAction03
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMomo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3132" )
+\CN["桃"]
+「怒りに{御身,おんみ}を焦がす{雷,いかづち}の精霊よ――
+　我が{命,めい}に従い愚かなる者に裁きの{雷,いかづち}を」
+
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3133" )
+\CN["桃"]
+「≪{天雷魔術,ライトニング}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*ThunderMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+
+//========================================================
+//○桃　アースイーター
+//========================================================
+*MomoAction04
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMomo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3134" )
+\CN["桃"]
+「大いなる大地に宿りし土の精霊よ――
+　我が{命,めい}に従い邪悪なる者を喰らい尽くせ」
+
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3135" )
+\CN["桃"]
+「≪{地喰魔術,アースイーター}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*EarthMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○桃　リザレクト
+//========================================================
+*MomoAction05
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMomo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3136" )
+\CN["桃"]
+「空を見守る優しき女神よ。
+　傷つく身体に命の息吹を――」
+
+: PlayVoice( "Voices/vo01_mom3137" )
+\CN["桃"]
+「≪{完全回復魔術,リザレクト}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: PlaySe( "SE/Se_AnimeL_Heal04" )
+: PlayAnim( "Animations/AnimeL_Heal04", false, 0, 0, 5, 5 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○桃　スリープ
+//========================================================
+*MomoAction06
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3138" )
+\CN["桃"]
+「眠りなさい――{睡眠魔術,スリープ}！」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: PlaySe( "SE/Se_AnimeL_Dark01" )
+: PlayAnim( "Animations/AnimeL_Dark01", false, 0, 200, 4, 4 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○桃　ファランクス
+//========================================================
+*MomoAction07
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMomo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3139" )
+\CN["桃"]
+「母なる大地に宿りし偉大なる精霊よ――
+　堅牢な盾となり我らを守りたまえ」
+
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3140" )
+\CN["桃"]
+「≪{守護結界,ファランクス}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*Farankus" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○桃　カタストロフィ
+//========================================================
+*MomoAction08
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMomo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3141" )
+\CN["桃"]
+「――万物全てを見通す偉大なる精霊王よ。
+　地上の{焔,ほむら}、深海の{氷室,ひむろ}、天上の{焦雷,しょうらい}
+　{現世,うつしよ}に終焉の意を持たせよ！」
+
+: HideWnd()
+: evcha = "Momo"; evbg = true; evcos = true;
+: evfile = "evb_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3142" )
+\CN["桃"]
+「≪{終　　焉,カタストロフィ}≫！！！」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*Ultimate" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+
+//========================================================
+//○桃　アクションアニメーション・魔術弓
+//========================================================
+*MomoAnime
+: if ( CharaCostume( "Momo" ) == 0 )
+	: PlayAnim( "Animations/Anime_Action_Momo01_0", false, 0, 0, 1, 1 )
+: else
+	: PlayAnim( "Animations/Anime_Action_Momo01_1", false, 0, 0, 1, 1 )
+: endif
+: Wait()
+: Return
+//========================================================
+//○黄菜子　アクションシーン01
+//========================================================
+*KinakoAction01
+: if ( CharaCostume( "Kinako" ) == 1 )
+	: PlayAnim( "Animations/Anime_Action_Kinako01_1", false, 0, 0, 1, 1 )
+: elif ( CharaCostume( "Kinako" ) == 2 )
+	: PlayAnim( "Animations/Anime_Action_Kinako01_2", false, 0, 0, 1, 1 )
+: else
+	: PlayAnim( "Animations/Anime_Action_Kinako01_0", false, 0, 0, 1, 1 )
+: endif
+: Wait()
+: Return
+//========================================================
+//○黄菜子　錨星（いかりぼし）
+//========================================================
+*KinakoAction02
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2381" )
+\CN["黄菜子"]
+「有栖川流壱ノ刃――{錨　星,いかりぼし}」
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+: endif
+: EraseAllImage( 9, 0.0 )
+: Wait()
+: ShowWnd()
+: Return
+//========================================================
+//○黄菜子　柳星（やなぎぼし）
+//========================================================
+*KinakoAction03
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2382" )
+\CN["黄菜子"]
+「有栖川流弐ノ刃――{柳　星,やなぎぼし}」
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash02", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+: endif
+: EraseAllImage( 9, 0.0 )
+: Wait()
+: ShowWnd()
+: Return
+//========================================================
+//○黄菜子　箒星（ほうきぼし）
+//========================================================
+*KinakoAction04
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2383" )
+\CN["黄菜子"]
+「有栖川流参ノ刃――{箒　星,ほうきぼし}」
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash03" )
+: PlayAnim( "Animations/AnimeEff_Slash03", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+: endif
+: EraseAllImage( 9, 0.0 )
+: Wait()
+: ShowWnd()
+: Return
+//========================================================
+//○黄菜子　暁星（ぎょうのほし）
+//========================================================
+*KinakoAction05
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2384" )
+\CN["黄菜子"]
+「有有栖川流肆ノ刃――{暁　星,ぎょうのほし}」
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+: endif
+: EraseAllImage( 9, 0.0 )
+: Wait()
+: ShowWnd()
+: Return
+//========================================================
+//○黄菜子　昴星（ぼうせい）
+//========================================================
+*KinakoAction06
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2385" )
+\CN["黄菜子"]
+「有栖川流伍ノ刃――{昴　星,ぼうせい}」
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash02", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+: endif
+: EraseAllImage( 9, 0.0 )
+: Wait()
+: ShowWnd()
+: Return
+//========================================================
+//○黄菜子　天の川（あまのがわ）
+//========================================================
+*KinakoAction07
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a002_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2386" )
+\CN["黄菜子"]
+「有栖川流終ノ刃――{天の川,あまのがわ}」
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.15 )
+: Call("*KinakoAction01")
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.15 )
+: ShowWnd()
+: Return
+//========================================================
+//○黄菜子　揚羽解放
+//========================================================
+*KinakoAgeha
+: HideWnd()
+: evcha = "Kinako"; evbg = true; evcos = true;
+: evfile = "evc_a001_1_1_0100001_1000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2388" )
+\CN["黄菜子"]
+「――朝の羽はその身を憂う{蒼,あお}の色
+　――暮の羽はその身を焦がす{朱,あか}の色
+　――晩の羽はその身を隠す{闇,やみ}の色」
+
+: PlayVoice( "Voices/vo02_kin2389" )
+\CN["黄菜子"]
+「――真の羽は寄せ手を滅ぼす{黄金,こがね}の{刃,やいば}
+　その{存在,すがた}、ここに{現,うつ}し己が牙を打ち立てよ！」
+
+: Return
+//========================================================
+//○黄菜子　ダークエルフ化
+//========================================================
+*KinakoDE
+: HideWnd()
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a092_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Kinako01", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin2391" )
+\CN["黄菜子"]
+「――籠の中の少女はいつも傷を負っていた
+　――籠の中の少女はいつも歯を食いしばっていた
+　――籠の中の少女はいつも前を向いていた」
+
+: PlayVoice( "Voices/vo02_kin2392" )
+\CN["黄菜子"]
+「――籠から出た少女は逞しい馬を与えられた
+　――籠から出た少女は綺麗な靴を与えられた
+　――籠から出た少女は真実の愛を与えられた」
+
+: PlayVoice( "Voices/vo02_kin2393" )
+\CN["黄菜子"]
+「――≪　{解　　除,アクティベート}　≫」
+
+: HideWnd()
+: StopAnim()
+: PlaySe( "SE/CutinAnimeSe_KinakoActivate" )
+: PlayAnim( "Animations/Anime_Activate_Kinako02", false, 0, 0, 1, 1 )
+: Sleep(0.2)
+: CharaCostume( "Kinako", 2 )
+: Call("Scenarios/Common*EvDelete")
+: Return
+//========================================================
+//○レオ　斬撃アクション
+//========================================================
+*LeoAction01
+: PlayAnim( "Animations/Anime_Action_Leo01_0", false, 0, 0, 1, 1 )
+: Return
+
+//=======================================================
+//○レオ　ダークエルフ化
+//========================================================
+*LeoDE
+: HideWnd()
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a093_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Leo01", true, 0, 0, 1, 1 )
+: ShowWnd()
+\CN["レオ"]
+「――ある男は蛇と出会った
+　――ある男は火山に降り立った
+　――ある男は幾千もの薔薇を見た」
+
+\CN["レオ"]
+「――そこで男は友を得る
+　――そこで男は涙を流す
+　――そこで男は知る、大切なものの意味を」
+
+\CN["レオ"]
+「――≪　{解　　除,アクティベート}　≫」
+
+: HideWnd()
+: StopAnim()
+: PlaySe( "SE/CutinAnimeSe_LeoActivate" )
+: PlayAnim( "Animations/Anime_Activate_Leo02", false, 0, 0, 1, 1 )
+: Sleep(0.2)
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+: CharaCostume( "Leo", 2 )
+: Return
+//========================================================
+//○銀　殴打アクション
+//========================================================
+*GinAction01
+: PlayAnim( "Animations/Anime_Action_Gin01_0", false, 0, 0, 1, 1 )
+: Return
+//========================================================
+//○あざみ　アクション
+//========================================================
+*AzamiAction01
+: if ( CharaCostume( "Azami" ) == 1 )
+	: PlayAnim( "Animations/Anime_Action_Azami01_1", false, 0, 0, 1, 1 )
+: elif ( CharaCostume( "Azami" ) == 2 )
+	: PlayAnim( "Animations/Anime_Action_Azami01_2", false, 0, 0, 1, 1 )
+: else
+	: PlayAnim( "Animations/Anime_Action_Azami01_0", false, 0, 0, 1, 1 )
+: endif
+: Return
+//========================================================
+//○あざみ　ダークエルフ化
+//========================================================
+*AzamiDE
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a094_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Azami01", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0878" )
+\CN["あざみ"]
+「――少女は淡雪の肌とぬばたまの髪を持っていた
+　――少女は世界一の美しさを認められていた
+　――故に少女は妃に恨まれた」
+
+: PlayVoice( "Voices/vo05_aza0879" )
+\CN["あざみ"]
+「――毒の林檎が少女に永久の眠りをもたらした
+　――７人の小人が少女を見守った
+　――そして、少女は王子のキスで目覚めた」
+
+: PlayVoice( "Voices/vo05_aza0880" )
+\CN["あざみ"]
+「――≪　{解　　除,アクティベート}　≫」
+
+: HideWnd()
+: StopAnim()
+: PlaySe( "SE/CutinAnimeSe_AzamiActivate" )
+: PlayAnim( "Animations/Anime_Activate_Azami02", false, 0, 0, 1, 1 )
+: Sleep(0.2)
+: CharaCostume( "Azami", 2 )
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+: Return
+//========================================================
+//○龍　斬撃アクション
+//========================================================
+*RyuAction01
+: if ( CharaCostume( "Ryu" ) == 1 )
+	: PlayAnim( "Animations/Anime_Action_Ryu01_1", false, 0, 0, 1, 1 )
+: else
+	: PlayAnim( "Animations/Anime_Action_Ryu01_0", false, 0, 0, 1, 1 )
+: endif
+: Return
+//========================================================
+//○冥　アクション
+//========================================================
+*MeiAction01
+: if ( CharaCostume( "Mei" ) == 1 )
+	: PlayAnim( "Animations/Anime_Action_Mei01_1", false, 0, 0, 1, 1 )
+: elif ( CharaCostume( "Mei" ) == 2 )
+	: PlayAnim( "Animations/Anime_Action_Mei01_2", false, 0, 0, 1, 1 )
+: else
+	: PlayAnim( "Animations/Anime_Action_Mei01_0", false, 0, 0, 1, 1 )
+: endif
+: Return
+//========================================================
+//○冥　ダークエルフ化
+//========================================================
+*MeiDE
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a095_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Mei01", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei1383" )
+\CN["冥"]
+「――飢える少女は誰かにパンを与えた
+　――凍える少女は誰かに{衣服,ふく}を与えた
+　――貧しい少女は誰かに銅貨を与えた」
+
+: PlayVoice( "Voices/vo09_mei1384" )
+\CN["冥"]
+「――そして、少女は家を与えられた
+　――そして、少女は着物を与えられた
+　――そして、少女は愛を与えられた」
+
+: PlayVoice( "Voices/vo09_mei1385" )
+\CN["冥"]
+「――≪　{解　　除,アクティベート}　≫」
+
+: HideWnd()
+: StopAnim()
+: PlaySe( "SE/CutinAnimeSe_MeiActivate" )
+: PlayAnim( "Animations/Anime_Activate_Mei02", false, 0, 0, 1, 1 )
+: Sleep(0.2)
+: CharaCostume( "Mei", 2 )
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+: Return
+//========================================================
+//○みどり　アクション
+//========================================================
+*MidoriAction01
+: if ( CharaCostume( "Midori" ) == 5 || CharaCostume( "Midori" ) == 6 )
+	: PlayAnim( "Animations/Anime_Action_Midori01_1", false, 0, 0, 1, 1 )
+: else
+	: PlayAnim( "Animations/Anime_Action_Midori01_0", false, 0, 0, 1, 1 )
+: endif
+: Return
+//========================================================
+//○みどり　ダークエルフ化
+//========================================================
+*MidoriDE
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a096_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Midori01", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0640" )
+\CN["みどり"]
+「――美しき少女は朝の光を請い願った
+　――美しき少女は天の恵みを乞い願った
+　――美しき少女は天から希われた」
+
+: PlayVoice( "Voices/vo10_mid0641" )
+\CN["みどり"]
+「――そして坊主は主と巡り会った
+　――そして坊主は神と交わした
+　――そして坊主は首を跳ね飛ばされた」
+
+: PlayVoice( "Voices/vo10_mid0642" )
+\CN["みどり"]
+「――≪　{解　　除,アクティベート}　≫」
+
+: HideWnd()
+: StopAnim()
+: PlaySe( "SE/CutinAnimeSe_MidoriActivate" )
+: PlayAnim( "Animations/Anime_Activate_Midori02", false, 0, 0, 1, 1 )
+: Sleep(0.2)
+: Call("Scenarios/Common*EvDelete")
+: CharaCostume( "Midori", 6 )
+: ShowWnd()
+: Return
+//========================================================
+//○みどり　ダークエルフ化・キャンセルバージョン
+//========================================================
+*MidoriDE2
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a096_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Midori01", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0640" )
+\CN["みどり"]
+「――美しき少女は朝の光を請い願った
+　――美しき少女は天の恵みを乞い願った
+　――美しき少女は天から希われた」
+
+: PlayVoice( "Voices/vo10_mid0641" )
+\CN["みどり"]
+「――そして坊主は主と巡り会った
+　――そして坊主は神と交わした
+　――そして坊主は首を跳ね飛ばされた」
+
+: StopAnim()
+: Call("Scenarios/Common*EvDelete")
+: Return
+//========================================================
+//○御影・バースト
+//========================================================
+*Mikage_Action01
+: HideWnd()
+: evcha = "Mikage"; evbg = true; evcos = true;
+: evfile = "evg_a001_1_1_0600000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMikage", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0411" )
+\CN["御影"]
+「全てを燃やし尽くす炎の精霊よ――
+　我が命に従い邪悪なる者を焼き尽くせ」
+
+: HideWnd()
+: evcha = "Mikage"; evbg = true; evcos = true;
+: evfile = "evg_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0412" )
+\CN["御影"]
+「≪{煉獄魔術,バースト}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*FireMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○御影・ブリザード
+//========================================================
+*Mikage_Action02
+: HideWnd()
+: evcha = "Mikage"; evbg = true; evcos = true;
+: evfile = "evg_a001_1_1_0600000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMikage", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0413" )
+\CN["御影"]
+「全てを凍らせる純粋無垢なる氷の精霊よ――
+　我が{命,めい}に従い邪悪なる者に{永久,とわ}の眠りを与えたまえ」
+
+: HideWnd()
+: evcha = "Mikage"; evbg = true; evcos = true;
+: evfile = "evg_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0414" )
+\CN["御影"]
+「≪{烈寒魔術,ブリザード}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*IceMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○御影・ライトニング
+//========================================================
+*Mikage_Action03
+: HideWnd()
+: evcha = "Mikage"; evbg = true; evcos = true;
+: evfile = "evg_a001_1_1_0600000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMikage", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0415" )
+\CN["御影"]
+「怒りに御身を焦がす雷の精霊よ――
+　我が命に従い愚かなる者に裁きの{雷,いかづち}を」
+
+: HideWnd()
+: evcha = "Mikage"; evbg = true; evcos = true;
+: evfile = "evg_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0416" )
+\CN["御影"]
+「≪{天雷魔術,ライトニング}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*ThunderMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○御影・アースイーター
+//========================================================
+*Mikage_Action04
+: HideWnd()
+: evcha = "Mikage"; evbg = true; evcos = true;
+: evfile = "evg_a001_1_1_0600000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicMikage", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0417" )
+\CN["御影"]
+「大いなる大地に宿りし土の精霊よ――
+　我が命に従い邪悪なる者を喰らい尽くせ」
+
+: HideWnd()
+: evcha = "Mikage"; evbg = true; evcos = true;
+: evfile = "evg_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0418" )
+\CN["御影"]
+「≪{地喰魔術,アースイーター}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*EarthMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○紫苑　エクスプロージョン
+//※エクスプロージョンはダークエルフ時のみ使用可能
+//========================================================
+*Shion_Action01
+: HideWnd()
+: evbg = true; evcos = false;
+: if ( CharaCostume( "Shion" ) == 0 )
+	: evfile = "evh_a001_1_1_0200001_0000000_0_"
+: else
+	: evfile = "evh_a001_1_2_0200001_0000000_0_"
+: endif
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicShion", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0376" )
+\CN["紫苑"]
+「地獄の底にて飢える者どもよ――
+　我が命により力を成して万物全てを燃やし尽くせ」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: if ( CharaCostume( "Shion" ) == 0 )
+	: evfile = "evh_a001_1_1_0300001_0000000_0_"
+: else
+	: evfile = "evh_a001_1_2_0300001_0000000_0_"
+: endif
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0377" )
+\CN["紫苑"]
+「≪{爆　焔　魔　術,エクスプロージョン}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*ExplodeMagic" )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○紫苑　インフェルノ
+//========================================================
+*Shion_Action02
+: HideWnd()
+: evbg = true; evcos = false;
+: if ( CharaCostume( "Shion" ) == 0 )
+	: evfile = "evh_a001_1_1_0200001_0000000_0_"
+: else
+	: evfile = "evh_a001_1_2_0200001_0000000_0_"
+: endif
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicShion", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0378" )
+\CN["紫苑"]
+「煉獄で荒れ狂う{猛者,もさ}どもよ――
+　灼熱の鼓動、身を焦がす情炎、
+　我が命により地獄より生まれし炎で万物全てを包み込め」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: if ( CharaCostume( "Shion" ) == 0 )
+	: evfile = "evh_a001_1_1_0300001_0000000_0_"
+: else
+	: evfile = "evh_a001_1_2_0300001_0000000_0_"
+: endif
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0379" )
+\CN["紫苑"]
+「≪{地獄の豪火,インフェルノ}≫」
+
+: HideWnd()
+: StopAnim()
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOutEff")
+	: Wait()
+: endif
+: Call( "*Inferno" )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime"), 0.0 )
+: ShowWnd()
+: Return
+//========================================================
+//○紫苑　テンペスト
+//========================================================
+*Shion_Action03
+: HideWnd()
+: evbg = true; evcos = false;
+: if ( CharaCostume( "Shion" ) == 0 )
+	: evfile = "evh_a001_1_1_0200001_0000000_0_"
+: else
+	: evfile = "evh_a001_1_2_0200001_0000000_0_"
+: endif
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicShion", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0380" )
+\CN["紫苑"]
+「空より吹き付ける天の嵐よ――
+　海原の狂風、高嶺の颶風――
+　我が命により荒れ狂う嵐で万物全てを吹き飛ばせ」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: if ( CharaCostume( "Shion" ) == 0 )
+	: evfile = "evh_a001_1_1_0300001_0000000_0_"
+: else
+	: evfile = "evh_a001_1_2_0300001_0000000_0_"
+: endif
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0381" )
+\CN["紫苑"]
+「≪{天変地異,テンペスト}≫」
+
+: HideWnd()
+: Call( "*WindMagic" )
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: else
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: endif
+: Return
+//========================================================
+//○紫苑　コキュートス
+//========================================================
+*Shion_Action04
+: HideWnd()
+: evbg = true; evcos = false;
+: if ( CharaCostume( "Shion" ) == 0 )
+	: evfile = "evh_a001_1_1_0200001_0000000_0_"
+: else
+	: evfile = "evh_a001_1_2_0200001_0000000_0_"
+: endif
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicShion", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0382" )
+\CN["紫苑"]
+「地の底にて幾千の時を眠る氷の女王――
+　永久の凍土、戦慄の氷河、
+　我が命により万物全てに凍てつく息吹を」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: if ( CharaCostume( "Shion" ) == 0 )
+	: evfile = "evh_a001_1_1_0300001_0000000_0_"
+: else
+	: evfile = "evh_a001_1_2_0300001_0000000_0_"
+: endif
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0383" )
+\CN["紫苑"]
+「≪{八寒地獄,コキュートス}≫」
+
+: HideWnd()
+: Call( "*IceMagic2" )
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: else
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: endif
+: Return
+//========================================================
+//○紫苑　ダークエルフ化
+//========================================================
+*Shion_DE
+: HideWnd()
+: PlaySe( "SE/Se_Effect01" )
+: FadeOut( 0.4, 255, 255, 255 )
+: Wait()
+: CharaCostume( "Shion", 2 )
+: FadeIn( 0.4, 255, 255, 255 )
+: Wait()
+: Return
+//========================================================
+//○亜久里　アースイーター
+//========================================================
+*Aguri_Action01
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0313" )
+\CN["亜久里"]
+「大いなる大地に宿りし土の精霊よ――
+　我が命に従い邪悪なる者を喰らい尽くせ」
+
+: PlayVoice( "Voices/vo16_agu0314" )
+\CN["亜久里"]
+「≪{地　喰　魔　術,アースイーター}≫」
+
+: HideWnd()
+: Call( "*EarthMagic" )
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: else
+
+	: Wait()
+: endif
+: Return
+//========================================================
+//○亜久里　エクスプロージョン
+//========================================================
+*Aguri_Action02
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0315" )
+\CN["亜久里"]
+「地獄の底にて飢える者どもよ――
+　我が{命,めい}により力を成して万物全てを燃やし尽くせ」
+
+: PlayVoice( "Voices/vo16_agu0316" )
+\CN["亜久里"]
+「≪{爆　焔　魔　術,エクスプロージョン}≫」
+
+: HideWnd()
+: Call( "*ExplodeMagic" )
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: else
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: endif
+: Return
+//========================================================
+//○亜久里　コキュートス
+//========================================================
+*Aguri_Action03
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evk_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo16_agu0317" )
+\CN["亜久里"]
+「地の底にて幾千の時を眠る氷の女王――
+　永久の凍土、戦慄の氷河、
+　我が命により万物全てに凍てつく息吹を」
+
+: PlayVoice( "Voices/vo16_agu0318" )
+\CN["亜久里"]
+「≪{八寒地獄,コキュートス}≫」
+
+: HideWnd()
+: Call( "*IceMagic2" )
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: else
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: endif
+: Return
+//========================================================
+//○蘭丸　ダークエルフ化
+//========================================================
+*Ranmaru_DE
+: HideWnd()
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a098_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Ranmaru01", true, 0, 0, 1, 1 )
+: ShowWnd()
+\CN["蘭丸"]
+「――貧しき者はパンを求めた
+　――貧しき者はシャツを求めた
+　――貧しき者はドレスを求めた」
+
+\CN["蘭丸"]
+「――貧しき少女は全てを与えた
+　――貧しき少女は全てを失った
+　――貧しき少女は莫大な財産を手に入れた」
+
+\CN["蘭丸"]
+「――≪{　解　　　除　,アクティベート}≫」
+
+: HideWnd()
+: PlaySe( "SE/CutinAnimeSe_RanmaruActivate" )
+: PlayAnim( "Animations/Anime_Activate_Ranmaru02", false, 0, 0, 1, 1 )
+: Sleep(0.2)
+: CharaCostume( "Ranmaru", 2 )
+: Call("Scenarios/Common*EvDelete")
+: Return
+//========================================================
+//○ゼノ　斬撃アクション
+//========================================================
+*XenoAction01
+: PlayAnim( "Animations/Anime_Action_Xeno01_0", false, 0, 0, 1, 1 )
+: Return
+//========================================================
+//○イライザ　ダークエルフ化
+//========================================================
+*ElisaDE
+: HideWnd()
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: evbg = true; evcos = false;
+: evfile = "evx_a097_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: PlayAnim( "Animations/Anime_Activate_Elisa01", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo19_era0283" )
+\CN["イライザ"]
+「――その昔、少女は苦労を虐げられていた
+　――その昔、少女は希望を知らずにいた
+　――その昔、少女は{導,しるべ}を見失っていた」
+
+: PlayVoice( "Voices/vo19_era0284" )
+\CN["イライザ"]
+「――そして少女は出会った、自分を見つけてくれる人に
+　――そして少女は教わった、生きるという意味を
+　――そして少女は切り開いた、彼女だけの確かな道を」
+
+: PlayVoice( "Voices/vo19_era0285" )
+\CN["イライザ"]
+「――≪　{解　　除,アクティベート}　≫」
+
+: HideWnd()
+: PlaySe( "SE/CutinAnimeSe_ElisaActivate" )
+: PlayAnim( "Animations/Anime_Activate_Elisa02", false, 0, 0, 1, 1 )
+: Sleep(0.2)
+: CharaCostume( "Elisa", 2 )
+: Call("Scenarios/Common*EvDelete")
+: Return
+//========================================================
+//○ファルケ　アクションシーン01
+//========================================================
+*FalkeAction01a
+: PlayAnim( "Animations/Anime_Action_Falke01_0", false, 0, 0, 1, 1 )
+: Return
+//========================================================
+//○ファルケ　アクションシーン02（ダークエルフ時・日本刀）
+//========================================================
+*FalkeAction01b
+: PlayAnim( "Animations/Anime_Action_Falke01_2", false, 0, 0, 1, 1 )
+: Return
+//========================================================
+//○ファルケ　アクションシーン02（ダークエルフ時・長刀）
+//========================================================
+*FalkeAction01c
+: PlayAnim( "Animations/Anime_Action_Falke01_3", false, 0, 0, 1, 1 )
+: Return
+//========================================================
+//○玉藻　バースト
+//========================================================
+*TamamoAction01
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_a001_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicTamamo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0475" )
+\CN["玉藻"]
+「全てを燃やし尽くす炎の精霊よ――
+　我が命に従い邪悪なる者を焼き尽くせ」
+
+: PlayVoice( "Voices/vo22_tam0476" )
+\CN["玉藻"]
+「≪{煉獄魔術,バースト}≫」
+
+: HideWnd()
+: StopAnim()
+: Call( "*FireMagic" )
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: else
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: endif
+: Return
+//========================================================
+//○玉藻　トルネード
+//========================================================
+*TamamoAction02
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_a001_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicTamamo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0477" )
+\CN["玉藻"]
+「荒れ狂う風よ――
+　我が命に応え、森羅万象、全てを吹き飛ばせ」
+
+: PlayVoice( "Voices/vo22_tam0478" )
+\CN["玉藻"]
+「≪{暴風魔術,トルネード}≫」
+
+: HideWnd()
+: StopAnim()
+: Call( "*WindMagic" )
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: else
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: endif
+: Return
+//========================================================
+//○玉藻　インフェルノ
+//========================================================
+*TamamoAction03
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evi_a001_1_1_0100000_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlayAnim( "Animations/Anime_LoopMagicTamamo", true, 0, 0, 1, 1 )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0479" )
+\CN["玉藻"]
+「煉獄で荒れ狂う猛者どもよ――
+　灼熱の鼓動、身を焦がす情炎、
+　我が命により地獄より生まれし炎で万物全てを包み込め」
+
+: PlayVoice( "Voices/vo22_tam0480" )
+\CN["玉藻"]
+「≪{地獄の豪火,インフェルノ}≫」
+
+: HideWnd()
+: StopAnim()
+: Call( "*Inferno" )
+//ＣＧを消去する処理
+: if ( cgkeep == false )
+	: Call("Scenarios/Common*EvFadeOut")
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: else
+	: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+	: Wait()
+: endif
+: Return
+//========================================================
+//○汎用：炎魔術
+//========================================================
+*FireMagic
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/CutinAnimeSe_Fire" )
+: PlayAnim( "Animations/CutinAnime_Fire", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Return
+//========================================================
+//○汎用：氷魔術
+//========================================================
+*IceMagic
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/CutinAnimeSe_Ice" )
+: PlayAnim( "Animations/CutinAnime_Ice", false, 0, 200, 2, 2 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Return
+//========================================================
+//○汎用：氷魔術・コキュートス用
+//========================================================
+*IceMagic2
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeL_Ice03" )
+: PlayAnim( "Animations/AnimeL_Ice03", false, 0, -100, 5, 5 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Return
+//========================================================
+//○汎用：雷魔術
+//========================================================
+*ThunderMagic
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/CutinAnimeSe_Thunder" )
+: PlayAnim( "Animations/CutinAnime_Thunder", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Return
+//========================================================
+//○汎用：風魔術
+//========================================================
+*WindMagic
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/CutinAnimeSe_Wind" )
+: PlayAnim( "Animations/CutinAnime_Wind", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Return
+//========================================================
+//○汎用：土魔術
+//========================================================
+*EarthMagic
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/CutinAnimeSe_Earth" )
+: PlayAnim( "Animations/CutinAnime_Earth", false, 0, 0, 2, 2 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Return
+//========================================================
+//○汎用：爆発
+//========================================================
+*ExplodeMagic
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/CutinAnimeSe_Explode" )
+: PlayAnim( "Animations/CutinAnime_Explosion", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Return
+//========================================================
+//○汎用：インフェルノ
+//========================================================
+*Inferno
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeL_Fire03" )
+: PlayAnim( "Animations/AnimeL_Fire03", false, 0, 0, 6, 6 )
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Return
+//========================================================
+//○ファランクス
+//========================================================
+*Farankus
+: PlaySe( "SE/Se_AnimeL_Defense02" )
+: PlayAnim( "Animations/AnimeL_Defense02", false, 0, 0, 6, 6 )
+: Wait()
+: Return
+//========================================================
+//○血飛沫１
+//========================================================
+*Blood01
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Blood01" )
+: PlayAnim( "Animations/AnimeEff_Blood01", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, 0.0 )
+: Return
+//========================================================
+//○血飛沫２
+//========================================================
+*Blood02
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Blood02" )
+: PlayAnim( "Animations/AnimeEff_Blood02", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, 0.0 )
+: if ( keep == false )
+	: ResetLayer(9)
+: endif
+: Return
+//========================================================
+//○斬撃＆血飛沫１
+//========================================================
+*Blood03
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash02", false, 0, 0, 1, 1 )
+: Wait()
+: PlayAnim( "Animations/AnimeEff_Blood02", false, 0, 0, 1, 1 )
+: Wait()
+: if ( keep == false )
+	: ResetLayer(9)
+: else
+	: DrawImage( 9, 0, "BGImage/BG_Red", 0.0)
+: endif
+: if ( cgkeep == false)
+	: Call("Scenarios/Common*EvDelete")
+: endif
+: Return
+//========================================================
+//○斬撃＆血飛沫２
+//========================================================
+*Blood04
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash03" )
+: PlayAnim( "Animations/AnimeEff_Slash03", false, 0, 0, 1, 1 )
+: Wait()
+: PlaySe( "SE/Se_AnimeEff_Blood02" )
+: PlayAnim( "Animations/AnimeEff_Blood02", false, 0, 0, 1, 1 )
+: Wait()
+: if ( keep == false )
+	: ResetLayer(9)
+: else
+	: DrawImage( 9, 0, "MiscImage/Blood", 0.0 )
+: endif
+: if ( cgkeep == false)
+	: Call("Scenarios/Common*EvDelete")
+: endif
+: Return
+//========================================================
+//○血飛沫　血液だけ５
+//========================================================
+*Blood05
+: PlaySe( "SE/Se_AnimeEff_Blood02" )
+: PlayAnim( "Animations/AnimeEff_Blood02", false, 0, 0, 1, 1 )
+: Wait()
+: Return
+//========================================================
+//○究極魔術
+//========================================================
+*Ultimate
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/CutinAnimeSe_Ultimate" )
+: PlayAnim( "Animations/CutinAnime_Ultimate", false, 0, 0, 1, 1 )
+: Wait()
+: Return
+//========================================================
+//○連打
+//========================================================
+*Renda01
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeXL_Hit01" )
+: Sleep(0.15)
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, -350, 200, 1.5, 1.5 )
+: Sleep(0.15)
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 350, -200, 1.5, 1.5 )
+: Sleep(0.15)
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 350, 200, 1.5, 1.5 )
+: Sleep(0.15)
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, -350, -200, 1.5, 1.5 )
+: Sleep(0.15)
+: PlaySe( "SE/Se_Kick01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 1.5, 1.5 )
+: Return
+//========================================================
+//○攻撃トランジション演出
+//========================================================
+*TransitionAttack
+// ファイル名決定処理
+: if ( effecttype ==  "1" )
+	: TransionImage = "MiscImage/BattleEffect01"
+	: Transion = "BGImage/BattleEffectTransition01"
+: elif ( effecttype ==  "2" )
+	: TransionImage = "MiscImage/BattleEffect02"
+	: Transion = "BGImage/BattleEffectTransition02"
+: elif ( effecttype ==  "3a" )
+	: TransionImage = "MiscImage/BattleEffect03a"
+	: Transion = "BGImage/BattleEffectTransition03"
+: elif ( effecttype ==  "3b" )
+	: TransionImage = "MiscImage/BattleEffect03b"
+	: Transion = "BGImage/BattleEffectTransition03"
+: elif ( effecttype ==  "4" )
+	: TransionImage = "MiscImage/BattleEffect04"
+	: Transion = "BGImage/BattleEffectTransition04"
+: elif ( effecttype ==  "5" )
+	: TransionImage = "MiscImage/BattleEffect05"
+	: Transion = "BGImage/BattleEffectTransition05"
+: elif ( effecttype ==  "6" )
+	: TransionImage = "MiscImage/BattleEffect06"
+	: Transion = "BGImage/BattleEffectTransition06"
+: elif ( effecttype ==  "7" )
+	: TransionImage = "MiscImage/BattleEffect07"
+	: Transion = "BGImage/BattleEffectTransition07"
+: elif ( effecttype ==  "8" )
+	: TransionImage = "MiscImage/BattleEffect08"
+	: Transion = "BGImage/BattleEffectTransition08"
+: else	// 入力ミス対策
+	: TransionImage = "MiscImage/BattleEffect01"
+	: Transion = "BGImage/BattleEffectTransition01"
+: endif
+: sefile = "SE/" + se
+: DrawImage( 9, 0, TransionImage, 0.0 )
+: FadeOutLayer( 9, 0 )
+: PlaySe( sefile )
+: FadeInLayer( 9, 0.1, 0.1, Transion, 1.0, true, 0.0, 0.0)
+: Wait()
+: if ( keep == false )
+	: EraseAllImage( 9, 0.25 )
+: endif
+: if ( evkeep == false )
+	: EraseAllImage( 7, 0.25 )
+	: EraseAllImage( 8, 0.25 )
+	: AutoFaceThumbnail( true )
+	: ResetLayer(8)
+: endif
+: Return
+//========================================================
+//○断面図射精アニメ
+//========================================================
+*UterusEjaculation
+//ＣＧによって定義する
+: if( IsShowXRay() == false )
+	: Return
+: endif
+: if ( Uterus == "eva_c002" )
+	: x = -50; y = -100; UterusAnime = "02";
+: else
+	: x = 0; y = 0; UterusAnime = "01";
+: endif
+: file = "Animations/An_UterusEjaculation" + UterusAnime
+: PlayAnim( file, false, x, y, 1, 1 )
+: PlayHSe("Se/Hse_Piston04", false, 1.0, 0.0, 1.0, 0.0 )
+: PlayHSe("Se/Hse_Piston04", false, 1.0, 0.0, 1.0, 0.4 )
+: PlayHSe("Se/Hse_Piston04", false, 1.0, 0.0, 1.0, 0.8 )
+: PlayHSe("Se/Hse_Nakadashi01", false, 1.0, 0.0, 1.0, 0.9 )
+: Wait()
+: Return

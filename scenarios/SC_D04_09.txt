@@ -1,0 +1,427 @@
+//========================================================
+//○兼光を手に入れろ！１
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“这是某暴发户委托的工作。
+想要得到名为『{兼光，老密}』的刀
+被说了啊”
+
+\CN["眼镜店"]
+“你也是武士的话，应该知道兼光吧？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3739" )
+\CN["无黑色"]
+“嘛，至少听说过名字。
+因为有很多赝品而出名的刀吧？”
+
+\CN["眼镜店"]
+“瘦死了。那么，我也特别找。
+住在西都的武士居然有
+我知道了……”
+
+: DrawChara( "Mukuro", 6, 0)
+: PlayVoice( "Voices/vo00_muk3740" )
+\CN["无黑色"]
+“嗯？既然知道得那么清楚，那就和那个人交涉吧
+不只是好吗？”
+
+如果说有钱人想要的话，就不会把钱放在心上吧。
+
+\CN["眼镜店"]
+“虽然进行了交涉……。
+连个岛都没有，就是那样”
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk3741" )
+\CN["无黑色"]
+“那么，要跟我说那件事，是要和我交涉吗
+是想强行夺走吗？”
+
+\CN["眼镜店"]
+“嗯，就是这么回事。”
+
+: DrawChara( "Mukuro", 23, 0)
+报酬本身并没有那么坏。
+
+如果做爱是条件的话，那就便宜点吧
+口入屋估计也是预料到了这一点才对我说的吧。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3742" )
+\CN["无黑色"]
+“总之，先和那个武士见个面谈谈吧。”
+
+\CN["眼镜店"]
+“我是无黑酱！
+因为那个武士住在西都镇的西边
+还有，请多关照”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+事件信息更新了。
+
+//●シーンエンド
+: SetMission( "SC_D04_09_1", "InProgress" )
+: DestinationMap( "Map_Town05_13_Saito" )
+: Return
+
+*sc001_2
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“武士住在西都町的西边
+还有，请多关照”
+
+: Return
+
+//========================================================
+//○兼光を手に入れろ！２
+//========================================================
+*sc002
+//●場所：西都・武士の家
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["武士"]
+“你怎么了？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3743" )
+\CN["无黑色"]
+“我是来求你的。”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3744" )
+\CN["无黑色"]
+“直截了当地说。
+我想让你卖你的兼光”
+
+虽然没有什么谈判。
+
+\CN["武士"]
+“哈哈哈，不要直接说出来。
+我不讨厌那样的事”
+
+\CN["武士"]
+“但是，兼光是我家的传家宝。
+怎么积也卖不出去。不好意思，请收下吧”
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk3745" )
+\CN["无黑色"]
+“是吗……”
+
+谈判果然以破裂告终。
+
+如果这个男人想要我的身体的话
+虽然还很容易做……。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3746" )
+\CN["无黑色"]
+（不高明的诱惑也会适得其反。
+那么，怎么回事呢……？）
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+还有，没有什么特别的根据，这个男人的氛围是什么呢
+用酿造出来的空气感，稍微有点不舒服……。
+
+*sc002_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002_select
+//■選択肢１：武士を殺して兼光を奪いとる
+//■選択肢２：これ以上交渉しても無駄だな。諦めよう
+//――――――――――――――――――――――――――――
+\CI["杀死武士夺取兼光"]
+\CI["再谈判也没用。放弃吧"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc002_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：武士を殺して兼光を奪いとるを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s1
+//●演出：無黒　刀を抜く
+: PlaySe( "SE/Se_Katana01" )
+: DrawChara( "Mukuro", 26, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3747" )
+\CN["无黑色"]
+“谈判破裂了啊。那只能这样了……”
+
+\CN["武士"]
+“那我也用一下兼光吧。”
+
+武士超越兼光。
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk3748" )
+\CN["无黑色"]
+“你打算用重要的传家宝杀人吗？”
+
+\CN["武士"]
+“刀是杀人的工具。
+保养时使用人的血和脂肪是最重要的”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk3749" )
+\CN["无黑色"]
+（刀身上散发出不祥的气场……要注意了。）
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+//●演出：武士が襲いかかってくる
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：武士
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：兼光を手に入れろ！３　へ
+//■敗　北：敗北後のＨシーン　へ
+//――――――――――――――――――――――――――――
+//＠戦闘：武士,1,1,0,sc003,lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*lose" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_WaRoom04_01", "BGM/22_BM003", 1067, -1, -1, "Scenarios/SC_D04_09*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*lose" )	//敗北した場合
+: endif
+//========================================================
+//○兼光を手に入れろ！３
+//========================================================
+*sc003
+: DrawChara( "Mukuro", 6, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3750" )
+\CN["无黑色"]
+“啊啊啊啊啊！”
+
+//●演出：斬撃エフェクト
+//●ＳＥ：刀を弾く音
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+弹对方的刀。
+
+\CN["武士"]
+“……！做、糟了……！？”
+
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_a002_0_0_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3751" )
+\CN["无黑色"]
+“八重樱流——村云一闪！”
+
+//●演出：斬殺エフェクト
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_a002_0_1_0200000_1000000_1_"
+: Call("Scenarios/Common*EvIn")
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+\CN["武士"]
+「――――」
+
+//＠殺害,1
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: value = 1; Call("Scenarios/CommonSys*Murder")
+: target = "Bushi"
+: Call( "Scenarios/Common*RpgCharaTenmetsu" )
+: DrawChara( "Mukuro", 31, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3752" )
+\CN["无黑色"]
+“哈，哈……这把刀不是普通的刀啊。
+恐怕是妖刀之类的……”
+
+被斩断的伤口因魔术难以治愈，毫无疑问是妖刀的一种吧。
+
+: DrawChara( "Mukuro", 30, 1)
+: PlayVoice( "Voices/vo00_muk3753" )
+\CN["无黑色"]
+“我的工作是把这个交给入口店。”
+
+//●演出：無黒　兼光を拾って口入屋のところに戻る
+//●場所：西都・居酒屋
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: LoadMap( "Map_Town05_03_Saito", "Kuchiireya", "Scenarios/SC_D04_09*sc003_1")
+
+*sc003_1
+: Call("Scenarios/map_town05_saito_init*Map03_1")	//初期化
+: RpgCharaTurn( "Kuchiireya", "D" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“欢迎回来。无黑，不要乱来，真的。”
+
+口入屋好像流传着我杀了武士的消息。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3754" )
+\CN["无黑色"]
+“但是，工作顺利完成了。看，是兼光。”
+
+\CN["眼镜店"]
+“啊，这是……。
+哇……这是个可怕的家伙。绝对会被诅咒的”
+
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk3755" )
+\CN["无黑色"]
+“啊。武士的样子很奇怪
+也许持有者有什么诅咒呢」
+
+\CN["眼镜店"]
+“原来如此。啊，你说想要的那个。
+啊，是吗……”
+
+\CN["眼镜店"]
+“嘛，武士家的打扫工作我已经安排好了
+不用担心”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk3756" )
+\CN["无黑色"]
+“得救了。剩下的就交给你了。”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后，几天后——
+
+我是从入口店听说的
+买了兼光的有钱人对担任刀的检修的佣人
+好像被杀了。
+
+……………………………………………………。
+
+//＠場所移動：西都・居酒屋の前
+//●シーンエンド
+: SetMission( "SC_D04_09_1", "Successed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+
+*lose
+//●シーン：「武士にアナルをガッツリ犯される」へ
+//＠シナリオジャンプ：SC_D04_10
+: FadeIn( 0.5 )
+: Wait()
+: Jump( "Scenarios/SC_D04_10" )
+//-------------------------------------------------------
+//●選択肢２：これ以上交渉しても無駄だな。諦めようを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s2
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+谈判完全决裂。
+再在这里也没办法了。
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk3757" )
+\CN["无黑色"]
+“知道了。打扰你了。”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+工作会失败，但没办法。
+因为这种谈判原本就不适合。
+
+//●演出：無黒　去って行く
+//●演出：場面転換トランジション
+//●場所：西都・居酒屋
+
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: LoadMap( "Map_Town05_03_Saito", "Kuchiireya", "Scenarios/SC_D04_09*sc002_2")
+
+*sc002_2
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Call("Scenarios/map_town05_saito_init*Map03_1")	//初期化
+: RpgCharaTurn( "Kuchiireya", "D" )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+告诉入口店谈判失败了的事。
+
+\CN["眼镜店"]
+“啊，果然不行啊……”
+
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk3758" )
+\CN["无黑色"]
+“对不起，我不适合这样的。”
+
+\CN["眼镜店"]
+“你没有说让我吃醋吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3759" )
+\CN["无黑色"]
+“不，完全没有那样的。
+倒不如说让我吃醋比较好”
+
+: DrawChara( "Mukuro", 0, 0)
+那样的话，就有各种各样可以乘机的机会了……。
+
+\CN["眼镜店"]
+“嗯，那样的话，那就用稍微强硬一点的手吧。
+无黑，辛苦了”
+
+入口店以轻的感觉说。
+
+: DrawChara( "Mukuro", 10, 0)
+工作内容是工作内容
+没能回应大家的期待果然不是很好的事情。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+之后，那个武士突然从西都消失了
+我不知道眼镜的入口店是否有关系。
+
+//●シーンエンド
+: SetMission( "SC_D04_09_1", "Failed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")

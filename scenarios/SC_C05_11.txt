@@ -1,0 +1,935 @@
+//========================================================
+//○小夜を保護しろ１
+//========================================================
+*sc001
+//●視点：無黒視点
+//●背景：空・昼
+: FadeIn( 0.5 )
+: StopBgm( 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: Wait()
+: ShowWnd()
+——达磨和白夜干部们前往帝都城的时候。
+
+//●場所：白夜の隠れ家・無黒の部屋
+//●演出：玉藻が入ってくる
+: HideWnd()
+: RpgCharaOn("Tamamo")
+: RpgCharaTurn( "Player", "D" )
+: EraseAllImage( 1, Call("Scenarios/Common*EffTime") )
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: RpgCharaToPlayer( "Tamamo", "D", 4.0 )
+: Wait()
+: RpgCharaTurn( "Tamamo", "U" )
+: Wait()
+: DrawChara( "Tamamo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0219" )
+\CN["玉藻"]
+“你的主是神八代冥的妹妹神八代无黑吗？”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk3057" )
+\CN["无黑色"]
+“对，是的……那个，你呢？”
+
+兽耳和丰富的尾巴，绝对是兽人。
+
+但是，总觉得有一种神秘的气氛
+到底是什么人呢？
+
+: DrawChara( "Tamamo", 0, 0, 1)
+: PlayVoice( "Voices/vo22_tam0220" )
+\CN["玉藻"]
+“蕨菜的名字是玉藻。
+这是被称为白面金毛九尾之狐的妖狐啊」
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 34, 0)
+	: PlayVoice( "Voices/vo00_muk3058" )
+	\CN["无黑色"]
+“啊，你就是那个玉藻大人……！？
+对不起，太失礼了……！”
+
+慌忙低头。
+
+他的名字有史书记载的那么有名
+我觉得好像在说桃子是魔术的师傅之类的话。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk3059" )
+	\CN["无黑色"]
+“你是玉藻大人……确实是桃师傅。”
+
+虽然气氛有不寻常的东西
+不是那种夸张谦虚的对手。
+
+	//●演技：心の声です
+	: DrawChara( "Tamamo", 1, 0)
+	: PlayVoice( "Voices/vo22_tam0221" )
+	\CN["玉藻"]
+（虽然是从嘲讽中听到的，但是这家伙非常危险——
+不，已经晚了。）
+
+//●分岐終了
+: endif
+玉藻大人好像看透了什么似的盯着我。
+
+//●演技：心の声です
+: DrawChara( "Tamamo", 1, 0)
+: PlayVoice( "Voices/vo22_tam0222" )
+\CN["玉藻"]
+（潜能真是太神奇了。
+恐怕你肯定会认为这家伙是钥匙吧）
+
+//●読み：言伝（ことづて）
+: DrawChara( "Tamamo", 2, 0, 0)
+: PlayVoice( "Voices/vo22_tam0223" )
+\CN["玉藻"]
+「我有一件事想拜托你，你带我去找小夜
+我想要啊」
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3060" )
+\CN["无黑色"]
+“小夜？小夜的话不是一般都在城里吗？”
+
+//●読み：帝都城（ていとじょう）
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0224" )
+\CN["玉藻"]
+“帝都城现在不是那个地方。
+说是已经掉了也不过分吧”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk3061" )
+\CN["无黑色"]
+“怎么回事？”
+
+: DrawChara( "Tamamo", 0, 0, 1)
+: PlayVoice( "Voices/vo22_tam0225" )
+\CN["玉藻"]
+“总之。小夜现在和亲信一起逃走了。
+在落入见回组和其他反幕派手中之前保护他们
+我想要”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3062" )
+\CN["无黑色"]
+“放任不管的话，小夜的生命就危险了，这样可以吗？”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0226" )
+\CN["玉藻"]
+“恩。小夜通过大和东街道向厚海方向走去。”
+”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3063" )
+\CN["无黑色"]
+“玉藻大人，你知道吗？”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0227" )
+\CN["玉藻"]
+“小夜是一个特殊的{女子，おなご}。
+在我看来”
+
+“看得见”？
+
+虽然不知道在说什么
+现在只有相信玉藻大人的话了。
+
+据说是白面金毛九尾之狐的玉藻大人。
+应该是有什么特别的力量吧。
+
+//●演出：無黒　退場する
+: HideWnd()
+: EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveLeft", 2	\
+:	"MoveDown", 4 )
+: Wait()
+: RpgCharaOff("Player")
+: RpgCharaTurn( "Tamamo", "D" )
+: DrawChara( "Tamamo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0228" )
+\CN["玉藻"]
+“因为我们直接去的话，可能会‘改变’”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0229" )
+\CN["玉藻"]
+「拜托了，神八代无黑。
+关系到大和的未来”
+
+//＠マップ解放：大和東街道（無黒）
+//●シーンエンド
+: HideWnd()
+: EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+事件信息更新了。
+<^FF0000>侧面小故事更新了！</color>
+
+: CharaCanDarkelfChange( "Mukuro", true )
+服装变更使得{黑夜叉，暗黑妖精}化成为可能。
+<color=FF0000>※服装变更是从“菜单”中的“角色”开始的
+可以变更。也有不可更改的地方。</color>
+
+: SideEpisodeFlagUp( "episode54" )
+: SideEpisodeFlagUp( "episode55" )
+: FastTravelMapOn( "YamatoHigashiKaidoA" )
+: DestinationMap
+: SetMission( "SC_C05_11_1", "InProgress" )
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Town07_01_Byakuya", "MukuroRoom", "Scenarios/Map_Town07_Byakuya_Init*Map01")
+
+//========================================================
+//○小夜を保護しろ２
+//========================================================
+*sc002
+//●場所：大和東街道・小屋前
+//●状況：レオが道を塞いでいる
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Mukuro" ) == 0 || CharaCostume( "Mukuro" ) == 2 )
+	: DrawChara( "Mukuro", 1, 0, 0, 0.25, 0.0, 3, "RC" )
+	: DrawChara( "Leo", 14, 0, 0, 0.25, 0.0, 4, "LC" )
+	\CN["雷欧"]
+“哇！好久不见！无黑！”！
+你还好吗？没有我不寂寞吗？”
+
+	: DrawChara( "Leo", 0, 0)
+	\CN["雷欧"]
+“突然不说话不行，好寂寞啊。”
+
+离得很远，而且雷欧是我的敌人组织，白夜
+所属的人应该是从桃和银那里听来的……。
+
+尽管如此，这样坦率地打招呼还是很吃惊的。
+
+//●分岐：［服装］全裸の場合
+: else
+	: DrawChara( "Mukuro", 1, 0, 0, 0.25, 0.0, 3, "RC" )
+	: DrawChara( "Leo", 4, 1, 0, 0.0, 0.0, 4, "LC" )
+	\CN["雷欧"]
+“……！你的衣服怎么了！？
+你被搞得乱七八糟，连衣服都不能再生了吗？”
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 12, 1)
+	: PlayVoice( "Voices/vo00_muk3064" )
+	\CN["无黑色"]
+（竟然自己露出来了，真是说不出口啊……）
+
+而且，连Leo担心的事情都
+成为了更加增加背德感的刺激。
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 21, 1, 1)
+	: PlayVoice( "Voices/vo00_muk3065" )
+	\CN["无黑色"]
+（又不像话，衣服也要好好穿啊……）
+
+	//●服装：無黒・着衣
+	: CharaCostume( "Mukuro", 0 )
+	: JumpLayer( 3, 0, -50, 1, 0.25)
+	: DrawChara( "Mukuro", 21, 1, 1)
+	//＠服装：無黒,0
+	: DrawChara( "Leo", 14, 0)
+	\CN["雷欧"]
+“什么啊，衣服不能好好再生啊。
+不过嘛，我也很满足你的生奶”
+
+	: DrawChara( "Mukuro", 21, 0, 0)
+	: PlayVoice( "Voices/vo00_muk3066" )
+	\CN["无黑色"]
+“我的裸体，我完全知道你在看癌症……”
+
+	//●分岐：悪堕ちＬＶが０～２の場合
+	: if ( $evilLevel < 3 )
+		: DrawChara( "Leo", 0, 0, 0, 0.0, 0.0, 4, "LC" )
+		\CN["雷欧"]
+“那是因为我是男人。我真想看看喜欢的女人的裸体。”
+已经决定了”
+
+		//●演技：心の声です
+		: DrawChara( "Mukuro", 7, 0)
+		: PlayVoice( "Voices/vo00_muk3067" )
+		\CN["无黑色"]
+（如果是以前的雷欧，不管怎么说，看着我的裸体
+应该是睁大了眼睛吧）
+
+离得很远，而且雷欧是我的敌人组织，白夜
+所属的人应该是从桃和银那里听来的……。
+
+尽管如此，我觉得他还是很坦率地跟我打招呼
+似乎有很好的警戒。
+
+	//●分岐終了地点へ
+	//●分岐：それ以外の場合
+	//●悪堕ちＬＶ３の場合
+	: else
+		: DrawChara( "Leo", 3, 0, 0, 0.0, 0.0, 4, "LC" )
+		\CN["雷欧"]
+“那是因为，现在的你如果睁开眼睛的话
+好像要被杀了」
+
+		: DrawChara( "Mukuro", 2, 0)
+		: PlayVoice( "Voices/vo00_muk3068" )
+		\CN["无黑色"]
+“这样啊……。怎么会被警戒呢……”
+
+		: DrawChara( "Leo", 6, 0)
+		\CN["雷欧"]
+“啊，气氛完全不一样……。
+啊，为什么你是来这里的？”
+
+		: DrawChara( "Mukuro", 26, 0)
+		: PlayVoice( "Voices/vo00_muk3069" )
+		\CN["无黑色"]
+“没什么特别的意思。就是这种兴趣。”
+
+		: DrawChara( "Leo", 5, 0)
+		\CN["雷欧"]
+“嗯，你变了好多啊。”
+
+	//●分岐終了
+	: endif
+//●分岐終了
+: endif
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“你在这种地方干什么？”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk3070" )
+\CN["无黑色"]
+“工作上有一点。我想看看对面建着的小屋。”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“小屋……？啊，啊，那种地方看了也没什么。
+还有，今后，真的什么都没有哦”
+
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“看，不是还有别的地方要去吗？”？
+附近有一个叫厚海的观光街，不去吗？
+温泉，好舒服啊”
+
+这样慌张，没错。
+
+//●分岐：淫乱度Ｃ～Ｄの場合
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) < 2 )
+	: DrawChara( "Mukuro", 23, 0)
+	: PlayVoice( "Voices/vo00_muk3071" )
+	\CN["无黑色"]
+“在那之后，小夜在吗？”
+
+	: DrawChara( "Leo", 10, 0)
+	\CN["雷欧"]
+“嘿嘿……那么，再见……？来吧……”
+
+	: DrawChara( "Mukuro", 12, 0)
+	: PlayVoice( "Voices/vo00_muk3072" )
+	\CN["无黑色"]
+“不擅长说谎好像还是老样子啊。”
+
+	: DrawChara( "Leo", 0, 0)
+	\CN["雷欧"]
+“嘛，我是个诚实的人。”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●淫乱度Ａ～Ｂの場合
+: else
+	//●読み：厚海（あつうみ）＝熱海のパロです
+	: DrawChara( "Mukuro", 26, 1)
+	: PlayVoice( "Voices/vo00_muk3073" )
+	\CN["无黑色"]
+“其实最近完全没做呢。
+不能等到厚海。在里面的小屋里……？”
+
+	: ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
+	: DrawChara( "Leo", 6, 1)
+	\CN["雷欧"]
+“诶，诶……那，那也就是说……那个……”
+
+雷欧的脸变红了。
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 21, 1)
+	: PlayVoice( "Voices/vo00_muk3074" )
+	\CN["无黑色"]
+（本来打算开玩笑的，但是被这样的反应吓了一跳
+做了……）
+
+雷欧客观地看很帅，喜欢雷欧的孩子
+有很多。
+
+即使去掉那个，和雷欧H也是
+有觉得不完全的自己。
+
+	: DrawChara( "Leo", 2, 0)
+	\CN["雷欧"]
+“总之那个小屋是不行的！”
+
+怎么说呢，雷欧并不是那种会输给诱惑的家伙
+我知道了。
+
+我只是说了句“不行”，总觉得有这样的东西。
+
+//●分岐終了
+: endif
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“呐，真的拜托你了。能不能从这里退出来呢？”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk3075" )
+\CN["无黑色"]
+“你知道我是热心工作的女人吗？”
+
+: DrawChara( "Leo", 24, 0)
+\CN["雷欧"]
+“在那里想办法！我不想和喜欢的女人互相残杀。”
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk3076" )
+	\CN["无黑色"]
+“我也不想和以前的伙伴厮杀。
+但是，我也不能让步”
+
+因为玉藻大人说过大和的未来是有关系的。
+
+就算对方是雷欧，也绝对不能后退。
+
+	: DrawChara( "Leo", 6, 0)
+	\CN["雷欧"]
+“这样啊。真的吗……那就再见了。”
+
+	: PlaySe( "SE/Se_Katana01" )
+	: DrawChara( "Mukuro", 23, 0, 5)
+	: DrawChara( "Leo", 1, 0, 1)
+两个人同时拔刀。
+
+感到松散的空气一下子紧张起来。
+
+现在开始的既不是练习也不是嬉戏。
+真正的战斗开始了。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk3077" )
+	\CN["无黑色"]
+“这是过去朋友的情谊，我再忠告他一次。
+雷欧，从那里让开！”
+
+	: DrawChara( "Leo", 2, 0)
+	\CN["雷欧"]
+“……拒绝的话，怎么样？”
+
+	//●演出：無黒　刀を抜く
+	: PlaySe( "SE/Se_Katana01" )
+	: DrawChara( "Mukuro", 23, 0, 5)
+	: PlayVoice( "Voices/vo00_muk3078" )
+	\CN["无黑色"]
+“杀了你，我先走了。就这样。”
+
+	//●演出：レオ　刀を抜く
+	: PlaySe( "SE/Se_Katana01" )
+	: DrawChara( "Leo", 1, 0, 1)
+	\CN["雷欧"]
+“真的吗……真糟糕。”
+
+互相拔出刀来，浮在空中的空气一下子紧张起来。
+
+现在开始的既不是练习也不是嬉戏。
+真正的厮杀开始了。
+
+//●分岐終了
+: endif
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：レオ・ゴールドスタイン
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：レオ・ゴールドスタイン,1,1,1
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_01", "BGM/04_CM004", 1058, -1, -1, "Scenarios/SC_C05_11*battle_end" , true )
+
+*battle_end
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○小夜を保護しろ３
+//========================================================
+*sc003
+//●状況：戦闘終了後
+//●演出：斬撃エフェクト
+//●ＳＥ：カキーン　甲高い金属音
+//●全裸時は強制着衣
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: CharaCostume( "Mukuro", 0 )
+: endif
+: FadeIn( 0.5 )
+: Wait()
+: StopBgm( 0.0 )
+: PlaySe( "SE/Se_KatanaHit02" )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 6, 6 )
+: Wait()
+: PlayBgm("BGM/01_CM001")
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	: DrawChara( "Mukuro", 23, 0, 2, 0.25, 0.0, 3, "RC" )
+	: DrawChara( "Leo", 6, 0, 0, 0.25, 0.0, 4, "LC" )
+	\CN["雷欧"]
+“我认输了，我输了。”
+
+我的剑戟飞了利奥的刀。
+
+但是，这是————
+
+	: DrawChara( "Mukuro", 8, 0)
+	: PlayVoice( "Voices/vo00_muk3079" )
+	\CN["无黑色"]
+“刚才也说过了
+你真是不擅长说谎啊……”
+
+	: DrawChara( "Leo", 4, 0)
+	\CN["雷欧"]
+“……什么，你说什么？说吧，我输了。”
+
+	: DrawChara( "Mukuro", 23, 0)
+	: PlayVoice( "Voices/vo00_muk3080" )
+	\CN["无黑色"]
+“如果你打算杀我的话
+可能是我输了”
+
+	: DrawChara( "Mukuro", 1, 0, 2)
+	: PlayVoice( "Voices/vo00_muk3081" )
+	\CN["无黑色"]
+“为什么要偷懒？”
+
+	: DrawChara( "Leo", 0, 0)
+	\CN["雷欧"]
+“因为我觉得如果是你的话一定会一起守护你的。
+这是武士的直觉啊”
+
+	: DrawChara( "Leo", 14, 0)
+	\CN["雷欧"]
+“而且你也没把手伸到里面去。
+所以说，不是咚咚吗？”
+
+	: DrawChara( "Leo", 1, 0)
+	\CN["雷欧"]
+“你也能成为{黑夜叉，暗黑妖精}吧？”
+
+//●分岐：［服装］ダークエルフの場合
+: else
+	: CharaCostume( "Mukuro", 2 )
+	: DrawChara( "Mukuro", 23, 0, 2, 0.25, 0.0, 3, "RC" )
+	: DrawChara( "Leo", 6, 0, 0, 0.25, 0.0, 4, "LC" )
+	\CN["雷欧"]
+“我投降了，投降了。”
+
+我的剑戟飞了利奥的刀。
+
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk3082" )
+	\CN["无黑色"]
+“{黑夜叉，暗黑妖精}的力量必须要使用
+没想到会被逼入绝境……”
+
+	: DrawChara( "Mukuro", 7, 0, 2)
+	: PlayVoice( "Voices/vo00_muk3083" )
+	\CN["无黑色"]
+“如果，还没有变成{黑夜叉，暗黑妖精}的话
+输的一定是我……”
+
+	: DrawChara( "Leo", 8, 0)
+	\CN["雷欧"]
+“因为一直在锻炼，所以相当有自信。
+无黑变得那么强大，说实话很害怕”
+
+	: DrawChara( "Leo", 14, 0)
+	\CN["雷欧"]
+“话说，你也能成为{黑夜叉，暗黑妖精}啊。”
+
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3084" )
+\CN["无黑色"]
+“对你来说，说不定雷欧也会变成{黑夜叉，暗黑妖精}
+能成为吗？”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“啊，费尔克先生——维克托尔骑士团的骑士团长
+来屯所玩吧。我接受了特别训练”
+
+: DrawChara( "Leo", 13, 0)
+\CN["雷欧"]
+“你也知道吧？我说的是费尔克。
+看，之前维克托尔的伟人来过吧？”
+
+有大臣从维克托尔来的吧。那么说来。
+
+反幕派的家伙暴走袭击了他们
+我记得曾经听说全体人员都漂亮地被复仇了。
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“我的事怎么样都无所谓，就是你的事。”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“总之先在这里站着说话，过来一下。”
+
+//＠ダークエルフになっている場合は強制的に元に戻す
+//●演出：レオについて行く無黒
+//●演出：場面転換トランジション
+//●場所：小屋
+//●状況：小屋に小夜と爺がいる
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: if ( CharaCostume( "Mukuro" ) == 2 )
+	: CharaCostume( "Mukuro", 0 )
+: endif
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: LoadMap( "Map_Dungeon16_07_Koya", "SC_C05_11", "Scenarios/SC_C05_11*sc003_1")
+
+*sc003_1
+: HideWnd()
+: RpgCharaOn("Leo2")
+: RpgCharaOn("Sayo")
+: RpgCharaOn("Jii")
+: RpgCharaWarp( "Leo2", "SC_B05_12")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/09_CM009")
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Sayo", 4, 0, 0, 0.25, 0.0, 2, "LC" )
+	: DrawChara( "Mukuro", 0, 0, 0, 0.25, 0.0, 3, "RC" )
+	//: DrawChara( "Ji", 0, 0, 0, 0.25, 0.0, 4, "L" )
+	: ShowWnd()
+	: PlayVoice( "Voices/vo24_say0235" )
+	\CN["小夜"]
+“好久不见，突然就不见了
+我非常寂寞”
+
+	: DrawChara( "Mukuro", 8, 0)
+	: PlayVoice( "Voices/vo00_muk3085" )
+	\CN["无黑色"]
+“对不起，小夜……”
+
+抚摸小夜的头。
+
+	: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Sayo", 11, 0, 0, 0.25, 0.0, 2, "LC" )
+	: DrawChara( "Mukuro", 0, 0, 0, 0.25, 0.0, 3, "RC" )
+	//: DrawChara( "Ji", 10, 0, 0, 0.25, 0.0, 4, "L" )
+	: ShowWnd()
+	: PlayVoice( "Voices/vo24_say0236" )
+	\CN["小夜"]
+“你真的是无黑的吗？”
+
+	: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+	: DrawChara( "Ji", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+	\CN["老头儿"]
+“情况发生了很大的变化呢。
+应该是相当努力地活着吧”
+
+老爷爷这样说着，就抚摸着有点害怕的小夜的头。
+
+	: DrawChara( "Mukuro", 7, 0)
+	: PlayVoice( "Voices/vo00_muk3086" )
+	\CN["无黑色"]
+“曾经为了生存而拼命过——
+话是这么说的，但是，可能确实是这样”
+
+因为到现在为止都是为了“活着”而杀人的。
+
+	: EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3087" )
+\CN["无黑色"]
+“那么，雷欧，你说什么？发生什么事了吗？”
+
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["雷欧"]
+“啊。嘛，说来话长。”
+
+雷欧慢慢地说了至今为止发生的事情。
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“达磨上车，鬼灯坏了一半吧？
+所以完全不被将军信任了”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+「这样啊，轮回组已经很糟糕了。
+我们被将军信任，非常傲慢
+在街上随便做了”
+
+: DrawChara( "Leo", 8, 0)
+\CN["雷欧"]
+“那么，当然，如果有人给你添麻烦的话，我会帮你的？
+这样的话，感觉我们会被幕府抱怨
+”
+
+: DrawChara( "Leo", 17, 0)
+\CN["雷欧"]
+“在那里加入了反幕派，更让人莫名其妙
+成为……”
+
+雷欧一边挥着拳头，一边后悔地说。
+
+听说以老大那件事为契机，帝都的治安恶化了
+我听说过……。
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“那么，我们是我们，即使这样也要想办法解决。”
+虽然在动……”
+
+雷欧瞥了爷爷一眼。
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Ji", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+\CN["老头儿"]
+“害怕暗杀的幕臣们和跟随幕府的贵族们
+一个接一个地离开了幕府”
+
+: DrawChara( "Ji", 5, 0)
+\CN["老头儿"]
+“是因为幕臣们的背叛，将军心乱如麻吗
+只相信自己站起来的见回组组长笹木幸三郎
+”
+
+: DrawChara( "Ji", 6, 0)
+\CN["老头儿"]
+“因此鬼灯也解散了……”
+
+: ChaOut = "Ji"; ChaIn = "Sayo"; Face = 3; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+//: DrawChara( "Sayo", 3, 0)
+: PlayVoice( "Voices/vo24_say0237" )
+\CN["小夜"]
+「…………」
+
+: ChaOut = "Sayo"; ChaIn = "Leo"; Face = 5; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+//: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“局长也突然消失了……。
+然后，说要找，龙先生也不在了”
+
+//: DrawChara( "Sayo", 0, 0)
+: ChaOut = "Leo"; ChaIn = "Ji"; Face = 0; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+\CN["老头儿"]
+“我们也感到了自身的危险
+我是依赖雷欧他们的”
+
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk3088" )
+\CN["无黑色"]
+“那是……”
+
+我知道他们喜欢见回组，但是
+没想到鬼灯竟然变成了那样。
+
+我经常听到幕府已经结束了
+也不见得言过其实。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3089" )
+\CN["无黑色"]
+“桃子和黄菜子他们怎么样了？”
+
+: ChaOut = "Ji"; ChaIn = "Leo"; Face = 3; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+//: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“那些家伙的话没关系，反正他们是一起行动的。”
+
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“总之，现在先找局长和龙先生
+感觉好像到处都在动”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“那么，这次是你的事。为什么要小夜？”
+
+: DrawChara( "Mukuro", 0, 0)
+: PlayVoice( "Voices/vo00_muk3090" )
+\CN["无黑色"]
+“啊，虽然是这样，但就像是从玉藻大人那里带小夜过来一样
+说吧。在被见回组或者其他反幕派逮捕之前
+保护我！”
+
+: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“这样啊。那小夜你想怎么办？”
+
+//: DrawChara( "Sayo", 0, 0)
+: ChaOut = "Leo"; ChaIn = "Sayo"; Face = 0; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+: PlayVoice( "Voices/vo24_say0238" )
+\CN["小夜"]
+“我觉得……跟着无黑走不是最好的吗？”
+我觉得”
+
+: DrawChara( "Sayo", 4, 0)
+: PlayVoice( "Voices/vo24_say0239" )
+\CN["小夜"]
+“对于见回组和反幕派来说，我是非常碍事的存在
+你应该想杀了他」
+
+: ChaOut = "Sayo"; ChaIn = "Ji"; Face = 5; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+//: DrawChara( "Ji", 5, 0)
+\CN["老头儿"]
+「…………」
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 39, 0)
+: PlayVoice( "Voices/vo00_muk3091" )
+\CN["无黑色"]
+（如果只是被杀的话，还算好。
+有的人说死了更好）
+
+所以，我马上开始保护小夜。
+
+//: DrawChara( "Leo", 0, 0)
+: ChaOut = "Ji"; ChaIn = "Leo"; Face = 0; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+\CN["雷欧"]
+“我知道了。但是，我也跟着sayo。
+这样可以吗？”
+
+: DrawChara( "Mukuro", 3, 0)
+: PlayVoice( "Voices/vo00_muk3092" )
+\CN["无黑色"]
+“啊，没关系。”
+
+//: DrawChara( "Sayo", 3, 0)
+: ChaOut = "Leo"; ChaIn = "Sayo"; Face = 3; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+: PlayVoice( "Voices/vo24_say0240" )
+\CN["小夜"]
+“雷欧，你愿意和我来吗？”
+
+: ChaOut = "Mukuro"; ChaIn = "Leo"; Face = 14; Hoho = 0; Pose = 0; Lay = 3; Pos = "RC";
+: Call( "Scenarios/Common*FgChange" )
+//: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“那是当然的。”
+
+//: DrawChara( "Ji", 0, 0)
+: ChaOut = "Sayo"; ChaIn = "Ji"; Face = 0; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+\CN["老头儿"]
+“如果你和我在一起我就放心了。当然，我也会跟着你的。”
+
+目的是保护小夜。
+雷欧他们在一起也没问题吧。
+
+//: DrawChara( "Mukuro", 4, 0, 3)
+: ChaOut = "Ji"; ChaIn = "Mukuro"; Face = 4; Hoho = 0; Pose = 3; Lay = 2; Pos = "LC";
+: Call( "Scenarios/Common*FgChange" )
+: PlayVoice( "Voices/vo00_muk3093" )
+\CN["无黑色"]
+“那我带你去玉藻大人那里。跟我来。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Leo", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+这之后，小夜带他们去了玉藻大人那里……。
+
+我希望我的行为以后会给大和带来毁灭的危机
+那时的我根本不知道。
+
+……………………………………………………。
+
+//●白夜ルート第５章終了。最終章へ
+//●シーン：「嵐の前の静けさ」へ
+//＠シナリオジャンプ：SC_C06_01
+: SetMission( "SC_C05_11_1", "Successed" )
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_C06_01")

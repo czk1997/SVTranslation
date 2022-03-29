@@ -1,0 +1,108 @@
+//========================================================
+//○白夜の隠れ家
+//========================================================
+//--------------------------------------------------------
+// 入口
+//--------------------------------------------------------
+*Map01
+// ＮＰＣ配置
+// 無黒リーダー時
+//裸の場合　強制着衣へ
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: CharaCostume( "Mukuro", 0 )
+: endif
+: if ( CharaCostume( "Momo" ) == 1 )
+	: CharaCostume( "Momo", 0 )
+: endif
+: if ( CharaCostume( "Kinako" ) == 1 )
+	: CharaCostume( "Kinako", 5 )
+: endif
+: if ( CharaCostume( "Mei" ) == 1 )
+	: CharaCostume( "Mei", 0 )
+: endif
+: if ( WhoLeader( "Mukuro" ) == true )
+	: RpgCharaOn("NPC_T07_010")
+	: RpgCharaOn("NPC_T07_011")
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+		: RpgCharaOn("NPC_T07_012")
+	: endif
+	: if ( MissionProgress( "SC_C04_10_1", "Successed" ) == true )
+		: RpgCharaOn("Mikage")
+	: endif
+: endif
+// イベント配置
+: if ( MissionProgress( "SC_C04_01_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "ToMeiRoom", "Event" )
+: endif
+: if ( MissionProgress( "SC_C05_03_1", "InProgress" ) == true )
+	: RpgMapBaloonOn( "ToMeiRoom", "Event" )
+: endif
+: if ( $chapter == 9 )
+	: RpgCharaOn("Mikage")
+: endif
+// 小夜を探せ　進行中
+: if ( MissionProgress( "SC_C05_11_1", "InProgress" ) == true )
+	: RpgCharaOff("Mikage")
+: endif
+//ＮＰＣ生存チェック
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+// 冥の部屋
+//--------------------------------------------------------
+*Map02
+: if (WhoLeader( "Mei" ) == true)
+	: RpgCharaOff("Mei")
+	: RpgEventOn( "Inn" )
+	: RpgMapBaloonOn( "Inn" )
+: endif
+// 小夜を探せ　進行中
+: if ( MissionProgress( "SC_C05_11_1", "InProgress" ) == true )
+	: RpgCharaOff("Mei")
+: endif
+: Return
+//--------------------------------------------------------
+// みどりの部屋
+//--------------------------------------------------------
+*Map03
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( $chapter == 8 ) RpgCharaOn("Midori") endif
+: endif
+// 小夜を探せ　進行中
+: if ( MissionProgress( "SC_C05_11_1", "InProgress" ) == true )
+	: RpgCharaOff("Midori")
+: endif
+: Return
+//--------------------------------------------------------
+// 卍の部屋
+//--------------------------------------------------------
+*Map04
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mukuro" ) == false )
+		: RpgCharaOn("Manji")
+	: endif
+: endif
+: Return
+//--------------------------------------------------------
+// 地下室
+//--------------------------------------------------------
+*Map05
+: if (WhoLeader( "Mukuro" ) == true)
+	: if ( Call( "Scenarios/CommonSys*Virgin_Mukuro" ) == false )
+		: RpgCharaOn("NPC_T07_007")
+	: endif
+: endif
+//ＮＰＣ生存チェック
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return
+//--------------------------------------------------------
+// 無黒の部屋
+//--------------------------------------------------------
+*Map06
+//ＮＰＣ生存チェック
+: if ( WhoLeader( "Mukuro" ) == false )
+	: RpgEventOff( "Inn_Mukuro" )
+	: RpgMapBaloonOff( "Inn" )
+: endif
+: Call( "Scenarios/CommonSys*NpcLive" )
+: Return

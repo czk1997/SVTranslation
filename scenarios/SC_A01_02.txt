@@ -1,0 +1,611 @@
+//========================================================
+//○無黒の過去
+//========================================================
+*sc001
+//●背景：黒画面
+//＠真田：以下、台詞表示という形にはしない。ボイスありの地の文という演出
+//●視点：無黒視点
+//章開始の処理
+: HideWnd()
+: Call( "Scenarios/Common*Eyecatch" )
+: EraseAllImage(1,1.0)
+: Wait()
+: ShowWnd()
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0011" )
+//\CN["無黒"]
+我的名字是神八代无黑
+鬼灯队士之一——
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0012" )
+//\CN["無黒"]
+是在外地农村出身
+经营农家的父母身边出生的普通女人……。
+
+//＠真田：無黒の立ち絵は表示させない。メッセージフェイスのみ
+//●演出：回想に入る
+//●場所：無黒の生まれ故郷・昼
+//●背景：農村・外・昼
+: PlaySe("SE/Se_Effect00")
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Village01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 2.0, 0.0, "BGImage/Transition14", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/23_FM001")
+: ShowWnd()
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0013" )
+\CN["无黑"]
+「呼～……今年的米很好，期待收获啊」
+
+经营大米农家的父亲、母亲、姐姐，还有我的四口之家。
+
+与慌乱无缘，悠然自得
+过着非常普通的农民生活。
+
+//●演技：心の声です
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0014" )
+\CN["无黑"]
+（今后，这样的日子也会一直持续下去吧——）
+
+每天早上早起，照顾农作物，等到天黑就睡觉。
+
+和村子里的某个人结婚生孩子——
+一定会在这样的将来走下去吧。
+
+没错，我相信并没有怀疑。这就是我的一生。
+
+//●演出：暗転
+: StopBgm(1.0)
+: EraseImage( 1, 0, 1.0)
+: Wait()
+: ResetLayer(1)
+“——和平这种东西就像纸片一样又薄又脆”
+那时的我根本没有意识到。
+
+持续了几十年的村子的和平瞬间就崩毁了
+仅仅只花了几个小时……。
+
+//●背景：農村・外・昼
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Village01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: PlayBgm("BGM/28_ID01")
+: Wait()
+: ShowWnd()
+\CN["村民1"]
+“敌人袭击啊啊啊啊啊啊啊啊！！”
+
+\CN["村民2"]
+“可以！但是，为什么，在这个什么都没有的村子里！？”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0015" )
+\CN["无黑"]
+“这、这到底是……为什么…？”
+
+有事前往森林的我。
+
+村民们不知所措。
+大家都习惯了和平，连逃跑的方法都不知道。
+
+即使那是简单地割下自己的生命
+不能违抗也不能逃避。
+
+从森林里回来的时候看到的就是如此的景象
+
+: PlaySe("SE/Se_Foot01")
+: DrawImage( 8, 0, "MiscImage/CutinFg01", 0.5)
+\CN["男1"]
+“嘿嘿嘿，竟然还有幸存者在这。”
+
+\CN["男2"]
+“别怪我哦。我不会浪费你宝贵牺牲的……哈……”
+
+拿着刀的男人们向我袭来。
+
+//●演出：斬撃アニメーション
+: HideWnd()
+: effecttype = "1"; se = "Se_Swing01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["男1"]
+“哎呀……！”
+
+: HideWnd()
+: EraseImage( 9, 0, 0.25)
+: Wait()
+: ShowWnd()
+\CN["男2"]
+“嘿嘿，你真有一手啊”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0016" )
+\CN["无黑"]
+“呃……没打中马吗……”
+
+虽然自己也有剑术的心得……。
+我的斩击很容易就被男人们躲开了。
+
+现在想想就知道了。
+那时的我完全没有思想准备。
+
+有着用刀伤害别人、夺取生命的觉悟。
+
+\CN["男2"]
+“放心，我不会马上把你杀掉的。”
+
+\CN["男1"]
+“对对对，回让人好好舒服一下的。”
+
+//●ＳＥ：カキン！　刀を受け止める音
+: HideWnd()
+: effecttype = "2"; se = "Se_KatanaHit02"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0017" )
+\CN["无黑"]
+“……呜！！”
+
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+\CN["男1"]
+“嘿嘿，没中吗，但是没关系……”
+
+\CN["男2"]
+“我们有两个人啊！”
+
+//●ＳＥ：ドゴッ！　殴られる音
+: HideWnd()
+: PlaySe( "SE/Se_AnimeXL_Hit01" )
+: PlayAnim( "Animations/AnimeXL_Hit01", false, 0, 0, 3, 3 )
+: Wait()
+: DrawImage( 9, 0, "BGImage/BG_Black", Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+――――――――――――――――――――――――――――
+
+//●演技：腹に蹴りを入れられました
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0018" )
+\CN["无黑"]
+“……呃！！”
+
+从侧面溢出的热情和冰冷的冲动。
+沙哑的呻吟声。
+
+//●演出：斬撃アニメーション
+//●ＳＥ：倒れる音
+//＠立ち絵：冥（着衣）
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: PlaySe("SE/Se_Down01")
+: DrawChara( "Mei", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: AutoFaceThumbnail( false )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0019" )
+\CN["无黑"]
+“喂，姐姐……！”
+
+这时，帮助我和家人的是神八代冥。
+我姐姐是村里最会使用剑术的人。
+
+: DrawChara( "Mei", 18, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0001" )
+\CN["冥"]
+“没关系吗？没有受伤吧？”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0020" )
+\CN["无黑"]
+“嗯……想办法……”
+
+: DrawChara( "Mei", 3, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0002" )
+\CN["冥"]
+“那么，快逃到森林那边去。”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0021" )
+\CN["无黑"]
+“呐，姐姐，我也……”
+
+: DrawChara( "Mei", 0, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0003" )
+\CN["冥"]
+“不用担心……”
+
+姐姐把手放在了我的头上。
+
+: DrawChara( "Mei", 19, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0004" )
+\CN["冥"]
+“只要抓到敌人的头目
+ 他们也一定会撤退的”
+
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo09_mei0005" )
+\CN["冥"]
+“你只要躲在那个小屋的地下室就可以了。
+ 我马上收拾敌人，去接你……”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0022" )
+\CN["无黑"]
+“嗯……姐姐……”
+
+//＠立ち絵：消去
+//●背景：空・昼
+: HideWnd()
+: EraseChara("Mei", 0.25)
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+有姐姐在所以没关系。
+
+我、爸爸、妈妈还有村里的人都疏忽了。
+
+没有人能敌得过姐姐——
+没错，我并没有怀疑。
+
+//●背景：空・夜
+: StopBgm(1.0)
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+但是过了几个小时，谁也没有来小屋。
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0023" )
+\CN["无黑"]
+“姐姐说绝对不要动……”
+
+坐立不安
+离开小屋去看看村子的情况。
+
+//●背景：赤画面
+: PlaySe("SE/Se_Effect00")
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Red", 1.0 )
+: Wait()
+: ShowWnd()
+//●演技：村に戻るとボロボロになった家と無数の死体が積み上がっていた
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0024" )
+\CN["无黑"]
+「…………！」
+
+: PlayBgm("BGM/29_ID02")
+怀疑了眼睛。
+
+我以为是梦。我希望是梦。
+
+堆积在破破烂烂的房子里的无数尸体。
+
+强烈的血的味道让人恶心。
+
+然后——
+
+//●背景：農村・外・夜
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Village01_03", 1.0 )
+: Wait()
+: ShowWnd()
+背部被劈得粉碎的遗体
+所保护那下面的女性的尸体露了出来。
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0025" )
+\CN["无黑"]
+“骗人的……爸爸……妈妈……？”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0026" )
+\CN["无黑"]
+“怎么会……嗯……嗯……
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！”
+
+喊得嘶哑。
+
+跪了下来并仰望天空，就像刚出生的婴儿一样。
+
+//＠立ち絵：あざみ（着衣）
+: StopBgm(0.5)
+: Wait()
+: PlaySe("SE/Se_Foot01")
+: DrawChara( "Azami", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeOutLayer( 3, 0.0)
+: SetLayerRelPos( 3, -50, 0, 0.0, 0)
+: SetLayerRelPos( 3, 50, 0, 0.5, 0)
+: FadeInLayer( 3, 0.5)
+: Wait()
+在哭累了几乎要倒下的时候。
+
+: PlayBgm("BGM/30_CM015")
+一个女人来到了我站着的地方。
+
+//●演技：涙を堪えています
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0027" )
+\CN["无黑"]
+“……你……把大家……？”
+
+视野因泪水而扭曲。
+其中也有拔刀的姿势。
+
+: DrawChara( "Azami", 4, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0017" )
+\CN["爱彩弥"]
+“你是这个村子的人吗？”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0028" )
+\CN["无黑"]
+“好的，回答我！
+你把大家， 把这村子变成这样……”
+
+: DrawChara( "Azami", 1, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0018" )
+\CN["爱彩弥"]
+“也许你不会相信我，但我不是。
+我是来抓袭击这个村子的家伙的那一边的人”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0029" )
+\CN["无黑"]
+“……这样的事你能相信吗？”
+
+: DrawChara( "Azami", 6, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0019" )
+\CN["爱彩弥"]
+“如果你不能相信我，那就没办法了……”
+
+那个女人只是静静地回答。
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0030" )
+\CN["无黑"]
+“……对不起……”
+
+: EraseChara("Azami", 0.5)
+被女人特有的不寻常的气氛所压倒。
+
+然后，和村民们混在一起的陌生人们的
+尸体一定是这个女人所埋葬的吧。
+
+//＠立ち絵：龍（着衣）
+: StopBgm(0.5)
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Village01_03", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+: PlaySe("SE/Se_Foot01")
+: DrawChara( "Ryu", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Ryu"; lay = 3 ; type = "WL";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: AutoFaceThumbnail( true )
+\CN["龙"]
+“局长，已经没有白夜的家伙了。”
+
+: EraseChara("Ryu", 0.25)
+: ResetLayer(3);
+: DrawChara( "Azami", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Azami"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0020" )
+\CN["爱彩弥"]
+“是吗，辛苦了。”
+
+//●読み：白夜（びゃくや）＝組織の名前です
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0031" )
+\CN["无黑"]
+“那个，白夜是……？”
+
+: PlayBgm("BGM/14_CM014")
+: DrawChara( "Azami", 1, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0021" )
+\CN["爱彩弥"]
+“啊，是反幕派组织中最凶恶的组织——
+是引导大和混乱的家伙们”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0032" )
+\CN["无黑"]
+“……那么，你们呢？”
+
+: DrawChara( "Azami", 5, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0022" )
+\CN["爱彩弥"]
+“我们是‘鬼灯’。是幕府直属的治安维持组织——”
+
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0023" )
+\CN["爱彩弥"]
+“说实话，的确是这样……。
+与幕府结仇的人都是敌人”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0033" )
+\CN["无黑"]
+“……也就是说，刚才的……白夜的……？”
+
+: DrawChara( "Azami", 8, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0024" )
+\CN["爱彩弥"]
+“是啊。对他们来说，我们是冤家吧。”
+
+白夜之敌——
+也就是说，跟着这些人走。
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0034" )
+\CN["无黑"]
+“拜托了……让我也……加入你们组织……！”
+
+额头贴在地上，跪在地上恳求。
+
+: DrawChara( "Azami", 4, 0)
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0025" )
+\CN["爱彩弥"]
+“把头抬起来！”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0035" )
+\CN["无黑"]
+「……！」
+
+: AutoFaceThumbnail( true )
+: PlayVoice( "Voices/vo05_aza0026" )
+\CN["爱彩弥"]
+“呐，你叫什么名字？”
+
+: AutoFaceThumbnail( false )
+: PlayVoice( "Voices/vo00_muk0036" )
+\CN["无黑"]
+“无黑……我是神八代无黑……！”
+
+//＠立ち絵：消去
+//●背景：空・夜
+: HideWnd()
+: AutoFaceThumbnail( true )
+: EraseChara("Azami",0.5)
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 0.5 )
+: Wait()
+: ShowWnd()
+那就是我和鬼灯的相遇。
+
+之后，我前往帝都通过了加入鬼灯的入队试验。
+现在作为鬼灯的一员工作着。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+// 一旦画面全体を黒フェードアウト
+// 鬼灯屯所・無黒の部屋をマップ遷移 ＆ SC_A01_02 *sc002 を再生
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Town02_02_Hozuki", "WakeUp", "Scenarios/SC_A01_02*sc002" )
+
+//========================================================
+
+*sc002
+//＠ＡＤＶシーン：終了
+//●場所：鬼灯屯所・無黒の部屋
+//＠システム：オープニングジャンプした場合、ここに飛んでくる。
+//●演出：回想開ける
+//●ＳＥ：ピピピ　目覚ましの音
+: RpgCharaWarp( "Player", "WakeUp" )
+: RpgCharaTurn( "Player", "Down" )
+: DrawImage( 0, 0, "BGImage/BG_White", 0.0 )
+: SetLayerColor( 0, 0, 0, 0 )
+: FadeIn( 1.0 );
+: PlaySe("SE/Se_Mezamashi")
+——嘀嘀嘀。
+
+//●演技：目を覚まします
+: FadeOutLayer( 0, 2.0, 0.0, "BGImage/Rule_00", 0.2, true );
+: Wait()
+: EraseAllImage( 0 )
+: DrawChara( "Mukuro", 1, 0, 3, 0.5, 0.0, 3, "R" )
+: FadeOutLayer( 3, 0.0)
+: SetLayerRelPos( 3, 0, 20, 0.0, 0)
+: SetLayerRelPos( 3, 0, -20, 0.5, 0)
+: FadeInLayer( 3, 0.5)
+: Wait()
+: PlayVoice( "Voices/vo00_muk0037" )
+\CN["无黑"]
+“……嗯……嗯……”
+
+已经是早上了。
+
+被闹钟声吵醒。
+: DrawChara( "Mukuro", 3, 0, 0)
+: PlayVoice( "Voices/vo00_muk0038" )
+\CN["无黑"]
+“啊啊啊~……睡得真好啊~……”
+
+: EraseChara( "Mukuro", 0.25 )
+: Wait()
+//＠ドット：ドットを動かして朝の用意をしている風に。
+//: RpgCharaBatch( "Player",	\	// プレーヤーのバッチ処理 (以下の操作を//順に実行)
+//:	"Speed", 2.0,			\	// 移動速度
+//:	\ // 右側の机の前に移動
+//:	"MoveRight", 3,			\	// 右に３タイル移動
+//:	"MoveUp", 1,			\	// 上に１タイル移動
+//:	"Sleep", 1.5,			\	// 1.5 秒待機
+//:	\ // 机左の書類の山あたりちょっと弄る
+//:	"MoveLeft", 1,			\	// 左に１タイル移動
+//:	"Turn", "Up",			\	// 上を向く
+//:	"Sleep", 0.5,			\	// 0.5 秒待機
+//:	\ // 左上の小机の前に移動
+//:	"MoveLeft", 5,			\	// 左に５タイル移動
+//:	"Turn", "Up",			\	// 上を向く
+//:	"Sleep", 1.5,			\	// 1.5 秒待機
+//:	\ // 元の位置に戻る
+//:	"MoveRight", 3			\	// 右に３タイル移動
+//:	"MoveDown", 1 )				// 下に１タイル移動
+
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"Speed",  4.0,	\
+:	"MoveLeft", 6,	\
+:	"MoveUp", 3,	\
+:	"PlaySe", "SE/Se_Todana01",	\
+:	"Sleep", 1.0,	\
+:	"MoveDown", 3,	\
+:	"MoveRight", 4,	\
+:	"Turn", "D" )
+: Wait()
+: ShowWnd()
+起来后，穿好了衣服。
+
+现在去局长那里问任务。
+
+//最初の所持金設定
+: $money += 300
+: SetMission( "SC_A01_03_1", "Opened" )
+事件信息更新了。
+
+※活动信息等请从菜单画面“活动记录”中获取
+可以取人一下。
+
+※上面写有之后的目的地，
+请一定要活用。
+
+: Return

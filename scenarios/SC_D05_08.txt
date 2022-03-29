@@ -1,0 +1,245 @@
+//========================================================
+//○魔物の残党退治１
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“虽然是击退魔物的工作
+适合擅长魔术的桃子的家伙”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1283" )
+\CN["桃子"]
+“诶~我不会消灭魔物。能详细问一下吗？”
+
+从眼镜店打听详细情况。
+
+\CN["眼镜店"]
+“——受到惩办埃维尔乌姆的影响，留下的乌姆们现在
+也就是说他在胡闹”
+
+前几天，触手系的魔物也非常凶暴危险的埃维尔乌姆
+被消灭后，其他温顺的虫——触手系的魔物
+在那余波中暴走。
+
+口入屋介绍的是消灭虫的残党
+但是……。
+
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：引き受けてみる
+//■選択肢２：もうちょっと考えてみる
+//――――――――――――――――――――――――――――
+\CI["接着试试"]
+\CI["再考虑考虑"]
+怎么办呢？
+
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：引き受けてみるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1284" )
+\CN["桃子"]
+“那份工作，我试试！去哪里好呢？”
+
+\CN["眼镜店"]
+“小静，我去了桃子的‘西都南湿原’那里
+要吗？”
+
+\CN["眼镜店"]
+“那你看地图，桃子，有设备吗？”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1285" )
+\CN["桃子"]
+“我姑且有。”
+
+: DrawChara( "Momo", 5, 0)
+上次帮黑医工作的时候
+是送我礼物的吧。
+
+\CN["眼镜店"]
+“那我把西都南湿原的地图发给你。
+如果能把那里的虫给治退就好了」
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom1286" )
+\CN["桃子"]
+“明白了！那我去消灭一下。”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+事件信息更新了。
+
+//＠マップ解放：西都南湿原（桃）
+//●シーンエンド
+: FastTravelMapOn( "SaitoNishiShitsugen" )
+: DestinationMap( "Map_Dungeon49_01_SaitoNishiShitsugen" )
+: SetMission( "SC_D05_08_1", "InProgress" )
+: Return
+
+*sc001_1
+: DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“如果能把位于西都南湿原的蠕虫击退就好了。
+拜托了，桃子”
+
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：もうちょっと考えてみるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+: DrawChara( "Momo", 4, 0)
+\CN["眼镜店"]
+“这样啊。等，如果愿意的话就跟我说话吧。”
+
+//●シーンエンド
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: Return
+
+//========================================================
+//○魔物の残党退治２
+//========================================================
+*sc002
+\CI["去惩办"]
+\CI["看情况"]
+前面看到的魔物，那就是虫吧……。
+
+: if ($choice == 1)
+: RpgCharaBatch( "Player"	\
+:	"MoveDown", 1 )
+: Wait()
+: Return
+: endif
+//●場所：西都南湿原・奥
+//●演出：桃　数歩歩くと沼地から触手が３体出現する
+: HideWnd()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 6 )
+: Wait()
+: DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1287" )
+\CN["桃子"]
+“嗯。这就是传说中触手系的魔物吧。
+听说数量很多，不能大意啊”
+
+蠢蠢欲动。
+
+要是被那样的人抓住的话，可能会出大事的……。
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom1288" )
+\CN["桃子"]
+「我要用我的魔术一网打尽给你看！
+无论从哪里都要打过来！”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+//●演出：触手　桃に集まっていく
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：レッサーワーム×３
+//■タイプ：ボス戦（逃走可能）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：『魔物の残党退治３』　へ
+//■敗　北：『触手の群れに犯される』　へ
+//――――――――――――――――――――――――――――
+//＠戦闘：レッサーワーム×３,2,0,0,sc003,lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: Jump( "*sc003" )	// 勝利後のラベル
+: elif( BattleSkiplose == true )
+	: Jump( "*lose" )	// 敗北後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_03", "BGM/22_BM003", 1074, 1074, 1074, "Scenarios/SC_D05_08*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: Jump( "*lose" )	//敗北した場合
+: endif
+//========================================================
+//○魔物の残党退治３
+//========================================================
+*sc003
+//●勝利した場合
+//●演出：桃　炎系魔術演出
+//●ＳＥ：断末魔の悲鳴
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: PlaySe( "SE/Se_AnimeL_Fire02" )
+: PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 6, 6 )
+: RpgCharaOff("Enemy01")
+: RpgCharaOff("Enemy02")
+: RpgCharaOff("Enemy03")
+: Wait()
+: ShowWnd()
+――――――――――――――――――――――――
+
+用火焰的魔术将虫们烧尽。
+
+: DrawChara( "Momo", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1289" )
+\CN["桃子"]
+“啊，全部烤好了。”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom1290" )
+\CN["桃子"]
+“嗯，有点烧剩了
+如果把它作为讨伐部位带去的话，那就相当不错了”
+
+回收烧剩的触手的一部分。
+
+然后，向入口店报告，拿到报酬就结束了。
+我想快点洗个澡然后清爽一下。
+
+//●演出：暗転
+: HideWnd()
+: SetMission( "SC_D05_08_1", "Successed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//＠場所移動：西都
+//●シーンエンド
+: if ( MissionProgress( "SC_D05_10_1", "Successed", "Failed" ) == true )
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_12")
+: else
+	: FadeOut( 0.0 )
+	: Wait()
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif
+
+*lose
+//●敗北した場合
+//●シーン：「触手の群れに犯される」へ
+//＠シナリオジャンプSC_D05_09
+: Jump( "Scenarios/SC_D05_09" )

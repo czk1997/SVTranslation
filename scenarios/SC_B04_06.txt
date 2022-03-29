@@ -1,0 +1,854 @@
+//========================================================
+//○崖っぷちの姫椿家１
+//========================================================
+*sc001
+//●プレイヤーキャラ変更：桃
+: Party( "Momo","Gin" )
+: Participate( 0, true, 1, true )
+: PartyType = "Party06"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+//ファストトラベルを桃用に変更
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "YamatoHigashiKaidoC" )
+//●視点：桃視点
+//●場所：鬼灯屯所前・夜
+//●演出：屯所に入ろうとしているところに使いがやってくる
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+潮湿的讨厌的空气缠绕在皮肤上
+这是一个令人恶心的空气流动的夜晚……。
+
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Houzuki_Genkan03", 1.0 )
+: Wait()
+: PlayBgm("BGM/08_CM008_inst")
+: DrawChara( "Momo", 0, 0, 1, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["山茶女家的佣人"]
+“桃大人！！”
+
+刚要进屯所的瞬间
+突然从后面大声叫住了。
+
+: DrawChara( "Momo", 4, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0321" )
+\CN["桃子"]
+“……好像不是平时的样子。”
+
+我不是银瞒着我赶走的家伙。
+
+好好地做了——因为是可以放在外面的使用者
+没错吧。
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0322" )
+\CN["桃子"]
+「我告诉你，我已经离家出走了。
+完全没有回去的打算”
+
+\CN["山茶女家的佣人"]
+“然后，但是……桃大人……！
+桃大人不回来的话，公主椿家就只能毁灭了……”
+
+虽说是刚刚没落，但资产应该还有一定的富余。
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom0323" )
+\CN["桃子"]
+“是爸爸或者妈妈浪费了吗？”
+
+\CN["山茶女家的佣人"]
+“……不对！老爷现在……”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0324" )
+\CN["桃子"]
+“那样子，好像不是一般的事。好吧，我去问问。”
+
+\CN["山茶女家的佣人"]
+“现在，丈夫被怀疑有无事实根据的反幕嫌疑。
+幕府连拼命的辩解都不听……”
+
+听说现在的幕府只要稍有反幕的动向就会被处死。
+
+//●演技：心の声です
+//●読み：大それた（だいそれた）
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom0325" )
+\CN["桃子"]
+（父亲没有胆子这么大。
+这样的话，很有可能是被谁戴上了……？）
+
+山茶女家即使放任不管势力也会衰弱到没落的程度。
+应该哪里都没有特意装父亲的好处吧。
+
+那么，谁会做这样的事……？
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0326" )
+\CN["桃子"]
+“刚才也说过了，我已经离开了椿之家。
+没有我能做的事”
+
+\CN["山茶女家的佣人"]
+“桃大人，请不要这样说！
+拜托了！如果桃大人回到家里和日野大人结婚的话
+老爷的嫌疑应该会消除的！”
+
+\CN["山茶女家的佣人"]
+“现在，如果老爷被处死了的话
+公主椿家相关的很多人都会迷路”
+
+\CN["山茶女家的佣人"]
+“幸运的是，对方没有放弃和桃小姐的婚约！
+拜托了，桃大人！请一定要回家！”
+
+大大人一边哭一边跪在地上，头擦在地上。
+
+//●演技：心の声です
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom0327" )
+\CN["桃子"]
+（真的很任性呢……）
+
+——那是我吗。
+
+放弃自己任性出生在贵族家的人的责任
+想要践踏一直以来为我们付出的人们的生活
+因为在做。
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0328" )
+\CN["桃子"]
+“让我想想。”
+
+\CN["山茶女家的佣人"]
+“桃大人……！呜呜……”
+
+//●演出：桃　退場する
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_03", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Azami", 2, 0, 0, 0.0, 0.0, 4, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0292" )
+\CN["嘲讽"]
+“可以放任不管吗？”
+
+在院子里发呆的时候局长来了。
+
+好像在看刚才的对话。
+
+: DrawChara( "Azami", 2, 0, 0, 0.0, 0.0, 4, "LC" )
+: DrawChara( "Momo", 12, 0, 0, 0.0, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom0329" )
+\CN["桃子"]
+「…………」
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0293" )
+\CN["嘲讽"]
+“嗯，也就是说差不多该不小心了。”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0330" )
+\CN["桃子"]
+“我已经扔掉了……”
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Azami", 0.5 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+是的，我是为了我才把家扔掉的。
+
+因为扔掉了所以山茶女的人不管怎么样都没有关系。
+
+我觉得每一个思考都很奇怪。
+
+……………………………………………………。
+
+//●背景：空・昼
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+——第二天早上。
+
+//●場所：鬼灯屯所前・昼
+//●演出：桃が屯所から出てくると銀が駆けつける
+//イベント用の帝都に一度飛ばしておく
+: HideWnd()
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Event004", "Hozuki", "Scenarios/SC_B04_06*sc001_1")
+
+*sc001_1
+: HideWnd()
+: FadeIn( 1.0 )
+: RpgCharaOn("Gin")
+: Wait()
+: RpgCharaBatch( "Gin"	\
+:	"MoveUp", 4 )
+: Wait()
+: PlayBgm("BGM/05_CM005")
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 4, "RC" )
+: DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 3, "LC" )
+: ShowWnd()
+\CN["银子"]
+“小姐，我陪您去。”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom0331" )
+\CN["桃子"]
+“嗯？我只是去散散步。”
+
+: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+“即使那样我也会陪你的。
+不管是在帝都散步还是去公主椿家看情况……”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0332" )
+\CN["桃子"]
+“小银，为什么？
+难道，昨晚……”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“我的任务是不管到哪里都要跟着小姐。”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0333" )
+\CN["桃子"]
+“是的……小银……”
+
+小银的一句话深深地打动了我的心——
+
+//桃をセンターに
+: beforelay = 4; afterlay = 4; move = -1; time = 0.25;
+: chara = "Momo"; face = 12; hoho = 1; pose = 0; pos = "C";
+: Call( "Scenarios/Common*FgPosChange" )
+: PlaySe( "SE/Se_Cloth01" )
+: DrawChara( "Gin", 0, 0)
+\CN["银子"]
+「？」
+
+: DrawChara( "Momo", 0, 2)
+: PlayVoice( "Voices/vo01_mom0334" )
+\CN["桃子"]
+“……谢谢”
+
+: DrawChara( "Gin", 18, 0)
+\CN["银子"]
+“小姐……？”
+
+//●背景：空・昼
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+不知什么时候脸埋在了小银的心里。
+
+: DrawFaceThumbnail( "Momo", 12, 2, 0 )
+: PlayVoice( "Voices/vo01_mom0335" )
+\CN["桃子"]
+“就这样一点点……”
+
+: DrawFaceThumbnail( "Gin", 7, 0, 0 )
+\CN["银子"]
+「…………」
+
+小银轻轻地抚摸着我的头。
+
+那是小时候，{我，我}憧憬渴望
+随着时间的流逝，连憧憬的事情都忘记了。
+
+: SetMission( "SC_B04_06_1", "InProgress" )
+: DestinationMap( "Map_Town10_01_Senba" )
+事件信息更新了。
+
+//●背景：消去
+//Yoshi：背景消去
+//＠マップ解放：桃、帝都東街道
+//●シーンエンド
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: FastTravelMapOn( "TeitoHigashiKaido" )
+//元のマップに戻す処理
+: LoadMap( "Map_Town01_01_Teito", "Hozuki", "Scenarios/Map_Town01_Teito_Init*Map01")
+
+//========================================================
+//○崖っぷちの姫椿家２
+//========================================================
+*sc002
+//●場所：仙葉・姫椿家前
+: HideWnd()
+: RpgCharaBaloonOff("SC_B04_06")
+//桃を正面に
+: RpgCharaMoveTo("Player", 32, 24)
+: Wait()
+: RpgCharaTurn("Player", "U")
+: RpgCharaOn("Gin")
+: ShowWnd()
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 4, "RC" )
+\CN["山茶女家的佣人"]
+“噢噢！桃先生，您果然回来了啊！”
+
+\CN["山茶女家的佣人"]
+“如果桃大人和日野大人结婚的话，公主椿家就安泰了！
+哎呀，太好了……”
+
+: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 3, "LC" )
+\CN["银子"]
+「…………」
+
+\CN["山茶女家的佣人"]
+“不能这样做！赶紧和丈夫联系！
+啊……正好日野先生来的时候回来
+能得到什么，运气真好”
+
+//●演出：使用人　退場する
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: RpgDoorLock( "Himetsubaki", false )
+: RpgDoorOpen( "Himetsubaki" )
+: Wait()
+: RpgCharaMove( "SC_B04_06", "D", 1 )
+: Wait()
+: RpgCharaOff("SC_B04_06")
+: RpgDoorClose( "Himetsubaki" )
+: Sleep(0.5)
+: DrawChara( "Gin", 6, 0, 0, 0.5, 0.0, 3, "LC" )
+: ShowWnd()
+\CN["银子"]
+“怎么办？”
+
+: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: PlayVoice( "Voices/vo01_mom0336" )
+\CN["桃子"]
+“是啊。好不容易来了
+正如局长说的那样，我已经做好了”
+
+虽然想着已经收拾好了，结果只是把结论推后了。
+
+必须和爸爸妈妈见面解决。
+
+: DrawChara( "Momo", 0, 0)
+: PlayVoice( "Voices/vo01_mom0337" )
+\CN["桃子"]
+“那小银，我走了。”
+
+//●演出：桃が屋敷に入って行って場面転換
+//●場所：姫椿家
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: RpgCharaMove( "Player", "D", 1 )
+: Wait()
+: RpgDoorOpen( "Himetsubaki" )
+: RpgCharaMove( "Player", "D", 1 )
+: Wait()
+: RpgCharaOff("Player")
+: RpgDoorClose( "Himetsubaki" )
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Room02_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/24_FM002")
+: ShowWnd()
+//: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "RC" )
+\CN["桃之父"]
+“终于回来了吗？至今为止你在哪里游手好闲的？”。
+这个贾马姑娘……”
+
+\CN["桃妈妈"]
+“你这样说可不好。
+在日野先生的面前”
+
+\CN["桃之父"]
+“是的，是这样啊。对不起，文麻吕大人。不知不觉。”
+
+: DrawChara( "Fumimaro", 9, 0, 0, 0.0, 0.0, 4, "C" )
+: chara = "Fumimaro"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["文麻吕"]
+“不，我不介意。”
+
+穿着整洁，态度温和。
+给人一种善良的好青年的印象是不会变的。
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Momo", 11, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0338" )
+\CN["桃子"]
+（财阀家，而且年纪轻轻就当上了家长的男人还特地跑来跑去
+与这样的没落贵族为对手，用常识来考虑是不可能的
+但是……）
+
+因为有更强大的贵族或者是同样的财阀家，或者是他们的关系
+亲事应该很多。
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Momo", 4, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0339" )
+\CN["桃子"]
+（即使和我结婚，也完全没有好处。）
+
+//●演技：心の声です
+: DrawFaceThumbnail( "Momo", 4, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0340" )
+\CN["桃子"]
+（不仅如此，父亲还怀疑他有反幕嫌疑
+应该只有坏处…）
+
+那为什么要拘泥于姬椿家呢？
+
+: ResetLayer(4)
+: DrawChara( "Fumimaro", 5, 0, 0, 0.0, 0.0, 4, "C" )
+\CN["文麻吕"]
+“咦？桃子，你身体有什么毛病？”
+
+: DrawChara( "Momo", 12, 0, 0, 0.0, 0.0, 3, "RC" )
+: DrawChara( "Fumimaro", 5, 0, 0, 0.0, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom0341" )
+\CN["桃子"]
+“啊……不，对不起。
+在财阀面前有点紧张……”
+
+\CN["桃之父"]
+“比起这个，日野大人……我是和桃子提亲的。”
+
+: DrawChara( "Fumimaro", 7, 0)
+\CN["文麻吕"]
+“从现在的山茶公主的状况来看，赶紧去鉴定一下比较好吗？”
+”
+
+: DrawChara( "Fumimaro", 13, 0)
+\CN["文麻吕"]
+“如果身边的人赶来的话，一个环节就结束了
+在我插嘴之前会被处死的”
+
+\CN["桃之父"]
+“拜托了！
+请一定要救我们——姬椿家”
+
+\CN["桃之父"]
+“你看，桃子！你也快点把头低下来吧！”
+
+//●演技：頭を押さえ込まれています
+: PlaySe( "SE/Se_Cloth01" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom0342" )
+\CN["桃子"]
+“等一下……嗯！”
+
+被父亲压住了头，被迫低下了头。
+
+: DrawChara( "Fumimaro", 2, 0)
+\CN["文麻吕"]
+“请把头抬起来。”
+
+\CN["桃之父"]
+“那么……！”
+
+: DrawChara( "Fumimaro", 0, 0)
+\CN["文麻吕"]
+“是的。我赶紧回家，明天早上
+我们结婚吧”
+
+\CN["桃之父"]
+“噢噢！太感谢了……这样一来，姬椿家就……呜”
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom0343" )
+\CN["桃子"]
+「哇，我还什么都——」
+
+: DrawChara( "Fumimaro", 6, 0)
+\CN["文麻吕"]
+“桃子先生，我能理解您的心情……。
+如果父亲因为反幕嫌疑被处死的话
+会给你周围的人带来很大的麻烦”
+
+: DrawChara( "Fumimaro", 7, 0)
+\CN["文麻吕"]
+“鬼灯是幕府直属的部队。据说那里的队员和反幕派有关系。”
+如果被将军知道了，所有人都会被处死”
+
+: HideWnd()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Momo", 7, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0344" )
+\CN["桃子"]
+“嗯……那，那是……”
+
+看最近将军的做法，这个人说的是
+没什么夸张的。
+
+如果我就这样拒绝和日野文麻吕结婚的话
+正如所说，所有人都会被处死吧。
+
+或者是为了逃避处刑而与幕府敌对……。
+
+//●演技：心の声です
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0345" )
+\CN["桃子"]
+（不管怎么说，大家都是为了我的家
+不能卷进去……）
+
+: DrawChara( "Fumimaro", 5, 0)
+\CN["文麻吕"]
+“桃先生……？”
+
+\CN["桃之父"]
+“桃子！快点回复吧！
+关系到我的生命和家的存续！”
+
+\CN["桃之父"]
+“要是得罪了日野先生怎么办！”
+
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom0346" )
+\CN["桃子"]
+“哇，我是——”
+
+//●演出：フラッシュバック。鬼灯のメンバー（銀を除く）
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Effect00" )
+: DrawImage( 9, 0, "BGImage/BG_White", 0.1)
+: Wait()
+: DrawImage( 9, 0, "EventCG/evx_a051_1_2_0000000_0000000_0_0", 0.1)
+: Wait()
+: ShowWnd()
+鬼灯的伙伴们的脸浮现在脑海里。
+
+//●演出：フラッシュバック。銀単体
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: DrawImage( 9, 0, "BGImage/BG_White", 0.1)
+: Wait()
+: DrawImage( 9, 0, "EventCG/evy_a001_1_1_0100000_0000000_0_0", 0.1)
+: Wait()
+: Sleep(0.5)
+: PlaySe( "SE/Se_Effect00" )
+: DrawImage( 9, 0, "BGImage/BG_White", 0.1)
+: Wait()
+: DrawImage( 9, 0, "EventCG/evx_a011_1_2_0200000_0000000_0_0", 0.1)
+: Wait()
+: ShowWnd()
+――――――――――――
+
+//●演技：心の声です
+: HideWnd()
+: PlayBgm("BGM/41_Sad")
+: Call("Scenarios/Common*CutinFadeOut")
+: DrawChara( "Fumimaro", 4, 0, 0, 0.5, 0.0, 4, "LC" )
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom0347" )
+\CN["桃子"]
+（小银不管发生什么事，都会在我身边
+告诉我了……）
+
+我也希望小银在我身边。
+
+出了家之后，不，出家门前就开始吃各种各样的苦乐
+一起分享了。
+
+——如果我出嫁的话，那一定不会实现。
+
+//●演技：心の声です
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0348" )
+\CN["桃子"]
+（但是，再任性下去就不行了……）
+
+必须完成作为贵族女儿出生的责任和义务。
+
+虽然知道总有一天这样的日子会到来
+但是，这么快，这么突然就来了……。
+
+//●演出：場面転換トランジション
+//●演出：桃　屋敷から出てくる
+: HideWnd()
+: FadeOut( 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Fumimaro", 0.0 )
+: ResetLayer(1)
+: FadeIn( 1.0 )
+: RpgCharaOn("Player")
+: RpgCharaWarp( "Player", "SC_B04_06" )
+: Wait()
+: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Gin", 6, 0, 0, 0.5, 0.0, 4, "LC" )
+: ShowWnd()
+\CN["银子"]
+“小姐，你说得怎么样？”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0349" )
+\CN["桃子"]
+“嗯……怎么说呢，我要结婚了……”
+
+: DrawChara( "Gin", 7, 0)
+\CN["银子"]
+“是吗……”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0350" )
+\CN["桃子"]
+“小银不讨厌吗？
+如果结婚了，我就不会再像以前那样了」
+
+: DrawChara( "Gin", 22, 0)
+\CN["银子"]
+「…………」
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom0351" )
+\CN["桃子"]
+“小银？”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“结婚对象是日野家的户主吧？
+女儿的未婚妻”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0352" )
+\CN["桃子"]
+“嗯，是啊。嘛，好像还没有废除婚约。”
+
+: DrawChara( "Gin", 7, 0)
+\CN["银子"]
+“是吗……。
+正因为如此，对小姐才是认真的吧？”
+
+: DrawChara( "Gin", 6, 0)
+\CN["银子"]
+“我不太清楚贵族的世界
+财阀的户主，比大小姐的家还要高得多，这才是真正的
+财阀家有亲事也不奇怪吧？”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0353" )
+\CN["桃子"]
+“在那里呢。把家做大是作为贵族出生的人的
+虽然是责任……”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom0354" )
+\CN["桃子"]
+“即使和像我们这样濒临没落的家庭结了婚
+应该没有什么好处吧”
+
+而且现在是家长被怀疑有反幕嫌疑的状态
+即使我们是财阀家也应该避开。
+
+: DrawChara( "Gin", 0, 0)
+\CN["银子"]
+“你不是说你是认真对待小姐吗？”
+
+: DrawChara( "Gin", 1, 0)
+\CN["银子"]
+“日野家的家长，我在派对上也见过好几次
+看起来很温柔的人，而且财阀家，一定是个大小姐
+我想会让你幸福的”
+
+银酱说了“再见”。
+
+从者对贵族的女儿说的话是正确的。
+小银没有说什么错误的话。
+
+但是——
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom0355" )
+\CN["桃子"]
+“小银那样就可以了吗！？”
+
+: DrawChara( "Gin", 22, 0)
+\CN["银子"]
+“……我说的话怎么样都无所谓。”
+
+//●演技：怒り気味です
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Momo", 8, 2)
+: PlayVoice( "Voices/vo01_mom0356" )
+\CN["桃子"]
+“好的，回答我！”
+
+我为什么这么烦躁呢？
+
+为什么对小银这么发脾气呢。
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“是啊……”
+
+小银大喘气，背对着我——
+
+: DrawChara( "Gin", 22, 0)
+\CN["银子"]
+“为了女儿，结婚不是更好吗？”
+
+: DrawChara( "Momo", 7, 2)
+: PlayVoice( "Voices/vo01_mom0357" )
+\CN["桃子"]
+“为什么？为了我，为什么？”
+小银是这么想的吗？”
+
+: DrawChara( "Gin", 22, 0)
+\CN["银子"]
+“……这样下去的话，小姐总有一天会受重伤的。
+白夜也出现了很多干部”
+
+: DrawChara( "Momo", 8, 2)
+: PlayVoice( "Voices/vo01_mom0358" )
+\CN["桃子"]
+“我知道那种事！
+自从老师教我魔术后，我就下定了决心”
+
+: DrawChara( "Gin", 22, 0)
+\CN["银子"]
+“适可而止，请注意……”
+
+: DrawChara( "Gin", 22, 0)
+\CN["银子"]
+“今后，一边守护女儿一边生存下去
+不行啊”
+
+: DrawChara( "Momo", 8, 2)
+: PlayVoice( "Voices/vo01_mom0359" )
+\CN["桃子"]
+「哈？护身符？那我就好像是累赘一样
+好像变成这样了！”
+
+小银，你是这么想的吗？
+不由得大声喊叫。
+
+于是，小银慢慢地转向这边——
+
+: DrawChara( "Gin", 21, 0)
+\CN["银子"]
+“啊~……所以才这样。
+有你在就是那个。就是说很难做啊」
+
+一边挠着鼻子的头，一边非常麻烦地说。
+
+关于那句话，我很恼火。
+
+: DrawChara( "Momo", 7, 2)
+: PlayVoice( "Voices/vo01_mom0360" )
+\CN["桃子"]
+“等一下——什么，这种说法！？”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“我说得对，不要让我说几次。”
+
+: DrawChara( "Momo", 8, 2)
+: PlayVoice( "Voices/vo01_mom0361" )
+\CN["桃子"]
+“啊？那是什么？小银，请认真回答！”
+
+: DrawChara( "Gin", 13, 1)
+\CN["银子"]
+“所以说，照顾你已经很麻烦了！
+一个一个地，好厉害啊！”
+
+因为小银会大声怒吼，所以我——
+
+//●演技：泣いています
+: DrawChara( "Momo", 12, 2)
+: PlayVoice( "Voices/vo01_mom0362" )
+\CN["桃子"]
+「…………」
+
+//●演出：桃　ダッシュで家の中へ
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: Wait()
+: RpgCharaMove( "Player", "D", 1, 4.0 )
+: Wait()
+: RpgDoorOpen( "Himetsubaki" )
+: RpgCharaMove( "Player", "D", 1, 4.0 )
+: Wait()
+: RpgCharaOff("Player")
+: RpgDoorClose( "Himetsubaki" )
+: Wait()
+: RpgCharaMove( "Gin", "U", 2 )
+: Wait()
+: RpgCharaTurn( "Gin", "U" )
+: DrawChara( "Gin", 22, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+\CN["银子"]
+“……应该是为了女儿才这样的……”
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“如果是那个男人的话——日野文麻吕站在女儿的旁边。
+立场、权威、财力，什么都没有……”
+
+\CN["银子"]
+“性格温和，一定要珍惜女儿
+一定会帮我做的……”
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“小姐，祝你幸福……”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「私はわたし――姫椿家と決別１」へ
+//＠シナリオジャンプ：SC_B04_07
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Town10_04_Hino", "SC_B04_07", "Scenarios/SC_B04_07")

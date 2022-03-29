@@ -1,0 +1,998 @@
+//========================================================
+//○強者共が夢の跡
+//========================================================
+//生存キャラ　服装設定しておく
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: CharaCostume( "Leo", 1 )
+: CharaCostume( "Mei", 0 )
+: CharaCostume( "Ranmaru", 0 )
+: CharaCostume( "Xeno", 0 )
+: CharaCostume( "Elisa", 0 )
+: CharaCostume( "Falke", 3 )
+: CharaCostume( "Sayo", 0 )
+//●視点：無黒視点
+//●背景：空
+: HideWnd()
+: FadeIn( 1.0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: Wait()
+: ShowWnd()
+——和破坏神阿修罗的比拉加战斗几天后。
+
+//●背景：帝都・街並み・昼
+: HideWnd()
+: PlayBgm("BGM/26_FM004")
+: SwapImage( 1, 0, "BGImage/BG_Teito01_01", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["城里人1"]
+“啊，听说了吗？”
+
+\CN["城里人2"]
+“是说将军猝死了吧？”
+
+幕府公布了将军一桥忠胜的死。
+
+当然，我并没有把所有的事情都如实地传达出来。
+
+\CN["城里人3"]
+“死因好像是心力衰竭。
+即使那样也很突然啊」
+
+\CN["城里人4"]
+“今后幕府会怎么样呢？”
+
+\CN["城里人5"]
+“啊？只能这样了吧。”
+
+一桥幕府世世代代由一桥家的男子担任将军一职。
+
+一桥忠胜的孩子只有一个女儿的小夜。
+
+即使只是形式上的女人小夜担任将军的职务
+认为不可能的幕臣们和，血脉重要，小夜只是形式的
+认为应该就任将军的幕臣之间意见有分歧。
+
+因为将军还没定下来，所以大和还是战战兢兢的。
+
+\CN["地滚石1"]
+“嘿嘿，我，快把钱拿出来！”
+
+\CN["地滚石2"]
+“我们有点缺钱。”
+
+\CN["男1"]
+“嗯……是，是谁……”
+
+: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: lay = 2; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo01_mom1036" )
+\CN["桃子"]
+“好的，那就停止暴力吧。”
+
+: DrawChara( "Gin", 0, 0)
+\CN["银子"]
+「…………」
+
+\CN["地滚石1"]
+“什么啊，你这家伙？”
+
+\CN["地滚石2"]
+「……喂，喂……住手！
+那是风神的银和那个女人的残暴无道的魔术师桃吧？”
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Momo", 7, 0, 0)
+: PlayVoice( "Voices/vo01_mom1037" )
+\CN["桃子"]
+“喂，谁是残暴无道的魔术师啊！？
+真是失礼了吧？”
+
+\CN["地滚石1"]
+“希奇！啊，那个冷酷无情的……！？”
+
+\CN["地滚石2"]
+“哇啊啊啊啊啊啊啊啊！”
+
+: PlaySe( "SE/Se_dash01" )
+地滚石们改变了脸色慌慌张张地逃走了。
+
+//: EraseChara( "Momo", 0.5 )
+: DrawChara( "Gin", 5, 0, 0)
+\CN["银子"]
+“好久没有像这样刻板的人了。
+怎么办？”
+
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Momo", 4, 0, 0)
+: PlayVoice( "Voices/vo01_mom1038" )
+\CN["桃子"]
+“肯定不会放过你的。
+因为他对我说了很多想说的话”
+
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Gin", 0.5 )
+: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: chara = "Momo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo01_mom1039" )
+\CN["桃子"]
+“小银，命令啊——
+把那两个人抓住吧」
+
+//: EraseChara( "Momo", 0.5 )
+//: DrawChara( "Gin", 4, 0, 0, 0.5, 0.0, 2, "C" )
+: fadein_cha = "Gin"; fadeout_cha = "Momo"; face = 4; hoho = 0; pose = 0;
+: Call( "Scenarios/Common*FgFocus" )
+\CN["银子"]
+“我明白了。”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Gin"; lay = 3; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+将军死后，在希拉加的手上，巡查组灭亡后
+半格雷集团盘踞在帝都。
+
+但是，以淤青的葬礼为契机一次变成了玫瑰
+鬼灯队士们再次集结。
+
+然后成为了名为“武士文化”的组织
+自主地致力于城市的治安维持。
+
+多亏了这个，混乱的秩序一点点恢复了。
+
+//: EraseChara( "Gin", 0.5 )
+//●背景：白夜のアジト・昼
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_WaRoom02_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: ShowWnd()
+另一方面，失去了头脑中的达磨，干部九星也只有冥和兰丸
+变成这样的白夜就这样自然消失了——不如说
+组织以自然分解的形式消灭了。
+
+原本是暴徒聚集的集团。
+
+大半是半格雷的组织，成为黑道
+不属于任何一个地方，而是靠从入口店获取日工的工作来生活
+这样的状态。其中也有人跟着原鬼灯队士……。
+
+//●背景：民家・昼
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: DrawChara( "Ranmaru", 1, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["兰丸"]
+“……嗯……笔怎么也写不下去啊……嗯……”
+
+: DrawChara( "Ranmaru", 0, 0)
+\CN["兰丸"]
+“去稍微转换一下心情吧。”
+
+原白夜九星二黑的兰丸放下刀拿着笔。
+
+以谷崎润一郎的名字再次开始执笔活动。
+
+: EraseChara( "Ranmaru", 0.5 )
+: DrawChara( "Mei", 21, 0, 0, 0.5, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo09_mei0179" )
+\CN["冥"]
+“兰丸，你要去哪里？”
+
+: EraseChara( "Mei", 0.5 )
+: DrawChara( "Ranmaru", 4, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["兰丸"]
+“呜……小冥？不是去镇上巡视了吗……？”
+
+神八代冥的右眼完全崩溃，无法施舍。
+
+但是，左眼是雷欧的母亲妮娜的魔术治疗
+总算治好了。
+
+伤口漂亮到可以用化妆来掩饰的程度
+用现在的技术是不可能让右眼恢复原样的。
+
+然后，现在妹妹无黑置身于“武士文化”之中
+和兰丸一起所属，致力于维持帝都的治安。
+
+: EraseChara( "Ranmaru", 0.5 )
+: DrawChara( "Mei", 22, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Ranmaru", 4, 0, 0, 0.5, 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo09_mei0180" )
+\CN["冥"]
+“我环视了一下，发现是你出的书的编辑和
+偶然遇见啊」
+
+: DrawChara( "Mei", 35, 0)
+: PlayVoice( "Voices/vo09_mei0181" )
+\CN["冥"]
+“我希望你监视我，不要出去散步
+是我拜托你的”
+
+: DrawChara( "Mei", 26, 0)
+: PlayVoice( "Voices/vo09_mei0182" )
+\CN["冥"]
+“听说今天是截止日期。”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“……不，我觉得再过两三天应该没问题。”
+
+: EraseChara( "Mei", 0.5 )
+: DrawChara( "Mei", 22, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo09_mei0183" )
+\CN["冥"]
+“兰丸，你约好今天完成吧？
+既然约好了，就必须遵守不是吗？”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“嗯，嗯……是啊。如果不遵守约定的话……。
+如果冥酱亲了我，我就可以努力了”
+
+兰丸是以废柴为借口说的……。
+
+: DrawChara( "Mei", 33, 1)
+: PlayVoice( "Voices/vo09_mei0184" )
+\CN["冥"]
+“……真的吻了的话，能加油吗？”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“嘿嘿……？”
+
+//●演技：キスですが、唇を当てにいくだけの感じです
+//: EraseChara( "Mei", 0.5 )
+//: DrawChara( "Mei", 4, 2, 0, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b004_0_6_0101001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Ranmaru", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0185" )
+\CN["冥"]
+“嗯……”
+
+//●ＳＥ：カチン　歯が当たる音
+//: EraseChara( "Mei", 0.5 )
+//: DrawChara( "Ranmaru", 1, 1, 0, 0.5, 0.0, 2, "C" )
+\CN["兰丸"]
+“……！”
+
+没有接吻经验的冥。
+太猛了，牙齿都磕了。
+
+: HideWnd()
+//: EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: Call("Scenarios/Common*EvFadeOut")
+//: EraseChara( "Ranmaru", 0.5 )
+: DrawChara( "Mei", 27, 1, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo09_mei0186" )
+: ShowWnd()
+\CN["冥"]
+“对不起，对不起……！没和你接吻过……”……
+没关系吗？”
+
+: DrawChara( "Mei", 27, 1, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Ranmaru", 2, 1, 0, 0.5, 0.0, 2, "LC" )
+\CN["兰丸"]
+“冥酱……”
+
+//●演技：キスです。唇と唇を当てるだけのもの
+//: DrawChara( "Mei", 10, 2)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eve_b004_0_6_0101001_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Mei", 0.0 )
+: EraseChara( "Ranmaru", 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0187" )
+\CN["冥"]
+“嗯……嗯……嗯……嗯……”
+
+兰丸温柔地吻着慌慌张张的冥。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Mei", 32, 2, 0, 0.5, 0.0, 3, "C")
+: ShowWnd()
+: PlayVoice( "Voices/vo09_mei0188" )
+\CN["冥"]
+“喂，你还不习惯接吻吗？”
+
+: DrawChara( "Mei", 32, 2, 0, 0.5, 0.0, 3, "RC")
+: DrawChara( "Ranmaru", 16, 1, 0, 0.5, 0.0, 4, "LC")
+\CN["兰丸"]
+“没那回事。
+因为和最喜欢的女孩子接吻，所以在心脏病发作时
+好像要跳出来了”
+
+: DrawChara( "Ranmaru", 17, 0, 0)
+\CN["兰丸"]
+“但是，这样的话会非常努力的！”
+
+: EraseChara( "Ranmaru", 0.5 )
+: EraseChara( "Mei", 0.5 )
+然后，兰丸再次用笔写在桌子上。
+
+//●演出：場面転換トランジション
+//●視点：無黒視点
+//●背景：港・昼
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/Bg_Harbor01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/36_ID03")
+: ShowWnd()
+然后，又过了几天
+来到大和的维克托尔骑士团回国的日子到了。
+
+: DrawChara( "Elisa", 6, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo19_era0176" )
+\CN["伊拉伊萨"]
+“虽然很可惜，但是今天大和的生活也结束了啊。”
+
+: EraseChara( "Elisa", 0.5 )
+: DrawChara( "Mukuro", 4, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Elisa", 6, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2245" )
+\CN["无黑色"]
+“伊拉伊萨先生，请随时再来。”
+
+: DrawChara( "Elisa", 0, 0)
+: PlayVoice( "Voices/vo19_era0177" )
+\CN["伊拉伊萨"]
+“喂！大和的饭很好吃啊。”
+
+: EraseChara( "Elisa", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Leo", 24, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["雷欧"]
+“谢谢你，费尔克先生！”
+
+激战后“我必须成为世界最强的人”
+说了这样的话的Leo，伤口治愈了的话对falker先生说
+我接受了特训。
+
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Falke", 12, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["沥青"]
+“我也非常开心，Leo。
+下次我会带着妻子和女儿来玩的”
+
+: EraseChara( "Falke", 0.5 )
+: DrawChara( "Leo", 11, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["雷欧"]
+“绝对是的！那个时候我也说不定。
+我已经每天都很努力了”
+
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Momo", 3, 2, 0, 0.5, 0.0, 3, "RC" )
+: Wait()
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1040" )
+\CN["桃子"]
+“诶？无黑，是吗……？每晚都这样啊……”
+
+: DrawChara( "Gin", 16, 1, 0, 0.5, 0.0, 2, "LC" )
+\CN["银子"]
+「…………」
+
+: HideWnd()
+: EraseChara( "Gin", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: DrawChara( "Mukuro", 20, 3, 3, 0.5, 0.0, 3, "C" )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2246" )
+\CN["无黑色"]
+“レ、レオ……！不要在别人面前说这种话
+你总是在说吧！这个笨蛋！”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sea01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/03_CM003")
+: ShowWnd()
+另一方面，黄菜子和zeno在离我们很远的地方
+互相依恋着离别。
+
+: DrawChara( "Xeno", 0, 0, 0, 0.5, 0.0, 2, "C" )
+\CN["奇诺"]
+「…………」
+
+黄菜子和zeno明明都喜欢
+感觉像这样，没有迈出一步。
+
+: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Kinako", 4, 1, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0539" )
+\CN["黄菜子"]
+“zeno君……那个…那个，我……”
+
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Xeno", 2, 1, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Kinako", 4, 1, 0, 0.5, 0.0, 3, "RC" )
+\CN["奇诺"]
+“黄菜子，我……”
+
+//●演技：ゼノに抱きしめられてビックリ
+: HideWnd()
+: EraseChara( "Xeno", 0.5 )
+: Wait()
+: PlaySe( "SE/Se_Cloth01" )
+: DrawChara( "Kinako", 7, 2, 0, 0.5, 0.0, 3, "C" )
+: chara = "Kinako"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0540" )
+\CN["黄菜子"]
+「……！！」
+
+: HideWnd()
+: EraseChara( "Kinako", 0.5 )
+//: EraseChara( "Xeno", 0.5 )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Xeno", 2, 1, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Kinako", 7, 2, 0, 0.5, 0.0, 3, "RC" )
+//: DrawChara( "Elisa", 0, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: DrawFaceThumbnail( "Elisa", 0, 0, 0 )
+: PlayVoice( "Voices/vo19_era0178" )
+\CN["伊拉伊萨"]
+“休♪泽诺那家伙，不是很能干嘛。”
+
+//: DrawChara( "Falke", 8, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawFaceThumbnail( "Falke", 8, 0, 0 )
+\CN["沥青"]
+“经常说的话很让人讨厌……。
+来这里之前明明一直在煽动……”
+
+//: EraseChara( "Falke", 0.5 )
+//: EraseChara( "Elisa", 0.5 )
+//: DrawChara( "Momo", 5, 1, 0, 0.5, 0.0, 3, "RC" )
+: DrawFaceThumbnail( "Momo", 5, 1, 0 )
+: PlayVoice( "Voices/vo01_mom1041" )
+\CN["桃子"]
+“黄菜子，太好了……。
+看，既然到了这里，就快点下一个吧！”
+
+//: DrawChara( "Gin", 4, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawFaceThumbnail( "Gin", 4, 0, 0 )
+\CN["银子"]
+“小姐，这样安静地参观是礼仪。”
+
+//: EraseChara( "Gin", 0.5 )
+//: EraseChara( "Momo", 0.5 )
+//: DrawChara( "Leo", 14, 0, 0 0.5, 0.0, 2, "LC" )
+: DrawFaceThumbnail( "Leo", 14, 0, 0 )
+\CN["雷欧"]
+“在那里！”
+
+//: DrawChara( "Mukuro", 37, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawFaceThumbnail( "Mukuro", 37, 0, 0 )
+: PlayVoice( "Voices/vo00_muk2247" )
+\CN["无黑色"]
+“真是的，你们……不放着不管吗？”
+
+互相喜欢的人必须要远离
+一想，虽然是没有办法的事情，但还是有种说不出的心情。
+
+特别是黄菜子，多年的搭档，一直在一起的红美去世了。
+
+虽然本人表现得很刚强
+我觉得奇诺的支持很大。
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+: DrawChara( "Kinako", 3, 0, 0)
+: PlayVoice( "Voices/vo02_kin0541" )
+\CN["黄菜子"]
+“zeno君……果然，离别很寂寞……”
+
+: DrawChara( "Xeno", 9, 0, 0)
+\CN["奇诺"]
+“当然，我也是。我不想和黄菜子分开。”
+
+: DrawChara( "Kinako", 0, 0)
+: PlayVoice( "Voices/vo02_kin0542" )
+\CN["黄菜子"]
+「…………」
+
+//: EraseChara( "Xeno", 0.5 )
+//: EraseChara( "Kinako", 0.5 )
+//: DrawChara( "Leo", 5, 0, 0, 0.5, 0.0, 2, "LC" )
+: DrawFaceThumbnail( "Leo", 5, 0, 0 )
+\CN["雷欧"]
+“呃，我觉得说出来就好了。”
+
+//: DrawChara( "Momo", 6, 0, 0, 0.5, 0.0, 3, "RC" )
+: DrawFaceThumbnail( "Momo", 6, 0, 0 )
+: PlayVoice( "Voices/vo01_mom1042" )
+\CN["桃子"]
+“是啊。我觉得这样的气势很重要。
+热情地去做就好了！”
+
+//: EraseChara( "Momo", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//: DrawChara( "Elisa", 3, 0, 0, 0.5, 0.0, 3, "C" )
+: DrawFaceThumbnail( "Elisa", 3, 0, 0 )
+: PlayVoice( "Voices/vo19_era0179" )
+\CN["伊拉伊萨"]
+“我也是这么想的。
+Zno，太慎重了吧”
+
+//: DrawChara( "Elisa", 1, 0)
+: DrawFaceThumbnail( "Elisa", 1, 0, 0 )
+: PlayVoice( "Voices/vo19_era0180" )
+\CN["伊拉伊萨"]
+“参谋的男人都是那样吗？”
+
+//: EraseChara( "Elisa", 0.5 )
+//●演出：場面転換トランジション
+//●視点：黄菜子視点
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Xeno", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Kinako", 4, 1, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo02_kin0543" )
+\CN["黄菜子"]
+“……啊，那个，zeno君，我……我……”
+
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Xeno", 1, 1, 0, 0.5, 0.0, 2, "C" )
+\CN["奇诺"]
+“我……是指黄菜子……”
+
+: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Kinako", 4, 1, 0, 0.5, 0.0, 3, "RC" )
+: DrawChara( "Xeno", 3, 1, 0, 0.5, 0.0, 2, "LC" )
+\CN["奇诺"]
+「…………」
+
+: EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_Cloth01" )
+泽诺君会紧紧抱住我。
+
+: DrawChara( "Kinako", 0, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo02_kin0544" )
+\CN["黄菜子"]
+“zeno……君……”
+
+头变得雪白了。
+
+今天泽诺君就回维克托尔了。
+明明想好好地传达我的想法——
+
+//●演技：心の声です
+: DrawChara( "Kinako", 3, 2)
+: PlayVoice( "Voices/vo02_kin0545" )
+\CN["黄菜子"]
+（说不出话来……明明有很多想说的话……）
+
+语言在脑子里咕噜地飞舞。
+
+我一直想告诉你，为什么什么也说不出来
+是吧？
+
+: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Xeno", 5, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["奇诺"]
+“黄菜子……我，是你……”
+
+紧紧抱住我的力量会变强。
+
+——然后，Zno君慢慢地张开嘴。
+
+: DrawChara( "Xeno", 6, 2, 0 )
+\CN["奇诺"]
+“我喜欢。”
+
+//●演技：告白されて目を大きく見開く感じです
+: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Kinako", 7, 3, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0546" )
+\CN["黄菜子"]
+「！！」
+
+一直希望我说的话
+这是一句梦想着能被治之君说的话。
+
+所以，心中充满了泪水。
+
+脸颊上流着热泪。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 6, 3)
+: PlayVoice( "Voices/vo02_kin0547" )
+\CN["黄菜子"]
+（不早点回复的话……！）
+
+我的心情早已决定了。
+你只要说出来就好了。
+
+//●演技：心の声です
+: DrawChara( "Kinako", 3, 3)
+: PlayVoice( "Voices/vo02_kin0548" )
+\CN["黄菜子"]
+（为什么？这么简单的事情……）
+
+只要说“我也喜欢”就可以了。
+那是我最想传达的话。
+
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Xeno", 4, 2, 0, 0.5, 0.0, 2, "C" )
+\CN["奇诺"]
+「……」
+
+所以，请把我的心情托付给我——
+
+//●演技：キスです
+: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Kinako", 8, 3, 0, 0.5, 0.0, 3, "C" )
+: chara = "Kinako"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo02_kin0549" )
+\CN["黄菜子"]
+“恩……！”
+
+我亲了泽诺君。
+
+//: DrawChara( "Xeno", 11, 3, 0, 0.5, 0.0, 2, "LC" )
+: fadein_cha = "Xeno"; fadeout_cha = "Kinako"; face = 11; hoho = 3; pose = 0;
+: Call( "Scenarios/Common*FgFocus" )
+\CN["奇诺"]
+「！！？」
+
+//: EraseChara( "Xeno", 0.5 )
+//: EraseChara( "Kinako", 0.5 )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: ResetLayer(3)
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Momo", 2, 2, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1043" )
+\CN["桃子"]
+“哇！黄菜子，真大胆……”
+
+: DrawChara( "Elisa", 4, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo19_era0181" )
+\CN["伊拉伊萨"]
+“黄菜子，你不是在干吗？我说，因为你是胆小鬼。
+那个地方和那个眼镜一样啊」
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Elisa", 0.0 )
+: EraseChara( "Momo", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Xeno", 3, 3, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+\CN["奇诺"]
+「…………」
+
+//●演技：キスしています
+: EraseChara( "Xeno", 0.5 )
+: DrawChara( "Kinako", 8, 3, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo02_kin0550" )
+\CN["黄菜子"]
+「…………」
+
+心的跳动变快了，热得全身都快溶化了。
+
+只要Zno君将我的身体紧紧地吸引过来，紧紧地拥抱我
+感觉就像时间停止了一样。
+
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Xeno", 2, 1, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Kinako", 8, 3, 0, 0.5, 0.0, 3, "RC" )
+\CN["奇诺"]
+“黄菜子……”
+
+: DrawChara( "Kinako", 1, 1, 1 )
+: PlayVoice( "Voices/vo02_kin0551" )
+\CN["黄菜子"]
+“zeno君，我也是……。
+我也很喜欢zeno君”
+
+终于能够表达自己真正的心情了。
+
+: EraseChara( "Kinako", 0.0 )
+: EraseChara( "Xeno", 0.0 )
+……………………………………………………。
+
+//●演出：場面転換トランジション
+//●視点：無黒視点
+//●状況：デートしています
+//●背景：帝都・街並み・昼
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_01", 1.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/39_CM018")
+: DrawChara( "Leo", 13, 0, 0, 0.5, 0.0, 2, "C" )
+: ShowWnd()
+\CN["雷欧"]
+“好久没约会了。”
+
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Mukuro", 8, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk2248" )
+\CN["无黑色"]
+“啊，是啊……”
+
+激战之后，身体好了之后是什么呢
+一直努力工作的我们。
+
+//●演出：過去に入る
+: HideWnd()
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: cutinfile = "Refrain"
+: Call("Scenarios/Common*CutinFadeIn")
+: EraseChara( "Mukuro", 0.0 )
+: SwapImage( 1, 1, "BGImage/BG_HozukiDoujyo01", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1044" )
+\CN["桃子"]
+“无黑，偶尔不休息是不行的！”
+
+: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk2249" )
+\CN["无黑色"]
+“不，但是现在太懒了，不是休息的时候吗？”
+
+//: EraseChara( "Momo", 0.5 )
+: DrawChara( "Momo", 0, 0, 1)
+: PlayVoice( "Voices/vo01_mom1045" )
+\CN["桃子"]
+“没关系！你不休息别人就不能休息。
+所以，你去和雷欧约会吧！”
+
+//●演出：過去から戻る
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: ResetLayer(9)
+: EraseImage( 1, 1, 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+因此，被强迫休息的我们
+久违地在帝都镇约会了。
+
+\CN["地滚石3"]
+“啊……”
+
+\CN["地滚石4"]
+「…………」
+
+日夜为了维持治安而持续活动
+长得非常漂亮的人一看到我们
+我避开了。
+
+: DrawChara( "Leo", 6, 0, 0, 0.5, 0.0, 2, "LC" )
+\CN["雷欧"]
+“明明不用那么害怕……”
+
+: DrawChara( "Mukuro", 3, 0, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2250" )
+\CN["无黑色"]
+“不要变成无用的争斗不是挺好的吗……”
+
+: DrawChara( "Leo", 16, 0)
+\CN["雷欧"]
+“是啊。
+我不想被别人打扰难得的恋爱约会”
+
+//: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Mukuro", 6, 1, 3)
+: PlayVoice( "Voices/vo00_muk2251" )
+\CN["无黑色"]
+“所谓的甜蜜约会，你又会这样……”
+
+和雷奥手牵着手在街上游行。
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+: DrawChara( "Mukuro", 35, 0, 0)
+: PlayVoice( "Voices/vo00_muk2252" )
+\CN["无黑色"]
+“完全恢复原状好像很难啊……”
+
+虽说治安恢复了
+并不是完全和以前的帝都一样。
+
+: DrawChara( "Mukuro", 21, 0)
+: PlayVoice( "Voices/vo00_muk2253" )
+\CN["无黑色"]
+“要像{以前}那样
+要花多少时间呢？”
+
+//: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Leo", 1, 0, 0)
+\CN["雷欧"]
+“嗯，是啊。不过，总会有办法的。”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“因为啊，这里有我们在啊？
+一定会比之前的帝都更好”
+
+//: EraseChara( "Leo", 0.5 )
+: DrawChara( "Mukuro", 37, 0, 0)
+: DrawChara( "Leo", 0, 0, 0)
+: PlayVoice( "Voices/vo00_muk2254" )
+\CN["无黑色"]
+“真是非常自信啊。但是，很像你。”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk2255" )
+\CN["无黑色"]
+“果然，我就是这样的你……”
+
+: DrawChara( "Leo", 3, 0)
+\CN["雷欧"]
+“怎么了？莫非，你重新爱上他了？”
+
+像往常一样，雷欧这么说道。
+
+: DrawChara( "Mukuro", 4, 2)
+: PlayVoice( "Voices/vo00_muk2256" )
+\CN["无黑色"]
+“是啊。啊，我重新迷上你了。”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“……诶？”
+
+//●演技：ほっぺにキス
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Mukuro", 28, 2, 0, 0.5, 0.0, 3, "C" )
+: Wait()
+: evbg = false; evcos = false;
+: evfile = "eva_a010_1_1_0000000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk2257" )
+\CN["无黑色"]
+“……嗯”
+
+伸开腿，我轻轻地吻了一下雷欧的脸颊。
+
+不能总是在约会的时候被雷欧弄到
+不去。
+
+偶尔从我来说也不错吧。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+//: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Leo", 15, 1, 0, 0.5, 0.0, 2, "C" )
+: ShowWnd()
+\CN["雷欧"]
+“……无黑”
+
+: DrawChara( "Leo", 15, 1, 0, 0.5, 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 4, 1, 3, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk2258" )
+\CN["无黑色"]
+“你看，我走了，雷欧。
+今天不是工作而是约会吧？”
+
+: DrawChara( "Leo", 0, 0, 0)
+\CN["雷欧"]
+“喂！让我们过个甜蜜的一天吧。”
+
+然后，两个人牵着手走去。
+
+今后也一定会有很多痛苦和悲伤的事情吧。
+
+但是，和雷欧在一起的话，桃、黄菜子、银、还有姐姐们。
+和无可替代的伙伴们在一起的话一定没问题。
+
+嘲讽局长和龙先生，很多人牺牲生命来保护他们
+在大和——
+
+我们武士今后也会一直和重要的人们在一起
+一起活下去。
+
+//●分岐：処女の場合
+//●エンディング：「小さな芽」へ
+//＠シナリオジャンプ：SC_B07_02
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●エンディング：「大切な人と共に歩み続ける未来」へ
+//＠シナリオジャンプ：SC_B07_01
+//●分岐終了
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+\CI["看"]
+\CI["跳过"]
+看片尾曲吗？
+: if ( $choice == 0 )
+	: HideWnd()
+	: PlayAnim( "Animations/Ending", false, 0, 0, 1, 1 )
+	: Wait()
+: endif
+: if ( Flag ( "NonVirgin_Mukuro" ) == false )
+	: Jump( "Scenarios/SC_B07_02" )
+: else
+	: Jump( "Scenarios/SC_B07_01" )
+: endif

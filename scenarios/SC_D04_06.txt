@@ -1,0 +1,402 @@
+//========================================================
+//○タイラントボア退治１
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+「せやや啊，如果是你的话，击退魔物也很轻松吧。
+赶紧消灭掉吧”
+
+击退魔物不怎么受欢迎。
+
+报酬倒也不坏，但是和生命的危险相当高
+但是没有。
+
+\CN["眼镜店"]
+“被目击到的魔物是《泰兰特波亚》。
+附近的村子被那家伙糟蹋了田地，好像很危险啊」
+
+对方是泰国人吗……。
+听说过。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3652" )
+\CN["无黑色"]
+“是野猪的魔物吗……是单独的？还是……”
+
+\CN["眼镜店"]
+“遗憾的是好像是一群人。
+然后，北山好像有个洞。
+好像是从那里来的”
+
+: DrawChara( "Mukuro", 24, 0)
+群か……。
+
+提出这个委托的人的目标是：
+因为受灾情况会扩大，所以想赶快把它毁掉
+不过呢。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3653" )
+\CN["无黑色"]
+（嘛，虽然不能囫囵吞枣……）
+
+一旦承包工作，就会发现和入口店的信息完全不一样
+有的是。
+
+如果是惩办魔物的话，会突然出现上位种，或者是
+也有很多其他凶恶的魔物出现，需要注意。
+
+\CN["眼镜店"]
+“如果是无黑的话，应该会轻松取胜吧。”
+
+: DrawChara( "Mukuro", 27, 0)
+: PlayVoice( "Voices/vo00_muk3654" )
+\CN["无黑色"]
+“啊，这个委托，实际上报酬不是更高吗？
+要捣毁巢穴，这个价格是不可能的”
+
+\CN["眼镜店"]
+“……呜……不愧是这样。
+那报酬是1.5倍怎么样？”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk3655" )
+\CN["无黑色"]
+“这样的话，还妥当。我接受吧。”
+
+//＠マップ解放：タイラントボアの巣穴
+//●シーンエンド
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+事件信息更新了。
+
+: SetMission( "SC_D04_06_1", "InProgress" )
+: FastTravelMapOn( "AbareInoshishi" )
+: DestinationMap( "Map_Dungeon40_04_AbareInoshishi" )
+: Return
+
+//---------------------------------------------------------
+
+*sc001_2
+//請負中
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“被目击到的魔物是《泰兰特波亚》。
+附近的村子被那家伙糟蹋了田地，好像很危险啊」
+
+\CN["眼镜店"]
+“不过，嘛，无黑酱的话应该会轻松取胜吧。
+敬请期待”
+
+: Return
+
+//========================================================
+//○タイラントボア退治２
+//========================================================
+*sc002
+//●場所：タイラントボアの巣穴・奥
+//●ＳＥ：グルルル。魔物の声
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3656" )
+\CN["无黑色"]
+“看来，这里是巢的最里面就好了。”
+
+如果把这里的泰兰特波亚全部消灭的话
+没关系吧。
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+把这层的泰兰特波亚打倒5只就过关了。
+※失败的话会失败，请小心。
+
+//●シーンエンド
+: Flag( "SC_D04_06_START", true )
+: Return
+
+//---------------------------------------------------------
+
+*Enemy01
+//――――――――――――――――――――――――――――
+//■戦　闘：タイラントボア
+//■タイプ：通常戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：全滅させたら「タイラントボア退治３」へ
+//■敗　北：「タイラントボアに犯される」へ
+//――――――――――――――――――――――――――――
+//＠戦闘：タイラントボア,0,1,0,sc002_win,sc002_lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: RpgCharaOff("Enemy01")
+	: Flag( "SC_D04_06_Enemy01", true )
+	: Jump( "*sc002_win" )	// 勝利した場合
+: elif( BattleSkiplose == true )
+	: Jump( "*sc002_lose" )	// 敗北した場合
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cave01", "BGM/21_BM002", 1065, -1, -1, "Scenarios/SC_D04_06*battle_end01" , true )
+
+*battle_end01
+: RestoreBgm
+: if ( $battleWin == true )
+	: RpgCharaOff("Enemy01")
+	: Flag( "SC_D04_06_Enemy01", true )
+	: Jump( "*sc002_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*Enemy01" )
+
+: else
+	: Jump( "*sc002_lose" )	//敗北した場合
+: endif
+
+*Enemy02
+//――――――――――――――――――――――――――――
+//■戦　闘：タイラントボア
+//■タイプ：通常戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：全滅させたら「タイラントボア退治３」へ
+//■敗　北：「タイラントボアに犯される」へ
+//――――――――――――――――――――――――――――
+//＠戦闘：タイラントボア,0,1,0,sc002_win,sc002_lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: RpgCharaOff("Enemy02")
+	: Flag( "SC_D04_06_Enemy02", true )
+	: Jump( "*sc002_win" )	// 勝利した場合
+: elif( BattleSkiplose == true )
+	: Jump( "*sc002_lose" )	// 敗北した場合
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cave01", "BGM/21_BM002", 1065, -1, -1, "Scenarios/SC_D04_06*battle_end02" , true )
+
+*battle_end02
+: RestoreBgm
+: if ( $battleWin == true )
+	: RpgCharaOff("Enemy02")
+	: Flag( "SC_D04_06_Enemy02", true )
+	: Jump( "*sc002_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*Enemy02" )
+: else
+	: Jump( "*sc002_lose" )	//敗北した場合
+: endif
+
+*Enemy03
+//――――――――――――――――――――――――――――
+//■戦　闘：タイラントボア
+//■タイプ：通常戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：全滅させたら「タイラントボア退治３」へ
+//■敗　北：「タイラントボアに犯される」へ
+//――――――――――――――――――――――――――――
+//＠戦闘：タイラントボア,0,1,0,sc002_win,sc002_lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: RpgCharaOff("Enemy03")
+	: Flag( "SC_D04_06_Enemy03", true )
+	: Jump( "*sc002_win" )	// 勝利した場合
+: elif( BattleSkiplose == true )
+	: Jump( "*sc002_lose" )	// 敗北した場合
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cave01", "BGM/21_BM002", 1065, -1, -1, "Scenarios/SC_D04_06*battle_end03" , true )
+
+*battle_end03
+: RestoreBgm
+: if ( $battleWin == true )
+	: RpgCharaOff("Enemy03")
+	: Flag( "SC_D04_06_Enemy03", true )
+	: Jump( "*sc002_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*Enemy03" )
+: else
+	: Jump( "*sc002_lose" )	//敗北した場合
+: endif
+
+*Enemy04
+//――――――――――――――――――――――――――――
+//■戦　闘：タイラントボア
+//■タイプ：通常戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：全滅させたら「タイラントボア退治３」へ
+//■敗　北：「タイラントボアに犯される」へ
+//――――――――――――――――――――――――――――
+//＠戦闘：タイラントボア,0,1,0,sc002_win,sc002_lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: RpgCharaOff("Enemy04")
+	: Flag( "SC_D04_06_Enemy04", true )
+	: Jump( "*sc002_win" )	// 勝利した場合
+: elif( BattleSkiplose == true )
+	: Jump( "*sc002_lose" )	// 敗北した場合
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cave01", "BGM/21_BM002", 1065, -1, -1, "Scenarios/SC_D04_06*battle_end04" , true )
+
+*battle_end04
+: RestoreBgm
+: if ( $battleWin == true )
+	: RpgCharaOff("Enemy04")
+	: Flag( "SC_D04_06_Enemy04", true )
+	: Jump( "*sc002_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*Enemy04" )
+: else
+	: Jump( "*sc002_lose" )	//敗北した場合
+: endif
+
+*Enemy05
+//――――――――――――――――――――――――――――
+//■戦　闘：タイラントボア
+//■タイプ：通常戦（逃走不可）
+//■勝敗分岐：敗北分岐あり
+//■勝　利：全滅させたら「タイラントボア退治３」へ
+//■敗　北：「タイラントボアに犯される」へ
+//――――――――――――――――――――――――――――
+//＠戦闘：タイラントボア,0,1,0,sc002_win,sc002_lose
+//＠戦闘前選択肢（勝敗分岐あり）
+: Call( "Scenarios/Battle*BattleSelect01" )
+: if( BattleSkipWin == true )
+	: RpgCharaOff("Enemy05")
+	: Flag( "SC_D04_06_Enemy05", true )
+	: Jump( "*sc002_win" )	// 勝利した場合
+: elif( BattleSkiplose == true )
+	: Jump( "*sc002_lose" )	// 敗北した場合
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cave01", "BGM/21_BM002", 1065, -1, -1, "Scenarios/SC_D04_06*battle_end05" , true )
+
+*battle_end05
+: RestoreBgm
+: if ( $battleWin == true )
+	: RpgCharaOff("Enemy05")
+	: Flag( "SC_D04_06_Enemy05", true )
+	: Jump( "*sc002_win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*Enemy05" )
+: else
+	: Jump( "*sc002_lose" )	//敗北した場合
+: endif
+
+*sc002_win
+//●勝利した場合
+//＠システム：タイラントボア×５匹を全滅させたら進行
+//●シーン：「タイラントボア退治３」へ
+//＠ラベルジャンプ：sc003
+: if ( Flag ( "SC_D04_06_Enemy01" ) == true && Flag ( "SC_D04_06_Enemy02" ) == true && Flag ( "SC_D04_06_Enemy03" ) == true && Flag ( "SC_D04_06_Enemy04" ) == true && Flag ( "SC_D04_06_Enemy05" ) == true )
+	: Jump( "*sc003" )
+: else
+	: Return
+: endif
+
+*sc002_lose
+//●敗北した場合
+//●シーン：「タイラントボアに犯される」へ
+//＠シナリオジャンプ：SC_D04_07
+: Jump( "Scenarios/SC_D04_07" )
+//========================================================
+//○タイラントボア退治３
+//========================================================
+*sc003
+//●演出：無黒　アクションシーン
+: DrawChara( "Mukuro", 2, 1, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk3657" )
+\CN["无黑色"]
+“呼……魔物的气息好像完全消失了。
+这样已经没问题了吧”
+
+还有就是把讨伐证明泰兰特波亚的耳朵放进了入口屋
+拿着去，拿到报酬就结束了。
+
+//●場所：西都・居酒屋
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: LoadMap( "Map_Town05_03_Saito", "Kuchiireya", "Scenarios/SC_D04_06*sc003_1")
+
+*sc003_1
+: Call("Scenarios/Map_Town05_Saito_Init*Map03_1")	//初期化
+: RpgCharaTurn( "Kuchiireya", "D" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["眼镜店"]
+“哦！无黑酱，你的脸好像变好了呢。”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk3658" )
+\CN["无黑色"]
+“啊，按照事先的情报得救了。这是讨伐部位的耳朵。”
+
+\CN["眼镜店"]
+「ひのふみ——咦，有5只啊……。
+确实收到了。顺便说一下，这是全部吗？”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3659" )
+\CN["无黑色"]
+“大概吧。应该已经没有留在洞里了。”
+
+\CN["眼镜店"]
+“原来如此。嘛，那些家伙白天从巢穴里出来什么的
+几乎没有。ＯＫ。那么，这项工作就到此结束吧”
+
+\CN["眼镜店"]
+“如果还想赚钱的话就跟我打招呼。
+击退魔物，大人物的护卫，枕头，如果是你的话请放心
+因为可以介绍工作”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk3660" )
+\CN["无黑色"]
+“啊，请多关照。”
+
+: $money += 500
+无黑从入口店得到了工作成功的报酬。
+
+//●シーンエンド
+: SetMission( "SC_D04_06_1", "Successed" )
+: DestinationMap( "Map_Town05_01_Saito" )
+: Return

@@ -1,0 +1,541 @@
+//========================================================
+//○たった１人で鬼灯奇襲
+//========================================================
+//●場所：鬼灯屯所
+//●視点：第三者視点
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 0.0 )
+: FadeIn( 1.0 )
+: Wait()
+: ShowWnd()
+那是有一天晚上。
+这是一个吹着潮湿和腥味的风，令人讨厌的夜晚。
+
+//●背景：鬼灯屯所・玄関・夜
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/BG_Houzuki_Genkan03", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["鬼灯队士・男B"]
+“哈哈……！来，你……！？”
+
+//●演出：鬼灯の隊士　倒れる
+//●演出：達磨　登場する
+: PlaySe( "SE/Se_Down01" )
+: CharaCostume("Daruma",2)
+: DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: PlayBgm("BGM/14_CM014")
+\CN["达磨"]
+“不能白白杀生，只能让他暂时睡一觉。”
+
+达磨对倒下的看守这样说
+走进屯子里。
+
+//●演出：場面転換トランジション
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_03", 0.0 )
+: EraseChara( "Daruma", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+//: DrawChara( "Daruma", 0, 0, 0, 0.25, 0.0, 5, "" )
+: DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+: ShowWnd()
+\CN["银子"]
+“你一个人吗？我被你小看了。”
+
+: DrawChara( "Leo", 20, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["雷欧"]
+「小心。这家伙真厉害。
+”
+
+: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+: lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
+: PlayVoice( "Voices/vo01_mom1078" )
+\CN["桃子"]
+“但是，对方只有一个人。
+如果大家一起合作的话……”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["达磨"]
+“嗯。我很喜欢和才华横溢的年轻人对峙。”
+
+: DrawChara( "Daruma", 2, 0)
+\CN["达磨"]
+“不想死的话就一起扑过来。”
+
+与雷欧、银、桃为对手的达磨在口罩后面露出了从容的笑容。
+
+眼前的三个人经过锻炼就可以连名白夜干部
+能做的可能性非常高。
+
+面对才华横溢的年轻人，达磨的心激动不已。
+
+: EraseChara( "Daruma", 0.0 )
+: DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo01_mom1079" )
+\CN["桃子"]
+“好的。雷欧，小银，让路！”
+
+根据桃子的指示，雷欧和银让路。
+
+//: EraseChara( "Momo", 0.25 )
+//: EraseChara( "Daruma", 0.25 )
+//●演出：桃　中級魔術　演出
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: evbg = true; evcos = false;
+: evfile = "evb_a001_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom3122" )
+\CN["桃子"]
+“雷啊！”
+
+: HideWnd()
+: Call("Scenarios/Common*EvDelete")
+: PlaySe( "SE/Se_AnimeL_Thunder02" )
+: PlayAnim( "Animations/AnimeL_Thunder02", false, 0, 0, 6, 6 )
+: Wait()
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["达磨"]
+“恩，我钻研得很好。
+好像受惠于好老师啊」
+
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+「但是，真可惜。尚不知道自己的可能性。
+期待更加精进”
+
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom1080" )
+\CN["桃子"]
+“呃，骗人……我的魔术完全无效……？”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“效果不错。不过，这种程度，对我来说还差得远呢。”
+就是说不够温”
+
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Gin", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["银子"]
+“你这么游手好闲，我真讨厌！”
+
+: DrawChara( "Gin", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Leo", 19, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["雷欧"]
+“从一开始就不是高潮。
+我来看看我的必杀技吧”
+
+//: DrawChara( "Daruma", 0, 0)
+: DrawFaceThumbnail( "Daruma", 0, 0, 0 )
+\CN["达磨"]
+「糠等人听到传闻，鬼灯的风神和雷神吗。
+很有气势。真舒服”
+
+年轻人必须这样。
+达磨在假面后面微笑着。
+
+//: DrawChara( "Gin", 13, 0)
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "3"; lay = 0; type = "DL"; Call( "Scenarios/Common*FgEffOut");
+: chara = "4"; lay = 0; type = "DR"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["银子"]
+“大岚————！”
+
+//: DrawChara( "Leo", 23, 0)
+: HideWnd()
+: cgkeep = true;
+: Call( "Scenarios/Effect*GinAction01" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a002_1_1_0200000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["雷欧"]
+“紫电一闪！！”
+
+: HideWnd()
+: cgkeep = false;
+: Call( "Scenarios/Effect*LeoAction01" )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: ShowWnd()
+雷欧和银分别用最有自信的技能进行达磨
+虽然会撞上去。
+
+: DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["达磨"]
+“不错。不过，好像还有锻炼的余地啊。”
+
+//: DrawChara( "Daruma", 2, 0)
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Daruma"; lay = 3; type = "DL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a026_1_0_1000000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["达磨"]
+“天真一刀流・{龙爪，龙爪，龙爪}”
+
+//: EraseChara( "Daruma", 0.5 )
+//●演出：斬撃　エフェクト
+: HideWnd()
+: effecttype = "6"; se = "Se_Slash01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+达磨的剑闪抓住了雷欧和银两人。
+
+: HideWnd()
+: EraseImage( 9, 0, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Leo", 17, 0)
+: DrawFaceThumbnail( "Leo", 21, 0, 0 )
+\CN["雷欧"]
+“……哼……哈哈……只是一击……”
+
+//: DrawChara( "Gin", 12, 0)
+: DrawFaceThumbnail( "Gin", 0, 0, 0 )
+\CN["银子"]
+“小姐……请逃……快，快……”
+
+: DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["达磨"]
+“放心吧。无用的杀生是我最讨厌的。”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“有才能的年轻人不想尽可能地杀人。”
+
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlayVoice( "Voices/vo01_mom1081" )
+\CN["桃子"]
+“……！？”
+
+达磨一瞬间移动到了桃子附近。
+
+//●演出：打撃　エフェクト
+//●演出：桃　倒れる
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: Wait()
+: PlaySe("SE/Se_Foot01")
+: chara = "Momo"; lay = 0; type = "Down"; Call( "Scenarios/Common*FgEffOut");
+: ShowWnd()
+让桃子轻易晕过去。
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["鬼灯队士・男C"]
+“如果让你一个人无伤地回去的话，鬼灯的名字就会被折断。”
+
+\CN["鬼灯队士・女A"]
+“敌前逃亡什么的根本就不存在。”
+
+\CN["鬼灯队士・男G"]
+“黄菜子和红美现在正在跑去叫局长呢。
+我会忍耐的”
+
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["达磨"]
+“看到我的力量就害怕是理所当然的。
+但是，不抛弃同伴是抬头仰望的气魄”
+
+\CN["鬼灯队士・男H"]
+“哇哦哦哦哦哦哦！！”
+
+鬼灯的队员们尽管力量的差距变得明显
+迎着达磨前进。
+
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+“你的气魄太好了。我也想向白夜学习。”
+
+//●演出：達磨　鬼灯の隊士を次々と倒していく
+: HideWnd()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+\CN["鬼灯队士・女A"]
+“呜……！至少……一把大刀……”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“呼……”
+
+: PlaySe( "SE/Se_KatanaHit01" )
+女队员扔的小刀。
+达磨用身上的铁甲轻轻弹飞。
+
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+“悔恨才是让自己成长的食粮。
+我们不能割断你们的可能性”
+
+队员们全都露出遗憾的表情
+我放弃了意识。
+
+//●演出：龍　登場する
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+//: DrawChara( "Daruma", 0, 0, 0, 0.25, 0.0, 3, "RC" )
+: DrawChara( "Ryu", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["龙"]
+“白夜的头，看上去像是达磨殿。”
+
+: DrawChara( "Ryu", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["达磨"]
+“狗是鬼灯最强的男人——鬼灯副长新渡户龙吗？”。
+原来如此。好像是传说中的武人”
+
+: DrawChara( "Ryu", 5, 0)
+\CN["龙"]
+“曾经被称为地上最强的你所说的是
+非常光荣”
+
+达磨深吐一口气，准备和龙一战。
+
+光从“武”的观点来看，鬼灯是最需要警惕的
+达磨认为这个男人是龙。
+
+: DrawChara( "Ryu", 40, 0)
+\CN["龙"]
+“来吧——”
+
+//●演出：斬撃エフェクト
+: HideWnd()
+: effecttype = "4"; se = "Se_Swing01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: evbg = true; evcos = false;
+: evfile = "evx_a025_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvIn")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: EraseChara( "Daruma", 0.0 )
+: EraseChara( "Ryu", 0.0 )
+: Wait()
+: ShowWnd()
+最先设计的是龙。
+
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+达磨冷静地接受了龙的高速剑闪。
+
+\CN["达磨"]
+（如果不是这个身体的话，可能会很危险。
+我是白夜想要的男人）
+
+//●演出：斬撃エフェクト　斬り合い
+//: DrawChara( "Ryu", 38, 0)
+\CN["龙"]
+“八重樱流——千鸟岚月！”
+
+//: DrawChara( "Ryu", 41, 0)
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = true;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+\CN["达磨"]
+“哈哈！”
+
+//: DrawChara( "Daruma", 2, 0)
+\CN["龙"]
+「那么，就这样。
+——八重樱流·村云一闪！”
+
+: HideWnd()
+: effecttype = "6"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+达磨不难对付龙的猛攻，而是用刀来操纵。
+
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+\CN["达磨"]
+「糠之剑，没有迷惑，非常精炼。
+每天锻炼都没有怠慢的证据”
+
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L")
+: DrawChara( "Ryu", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R")
+\CN["龙"]
+“我只是个剑术白痴。”
+
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+“你是剑术白痴吗。
+嗯，但是还不及我啊」
+
+龙终于歪着嘴跑了出去。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a025_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Daruma", 0.0 )
+: EraseChara( "Ryu", 0.0 )
+: ShowWnd()
+//: DrawChara( "Ryu", 41, 0)
+\CN["龙"]
+“——八重樱流·奥义”
+
+//: DrawChara( "Ryu", 42, 0)
+\CN["龙"]
+“八咫乌！！”
+
+: HideWnd()
+: PlaySe( "SE/Se_Swing01" )
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+无数的剑闪向达磨袭来。
+
+//: DrawChara( "Daruma", 0, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a026_1_0_1000000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: EraseImage( 9, 0, Call("Scenarios/Common*EffTime") )
+: ShowWnd()
+\CN["达磨"]
+“我也会用这个技能来回应你的。”
+
+//: DrawChara( "Daruma", 2, 0)
+\CN["达磨"]
+“天真一刀流・影断！”
+
+: HideWnd()
+: effecttype = "6"; se = "Se_Swing01"; keep = true; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+: DrawFaceThumbnail( "Ryu", 0, 0, 0 )
+\CN["龙"]
+“……酷！”
+
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+像是钻过龙放出的奥义的缝隙一样
+达磨的大刀抓住了龙。
+
+//: DrawChara( "Ryu", 36, 0)
+: DrawFaceThumbnail( "Ryu", 36, 0, 0 )
+\CN["龙"]
+“……是我输了……”
+
+//: EraseChara( "Ryu", 0.5 )
+: PlaySe( "SE/Se_Down01" )
+达磨就在眼前，龙承认了自己的失败
+就那样失去了意识。
+
+: DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+\CN["达磨"]
+“今晚刮着讨厌的风。和那天一样吧。”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“这样的夜晚，应该不会痛的伤口会痛”
+
+达磨仰望着停滞的天空，想着什么。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//Yoshi：背景消去
+//●白夜ルート第４章終了。第５章へ
+//●分岐：淫乱度Ｂ以下の場合
+//●シーン：「迷い揺らぐ心Ａ」へ
+//＠シナリオジャンプ：SC_B05_01 sc001
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●シーン：「迷い揺らぐ心Ｂ」へ
+//＠シナリオジャンプ：SC_B05_01 sc002
+//●分岐終了
+: Jump( "Scenarios/SC_C05_01" )

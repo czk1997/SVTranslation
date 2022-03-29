@@ -1,0 +1,417 @@
+//========================================================
+//○白夜幹部集団『九星』が動き出す
+//========================================================
+//●場所：織笠神社・境内
+//●視点：第三者視点
+//●背景：神社・夜
+//Yoshi：背景
+: HideWnd()
+: PlayBgm("BGM/39_CM018")
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/Bg_Jinja01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition14", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+在远离帝都的地区，有一个静静伫立着的小神社。
+
+几年前，根据幕府的政策而被烧毁的神社
+在那里的旧址上新盖了一座神社。
+
+现在那里有一个巫女和同伴一起生活着。
+
+//●演出：織笠御影・人物紹介
+: HideWnd()
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: chara = "Mikage"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: ShowWnd()
+那个巫女的名字是{织笠御影，笼影}——
+
+即使是大和也能进入5个手指的魔术使用者
+反幕派组织“白夜”的“九星，救星”的“六白，六白”的
+在位。
+
+//●演出：達磨（マスクあり）がやってくる
+//●服装：達磨・通常・マスク
+//＠服装：達磨,1
+: HideWnd()
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: CharaCostume( "Daruma", 2 )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+//●読み：お頭（おかしら）
+: DrawChara( "Mikage", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlaySe("SE/Se_Foot01")
+: lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0005" )
+\CN["御影"]
+“老板，您不必特意到这种地方来。
+如果您告诉我的话，我就去拜访您了”
+
+: DrawChara( "Daruma", 3, 0)
+\CN["白夜的头"]
+“我是来附近的。”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["白夜的头"]
+“御影，我有件事想请你动一下。
+可以拜托你吗？”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0006" )
+\CN["御影"]
+“当然！请随便说。”
+
+//●読み：私（わたくし）＝御影の１人称は「わたくし」読みです
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0007" )
+\CN["御影"]
+“如果我能帮上忙的话
+无论什么事情都要完成”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["白夜的头"]
+“嗯。请叫一下西边的九星们。”
+
+: DrawChara( "Mikage", 6, 0)
+: PlayVoice( "Voices/vo11_mik0008" )
+\CN["御影"]
+“{西都，有}的人吗？”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["白夜的头"]
+“嗯”
+
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0009" )
+\CN["御影"]
+“呵呵，这么便宜的事。
+我马上联系他，让他去这边”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["白夜的头"]
+“啊，请多关照。”
+
+//●演出：達磨　立ち去る
+: HideWnd()
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: chara = "Mikage"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+: PlayVoice( "Voices/vo11_mik0010" )
+\CN["御影"]
+“这不是别人的事，是上司的请求，所以必须马上联系。”
+
+//●読み：九星（きゅうせい）＝幹部集団の名前です
+: DrawChara( "Mikage", 5, 0)
+: PlayVoice( "Voices/vo11_mik0011" )
+\CN["御影"]
+“……话虽如此，还是要把九星集合起来啊……。
+呵呵，好像会变成非常开心的事情呢”
+
+//●演出：場面転換トランジション
+//●場所：西都
+//●背景：街・昼
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(4)
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Village02_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+在大和的西部写着西都，被称为『{西都，させと}』
+有个大城市。
+
+过去，这里曾是大和政权聚集的地方
+在帝都设置了幕府，权力和权威都集中在那里
+衰退了。
+
+: StopBgm( 1.0 )
+现在治安绝对不是好的地区
+变成了流氓们聚集的城镇。
+
+//●演出：場面転換トランジション
+//●場所：西都・鏑木親子の家
+//●背景：ぼろ家・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )	// 黒を引いておく
+: FadeOutLayer( 0, 0 )
+: FadeInLayer( 0, 1.0, 0.0, "BGImage/Transition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_BoroRoom01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlayBgm("BGM/27_FM005")
+: ShowWnd()
+\CN["流氓"]
+“我，今天早上在这里杀了我的{人，门}
+听说有个混蛋，如果不给他戴梨的话……”
+
+: HideWnd()
+: CharaCostume( "Iwao", 1 )
+: DrawChara( "Iwao", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 0; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["大汉"]
+“啊？”
+
+\CN["流氓"]
+「……！？」
+
+是一个势均力敌的黑帮
+一看到房东就吓瘫了。
+
+肌肉发达的身材，2米左右轻的大个子
+因为一脸不高兴的样子。
+
+: HideWnd()
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: CharaPartsOn( "Shion", 0)
+: DrawChara( "Shion", 0, 1, 0, 0.0, 0.0, 4, "C" )
+: lay = 4; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: Wait()
+: ShowWnd()
+\CN["大汉"]
+“啊……妈妈……”
+
+: JumpLayer( 4, 0, -50, 1, 0.25)
+: DrawChara( "Shion", 9, 1, 0)
+: PlayVoice( "Voices/vo12_shi0001" )
+\CN["大儿子的母亲"]
+“呼～……哎呀，太吵了。”
+
+: DrawChara( "Shion", 3, 1)
+: PlayVoice( "Voices/vo12_shi0002" )
+\CN["大儿子的母亲"]
+“阻碍父母和子女的生活，是缺乏常识的。”
+
+\CN["流氓"]
+“……啊，那个……？诶…？”
+
+: HideWnd()
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(4)
+: cutinfile = "CutinFg03"
+: Call("Scenarios/Common*CutinFadeIn")
+: ShowWnd()
+女人嘴唇的边缘附着精液的水滴和一根粗的阴毛
+终于说明了到现在为止做了什么
+
+然后，流氓男子似乎也察觉到了这一点。
+
+\CN["流氓"]
+“喂，喂，你们……啊，啊，头好奇怪……。
+难道是父子……？不，不可能……”
+
+: HideWnd()
+: Call("Scenarios/Common*CutinFadeOut")
+: ShowWnd()
+\CN["流氓"]
+“是，谁呢——”
+
+//※●演出：血飛沫エフェクト
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+在寻求帮助后转身的瞬间
+流氓男子的头部被残忍地打碎了。
+
+如果比喻的话，会联想到从树上掉下来的果实。
+就是那样的感觉。
+
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["大汉"]
+“呼————！呼——！
+妈妈……这家伙不好……这家伙…”
+
+: DrawChara( "Shion", 0, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo12_shi0003" )
+\CN["大儿子的母亲"]
+「这样啊。这家伙什么都不好。
+严酱有好几处坏啊」
+
+然后母亲溺爱儿子。
+
+不否定、不拒绝、不责备。
+就这样，大个子被养大了。
+
+//●演出：冥がやってくる
+: HideWnd()
+: StopBgm( 1.0)
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Mei", 20, 0, 0, 0.0, 0.0, 5, "C" )
+: PlaySe("SE/Se_Foot01")
+: chara = "Mei"; lay = 5 ; type = "WL";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["大汉"]
+“喂，喂，你是……！？”
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0006" )
+\CN["冥"]
+“……啧……特意来了没来过的地方
+明明这么说……”
+
+: HideWnd()
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(5)
+: DrawChara( "Shion", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
+: ShowWnd()
+\CN["大汉"]
+“呜呜……妈妈，好恐怖啊……”
+
+: PlayBgm("BGM/42_CM019")
+突然进来的凛然女子——害怕神八代冥的大个子
+躲在母亲身后。
+
+//●読み：主さん（ぬしさん）
+: DrawChara( "Shion", 0, 0)
+: PlayVoice( "Voices/vo12_shi0004" )
+\CN["大儿子的母亲"]
+“主人来这里真少见啊。”
+
+: DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC")
+: PlayVoice( "Voices/vo09_mei0007" )
+\CN["冥"]
+“啊，一般有人会把尸体堆在家门前
+话说回来，只要没什么大不了的事情，我就不想来了
+但是啊」
+
+: DrawChara( "Shion", 5, 0)
+: PlayVoice( "Voices/vo12_shi0005" )
+\CN["大儿子的母亲"]
+“也就是说，发生了相当严重的事情——
+不是那样的吗？”
+
+: DrawChara( "Mei", 18, 0, 0 )
+: PlayVoice( "Voices/vo09_mei0008" )
+\CN["冥"]
+“多亏你们没有设备，我才特意来到这里
+必须要来”
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0009" )
+\CN["冥"]
+“如果是其他人的话，那里的单细胞白痴就会以气势杀死
+没错”
+
+: DrawChara( "Shion", 8, 0)
+: PlayVoice( "Voices/vo12_shi0006" )
+\CN["大儿子的母亲"]
+“不要说可爱的儿子的坏话了，我才是胆小鬼。”
+
+: DrawChara( "Mei", 18, 0)
+: PlayVoice( "Voices/vo09_mei0010" )
+\CN["冥"]
+“那样的话就要好好地教育一下啊。”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+\CN["大汉"]
+“呜呜……”
+
+神八代冥和大汉的母亲互相对峙。
+
+但是，绝对不会发生争执。
+
+相争则无事。
+我很清楚那个。
+
+: DrawChara( "Shion", 3, 0)
+: PlayVoice( "Voices/vo12_shi0007" )
+\CN["大儿子的母亲"]
+“一看到主人，儿子就害怕
+快点把事情告诉你”
+
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mei", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo09_mei0011" )
+\CN["冥"]
+“头上有人叫我来帝都。”
+
+: DrawChara( "Mei", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: DrawChara( "Shion", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
+: PlayVoice( "Voices/vo12_shi0008" )
+\CN["大儿子的母亲"]
+“呼。去帝都。那也是头大人，直接……”
+
+: DrawChara( "Shion", 0, 0)
+: PlayVoice( "Voices/vo12_shi0009" )
+\CN["大儿子的母亲"]
+“但是，也有准备什么的……
+我们两个小时后就可以了”
+
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0012" )
+\CN["冥"]
+“应该传达的事情已经传达了，之后就随你的便……”
+
+//●演出：冥、外に出て行く。紫苑と巌　部屋へ。
+//●演出：紫苑のＢＧＶを流す
+//●背景：空
+//Yoshi：背景、昼の空
+: HideWnd()
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: PlayBackVoice( "Voices/BGV12_shi_aegi02" )
+: ShowWnd()
+神八代冥就这样前往帝都。
+
+对于以西都为据点活动的她来说
+时隔两年回到帝都。
+
+把自己置身于白夜
+这是自取得九星席位以来的第一次。
+
+//●演出：暗転
+//Yoshi：背景消去
+//●シーン：「お姫様お忍び紀行」へ
+//＠シナリオジャンプ：SC_A02_10
+: HideWnd()
+: CharaCostume( "Iwao", 0 )
+: StopBackVoice()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: Jump( "Scenarios/SC_A02_10" )

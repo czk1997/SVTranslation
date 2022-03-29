@@ -1,0 +1,333 @@
+//========================================================
+//○時は来た。白夜、動き出す
+//========================================================
+*sc001
+//●場所：白夜のアジト
+//●視点：第三者視点
+//●状況：白夜の幹部たちが集められている。幹部会議
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Byakuya", 1.0 )
+: ShowWnd()
+达磨让鬼灯半坏后几天
+白夜的干部们被召集起来了。
+
+//: DrawChara( "Mikage", 0, 0, 0, 0.25, 0.0, 3, "LC" )
+//: DrawChara( "Midori", 2, 0, 0, 0.25, 0.0, 4, "RC" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a053_1_2_0000000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/11_CM011")
+: ShowWnd()
+: DrawFaceThumbnail( "Mikage", 0, 0, 0 )
+: PlayVoice( "Voices/vo11_mik0190" )
+\CN["御影"]
+“今天也{一白}好像缺席了呢。”
+
+: DrawFaceThumbnail( "Midori", 0, 0, 0)
+: PlayVoice( "Voices/vo10_mid0266" )
+\CN["绿色"]
+“这是平时的事。对了，最近完全没见过面。”
+
+: DrawFaceThumbnail( "Midori", 17, 0, 0)
+: PlayVoice( "Voices/vo10_mid0267" )
+\CN["绿色"]
+“听你这么说，头啊。一个人去杀鬼灯什么的。
+要是我们也邀请就好了，真是见外啊”
+
+: DrawFaceThumbnail( "Mikage", 1, 0, 0)
+: PlayVoice( "Voices/vo11_mik0191" )
+\CN["御影"]
+“美、绿酱！？头上怎么这么会说话……！？”
+
+: DrawFaceThumbnail( "Midori", 19, 0, 0)
+: PlayVoice( "Voices/vo10_mid0268" )
+\CN["绿色"]
+“啊……再见！”
+
+: DrawFaceThumbnail( "Mikage", 6, 0, 0)
+: PlayVoice( "Voices/vo11_mik0192" )
+\CN["御影"]
+“小绿！！”
+
+//: EraseChara( "Mikage", 0.25 )
+//: DrawFaceThumbnail( "Iwao", 0, 0, 0, 0.25, 0.0, 5, "L" )
+: DrawFaceThumbnail( "Shion", 1, 0, 0)
+: PlayVoice( "Voices/vo12_shi0189" )
+\CN["紫苑"]
+“嘛，望月本来就是这种性格。
+话没进展，放在一边就没办法了”
+
+\CN["严严"]
+「Ｚｚｚ……」
+
+: DrawFaceThumbnail( "Manji", 0, 0, 0)
+\CN["卍"]
+“这个大家伙打着呼噜睡觉……”
+
+: DrawFaceThumbnail( "Shion", 5, 0, 0)
+: PlayVoice( "Voices/vo12_shi0190" )
+\CN["紫苑"]
+“嗯？有什么想对严说的吗？”
+
+\CN["卍"]
+“……切！”
+
+//: EraseChara( "Manji", 0.25 )
+: DrawFaceThumbnail( "Manji", 0, 0, 0)
+被紫苑盯上的卍移开视线，恶语伤人。
+
+//●演技：からかうような感じです
+//●読み：卍（まんじ）
+: DrawFaceThumbnail( "Midori", 17, 0, 0)
+: PlayVoice( "Voices/vo10_mid0269" )
+\CN["绿色"]
+“哇，卍……我自己不是太差劲了吗？”
+
+\CN["卍"]
+“……你……”
+
+: DrawFaceThumbnail( "Midori", 19, 0, 0)
+: PlayVoice( "Voices/vo10_mid0270" )
+\CN["绿色"]
+“什么呀，这种态度。有想说的事情做了，就看我的眼睛。”
+堂堂正正地说吧。真的有球吗？啊？”
+
+//: EraseChara( "Shion", 0.25 )
+//: EraseChara( "Iwao", 0.25 )
+: DrawFaceThumbnail( "Mei", 1, 0, 0)
+: PlayVoice( "Voices/vo09_mei0326" )
+\CN["冥"]
+“两个人都不停吗？太难看了。”
+
+: DrawFaceThumbnail( "Ranmaru", 3, 0, 0)
+\CN["兰丸"]
+“卍君和望月桑，关系很好呢。”
+
+: DrawFaceThumbnail( "Midori", 4, 0, 0)
+: PlayVoice( "Voices/vo10_mid0271" )
+\CN["绿色"]
+“你的眼睛和耳朵是装饰物吗？
+和卍关系很好，不要说恶心的话啊」
+
+: DrawFaceThumbnail( "Mei", 3, 0, 0)
+: PlayVoice( "Voices/vo09_mei0327" )
+\CN["冥"]
+“你们这些家伙，适可而止吧！话完全没有进展。”
+
+//: EraseChara( "Midori", 0.25 )
+//: EraseChara( "Mei", 0.25 )
+//: EraseChara( "Ranmaru", 0.25 )
+//: EraseChara( "Manji", 0.25 )
+: DrawFaceThumbnail( "Hiraga", 0, 0, 0)
+\CN["平底片"]
+“是的。这样下去的话，时间过得太有意义了。”
+”
+
+: DrawFaceThumbnail( "Mikage", 4, 0, 0)
+: PlayVoice( "Voices/vo11_mik0193" )
+\CN["御影"]
+“对不起，头……”
+
+: DrawFaceThumbnail( "Daruma", 0, 0, 0)
+\CN["达磨"]
+“好的。平时不怎么见面吧？”？
+偶尔的玩笑，宽容点吧”
+
+: DrawFaceThumbnail( "Daruma", 0, 0, 0)
+\CN["达磨"]
+“但是，那在我说完之后可以吗？”
+
+//: EraseChara( "Daruma", 0.25 )
+//: EraseChara( "Mikage", 0.25 )
+//: EraseChara( "Hiraga", 0.25 )
+: DrawFaceThumbnail( "Midori", 1, 0, 0)
+: PlayVoice( "Voices/vo10_mid0272" )
+\CN["绿色"]
+“……せやな”
+
+: DrawFaceThumbnail( "Manji", 0, 0, 0)
+\CN["卍"]
+「…………」
+
+: DrawFaceThumbnail( "Ranmaru", 16, 0, 0)
+\CN["兰丸"]
+“不愧是头啊。”
+
+达磨并不是怒吼起来的。
+只是，用虽然安静但是有沉重压力的声音问。
+
+就这样，白夜的干部们一起闭嘴。
+
+//: EraseChara( "Midori", 0.25 )
+//: EraseChara( "Manji", 0.25 )
+//: EraseChara( "Ranmaru", 0.25 )
+: DrawFaceThumbnail( "Daruma", 0, 0, 0)
+\CN["达磨"]
+“正如望月所说，我昨晚一个人去鬼灯的屯所
+揉搓着队伍来了」
+
+: DrawFaceThumbnail( "Ranmaru", 0, 0, 0)
+\CN["兰丸"]
+（揉了揉……基本上是毁灭了啊。
+虽然没有死人，但是好像有很多重伤者……）
+
+: DrawFaceThumbnail( "Ranmaru", 1, 0, 0)
+\CN["兰丸"]
+（不过，鬼灯不仅在肉体上，在精神上也是
+因为好像是经过了很多锻炼，所以大部分都恢复了
+会来的吧）
+
+: DrawFaceThumbnail( "Daruma", 1, 0, 0)
+\CN["达磨"]
+“到现在为止，就像是敲着石桥过桥一样，慎重地进行着工作。
+你知道为什么吗？”
+
+: DrawFaceThumbnail( "Midori", 21, 0, 0)
+: PlayVoice( "Voices/vo10_mid0273" )
+\CN["绿色"]
+“我们的目的不只是摧毁幕府吧？
+那是章鱼烧”
+
+: DrawFaceThumbnail( "Mikage", 1, 0, 0)
+: PlayVoice( "Voices/vo11_mik0194" )
+\CN["御影"]
+“说起来要摧毁肮脏的幕府是很容易的。”
+
+: DrawFaceThumbnail( "Mikage", 4, 0, 0)
+: PlayVoice( "Voices/vo11_mik0195" )
+\CN["御影"]
+“只是，被乌云压坏了，{未来，前头}也变得乱七八糟
+只是这样而已……”
+
+//: EraseChara( "Ranmaru", 0.25 )
+: DrawFaceThumbnail( "Mei", 4, 0, 0)
+: PlayVoice( "Voices/vo09_mei0328" )
+\CN["冥"]
+“没有秩序的话，暴徒们只会发狂。
+如果变成那样的话，那就是地狱图了。我不想考虑”
+
+: DrawFaceThumbnail( "Shion", 3, 0, 0)
+: PlayVoice( "Voices/vo12_shi0191" )
+\CN["紫苑"]
+“真是的，只会发生一切暴力和一切掠夺。
+那是我第二次经历的事”
+
+有人在达磨的提问中说出了话。
+
+然后，在战火中，紫苑抱着严生存下来的话语
+比谁都重得多。
+
+//: EraseChara( "Mei", 0.25 )
+//: EraseChara( "Shion", 0.25 )
+//: EraseChara( "Mikage", 0.25 )
+//: EraseChara( "Midori", 0.25 )
+//: EraseChara( "Daruma", 0.25 )
+: DrawFaceThumbnail( "Midori", 1, 0, 0 )
+: PlayVoice( "Voices/vo10_mid0274" )
+\CN["绿色"]
+“但是，脑袋打碎了鬼灯
+可以考虑到那个时候终于到了吗？”
+
+: DrawFaceThumbnail( "Daruma", 0, 0)
+\CN["达磨"]
+“恩。本来打算花更多时间
+发生了不得已的情况”
+
+//: EraseChara( "Midori", 0.25 )
+//: EraseChara( "Daruma", 0.25 )
+: DrawFaceThumbnail( "Daruma", 2, 0, 0)
+\CN["达磨"]
+“所以从现在开始，我们白夜就是怨敌，一桥幕府倒幕。
+我期待你们的工作！”
+
+达磨用强有力的语调激励全体人员。
+
+//: EraseChara( "Daruma", 0.25 )
+: DrawFaceThumbnail( "Manji", 0, 0, 0)
+\CN["卍"]
+“反幕派一起发动政变
+想象一下巡游组和鬼灯惊慌失措的样子很有趣”
+
+: DrawFaceThumbnail( "Midori", 18, 0, 0)
+: PlayVoice( "Voices/vo10_mid0275" )
+\CN["绿色"]
+“终于要到了。我等了很久了！”
+
+只是，想发狂一个劲地。我想杀很多人。
+有人想象着那个场面，发出欢喜的声音。
+
+: DrawFaceThumbnail( "Mikage", 5, 0, 0)
+: PlayVoice( "Voices/vo11_mik0196" )
+\CN["御影"]
+「呼呼。终于。我的魔术{丑秽，臭}啊
+把幕府从这个世界上埋葬吧”
+
+有人因为可以报仇雪恨的喜悦而颤抖。
+
+: DrawFaceThumbnail( "Manji", 0, 0, 0)
+\CN["卍"]
+“打败幕府，我们取得天下的话就随便做！
+金钱、女人、地位、名誉都随心所欲”
+
+有想象倒幕后的自己欢闹的人。
+
+//: EraseChara( "Manji", 0.25 )
+//: EraseChara( "Mikage", 0.25 )
+//: EraseChara( "Midori", 0.25 )
+: DrawFaceThumbnail( "Iwao", 0, 0, 0)
+\CN["严严"]
+“嗯？啊！？”
+
+: DrawFaceThumbnail( "Shion", 0, 0, 0)
+: PlayVoice( "Voices/vo12_shi0192" )
+\CN["紫苑"]
+“呼，终于……。
+我们不是只听别人说的话吗……”
+
+: DrawFaceThumbnail( "Hiraga", 5, 0, 0)
+\CN["平底片"]
+“如果你让我也合作的话，我也会协助你的。
+追求的是平稳的每一天”
+
+有不太感兴趣的人——、
+
+//: EraseChara( "Iwao", 0.25 )
+//: EraseChara( "Shion", 0.25 )
+//: EraseChara( "Hiraga", 0.25 )
+: DrawFaceThumbnail( "Ranmaru", 1, 0, 0)
+\CN["兰丸"]
+（终于要倒幕了。有不得已的情况
+最在意的是……）
+
+//●演技：もっと幕府のことを調べたいと思っていたので胸中複雑です
+: DrawFaceThumbnail( "Mei", 5, 0, 1)
+: PlayVoice( "Voices/vo09_mei0329" )
+\CN["冥"]
+「…………」
+
+也有人不知道他在想什么。
+
+//: EraseChara( "Ranmaru", 0.25 )
+//: EraseChara( "Mei", 0.25 )
+干部们各种各样的想法混杂在一起
+白夜终于要向倒幕进军了。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「財閥屋敷強襲１」へ
+//＠シナリオジャンプ：SC_C05_05
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Town07_02_Byakuya", "Return", "Scenarios/SC_C05_05")

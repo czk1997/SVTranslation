@@ -1,0 +1,113 @@
+//========================================================
+//○町中露出プレイ（桃）
+//========================================================
+*sc001
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//●ＣＧ：露出プレイ（桃）
+//●ＣＧ差分：着衣
+//＠evcg：evb_b011
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_1_0100001_0000000_0_"
+: if ( $inExtra == true )
+	: DrawImage( 1, 0, "BGImage/BG_Teito01_01", Call("Scenarios/Common*EffTime") )
+: endif
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3064" )
+\CN["桃子"]
+（……在街上脱光衣服……）
+
+这就是所谓的曝光预赛吧。
+
+上次进男浴室的时候
+我想尝试更刺激的东西。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3065" )
+\CN["桃子"]
+（心跳加速。不能后退啊……）
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：下着
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_2_0300001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Momo", 2 )
+: ShowWnd()
+在街上脱衣服。
+
+\CN["男1"]
+“……咦！？啊，那孩子在干什么……？”
+
+\CN["女1"]
+“在街上暴露胸部什么的，到底有多显眼？
+哇……太变态了……”
+
+只穿一件内衣的话，会被男性好奇的视线、
+被女人用看脏东西的眼光看了。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3066" )
+\CN["桃子"]
+（然后脱掉内衣……然后，在街上裸体……）
+
+//●ＣＧ差分：下着脱衣カットイン
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_5_0400001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+手搭在内衣上，慢慢地放下。
+
+装作不在意别人视线的样子
+就好像换了衣服一样。
+
+//●ＣＧ差分：全裸
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "evb_b011_0_3_0300001_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Momo", 1 )
+: ShowWnd()
+\CN["男2"]
+“……诶…？街上有个裸着身子的孩子……！？”
+
+\CN["男1"]
+“是曝光游戏吧？什么，有什么企划吗？”？
+还是说那孩子是因为奴隶什么的而被主人命令的？”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3067" )
+\CN["桃子"]
+（这种时候，精灵的耳朵真是那个啊……。
+所有的秘密都能听到……）
+
+他们本人可能是以为听不见才这么说的
+我是精灵，耳朵非常好，所以全部都能穿。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo01_mom3068" )
+\CN["桃子"]
+（呃……就这样光着身子在街上走的话……嗯……
+真是让人毛骨悚然啊♥</color>）
+
+已经有几个人赤身裸体了
+被看到了。
+
+事到如今，再也不能回头了。
+
+//●シーンエンド
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S12_02" )
+: if ( $inExtra == false ) CharaSexHistory( "Momo", 6001 ) endif
+: Return

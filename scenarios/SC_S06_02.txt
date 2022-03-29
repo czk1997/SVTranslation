@@ -1,0 +1,149 @@
+//========================================================
+//○遊廓・エロコス喫茶（桃）
+//========================================================
+*sc001
+//＠最初の１回目だけ発生する
+//●服装：桃・エロコス
+: Call("Scenarios/Map_Town18_EroCos_Init")
+: CharaCostume( "Momo", 3 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Wait()
+: if ( Flag ( "EroCosWorksMomo" ) == true ) Return endif
+: DrawChara( "Momo", 0, 1, 1, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom2835" )
+\CN["桃子"]
+“这就是这里的制服。
+”
+
+这个，是叫“nipples”吗？
+
+\CN["母版"]
+“嗯，很适合你。
+桃子，脸很可爱，身材也很好”
+
+: DrawChara( "Momo", 1, 1, 0, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom2836" )
+\CN["桃子"]
+“那么，先做什么好呢？”
+
+\CN["母版"]
+“虽然也请服务员做，但是如果能和客人聊天的话
+这样就可以了」
+
+: DrawChara( "Momo", 5, 1)
+: PlayVoice( "Voices/vo01_mom2837" )
+\CN["桃子"]
+“嗯。嘛，总之先试试看吧。”
+
+//＠立ち絵消去
+: EraseChara( "Momo", 0.5 )
+之后，老板教了我一番工作
+打工开始了。
+
+//●エロコス喫茶バイト開始
+//●シーンエンド
+: Flag( "EroCosWorksMomo", true )
+: Return
+
+//--------------------------------------------------------
+
+*sc002
+//●場所：エロコス喫茶
+\CN["母版"]
+“嗯？怎么了？”
+
+*sc002_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc002_select
+//■選択肢１：服装を変えたい
+//■選択肢２：仕事を終了する
+//■選択肢３：何もない
+//――――――――――――――――――――――――――――
+\CI["想换衣服"]
+\CI["结束工作"]
+\CI["什么也没有"]
+: if ($choice == 1) Jump( "*sc002_select_s2" ) endif
+: if ($choice == 2) Jump( "*sc002_select_s3" ) endif
+//-------------------------------------------------------
+//●選択肢１：服装を変えたいを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s1
+//●分岐：［服装］エロコスの場合
+: if ( CharaCostume( "Momo" ) == 3 )
+	: DrawChara( "Momo", 1, 1, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo01_mom2838" )
+	\CN["桃子"]
+“啊，果然还是想脱下衣服赤身裸体地接待客人啊
+不行吗？”
+
+	\CN["母版"]
+“嗯？如果桃子可以的话就没关系了。”
+
+	: DrawChara( "Momo", 5, 1)
+	: PlayVoice( "Voices/vo01_mom2839" )
+	\CN["桃子"]
+“那就恭敬不如从命，把这些都脱了吧。”
+
+虽然这么说，但是几乎没有要脱的东西……。
+
+	//●服装：桃・全裸
+	: HideWnd()
+	: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: PlaySe( "SE/Se_Cloth01" )
+	: CharaCostume( "Momo", 1 )
+	: ShowWnd()
+	//●分岐終了地点へ
+	//●分岐：それ以外の場合
+	//●全裸の場合
+: else
+	: DrawChara( "Momo", 4, 1, 0, 0.5, 0.0, 3, "RC" )
+	: PlayVoice( "Voices/vo01_mom2840" )
+	\CN["桃子"]
+“果然还是服装好啊。”
+
+	\CN["母版"]
+“知道了。那就这样。”
+
+从老板那里收到服装。
+
+	//●服装：桃・エロコス
+	: HideWnd()
+	: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+	: Wait()
+	: PlaySe( "SE/Se_Cloth01" )
+	: CharaCostume( "Momo", 3 )
+	: ShowWnd()
+	//●分岐終了
+	//●シーンエンド
+: endif
+: Return
+//-------------------------------------------------------
+//●選択肢２：仕事を終了するを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s2
+\CN["母版"]
+“已经结束了吗？知道了。辛苦了。”
+
+//●バイト終了処理
+//●シーンエンド
+: chara = "Momo"; Call( "Scenarios/CommonSys*EroCosMoney" )
+
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: Call( "Scenarios/CommonSys*PartyReset" )
+: CharaCostume( "Momo", 0 )	//服装戻す
+: LoadMap( "Map_Town05_09_Saito", "EroCosReturn" )
+//-------------------------------------------------------
+//●選択肢３：何もないを選んだ場合
+//-------------------------------------------------------
+*sc002_select_s3
+\CN["母版"]
+“这样啊。嘛，有什么事的话跟我说。”
+
+//●シーンエンド
+: Return

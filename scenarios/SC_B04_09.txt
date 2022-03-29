@@ -1,0 +1,311 @@
+//========================================================
+//○正義の見方
+//========================================================
+*sc001
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+//＠プレイヤーキャラ：無黒
+: Party( "Mukuro","Momo","Kinako" )
+: PartyType = "Party09"; Call( "Scenarios/CommonSys*PartySetting" )
+: Participate( 0, true, 1, true, 2, true )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+//ファストトラベルを無黒に戻す
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoNishikaido" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "Kazusa" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: FastTravelMapOn( "Nagatoro" )
+: FastTravelMapOn( "Takahama" )
+: FastTravelMapOn( "KannaKaido" )
+: FastTravelMapOn( "YamatoHigashiKaidoC" )
+: FastTravelMapOn( "NittouKaido" )
+: FastTravelMapOn( "KitaguniKaido" )
+//●視点：第三者視点
+: ShowWnd()
+——几天后。
+
+从维尔访问的多米尼克大臣和
+维克托尔骑士团顺利视察完毕回国了。
+
+//●演出：場面転換トランジション
+//●場所：帝都・昼
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: PlayBgm("BGM/01_CM001_inst")
+: Wait()
+\CN["城里人A"]
+“呐，你知道吗？
+最近，不断有幕府的高层被杀的传闻
+不过…”
+
+\CN["城里人B"]
+“前几天好像福田这样的幕臣也被杀了。”
+
+\CN["城里人A"]
+“那家伙好像是被杀了理所当然的事情。
+提高税金，把上面的部分放进自己的腰包里”
+
+\CN["城里人C"]
+“还有就是那个吗，财阀的幡谷家。
+那家的主人被杀了吧……”
+
+\CN["城里人B"]
+“不，那家伙当然是被杀了。倒不如说很爽快。”
+
+//●演出：過去回想
+//●場所：幡ヶ谷家の屋敷・夜
+//●状況：ベッドに女が倒れていて当主が近くに座っている
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition13", 1.0 )
+: Wait()
+: LoadMap( "Map_Event006", "", "Scenarios/SC_B04_09*sc001_1")
+
+*sc001_1
+: RpgCharaOff("Player")
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/29_ID02")
+: ShowWnd()
+\CN["贵族的女儿"]
+“嗯……嗯……嗯……呜……”
+
+被幡谷家的户主侵犯而哭泣的女人
+她是今天刚刚举行婚礼的贵族女性。
+
+\CN["幡谷家当家"]
+“哼哼……没想到是处女啊~。
+因为是新婚，所以我觉得一定会一直这样”
+
+\CN["贵族的女儿"]
+“你……对不起……我……”
+
+贵族之间罕见的恋爱结婚
+虽然青梅竹马的两人反对
+说服了好几年，终于结婚了。
+
+然后迎来了晴天。
+
+被邀请参加仪式的财阀幡谷家的户主说
+很喜欢这位贵族的女儿，在婚礼开始前
+命令部下拐走了。
+
+由于新娘突然失踪，婚礼中止了——
+
+\CN["幡谷家当家"]
+“你已经没有道歉的对象了。
+没必要担心”
+
+\CN["贵族的女儿"]
+“诶……？”
+
+\CN["幡谷家当家"]
+“这是当然的吧？我招待了财阀
+结婚典礼中止了。因为我浪费了我的时间”
+
+\CN["贵族的女儿"]
+“那是你强迫我……”
+
+\CN["幡谷家当家"]
+“那怎么都行。
+问题是没有举行婚礼”
+
+\CN["幡谷家当家"]
+“因此，两家决定将所有相关人员都处死。
+不，已经被执行了”
+
+\CN["幡谷家当家"]
+“正好记录了被处刑的地方。
+为什么要和我一起看呢？”
+
+\CN["贵族的女儿"]
+“骗人的……”
+
+\CN["幡谷家当家"]
+“我是财阀的男人，不会说谎。”
+
+\CN["贵族的女儿"]
+「…………」
+
+女人受了很大打击，什么也说不出来了。
+
+无法接受现实而目瞪口呆。
+
+\CN["幡谷家当家"]
+“那么，一起看吧。你的未婚妻要被斩首了。”
+
+户主一边抿嘴一笑，一边让自己看起来像个女人
+播放影像。
+
+被断头台牢牢固定住脖子的男人是女人最爱的对象——
+
+\CN["未婚夫"]
+“……对不起……。
+我本以为以后会和你幸福的……”
+
+: HideWnd()
+: PlaySe( "SE/Se_AnimeEff_Blood01" )
+: DrawImage( 1, 0, "BGImage/BG_Red", 0.0 )
+: ShowWnd()
+——我想变得幸福。
+留下那句话的男人断送了生命。
+
+\CN["贵族的女儿"]
+“哇啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+
+女人疯狂地哭喊。
+
+: HideWnd()
+: EraseImage( 1, 0, 1.0)
+: Wait()
+: ResetLayer(1)
+: ShowWnd()
+\CN["幡谷家当家"]
+“呵呵，我疯了。好的，我最兴奋。
+这种女人的manko很舒服”
+
+\CN["幡谷家当家"]
+“让我享受一整晚吧。”
+
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_DoorOpen01" )
+: CharaCostume( "Azami", 4 )
+: RpgCharaOn("Azami")
+: RpgCharaBatch( "Azami"	\
+:	"MoveUp", 2 )
+: Wait()
+: RpgCharaTurn( "NPC_51_Mobu41", "D" )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["幡谷家当家"]
+“……是谁？这种时候。”
+
+//●演出：当主が振り返り青ざめる
+\CN["幡谷家当家"]
+“哈，般若的面……难道…”
+
+: DrawChara( "Azami", 0, 0, 0 )
+\CN["般若"]
+「…………」
+
+//●演出：般若が当主を斬り殺す
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Red", 0.5 )
+: PlaySe( "SE/Se_Slash01" )
+: Call( "Scenarios/Effect*Blood01" )
+: Wait()
+: ShowWnd()
+……………………………………………………。
+
+//●演出：回想開ける演出
+//●背景：空
+//Yoshi：背景、昼
+: HideWnd()
+: CharaCostume( "Azami", 0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition14", 1.0 )
+: Wait()
+: ShowWnd()
+般若暗杀的对象几乎都是以权力为伞，招揽了许多民众
+尽是些痛苦的人。
+
+只是并不是无差别地在黑云里不管是谁都杀了。
+
+人们一知道这件事，就有人举起般若来。
+
+般若不是冷酷无比的暗杀。
+他说，这是正义的伙伴，能帮助我们解决那些折磨自己的暴君。
+
+而且这件事进一步加速了反幕派的势头。
+
+//●演出：場面転換トランジション
+//●場所：帝都・昼
+//●演出：話合っている男たちの横をヒラガ＆亜久里が通りすがる
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/36_ID03")
+: DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: ShowWnd()
+\CN["平底片"]
+“正义的伙伴吗……。
+因为般若死后只杀了那些理所当然的人”
+
+: DrawChara( "Aguri", 1, 0)
+: PlayVoice( "Voices/vo16_agu0001" )
+\CN["白衣的女人"]
+“将军直属的部队，见回组平时的行为令人目不忍睹
+对幕府抱有不信任感的人每天都在增加”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“虽然做的是杀人。
+这就是正义的伙伴——正义的看法各不相同”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“治理大和的人和想把他们拉下去的人
+在争斗吗……。你觉得亚久里怎么样？”
+
+: DrawChara( "Aguri", 2, 0)
+: PlayVoice( "Voices/vo16_agu0002" )
+\CN["亚久里"]
+“从100多年前开始重复同样的事情。
+这个国家只有不学习的人吧”
+
+: DrawChara( "Hiraga", 5, 0)
+\CN["平底片"]
+“亚久里先生也还是希望和平的世界吗？”
+
+: DrawChara( "Aguri", 3, 0, 1 )
+: PlayVoice( "Voices/vo16_agu0003" )
+\CN["亚久里"]
+“是啊。嗯，我觉得和平的世界很好。”
+
+: DrawChara( "Hiraga", 6, 0)
+\CN["平底片"]
+“我有同感……”
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+\CN["平底片"]
+“突然……鼻血……”
+
+: DrawChara( "Aguri", 4, 0, 0 )
+: PlayVoice( "Voices/vo16_agu0004" )
+\CN["亚久里"]
+“希拉加先生，这是纸巾。”
+
+: DrawChara( "Hiraga", 0, 0)
+\CN["平底片"]
+“嗯……谢谢你，亚久里先生。”
+
+//●演出：ヒラガ＆亜久里　去ってから暗転
+//●シーン：「売られたエルフと遊廓と１」へ
+//＠シナリオジャンプ：SC_B04_10
+: HideWnd()
+: chara = "Hiraga"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: chara = "Aguri"; lay = 4; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: LoadMap( "Map_Event007", "", "Scenarios/SC_B04_10")

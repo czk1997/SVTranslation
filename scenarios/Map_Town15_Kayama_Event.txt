@@ -1,0 +1,37 @@
+//========================================================
+//○ＮＰＣ会話
+//========================================================
+*NPC_T15_001
+: Call( "Scenarios/SC_N01_01*NPC_T15_001" )
+: Flag( "SC_D05_04_1", true )
+: Jump( "*End" )
+
+*NPC_T15_002
+: Call( "Scenarios/SC_N01_01*NPC_T15_002" )
+: Flag( "SC_D05_04_2", true )
+: Jump( "*End" )
+
+
+*NPC_T15_003
+: Call( "Scenarios/SC_N01_01*NPC_T15_003" )
+: Flag( "SC_D05_04_3", true )
+: Jump( "*End" )
+
+
+*NPC_T15_004
+: Call( "Scenarios/SC_N01_01*NPC_T15_004" )
+: Flag( "SC_D05_04_4", true )
+: Jump( "*End" )
+
+
+*NPC_T15_005
+: Call( "Scenarios/SC_N01_01*NPC_T15_005" )
+: Flag( "SC_D05_04_5", true )
+: Jump( "*End" )
+
+*End
+//５人話しかけているとイベント発生
+: if ( Flag ( "SC_D05_04_1" ) == true && Flag ( "SC_D05_04_2" ) == true && Flag ( "SC_D05_04_3" ) == true && Flag ( "SC_D05_04_4" ) == true && Flag ( "SC_D05_04_5" ) == true )
+	: Jump( "Scenarios/SC_D05_04*sc003a" )
+: endif
+: Return

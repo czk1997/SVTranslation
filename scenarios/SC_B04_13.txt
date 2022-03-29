@@ -1,0 +1,637 @@
+//========================================================
+//○達磨襲来、鬼灯半壊
+//========================================================
+//＠プレイヤーキャラ：無黒
+//●視点：無黒視点
+//●場所：鬼灯屯所・夜
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Teito" )
+: FastTravelMapOn( "TeitoNishikaido" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "Kazusa" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: FastTravelMapOn( "Nagatoro" )
+: FastTravelMapOn( "Takahama" )
+: FastTravelMapOn( "KannaKaido" )
+: FastTravelMapOn( "YamatoHigashiKaidoC" )
+: FastTravelMapOn( "NittouKaido" )
+: FastTravelMapOn( "KitaguniKaido" )
+: FastTravelMapOn( "TeitoHigashiKaido" )
+: FastTravelMapOn( "Yoshinohara" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: ShowWnd()
+——在吉野原错过般若后，回到了屯所……。
+
+//●状況：隊士たちが倒れている
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Houzuki_Genkan03", 1.0 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: ShowWnd()
+一回到屯所，同伴们就倒下了。
+
+: DrawChara( "Mukuro", 6, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["鬼灯队士・男A"]
+「…………」
+
+: DrawChara( "Mukuro", 17, 0)
+: PlayVoice( "Voices/vo00_muk1327" )
+\CN["无黑色"]
+“……只是昏过去了吗……。
+但是，这到底是怎么回事……？”
+
+//●演出：無黒　屯所の中に入っていく
+//●状況：屯所の中も同じように人が倒れている
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 0; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Restaurant01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["鬼灯队士・男B"]
+“无黑……呃……呃……”
+
+\CN["鬼灯队士・女A"]
+「…………」
+
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk1328" )
+\CN["无黑色"]
+“啊……谁会这样……”
+
+//●演出：無黒　庭に出る
+//●状況：レオ＆龍と達磨が戦っている
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 0; type = "DL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/14_CM014")
+//: DrawChara( "Mukuro", 16, 0, 2, 0.5, 0.0, 3, "RC" )
+: CharaCostume( "Daruma", 2 )
+: DrawChara( "Daruma", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Daruma"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+//: DrawChara( "Leo", 17, 0, 1, 0.5, 0.0, 4, "C" )
+: DrawFaceThumbnail( "Leo", 17, 0, 1 )
+: ShowWnd()
+\CN["雷欧"]
+“哈……哈……哈……哈……哈……哈……”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+: EraseChara( "Daruma", 0.0 )
+: ResetLayer(3)
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Ryu", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["龙"]
+“……酷”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["假面男"]
+“你们这家伙，钻研得很好。
+但是，还远不及我……”
+
+一出院子，雷欧和龙正在和戴着面具的男人战斗。
+
+//: EraseChara( "Ryu", 0.5 )
+//: DrawChara( "Leo", 21, 0, 1, 0.5, 0.0, 4, "RC" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: EraseChara( "Ryu", 0.0 )
+: EraseChara( "Daruma", 0.0 )
+: ShowWnd()
+\CN["雷欧"]
+“好吵啊……竟然让同伴遭遇这种情况……”
+
+//: DrawChara( "Leo", 23, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a002_1_1_0400000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["雷欧"]
+“哦哦哦哦哦哦哦哦哦！！”
+
+雷欧要砍了——
+
+//●演出：刀と刀がぶつかり合う
+: HideWnd()
+: effecttype = "1"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: DrawImage( 1, 0, "BGImage/BG_Hozuki_Rouka01_03", 0.5 )
+: DrawChara( "Daruma", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: Wait()
+: ShowWnd()
+\CN["假面男"]
+“嗯……。为同伴着想的直而有力的太刀筋——
+好吧，好吧”
+
+: DrawChara( "Daruma", 2, 0)
+\CN["假面男"]
+“但是，仅仅这样是不能伤害我的……”
+
+: HideWnd()
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: EraseChara( "Daruma", 0.0 )
+: Call("Scenarios/Common*CutinFadeOut")
+//: DrawChara( "Leo", 21, 0)
+: PlaySe( "SE/Se_Down01" )
+: DrawFaceThumbnail( "Leo", 21, 0, 1 )
+: ShowWnd()
+\CN["雷欧"]
+“呜哇呜……！”
+
+//: EraseChara( "Leo", 0.5 )
+//●演出：龍　必殺技演出
+: HideWnd()
+: Call( "Scenarios/Effect*RyuAction01" )
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Ryu", 41, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
+: ShowWnd()
+\CN["假面男"]
+“哇……不愧是八重樱流师范。真是名不虚传的本领。”
+
+: DrawChara( "Ryu", 36, 0)
+\CN["龙"]
+“哼……承蒙夸奖，真是太高兴了。”
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 2, 0, 0, 0.0, 0.0, 3, "C")
+: chara = "Daruma"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["假面男"]
+“哈！”
+
+//●演出：龍がぶっ飛ばされる
+: PlaySe("SE/Se_Slash01")
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: DrawFaceThumbnail( "Ryu", 34, 0, 0 )
+\CN["龙"]
+“啊啊啊啊——！”
+
+: HideWnd()
+: EraseChara( "Daruma", 0.0 )
+: Call("Scenarios/Common*CutinFadeOut")
+: ResetLayer(3)
+: ResetLayer(2)
+: DrawChara( "Mukuro", 17, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: ShowWnd()
+\CN["假面男"]
+“呼。那边的{女子，おなご}，不想受伤的话就退去比较好。”
+
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk1329" )
+\CN["无黑色"]
+“这么说你就退了？”
+
+刚才才知道对方比自己高几级。
+
+但是，不能因此而退。
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Daruma", 0.0 )
+: DrawChara( "Leo", 19, 0, 1, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+“无黑……不行……！快逃！”
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: DrawChara( "Daruma", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["假面男"]
+“好吧。做好觉悟，拔刀就成了一名武士。
+我会全力回应你的这份心意的”
+
+: PlaySe("SE/Se_Foot01")
+: chara = "Daruma"; lay = 3; type = "SDL";
+: Call( "Scenarios/Common*FgEffOut")
+假面男子踢着大地。
+
+//: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 5, "C" )
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 17, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: chara = "Mukuro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1330" )
+\CN["无黑色"]
+“……！？是，速度……”
+
+一瞬间逼近眼前的男人的刃。
+
+被做——！？
+
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Leo", 23, 0, 1, 0.5, 0.0, 4, "R" )
+: DrawFaceThumbnail( "Leo", 23, 0, 1 )
+\CN["雷欧"]
+“无黑————————！”
+
+//●演出：レオが達磨の刃を受け止める
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evx_a002_1_1_0400000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: ShowWnd()
+//: DrawChara( "Daruma", 1, 0)
+\CN["假面男"]
+“哇……在那一瞬间”
+
+雷欧劈开我和假面男之间走进来
+假面男发出了感叹声。
+
+//●演出：レオ　必殺技
+: HideWnd()
+: Call( "Scenarios/Effect*LeoAction01" )
+: ShowWnd()
+雷欧使出全身心的力量——
+
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: DrawChara( "Daruma", 2, 0, 0, 0.0, 0.0, 3, "C")
+: chara = "Daruma"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["假面男"]
+“啊啊啊啊啊啊啊！！”
+
+//●演出：レオの刀が折られる
+: PlaySe("SE/Se_Swing02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect05", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition05", 1.0, true, 0.0, 0.0)
+: Wait()
+: EraseChara( "Daruma", 0.0 )
+: ResetLayer(3)
+: PlaySe("SE/Se_KatanaDrop01")
+: DrawFaceThumbnail( "Leo", 21, 0, 0 )
+\CN["雷欧"]
+“……呃，刀！”
+
+: HideWnd()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: DrawChara( "Daruma", 1, 0, 0, 0.0, 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["假面男"]
+「糠的一击，真是太好了。
+如果我不认真起来的话就挡不住了……”
+
+: DrawFaceThumbnail( "Leo", 17, 0, 0 )
+\CN["雷欧"]
+“哈、哈、哈……是、混蛋……！”
+
+: StopBgm( 1.0 )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+和受到巨大伤害的龙先生
+雷欧被刀折断了。
+
+我不想办法的话……！
+
+//●演出：あざみ　やってくる
+: HideWnd()
+: CharaCostume( "Azami", 3 )
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayBgm("BGM/31_CM016")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0307" )
+\CN["嘲讽"]
+“这又给我做得太花哨了。”
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
+: DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+\CN["假面男"]
+“……唔是鬼灯头，高千穗痣吗？”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0308" )
+\CN["嘲讽"]
+“啊，是啊。你是什么人？”？
+看来是白夜的头目达磨……？”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["假面男"]
+“左先生，以后请多关照。”
+
+: DrawChara( "Azami", 6, 0)
+: PlayVoice( "Voices/vo05_aza0309" )
+\CN["嘲讽"]
+“我不太想和你认识。”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“我不想再和你交手了。
+像狗一样的强者，杀人实在是太可惜了”
+
+: DrawChara( "Azami", 8, 0)
+: PlayVoice( "Voices/vo05_aza0310" )
+\CN["嘲讽"]
+“诶。那是绕圈子比我强。”
+你想说吗？”
+
+: DrawChara( "Daruma", 3, 0)
+\CN["达磨"]
+“我只是说了事实而已。”
+
+: DrawChara( "Azami", 14, 0)
+: PlayVoice( "Voices/vo05_aza0311" )
+\CN["嘲讽"]
+“那么，要不要试试？现在在这里。”
+
+: DrawChara( "Azami", 16, 0)
+: PlayVoice( "Voices/vo05_aza0312" )
+\CN["嘲讽"]
+“实际上，我也被重要的伙伴们欺负了
+我脑子里乱七八糟的”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“嗯，那是做了坏事。”
+
+局长和白夜的头目，名为达磨的男子对峙。
+
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Daruma", 0.0 )
+: EraseChara( "Azami", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: DrawChara( "Mukuro", 16, 0, 2, 0.0, 0.0, 3, "RC" )
+: DrawChara( "Leo", 21, 0, 0, 0.0, 0.0, 4, "LC" )
+: Wait()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk1331" )
+\CN["无黑色"]
+（……非常气魄……身体完全动不了。）
+
+\CN["雷欧"]
+「…………」
+
+两个人只是摆好架势，一步也不动。
+
+我、还有雷欧都被气魄的漩涡吞没了
+只能看情况。
+
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Leo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Daruma", 2, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Daruma"; lay = 3 ; type = "DL";
+: PlaySe( "SE/Se_Foot01" )
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["达磨"]
+“破了！”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Daruma"; lay = 0; type = "SDR";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Azami", 14, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Daruma"; lay = 3 ; type = "DR";
+: PlaySe( "SE/Se_Foot01" )
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0313" )
+\CN["嘲讽"]
+“啊啊啊啊啊！”
+
+//●演出：刀と刀がぶつかる
+: HideWnd()
+: EraseChara( "Azami", 0.0 )
+: ResetLayer(3)
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+: DrawChara( "Azami", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R")
+: DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L")
+: PlayVoice( "Voices/vo05_aza0314" )
+\CN["嘲讽"]
+“所谓TOP好像不是摆样子……”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“云母”
+
+: DrawFaceThumbnail( "Leo", 17, 0, 0, 0 )
+\CN["雷欧"]
+“局长还那么强啊……。
+和我的次元不同……”
+
+我知道你很强。
+
+和达磨势均力敌。
+没想到竟然到了这里……。
+
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“真能干啊……”
+
+: DrawChara( "Azami", 14, 0)
+: PlayVoice( "Voices/vo05_aza0315" )
+\CN["嘲讽"]
+“我可以认真起来吗？”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“正是狗……”
+
+//●演出：あざみと達磨　距離を取る
+
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Daruma", 0, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Daruma"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["达磨"]
+“但是，今晚只是来看情况。
+高千穗的痣，和期待的一样{女子，阿谀奉承}”
+
+: DrawChara( "Daruma", 0, 0)
+\CN["达磨"]
+“还有，那边的金发和黑发各一半的男人——
+今后也非常期待的男人”
+
+: DrawFaceThumbnail( "Leo", 21, 0, 0, 0 )
+\CN["雷欧"]
+“是吗？”
+
+: DrawChara( "Daruma", 1, 0)
+\CN["达磨"]
+“我期待着再次相见的那一天。”
+
+: HideWnd()
+//●演出：達磨　消える
+: PlaySe("SE/Se_Foot01")
+: chara = "Daruma"; lay = 0; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: ResetLayer(3)
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk1332" )
+\CN["无黑色"]
+“……那是白夜的头号，我们应该战斗的对手”
+
+我知道九星干部们也有力量上的差距。
+
+不能就这样。
+一定在不久的将来，变得完全不能竞争了。
+
+: DrawFaceThumbnail( "Leo", 7, 0, 0, 0 )
+\CN["雷欧"]
+“呃……！在期待着什么呢……。
+开玩笑……”
+
+另一方面，雷欧一边望着被折断的刀
+悔恨得皱起了眉头。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+——白夜之巅，达磨袭来之日。
+鬼灯在达磨一个人的力量下几乎处于毁灭状态。
+
+如果局长回来晚了
+也许全灭了。
+
+这件事让我很震惊，不知道自己有多无力
+被告知……。
+
+只能呆呆地伫立着。
+
+……………………………………………………。
+
+//●第４章終了。第５章へ
+//●シーン：「追い込まれる鬼灯」へ
+//＠シナリオジャンプ：SC_B05_01
+: CharaCostume( "Daruma", 0 )
+: CharaCostume( "Azami", 0 )
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_B05_01")

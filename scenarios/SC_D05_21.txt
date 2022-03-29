@@ -1,0 +1,375 @@
+//========================================================
+//○縁切り～桃編～１
+//========================================================
+//パーティーを桃単独にする
+: Party( "Momo" )
+: PartyType = "Party02"; Call( "Scenarios/CommonSys*PartySetting" )
+: FastTravelMapOn( "NasunoYama" )
+: SetMission( "SC_D05_21_1", "InProgress" )
+: DestinationMap( "Map_Dungeon14_05_Nasunoyama" )
+: FadeOut( 0.5 )
+: Wait()
+: LoadMap( "Map_Dungeon14_01_Nasunoyama", "", "Scenarios/SC_D05_21*sc001")
+
+*sc001
+//●場所：那須野山・入口
+//●演出：桃　山に入ってくる
+: Call( "Scenarios/Map_Dungeon_Init*Map_Dungeon14_01" )
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Momo", 10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1499" )
+\CN["桃子"]
+“啊~……要说服老师帮忙，好忧郁啊……”
+
+那个老师不可能帮助幕府的事情。
+
+希拉加到底是怎么想的，才委托了这样的事情呢。
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom1500" )
+\CN["桃子"]
+“但是，能做的事情必须要做。
+也许会有万一……”
+
+: DrawChara( "Momo", 10, 0)
+: PlayVoice( "Voices/vo01_mom1501" )
+\CN["桃子"]
+“只是，问题是老师现在是否还在这里……”
+
+正如前几天在西都出现的情况所示
+突然就要去哪里旅行了。
+
+殷切地希望你能呆在山顶的小屋里
+我决定登山去。
+
+//＠マップ解放：那須野山（桃）
+//●シーンエンド
+事件信息更新了。
+
+: Return
+//========================================================
+//○縁切り～桃編～２
+//========================================================
+*sc002
+//●場所：那須野山・頂上
+: PlayBgm("BGM/15_ESM04")
+: DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: DrawChara( "Tamamo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo01_mom1502" )
+\CN["桃子"]
+“太好了。老师好好待在这里。”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0340" )
+\CN["玉藻"]
+“因为我知道你要来这里。”
+
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1503" )
+\CN["桃子"]
+“啊，是吗？
+难道是‘看到了’吗？”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0341" )
+\CN["玉藻"]
+「再见。那我就好好待在这里了。
+能成为温柔的老师真是太好了”
+
+因为是老师的事，如果不想商量的话就找个地方看看吧
+应该很耀眼。
+
+那就是在这里——
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1504" )
+\CN["桃子"]
+“我直截了当地说。
+老师，能协助幕府吗？”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0342" )
+\CN["玉藻"]
+“合作是什么？”
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom1505" )
+\CN["桃子"]
+“啊？虽然没听说过详细的事情
+将军好像想借助老师的智慧”
+
+: DrawChara( "Tamamo", 1, 0)
+: PlayVoice( "Voices/vo22_tam0343" )
+\CN["玉藻"]
+“我知道你想借智慧的意思
+你在跟我说吗？”
+
+//●読み：妾（めかけ）
+: DrawChara( "Momo", 3, 0)
+: PlayVoice( "Voices/vo01_mom1506" )
+\CN["桃子"]
+“将军的妻子——没有啊。作为妾在一旁支持我之类的。”
+不是那样吗？”
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0344" )
+\CN["玉藻"]
+“大概明白了两成吧”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1507" )
+\CN["桃子"]
+“嗯。那还有更大的意义。”
+
+: DrawChara( "Tamamo", 1, 0)
+: PlayVoice( "Voices/vo22_tam0345" )
+\CN["玉藻"]
+“桃子，你知道我叫什么吗？”
+
+//●読み：白面金毛九尾（はくめんこんもうきゅうび）
+//●読み：傾国（けいこく）
+: DrawChara( "Momo", 11, 0)
+: PlayVoice( "Voices/vo01_mom1508" )
+\CN["桃子"]
+“呃，是什么来着？好像有点长的东西……。
+确实是《白面金毛九尾之狐》或者《倾国美女》吧？”
+
+: PlayVoice( "Voices/vo22_tam0346" )
+\CN["玉藻"]
+“那是从‘恶’的侧面看蕨菜的情况。”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0347" )
+\CN["玉藻"]
+“因为美貌和知识而被称为支撑国家的‘贤者的智慧’
+时代也是有的”
+
+: DrawChara( "Momo", 6, 0)
+: PlayVoice( "Voices/vo01_mom1509" )
+\CN["桃子"]
+“美貌是自己说的吗？虽然很像老师……”
+
+: DrawChara( "Tamamo", 1, 0)
+: PlayVoice( "Voices/vo22_tam0348" )
+\CN["玉藻"]
+“虽然不知道是谁出谋划策的，但将军却认为这是我对未来的‘能力，力量’
+应该是想要积累了数百年以上的知识吧”
+
+: PlayVoice( "Voices/vo22_tam0349" )
+\CN["玉藻"]
+“我不能给任何地方。
+笨蛋弟子啊，放弃回去吧”
+
+: DrawChara( "Momo", 1, 0)
+: PlayVoice( "Voices/vo01_mom1510" )
+\CN["桃子"]
+“是啊。但是，我也是工作
+”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1511" )
+\CN["桃子"]
+“不管你问我几天，我也只能说服你了。”
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0350" )
+\CN["玉藻"]
+“那就没办法了。
+如果你想让稻草听听你的愿望，那就不要让它倒下”
+
+: DrawChara( "Momo", 12, 0)
+: PlayVoice( "Voices/vo01_mom1512" )
+\CN["桃子"]
+“那是用力吗？
+因为有把被操纵的我复原的恩情
+虽然我想避开这种情况……”
+
+: PlayVoice( "Voices/vo22_tam0351" )
+\CN["玉藻"]
+「没关系。如果你想让我听你的话，我只有打倒你。
+这是自古以来的规矩”
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1513" )
+\CN["桃子"]
+“这是我第一次听说。
+但是，如果老师那样说的话……”
+
+离开这里之前完全敌不过老师。
+我觉得正是因为这样，孩子和大人之间才有差距。
+
+//●演技：心の声です
+: DrawChara( "Momo", 0, 0 ,1)
+: PlayVoice( "Voices/vo01_mom1514" )
+\CN["桃子"]
+（但是，现在的话——
+为了活下去而磨练了魔术的本领！）
+
+: DrawChara( "Tamamo", 3, 0 ,1)
+: PlayVoice( "Voices/vo22_tam0352" )
+\CN["玉藻"]
+“很有生物的样子。
+桃，你是想杀我才来的！”
+
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：玉藻
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：玉藻,2,2,2
+
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc003" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Mountain01_01", "BGM/22_BM003", 1051, -1, -1, "Scenarios/SC_D05_21*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc003" )	//勝利した場合
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+*sc003
+//●状況：戦闘勝利後
+//●演技：戦闘後、ダメージを受けています
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Tamamo", 5, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0353" )
+\CN["玉藻"]
+“……真不愧是这样……我知道会变成这样……。
+我稍微有点抵触……”
+
+: DrawChara( "Momo", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1515" )
+\CN["桃子"]
+“哈、哈、哈……终于赢了老师……”
+
+//●演技：玉藻は未来が見えています
+//●演技：心の声です
+: DrawChara( "Tamamo", 1, 0)
+: PlayVoice( "Voices/vo22_tam0354" )
+\CN["玉藻"]
+（在我们将军身边
+大和的灭亡应该会有所延后……）
+
+//●演技：心の声です
+: DrawChara( "Tamamo", 2, 1)
+: PlayVoice( "Voices/vo22_tam0355" )
+\CN["玉藻"]
+（不输给可爱的笨蛋弟子是不行的
+真是非常麻烦的地方啊……）
+
+: DrawChara( "Momo", 3, 1)
+老师虽然输了，但还是一副清爽的样子。
+
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0356" )
+\CN["玉藻"]
+「看，你赢了。
+你可以带我去任何地方”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Momo", 0.0 )
+: EraseChara( "Tamamo", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+然后带着老师回了希拉加那里。
+
+老师在那之后马上被希拉加和他的助手带去了
+朝着将军所在的帝都城走去。
+
+……………………………………………………。
+
+//●分岐：無黒と黄菜子のイベントが終了している場合
+//●シーン：「色町の最凶母子を始末せよ！１」へ
+//＠シナリオジャンプ：SC_D05_23
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●キャラクター選択肢へ
+//●分岐終了
+: $money += 7500
+我得到了报酬。
+
+: FastTravelMapOff( "NasunoYama" )
+: SetMission( "SC_D05_21_1", "Successed" )
+: if( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 1 )
+	\CI["因缘~公主椿桃篇~开始"]
+	\CI["因缘～有栖川黄菜子篇～开始"]
+开始哪个故事？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_21" )
+	: else
+		: Jump( "Scenarios/SC_D05_22" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 2 )
+	\CI["因缘~神八代无黑篇开始~"]
+	\CI["因缘～有栖川黄菜子篇～开始"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_20" )
+	: else
+		: Jump( "Scenarios/SC_D05_22" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 3 )
+	\CI["因缘~神八代无黑篇开始~"]
+	\CI["因缘~公主椿桃篇~开始"]
+你做什么工作？
+
+	: if ($choice == 0)
+		: Jump( "Scenarios/SC_D05_20" )
+	: else
+		: Jump( "Scenarios/SC_D05_21" )
+	: endif
+
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 4 )
+	: Jump( "Scenarios/SC_D05_22" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 5 )
+	: Jump( "Scenarios/SC_D05_21" )
+: elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 6 )
+	: Jump( "Scenarios/SC_D05_20" )
+: else
+	: FadeOut( 0.0 )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_23")
+: endif
+: Return

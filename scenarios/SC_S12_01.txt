@@ -1,0 +1,133 @@
+//========================================================
+//○町中露出プレイ（無黒）
+//========================================================
+*sc001
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//●ＣＧ：Ｈカットイン・着替え（無黒）
+//●ＣＧ差分：着衣
+//＠evcg：eva_c040
+: HideWnd()
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_1_0100002_1000000_0_"
+: if ( $inExtra == true )
+	: DrawImage( 1, 0, "BGImage/BG_Teito01_01", Call("Scenarios/Common*EffTime") )
+: endif
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6921" )
+\CN["无黑色"]
+（……接下来，我就在这里……在街道正中间脱下衣服
+光着身子……）
+
+前几天，进了男浴室之后，想做更过激的事情。
+
+我想在街上裸体……。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6922" )
+\CN["无黑色"]
+（总觉得，非常紧张……）
+
+心跳加速。
+
+胯股之间的附近痒痒的，腰附近战战兢兢的
+一不小心脸上就变得很害羞。
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：下着
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_2_0100002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+索性脱了衣服穿内衣。
+
+\CN["男1"]
+“喂喂，快看那个啊。”
+
+\CN["男2"]
+“超级美女突然变成内衣了！？”
+
+: PlayVoice( "Voices/vo00_muk6923" )
+\CN["无黑色"]
+“呵呵……”
+
+穿着内衣的瞬间，行人一齐朝着我。
+
+猥亵的视线自不必说，侮蔑的视线和好奇的视线
+各种各样的感情交织在一起被投来了视线。
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：下着脱ぎ
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_3_0300002_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Mukuro", 3 )
+: ShowWnd()
+取下胸罩，只穿一条裤子。
+
+脱掉这个的话，就会暴露裸体。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6924" )
+\CN["无黑色"]
+（#f59a0）♥</光是内衣就这么令人毛骨悚然……。
+这样的话，如果变成裸体的话……）
+
+一定会比现在更受关注。
+
+只是想象一下就不行了。手停不下来。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6925" )
+\CN["无黑色"]
+（我害羞的地方，想让你看看♥</color>）
+
+//●ＳＥ：衣擦れの音
+//●ＣＧ差分：全裸
+: HideWnd()
+: PlaySe( "SE/Se_Cloth01" )
+: evbg = false; evcos = false;
+: evfile = "eva_c040_0_4_0300003_1000000_0_"
+: Call("Scenarios/Common*EvChange")
+: CharaCostume( "Mukuro", 0 )
+: ShowWnd()
+脱掉内衣，赤身裸体。
+
+终于全部脱掉了。
+
+\CN["女1"]
+“什么，那孩子？哇……光着身子。变态？”
+
+\CN["女2"]
+“怎么说呢？在街上试着全裸露出来了！”
+是那样的企划吧。哇……”
+
+\CN["男3"]
+“那是一个非常色情的身体”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo00_muk6926" )
+\CN["无黑色"]
+（哈……哈………兴奋得喘不过气来……。
+我真的是裸体。在街上，光着身子♥</color>）
+
+做到这一步，不可能马上穿衣服。
+
+既然这样，那就再在街上裸奔一会儿吧。
+
+//●シーンエンド
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: ShowWnd()
+//Ｈ履歴更新
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_S12_01" )
+: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 6001 ) endif
+: Return

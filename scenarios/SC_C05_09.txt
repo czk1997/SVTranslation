@@ -1,0 +1,920 @@
+//========================================================
+//○牢屋敷襲撃１
+//========================================================
+*sc001
+//●場所：白夜の隠れ家・無黒の部屋
+//●視点：無黒視点
+//●背景：空・昼
+: HideWnd()
+//パーティーを無黒に
+: Party( "Mukuro" )
+: PartyType = "Party01"; Call( "Scenarios/CommonSys*PartySetting" )
+: Call( "Scenarios/CommonSys*FastTravelMapOffAll" )
+: FastTravelMapOn( "Sakitama" )
+: FastTravelMapOn( "Yoshinohara" )
+: FastTravelMapOn( "HiragaLavoWay" )
+: FastTravelMapOn( "Mizukami" )
+: FastTravelMapOn( "TeitoMinamiKaido" )
+: FastTravelMapOn( "TakahamaPort" )
+: FastTravelMapOn( "Orikasa" )
+: FastTravelMapOn( "TeitoKitaKaido" )
+: FastTravelMapOn( "NasunoYama" )
+: FastTravelMapOn( "YoseiForest" )
+: FastTravelMapOn( "KannaKaido" )
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: FadeIn( 0.0 )
+: Wait()
+: StopBgm( 0.0 )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+白夜的人们在与幕府为对手胡闹的时候
+我收到了一个命令
+
+//●服装：無黒・下着
+: HideWnd()
+: CharaCostume( "Mukuro", 3 )
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayBgm("BGM/01_CM001")
+: ShowWnd()
+早上起床后确认设备。
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk3035" )
+\CN["无黑色"]
+“我下达的命令是牢狱的袭击吗……”
+
+以前，是为了救出日野家的户主而潜入的牢房。
+虽然主人被般若杀死了没能救出来。
+
+//●演技：大和が荒れてきたことで考え込んでいます
+: DrawChara( "Mukuro", 7, 0)
+: PlayVoice( "Voices/vo00_muk3036" )
+\CN["无黑色"]
+「…………」
+
+自从白夜真正开始行动后
+大和开始大变粗了。
+
+幕府无法抑制失去力量，成为暴徒的反幕派。
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk3037" )
+	\CN["无黑色"]
+“……这样真的好吗？
+我做的事对吗……？”
+
+骚动不断扩大，即使是普通生活的人们
+危害波及到了。
+
+	: DrawChara( "Mukuro", 21, 0)
+	: PlayVoice( "Voices/vo00_muk3038" )
+	\CN["无黑色"]
+“推翻幕府，创造新时代。
+为此牺牲是必要的……”
+
+那个想法不是不明白。
+只是，并不是能轻易接受。
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶが３の場合
+: else
+	: DrawChara( "Mukuro", 39, 0)
+	: PlayVoice( "Voices/vo00_muk3039" )
+	\CN["无黑色"]
+“以白夜为中心打倒幕府，建立新时代
+正在做。牺牲了也没办法……”
+
+不想死的话只要变强就好了。
+
+建立新时代并不是谁都能接受的。
+
+//●分岐終了
+: endif
+我越来越不知道什么是正确的。
+
+: DrawChara( "Mukuro", 23, 0, 3)
+: PlayVoice( "Voices/vo00_muk3040" )
+\CN["无黑色"]
+“我现在只做应该做的事。”
+
+这样对自己说。
+
+如果就此止步的话
+感觉一生都不知道。
+
+//●シーンエンド
+: FadeOut( 0.5 )
+: Wait()
+: SetMission( "SC_C05_09_1", "InProgress" )
+: DestinationMap( "Map_Dungeon35_01_TeitoRouyashiki" )
+: CharaCostume( "Mukuro", 0 )
+: LoadMap( "Map_Town06_01_Sakitama", "FromByakuya", "Scenarios/Map_Town06_Sakitama_Init*Map01")
+
+//========================================================
+//○牢屋敷襲撃２
+//========================================================
+*sc002
+//●場所：牢屋敷の入口
+//●状況：白夜の人物が大勢。待機している
+: HideWnd()
+//強制着衣
+: CharaCostume( "Mukuro", 0 )
+: DrawImage( 1, 0, "BGImage/BG_Yashiki02_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3041" )
+\CN["无黑色"]
+“对不起，让你久等了。”
+
+\CN["白夜队士·男1"]
+“哟，不是晚了吗？”
+
+\CN["白夜队士·女1"]
+“吵架之后再说。把被抓来的同志们放跑的是我们的
+因为这是使命”
+
+//●ＳＥ：ドーン　爆発音
+: PlaySe( "SE/Se_AnimeXL_Explode01" )
+从监狱那边听到爆炸声。
+
+\CN["白夜队士·男1"]
+“刚才是信号！我走了！”
+
+\CN["白夜队士·女1"]
+“神八代，请你站在正中间。”
+
+: DrawChara( "Mukuro", 23, 0, 2)
+: PlayVoice( "Voices/vo00_muk3042" )
+\CN["无黑色"]
+“我知道了。”
+
+//●演出：モブたちが一斉に、牢屋敷に乗り込んでいく
+//＠見廻組や鬼灯と戦いながら牢屋敷に囚われている人を逃がしていく
+//●シーンエンド
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseImage( 1, 0, Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ShowWnd()
+无黑接下来会把被囚禁在牢狱里的人们放走。
+
+检查监牢的话可以破坏监牢，请全部破坏。
+
+: Flag( "RouYashikiEvent", true )
+: Return
+//========================================================
+//○牢屋破壊イベント
+//========================================================
+*sc002a
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 4, 4 )
+: Wait()
+: RpgCharaOff("RouyaSc002a")
+: ShowWnd()
+\CN["囚犯1"]
+“哦哦哦！谢谢！”
+
+\CN["囚犯2"]
+“我是被冤枉而逮捕的。”
+
+: if ( CharaCostume( "Mukuro" ) == 1 )
+
+	\CN["囚犯1"]
+“竟然被全裸的美少女救了……。
+”
+: endif
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("sc002a_1")
+: RpgCharaOff("sc002a_2")
+: FadeIn( 0.5 )
+: Flag( "RouyaSc002a", true )
+: Jump( "*sc002_end" )
+
+*sc002b
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 4, 4 )
+: Wait()
+: RpgCharaOff("RouyaSc002b")
+: ShowWnd()
+\CN["囚犯1"]
+“谢谢！得救了！”
+
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	\CN["囚犯2"]
+“被曝光狂救了吗……。
+不，什么都可以。太好了！”
+
+: else
+	\CN["囚犯2"]
+“嘿嘿，我不会忘记你的。”
+
+: endif
+
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("sc002b_1")
+: RpgCharaOff("sc002b_2")
+: RpgCharaOff("sc002b_3")
+: FadeIn( 0.5 )
+: Flag( "RouyaSc002b", true )
+: Jump( "*sc002_end" )
+
+*sc002c
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 4, 4 )
+: Wait()
+: RpgCharaOff("RouyaSc002c")
+: ShowWnd()
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	\CN["囚犯"]
+“没想到会被曝光狂救出来啊。”
+
+: else
+	\CN["囚犯"]
+“怎么会被这样的小姑娘救了呢。”
+
+: endif
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("sc002c_1")
+: RpgCharaOff("sc002c_2")
+: FadeIn( 0.5 )
+: Flag( "RouyaSc002c", true )
+: Jump( "*sc002_end" )
+
+*sc002d
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 4, 4 )
+: Wait()
+: RpgCharaOff("RouyaSc002d")
+: ShowWnd()
+\CN["囚犯"]
+“幕府把我关在这里
+我绝对要把他击溃！”
+
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("sc002d_1")
+: RpgCharaOff("sc002d_2")
+: FadeIn( 0.5 )
+: Flag( "RouyaSc002d", true )
+: Jump( "*sc002_end" )
+
+*sc002e
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 4, 4 )
+: Wait()
+: RpgCharaOff("RouyaSc002e")
+: ShowWnd()
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	\CN["囚犯"]
+“……曝光狂！？
+不，就是这个时候也可以！得救了！”
+
+: else
+	\CN["囚犯"]
+“你是白夜人吗？谢谢你。”
+
+: endif
+
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("sc002e_1")
+: RpgCharaOff("sc002e_2")
+: FadeIn( 0.5 )
+: Flag( "RouyaSc002e", true )
+: Jump( "*sc002_end" )
+
+*sc002f
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Earth02" )
+: PlayAnim( "Animations/AnimeL_Sword01", false, 0, 0, 4, 4 )
+: Wait()
+: RpgCharaOff("RouyaSc002f")
+: ShowWnd()
+\CN["囚犯"]
+“这份恩情，我绝对不会忘记。真是费事啊。”
+
+: HideWnd()
+: FadeOut( 0.5 )
+: Wait()
+: RpgCharaOff("sc002f_1")
+: RpgCharaOff("sc002f_2")
+: FadeIn( 0.5 )
+: Flag( "RouyaSc002f", true )
+: Jump( "*sc002_end" )
+
+//終了処理
+*sc002_end
+: Num = 0
+: if ( Flag ( "RouyaSc002a" ) == true )
+	: Num += 1
+: endif
+: if ( Flag ( "RouyaSc002b" ) == true )
+	: Num += 1
+: endif
+: if ( Flag ( "RouyaSc002c" ) == true )
+	: Num += 1
+: endif
+: if ( Flag ( "RouyaSc002d" ) == true )
+	: Num += 1
+: endif
+: if ( Flag ( "RouyaSc002e" ) == true )
+	: Num += 1
+: endif
+: if ( Flag ( "RouyaSc002f" ) == true )
+	: Num += 1
+: endif
+: if( Num < 6 )
+	: Return
+: endif
+//========================================================
+//○牢屋敷襲撃３
+//========================================================
+*sc003
+//●場所：牢屋敷
+//●状況：捕まっている反幕派を全員逃がした後
+: DrawChara( "Mukuro", 23, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3043" )
+\CN["无黑色"]
+“这样的话就好像所有人了。去外面看看吧。”
+
+//●演出：場面転換トランジション
+//●状況：外に出ると、白夜の隊士が倒れていて龍が１人佇んでいる
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Yashiki02_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: PlayBgm("BGM/10_CM010")
+//●分岐：［服装］着衣の場合
+: if( Call( "Scenarios/CommonSys*CosWear" ) == true )
+	: DrawChara( "Ryu", 1, 0, 0, 0.25, 0.0, 3, "C" )
+	//: DrawChara( "Mukuro", 1, 0, 2, 0.25, 0.0, 4, "RC" )
+	: ShowWnd()
+	\CN["龙"]
+“神八代，好久不见了。”
+
+	: DrawChara( "Ryu", 1, 0, 0, 0.25, 0.0, 3, "LC" )
+	: DrawChara( "Mukuro", 23, 0, 2, 0.25, 0.0, 4, "RC" )
+	: PlayVoice( "Voices/vo00_muk3044" )
+	\CN["无黑色"]
+“……龙先生”
+
+//●分岐：［服装］全裸の場合
+: else
+	: DrawChara( "Ryu", 22, 0, 0, 0.25, 0.0, 3, "C" )
+	: ShowWnd()
+	\CN["龙"]
+“神八代，你是不是有点不见就变成曝光狂了？”
+
+	: DrawChara( "Ryu", 22, 0, 0, 0.25, 0.0, 3, "LC" )
+	: DrawChara( "Mukuro", 23, 0, 2, 0.25, 0.0, 4, "RC" )
+	: PlayVoice( "Voices/vo00_muk3045" )
+	\CN["无黑色"]
+“这种认真的反应会让我失去自信……”
+
+//●分岐終了
+: endif
+很多白夜的人都倒下了。
+
+龙先生竟然会在这里出现……。
+
+: DrawChara( "Mukuro", 1, 0, 2)
+: PlayVoice( "Voices/vo00_muk3046" )
+\CN["无黑色"]
+“伤已经好了吗？”
+
+: DrawChara( "Ryu", 5, 0)
+\CN["龙"]
+“呼。没什么好伤的。”
+
+头部受的伤好像已经好了。
+
+: DrawChara( "Ryu", 1, 0)
+\CN["龙"]
+“虽然道路{不同，但是}不同的人，总有一天会这样相见的
+”
+
+: DrawChara( "Mukuro", 21, 0)
+: PlayVoice( "Voices/vo00_muk3047" )
+\CN["无黑色"]
+“如果可以的话，我想避开和龙先生的战斗……”
+
+如果是以前的我就逃不掉的这个场面，我已经做好了死的觉悟。
+
+但是，虽说可以{黑夜叉，暗黑精灵}化
+还没有按照自己的意志行事。
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if( $evilLevel < 3 )
+	: DrawChara( "Ryu", 16, 0)
+	\CN["龙"]
+“离开鬼灯，似乎积累了不少钻研。
+呵呵，作为一个武士，血腥骚动”
+
+	: DrawChara( "Mukuro", 12, 0)
+	: PlayVoice( "Voices/vo00_muk3048" )
+	\CN["无黑色"]
+“我这边是血色减退……”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Ryu", 20, 0)
+	\CN["龙"]
+“看来是花了很多钱才弄到这一手上的。
+气氛就像是刽子手一样”
+
+	: DrawChara( "Mukuro", 1, 0)
+	: PlayVoice( "Voices/vo00_muk3049" )
+	\CN["无黑色"]
+“光看就知道了吗？真不愧是。”
+
+//●分岐終了
+: endif
+: PlaySe( "SE/Se_Katana01" )
+龙先生拔刀。
+
+//●演技：殺気を放たれて驚いている感じです
+: DrawChara( "Mukuro", 16, 0, 5)
+: PlayVoice( "Voices/vo00_muk3050" )
+\CN["无黑色"]
+「……！？」
+
+皮肤越是刺痛越锋利，越是空气淤塞越是浓重的杀气。
+
+现在开始进行的不是练习而是“互相残杀”
+即使不愿意也会被别人理解。
+
+: DrawChara( "Ryu", 42, 0)
+\CN["龙"]
+“——我走了。”
+
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：新渡戸龍
+//■タイプ：ボス戦（逃走不可）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：新渡戸龍,1,1,1
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc004" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Yashiki02_01", "BGM/22_BM003", 1057, -1, -1, "Scenarios/SC_C05_09*battle_end" , true )
+
+*battle_end
+: StopBgm( 0.0 )
+: if ( $battleWin == true )
+	: Jump( "*sc004" )	//勝利した場合
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		//牢屋フラグを全部リセットする
+		: FlagDown( "RouyaSc002a" )
+		: FlagDown( "RouyaSc002b" )
+		: FlagDown( "RouyaSc002c" )
+		: FlagDown( "RouyaSc002d" )
+		: FlagDown( "RouyaSc002e" )
+		: FlagDown( "RouyaSc002f" )
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+*battle01_2
+//●ダークエルフになると発生（システム的に可能なら）
+//※恐らく、没にするかと……。
+//: CharaCostume( "Mukuro", 2 )
+: DrawChara( "Ryu", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["龙"]
+「呼，{黑夜叉，暗黑精灵}已经达到了吗……。
+积累了那么多的钻研啊。钦佩”
+
+: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk3051" )
+\CN["无黑色"]
+“在黑夜叉、黑精灵面前
+真不愧是完全不动啊”
+
+: DrawChara( "Ryu", 5, 0)
+\CN["龙"]
+“如果我无法达到{黑夜叉，暗黑妖精}的话
+也许很惊讶”
+
+: DrawChara( "Ryu", 28, 0)
+\CN["龙"]
+“——有个男人爱着大海
+——有一只乌龟被一个男人拯救了
+——某个公主遇到了一个海之男”
+
+: DrawChara( "Mukuro", 24, 0)
+龙先生编织出对{黑夜叉，暗黑妖精}化的言辞。
+
+虽然预料到了，但是果然龙先生也……。
+
+: DrawChara( "Ryu", 30, 0)
+\CN["龙"]
+“——海之姬爱上了男人
+——海之男渴望回到陆地
+——最后男人打开了箱子”
+
+: DrawChara( "Ryu", 41, 0)
+\CN["龙"]
+“
+
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+//●演出：龍　ダークエルフ化
+
+: CharaCostume( "Ryu", 4 )
+: DrawChara( "Ryu", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+\CN["龙"]
+“那么，继续吧。”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 16, 0)
+: PlayVoice( "Voices/vo00_muk3052" )
+\CN["无黑色"]
+（这就是龙的{黑夜叉，暗黑精灵}化。
+比姐姐更强吧……？）
+
+//＠戦闘再開
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc004" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Yashiki02_01", "BGM/22_BM003", 1057, -1, -1, "Scenarios/SC_C05_09*battle_end2" , true )
+
+*battle_end2
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*sc004" )	//勝利した場合
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		//牢屋フラグを全部リセットする
+		: FlagDown( "RouyaSc002a" )
+		: FlagDown( "RouyaSc002b" )
+		: FlagDown( "RouyaSc002c" )
+		: FlagDown( "RouyaSc002d" )
+		: FlagDown( "RouyaSc002e" )
+		: FlagDown( "RouyaSc002f" )
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+//========================================================
+//○牢屋敷襲撃４
+//========================================================
+*sc004
+//●状況：戦闘終了後
+//●演出：刀のつばぜり合いアクションを入れていく
+//: DrawChara( "Ryu", 40, 0, 0, 0.25, 0.0, 3, "C" )
+//: DrawChara( "Mukuro", 46, 0, 2, 0.25, 0.0, 4, "RC" )
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Yashiki02_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: PlayBgm("BGM/16_TM001")
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3053" )
+\CN["无黑色"]
+“哦哦哦哦哦哦哦哦！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a025_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//: DrawChara( "Ryu", 41, 0)
+\CN["龙"]
+“哈哈！”
+
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+一刻也不泄气。
+
+//: DrawChara( "Mukuro", 46, 0, 5)
+: HideWnd()
+: evcha = "Mukuro"; evbg = true; evcos = true;
+: evfile = "eva_a002_1_0_0100000_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3054" )
+\CN["无黑色"]
+“——八重樱流·村云一闪”
+
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash02", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: DrawChara( "Ryu", 42, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+//●分岐：［服装］着衣の場合
+: if( Call( "Scenarios/CommonSys*CosWear" ) == true )
+	\CN["龙"]
+“这是个好招数。”
+//●分岐：［服装］全裸の場合
+: else
+	\CN["龙"]
+“真是个好脾气。并不是单纯的暴露狂
+好像没有啊」
+: endif
+//●分岐終了
+//●演出：距離を取る無黒と龍
+: DrawChara( "Ryu", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Mukuro", 36, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
+\CN["龙"]
+“……嗯”
+
+//●演出：冥、みどり、御影が駆けつける
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Ryu", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Midori", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: lay = 4; type = "WL"; Call( "Scenarios/Common*FgEff");
+: lay = 5; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+//●分岐：［服装］コスの場合
+: : if ( CharaCostume( "Mukuro" ) == 0 )
+	: DrawChara( "Midori", 16, 0)
+	: PlayVoice( "Voices/vo10_mid0284" )
+	\CN["绿色"]
+“我们自己可是在做着各种各样的事啊。
+那个大叔很厉害吧？”
+
+	//●読み：新渡戸龍（にとべ　りゅう）
+	: DrawChara( "Mei", 14, 0)
+	: PlayVoice( "Voices/vo11_mik0202" )
+	\CN["御影"]
+“鬼灯的副长，新渡户龙——怎么会有这样的大人物……”
+
+	: EraseChara( "Mikage", 0.25 )
+	: EraseChara( "Mei", 0.25 )
+	: EraseChara( "Midori", 0.25 )
+//●分岐：［服装］全裸の場合
+: elif ( CharaCostume( "Mukuro" ) == 1 )
+	: DrawChara( "Midori", 19, 0)
+	: PlayVoice( "Voices/vo10_mid0285" )
+	\CN["绿色"]
+“衣服散开之后，大叔
+是的，兴趣很丰富啊”
+
+	: DrawChara( "Mikage", 6, 1)
+	: PlayVoice( "Voices/vo11_mik0203" )
+	\CN["御影"]
+“多么丢脸啊……男人这种生物又脏又脏……。
+一想到生活在同一个空间就想吐”
+
+	: DrawChara( "Mei", 18, 0)
+	: PlayVoice( "Voices/vo09_mei0410" )
+	\CN["冥"]
+“无黑，被侮辱了还不扔掉刀是好事。”
+
+	: EraseChara( "Mikage", 0.25 )
+	: EraseChara( "Mei", 0.25 )
+	: EraseChara( "Midori", 0.25 )
+……怎么办呢。大家都擅自误会了。
+
+	: DrawChara( "Ryu", 22, 0, 0, 0.25, 0.0, 3, "L" )
+	: DrawChara( "Mukuro", 12, 1, 2, 0.25, 0.0, 4, "R" )
+	\CN["龙"]
+“你找碴了。”
+
+	: EraseChara( "Mukuro", 0.25 )
+	: EraseChara( "Ryu", 0.25 )
+//●分岐：［服装］ダークエルフの場合
+: else
+	: DrawChara( "Mei", 19, 0)
+	: PlayVoice( "Voices/vo09_mei0411" )
+	\CN["冥"]
+“无黑，好像和意想不到的怪物做对手。
+我重新认识到对方还活着”
+
+	: DrawChara( "Midori", 4, 0)
+	: PlayVoice( "Voices/vo10_mid0286" )
+	\CN["绿色"]
+“什么啊，那家伙。咦，头级的厉害啊！”
+
+	: DrawChara( "Midori", 8, 0)
+	: PlayVoice( "Voices/vo10_mid0287" )
+	\CN["绿色"]
+“话说，如果能成为无黑、自己、{黑夜叉、暗黑妖精}的话
+我说我能成为……”
+
+	: DrawChara( "Mikage", 7, 1)
+	: PlayVoice( "Voices/vo11_mik0204" )
+	\CN["御影"]
+“绿，现在不是说那种话的时候
+没有啊」
+
+	: EraseChara( "Mikage", 0.25 )
+	: EraseChara( "Mei", 0.25 )
+	: EraseChara( "Midori", 0.25 )
+//●分岐終了
+: endif
+
+: DrawChara( "Ryu", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["龙"]
+“白夜的干部出来了3个人吗？”。
+然后，再加上神八代……”
+
+: DrawChara( "Ryu", 3, 0)
+\CN["龙"]
+“我觉得认真起来应该没问题，但是没有受伤就回去是不行的吗？”。
+那么——”
+
+//●演出：龍　逃げ出す。魔法陣エフェクト
+: HideWnd()
+: EraseChara( "Ryu", 0.0 )
+: PlaySe( "SE/Se_AnimeL_Smoke02" )
+: PlayAnim( "Animations/AnimeL_Smoke02", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+周围被烟笼罩。
+
+天晴的时候龙已经不见了。
+
+: DrawChara( "Midori", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo10_mid0288" )
+\CN["绿色"]
+“等一下……突然跑起来什么的？
+真的是不可能！”
+
+//●読み：退いて（ひいて）
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0412" )
+\CN["冥"]
+“那是鬼灯里最可怕的男人——新渡户龙吗……。
+也许你能退下来帮了我大忙”
+
+: EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
+//●分岐：［服装］ダークエルフの場合
+: if ( CharaCostume( "Mukuro" ) == 2 )
+	//●演出：無黒のダークエルフ化が解ける
+	: CharaCostume( "Mukuro", 0 )
+也许是因为松了一口气，{黑夜叉，暗黑妖精}化解开了。
+
+//●分岐：［服装］全裸の場合
+: elif ( CharaCostume( "Mukuro" ) == 1 )
+	: DrawChara( "Mikage", 1, 0, 0, 0.25, 0.0, 5, "LC" )
+	: PlayVoice( "Voices/vo11_mik0205" )
+	\CN["御影"]
+“给无黑桑毛巾什么的……。
+这样下去会感冒的”
+
+	//●演技：自分から裸になっているのでいたたまれない感じです
+	: DrawChara( "Mukuro", 12, 0, 1, 0.0, 0.0, 4, "RC" )
+	: PlayVoice( "Voices/vo00_muk3055" )
+	\CN["无黑色"]
+“……啊，啊”
+
+因为自己喜欢裸体，所以被这样对待的话
+我变得非常的难受。
+
+	: EraseChara( "Mikage", 0.25 )
+	: EraseChara( "Mukuro", 0.25 )
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 28, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
+: PlayVoice( "Voices/vo00_muk3056" )
+\CN["无黑色"]
+“龙先生的对手居然还活着……”
+
+不，龙先生不是手下留情吗？
+
+杀气虽然放着，但我并没有真的要杀我
+我觉得不是没有。
+
+//●背景：空・昼
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+监狱的袭击本身以成功告终。
+
+但是，见回组、被龙杀死的队员和反幕派的人们也
+不少……。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//●シーン：「幕府の終わり」へ
+//＠シナリオジャンプ：SC_C05_10
+: SetMission( "SC_C05_09_1", "Successed" )
+: $money += 7500
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_C05_10")

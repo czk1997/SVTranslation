@@ -1,0 +1,472 @@
+//========================================================
+//○幕臣大岡佐吉を殺せ１
+//========================================================
+*sc001
+//●場所：西都・居酒屋
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“这是{杀，玫瑰}的委托。而且对方是幕臣
+这样的话真的是很糟糕的光泽啊”
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk4424" )
+\CN["无黑色"]
+“想要杀幕臣吗……。
+并不是特别依赖稀有的依吧？”
+
+听说因为贵族和财阀的委托偶尔会有。
+
+\CN["眼镜店"]
+“嘛，虽然是这样。”
+
+\CN["眼镜店"]
+“根据目标不同，应该是大冈佐吉吧。
+被称为正义的使者或平民的伙伴的民众
+是个受人仰慕的家伙”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4425" )
+\CN["无黑色"]
+“这样的话，就算被当做杀人目标也不奇怪
+是吧？在上面的那些家伙看来，是个碍事的家伙”
+
+\CN["眼镜店"]
+“嗯，是这样吧……”
+
+\CN["眼镜店"]
+“顺便说一下，大冈委托的内容是将负责的城镇的人们
+好像是企图欺骗和反幕……”
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 8, 0)
+	: PlayVoice( "Voices/vo00_muk4426" )
+	\CN["无黑色"]
+“嗯……总觉得有点不对劲……”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 12, 0)
+	: PlayVoice( "Voices/vo00_muk4427" )
+	\CN["无黑色"]
+“这是杀人的工作吗？不用想……”
+
+//●分岐終了
+: endif
+*sc001_select
+//――――――――――――――――――――――――――――
+//＠通常選択肢,sc001_select
+//■選択肢１：依頼を受ける
+//■選択肢２：よく考える
+//――――――――――――――――――――――――――――
+\CI["接受委托"]
+\CI["仔细考虑"]
+怎么办？
+
+: if ($choice == 1) Jump( "*sc001_select_s2" ) endif
+//-------------------------------------------------------
+//●選択肢１：依頼を受けるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s1
+\CN["眼镜店"]
+“哎，要试试吗？”
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 6, 0)
+	: PlayVoice( "Voices/vo00_muk4428" )
+	\CN["无黑色"]
+“总觉得有点在意。
+总之，先去那个幕臣所在的城镇看看。
+能告诉我是哪个城市吗？”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 10, 0)
+	: PlayVoice( "Voices/vo00_muk4429" )
+	\CN["无黑色"]
+“因为这是杀了就好的工作。
+没有特别不接受的理由”
+
+//●分岐終了
+: endif
+\CN["眼镜店"]
+“明白了。有大冈的城镇沿着熊野街道一直往南走
+名为香山的小港口城市。在那深处的家里
+好像住在那里”
+
+\CN["眼镜店"]
+“嘛，我也有过这样的经历。
+委托人经常会说谎”
+
+\CN["眼镜店"]
+“这个委托还没有仔细检查过
+无黑，请小心”
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+事件信息更新了。
+
+//＠マップ解放：熊野街道
+//●シーンエンド
+: SetMission( "SC_D05_04_1", "InProgress" )
+: FastTravelMapOn( "Kumanokaido" )
+: DestinationMap( "Map_Town15_01_Kayama" )
+: Return
+
+*sc001_1
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["眼镜店"]
+“有大冈的小镇沿着熊野街道一直往南走
+名为香山的小港口城市。在那深处的家里
+好像住在那里”
+
+\CN["眼镜店"]
+“嘛，我也有过这样的经历。
+委托人经常会说谎”
+
+\CN["眼镜店"]
+“这个委托还没有仔细检查过
+无黑，请小心”
+
+: Return
+
+//-------------------------------------------------------
+//●選択肢２：よく考えるを選んだ場合
+//-------------------------------------------------------
+*sc001_select_s2
+: DrawChara( "Mukuro", 0, 0)
+\CN["眼镜店"]
+「这样啊。啊，我觉得可以试试看的话就请说出来
+给我打吧”
+
+//●シーンエンド
+: Return
+//========================================================
+//○幕臣大岡佐吉を殺せ２
+//========================================================
+*sc002
+//●場所：香山
+//●演出：無黒　街に入ってくる
+//●演出：スクロールさせて奥の家を表示する
+//●読み：大岡（おおおか）
+: HideWnd()
+: RpgCameraFocus( "Door", "SC_D05_04", 0, 0, 20 )
+: Wait()
+: ShowWnd()
+: DrawFaceThumbnail( "Mukuro", 25, 0, 0 )
+: PlayVoice( "Voices/vo00_muk4430" )
+\CN["无黑色"]
+“呃，据口入屋说大冈的家在那附近吗？”。
+那怎么办呢？”
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+委托的内容是幕臣大冈佐吉企图欺骗町上的人而策划反幕
+内容是杀了他。
+
+	: DrawFaceThumbnail( "Mukuro", 10, 0, 0 )
+	: PlayVoice( "Voices/vo00_muk4431" )
+	\CN["无黑色"]
+“是问问城里人，还是把他推到家里杀了……。
+是哪一个呢”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+委托内容是让幕臣大冈佐吉杀掉。
+
+	: DrawFaceThumbnail( "Mukuro", 26, 0, 0 )
+	: PlayVoice( "Voices/vo00_muk4432" )
+	\CN["无黑色"]
+“我是委托你杀了他，只要照他说的做就行了。
+理由什么的，说实话怎样都无所谓”
+
+我不讨厌杀人的工作。
+那么，不做麻烦的事情也可以吧。
+
+//●分岐終了
+: endif
+: SetMission( "SC_D05_04_1", "Hidden" )
+: SetMission( "SC_D05_04_2", "InProgress" )
+事件信息更新了。
+
+: Return
+//========================================================
+//○幕臣大岡佐吉を殺せ３Ａ
+//========================================================
+*sc003a
+//●状況：情報収集をする。町の人全員に話しかけた後
+: DrawChara( "Mukuro", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4433" )
+\CN["无黑色"]
+“嗯……越是问城里人的事情，越是问委托的内容
+感到疑问”
+
+: DrawChara( "Mukuro", 7, 0)
+——再次确认委托内容。
+
+笼统地说，大冈洗脑了镇上的人，缴纳了很高的税金
+表面上是要让他治好，或是伸出援助之手，其实是在欺骗他
+写着有。
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 8, 0)
+如果要杀的话杀了也没关系
+这样的情报也有不一致的地方啊……。
+
+	: DrawChara( "Mukuro", 6, 0)
+	: PlayVoice( "Voices/vo00_muk4434" )
+	\CN["无黑色"]
+“如果不是町人被洗脑，而是真心说的话
+我觉得是个不能杀人的人”
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 11, 0)
+杀气腾腾，但总觉得哪里挂了钩。
+
+	: DrawChara( "Mukuro", 27, 0)
+	: PlayVoice( "Voices/vo00_muk4435" )
+	\CN["无黑色"]
+“这种情况最好不要贸然插手。”
+
+//●分岐終了
+: endif
+还是回去一次比较好。
+请入口店仔细检查信息。
+
+//●演出：場面転換トランジション
+//●シーン：「嘘を伝えた依頼者に鉄槌を１」へ
+//＠シナリオジャンプ：SC_D05_05
+: HideWnd()
+: StopBgm( 0.5 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: LoadMap( "Map_Town05_03_Saito", "Kuchiireya", "Scenarios/SC_D05_05")
+
+//========================================================
+//○幕臣大岡佐吉を殺せ３Ｂ
+//========================================================
+*sc003b
+\CI["好好地问问城里人之后"]
+\CI["上车！"]
+这里好像是大冈佐吉的家……。
+
+: if ($choice == 0) Return endif
+//●場所：大岡佐吉の家
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: PlayBgm("BGM/01_CM001")
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4436" )
+\CN["无黑色"]
+“你住在一个很简朴的家里呢。
+因为是幕臣，所以我觉得住在更好的家里”
+
+\CN["大冈"]
+“哼。因为我是单身汉。
+只要能工作和睡觉就足够了”
+
+//●分岐：［服装］着衣の場合
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	\CN["大冈"]
+“你来干什么？”？
+看了那把刀就一目了然了”
+
+	: DrawChara( "Mukuro", 23, 0)
+	: PlayVoice( "Voices/vo00_muk4437" )
+	\CN["无黑色"]
+“正如你所料，我是来杀你的。”
+
+//●分岐：［服装］全裸の場合
+: else
+\CN["大冈"]
+“全裸进入别人家{侵入，是}的变态
+我没什么事。那种感觉，是不是遭遇了被剥夺
+”
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk4438" )
+\CN["无黑色"]
+“你怎么这么仔细地看着我的身体啊。”
+
+\CN["大冈"]
+“基本上，像你这样的类型最可怕。
+没有失去的东西就没有好处。那你来干什么？”
+
+//●演出：無黒　刀を出す
+: DrawChara( "Mukuro", 26, 0, 2 )
+: PlayVoice( "Voices/vo00_muk4439" )
+\CN["无黑色"]
+“我是来杀你的，只是这样。”
+
+//●分岐終了
+: endif
+\CN["大冈"]
+“这样啊。那是谁托你的？”？
+虽然已经察觉到了，但还是先问一下”
+
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4440" )
+\CN["无黑色"]
+“我真的不知道委托人。
+只是，你拜托我杀了你啊」
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：大岡佐吉
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：大岡佐吉,2,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*win" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/Bg_WaRoom04_01", "BGM/22_BM003", 1072, -1, -1, "Scenarios/SC_D05_04*battle_end" , true )
+
+*battle_end
+: RestoreBgm
+: if ( $battleWin == true )
+	: Jump( "*win" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: RpgCharaWarp( "Player","START")
+		: RpgPlayBgm()
+		: Return
+	: endif
+: endif
+
+//●戦闘終了後
+*win
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_01", 0.0 )
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4441" )
+\CN["无黑色"]
+“你已经做好觉悟了。”
+
+\CN["大冈"]
+“我不想死。还有很多没做完的事情。
+恋恋不舍”
+
+虽然那么说，但并不慌乱。
+
+似乎已经完全接受了自己的命运。
+
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+//●演技：心の声です
+	: DrawChara( "Mukuro", 35, 0)
+	: PlayVoice( "Voices/vo00_muk4442" )
+	\CN["无黑色"]
+（真的可以杀了这家伙吗？）
+
+突然，好像想停留在心里——
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 24, 0)
+	: PlayVoice( "Voices/vo00_muk4443" )
+	\CN["无黑色"]
+（犹豫直接关系到死亡。不是犹豫的时候。）
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 26, 0)
+	: PlayVoice( "Voices/vo00_muk4444" )
+	\CN["无黑色"]
+“我并不讨厌干净的人。
+为了不让你痛苦，我会让你轻松地死去”
+
+//●分岐終了
+: endif
+
+//●演出：斬殺エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: AddKill( 1 )
+: EraseChara( "Mukuro", 0.0 )
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+\CN["大冈"]
+“嗯……！”
+
+//●演出：大岡　死体になる
+: DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk4445" )
+\CN["无黑色"]
+“……嗯。这样就完成了委托。”
+
+正如口入屋委托的那样，杀死了大冈佐吉。
+我只是做了被拜托的事情。
+
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4446" )
+\CN["无黑色"]
+“但是，好像有什么问题。”
+
+比如说喉咙里扎着鱼刺的感觉吧。
+总觉得有点难以理解。我有那种感觉。
+
+//●演出：無黒　退場する
+//＠場所移動：西都
+//●シーンエンド
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mukuro"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
+: Wait()
+: FadeOut( 0.5 )
+: Wait()
+: SetMission( "SC_D05_04_2", "Successed" )
+: if ( MissionProgress( "SC_D05_02_1", "Successed", "Failed" ) == true )
+	: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_07")
+: else
+	: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+: endif

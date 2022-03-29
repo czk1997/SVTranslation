@@ -1,0 +1,617 @@
+//========================================================
+//○紫苑の仕事
+//========================================================
+//●視点：紫苑視点
+//●背景：遊廓
+//Yoshi：背景、遊郭通り・夜
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Yuukaku01_04", 1.0 )
+: PlayBgm("BGM/39_CM018")
+: Wait()
+: ShowWnd()
+位于吉野原游廓的超一流店——
+
+\CN["掌柜"]
+“对不起……我不接受堇太夫的预约……”
+
+在那里，直到现在财阀和贵族们大肆挥霍
+想要拥抱的花魁复归了，稍微成为了话题
+构成。
+
+//●状況：遊廓で働いている紫苑。客と騎乗位セックス。
+//●ＣＧ：遊廓で客とセックス（紫苑）
+//●ＣＧ差分：未挿入
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_C05_87" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_C05_87" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: StopBgm( 1.0 )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_1_0100001_1000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/35_H_IMMORAL")
+: ShowWnd()
+\CN["客人"]
+“啊啊……竟然能和那个堇太夫做爱
+我什么时候死都没关系”
+
+: PlayVoice( "Voices/vo12_shi0204" )
+\CN["紫苑"]
+「呵呵。居然能得到像主人一样优秀的老爷的表扬。
+非常光荣”
+
+: PlayVoice( "Voices/vo12_shi0205" )
+\CN["紫苑"]
+“主人的公鸡，强壮得像要打破避孕器具一样
+变成……。”
+
+\CN["客人"]
+“哈，是的……其实，一直都是这样……”
+
+就算对方是谁，我也一定要带上避孕用具。
+
+也有害怕性病或不能怀孕的理由
+当然有，但并不是第一。
+
+现在，在这个世界上，只有严酱可以倾注全部精力。
+
+: HideWnd()
+: evfile = "evh_b003_1_1_0200001_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0206" )
+\CN["紫苑"]
+“在插之前，首先用主人的手指来感受我乳房的触感
+期待着什么……”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——呼，紧紧地，呼。
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi01" )
+客人战战兢兢地揉着我们的乳房。
+
+因为是财阀的人，所以感觉好像习惯了女性
+因为很紧张，所以请多坐一会儿吧。
+
+: HideWnd()
+: evfile = "evh_b003_1_1_0100001_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0207" )
+\CN["紫苑"]
+“恩哈，啊，如果被那么温柔地揉搓的话……
+哈，嗯，嗯，好饿啊！”
+
+: PlayVoice( "Voices/vo12_shi0208" )
+\CN["紫苑"]
+“呃，心情变好了……呃，乳头，已经这么
+变成了米酒……啊，嗯，嗯！”
+
+\CN["客人"]
+“啊啊，皮肤的质感很棒。而且还很紧绷。
+光是这样，就有来到这里的价值！”
+
+对身体相当在意。
+每天对皮肤的护理都很细致。
+
+我不想让严酱失望。
+
+: HideWnd()
+: evfile = "evh_b003_1_1_0300001_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0209" )
+\CN["紫苑"]
+「呜呼、呜呜、啊啊啊啊啊啊啊啊啊啊♥</啊，啊，啊，啊
+哈……啊啊啊……”
+
+: PlayVoice( "Voices/vo12_shi0210" )
+\CN["紫苑"]
+“渐渐地，揉法变得粗暴了……嗯，嗯……”
+
+\CN["客人"]
+“……疼吗？”
+
+: PlayVoice( "Voices/vo12_shi0211" )
+\CN["紫苑"]
+「没有。要按照主人的喜好行事……。
+我的身体，尽情地享受吧……啊，啊啊啊……”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+小麦、小麦、牛奶——
+
+: HideWnd()
+: evfile = "evh_b003_1_1_0200001_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0212" )
+\CN["紫苑"]
+“嗯！嗯，啊，啊啊啊啊啊！”
+
+用力揉搓到手指都紧紧地咬住了
+终于，我也开始感觉到了。
+
+因为严酱总是竭尽全力的
+我的身体习惯了那边。
+
+我觉得强行粗暴的性更舒服
+已经变成了。
+
+\CN["客人"]
+“哈，哈，好香啊，乳房……，这样
+第一次摸起来很舒服……”
+
+: PlayVoice( "Voices/vo12_shi0213" )
+\CN["紫苑"]
+“哈……啊，哈……主人，好像相当兴奋
+谢谢……。就这样，猜中了我的脸蛋……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Teman01" )
+: layer = 8; time = 1.0; strength = 20; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——中居！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_1_0300001_1100001_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を膣口にあてがっています
+: PlayVoice( "Voices/vo12_shi0214" )
+\CN["紫苑"]
+“嗯！小金的热度，会传过来的……”
+
+\CN["客人"]
+“我，我也知道……哈，啊，真想被插上！
+希望能让我插上……”
+
+\CN["客人"]
+“非常想被堇太夫的{阴道内，内}插进去。”
+
+财阀的男子拼命地向我诉说。
+
+: PlayVoice( "Voices/vo12_shi0215" )
+\CN["紫苑"]
+“太好了。我的点心也早就准备好了。”
+对不起……”
+
+//●演技：後半、先っぽだけ挿入しています
+: HideWnd()
+: evfile = "evh_b003_1_1_0100001_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0216" )
+\CN["紫苑"]
+“主人的公鸡，热得连避孕器具都知道了……
+嗯……啊，好硬……啊，嗯……”
+
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嗯，嗯，嗯，嗯。
+
+\CN["客人"]
+“嗯……嗯……女阴，湿得很厉害
+啊……啊啊…”
+
+: PlayVoice( "Voices/vo12_shi0217" )
+\CN["紫苑"]
+“主人就这样……恩，小金，让我勃起
+胆小鬼……还有，我……”
+
+: HideWnd()
+//挿入
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_2_0311002_1100001_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を根元まで挿入していきます
+: PlayVoice( "Voices/vo12_shi0218" )
+\CN["紫苑"]
+“恩……是、{插入，是}出来……小矮子、
+热到可以通过避孕器具知道的程度…嗯，啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi02" )
+平时，严酱的超粗小鸡鸡已经习惯了
+简单地把客人的零用钱吞进去。
+
+: PlayVoice( "Voices/vo12_shi0219" )
+\CN["紫苑"]
+“嗯……呵呵，主人那健壮的小矮人
+全部都吞进去了」
+
+\CN["客人"]
+“啊啊啊……这、这是堇太夫的{阴道内，内}……！”
+
+\CN["客人"]
+“不烫的话，会很讨厌地缠着小鸡鸡！”
+
+说得有点兴奋。
+
+不要马上动，{阴道内，肚子}等小鸡鸡安定下来。
+
+: HideWnd()
+: evfile = "evh_b003_1_2_0111002_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0220" )
+\CN["紫苑"]
+“呼呼，小矮子，哇的{阴道内，肚子}
+又长大了……”
+
+\CN["客人"]
+“那、那是因为{阴道内、内}非常舒服。
+蜿蜒起伏，传过来……”
+
+: PlayVoice( "Voices/vo12_shi0221" )
+\CN["紫苑"]
+“那么，差不多该走了。
+主人可不能随便……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_2_0211002_1100001_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：騎乗位。ゆっくりと腰を動かし始めます。
+: PlayVoice( "Voices/vo12_shi0222" )
+\CN["紫苑"]
+“啊啊啊啊……嗯……啊，嗯，嗯……
+嗯，啊啊啊啊……”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+——ぬち、中、中、一直、一直、ぬぐ。
+
+一边感受着小矮人的感觉，一边以一定的速度
+腰前后摆动。
+
+\CN["客人"]
+“嗯……啊，一直缠着我的，哈……
+明明只是在慢慢地移动……”
+
+客人早就发出了闷声。
+
+为了不马上{射精，だ}
+一边仔细询问情况一边继续抽奖。
+
+: PlayVoice( "Voices/vo12_shi0223" )
+\CN["紫苑"]
+“嗯……主人的小弟弟一会儿进一会儿出……”……
+哈，哈……哇地的入口，扩大到主人的形状……”
+
+: PlayVoice( "Voices/vo12_shi0224" )
+\CN["紫苑"]
+“呜，哈，嗯啊啊啊啊啊啊啊啊……发出了非常淫靡的声音……”……
+嗯，呜呜……小矮人，很坚强啊，被摩擦了……嗯！”
+
+\CN["客人"]
+“哇，好厉害……堇太夫给我一碗肥肥金枪鱼的汤
+溢出来了……”
+
+明明只是插入后反复进行了几次抽插
+从结合部溢出了爱液。
+
+在涉及到行为之前，请使用能活化爱液分泌的乳霜
+在训练中，这也许起到了作用……。
+
+: HideWnd()
+: evfile = "evh_b003_1_2_0111002_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0225" )
+\CN["紫苑"]
+“主人的小弟弟很舒服……”
+
+: PlayVoice( "Voices/vo12_shi0226" )
+\CN["紫苑"]
+“简直要把你淋得湿透了……呜，啊啊啊啊
+让我感受到，因为我收到了……啊rin吧……”
+
+虽然远不及严酱，但有相当大的尺寸和硬度。
+
+这样的话，这边多少也会变得心情舒畅。
+
+: PlayVoice( "Voices/vo12_shi0227" )
+\CN["紫苑"]
+“哈……嗯……啊，啊，啊，嗯
+啊啊啊啊啊啊啊啊！”
+
+\CN["客人"]
+“嗯……啊…啊……{阴道内，内}很暖和，嗯……
+而且……嗯……”
+
+在肚子下面用力的话，客人就会发出悲伤的声音。
+
+: PlayVoice( "Voices/vo12_shi0228" )
+\CN["紫苑"]
+“啊，嗯啊，嗯，嗯！嗯！是啊，是啊
+刺激我心情好的地方……啊，啊，嗯……！”
+
+如果发现了能让我心情变好的要点
+然后像是撞到那边一样移动就可以了。
+
+这样才能和客人分享快感。
+
+: HideWnd()
+: evfile = "evh_b003_1_2_0311002_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0229" )
+\CN["紫苑"]
+“嗯啊啊啊啊啊啊啊啊啊啊啊啊！感觉到了……
+小金，好舒服……嗯，啊，嗯……”
+
+\CN["客人"]
+“咕……那、差不多该……”
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi03" )
+小矮子{阴道内，肚子}一边膨胀，一边小块地活动
+告诉你界限已经到了。
+
+: PlayVoice( "Voices/vo12_shi0230" )
+\CN["紫苑"]
+「哈，嗯啊啊，主人的小弟弟，战战兢兢的
+嗯……{阴道内，内}碰到了各种各样的地方……」
+
+: HideWnd()
+: evfile = "evh_b003_1_2_0111002_1100001_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0231" )
+\CN["紫苑"]
+“啊，嗯，嗯，嗯，嗯！哈……啊，哈……
+啊，嗯……嗯，嗯，嗯，嗯”
+
+——差不多该这样了。
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+小咕、小咕、小咕、小狐狸、小咕、小咕、小咕、小咕！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_2_0311002_1100001_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：腰の動きを速くしていきます
+: PlayVoice( "Voices/vo12_shi0232" )
+\CN["紫苑"]
+「呜哇，啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+啊啊啊、嗯、嗯……嗯…啊啊啊啊！”
+
+\CN["客人"]
+“呃……堇太夫的速度越来越快……啊啊……
+已经……”
+
+: PlayVoice( "Voices/vo12_shi0233" )
+\CN["紫苑"]
+“再多一点……哈，哈，我好像也能达到……”
+
+: PlayVoice( "Voices/vo12_shi0234" )
+\CN["紫苑"]
+“如果是这样的话……嗯，我想和主人一起去……
+啊，啊，啊啊啊啊啊……嗯！”
+
+客人的表情和呼吸方式，{阴道内，肚子}的小鸡鸡的样子
+一边确认一边上下左右扭动腰。
+
+\CN["客人"]
+“嗯……那个，那个动作很讨厌……嗯……”
+
+: HideWnd()
+: evfile = "evh_b003_1_2_0211002_1100001_1_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0235" )
+\CN["紫苑"]
+“哈、哈……{射精，然后}如果是这样的话，请好好说
+胆小鬼……我也，合计……达不到……”
+
+: HideWnd()
+//ピストン
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+女皇、女皇、女皇、女皇、女皇、女皇、女皇、女皇、女皇！
+
+在梅雨声中淫荡地响着，摆动着腰。
+
+一边探索着客人的小矮人向射精的方向前进
+无论什么时候，我都希望能改变。
+
+\CN["客人"]
+“啊啊啊……然后、{射精，然后}！呜！”
+
+在客人的信号声中释放出一种停下来的快感——
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_2_0111002_1100001_1_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0236" )
+\CN["紫苑"]
+“哇，我也很帅啊……哈哈……好……”……
+呜呜呜呜……啊…啊…嗯，嗯……”
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo12_shi0237" )
+\CN["紫苑"]
+“嗯啊啊啊啊啊啊啊啊啊啊啊啊啊————！！”
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精（コンドーム）
+: StopBackVoice()
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_2_0311113_1100011_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+咻咻，咻咻，咻咻！
+
+: PlayVoice( "Voices/vo12_shi0238" )
+\CN["紫苑"]
+“嗯……啊…啊……啊…小金，跳得很精神……”……
+啊啊啊啊……”
+
+: PlayBackVoice( "Voices/BGV12_shi_jigo01" )
+{阴道内，肚子}一边感受着暴走的小矮子
+把身体交给顶峰带来的快乐。
+
+\CN["客人"]
+“啊啊啊……好厉害……{阴道内，内}好难受
+总结过来……”
+
+: HideWnd()
+: evfile = "evh_b003_1_2_0111113_1100011_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0239" )
+\CN["紫苑"]
+“哈，哈，通过避孕器具……传递主先生精液的热量
+来……嗯，嗯，嗯，嗯……”
+
+//●演技：乱れた呼吸を整えています
+: PlayVoice( "Voices/vo12_shi0240" )
+\CN["紫苑"]
+“哈……哈……哈……哈、哈……哈…”
+
+一边调整紊乱的呼吸，一边等待射精的安定。
+
+//●ＣＧ差分：未挿入（射精後）
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b003_1_3_0411013_1100001_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["客人"]
+“心情非常好……”
+
+: PlayVoice( "Voices/vo12_shi0241" )
+\CN["紫苑"]
+“呵呵，精液，这么多{射精，だ}太累了……”
+
+射精后变得成熟的小矮人。
+松散的避孕具里装满了大量的精液，膨胀起来了。
+
+: PlayVoice( "Voices/vo12_shi0242" )
+\CN["紫苑"]
+“话虽如此，量还是挺多的。
+避孕器具膨胀成这样的面包……”
+
+\CN["客人"]
+“我自己也吓了一跳。没想到会出现这么多。”
+
+: PlayVoice( "Voices/vo12_shi0243" )
+\CN["紫苑"]
+“小气鬼，长得很漂亮。
+就这样睡着了……”
+
+//●背景：遊廓
+//Yoshi：背景、遊郭座敷・夜（明）
+: StopBackVoice()
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_YuukakuZashiki01_04", 0.0 )
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: ShowWnd()
+取下客人的避孕器具后，用纸巾擦拭精液。
+
+: DrawFaceThumbnail( "Shion", 0, 2, 0 )
+: PlayVoice( "Voices/vo12_shi0244" )
+\CN["紫苑"]
+“虽然有些恋恋不舍，但正好到了时间。”
+
+\CN["客人"]
+“嗯……已经……？
+时间过得非常快……”
+
+今天的客人都是懂礼貌的好客人。
+
+偶尔也会有客人直接打过来
+这种情况下只能用魔术让他沉默，交给他。
+
+如果一天在这里工作的话，几个月什么都不做也能生活下去
+能拿到足够的工资。
+
+正因为如此，和严酱在一起的时间才会增加
+在游廓工作是非常有效率的赚钱方式。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//Yoshi：背景消去
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_C05_87" )
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

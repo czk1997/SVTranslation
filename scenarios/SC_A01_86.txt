@@ -1,0 +1,837 @@
+//========================================================
+//○夢を見る者、それは生き残れる強さを持つ者
+//========================================================
+//●場所：鬼灯屯所・道場
+//●背景：鬼灯屯所・道場・昼
+//Yoshi：背景
+//コスチュームセッティング
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Leo", 0 )
+: CharaCostume( "Ryu", 0 )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_HozukiDoujyo01", 1.0 )
+: Wait()
+: PlayBgm("BGM/10_CM010")
+: DrawChara( "Ryu", 0, 0, 0, 0.0, 0.0, 4, "C" )
+: chara = "Ryu"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+——新渡户龙。
+鬼灯的副局长，高千穗痣的右臂。
+
+他也是被称为八重樱流的流派的师范。
+
+//●※演出：無黒やレオの斬撃エフェクトを交互に
+: HideWnd()
+: EraseChara( "Ryu", 0.5 )
+: Wait()
+: ResetLayer(4)
+//: DrawChara( "Ryu", 7, 0, 0, 0.5, 0.0, 4, "LC" )
+: evbg = true; evcos = false;
+: evfile = "evx_a025_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+\CN["龙"]
+“狗！”
+
+: HideWnd()
+//※斬撃エフェクト入れる
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: CharaPartsOn( "Mukuro", 0 )
+: DrawChara( "Leo", 4, 0, 0, 0.0, 0.0, 2, "LC" )
+: chara = "Leo"; lay = 2 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: DrawChara( "Mukuro", 31, 1, 2, 0.0, 0.0, 3, "RC" )
+: chara = "Mukuro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0185" )
+\CN["无黑色"]
+“呜……！”
+
+\CN["雷欧"]
+“哈，哈，哈……”
+
+在进入鬼灯之前，剑术是冥姐教给我的。
+
+连龙都不知道的无名流派的剑术。
+恐怕是古代剑术的一种。
+
+虽然有人说可以将其升华
+我下定决心从1开始学习八重樱流。
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: ResetLayer(2)
+: ResetLayer(3)
+: DrawChara( "Ryu", 8, 0, 0, 0.5, 0.0, 3, "C" )
+\CN["龙"]
+「无黑，你再深入一点！
+太警惕对方的反击了”
+
+: DrawChara( "Ryu", 10, 0)
+\CN["龙"]
+“还有，雷欧。就算再怎么练习也不能放松啊。
+你打算杀了我！”
+
+//: DrawChara( "Leo", 17, 0)
+: HideWnd()
+: EraseChara( "Ryu", 0.5 )
+: evbg = true; evcos = false;
+: evfile = "evx_a001_1_0_0300000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["雷欧"]
+“哇，我给你看我的认真！”
+
+//: DrawChara( "Leo", 19, 0)
+: HideWnd()
+: x1 = -200; y1 = 0; z1 = 1; time = 0.5;
+: x2 = 0; y2 = 0; z2 = 1;
+: evbg = false; evcos = false;
+: evfile = "evx_a002_0_1_0200000_0000000_0_"
+: Call( "Scenarios/Common*EvSlideIn" )
+: ShowWnd()
+\CN["雷欧"]
+“啊啊啊啊啊啊啊啊啊！”
+
+//●※演出：斬撃エフェクト（レオ）
+//: DrawChara( "Ryu", 17, 0)
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_KatanaHit02" )
+: PlayAnim( "Animations/AnimeL_Sword03", false, 0, 0, 6, 6 )
+: evbg = true; evcos = false;
+: evfile = "evx_a025_1_1_0100000_0000000_1_"
+: Call("Scenarios/Common*EvIn")
+: Wait()
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+\CN["龙"]
+“还没呢！”
+
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: ShowWnd()
+: DrawFaceThumbnail( "Leo", 21, 0, 0 )
+\CN["雷欧"]
+“哇……！”
+
+//: DrawChara( "Ryu", 03, 0)
+: DrawChara( "Ryu", 3, 0, 0, 0.0, 0.0, 3, "L" )
+: chara = "Ryu"; lay = 3 ; type = "WL";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["龙"]
+“你不是一直在说吗？”？
+你一次又一次的追求过多”
+
+//: DrawChara( "Leo", 4, 0)
+: DrawChara( "Leo", 4, 0, 0, 0.0, 0.0, 4, "R" )
+: chara = "Leo"; lay = 4 ; type = "WR";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+“啊，对不起。
+这种时候，哪个都取的是我”
+
+//●演出：レオ　移動する
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Ryu", 0.5 )
+: Wait()
+: Call( "Scenarios/Common*FgResetLayer" )
+//: DrawChara( "Leo", 23, 0, 1, 0.5, 0.0, 2, "C" )
+: evbg = true; evcos = false;
+: evfile = "evx_a002_1_1_0300000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: ShowWnd()
+\CN["雷欧"]
+“啊啊啊啊啊啊啊啊！！”
+
+//●演出：斬撃エフェクト（レオ）
+//: EraseChara( "Leo", 0.5 )
+//: DrawChara( "Ryu", 10, 0, 0, 0.5, 0.0, 4, "C" )
+: HideWnd()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 7, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 9, 0, "MiscImage/BattleEffect01", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect02", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition02", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect04", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition04", 1.0, true, 0.0, 0.0)
+: Wait()
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ResetLayer(7)
+: ResetLayer(9)
+: ShowWnd()
+\CN["龙"]
+「……！」
+
+//: EraseChara( "Ryu", 0.5 )
+//: DrawChara( "Mukuro", 16, 0, 5, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "eva_a001_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0186" )
+\CN["无黑色"]
+“龙先生，觉悟！”
+
+//●演出：斬撃エフェクト（無黒）
+: HideWnd()
+: PlaySe("SE/Se_Swing02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect06", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+一边躲着从正面刺进的雷欧，一边从上面砍杀。
+
+: PlaySe("SE/Se_KatanaHit02")
+: HideWnd()
+: SwapImage( 8, 0, "EventCG/evx_a025_1_1_0100000_0000000_1_0", 0.0)
+: AutoFaceThumbnail( false )
+: Call("Scenarios/Common*CutinFadeOut")
+: Wait()
+: ShowWnd()
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Ryu", 5, 0, 0, 0.5, 0.0, 4, "C" )
+\CN["龙"]
+“呵——”
+
+//●演出：斬撃エフェクト（龍）
+//●ＳＥ：叩きつけられる音
+//●演技：吹っ飛ばされて、壁に叩きつけられる
+//: EraseChara( "Ryu", 0.5 )
+//: DrawChara( "Mukuro", 19, 1, 5, 0.5, 0.0, 3, "RC" )
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0187" )
+\CN["无黑色"]
+“哈哈——”
+
+//: DrawChara( "Leo", 4, 0, 1, 0.5, 0.0, 2, "LC" )
+\CN["雷欧"]
+“无黑！？”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+//: DrawChara( "Ryu", 10, 0, 0, 0.5, 0.0, 4, "C" )
+\CN["龙"]
+“首先要担心自己。”
+
+//●ＳＥ：叩きつけられる音
+//●演出：斬撃エフェクト（龍）
+//: EraseChara( "Ryu", 0.5 )
+//: DrawChara( "Leo", 17, 0, 1, 0.5, 0.0, 2, "LC" )
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: ShowWnd()
+\CN["雷欧"]
+「――――！！」
+
+: HideWnd()
+: DrawChara( "Mukuro", 31, 2, 5, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk0188" )
+\CN["无黑色"]
+“哈，哈，哈……哇！哇！哇！
+嘛，还差得远……”
+
+: DrawChara( "Leo", 8, 0, 1, 0.5, 0.0, 2, "LC" )
+\CN["雷欧"]
+“哈哈哈，真是的，师傅，真是不可原谅啊……。
+没大人样啊……”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: DrawChara( "Ryu", 5, 0, 0, 0.5, 0.0, 4, "C" )
+\CN["龙"]
+“真是的。两个人都显示出了毅力。”
+
+进入鬼灯后的第一年要彻底
+被迫进行了基础训练。
+
+: EraseChara( "Ryu", 0.5 )
+: Wait()
+: DrawChara( "Leo", 6, 0, 1, 0.5, 0.0, 2, "LC" )
+\CN["雷欧"]
+“这样啊，啊……发生了各种各样的事情啊”
+
+: DrawChara( "Mukuro", 39, 0, 2, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0189" )
+\CN["无黑色"]
+“啊，是啊。”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+——我想为了保护谁而变强。
+
+虽然别人不知道，但是我想学八重樱流
+{最初的理由，・・・}就是这个。
+
+但是，这只是甜蜜的妄言。
+
+注意到了这一点——不仅仅是头脑，用心脏理解的是
+那是进入鬼灯后第一个任务的时候。
+
+//●演出：過去回想
+//●場所：悪徳貴族の屋敷・夜・過去
+//●背景：和風屋敷・部屋・夜
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.5, 255, 255, 255, "BGImage/Transition13", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom03_03", 0.0 )
+: FadeIn( 0.5, 255, 255, 255, "BGImage/Transition14", 1.0 )
+: Wait()
+: PlayBgm("BGM/27_FM005")
+: ShowWnd()
+\CN["鬼灯队士・男E"]
+“御用改了！老实点！”
+
+\CN["贵族"]
+「…………」
+
+第一次的任务在{高浜，高马}方面
+这是对某位贵族的御用。
+
+接到了有关违法药物交易的通报
+调查的结果是黑色。
+
+\CN["鬼灯队士·男F"]
+“给我死主意！”
+
+\CN["鬼灯队士・女D"]
+“……呵呵。你的坏事我看出来了。”
+
+跟随三位前辈。
+
+我和Leo是以支援的形式参加的。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 17, 0, 2, 0.0, 0.0, 3, "RC" )
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo00_muk0190" )
+\CN["无黑色"]
+（奇怪……为什么能这么悠闲呢？）
+
+对方好像知道我们要来似的
+异常沉着。
+
+: DrawChara( "Leo", 17, 0, 1, 0.5, 0.0, 2, "LC" )
+: lay = 2; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+\CN["雷欧"]
+“……为什么这么冷静？”
+
+\CN["鬼灯队士・男E"]
+“你是认命了吧？”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Wait()
+那是在先头部队的前辈队士想要捕获贵族的时候。
+
+: StopBgm( 1.0 )
+\CN["鬼灯队士・男E"]
+“唔……！”
+
+//●ＳＥ：ドサリ　倒れる音
+: PlaySe( "SE/Se_Down01" )
+突然，前辈队伍士发出了含混不清的声音倒在了现场。
+
+: DrawChara( "Leo", 2, 0, 0, 0.0, 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 6, 0, 5, 0.0, 0.0, 3, "RC" )
+: chara = "Leo"; lay = 2 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: chara = "Mukuro"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+\CN["雷欧"]
+“……不，刚才的……？”
+
+: PlayVoice( "Voices/vo00_muk0191" )
+\CN["无黑色"]
+“好像有什么东西穿过了……？”
+
+//●演出：みどり　登場する
+: PlayBgm("BGM/30_CM015")
+: CharaCostume( "Midori", 1 )
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: DrawChara( "Midori", 1, 0, 0, 0.0, 0.0, 4, "C" )
+: PlaySe( "SE/Se_Foot01" )
+: chara = "Midori"; lay = 4 ; type = "WL";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["贵族"]
+“我等着呢。快把这些家伙收拾一下！”
+
+长着绿色头发的野一风女子出现的瞬间
+贵族脸上露出了骄傲的笑容。
+
+: DrawChara( "Midori", 2, 0)
+: PlayVoice( "Voices/vo10_mid0007" )
+\CN["九一"]
+“嘿嘿嘿。你先逃吧。”
+
+//●演技：最後の……は舌なめずりをする感じでお願いします
+: DrawChara( "Midori", 27, 0)
+: PlayVoice( "Voices/vo10_mid0008" )
+\CN["九一"]
+“如果不这样做的话，也许会弄错{杀，时候}呢……”
+
+: EraseChara( "Midori", 0.5 )
+: Wait()
+: Call( "Scenarios/Common*FgResetLayer" )
+: DrawChara( "Leo", 21, 0, 1, 0.5, 0.0, 2, "C" )
+\CN["雷欧"]
+“……啊，那家伙……{什么人，什么东西}？”
+
+身体蜷缩。
+我觉得被蛇盯着的青蛙就是这样。
+
+: EraseChara( "Leo", 0.5 )
+\CN["贵族"]
+“啊，啊，让我这么做吧。”
+
+贵族男子逃离了那个地方。
+
+\CN["鬼灯队士·男F"]
+“等一下，等一下！跑了吗！”
+
+//●演出：斬撃エフェクト（みどり）
+: HideWnd()
+: keep = true; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0300000_0000000_0_"
+: Call("Scenarios/Common*EvIn")
+: EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
+: Wait()
+: ShowWnd()
+//: DrawChara( "Midori", 22, 0, 0, 0.5, 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo10_mid0009" )
+\CN["九一"]
+“你说谁在随便行动？”
+
+\CN["鬼灯队士·男F"]
+“啊……是……是……是……”
+
+//: DrawChara( "Midori", 23, 0)
+: PlayVoice( "Voices/vo10_mid0010" )
+\CN["九一"]
+“再等一下！”
+
+//●演出：斬撃エフェクト（みどり）
+: HideWnd()
+: cgkeep = false;
+: Call( "Scenarios/Effect*MidoriAction01" )
+: Call("Scenarios/Common*EvDelete")
+: Call( "Scenarios/Effect*Blood01" )
+: Wait()
+: DrawChara( "Leo", 19, 0, 1, 0.0, 0.0, 2, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "DR";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["雷欧"]
+“——呃，仓田先生！？”
+
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: DrawChara( "Midori", 16, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Midori"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0011" )
+\CN["九一"]
+“接下来就是那边的你了。好了！”
+
+//●演出：斬撃エフェクト（みどり）
+: EraseChara( "Midori", 0.5 )
+: Wait()
+: ResetLayer(3)
+\CN["鬼灯队士・女D"]
+“诶——！？”
+
+//●演出　血飛沫
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+被贯穿了大脑的前辈当场变成了一块肉。
+
+//●演技：怯えています
+: DrawChara( "Leo", 0, 0, 1, 0.5, 0.0, 3, "LC" )
+: DrawChara( "Mukuro", 15, 0, 2, 0.5, 0.0, 4, "RC" )
+: PlayVoice( "Voices/vo00_muk0192" )
+\CN["无黑色"]
+“……啊…啊…啊…啊啊……”
+
+: DrawChara( "Leo", 4, 0,)
+\CN["雷欧"]
+“怎么回事啊……完全看不见……”
+
+完全看不到对方的动作。
+
+那个不只是我们。
+被贯彻始终的前辈也是这样吧。
+
+//: DrawChara( "Midori", 5, 0)
+: HideWnd()
+: EraseChara( "Leo", 0.5 )
+: EraseChara( "Mukuro", 0.5 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evf_a001_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0012" )
+\CN["九一"]
+“之后你们两个人{结束，结束}怎么样？
+怎么说呢，今天的鬼灯真是没味道啊……”
+
+//: DrawChara( "Leo", 17, 0,)
+\CN["雷欧"]
+“哈？我们俩是怎么回事……？”
+
+//: DrawChara( "Midori", 8, 0)
+: PlayVoice( "Voices/vo10_mid0013" )
+\CN["九一"]
+“啊，虽然不知道怎么回事，但是天花板里面或者下面的是
+因为全员都杀了，玫瑰了”
+
+//: DrawChara( "Midori", 10, 0)
+: PlayVoice( "Voices/vo10_mid0014" )
+\CN["九一"]
+“听到的老鼠一共有5只左右啊。”
+
+//: EraseChara( "Mukuro", 0.5 )
+//: DrawChara( "Mukuro", 18, 0, 5, 0.5, 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk0193" )
+\CN["无黑色"]
+“嗯，骗人的……那就是…”
+
+参加这个任务的谍报队一共有五个人。
+
+从刚才开始就没有任何联系。
+应该是所有人都被这个女人杀害了吧。
+
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: Wait()
+: DrawChara( "Leo", 4, 0, 1, 0.5, 0.0, 3, "C" )
+: chara = "Leo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["雷欧"]
+“真的吗……真的，真的是很冷淡呢……哈哈……”
+
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Midori", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: chara = "Midori"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo10_mid0015" )
+\CN["九一"]
+“你真有脸啊。
+但是，很遗憾我很喜欢”
+
+: DrawChara( "Midori", 14, 0)
+: PlayVoice( "Voices/vo10_mid0016" )
+\CN["九一"]
+“我的爱好是能被欺负
+因为他是我最喜欢的超级M猪男”
+
+: EraseChara( "Midori", 0.5 )
+: Wait()
+: ResetLayer(3)
+: DrawChara( "Leo", 22, 0, 1, 0.5, 0.0, 4, "LC" )
+: chara = "Leo"; lay = 4; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+\CN["雷欧"]
+“我啊，是那里一心一意的纯情少年
+不管你喜欢什么，都无所谓”
+
+: DrawChara( "Mukuro", 6, 0, 2, 0.5, 0.0, 2, "RC" )
+: chara = "Mukuro"; lay = 2; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo00_muk0194" )
+\CN["无黑色"]
+“雷、雷欧……这种时候你还说什么傻话……！？”
+
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Leo", 0.5 )
+: Wait()
+: DrawChara( "Midori", 20, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo10_mid0017" )
+\CN["九一"]
+“你们两个，看起来很有看头
+我们不能因为性急而等待成长”
+
+: DrawChara( "Midori", 22, 0)
+: PlayVoice( "Voices/vo10_mid0018" )
+\CN["九一"]
+“我会像刚才那个女人一样一瞬间{杀，玫瑰}的。”
+
+: PlaySe( "SE/Se_dash01" )
+: SetLayerRelPos( 3, 300, 0, 0.25)
+: EraseChara( "Midori", 0.25 )
+: Wait()
+一个女人踢地。
+
+//●ＳＥ：カキン！　刀を受け止める音
+: PlaySe("SE/Se_KatanaHit02")
+: DrawImage( 9, 0, "MiscImage/BattleEffect03b", 0.0 )
+: FadeOutLayer( 9, 0 )
+: FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition03", 1.0, true, 0.0, 0.0)
+: Wait()
+发出尖锐的金属声。
+
+//●演出：龍　登場する
+: HideWnd()
+: StopBgm( 1.0 )
+//: DrawChara( "Ryu", 35, 0, 0, 0.0, 0.0, 5, "RC" )
+: DrawImage( 8, 0, "EventCG/evx_a025_1_1_0100000_0000000_1_0", 0.0)
+: Call("Scenarios/Common*CutinFadeOut")
+: ResetLayer(2)
+: ResetLayer(3)
+: ResetLayer(4)
+: AutoFaceThumbnail( false )
+: Wait()
+: ShowWnd()
+\CN["龙"]
+「…………」
+
+//: DrawChara( "Midori", 2, 0)
+: PlayBgm("BGM/10_CM010")
+: PlayVoice( "Voices/vo10_mid0019" )
+\CN["九一"]
+“哎，真能干啊。居然接受了我们家的{颅拔，狗}……”
+
+//: DrawChara( "Ryu", 13, 0)
+\CN["龙"]
+“好像是你斟酌了……”
+
+//: EraseChara( "Ryu", 0.5 )
+//: DrawChara( "Leo", 2, 0, 1, 0.5, 0.0, 2, "RC" )
+\CN["雷欧"]
+“老师，师傅！？”
+
+龙先生站在雷欧面前，接住了九之一的刀。
+
+//: EraseChara( "Leo", 0.5 )
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Ryu", 11, 0, 0, 0.5, 0.0, 3, "RC" )
+: chara = "Ryu"; lay = 3; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["龙"]
+“这个出奇的速度——
+白夜干部、{九星，救星}中的一个人，看起来像望月殿」
+
+: DrawChara( "Midori", 5, 0, 0, 0.0, 0.0, 4, "LC" )
+: chara = "Midori"; lay = 4; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo10_mid0020" )
+\CN["望月"]
+“诶，你知道我们家吗？那真是光荣啊。”
+
+//●読み：何者（なにもん）
+: DrawChara( "Midori", 1, 0)
+: PlayVoice( "Voices/vo10_mid0021" )
+\CN["望月"]
+「那你是什么人？
+我们家的一击就止住了，名字之类的就记住了”
+
+: DrawChara( "Ryu", 9, 0)
+\CN["龙"]
+“鬼灯副长、新渡户龙——
+虽然我以后不想和你见过面……”
+
+: DrawChara( "Midori", 17, 0)
+: PlayVoice( "Voices/vo10_mid0022" )
+\CN["绿色"]
+“哼……真是奇遇啊。我们也有同样的心情啊。
+我觉得你就在这里杀了吧”
+
+: HideWnd()
+: PlaySe( "SE/Se_Foot01" )
+: SetLayerRelPos( 4, -300, 0, 0.25)
+: EraseChara( "Midori", 0.25 )
+: SetLayerRelPos( 3, 300, 0, 0.25)
+: EraseChara( "Ryu", 0.25 )
+: Wait()
+: Call( "Scenarios/Common*FgResetLayer" )
+: ShowWnd()
+两个人保持距离。
+
+这时，我被卷入旋涡中的浓厚杀气所笼罩
+手在颤抖。
+
+//: EraseChara( "Ryu", 0.5 )
+//●演出：蘭丸　登場
+: StopBgm( 0.5 )
+: DrawChara( "Ranmaru", 0, 0, 0, 0.5, 0.0, 6, "R" )
+: PlaySe("SE/Se_Foot01")
+: lay = 6; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+刚要开始互相残杀的时候，一个男人进了房间。
+
+: PlayBgm("BGM/08_CM008")
+: DrawChara( "Ranmaru", 17, 0)
+\CN["一只眼睛藏起来的男人"]
+“望月，达成目标了，我要撤退了~”
+
+: DrawChara( "Midori", 24, 0, 0, 0.5, 0.0, 3, "L" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayVoice( "Voices/vo10_mid0023" )
+\CN["望月"]
+“啊？你这家伙，有什么好地方，不要打扰我！
+小喽，给我察言观色吧！”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["一只眼睛藏起来的男人"]
+“别这么脆啊。撤退是我的命令。”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["一只眼睛藏起来的男人"]
+“那我已经好好告诉你了，以后请多关照。”
+
+//●演出：蘭丸　去る
+: HideWnd()
+: SetLayerRelPos( 6, 100, 0, 0.5)
+: EraseChara( "Ranmaru", 0.5 )
+: Wait()
+: DrawChara( "Midori", 13, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo10_mid0024" )
+\CN["望月"]
+“啧……是脑子里的命令吗……那就没意思了。”
+
+//●演出：みどり　去る
+: HideWnd()
+: EraseChara( "Midori", 0.5 )
+: SetLayerRelPos( 3, -100, 0, 0.5)
+: Wait()
+: ShowWnd()
+继男子之后，望月之类的女忍者也离开了。
+
+: DrawChara( "Ryu", 9, 0, 0, 0.5, 0.0, 5, "C" )
+\CN["龙"]
+「…………」
+
+龙也没有追，一直在寻找着浩一的去向
+凝视着。
+
+: DrawChara( "Leo", 23, 0, 1, 0.5, 0.0, 2, "R" )
+\CN["雷欧"]
+“……什么啊，那家伙……前辈们……
+可恶……！”
+
+: DrawChara( "Ryu", 31, 0)
+\CN["龙"]
+“无黑，雷欧，只要你们能救我就太好了。”
+
+: DrawChara( "Mukuro", 7, 0, 2, 0.5, 0.0, 3, "L" )
+: PlayVoice( "Voices/vo00_muk0195" )
+\CN["无黑色"]
+“……龙先生……刚才的女性到底是谁？”。
+白夜的干部说了些什么……”
+
+: DrawChara( "Ryu", 2, 0)
+\CN["龙"]
+“啊，那个女人是被称为九星的白夜干部之一——”
+
+: DrawChara( "Ryu", 33, 0)
+\CN["龙"]
+“如果就这样继续战斗的话，我们可能全部都死了
+不知道。是个有那么点实力的女人”
+
+我第一个任务是死亡8人，目标是逃跑
+结果糟糕透顶。
+
+而且亲身体验到了白夜的恐怖。
+
+: DrawChara( "Leo", 6, 0, 0)
+\CN["雷欧"]
+“……啊，师傅，我
+变强的意思，好像完全搞错了啊」
+
+我也是。我在狂妄自大。
+
+——为了保护谁而变强。
+
+: StopBgm( 1.0 )
+那是只有“拥有生存能力的人”才能拥有的目标
+只有站在被杀一方的立场上才能理解。
+
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: ShowWnd()
+以这一天为界，我想要获得“生存的坚强”
+我要挑战练习。
+
+梦想和理想只能对幸存者说。
+
+第一次切身感受到了那个时代。
+
+//Yoshi：背景消去
+//●シーンエンド
+//サイドエピソード終了処理
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

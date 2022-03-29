@@ -1,0 +1,526 @@
+//========================================================
+//○お姫様お忍び紀行
+//========================================================
+//●場所：幕府
+//●視点：第三者視点
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: DrawFaceThumbnail( "Ji", 0, 0, 0 )
+: ShowWnd()
+\CN["老头儿"]
+“公主啊啊啊啊啊——————————！”
+
+//●背景：幕府・部屋
+//Yoshi：背景、昼
+: HideWnd()
+: PlayBgm("BGM/26_FM004")
+: SwapImage( 1, 0, "BGImage/BG_BakuhuRoom01_01", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["幕臣A"]
+“公主殿下——！”
+
+\CN["幕臣B"]
+“喂！在吗？”
+
+\CN["幕臣C"]
+“不，这里……”
+
+\CN["幕臣D"]
+“啊啊啊……小夜公主，到底在哪里……！？”
+
+\CN["幕臣E"]
+“如果这件事被将军知道了的话
+你们肯定全部被人砍头了！”
+
+//: EraseChara( "Ji", 0.5 )
+某一天的幕府——
+家臣们变相奔走着。
+
+其原因是幕府将军《一桥忠胜，一吐为快》的
+一个女儿，{一桥小夜，一翼啊}突然消失了
+有了。
+
+//●演出：場面転換トランジション
+//●場所：帝都
+//●背景：帝都・街並み・昼
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Sayo", 3, 1, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: PlayBgm("BGM/09_CM009")
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0001" )
+\CN["幕府的公主"]
+“总算能溜走了。
+来到这里的话，应该没问题吧？”
+
+: DrawChara( "Sayo", 2, 1)
+: PlayVoice( "Voices/vo24_say0002" )
+\CN["幕府的公主"]
+「我不是笼子里的鸟。
+偶尔也去外面玩一下”
+
+公主不允许外出。
+
+父亲、将军忠胜在女儿小夜外出
+不原谅。
+
+并不是因为溺爱女儿。
+
+如果，小夜被反幕派掳走的话……？
+因为我最讨厌背负那个风险。
+
+: DrawChara( "Sayo", 0, 0)
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: PlayVoice( "Voices/vo24_say0003" )
+\CN["幕府的公主"]
+“那么，虽然来到街上是很好的
+首先要做什么呢？”
+
+: DrawChara( "Sayo", 5, 0)
+: PlayVoice( "Voices/vo24_say0004" )
+\CN["幕府的公主"]
+“嗯……真糟糕。我不知道该做什么。”
+
+虽然是非常想去街上看看的公主
+一旦出来，就不知道具体该做什么。
+
+\CN["男A"]
+“呐……那孩子是迷路了吗？”
+
+\CN["女A"]
+“不能和你扯上关系……。
+那件和服一定是贵族的孩子！”
+
+\CN["男B"]
+“告诉警察不是更好吗？”
+
+\CN["男C"]
+“啊，我不想和你扯上关系。你就是啊。”
+
+明明是女孩子迷路的情况
+周围的大人中没有一个人想跟他说话。
+
+公主穿的和服只有一件价格
+有稍微超过镇上居民年收入的价格。
+
+对这样阶级的人伸出援助之手
+除了幕府的相关人员，都是坏人，只有偏离了头脑的好人
+没有。
+
+//●ＳＥ：ぐーー。お腹の鳴る音
+: HideWnd()
+: PlaySe( "SE/Se_Hungry" )
+: DrawChara( "Sayo", 4, 0)
+: layer = 3; time = 0.5; strength = 10; vibrato = 25;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0005" )
+\CN["幕府的公主"]
+“嗯，肚子饿了。
+应该先吃点什么再出来啊」
+
+: DrawChara( "Sayo", 3, 0)
+: PlayVoice( "Voices/vo24_say0006" )
+\CN["幕府的公主"]
+“但是，这样的话就无法摆脱了吧
+很难呢”
+
+话虽如此，今后该怎么办才好呢？
+
+我绝对不想就这样什么都不做就回幕府。
+公主这样想着。
+
+: DrawChara( "Sayo", 2, 0)
+: PlayVoice( "Voices/vo24_say0007" )
+\CN["幕府的公主"]
+“首先从吃什么开始吧。”
+
+: DrawChara( "Sayo", 7, 0)
+: PlayVoice( "Voices/vo24_say0008" )
+\CN["幕府的公主"]
+“从那边传来一股好像很好吃的味道。”
+
+//●演出：小夜　退場させてから場面転換
+: HideWnd()
+: SetLayerRelPos( 3, 100, 0, 0.5)
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: FadeOutLayer( 1, 1.0, 0.0, "BGImage/Transition12", 1.0, true, 0.0, 0.0 )
+: Wait()
+: ResetLayer(1)
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition06", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+\CN["摊子上的大叔"]
+“哦，欢迎光临。
+小姐，要用吗？”
+
+: DrawChara( "Sayo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo24_say0009" )
+\CN["幕府的公主"]
+“不是用的，是一个人来的。”
+
+\CN["摊子上的大叔"]
+“是吗？真了不起。”
+
+: DrawChara( "Sayo", 7, 0)
+: PlayVoice( "Voices/vo24_say0010" )
+\CN["幕府的公主"]
+“对了，那个咖啡有很好闻的味道
+是什么？”
+
+\CN["摊子上的大叔"]
+“小姐，你不知道烤串吗？”
+
+: DrawChara( "Sayo", 3, 0)
+: PlayVoice( "Voices/vo24_say0011" )
+\CN["幕府的公主"]
+“……真漂亮……？我没听说过。”
+
+: DrawChara( "Sayo", 7, 0)
+: PlayVoice( "Voices/vo24_say0012" )
+\CN["幕府的公主"]
+“我想吃那个。”
+
+\CN["摊子上的大叔"]
+“恩！小姐很可爱，所以很特别。
+我给你打半价”
+
+: DrawChara( "Sayo", 0, 0)
+: PlayVoice( "Voices/vo24_say0013" )
+\CN["幕府的公主"]
+“半学……？”
+
+\CN["摊子上的大叔"]
+“嗯？你没带钱吗？”
+
+: DrawChara( "Sayo", 10, 0)
+: PlayVoice( "Voices/vo24_say0014" )
+\CN["幕府的公主"]
+“钱……家里有很多呢……”
+
+\CN["摊子上的大叔"]
+“那就不行了。”
+
+//●演出：レオ　登場する
+: HideWnd()
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WR";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["雷欧"]
+“大叔，怎么了？”
+
+\CN["摊子上的大叔"]
+“哦，雷欧。其实，这孩子。”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Sayo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["雷欧"]
+“嗯？你怎么饿了？”
+
+: DrawChara( "Sayo", 9, 0)
+: PlayVoice( "Voices/vo24_say0015" )
+\CN["幕府的公主"]
+“我不是你！
+因为我有‘小夜’这个名字！”
+
+: DrawChara( "Leo", 13, 0)
+\CN["雷欧"]
+「这样啊，不好意思，不好意思。
+那么，sayo饿了吗？”
+
+//●演技：見栄はってます
+: DrawChara( "Sayo", 3, 0)
+: PlayVoice( "Voices/vo24_say0016" )
+\CN["小夜"]
+“没什么……我到那里为止……”
+
+//●ＳＥ：ぐーーー　お腹の減る音
+: PlaySe( "SE/Se_Hungry" )
+: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Sayo", 5, 0)
+: PlayVoice( "Voices/vo24_say0017" )
+\CN["小夜"]
+“啊……”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“大叔，给我一根烤串。给这孩子吧。”
+
+\CN["摊子上的大叔"]
+“你好。你看，小姐。”
+
+: DrawChara( "Sayo", 3, 1)
+: PlayVoice( "Voices/vo24_say0018" )
+\CN["幕府的公主"]
+“啊，那个……谢谢……”
+
+: DrawChara( "Leo", 13, 0)
+\CN["雷欧"]
+“好的好的”
+
+: JumpLayer( 3, 0, -50, 1, 0.25)
+: DrawChara( "Sayo", 6, 2)
+: PlayVoice( "Voices/vo24_say0019" )
+\CN["小夜"]
+“啊……不要把我当小孩子看待！”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“别把我当小孩子看待，你还不是小孩子吗？”
+
+: DrawChara( "Sayo", 9, 2)
+: PlayVoice( "Voices/vo24_say0020" )
+\CN["小夜"]
+“不对！我不是小孩子……。
+我已经是一位出色的女士了！”
+
+: DrawChara( "Leo", 13, 0)
+\CN["雷欧"]
+“哇，我说了。”
+
+那是从旁边看有点年龄差距的兄妹
+看起来好像在开心地玩耍。
+
+然而，有一个人看到这一幕，脸色惨白地仰望着天空
+就在附近。
+
+//●演出：あざみ登場する
+: HideWnd()
+: StopBgm( 0.5 )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Azami", 2, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+: PlayVoice( "Voices/vo05_aza0087" )
+\CN["嘲讽"]
+“公主……我找到了……”
+
+: HideWnd()
+: PlayBgm("BGM/36_ID03")
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Sayo", 3, 0, 0, 0.0, 0.0, 3, "R" )
+: DrawChara( "Azami", 2, 0, 0, 0.0, 0.0, 4, "L" )
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0021" )
+\CN["小夜"]
+“嗯……我在嘲讽……被发现了……”
+
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
+\CN["雷欧"]
+“等一下——嘲弄局长……”
+
+: DrawChara( "Azami", 0, 0, 0 )
+: PlayVoice( "Voices/vo05_aza0088" )
+\CN["嘲讽"]
+“啊，Leo，没关系。
+怎么说呢，这是幕府将军的女儿啊”
+
+//: EraseChara( "Leo", 0.5 )
+: DrawChara( "Sayo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo24_say0022" )
+\CN["小夜"]
+「…………」
+
+//: EraseChara( "Sayo", 0.5 )
+: DrawChara( "Leo", 2, 0, 0 )
+\CN["雷欧"]
+“啊……！是吗，因为是将军的女儿，所以是公主啊。
+所以我觉得她穿的衣服很贵啊……”
+
+: DrawChara( "Azami", 3, 0)
+: PlayVoice( "Voices/vo05_aza0089" )
+\CN["嘲讽"]
+“顺便说一下，根据我的看法，你的工资会减轻半年。”
+
+: ImpactLayer( 5, 0.1, 0.1, 1, 0.25)
+: DrawChara( "Leo", 4, 0)
+\CN["雷欧"]
+“啊啊啊！？真的吗！？
+那样的话，局长，我的工资再涨一点吧！”
+
+: DrawChara( "Azami", 0, 0)
+: PlayVoice( "Voices/vo05_aza0090" )
+\CN["嘲讽"]
+“好是好是好，过几天吧。”
+
+: DrawChara( "Azami", 2, 0)
+: PlayVoice( "Voices/vo05_aza0091" )
+\CN["嘲讽"]
+“……现在不是这种时候。
+公主，我会尽快回幕府的。我来陪你”
+
+//: EraseChara( "Leo", 0.5 )
+: DrawChara( "Sayo", 3, 0, 0 )
+: PlayVoice( "Voices/vo24_say0023" )
+\CN["小夜"]
+“嗯……有点小聪明……。
+只要一点点就够了，在街上走一走”
+
+//: EraseChara( "Sayo", 0.5 )
+: DrawChara( "Leo", 1, 0, 0 )
+\CN["雷欧"]
+“是啊，局长。有点……”
+
+: DrawChara( "Azami", 1, 0)
+: PlayVoice( "Voices/vo05_aza0092" )
+\CN["嘲讽"]
+“不，无论如何都要带他回幕府。
+因为现在幕府内的幕臣们都恐慌了”
+
+: DrawChara( "Leo", 2, 0)
+\CN["雷欧"]
+“但是，说点事情的话，不是稍微好一点吗？”
+
+: DrawChara( "Azami", 7, 0)
+: PlayVoice( "Voices/vo05_aza0093" )
+\CN["嘲讽"]
+“不行。公主发生什么事的时候，我可担不起责任。”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“但是啊……”
+
+雷欧咬住了小孔。
+
+: HideWnd()
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: DrawChara( "Sayo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: chara = "Sayo"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+: PlayVoice( "Voices/vo24_say0024" )
+\CN["小夜"]
+“好啊，嘲讽。能送我到幕府吗？”
+
+: DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: chara = "Azami"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: PlayVoice( "Voices/vo05_aza0094" )
+\CN["嘲讽"]
+“是的。我会负责带公主去幕府。”
+
+: HideWnd()
+: EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(4)
+: DrawChara( "Leo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+: chara = "Leo"; lay = 4 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["雷欧"]
+“喂，不是sayo，是公主啊
+不是想在街上玩吗？
+明明是个小孩子，为什么那么坦率呢？啊？”
+
+: DrawChara( "Sayo", 4, 0)
+: PlayVoice( "Voices/vo24_say0025" )
+\CN["小夜"]
+“‘サヨ’就可以了。你叫我公主的时候
+总觉得好痒”
+
+: DrawChara( "Sayo", 8, 0)
+: PlayVoice( "Voices/vo24_say0026" )
+\CN["小夜"]
+“虽然我很高兴你的心情，但是我的任性
+再也不能给你添麻烦了……”
+
+: DrawChara( "Leo", 1, 0)
+\CN["雷欧"]
+“……这样啊。那就再见了。”
+
+: HideWnd()
+: EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: Call( "Scenarios/Common*FgResetLayer" )
+: ShowWnd()
+被嘲笑带走的公主。
+
+并不是单纯的懂事。
+我只知道放弃妥协。
+
+那样的孩子分别的时候，朝向雷欧——
+
+: DrawChara( "Sayo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
+: PlayVoice( "Voices/vo24_say0027" )
+\CN["小夜"]
+“喂，你的名字是？”
+
+: DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
+\CN["雷欧"]
+“雷欧——我的名字是雷欧。”
+
+: DrawChara( "Leo", 14, 0)
+\CN["雷欧"]
+“因为他是近期将成为地上最强的男人！
+千万不要忘记啊」
+
+: DrawChara( "Sayo", 7, 0)
+: PlayVoice( "Voices/vo24_say0028" )
+\CN["小夜"]
+“……Leo，对吧……嗯，我知道了！我会记住的。”
+
+: DrawChara( "Sayo", 1, 0)
+: PlayVoice( "Voices/vo24_say0029" )
+\CN["小夜"]
+“那么，雷欧。再见！”
+
+不是总是摆出的笑容。
+
+把发自内心天真无邪的笑容还给了雷欧。
+
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+//体験版　ここで切る（仮）
+: if $trial == true
+	: ShowWnd()
+谢谢您玩到这里。
+体验版到此结束。
+
+	: HideWnd()
+	: DrawImage( 9, 0, "MiscImage/TrialEnd", Call("Scenarios/Common*EffTime") )
+\NULL[]
+	: FadeOut( 0.5 )
+	: Wait()
+	: LoadScene( "Title" )
+: else
+	: Jump( "Scenarios/SC_A03_01" )
+: endif

@@ -1,0 +1,735 @@
+//========================================================
+//○幸福になれる仏像１
+//========================================================
+*sc001
+: HideWnd()
+: Call("Scenarios/map_town05_saito_init*Map03_1")	//初期化
+: RpgCharaTurn( "Kuchiireya", "D" )
+: RpgCharaWarp( "Player", "SC_D04_19" )
+: RpgCharaOff("Player")
+: RpgCharaOn("Mukuro")
+: FadeIn( 0.5 )
+: Wait()
+//●場所：西都・居酒屋
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["眼镜店"]
+“无黑，你知道能幸福的佛像吗？”
+
+刚想被口入屋叫到了往常的居酒屋
+突然被说了这样的话。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3996" )
+\CN["无黑色"]
+“好像有那样的。
+祈祷的话就能幸福”
+
+\CN["眼镜店"]
+“你觉得怎么样？”
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk3997" )
+\CN["无黑色"]
+“真无聊啊。”
+
+\CN["眼镜店"]
+“真像无黑酱啊”
+
+\CN["眼镜店"]
+“但是，好像是很愚蠢的事情。
+因为连日都有人蜂拥而至”
+
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk3998" )
+\CN["无黑色"]
+“如果只是拜了就能幸福的话
+现在大家都变得幸福了。你也明白这些
+明明有……”
+
+\CN["眼镜店"]
+“不过……”
+
+\CN["眼镜店"]
+“这样啊，我对入口店的直觉非常迟钝。
+总觉得有点恶心啊」
+
+: DrawChara( "Mukuro", 12, 0)
+: PlayVoice( "Voices/vo00_muk3999" )
+\CN["无黑色"]
+“那就是说，你想让我去看看。”
+
+\CN["眼镜店"]
+“对了对了。我是想自己去的地方
+就算有年末的事情。报酬由我来出
+希望你能去看看幸福的佛像”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4000" )
+\CN["无黑色"]
+“……呵呵”
+
+说是希望入口店自己拿出钱来看看
+你是什么意思？
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 11, 0)
+: PlayVoice( "Voices/vo00_muk4001" )
+\CN["无黑色"]
+（这家伙绝对是在隐瞒什么啊……）
+
+只是去看看情况就能拿到钱。
+这么简单的工作背后有很多是
+切身体会。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk4002" )
+\CN["无黑色"]
+（但是，这家伙说到这里的话，我就去看看
+的也有。正好现在没有工作……）
+
+\CN["眼镜店"]
+“无黑，怎么办？”
+
+: DrawChara( "Mukuro", 2, 0)
+: PlayVoice( "Voices/vo00_muk4003" )
+\CN["无黑色"]
+“啊，只是去村里看看情况吧？
+那就做。我觉得去看看话题也不错”
+
+\CN["眼镜店"]
+“不愧是无黑。那就拜托你了。”
+
+\CN["眼镜店"]
+“去明里村的话，走茨木街道就能到。
+请多关照”
+
+//●演出：無黒　退場する
+//●演出：退場した後、若干ウエイト
+//●状況：裏で玉藻が隠れている
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: RpgCharaBatch( "Mukuro"	\
+:	"Speed", 4.0	\
+:	"MoveDown", 4	\
+:	"MoveRight", 10	\
+:	"MoveDown", 5 )
+: Wait()
+: RpgCharaOn("Tamamo")
+: RpgCharaBatch( "Tamamo"	\
+:	"Speed", 4.0	\
+:	"MoveUp", 1	\
+:	"MoveRight", 1	\
+:	"MoveDown", 4	\
+:	"MoveLeft", 2 )
+: Wait()
+: RpgCharaTurn( "Kuchiireya", "R" )
+: DrawChara( "Tamamo", 1, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+\CN["眼镜店"]
+“啊，这样就好了吗？
+话说，靠普通人就好了吗？”
+
+: PlayVoice( "Voices/vo22_tam0311" )
+\CN["玉藻"]
+“我们极力避免介入。
+因为不想浪费好不容易看到的东西”
+
+\CN["眼镜店"]
+“嗯。等一下，只要支付什么都可以。”
+
+//●演出：暗転
+//＠場所移動：居酒屋の前
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+事件信息更新了。
+
+: SetMission( "SC_D04_19_1", "InProgress" )
+: DestinationMap( "Map_Town14_01_Akesato" )
+: FadeOut( 0.0 )
+: RpgCharaOn("Player")
+: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")
+
+//========================================================
+//○幸福になれる仏像２
+//========================================================
+*sc002
+//●場所：明里村
+//●状況：仏像がある神社の前に人がたくさん並んでいる
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo00_muk4004" )
+\CN["无黑色"]
+“原来如此。正如传闻那样，好像盛况空前……”
+
+\CN["男1"]
+“……嘿嘿”
+
+\CN["女1"]
+“呵呵……这样我也要幸福。”
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 30, 0)
+: PlayVoice( "Voices/vo00_muk4005" )
+\CN["无黑色"]
+（这是什么？排队的人的样子明显很奇怪。）
+
+\CN["男2"]
+“咦？你是来拜佛的吗？”
+
+: DrawChara( "Mukuro", 26, 0)
+: PlayVoice( "Voices/vo00_muk4006" )
+\CN["无黑色"]
+“啊，嘛，就是这样。
+听到大家的评价，有点…”
+
+\CN["男2"]
+“嘿嘿，拜了那尊像心情就会平静下来。
+感觉什么都无所谓。那是最棒的
+好舒服啊」
+
+这个男人也是。
+眼睛死了。感觉不到生气。
+
+只看一次佛像吗。
+
+//●演出：時間経過トランジション
+//●演出：暗転
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition04", 1.0 )
+: Wait()
+: EraseChara( "Mukuro", 0.0 )
+: DrawImage( 1, 0, "BGImage/Bg_Jinja01_01", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+——过了一个小时左右
+终于有机会参拜佛像了。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4007" )
+\CN["无黑色"]
+（乍一看是普通的佛像……）
+
+站在佛像前。
+
+: HideWnd()
+: PlaySe( "SE/Se_Effect01" )
+: FadeOut( 0.1, 255, 255, 255 )
+: Wait()
+: FadeIn( 0.1, 255, 255, 255 )
+: Wait()
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Mukuro", 31, 0)
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4008" )
+\CN["无黑色"]
+“呜……！”
+
+以为佛像发出了奇怪的光芒，却被吸入了力量。
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 30, 0)
+: PlayVoice( "Voices/vo00_muk4009" )
+\CN["无黑色"]
+（也许，我错以为这种感觉会幸福
+在吗？）
+
+被吸气并没有什么特别不舒服的感觉。
+
+: DrawChara( "Mukuro", 24, 1)
+大脑淡淡的麻痹，全身感觉舒服地麻痹了，周而复始的感觉——
+有接近顶峰的东西。
+
+\CN["男3"]
+“喂，你！快换我吧。”
+
+: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk4010" )
+\CN["无黑色"]
+“啊……对不起。”
+
+也许是因为想事情的缘故，我停了下来。
+
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk4011" )
+\CN["无黑色"]
+“那尊佛像明显太奇怪了。
+感觉有什么不好的团体{背后，背后}在”
+
+就这样只报告意见也没有意义吧。
+不好好调查真相的话。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+因此，向村里的人打听之后
+今天决定在附近的驿站町住一晚。
+
+——那天晚上。
+
+从旅馆房间外面感觉到了强烈的气息
+惊醒。
+
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/Bg_WaRoom04_03", 1.0 )
+: Wait()
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4012" )
+\CN["无黑色"]
+“……信……？到底是谁？”
+
+//●読み：美濃部洞窟（みのべどうくつ）
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4013" )
+\CN["无黑色"]
+“去村子北边的‘美浓部洞窟’比较好。
+你要找的东西在那里——吗？”
+
+那封信上是这样写的。
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk4014" )
+\CN["无黑色"]
+“村里的人没怎么听到有什么内容的话
+明天去这里写的洞窟看看吗？”
+
+虽然没有比这更奇怪的了，但还是赌一赌吧。
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+……………………………………………………。
+
+//＠場所移動：宿屋の前
+//●シーンエンド
+: SetMission( "SC_D04_19_1", "Hidden" )
+: SetMission( "SC_D04_19_2", "InProgress" )
+: EraseAllImage( 0, Call("Scenarios/Common*EffTime") )
+: Wait()
+: PlayBgm("BGM/37_Dungeon")
+: RpgCharaWarp( "Player", "START")
+: Return
+//========================================================
+//○幸福になれる仏像３
+//========================================================
+*sc003
+\CI["准备好了！"]
+\CI["再次确认"]
+今后会有什么感受……。
+
+: if ($choice == 1) Return endif
+: LoadMap( "Map_Dungeon44_04_MinobeDokutsu", "", "Scenarios/SC_D04_19*sc003_1")
+
+*sc003_1
+//●場所：美濃部洞窟・奥
+//●状況：魔導器の前に桃がいる
+: HideWnd()
+: FadeIn( 0.5 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 8 )
+: Wait()
+: PlayBgm("BGM/30_CM015")
+: DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4015" )
+\CN["无黑色"]
+“桃子……！？你在这种地方干什么！？”
+
+//●演技：傀儡の術にかかっています
+: RpgCharaTurn( "Momo", "D" )
+: DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: PlayVoice( "Voices/vo01_mom1268" )
+\CN["桃子"]
+“谁是你？”
+
+桃子的样子很明显很奇怪。
+
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4016" )
+\CN["无黑色"]
+“只是没见面就忘了
+看来不是蠢话啊”
+
+桃子的表情和在村子里为了参拜佛像而排队的家伙
+完全是一样没有生气的东西。
+
+: DrawChara( "Momo", 4, 0)
+: PlayVoice( "Voices/vo01_mom1269" )
+\CN["桃子"]
+“能不能不要打扰我？
+我现在很忙”
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk4017" )
+\CN["无黑色"]
+“你说忙，在那干什么？”
+
+: DrawChara( "Momo", 7, 0)
+: PlayVoice( "Voices/vo01_mom1270" )
+\CN["桃子"]
+“必须要帮到丈夫”
+
+: DrawChara( "Momo", 9, 0)
+: PlayVoice( "Voices/vo01_mom1271" )
+\CN["桃子"]
+“文麻吕大人不久，便是治理大和天下的御方。
+作为妻子必须要支持她”
+
+: DrawChara( "Mukuro", 30, 0)
+: PlayVoice( "Voices/vo00_muk4018" )
+\CN["无黑色"]
+“哈？文麻吕大人？”
+
+嗯，说到文麻吕，确实是桃的原未婚夫什么的
+是财阀家的人吧？
+
+所谓妻子，就是桃子和那家伙结婚了吗？
+
+//●演技：心の声です
+: DrawChara( "Mukuro", 24, 0)
+: PlayVoice( "Voices/vo00_muk4019" )
+\CN["无黑色"]
+（相比之下，桃子的样子太滑稽了。
+简直就像是被什么操纵了一样）
+
+//●演出：炎魔術
+: HideWnd()
+: PlaySe( "SE/Se_AnimeL_Fire01" )
+: PlayAnim( "Animations/AnimeL_Fire01", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+桃子突然使出了魔法。
+虽然包含了不想猜中，警告的意志。
+
+: DrawChara( "Momo", 8, 0)
+: PlayVoice( "Voices/vo01_mom1272" )
+\CN["桃子"]
+「如果要妨碍我的话，下次就猜对了。
+不管你是谁，我都要杀了你」
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4020" )
+\CN["无黑色"]
+“果然，不能因为那件事就置之不理啊。
+桃子，我揍你一拳，把你的眼睛睁开吧」
+
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+*battle01
+//――――――――――――――――――――――――――――
+//■戦　闘：姫椿桃
+//■タイプ：ボス戦（逃走不可能）
+//■勝敗分岐：敗北分岐なし
+//――――――――――――――――――――――――――――
+//＠戦闘：姫椿桃,2,2,2
+//＠戦闘前選択肢（勝敗分岐なし）
+: if ( Flag ( "EasyMode" ) == true )
+	: Call( "Scenarios/Battle*BattleSelect00" )
+	: if( BattleSkip == true ) Jump( "*sc004" ) endif	//勝利後のラベル
+: endif
+
+: PlaySe( "SE/Se_BattleStart" )
+: FadeOut( 0.5, 0.0, 0.0, 0.0, "BGImage/Transition15", 1.0 )
+: Wait()
+: StoreBgm()
+: Call( "Scenarios/Battle*BattleScriptBoss" )
+: BeginBattle( "BGImage/BG_Cave02", "BGM/22_BM003", 1049, -1, -1, "Scenarios/SC_D04_19*battle_end" , true )
+
+*battle_end
+: if ( $battleWin == true )
+	: StopBgm( 0.0 )
+	: Jump( "*sc004" )	//勝利した場合
+: elif ( $battleEscape == true )
+这场战斗，不能逃走！
+
+	: Jump( "*battle01" )
+: else
+	: StopBgm( 0.0 )
+	: Call( "Scenarios/CommonSys*AllRecovery" )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+	: FadeIn( 0.0 )
+	\CI["再战"]
+	\CI["重做"]
+失败了……。
+
+	: if ($choice == 0)
+		: Jump( "*battle01" )
+	: else
+		: Jump( "Scenarios/CommonSys*LoseReturn" )
+	: endif
+: endif
+
+//========================================================
+//○幸福になれる仏像４
+//========================================================
+*sc004
+//●状況：戦闘終了後
+//●演出：無黒が桃をぶっ飛ばす。桃気絶する
+: FadeIn( 0.5 )
+: Wait()
+: HideWnd()
+: effecttype = "1"; se = "Se_Slash01"; keep = false; evkeep = false;
+: Call( "Scenarios/Effect*TransitionAttack" )
+: DrawChara( "Mukuro", 31, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: RpgCharaTurn( "Momo", "U" )
+: PlaySe( "SE/Se_Down01" )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk4021" )
+\CN["无黑色"]
+“桃子的魔术果然很麻烦……。
+稍微放松一下，就被杀了”
+
+: PlayBgm("BGM/15_ESM04")
+这么说来，这是第一次和桃这样真心的厮杀。
+果然鬼灯的人向敌人转动是危险的。我想尽量避免战斗。
+
+: DrawChara( "Mukuro", 25, 0)
+: PlayVoice( "Voices/vo00_muk4022" )
+\CN["无黑色"]
+“这是魔导器吧？和唤来幸福的佛像一样的感觉——
+不，可以说是上位互换吗？”
+
+//●演出：玉藻　登場する
+: HideWnd()
+: RpgCharaOn("Tamamo")
+: RpgCharaBatch( "Tamamo"	\
+:	"Speed", 6.0	\
+:	"MoveUp", 7 )
+: Wait()
+: DrawChara( "Tamamo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo22_tam0312" )
+\CN["玉藻"]
+“女儿啊，你要破坏那个魔导器。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4023" )
+\CN["无黑色"]
+“诶？”
+
+: DrawChara( "Tamamo", 3, 0)
+: PlayVoice( "Voices/vo22_tam0313" )
+\CN["玉藻"]
+“不用了，快点！”
+
+: DrawChara( "Mukuro", 34, 0)
+: PlayVoice( "Voices/vo00_muk4024" )
+\CN["无黑色"]
+“我，我知道了！”
+
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: EraseChara( "Tamamo", 0.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: ShowWnd()
+正如突然出现的身着和服的兽人所说的那样
+用刀打碎魔导器。
+
+//●演出：斬撃エフェクト
+//●演出：無黒　魔導器を破壊する
+: DrawChara( "Tamamo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: PlayVoice( "Voices/vo22_tam0314" )
+\CN["玉藻"]
+“那么，接下来就不是这个笨蛋弟子了。
+被施了麻烦的咒术”
+
+//●演出：回復魔法演出
+: HideWnd()
+: EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
+: PlaySe( "SE/Se_AnimeL_Heal02" )
+: PlayAnim( "Animations/AnimeL_Heal02", false, 0, 0, 6, 6 )
+: Wait()
+: ShowWnd()
+兽人靠近桃子，行使魔术。
+
+//●演技：桃　正気に戻る
+: DrawChara( "Tamamo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
+: DrawChara( "Momo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+: PlayVoice( "Voices/vo01_mom1273" )
+\CN["桃子"]
+“嗯……”
+
+: DrawChara( "Tamamo", 3, 0)
+: PlayVoice( "Voices/vo22_tam0315" )
+\CN["玉藻"]
+“这个，快点起床吧！？这个笨蛋弟子！”
+
+//●ＳＥ：叩く音
+: PlaySe( "SE/Se_Punch01" )
+: layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
+: Wait()
+: DrawChara( "Momo", 13, 0, 0 )
+: PlayVoice( "Voices/vo01_mom1274" )
+\CN["桃子"]
+“痛啊！老师……！？
+咦？这里、哪里……？确实我……”
+
+//●演出：文麻呂調教　フラッシュバック
+: HideWnd()
+: PlaySe( "SE/Se_Effect00" )
+: FadeOut( 0.1, 255, 255, 255 )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evb_b007_1_2_0411011_1201010_0_"
+: Call("Scenarios/Common*EvIn")
+: FadeIn( 0.1, 255, 255, 255 )
+: Wait()
+: Sleep(0.25)
+: FadeOut( 0.1, 255, 255, 255 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: FadeIn( 0.1, 255, 255, 255 )
+: Wait()
+: ShowWnd()
+//●演技：調教の記憶が蘇って震えます
+: DrawChara( "Momo", 10, 1)
+: PlayVoice( "Voices/vo01_mom1275" )
+\CN["桃子"]
+“呜……嗯……不，不……啊啊……！”
+
+桃子蹲在那里，身体颤抖着。
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo00_muk4025" )
+\CN["无黑色"]
+“桃子……”
+
+: DrawChara( "Mukuro", 35, 0)
+对某人——恐怕是财阀日野家的长子
+你做了很过分的事吧。
+
+就连我也能察觉到这点。
+
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0316" )
+\CN["穿着和服的女人"]
+“……真不愧是心灵上的创伤，连笑容都无法治愈。
+桃，没能帮你真是抱歉”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4026" )
+\CN["无黑色"]
+“这么说来，桃子和老师……。
+难道你是玉藻大人吗？”
+
+听说他从桃子开始向玉藻大人学习魔术。
+
+//●読み：魔導器（まどうき）
+: DrawChara( "Tamamo", 2, 0)
+: PlayVoice( "Voices/vo22_tam0317" )
+\CN["玉藻"]
+「的确如此。蕨菜是玉藻。
+把那个魔导器好好地弄坏了」
+
+: DrawChara( "Tamamo", 0, 0)
+: PlayVoice( "Voices/vo22_tam0318" )
+\CN["玉藻"]
+“那是因为，使用迷惑人们的心的危险魔导器的电源
+像这样的东西。启动时好像利用了桃子的魔力”
+
+: DrawChara( "Mukuro", 23, 0)
+: PlayVoice( "Voices/vo00_muk4027" )
+\CN["无黑色"]
+“能让村子里幸福的佛像说不定是——”
+
+: PlayVoice( "Voices/vo22_tam0319" )
+\CN["玉藻"]
+「恩。是慢慢地洗脑人的魔导器。
+在这个村子里做的，恐怕是实验吧”
+
+被操纵的桃子说了呢。
+日野文麻吕治理大和的天下。
+
+这次的这个就是那个立足点吗。
+
+: PlayVoice( "Voices/vo22_tam0320" )
+\CN["玉藻"]
+“村里的人和挂在桃子上的洗脑不同，效果很差
+因为不是那家伙。过几天就会恢复原状吧”
+
+: DrawChara( "Tamamo", 5, 0)
+: PlayVoice( "Voices/vo22_tam0321" )
+\CN["玉藻"]
+“不好意思，请多关照桃子。”
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk4028" )
+\CN["无黑色"]
+“玉藻大人去哪里？”
+
+//●読み：日野文麻呂（ひのふみまろ）
+: DrawChara( "Tamamo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: PlayVoice( "Voices/vo22_tam0322" )
+\CN["玉藻"]
+“不能让日野文麻吕就这样散开
+因为不行啊」
+
+: DrawChara( "Tamamo", 1, 0)
+: PlayVoice( "Voices/vo22_tam0323" )
+\CN["玉藻"]
+“……看来，我们多少介入一下也没问题吧。”
+
+最后，玉藻大人说了不太明白的话
+从山洞里消失了。
+
+//●演出：玉藻　完全に退場する
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: EraseChara( "Tamamo", 0.0 )
+: EraseChara( "Mukuro", 0.0 )
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+来到西都，作为在那里生活的浪人
+虽然我走过了新的人生。
+
+以这次事件为契机，卷入了与国家有关的骚动中
+真是的，连想都没想过。
+
+……………………………………………………。
+
+//●浪人ルート第４章終了。浪人ルート第５章へ
+//●シーン：「浪人生活に桃が加わって」へ
+//＠シナリオジャンプ：SC_D05_01
+: SetMission( "SC_D04_19_2", "Successed" )
+: FadeOut( 0.0 )
+: Wait()
+: LoadMap( "Map_Event000", "", "Scenarios/SC_D05_01")

@@ -1,0 +1,1347 @@
+//========================================================
+//○Ｈシーンスキップ処理
+//========================================================
+*HsceneSkip
+: if ( blackout == true )
+	: HideWnd()
+	: StopBgm( 1.0 )
+	: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+	: Wait()
+	: ShowWnd()
+: endif
+: ShowWnd()
+\CI["Ｈシーンを見る"]
+\CI["Ｈシーンをスキップする"]
+一度見たＨシーンです。スキップしますか？
+
+: Return
+
+//========================================================
+//○自らの手で処女膜を破ってしまう
+//========================================================
+*SC_A01_51
+: Call( "Scenarios/CommonSys*Word" )
+: Call( "Scenarios/CommonSys*CosMemory" )
+//――――――――――――――――――――――――――――
+//＠通常選択肢,select02
+//■選択肢１：服を着たままやる主義
+//■選択肢２：裸でやる主義
+//――――――――――――――――――――――――――――
+\CI["服を着たままやる主義"]
+\CI["裸でやる主義"]
+オナニーはどうする主義ですか？
+
+: if ($choice == 1)
+	: CharaCostume( "Mukuro", 1 )
+: endif
+
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Onanism", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+
+\CI["やっぱり、無理！"]
+\CI["ここまできたら最後まで！"]
+自らの手で処女を失ってしまっていいのだろうか？
+
+: if ($choice == 0)
+	: if ( $inExtra == false ) CharaSexHistory( "Mukuro", 1 ) endif
+	: Jump( "Scenarios/SC_A01_51*HScene_End0" )
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: Jump( "Scenarios/SC_A01_51*HScene_End" )
+: endif
+: Return
+//========================================================
+//○貴族の男に処女をあげてしまう
+//========================================================
+*SC_A01_52
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "ByInvited", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: Call( "Scenarios/CommonSys*CosMemory" )
+
+\CI["言われた通り服を脱ぐ"]
+\CI["服は着たままで"]
+裸になれってことだろうけれど……。
+
+: if ($choice == 0)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1 ) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "VaginaPetting", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaIsMenstrual_Mukuro_UnsafeDay" ) == true )
+	: Flag( "CondomOn", true )
+: else
+	\CI["ちゃんと避妊具をつけてもらう"]
+	\CI["まぁいいか、このままで"]
+	避妊具、つけてもらう？　それとも……。
+
+	: if ($choice == 0)
+		: Flag( "CondomOn", true )
+	: endif
+: endif
+: if ( Flag ( "CondomOn" ) == true )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: endif
+: Jump( "Scenarios/SC_A01_52*HScene_End" )
+
+//========================================================
+//○ヤクザの組長に敗北、処女を奪われる
+//========================================================
+*SC_A02_02_1
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "VaginaPetting", 1) endif
+
+\CI["……？"]
+\CI["力を振り絞って身体をよじらす"]
+組長がお尻を鷲づかみにしながら、くぐもった声を漏らす。
+
+: if ($choice == 0)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: endif
+: Jump( "Scenarios/SC_A02_02*HScene_End1" )
+
+//========================================================
+//○ヤクザの組長に敗北し一晩中犯される
+//========================================================
+*SC_A02_02_2
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 10 ) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 10 ) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 6) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 2) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithTherianthrope", 2) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", RandomRange(5,10)) endif
+: endif
+
+\CI["中出しなんてさせない！"]
+\CI["……抵抗できない！"]
+組長がお尻を鷲づかみにしながら、くぐもった声を漏らす。
+
+: if ($choice == 0)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15) ) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(130,150) ) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(130,150)) endif
+: Jump( "Scenarios/SC_A02_02*HScene_End2" )
+
+//========================================================
+//○オークに処女を散らされて……
+//========================================================
+*SC_A02_08_1
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithDemon", 1) endif
+: semen = RandomRange(30,45)
+: semen *= 10
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", semen) endif
+: Jump( "Scenarios/SC_A02_08*HScene_End1" )
+
+//========================================================
+//○オークに散々犯されて……
+//========================================================
+*SC_A02_08_2
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 10) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithDemon", 1) endif
+: semen = RandomRange(30,45)
+: semen *= 10
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", semen) endif
+: ecstasy_num = RandomRange(5,10)
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", ecstasy_num) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", ecstasy_num) endif
+: Jump( "Scenarios/SC_A02_08*HScene_End2" )
+
+//========================================================
+//○町長をパイズリでスッキリさせてあげる
+//========================================================
+*SC_A02_52
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateOral", RandomRange(5,10)) endif
+: Jump( "Scenarios/SC_A02_52*HScene_End" )
+
+//========================================================
+//○童貞貴族の筆おろし
+//========================================================
+*SC_A02_54
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: Call( "Scenarios/CommonSys*CosMemory" )
+\CI["このままエッチする！"]
+\CI["エッチは服を脱いでから！"]
+――さてと、ここからどうするか。
+
+: if ($choice == 1) 
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+
+\CI["このまま膣内に出させてあげる"]
+\CI["やっぱり外で！"]
+――どうしよう？
+
+: if ($choice == 1)
+	: Nakadashi = true
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: else
+	: Nakadashi = false
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: endif
+: Jump( "Scenarios/SC_A02_54*HScene_End" )
+
+//========================================================
+//○情報の対価は身体で
+//========================================================
+*SC_A03_04
+: Call( "Scenarios/CommonSys*CosMemory" )
+\CI["服を脱がさないまま"]
+\CI["服を全部脱がしてから"]
+エッチの時、服は？
+
+: if ($choice == 1)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "ByInvited", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Breast" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaIsMenstrual_Mukuro_UnsafeDay" ) == true )
+	\CI["危険日に中出しされるわけにはいかない！"]
+	\CI["中出しさせないと情報が貰えないかも"]
+	どうしよう……このままだと膣内に射精されてしまう！
+
+: else
+	\CI["外に出してもらうか"]
+	\CI["中に出させてあげた方がいいだろう"]
+	どうしよう……このままだと膣内に射精されてしまう！
+
+: endif
+: if ($choice == 0)
+	: Nakadashi = false
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2 )
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+	: endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: else
+	: Nakadashi = true
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2 )
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+	: endif
+: endif
+: HideWnd()
+: StopBackVoice()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: Jump( "Scenarios/SC_A03_04*HScene_End" )
+
+//========================================================
+//○深夜の牢屋で処女を奪われる
+//========================================================
+*SC_A03_11_1
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: value = RandomRange(10,20)
+: liquid_a = RandomRange(10,15)
+: liquid_a *= value
+: liquid_b = RandomRange(10,15)
+: liquid_b *= value
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", value) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgy", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", value) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", liquid_a) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", liquid_b) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) < 2 )
+	: ecstasy_a = RandomRange(5,10)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", ecstasy_a) endif
+: else
+	: ecstasy_a = RandomRange(5,20)
+	: ecstasy_b = RandomRange(5,10)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", ecstasy_a) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", ecstasy_b) endif
+: endif
+: Jump( "Scenarios/SC_A03_11*HScene_End" )
+
+//========================================================
+//○深夜の牢屋で廻される
+//========================================================
+*SC_A03_11_2
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Breast" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: endif
+
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) <= 1 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: endif
+: value = RandomRange(10,20)
+: liquid_a = RandomRange(10,15)
+: liquid_a *= value
+: liquid_b = RandomRange(10,15)
+: liquid_b *= value
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", value) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgy", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", value) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", liquid_a) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", liquid_b) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) < 2 )
+	: ecstasy_a = RandomRange(5,10)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", ecstasy_a) endif
+: else
+	: ecstasy_a = RandomRange(5,20)
+	: ecstasy_b = RandomRange(5,10)
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", ecstasy_a) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", ecstasy_b) endif
+: endif
+: Jump( "Scenarios/SC_A03_11*HScene_End" )
+
+//========================================================
+//○公衆トイレで覗かれて……
+//========================================================
+*SC_A03_52
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+: Jump( "Scenarios/SC_A03_52*HScene_End" )
+
+//========================================================
+//○巌に容赦なく処女を奪われる
+//========================================================
+*SC_B04_04_1
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(50,100)) endif
+: Jump( "Scenarios/SC_B04_04*HScene_End1" )
+
+//========================================================
+//○巌に容赦なく犯される
+//========================================================
+*SC_B04_04_2
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( CharaCostume( "Mukuro" ) == 1 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2 )
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) == 3 )
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+	: endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(50,100)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(50,100)) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(50,100)) endif
+: endif
+: Jump( "Scenarios/SC_B04_04*HScene_End2" )
+
+//========================================================
+//○浪人たちに処女を奪われオモチャにされる
+//========================================================
+*SC_B04_11_1
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgy", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(10,15)) endif
+: value1 = RandomRange(3,5)
+: value2 = RandomRange(1,3)
+: value3 = RandomRange(1,3)
+: sex_val = RandomRange(6,25)
+: anal_val = RandomRange(6,25)
+: sex_anal = RandomRange(6,25)
+: liquid_vagina = RandomRange(10,20) * sex_val
+: liquid_anal = RandomRange(10,20) * anal_val
+: liquid_bukkake = RandomRange(10,20) * sex_anal
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", value1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", value2) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithTherianthrope", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", sex_val) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", anal_val) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", sex_val + anal_val) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", liquid_vagina) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", liquid_anal) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", liquid_bukkake) endif
+: Jump( "Scenarios/SC_B04_11*HScene_End1" )
+
+//========================================================
+//○浪人たちにオモチャにされる
+//========================================================
+*SC_B04_11_2
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgy", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(10,15)) endif
+: value1 = RandomRange(3,5)
+: value2 = RandomRange(1,3)
+: value3 = RandomRange(1,3)
+: sex_val = RandomRange(6,25)
+: anal_val = RandomRange(6,25)
+: sex_anal = RandomRange(6,25)
+: liquid_vagina = RandomRange(10,20) * sex_val
+: liquid_anal = RandomRange(10,20) * anal_val
+: liquid_bukkake = RandomRange(10,20) * sex_anal
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", value1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", value2) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithTherianthrope", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", sex_val) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", anal_val) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", sex_val + anal_val) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", liquid_vagina) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", liquid_anal) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", liquid_bukkake) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) < 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", RandomRange(1,5)) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", RandomRange(10,20)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", RandomRange(5,10)) endif
+: endif
+: Jump( "Scenarios/SC_B04_11*HScene_End2" )
+
+//========================================================
+//○ミノタウロスに襲われ処女を奪われる
+//========================================================
+*SC_B04_51_1
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithDemon", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Interbreed", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(200,300)) endif
+: Jump( "Scenarios/SC_B04_51*HScene_End1" )
+
+//========================================================
+//○ミノタウロスに犯される
+//========================================================
+*SC_B04_51_2
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithDemon", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Interbreed", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(200,300)) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 4) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 4) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Interbreed", 4) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(200,300)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 9) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 9) endif
+: endif
+: Jump( "Scenarios/SC_B04_51*HScene_End2" )
+//========================================================
+//○約束よ――ずっと側にいて
+//========================================================
+*SC_B04_08
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "ByInvited", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "VaginaPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(20,30)) endif
+: Jump( "Scenarios/SC_B04_08*HScene_End" )
+
+//========================================================
+//○今夜は私が銀ちゃんを
+//========================================================
+*SC_B04_54
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(20,30)) endif
+: Jump( "Scenarios/SC_B04_54*HScene_End" )
+
+//========================================================
+//○密会
+//========================================================
+*SC_A03_85
+: Jump( "Scenarios/SC_A03_85*HScene_End" )
+
+//========================================================
+//○狂った親子のいつもの日常
+//========================================================
+*SC_A03_86
+: Jump( "Scenarios/SC_A03_86*HScene_End" )
+
+//========================================================
+//○激戦後の夜に結ばれて処女喪失
+//========================================================
+*SC_B05_17_1
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Kiss", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "VaginaPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(15,20)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(15,20)) endif
+: Jump( "Scenarios/SC_B05_17*HScene_End1" )
+
+//========================================================
+//○激戦後の夜に結ばれて
+//========================================================
+*SC_B05_17_2
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Kiss", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "VaginaPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_id_Breast" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_id_Vagina" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaIsMenstrual_Mukuro_UnsafeDay" ) == true )
+	: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) < 2 )
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(15,20)) endif
+	: else
+		\CI["危険日だけど中に出して欲しい！"]
+		\CI["危険日だから仕方ない。このまま外で"]
+		私の気持ちは……？
+
+		: if ($choice == 0)
+			: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(15,20)) endif
+		: else
+			: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(15,20)) endif
+		: endif
+	: endif
+: else
+	\CI["抜かないで……このまま、中で！"]
+	\CI["このまま外に出して貰う"]
+	私の気持ちは……？
+
+	: if ($choice == 0)
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(15,20)) endif
+	: else
+		: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(15,20)) endif
+	: endif
+//●分岐終了
+: endif
+: Jump( "Scenarios/SC_B05_17*HScene_End2" )
+
+//========================================================
+//○あの人を想うと切なくて
+//========================================================
+*SC_B05_83
+: Jump( "Scenarios/SC_B05_83*HScene_End" )
+
+//========================================================
+//○鬼灯の便女
+//========================================================
+: Jump( "Scenarios/SC_B05_86*HScene_End" )
+
+//========================================================
+//○恋人同士ですること
+//========================================================
+*SC_B06_50
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "ByInvited", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Fellatio", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Cunnilingus", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(15,20)) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_OralSex" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(10,15)) endif
+: endif
+: Jump( "Scenarios/SC_B06_50*HScene_End" )
+
+//========================================================
+//○今夜は私が……
+//========================================================
+*SC_B06_51
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Kiss", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(20,30)) endif
+: Jump( "Scenarios/SC_B06_51*HScene_End" )
+
+//========================================================
+//○大和に戻る前の夜の出来事
+//========================================================
+*SC_B06_80
+: Jump( "Scenarios/SC_B06_80*HScene_End" )
+
+//========================================================
+//○世界最強が垣間見せる弱さ
+//========================================================
+*SC_B06_81
+: Jump( "Scenarios/SC_B06_81*HScene_End" )
+
+//========================================================
+//○媚薬効果のある花の香りに我慢できなくなって
+//========================================================
+*SC_C04_05
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Onanism", 1) endif
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	: Call( "Scenarios/CommonSys*CosMemory" )
+	\CI["服を着たままオナニーする"]
+	\CI["服を脱いでオナニーする"]
+	: if ($choice == 1)
+		: CharaCostume( "Mukuro", 1 )
+	: endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: Jump( "Scenarios/SC_C04_05*HScene_End" )
+
+//========================================================
+//○商人説得のため身体を張る
+//========================================================
+*SC_C04_07
+: Call( "Scenarios/CommonSys*CosMemory" )
+\CI["服は着たまま"]
+\CI["裸になる"]
+服装はどうしようか？
+
+: if ($choice == 1)
+	: CharaCostume( "Mukuro", 1 )
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Kiss", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "ByInvited", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: Jump( "Scenarios/SC_C04_07*HScene_End" )
+
+//========================================================
+//○魔導器で処女喪失
+//========================================================
+*SC_C04_51
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: Jump( "Scenarios/SC_C04_51*HScene_End" )
+
+//========================================================
+//○鏑木紫苑と鏑木巌　血の繋がった親子の異常愛
+//========================================================
+*SC_C04_83
+: Jump( "Scenarios/SC_C04_83*HScene_End" )
+
+//========================================================
+//○部下との蜜月
+//========================================================
+*SC_C04_85
+: Jump( "Scenarios/SC_C04_85*HScene_End" )
+//========================================================
+//○不安を紛らわすため、ヤリまくり
+//========================================================
+*SC_C05_01
+: Jump( "Scenarios/SC_C05_01*HScene_End" )
+//========================================================
+//○敗者の定め、見廻組処女輪姦
+//========================================================
+*SC_C05_06_1
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: Jump( "Scenarios/SC_C05_06*HScene_End1" )
+//========================================================
+//○敗者の定め、見廻組輪姦
+//========================================================
+*SC_C05_06_2
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 3 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Anal" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: endif
+: Jump( "Scenarios/SC_C05_06*HScene_End2" )
+
+//========================================================
+//○うまい話を持ちかけられて股を開く
+//========================================================
+*SC_C05_51
+: Call( "Scenarios/CommonSys*CosMemory" )
+: if ( CharaCostume( "Mukuro" ) == 0 )
+	\CI["服を着てセックスしている"]
+	\CI["裸でセックスしている"]
+	無黒は商人と――
+
+	: if ($choice == 1) 
+		: CharaCostume( "Mukuro", 1 )
+	: endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "ByInvited", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: Jump( "Scenarios/SC_C05_51*HScene_End" )
+//========================================================
+//○ムラムラして配下を犯す
+//========================================================
+*SC_C05_81
+: Jump( "Scenarios/SC_C05_81*HScene_End" )
+//========================================================
+//○ヒラガと亜久里の夜１
+//========================================================
+*SC_C05_84
+: Jump( "Scenarios/SC_C05_81*HScene_End" )
+//========================================================
+//○紫苑の仕事
+//========================================================
+*SC_C05_87
+: Jump( "Scenarios/SC_C05_87*HScene_End" )
+//========================================================
+//○今までのお礼を。私の身体で
+//========================================================
+*SC_C06_03
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Kiss", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "WithElf", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "Squirting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mei", "EjaculateVagina", RandomRange(20,30)) endif
+: Jump( "Scenarios/SC_C06_03*HScene_End" )
+//========================================================
+//○素直になる冥、蘭丸と肌を重ねて――
+//========================================================
+*SC_C06_50
+: Jump( "Scenarios/SC_C06_50*HScene_End" )
+//========================================================
+//○レオとゆきずり逆夜這い
+//========================================================
+*SC_C06_51
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Fellatio", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(20,30)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "BreastPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Kiss", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: Jump( "Scenarios/SC_C06_51*HScene_End" )
+
+//========================================================
+//○ヒラガと亜久里の夜２
+//========================================================
+*SC_C06_83
+: Jump( "Scenarios/SC_C06_83*HScene_End" )
+//========================================================
+//○神八代姉妹の淫らな夜
+//========================================================
+*SC_C06_84
+: Jump( "Scenarios/SC_C06_84*HScene_End" )
+//========================================================
+//○私はもうサムライじゃない
+//========================================================
+*SC_C07_02
+: Jump( "Scenarios/SC_C07_02*HScene_End" )
+//========================================================
+//○輪姦刑で処女を失う
+//========================================================
+*SC_D04_02_1
+: Jump( "Scenarios/SC_D04_02*HScene_End1" )
+//========================================================
+//○輪姦刑で処女を失う
+//========================================================
+*SC_D04_02_2
+: Jump( "Scenarios/SC_D04_02*HScene_End2" )
+//========================================================
+//○輪姦刑で処女を失う
+//========================================================
+*SC_D04_03
+: Jump( "Scenarios/SC_D04_03*HScene_End" )
+//========================================================
+//○タイラントボアに犯される
+//========================================================
+*SC_D04_07
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithMagicBeast", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Cunnilingus", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(80,100)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: endif
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+: Jump( "Scenarios/SC_D04_07*HScene_End" )
+//========================================================
+//○武士にアナルをガッツリ犯される
+//========================================================
+*SC_D04_10
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "HipPetting", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Anal" ) < 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(10,15)) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", RandomRange(5,10)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(10,15)) endif
+: endif
+: Jump( "Scenarios/SC_D04_10*HScene_End" )
+
+//========================================================
+//○幕府幕臣にハニートラップ
+//========================================================
+*SC_D04_12
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Kiss", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: Jump( "Scenarios/SC_D04_12*HScene_End" )
+
+//========================================================
+//○異邦人からの壮絶レイプ
+//========================================================
+*SC_D04_16
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(30,45)) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) < 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) == 3 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Urination", 1) endif
+: endif
+: Jump( "Scenarios/SC_D04_16*HScene_End" )
+//========================================================
+//○
+//========================================================
+*SC_D04_18
+: Jump( "Scenarios/SC_D04_18*HScene_End" )
+//========================================================
+//○口入屋に枕営業
+//========================================================
+*SC_D04_50
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: endif
+: if ( Call( "Scenarios/CommonSys*CharaIsMenstrual_Mukuro_TakenPill" ) == true )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: endif
+: Jump( "Scenarios/SC_D04_50*HScene_End" )
+//========================================================
+//○袖の下おまんこ
+//========================================================
+*SC_D04_51
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(80,100)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(80,100)) endif
+: Jump( "Scenarios/SC_D04_51*HScene_End" )
+//========================================================
+//○変態貴族の変わった趣味
+//========================================================
+*SC_D04_52
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 5) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithElf", 3) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithTherianthrope", 2) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "HandFootJob", 30) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateOral", RandomRange(350,500)) endif
+: Jump( "Scenarios/SC_D04_52*HScene_End" )
+
+//========================================================
+//○魔導手術で子宮改造１
+//========================================================
+*SC_D04_53
+: Call( "Scenarios/CommonSys*CosMemory" )
+: if ( $inExtra == false )  CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false )  CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: if ( $inExtra == false )  CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false )  CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false )  CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false )  CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: if ( $inExtra == false )  CharaAddHParam( "Mukuro", "Urination", 1) endif
+: Jump( "Scenarios/SC_D04_53*HScene_End" )
+
+//========================================================
+//○触手の悪魔に呑み込まれて
+//========================================================
+*SC_D05_03
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithDemon", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Interbreed", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Vagina" ) < 2 )
+: else
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "AnalSex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(80,100)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateAnal", RandomRange(80,100)) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", RandomRange(5,10)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", RandomRange(5,10)) endif
+: endif
+: Jump( "Scenarios/SC_D05_03*HScene_End" )
+//========================================================
+//○幕府官僚の用心棒とエッチする
+//========================================================
+*SC_D05_06
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Voluntary", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+\CI["このまま中出しさせてあげる"]
+\CI["腰をずらして膣外に"]
+どうしよう？
+
+: if ($choice == 0)
+	: nakadashi = true
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: else
+	: nakadashi = false
+	: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Bukkake", RandomRange(10,15)) endif
+: endif
+: Jump( "Scenarios/SC_D05_06*HScene_End" )
+//========================================================
+//○触手の群れに犯される
+//========================================================
+*SC_D05_09
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithDemon", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Fellatio", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "AnalSex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Interbreed", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(30,45)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateAnal", RandomRange(30,45)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateOral", RandomRange(30,45)) endif
+: Jump( "Scenarios/SC_D05_09*HScene_End" )
+
+//========================================================
+//○見廻組の慰み者
+//========================================================
+*SC_D05_11
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Rape", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 3) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 7) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 5) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", 50) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Bukkake", RandomRange(30,50)) endif
+: Jump( "Scenarios/SC_D05_11*HScene_End" )
+
+//========================================================
+//○変態貴族相手に両穴処女オークション
+//========================================================
+*SC_D05_12
+: Jump( "Scenarios/SC_D05_12*HScene_End" )
+
+//========================================================
+//○黄菜子の絶望
+//========================================================
+*SC_D05_14
+: Jump( "Scenarios/SC_D05_14*HScene_End" )
+
+//========================================================
+//○門番の見廻組から身体検査を受ける
+//========================================================
+*SC_D05_16
+: Jump( "Scenarios/SC_D05_16*HScene_End" )
+//========================================================
+//○大和のために、己を犠牲に
+//========================================================
+*SC_D05_24
+: Jump( "Scenarios/SC_D05_24*HScene_End" )
+//========================================================
+//○趣味と実益を兼ねた売春の日々
+//========================================================
+*SC_D06_02
+: Jump( "Scenarios/SC_D06_02*HScene_End" )
+//========================================================
+//○敗北者の行く末、織笠御影のその後
+//========================================================
+*SC_D06_80
+: Jump( "Scenarios/SC_D06_80*HScene_End" )
+//========================================================
+//○敗北者の行く末、神八代冥のその後
+//========================================================
+*SC_D06_81
+: Jump( "Scenarios/SC_D06_81*HScene_End" )
+//========================================================
+//○敗北者の行く末、望月みどりのその後
+//========================================================
+*SC_D06_82
+: Jump( "Scenarios/SC_D06_82*HScene_End" )
+//========================================================
+//○敗北者の行く末、鏑木紫苑のその後
+//========================================================
+*SC_D06_83
+: Jump( "Scenarios/SC_D06_83*HScene_End" )
+//========================================================
+//○敗北者の行く末、高千穂あざみのその後
+//========================================================
+*SC_D06_84
+: Jump( "Scenarios/SC_D06_84*HScene_End" )
+//========================================================
+//○性に溺れし哀れな狐
+//========================================================
+*SC_D06_85
+: Jump( "Scenarios/SC_D06_85*HScene_End" )
+//========================================================
+//○劇の姫君、財閥に売られて
+//========================================================
+*SC_D06_86
+: Jump( "Scenarios/SC_D06_86*HScene_End" )
+//========================================================
+//○エロティックスローライフ
+//========================================================
+*SC_D07_02
+: Jump( "Scenarios/SC_D07_02*HScene_End" )
+//========================================================
+//○反逆者の罪を着せられて
+//========================================================
+*SC_D07_04
+: Jump( "Scenarios/SC_D07_04*HScene_End" )
+//========================================================
+//○改革の前夜
+//========================================================
+*SC_B06_82
+: Jump( "Scenarios/SC_D06_82*HScene_End" )
+
+//========================================================
+//○戦闘敗北レイプで処女喪失（人間編）
+//========================================================
+*SC_S02_01_1
+: Jump( "Scenarios/SC_S02_01*HScene_End1" )
+
+//========================================================
+//○戦闘敗北レイプで処女喪失（魔物編）
+//========================================================
+*SC_S02_01_2
+: Jump( "Scenarios/SC_S02_01*HScene_End2" )
+
+//========================================================
+//○戦闘敗北レイプ（人間編）
+//========================================================
+*SC_S02_02_1
+: Jump( "Scenarios/SC_S02_02*HScene_End1" )
+
+//========================================================
+//○戦闘敗北レイプ（魔物編）
+//========================================================
+*SC_S02_02_2
+: Jump( "Scenarios/SC_S02_02*HScene_End2" )
+
+//========================================================
+//○戦闘敗北レイプ（人間編）
+//========================================================
+*SC_S02_03_1
+: Jump( "Scenarios/SC_S02_03*HScene_End1" )
+
+//========================================================
+//○戦闘敗北レイプ（魔物編）
+//========================================================
+*SC_S02_03_2
+: Jump( "Scenarios/SC_S02_03*HScene_End2" )
+
+//========================================================
+//○戦闘敗北レイプ（人間編）
+//========================================================
+*SC_S02_04_1
+: Jump( "Scenarios/SC_S02_04*HScene_End1" )
+
+//========================================================
+//○戦闘敗北レイプ（魔物編）
+//========================================================
+*SC_S02_04_2
+: Jump( "Scenarios/SC_S02_04*HScene_End2" )
+
+//========================================================
+//○戦闘敗北レイプで処女喪失（人間編）
+//========================================================
+*SC_S02_05_1
+: Jump( "Scenarios/SC_S02_05*HScene_End1" )
+
+//========================================================
+//○戦闘敗北レイプで処女喪失（魔物編）
+//========================================================
+*SC_S02_05_2
+: Jump( "Scenarios/SC_S05_01*HScene_End2" )
+
+//========================================================
+//○戦闘敗北レイプ（人間編）
+//========================================================
+*SC_S02_06_1
+: Jump( "Scenarios/SC_S02_06*HScene_End1" )
+
+//========================================================
+//○戦闘敗北レイプ（魔物編）
+//========================================================
+*SC_S02_06_2
+: Jump( "Scenarios/SC_S02_06*HScene_End2" )
+//========================================================
+//○失敗した罰は処女喪失
+//========================================================
+*SC_S04_01_1
+: Jump( "Scenarios/SC_S04_01*HScene_End1" )
+//========================================================
+//○失敗した者には罰を
+//========================================================
+*SC_S04_01_2
+: Jump( "Scenarios/SC_S04_01*HScene_End2" )
+//========================================================
+//○ケジメでゴロツキたちとキメセクさせられる
+//========================================================
+*SC_S05_01
+: Call( "Scenarios/CommonSys*CosMemory" )
+\CI["服を着たまま償いをさせられた"]
+\CI["全裸で償いをさせられた"]
+で、その償いをするべく路地裏に連れて行かれて――
+
+: if ($choice == 0)
+	: CharaCostume( "Mukuro", 0 )
+: else
+	: CharaCostume( "Mukuro", 1 )
+: endif
+: Jump( "Scenarios/SC_S05_01*HScene_End" )
+//========================================================
+//○無黒　遊廓・ストリップ＆性行為演舞
+//========================================================
+*SC_S07_01
+: CharaCostume( "Mukuro", 1 )
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "VaginaPetting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(10,15)) endif
+: Jump( "Scenarios/SC_S07_01*HScene_End" )
+//========================================================
+//○桃　遊廓・ストリップ＆性行為演舞
+//========================================================
+*SC_S07_02
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Yukaku", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Squirting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Vagina" ) == 3 )
+	: if ( $inExtra == false ) CharaAddHParam( "Momo", "Orgasm", 1) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Exhibitionist", 1) endif
+: Jump( "Scenarios/SC_S07_02*HScene_End" )
+//========================================================
+//○黄菜子　遊廓・ストリップ＆性行為演舞
+//========================================================
+*SC_S07_03
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "WithHuman", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Yukaku", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Sex", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "EjaculateVagina", RandomRange(10,15)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgasm", 1) endif
+: if ( Call( "Scenarios/CommonSys*CharaHRank_Kinako_Exhibitionist" ) >= 2 )
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Orgasm", 1) endif
+	: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Squirting", 1) endif
+: endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Exhibitionist", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Kinako", "Urination", 1) endif
+: Jump( "Scenarios/SC_S07_03*HScene_End" )
+//========================================================
+//○拘束肉便器　無限射精
+//========================================================
+*SC_D04_54
+: Jump( "Scenarios/SC_D04_54*HScene_End" )
+//========================================================
+//○常連客と乱交パーティー
+//========================================================
+*SC_S08_01
+: Jump( "Scenarios/SC_S08_01*HScene_End" )
+//========================================================
+//○貴族と乱交
+//========================================================
+*SC_S08_02
+: Jump( "Scenarios/SC_S08_02*HScene_End" )
+//========================================================
+//○筆おろし乱交
+//========================================================
+*SC_S08_03
+: Jump( "Scenarios/SC_S08_03*HScene_End" )
+//========================================================
+//○異種姦ショー
+//========================================================
+*SC_S09_01
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Yukaku", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "WithMagicBeast", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "SexualJob", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Interbreed", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 5 ) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(30,45)) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "EjaculateVagina", RandomRange(30,45)) endif
+: Jump( "Scenarios/SC_S09_01*HScene_End" )
+//========================================================
+//○レズショー
+//========================================================
+*SC_S09_02
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Squirting", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Exhibitionist", 1) endif
+: if ( $inExtra == false ) CharaAddHParam( "Momo", "Exhibitionist", 1) endif
+: Jump( "Scenarios/SC_S09_02*HScene_End" )
+//========================================================
+//○野外拘束肉便器
+//========================================================
+*SC_S09_03
+: Jump( "Scenarios/SC_S09_03*HScene_End" )
+//========================================================
+//○出産
+//========================================================
+*SC_S13_01
+: Jump( "Scenarios/SC_S13_01*HScene_End" )
+*SC_S13_02
+: Jump( "Scenarios/SC_S13_02*HScene_End" )
+*SC_S13_03
+: Jump( "Scenarios/SC_S13_03*HScene_End" )
+*SC_S13_04
+: Jump( "Scenarios/SC_S13_04*HScene_End" )
+*SC_S13_05
+: Jump( "Scenarios/SC_S13_05*HScene_End" )
+*SC_S13_06
+: Jump( "Scenarios/SC_S13_06*HScene_End" )
+*SC_S13_07
+: Jump( "Scenarios/SC_S13_07*HScene_End" )
+*SC_S13_08
+: Jump( "Scenarios/SC_S13_08*HScene_End" )
+*SC_S13_09
+: Jump( "Scenarios/SC_S13_09*HScene_End" )
+*SC_S13_10
+: Jump( "Scenarios/SC_S13_10*HScene_End" )
+*SC_S13_11
+: Jump( "Scenarios/SC_S13_11*HScene_End" )
+*SC_S13_12
+: Jump( "Scenarios/SC_S13_12*HScene_End" )
+*SC_S13_13
+: Jump( "Scenarios/SC_S13_13*HScene_End" )

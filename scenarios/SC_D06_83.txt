@@ -1,0 +1,707 @@
+//========================================================
+//○敗北者の行く末、鏑木紫苑のその後
+//========================================================
+//●背景：黒画面
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+//＠Ｈシーンスキップ処理
+: if ( $inExtra == true )  Jump( "*HscStart" ) endif
+: if ( SceneFlag( "SC_D06_83" ) == false ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "Off" ) == true ) Jump( "*HscStart" ) endif
+: if ( IsReadedHSceneSkip( "On" ) == true ) Jump( "*HscJump" ) endif
+: blackout = false
+: Call( "Scenarios/HSceneSkip*HsceneSkip" )
+: if( $choice == 0 ) Jump( "*HscStart" ) endif
+
+*HscJump
+: Jump( "Scenarios/HSceneSkip*SC_D06_83" )
+
+*HscStart
+: Call( "Scenarios/CommonSys*Start_Refrain" )
+//淫語情報取得
+: Call( "Scenarios/CommonSys*Word" )
+: ShowWnd()
+和无黑他们战斗后，镝木紫苑幸存下来，之后的故事。
+
+她在被希拉加完全提取了魔力之后
+{黑夜叉，暗黑精灵}完全失去了化的力量。
+
+然后，现在的镝木紫苑——
+
+//●視点：紫苑視点
+//●ＣＧ：放心輪姦（紫苑）
+//●ＣＧ差分：未挿入・精液溢れ・ぶっかけ
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_1_0111011_1100010_0_"
+: Call("Scenarios/Common*EvFadeIn")
+: PlayBgm("BGM/34_H_DARK")
+: ShowWnd()
+//●演技：性行為を何度も行った後です
+: PlayVoice( "Voices/vo12_shi0311" )
+\CN["紫苑"]
+“呼……嗯……哈…哈、哈、哈……”
+
+: PlayBackVoice( "Voices/BGV12_shi_jigo01" )
+\CN["流浪者1"]
+“没想到扫垃圾堆里竟然有这样的美女。
+而且，听说她是传说中的堇太夫花魁”
+
+\CN["流浪者2"]
+“所谓的花魁，就是连manko和kets都没有时间弄干
+你疯了吧？”
+
+: PlayVoice( "Voices/vo12_shi0312" )
+\CN["紫苑"]
+“那怎么都行吧？
+赶紧把公鸡塞进我的公鸡里……”
+
+可爱的儿子在眼前被杀后，一边发狂一边失去了意识。
+
+醒来后被丢弃在赤身裸体流浪者聚集的后街上
+流浪者都被侵犯了。
+
+\CN["流浪者1"]
+“嘿嘿，那我走了……嗯…”
+
+//●ＣＧ差分：挿入・精液溢れ・ぶっかけ
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_2_0211001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜呜呜、呜呜、唔唔、咕嘟咕嘟！
+
+//●演技：男性器が挿入されます
+: PlayVoice( "Voices/vo12_shi0313" )
+\CN["紫苑"]
+“嗯……哈…嗯……嗯……嗯……！
+是、{插入、是}出来的……”
+
+: PlayVoice( "Voices/vo12_shi0314" )
+\CN["紫苑"]
+“装成一副毫不做作的样子……嗯，不断前进……哈哈……
+里面……认真的小公鸡，已经送到了里面了啊♥</color>」
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi01" )
+散发着流浪者{呕吐，无能}般恶臭的公鸡
+一口气贯穿我的阴道内。
+
+\CN["流浪者3"]
+“啊，花魁和小山羊要花很多钱吧？”
+
+\CN["流浪者4"]
+“官僚的工资好像是2个月或者3个月的。”
+
+\CN["流浪者1"]
+“因为那样的女人现在是个垃圾堆，是个土鳖。
+这就是老天爷给我的恩典吧”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_2_0111001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0315" )
+\CN["紫苑"]
+“别嘟嘟囔囔的，先动一下腰吧……。
+主人的小点心，我还想尝尝”
+
+\CN["流浪者1"]
+“这样啊。你会说开心的话啊。
+喂……！”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_3_0000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+嗯，嗯，嗯，嗯，嗯，嗯，嗯，嗯！
+
+//●演技：下から突き上げられています
+: PlayVoice( "Voices/vo12_shi0316" )
+\CN["紫苑"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊！哈哈♥</啊，对了♥</啊，对了♥</color>」
+
+\CN["流浪者1"]
+“怎么样？你喜欢这样被人戳到吗？”
+
+: PlayVoice( "Voices/vo12_shi0317" )
+\CN["紫苑"]
+“啊，好舒服……啊，呃，啊啊啊啊……”♥</color>
+满是污垢的、肮脏的小气鬼、被责备了……”
+
+: PlayVoice( "Voices/vo12_shi0318" )
+\CN["紫苑"]
+“也，再多一点……再多虐待我的女儿……”……
+乱七八糟地搅拌着……”
+
+散发着恶臭的小矮人，用不洁的块状物在身体里
+被污染。
+
+而且，体表上都沾满了男人们洒下的精液
+这个还继续散发着像垃圾一样的味道。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_2_0111001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo12_shi0319" )
+\CN["紫苑"]
+（这样就好了……如果不这样做的话，我……）
+
+可爱的丈夫和儿子都在眼前死去了。
+
+我什么都不能做，重要的人凄惨地死去的样子
+我只会看。
+
+——所以这是惩罚。
+
+我为了在那个世界死去，将这个身体一个一个的毛孔全部
+必须被蹂躏、污秽。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_2_0211001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：心の声です
+: PlayVoice( "Voices/vo12_shi0320" )
+\CN["紫苑"]
+（像这样侥幸的话，就会被流浪者粗暴地侵犯
+不由得回忆起幸福的日子……）
+
+: PlayVoice( "Voices/vo12_shi0321" )
+\CN["紫苑"]
+“嗯，啊，啊啊啊啊啊啊啊啊啊啊啊！啊，啊，啊，啊
+嗯……嗯♥</color>」
+
+阴道内感觉到的小矮人的感觉。
+
+为了让它贯穿身体
+自己让腰进行打滑。
+
+\CN["流浪者1"]
+“噢噢……！真是个令人讨厌的坐姿。
+不愧是花魁……真是太舒服了！”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_2_0311001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0322" )
+\CN["紫苑"]
+“哈，哈，主人的小弟弟……嗯
+{阴道内，内}膨胀，不知道是不是……]
+: PlayVoice( "Voices/vo12_shi0323" )
+\CN["紫苑"]
+“横向、纵向、这样移动……嗯，嗯……
+小鸡鸡、雁首的地方，一边感受一边……用力……”
+
+\CN["流浪者1"]
+“恩……什么！这是什么……等等……
+如果那个继续被打败的话……”
+
+: PlayVoice( "Voices/vo12_shi0324" )
+\CN["紫苑"]
+“{阴道内，肚子}里，有射精的感觉吗？”
+
+静静地这样问，流浪者很有气势地多次竖着头
+摆动着。
+
+如果这是{接待客人，工作}的话，应该是配合的地方吧……。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_3_0000000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0325" )
+\CN["紫苑"]
+“嗯，啊，啊啊啊啊啊啊啊啊！啊，哈，哈，啊
+嗯，嗯！啊……啊啊…嗯……”
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi02" )
+马上停止思考。
+
+认真的思考会让自己的身心都痛苦。
+
+一回过神来，就毫无办法地发狂
+这是明摆着的事。
+
+\CN["流浪者1"]
+“啊，不行……然后，出来……出来了……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_2_0211001_1100010_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：激しく動いているので呼吸が上がっています
+: PlayVoice( "Voices/vo12_shi0326" )
+\CN["紫苑"]
+“哈、哈、哈、那就、{射精，だ}去做吧。”
+
+: PlayVoice( "Voices/vo12_shi0327" )
+\CN["紫苑"]
+“在我的大便深处……直接向{子宫，肚子}投掷
+左右、没有充分{射精，だ}……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嗯，嗯，嗯，嗯，嗯，嗯，嗯，嗯！
+
+放开体重，让小鸡鸡钻进阴道里
+激烈地打滑着腰。
+
+\CN["流浪者1"]
+“啊……不行……出来了……！”
+
+流浪者发出微弱的声音，嗖的一声让身体弹起。
+
+//●演出：射精
+//●ＣＧ差分：挿入・膣内射精・精液溢れ・ぶっかけ
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_2_0411011_1100020_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+布鲁鲁、布莱、德彪乌！！！
+看！酷酷！咚！咚咚咚咚！
+
+在最里面，让她侵入到能撬开子宫口的深处的瞬间
+被吹出一股热精液的奔流。
+
+: PlayVoice( "Voices/vo12_shi0328" )
+\CN["紫苑"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊”♥</就这样吧♥</彩色精液在大麦的深处
+刺进去的程度，气势很好地{射精，然后}……”
+
+: PlayVoice( "Voices/vo12_shi0329" )
+\CN["紫苑"]
+“呃，呃……我要走了……哦哦哦哦哦哦……好棒啊！”♥</color>
+精液就可以了……{阴道内射精，内射精，内射精，内射精，内射精，内射精，内射精♥</color>」
+
+//●演技：絶頂です
+: PlayVoice( "Voices/vo12_shi0330" )
+\CN["紫苑"]
+「呜哇……呜……啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color><color=#f59aa0>♥</color><color=#f59aa0>♥</color>」
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+阿飞！阿飞！战栗战栗！阿飞！
+嘎嘎嘎嘎地响！！
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi03" )
+感受到精液的热度的大麦会伴随着疼痛而疼痛
+就这样流到了顶峰。
+
+//●ＣＧ差分：未挿入・精液溢れ・ぶっかけ
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_4_0411011_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：男性器を引き抜かれて絶頂します
+: PlayVoice( "Voices/vo12_shi0331" )
+\CN["紫苑"]
+“呜哇呜……啊，敏感的地方，被拔了个小矮子
+这样的话……就这样……嗯……嗯♥</color>」
+
+: PlayBackVoice( "Voices/BGV12_shi_jigo01" )
+由于男性器皿脱落的冲击，更是达到了顶峰。
+
+\CN["流浪者1"]
+“哈哈哈，出了很多……”
+
+\CN["流浪者2"]
+“馒头一边吧嗒吧嗒一边滴精液
+好性感啊」
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_4_0211001_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0332" )
+\CN["紫苑"]
+“接下来是谁啊……谁都可以……快点……好想快点。”
+
+: PlayVoice( "Voices/vo12_shi0333" )
+\CN["紫苑"]
+“无论是女巫还是屁股孔，都可以……。
+快点，小金，插上吧……”
+
+抬起屁股，摆动，诱惑。
+
+: PlayVoice( "Voices/vo12_shi0334" )
+\CN["紫苑"]
+“希望能早点插上啊……拜托了
+小矮人……顽强地愤怒着的小矮人，在小矮人的肉穴里……！”
+
+如果没有小鸡鸡{插入，是}的话，就不能填补肉孔
+恢复理智快疯了。
+
+快点、快点、快点——
+
+请求着的话，流浪者的1人把公鸡做为屁股孔
+猜对了。
+
+//●ＣＧ差分：アナル挿入・精液溢れ・ぶっかけ
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0311001_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：アナルに挿入されています。すでに開発済み。感じてしまう
+: PlayVoice( "Voices/vo12_shi0335" )
+\CN["紫苑"]
+「好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫好烫♥</color>
+撞到屁股上，热呼呼的插入，好的}出来了♥</color>」
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi02" )
+\CN["流浪者2"]
+“嗯！这家伙的屁股也被开发得乱七八糟。
+花魁果然不就是个狐狸精吗？”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0111001_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0336" )
+\CN["紫苑"]
+“哈……哈……我不太了解别人……”
+
+\CN["流浪者2"]
+“嗯。那你呢？”
+
+: PlayVoice( "Voices/vo12_shi0337" )
+\CN["紫苑"]
+“哇，我是……如果对方说想使用的话……
+即使是屁股洞，也没什么……”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo12_shi0338" )
+\CN["紫苑"]
+（呼呼……严酱偶尔也会要求屁眼很好
+不是为我做的……）
+
+这样一瞬间，回过神来想起来是不行的。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0311001_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：息子のことを思い出して一瞬、呼吸ができなくなる
+: PlayVoice( "Voices/vo12_shi0339" )
+\CN["紫苑"]
+“啊啊啊……啊……啊……啊……啊…啊…啊…啊…啊…啊…啊……”
+
+: PlayBackVoice( "Voices/BGV12_shi_jigo01" )
+视野扭曲。不能呼吸了。
+
+血气方刚
+身体剧烈地颤抖着。
+
+\CN["流浪者2"]
+“什么？你那么喜欢阿纳尔吗？”？
+超、虽然鼻孔收缩了……”
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo12_shi0340" )
+\CN["紫苑"]
+（啊，不行啊……想点什么不好……）
+
+必须尽快放弃思考。
+
+不能成为正派。
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0111001_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：呼吸が回復し、一気に空気が流れこんできます
+: PlayVoice( "Voices/vo12_shi0341" )
+\CN["紫苑"]
+“啊————！啊——！啊！啊啊啊……”
+
+\CN["流浪者2"]
+“怎么了？是在洞里吗？”
+
+: PlayVoice( "Voices/vo12_shi0342" )
+\CN["紫苑"]
+“那、那样的感觉……。因为还想再继续
+我会狠狠地责备你，把我弄坏的”
+
+抬起屁股，促使自己进一步深入插入。
+
+\CN["流浪者2"]
+“好厉害啊。干劲十足啊。”
+
+: PlayVoice( "Voices/vo12_shi0343" )
+\CN["紫苑"]
+“越是激烈，越是无法思考任何事情
+你也要犯下错误……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston02" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+嘘！嘘！嘘！嘘！慢吞吞！嘘！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0311001_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0344" )
+\CN["紫苑"]
+“嗯……嗯……啊…呃……嗯…啊啊啊啊”
+
+正如我所期望的那样，激烈地来回着小钢珠。
+
+被强烈地责备屁股，甚至把肛门卷起来
+欢迎来自那里的强烈的压迫感和冲击。
+
+\CN["流浪者2"]
+“哇，啊，哈哈……阿纳尔法克，太棒了……！”
+
+: PlayVoice( "Voices/vo12_shi0345" )
+\CN["紫苑"]
+“嗯……主人的小弟弟……越来越坚强了
+因为在成长，所以用屁股来感受……”
+
+撑得慌。
+
+\CN["流浪者2"]
+“……被网络包围着，心情非常舒畅……
+但是，已经到了极限了……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu02" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+呜呜呜呜、一直、小狗、呜呜呜呜！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0211001_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：ピストンが激しくなります
+: PlayVoice( "Voices/vo12_shi0346" )
+\CN["紫苑"]
+“屁股……好像要把洞卷起来了……肚子里，用小鸡鸡
+搅拌得乱七八糟……里面，麻了……”
+
+: PlayVoice( "Voices/vo12_shi0347" )
+\CN["紫苑"]
+“嗯，啊，啊，哈酱。”♥</啊啊啊啊啊啊！
+啊啊啊啊……啊，嗯，啊啊啊啊！”
+
+: PlayBackVoice( "Voices/BGV12_shi_aegi03" )
+\CN["流浪者5"]
+“阿纳尔，感觉很舒服……我可能也想试试。”
+
+\CN["流浪者4"]
+“我只是个千篇一律的选择。”
+
+\CN["流浪者2"]
+“啊哈……然后，出来了……嗯……”
+
+: HideWnd()
+: PlayHSe( "SE/Hse_Piston03" )
+: layer = 8; time = 1.0; strength = 40; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+好痛、好痛、好痛、好痛、好痛、好痛、好痛！
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0311001_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+: PlayVoice( "Voices/vo12_shi0348" )
+\CN["紫苑"]
+“什么时候都可以……主人想{射精，だ}的时候……”
+
+将屁股朝着射精方向抽插，放松准备。
+
+\CN["流浪者2"]
+“我、我拿出来……在包里……呃……呜…呜！”
+
+//●演出：射精
+//●ＣＧ差分：アナル挿入・精液溢れ・ぶっかけ・アナル射精
+: HideWnd()
+: Call("Scenarios/Common*Shasei")
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0311011_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+呜呜，呜呜，呜呜，呜呜！
+咻咻，咻咻！
+
+: PlayVoice( "Voices/vo12_shi0349" )
+\CN["紫苑"]
+“啊啊，屁股好烫，受不了啊。”♥</color>
+快，快，快♥</啊，用屁股弄湿了♥</color>
+屁股、精液、{射精，だ}被射精了……”
+
+\CN["流浪者2"]
+“嘛，还没出来……那个洞，变得非常狭窄……！”
+
+//●演出：射精
+: HideWnd()
+: PlayHSe( "SE/Hse_Nakadashi01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+咻咻，毒舌，咻咻，咻咻！
+
+: PlayVoice( "Voices/vo12_shi0350" )
+\CN["紫苑"]
+“啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊……好棒啊……好棒……好棒……”……
+屁股，好痛啊♥</啊……啊…啊……啊……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_5_0411011_1100040_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+//●演技：絶頂です
+: PlayVoice( "Voices/vo12_shi0351" )
+\CN["紫苑"]
+“好疼……屁股、精液{射精，だ}被咬了……
+嗯……我要开始了——————！”
+
+: HideWnd()
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+在流浪者聚集的下町里，娇声高亢地回响着
+往高处爬。
+
+: PlayBackVoice( "Voices/BGV12_shi_jigo01" )
+强烈的绝顶感使头脑轻飘飘。
+
+//●演技：心の声です
+: PlayVoice( "Voices/vo12_shi0352" )
+\CN["紫苑"]
+（这种感觉很好啊……。
+脑子空空如也……什么都不用想……）
+
+一边这么强烈地想着，一边将身体交给不断往上涌的绝顶感
+疯狂地让身体快乐地颤抖。
+
+好几次好几次，被欢喜的旋涡吞噬着。
+
+//●ＣＧ差分：未挿入・精液溢れ・ぶっかけ
+: HideWnd()
+: PlayHSe( "SE/Hse_Sounyu01" )
+: layer = 8; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: evbg = true; evcos = false;
+: evfile = "evh_b004_1_6_0111011_1100030_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["流浪者2"]
+“恩哈。阿纳尔，心情非常好。”
+
+\CN["流浪者3"]
+“看了之后，真是受不了了。还不行吧？”
+
+\CN["流浪者4"]
+“我也想早点打进去。”
+
+: PlayVoice( "Voices/vo12_shi0353" )
+\CN["紫苑"]
+“哈哈哈，主人们，大家一起开心地玩着哇
+我想要……小气鬼，这么多……”
+
+想要自己身体的男人在小巷里好像有很多。
+
+于是，我和只是能碰上性的肉人偶
+沦为。
+
+总有一天这只手不动了，这只脚不动了
+然后，这个身体腐朽而死。
+
+那样的日子——用尽全力，梦想着离开这个世界。
+
+//●演出：暗転
+: StopBackVoice()
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+: ShowWnd()
+………………………………。
+
+……………………。
+
+…………。
+
+//●シーンエンド
+*HScene_End
+//※回想はここで切る
+: Call( "Scenarios/CommonSys*End_Refrain" )
+: if ( $inExtra == true ) Return endif
+//シーン登録
+: SceneFlagUp( "SC_D06_83" )
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

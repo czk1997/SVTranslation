@@ -1,0 +1,92 @@
+//========================================================
+//○西都で生活し始めるようになった桃
+//========================================================
+//●場所：西都・安宿
+//●視点：桃視点
+//●服装：桃・下着
+//パーティーを桃に変更する
+: Party( "Momo" )
+: PartyType = "Party02"; Call( "Scenarios/CommonSys*PartySetting" )
+: LoadMap( "Map_Town05_03_Saito_Yadoya", "Awake", "Scenarios/SC_D05_07*sc001")
+
+*sc001
+//桃cos2へ変更
+: HideWnd()
+: Call( "Scenarios/Map_Town05_Saito_Init*Map03_2" )
+: CharaCostume( "Momo", 1 )
+: RpgCharaOn("Mobu01")
+: FadeIn( 0.5 )
+: Wait()
+: DrawChara( "Momo", 6, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1279" )
+\CN["桃子"]
+“嗯……睡得真好啊～♪”
+
+——被日野文麻吕弄得落花流水，被他玷污了。
+
+默默地对鬼灯的大家走出去，就是这个恶魔。
+
+我觉得已经回不到鬼灯了
+决定在西都生活一段时间。
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom1280" )
+\CN["桃子"]
+“在无黑的指导下，做了各种各样的工作。
+嗯。总算有办法了呢」
+
+切身体会到挣日钱是多么的辛苦。
+
+如果不选工作的话，有能咬紧牙关的程度。
+
+: HideWnd()
+: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveRight", 1 )
+: Wait()
+: ShowWnd()
+\CN["男人"]
+“……啊…啊……啊……”
+
+因为从无黑到夜间爬行很多，所以被说睡觉的时候要注意
+所以在睡觉之前，我会先设一个魔术陷阱。
+
+: DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
+: PlayVoice( "Voices/vo01_mom1281" )
+\CN["桃子"]
+“真的，真是不甘心啊……”
+
+今天早上也有一个打算爬夜的男子，中了圈套
+我昏迷了。
+
+//桃cos0へ戻し
+//●演出：桃　着替える
+//●服装：桃・着物
+: HideWnd()
+: EraseChara( "Momo", 0.5 )
+: Wait()
+: RpgCharaBatch( "Player"	\
+:	"MoveUp", 1 )
+: Wait()
+: Sleep(1.0)
+: CharaCostume( "Momo", 0 )
+: RpgCharaTurn( "Player", "D" )
+: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 3, "RC" )
+: ShowWnd()
+: PlayVoice( "Voices/vo01_mom1282" )
+\CN["桃子"]
+“这个男人交给旅馆的人
+今天也去找工作吧」
+
+//●演出：桃　部屋から出て行く
+//●演出：場面転換トランジション
+//＠場所移動：西都・安宿前
+//●シーンエンド
+: HideWnd()
+: Flag( "SC_D05_08", true )	//第５章・中盤スタート
+: FadeOut( 0.5 )
+: Wait()
+: DestinationMap( "Map_Town05_01_Saito" )
+: LoadMap( "Map_Town05_01_Saito", "From03", "Scenarios/Map_Town05_Saito_Init*Map01")

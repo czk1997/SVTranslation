@@ -1,0 +1,282 @@
+//========================================================
+//○見廻組誕生
+//========================================================
+//●視点：第三者視点
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: DrawImage( 1, 0, "BGImage/BG_Sky01", 0.0 )
+: FadeOutLayer( 1, 0 )
+: FadeInLayer( 1, 1.0, 0.0, "BGImage/Transition14", 1.0, true, 0.0, 0.0)
+: Wait()
+: ShowWnd()
+般若暗杀仍在继续
+反幕派的势力进一步增强——
+
+火冒三丈的将军和鬼灯不同，是私设的护卫部队
+新设立了『{见回组，みぐみ}』。
+
+//●演出：場面転換トランジション
+//●背景：帝都
+//Yoshi：背景、街・昼
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayBgm("BGM/27_FM005")
+: ShowWnd()
+\CN["睡眠组A"]
+“喂喂喂，你站在哪里啊？”
+
+\CN["男A"]
+“好烫！好的，对不起！”
+
+\CN["睡眠组B"]
+“这是将军警护的见回组大人的街道。让开道路！”
+
+\CN["男B"]
+“啊？你在说什么？”
+
+\CN["睡眠组B"]
+“啊？你是说要违抗老子吗？”
+
+\CN["男B"]
+“如果说要反过来的话？那是什么？”
+
+//※●演出：斬撃エフェクト
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood03" )
+: ShowWnd()
+\CN["睡眠组B"]
+“嘿嘿……”
+
+\CN["男C"]
+“啊啊啊……一、一……一……杀了人！”
+
+//●演出：住民たちが散っていく
+: PlaySe( "SE/Se_dash01" )
+\CN["睡眠组C"]
+“哈哈哈哈哈！突然就砍了我，太厉害了！
+超受欢迎～♪”
+
+\CN["睡眠组B"]
+“不是做得太过分了！我们是被选中的男人吧？
+毕竟是将军直接的护卫啊」
+
+要当场斩杀反抗者，当然要吃无钱的食物
+擅自抢走店里的商品，真是为所欲为……。
+
+因为是直属将军的部队，所以谁也不会有怨言的
+帝都街上的人们只能忍气吞声。
+
+//●演出：場面転換トランジション
+//●背景：どこかの貴族の屋敷
+//Yoshi：背景
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: EraseChara( "Mimawari", 0.0 )
+: SwapImage( 1, 0, "BGImage/BG_Room04", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["贵族"]
+“什么，什么！？你们……？”
+
+: PlayBgm("BGM/12_CM012")
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["睡眠组、组长"]
+“我是见回组。
+我将视您为违抗幕府之辈，奉命命令”
+
+\CN["贵族"]
+“哈？”
+
+//※●演出：貴族　斬り殺される
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood02" )
+: ShowWnd()
+: DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["睡眠组、组长"]
+“在场的人都视为反幕派的人。
+请一个不留地斩杀”
+
+: EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
+\CN["睡眠组A"]
+“就是这么回事。我来！”
+
+//●演出：見廻組の連中が周りの人たちを次々殺していく
+: DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+\CN["睡眠组B"]
+“正义在我们！”
+
+见回组的男人们愉快地杀人。
+
+//●演出：斬り殺す
+\CN["贵族的女儿"]
+“哇啊啊啊啊！妈妈！好恐怖啊！”
+
+\CN["贵族之妻"]
+“拜托了！只有这孩子请帮帮我……”
+
+\CN["睡眠组C"]
+“讨厌！”
+
+: HideWnd()
+: keep = false; cgkeep = false;
+: Call( "Scenarios/Effect*Blood04" )
+: ShowWnd()
+贵族的女儿也毫不留情地斩杀。
+
+故意斩杀，以免造成致命伤
+植入恐怖和痛苦。
+
+//●演出：娘を斬る
+\CN["贵族的女儿"]
+“……好痛……好痛好痛好痛！好痛啊！”！
+妈妈！救命！”
+
+\CN["贵族之妻"]
+“诶……？”
+
+\CN["睡眠组C"]
+“看吧！”
+
+: HideWnd()
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+贴近哭泣的女儿的母亲的心脏。
+
+//●演出：母親を斬る
+\CN["贵族的女儿"]
+“……妈妈——嗯……血……妈妈……
+没动……妈妈………好痛啊……好痛啊……
+好痛……好痛……好痛……好痛……”
+
+\CN["睡眠组C"]
+“就算放任不管也会死，慢慢地死去就好了♪
+啊——！看着孩子痛苦地死去，真是太棒了♪”
+
+: HideWnd()
+: Call( "Scenarios/Effect*Blood01" )
+: ShowWnd()
+\CN["贵族的女儿"]
+“啊……啊…好暗啊……好冷啊……好痛啊……”……
+妈妈……爸爸……呜呜…呜呜…呜呜…呜呜……”
+
+见回组不仅仅是贵族的女儿、儿子、妻子
+随从者，女中等，在那个场合的所有人都没有看见
+斩杀了一个劲。
+
+//●演出：場面転換トランジション
+//●場所：帝都
+//Yoshi：背景、街・昼
+: StopBgm( 1.0 )
+: HideWnd()
+: FadeOut( 1.0, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Teito01_01", 0.0 )
+: FadeIn( 1.0, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+远处传来了见回组重做御用的样子
+有两个人眺望着。
+
+: PlayBgm("BGM/08_CM008_inst")
+: DrawChara( "Ranmaru", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["兰丸"]
+“嗯，这就是新出现的所谓见回组”
+
+: DrawChara( "Mei", 20, 0)
+: PlayVoice( "Voices/vo09_mei0042" )
+\CN["冥"]
+“毫不犹豫地夺走了无关的女人和孩子的生命……”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“嘛，我们也没法对这方面说三道四。
+没有好好调查就在怀疑的时候马上
+他们好像打进来了呢”
+
+: DrawChara( "Mei", 1, 0)
+: PlayVoice( "Voices/vo09_mei0043" )
+\CN["冥"]
+“说起来，所谓的相亲组到底是怎样的家伙呢？”
+
+: DrawChara( "Ranmaru", 4, 0)
+\CN["兰丸"]
+“好像从大和的各个方面都收集到了技术的自豪感。”
+
+: DrawChara( "Mei", 0, 0)
+: PlayVoice( "Voices/vo09_mei0044" )
+\CN["冥"]
+“应该说是大象无象的集团吧。
+兰丸，他们在战斗力上怎么样？”
+
+: DrawChara( "Ranmaru", 1, 0)
+\CN["兰丸"]
+“怎么样呢？虽然相亲组的头号男生好像很能干
+其他的就不太……”
+
+: DrawChara( "Ranmaru", 2, 0)
+\CN["兰丸"]
+“在我看来，和鬼灯打交道更可怕。”
+
+: DrawChara( "Mei", 14, 0)
+: PlayVoice( "Voices/vo09_mei0045" )
+\CN["冥"]
+“原来如此。那就用不着害怕了。”
+
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: chara = "Mei"; lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: DrawChara( "Ranmaru", 0, 0)
+: ShowWnd()
+\CN["兰丸"]
+“已经可以了吗？”
+
+: DrawFaceThumbnail( "Mei", 0, 0 )
+: PlayVoice( "Voices/vo09_mei0046" )
+\CN["冥"]
+“足够了。对我们来说威胁的是高千穗的痣。”
+新渡户龙。只有这两个人是不会变的”
+
+: DrawChara( "Ranmaru", 3, 0, 0 )
+\CN["兰丸"]
+“就这些吗？
+我觉得你的妹妹也足够构成威胁了”
+
+: DrawFaceThumbnail( "Mei", 2, 0 )
+: PlayVoice( "Voices/vo09_mei0047" )
+\CN["冥"]
+“无黑？那是你的得意之作。”
+
+: DrawChara( "Ranmaru", 16, 0)
+\CN["兰丸"]
+“那就好了。”
+
+//●演出：暗転
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe("SE/Se_Foot01")
+: chara = "Ranmaru"; lay = 2; type = "WL";
+: Call( "Scenarios/Common*FgEffOut")
+: Wait()
+: DrawImage( 9, 0, "BGImage/BG_Black", 1.0 )
+: Wait()
+: Call( "Scenarios/Common*LayerClean" )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: Wait()
+: ResetLayer(9)
+//●シーン：「宿場町から白夜を追い払え１」へ
+//＠シナリオジャンプ：SC_B04_03
+: Jump( "Scenarios/SC_B04_03" )

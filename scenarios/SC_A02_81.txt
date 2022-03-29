@@ -1,0 +1,328 @@
+//========================================================
+//○姫椿家の追っ手
+//========================================================
+: Call( "Scenarios/CommonSys*CosMemory" )
+: CharaCostume( "Momo", 0 )
+//●場所：鬼灯屯所
+//●視点：第三者視点
+//●背景：空・夜
+//Yoshi：背景
+: HideWnd()
+: StopBgm( 1.0 )
+: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
+: DrawImage( 1, 0, "BGImage/BG_Sky03", 1.0 )
+: Wait()
+: trackIndex = PlaySe( "SE/Se_Night1", true );
+: ShowWnd()
+——有一天晚上。
+
+//●場所：桃の部屋・夜
+//●背景：和風民家・部屋・消灯
+//Yoshi：背景
+: HideWnd()
+: SwapImage( 1, 0, "BGImage/Bg_WaRoom03_03", 1.0 )
+: Wait()
+: ShowWnd()
+//●演技：寝ています
+//Yoshi：桃の顔アイコンのみ
+: DrawFaceThumbnail( "Momo",15, 0, 0, 0 )
+: PlayVoice( "Voices/vo01_mom0115" )
+\CN["桃子"]
+“好……好……嗯……”
+
+山茶桃公主在今天的任务中用尽了魔力
+睡得很沉。
+
+因此，从外面乘着夜风飘来的肮脏的气息
+没能注意到。
+
+如果是平时的话，我会立刻睁开眼睛做好迎击的准备
+明明这么说，却睡得很沉。
+
+//●演出：場面転換トランジション
+//●場所：鬼灯屯所・中庭
+//●背景：鬼灯屯所・外観・夜
+//Yoshi：背景
+: HideWnd()
+: FadeOut( 0.5, 0, 0, 0, "BGImage/Transition12", 1.0 )
+: Wait()
+: DrawImage( 1, 0, "BGImage/BG_House01_03", 0.0 )
+: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
+: Wait()
+: ShowWnd()
+\CN["黑衣男子A"]
+“……好…好……谁都不在啊。”
+
+\CN["黑衣男子B"]
+“幕府的狗……可恶，好像在大快朵颐。”
+
+\CN["黑衣男子C"]
+“喂，你可别大意啊。你想试着多次入侵。”
+因为失败了啊”
+
+//●演出：銀　登場する
+//Yoshi：センターに銀
+: HideWnd()
+: StopSe( trackIndex );
+: DrawChara( "Gin", 6, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 3; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: PlayBgm("BGM/05_CM005")
+: ShowWnd()
+\CN["银子"]
+“这么晚凑齐雁首有什么事？”
+
+\CN["黑衣男子C"]
+「……！？」
+
+\CN["黑衣男子B"]
+“怎么，你怎么知道的？气息应该完全消失了。”
+
+: DrawChara( "Gin", 5, 0)
+\CN["银子"]
+“啊？那个，你是认真说的吗？”
+
+\CN["银子"]
+“只不过是在自我主张让我去发现而已
+没想到……”
+
+\CN["黑衣男子A"]
+“呼，风真……！？你啊！！”
+
+\CN["黑衣男子B"]
+“这、这家伙是传说中的叛徒……”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“你是谁？被不认识的人称呼为这家伙
+我很生气……”
+
+\CN["黑衣男子C"]
+“哼……有个忘恩负义的人！”
+
+\CN["黑衣男子A"]
+“在这里杀了你，风真。今天是你的最后一天。”
+
+黑衣男子从怀里拿出了小刀。
+
+不是普通的小刀。
+刀尖上涂着麻痹身体的毒。
+
+//: DrawChara( "Gin",11, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_2_0300000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+: EraseChara( "Gin", 0.0 )
+: ShowWnd()
+\CN["银子"]
+“啊？面对那家伙当然有死的觉悟
+有吧？”
+
+银筑。
+
+//: DrawChara( "Gin", 7, 0)
+//●ＳＥ：風の音
+: PlaySe( "SE/Se_Wind01" )
+\CN["黑衣男子B"]
+“……嗯？风……？”
+
+\CN["黑衣男子C"]
+“今天应该是没有风的夜晚……”
+
+\CN["黑衣男子B"]
+“嘿嘿，我们的‘椿队，好想吐口水’坐在腰圆的舞台上。”
+不可能输的！”
+
+\CN["黑衣男子B"]
+“聚集在桃色大小姐身上的贱人，就在这里杀了他。
+因为丈夫严格要求我带小姐回去！”
+
+//: DrawChara( "Gin",10, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_1_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“哈~……”
+
+银对恶语伤人的男子深深地叹了一口气。
+
+\CN["黑衣男子B"]
+“你这个笨蛋！！！”
+
+\CN["黑衣男子A"]
+“好嘞！别接近他不要……！”
+
+//: DrawChara( "Gin",11, 0)
+\CN["银子"]
+“迟到了……”
+
+//●演出：銀が黒ずくめの１人をぶっ飛ばす
+: HideWnd()
+: cgkeep = false;
+: Call( "Scenarios/Effect*GinAction01" )
+: PlaySe( "SE/Se_Down01" )
+: layer = 1; time = 1.0; strength = 30; vibrato = 50;
+: Call( "Scenarios/Common*CgShake" )
+: Wait()
+: ShowWnd()
+\CN["黑衣男子B"]
+“我————！！”
+
+一个黑衣人受到银踢
+扑通一声倒在那里动弹不得。
+
+//: DrawChara( "Gin", 8, 0)
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_2_0300000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: ShowWnd()
+\CN["银子"]
+“向对方报上自己的组织什么的，太傻了笑不出来。”
+
+\CN["黑衣男子A"]
+“我们每天都在积累严格的锻炼！
+我不会输给你这种人的！”
+
+\CN["黑衣男子A"]
+“哈！”
+
+//●演技：黒ずくめのナイフの一撃を銀が簡単に躱す
+\CN["黑衣男子B"]
+“啊啊啊啊啊啊啊！”
+
+\CN["银子"]
+“真是的，半夜不要大声喧哗。
+小姐会醒吧……”
+
+: HideWnd()
+: evbg = true; evcos = false;
+: evfile = "evx_a013_1_0_0100000_0000000_0_"
+: Call("Scenarios/Common*EvChange")
+: PlaySe( "SE/Se_AnimeEff_Hit02" )
+: PlayAnim( "Animations/AnimeEff_Hit01", false, 0, 0, 1, 1 )
+: Wait()
+: ShowWnd()
+\CN["黑衣男子B"]
+“笨蛋啊……”
+
+//●演出：黒ずくめの男がぶっ倒れる
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: DrawChara( "Gin", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: ShowWnd()
+\CN["银子"]
+“那你还不来吗？”
+
+\CN["黑衣男子A"]
+“酷……为什么呢……你为什么有这么大的力量呢？”
+但是，背叛了丈夫？”
+
+\CN["黑衣男子A"]
+“如果有那种强大的力量的话，现在也应该成为部队的队长了。
+为什么……！？”
+
+: DrawChara( "Gin", 8, 0)
+\CN["银子"]
+“……哈？真的不知道在说什么……”
+
+\CN["银子"]
+“老公，被说成老爷也没兴趣。
+我原本就不记得被捡到过”
+
+: DrawChara( "Gin", 9, 0)
+\CN["银子"]
+“还有就是站在你们的顶端
+那到底会是什么？什么价值也找不到……”
+
+\CN["黑衣男子A"]
+“来，你啊！”
+
+: HideWnd()
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: evbg = true; evcos = false;
+: evfile = "evx_a011_1_2_0300000_0000000_0_"
+: Call("Scenarios/Common*EvZoomIn")
+//※●演出：銀が黒ずくめの１人をぶっ飛ばす
+: PlaySe( "SE/Se_AnimeL_Attack01" )
+: PlayAnim( "Animations/AnimeL_Attack01", false, 0, 0, 6, 6 )
+: ImpactLayer( 8, 0.1, 0.1, 1, 0.15)
+: Wait()
+: ShowWnd()
+\CN["银子"]
+「…………」
+
+\CN["黑衣男子A"]
+“……为什么……我们……明明每天都在努力。”
+
+\CN["黑衣男子A"]
+“对不起……老爷……”
+
+//●演出：黒ずくめの男がぶっ倒れる
+: HideWnd()
+: Call("Scenarios/Common*EvFadeOut")
+: PlaySe( "SE/Se_Down01" )
+: DrawChara( "Gin", 5, 0, 0, 0.0, 0.0, 3, "C" )
+: chara = "Gin"; lay = 3 ; type = "F";
+: Call( "Scenarios/Common*FgLarge" )
+: ShowWnd()
+\CN["银子"]
+“主要是那些说着要牺牲自己性命之类无聊话的家伙们
+我们不会输的”
+
+\CN["银子"]
+“{大和，这里}可以用牺牲的程度来保护主人
+不是温柔的地方……”
+
+银小声嘟囔着的话
+随着突然刮起的微风消失了。
+
+: DrawChara( "Gin", 2, 0)
+\CN["银子"]
+“呼啊……天气变暖和了，放在外面也没关系
+不会死吧”
+
+\CN["银子"]
+“这里就算醉醺醺的睡着了钱包也只会被刷掉而已
+因为这里治安很好”
+
+//●演出：銀　退場させる
+: HideWnd()
+: StopBgm( 1.0 )
+: PlaySe( "SE/Se_Foot01" )
+: SetLayerRelPos( 3, 100, 0, 0.5)
+: EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: ResetLayer(3)
+: ShowWnd()
+银扛着昏厥的黑衣人
+就这样带他去了远离屯所的地方。
+
+//●演出：龍　登場する
+//Yoshi：センターに龍
+: HideWnd()
+: DrawChara( "Ryu", 1, 0, 0, 0.0, 0.0, 3, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 0; type = "WL";
+: Call( "Scenarios/Common*FgEff")
+: ShowWnd()
+\CN["龙"]
+「…………」
+
+//●演出：龍　退場する
+//●シーンエンド
+: HideWnd()
+: PlaySe("SE/Se_Foot01")
+: SetLayerRelPos( 3, 100, 0, 0.5)
+: EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

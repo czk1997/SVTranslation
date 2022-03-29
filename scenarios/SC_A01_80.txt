@@ -1,0 +1,280 @@
+//========================================================
+//○こう見えて可愛いものが好き
+//========================================================
+//●場所：帝都・町中
+//●背景：帝都
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: PlayBgm("BGM/23_FM001")
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Teito01_01", 1.0 )
+: Wait()
+: PlaySe("SE/Se_Cat01")
+: ShowWnd()
+\CN["猫"]
+“喵♪”
+
+//●演技：可愛い猫を発見します
+//Yoshi：センター無黒
+: CharaCostume( "Mukuro", 0 )
+: CharaCostume( "Momo", 0 )
+: CharaCostume( "Kinako", 0 )
+: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk0161" )
+\CN["无黑"]
+“……嗯？”
+
+在街道中环顾四周的时候，
+有一只猫蹭到脚下来了。
+
+像个和蔼可亲的孩子，用脸蹭着脚部。
+
+//●演出：キャラ立ち絵を左右に振る
+//Yoshi：左右に振れてない。猫にデレデレな無黒
+……确认一下没有熟人。
+
+: DrawChara( "Mukuro", 4, 2)
+: PlayVoice( "Voices/vo00_muk0162" )
+\CN["无黑"]
+“呵呵，好可爱啊。今天天气真好啊。”
+
+: PlaySe("SE/Se_Cat01")
+\CN["猫"]
+“—♪”
+
+用手指轻轻抚摸脖子的话会发出咕噜咕噜的声音。
+
+//●演技：心の声です
+//Yoshi：猫にデレデレになりつつ冷静な無黒
+: DrawChara( "Mukuro", 3, 2)
+: PlayVoice( "Voices/vo00_muk0163" )
+\CN["无黑"]
+（因为戴着项圈
+我觉得不是野猫而是养的猫……）
+
+//Yoshi：続・猫にデレデレな無黒
+: DrawChara( "Mukuro", 4, 2)
+: PlayVoice( "Voices/vo00_muk0164" )
+\CN["无黑"]
+“莫非你迷路了？”
+
+从刚才开始就一直在我脚下叫。
+
+: PlayVoice( "Voices/vo00_muk0165" )
+\CN["无黑"]
+“很寂寞吗？
+还是说肚子饿了？”
+
+有什么猫能吃的东西来着？
+
+看看这附近有没有卖……。
+
+//●演出：桃と黄菜子が登場する
+//＠立ち絵：桃、黄菜子
+: EraseChara( "Mukuro", 0.5 )
+//Yoshida：左に無黒、右に桃、右中に黄菜子
+: DrawChara( "Mukuro", 3, 2, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "R" )
+: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 5, "RC" )
+//●演技：ネコを捕まえます
+: PlayVoice( "Voices/vo02_kin0004" )
+\CN["黄菜子"]
+“啊……无黑，那只猫……呜！”
+
+那只想要去哪里的猫
+被黄菜子马上抓住并抱在怀里。
+
+//●演技：笑いを堪えています
+: DrawChara( "Momo", 6, 1)	//Yoshi：笑顔の桃
+: PlayVoice( "Voices/vo01_mom0008" )
+\CN["桃"]
+“……噗”
+
+回头一看，认识的人……。
+
+: DrawChara( "Mukuro", 10, 0)
+: PlayVoice( "Voices/vo00_muk0166" )
+\CN["无黑"]
+“……看见了吗？”
+
+: DrawChara( "Kinako", 7, 0)	//Yoshi：慌てる黄菜子
+: PlayVoice( "Voices/vo02_kin0005" )
+\CN["黄菜子"]
+“诶……啊，那个……诶……”
+
+慌慌张张的黄菜子。
+桃拼命的忍住笑意……。
+
+: PlayVoice( "Voices/vo01_mom0009" )
+\CN["桃"]
+“那个，无黑酱……啊，婴儿用语……
+ 对猫……噗噗噗……”
+
+: DrawChara( "Kinako", 2, 0)
+: PlayVoice( "Voices/vo02_kin0006" )
+\CN["黄菜子"]
+“哇，我觉得很普通吧？
+ 猫，很可爱呢”
+
+//●演技：恥ずかしがって悶えています
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Mukuro", 6, 3, 0, 0.5, 0.0, 3, "C" )	//Yoshi：赤面する無黒
+: PlayVoice( "Voices/vo00_muk0167" )
+\CN["无黑"]
+「～～～～～～～～～～～～～～！！！」
+
+啊啊啊啊啊啊啊啊啊啊！！！
+
+我被人看到了不得了的地方！
+被看到了难以置信的事情！
+
+那也是鬼灯的伙伴……！
+而且，桃……！！
+
+: EraseChara( "Mukuro", 0.5 )
+//Yoshi：左に無黒、右に桃
+: DrawChara( "Mukuro", 6, 2, 0, 0.5, 0.0, 3, "L" )
+: DrawChara( "Momo", 6, 0, 0, 0.5, 0.0, 4, "R" )
+: PlayVoice( "Voices/vo01_mom0010" )
+\CN["桃"]
+“哈，哈……嗯，嗯，呃，我觉得没什么关系。
+黄菜子也说她很普通……”
+
+: PlayVoice( "Voices/vo01_mom0011" )
+\CN["桃"]
+“但是，但是……那个，无黑变成了猫的对手……
+ “肚子饿了吗”……噗噗噗……”
+
+: PlayVoice( "Voices/vo00_muk0168" )
+\CN["无黑"]
+“把刚才的忘了吧！拜托了……！”
+
+: DrawChara( "Momo", 2, 0)
+: PlayVoice( "Voices/vo01_mom0012" )
+\CN["桃"]
+“那么……怎么办呢？
+呵呵，雷欧君听了的话会很开心的”
+
+: PlayVoice( "Voices/vo00_muk0169" )
+\CN["无黑"]
+“什么……！？那、不行……只有那家伙绝对不行！
+如果跟他说的话，我会把你打入地狱的”
+
+: PlayVoice( "Voices/vo01_mom0013" )
+\CN["桃"]
+“啊？为什么？”
+
+: PlayVoice( "Voices/vo00_muk0170" )
+\CN["无黑"]
+“怎、怎么说……那、那是……那个……”
+
+: PlayVoice( "Voices/vo00_muk0171" )
+\CN["无黑"]
+“总之！无论如何都！”
+
+: DrawChara( "Momo", 5, 0)
+: PlayVoice( "Voices/vo01_mom0014" )
+\CN["桃"]
+“不告诉我理由的话……对吧，黄菜子？”
+
+//●演技：１人、夢中になって猫と遊んでいます
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako", 1, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo02_kin0007" )
+\CN["黄菜子"]
+“好嘞，好嘞……这里舒服吗？”
+
+黄菜子好像沉迷于和猫玩。
+
+: EraseChara( "Kinako", 0.5 )
+: DrawChara( "Mukuro",11, 0)	//Yoshi：真剣な表情の無黒
+: PlayVoice( "Voices/vo00_muk0172" )
+\CN["无黑"]
+“哼……既然这样……”
+
+//●ＳＥ：チャキン！　抜刀仕様とする音
+: PlaySe("SE/Se_Katana01")
+: DrawChara( "Mukuro", 10, 1, 5)
+: DrawChara( "Momo",14, 0)	//Yoshi：焦る桃
+: PlayVoice( "Voices/vo01_mom0015" )
+\CN["桃"]
+「呀，开玩笑啦，开玩笑！
+所以，冷静下来吧？”
+
+: PlayVoice( "Voices/vo00_muk0173" )
+\CN["无黑"]
+“噗……噗……噗……”
+
+: DrawChara( "Mukuro", 0, 0)	//Yoshi：デフォ表情に戻る無黒
+: PlayVoice( "Voices/vo00_muk0174" )
+\CN["无黑"]
+“……话说两个人为什么都在这里？”
+
+: DrawChara( "Momo", 0, 0)	//Yoshi：デフォ表情の桃
+//Yoshi：センターに黄菜子
+: DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 5, "C" )
+: PlayVoice( "Voices/vo02_kin0008" )
+\CN["黄菜子"]
+“其实，我在找这只猫。
+ 是丸子店养的猫……”
+
+: PlayVoice( "Voices/vo01_mom0016" )
+\CN["桃"]
+“然后，我在散步的时候，偶然遇到了黄菜子
+ 我们一起寻找着”
+
+: PlayVoice( "Voices/vo02_kin0009" )
+\CN["黄菜子"]
+“那猫就由你带你去团子店吧。”
+
+: DrawChara( "Mukuro", 34, 0)	//Yoshi：寂しげな無黒
+: PlayVoice( "Voices/vo00_muk0175" )
+\CN["无黑"]
+“……啊”
+
+: PlayVoice( "Voices/vo02_kin0010" )
+\CN["黄菜子"]
+“无黑，一起去吗？”
+
+: DrawChara( "Mukuro", 0, 0)	//Yoshi：デフォ表情に戻る無黒
+: PlayVoice( "Voices/vo00_muk0176" )
+\CN["无黑"]
+“啊，啊。是啊。嗯。还有，猫——”
+
+: DrawChara( "Kinako", 1, 0)	//Yoshi：笑顔の黄菜子
+: PlayVoice( "Voices/vo02_kin0011" )
+\CN["黄菜子"]
+“是的，猫，指无黑
+好像喜欢上了。猫，太好了♪”
+
+: PlaySe("SE/Se_Cat01")
+: DrawChara( "Mukuro", 2, 0)	//Yoshi：ちょっと笑う無黒
+\CN["猫"]
+“喵~”
+
+//＠立ち絵：消去
+: EraseChara( "Mukuro", 0.5 )
+: EraseChara( "Momo", 0.5 )
+: EraseChara( "Kinako", 0.5 )
+从黄菜子那里收到猫，好好地抱在怀里。
+
+然后，一起去了团子店的奶奶那里
+带着猫去的。
+
+在稍微离开视线的间隙逃跑了。
+
+——下次再来见面吧。
+
+//●シーンエンド
+//サイドエピソード終了処理
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return

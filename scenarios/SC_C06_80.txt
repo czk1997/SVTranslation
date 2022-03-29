@@ -1,0 +1,324 @@
+//========================================================
+//○黒夜叉の姿を見られて
+//========================================================
+//●背景：荒野・昼
+//Yoshi：背景
+//サイドエピソード開始処理
+: StopBgm( 1.0 )
+: Call( "Scenarios/CommonSys*CosMemory" )
+: HideWnd()
+: DrawImage( 0, 0, "BGImage/BG_Black", 1.0 )
+: DrawImage( 1, 0, "BGImage/BG_Kouya01_01", 1.0 )
+: Wait()
+: PlayBgm("BGM/21_BM002")
+: ShowWnd()
+——几天前。
+
+在越过崎珠森林的地方的荒野。
+因为那里出现了魔物群，所以赶来了。
+
+//●服装：無黒・隊士服
+: CharaCostume( "Mukuro", 0 )
+: DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3398" )
+\CN["无黑色"]
+“那么——”
+
+//●演出：無黒　ダークエルフ化
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: cgkeep = true;
+: Call( "Scenarios/Effect*MukuroDE" )
+: ShowWnd()
+为了不被黑夜叉、黑精灵的力量所吞噬
+就这样{黑夜叉，暗黑妖精}化为习惯身体。
+
+既能训练又能赚钱。就是一石二鸟。
+
+//●演出：無黒　アクション
+//: DrawChara( "Mukuro", 46, 0, 5, 0.5, 0.0, 3, "C" )
+: HideWnd()
+: evcha = "Mukuro"; evbg = false; evcos = true;
+: evfile = "eva_a002_1_0_0200000_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3399" )
+\CN["无黑色"]
+“啊啊啊啊啊啊啊！”
+
+//●演出：斬撃　エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash02" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: PlaySe( "SE/Se_Monster01" )
+: ShowWnd()
+\CN["魔物"]
+“噢噢噢噢噢噢！”
+
+: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk3400" )
+\CN["无黑色"]
+“不由得用力过猛了。
+如果不能更加控制的话”
+
+{黑夜叉，暗黑精灵}化总之力量消耗很大。
+
+: DrawChara( "Mukuro", 21, 0)
+: PlayVoice( "Voices/vo00_muk3401" )
+\CN["无黑色"]
+“力量分配错了的话就死吧
+姐姐也在威胁我……”
+
+更有实感。
+
+力量用尽后{黑夜叉，暗黑精灵}化解除时
+因为我一个手指都没能动好。
+
+: DrawChara( "Mukuro", 10, 0, 2)
+: PlayVoice( "Voices/vo00_muk3402" )
+\CN["无黑色"]
+“下次好好保存力量……”
+
+//: DrawChara( "Mukuro", 16, 0)
+: HideWnd()
+: EraseChara( "Mukuro", 0.0 )
+: evfile = "eva_a002_1_0_0200000_1000000_0_"; Call("Scenarios/Common*EvChange");
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3403" )
+\CN["无黑色"]
+“八重樱流——{饿狼，饿狼}！”
+
+//●演出：斬撃　エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash01", false, 0, 0, 1, 1 )
+: Wait()
+: EraseAllImage( 9, 0.0 )
+: ShowWnd()
+: PlayVoice( "Voices/vo00_muk3404" )
+\CN["无黑色"]
+“八重樱流——{天冲，天冲}！”
+
+//●演出：斬撃　エフェクト
+//●ＳＥ：斬る音
+: HideWnd()
+: DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
+: PlaySe( "SE/Se_AnimeEff_Slash01" )
+: PlayAnim( "Animations/AnimeEff_Slash03", false, 0, 0, 1, 1 )
+: Wait()
+: Call("Scenarios/Common*EvDelete")
+: EraseAllImage( 9, 0.0 )
+: ShowWnd()
+大约30只左右吧。
+把聚集起来的魔物群一个接一个地消灭。
+
+//●演技：息切れしています
+: PlayBgm("BGM/01_CM001_inst")
+: DrawChara( "Mukuro", 30, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
+: PlayVoice( "Voices/vo00_muk3405" )
+\CN["无黑色"]
+“哈……哈……还需要锻炼啊。”
+
+这种程度就气喘吁吁的
+力量分配不好的证据。
+
+姐姐跟原来的状态没什么不同
+据说要熟练运用力量。
+
+: DrawChara( "Mukuro", 1, 0)
+: PlayVoice( "Voices/vo00_muk3406" )
+\CN["无黑色"]
+“总之，今天就在这里吧……”
+
+{黑夜叉，暗黑精灵}想要解开化。
+
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+//●演出：レオ　登場する
+: CharaCostume( "Leo", 0 )
+: DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
+: PlaySe("SE/Se_Foot01")
+: lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
+: Wait()
+: ShowWnd()
+\CN["雷欧"]
+“你……无黑吗？”
+
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: DrawChara( "Mukuro", 40, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
+: PlayVoice( "Voices/vo00_muk3407" )
+\CN["无黑色"]
+“雷欧？你为什么在这里？”
+
+//: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
+: DrawChara( "Mukuro", 40, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
+\CN["雷欧"]
+“不，听说魔物群出现了。
+然后，我就有种要一下子飞出去的感觉……”
+
+: DrawChara( "Leo", 5, 0)
+\CN["雷欧"]
+“你这家伙是{黑夜叉，暗黑精灵}化的吗？”
+
+: DrawChara( "Mukuro", 8, 0)
+: PlayVoice( "Voices/vo00_muk3408" )
+\CN["无黑色"]
+“啊，对了。”
+
+: DrawChara( "Leo", 6, 0)
+\CN["雷欧"]
+“啊，那是怎么回事？”
+
+: DrawChara( "Mukuro", 11, 0)
+: PlayVoice( "Voices/vo00_muk3409" )
+\CN["无黑色"]
+“怎么做……？嗯，变得自然了
+或者说……”
+
+问理由也不能很好地回答。
+
+契机是和姐姐的特训。
+
+{黑夜叉，暗黑精灵}和化了的姐姐对战的时候
+突然，这个力量觉醒了。
+
+//: EraseChara( "Mukuro", 0.5 )
+//: EraseChara( "Leo", 0.5 )
+: DrawChara( "Leo", 3, 0, 0)
+\CN["雷欧"]
+“是吗？”
+
+: DrawChara( "Leo", 16, 0)
+\CN["雷欧"]
+“那么，{黑夜叉，暗黑妖精}和我一起训练吧？”
+
+//: EraseChara( "Leo", 0.5 )
+: DrawChara( "Mukuro", 6, 0, 2)
+: PlayVoice( "Voices/vo00_muk3410" )
+\CN["无黑色"]
+“哈？你是认真说那个的吗？”？
+{黑夜叉，暗黑妖精}的力量，你不可能不知道吧？」
+
+//: EraseChara( "Mukuro", 0.5 )
+: DrawChara( "Leo", 1, 0, 0)
+\CN["雷欧"]
+“我知道现在的我根本不是对手。”
+
+: DrawChara( "Leo", 0, 0)
+\CN["雷欧"]
+“但是，即使那样也要试试。
+如果不是那样的话，今后会保护谁
+我觉得我做不到”
+
+//: EraseChara( "Leo", 0.5 )
+//●分岐：悪堕ちＬＶが０～２の場合
+: if ( $evilLevel < 3 )
+	: DrawChara( "Mukuro", 39, 0, 5)
+	: PlayVoice( "Voices/vo00_muk3411" )
+	\CN["无黑色"]
+“嗯……但是……”
+
+如果弄错了力量的程度，可能会杀死雷欧。
+
+	: DrawChara( "Leo", 5, 0, 0)
+	\CN["雷欧"]
+“难道你在烦恼要不要杀了我？”
+
+	: DrawChara( "Mukuro", 23, 0)
+	: PlayVoice( "Voices/vo00_muk3412" )
+	\CN["无黑色"]
+“啊，没错。我不想杀你。”
+
+不要含糊其辞，说清楚比较好吧。
+
+	: DrawChara( "Leo", 3, 0)
+	\CN["雷欧"]
+“这样的话，我就必须拼死努力了。
+不能让心爱的女人杀掉”
+
+	: DrawChara( "Mukuro", 36, 1, 2)
+	: PlayVoice( "Voices/vo00_muk3413" )
+	\CN["无黑色"]
+“喜欢的女人，你还那样……”
+
+	: DrawChara( "Leo", 13, 0)
+	\CN["雷欧"]
+“嘛，这是事实。”
+
+那样的话，我也要拼命。
+为了不杀死雷欧，必须调整力量。
+
+在力量控制方面可以进行超粗暴的治疗
+不能在雷欧认真的目光面前毫不客气地拒绝。
+
+	//●演技：心の声です
+	: DrawChara( "Mukuro", 17, 0, 2)
+	: PlayVoice( "Voices/vo00_muk3414" )
+	\CN["无黑色"]
+（我也下定决心了吗？）
+
+//●分岐終了地点へ
+//●分岐：それ以外の場合
+//●悪堕ちＬＶ３の場合
+: else
+	: DrawChara( "Mukuro", 24, 0, 2)
+	: PlayVoice( "Voices/vo00_muk3415" )
+	\CN["无黑色"]
+“我倒没什么，不过我死也不知道。”
+
+	: DrawChara( "Leo", 0, 0, 0)
+	\CN["雷欧"]
+“这样的话，我就必须拼死努力了。
+不能让心爱的女人杀掉”
+
+	: DrawChara( "Mukuro", 26, 0)
+	: PlayVoice( "Voices/vo00_muk3416" )
+	\CN["无黑色"]
+“喜欢的女人……。
+嗯，有干劲的话正好吗？”
+
+我必须不杀掉雷欧。
+要想控制力量的训练，就没有比这更好的了。
+
+//●分岐終了
+: endif
+: DrawChara( "Mukuro", 6, 0, 2)
+: PlayVoice( "Voices/vo00_muk3417" )
+\CN["无黑色"]
+“最后再叮嘱一下。
+也许我会杀了你，真的好吗？”
+
+: DrawChara( "Leo", 14, 0, 0)
+\CN["雷欧"]
+“真是个愚蠢的问题。要是我的话绝对没问题，别担心！”
+
+//●背景：空・昼
+//Yoshi：背景
+: HideWnd()
+: EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
+: EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
+: Wait()
+: SwapImage( 1, 0, "BGImage/BG_Sky01", 1.0 )
+: Wait()
+: ShowWnd()
+从这天开始，我要找时间和里奥训练。
+
+……………………………………………………。
+
+//Yoshi：背景消去
+//●シーンエンド
+: HideWnd()
+: StopBgm( 1.0 )
+: FadeOut( 1.0 )
+: Wait()
+: Call( "Scenarios/CommonSys*CosReturn" )
+: RpgPlayBgm
+: Return
