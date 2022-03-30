@@ -15,7 +15,7 @@
 : DrawImage( 1, 0, "BGImage/Bg_Harbor01_03", 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0121" )
-\CN["绿色"]
+\CN["绿"]
 “真好啊，真好啊，我自己，嗯。{以前}完全不一样。
 　好久没有这么激动人心的战斗了”
 
@@ -59,7 +59,7 @@
 : EraseAllImage( 9, 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0122" )
-\CN["绿色"]
+\CN["绿"]
 “呼！我们自己发生了什么事吗？”？
 　组合，太棒了，变得很好”
 
@@ -89,7 +89,7 @@
 //Yoshi：センターにみどり
 : DrawChara( "Midori",12, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0123" )
-\CN["绿色"]
+\CN["绿"]
 “你们自己别给我看了！我真的很恼火！”
 
 : HideWnd()
@@ -109,7 +109,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0124" )
-\CN["绿色"]
+\CN["绿"]
 “收到了！我不会死的！”
 
 //: EraseChara( "Midori", 0.5 )
@@ -141,7 +141,7 @@
 : DrawChara( "Midori",19, 2, 0, 0.5, 0.0, 3, "C" )
 //●演技：くうううぅは喜んでいる感じです
 : PlayVoice( "Voices/vo10_mid0125" )
-\CN["绿色"]
+\CN["绿"]
 “好饿！真让我毛骨悚然，真是的……！”
 
 //●演出：場面転換トランジション
@@ -312,7 +312,7 @@
 //Yoshi：左にみどり、右に御影
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0115" )
-\CN["绿色"]
+\CN["绿"]
 “好孩子已经到了睡觉的时间了。”
 
 : PlayVoice( "Voices/vo11_mik0039" )
@@ -322,7 +322,7 @@
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0116" )
-\CN["绿色"]
+\CN["绿"]
 “嘛，对我们来说都是无关紧要的事情。
 　如果不摆出一副了不起的样子，那就好了”
 
@@ -640,7 +640,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0126" )
-\CN["绿色"]
+\CN["绿"]
 “老头，今后会很有趣的。”
 
 //Yoshi：左に御影
@@ -908,13 +908,13 @@
 
 : DrawChara( "Midori", 19, 0, 0)
 : PlayVoice( "Voices/vo10_mid0127" )
-\CN["绿色"]
+\CN["绿"]
 “真的吗……那么，老头子就别对鬼灯局长出手了
 　也就是说……。我理解了”
 
 : DrawChara( "Midori", 3, 0)
 : PlayVoice( "Voices/vo10_mid0128" )
-\CN["绿色"]
+\CN["绿"]
 “怎么说呢，九星之间的纠纷是不允许的。”
 
 \CN["达磨"]
@@ -1213,7 +1213,7 @@
 
 : DrawChara( "Midori",22, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0129" )
-\CN["绿色"]
+\CN["绿"]
 “爷爷，下次不要打扰我了。
 　请让我直到最后”
 
@@ -1253,7 +1253,7 @@
 
 : DrawChara( "Midori",23, 0)
 : PlayVoice( "Voices/vo10_mid0130" )
-\CN["绿色"]
+\CN["绿"]
 “已经等不及了！赶紧开始吧。”
 
 明明必须快点追局长的
@@ -1278,7 +1278,7 @@
 : chara = "Midori"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo10_mid0131" )
-\CN["绿色"]
+\CN["绿"]
 “去死吧啊啊啊啊啊啊啊啊啊————！！”
 
 : HideWnd()
@@ -1320,7 +1320,7 @@
 : ShowWnd()
 //Yoshi：センターにみどり
 : PlayVoice( "Voices/vo10_mid0132" )
-\CN["绿色"]
+\CN["绿"]
 “谁啊！会来打扰我们吗！？”
 
 : EraseChara( "Midori", 0.5 )
@@ -1380,7 +1380,7 @@
 
 : DrawChara( "Midori", 8, 0)
 : PlayVoice( "Voices/vo10_mid0133" )
-\CN["绿色"]
+\CN["绿"]
 “那是世界最强的吧。真是男子汉啊！”
 
 : DrawChara( "Mikage", 7, 0)
@@ -1477,7 +1477,7 @@
 //Yoshi：左にみどり
 : DrawChara( "Midori",12, 0, 0, 0.5, 0.0, 2, "L" )
 : PlayVoice( "Voices/vo10_mid0134" )
-\CN["绿色"]
+\CN["绿"]
 “啊，怎么可能放过你！”
 
 //Yoshi：右にファルケ
@@ -1488,7 +1488,7 @@
 : DrawChara( "Midori",17, 0)
 //●演技：内心怯えています
 : PlayVoice( "Voices/vo10_mid0135" )
-\CN["绿色"]
+\CN["绿"]
 “什么嘛，我自己。让女孩子更温柔地对待。”
 　在学校没有教我吧？”
 
@@ -1565,13 +1565,13 @@
 //: DrawChara( "Daruma", 0, 0)
 //: DrawChara( "Midori", 7, 0)
 : PlayVoice( "Voices/vo10_mid0136" )
-\CN["绿色"]
+\CN["绿"]
 “什么嘛，自己也很帅啊。
 　如果做了世界最强的运动的话，至少也要做那个啊」
 
 //: DrawChara( "Midori",11, 0)
 : PlayVoice( "Voices/vo10_mid0137" )
-\CN["绿色"]
+\CN["绿"]
 “得物也不是刚才的死海里的东西啊……。
 　话说，自己的那个是吧？是神刀吗？”
 
@@ -1586,7 +1586,7 @@
 : DrawChara( "Daruma", 1, 0, 0, 0.5, 0.0, 3, "LC")
 : DrawChara( "Midori",24, 0, 0, 0.5, 0.0, 4, "RC")
 : PlayVoice( "Voices/vo10_mid0138" )
-\CN["绿色"]
+\CN["绿"]
 “哈？为什么啊！
 　要有机会杀死世界最强！”
 
@@ -1595,7 +1595,7 @@
 
 : DrawChara( "Midori", 13, 0)
 : PlayVoice( "Voices/vo10_mid0139" )
-\CN["绿色"]
+\CN["绿"]
 “啊？我们家很强吗？不知道说什么。”
 
 : DrawChara( "Daruma", 8, 0)
@@ -1605,7 +1605,7 @@
 //: DrawChara( "Mikage", 4, 0)
 : DrawChara( "Midori", 19, 0)
 : PlayVoice( "Voices/vo10_mid0140" )
-\CN["绿色"]
+\CN["绿"]
 “……啊，我知道了。
 　那么，可以追逃走的家伙吗？
 　那程度可以吗？”
@@ -1624,7 +1624,7 @@
 : EraseChara( "Daruma", 0.5 )
 : DrawChara( "Midori",12, 0, 0, 0.5, 0.0, 3, "LC")
 : PlayVoice( "Voices/vo10_mid0141" )
-\CN["绿色"]
+\CN["绿"]
 “哈~…真是没意思。真是的。
 　就算放任不管，反正还能再见面的”
 

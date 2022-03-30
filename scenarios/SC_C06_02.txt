@@ -526,7 +526,7 @@
 : PlaySe("SE/Se_Foot01")
 : lay = 3; type = "WR"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo10_mid0435" )
-\CN["绿色"]
+\CN["绿"]
 “哇~午睡的时候突然叫了出来
 　有什么开心的事吗？”
 
@@ -563,7 +563,7 @@
 
 	: DrawChara( "Midori", 12, 0, 0, 0.5, 0.0, 3, "RC" )
 	: PlayVoice( "Voices/vo10_mid0436" )
-	\CN["绿色"]
+	\CN["绿"]
 	“哇……卍，要说这个吗？
 	　自己，就是这样，真的吗？”
 
@@ -630,13 +630,13 @@
 
 : DrawChara( "Midori", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0437" )
-\CN["绿色"]
+\CN["绿"]
 “嘛，我觉得有趣的话，不管是正义还是邪恶
 　怎么都行”
 
 : DrawChara( "Midori", 9, 0)
 : PlayVoice( "Voices/vo10_mid0438" )
-\CN["绿色"]
+\CN["绿"]
 “话说，如果原本大和消失了，那就完了。”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -662,7 +662,7 @@
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0439" )
-\CN["绿色"]
+\CN["绿"]
 “{黑夜叉，暗黑妖精}呢？诶，像我们这样到
 　他们有那么多啊。太脆弱了”
 
@@ -675,7 +675,7 @@
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0440" )
-\CN["绿色"]
+\CN["绿"]
 “太好了！”
 
 : DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )

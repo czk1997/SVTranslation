@@ -100,7 +100,7 @@
 : PlayBgm("BGM/30_CM015")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0550" )
-\CN["绿色"]
+\CN["绿"]
 “不愧是我们公司的预料啊。
 　居然能简单防止我们的突然袭击啊”
 
@@ -113,7 +113,7 @@
 
 : DrawChara( "Midori", 8, 0)
 : PlayVoice( "Voices/vo10_mid0551" )
-\CN["绿色"]
+\CN["绿"]
 “不要告诉我，活下去了就活下去。
 　报、联、相，很重要吗？”
 
@@ -132,7 +132,7 @@
 : DrawChara( "Midori", 12, 0)
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0552" )
-\CN["绿色"]
+\CN["绿"]
 “等一下，突然砍过来，很奇怪吧？
 　自己不是叫精神病的家伙吗？”
 
@@ -148,12 +148,12 @@
 
 : DrawChara( "Midori", 29, 0)
 : PlayVoice( "Voices/vo10_mid0553" )
-\CN["绿色"]
+\CN["绿"]
 “是的，是的，那个安静的杀气。我很冷。”
 
 : DrawChara( "Midori", 21, 0)
 : PlayVoice( "Voices/vo10_mid0554" )
-\CN["绿色"]
+\CN["绿"]
 “你不是别的。认真的和、{杀，玫瑰}不做的是。”
 　像我这样的人”
 
@@ -179,13 +179,13 @@
 
 : DrawChara( "Midori", 7, 0)
 : PlayVoice( "Voices/vo10_mid0555" )
-\CN["绿色"]
+\CN["绿"]
 “这么吃惊的小中，竟然知道这是什么
 　是吗。不愧是元鬼灯的一流谍报啊」
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0556" )
-\CN["绿色"]
+\CN["绿"]
 “嘛，就算知道了，你也只是被我{杀，玫瑰}杀了而已
 　不过……！”
 
@@ -207,7 +207,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo10_mid0557" )
-\CN["绿色"]
+\CN["绿"]
 “太棒了！{黑夜叉，暗黑精灵}化后我们家被瞄准了要害
 　躲开了，自己还是第一次！哈哈，自豪一下吧”
 
@@ -251,7 +251,7 @@
 //: DrawChara( "Midori", 5, 0)
 : DrawFaceThumbnail( "Midori", 5, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0558" )
-\CN["绿色"]
+\CN["绿"]
 “什么呀，发呆。已经放弃了吗？
 　不管怎么说，都太快了吧！”
 
@@ -284,7 +284,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0559" )
-\CN["绿色"]
+\CN["绿"]
 「哇！？自己，那个{黑夜叉，暗黑妖精}化了吧！？
 　这果然出乎我的意料”
 
@@ -302,7 +302,7 @@
 : Call("Scenarios/Common*EvFadeOut")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0560" )
-\CN["绿色"]
+\CN["绿"]
 “你笑什么？”
 
 : PlayVoice( "Voices/vo02_kin0802" )
@@ -312,7 +312,7 @@
 
 : DrawChara( "Midori", 1, 0)
 : PlayVoice( "Voices/vo10_mid0561" )
-\CN["绿色"]
+\CN["绿"]
 “我被{杀，玫瑰}弄得很自大啊。
 　但是，这样终于有嚼劲的家伙，{杀，玫瑰}快要让他吃了！」
 
@@ -371,7 +371,7 @@
 : Wait()
 : DrawChara( "Midori", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo10_mid0562" )
-\CN["绿色"]
+\CN["绿"]
 “那、那样的笨蛋啊……我们家……不来的小鬼……
 　{黑夜叉，暗黑精灵}的家伙……」
 
@@ -468,7 +468,7 @@
 : Call( "Scenarios/Effect*Blood01" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0563" )
-\CN["绿色"]
+\CN["绿"]
 “嗯……”
 
 从昏迷的望月绿中，隐含的悲鸣声泄漏出来。
@@ -484,7 +484,7 @@
 “没关系，我已经把要害摘掉了。”
 
 : PlayVoice( "Voices/vo10_mid0564" )
-\CN["绿色"]
+\CN["绿"]
 “这、这个……”
 
 不幸的是她醒了。
@@ -502,7 +502,7 @@
 好几次好几次，不杀的程度刺刀。
 
 : PlayVoice( "Voices/vo10_mid0565" )
-\CN["绿色"]
+\CN["绿"]
 “哈……如果{杀，玫瑰}的话，就不好了……”
 
 : DrawChara( "Kinako", 10, 0)
@@ -511,7 +511,7 @@
 “你想死吗？”
 
 : PlayVoice( "Voices/vo10_mid0566" )
-\CN["绿色"]
+\CN["绿"]
 “这是为什么呢……身体要动的话，就去抵抗吧
 　我会决定的……”
 

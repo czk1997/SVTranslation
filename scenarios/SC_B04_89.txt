@@ -40,7 +40,7 @@
 : Call( "Scenarios/Common*FgEff")
 : PlayVoice( "Voices/vo10_mid0081" )
 : ShowWnd()
-\CN["绿色"]
+\CN["绿"]
 「哇，卍。终于醒了吗？
 　真是的，要睡到什么时候啊，自己”
 
@@ -60,12 +60,12 @@
 : DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Midori", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo10_mid0082" )
-\CN["绿色"]
+\CN["绿"]
 “你这家伙本来就解决不了，卍”
 
 : DrawChara( "Midori", 9, 0)
 : PlayVoice( "Voices/vo10_mid0083" )
-\CN["绿色"]
+\CN["绿"]
 “我再说了好几次了，望月啊，绿
 　或者是望月先生吧？”
 
@@ -138,7 +138,7 @@
 : EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0084" )
-\CN["绿色"]
+\CN["绿"]
 “卍，你已经败露了。你是不是太不擅长说谎了？”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -155,7 +155,7 @@
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0085" )
-\CN["绿色"]
+\CN["绿"]
 “嘛，这样逞强也是现在的事吧。”
 
 : DrawChara( "Manji", 0, 0)
@@ -165,12 +165,12 @@
 
 : DrawChara( "Midori", 5, 0)
 : PlayVoice( "Voices/vo10_mid0086" )
-\CN["绿色"]
+\CN["绿"]
 “嗯？我们没打算给你拷打吗？”
 
 : DrawChara( "Midori", 15, 0)
 : PlayVoice( "Voices/vo10_mid0087" )
-\CN["绿色"]
+\CN["绿"]
 “我要给你的话，是要拷问或者行刑
 　开小差”
 
@@ -245,7 +245,7 @@
 : DrawChara( "Mikage", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : DrawChara( "Midori", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0088" )
-\CN["绿色"]
+\CN["绿"]
 “御影，等一下！我们约好了让我来做吧？”
 
 绿急忙阻止了欲行使魔术的御影。
@@ -267,7 +267,7 @@
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0089" )
-\CN["绿色"]
+\CN["绿"]
 “那么，卍。快乐的时间开始了。”
 
 //●演出：みどり　義手を外す
@@ -304,13 +304,13 @@
 : ShowWnd()
 : DrawChara( "Midori", 28, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0090" )
-\CN["绿色"]
+\CN["绿"]
 “是的。如果自己有后面的话
 　来杀我，没关系。我们可是非常欢迎的”
 
 : DrawChara( "Midori", 20, 0)
 : PlayVoice( "Voices/vo10_mid0091" )
-\CN["绿色"]
+\CN["绿"]
 “那么，接下来哪里好呢？我给你选。”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -321,7 +321,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 22, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0092" )
-\CN["绿色"]
+\CN["绿"]
 “哈哈，不回答吗！”
 
 //●演出：血飛沫
@@ -351,7 +351,7 @@
 //: EraseChara( "Manji", 0.5 )
 //: DrawChara( "Midori", 10, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0093" )
-\CN["绿色"]
+\CN["绿"]
 “啊？自己说什么呢？算了，快点吧！”
 
 //●演出：血飛沫
@@ -372,24 +372,24 @@
 : DrawChara( "Midori", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0094" )
-\CN["绿色"]
+\CN["绿"]
 “啊，我这是第一次处死九星的家伙。
 　非常期待……”
 
 : DrawChara( "Midori", 17, 0)
 : PlayVoice( "Voices/vo10_mid0095" )
-\CN["绿色"]
+\CN["绿"]
 “昨天晚上太期待了，完全睡不着……”
 
 : DrawChara( "Midori", 13, 0)
 : PlayVoice( "Voices/vo10_mid0096" )
-\CN["绿色"]
+\CN["绿"]
 “那是什么？只是稍微用脚戳了一下
 　什么失禁啊」
 
 : DrawChara( "Midori", 9, 0)
 : PlayVoice( "Voices/vo10_mid0097" )
-\CN["绿色"]
+\CN["绿"]
 “真的拜托了……不可能，真的……。
 　自己太失望了吧……”
 
@@ -409,7 +409,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0098" )
-\CN["绿色"]
+\CN["绿"]
 “我、{处刑、游戏}中使用药物，真的很讨厌。
 　但是，你太失望了，不这么用的话
 　看样子很开心”
@@ -423,13 +423,13 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0099" )
-\CN["绿色"]
+\CN["绿"]
 “我好像在说处女被侵犯之前的话。
 　那个有点有趣。嗯，我在说线”
 
 : DrawChara( "Midori", 18, 0)
 : PlayVoice( "Voices/vo10_mid0100" )
-\CN["绿色"]
+\CN["绿"]
 “因为要用这个，所以要更加努力。”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -446,14 +446,14 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0101" )
-\CN["绿色"]
+\CN["绿"]
 “请给我恢复元气的药。”
 
 脸色苍白无力地问卍，绿爽快地回答。
 
 : DrawChara( "Midori", 27, 0)
 : PlayVoice( "Voices/vo10_mid0102" )
-\CN["绿色"]
+\CN["绿"]
 「呐，继续干吧。大腿那里一失血就马上
 　因为是死的关系啊……。接下来是手臂♪”
 
@@ -475,12 +475,12 @@
 : DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0103" )
-\CN["绿色"]
+\CN["绿"]
 “基本上就算刺伤也不要紧。”
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0104" )
-\CN["绿色"]
+\CN["绿"]
 “不过，比拉加大叔做的药，真的很糟糕。
 　普通的话早就失去意识了……”
 
@@ -489,7 +489,7 @@
 
 : DrawChara( "Midori", 8, 0)
 : PlayVoice( "Voices/vo10_mid0105" )
-\CN["绿色"]
+\CN["绿"]
 “那么，下次去哪里好呢？”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -502,7 +502,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0106" )
-\CN["绿色"]
+\CN["绿"]
 （说在这里杀了他，真是太好了♪
 　还没有放弃的证据啊）
 
@@ -522,7 +522,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0107" )
-\CN["绿色"]
+\CN["绿"]
 “那么，下一个是这里吗？”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -543,7 +543,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 28, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0108" )
-\CN["绿色"]
+\CN["绿"]
 “还有，有两个中的一个还没毁掉呢。”
 
 然后，绿又重新开始处刑。
@@ -556,7 +556,7 @@
 
 : DrawChara( "Midori", 7, 0)
 : PlayVoice( "Voices/vo10_mid0109" )
-\CN["绿色"]
+\CN["绿"]
 “那就另一边吧？”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -567,7 +567,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 29, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0110" )
-\CN["绿色"]
+\CN["绿"]
 “别还嘴！”
 
 //●演出：血飛沫
@@ -595,12 +595,12 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0111" )
-\CN["绿色"]
+\CN["绿"]
 “自己想死吗？说些没有男子气概的话……”
 
 : DrawChara( "Midori", 10, 0)
 : PlayVoice( "Voices/vo10_mid0112" )
-\CN["绿色"]
+\CN["绿"]
 “那就不需要小鸡鸡了吧。”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -621,7 +621,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0113" )
-\CN["绿色"]
+\CN["绿"]
 “啊，坏了也不要紧。不好，下次就在这里吧……”
 
 //●演出：血飛沫
@@ -639,7 +639,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0114" )
-\CN["绿色"]
+\CN["绿"]
 “那么，接下来就是正式演出了！
 　我会慢慢地、慢慢地花时间处刑的♪”
 

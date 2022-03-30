@@ -19,7 +19,7 @@
 : chara = "Midori"; lay = 3 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0307" )
-\CN["绿色"]
+\CN["绿"]
 “嗯……呼……嗯…嗯……嗯……”
 
 好好做伸展运动。
@@ -27,7 +27,7 @@
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0308" )
-\CN["绿色"]
+\CN["绿"]
 “身体是资本。
 　这种懒惰才是专业的工作”
 
@@ -35,13 +35,13 @@
 
 : DrawChara( "Midori", 9, 0)
 : PlayVoice( "Voices/vo10_mid0309" )
-\CN["绿色"]
+\CN["绿"]
 “在杀人的过程中，自己也不能做好被杀的觉悟。
 　最近，不知道这些的年轻人太多了”
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0310" )
-\CN["绿色"]
+\CN["绿"]
 “搭档的打理也很细心了。”
 
 : HideWnd()
@@ -56,14 +56,14 @@
 : DrawChara( "Midori", 2, 0 ,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo10_mid0311" )
-\CN["绿色"]
+\CN["绿"]
 “和这家伙交往很长时间啊……”
 
 我开始戴这个，要过多久？
 
 : DrawChara( "Midori", 4, 0)
 : PlayVoice( "Voices/vo10_mid0312" )
-\CN["绿色"]
+\CN["绿"]
 “虽然觉得是最近的事情，但是感觉是很久以前的事了。”
 
 : DrawChara( "Midori", 0, 0)
@@ -91,7 +91,7 @@
 
 : DrawChara( "Midori", 3, 0)
 : PlayVoice( "Voices/vo10_mid0313" )
-\CN["绿色"]
+\CN["绿"]
 “那时候发生了很多事啊……我也很年轻。”
 
 在背地里说坏话的人身上练习拷问
@@ -100,7 +100,7 @@
 
 : DrawChara( "Midori", 7, 0)
 : PlayVoice( "Voices/vo10_mid0314" )
-\CN["绿色"]
+\CN["绿"]
 “嫉妒心很强的笨蛋，成为了练习台。
 　现在想起来，环境真好啊”
 
@@ -109,7 +109,7 @@
 
 : DrawChara( "Midori", 14, 0)
 : PlayVoice( "Voices/vo10_mid0315" )
-\CN["绿色"]
+\CN["绿"]
 “看起来是这样，我们家非常热心学习啊。”
 
 怎么做才能看到不杀人而痛苦的样子呢
@@ -130,7 +130,7 @@
 
 : DrawChara( "Midori", 9, 0,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo10_mid0316" )
-\CN["绿色"]
+\CN["绿"]
 “我们家啊，嗯，完全不能理解。”
 
 我不知道其他一派是怎么样的。
@@ -141,7 +141,7 @@
 
 : DrawChara( "Midori", 3, 0)
 : PlayVoice( "Voices/vo10_mid0317" )
-\CN["绿色"]
+\CN["绿"]
 “敌人吗？不是吗？只要知道就足够了。”
 
 那个从断奶的时候就被敲进来了。
@@ -152,7 +152,7 @@
 
 : DrawChara( "Midori", 9, 0)
 : PlayVoice( "Voices/vo10_mid0318" )
-\CN["绿色"]
+\CN["绿"]
 “现在想起来，那时候的我们，状态非常好……”
 
 那个时候是改变我们命运的时候。
@@ -200,7 +200,7 @@
 : PlaySe("SE/Se_Foot01")
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo10_mid0319" )
-\CN["绿色"]
+\CN["绿"]
 “嗯，嗯，这个空气。
 　我来告诉你，我会紧张的”
 
@@ -209,7 +209,7 @@
 
 : DrawChara( "Midori", 20, 0)
 : PlayVoice( "Voices/vo10_mid0320" )
-\CN["绿色"]
+\CN["绿"]
 “这个地方，我喜欢胸罩……”
 
 非常喜欢治安不好的街道和后街。
@@ -220,13 +220,13 @@
 
 : DrawChara( "Midori", 13, 0)
 : PlayVoice( "Voices/vo10_mid0321" )
-\CN["绿色"]
+\CN["绿"]
 “即使是这样，今天也是风暖人恶心的夜晚啊。
 　像这样死气沉沉的感觉很不舒服”
 
 : DrawChara( "Midori", 10, 0)
 : PlayVoice( "Voices/vo10_mid0322" )
-\CN["绿色"]
+\CN["绿"]
 “这样的夜晚，很快就把目标{杀，玫瑰}了
 　{那家伙，那家伙}喝一杯最棒了」
 
@@ -237,7 +237,7 @@
 
 : DrawChara( "Midori", 7, 0)
 : PlayVoice( "Voices/vo10_mid0323" )
-\CN["绿色"]
+\CN["绿"]
 “目标貌似是不错的客栈
 　如果是我们家的话就轻松取胜了”
 
@@ -259,7 +259,7 @@
 //●演技：心の声です
 : DrawFaceThumbnail( "Midori", 0, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0324" )
-\CN["绿色"]
+\CN["绿"]
 （反正是疏忽大意了，这次也轻松取胜吧）
 
 但是，不能骄傲自满。
@@ -268,14 +268,14 @@
 我觉得变成那样也是理所当然的。
 
 : PlayVoice( "Voices/vo10_mid0325" )
-\CN["绿色"]
+\CN["绿"]
 “确实是收到的信息和这个房间……。
 　那家伙也不错啊。看了的感觉，不清冷的大叔吗？”
 
 现在想起来，这让我们的疏忽变得冗长了。
 
 : PlayVoice( "Voices/vo10_mid0326" )
-\CN["绿色"]
+\CN["绿"]
 “不要拷打，不要杀了。干脆杀了他吧。”
 
 //●演出：みどり　着地する
@@ -289,7 +289,7 @@
 
 : PlayBgm("BGM/30_CM015")
 : PlayVoice( "Voices/vo10_mid0327" )
-\CN["绿色"]
+\CN["绿"]
 「…………」
 
 在这里喋喋不休是二流三流的行为。
@@ -303,7 +303,7 @@
 : ShowWnd()
 : DrawChara( "Midori", 4, 0)
 : PlayVoice( "Voices/vo10_mid0328" )
-\CN["绿色"]
+\CN["绿"]
 “……诶！？”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -321,7 +321,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0329" )
-\CN["绿色"]
+\CN["绿"]
 “哇！？老头突然出来了……！
 　没什么”
 
@@ -334,7 +334,7 @@
 : DrawChara( "Daruma", 1, 0, 0, 0.5, 0.0, 3, "LC" )
 : DrawChara( "Midori", 4, 0,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
 : PlayVoice( "Voices/vo10_mid0330" )
-\CN["绿色"]
+\CN["绿"]
 「啊，原来有这样的魔导器啊。我不知道。
 　影武者，这不是随便做的吗？”
 
@@ -344,13 +344,13 @@
 
 : DrawChara( "Midori", 11, 0)
 : PlayVoice( "Voices/vo10_mid0331" )
-\CN["绿色"]
+\CN["绿"]
 “嗯。嘛，怎么样都无所谓。
 　对不起，爷爷。今天好像是你的忌辰啊」
 
 : DrawChara( "Midori", 16, 0)
 : PlayVoice( "Voices/vo10_mid0332" )
-\CN["绿色"]
+\CN["绿"]
 “只不过是死得早了一点而已，没什么不好的。”
 
 //●演出：斬撃エフェクト＆刀で防ぐ音
@@ -365,7 +365,7 @@
 
 : DrawChara( "Midori", 23, 0)
 : PlayVoice( "Voices/vo10_mid0333" )
-\CN["绿色"]
+\CN["绿"]
 “那是因为他杀气腾腾的，这是当然的。”
 
 \CN["达磨"]
@@ -373,7 +373,7 @@
 
 : DrawChara( "Midori", 19, 0)
 : PlayVoice( "Voices/vo10_mid0334" )
-\CN["绿色"]
+\CN["绿"]
 “到了……？说些什么莫名其妙的话怎么样？
 　装傻了吗，老头子”
 
@@ -411,7 +411,7 @@
 //●演技：心の声です
 : DrawChara( "Midori", 13, 0,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo10_mid0335" )
-\CN["绿色"]
+\CN["绿"]
 （我们的技术被简单地淘汰了。
 　被当做小孩子看待了，我们家）
 
@@ -421,7 +421,7 @@
 : DrawChara( "Midori", 24, 0)
 : chara = "Midori"; lay = 3 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
 : PlayVoice( "Voices/vo10_mid0336" )
-\CN["绿色"]
+\CN["绿"]
 “哦哦哦哦哦哦！！”
 
 //●演出：斬撃エフェクト＆刀で防ぐ音
@@ -439,7 +439,7 @@
 : DrawChara( "Daruma", 1, 0,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
 : DrawChara( "Midori", 22, 0,0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
 : PlayVoice( "Voices/vo10_mid0337" )
-\CN["绿色"]
+\CN["绿"]
 “好大的牢骚、好大的牢骚、真的好烦啊，这个老头子。”
 
 //●演出：斬撃エフェクト＆刀で防ぐ音
@@ -480,7 +480,7 @@
 
 : DrawChara( "Midori", 12, 0)
 : PlayVoice( "Voices/vo10_mid0338" )
-\CN["绿色"]
+\CN["绿"]
 “属下啊？自己在互相残杀的时候说什么呢？”
 
 //●演出：斬撃エフェクト＆刀で防ぐ音
@@ -495,7 +495,7 @@
 
 : DrawChara( "Midori", 13, 0)
 : PlayVoice( "Voices/vo10_mid0339" )
-\CN["绿色"]
+\CN["绿"]
 “你摆什么架子……真恶心。
 　竟然下到你身上，真是不可能！”
 
@@ -511,7 +511,7 @@
 : chara = "Midori"; lay = 0 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0340" )
-\CN["绿色"]
+\CN["绿"]
 “我不会死的！”
 
 //: DrawChara( "Daruma", 11, 0)
@@ -530,7 +530,7 @@
 //: DrawChara( "Midori", 25, 0)
 : DrawFaceThumbnail( "Midori", 25, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0341" )
-\CN["绿色"]
+\CN["绿"]
 “……呃！”
 
 回过神来，发现自己右臂的肘部已经没有了前部
@@ -547,11 +547,11 @@
 //: DrawFaceThumbnail( "Midori", 26, 0, 0 )
 : AutoFaceThumbnail( false )
 : PlayVoice( "Voices/vo10_mid0342" )
-\CN["绿色"]
+\CN["绿"]
 “好使的手臂……已经没有了……我们家的……输了……”
 
 : PlayVoice( "Voices/vo10_mid0343" )
-\CN["绿色"]
+\CN["绿"]
 “如果{杀，玫瑰}结束的话，就……”
 
 : DrawChara( "Daruma", 1, 0)
@@ -567,7 +567,7 @@
 //: DrawFaceThumbnail( "Midori", 25, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0344" )
 : AutoFaceThumbnail( false )
-\CN["绿色"]
+\CN["绿"]
 “哈……哈………你有什么好处……？”
 
 : DrawChara( "Daruma", 1, 0)
@@ -578,7 +578,7 @@
 //: DrawFaceThumbnail( "Midori", 12, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0345" )
 : AutoFaceThumbnail( false )
-\CN["绿色"]
+\CN["绿"]
 “最大限度地……？但是，我已经有能力了，对你
 　是被斩断了吗？”
 
@@ -594,7 +594,7 @@
 //: DrawFaceThumbnail( "Midori", 13, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0346" )
 : AutoFaceThumbnail( false )
-\CN["绿色"]
+\CN["绿"]
 “嗯……真是的，你会买我们家的吧……”
 
 但是，如果能帮我买到这里的话
@@ -602,7 +602,7 @@
 
 //: DrawFaceThumbnail( "Midori", 9, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0347" )
-\CN["绿色"]
+\CN["绿"]
 “呐，自己真的能发挥出自己的力量吗？”
 
 : DrawChara( "Daruma", 0, 0)
@@ -614,7 +614,7 @@
 //: DrawFaceThumbnail( "Midori", 4, 0, 0 )
 : AutoFaceThumbnail( false )
 : PlayVoice( "Voices/vo10_mid0348" )
-\CN["绿色"]
+\CN["绿"]
 “{黑夜叉，暗黑妖精}……？我们家？”
 
 因为他那张脸真的会说“我能成为那样虚构的存在”之类的话
@@ -622,7 +622,7 @@
 
 //: DrawFaceThumbnail( "Midori", 10, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0349" )
-\CN["绿色"]
+\CN["绿"]
 「不，那个。
 　嗯，我跟着你走”
 
@@ -654,7 +654,7 @@
 : ShowWnd()
 //●演技：ここは殺し（ころし）と読みます
 : PlayVoice( "Voices/vo10_mid0350" )
-\CN["绿色"]
+\CN["绿"]
 “那么，希拉加又能成为义手，又能成为杀人道具的搭档
 　给我戴了没有头盖的……”
 
@@ -662,7 +662,7 @@
 
 : DrawChara( "Midori", 3, 0)
 : PlayVoice( "Voices/vo10_mid0351" )
-\CN["绿色"]
+\CN["绿"]
 “能相信的只有自己。
 　所以我们应该到这里来了……”
 
@@ -672,7 +672,7 @@
 //●演技：心の声です
 : DrawChara( "Midori", 9, 0)
 : PlayVoice( "Voices/vo10_mid0352" )
-\CN["绿色"]
+\CN["绿"]
 （只会这么想，真没想到老妈
 　对我们来说，是那种感觉吧）
 
@@ -681,7 +681,7 @@
 
 : DrawChara( "Midori", 3, 0)
 : PlayVoice( "Voices/vo10_mid0353" )
-\CN["绿色"]
+\CN["绿"]
 “总是杀气腾腾的，别人是杀还是不杀，只有一个
 　如果是想着没有的女儿的话，应该会很害怕吧”
 
@@ -696,7 +696,7 @@
 
 : DrawChara( "Midori", 4, 0)
 : PlayVoice( "Voices/vo10_mid0354" )
-\CN["绿色"]
+\CN["绿"]
 「嘛，都已经死了。
 　就算想确认一下自己是怎么想的，也没办法”
 
@@ -707,7 +707,7 @@
 
 : DrawChara( "Midori", 3, 0)
 : PlayVoice( "Voices/vo10_mid0355" )
-\CN["绿色"]
+\CN["绿"]
 “因为比攻来的家伙弱，所以被杀了。
 　因为很冷淡啊”
 
@@ -716,7 +716,7 @@
 
 : DrawChara( "Midori", 9, 0)
 : PlayVoice( "Voices/vo10_mid0356" )
-\CN["绿色"]
+\CN["绿"]
 “我知道除了我以外的人会变成什么样
 　虽然没有。我不关心别人”
 
@@ -767,13 +767,13 @@
 : DrawChara( "Midori", 9, 0, 0, 0.5, 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0357" )
-\CN["绿色"]
+\CN["绿"]
 “但是，为什么不想杀人呢？
 　如果碍事的话{杀，玫瑰}应该是我们家的信条吧」
 
 : DrawChara( "Midori", 4, 0)
 : PlayVoice( "Voices/vo10_mid0358" )
-\CN["绿色"]
+\CN["绿"]
 “我本来就在想要不要和他搞好关系
 　这件事本身就很吃惊”
 
@@ -790,7 +790,7 @@
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0359" )
-\CN["绿色"]
+\CN["绿"]
 “正因为如此，才觉得现在很开心吧……”
 
 //●演出：暗転

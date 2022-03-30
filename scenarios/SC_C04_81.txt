@@ -25,7 +25,7 @@
 : PlaySe("SE/Se_Foot01")
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo10_mid0238" )
-\CN["绿色"]
+\CN["绿"]
 （那家伙是外交官{水野高中生，水的功劳}吗。
 　很有气氛的大叔啊）
 
@@ -35,14 +35,14 @@
 //●演技：心の声です
 : DrawChara( "Midori", 1, 0)
 : PlayVoice( "Voices/vo10_mid0239" )
-\CN["绿色"]
+\CN["绿"]
 （头上还说要暗杀呢。
 　这里的话，多余的家伙会过来的。）
 
 //●演技：心の声です
 : DrawChara( "Midori", 16, 0)
 : PlayVoice( "Voices/vo10_mid0240" )
-\CN["绿色"]
+\CN["绿"]
 （等，过来的时候，顺便来一下，那家伙也一起
 　{杀，散开}不过是这样而已）
 
@@ -59,7 +59,7 @@
 //: DrawChara( "Midori", 3, 0)
 : DrawFaceThumbnail( "Midori", 3, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0241" )
-\CN["绿色"]
+\CN["绿"]
 （杨先生，你给我钱，我知道条约什么的对我不利
 　签订后……）
 
@@ -70,7 +70,7 @@
 //: DrawChara( "Midori", 2, 0)
 : DrawFaceThumbnail( "Midori", 2, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0242" )
-\CN["绿色"]
+\CN["绿"]
 （嘛，说实话理由什么的，什么都没关系。
 　{杀，玫瑰}被说了的话就会很高兴{杀，散开}去吧）
 
@@ -78,7 +78,7 @@
 //: DrawChara( "Midori", 1, 0)
 : DrawFaceThumbnail( "Midori", 1, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0243" )
-\CN["绿色"]
+\CN["绿"]
 （对方喝醉了，马上结束吧……。
 　那个的话应该可以吧，大概）
 
@@ -91,7 +91,7 @@
 //: DrawChara( "Midori", 10, 0)
 : DrawFaceThumbnail( "Midori", 10, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0244" )
-\CN["绿色"]
+\CN["绿"]
 （那个大叔是后者吧。会让我开心的。）
 
 //: EraseChara( "Midori", 0.5 )
@@ -113,7 +113,7 @@
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0245" )
-\CN["绿色"]
+\CN["绿"]
 “你是外交官水野高中生，没错吧？”
 
 \CN["水野"]
@@ -122,7 +122,7 @@
 //●演技：ちゅうことで――→話を遮られる感じです
 : DrawChara( "Midori", 8, 0)
 : PlayVoice( "Voices/vo10_mid0246" )
-\CN["绿色"]
+\CN["绿"]
 “啊，搞错了的话就不会是错的时候了。
 　用忍耐的心——”
 
@@ -144,14 +144,14 @@
 : DrawChara( "Midori", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : chara = "Midori"; lay = 0 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
 : PlayVoice( "Voices/vo10_mid0247" )
-\CN["绿色"]
+\CN["绿"]
 “我们还在聊天呢。
 　真的，真是性急啊……”
 
 //●読み：千葉一刀流（ちばいっとうりゅう）
 : DrawChara( "Midori", 10, 0)
 : PlayVoice( "Voices/vo10_mid0248" )
-\CN["绿色"]
+\CN["绿"]
 “刚才，是千叶一刀流的招数吧？
 　如果不是我的话就死了？”
 
@@ -161,7 +161,7 @@
 
 : DrawChara( "Midori", 17, 0)
 : PlayVoice( "Voices/vo10_mid0249" )
-\CN["绿色"]
+\CN["绿"]
 “危险的气味是对女士失礼的吗？
 　嘛，是的……”
 
@@ -176,7 +176,7 @@
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0250" )
-\CN["绿色"]
+\CN["绿"]
 “虽然感觉不错，但是技能太漂亮了。
 　这种高雅的技巧，我一辈子都中不了”
 
@@ -197,7 +197,7 @@
 : ShowWnd()
 //: DrawChara( "Midori", 11, 0)
 : PlayVoice( "Voices/vo10_mid0251" )
-\CN["绿色"]
+\CN["绿"]
 “《电光石火》！！”
 
 //●演出：刺突エフェクト
@@ -219,7 +219,7 @@
 : DrawChara( "Midori", 27, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0252" )
-\CN["绿色"]
+\CN["绿"]
 “一下子就上去了。真是出乎我的期待啊。”
 
 躲开攻击，进入空隙，打穿脑门，然后结束。
@@ -236,7 +236,7 @@
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0253" )
-\CN["绿色"]
+\CN["绿"]
 「啊，是吗。
 　尸体好像可以就这样放着不管”
 
@@ -286,7 +286,7 @@
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0254" )
-\CN["绿色"]
+\CN["绿"]
 “嗯。自己有什么问题吗？”
 
 \CN["白夜队士"]
@@ -294,14 +294,14 @@
 
 : DrawChara( "Midori", 17, 0)
 : PlayVoice( "Voices/vo10_mid0255" )
-\CN["绿色"]
+\CN["绿"]
 “怎么说呢，已经决定好了。
 　这么晚了，像我们这样柔弱的女士来散步的话
 　你觉得吗？”
 
 : DrawChara( "Midori", 19, 0)
 : PlayVoice( "Voices/vo10_mid0256" )
-\CN["绿色"]
+\CN["绿"]
 “还有，不要叫望月，望月或者绿。
 　不可以直呼其名？”
 
@@ -310,7 +310,7 @@
 
 : DrawChara( "Midori", 21, 0)
 : PlayVoice( "Voices/vo10_mid0257" )
-\CN["绿色"]
+\CN["绿"]
 “这可没必要问啊……太遗憾了。”
 
 我们这么晚还特意到哪里的森林来
@@ -318,12 +318,12 @@
 
 : DrawChara( "Midori", 16, 0)
 : PlayVoice( "Voices/vo10_mid0258" )
-\CN["绿色"]
+\CN["绿"]
 “我想你会知道的，但是要从白夜中脱离是要拼上性命的。”
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0259" )
-\CN["绿色"]
+\CN["绿"]
 “要是连迷恋都做不到的话
 　一开始就不要犯禁忌……”
 
@@ -372,7 +372,7 @@
 : DrawChara( "Midori", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0260" )
-\CN["绿色"]
+\CN["绿"]
 “好吵啊。半夜什么的，安静点吧。”
 
 //●演出：血飛沫　エフェクト
@@ -383,13 +383,13 @@
 
 : DrawChara( "Midori", 3, 0)
 : PlayVoice( "Voices/vo10_mid0261" )
-\CN["绿色"]
+\CN["绿"]
 “真面目的家伙不管是幕府还是反幕派都是属先生一方
 　是啊”
 
 : DrawChara( "Midori", 17, 0)
 : PlayVoice( "Voices/vo10_mid0262" )
-\CN["绿色"]
+\CN["绿"]
 “我的脑袋、精神、心都是被乌贼咬过的家伙
 　因为我做不下去”
 
@@ -404,7 +404,7 @@
 : EraseChara( "Midori", 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0263" )
-\CN["绿色"]
+\CN["绿"]
 “开始吧。”
 
 \CN["白夜队士"]
@@ -425,7 +425,7 @@
 : evfile = "evf_a001_1_1_0200000_0000000_0_"; Call("Scenarios/Common*EvChange");
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0264" )
-\CN["绿色"]
+\CN["绿"]
 “这样啊，虽然听到悲鸣也是一种负担
 　好潇洒啊。偶尔这样也不错”
 
@@ -439,7 +439,7 @@
 : evfile = "evf_a001_1_1_0100000_0000000_0_"; Call("Scenarios/Common*EvChange");
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0265" )
-\CN["绿色"]
+\CN["绿"]
 “至少，在黎明之前死吧。”
 
 半夜还特意让我到这种地方来

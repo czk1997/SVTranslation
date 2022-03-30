@@ -1603,7 +1603,7 @@
 : FadeInLayer( 9, 0.1, 0.1, "BGImage/BattleEffectTransition01", 1.0, true, 0.0, 0.0)
 : Wait()
 : PlayVoice( "Voices/vo10_mid0066" )
-\CN["绿色"]
+\CN["绿"]
 “呜……！嗯……！”
 
 : HideWnd()
@@ -1616,13 +1616,13 @@
 
 : DrawChara( "Midori", 10, 0)
 : PlayVoice( "Voices/vo10_mid0067" )
-\CN["绿色"]
+\CN["绿"]
 “因为有维克托尔骑士团的骑士之类的奇怪的名字
 　我还以为会不会有什么问题呢，但还是很能干啊，我自己”
 
 : DrawChara( "Midori", 18, 0)
 : PlayVoice( "Voices/vo10_mid0068" )
-\CN["绿色"]
+\CN["绿"]
 “竟然能和我这样互相残杀的家伙
 　一只手就够了”
 
@@ -1662,7 +1662,7 @@
 : lay = 0; type = "WL";
 : Call( "Scenarios/Common*FgEff")
 : PlayVoice( "Voices/vo10_mid0069" )
-\CN["绿色"]
+\CN["绿"]
 “你太快了。
 　居然能全部躲开我的头盖”
 
@@ -1676,7 +1676,7 @@
 
 : DrawChara( "Midori", 7, 0)
 : PlayVoice( "Voices/vo10_mid0070" )
-\CN["绿色"]
+\CN["绿"]
 “我啊，哈哈，基本上是和男人吵架的时候吧
 　{拷问，啊そ}大概是在玩的时候吧」
 
@@ -1690,7 +1690,7 @@
 : EraseChara( "Elisa", 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0071" )
-\CN["绿色"]
+\CN["绿"]
 “去吧！望月流暗杀术——{暗蜘蛛，やみぐ}！！”
 
 //●演出：突き攻撃　エフェクト
@@ -1709,7 +1709,7 @@
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 : PlayVoice( "Voices/vo10_mid0072" )
-\CN["绿色"]
+\CN["绿"]
 “我会说的。明明都看见了……”
 
 //●演出：場面転換トランジション
@@ -1836,7 +1836,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0073" )
-\CN["绿色"]
+\CN["绿"]
 “大和有个讨厌的家伙。
 　但是，你没有在维克托尔吗？坚强的家伙”
 
@@ -1852,7 +1852,7 @@
 
 : DrawChara( "Midori", 29, 0)
 : PlayVoice( "Voices/vo10_mid0074" )
-\CN["绿色"]
+\CN["绿"]
 “那么，我们也稍微拿出点真本事，号称世界最强吧
 　我必须要杀了他啊”
 
@@ -1871,7 +1871,7 @@
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0075" )
-\CN["绿色"]
+\CN["绿"]
 “啊啊啊啊啊啊！！”
 
 //●演技：心の声です
@@ -1945,7 +1945,7 @@
 : JumpLayer( 2, 0, -50, 1, 0.25)
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0076" )
-\CN["绿色"]
+\CN["绿"]
 “哈~……。好像情绪低落了……”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -1963,7 +1963,7 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo10_mid0077" )
-\CN["绿色"]
+\CN["绿"]
 “啊，这里是我的故乡啊。
 　可恶。我不知道”
 
@@ -1985,19 +1985,19 @@
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 : PlayVoice( "Voices/vo10_mid0078" )
-\CN["绿色"]
+\CN["绿"]
 “哇，好恐怖……。
 　自己要是做不到那种表情的话，就先说吧……”
 
 : DrawChara( "Midori", 16, 0)
 : PlayVoice( "Voices/vo10_mid0079" )
-\CN["绿色"]
+\CN["绿"]
 “像刺一样的杀气，我最喜欢那个了。
 　只是被转向了，就好像爱上了啊」
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0080" )
-\CN["绿色"]
+\CN["绿"]
 “虽然很想和对方交往，但是不管怎么说都是寡不敌众。
 　而且还有世界最强的存在，照现在的样子果然很辛苦。
 　看来只能撤退了”

@@ -737,7 +737,7 @@
 : : if ( CharaCostume( "Mukuro" ) == 0 )
 	: DrawChara( "Midori", 16, 0)
 	: PlayVoice( "Voices/vo10_mid0284" )
-	\CN["绿色"]
+	\CN["绿"]
 	“我们自己可是在做着各种各样的事啊。
 	　那个大叔很厉害吧？”
 
@@ -754,7 +754,7 @@
 : elif ( CharaCostume( "Mukuro" ) == 1 )
 	: DrawChara( "Midori", 19, 0)
 	: PlayVoice( "Voices/vo10_mid0285" )
-	\CN["绿色"]
+	\CN["绿"]
 	“衣服散开之后，大叔
 	　是的，兴趣很丰富啊”
 
@@ -791,12 +791,12 @@
 
 	: DrawChara( "Midori", 4, 0)
 	: PlayVoice( "Voices/vo10_mid0286" )
-	\CN["绿色"]
+	\CN["绿"]
 	“什么啊，那家伙。咦，头级的厉害啊！”
 
 	: DrawChara( "Midori", 8, 0)
 	: PlayVoice( "Voices/vo10_mid0287" )
-	\CN["绿色"]
+	\CN["绿"]
 	“话说，如果能成为无黑、自己、{黑夜叉、暗黑妖精}的话
 	　我说我能成为……”
 
@@ -836,7 +836,7 @@
 : DrawChara( "Midori", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0288" )
-\CN["绿色"]
+\CN["绿"]
 “等一下……突然跑起来什么的？
 　真的是不可能！”
 

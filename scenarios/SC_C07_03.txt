@@ -110,7 +110,7 @@
 
 : DrawChara( "Midori", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo10_mid0480" )
-\CN["绿色"]
+\CN["绿"]
 “我不喜欢粘糊糊的东西
 　直截了当地说”
 
@@ -119,7 +119,7 @@
 : JumpLayer( 2, 0, -20, 1, 0.25)
 : DrawChara( "Midori", 11, 0)
 : PlayVoice( "Voices/vo10_mid0481" )
-\CN["绿色"]
+\CN["绿"]
 “头的命令来杀你，玫瑰。”
 
 //●演出：無黒　刀を抜く
@@ -131,7 +131,7 @@
 
 : DrawChara( "Midori", 16, 0)
 : PlayVoice( "Voices/vo10_mid0482" )
-\CN["绿色"]
+\CN["绿"]
 “老实说，命令什么的怎么样都无所谓。
 　我曾经想试着和你玩一次叫做“你和喀哒互相杀”的游戏”
 
@@ -161,7 +161,7 @@
 : DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0483" )
-\CN["绿色"]
+\CN["绿"]
 “血要滚滚而来！太兴奋了真恶心。”
 
 : DrawChara( "Mukuro", 26, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
@@ -221,7 +221,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0484" )
-\CN["绿色"]
+\CN["绿"]
 “去地狱的话会有很多吧？我不知道。”
 
 //●演出：斬撃エフェクト
@@ -241,7 +241,7 @@
 
 : DrawFaceThumbnail( "Midori", 2, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0485" )
-\CN["绿色"]
+\CN["绿"]
 “准备运动就是这样的。
 　呐，差不多该认真了！”
 
@@ -305,7 +305,7 @@
 : DrawChara( "Midori", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0486" )
-\CN["绿色"]
+\CN["绿"]
 “哈哈……我们输了啊……”
 
 //●ＳＥ：倒れる音
@@ -369,12 +369,12 @@
 : PlaySe("SE/Se_Foot01")
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo10_mid0487" )
-\CN["绿色"]
+\CN["绿"]
 “你的头为什么不来呢？你是在警戒海螺吗？”
 
 : DrawChara( "Midori", 1, 0)
 : PlayVoice( "Voices/vo10_mid0488" )
-\CN["绿色"]
+\CN["绿"]
 “嘛，不过，我也算是乐在其中了。
 　你{杀，玫瑰}的话，会变得无聊的，会特别放过你的」
 

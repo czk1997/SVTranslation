@@ -695,7 +695,7 @@
 : PlayBgm("BGM/30_CM015")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0043" )
-\CN["绿色"]
+\CN["绿"]
 “什么呀，我们自己。注意到了吗？”
 
 长着绿色头发的女人出现了。
@@ -731,7 +731,7 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : PlayVoice( "Voices/vo10_mid0044" )
-\CN["绿色"]
+\CN["绿"]
 “你们知道我们家吗？”
 
 : DrawChara( "Mukuro", 17, 1)
@@ -747,7 +747,7 @@
 : ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Midori", 22, 0)
 : PlayVoice( "Voices/vo10_mid0045" )
-\CN["绿色"]
+\CN["绿"]
 “谁是笨蛋，我要杀了你，这个混蛋！”
 
 : DrawChara( "Leo", 4, 0)
@@ -761,7 +761,7 @@
 
 : DrawChara( "Midori", 23, 0)
 : PlayVoice( "Voices/vo10_mid0046" )
-\CN["绿色"]
+\CN["绿"]
 “你这家伙，不会让你轻松地死去的……”
 
 //みどり　義手刀にする
@@ -770,7 +770,7 @@
 : JumpLayer( 5, 0, -50, 1, 0.25)
 : DrawChara( "Midori", 18, 0)
 : PlayVoice( "Voices/vo10_mid0047" )
-\CN["绿色"]
+\CN["绿"]
 「慢慢地，慢慢地，敲诈杀死你
 　做好觉悟！”
 
@@ -844,7 +844,7 @@
 //●演技：ってぇな＝痛ぇな
 : DrawChara( "Midori", 26, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
 : PlayVoice( "Voices/vo10_mid0048" )
-\CN["绿色"]
+\CN["绿"]
 “哈哈哈……呃，你这家伙……”
 
 : DrawChara( "Leo", 18, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
@@ -866,13 +866,13 @@
 
 : DrawChara( "Midori", 23, 1)
 : PlayVoice( "Voices/vo10_mid0049" )
-\CN["绿色"]
+\CN["绿"]
 “那个黑发的女人，一看就很生气啊……
 　光看脸就恶心”
 
 : DrawChara( "Midori", 29, 1)
 : PlayVoice( "Voices/vo10_mid0050" )
-\CN["绿色"]
+\CN["绿"]
 “和我们最讨厌的家伙长得很像啊？
 　眼睛珠子，我真想用这个挖苦他”
 
@@ -896,7 +896,7 @@
 : EraseChara( "Midori", 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0051" )
-\CN["绿色"]
+\CN["绿"]
 “我不会死的！”
 
 //: DrawChara( "Mukuro", 34, 1)
@@ -937,7 +937,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0052" )
-\CN["绿色"]
+\CN["绿"]
 “啧……！好危险啊……。
 　这个臭小鬼……一个一个，真让人生气！”
 
@@ -958,7 +958,7 @@
 
 : DrawFaceThumbnail( "Midori", 22, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0053" )
-\CN["绿色"]
+\CN["绿"]
 “啊，已经不行了。已经不能忍耐了……。
 　自己们，现在就想在这里认真地杀了他们……”
 
@@ -989,7 +989,7 @@
 : EraseChara( "Mukuro", 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0054" )
-\CN["绿色"]
+\CN["绿"]
 “——水性……”
 
 : PlaySe( "SE/Se_Device01" )
@@ -1033,7 +1033,7 @@
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0055" )
-\CN["绿色"]
+\CN["绿"]
 “啊啊啊啊啊啊啊啊啊啊啊！！”
 
 //: DrawChara( "Leo", 24, 1)
@@ -1061,12 +1061,12 @@
 
 : DrawChara( "Midori", 29, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : PlayVoice( "Voices/vo10_mid0056" )
-\CN["绿色"]
+\CN["绿"]
 “你这杀气腾腾的，真让人毛骨悚然。”
 
 : DrawChara( "Midori", 13, 1)
 : PlayVoice( "Voices/vo10_mid0057" )
-\CN["绿色"]
+\CN["绿"]
 “但是，自己越看越觉得烦躁。
 　真的，我是一边慢慢地安慰着一边杀人的”
 
@@ -1087,7 +1087,7 @@
 : DrawChara( "Midori", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Leo", 17, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo10_mid0058" )
-\CN["绿色"]
+\CN["绿"]
 “啊，真能干啊自己。一下子躲开了啊……”
 
 : DrawChara( "Leo", 20, 1)
@@ -1106,7 +1106,7 @@
 
 : DrawChara( "Midori", 23, 1)
 : PlayVoice( "Voices/vo10_mid0059" )
-\CN["绿色"]
+\CN["绿"]
 “在想要杀人的时候，如果能让我看到这样的亲昵
 　真是的，真恶心……”
 
@@ -1139,7 +1139,7 @@
 : PlayBgm("BGM/28_ID01")
 : DrawChara( "Midori", 0, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo10_mid0060" )
-\CN["绿色"]
+\CN["绿"]
 “什么呀，兰丸啊……别在那个地方打扰我啊！对吧？
 　你也一起打死了吗？”
 
@@ -1154,13 +1154,13 @@
 
 : DrawChara( "Midori", 13, 1)
 : PlayVoice( "Voices/vo10_mid0061" )
-\CN["绿色"]
+\CN["绿"]
 “……啧……那就干巴巴的……。
 　因为不能给头脑面子啊”
 
 : DrawChara( "Midori", 10, 1)
 : PlayVoice( "Voices/vo10_mid0062" )
-\CN["绿色"]
+\CN["绿"]
 “我们自己捡了命啊。
 　下次见面的时候我会毫不留情的杀掉你，你要做好觉悟吗？”
 
@@ -1177,7 +1177,7 @@
 
 : DrawFaceThumbnail( "Midori", 2, 0 )
 : PlayVoice( "Voices/vo10_mid0063" )
-\CN["绿色"]
+\CN["绿"]
 “呐，我们的名字是？”
 
 : DrawChara( "Leo", 12, 0)
@@ -1198,12 +1198,12 @@
 
 : DrawFaceThumbnail( "Midori", 16, 0 )
 : PlayVoice( "Voices/vo10_mid0064" )
-\CN["绿色"]
+\CN["绿"]
 “无黑的雷欧……我会记住的。”
 
 : DrawFaceThumbnail( "Midori", 11, 0 )
 : PlayVoice( "Voices/vo10_mid0065" )
-\CN["绿色"]
+\CN["绿"]
 “我——白夜，四绿的望月绿将你们斩杀
 　这帮家伙，不许被其他人杀死”
 

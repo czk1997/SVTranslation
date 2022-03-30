@@ -935,7 +935,7 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Midori", 1, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0441" )
-\CN["绿色"]
+\CN["绿"]
 “我们自己会陷入苦战的。”
 
 //●演出：白夜九星登場する
@@ -967,7 +967,7 @@
 
 : DrawChara( "Midori", 12, 0, 0)
 : PlayVoice( "Voices/vo10_mid0442" )
-\CN["绿色"]
+\CN["绿"]
 “哇，出来了！？怎么了，那个！”
 
 : DrawChara( "Manji", 0, 0, 1)
@@ -1011,7 +1011,7 @@
 : DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0443" )
-\CN["绿色"]
+\CN["绿"]
 “恩？卍，你难道害怕吗？”
 
 : layer = 2; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
@@ -1082,7 +1082,7 @@
 : EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0444" )
-\CN["绿色"]
+\CN["绿"]
 “你说得对！我才不说呢！”
 
 : DrawChara( "Shion", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -1095,7 +1095,7 @@
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0445" )
-\CN["绿色"]
+\CN["绿"]
 “因为我会马上得到许可的。
 {最初，请从花}飞出去！]
 //●演出：みどり　ダークエルフ化
@@ -1156,7 +1156,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0446" )
-\CN["绿色"]
+\CN["绿"]
 “呐，去吧！最近很老实地做了呢。
 压力太大了！”
 
@@ -1174,12 +1174,12 @@
 : ShowWnd()
 //: DrawChara( "Midori", 3, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0447" )
-\CN["绿色"]
+\CN["绿"]
 “首先代替问候吧！秘传的暗杀术，开始吧。”
 
 //: DrawChara( "Midori", 1, 0)
 : PlayVoice( "Voices/vo10_mid0448" )
-\CN["绿色"]
+\CN["绿"]
 “‘暗蜘蛛’！！！”
 
 //●演出：刺突　エフェクト
@@ -1193,7 +1193,7 @@
 
 : DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo10_mid0449" )
-\CN["绿色"]
+\CN["绿"]
 “就算像柏青哥似的，果然还是{黑夜叉，暗黑妖精}啊。
 一下子就杀不掉了……”
 
@@ -1204,7 +1204,7 @@
 : DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : chara = "Midori"; lay = 3 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
 : PlayVoice( "Voices/vo10_mid0450" )
-\CN["绿色"]
+\CN["绿"]
 “完成吧！”
 
 //●演出：刺突　エフェクト
@@ -1223,7 +1223,7 @@
 //: EraseChara( "Gin", 0.5 )
 : DrawChara( "Midori", 7, 0, 0)
 : PlayVoice( "Voices/vo10_mid0451" )
-\CN["绿色"]
+\CN["绿"]
 “什么呀，死了就消失了啊。
 我们自己是多么环保啊。对地球太温柔了吧！”
 
@@ -1243,7 +1243,7 @@
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0452" )
-\CN["绿色"]
+\CN["绿"]
 “紫苑姐姐，你真的要回答我的段子吗？”。
 因为很害羞”
 
@@ -1287,7 +1287,7 @@
 
 : DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo10_mid0453" )
-\CN["绿色"]
+\CN["绿"]
 “卍、吓了一跳的话，就要藏起来了！
 一边守护着你，一边{杀，玫瑰}让你成为对手吧」
 
@@ -1334,7 +1334,7 @@
 //: EraseChara( "Gin", 0.5 )
 //: DrawChara( "Midori", 4, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0454" )
-\CN["绿色"]
+\CN["绿"]
 「啊，那家伙，是史黛拉！
 赤手空拳{黑夜叉，暗黑妖精}打，真是太脆弱了！」
 
@@ -1945,7 +1945,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0455" )
-\CN["绿色"]
+\CN["绿"]
 “啊，赶上了，紫苑姐姐
 解开了那家伙的封印了吗？”
 
@@ -1956,7 +1956,7 @@
 
 : DrawChara( "Midori", 6, 0)
 : PlayVoice( "Voices/vo10_mid0456" )
-\CN["绿色"]
+\CN["绿"]
 “せやや。也有相当能干的人。”
 
 : HideWnd()
@@ -2146,7 +2146,7 @@
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0457" )
-\CN["绿色"]
+\CN["绿"]
 “嘛，我们家要快得多啊。
 但是，我试着杀了他一次”
 
@@ -2157,7 +2157,7 @@
 
 : DrawChara( "Mikage", 3, 0)
 : PlayVoice( "Voices/vo10_mid0458" )
-\CN["绿色"]
+\CN["绿"]
 “せやな。现在在的好像是刚才那帮家伙的上位互换。”
 文字用品”
 
@@ -2235,7 +2235,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0459" )
-\CN["绿色"]
+\CN["绿"]
 “他们说还是不要勉强比较好！
 别缩回去。自己会成为妨碍”
 
@@ -2264,7 +2264,7 @@
 : evfile = "evf_a001_1_2_0100000_0000000_0_"
 : Call("Scenarios/Common*EvFadeIn")
 : PlayVoice( "Voices/vo10_mid0460" )
-\CN["绿色"]
+\CN["绿"]
 “{杀，玫瑰}快杀了我！
 《影法师》
 
@@ -2478,7 +2478,7 @@
 
 : DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0461" )
-\CN["绿色"]
+\CN["绿"]
 “剩下的不多了。干脆{杀，玫瑰}吧。”
 
 绿摆出架势，用刚才为止的要领{黑夜叉，暗黑妖精}
@@ -2494,7 +2494,7 @@
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0462" )
-\CN["绿色"]
+\CN["绿"]
 “哈……？”
 
 : StopBgm( 1.0 )
@@ -3091,7 +3091,7 @@
 : ShowWnd()
 //●状況：ダークエルフ軍団と戦っているレオたち
 : PlayVoice( "Voices/vo10_mid0463" )
-\CN["绿色"]
+\CN["绿"]
 「……！！」
 
 {黑夜叉，暗黑精灵}放出的闪光变成绿色
@@ -3118,7 +3118,7 @@
 : PlayBgm("BGM/41_Sad")
 : DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0464" )
-\CN["绿色"]
+\CN["绿"]
 “啊，你怎么了！？怎么会这样……”
 
 //: DrawChara( "Manji", 0, 0, 1, 0.5, 0.0, 2, "LC" )
@@ -3127,7 +3127,7 @@
 
 : DrawChara( "Midori", 5, 0)
 : PlayVoice( "Voices/vo10_mid0465" )
-\CN["绿色"]
+\CN["绿"]
 “啊？借？什么事？”？
 我可不记得把它借给你……”
 
@@ -3199,7 +3199,7 @@
 
 : DrawChara( "Midori", 13, 0, 0 )
 : PlayVoice( "Voices/vo10_mid0466" )
-\CN["绿色"]
+\CN["绿"]
 “望月先生，你不是说叫我绿先生吗？”
 
 : DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
@@ -3212,7 +3212,7 @@
 
 : DrawChara( "Midori", 3, 0)
 : PlayVoice( "Voices/vo10_mid0467" )
-\CN["绿色"]
+\CN["绿"]
 「…………」
 
 : DrawChara( "Manji", 0, 0)
@@ -3224,14 +3224,14 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0468" )
-\CN["绿色"]
+\CN["绿"]
 （在街上遇到了，叫狐狸姐姐到这里去
 被这么一说，我就来了……）
 
 //●演技：心の声です
 : DrawChara( "Midori", 13, 0)
 : PlayVoice( "Voices/vo10_mid0469" )
-\CN["绿色"]
+\CN["绿"]
 （怎么会变成不笑的事情呢……）
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -3247,7 +3247,7 @@
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo10_mid0470" )
-\CN["绿色"]
+\CN["绿"]
 “卍，选择错了怎么办
 用你那像老鼠一样的脑浆也能明白吧？”
 
@@ -3257,7 +3257,7 @@
 
 : DrawChara( "Midori", 10, 0)
 : PlayVoice( "Voices/vo10_mid0471" )
-\CN["绿色"]
+\CN["绿"]
 “如果你回答错了的话——
 这种时候我们会负责{杀，玫瑰}的”
 
@@ -3346,7 +3346,7 @@
 //●演技：静かにキレています
 : DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 : PlayVoice( "Voices/vo10_mid0472" )
-\CN["绿色"]
+\CN["绿"]
 “……御影，拜托了。”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -3527,7 +3527,7 @@
 : EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo10_mid0473" )
-\CN["绿色"]
+\CN["绿"]
 “什么呀，什么呀，那家伙，什么都不懂。{黑夜叉，暗黑精灵}化了
 文静！？滚滚地滚啊！”
 
@@ -4500,7 +4500,7 @@
 : DrawChara( "Midori", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0474" )
-\CN["绿色"]
+\CN["绿"]
 “什么呀，怎么了……！？
 {黑夜叉，暗黑妖精}大家都会变成光之尘吗？」
 
@@ -4530,7 +4530,7 @@
 
 : DrawChara( "Midori", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0475" )
-\CN["绿色"]
+\CN["绿"]
 “怎么，卍，你还活着吗？真不愧是御影啊。”
 
 : DrawChara( "Mikage", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )

@@ -720,7 +720,7 @@
 : PlayBgm("BGM/30_CM015")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0115" )
-\CN["绿色"]
+\CN["绿"]
 “好孩子已经到了睡觉的时间了。”
 
 : HideWnd()
@@ -737,7 +737,7 @@
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0116" )
-\CN["绿色"]
+\CN["绿"]
 “嘛，对我们来说都是无关紧要的事情。
 　如果不摆出一副了不起的样子，那就好了”
 
@@ -752,7 +752,7 @@
 : DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo10_mid0117" )
-\CN["绿色"]
+\CN["绿"]
 “喂，能不能不要直呼其名？
 　大概，我们家比你年长吧”
 
@@ -765,7 +765,7 @@
 
 : DrawChara( "Midori", 13, 0)
 : PlayVoice( "Voices/vo10_mid0118" )
-\CN["绿色"]
+\CN["绿"]
 “嗯，{杀，玫瑰}抢的话比较快，这样也可以。”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -795,7 +795,7 @@
 : ShowWnd()
 : DrawChara( "Midori", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo10_mid0119" )
-\CN["绿色"]
+\CN["绿"]
 “什么呀，什么呀，那个乳房！和影子势均力敌。”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
