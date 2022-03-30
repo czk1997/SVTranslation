@@ -16,7 +16,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo11_mik0012" )
 \CN["御影"]
-“我想差不多该开始开会了
+“我想差不多该开始会议了
 　还没来的是——”
 
 //: DrawChara( "Mei", 1, 0, 0, 0.5, 0.0, 2, "LC" )
@@ -35,8 +35,8 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 \CN["卍"]
-“嘛，迟到了吧，望月。
-　这边明明没有空啊」
+“又迟到了啊，望月。
+　这边明明没有空闲啊」
 
 //●演出：みどり　登場する
 //: EraseChara( "Mikage", 0.5 )
@@ -50,8 +50,8 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo10_mid0025" )
-\CN["绿色"]
-“对不起我迟到了，{卍，まじ}”
+\CN["绿"]
+“对不起我迟到了，卍”
 
 : PlaySe("SE/Se_Swing01")
 : HideWnd()
@@ -62,9 +62,9 @@
 : ShowWnd()
 //: DrawChara( "Midori", 22, 0)
 : PlayVoice( "Voices/vo10_mid0026" )
-\CN["绿色"]
-“还有望月、望月、或者绿桑吧？
-　我们的座位顺序比你高吗？”
+\CN["绿"]
+“还有，不是望月酱、望月、或者绿桑吧？
+　你的座位顺序比我高吗？”
 
 : HideWnd()
 : EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
@@ -75,13 +75,13 @@
 
 //: DrawChara( "Midori", 16, 0)
 : PlayVoice( "Voices/vo10_mid0027" )
-\CN["绿色"]
-“啊，我出血了。
-　稍微有点力道，就算是米丝也不会唱。忍耐”
+\CN["绿"]
+“啊，出血了。
+　犯了错误而已，要接受点代价啊。要忍耐啊”
 
-绿色无畏地笑着。
+绿无畏地笑着。
 
-第漆座的额头上有绿的武器“拔头盖”的刀尖
+第漆座的额头上有着绿的武器“拔头盖”的刀尖
 只刺了一点点血。
 
 //: EraseChara( "Manji", 0.5 )
@@ -89,12 +89,12 @@
 : PlayVoice( "Voices/vo11_mik0013" )
 \CN["御影"]
 “绿先生，九星之间的争斗是禁止的
-　你脑子里是这么说的吧？”
+　头里是这么说的吧？”
 
 //: DrawChara( "Midori", 8, 0)
 : PlayVoice( "Voices/vo10_mid0028" )
-\CN["绿色"]
-“没什么要争的。玩吧。什，卍”
+\CN["绿"]
+“没什么要争的。实在有些，对吧，卍”
 
 //: EraseChara( "Mikage", 0.5 )
 //: DrawChara( "Manji", 0, 0, 0, 0.5, 0.0, 2, "LC" )
@@ -110,9 +110,9 @@
 //●演技：冥とみどりは仲がすごく悪いです
 //: DrawChara( "Midori", 9, 0)
 : PlayVoice( "Voices/vo10_mid0029" )
-\CN["绿色"]
+\CN["绿"]
 「啊？怎么会有冥呢？特地从西边过来
-　辛苦了啊。没必要来……”
+　辛苦了啊。你明明没必要来……”
 
 //: EraseChara( "Midori", 0.5 )
 //: EraseChara( "Mei", 0.5 )
@@ -122,7 +122,7 @@
 : evfile = "evx_a054_1_5_0000000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["严严"]
+\CN["严"]
 「…………」
 
 //: DrawChara( "Shion", 3, 0, 0, 0.5, 0.0, 3, "RC" )
@@ -136,10 +136,10 @@
 因为九星他们各自都非常有个性
 冲突也很多。
 
-席次是{战斗力，强度}的顺序和对白夜的贡献
-被分配。
+席次是战斗力的顺序和以及对白夜的贡献
+已经被分配好了。
 
-其中也有像绿色一样无法接受的人……。
+但是其中也有像绿一样无法接受的人……。
 
 //●演出：蘭丸　登場する
 //: EraseChara( "Iwao", 0.5 )
@@ -151,11 +151,11 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 \CN["兰丸"]
-“大家对不起，让你久等了吗？”
+“大家对不起，让你们久等了吗？”
 
 //: DrawChara( "Manji", 0, 0, 0, 0.5, 0.0, 2, "LC" )
 \CN["卍"]
-“迟到了……我明明说我没空……”
+“迟到了……我明明说过我没空了……”
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -166,7 +166,7 @@
 \CN["兰丸"]
 “就算你这么说也没关系。
 　古河家啊，被鬼灯攻击了啊
-　你善后了吧”
+　你善后了吧？”
 
 //: DrawChara( "Manji", 0, 0)
 \CN["卍"]
@@ -175,15 +175,15 @@
 //: DrawChara( "Ranmaru", 0, 0)
 \CN["兰丸"]
 “嗯，是你的管辖范围啊。
-　但是，刚才大家都被鬼灯给撞了」
+　但是，刚才被鬼灯给剿灭了。“
 
 //: DrawChara( "Manji", 0, 0)
 \CN["卍"]
-“喂！你不是在胡说八道吗？”
+“喂！你是在胡说八道吗？”
 
 //: DrawChara( "Ranmaru", 16, 0)
 \CN["兰丸"]
-“说谎也没办法啊。”
+“你要是觉得再说谎也没办法啊。”
 
 //: DrawChara( "Ranmaru", 3, 0)
 \CN["兰丸"]
@@ -193,13 +193,13 @@
 //: EraseChara( "Manji", 0.5 )
 //: DrawChara( "Midori", 13, 0, 0, 0.5, 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo10_mid0030" )
-\CN["绿色"]
+\CN["绿"]
 “还真是语无伦次，赶紧说想说的话。
 　好烦躁啊」
 
 //: EraseChara( "Midori", 0.5 )
 //: DrawChara( "Iwao", 0, 0, 0, 0.5, 0.0, 2, "LC" )
-\CN["严严"]
+\CN["严"]
 「Ｚｚｚｚ……」
 
 //: EraseChara( "Iwao", 0.5 )
@@ -207,14 +207,14 @@
 : PlayVoice( "Voices/vo12_shi0011" )
 \CN["紫苑"]
 “哎呀，严酱，好像已经睡着了啊。
-　好嘞！”
+　怪、怪！”
 
 //: EraseChara( "Shion", 0.5 )
 //: DrawChara( "Mikage", 7, 0, 0, 0.5, 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo11_mik0014" )
 \CN["御影"]
 “兰丸先生，稍后我会告诉没听的人
-　先开个会”
+　会议先开始吧”
 
 //: DrawChara( "Ranmaru", 17, 0)
 \CN["兰丸"]
@@ -224,20 +224,20 @@
 //: EraseChara( "Mikage", 0.5 )
 //: DrawChara( "Midori", 5, 0, 0, 0.5, 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo10_mid0031" )
-\CN["绿色"]
+\CN["绿"]
 “啊，是吗？这么说来，从刚才开始就一直在
-　在那附近的头会帮我做吗？”
+　在那附近的人会帮我做吗？”
 
 //: EraseChara( "Ranmaru", 0.5 )
 //: DrawChara( "Mikage", 6, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo11_mik0015" )
 \CN["御影"]
-“美、绿……什么！？头上怎么这么会说话？”
+“美、绿……什么！？你对头领怎么这么说话？”
 
 //: DrawChara( "Midori", 8, 0)
 : PlayVoice( "Voices/vo10_mid0032" )
-\CN["绿色"]
-“是的，没什么。头？”
+\CN["绿"]
+“欸，没什么。那么，头？”
 
 : StopBgm( 1.0 )
 //: EraseChara( "Midori", 0.5 )
@@ -259,8 +259,8 @@
 \CN["卍"]
 「……！？」
 
-刚才在谁都不在的地方戴着面具的男人
-坐着。
+刚才在谁都不在的地方
+有个戴着面具的男人坐着。
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -271,7 +271,7 @@
 //: DrawChara( "Shion", 0, 0, 0, 0.5, 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo12_shi0012" )
 \CN["紫苑"]
-“然后，头，特意去西都住了
+“然后，头，特意把居住再西都的我
 　叫到帝都的理由是什么？”
 
 //: DrawChara( "Daruma", 1, 0)
@@ -281,25 +281,25 @@
 //: EraseChara( "Shion", 0.5 )
 //: DrawChara( "Midori", 9, 0, 0, 0.5, 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo10_mid0033" )
-\CN["绿色"]
+\CN["绿"]
 “什么意思？御影，你明白吗？”
 
 //: EraseChara( "Midori", 0.5 )
 //: DrawChara( "Mikage", 2, 0, 0, 0.5, 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo11_mik0016" )
 \CN["御影"]
-“收拾肮脏幕府的大便的时刻临近了
-　也就是说，头！”
+“也就是收拾肮脏幕府的的时刻临近了
+　对吧，头！”
 
 //: DrawChara( "Daruma", 3, 0)
 \CN["达磨"]
-“左大人……”
+“是的……”
 
 //: EraseChara( "Mikage", 0.5 )
 //: DrawChara( "Midori", 15, 0, 0, 0.5, 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo10_mid0034" )
-\CN["绿色"]
-“御影，我自己太吵了。嘛，我知道你的心情……”
+\CN["绿"]
+“御影，你太吵了。嘛，我知道你的心情……”
 
 //: EraseChara( "Midori", 0.5 )
 //: DrawChara( "Mikage", 1, 1, 0, 0.5, 0.0, 2, "LC" )
@@ -331,17 +331,17 @@
 //: EraseChara( "Ranmaru", 0.5 )
 //: DrawChara( "Midori", 18, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo10_mid0035" )
-\CN["绿色"]
-“虽然也有睡得很熟的人，但是听说那里很大。”
+\CN["绿"]
+“虽然也有睡得很熟的人，比如哪个大家伙。”
 
 \CN["九星、八白"]
-“睡得很熟呢……鼻血……”
+“睡得很熟呢……啊，鼻血……”
 
 //: EraseChara( "Mei", 0.5 )
 //: DrawChara( "Manji", 0, 0, 0, 0.5, 0.0, 2, "LC" )
 \CN["卍"]
-“什么大叔？又是鼻血啊。
-　每次大家聚在一起都会拿出来”
+“什么啊？又是鼻血啊。
+　每次大家聚在一起都会出来”
 
 \CN["九星、八白"]
 “呵呵……和大家久别重逢，有点
@@ -349,7 +349,7 @@
 
 //: EraseChara( "Manji", 0.5 )
 //: DrawChara( "Iwao", 0, 0, 0, 0.5, 0.0, 2, "LC" )
-\CN["严严"]
+\CN["严"]
 「Ｚｚｚ……Ｚｚ」
 
 //: EraseChara( "Midori", 0.5 )
@@ -370,8 +370,8 @@
 //: EraseChara( "Mikage", 0.5 )
 //: DrawChara( "Daruma", 0, 0, 0, 0.5, 0.0, 3, "C" )
 \CN["达磨"]
-「好的。你们要比以前更努力工作
-　”
+「好的。你们要比以前更努
+　力工作啊”
 
 //: DrawChara( "Daruma", 1, 0)
 \CN["达磨"]
