@@ -29,18 +29,18 @@
 : PlayVoice( "Voices/vo01_mom0103" )
 \CN["桃"]
 “啊！局长拿在手里的那个
-　说不定，是卤鸭！？”
+　说不定，是哈根达克！？”
 
 : DrawChara( "Azami", 5, 0)
 : PlayVoice( "Voices/vo05_aza0096" )
 \CN["爱彩弥"]
-“呼。不愧是公主椿，真是太好了。”
+“呼。不愧是公主椿，厉害啊。”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo00_muk0479" )
 \CN["无黑"]
-“卤鸭……？”
+“哈根达克……？”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -56,16 +56,16 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 \CN["雷欧"]
-“对了对了。我曾经想吃一次啊。”
+“对了对了。我一直想吃一次啊。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["银"]
-“啊？那就买来吃吧。”
+“啊？那就买来啊。”
 
 : DrawChara( "Leo", 6, 0)
 \CN["雷欧"]
-“不，因为啊，连日来女孩子们都在排队呢？
+“不，因为啊，都是女孩子们都在排队呢？
 　那种地方，因为害羞而不排队”
 
 : DrawChara( "Gin", 5, 0)
@@ -75,11 +75,11 @@
 : DrawChara( "Leo", 4, 0)
 \CN["雷欧"]
 “啊？你不会吗？”？
-　只排那个女人的队吗？”
+　排那个只有女人的队吗？”
 
 : DrawChara( "Gin", 3, 0)
 \CN["银"]
-“不，不是那边。
+“不，不是。
 　你居然有羞耻心，真让我吃惊啊」
 
 : DrawChara( "Leo", 7, 0)
@@ -116,54 +116,54 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0105" )
 \CN["桃"]
-“还有，顺便说一下，小银排在女孩子的队伍里
+“还有，顺便说一下，小银在女孩子的队伍里
 　排队什么的，简直是小菜一碟”
 
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 \CN["银"]
-“工资日和女儿经常排队。
-　已经什么都不想了……”
+“工资日经常和小姐一起。
+　已经什么都不在乎了……”
 
 : DrawChara( "Gin", 16, 0)
 \CN["银"]
-“……据说他是在寒冷的冬天从维克托尔来的
-　在排队买限定薄饼的时候，已经……”
+“……在排队买据说是在寒冷的冬天
+　从维克托尔来的限定薄饼的时候，已经……”
 
 //: EraseChara( "Leo", 0.5 )
 : DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo02_kin0072" )
 \CN["黄菜子"]
-“诶！？桃先生吃过‘口琴薄饼’吗？”
+“诶！？桃先生吃过‘莫妮卡薄饼’吗？”
 　有吗？”
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0106" )
 \CN["桃"]
-“呵呵♪那是当然的啦！从朝一到小银去高浜
-　因为排队了”
+“呵呵♪那是当然的啦！从早上开始，银就去去高浜
+　排队购买了”
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0107" )
 \CN["桃"]
 “维克托尔王室御用的薄煎饼是指
-　不是摆样子的吧”
+　不是样子货吧”
 
 : DrawChara( "Momo", 6, 0)
 : PlayVoice( "Voices/vo01_mom0108" )
 \CN["桃"]
 “那个甜，那个软绵绵的感觉。简直就是天使的甜品。”
-　说也不过分”
+　这么说也不过分”
 
 : DrawChara( "Kinako", 12, 0)
 : PlayVoice( "Voices/vo02_kin0073" )
 \CN["黄菜子"]
 “啊啊……真是的，好羡慕啊……。
-　我只要一次就可以了，想吃一次口琴的薄煎饼”
+　我只要一次就可以了，想吃一次莫妮卡的薄煎饼”
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0109" )
 \CN["桃"]
-“下次出售的话，也要好好买黄菜子的份
+“下次还买的话，也要好好买黄菜子的份
 　我来给你！当然，也包括大家的份”
 
 : DrawChara( "Kinako", 1, 0)
@@ -186,8 +186,8 @@
 : evfile = "evx_a051_1_1_0000000_0000000_0_"
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
-然后，大家一起吃局长赠送的冰淇淋
-领受。
+然后，大家一起享用了
+局长赠送给大家的冰淇淋。
 
 //: DrawChara( "Mukuro", 4, 1, 0, 0.5, 0.0, 5, "C" )
 : PlayVoice( "Voices/vo00_muk0481" )
@@ -197,7 +197,7 @@
 //: DrawChara( "Momo", 6, 1, 0, 0.5, 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0110" )
 \CN["桃"]
-“嗯————！果然是卤鸭啊。
+“嗯————！果然是哈根达克啊。
 　入口即化的感觉最棒了！”
 
 //: DrawChara( "Azami", 24, 1, 0, 0.5, 0.0, 3, "L" )
@@ -222,7 +222,7 @@
 //: DrawChara( "Bebi", 1, 0)
 : PlayVoice( "Voices/vo07_beb0028" )
 \CN["红美"]
-“所以，不要小矮子了！用红美来请客！”
+“所以，不要小矮子了！我叫红美！”
 
 //: DrawChara( "Leo", 0, 0)
 \CN["雷欧"]
@@ -263,12 +263,12 @@
 //: DrawChara( "Momo", 14, 0, 0, 0.5, 0.0, 4, "L" )
 : PlayVoice( "Voices/vo01_mom0111" )
 \CN["桃"]
-“嗯……Leo君，我觉得这到底是不可能的吧？”
+“嗯…雷欧君，我觉得这怎么都是不可能的吧？”
 
 //: DrawChara( "Leo", 2, 0)
 \CN["雷欧"]
 “哈？香草冰淇淋是这么吃的吧？
-　因为，{老家，我家}是这样的……」
+　因为，老家（我家）是这样的……」
 
 //: EraseChara( "Mukuro", 0.5 )
 //: DrawChara( "Gin", 16, 0, 0, 0.5, 0.0, 8, "R" )
@@ -307,11 +307,11 @@
 : PlayVoice( "Voices/vo00_muk0484" )
 \CN["无黑"]
 “你总是这样。
-　嘛，要是喜欢吃冰淇淋就好了……”
+　嘛，要是喜欢吃冰淇淋就是了……”
 
 //: DrawChara( "Leo", 14, 0)
 \CN["雷欧"]
-“就是这么回事！我太贪心了。”
+“就是这么回事！我太很贪心的啊。”
 
 //: DrawChara( "Leo", 16, 0)
 \CN["雷欧"]
@@ -322,7 +322,7 @@
 //: DrawChara( "Momo", 11, 0, 0, 0.5, 0.0, 4, "L" )
 : PlayVoice( "Voices/vo01_mom0112" )
 \CN["桃"]
-“喂，Leo君，真的很好吃吗？那个？”
+“喂，雷欧君，真的很好吃吗？那个？”
 
 //: DrawChara( "Leo", 11, 0)
 \CN["雷欧"]
@@ -415,7 +415,7 @@
 //: DrawChara( "Leo", 0, 0)
 \CN["雷欧"]
 “老师！
-　果然明白区别的男人不是这样的”
+　果然明白区别的男人是这样的”
 
 //: EraseChara( "Ryu", 0.5 )
 //: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 4, "L" )
@@ -423,13 +423,13 @@
 \CN["桃"]
 “确实和御手洗团子很接近……。
 　但是，那样的话，就想吃普通的团子吧。
-　好不容易来一只卤鸭……”
+　好不容易来一只哈根达克……”
 
 //: EraseChara( "Azami", 0.5 )
 //: DrawChara( "Mukuro", 9, 0, 0, 0.5, 0.0, 5, "R" )
 : PlayVoice( "Voices/vo00_muk0486" )
 \CN["无黑"]
-“咕嘟咕嘟……嗯，偶尔也不错，我呢。”
+“咕嘟咕嘟……嗯，我感觉，偶尔也不错。”
 
 //: EraseChara( "Leo", 0.5 )
 //: DrawChara( "Kinako", 1, 0, 0, 0.5, 0.0, 6, "C" )
@@ -438,7 +438,7 @@
 “我都喜欢。咕嘟咕嘟……”
 
 确实不错，但我不想每次都做。
-香草冰淇淋想吃香草冰淇淋。
+香草冰淇淋还是应该吃香草冰淇淋。
 
 //: EraseChara( "Momo", 0.5 )
 //: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 8, "L" )
@@ -453,7 +453,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 \CN["雷欧"]
-“啊，像你这样的孩子舌头是不知道的味道啊。”
+“啊，像你这样的孩子舌头所不知道的味道啊。”
 
 //: DrawChara( "Gin", 14, 0)
 \CN["银"]
