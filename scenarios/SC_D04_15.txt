@@ -10,7 +10,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3912" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，这么说来商人们还真是吵闹啊。”
 
 我不太了解那一带，所以不太清楚。
@@ -29,7 +29,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3913" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果是这样的话，幕府不是会动吗？”
 
 \CN["眼镜店"]
@@ -42,7 +42,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3914" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，工作来了什么样的工作呢？”
 
 \CN["眼镜店"]
@@ -51,7 +51,7 @@
 
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk3915" )
-\CN["无黑色"]
+\CN["无黑"]
 “确实是很简单的事情……。
 即使杀了他，镇上也会有办法吗？”
 
@@ -77,7 +77,7 @@
 *sc001_select_s1
 : DrawChara( "Mukuro", 2, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk3916" )
-\CN["无黑色"]
+\CN["无黑"]
 “那项工作可以做。”
 
 \CN["眼镜店"]
@@ -99,7 +99,7 @@
 
 : DrawChara( "Mukuro", 10, 0)
 : PlayVoice( "Voices/vo00_muk3917" )
-\CN["无黑色"]
+\CN["无黑"]
 “原来如此。是真的被占领了吗？”。
 好好注意”
 
@@ -163,7 +163,7 @@
 	: PlaySe( "SE/Se_Katana01" )
 	: DrawChara( "Mukuro", 24, 0, 5 )
 	: PlayVoice( "Voices/vo00_muk3918" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我有点事要找这个镇上的一个叫奥利弗的男人。
 我想让你通过这里？”
 
@@ -204,7 +204,7 @@
 	: PlaySe( "SE/Se_Katana01" )
 	: DrawChara( "Mukuro", 24, 0, 5 )
 	: PlayVoice( "Voices/vo00_muk3918" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我有点事要找这个镇上的一个叫奥利弗的男人。
 我想让你通过这里？”
 
@@ -272,7 +272,7 @@
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk3919" )
-\CN["无黑色"]
+\CN["无黑"]
 “这样啊。那差不多该沉默了吧。”
 
 //●演出：斬殺エフェクト
@@ -308,7 +308,7 @@
 : endif
 : DrawChara( "Mukuro", 28, 0)
 : PlayVoice( "Voices/vo00_muk3920" )
-\CN["无黑色"]
+\CN["无黑"]
 “好像刚才被看得很清楚。
 所有人都要杀了我”
 
@@ -316,7 +316,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 24, 0)
 	: PlayVoice( "Voices/vo00_muk3921" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我不太想做无益的杀生……”
 
 //●分岐終了地点へ
@@ -325,7 +325,7 @@
 	//●悪堕ちＬＶ３の場合
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk3922" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “呵呵。很有趣。我会把所有人都杀了。
 因为口入屋并没有说不要杀其他住人”
 
@@ -366,7 +366,7 @@
 
 	: DrawChara( "Mukuro", 29, 0)
 	: PlayVoice( "Voices/vo00_muk3923" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “是你先动手的吧？
 明明是彼此彼此……”
 
@@ -385,7 +385,7 @@
 
 	: DrawChara( "Mukuro", 28, 0)
 	: PlayVoice( "Voices/vo00_muk3924" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “不是为了只给你看才裸体的吗？”
 ”
 
@@ -457,7 +457,7 @@
 
 : DrawChara( "Mukuro", 25, 0)
 : PlayVoice( "Voices/vo00_muk3925" )
-\CN["无黑色"]
+\CN["无黑"]
 “不求你的命可以吗？”
 
 \CN["奥利弗"]
@@ -470,7 +470,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3926" )
-\CN["无黑色"]
+\CN["无黑"]
 “……是吗？但是，我只是做我应该做的事。”
 
 //●演出：斬殺エフェクト
@@ -486,7 +486,7 @@
 
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk3927" )
-\CN["无黑色"]
+\CN["无黑"]
 “趁着人还没增加就逃吧。
 刚才的战斗消耗了很多”
 
@@ -514,7 +514,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk3928" )
-\CN["无黑色"]
+\CN["无黑"]
 “说话真快啊。
 反正是让谁监视的吧”
 
@@ -523,7 +523,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3929" )
-\CN["无黑色"]
+\CN["无黑"]
 「呐，事到如今还真的杀了你真的好吗？
 以此为理由，外国会发动大和战争……”
 
@@ -541,7 +541,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk3930" )
-\CN["无黑色"]
+\CN["无黑"]
 “那也是，是啊。”
 
 刚才进店的一句话就明白了。

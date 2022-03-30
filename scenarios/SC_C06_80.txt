@@ -21,7 +21,7 @@
 : CharaCostume( "Mukuro", 0 )
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk3398" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么——”
 
 //●演出：無黒　ダークエルフ化
@@ -42,7 +42,7 @@
 : evfile = "eva_a002_1_0_0200000_1000000_0_"; Call("Scenarios/Common*EvChange");
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3399" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊啊啊啊啊啊啊！”
 
 //●演出：斬撃　エフェクト
@@ -61,7 +61,7 @@
 
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk3400" )
-\CN["无黑色"]
+\CN["无黑"]
 “不由得用力过猛了。
 如果不能更加控制的话”
 
@@ -69,7 +69,7 @@
 
 : DrawChara( "Mukuro", 21, 0)
 : PlayVoice( "Voices/vo00_muk3401" )
-\CN["无黑色"]
+\CN["无黑"]
 “力量分配错了的话就死吧
 姐姐也在威胁我……”
 
@@ -80,7 +80,7 @@
 
 : DrawChara( "Mukuro", 10, 0, 2)
 : PlayVoice( "Voices/vo00_muk3402" )
-\CN["无黑色"]
+\CN["无黑"]
 “下次好好保存力量……”
 
 //: DrawChara( "Mukuro", 16, 0)
@@ -89,7 +89,7 @@
 : evfile = "eva_a002_1_0_0200000_1000000_0_"; Call("Scenarios/Common*EvChange");
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3403" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流——{饿狼，饿狼}！”
 
 //●演出：斬撃　エフェクト
@@ -102,7 +102,7 @@
 : EraseAllImage( 9, 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3404" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流——{天冲，天冲}！”
 
 //●演出：斬撃　エフェクト
@@ -122,7 +122,7 @@
 : PlayBgm("BGM/01_CM001_inst")
 : DrawChara( "Mukuro", 30, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk3405" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈……哈……还需要锻炼啊。”
 
 这种程度就气喘吁吁的
@@ -133,7 +133,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3406" )
-\CN["无黑色"]
+\CN["无黑"]
 “总之，今天就在这里吧……”
 
 {黑夜叉，暗黑精灵}想要解开化。
@@ -154,7 +154,7 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 40, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk3407" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧？你为什么在这里？”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -170,7 +170,7 @@
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk3408" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，对了。”
 
 : DrawChara( "Leo", 6, 0)
@@ -179,7 +179,7 @@
 
 : DrawChara( "Mukuro", 11, 0)
 : PlayVoice( "Voices/vo00_muk3409" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么做……？嗯，变得自然了
 或者说……”
 
@@ -203,7 +203,7 @@
 //: EraseChara( "Leo", 0.5 )
 : DrawChara( "Mukuro", 6, 0, 2)
 : PlayVoice( "Voices/vo00_muk3410" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈？你是认真说那个的吗？”？
 {黑夜叉，暗黑妖精}的力量，你不可能不知道吧？」
 
@@ -223,7 +223,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 39, 0, 5)
 	: PlayVoice( "Voices/vo00_muk3411" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “嗯……但是……”
 
 如果弄错了力量的程度，可能会杀死雷欧。
@@ -234,7 +234,7 @@
 
 	: DrawChara( "Mukuro", 23, 0)
 	: PlayVoice( "Voices/vo00_muk3412" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “啊，没错。我不想杀你。”
 
 不要含糊其辞，说清楚比较好吧。
@@ -246,7 +246,7 @@
 
 	: DrawChara( "Mukuro", 36, 1, 2)
 	: PlayVoice( "Voices/vo00_muk3413" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “喜欢的女人，你还那样……”
 
 	: DrawChara( "Leo", 13, 0)
@@ -262,7 +262,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 17, 0, 2)
 	: PlayVoice( "Voices/vo00_muk3414" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （我也下定决心了吗？）
 
 //●分岐終了地点へ
@@ -271,7 +271,7 @@
 : else
 	: DrawChara( "Mukuro", 24, 0, 2)
 	: PlayVoice( "Voices/vo00_muk3415" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我倒没什么，不过我死也不知道。”
 
 	: DrawChara( "Leo", 0, 0, 0)
@@ -281,7 +281,7 @@
 
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk3416" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “喜欢的女人……。
 嗯，有干劲的话正好吗？”
 
@@ -292,7 +292,7 @@
 : endif
 : DrawChara( "Mukuro", 6, 0, 2)
 : PlayVoice( "Voices/vo00_muk3417" )
-\CN["无黑色"]
+\CN["无黑"]
 “最后再叮嘱一下。
 也许我会杀了你，真的好吗？”
 

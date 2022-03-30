@@ -42,17 +42,17 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom1480" )
-\CN["桃子"]
+\CN["桃"]
 “黄菜子，你这家伙太过分了。”
 
 : DrawChara( "Mukuro", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo00_muk4553" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，这半格雷就交给黄菜子吧。”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1481" )
-\CN["桃子"]
+\CN["桃"]
 「是啊。我们去消灭后面涌出了稻草的虫子
 要吗？”
 
@@ -189,7 +189,7 @@
 : DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4554" )
-\CN["无黑色"]
+\CN["无黑"]
 “那边好像结束了。”
 
 这边也差不多收拾好了。
@@ -213,7 +213,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1482" )
-\CN["桃子"]
+\CN["桃"]
 「那么，你们还做吗？」
 
 桃子手持魔术之弓，威吓剩下的卍的部下们。
@@ -234,12 +234,12 @@
 : DrawChara( "Mukuro", 23, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
 : DrawChara( "Momo", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom1483" )
-\CN["桃子"]
+\CN["桃"]
 “呼～。剩下的只是没有毅力啊。”
 
 : DrawChara( "Mukuro", 2, 1)
 : PlayVoice( "Voices/vo00_muk4555" )
-\CN["无黑色"]
+\CN["无黑"]
 “我们也赶紧回去吧。”
 
 //●演出：無黒たち　家から出て行く

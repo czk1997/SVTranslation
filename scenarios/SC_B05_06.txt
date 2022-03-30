@@ -29,7 +29,7 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1565" )
-\CN["无黑色"]
+\CN["无黑"]
 “你不是在幕府的什么地方吗？”
 
 : DrawChara( "Ji", 5, 0)
@@ -39,7 +39,7 @@
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0816" )
-\CN["桃子"]
+\CN["桃"]
 “如果一个人擅自外出的话，必须马上找出来。”
 
 : DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -53,7 +53,7 @@
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0354" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “现在的帝都反幕派的人越来越多了。
 小夜公主很有可能遭遇危险”
 
@@ -71,7 +71,7 @@
 : DrawChara( "Mukuro", 34, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1566" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊！雷欧……！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -95,11 +95,11 @@
 : DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0817" )
-\CN["桃子"]
+\CN["桃"]
 “我们也去，小银。”
 
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “了解”
 
 //●演出：桃＆銀　出て行く
@@ -113,13 +113,13 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1567" )
-\CN["无黑色"]
+\CN["无黑"]
 （如果，小夜独自一人离开幕府的话
 应该有相当大的理由）
 
 : DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0355" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “你不去吗？”
 
 当然想去寻找。也有焦躁的心情。
@@ -128,7 +128,7 @@
 
 : DrawChara( "Mukuro", 36, 0)
 : PlayVoice( "Voices/vo00_muk1568" )
-\CN["无黑色"]
+\CN["无黑"]
 “爷爷，小夜有什么事吗？”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
@@ -138,7 +138,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1569" )
-\CN["无黑色"]
+\CN["无黑"]
 “比如将军宣布禁止外出之类的……”
 
 : DrawChara( "Ji", 5, 0)
@@ -155,7 +155,7 @@
 
 : DrawChara( "Mukuro", 35, 0)
 : PlayVoice( "Voices/vo00_muk1570" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗……”
 
 不是因为幕府讨厌才逃出来的吗？
@@ -169,18 +169,18 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk1571" )
-\CN["无黑色"]
+\CN["无黑"]
 （不问问本人是不会知道的。）
 
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk1572" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，我也去找找小夜吧！”
 
 : EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0356" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，小夜公主来这里的话会马上通知你的。
 拜托你了」
 
@@ -269,7 +269,7 @@
 : PlayBgm("BGM/41_Sad")
 : DrawChara( "Mukuro", 17, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1573" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜，没事吧？”
 
 : DrawChara( "Sayo", 6, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -283,7 +283,7 @@
 
 : DrawChara( "Mukuro", 6, 0, 0 )
 : PlayVoice( "Voices/vo00_muk1574" )
-\CN["无黑色"]
+\CN["无黑"]
 “发生什么事了吗？你竟然故意一个人溜走
 差不多吧？”
 
@@ -295,7 +295,7 @@
 
 : DrawChara( "Mukuro", 38, 0)
 : PlayVoice( "Voices/vo00_muk1575" )
-\CN["无黑色"]
+\CN["无黑"]
 “会被将军杀死吗？”
 
 小夜的话让人怀疑自己的耳朵。
@@ -304,7 +304,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk1576" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜，请再详细一点告诉我。
 是啊，一次鬼灯……”
 
@@ -315,7 +315,7 @@
 
 : DrawChara( "Mukuro", 4, 0)
 : PlayVoice( "Voices/vo00_muk1577" )
-\CN["无黑色"]
+\CN["无黑"]
 「困惑啊，没什么。
 小夜对我们来说不只是幕府的公主”
 
@@ -329,7 +329,7 @@
 
 : DrawChara( "Mukuro", 1, 0, 3 )
 : PlayVoice( "Voices/vo00_muk1578" )
-\CN["无黑色"]
+\CN["无黑"]
 “总之，不是在这种地方，而是在安全的地方。”
 
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
@@ -394,7 +394,7 @@
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1579" )
-\CN["无黑色"]
+\CN["无黑"]
 “总之，请先去那边领取。
 因为有小夜的生命危险”
 
@@ -419,7 +419,7 @@
 : PlaySe( "SE/Se_Katana01" )
 : DrawChara( "Mukuro", 24, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1580" )
-\CN["无黑色"]
+\CN["无黑"]
 “我拒绝。小夜不给你。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -431,7 +431,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk1581" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道小夜不是说谎的女孩。
 我不能交给你”
 
@@ -463,7 +463,7 @@
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1582" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜，退下。没关系，我会保护你的。”
 
 : EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
@@ -476,12 +476,12 @@
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 0, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1583" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜确实是幕府的公主。”
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk1584" )
-\CN["无黑色"]
+\CN["无黑"]
 “但是，对我来说不只是这些。
 是很重要的朋友”
 
@@ -575,7 +575,7 @@
 : Call("Scenarios/Common*CutinFadeOut")
 : DrawChara( "Mukuro", 18, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1585" )
-\CN["无黑色"]
+\CN["无黑"]
 “哼……好卑鄙啊。”
 
 : DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -624,7 +624,7 @@
 : EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 42, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1586" )
-\CN["无黑色"]
+\CN["无黑"]
 “……我知道了。
 我会照你说的去做的，请不要伤害小夜”
 
@@ -696,7 +696,7 @@
 : DrawChara( "Mukuro", 31, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1587" )
-\CN["无黑色"]
+\CN["无黑"]
 “呃……在这种地方……”
 
 //●演出：無黒　倒れる

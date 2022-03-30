@@ -14,7 +14,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3739" )
-\CN["无黑色"]
+\CN["无黑"]
 “嘛，至少听说过名字。
 因为有很多赝品而出名的刀吧？”
 
@@ -25,7 +25,7 @@
 
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk3740" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯？既然知道得那么清楚，那就和那个人交涉吧
 不只是好吗？”
 
@@ -37,7 +37,7 @@
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk3741" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，要跟我说那件事，是要和我交涉吗
 是想强行夺走吗？”
 
@@ -52,7 +52,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3742" )
-\CN["无黑色"]
+\CN["无黑"]
 “总之，先和那个武士见个面谈谈吧。”
 
 \CN["眼镜店"]
@@ -87,12 +87,12 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3743" )
-\CN["无黑色"]
+\CN["无黑"]
 “我是来求你的。”
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3744" )
-\CN["无黑色"]
+\CN["无黑"]
 “直截了当地说。
 我想让你卖你的兼光”
 
@@ -108,7 +108,7 @@
 
 : DrawChara( "Mukuro", 25, 0)
 : PlayVoice( "Voices/vo00_muk3745" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗……”
 
 谈判果然以破裂告终。
@@ -119,7 +119,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3746" )
-\CN["无黑色"]
+\CN["无黑"]
 （不高明的诱惑也会适得其反。
 那么，怎么回事呢……？）
 
@@ -146,7 +146,7 @@
 : PlaySe( "SE/Se_Katana01" )
 : DrawChara( "Mukuro", 26, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk3747" )
-\CN["无黑色"]
+\CN["无黑"]
 “谈判破裂了啊。那只能这样了……”
 
 \CN["武士"]
@@ -156,7 +156,7 @@
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk3748" )
-\CN["无黑色"]
+\CN["无黑"]
 “你打算用重要的传家宝杀人吗？”
 
 \CN["武士"]
@@ -166,7 +166,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk3749" )
-\CN["无黑色"]
+\CN["无黑"]
 （刀身上散发出不祥的气场……要注意了。）
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -212,7 +212,7 @@
 *sc003
 : DrawChara( "Mukuro", 6, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk3750" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊啊啊啊啊！”
 
 //●演出：斬撃エフェクト
@@ -233,7 +233,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3751" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流——村云一闪！”
 
 //●演出：斬殺エフェクト
@@ -255,7 +255,7 @@
 : DrawChara( "Mukuro", 31, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3752" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈，哈……这把刀不是普通的刀啊。
 恐怕是妖刀之类的……”
 
@@ -263,7 +263,7 @@
 
 : DrawChara( "Mukuro", 30, 1)
 : PlayVoice( "Voices/vo00_muk3753" )
-\CN["无黑色"]
+\CN["无黑"]
 “我的工作是把这个交给入口店。”
 
 //●演出：無黒　兼光を拾って口入屋のところに戻る
@@ -287,7 +287,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3754" )
-\CN["无黑色"]
+\CN["无黑"]
 “但是，工作顺利完成了。看，是兼光。”
 
 \CN["眼镜店"]
@@ -296,7 +296,7 @@
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk3755" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊。武士的样子很奇怪
 也许持有者有什么诅咒呢」
 
@@ -310,7 +310,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk3756" )
-\CN["无黑色"]
+\CN["无黑"]
 “得救了。剩下的就交给你了。”
 
 : HideWnd()
@@ -353,7 +353,7 @@
 
 : DrawChara( "Mukuro", 25, 0)
 : PlayVoice( "Voices/vo00_muk3757" )
-\CN["无黑色"]
+\CN["无黑"]
 “知道了。打扰你了。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -381,7 +381,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk3758" )
-\CN["无黑色"]
+\CN["无黑"]
 “对不起，我不适合这样的。”
 
 \CN["眼镜店"]
@@ -389,7 +389,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3759" )
-\CN["无黑色"]
+\CN["无黑"]
 “不，完全没有那样的。
 倒不如说让我吃醋比较好”
 

@@ -86,7 +86,7 @@
 : PlayVoice( "Voices/vo12_shi0046" )
 \CN["紫苑"]
 “严酱这么坚强……嗯，我很成熟
-嗯，嗯，嗯，嗯，中，珠理奈♥</color>」
+嗯，嗯，嗯，嗯，中，珠理奈<color=#f59aa0>♥</color>」
 
 \CN["严严"]
 “啊啊啊……妈妈，好舒服啊……”
@@ -129,21 +129,21 @@
 
 : DrawChara( "Azami", 0, 0)
 : PlayVoice( "Voices/vo05_aza0271" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “嘛，这里的驿站町对幕府来说是重要的据点之一。
 就算居民都被杀了也不能轻易放弃
 ”
 
 : DrawChara( "Azami", 8, 0)
 : PlayVoice( "Voices/vo05_aza0272" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “也就是说，对方是九星中的两个人。
 虽然会是很辛苦的战斗，但还是拜托你了”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1032" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的！这样的外路，我不能原谅！”
 
 \CN["鬼灯队士・男B"]
@@ -152,7 +152,7 @@
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo05_aza0273" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “嗯，有各种各样的事。请体谅我……。
 因为对方是白夜干部。是我们出场的时候”
 
@@ -230,7 +230,7 @@
 
 : DrawChara( "Mukuro", 15, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1033" )
-\CN["无黑色"]
+\CN["无黑"]
 “多么残忍的事啊……。
 真的是别人做的吗……？”
 
@@ -333,7 +333,7 @@
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1034" )
-\CN["无黑色"]
+\CN["无黑"]
 “……呜！”
 
 这家伙，出奇的强大——
@@ -341,7 +341,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk1035" )
-\CN["无黑色"]
+\CN["无黑"]
 “我有件事要为我做！
 不能在这种地方退缩！”
 
@@ -402,7 +402,7 @@ yu、不原谅……这个女人，杀了她……”
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 40, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1036" )
-\CN["无黑色"]
+\CN["无黑"]
 “什么，什么……这种气氛……？”
 
 : PlayBgm("BGM/11_CM011")
@@ -473,7 +473,7 @@ yu、不原谅……这个女人，杀了她……”
 
 : DrawChara( "Mukuro", 40, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1037" )
-\CN["无黑色"]
+\CN["无黑"]
 “……呃”
 
 以我现在的实力是不可能生存下来的。

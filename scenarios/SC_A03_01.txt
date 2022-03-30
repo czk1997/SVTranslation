@@ -43,7 +43,7 @@
 : chara = "Azami"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo05_aza0103" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我听龙说，原来如此，今年的那些家伙确实是
 看起来很有趣”
 
@@ -65,7 +65,7 @@
 : AutoFaceThumbnail( true )
 : DrawChara( "Azami", 10, 0)
 : PlayVoice( "Voices/vo05_aza0104" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我并不讨厌狂妄自大的家伙，但我是Leo Gold Stein。
 只是，不允许把年轻的少女当做大妈来对待”
 
@@ -77,12 +77,12 @@
 //: EraseChara( "Leo", 0.5 )
 //: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0134" )
-\CN["桃子"]
+\CN["桃"]
 “喂，小银，刚才看到了吗？
 说不定比小银还要厉害……？”
 
 //: DrawChara( "Gin", 2, 0, 0, 0.5, 0.0, 2, "L" )
-\CN["银子"]
+\CN["银"]
 “小姐，那真是太好了。
 确实不是普通人……”
 
@@ -91,7 +91,7 @@
 //: EraseChara( "Gin", 0.5 )
 //: DrawChara( "Mukuro", 17, 0, 0, 0.5, 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo00_muk0518" )
-\CN["无黑色"]
+\CN["无黑"]
 （刚才的动作是……？）
 
 一瞬间，他进入了那个男孩的怀里，敲着拳头。
@@ -101,13 +101,13 @@
 : AutoFaceThumbnail( true )
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0105" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （呼，一瞬间扭转身体避开了向要害的一击吗……）
 
 //●演技：心の声です
 : DrawChara( "Azami", 5, 0)
 : PlayVoice( "Voices/vo05_aza0106" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （如果不是本能能做到这一点的人，马上就会死
 因为会这样。确实今年的那些家伙们好像可以期待了）
 
@@ -140,7 +140,7 @@
 : AutoFaceThumbnail( true )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0107" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “师傅？龙，明明还没给那家伙练习过
 已经叫我师傅了吗？”
 
@@ -163,13 +163,13 @@
 : AutoFaceThumbnail( true )
 : DrawChara( "Azami", 3, 0)
 : PlayVoice( "Voices/vo05_aza0108" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 「这样啊。不管怎么说，有目的是
 不是坏事”
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0109" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “只是，别把意思搞错了，小僧。”
 
 : AutoFaceThumbnail( false )
@@ -193,27 +193,27 @@
 : AutoFaceThumbnail( true )
 : DrawChara( "Azami", 24, 0)
 : PlayVoice( "Voices/vo05_aza0110" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哈哈哈，是在鬼灯里的人吗？嘛，不是弄错了吧。”
 
 : AutoFaceThumbnail( false )
 //: EraseChara( "Leo", 0.5 )
 //: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0135" )
-\CN["桃子"]
+\CN["桃"]
 “嗯……好像在哪里见过呢……嗯……”
 
 : AutoFaceThumbnail( true )
 : DrawChara( "Azami", 4, 0)
 : PlayVoice( "Voices/vo05_aza0111" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “这样啊，听说好像是茶花女的人合格了
 难道是你吗？”
 
 : AutoFaceThumbnail( false )
 //: DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0136" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。公主椿桃，请多关照。
 嘛，我是从姬椿家出来的，所以就算是大小姐也没什么”
 
@@ -222,7 +222,7 @@
 //: EraseChara( "Momo", 0.5 )
 //: DrawChara( "Mukuro", 0, 0, 0, 0.5, 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0112" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “喂！然后，呵呵……神八代无黑，你也好好地
 好像合格了呢。嗯，”
 
@@ -235,7 +235,7 @@
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0113" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那么，差不多该开始了吧。”
 
 : AutoFaceThumbnail( false )
@@ -277,7 +277,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0519" )
-\CN["无黑色"]
+\CN["无黑"]
 （并不是说只是在山上度过就可以了
 虽然我是这么想的……）
 
@@ -290,11 +290,11 @@
 //: EraseChara( "Leo", 0.5 )
 //: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 5, "LC" )
 : PlayVoice( "Voices/vo01_mom0137" )
-\CN["桃子"]
+\CN["桃"]
 “没有洗澡的话有点……”
 
 //: DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 4, "L" )
-\CN["银子"]
+\CN["银"]
 “小姐，我没说奢侈。”
 
 //: EraseChara( "Momo", 0.5 )
@@ -302,7 +302,7 @@
 //: EraseChara( "Ryu", 0.5 )
 //: DrawChara( "Azami", 7, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo05_aza0114" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那我一周后再来。
 好好活下去吧”
 
@@ -315,22 +315,22 @@
 //: EraseChara( "Ryu", 0.5 )
 //: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0138" )
-\CN["桃子"]
+\CN["桃"]
 “从现在开始的一周里，这4个人不在这里度过的话
 不可以啊」
 
 //: DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0139" )
-\CN["桃子"]
+\CN["桃"]
 “那就先自我介绍一下吧。”
 
 //: DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0140" )
-\CN["桃子"]
+\CN["桃"]
 “我是公主椿桃。我很擅长魔术。”
 
 //: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “……是风真银。”
 
 //: EraseChara( "Momo", 0.5 )
@@ -339,7 +339,7 @@
 “喂喂，就这些吗！难道不是更这样吗？”
 
 //: DrawChara( "Gin", 9, 0)
-\CN["银子"]
+\CN["银"]
 “啊？”
 
 //: DrawChara( "Leo", 3, 0)
@@ -349,7 +349,7 @@
 //: EraseChara( "Gin", 0.5 )
 //: DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom0141" )
-\CN["桃子"]
+\CN["桃"]
 “嗯？桃子就可以了。”
 
 //: DrawChara( "Leo", 13, 1)
@@ -363,19 +363,19 @@
 
 //: EraseChara( "Momo", 0.5 )
 //: DrawChara( "Gin", 0, 0, 0, 0.5, 0.0, 2, "L" )
-\CN["银子"]
+\CN["银"]
 “……无聊”
 
 //: DrawChara( "Momo", 5, 1, 0, 0.5, 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom0142" )
-\CN["桃子"]
+\CN["桃"]
 “那么，怎么样呢？呵呵，就任凭你想象了。”
 
 //: EraseChara( "Momo", 0.5 )
 //: EraseChara( "Gin", 0.5 )
 //: DrawChara( "Mukuro", 11, 0, 0, 0.5, 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo00_muk0520" )
-\CN["无黑色"]
+\CN["无黑"]
 “对初次见面的人不觉得失礼吗？”
 
 //: DrawChara( "Leo", 4, 0)
@@ -389,7 +389,7 @@
 
 //: DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk0521" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么了？我的脸上沾了什么？”
 
 //: DrawChara( "Leo", 1, 0)
@@ -398,12 +398,12 @@
 
 //: DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk0522" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，对不起。介绍晚了。”
 
 //: DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk0523" )
-\CN["无黑色"]
+\CN["无黑"]
 “我的名字是神八代无黑。擅长剑术。
 以后请多关照”
 
@@ -415,7 +415,7 @@
 //●演技：ニュアンス的には「ホントに？」的な呆れた感じです
 //: DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk0524" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗？”
 
 我父母的命名能力在村子里也很独特
@@ -426,14 +426,14 @@
 //●演出：桃と銀　２人でコソコソ話する感じ
 //＠台詞フォント小さく
 //: DrawChara( "Gin", 2, 0, 0, 0.5, 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 <size=70%>“小姐。那个……”
 
 //＠台詞フォント小さく
 //●演技：銀と内緒話しています
 //: DrawChara( "Momo", 6, 1, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0143" )
-\CN["桃子"]
+\CN["桃"]
 <size=70%>“那个男孩，绝对是爱上神八代了吧？
 也许第一次看到一见钟情的瞬间……”
 
@@ -483,7 +483,7 @@
 
 : DrawChara( "Mukuro", 0, 0, 3, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0525" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗？已经3年了啊……”
 
 这3年间发生了很多事情。真的发生了很多事情。
@@ -491,7 +491,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 39, 0)
 : PlayVoice( "Voices/vo00_muk0526" )
-\CN["无黑色"]
+\CN["无黑"]
 （我夺走了爸爸妈妈姐姐的白夜，用我自己的手
 给你毁掉吗……）
 
@@ -509,7 +509,7 @@
 : DrawChara( "Bebi", 0, 0, 0, 0.5, 0.0, 5, "LC" )
 : DrawChara( "Mukuro", 1, 0, 3, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0527" )
-\CN["无黑色"]
+\CN["无黑"]
 “黄菜子，里面是什么感觉？”
 
 : DrawChara( "Kinako", 2, 0)
@@ -542,19 +542,19 @@
 
 : DrawChara( "Mukuro", 11, 0)
 : PlayVoice( "Voices/vo00_muk0528" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧，你可不能大意。你的小指，我会折的。”
 
 : EraseChara( "Kinako", 0.5 )
 : EraseChara( "Bebi", 0.5 )
 : DrawChara( "Gin", 0, 0, 0, 0.5, 0.0, 4, "L" )
-\CN["银子"]
+\CN["银"]
 “真是的，没有紧张感啊。”
 
 //●読み：夫婦漫才（めおとまんざい）
 : DrawChara( "Momo", 2, 0, 0, 0.5, 0.0, 5, "LC" )
 : PlayVoice( "Voices/vo01_mom0144" )
-\CN["桃子"]
+\CN["桃"]
 “但是，在战斗前果然还是要说无黑和雷欧的夫妇相声
 不看的话就收不住啊」
 
@@ -566,13 +566,13 @@
 
 : DrawChara( "Mukuro", 6, 1)
 : PlayVoice( "Voices/vo00_muk0529" )
-\CN["无黑色"]
+\CN["无黑"]
 “肯定是言过其实。
 别开玩笑了，我去帮你改吧」
 
 : DrawChara( "Momo", 11, 0)
 : PlayVoice( "Voices/vo01_mom0145" )
-\CN["桃子"]
+\CN["桃"]
 “熬夜是美容的大敌
 虽然很想一下子就结束……”
 
@@ -592,7 +592,7 @@
 
 : DrawChara( "Mukuro", 17, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0530" )
-\CN["无黑色"]
+\CN["无黑"]
 “嘛，即便如此对方还是白夜。麻痹大意是大敌。”
 
 : DrawChara( "Leo", 18, 0)
@@ -606,7 +606,7 @@
 : EraseChara( "Bebi", 0.5 )
 : DrawChara( "Momo", 9, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0146" )
-\CN["桃子"]
+\CN["桃"]
 “那么，开始吗？小银，准备好了吗？”
 
 包括我在内，所有人的表情都变成了武士的脸。
@@ -617,7 +617,7 @@
 //●演技：水都＝地名、古河又八＝人名です
 : DrawChara( "Mukuro", 16, 0, 2, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk0531" )
-\CN["无黑色"]
+\CN["无黑"]
 “{水都，みと}贵族、{古河又八，这又是……”
 御用！老实点！”
 

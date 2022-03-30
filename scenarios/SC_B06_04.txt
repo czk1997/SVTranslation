@@ -36,7 +36,7 @@
 : ResetLayer(3)
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0963" )
-\CN["桃子"]
+\CN["桃"]
 “哈，哈……我可不能在这种地方耽搁啊！”
 
 //●演出：桃　魔術演出
@@ -55,7 +55,7 @@
 : DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom0964" )
-\CN["桃子"]
+\CN["桃"]
 “那也不是你吗？”
 
 : DrawChara( "Mikage", 7, 0, 0 )
@@ -75,7 +75,7 @@
 //: DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 4, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0965" )
-\CN["桃子"]
+\CN["桃"]
 （这样下去的话，真是太麻烦了……）
 
 魔力消失会直接导致死亡。
@@ -87,7 +87,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0966" )
-\CN["桃子"]
+\CN["桃"]
 （只能用那个……）
 
 老师教给我的王牌。
@@ -95,7 +95,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0967" )
-\CN["桃子"]
+\CN["桃"]
 （现在的我，不注入全部魔力就不能发动的魔术）
 
 所以，如果摘掉的话，那个时候我一定会死的
@@ -112,7 +112,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0968" )
-\CN["桃子"]
+\CN["桃"]
 “嗯……嗯……嗯”
 
 吃了一口从怀里取出的秘药
@@ -133,7 +133,7 @@
 : fadein_cha = "Momo"; fadeout_cha = "Mikage"; face = 2; hoho = 0; pose = 0;
 : Call( "Scenarios/Common*FgFocus" )
 : PlayVoice( "Voices/vo01_mom0969" )
-\CN["桃子"]
+\CN["桃"]
 “我只是从老师那里得到的。我不知道是在哪里得到的。”
 
 去这里之前事先拿到的东西。
@@ -173,7 +173,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom3141" )
-\CN["桃子"]
+\CN["桃"]
 “——能看透万物的伟大精灵王啊。
 地上的火焰，焰，深海的冰室，ひろ}，天上的{焦雷，未来}
 {现世，郁闷}让你有终焉之意！」
@@ -285,7 +285,7 @@
 : ShowWnd()
 //: DrawChara( "Momo", 11, 0, 0, 0.5, 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0970" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。嗯，确实我没有小银。”
 也许什么都做不了……”
 
@@ -296,7 +296,7 @@
 
 //: DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0971" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。如果要借同伴的话——”
 
 //: DrawChara( "Momo", 2, 0)
@@ -306,7 +306,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0972" )
-\CN["桃子"]
+\CN["桃"]
 “这里我一个人就够了！”
 
 : HideWnd()
@@ -396,7 +396,7 @@
 : ShowWnd()
 //: DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0973" )
-\CN["桃子"]
+\CN["桃"]
 “‘终焉，卡塔特罗菲’！！”
 
 //: EraseChara( "Momo", 0.5 )
@@ -1737,7 +1737,7 @@
 : ShowWnd()
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
 : PlayVoice( "Voices/vo05_aza0444" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哎，真不愧是头脑啊。
 你知道兰丸会到吗？”
 
@@ -1989,7 +1989,7 @@
 
 : DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
 : PlayVoice( "Voices/vo05_aza0445" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “兰丸也终于变成了{黑夜叉，暗黑妖精}了……。
 哎呀，大概比我强吧”
 
@@ -1999,13 +1999,13 @@
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0446" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “是啊。看起来完全是势均力敌。
 不管哪一方幸存下来都不奇怪”
 
 : DrawChara( "Azami", 8, 0)
 : PlayVoice( "Voices/vo05_aza0447" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “唯一的区别就是技能的威力是雷欧
 丰富多彩的话应该就是兰丸吧”
 
@@ -2154,7 +2154,7 @@
 
 : DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
 : PlayVoice( "Voices/vo05_aza0448" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “是吧。
 两个都没有拖延胜负的打算吧”
 
@@ -2164,7 +2164,7 @@
 
 : DrawChara( "Azami", 4, 0)
 : PlayVoice( "Voices/vo05_aza0449" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “头、手在抽搐呢？喝多了吗？”
 
 : DrawChara( "Daruma", 11, 0)
@@ -2178,7 +2178,7 @@
 
 : DrawChara( "Azami", 26, 0)
 : PlayVoice( "Voices/vo05_aza0450" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “嗯，就是这么回事吧？
 男人到了什么时候都不会变啊」
 
@@ -2370,7 +2370,7 @@
 : ResetLayer(3)
 : DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo05_aza0451" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，也就是说雷欧战斗的本质是二刀流。
 是这样吗……”
 
@@ -2432,7 +2432,7 @@
 //: DrawChara( "Azami", 17, 0, 0, 0.5, 0.0, 2, "C" )
 : DrawFaceThumbnail( "Azami", 17, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0452" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （喂喂，据说那是八重樱流的奥义中的奥义
 不是『{月虹，月虹}』吗……。为什么那家伙？）
 
@@ -3676,13 +3676,13 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : ShowWnd()
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo05_aza0035" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 《圣诞老人，红美。
 本来想抽烟的，可是火都烧光了，忘了……”
 
 : DrawChara( "Azami", 4, 0)
 : PlayVoice( "Voices/vo05_aza0036" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我觉得红美的这个刚刚好。”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
@@ -4141,7 +4141,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0759" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那倒是，在常识范围内。
 我小时候听说过大和{出现，然后}的传闻
 
@@ -4560,7 +4560,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : DrawChara( "Mukuro", 30, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2112" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈、哈、哈……！”
 
 明明是自己的身体却不能自己控制。
@@ -4591,7 +4591,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 //: EraseChara( "Mei", 0.5 )
 //: DrawChara( "Mukuro", 31, 0, 2, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2113" )
-\CN["无黑色"]
+\CN["无黑"]
 “哇！”
 
 //●演出：斬撃　エフェクト
@@ -4623,14 +4623,14 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : DrawChara( "Mukuro", 5, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2114" )
-\CN["无黑色"]
+\CN["无黑"]
 “唔……！”
 
 姐姐的剑戟越来越尖锐。
 
 : DrawChara( "Mukuro", 31, 0)
 : PlayVoice( "Voices/vo00_muk2115" )
-\CN["无黑色"]
+\CN["无黑"]
 “……呃，呃……嗯…嗯……”
 
 伤口不断增加。
@@ -4638,7 +4638,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Mukuro", 30, 0)
 : PlayVoice( "Voices/vo00_muk2116" )
-\CN["无黑色"]
+\CN["无黑"]
 “噗——……！噗——……噗——……！”
 
 我没有时间考虑什么了。
@@ -4653,7 +4653,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2117" )
-\CN["无黑色"]
+\CN["无黑"]
 “——八重樱流・{村云一闪，不声不响}！！”
 
 //●演出：斬撃　エフェクト
@@ -4672,7 +4672,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 //: DrawChara( "Mukuro", 16, 0, 5, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2118" )
-\CN["无黑色"]
+\CN["无黑"]
 “——八重樱流・{千鸟岚月，七彩月}！！”
 
 //●演出：斬撃　エフェクト
@@ -4703,7 +4703,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 9, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2119" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊啊啊啊啊啊啊！”
 
 //●演出：刀合わせ
@@ -4745,7 +4745,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 //●演技：呼吸を整えています
 : DrawChara( "Mukuro", 24, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2120" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈……哈……呜……呵呵……好…”
 
 感觉自己的身体渐渐适应了输出。
@@ -4759,7 +4759,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2121" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流・清流！！”
 
 //●演出：斬撃エフェクト
@@ -4776,7 +4776,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 24, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2122" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊啊啊啊……！八重樱流・水月！！”
 
 //●演出：斬撃エフェクト
@@ -4811,7 +4811,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : fadein_cha = "Mukuro"; fadeout_cha = "Mei"; face = 16; hoho = 0; pose = 2;
 : Call( "Scenarios/Common*FgFocus" )
 : PlayVoice( "Voices/vo00_muk2123" )
-\CN["无黑色"]
+\CN["无黑"]
 “哦哦哦哦哦哦哦哦哦哦！”
 
 : fadein_cha = "Mei"; fadeout_cha = "Mukuro"; face = 3; hoho = 0; pose = 0;
@@ -4852,7 +4852,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk2124" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐，我绝对不会输的！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -4884,7 +4884,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2125" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊啊啊！”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -4920,7 +4920,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : DrawChara( "Mukuro", 17, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2127" )
-\CN["无黑色"]
+\CN["无黑"]
 （总觉得能理解姐姐的动作……。
 因为他是一直追在我背后的人！）
 
@@ -4934,7 +4934,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 //: EraseChara( "Mukuro", 0.5 )
 : DrawChara( "Mukuro", 34, 0, 2 )
 : PlayVoice( "Voices/vo00_muk2128" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐不知在哪里迷了路……。
 这样交手的话就明白了”
 
@@ -4956,7 +4956,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk2129" )
-\CN["无黑色"]
+\CN["无黑"]
 “就这样截断！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -4981,7 +4981,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : fadein_cha = "Mukuro"; fadeout_cha = "None"; face = 17; hoho = 0; pose = 2;
 : Call( "Scenarios/Common*FgFocus" )
 : PlayVoice( "Voices/vo00_muk2130" )
-\CN["无黑色"]
+\CN["无黑"]
 “绝对不会输的……！”
 
 //●演技：心の声です
@@ -5040,7 +5040,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2131" )
-\CN["无黑色"]
+\CN["无黑"]
 （虽然至今为止一次也没有成功过……。
 但是，我觉得现在可以做到。）
 
@@ -5051,7 +5051,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 //: DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk2132" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流奥义——”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -5062,7 +5062,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2133" )
-\CN["无黑色"]
+\CN["无黑"]
 “{八咫乌，やたか}！！”
 
 : HideWnd()
@@ -5107,7 +5107,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : DrawChara( "Mukuro", 30, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2134" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈……哈…哈……哈……哈……”
 
 : DrawChara( "Mei", 14, 0, 0 )
@@ -5132,7 +5132,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : chara = "Mukuro"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo00_muk2135" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐……”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -5175,7 +5175,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : PlayBgm("BGM/02_CM002")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0974" )
-\CN["桃子"]
+\CN["桃"]
 “……真的是很极限呢……已经累死了……”
 
 看着倒下而动弹不得的织笠御影，我这样想着。
@@ -5184,7 +5184,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0975" )
-\CN["桃子"]
+\CN["桃"]
 “但是，我不能在这里悠闲地呆着呢。”
 
 必须前进……！
@@ -5192,7 +5192,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0976" )
-\CN["桃子"]
+\CN["桃"]
 “怎么说呢……啊……”
 
 //●演出：甲太郎　登場する
@@ -5219,7 +5219,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Kotaro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo01_mom0977" )
-\CN["桃子"]
+\CN["桃"]
 「我一直以为一定是和主人一起被处刑的
 虽然我是这么想的……”
 
@@ -5234,7 +5234,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom0978" )
-\CN["桃子"]
+\CN["桃"]
 “不好意思，对方现在没来这里。
 可以再等我一次吗？”
 
@@ -5244,7 +5244,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0979" )
-\CN["桃子"]
+\CN["桃"]
 “是啊，再等100年左右的话
 我个人倒是很开心……”
 
@@ -5254,7 +5254,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0980" )
-\CN["桃子"]
+\CN["桃"]
 “是的。那就不放弃了。”
 
 这样的话，是的，如果放弃了去哪里的话
@@ -5279,7 +5279,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0981" )
-\CN["桃子"]
+\CN["桃"]
 （在魔力用尽的现在，果然这个人是对手
 太严厉了……）
 
@@ -5315,7 +5315,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 “来了吗……”
 
 : DrawChara( "Gin", 6, 0, 0 )
-\CN["银子"]
+\CN["银"]
 “小姐，请退下。
 等一下，这家伙，我要杀了你”
 
@@ -5325,50 +5325,50 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 //: EraseChara( "Kotaro", 0.5 )
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0982" )
-\CN["桃子"]
+\CN["桃"]
 “……等一下。”
 
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
-\CN["银子"]
+\CN["银"]
 “嗯？”
 
 : DrawChara( "Momo", 13, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0983" )
-\CN["桃子"]
+\CN["桃"]
 “不是吗？不是啦！
 你在干什么！？你在想什么？”
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0984" )
-\CN["桃子"]
+\CN["桃"]
 “呐，为什么不能老老实实地睡呢！？
 伤口还没有痊愈呢？你知道吗！？”
 
 一口气喋喋不休。
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “听说没关系。
 而且，那样睡的话身体会变迟钝的”
 
 //●読み：鈍っちまいます（にぶっちまいます）
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0985" )
-\CN["桃子"]
+\CN["桃"]
 “太迟钝了……不是的！”
 
 //: EraseChara( "Gin", 0.5 )
 //: EraseChara( "Momo", 0.5 )
 : DrawChara( "Momo", 12, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0986" )
-\CN["桃子"]
+\CN["桃"]
 “小银，你知道我受了多少重伤吗？
 我……有多担心啊……”
 
 //: EraseChara( "Momo", 0.5 )
 : DrawChara( "Gin", 2, 0, 0 )
-\CN["银子"]
+\CN["银"]
 “……小姐”
 
 : PlaySe( "SE/Se_Cloth01" )
@@ -5382,7 +5382,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 “现在开始就要互相残杀了，还很从容吧？”
 
 : DrawChara( "Gin", 0, 0)
-\CN["银子"]
+\CN["银"]
 “没有什么可以互相残杀的。”
 
 : DrawChara( "Kotaro", 0, 0)
@@ -5393,38 +5393,38 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “小姐……请离开我。”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0987" )
-\CN["桃子"]
+\CN["桃"]
 “但是……”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “没关系。
 而且我不能让喜欢的女人看到我难看的样子”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 14, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0988" )
-\CN["桃子"]
+\CN["桃"]
 “呃，喜欢的{女，人}就是在这种时候
 你说了吗！？”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 0, 2, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0989" )
-\CN["桃子"]
+\CN["桃"]
 “还有，这样的事
 虽然希望两个人独处的时候好好说出来……”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “那、那是……好的，我会妥善处理的……”
 
 //: EraseChara( "Gin", 0.5 )
@@ -5445,7 +5445,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : lay = 3; type = "WL";
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “让你久等了。”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -5458,7 +5458,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 //: EraseChara( "Kotaro", 0.5 )
 : DrawChara( "Kotaro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “这是什么？用了很夸张的东西。”
 
 //: DrawChara( "Kotaro", 2, 0, 0 )
@@ -5494,7 +5494,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 「……！」
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -5513,16 +5513,16 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0990" )
-\CN["桃子"]
+\CN["桃"]
 “那个感觉……难道，{黑夜叉，暗黑精灵}……！？”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “感觉和那个大叔又不一样……”
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “但是，那种事怎么样都无所谓。
 这家伙肯定是个荒唐的家伙……”
 
@@ -5566,7 +5566,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : ResetLayer(3)
 : DrawChara( "Gin", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “你、{黑夜叉，暗黑妖精}已经习惯了吧？”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -5581,7 +5581,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 我没关系”
 
 : DrawChara( "Gin", 7, 0)
-\CN["银子"]
+\CN["银"]
 “不，我不在乎寿司。”
 
 : DrawChara( "Kotaro", 3, 0)
@@ -5592,14 +5592,14 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “呼，那家伙的话和戴在身上真是太让人生气了……”
 
 : StopBgm( 1.0 )
 : DrawChara( "Gin", 10, 0)
 : chara = "Gin"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
-\CN["银子"]
+\CN["银"]
 “你这家伙，我一个人就够了！”
 
 //●演出：銀ＶＳ甲太郎　アクションシーン
@@ -5620,7 +5620,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : PlaySe("SE/Se_Foot01")
 : lay = 2; type = "DR";
 : Call( "Scenarios/Common*FgEff")
-\CN["银子"]
+\CN["银"]
 “哇！”
 
 //●演出：乱打　エフェクト
@@ -5634,7 +5634,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 甲太郎的右拳和银的左拳互相碰撞。
 
 : DrawChara( "Gin", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “啊啊啊啊啊啊啊！”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -5648,7 +5648,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “比起以前，之前，变得更快更重了。”
 
 : DrawChara( "Kotaro", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -5661,7 +5661,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 你到底是什么样的身体啊？”
 
 : DrawChara( "Gin", 11, 0)
-\CN["银子"]
+\CN["银"]
 “是吗？锻炼方法不是不一样吗？”
 
 : DrawChara( "Kotaro", 14, 0)
@@ -5680,7 +5680,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 6, 6 )
 : Wait()
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “噗……！”
 
 : HideWnd()
@@ -5689,7 +5689,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 //: DrawChara( "Gin", 10, 0)
-\CN["银子"]
+\CN["银"]
 “啊啊啊啊啊！”
 
 //●演出：殴打　エフェクト
@@ -5719,7 +5719,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0991" )
-\CN["桃子"]
+\CN["桃"]
 “……小银”
 
 只能守护的桃子。
@@ -5739,7 +5739,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 “呼——……，加油！”
 
 : DrawChara( "Gin", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “——疾风！！”
 
 : HideWnd()
@@ -5750,7 +5750,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 技术伙伴互相碰撞。
 
 : DrawChara( "Gin", 6, 0)
-\CN["银子"]
+\CN["银"]
 “我想问一下，你跟谁学的？”
 
 : DrawChara( "Kotaro", 3, 0)
@@ -5759,7 +5759,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 你好像跟谁学过啊」
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “我不记得学过。
 一个劲地吃，身体擅自记住了”
 
@@ -5775,7 +5775,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0453" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，那个精灵是之前被处刑的桃之原未婚妻那里的
 是随从者吧？”
 
@@ -5786,7 +5786,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Azami", 2, 0)
 : PlayVoice( "Voices/vo05_aza0454" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “反正是比拉加做了什么。”
 
 : DrawChara( "Daruma", 5, 0)
@@ -5801,13 +5801,13 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : DrawChara( "Azami", 4, 0)
 : PlayVoice( "Voices/vo05_aza0455" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 「怎么说呢，银将{黑夜叉，暗黑精灵}化后的龙逼到绝境
 因为是男人嘛。也许已经比我更坚强了”
 
 : DrawChara( "Azami", 25, 0)
 : PlayVoice( "Voices/vo05_aza0456" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “得到保护{存在，东西}的人比谁都强。”
 
 : DrawChara( "Daruma", 11, 0)
@@ -5824,7 +5824,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Wait()
 : ShowWnd()
 : DrawChara( "Gin", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “啊啊啊啊啊啊啊啊！”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -5840,12 +5840,12 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “你是第一次说的吧？
 有些家伙不想让人看到他难看的样子”
 
 : DrawChara( "Gin", 9, 0)
-\CN["银子"]
+\CN["银"]
 “因为有人在我死后会伤心。
 所以，绝对不能死”
 
@@ -5865,12 +5865,12 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 也就是说……”
 
 : DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “你应该猜中了很多要害吧。
 有多顽强啊」
 
 : DrawChara( "Gin", 11, 0)
-\CN["银子"]
+\CN["银"]
 （黑夜叉，暗黑妖精）大家都是这样吗？
 如果坚强的话，和龙之大叔是很好的比赛。）
 
@@ -5890,7 +5890,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 你也知道吧？这种充实的感觉”
 
 : DrawChara( "Gin", 3, 0)
-\CN["银子"]
+\CN["银"]
 “我不想知道，这个战斗狂……！”
 
 银一边说着那样的话一边笑着。
@@ -5900,7 +5900,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 “从这里开始，我不打算退出。是互相殴打。”
 
 : DrawChara( "Gin", 4, 0)
-\CN["银子"]
+\CN["银"]
 “哼，我只是单方面地把你变成傻瓜而已。”
 
 //●演出：殴り合いエフェクト
@@ -5921,7 +5921,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “是吗？”
 
 //●演出：場面転換トランジション
@@ -5934,7 +5934,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0992" )
-\CN["桃子"]
+\CN["桃"]
 「…………」
 
 桃子拼命忍耐着想要飞奔出去的心情。
@@ -5955,11 +5955,11 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Wait()
 : ShowWnd()
 //: DrawChara( "Gin", 11, 0, 0, 0.5, 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “哈……哈…呜……呜……！”
 
 //: DrawChara( "Gin", 12, 0)
-\CN["银子"]
+\CN["银"]
 “大岚！！”
 
 //●演出：打撃　エフェクト
@@ -5980,7 +5980,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Call( "Scenarios/Effect*TransitionAttack" )
 : ShowWnd()
 : DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “呃！”
 
 银子退一步。
@@ -5997,7 +5997,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 甲太郎的追击——、
 
 : DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 「……！」
 
 : HideWnd()
@@ -6019,7 +6019,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0993" )
-\CN["桃子"]
+\CN["桃"]
 “小银，那可不行啊！
 你的右手还……！”
 
@@ -6034,7 +6034,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : FadeIn( 0.5, 0, 0, 0, "BGImage/Transition06", 1.0 )
 : Wait()
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “{高岭探险39082；，杀了我}！！”
 
 //●演出：殴打　エフェクト
@@ -6064,7 +6064,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : ResetLayer(2)
 : DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “呵——”
 
 银笑了。
@@ -6076,12 +6076,12 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “如果是你的话，我就断了对我的{高岭⇔390828；，杀了你}的念头
 我觉得那个绞技一定会来的”
 
 : DrawChara( "Gin", 4, 0)
-\CN["银子"]
+\CN["银"]
 “这{胜负，・・}是我赢了！”
 
 //: DrawChara( "Kotaro", 9, 0)
@@ -6098,7 +6098,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 //: EraseChara( "Kotaro", 0.0 )
 //: DrawChara( "Gin", 13, 0, 0, 0.5, 0.0, 3, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “神风啊！！”
 
 //●演出：殴打　エフェクト
@@ -6128,7 +6128,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “无论做多少次都是一样的。我赢不了。”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -6138,7 +6138,7 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 
 : EraseChara( "Kotaro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “下次也要复仇哦，『{甲太郎，・・}』”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -6158,20 +6158,20 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : Wait()
 : PlayBgm("BGM/05_CM005")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “哟”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom0994" )
-\CN["桃子"]
+\CN["桃"]
 「啊，不是啦！
 小银，为什么不老实睡觉呢！？”
 
 //●演技：涙ぐみながら
 : DrawChara( "Momo", 12, 1)
 : PlayVoice( "Voices/vo01_mom0995" )
-\CN["桃子"]
+\CN["桃"]
 “……担心……别让我……”
 
 含泪桃埋在银胸里。
@@ -6179,22 +6179,22 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 12, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Gin", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
-\CN["银子"]
+\CN["银"]
 “对不起让你担心了……”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “但是，当女儿遭遇危险的时候，她却一直不动
 没有”
 
 : DrawChara( "Momo", 10, 2)
 : PlayVoice( "Voices/vo01_mom0996" )
-\CN["桃子"]
+\CN["桃"]
 “……嗯……太好了……小银，能活着真好……”……
 嗯……嗯……”
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 「…………」
 
 银温柔地接住了哭泣的桃子，抚摸着头。
@@ -6202,12 +6202,12 @@ Zno的耳朵里响起了黄菜子的悲鸣。
 然后让桃子冷静下来。
 
 : DrawChara( "Gin", 4, 0)
-\CN["银子"]
+\CN["银"]
 “小姐……走吧。”
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0997" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。快去大家那里吧。”
 
 //●演出：銀と桃退場後、場面転換

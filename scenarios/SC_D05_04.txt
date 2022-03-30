@@ -10,7 +10,7 @@
 
 : DrawChara( "Mukuro", 12, 0)
 : PlayVoice( "Voices/vo00_muk4424" )
-\CN["无黑色"]
+\CN["无黑"]
 “想要杀幕臣吗……。
 并不是特别依赖稀有的依吧？”
 
@@ -26,7 +26,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4425" )
-\CN["无黑色"]
+\CN["无黑"]
 “这样的话，就算被当做杀人目标也不奇怪
 是吧？在上面的那些家伙看来，是个碍事的家伙”
 
@@ -41,7 +41,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 8, 0)
 	: PlayVoice( "Voices/vo00_muk4426" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “嗯……总觉得有点不对劲……”
 
 //●分岐終了地点へ
@@ -50,7 +50,7 @@
 : else
 	: DrawChara( "Mukuro", 12, 0)
 	: PlayVoice( "Voices/vo00_muk4427" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “这是杀人的工作吗？不用想……”
 
 //●分岐終了
@@ -77,7 +77,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 6, 0)
 	: PlayVoice( "Voices/vo00_muk4428" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “总觉得有点在意。
 总之，先去那个幕臣所在的城镇看看。
 能告诉我是哪个城市吗？”
@@ -88,7 +88,7 @@
 : else
 	: DrawChara( "Mukuro", 10, 0)
 	: PlayVoice( "Voices/vo00_muk4429" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “因为这是杀了就好的工作。
 没有特别不接受的理由”
 
@@ -159,7 +159,7 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Mukuro", 25, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4430" )
-\CN["无黑色"]
+\CN["无黑"]
 “呃，据口入屋说大冈的家在那附近吗？”。
 那怎么办呢？”
 
@@ -170,7 +170,7 @@
 
 	: DrawFaceThumbnail( "Mukuro", 10, 0, 0 )
 	: PlayVoice( "Voices/vo00_muk4431" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “是问问城里人，还是把他推到家里杀了……。
 是哪一个呢”
 
@@ -182,7 +182,7 @@
 
 	: DrawFaceThumbnail( "Mukuro", 26, 0, 0 )
 	: PlayVoice( "Voices/vo00_muk4432" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我是委托你杀了他，只要照他说的做就行了。
 理由什么的，说实话怎样都无所谓”
 
@@ -203,7 +203,7 @@
 //●状況：情報収集をする。町の人全員に話しかけた後
 : DrawChara( "Mukuro", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk4433" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……越是问城里人的事情，越是问委托的内容
 感到疑问”
 
@@ -222,7 +222,7 @@
 
 	: DrawChara( "Mukuro", 6, 0)
 	: PlayVoice( "Voices/vo00_muk4434" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “如果不是町人被洗脑，而是真心说的话
 我觉得是个不能杀人的人”
 
@@ -235,7 +235,7 @@
 
 	: DrawChara( "Mukuro", 27, 0)
 	: PlayVoice( "Voices/vo00_muk4435" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “这种情况最好不要贸然插手。”
 
 //●分岐終了
@@ -277,7 +277,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4436" )
-\CN["无黑色"]
+\CN["无黑"]
 “你住在一个很简朴的家里呢。
 因为是幕臣，所以我觉得住在更好的家里”
 
@@ -293,7 +293,7 @@
 
 	: DrawChara( "Mukuro", 23, 0)
 	: PlayVoice( "Voices/vo00_muk4437" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “正如你所料，我是来杀你的。”
 
 //●分岐：［服装］全裸の場合
@@ -305,7 +305,7 @@
 
 : DrawChara( "Mukuro", 12, 0)
 : PlayVoice( "Voices/vo00_muk4438" )
-\CN["无黑色"]
+\CN["无黑"]
 “你怎么这么仔细地看着我的身体啊。”
 
 \CN["大冈"]
@@ -315,7 +315,7 @@
 //●演出：無黒　刀を出す
 : DrawChara( "Mukuro", 26, 0, 2 )
 : PlayVoice( "Voices/vo00_muk4439" )
-\CN["无黑色"]
+\CN["无黑"]
 “我是来杀你的，只是这样。”
 
 //●分岐終了
@@ -326,7 +326,7 @@
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4440" )
-\CN["无黑色"]
+\CN["无黑"]
 “我真的不知道委托人。
 只是，你拜托我杀了你啊」
 
@@ -387,7 +387,7 @@
 : DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4441" )
-\CN["无黑色"]
+\CN["无黑"]
 “你已经做好觉悟了。”
 
 \CN["大冈"]
@@ -403,7 +403,7 @@
 //●演技：心の声です
 	: DrawChara( "Mukuro", 35, 0)
 	: PlayVoice( "Voices/vo00_muk4442" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （真的可以杀了这家伙吗？）
 
 突然，好像想停留在心里——
@@ -411,7 +411,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 24, 0)
 	: PlayVoice( "Voices/vo00_muk4443" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （犹豫直接关系到死亡。不是犹豫的时候。）
 
 //●分岐終了地点へ
@@ -420,7 +420,7 @@
 : else
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk4444" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我并不讨厌干净的人。
 为了不让你痛苦，我会让你轻松地死去”
 
@@ -441,7 +441,7 @@
 //●演出：大岡　死体になる
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk4445" )
-\CN["无黑色"]
+\CN["无黑"]
 “……嗯。这样就完成了委托。”
 
 正如口入屋委托的那样，杀死了大冈佐吉。
@@ -449,7 +449,7 @@
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4446" )
-\CN["无黑色"]
+\CN["无黑"]
 “但是，好像有什么问题。”
 
 比如说喉咙里扎着鱼刺的感觉吧。

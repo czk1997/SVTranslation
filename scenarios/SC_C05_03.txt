@@ -18,7 +18,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk2872" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道了我使用的刀的真面目
 然后，我听说他有隐藏在我身上的力量”
 
@@ -33,7 +33,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk2873" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐，为什么要把那个……！？”
 
 : PlayVoice( "Voices/vo09_mei0302" )
@@ -43,7 +43,7 @@
 
 : DrawChara( "Mukuro", 34, 0)
 : PlayVoice( "Voices/vo00_muk2874" )
-\CN["无黑色"]
+\CN["无黑"]
 “到、到……姐姐、{黑夜叉，暗黑妖精}
 能成为吗？”
 
@@ -56,7 +56,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk2875" )
-\CN["无黑色"]
+\CN["无黑"]
 「那么，那么，我也训练一下的话{黑夜叉，暗黑妖精}
 能成为吗？”
 
@@ -70,7 +70,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk2876" )
-\CN["无黑色"]
+\CN["无黑"]
 “……我觉得今后为了生存下去是必要的。
 如果就这样的话，就无法生存下去……”
 
@@ -178,7 +178,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk2877" )
-\CN["无黑色"]
+\CN["无黑"]
 “{黑夜叉，暗黑妖精}的特训是这个……？”
 
 真的是认真比赛吗？
@@ -198,7 +198,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk2878" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果是这样的话……”
 
 拔刀。
@@ -207,7 +207,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 23, 0, 2)
 	: PlayVoice( "Voices/vo00_muk2879" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “如果姐姐要试我的话
 只有全力以赴”
 
@@ -223,7 +223,7 @@
 : else
 	: DrawChara( "Mukuro", 26, 0, 2)
 	: PlayVoice( "Voices/vo00_muk2880" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “姐姐，我打算杀了她。”
 
 	: DrawChara( "Mei", 5, 0)
@@ -298,7 +298,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 21, 1)
 	: PlayVoice( "Voices/vo00_muk2881" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “啊，哈哈，我已经竭尽全力了
 姐姐还很从容吧……”
 
@@ -308,7 +308,7 @@
 : else
 	: DrawChara( "Mukuro", 21, 1)
 	: PlayVoice( "Voices/vo00_muk2882" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我本来打算真的杀了他……。
 哈……哈…姐姐，一点气都没有喘出来……”
 
@@ -347,7 +347,7 @@
 : DrawFaceThumbnail( "Mukuro", 18, 0, 0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2883" )
-\CN["无黑色"]
+\CN["无黑"]
 “这、这就是{黑夜叉，暗黑妖精}……！？”
 
 外表和气氛都截然不同的姐姐。
@@ -371,7 +371,7 @@
 
 : DrawFaceThumbnail( "Mukuro", 16, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2884" )
-\CN["无黑色"]
+\CN["无黑"]
 “……只有干了。”
 
 //＠ＨＰＭＰ完全回復処理
@@ -414,7 +414,7 @@
 //: DrawChara( "Mei", 0, 0, 1, 0.25, 0.0, 4, "LC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2885" )
-\CN["无黑色"]
+\CN["无黑"]
 “……呜！”
 
 简直站不住脚。
@@ -423,7 +423,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk2886" )
-\CN["无黑色"]
+\CN["无黑"]
 （不会吧，差到这种程度……）
 
 忍受鬼灯的严格训练，即使脱掉了也没有怠慢锻炼。
@@ -446,7 +446,7 @@
 
 //: DrawChara( "Mukuro", 18, 0)
 : PlayVoice( "Voices/vo00_muk2887" )
-\CN["无黑色"]
+\CN["无黑"]
 “嘘，死了……”
 
 变成了黑夜叉，黑精灵}的姐姐没有慈悲心。
@@ -473,7 +473,7 @@
 //: DrawChara( "Mukuro", 16, 0)
 : DrawFaceThumbnail( "Mukuro", 16, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2888" )
-\CN["无黑色"]
+\CN["无黑"]
 “呃……”
 
 ——我不能成为{黑夜叉，暗黑妖精}吗？
@@ -504,7 +504,7 @@
 : ShowWnd()
 //: DrawChara( "Mukuro", 31, 0)
 : PlayVoice( "Voices/vo00_muk2890" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈……哈…哈……哈……”
 
 眼看就要被砍掉的时候，她把姐姐的刀弹飞了。
@@ -526,7 +526,7 @@
 : DrawChara( "Mei", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L")
 : DrawChara( "Mukuro", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R")
 : PlayVoice( "Voices/vo00_muk2891" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗……这种感觉，果然是我，{黑夜叉，暗黑妖精}”
 
 //●分岐：悪堕ちＬＶが０～２の場合
@@ -540,7 +540,7 @@
 //●演技：心の声です
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk2892" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （这种心情是吗？刚才姐姐说的
 {黑夜叉，暗黑妖精}的话就抑制不住冲动之类的
 说的就是这个吗……）
@@ -585,7 +585,7 @@
 : evfile = "eva_a002_1_0_0200000_1000000_0_"; Call("Scenarios/Common*EvChange");
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2893" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊啊啊啊啊啊啊！！”
 
 //●ＳＥ：カキン　刀を合わせる音
@@ -611,7 +611,7 @@
 //: DrawChara( "Mei", 0, 0, 0, 0.25, 0.0, 4, "LC" )
 : DrawFaceThumbnail( "Mukuro", 7, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2894" )
-\CN["无黑色"]
+\CN["无黑"]
 “像姐姐一样自由自在地{黑夜叉，暗黑妖精}
 不能……。不被逼到绝境的话……”
 

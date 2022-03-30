@@ -52,7 +52,7 @@
 //Yoshi：左にレオ、右に無黒
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1009" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，最近的黄菜子，哪里不对劲吗？”？
 是不是经常发呆了……”
 
@@ -69,7 +69,7 @@
 //Yoshi：左に桃
 : DrawChara( "Momo",12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : PlayVoice( "Voices/vo01_mom0294" )
-\CN["桃子"]
+\CN["桃"]
 “……你们是认真说的吗？”
 
 : DrawChara( "Momo", 0, 0)
@@ -79,16 +79,16 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1010" )
-\CN["无黑色"]
+\CN["无黑"]
 “诶……黄菜子啊……”
 
 : DrawChara( "Momo", 6, 0)
 : PlayVoice( "Voices/vo01_mom0295" )
-\CN["桃子"]
+\CN["桃"]
 “也许黄菜子是初恋吧？”
 
 : PlayVoice( "Voices/vo01_mom0296" )
-\CN["桃子"]
+\CN["桃"]
 “啊啊啊！多么酸甜啊！？
 喂，小银，你不这么认为吗？”
 
@@ -96,13 +96,13 @@
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 6, 0)
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
-\CN["银子"]
+\CN["银"]
 “……对不起，我没兴趣。”
 
 : ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Momo",12, 0)
 : PlayVoice( "Voices/vo01_mom0297" )
-\CN["桃子"]
+\CN["桃"]
 “真是的！小银的话不太起劲啊！”
 
 \CN["鬼灯队士・女B"]
@@ -121,7 +121,7 @@
 : JumpLayer( 3, 0, -50, 1, 0.25)
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0298" )
-\CN["桃子"]
+\CN["桃"]
 “等一下，Leo君！现在悄悄地放着比较好！
 不记住敏感的东西的话，会被无黑讨厌的吧？”
 
@@ -134,13 +134,13 @@
 
 : DrawChara( "Mukuro",34, 0)
 : PlayVoice( "Voices/vo00_muk1011" )
-\CN["无黑色"]
+\CN["无黑"]
 “哇，我没什么……。
 话说回来，桃子，为什么会出现我呢？”
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0299" )
-\CN["桃子"]
+\CN["桃"]
 “总觉得啊！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -181,13 +181,13 @@
 //Yoshi：センターに桃
 : DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0300" )
-\CN["桃子"]
+\CN["桃"]
 “啊！我也是！我也很在意！”！
 喜欢黄菜子的男孩是怎么样的？”
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0301" )
-\CN["桃子"]
+\CN["桃"]
 “总觉得，像年纪相近的哥哥一样的男孩子
 感觉到了吧”
 
@@ -201,7 +201,7 @@
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 //●演技：イメージ＝ゼップのような男性です
 : PlayVoice( "Voices/vo00_muk1012" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……是喜欢黄菜子的人吗……。
 平时很酷，实际上却很重感情，这样的男性
 没有吗？”
@@ -214,7 +214,7 @@
 
 : DrawChara( "Mukuro",21, 1)
 : PlayVoice( "Voices/vo00_muk1013" )
-\CN["无黑色"]
+\CN["无黑"]
 “哇，我没什么……那个，这样说还太早吗？”
 现在还不是那个时候吗……”
 

@@ -40,7 +40,7 @@
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo00_muk4557" )
-\CN["无黑色"]
+\CN["无黑"]
 “是织笠御影的部下吗……”
 
 : PlayVoice( "Voices/vo02_kin0781" )
@@ -109,7 +109,7 @@
 
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1485" )
-\CN["桃子"]
+\CN["桃"]
 “无黑，这些孩子怎么办？”
 
 //＠分岐：悪堕ちＬＶ３の場合
@@ -134,7 +134,7 @@
 *battle01_select_s1
 : DrawChara( "Mukuro", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk4558" )
-\CN["无黑色"]
+\CN["无黑"]
 “放着不管吧。没必要特意杀了。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -153,7 +153,7 @@
 *battle01_select_s2
 : DrawChara( "Mukuro", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk4559" )
-\CN["无黑色"]
+\CN["无黑"]
 “这是肯定的。因为我讨厌和织笠御影战斗的时候被打扰。”
 
 //●演出：斬殺エフェクト
@@ -200,7 +200,7 @@
 : DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom1486" )
-\CN["桃子"]
+\CN["桃"]
 “织笠御影，作为一个魔术师，你是
 我想差不多该解决了吧”
 
@@ -220,7 +220,7 @@
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1487" )
-\CN["桃子"]
+\CN["桃"]
 “我对那边的世界也有兴趣
 我不想理你啊。看起来很危险……”
 
@@ -302,13 +302,13 @@
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk4560" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗？虽然没有实感。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom1488" )
-\CN["桃子"]
+\CN["桃"]
 “无黑，黄菜子，退下！”
 
 有着桃色张力的声音响彻四方，我和黄菜子不受桃子的阻碍
@@ -338,7 +338,7 @@
 
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo01_mom1490" )
-\CN["桃子"]
+\CN["桃"]
 “啊啊啊啊啊啊！”
 
 //●演技：魔力合戦。力比べ的な感じです
@@ -355,12 +355,12 @@
 
 : DrawFaceThumbnail( "Mukuro", 6, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4561" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子！就这样剪下去！”
 
 : DrawFaceThumbnail( "Momo", 7, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1491" )
-\CN["桃子"]
+\CN["桃"]
 “不用说！”
 
 桃子的输出进一步提高。
@@ -391,12 +391,12 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1492" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵，最后给你一句话。”
 
 //: DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom1493" )
-\CN["桃子"]
+\CN["桃"]
 “连女人都会着迷的女人真的是很强的女人——
 只有死的时候才能优雅美丽地散落的淑女”
 
@@ -418,7 +418,7 @@
 : DrawChara( "Momo", 10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo01_mom1494" )
-\CN["桃子"]
+\CN["桃"]
 “哈哈，说实话很糟糕。已经完全没有魔力了。”
 
 : DrawChara( "Kinako", 3, 0)
@@ -428,7 +428,7 @@
 
 : DrawChara( "Mukuro", 38, 0)
 : PlayVoice( "Voices/vo00_muk4562" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊……”
 
 *battle02_select
@@ -449,7 +449,7 @@
 *battle02_select_s1
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk4563" )
-\CN["无黑色"]
+\CN["无黑"]
 “我说过尽可能地让比拉加活下去
 没有必要杀了吧”
 
@@ -481,7 +481,7 @@
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk4564" )
-\CN["无黑色"]
+\CN["无黑"]
 “你打算怎么对待她？
 啊，不，对不起。不问才是礼仪啊”
 
@@ -511,7 +511,7 @@
 : DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo01_mom1495" )
-\CN["桃子"]
+\CN["桃"]
 「那我们也回去吧。
 喂，顺便去崎珠吃点好吃的再回去吧”
 
@@ -522,7 +522,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk4565" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊。那就不直接回帝都去崎珠吧。”
 
 //＠フラグ：御影生存,1
@@ -560,7 +560,7 @@
 *battle02_select_s2
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4566" )
-\CN["无黑色"]
+\CN["无黑"]
 “为什么希拉加想让织笠御影活下来呢？”
 虽然不知道，但是我觉得危险人物应该在这里杀了”
 

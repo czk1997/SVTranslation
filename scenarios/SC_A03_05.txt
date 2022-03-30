@@ -4,7 +4,7 @@
 *sc001
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk0624" )
-\CN["无黑色"]
+\CN["无黑"]
 “奴隶市是在晚上召开的。
 先等到晚上吧……”
 
@@ -55,7 +55,7 @@
 
 	: DrawChara( "Mukuro", 16, 0)
 	: PlayVoice( "Voices/vo00_muk0625" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “雷欧，你可不能大意。
 因为我觉得对方也很警惕”
 
@@ -66,12 +66,12 @@
 
 	: DrawChara( "Mukuro", 24, 0)
 	: PlayVoice( "Voices/vo00_muk0626" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “被雷欧这么一说反而让我不安……”
 
 	: DrawChara( "Mukuro", 23, 0)
 	: PlayVoice( "Voices/vo00_muk0627" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “算了，总之先上车吧。
 我觉得会有警卫或贵族的护卫，所以不要放松警惕”
 
@@ -171,7 +171,7 @@
 //: DrawChara( "Mukuro", 16, 0, 3, 0.5, 0.0, 3, "RC" )
 : DrawFaceThumbnail( "Mukuro", 16, 0, 3 )
 : PlayVoice( "Voices/vo00_muk0628" )
-\CN["无黑色"]
+\CN["无黑"]
 “什么，怎么回事……简直像奴隶一样……。
 不快点救出来的话……！”
 
@@ -190,7 +190,7 @@
 //: DrawChara( "Mukuro", 39, 0, 0, 0.5, 0.0, 3, "RC" )
 : DrawFaceThumbnail( "Mukuro", 39, 0, 0 )
 : PlayVoice( "Voices/vo00_muk0629" )
-\CN["无黑色"]
+\CN["无黑"]
 “对，是啊……对不起，头上出血了。”
 
 : DrawFaceThumbnail( "Leo", 3, 0, 0 )
@@ -201,7 +201,7 @@
 //: DrawChara( "Mukuro", 17, 0)
 : DrawFaceThumbnail( "Mukuro", 17, 0, 0 )
 : PlayVoice( "Voices/vo00_muk0630" )
-\CN["无黑色"]
+\CN["无黑"]
 “了解”
 
 如果没有雷欧的话，我一定会原封不动地对他们说
@@ -214,7 +214,7 @@
 //: DrawChara( "Mukuro", 28, 0)
 : DrawFaceThumbnail( "Mukuro", 28, 0, 0 )
 : PlayVoice( "Voices/vo00_muk0631" )
-\CN["无黑色"]
+\CN["无黑"]
 （雷欧这个人有时候很可靠……）
 
 明明总是很消沉，但一到紧张的场面
@@ -231,7 +231,7 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Mukuro", 17, 0, 0 )
 : PlayVoice( "Voices/vo00_muk0632" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧……！”
 
 //: DrawChara( "Leo", 17, 0)
@@ -276,7 +276,7 @@
 
 : DrawChara( "Mukuro", 16, 0 )
 : PlayVoice( "Voices/vo00_muk0633" )
-\CN["无黑色"]
+\CN["无黑"]
 “御用改！大和地区禁止贩卖人口。”
 
 \CN["奴隶商"]
@@ -359,7 +359,7 @@
 : DrawChara( "Mukuro", 24, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Leo", 21, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo00_muk0634" )
-\CN["无黑色"]
+\CN["无黑"]
 “无聊……”
 
 贵族们这种态度令人唾弃。
@@ -397,7 +397,7 @@
 
 : DrawChara( "Mukuro", 39, 0)
 : PlayVoice( "Voices/vo00_muk0635" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，奴隶商人的男人最后也逃走了……”
 
 趁着骚动很快就消失了。
@@ -434,7 +434,7 @@
 
 : DrawChara( "Mukuro", 31, 1)
 : PlayVoice( "Voices/vo00_muk0636" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈……哈…哈……哈……！”
 
 \CN["贵族保镖A"]
@@ -475,7 +475,7 @@
 //●演技：涙を堪えています
 : DrawChara( "Mukuro", 33, 1, 2 )
 : PlayVoice( "Voices/vo00_muk0637" )
-\CN["无黑色"]
+\CN["无黑"]
 “呃……嗯……”
 
 落后于这种程度低的人的自己太可怜了
@@ -494,7 +494,7 @@
 //●演技：声を絞り出す感じで
 : DrawChara( "Mukuro", 19, 1)
 : PlayVoice( "Voices/vo00_muk0638" )
-\CN["无黑色"]
+\CN["无黑"]
 “……啊，哎呀，住手——”
 
 \CN["贵族保镖A"]
@@ -534,7 +534,7 @@
 
 : DrawChara( "Mukuro", 18, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo00_muk0639" )
-\CN["无黑色"]
+\CN["无黑"]
 “龙先生……！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -568,7 +568,7 @@
 
 : DrawChara( "Mukuro", 5, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo00_muk0640" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧，不对……！这么说的话，我也还差得远……”
 
 : DrawChara( "Ryu", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )

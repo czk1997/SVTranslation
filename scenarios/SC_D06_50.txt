@@ -7,7 +7,7 @@
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo00_muk4660" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子、黄菜子，从这里开始先让我一个人去好吗？”
 
 : DrawChara( "Kinako", 10, 0)
@@ -17,18 +17,18 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1568" )
-\CN["桃子"]
+\CN["桃"]
 “我也可以。但是，为什么突然？”
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk4661" )
-\CN["无黑色"]
+\CN["无黑"]
 “没有什么特别的理由。
 如果借你的话来说的话，那就是女人的直觉吧”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1569" )
-\CN["桃子"]
+\CN["桃"]
 “是的。那就没办法了。”
 
 //●演出：無黒　１人で奥に歩いて行く。
@@ -58,7 +58,7 @@
 : PlayBgm("BGM/01_CM001")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4662" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧，你怎么会在这种地方……”
 
 //●分岐：［服装］着衣の場合
@@ -75,7 +75,7 @@
 
 	: DrawChara( "Mukuro", 29, 0)
 	: PlayVoice( "Voices/vo00_muk4663" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “不必移开视线。
 想看的话，可以随便看”
 
@@ -91,7 +91,7 @@
 
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk4664" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我曾经差点死过。
 以此为契机，能成为{黑夜叉，暗黑妖精}
 ”
@@ -100,7 +100,7 @@
 : endif
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk4665" )
-\CN["无黑色"]
+\CN["无黑"]
 “你在这里做什么？”
 
 : DrawChara( "Leo", 1, 0)
@@ -113,7 +113,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4666" )
-\CN["无黑色"]
+\CN["无黑"]
 「这样啊。那你得到了什么？」
 
 : DrawChara( "Leo", 5, 0)
@@ -126,7 +126,7 @@
 
 : DrawChara( "Mukuro", 25, 0)
 : PlayVoice( "Voices/vo00_muk4667" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯？”
 
 : DrawChara( "Leo", 1, 0)
@@ -135,7 +135,7 @@
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk4668" )
-\CN["无黑色"]
+\CN["无黑"]
 “……多少……我都不记得了。
 杀了人的数量一个一个没数过”
 
@@ -152,7 +152,7 @@
 : PlaySe( "SE/Se_Katana01" )
 : DrawChara( "Mukuro", 28, 0, 2)
 : PlayVoice( "Voices/vo00_muk4669" )
-\CN["无黑色"]
+\CN["无黑"]
 “认真地向喜欢的人拔刀之类的
 虽然我不认为这是精神正常的事情”
 
@@ -163,7 +163,7 @@
 
 : DrawChara( "Mukuro", 41, 0)
 : PlayVoice( "Voices/vo00_muk4670" )
-\CN["无黑色"]
+\CN["无黑"]
 “就算现在的你能杀了我？”
 
 : DrawChara( "Leo", 19, 0)
@@ -190,7 +190,7 @@
 	: DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 	: ShowWnd()
 	: PlayVoice( "Voices/vo00_muk4671" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “{黑夜叉，暗黑妖精}吗……。
 那我也只能以此来对抗了”
 
@@ -270,14 +270,14 @@
 
 : DrawChara( "Mukuro", 30, 1, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk4672" )
-\CN["无黑色"]
+\CN["无黑"]
 “只有一纸啊……真危险。”
 
 不管谁赢了都不奇怪的战斗。
 
 : DrawChara( "Mukuro", 27, 0, 2)
 : PlayVoice( "Voices/vo00_muk4673" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么办？”
 
 如果想作为武士切腹而死的话
@@ -293,7 +293,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk4674" )
-\CN["无黑色"]
+\CN["无黑"]
 “真的这样可以吗？”
 
 : DrawChara( "Leo", 1, 0)
@@ -302,7 +302,7 @@
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4675" )
-\CN["无黑色"]
+\CN["无黑"]
 「…………」
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -351,12 +351,12 @@
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1570" )
-\CN["桃子"]
+\CN["桃"]
 “没关系吗？难道里面发生了什么事？”
 
 : DrawChara( "Mukuro", 37, 0)
 : PlayVoice( "Voices/vo00_muk4676" )
-\CN["无黑色"]
+\CN["无黑"]
 “不，什么都没有。”
 
 只有一点分别。

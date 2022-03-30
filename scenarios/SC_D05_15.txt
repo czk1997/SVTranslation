@@ -25,7 +25,7 @@
 	: ShowWnd()
 	//●演技：騎乗位セックスしています
 	: PlayVoice( "Voices/vo01_mom1453" )
-	\CN["桃子"]
+	\CN["桃"]
 “啊啊，好舒服……”♥</啊，嗯
 喂，看起来很帅……喂，可以吗？就这样，你的
 可以用小鸡鸡咬吗？”
@@ -34,8 +34,8 @@
 “啊哈哈，褶皱蜿蜒缠绕着……啊，我也是……”
 
 	: PlayVoice( "Voices/vo01_mom1454" )
-	\CN["桃子"]
-“嗯……好啊，我去也可以。”♥</color>
+	\CN["桃"]
+“嗯……好啊，我去也可以。”<color=#f59aa0>♥</color>
 一起加油吧……嗯……用精液，让我生机勃勃……”
 
 	: HideWnd()
@@ -44,9 +44,9 @@
 	: Call("Scenarios/Common*EvChange")
 	: ShowWnd()
 	: PlayVoice( "Voices/vo01_mom1455" )
-	\CN["桃子"]
-「这是什么？」♥</要穿的话♥</要穿的话♥</color>
-啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊♥</color><color=#f59aa0>♥</color><color=#f59aa0>♥</color>」
+	\CN["桃"]
+「这是什么？」♥</要穿的话♥</要穿的话<color=#f59aa0>♥</color>
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊<color=#f59aa0>♥</color><color=#f59aa0><color=#f59aa0>♥</color><color=#f59aa0><color=#f59aa0>♥</color>」
 
 	//●演出：射精
 	//●ＣＧ差分：膣内射精
@@ -63,8 +63,8 @@
 ——呜呜呜呜呜呜呜呜呜呜呜呜！！
 
 	: PlayVoice( "Voices/vo01_mom1456" )
-	\CN["桃子"]
-“哈，哈，好热啊……好厉害，出了好多啊<color=59a0>♥</color>」
+	\CN["桃"]
+“哈，哈，好热啊……好厉害，出了好多啊<color=59a0><color=#f59aa0>♥</color>」
 
 	: HideWnd()
 	: Call("Scenarios/Common*EvFadeOut")
@@ -82,7 +82,7 @@
 	: ShowWnd()
 	: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 3, "C" )
 	: PlayVoice( "Voices/vo01_mom1457" )
-	\CN["桃子"]
+	\CN["桃"]
 「呼。这样就可以了。
 只要有驱除魔物的工作就很感谢了”
 
@@ -109,8 +109,8 @@
 
 	//●演技：パイズリしています
 	: PlayVoice( "Voices/vo00_muk4527" )
-	\CN["无黑色"]
-“嗯……嗯……小矮人，变得通红了。”♥</color>
+	\CN["无黑"]
+“嗯……嗯……小矮人，变得通红了。”<color=#f59aa0>♥</color>
 想拿出来的话，随时拿出来也可以……”
 
 	\CN["贵族"]
@@ -134,13 +134,13 @@
 咻咻！呸！噗噗噗噗！
 
 	: PlayVoice( "Voices/vo00_muk4528" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “呼……非常多的精液……。
 小矮人，要好好地变漂亮啊”
 
 	: PlayVoice( "Voices/vo00_muk4529" )
-	\CN["无黑色"]
-“啊……嗯……嗯…珠理奈……中出拳了♥</color>」
+	\CN["无黑"]
+“啊……嗯……嗯…珠理奈……中出拳了<color=#f59aa0>♥</color>」
 
 	: HideWnd()
 	: Call("Scenarios/Common*EvFadeOut")
@@ -162,7 +162,7 @@
 	: DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "C" )
 	: ShowWnd()
 	: PlayVoice( "Voices/vo00_muk4530" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “这是我要的材料，这样对吗？”
 
 	\CN["药店"]
@@ -345,7 +345,7 @@
 
 : DrawChara( "Momo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
 : PlayVoice( "Voices/vo01_mom1458" )
-\CN["桃子"]
+\CN["桃"]
 “……怎么回事？你不是死了吗？”
 
 \CN["眼镜店"]
@@ -353,7 +353,7 @@
 
 : DrawChara( "Mukuro", 41, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
 : PlayVoice( "Voices/vo00_muk4531" )
-\CN["无黑色"]
+\CN["无黑"]
 “不是天堂，是地狱的错吗？”
 
 不能放手高兴。
@@ -380,7 +380,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
 : PlayVoice( "Voices/vo01_mom1459" )
-\CN["桃子"]
+\CN["桃"]
 “那么，特意来到我们面前
 你带来了什么特别麻烦的工作？”
 
@@ -405,7 +405,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
 : PlayVoice( "Voices/vo01_mom1460" )
-\CN["桃子"]
+\CN["桃"]
 “确实如黄菜子所说。
 那个真的没问题吗？不是陷阱吗？”
 
@@ -419,18 +419,18 @@
 
 : DrawChara( "Momo", 11, 0)
 : PlayVoice( "Voices/vo01_mom1461" )
-\CN["桃子"]
+\CN["桃"]
 “嗯，怎么办？”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4532" )
-\CN["无黑色"]
+\CN["无黑"]
 “只见面不也可以吗？
 所以，如果是奇怪的家伙，不接受工作就好了”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1462" )
-\CN["桃子"]
+\CN["桃"]
 “那也是。去看看吧。”
 
 因此，我们决定再次回到帝都。
@@ -482,7 +482,7 @@
 : DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "R" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1463" )
-\CN["桃子"]
+\CN["桃"]
 “哎呀，好像马上就来了啊。”
 
 \CN["睡眠组1"]
@@ -498,13 +498,13 @@
 
 : DrawChara( "Mukuro", 25, 0)
 : PlayVoice( "Voices/vo00_muk4533" )
-\CN["无黑色"]
+\CN["无黑"]
 “我不想在和委托人见面之前引起太大的骚动
 但是……”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1464" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。这群家伙是看走狗的吧？”？
 如果可能的话，我就不想和幕府扯上关系了”
 
@@ -586,7 +586,7 @@
 : EraseChara( "Aguri", 0.5 )
 : DrawChara( "Mukuro", 34, 0, 0, 0.5, 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk4534" )
-\CN["无黑色"]
+\CN["无黑"]
 “咦？希拉加？”
 
 当比拉加和他的助手来的时候，不知道为什么身边的人
@@ -654,7 +654,7 @@
 : PlayBgm("BGM/36_ID03")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1465" )
-\CN["桃子"]
+\CN["桃"]
 “我想先确认一下，把我们叫到帝都
 贵族是指你吗？”
 
@@ -676,7 +676,7 @@
 : EraseChara( "Kinako", 0.5 )
 : DrawChara( "Mukuro", 30, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk4535" )
-\CN["无黑色"]
+\CN["无黑"]
 “比拉加，你是白夜的一员吗？”
 
 : DrawChara( "Hiraga", 6, 0)
@@ -692,7 +692,7 @@
 : EraseChara( "Mukuro", 0.5 )
 : DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom1466" )
-\CN["桃子"]
+\CN["桃"]
 “所以才成为了贵族。
 嘛，不问情况是礼仪，所以不要再深入了
 但是”
@@ -700,7 +700,7 @@
 : EraseChara( "Momo", 0.5 )
 : DrawChara( "Mukuro", 27, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk4536" )
-\CN["无黑色"]
+\CN["无黑"]
 “比拉加——不，应该叫平贺大人吗？”
 
 \CN["平底片"]
@@ -709,7 +709,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk4537" )
-\CN["无黑色"]
+\CN["无黑"]
 「知道了。那么，希拉加，你叫我们到{帝都，这里}来了
 请告诉我理由”
 
@@ -729,7 +729,7 @@
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk4538" )
-\CN["无黑色"]
+\CN["无黑"]
 “那倒是没关系，但这种工作不是鬼灯做的工作
 没有吗？”
 
@@ -743,7 +743,7 @@
 : EraseChara( "Mukuro", 0.5 )
 : DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom1467" )
-\CN["桃子"]
+\CN["桃"]
 “……骗人的……可是鬼灯怎么会塌下来……”
 
 桃子明显受到了打击。
@@ -751,7 +751,7 @@
 : EraseChara( "Momo", 0.5 )
 : DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk4539" )
-\CN["无黑色"]
+\CN["无黑"]
 “所有人都死了吗？”
 
 : DrawChara( "Hiraga", 0, 0)
@@ -761,7 +761,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk4540" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗，果然还活着啊……”
 
 听到那个，我就放心了。
@@ -772,7 +772,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk4541" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果是这样的话，我想帮忙……。
 顺便问一下，你知道对方是谁吗？”
 
@@ -785,7 +785,7 @@
 : DrawChara( "Momo", 11, 0, 0, 0.5, 0.0, 5, "RC" )
 : DrawChara( "Kinako", 10, 0, 0, 0.5, 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom1468" )
-\CN["桃子"]
+\CN["桃"]
 “卍确实是那个半灰色的人啊。”
 
 //●演技：卍に恨みがある黄菜子。暗殺者モード
@@ -802,7 +802,7 @@
 : DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 24, 0, 0, 0.5, 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk4542" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，还有一个呢？”
 
 \CN["平底片"]
@@ -820,7 +820,7 @@
 : DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 5, "L" )
 : DrawChara( "Kinako", 11, 0, 0, 0.5, 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom1469" )
-\CN["桃子"]
+\CN["桃"]
 “织笠御影确实是那个巫女吧？”
 
 : DrawChara( "Kinako", 0, 0)
@@ -832,13 +832,13 @@
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk4543" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果是来自比拉加的委托的话，没有拒绝的理由。
 桃、黄菜子，你们呢？”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1470" )
-\CN["桃子"]
+\CN["桃"]
 “嗯？我可以另外做。”
 
 : DrawChara( "Kinako", 0, 0)
@@ -866,7 +866,7 @@
 : DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 2, "LC" )
 : DrawChara( "Mukuro", 26, 0, 0, 0.5, 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk4544" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道了。我想说要妥善处理
 因为对方是对手啊。如果不从一开始就打算杀他而战斗的话
 我会被杀的”

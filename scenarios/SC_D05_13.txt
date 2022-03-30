@@ -15,13 +15,13 @@
 : PlayBgm("BGM/26_FM004")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1421" )
-\CN["桃子"]
+\CN["桃"]
 “不是一般的居酒屋，而是特意叫到这种地方
 这是什么样的工作呢？”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4497" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊。但是，我也很在意。”
 
 我和桃子在眼镜店和远离西都的城镇里
@@ -29,7 +29,7 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1422" )
-\CN["桃子"]
+\CN["桃"]
 “嗯，应该是在这附近……”
 
 根据发送给设备的信息去约会地点。
@@ -42,12 +42,12 @@
 
 : DrawChara( "Momo", 4, 0, 0)
 : PlayVoice( "Voices/vo00_muk4498" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么办？”
 
 : DrawChara( "Mukuro", 10, 0, 0)
 : PlayVoice( "Voices/vo01_mom1423" )
-\CN["桃子"]
+\CN["桃"]
 “总之先进去看看吧。”
 
 //●演出：立ち絵消去
@@ -70,20 +70,20 @@
 //●演出：無黒・桃　口入屋に駆け寄る
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo00_muk4499" )
-\CN["无黑色"]
+\CN["无黑"]
 “我死了……”
 
 : PlayBgm("BGM/41_Sad")
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom1424" )
-\CN["桃子"]
+\CN["桃"]
 “……因为还很暖和，所以死后才花那么多时间
 可能还没过”
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4500" )
-\CN["无黑色"]
+\CN["无黑"]
 “这样的话，杀了入口店的家伙就在附近……？”
 
 眼镜店因为工作关系，招致了很多怨恨。
@@ -91,28 +91,28 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1425" )
-\CN["桃子"]
+\CN["桃"]
 “怎么了？”
 
 : DrawChara( "Mukuro", 25, 0)
 : PlayVoice( "Voices/vo00_muk4501" )
-\CN["无黑色"]
+\CN["无黑"]
 “不，我觉得那个入口店是这么简单就被杀了。”
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1426" )
-\CN["桃子"]
+\CN["桃"]
 “的确是呢。他是个杀人也不会死的人……”
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4502" )
-\CN["无黑色"]
+\CN["无黑"]
 “这样的话，杀了入口店的家伙是相当高明的
 或者……”
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom1427" )
-\CN["桃子"]
+\CN["桃"]
 「嘛，不管怎么说，我们也得小心啊。
 总之先回西都吧”
 
@@ -136,12 +136,12 @@
 
 : DrawFaceThumbnail( "Momo", 4, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1428" )
-\CN["桃子"]
+\CN["桃"]
 “你在考虑入口店吗？”
 
 : DrawFaceThumbnail( "Mukuro", 8, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4503" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊。来到西都后，得到了很多照顾。
 我有各种各样的想法”
 
@@ -176,13 +176,13 @@
 
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom1429" )
-\CN["桃子"]
+\CN["桃"]
 “口入屋先生，留个口信什么的，说不定是自己
 你知道会被杀吗？”
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk4504" )
-\CN["无黑色"]
+\CN["无黑"]
 “因为他是个不太清楚的家伙……”
 
 确认信的内容是桃子。
@@ -193,7 +193,7 @@
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1430" )
-\CN["桃子"]
+\CN["桃"]
 “很有口入屋风格的写法呢……”
 
 “稍微有点笨拙啊。站在被狙击生命的立场上。”
@@ -209,26 +209,26 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4505" )
-\CN["无黑色"]
+\CN["无黑"]
 “听说是这样，桃子怎么办？”
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom1431" )
-\CN["桃子"]
+\CN["桃"]
 “我都无所谓。
 只是，总觉得接受比较好。
 女人的直觉啊”
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk4506" )
-\CN["无黑色"]
+\CN["无黑"]
 “是女人的直觉吗……”
 
 眼镜店果然还是有恩的。
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk4507" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊。至少可以讨伐敌人吧。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -286,7 +286,7 @@
 : PlayBgm("BGM/03_CM003")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4508" )
-\CN["无黑色"]
+\CN["无黑"]
 “黄菜子……！？你怎么会在这里？”
 
 //●演技：洗脳されていて殺し屋時代に戻ってしまっています
@@ -298,7 +298,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom1432" )
-\CN["桃子"]
+\CN["桃"]
 “无黑，小心点……！黄菜子的样子很奇怪。”
 
 //●演出：黄菜子が襲いかかってきます
@@ -323,12 +323,12 @@
 : ShowWnd()
 : DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk4509" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子，小心点。现在的黄菜子不普通。”
 
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo01_mom1433" )
-\CN["桃子"]
+\CN["桃"]
 “我知道。如果不以杀人的心情挑战的话，我们会
 会被杀的吧”
 
@@ -344,13 +344,13 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo01_mom1434" )
-\CN["桃子"]
+\CN["桃"]
 “把刀对着人的黄菜子，竟然到这里……。
 杀气得简直要瘫软了」
 
 : DrawChara( "Mukuro", 30, 0)
 : PlayVoice( "Voices/vo00_muk4510" )
-\CN["无黑色"]
+\CN["无黑"]
 “我不知道发生了什么……”
 
 既然挥舞着刀来，就必须全力对抗
@@ -437,7 +437,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk4511" )
-\CN["无黑色"]
+\CN["无黑"]
 （事到如今，我的刀，其实相当厉害的
 不是名刀吗？）
 
@@ -475,7 +475,7 @@
 : DrawChara( "Mukuro", 30, 1)
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4512" )
-\CN["无黑色"]
+\CN["无黑"]
 “呃……嗯……！”
 
 //●演技：つばぜり合いしています
@@ -488,7 +488,7 @@
 
 : DrawChara( "Mukuro", 6, 1)
 : PlayVoice( "Voices/vo00_muk4513" )
-\CN["无黑色"]
+\CN["无黑"]
 “就这样截断！”
 
 //●ＳＥ：刀が地面に落ちる
@@ -502,7 +502,7 @@
 
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo01_mom1435" )
-\CN["桃子"]
+\CN["桃"]
 “无黑，退下！”
 
 对桃子的声音作出反应，与黄菜子取得很大距离。
@@ -511,7 +511,7 @@
 //: EraseChara( "Momo", 0.5 )
 : DrawChara( "Momo", 0, 0, 1 )
 : PlayVoice( "Voices/vo01_mom1436" )
-\CN["桃子"]
+\CN["桃"]
 “连接{睡眠魔术，睡眠}！！”
 
 : HideWnd()
@@ -533,19 +533,19 @@
 : DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom1437" )
-\CN["桃子"]
+\CN["桃"]
 “不行元尝试了{睡眠魔术，睡眠}……。
 好像好好地起了作用真是太好了”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1438" )
-\CN["桃子"]
+\CN["桃"]
 “黄菜子，总觉得精神上很虚弱
 因为……”
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk4514" )
-\CN["无黑色"]
+\CN["无黑"]
 「这样啊……桃子，得救了。
 说实话，这是相当危险的地方”
 
@@ -555,12 +555,12 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4515" )
-\CN["无黑色"]
+\CN["无黑"]
 （原来是作为暗杀者的黄菜子啊……。没想到竟然能做到这种地步。）
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1439" )
-\CN["桃子"]
+\CN["桃"]
 “那么，让他睡了也可以，但是怎么办呢？
 睁开眼睛的话，就会袭击过来的吧……”
 
@@ -568,7 +568,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 8, 0)
 	: PlayVoice( "Voices/vo00_muk4516" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “是啊……嗯……。
 如果不知道黄菜子变成这样的理由的话……”
 
@@ -580,25 +580,25 @@
 : else
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk4517" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “杀了吗？那是最确定的。”
 
 	: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 	: DrawChara( "Momo", 8, 0)
 	: PlayVoice( "Voices/vo01_mom1440" )
-	\CN["桃子"]
+	\CN["桃"]
 “嗯，无黑！？”
 
 桃子用吃惊的眼光看过来。
 
 	: DrawChara( "Mukuro", 27, 0)
 	: PlayVoice( "Voices/vo00_muk4518" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “开玩笑，别当真。”
 
 	: DrawChara( "Momo", 13, 0)
 	: PlayVoice( "Voices/vo01_mom1441" )
-	\CN["桃子"]
+	\CN["桃"]
 “刚才你说的话，我一点也听不出是开玩笑……”
 
 //●分岐終了
@@ -608,17 +608,17 @@
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1442" )
-\CN["桃子"]
+\CN["桃"]
 “这种时候，如果老师在的话总会有办法的……”
 
 : PlayVoice( "Voices/vo01_mom1443" )
-\CN["桃子"]
+\CN["桃"]
 “即使带他去，在到达老师那里之前
 黄菜子，你会醒的吧”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4519" )
-\CN["无黑色"]
+\CN["无黑"]
 “确实你的老师是指玉藻大人吧？
 那我就在救你的时候见过你」
 
@@ -626,12 +626,12 @@
 : Wait()
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1444" )
-\CN["桃子"]
+\CN["桃"]
 “诶！？这么说来，老师现在来西都了吗？”
 
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk4520" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，您在哪里呢
 我也不知道”
 
@@ -654,7 +654,7 @@
 : DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
 : DrawChara( "Momo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : PlayVoice( "Voices/vo01_mom1445" )
-\CN["桃子"]
+\CN["桃"]
 “老师……！？”
 
 : DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
@@ -666,7 +666,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4521" )
-\CN["无黑色"]
+\CN["无黑"]
 “那个，玉藻大人，为什么在这里？”
 
 : DrawChara( "Tamamo", 0, 0)
@@ -677,7 +677,7 @@
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom1446" )
-\CN["桃子"]
+\CN["桃"]
 “老师的话可以治好黄菜子吧？
 我想大概是被人用了什么傀儡术吧”
 
@@ -688,13 +688,13 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1447" )
-\CN["桃子"]
+\CN["桃"]
 “啊？但是，黄菜子竟然要杀我们
 绝对不可能……”
 
 : DrawChara( "Mukuro", 10, 0)
 : PlayVoice( "Voices/vo00_muk4522" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，而且，黄菜子的眼睛总觉得有些空虚。
 和以前的桃子状态一样……”
 
@@ -714,7 +714,7 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1448" )
-\CN["桃子"]
+\CN["桃"]
 “老师……？那黄菜子怎么办才好……”
 
 : DrawChara( "Tamamo", 0, 0)
@@ -725,7 +725,7 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1449" )
-\CN["桃子"]
+\CN["桃"]
 “……老师，为什么要这样做？而且还嘲讽……”
 
 : PlayVoice( "Voices/vo22_tam0334" )
@@ -734,7 +734,7 @@
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4523" )
-\CN["无黑色"]
+\CN["无黑"]
 “也就是说，现在的黄菜子回到了相遇时的黄菜子
 真是糟糕啊……。但是，为什么会这样呢？”
 
@@ -746,7 +746,7 @@
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1450" )
-\CN["桃子"]
+\CN["桃"]
 “……黄菜子”
 
 : DrawChara( "Tamamo", 0, 0)

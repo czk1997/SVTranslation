@@ -27,7 +27,7 @@
 : DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 2, "R" )
 : PlayVoice( "Voices/vo00_muk4545" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道了。我不抵抗。随你的便。”
 
 我知道这些家伙只有别有用心，但我不想粗暴对待。
@@ -52,7 +52,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1471" )
-\CN["桃子"]
+\CN["桃"]
 “光是裸体就好的话，轻松就好了。”
 
 //●演出：桃　着替え
@@ -83,12 +83,12 @@
 
 //: DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1472" )
-\CN["桃子"]
+\CN["桃"]
 “基本上不戴胸罩。”
 
 //: DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom1473" )
-\CN["桃子"]
+\CN["桃"]
 “还有，{现代，现在}即使是这样的衣服也要穿内衣
 基本啊。请记住”
 
@@ -147,7 +147,7 @@
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4546" )
-\CN["无黑色"]
+\CN["无黑"]
 “黄菜子，没事吧？”
 
 : DrawChara( "Kinako", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
@@ -159,7 +159,7 @@
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk4547" )
-\CN["无黑色"]
+\CN["无黑"]
 “这样可以吗？”
 
 \CN["睡眠组1"]
@@ -173,7 +173,7 @@
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R")
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C")
 : PlayVoice( "Voices/vo01_mom1474" )
-\CN["桃子"]
+\CN["桃"]
 “反正我是这么想的。
 我已经看到这里了，虽然已经到现在了……”
 
@@ -182,7 +182,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1475" )
-\CN["桃子"]
+\CN["桃"]
 （但是，因为是帝都。在这种地方，能看到小银的是
 果然很辛苦啊。各种各样……）
 
@@ -191,7 +191,7 @@
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom1476" )
-\CN["桃子"]
+\CN["桃"]
 “快点结束吧。”
 
 //●演出：桃　全裸になる
@@ -219,7 +219,7 @@
 : if ( Call( "Scenarios/CommonSys*CharaHRank_Momo_Exhibitionist" ) < 3 )
 	//: DrawChara( "Momo", 10, 1)
 	: PlayVoice( "Voices/vo01_mom1477" )
-	\CN["桃子"]
+	\CN["桃"]
 “如果被人用那么讨厌的眼神看的话
 虽然真的很恶心……”
 
@@ -230,10 +230,10 @@
 //●演技：心の声です
 	//: DrawChara( "Momo", 10, 2)
 	: PlayVoice( "Voices/vo01_mom1478" )
-	\CN["桃子"]
+	\CN["桃"]
 （用非常恶心的眼神看着我的身体……。
 胸、屁股、大腿……意识到的话，会有色情的心情
-也许已经变成这样了♥</color>）
+也许已经变成这样了<color=#f59aa0>♥</color>）
 
 //●分岐終了
 : endif
@@ -244,7 +244,7 @@
 
 : DrawChara( "Mukuro", 41, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk4548" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果遮住前屈或者稍微勃起的话
 怎么样？”
 
@@ -314,7 +314,7 @@
 : DrawChara( "Mukuro", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4549" )
-\CN["无黑色"]
+\CN["无黑"]
 “看，我按照你的要求好好地给你脱了衣服。
 快点结束‘体检’吧”
 
@@ -323,7 +323,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 39, 2)
 	: PlayVoice( "Voices/vo00_muk4550" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （果然，被这么盯着看的话
 害羞得不得了
 
@@ -334,8 +334,8 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 37, 2)
 	: PlayVoice( "Voices/vo00_muk4551" )
-	\CN["无黑色"]
-（被这么死板地盯着看，果然还是很兴奋♥</color>
+	\CN["无黑"]
+（被这么死板地盯着看，果然还是很兴奋<color=#f59aa0>♥</color>
 只是被看到，就会疼起来）
 
 //●分岐終了
@@ -350,7 +350,7 @@
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : DrawChara( "Mukuro", 37, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo01_mom1479" )
-\CN["桃子"]
+\CN["桃"]
 “如果想不同意的话，就堂堂正正地邀请他‘想耍威风’吧。”
 
 \CN["睡眠组1"]
@@ -381,7 +381,7 @@
 : EraseChara( "Aguri", 0.5 )
 : DrawChara( "Mukuro", 34, 0, 0, 0.5, 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk4552" )
-\CN["无黑色"]
+\CN["无黑"]
 “咦？希拉加？”
 
 当比拉加和他的助手来的时候，不知道为什么身边的人

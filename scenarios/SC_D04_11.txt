@@ -21,7 +21,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3813" )
-\CN["无黑色"]
+\CN["无黑"]
 （委托人大概是幕府的相关人员吧。
 然后，如果有妨碍出人头地的家伙……）
 
@@ -35,7 +35,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk3814" )
-\CN["无黑色"]
+\CN["无黑"]
 （不是“好像”，应该已经找到了吧）
 
 \CN["眼镜店"]
@@ -63,7 +63,7 @@
 *sc001_select_s1
 : DrawChara( "Mukuro", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk3815" )
-\CN["无黑色"]
+\CN["无黑"]
 “我对那件事产生了兴趣。
 总之，先去看看是什么样的地方”
 
@@ -127,7 +127,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk3817" )
-\CN["无黑色"]
+\CN["无黑"]
 （那你好像在告诉我这里有要员
 但是……）
 
@@ -177,7 +177,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 28, 0, 2)
 	: PlayVoice( "Voices/vo00_muk3818" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （如果事先知道了那个信息
 还有更简单更可靠的做法呢……）
 
@@ -213,7 +213,7 @@
 	: Call("Scenarios/Common*EvFadeIn")
 	: ShowWnd()
 	: PlayVoice( "Voices/vo00_muk3819" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “哈！”
 
 	//●演出：斬撃エフェクト
@@ -270,7 +270,7 @@
 *sc002_select_s2
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk3820" )
-\CN["无黑色"]
+\CN["无黑"]
 “这种事情还是慎重一点比较好。”
 
 //●演出：無黒　退場してから暗転
@@ -353,7 +353,7 @@
 : endif
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk3821" )
-\CN["无黑色"]
+\CN["无黑"]
 “……拒绝”
 
 //●演出：斬殺エフェクト
@@ -367,7 +367,7 @@
 : DrawChara( "Mukuro", 26, 1, 5 )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3822" )
-\CN["无黑色"]
+\CN["无黑"]
 “呼。这就结束了……。
 是住宿的人呢，还是其他人来之前必须要先离开啊」
 
@@ -407,7 +407,7 @@
 
 : DrawChara( "Mukuro", 6, 1)
 : PlayVoice( "Voices/vo00_muk3823" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……有酒味。
 你从这样的白天就开始喝酒了吗？”
 
@@ -420,7 +420,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3824" )
-\CN["无黑色"]
+\CN["无黑"]
 “呼。也就是说，是在庆祝那个啊。”
 
 \CN["眼镜店"]
@@ -431,7 +431,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 10, 0)
 : PlayVoice( "Voices/vo00_muk3825" )
-\CN["无黑色"]
+\CN["无黑"]
 （我一直在想做和幕府有关的工作
 幕府的黑暗比我想象的要深得多。）
 
@@ -441,7 +441,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 28, 0)
 : PlayVoice( "Voices/vo00_muk3826" )
-\CN["无黑色"]
+\CN["无黑"]
 （正义如何，邪恶如何之类的想法
 这可是受惠者的特权啊）
 
@@ -456,7 +456,7 @@
 
 : DrawChara( "Mukuro", 37, 0)
 : PlayVoice( "Voices/vo00_muk3827" )
-\CN["无黑色"]
+\CN["无黑"]
 “稍微思考一下吧。”
 
 \CN["眼镜店"]
@@ -494,14 +494,14 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Mukuro", 31, 1, 2 )
 : PlayVoice( "Voices/vo00_muk3828" )
-\CN["无黑色"]
+\CN["无黑"]
 “……！我疏忽了……”
 
 不愧是被幕臣雇佣的保镖啊……。
 
 : DrawFaceThumbnail( "Mukuro", 30, 1, 2 )
 : PlayVoice( "Voices/vo00_muk3829" )
-\CN["无黑色"]
+\CN["无黑"]
 “没办法……死了就没意义了。”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -531,7 +531,7 @@
 
 : DrawFaceThumbnail( "Mukuro", 38, 0, 0 )
 : PlayVoice( "Voices/vo00_muk3830" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈~……有人抢先了吗……”
 
 写着另一个人成功暗杀幕臣的事情

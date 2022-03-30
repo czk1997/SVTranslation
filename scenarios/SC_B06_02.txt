@@ -83,13 +83,13 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo00_muk2080" )
-\CN["无黑色"]
+\CN["无黑"]
 “这么说来，以前在吉野原收集贩卖人口的情报的时候
 只能从楼主那里得到情报啊……”
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk2081" )
-\CN["无黑色"]
+\CN["无黑"]
 “总之，据点总算是有办法了
 接下来就是小夜现在被囚禁在哪里了……”
 
@@ -126,7 +126,7 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo00_muk2082" )
-\CN["无黑色"]
+\CN["无黑"]
 “不快点的话……。已经没有缓期了。”
 
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
@@ -154,12 +154,12 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0952" )
-\CN["桃子"]
+\CN["桃"]
 “我听到你的话了，我没关系。”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0953" )
-\CN["桃子"]
+\CN["桃"]
 “要去救小夜吧？
 当然，我也会跟着你的”
 
@@ -176,7 +176,7 @@
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0954" )
-\CN["桃子"]
+\CN["桃"]
 “我很担心。
 所以，必须快点救出小夜”
 
@@ -278,7 +278,7 @@
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0955" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。小银听了肯定会说‘是吧’
 我会说的。嗯。没错”
 
@@ -291,7 +291,7 @@
 
 : DrawChara( "Mukuro", 9, 1)
 : PlayVoice( "Voices/vo00_muk2083" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，啊。我觉得还不错……”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
@@ -305,7 +305,7 @@
 : Wait()
 : DrawChara( "Mukuro", 22, 2)
 : PlayVoice( "Voices/vo00_muk2084" )
-\CN["无黑色"]
+\CN["无黑"]
 “什么！？白、红美……说什么……？”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -361,7 +361,7 @@
 : CharaCostume( "Mukuro", 0 )	//強制的に着衣へ
 : DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo00_muk2085" )
-\CN["无黑色"]
+\CN["无黑"]
 “……！和上次来的时候气氛完全不一样……”
 
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "LC" )
@@ -374,14 +374,14 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0956" )
-\CN["桃子"]
+\CN["桃"]
 “而且，我能感觉到人的气息。
 大概是鬼灯和白夜的人们在监视着什么在徘徊
 是吧”
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk2086" )
-\CN["无黑色"]
+\CN["无黑"]
 “必须要振作精神。”
 
 //●演出：無黒たち　山に入って行く
@@ -534,13 +534,13 @@
 : DrawChara( "Midori", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk2087" )
-\CN["无黑色"]
+\CN["无黑"]
 “我是来还小夜的。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo01_mom0957" )
-\CN["桃子"]
+\CN["桃"]
 “你在里面吧？
 如果能通过那里的话，我会很开心的”
 
@@ -812,7 +812,7 @@
 : ShowWnd()
 //●読み：六白（ろっぱく）
 : PlayVoice( "Voices/vo01_mom0958" )
-\CN["桃子"]
+\CN["桃"]
 “白夜九星・六白的织笠御影，今天绝对不会输的。
 上次借的东西，我会还给你的”
 
@@ -825,7 +825,7 @@
 //●演技：相手を挑発するような感じで
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0959" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵，那怎么说呢？”
 
 : DrawChara( "Mikage", 0, 0)
@@ -843,7 +843,7 @@
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom0960" )
-\CN["桃子"]
+\CN["桃"]
 “以前，我说过你没有那个兴趣……”
 
 我克服了苦难。
@@ -851,7 +851,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0961" )
-\CN["桃子"]
+\CN["桃"]
 （但是，还没有涉及到这个人……）
 
 冷静的现状分析————
@@ -866,7 +866,7 @@
 : EraseChara( "Mikage", 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0962" )
-\CN["桃子"]
+\CN["桃"]
 “不足的部分就是这样。只能靠毅力想办法了。”
 
 : PlayVoice( "Voices/vo11_mik0061" )
@@ -1699,7 +1699,7 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Ranmaru", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo00_muk1467" )
-\CN["无黑色"]
+\CN["无黑"]
 “那个，这手帕掉了吗？”
 
 : DrawChara( "Ranmaru", 3, 0)
@@ -1906,7 +1906,7 @@
 
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk2088" )
-\CN["无黑色"]
+\CN["无黑"]
 “因为我知道了对自己来说最重要的东西。”
 
 和重要的人们一起度过的日常——
@@ -1941,7 +1941,7 @@
 //: DrawFaceThumbnail("Mukuro", 9, 0, 0)
 : AutoFaceThumbnail( false )
 : PlayVoice( "Voices/vo00_muk0019" )
-\CN["无黑色"]
+\CN["无黑"]
 “呐，姐姐……！”
 
 : AutoFaceThumbnail( true )
@@ -1951,7 +1951,7 @@
 
 : AutoFaceThumbnail( false )
 : PlayVoice( "Voices/vo00_muk0020" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……想办法……”
 
 : DrawChara( "Mei", 3, 0)
@@ -1962,7 +1962,7 @@
 
 : AutoFaceThumbnail( false )
 : PlayVoice( "Voices/vo00_muk0021" )
-\CN["无黑色"]
+\CN["无黑"]
 “呐，姐姐，我也……”
 
 : DrawChara( "Mei", 0, 0)
@@ -1991,7 +1991,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk0926" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈？姐姐，你在开什么玩笑？”
 
 : DrawChara( "Mei", 18, 0)
@@ -2002,7 +2002,7 @@
 
 : DrawChara( "Mukuro", 36, 0)
 : PlayVoice( "Voices/vo00_muk0927" )
-\CN["无黑色"]
+\CN["无黑"]
 “……你是认真问的吗？”
 
 : DrawChara( "Mei", 0, 0)
@@ -2027,7 +2027,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2089" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐，不，神八代冥——我要在这里打倒你！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -2101,7 +2101,7 @@
 
 : DrawChara( "Mukuro", 16, 1)
 : PlayVoice( "Voices/vo00_muk2090" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈，哈……因为不能一直这样软弱下去！”
 
 : HideWnd()
@@ -2162,7 +2162,7 @@
 //●演技：心の声です
 //: DrawChara( "Mukuro", 17, 1)
 : PlayVoice( "Voices/vo00_muk2091" )
-\CN["无黑色"]
+\CN["无黑"]
 （切忌疏忽……确实——）
 
 //: DrawChara( "Mukuro", 46, 1)
@@ -2172,7 +2172,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2092" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊啊啊啊啊啊啊！”
 
 //●演出：斬撃　エフェクト
@@ -2217,7 +2217,7 @@
 : DrawChara( "Mukuro", 16, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2093" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐，她的样子……难道是，{黑夜叉，暗黑妖精}吗！？”
 
 : DrawChara( "Mei", 19, 0)
@@ -2244,7 +2244,7 @@
 : Call( "Scenarios/Effect*TransitionAttack" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2094" )
-\CN["无黑色"]
+\CN["无黑"]
 “哇！哇，好重……！”
 
 //: DrawChara( "Mei", 3, 0)
@@ -2260,7 +2260,7 @@
 : DrawChara( "Mukuro", 16, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk2095" )
 : ShowWnd()
-\CN["无黑色"]
+\CN["无黑"]
 「……！！」
 
 姐姐的刀劈开了我刚才还在的地面。
@@ -2271,7 +2271,7 @@
 : Call("Scenarios/Common*EvFadeOut")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2096" )
-\CN["无黑色"]
+\CN["无黑"]
 （如果认真接受了那样的话……）
 
 确实是被力量压倒了吧。
@@ -2309,7 +2309,7 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Mukuro", 19, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2097" )
-\CN["无黑色"]
+\CN["无黑"]
 “哇啊啊啊啊啊啊啊啊啊！”
 
 : HideWnd()
@@ -2334,7 +2334,7 @@
 : EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk2098" )
-\CN["无黑色"]
+\CN["无黑"]
 “……呼～……哈～……”
 
 大口吸气呼气。
@@ -2347,7 +2347,7 @@
 
 : DrawChara( "Mukuro", 31, 1)
 : PlayVoice( "Voices/vo00_muk2099" )
-\CN["无黑色"]
+\CN["无黑"]
 “那是当然的……可是——”
 
 ————因为我不想死。
@@ -2361,7 +2361,7 @@
 : if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) < 3 )
 	: DrawChara( "Mukuro", 16, 1)
 	: PlayVoice( "Voices/vo00_muk2100" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “绝对要活下去……。
 和他们……和重要的伙伴们，还有……”
 
@@ -2370,7 +2370,7 @@
 : else
 	: DrawChara( "Mukuro", 16, 1)
 	: PlayVoice( "Voices/vo00_muk2101" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “绝对要活下去……。
 还有很多想做的事情！”
 
@@ -2398,7 +2398,7 @@
 //●演技：心の声です
 //: DrawChara( "Mukuro", 16, 1)
 : PlayVoice( "Voices/vo00_muk2102" )
-\CN["无黑色"]
+\CN["无黑"]
 （这是什么……？发生了什么事？）
 
 简直就像突然被飞到别的世界一样的感觉。
@@ -2430,7 +2430,7 @@
 
 //: DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk2103" )
-\CN["无黑色"]
+\CN["无黑"]
 “{黑夜叉，暗黑妖精}？是我？”
 
 全身弥漫的力量是成为{黑夜叉，暗黑精灵}的证据
@@ -2438,7 +2438,7 @@
 
 //: DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk2104" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊啊啊啊啊啊啊啊——————！”
 
 : HideWnd()
@@ -2474,7 +2474,7 @@
 : ShowWnd()
 //: DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk2105" )
-\CN["无黑色"]
+\CN["无黑"]
 （这个技能至今为止已经展示过好几次了……）
 
 我无法体会到的“阳隐一刀流”的招数。
@@ -2489,7 +2489,7 @@
 : EraseAllImage( 9, Call("Scenarios/Common*EffTime") )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2106" )
-\CN["无黑色"]
+\CN["无黑"]
 “哦哦哦哦哦哦哦哦哦！”
 
 //●演出：刀合わせ
@@ -2541,7 +2541,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3404" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流——{天冲，天冲}！”
 
 //●演出：刀合わせ
@@ -2558,7 +2558,7 @@
 
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk2108" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的。这是我希望自己选择的剑之技。”
 
 //: DrawChara( "Mukuro", 16, 0)
@@ -2568,7 +2568,7 @@
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2109" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流・清流————！”
 
 //: DrawChara( "Mei", 3, 0)
@@ -2643,7 +2643,7 @@
 //: DrawChara( "Mukuro", 17, 0)
 : DrawFaceThumbnail( "Mukuro", 17, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2110" )
-\CN["无黑色"]
+\CN["无黑"]
 （强行来决定胜负吗……！？）
 
 如果是以前的我的话，确实会被这个技能斩杀的吧。
@@ -2652,7 +2652,7 @@
 //: DrawChara( "Mukuro", 16, 0)
 : DrawFaceThumbnail( "Mukuro", 16, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2111" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流・千鸟岚月！！”
 
 : HideWnd()

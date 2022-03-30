@@ -52,7 +52,7 @@
 : DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Leo", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo00_muk1532" )
-\CN["无黑色"]
+\CN["无黑"]
 “实际上，我们是被白夜的达磨一个人打败的。
 我什么都不能还嘴”
 
@@ -62,7 +62,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk1533" )
-\CN["无黑色"]
+\CN["无黑"]
 “着急也是没办法的。一步一步踏实地恢复信赖是不行的。”
 ”
 
@@ -85,22 +85,22 @@
 
 : DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0770" )
-\CN["桃子"]
+\CN["桃"]
 “哈~……。真的，你说了很多你喜欢的话呢。”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “让他说就好了。”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom0771" )
-\CN["桃子"]
+\CN["桃"]
 “啊？意外的很冷静。我还以为会开车呢。”
 
 : DrawChara( "Gin", 16, 0)
-\CN["银子"]
+\CN["银"]
 “那么，嘛……”
 
 银和雷欧一起向见回组进攻后
@@ -111,12 +111,12 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0772" )
-\CN["桃子"]
+\CN["桃"]
 “如果白夜破灭了的话，就什么也不会说了吧
 虽然是到那时为止的艰辛……”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “是啊。”
 
 那个时候，因为要做别的任务，所以不能在现场集合
@@ -194,7 +194,7 @@
 : EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 24, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0333" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “您这么一说，我真是头疼啊。”
 
 夜幕。这是只有幕府和贵族的伟人在密会上使用的旅馆
@@ -206,7 +206,7 @@
 //●演技：心の声です
 : DrawChara( "Azami", 2, 0)
 : PlayVoice( "Voices/vo05_aza0334" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （将军自己也很清楚，编组是大失败的
 存在。绝对不会弄破鬼灯）
 
@@ -243,7 +243,7 @@
 : EraseChara( "Tadakatsu", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 2, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0335" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “是的，我知道。”
 
 话虽如此，这也只是嘴吧。
@@ -254,7 +254,7 @@
 //●演技：心の声です
 : DrawChara( "Azami", 5, 2)
 : PlayVoice( "Voices/vo05_aza0336" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （嘛，比起反幕派，我更在意的是
 有啊）
 
@@ -270,7 +270,7 @@
 //●演技：心の声です
 : DrawChara( "Azami", 6, 2)
 : PlayVoice( "Voices/vo05_aza0337" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （但是，无论调查幕府内的哪个地方，《阿波罗之弓》都是
 没找到……）
 
@@ -284,7 +284,7 @@
 //●演技：心の声です
 : DrawChara( "Azami", 25, 2)
 : PlayVoice( "Voices/vo05_aza0338" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （不会是那个孩子吧……）
 
 嘲讽本来就不是那样的吗？
@@ -296,20 +296,20 @@
 //●演技：心の声です
 : DrawChara( "Azami", 1, 2)
 : PlayVoice( "Voices/vo05_aza0339" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （还有很多不明白的地方，把大和吹跑了
 我知道有足够的力量）
 
 : DrawChara( "Azami", 6, 2)
 //●演技：心の声です
 : PlayVoice( "Voices/vo05_aza0340" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （在那力量发挥之前，无论做什么都必须停止。）
 
 //●演技：心の声です
 : DrawChara( "Azami", 17, 2)
 : PlayVoice( "Voices/vo05_aza0341" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （我知道了阿波罗箭的秘密，那时候我才是——）
 
 : DrawChara( "Tadakatsu", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -319,7 +319,7 @@
 
 : DrawChara( "Azami", 26, 2)
 : PlayVoice( "Voices/vo05_aza0342" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “是的，正如将军所愿……”
 
 嘲讽改变了决心，再次被将军拥抱。

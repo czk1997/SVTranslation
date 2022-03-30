@@ -33,40 +33,40 @@
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo01_mom1046" )
-\CN["桃子"]
+\CN["桃"]
 “小银，帝都终于安定下来了……”
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “是啊。”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1047" )
-\CN["桃子"]
+\CN["桃"]
 “真的，要到这里来
 好像是很长的一瞬间……”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “因为上面的{头，头}怎么也定不下来啊。”
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom1048" )
-\CN["桃子"]
+\CN["桃"]
 “嘛，幕府方面小夜也很可靠
 还有，老师也在呢。交给我就放心了”
 
 : DrawChara( "Gin", 4, 0)
-\CN["银子"]
+\CN["银"]
 “是啊。奶奶，很聪明。”
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom1049" )
-\CN["桃子"]
+\CN["桃"]
 “小银，我才不这么说呢！”
 
 : DrawChara( "Gin", 0, 0)
-\CN["银子"]
+\CN["银"]
 “……那么，小姐。今后怎么办？家里的事之类的。”
 
 完全没落的公主椿家……。
@@ -82,20 +82,20 @@
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1050" )
-\CN["桃子"]
+\CN["桃"]
 “是啊……嘛，对我来说怎么样都无所谓
 但是呢……”
 
 就这样扔掉也没什么。
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “嗯，我不管发生什么，无论在哪里
 我跟小姐一起去”
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom1051" )
-\CN["桃子"]
+\CN["桃"]
 「这样啊。呵呵，那就这样吧。
 嗯。从一开始重建姬椿家也很有趣呢”
 
@@ -104,26 +104,26 @@
 小银也吓得睁大了眼睛。
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “那么，这位怎么办？”
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom1052" )
-\CN["桃子"]
+\CN["桃"]
 “当然不会放弃的。”
 
 : DrawChara( "Gin", 3, 0)
-\CN["银子"]
+\CN["银"]
 “呵。你说的是哪一个？”
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom1053" )
-\CN["桃子"]
+\CN["桃"]
 “就是这样♪
 人生只有一次，既然这样，那就尽情享受吧”
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “明白了。我会一直在一起的。”
 
 贵族和街道警察的双重作用
@@ -137,14 +137,14 @@
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : chara = "Momo"; lay = 0 ; type = "F"; Call( "Scenarios/Common*FgLarge" );
 : PlayVoice( "Voices/vo01_mom1054" )
-\CN["桃子"]
+\CN["桃"]
 “如果这样决定的话，就要开始各种各样的行动了！
 呵呵，不知怎么变得开心起来了”
 
 : JumpLayer( 3, 0, -50, 1, 0.25)
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom1055" )
-\CN["桃子"]
+\CN["桃"]
 “如果三个人齐心协力的话
 我觉得我什么都能做”
 
@@ -154,13 +154,13 @@
 : ResetLayer(3)
 : DrawChara( "Gin", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “是啊………是吗？3个人？”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 6, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1056" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵。听说现在已经两个月了。
 今后会是爸爸吗？还是爸爸？达迪？
 想怎么称呼你？”
@@ -171,22 +171,22 @@
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 6, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “小姐，出门没问题吗？还是睡觉的好。”
 
 : DrawChara( "Momo", 5, 1)
 : PlayVoice( "Voices/vo01_mom1057" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵。没关系。
 还有，那个“小姐”也必须要改变啊”
 
 : DrawChara( "Momo", 2, 1)
 : PlayVoice( "Voices/vo01_mom1058" )
-\CN["桃子"]
+\CN["桃"]
 “妈妈？妈妈？还有什么其他的吗？”
 
 : DrawChara( "Gin", 2, 1)
-\CN["银子"]
+\CN["银"]
 “那么，那么……‘桃’”
 
 : HideWnd()
@@ -196,7 +196,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1059" )
-\CN["桃子"]
+\CN["桃"]
 “哈，是的。”
 
 突然被叫到“桃”这个名字，我很吃惊。
@@ -210,7 +210,7 @@
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 5, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1060" )
-\CN["桃子"]
+\CN["桃"]
 “嗯！小银！
 我们的孩子，让我们考虑一个好名字吧”
 
@@ -506,7 +506,7 @@
 : ShowWnd()
 //: DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2367" )
-\CN["无黑色"]
+\CN["无黑"]
 “大家都很努力啊。”
 
 抱着和雷欧生下的爱女出现在道场。
@@ -527,7 +527,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2368" )
-\CN["无黑色"]
+\CN["无黑"]
 “呼呼，睡得很香。”
 
 //: DrawChara( "Mei", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -544,7 +544,7 @@
 
 //: DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2369" )
-\CN["无黑色"]
+\CN["无黑"]
 “嘛。即使这样，也睡得很舒服啊。”
 
 重要的人在身边，是非常不可替代的
@@ -582,7 +582,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2370" )
-\CN["无黑色"]
+\CN["无黑"]
 “喂喂，结爱还只是个婴儿呢。
 即使变成那样，也是几年后的事了”
 
@@ -600,7 +600,7 @@
 
 //: DrawChara( "Mukuro", 6, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2371" )
-\CN["无黑色"]
+\CN["无黑"]
 “不要那样瞪着他。
 我说，你一说到恋爱的事，还是老样子啊……”
 
@@ -611,7 +611,7 @@
 
 //: DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk2372" )
-\CN["无黑色"]
+\CN["无黑"]
 “这孩子今后要走的未来会变成什么样呢？”
 
 有时会感到不安。
@@ -625,7 +625,7 @@
 
 //: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2373" )
-\CN["无黑色"]
+\CN["无黑"]
 “嘛，是啊。”
 
 //: DrawChara( "Leo", 0, 0)
@@ -647,7 +647,7 @@
 : evfile = "eva_a008_1_1_0100000_0000000_0_"; Call("Scenarios/Common*EvChange");
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2374" )
-\CN["无黑色"]
+\CN["无黑"]
 “正如你所说。
 为了今后大和的未来，结爱们能够安心生活
 必须要加油啊”

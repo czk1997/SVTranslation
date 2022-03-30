@@ -24,18 +24,18 @@
 //Yoshi：左に銀、右に桃
 : DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
-\CN["银子"]
+\CN["银"]
 “小姐，再来一杯茶。”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0302" )
-\CN["桃子"]
+\CN["桃"]
 “小银，谢谢你。”
 
 //●演技：伸びをしてから言っている感じです
 : DrawChara( "Momo",15, 0)
 : PlayVoice( "Voices/vo01_mom0303" )
-\CN["桃子"]
+\CN["桃"]
 “嗯……话虽如此，今天总觉得很悠闲呢。
 也没有什么特别的事件”
 
@@ -53,7 +53,7 @@
 : DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Leo",13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo00_muk1014" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊……偶尔这样也不错啊。”
 
 \CN["雷欧"]
@@ -61,7 +61,7 @@
 
 : DrawChara( "Mukuro",11, 0)
 : PlayVoice( "Voices/vo00_muk1015" )
-\CN["无黑色"]
+\CN["无黑"]
 “不做。说起来，现在正在工作。”
 
 : DrawChara( "Leo", 6, 0)
@@ -119,7 +119,7 @@
 //Yoshi：センターに無黒
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1016" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷、雷欧……那个孩子是……？”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -137,7 +137,7 @@
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk1017" )
-\CN["无黑色"]
+\CN["无黑"]
 “是、是吗……”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -151,17 +151,17 @@
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0304" )
-\CN["桃子"]
+\CN["桃"]
 “公主！？为什么会在这里！？”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1018" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子，你知道这孩子吗？”
 
 : DrawChara( "Momo",13, 0)
 : PlayVoice( "Voices/vo01_mom0305" )
-\CN["桃子"]
+\CN["桃"]
 “知道也没什么，一桥将军的女儿啊！
 也就是说，公主啊，公主！”
 
@@ -169,7 +169,7 @@
 : Wait()
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk1019" )
-\CN["无黑色"]
+\CN["无黑"]
 “对，对不起，公主……！太无礼了！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -186,7 +186,7 @@
 : DrawChara( "Kinako",0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo00_muk1020" )
-\CN["无黑色"]
+\CN["无黑"]
 “我是神八代无黑。”
 
 : PlayVoice( "Voices/vo02_kin0201" )
@@ -199,7 +199,7 @@
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0306" )
-\CN["桃子"]
+\CN["桃"]
 “我是山茶桃公主。这里是风真银。”
 
 //Yoshi：センターに小夜
@@ -209,7 +209,7 @@
 “说到姬椿，大概是仙叶的公主椿家的人吧？”
 
 : PlayVoice( "Voices/vo01_mom0307" )
-\CN["桃子"]
+\CN["桃"]
 “我是左先生。以后请多关照。”
 
 : DrawChara( "Sayo", 1, 0)
@@ -234,7 +234,7 @@
 //Yoshi：センターにあざみ
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0268" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那没问题。
 因为他让我来照顾你”
 
@@ -256,7 +256,7 @@
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0269" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “对不起，公主。那我做不到。
 因为幕府的人说不要从屯所出去”
 
@@ -279,7 +279,7 @@
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : DrawChara( "Sayo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo01_mom0308" )
-\CN["桃子"]
+\CN["桃"]
 “公主，怎么样？合您的口味吗？”
 
 : DrawChara( "Sayo", 1, 0)
@@ -288,7 +288,7 @@
 “真好吃。小银，你很会沏茶呢。”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “……小聪明”
 
 那个桃子非常在意，对本人来说不好
@@ -379,7 +379,7 @@
 : DrawChara( "Mukuro",46, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 : PlayVoice( "Voices/vo00_muk1021" )
-\CN["无黑色"]
+\CN["无黑"]
 “……！一、公主，突然间……！？”
 
 : DrawChara( "Sayo", 2, 0)
@@ -390,7 +390,7 @@
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk1022" )
-\CN["无黑色"]
+\CN["无黑"]
 “我们并不是那种关系……”
 
 : DrawChara( "Sayo",10, 0)
@@ -414,7 +414,7 @@
 : DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 //●演技：心の声です
 : PlayVoice( "Voices/vo00_muk1023" )
-\CN["无黑色"]
+\CN["无黑"]
 （会喜欢上谁吗……嗯……对我来说
 因为不需要……）
 
@@ -425,7 +425,7 @@
 : DrawChara( "Mukuro",39, 0)
 //●演技：心の声です
 : PlayVoice( "Voices/vo00_muk1024" )
-\CN["无黑色"]
+\CN["无黑"]
 （但是，我不想否定不是那样的。）
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )

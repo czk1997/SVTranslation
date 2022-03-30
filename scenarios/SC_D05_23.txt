@@ -32,7 +32,7 @@
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk4597" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，接下来又是什么请求呢？”
 
 只要有钱，哪个委托都可以。
@@ -45,14 +45,14 @@
 //●読み：吉野原（よしのはら）
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk4598" )
-\CN["无黑色"]
+\CN["无黑"]
 “吉野原是色町吧？
 你打算占领那种地方干什么？”
 
 : DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo01_mom1516" )
-\CN["桃子"]
+\CN["桃"]
 “啊，没有黑的话就不知道了。
 那样色情的街道是相当重要的地方”
 
@@ -68,7 +68,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4599" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道了。那么，那个占据着的家伙是谁？”？
 从口气上看应该是白夜的干部级别……”
 
@@ -78,7 +78,7 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1517" )
-\CN["桃子"]
+\CN["桃"]
 “哎呀，你们父子俩都是干部啊。”
 
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R")
@@ -91,13 +91,13 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1518" )
-\CN["桃子"]
+\CN["桃"]
 「啊，魔术的。
 和之前战斗过的织笠御影哪个更厉害呢？”
 
 : DrawChara( "Momo", 11, 0)
 : PlayVoice( "Voices/vo01_mom1519" )
-\CN["桃子"]
+\CN["桃"]
 “按顺序来说，织笠御影好像更高……。
 确实是第六个或者是什么吧？”
 
@@ -114,7 +114,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk4600" )
-\CN["无黑色"]
+\CN["无黑"]
 “明白了。总之先去吉野原看看吧。
 确实是要经过帝都东街道吧？”
 
@@ -210,7 +210,7 @@
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
 : DrawChara( "Kinako", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo00_muk4601" )
-\CN["无黑色"]
+\CN["无黑"]
 “黄菜子，那两个人……？”
 
 : DrawChara( "Kinako", 2, 0)
@@ -221,7 +221,7 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1520" )
-\CN["桃子"]
+\CN["桃"]
 “那真的是父子吗？
 就算不像也要有个限度不是吗？”
 
@@ -238,7 +238,7 @@
 
 : DrawFaceThumbnail( "Momo", 7, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1521" )
-\CN["桃子"]
+\CN["桃"]
 “糟糕……好像注意到了这边。”
 
 //●分岐：誰か１人でも全裸がいる場合
@@ -274,7 +274,7 @@
 	: DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 5, "RC" )
 	//●読み：黄蘭（おうらん）
 	: PlayVoice( "Voices/vo01_mom1522" )
-	\CN["桃子"]
+	\CN["桃"]
 “……黄兰？”
 
 	: DrawChara( "Kinako", 10, 0, 0, 0.5, 0.0, 4, "LC" )
@@ -324,7 +324,7 @@
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
 : DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom1523" )
-\CN["桃子"]
+\CN["桃"]
 “那个，两个人都变成了{黑夜叉，暗黑妖精}吧？”
 
 : DrawChara( "Kinako", 9, 0)
@@ -334,7 +334,7 @@
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk4602" )
-\CN["无黑色"]
+\CN["无黑"]
 “一开始就飞走。
 因为不是偷工减料就能生存的对手”
 
@@ -407,7 +407,7 @@
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 31, 1, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk4603" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈，是，是现在！”
 
 : DrawChara( "Kinako", 2, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -419,7 +419,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 8, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo01_mom1524" )
-\CN["桃子"]
+\CN["桃"]
 “交给我吧！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -446,7 +446,7 @@
 
 : DrawChara( "Mukuro", 26, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
 : PlayVoice( "Voices/vo00_muk4604" )
-\CN["无黑色"]
+\CN["无黑"]
 “好像终于掉下来了。”
 
 //●演技：息子の死を前にして理性を失っています
@@ -474,7 +474,7 @@
 : DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
 : DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
 : PlayVoice( "Voices/vo01_mom1525" )
-\CN["桃子"]
+\CN["桃"]
 “……无黑”
 
 *battle01_select
@@ -515,11 +515,11 @@
 : DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
 : DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo00_muk4605" )
-\CN["无黑色"]
+\CN["无黑"]
 “剩下的就交给比拉加吧。”
 
 : PlayVoice( "Voices/vo01_mom1526" )
-\CN["桃子"]
+\CN["桃"]
 “是啊，那很好。”
 
 : PlayVoice( "Voices/vo02_kin0817" )
@@ -575,7 +575,7 @@
 
 : DrawChara( "Mukuro", 37, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk4606" )
-\CN["无黑色"]
+\CN["无黑"]
 “剩下的就交给警察吧……”
 
 这是互相残杀的结果。

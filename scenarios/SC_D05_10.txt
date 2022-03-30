@@ -9,7 +9,7 @@
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1354" )
-\CN["桃子"]
+\CN["桃"]
 “保镖？
 ”
 
@@ -28,7 +28,7 @@
 
 : DrawChara( "Momo", 11, 0)
 : PlayVoice( "Voices/vo01_mom1355" )
-\CN["桃子"]
+\CN["桃"]
 “也就是说，根据场合的不同，必须和流氓和警察战斗
 不可以吧。嗯，怎么办呢？”
 
@@ -49,7 +49,7 @@
 *sc001_select_s1
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1356" )
-\CN["桃子"]
+\CN["桃"]
 “主要的工作是在葬礼期间，保护这一组就可以了吧？
 那样的话，嘛，可以另外做了”
 
@@ -68,7 +68,7 @@
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom1357" )
-\CN["桃子"]
+\CN["桃"]
 “明白。那么，去哪里好呢？”
 
 \CN["眼镜店"]
@@ -152,7 +152,7 @@
 
 : DrawChara( "Momo", 1, 0, 0)
 : PlayVoice( "Voices/vo01_mom1358" )
-\CN["桃子"]
+\CN["桃"]
 “对，是的。因为有你们组长的葬礼
 我是为了保护那个才来的」
 
@@ -176,7 +176,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1359" )
-\CN["桃子"]
+\CN["桃"]
 （诶，那个人，很受信赖呢。）
 
 \CN["下总组的男子2"]
@@ -221,7 +221,7 @@
 
 : DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1360" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。我也希望是这样。”
 
 \CN["下总组的男子2"]
@@ -229,7 +229,7 @@
 
 : DrawChara( "Momo", 11, 0)
 : PlayVoice( "Voices/vo01_mom1361" )
-\CN["桃子"]
+\CN["桃"]
 “嗯，是女人的直觉吗？
 总觉得要发生什么事”
 
@@ -258,7 +258,7 @@
 
 : DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1362" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。嘛，我倒是有希望被排除在外的直觉……”
 
 这样对话的时候。
@@ -278,7 +278,7 @@
 : PlaySe("SE/Se_Foot01")
 : lay = 3; type = "DL"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo01_mom1363" )
-\CN["桃子"]
+\CN["桃"]
 “敌人袭击……！？”
 
 受枪击的男子伤势很深。
@@ -329,7 +329,7 @@
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1364" )
-\CN["桃子"]
+\CN["桃"]
 “我没想到你会在这里问我相亲组的名字。
 你们在全国任何地方都想给你们添麻烦啊」
 
@@ -338,7 +338,7 @@
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom1365" )
-\CN["桃子"]
+\CN["桃"]
 “将军直属部队的人为什么会来西都？”
 是吗？莫非你被降职了？”
 
@@ -357,13 +357,13 @@
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom1366" )
-\CN["桃子"]
+\CN["桃"]
 “如果要妨碍葬礼的话就不饶恕了。
 但是，如果就这样卷着尾巴逃走的话，我会放过你的”
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom1367" )
-\CN["桃子"]
+\CN["桃"]
 “那么，怎么办呢？我给你特别选择。”
 
 反正答案已经定下来了……。
@@ -378,7 +378,7 @@
 看周围的男人们好像完全没有退缩的意思。
 
 : PlayVoice( "Voices/vo01_mom1368" )
-\CN["桃子"]
+\CN["桃"]
 “用我的魔术把所有人都揍飞。
 如果把刀指向的话，就要做好死的觉悟啊」
 
@@ -437,7 +437,7 @@
 : PlayBgm("BGM/02_CM002")
 : DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1369" )
-\CN["桃子"]
+\CN["桃"]
 “呼～……像我这样一个柔弱的女孩子里有几个
 居然会来，真是差劲的家伙啊”
 
@@ -445,7 +445,7 @@
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1370" )
-\CN["桃子"]
+\CN["桃"]
 “嘛，这家伙连杀人的价值都没有
 放着不管吧”
 
@@ -468,7 +468,7 @@
 //●演技：心の声です
 : DrawFaceThumbnail( "Momo", 11, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1371" )
-\CN["桃子"]
+\CN["桃"]
 （大家都哭得很厉害呢）
 
 看到大男人们都在流泪
@@ -480,7 +480,7 @@
 //●演技：心の声です
 : DrawFaceThumbnail( "Momo", 4, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1372" )
-\CN["桃子"]
+\CN["桃"]
 （正义和邪恶，真的，已经不太清楚了。）
 
 在鬼灯里的时候，对自己做的事情完全没有迷惑。

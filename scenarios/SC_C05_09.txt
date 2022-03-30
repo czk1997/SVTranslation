@@ -44,7 +44,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3035" )
-\CN["无黑色"]
+\CN["无黑"]
 “我下达的命令是牢狱的袭击吗……”
 
 以前，是为了救出日野家的户主而潜入的牢房。
@@ -53,7 +53,7 @@
 //●演技：大和が荒れてきたことで考え込んでいます
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk3036" )
-\CN["无黑色"]
+\CN["无黑"]
 「…………」
 
 自从白夜真正开始行动后
@@ -65,7 +65,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 39, 0)
 	: PlayVoice( "Voices/vo00_muk3037" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “……这样真的好吗？
 我做的事对吗……？”
 
@@ -74,7 +74,7 @@
 
 	: DrawChara( "Mukuro", 21, 0)
 	: PlayVoice( "Voices/vo00_muk3038" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “推翻幕府，创造新时代。
 为此牺牲是必要的……”
 
@@ -87,7 +87,7 @@
 : else
 	: DrawChara( "Mukuro", 39, 0)
 	: PlayVoice( "Voices/vo00_muk3039" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “以白夜为中心打倒幕府，建立新时代
 正在做。牺牲了也没办法……”
 
@@ -101,7 +101,7 @@
 
 : DrawChara( "Mukuro", 23, 0, 3)
 : PlayVoice( "Voices/vo00_muk3040" )
-\CN["无黑色"]
+\CN["无黑"]
 “我现在只做应该做的事。”
 
 这样对自己说。
@@ -132,7 +132,7 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3041" )
-\CN["无黑色"]
+\CN["无黑"]
 “对不起，让你久等了。”
 
 \CN["白夜队士·男1"]
@@ -154,7 +154,7 @@
 
 : DrawChara( "Mukuro", 23, 0, 2)
 : PlayVoice( "Voices/vo00_muk3042" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道了。”
 
 //●演出：モブたちが一斉に、牢屋敷に乗り込んでいく
@@ -357,7 +357,7 @@
 : DrawChara( "Mukuro", 23, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3043" )
-\CN["无黑色"]
+\CN["无黑"]
 “这样的话就好像所有人了。去外面看看吧。”
 
 //●演出：場面転換トランジション
@@ -382,7 +382,7 @@
 	: DrawChara( "Ryu", 1, 0, 0, 0.25, 0.0, 3, "LC" )
 	: DrawChara( "Mukuro", 23, 0, 2, 0.25, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo00_muk3044" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “……龙先生”
 
 //●分岐：［服装］全裸の場合
@@ -395,7 +395,7 @@
 	: DrawChara( "Ryu", 22, 0, 0, 0.25, 0.0, 3, "LC" )
 	: DrawChara( "Mukuro", 23, 0, 2, 0.25, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo00_muk3045" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “这种认真的反应会让我失去自信……”
 
 //●分岐終了
@@ -406,7 +406,7 @@
 
 : DrawChara( "Mukuro", 1, 0, 2)
 : PlayVoice( "Voices/vo00_muk3046" )
-\CN["无黑色"]
+\CN["无黑"]
 “伤已经好了吗？”
 
 : DrawChara( "Ryu", 5, 0)
@@ -422,7 +422,7 @@
 
 : DrawChara( "Mukuro", 21, 0)
 : PlayVoice( "Voices/vo00_muk3047" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果可以的话，我想避开和龙先生的战斗……”
 
 如果是以前的我就逃不掉的这个场面，我已经做好了死的觉悟。
@@ -439,7 +439,7 @@
 
 	: DrawChara( "Mukuro", 12, 0)
 	: PlayVoice( "Voices/vo00_muk3048" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我这边是血色减退……”
 
 //●分岐終了地点へ
@@ -453,7 +453,7 @@
 
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk3049" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “光看就知道了吗？真不愧是。”
 
 //●分岐終了
@@ -464,7 +464,7 @@
 //●演技：殺気を放たれて驚いている感じです
 : DrawChara( "Mukuro", 16, 0, 5)
 : PlayVoice( "Voices/vo00_muk3050" )
-\CN["无黑色"]
+\CN["无黑"]
 「……！？」
 
 皮肤越是刺痛越锋利，越是空气淤塞越是浓重的杀气。
@@ -535,7 +535,7 @@
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk3051" )
-\CN["无黑色"]
+\CN["无黑"]
 “在黑夜叉、黑精灵面前
 真不愧是完全不动啊”
 
@@ -576,7 +576,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk3052" )
-\CN["无黑色"]
+\CN["无黑"]
 （这就是龙的{黑夜叉，暗黑精灵}化。
 比姐姐更强吧……？）
 
@@ -638,7 +638,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3053" )
-\CN["无黑色"]
+\CN["无黑"]
 “哦哦哦哦哦哦哦哦！”
 
 : HideWnd()
@@ -684,7 +684,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3054" )
-\CN["无黑色"]
+\CN["无黑"]
 “——八重樱流·村云一闪”
 
 : HideWnd()
@@ -866,7 +866,7 @@
 	//●演技：自分から裸になっているのでいたたまれない感じです
 	: DrawChara( "Mukuro", 12, 0, 1, 0.0, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo00_muk3055" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “……啊，啊”
 
 因为自己喜欢裸体，所以被这样对待的话
@@ -878,7 +878,7 @@
 : endif
 : DrawChara( "Mukuro", 28, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo00_muk3056" )
-\CN["无黑色"]
+\CN["无黑"]
 “龙先生的对手居然还活着……”
 
 不，龙先生不是手下留情吗？

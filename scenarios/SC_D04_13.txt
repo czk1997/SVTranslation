@@ -10,7 +10,7 @@
 
 : DrawChara( "Mukuro", 0, 0, 0 )
 : PlayVoice( "Voices/vo00_muk3897" )
-\CN["无黑色"]
+\CN["无黑"]
 “因为镇上的人在谈论。我听说过。”
 
 : DrawChara( "Mukuro", 0, 0)
@@ -45,7 +45,7 @@
 //●読み：茨木街道（いばらぎかいどう）
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk3898" )
-\CN["无黑色"]
+\CN["无黑"]
 “我来试试这项工作。那家伙现在还在茨木街道的驿站町
 在吗？”
 
@@ -112,7 +112,7 @@
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3899" )
-\CN["无黑色"]
+\CN["无黑"]
 “相当、{人气、人烟}没有的驿站町。
 理所当然吗……”
 
@@ -161,7 +161,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk3900" )
-\CN["无黑色"]
+\CN["无黑"]
 “晚上的驿站町这么安静，真奇怪。”
 
 特别是在交易频繁的茨木街道的驿站町
@@ -170,14 +170,14 @@
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk3901" )
-\CN["无黑色"]
+\CN["无黑"]
 “正因为如此，才更害怕辻斩吧。”
 
 也就是说，辻斩事件的可信度很高……。
 
 : DrawChara( "Mukuro", 41, 0)
 : PlayVoice( "Voices/vo00_muk3902" )
-\CN["无黑色"]
+\CN["无黑"]
 “……我只是在街上徘徊了一会儿。”
 
 从背后感觉到了气息——强烈的杀气。
@@ -191,7 +191,7 @@
 : PlayHSe( "SE/Se_Katana01" )
 : DrawChara( "Mukuro", 24, 0, 5 )
 : PlayVoice( "Voices/vo00_muk3903" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道他在后面。
 赶紧让我看看你的样子怎么样？”
 
@@ -213,7 +213,7 @@
 
 	: DrawChara( "Mukuro", 27, 0)
 	: PlayVoice( "Voices/vo00_muk3904" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “虽然我觉得比起辻斩的家伙要好一些。”
 
 	\CN["杜松子酒"]
@@ -224,7 +224,7 @@
 : endif
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3905" )
-\CN["无黑色"]
+\CN["无黑"]
 “你不觉得自己会被砍吗？”
 
 \CN["杜松子酒"]
@@ -234,7 +234,7 @@
 
 : DrawChara( "Mukuro", 25, 0)
 : PlayVoice( "Voices/vo00_muk3906" )
-\CN["无黑色"]
+\CN["无黑"]
 “{夹竹桃，鱼糕}吗。
 没听说过名字的刀……”
 
@@ -320,7 +320,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3907" )
-\CN["无黑色"]
+\CN["无黑"]
 （果然是被妖刀操控着？）
 
 我听说过几起类似的事件……。
@@ -333,7 +333,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 25, 0)
 : PlayVoice( "Voices/vo00_muk3908" )
-\CN["无黑色"]
+\CN["无黑"]
 （难道你不记得以前的事情吗？）
 
 //●分岐：悪堕ちＬＶが３の場合
@@ -380,7 +380,7 @@
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk3909" )
-\CN["无黑色"]
+\CN["无黑"]
 “我抓到了杜松子酒，请你处理一下。”
 
 \CN["眼镜店"]
@@ -427,7 +427,7 @@
 *sc003_select_s2
 : DrawChara( "Mukuro", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk3910" )
-\CN["无黑色"]
+\CN["无黑"]
 “杀了他吗……”
 
 \CN["杜松子酒"]
@@ -448,7 +448,7 @@
 
 : DrawChara( "Mukuro", 26, 0, 2, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk3911" )
-\CN["无黑色"]
+\CN["无黑"]
 “琴酒已经处理好了。拜托你善后。”
 
 \CN["眼镜店"]

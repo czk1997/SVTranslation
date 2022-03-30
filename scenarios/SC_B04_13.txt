@@ -43,7 +43,7 @@
 
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk1327" )
-\CN["无黑色"]
+\CN["无黑"]
 “……只是昏过去了吗……。
 但是，这到底是怎么回事……？”
 
@@ -75,7 +75,7 @@
 : Wait()
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk1328" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊……谁会这样……”
 
 //●演出：無黒　庭に出る
@@ -219,7 +219,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk1329" )
-\CN["无黑色"]
+\CN["无黑"]
 “这么说你就退了？”
 
 刚才才知道对方比自己高几级。
@@ -266,7 +266,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1330" )
-\CN["无黑色"]
+\CN["无黑"]
 “……！？是，速度……”
 
 一瞬间逼近眼前的男人的刃。
@@ -356,7 +356,7 @@
 : PlayBgm("BGM/31_CM016")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0307" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “这又给我做得太花哨了。”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
@@ -367,7 +367,7 @@
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0308" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，是啊。你是什么人？”？
 看来是白夜的头目达磨……？”
 
@@ -377,7 +377,7 @@
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0309" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我不太想和你认识。”
 
 : DrawChara( "Daruma", 0, 0)
@@ -387,7 +387,7 @@
 
 : DrawChara( "Azami", 8, 0)
 : PlayVoice( "Voices/vo05_aza0310" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “诶。那是绕圈子比我强。”
 你想说吗？”
 
@@ -397,12 +397,12 @@
 
 : DrawChara( "Azami", 14, 0)
 : PlayVoice( "Voices/vo05_aza0311" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那么，要不要试试？现在在这里。”
 
 : DrawChara( "Azami", 16, 0)
 : PlayVoice( "Voices/vo05_aza0312" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “实际上，我也被重要的伙伴们欺负了
 我脑子里乱七八糟的”
 
@@ -422,7 +422,7 @@
 : Wait()
 //●演技：心の声です
 : PlayVoice( "Voices/vo00_muk1331" )
-\CN["无黑色"]
+\CN["无黑"]
 （……非常气魄……身体完全动不了。）
 
 \CN["雷欧"]
@@ -460,7 +460,7 @@
 : Call( "Scenarios/Common*FgLarge" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0313" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊啊啊啊啊！”
 
 //●演出：刀と刀がぶつかる
@@ -494,7 +494,7 @@
 : DrawChara( "Azami", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R")
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L")
 : PlayVoice( "Voices/vo05_aza0314" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “所谓TOP好像不是摆样子……”
 
 : DrawChara( "Daruma", 0, 0)
@@ -542,7 +542,7 @@
 
 : DrawChara( "Azami", 14, 0)
 : PlayVoice( "Voices/vo05_aza0315" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我可以认真起来吗？”
 
 : DrawChara( "Daruma", 0, 0)
@@ -587,7 +587,7 @@
 : DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1332" )
-\CN["无黑色"]
+\CN["无黑"]
 “……那是白夜的头号，我们应该战斗的对手”
 
 我知道九星干部们也有力量上的差距。

@@ -24,7 +24,7 @@
 	: DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 	: lay = 3; type = "WR"; Call( "Scenarios/Common*FgEff");
 	: PlayVoice( "Voices/vo01_mom1082" )
-	\CN["桃子"]
+	\CN["桃"]
 “无黑，好久不见了。还好吗？”
 
 	: DrawChara( "Kinako", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -38,7 +38,7 @@
 	: EraseChara( "Kinako", 0.5 )
 	: DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 	: PlayVoice( "Voices/vo00_muk3178" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “啊。桃子、黄菜子，你们看起来也很健康真是太好了。”
 
 桃子还是老样子。
@@ -81,7 +81,7 @@
 	: ResetLayer(2)
 	: DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 	: ShowWnd()
-	\CN["银子"]
+	\CN["银"]
 “无黑，好像提高了手臂似的。从态度上就知道了。”
 
 银喜欢战斗的地方也完全没有改变。
@@ -97,13 +97,13 @@
 	: DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 	: lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 	: PlayVoice( "Voices/vo01_mom1083" )
-	\CN["桃子"]
+	\CN["桃"]
 “无黑？气氛大变了吧？”
 
 	: DrawChara( "Mukuro", 38, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 	: lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
 	: PlayVoice( "Voices/vo00_muk3179" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “是吗？”
 
 	//●演技：心の声です
@@ -125,7 +125,7 @@
 “但是，无黑是无黑的。”
 
 	: DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-	\CN["银子"]
+	\CN["银"]
 “那种闪闪发光的感觉真糟糕。
 感觉和饥饿的野兽一样”
 
@@ -133,12 +133,12 @@
 	: EraseChara( "Leo", 0.5 )
 	: DrawChara( "Momo", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 	: PlayVoice( "Voices/vo01_mom1084" )
-	\CN["桃子"]
+	\CN["桃"]
 “小银！向女孩子挨饿的野兽很失礼吧！”
 
 	: DrawChara( "Mukuro", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo00_muk3180" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “呵呵……”
 
 啊，即使我离开后这些家伙也依旧是这群家伙。
@@ -159,7 +159,7 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1085" )
-\CN["桃子"]
+\CN["桃"]
 “老师拜托你了？真少见啊。”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -177,7 +177,7 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1086" )
-\CN["桃子"]
+\CN["桃"]
 “救命？小夜，哪里不舒服吗？”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -208,13 +208,13 @@
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 1, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk3181" )
-\CN["无黑色"]
+\CN["无黑"]
 “暴走的话小夜就会死，是这样吗？”
 
 //●演技：咎めるような感じです
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom1087" )
-\CN["桃子"]
+\CN["桃"]
 “无黑……！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -249,7 +249,7 @@
 有那么点威力啊」
 
 : DrawChara( "Gin", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “爸爸，你是认真说的吗？不会装糊涂吧？”
 
 : DrawChara( "Tamamo", 5, 0)
@@ -267,7 +267,7 @@
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk3182" )
-\CN["无黑色"]
+\CN["无黑"]
 “但是，玉藻大人为了救小夜的命想请你帮忙
 说了。也就是说，总会有办法的吧？”
 
@@ -293,7 +293,7 @@
 
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 「……！？」
 
 : DrawChara( "Leo", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -304,12 +304,12 @@
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 3, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1088" )
-\CN["桃子"]
+\CN["桃"]
 “小银，有在意的人吗……！？”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 21, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
-\CN["银子"]
+\CN["银"]
 「那、那是……比起这个，还是老太婆！
 想让我们做什么？快说！”
 
@@ -344,7 +344,7 @@
 
 : DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom1089" )
-\CN["桃子"]
+\CN["桃"]
 “如果是老师的话，就知道三种神器的‘在处，ありか}吧。”
 
 : DrawChara( "Tamamo", 2, 0)
@@ -363,7 +363,7 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk3183" )
-\CN["无黑色"]
+\CN["无黑"]
 “有三种神器的话能救小夜吗？”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -376,7 +376,7 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1090" )
-\CN["桃子"]
+\CN["桃"]
 “是那么简单就能脱离的东西吗？这种力量。
 听你这么一说，和魔力很相似吧？”
 
@@ -397,7 +397,7 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 23, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo00_muk3184" )
-\CN["无黑色"]
+\CN["无黑"]
 “也就是说，三种神器就是其魔力之素
 所以……”
 
@@ -408,7 +408,7 @@
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “奶奶，那个会顺利进行吧？”
 
 : DrawChara( "Tamamo", 5, 0)
@@ -420,7 +420,7 @@
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom1091" )
-\CN["桃子"]
+\CN["桃"]
 “……失败的话大和会灭亡吗？”
 
 : DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -430,7 +430,7 @@
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “这样的话，脑部……但是，还是有一个道理的。”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -448,7 +448,7 @@
 
 : DrawChara( "Mukuro", 34, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk3185" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜还有多少时间，能抓住阿波罗的箭的力量呢？”
 什么？”
 
@@ -462,7 +462,7 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 17, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk3186" )
-\CN["无黑色"]
+\CN["无黑"]
 “是赤月日吗……。已经没什么犹豫的了。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -471,7 +471,7 @@
 “那么，分成三部分去取会更有效率吧？”
 
 : DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “对你来说，这不是说正经话吗？”。
 那么，我和女儿，之后呢”
 
@@ -491,7 +491,7 @@
 
 : DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk3187" )
-\CN["无黑色"]
+\CN["无黑"]
 “那倒是挺好的，但是和黄菜子、红美两个人没关系吗？”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -504,13 +504,13 @@
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom1092" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。排练的时候也从雷欧和小银那里拿过一瓶。”
 有的”
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk3188" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗？”
 
 一味地教导疏忽大意会导致死亡
@@ -534,7 +534,7 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1093" )
-\CN["桃子"]
+\CN["桃"]
 “OK！那我马上去拿吧。”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -546,7 +546,7 @@
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom1094" )
-\CN["桃子"]
+\CN["桃"]
 “啊？那怎么拿呢？”
 
 : DrawChara( "Tamamo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -602,7 +602,7 @@
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk3189" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜，不要露出不安的表情。”
 
 : DrawChara( "Leo", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -685,7 +685,7 @@
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo00_muk3190" )
-\CN["无黑色"]
+\CN["无黑"]
 “我也是。那就是玉藻大人所说的天之大岩。”
 ”
 
@@ -711,7 +711,7 @@
 : AddItem( "KeyItem07", -1 )
 : DrawChara( "Mukuro", 3, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk3191" )
-\CN["无黑色"]
+\CN["无黑"]
 “好的。那就拿着这个快点回玉藻大人那里吧。”
 
 : DrawChara( "Leo", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
@@ -737,21 +737,21 @@
 : PlaySe("SE/Se_Foot01")
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo01_mom1095" )
-\CN["桃子"]
+\CN["桃"]
 “终于到了。魔物乱糟糟的。”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1096" )
-\CN["桃子"]
+\CN["桃"]
 “而且，都是没见过的魔物。”
 
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “和海参没什么区别。”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “比起这个，大小姐，赶紧把镜子什么的给我看吧
 拿回去吧。巴巴亚说的岩石大概是
 就是这个”
@@ -759,7 +759,7 @@
 //●読み：碧の珠（みどりのたま）
 : DrawChara( "Momo", 15, 0, 0)
 : PlayVoice( "Voices/vo01_mom1097" )
-\CN["桃子"]
+\CN["桃"]
 “{八咫镜，做的镜子}哟，小银。
 请稍等一下。老师送给我的碧珠——”
 
@@ -777,16 +777,16 @@
 桃子朝着大岩石举起碧珠，光之柱将岩石包住。
 
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “这是镜子啊。”
 
 : DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom1098" )
-\CN["桃子"]
+\CN["桃"]
 “从天上的大石头出来的，一定是这样的。”
 
 : DrawChara( "Gin", 4, 0)
-\CN["银子"]
+\CN["银"]
 “那么，我们快回婆婆家吧。”
 
 //●演出：桃、銀　退場する

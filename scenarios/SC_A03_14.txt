@@ -33,7 +33,7 @@
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0222" )
-\CN["桃子"]
+\CN["桃"]
 “会袭击神社吗……也有受罚的人呢。
 小银，你不这么认为吗？”
 
@@ -44,23 +44,23 @@
 我要去做护卫。
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “啊？我不太清楚。
 对没有神和佛的东西不知道感谢什么的意义”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0223" )
-\CN["桃子"]
+\CN["桃"]
 “真是的！小银的话，真没浪漫啊。”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “就是这样吗？说到浪漫的话
 你女儿不是也不相信吗？”
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0224" )
-\CN["桃子"]
+\CN["桃"]
 “嗯？来，怎么样？”
 
 幸运的是我还没有神啊佛啊什么的
@@ -71,12 +71,12 @@
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0225" )
-\CN["桃子"]
+\CN["桃"]
 “嘛，如果说被袭击的可能性很高的话
 去保护。那是我们的职责”
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “是啊……那就出发吧。
 春日神社从“大和东街道”去就可以了”
 
@@ -117,7 +117,7 @@
 : ShowWnd()
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
-\CN["银子"]
+\CN["银"]
 “小姐……！”
 
 : PlayBgm("BGM/28_ID01")
@@ -129,14 +129,14 @@
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0226" )
-\CN["桃子"]
+\CN["桃"]
 “已经没关系了。快从这里逃走。”
 
 \CN["神主"]
 “那么，但是，你的神社啊……”
 
 : DrawChara( "Gin", 11, 0)
-\CN["银子"]
+\CN["银"]
 “老头，你想死吗？”
 
 \CN["神主"]
@@ -144,28 +144,28 @@
 
 : DrawChara( "Momo", 13, 0)
 : PlayVoice( "Voices/vo01_mom0227" )
-\CN["桃子"]
+\CN["桃"]
 “小银！本来就很可怕的表情，却很厉害！”
 普通人会吓一跳的”
 
 : DrawChara( "Gin", 18, 0)
-\CN["银子"]
+\CN["银"]
 “……呃，没什么了不起的。”
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0228" )
-\CN["桃子"]
+\CN["桃"]
 「啊，好啊。
 即使坐得不好也很麻烦”
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0229" )
-\CN["桃子"]
+\CN["桃"]
 “小银，命令啊——
 全体人员，踢散了哟！”
 
 : DrawChara( "Gin", 10, 0)
-\CN["银子"]
+\CN["银"]
 “明白了！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -213,12 +213,12 @@
 : DrawChara( "Gin", 6, 0, 0, 0.0, 0.0, 3, "LC" )
 : FadeIn( 0.5 )
 : Wait()
-\CN["银子"]
+\CN["银"]
 “小姐，这不是这样的吗……”
 
 : DrawChara( "Momo", 1, 1)
 : PlayVoice( "Voices/vo01_mom0230" )
-\CN["桃子"]
+\CN["桃"]
 “真想这样啊。这样总算有办法了吗？”
 
 //●ＳＥ：ドゴーン　爆発する音
@@ -236,12 +236,12 @@
 突然，不知从哪里传来了很大的声音。
 
 : DrawChara( "Gin", 9, 0)
-\CN["银子"]
+\CN["银"]
 “小姐，刚才的是……”
 
 : DrawChara( "Momo", 8, 1)
 : PlayVoice( "Voices/vo01_mom0231" )
-\CN["桃子"]
+\CN["桃"]
 “从主殿那边来。小银，我很着急。”
 
 //●演出：場面転換
@@ -281,7 +281,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0232" )
-\CN["桃子"]
+\CN["桃"]
 “好的，跟踪！到此为止。”
 
 \CN["巫女之女"]
@@ -289,7 +289,7 @@
 
 : DrawChara( "Momo", 1, 1)
 : PlayVoice( "Voices/vo01_mom0233" )
-\CN["桃子"]
+\CN["桃"]
 “名答！
 是你们袭击神社的犯人啊」
 
@@ -299,17 +299,17 @@
 
 : DrawChara( "Momo", 4, 1)
 : PlayVoice( "Voices/vo01_mom0234" )
-\CN["桃子"]
+\CN["桃"]
 “{秽，伤}很难去除……。
 嘛，虽然不能一概否定……”
 
 : DrawChara( "Gin", 6, 0)
-\CN["银子"]
+\CN["银"]
 “小姐，怎么办？这家伙，好像不会退的。”
 
 : DrawChara( "Momo", 1, 1)
 : PlayVoice( "Voices/vo01_mom0235" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。虽然有点强势，但只能请他老实点。”
 
 \CN["巫女之女"]
@@ -318,11 +318,11 @@
 
 : DrawChara( "Momo", 8, 1)
 : PlayVoice( "Voices/vo01_mom0236" )
-\CN["桃子"]
+\CN["桃"]
 “小银，小心点。这个人，不是普通的魔术师。”
 
 : DrawChara( "Gin", 10, 0)
-\CN["银子"]
+\CN["银"]
 “知道了！”
 
 \CN["巫女之女"]
@@ -380,21 +380,21 @@
 
 : DrawChara( "Momo", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo01_mom0237" )
-\CN["桃子"]
+\CN["桃"]
 “呼～……这样就真的没问题了吧？”
 
 : DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
-\CN["银子"]
+\CN["银"]
 「…………」
 
 : DrawChara( "Momo", 4, 1)
 : PlayVoice( "Voices/vo01_mom0238" )
-\CN["桃子"]
+\CN["桃"]
 “说是白夜，为什么白夜要去神社？”
 
 : StopBgm( 1.0 )
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “那么，那个理由我完全不知道……”
 
 小银的紧张感越来越浓。
@@ -414,7 +414,7 @@
 
 : PlayBgm("BGM/30_CM015")
 : DrawFaceThumbnail( "Gin", 9, 0, 0 )
-\CN["银子"]
+\CN["银"]
 “希望你不要找我。
 至少要好好地教育一下部下”
 
@@ -441,13 +441,13 @@
 
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
-\CN["银子"]
+\CN["银"]
 “小姐……这家伙”
 
 //●読み：卍（まんじ）＝人名です
 : DrawChara( "Momo", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo01_mom0239" )
-\CN["桃子"]
+\CN["桃"]
 “我知道。不全力以赴的话真的很糟糕。
 即使是同一个干部，也比之前战斗过的卍强得多”
 
@@ -466,7 +466,7 @@
 
 : DrawChara( "Momo", 9, 1)
 : PlayVoice( "Voices/vo01_mom0240" )
-\CN["桃子"]
+\CN["桃"]
 “对不起，我没有那个兴趣。
 虽然没有否定的打算”
 
@@ -535,7 +535,7 @@
 : evfile = "evx_a013_1_0_0100000_0000000_0_"
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “啊啊啊啊啊啊啊啊！！”
 
 : HideWnd()
@@ -555,7 +555,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0241" )
-\CN["桃子"]
+\CN["桃"]
 “小银……！”
 
 : HideWnd()
@@ -568,11 +568,11 @@
 “战斗的时候，别人的意见不好吧？”
 
 : PlayVoice( "Voices/vo01_mom0243" )
-\CN["桃子"]
+\CN["桃"]
 （魔术的手臂和魔力的量，那边好几张都一直很擅长……。
 虽然很不甘心，但是现在的我完全没法反驳……）
 
-\CN["银子"]
+\CN["银"]
 “哇——”
 
 : HideWnd()
@@ -597,7 +597,7 @@
 : DrawChara( "Momo", 7, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0244" )
-\CN["桃子"]
+\CN["桃"]
 （……现在的是高级魔术……。
 竟然很简单地控制了那个……）
 
@@ -607,7 +607,7 @@
 这个人很容易地就掌握了那个。
 
 : DrawChara( "Gin", 12, 0)
-\CN["银子"]
+\CN["银"]
 “哈、哈、哈……切……这样的话……”
 
 : HideWnd()
@@ -619,18 +619,18 @@
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0245" )
-\CN["桃子"]
+\CN["桃"]
 “小银……！？”
 
 小银抱着我跑了起来。
 
 : DrawFaceThumbnail( "Gin", 12, 0 )
-\CN["银子"]
+\CN["银"]
 “小姐，对不起。我不能死在这里。”
 
 : DrawFaceThumbnail( "Momo", 12, 1 )
 : PlayVoice( "Voices/vo01_mom0246" )
-\CN["桃子"]
+\CN["桃"]
 「…………」
 
 虽然很后悔，但是我再也做不了什么了。

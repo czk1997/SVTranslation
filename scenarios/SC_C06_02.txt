@@ -552,7 +552,7 @@
 
 	: DrawChara( "Azami", 24, 0, 0, 0.5, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo05_aza0658" )
-	\CN["嘲讽"]
+	\CN["爱彩弥"]
 “那个，我不想只被你说。”
 
 	: EraseChara( "Azami", 0.5 )
@@ -610,7 +610,7 @@
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0659" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 「…………」
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )

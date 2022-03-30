@@ -37,7 +37,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk2136" )
-\CN["无黑色"]
+\CN["无黑"]
 （这是白夜头号的男人……
 让世界最强的费尔克先生身负重伤）
 
@@ -52,7 +52,7 @@
 
 : DrawChara( "Mukuro", 46, 0, 2 )
 : PlayVoice( "Voices/vo00_muk2137" )
-\CN["无黑色"]
+\CN["无黑"]
 “我决定了。为了救小夜，我要杀了你
 请让我突破这里！”
 
@@ -71,7 +71,7 @@
 
 : DrawChara( "Mukuro", 33, 0)
 : PlayVoice( "Voices/vo00_muk2138" )
-\CN["无黑色"]
+\CN["无黑"]
 「……！！」
 
 : HideWnd()
@@ -117,7 +117,7 @@
 //: DrawChara( "Mukuro", 17, 1, 2, 0.5, 0.0, 3, "RC" )
 : DrawFaceThumbnail( "Mukuro", 17, 0, 2 )
 : PlayVoice( "Voices/vo00_muk2139" )
-\CN["无黑色"]
+\CN["无黑"]
 （剑术的手腕，简直无法与之匹敌……！差距太大了）
 
 //: HideWnd()
@@ -127,7 +127,7 @@
 //: ShowWnd()
 : DrawFaceThumbnail( "Mukuro", 31, 0, 2 )
 : PlayVoice( "Voices/vo00_muk2140" )
-\CN["无黑色"]
+\CN["无黑"]
 “好快……！”
 
 心脏跳跃，全身毛孔张开的感觉。
@@ -164,7 +164,7 @@
 : lay = 5; type = "WL"; Call( "Scenarios/Common*FgEff");
 //: DrawChara( "Daruma", 8, 0, 0, 0.5, 0.0, 4, "L" )
 : PlayVoice( "Voices/vo00_muk2141" )
-\CN["无黑色"]
+\CN["无黑"]
 “法兰克……”
 
 携带着比自己身体还长的大剑的费尔克先生
@@ -203,7 +203,7 @@
 
 //: DrawChara( "Mukuro", 17, 1)
 : PlayVoice( "Voices/vo00_muk2142" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈，是！谢谢费尔克先生！”
 
 //●演出：無黒　ダッシュで退場する
@@ -543,12 +543,12 @@
 : PlayBgm("BGM/01_CM001")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2143" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜！！”
 
 //: DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk2144" )
-\CN["无黑色"]
+\CN["无黑"]
 “现在马上帮你。”
 
 //: EraseChara( "Sayo", 0.5 )
@@ -563,67 +563,67 @@
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0457" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我不会让他插手的。”
 
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2145" )
-\CN["无黑色"]
+\CN["无黑"]
 “局长……”
 
 : DrawChara( "Mukuro", 46, 0)
 : PlayVoice( "Voices/vo00_muk2146" )
-\CN["无黑色"]
+\CN["无黑"]
 “拜托了，请把小夜从那里拿出来！”
 
 : DrawChara( "Azami", 8, 0)
 : PlayVoice( "Voices/vo05_aza0458" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “……那不行。”
 
 : DrawChara( "Mukuro", 17, 0, 0 )
 : DrawChara( "Azami", 7, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0459" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “快看，红色的月亮马上就要升起了。”
 
 : DrawChara( "Azami", 10, 0)
 : PlayVoice( "Voices/vo05_aza0460" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “明天，为了让大和升起朝阳，我要牺牲公主
 只能吃了……”
 
 : DrawChara( "Azami", 12, 0)
 : PlayVoice( "Voices/vo05_aza0461" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “阿波罗的箭眼看就要爆发了。
 就这样关在希拉加制作的魔导器里
 勉强压抑着”
 
 : DrawChara( "Azami", 9, 0)
 : PlayVoice( "Voices/vo05_aza0462" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “不牺牲公主就能拯救大和。
 如果有那样的方法的话，请一定告诉我”
 
 //●演技：言葉を失っています
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk2147" )
-\CN["无黑色"]
+\CN["无黑"]
 「…………」
 
 被那样说而失言。
 
 : DrawChara( "Azami", 19, 0)
 : PlayVoice( "Voices/vo05_aza0463" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “无黑，没有觉悟的话就从这里消失吧。
 让你看到公主死的样子真不愧是……”
 
 : DrawChara( "Azami", 26, )
 : PlayVoice( "Voices/vo05_aza0464" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “大和的未来和公主的生命——
 如果必须从这两个中选择一个的话
 选哪个才是正确答案？你真的知道吗？”
@@ -632,25 +632,25 @@
 
 : DrawChara( "Mukuro", 28, 0)
 : PlayVoice( "Voices/vo00_muk2148" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊，没必要想。”
 
 是的，不用想。
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk2149" )
-\CN["无黑色"]
+\CN["无黑"]
 “我要拯救小夜和住在大和的人。
 不是选择哪一个，而是我选择哪一个”
 
 : DrawChara( "Azami", 27, 0)
 : PlayVoice( "Voices/vo05_aza0465" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哈~……。你说的和雷欧一样啊。”
 
 : DrawChara( "Azami", 20, 0)
 : PlayVoice( "Voices/vo05_aza0466" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “嘛，如果你这么想的话，我就不否定了。
 但是，我有我的想法”
 
@@ -658,7 +658,7 @@
 : PlaySe( "SE/Se_Katana01" )
 : DrawChara( "Mukuro", 17, 0, 2 )
 : PlayVoice( "Voices/vo00_muk2150" )
-\CN["无黑色"]
+\CN["无黑"]
 “再多说点什么都没用了。”
 
 //●演出：あざみ　刀を抜く
@@ -666,7 +666,7 @@
 : CharaCostume( "Azami", 3 )
 : DrawChara( "Azami", 10, 0)
 : PlayVoice( "Voices/vo05_aza0467" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “是啊。武士们要互相交流的话，{刀，这个}就没有了。”
 
 空间越是紧挨着就越要向我们发出浓厚的杀意。
@@ -685,25 +685,25 @@
 : DrawChara( "Mukuro", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2152" )
-\CN["无黑色"]
+\CN["无黑"]
 “局长也达到了{黑夜叉，暗黑妖精}呢。”
 
 : DrawChara( "Azami", 3, 0)
 : PlayVoice( "Voices/vo05_aza0469" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “这是以前抓的杵柄。
 你也能自由自在地{黑夜叉，暗黑妖精}化，真是太吃惊了」
 
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk2153" )
-\CN["无黑色"]
+\CN["无黑"]
 “正因为如此，局长才更厉害。”
 
 一起变成了{黑夜叉，暗黑妖精}的我们。
 
 : DrawChara( "Azami", 22, 0)
 : PlayVoice( "Voices/vo05_aza0470" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哇！”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
@@ -770,7 +770,7 @@
 : DrawChara( "Azami", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0471" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “无黑，变强了呢。
 可惜这场比赛已经结束了”
 
@@ -783,7 +783,7 @@
 : EraseChara( "Mukuro", 0.0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0472" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “不久红色的月亮就要升起了。
 这时，魔导器开始行动，把阿波罗的箭和公主一起
 已经可以封印了”
@@ -791,7 +791,7 @@
 //●演技：息切れしています
 //: DrawChara( "Mukuro", 31, 1)
 : PlayVoice( "Voices/vo00_muk2154" )
-\CN["无黑色"]
+\CN["无黑"]
 “……哈…哈……还没……还没……！
 我不会放弃小夜的”
 
@@ -810,7 +810,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2155" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流奥义·八咫乌！！”
 
 //: DrawChara( "Azami", 22, 0)
@@ -822,7 +822,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0473" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哈！”
 
 : HideWnd()
@@ -833,25 +833,25 @@
 
 : DrawChara( "Mukuro", 16, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo00_muk2156" )
-\CN["无黑色"]
+\CN["无黑"]
 “什么奥义不通……”
 
 //●読み：易々（やすやす）
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo05_aza0474" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “不，如果是完美的八咫乌的话，我也无法轻易防御。”
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0475" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “过于着急，技能不完全。
 那就只是尽情地挥着刀而已”
 
 : DrawChara( "Azami", 22, 0)
 : PlayVoice( "Voices/vo05_aza0476" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “没有什么技巧！”
 
 //●演出：斬撃　エフェクト
@@ -862,7 +862,7 @@
 //: DrawChara( "Mukuro", 31, 1)
 : DrawFaceThumbnail( "Mukuro", 31, 1 )
 : PlayVoice( "Voices/vo00_muk2157" )
-\CN["无黑色"]
+\CN["无黑"]
 “呃……！”
 
 : HideWnd()
@@ -883,7 +883,7 @@
 : DrawChara( "Azami", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0477" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哦……！？”
 
 //●演出：桃　登場する
@@ -892,29 +892,29 @@
 : DrawChara( "Azami", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L")
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo01_mom0998" )
-\CN["桃子"]
+\CN["桃"]
 “局长也到了{黑夜叉，暗黑妖精}呢……”
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0999" )
-\CN["桃子"]
+\CN["桃"]
 “竟然接受了我的魔术而目瞪口呆
 可能真的很受打击”
 
 : DrawChara( "Azami", 5, 0)
 : PlayVoice( "Voices/vo05_aza0478" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “如果你的魔力没有用尽的话
 怎么说呢{黑夜叉，暗黑妖精}虽然这么说但是很危险啊」
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
-\CN["银子"]
+\CN["银"]
 “要是能救在安里的公主就好了。轻松取胜。”
 
 : DrawChara( "Azami", 16, 0)
 : PlayVoice( "Voices/vo05_aza0479" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “你觉得让他简单做吗？”
 
 //黄菜子　ダークエルフ化
@@ -936,7 +936,7 @@
 : DrawChara( "Kinako", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Azami", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0480" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “黄菜子，你也被抓了吗……”
 
 //●演出：黄菜子　斬撃　エフェクト
@@ -987,7 +987,7 @@
 : layer = 4; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
 : Wait()
 : PlayVoice( "Voices/vo05_aza0481" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哼！”
 
 : DrawChara( "Kinako", 2, 0)
@@ -1007,7 +1007,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk2158" )
-\CN["无黑色"]
+\CN["无黑"]
 “等一下，小夜！我马上帮你！”
 
 : DrawChara( "Leo", 21, 0)
@@ -1046,7 +1046,7 @@
 : Call("Scenarios/Common*EvIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2159" )
-\CN["无黑色"]
+\CN["无黑"]
 「八重樱流・{迦楼罗，歌留}！！」
 
 : HideWnd()
@@ -1064,7 +1064,7 @@
 : DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Leo", 23, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo00_muk2160" )
-\CN["无黑色"]
+\CN["无黑"]
 “刀被弹回来了。”
 
 : DrawChara( "Leo", 21, 0)
@@ -1084,17 +1084,17 @@
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "R" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “不好，红月升到了山顶……”
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom1000" )
-\CN["桃子"]
+\CN["桃"]
 “如果刀不行的话就用魔术……？”
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom1001" )
-\CN["桃子"]
+\CN["桃"]
 （不，那可不行。因为是半吊子的魔术，所以绝对不行
 如果是高级魔法的话，即使成功了也会牵连小夜
 很有可能丢失）
@@ -1103,7 +1103,7 @@
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0482" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “桃子，你很容易感情用事，真是冷静啊。”
 
 //●演出：場面転換
@@ -1141,7 +1141,7 @@
 : DrawChara( "Hiraga", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Azami", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo05_aza0483" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “比拉加，准备好了吗？”
 
 : DrawChara( "Hiraga", 0, 0)
@@ -1169,7 +1169,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk2161" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，明显是情况……？”
 
 : DrawChara( "Leo", 21, 0)
@@ -1181,7 +1181,7 @@
 : DrawChara( "Hiraga", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Azami", 22, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo05_aza0484" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “希拉加，你打算做什么……？”
 
 : DrawChara( "Hiraga", 4, 0)
@@ -1197,7 +1197,7 @@
 
 : DrawChara( "Azami", 10, 0)
 : PlayVoice( "Voices/vo05_aza0485" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “希拉加，你骗了我们吗……。
 一开始就打算这样……”
 
@@ -1216,7 +1216,7 @@
 
 : DrawChara( "Azami", 18, 0)
 : PlayVoice( "Voices/vo05_aza0486" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那为什么……？”
 
 : DrawChara( "Hiraga", 2, 0)

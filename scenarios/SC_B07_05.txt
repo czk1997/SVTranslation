@@ -22,12 +22,12 @@
 
 : DrawChara( "Mukuro", 16, 1)
 : PlayVoice( "Voices/vo00_muk2433" )
-\CN["无黑色"]
+\CN["无黑"]
 “已经没办法了吗？”
 
 : DrawChara( "Momo", 10, 1)
 : PlayVoice( "Voices/vo01_mom1069" )
-\CN["桃子"]
+\CN["桃"]
 “我的魔力已经……”
 
 我和黄菜子都完全解开了{黑夜叉，暗黑妖精}化
@@ -44,7 +44,7 @@
 “还差得远。我会保护你的。”
 
 : DrawChara( "Gin", 14, 0)
-\CN["银子"]
+\CN["银"]
 “……啊，现在开始。”
 
 雷欧和银竭尽全力保护我们。
@@ -63,7 +63,7 @@
 
 : DrawFaceThumbnail( "Mukuro", 33, 1, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2434" )
-\CN["无黑色"]
+\CN["无黑"]
 “呀，住手！”
 
 希拉加开始提倡独自的魔术。
@@ -75,19 +75,19 @@
 “让我做吧！”
 
 : DrawChara( "Gin", 13, 0)
-\CN["银子"]
+\CN["银"]
 “我啊啊啊啊啊！”
 
 打算对雷欧和银咏唱中的希拉加做……。
 
 : DrawFaceThumbnail( "Momo", 8, 1, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1070" )
-\CN["桃子"]
+\CN["桃"]
 “小银！”
 
 : DrawFaceThumbnail( "Mukuro", 19, 1, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2435" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧！”
 
 //●演出：電撃エフェクト
@@ -112,7 +112,7 @@
 //●演技：回復魔術の詠唱です
 : DrawChara( "Momo", 7, 1, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1071" )
-\CN["桃子"]
+\CN["桃"]
 “守护天空的温柔女神啊——”
 
 桃为了治疗两个人而提倡恢复魔术。
@@ -135,7 +135,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0638" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “大家，伏下！”
 
 //●演出：ヒラガの闇魔術エフェクト
@@ -154,7 +154,7 @@
 : DrawFaceThumbnail( "Momo", 10, 1, 0 )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1072" )
-\CN["桃子"]
+\CN["桃"]
 “……是、是……！”
 
 //●ＳＥ：倒れる音
@@ -163,7 +163,7 @@
 被黑色的一闪贯穿心脏的桃子当场坍塌。
 
 : DrawChara( "Gin", 13, 0, 0, 0.5, 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “大小姐——————！”
 
 回响着银的悲痛呼喊。
@@ -173,7 +173,7 @@
 : DrawChara( "Kinako", 7, 1, 0, 0.5, 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 15, 1, 2, 0.5, 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk2436" )
-\CN["无黑色"]
+\CN["无黑"]
 “也是，桃子……”
 
 : DrawChara( "Kinako", 6, 1)
@@ -193,7 +193,7 @@
 
 : EraseImage( 7, 0, 0.5 )
 : DrawChara( "Gin", 13, 0, 0, 0.5, 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “你……！”
 
 愤怒而忘我的银拖着满身疮痍的身体
@@ -213,7 +213,7 @@
 : ShowWnd()
 //: DrawChara( "Gin", 15, 0)
 : DrawFaceThumbnail( "Gin", 15, 0, 0 )
-\CN["银子"]
+\CN["银"]
 “……咕！”
 
 //: DrawChara( "Azami", 23, 0, 0, 0.5, 0.0, 3, "C" )
@@ -224,7 +224,7 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Azami", 23, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0639" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “唔……！”
 
 //: EraseChara( "Azami", 0.5 )
@@ -243,7 +243,7 @@
 
 : DrawChara( "Mukuro", 33, 1)
 : PlayVoice( "Voices/vo00_muk2437" )
-\CN["无黑色"]
+\CN["无黑"]
 “……到局长为止……”
 
 : EraseChara( "Mukuro", 0.5 )
@@ -320,7 +320,7 @@
 : DrawChara( "Mukuro", 19, 1, 2, 0.5, 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2438" )
-\CN["无黑色"]
+\CN["无黑"]
 “利昂——————————！”
 
 希拉加放出的魔术之火将利奥吞噬
@@ -328,7 +328,7 @@
 
 : DrawChara( "Mukuro", 15, 1)
 : PlayVoice( "Voices/vo00_muk2439" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊……啊……雷欧……骗人的……雷欧……啊啊……”
 
 在火焰包围的瞬间看到的人影——
@@ -337,7 +337,7 @@
 //●演技：レオの死を間近で見て放心状態です
 : DrawChara( "Mukuro", 33, 0)
 : PlayVoice( "Voices/vo00_muk2440" )
-\CN["无黑色"]
+\CN["无黑"]
 「………………」
 
 燃烧雷欧的魔术之炎

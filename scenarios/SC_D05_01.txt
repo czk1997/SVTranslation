@@ -29,7 +29,7 @@
 //●演技：心の声です
 : DrawChara( "Azami", 6, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0774" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 （全员都很疲惫啊……。
 气氛不太好）
 
@@ -77,12 +77,12 @@
 : EraseChara( "Bebi", 0.5 )
 : DrawChara( "Azami", 7, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0775" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我们只是做我们的事……”
 
 : DrawChara( "Azami", 22, 0)
 : PlayVoice( "Voices/vo05_aza0776" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “今后，和反幕派一起的战斗也会激化。
 你们可不是朝下的时候啊」
 
@@ -116,7 +116,7 @@
 : PlayBgm("BGM/23_FM001")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4353" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……今天天气也不错啊。”
 
 今天天气也很好，家附近也有吵架什么的
@@ -133,7 +133,7 @@
 : lay = 3; type = "WR"; Call( "Scenarios/Common*FgEff");
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1276" )
-\CN["桃子"]
+\CN["桃"]
 “啊，无黑！”
 
 一直以为一定会回到帝都——鬼灯里的桃子
@@ -142,18 +142,18 @@
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
 : DrawChara( "Momo", 5, 0, 0, 0.5, 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo00_muk4354" )
-\CN["无黑色"]
+\CN["无黑"]
 “早上好。你早上很早就开始工作了吗？”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1278" )
-\CN["桃子"]
+\CN["桃"]
 “早上开始收集药草的材料，顺便去击退魔物。
 话说回来，早上很早，已经吃午饭了吧？”
 
 : DrawChara( "Mukuro", 12, 0)
 : PlayVoice( "Voices/vo00_muk4355" )
-\CN["无黑色"]
+\CN["无黑"]
 “昨天来晚了。”
 
 桃子也从我照顾的眼镜店得到了工作
@@ -166,7 +166,7 @@
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk4356" )
-\CN["无黑色"]
+\CN["无黑"]
 “这是{西都，这里}的规则。”
 
 我也得挣点钱，去吃口店看看吧。

@@ -26,7 +26,7 @@
 
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2677" )
-\CN["无黑色"]
+\CN["无黑"]
 “听说这里有妖狐玉藻……”
 
 住在这里的叫做玉藻的妖狐
@@ -34,7 +34,7 @@
 
 : DrawChara( "Mukuro", 28, 0)
 : PlayVoice( "Voices/vo00_muk2678" )
-\CN["无黑色"]
+\CN["无黑"]
 “幕府盯着她的力量
 赶紧努力保护吧，啊……”
 
@@ -42,7 +42,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk2679" )
-\CN["无黑色"]
+\CN["无黑"]
 “幕府啊……总觉得有种很讨厌的预感。
 因为，妖狐玉藻确实是桃的老师”
 
@@ -53,7 +53,7 @@
 
 : DrawChara( "Mukuro", 39, 0)
 : PlayVoice( "Voices/vo00_muk2680" )
-\CN["无黑色"]
+\CN["无黑"]
 “真想避免碰上啊。
 我尽可能不想和他们战斗”
 
@@ -108,7 +108,7 @@
 : PlayBgm("BGM/28_ID01")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2681" )
-\CN["无黑色"]
+\CN["无黑"]
 “果然是你们啊……”
 
 自古以来就是这样。
@@ -120,12 +120,12 @@
 	: DrawChara( "Momo", 8, 0, 0, 0.25, 0.0, 5, "C" )
 	: DrawChara( "Gin", 0, 0, 0, 0.25, 0.0, 4, "L" )
 	: PlayVoice( "Voices/vo01_mom1073" )
-	\CN["桃子"]
+	\CN["桃"]
 “无黑，听说你现在在白夜，是真的吗？”
 
 	: DrawChara( "Mukuro", 17, 0)
 	: PlayVoice( "Voices/vo00_muk2682" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “啊，没错。
 现在，我作为白夜的队员在这里”
 
@@ -133,7 +133,7 @@
 本来不打算隐瞒……。
 
 	: DrawChara( "Gin", 7, 0)
-	\CN["银子"]
+	\CN["银"]
 “这样的话，你就可以成为敌人了。”
 
 	//●分岐終了地点へ
@@ -142,17 +142,17 @@
 	//●鬼灯隊士・男Ａを殺している
 	: DrawChara( "Momo", 7, 0, 0, 0.25, 0.0, 5, "L" )
 	: DrawChara( "Gin", 12, 0, 0, 0.25, 0.0, 4, "LC" )
-	\CN["银子"]
+	\CN["银"]
 “你啊，好像杀了我们的同伴啊。”
 
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk2683" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “你是想找个陷阱吗？”
 
 	: DrawChara( "Momo", 8, 0)
 	: PlayVoice( "Voices/vo01_mom1074" )
-	\CN["桃子"]
+	\CN["桃"]
 “是的，当然是这个意思。
 因为你现在对我们来说，除了敌人以外什么都不是”
 
@@ -160,12 +160,12 @@
 : endif
 : DrawChara( "Momo", 0, 0, 1)
 : PlayVoice( "Voices/vo01_mom1075" )
-\CN["桃子"]
+\CN["桃"]
 “小银，命令啊——
 我们会亲手交给神八代无黑的。」
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “我明白了。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -223,30 +223,30 @@
 //: DrawChara( "Mukuro", 16, 0, 2, 0.5, 0.0, 3, "RC" )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
-\CN["银子"]
+\CN["银"]
 “小姐，差不多了。”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1076" )
-\CN["桃子"]
+\CN["桃"]
 “是啊，小银。我们的工作到此结束了。”
 
 : PlayVoice( "Voices/vo00_muk2684" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么回事？”
 
 : DrawChara( "Gin", 0, 0)
-\CN["银子"]
+\CN["银"]
 “我没有接到要杀你的命令。
 如果想杀的话，就可以简单地杀了”
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom1077" )
-\CN["桃子"]
+\CN["桃"]
 “小银，我要撤退了。”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “我明白了。”
 
 //●演出：桃　炎系魔術
@@ -263,7 +263,7 @@
 
 : DrawChara( "Mukuro", 31, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk2685" )
-\CN["无黑色"]
+\CN["无黑"]
 “呃……逃了吗……”
 
 我的目的不是杀死桃和银
@@ -293,7 +293,7 @@
 
 : DrawChara( "Mukuro", 28, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2686" )
-\CN["无黑色"]
+\CN["无黑"]
 “也就是说，你被人变成了桃和银吗？”
 
 那两个人比我先
@@ -305,7 +305,7 @@
 
 : DrawChara( "Mukuro", 0, 0, 3)
 : PlayVoice( "Voices/vo00_muk2687" )
-\CN["无黑色"]
+\CN["无黑"]
 “在这里也没办法。要回去一次吗……”
 
 //●演出：無黒　小屋を出る

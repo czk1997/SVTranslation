@@ -17,7 +17,7 @@
 : DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4677" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，来到这里是很好的，但是没有什么特别的。”
 
 : DrawChara( "Kinako", 10, 0)
@@ -28,13 +28,13 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1571" )
-\CN["桃子"]
+\CN["桃"]
 “正如黄菜子说的那样。
 这座山晚上非常危险……”
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk4678" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子这么说的话，是啊。就在这里住一晚吧。”
 
 //●演出：暗転
@@ -80,35 +80,35 @@
 : if ( CharaCostume( "Momo" ) == 0 )
 	: DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 3, "LC" )
 	: ShowWnd()
-	\CN["银子"]
+	\CN["银"]
 “……小姐？”
 
 	//●演技：銀に非常に会いづらかった
 	: DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo01_mom1572" )
-	\CN["桃子"]
+	\CN["桃"]
 “………小银！？”
 
 //●分岐：［服装］全裸の場合
 : else
 	: DrawChara( "Gin", 9, 0, 0, 0.5, 0.0, 3, "LC" )
-	\CN["银子"]
+	\CN["银"]
 “好像在不见的时候，已经变成变态了呢。”
 
 	: DrawChara( "Momo", 7, 1, 0, 0.5, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo01_mom1573" )
-	\CN["桃子"]
+	\CN["桃"]
 “变态什么的……我穿什么样的衣服对小银来说
 没关系吧！”
 
 	: DrawChara( "Momo", 9, 0)
 	: PlayVoice( "Voices/vo01_mom1574" )
-	\CN["桃子"]
+	\CN["桃"]
 “还是说，小银看到我的裸体很兴奋？
 小鸡鸡勃起了会很难受吗？”
 
 	: DrawChara( "Gin", 8, 0)
-	\CN["银子"]
+	\CN["银"]
 “如果是以前的女儿对象的话，也许会变成这样。
 但是，我已经看腻了只是变态的那个了……”
 
@@ -116,28 +116,28 @@
 : endif
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1575" )
-\CN["桃子"]
+\CN["桃"]
 “那么，小银在这里做什么呢？”
 
 : DrawChara( "Gin", 6, 0)
-\CN["银子"]
+\CN["银"]
 “这是我的台词。
 鬼灯消失后，只是在大和旅行时偶然路过而已
 ”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1576" )
-\CN["桃子"]
+\CN["桃"]
 “旅行？为了什么？”？
 难道你一直在找我吗？”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “确实在找人……。
 那也是，对我来说重要的人啊」
 
 : DrawChara( "Gin", 10, 0)
-\CN["银子"]
+\CN["银"]
 “但是，那家伙好像已经毫无办法地堕落了。
 不仅失去了作为一个人的尊严和尊严，还给予了他人伤害
 成为了存在”
@@ -146,11 +146,11 @@
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom1577" )
-\CN["桃子"]
+\CN["桃"]
 “哎呀，你是不是打算对柔弱的女孩子挥拳头？”
 
 : DrawChara( "Gin", 12, 0)
-\CN["银子"]
+\CN["银"]
 “啊。如果在这里放过你的话，以后会成为很大的敌人的。”
 所以啊。在为时已晚之前杀了他”
 
@@ -164,7 +164,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 11, 0)
 : PlayVoice( "Voices/vo01_mom1578" )
-\CN["桃子"]
+\CN["桃"]
 （只不过是被那边的流氓和半格雷他们说了而已
 真没想到啊）
 
@@ -172,7 +172,7 @@
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom1579" )
-\CN["桃子"]
+\CN["桃"]
 “如果你打算战斗的话
 我也不打算乖乖地被杀了”
 
@@ -235,13 +235,13 @@
 : DrawChara( "Momo", 4, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Gin", 19, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “哈……哈…不会吧，你到这里为止
 没想到我已经有力量了……”
 
 : DrawChara( "Momo", 12, 1)
 : PlayVoice( "Voices/vo01_mom1580" )
-\CN["桃子"]
+\CN["桃"]
 “小银……”
 
 小银的呼吸很奇怪。
@@ -251,7 +251,7 @@
 
 : DrawChara( "Momo", 4, 1)
 : PlayVoice( "Voices/vo01_mom1581" )
-\CN["桃子"]
+\CN["桃"]
 “再见……一直以来谢谢你。”
 
 我给小银刺了一只狗。
@@ -291,7 +291,7 @@
 //●演出：桃　涙を流している立ち絵でお願いします
 : DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom1582" )
-\CN["桃子"]
+\CN["桃"]
 “虽然苦战了很久，没关系吧？”
 
 黄菜子和无黑看起来很担心。
@@ -299,12 +299,12 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 34, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
 : PlayVoice( "Voices/vo00_muk4679" )
-\CN["无黑色"]
+\CN["无黑"]
 “眼泪……”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1583" )
-\CN["桃子"]
+\CN["桃"]
 “诶？骗人的！我在哭吗……？”
 
 被无黑说了才注意到。
@@ -312,13 +312,13 @@
 
 : DrawChara( "Momo", 6, 1)
 : PlayVoice( "Voices/vo01_mom1584" )
-\CN["桃子"]
+\CN["桃"]
 “这个是那个啊。只是眼睛里有垃圾。
 不用担心”
 
 : DrawChara( "Mukuro", 38, 0)
 : PlayVoice( "Voices/vo00_muk4680" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗……”
 
 //●演出：立ち絵消す

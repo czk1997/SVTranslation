@@ -23,7 +23,7 @@
 : RpgCharaTurn( "Player", "L" )
 : DrawChara( "Mukuro", 23, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2688" )
-\CN["无黑色"]
+\CN["无黑"]
 “我拒绝。因为我没有时间和你们一起喝酒。”
 
 //●分岐：淫乱度Ｂ以上の場合
@@ -43,7 +43,7 @@
 : if( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 24, 0)
 	: PlayVoice( "Voices/vo00_muk2689" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “朝着这个目标前进，就是做好了觉悟
 可以吗？”
 
@@ -52,7 +52,7 @@
 : else
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk2690" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “把刀指向对方，就有了自己被杀的觉悟
 应该做好了吧？”
 //●分岐終了
@@ -86,7 +86,7 @@
 
 : DrawChara( "Mukuro", 27, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2691" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果就这样老老实实地从店里出去的话，就饶了你一条命吧。”
 
 \CN["半灰色"]
@@ -114,7 +114,7 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2692" )
-\CN["无黑色"]
+\CN["无黑"]
 “吵死我了。”
 
 支付了一些麻烦费打算离开店的话。
@@ -124,7 +124,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk2693" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊？我是第一次看见那个家伙……”
 
 \CN["店长"]
@@ -139,7 +139,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk2694" )
-\CN["无黑色"]
+\CN["无黑"]
 “店长，那个半格雷集团的老板在哪里？”
 你知道吗？”
 
@@ -148,7 +148,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk2695" )
-\CN["无黑色"]
+\CN["无黑"]
 “放任不管好像也很麻烦
 如果能弄破的话就把它弄破吧」
 
@@ -159,7 +159,7 @@
 //●読み：土蜘蛛（つちぐも）
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk2696" )
-\CN["无黑色"]
+\CN["无黑"]
 “土蜘蛛？那是刚才那家伙所在的组织的名字吗？”
 
 \CN["店长"]
@@ -208,7 +208,7 @@
 看来是照顾了我们家啊”
 
 : PlayVoice( "Voices/vo00_muk2697" )
-\CN["无黑色"]
+\CN["无黑"]
 “我想见一个叫做‘土蜘蛛’的头目
 你是这样吗？”
 
@@ -222,7 +222,7 @@
 : PlaySe( "SE/Se_Katana01" )
 : DrawChara( "Mukuro", 27, 0, 5)
 : PlayVoice( "Voices/vo00_muk2698" )
-\CN["无黑色"]
+\CN["无黑"]
 “那正好。
 只需斩杀你就可以击溃土蜘蛛”
 
@@ -302,7 +302,7 @@
 
 //: DrawChara( "Mukuro", 21, 1, 2, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2699" )
-\CN["无黑色"]
+\CN["无黑"]
 “呵呵。因为是领导，所以更能让我开心。”
 我是这么想的。真是目瞪口呆啊……”
 
@@ -327,7 +327,7 @@
 : PlaySe("SE/Se_Foot01")
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo00_muk2700" )
-\CN["无黑色"]
+\CN["无黑"]
 “你也想变成这样吗？”
 
 \CN["土蜘蛛的成员"]
@@ -372,7 +372,7 @@
 *sc001_select_s1
 : DrawChara( "Mukuro", 23, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2701" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果马上从这个城市组织出来的话，我就放过你。”
 
 \CN["土蜘蛛的首领"]
@@ -446,7 +446,7 @@
 : DrawChara( "Mukuro", 39, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2702" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果放任你不管的话，说不定还会有奇怪的事情纠缠你
 因为不知道啊」
 
@@ -464,7 +464,7 @@
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk2700" )
-\CN["无黑色"]
+\CN["无黑"]
 “你也想变成这样吗？”
 
 \CN["土蜘蛛的成员"]
@@ -508,7 +508,7 @@
 
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2703" )
-\CN["无黑色"]
+\CN["无黑"]
 “我并不是想帮助别人才做的。
 因为挑衅的我有责任”
 

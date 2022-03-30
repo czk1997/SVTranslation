@@ -28,7 +28,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0832" )
-\CN["无黑色"]
+\CN["无黑"]
 “御用改了！老实点吧。”
 
 \CN["反幕派的武士A"]
@@ -45,7 +45,7 @@
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0833" )
-\CN["无黑色"]
+\CN["无黑"]
 “其他人都被拘留了。剩下的只有你们！”
 
 //: DrawChara( "Mukuro", 16, 0)
@@ -55,7 +55,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0834" )
-\CN["无黑色"]
+\CN["无黑"]
 “觉悟吧————！”
 
 : HideWnd()
@@ -103,7 +103,7 @@
 //: DrawChara( "Mukuro", 10, 0)
 : DrawFaceThumbnail( "Mukuro", 10, 0, 0 )
 : PlayVoice( "Voices/vo00_muk0835" )
-\CN["无黑色"]
+\CN["无黑"]
 （维克托尔的大使马上就要到了……。
 应该是想拒绝后顾之忧吧）
 
@@ -123,12 +123,12 @@
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0165" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “辛苦了。怎么样？”
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk0836" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的，正如报告所说。”
 
 把任务成果报告局长。
@@ -139,19 +139,19 @@
 //●読み：明日（あす）
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0166" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “无黑，刚完成任务的时候不好意思
 希望从明天早上开始就有新的任务”
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0167" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “反幕派中也有一个需要注意的人物‘东乡，合集’
 似乎终于开始公开行动了”
 
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk0837" )
-\CN["无黑色"]
+\CN["无黑"]
 “那个东乡是吗！？”
 
 ——{东乡隆，隆隆}
@@ -162,14 +162,14 @@
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0168" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “将军也下达了捉东乡的命令。
 现在，我在{厚海，热海}，希望你捉住我」
 
 //●演技：厚海＝熱海がモデル。温泉街です
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk0838" )
-\CN["无黑色"]
+\CN["无黑"]
 “{厚海，热海}吗？真是吞吞吞的东西啊……。
 你在治疗温泉吗？”
 
@@ -178,12 +178,12 @@
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0169" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哎，十有八九是陷阱吧。”
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0170" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “怎么说呢，传言东乡背后有白夜
 也许是想以东乡为诱饵把这里叫出来”
 
@@ -191,12 +191,12 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk0839" )
-\CN["无黑色"]
+\CN["无黑"]
 “大意大敌，对吧。那么，明天早上出发去厚海！”
 
 : DrawChara( "Azami", 0, 0)
 : PlayVoice( "Voices/vo05_aza0171" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，拜托了。还有，雷欧已经去了
 希望在那里会合”
 
@@ -261,7 +261,7 @@
 	: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 	: DrawChara( "Mukuro", 20, 2)
 	: PlayVoice( "Voices/vo00_muk0840" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “哈？喂，一起去泡温泉，你说什么？”
 
 	: DrawChara( "Leo", 4, 0)
@@ -270,12 +270,12 @@
 
 	: DrawChara( "Mukuro", 11, 2)
 	: PlayVoice( "Voices/vo00_muk0841" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “唔……雷欧的笨蛋……”
 
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk0842" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “局长让我和雷欧汇合
 你在听什么？”
 
@@ -286,7 +286,7 @@
 
 	: DrawChara( "Mukuro", 0, 0)
 	: PlayVoice( "Voices/vo00_muk0843" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “原来如此。那就是说要等到晚上吗？”
 
 	: DrawChara( "Leo", 13, 0)
@@ -296,7 +296,7 @@
 
 	: DrawChara( "Mukuro", 21, 1)
 	: PlayVoice( "Voices/vo00_muk0844" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “对，是啊。约会暂且不论，在街上徘徊
 收集信息也许很好。就这么办吧」
 
@@ -307,12 +307,12 @@
 
 	: DrawChara( "Mukuro", 36, 1)
 	: PlayVoice( "Voices/vo00_muk0845" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “所以，我说了没关系……”
 
 	: DrawChara( "Mukuro", 22, 2)
 	: PlayVoice( "Voices/vo00_muk0846" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我告诉你，这不是约会！
 只是情报收集而已！这一点，你要好好明白
 想要你放在那里”
@@ -324,7 +324,7 @@
 
 	: DrawChara( "Mukuro", 6, 2)
 	: PlayVoice( "Voices/vo00_muk0847" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “所以说，这不是约会……！太棒了！”
 
 //●分岐終了地点へ
@@ -332,7 +332,7 @@
 : else
 	: DrawChara( "Mukuro", 3, 0)
 	: PlayVoice( "Voices/vo00_muk0848" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “是啊。任务结束后一起进去吗？”
 
 	: DrawChara( "Leo", 6, 1)
@@ -340,7 +340,7 @@
 “诶！？啊……不好意思……我开玩笑了……”
 
 	: PlayVoice( "Voices/vo00_muk0842" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “局长让我和雷欧汇合
 你在听什么？”
 
@@ -349,12 +349,12 @@
 嗯。其他的队员也会在那之前到达”
 
 	: PlayVoice( "Voices/vo00_muk0843" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “原来如此。那就是说要等到晚上吗？”
 
 	: DrawChara( "Mukuro", 2, 0)
 	: PlayVoice( "Voices/vo00_muk0849" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “这样的话，逛街也不错。
 雷欧，怎么办？一起来吗？”
 
@@ -423,7 +423,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk0850" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，据局长说白夜好像在背后。
 好好调整身体状况比较好”
 
@@ -437,7 +437,7 @@
 
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk0851" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “嗯？Leo，你说了什么？”
 
 	: DrawChara( "Leo", 3, 0)
@@ -498,7 +498,7 @@
 : if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
 	: DrawChara( "Mukuro", 6, 2)
 	: PlayVoice( "Voices/vo00_muk0852" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “哈？怎么可能和你亲热呢……”
 
 	\CN["鬼灯队士・女B"]
@@ -513,7 +513,7 @@
 	: Wait()
 	: DrawChara( "Mukuro", 20, 2)
 	: PlayVoice( "Voices/vo00_muk0853" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “什么！？从哪里……！？”
 
 	\CN["鬼灯队士・女B"]
@@ -535,7 +535,7 @@
 	: JumpLayer( 3, 0, -50, 1, 0.25)
 	: DrawChara( "Mukuro", 36, 2)
 	: PlayVoice( "Voices/vo00_muk0854" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “等一下……呼，两个人都在说什么蠢话……！
 现在才要重做御用！”
 
@@ -548,7 +548,7 @@
 : else
 	: DrawChara( "Mukuro", 29, 0)
 	: PlayVoice( "Voices/vo00_muk0855" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “先不说是在调情
 也许想在温泉悠闲地度过一天”
 
@@ -576,7 +576,7 @@
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk0856" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧，你可不能大意啊？”
 
 : DrawChara( "Leo", 18, 0)
@@ -586,7 +586,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk0857" )
-\CN["无黑色"]
+\CN["无黑"]
 “这样啊……那就好了。我走了，雷欧。”
 
 : DrawChara( "Leo", 0, 0)
@@ -633,7 +633,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk0858" )
-\CN["无黑色"]
+\CN["无黑"]
 “明白了！”
 
 : HideWnd()
@@ -681,7 +681,7 @@
 
 : DrawChara( "Mukuro", 17, 1)
 : PlayVoice( "Voices/vo00_muk0859" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道。”
 
 : HideWnd()
@@ -714,7 +714,7 @@
 
 : DrawChara( "Mukuro", 16, 1)
 : PlayVoice( "Voices/vo00_muk0860" )
-\CN["无黑色"]
+\CN["无黑"]
 “……Leo……这家伙，是那个时候的！”
 
 : DrawChara( "Leo", 21, 0)
@@ -736,7 +736,7 @@
 
 : DrawChara( "Mukuro", 17, 1)
 : PlayVoice( "Voices/vo00_muk0861" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，怎么可能忘记。”
 
 : DrawChara( "Leo", 22, 0, 0, 0.0, 0.0, 2, "C" )
@@ -756,7 +756,7 @@
 
 : DrawChara( "Mukuro", 24, 1)
 : PlayVoice( "Voices/vo00_muk0862" )
-\CN["无黑色"]
+\CN["无黑"]
 “我觉得如果称呼女性为婆婆当然会生气……”
 
 : DrawChara( "Midori", 23, 0)
@@ -788,7 +788,7 @@
 
 : DrawChara( "Mukuro", 17, 1)
 : PlayVoice( "Voices/vo00_muk0863" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊……反正，不把这家伙打倒的话
 因为我不能活着回去……”
 
@@ -853,7 +853,7 @@
 
 : DrawChara( "Mukuro", 16, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo00_muk0864" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧，你是个疏忽大意的大敌！我不知道你会来干什么。”
 
 两个人总算逼到了这里。
@@ -861,7 +861,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 42, 1)
 : PlayVoice( "Voices/vo00_muk0865" )
-\CN["无黑色"]
+\CN["无黑"]
 （真的被逼到绝境了吗？有种非常讨厌的预感……）
 
 : DrawChara( "Midori", 23, 1)
@@ -901,7 +901,7 @@
 
 //: DrawChara( "Mukuro", 34, 1)
 : PlayVoice( "Voices/vo00_muk0866" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧……！”
 
 : HideWnd()
@@ -953,7 +953,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 6, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk0867" )
-\CN["无黑色"]
+\CN["无黑"]
 （从那种状态中，他能从容躲开……？）
 
 : DrawFaceThumbnail( "Midori", 22, 0, 0 )
@@ -970,7 +970,7 @@
 
 : DrawChara( "Mukuro", 17, 1)
 : PlayVoice( "Voices/vo00_muk0868" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷奥……小心点……”
 
 : DrawChara( "Leo", 17, 0)
@@ -1043,7 +1043,7 @@
 //●演出：みどりがレオをぶっ飛ばす
 //: DrawChara( "Mukuro", 32, 1)
 : PlayVoice( "Voices/vo00_muk0869" )
-\CN["无黑色"]
+\CN["无黑"]
 “利昂————！”
 
 我看到了尖锐的针准确地抓住了雷欧。
@@ -1056,7 +1056,7 @@
 : DrawChara( "Mukuro", 16, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk0870" )
-\CN["无黑色"]
+\CN["无黑"]
 “呜……你居然……把雷欧……！”
 
 : DrawChara( "Midori", 29, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
@@ -1101,7 +1101,7 @@
 
 : DrawChara( "Mukuro", 19, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo00_muk0871" )
-\CN["无黑色"]
+\CN["无黑"]
 “这种时候，你在说什么傻话！”
 
 : DrawChara( "Midori", 23, 1)
@@ -1193,7 +1193,7 @@
 : ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Mukuro", 6, 1)
 : PlayVoice( "Voices/vo00_muk0872" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈？老婆，雷欧！你在说什么傻话！”
 
 : DrawFaceThumbnail( "Midori", 16, 0 )
@@ -1232,7 +1232,7 @@
 : chara = "Mukuro"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo00_muk0873" )
-\CN["无黑色"]
+\CN["无黑"]
 “东乡隆，快死了！我要把你带走！”
 
 \CN["东乡"]
@@ -1349,7 +1349,7 @@
 : DrawChara( "Mukuro", 20, 2, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : ImpactLayer( 5, 0.1, 0.1, 1, 0.25)
 : PlayVoice( "Voices/vo00_muk0874" )
-\CN["无黑色"]
+\CN["无黑"]
 “所以我不是说了不要那样说吗！”
 
 : DrawChara( "Elisa", 4, 0)
@@ -1370,7 +1370,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk0875" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯，果然，那是……。
 那个男人，东乡隆是我们也在追的人物”
 
@@ -1387,7 +1387,7 @@
 
 : DrawChara( "Mukuro", 1, 1)
 : PlayVoice( "Voices/vo00_muk0876" )
-\CN["无黑色"]
+\CN["无黑"]
 “姑且用设备确认一下。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -1397,25 +1397,25 @@
 
 : DrawFaceThumbnail( "Azami", 2, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0172" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “把红头发扎在后面的人，会说‘我讨厌你’
 是维克托尔骑士团的人。这样啊，已经到那边了
 啊……”
 
 : PlayVoice( "Voices/vo05_aza0173" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “东乡通过贩卖人身，对维克托尔的兽人出手
 好像在。好像在那边被通缉了”
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk0877" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，东乡的身份就交给伊拉伊萨吧
 可以收起来吗？”
 
 : DrawFaceThumbnail( "Azami", 0, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0174" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，没问题。所以和幕府也有谈话。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -1427,7 +1427,7 @@
 
 : DrawChara( "Mukuro", 35, 0)
 : PlayVoice( "Voices/vo00_muk0878" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的……对不起。”
 
 : DrawChara( "Elisa", 0, 0)

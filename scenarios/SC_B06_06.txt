@@ -287,7 +287,7 @@
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0487" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “在下町发生的见回组全部被杀的大量杀戮事件
 没想到你一个人干……”
 
@@ -299,7 +299,7 @@
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo01_mom1002" )
-\CN["桃子"]
+\CN["桃"]
 “所以，你打算把大和全部卷入其中吗？”
 
 : DrawChara( "Hiraga", 0, 0)
@@ -328,7 +328,7 @@
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
-\CN["银子"]
+\CN["银"]
 “完全被欺负了……”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -339,7 +339,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk2162" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果我也在眼前失去了我最重要的人的话……”
 
 : DrawChara( "Leo", 17, 0)
@@ -391,7 +391,7 @@
 : EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0488" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “阿波罗的箭的力量……？
 你从一开始就以此为目标……！”
 
@@ -405,7 +405,7 @@
 : DrawChara( "Azami", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0489" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “呃……这、这是魔力屏障吗……？”
 
 : DrawChara( "Azami", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -417,7 +417,7 @@
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2163" )
-\CN["无黑色"]
+\CN["无黑"]
 “……”
 
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
@@ -427,7 +427,7 @@
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “啧……没什么……”
 
 : HideWnd()
@@ -464,7 +464,7 @@
 //: EraseChara( "Hiraga", 0.5 )
 //: DrawChara( "Mukuro", 16, 0, 2, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2164" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜——————！！”
 
 明明想马上帮你的……。
@@ -575,7 +575,7 @@
 
 : DrawChara( "Mukuro", 15, 0)
 : PlayVoice( "Voices/vo00_muk2165" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜……小夜啊————————！”
 
 我只知道，从这里小夜就不动了。
@@ -607,7 +607,7 @@
 //: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 4, "RC" )
 : DrawFaceThumbnail( "Momo", 7, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1003" )
-\CN["桃子"]
+\CN["桃"]
 “什么，什么……那个样子……！？”
 
 //: DrawChara( "Kinako", 7, 0)
@@ -833,7 +833,7 @@
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0490" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那个样子，以前在幕府的一本书上看到过。
 拥有六个手臂的鬼神{阿修罗，阿修罗}，就是它本身」
 
@@ -841,7 +841,7 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 17, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk2166" )
-\CN["无黑色"]
+\CN["无黑"]
 “鬼神，阿修罗……？”
 
 : HideWnd()
@@ -871,14 +871,14 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Azami", 23, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0491" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “唔……！”
 
 局长沐浴着从比拉加解放出来的闪光。
 
 : DrawChara( "Azami", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0492" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哈、哈、哈……真是荒唐的招数啊……。
 完全看不见”
 
@@ -898,7 +898,7 @@
 : EraseAllImage( 9, 0.5 )
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1004" )
-\CN["桃子"]
+\CN["桃"]
 “把小夜还给我！”
 
 //●演出：桃　魔術演出
@@ -935,7 +935,7 @@
 黄菜子的技能将比拉加的躯体切开。
 
 : DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “好快啊……那家伙，什么时候能使出那种招数……”
 
 : DrawChara( "Leo", 1, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -958,12 +958,12 @@
 : DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2167" )
-\CN["无黑色"]
+\CN["无黑"]
 “什么！？伤口一瞬间就恢复了！？”
 
 : DrawChara( "Azami", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0493" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “喂喂，黄菜子的刀，扬羽是妖刀吧？
 尽管如此，要恢复过来，也太荒唐了吧……”
 
@@ -995,7 +995,7 @@
 //: EraseChara( "Leo", 0.5 )
 //: DrawChara( "Gin", 12, 0, 0, 0.5, 0.0, 3, "RC" )
 : DrawFaceThumbnail( "Gin", 12, 0, 0 )
-\CN["银子"]
+\CN["银"]
 “这样的话，说不完全，到底是有多廉价啊……。
 无论怎么说都太盛了吧……”
 
@@ -1012,7 +1012,7 @@
 : EraseAllImage( 9, 0.5 )
 : DrawChara( "Azami", 22, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo05_aza0494" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “这、这个……有种讨厌的预感……！”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
@@ -1024,7 +1024,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2168" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流奥义——八咫乌！”
 
 //●演出：斬撃エフェクト
@@ -1060,7 +1060,7 @@
 : ShowWnd()
 //: EraseChara( "Kinako", 0.5 )
 //: DrawChara( "Gin", 13, 0, 0, 0.5, 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “神风！！”
 
 //●演出：殴打エフェクト
@@ -1103,7 +1103,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0495" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “天真一刀流——
 {八岐大蛇，山下的大蛇}！！！」
 
@@ -1169,7 +1169,7 @@
 
 : DrawChara( "Azami", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0496" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 「…………」
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
@@ -1181,12 +1181,12 @@
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom1005" )
-\CN["桃子"]
+\CN["桃"]
 「…………」
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “切……”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -1197,7 +1197,7 @@
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2169" )
-\CN["无黑色"]
+\CN["无黑"]
 「…………」
 
 即使全体人员竭尽全力也完全没有达到。
@@ -1219,7 +1219,7 @@
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0497" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “没错。那是阿修罗……。
 嘛，最里面的是平底片”
 
@@ -1245,7 +1245,7 @@
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0498" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “是吗……。那家伙说话好像是亚久里死了一样
 所以，因为那个事件……”
 
@@ -1256,7 +1256,7 @@
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0499" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “突然觉得空间里有个大洞
 消失在那里了”
 
@@ -1270,7 +1270,7 @@
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "L" )
 : PlayVoice( "Voices/vo01_mom1006" )
-\CN["桃子"]
+\CN["桃"]
 “{次元渡行，交叉防守}……？”
 
 : DrawChara( "Tamamo", 0, 0)
@@ -1281,7 +1281,7 @@
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 40, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "R" )
 : PlayVoice( "Voices/vo00_muk2170" )
-\CN["无黑色"]
+\CN["无黑"]
 “玉藻大人，小夜在哪里……？
 怎么去小夜的地方呢？”
 
@@ -1298,7 +1298,7 @@
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "R" )
 : PlayVoice( "Voices/vo01_mom1007" )
-\CN["桃子"]
+\CN["桃"]
 “老师，你说来得及吗？
 难道是小夜被带去的地方……？”
 
@@ -1315,12 +1315,12 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1008" )
-\CN["桃子"]
+\CN["桃"]
 “和平时的老师气氛完全不同……”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 18, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
-\CN["银子"]
+\CN["银"]
 “婆婆很神圣……”
 
 //●演技：詠唱です
@@ -1366,7 +1366,7 @@
 : ShowWnd()
 //: EraseChara( "Tamamo", 0.5 )
 : PlayVoice( "Voices/vo00_muk2171" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜在这里面……等一下，我马上就去！”
 
 : DrawChara( "Tamamo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )

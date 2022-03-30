@@ -17,7 +17,7 @@
 : Wait()
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk4571" )
-\CN["无黑色"]
+\CN["无黑"]
 “这里有姐姐……”
 
 我被希拉加拜托的是九星
@@ -25,7 +25,7 @@
 
 : DrawChara( "Mukuro", 40, 0)
 : PlayVoice( "Voices/vo00_muk4572" )
-\CN["无黑色"]
+\CN["无黑"]
 “没想到姐姐是属于白夜的，而且还是干部。
 ……一想，脑袋就要裂开了”
 
@@ -38,7 +38,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk4573" )
-\CN["无黑色"]
+\CN["无黑"]
 “……别多想了。
 我只是完成被拜托的事情而已”
 
@@ -100,7 +100,7 @@
 : endif
 : DrawChara( "Mukuro", 38, 0)
 : PlayVoice( "Voices/vo00_muk4574" )
-\CN["无黑色"]
+\CN["无黑"]
 “……没想到姐姐会在白夜{与，组}”
 
 : DrawChara( "Mei", 18, 0)
@@ -117,7 +117,7 @@
 
 : DrawChara( "Mukuro", 41, 0)
 : PlayVoice( "Voices/vo00_muk4575" )
-\CN["无黑色"]
+\CN["无黑"]
 “没落了吗……不能否定。”
 
 : DrawChara( "Mukuro", 28, 0)
@@ -135,7 +135,7 @@
 
 : DrawChara( "Mukuro", 39, 0)
 : PlayVoice( "Voices/vo00_muk4576" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果可以的话，我不想和姐姐互相残杀。”
 
 //●演出：無黒　刀を抜く
@@ -224,7 +224,7 @@
 
 : DrawChara( "Mukuro", 26, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk4577" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐是不是太迟钝了？
 以前应该是压倒我的”
 
@@ -246,7 +246,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk4578" )
-\CN["无黑色"]
+\CN["无黑"]
 （姐姐的那份从容，难道还没有全力以赴吗？）
 
 : DrawChara( "Mei", 7, 0)
@@ -257,7 +257,7 @@
 
 : DrawChara( "Mukuro", 30, 0)
 : PlayVoice( "Voices/vo00_muk4579" )
-\CN["无黑色"]
+\CN["无黑"]
 「……！」
 
 脊梁发冷。
@@ -277,7 +277,7 @@
 //: DrawChara( "Mukuro", 40, 0)
 : DrawFaceThumbnail( "Mukuro", 40, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4580" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐……那个样子……”
 
 : DrawChara( "Mei", 1, 0)
@@ -289,7 +289,7 @@
 : DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
 : PlayVoice( "Voices/vo00_muk4581" )
-\CN["无黑色"]
+\CN["无黑"]
 “难道不是出现在童话故事里的虚构的存在吗？”
 
 : DrawChara( "Mei", 18, 0)
@@ -301,7 +301,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 40, 0)
 : PlayVoice( "Voices/vo00_muk4582" )
-\CN["无黑色"]
+\CN["无黑"]
 （{黑夜叉，暗黑妖精}之类的，虚构的存在——
 但是，眼前出现的却是非常奇怪的怪物，这是事实）
 
@@ -327,7 +327,7 @@
 : DrawChara( "Mukuro", 31, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4583" )
-\CN["无黑色"]
+\CN["无黑"]
 “哇……！”
 
 即使在最后关头阻止姐姐的剑戟
@@ -343,7 +343,7 @@
 : ChaOut = "Mei"; ChaIn = "Mukuro"; Face = 30; Hoho = 0; Pose = 2; Lay = 3; Pos = "C";
 : Call( "Scenarios/Common*FgChange" )
 : PlayVoice( "Voices/vo00_muk4584" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈，哈，只是在仓库捡的刀啊。”
 
 : ChaOut = "Mukuro"; ChaIn = "Mei"; Face = 18; Hoho = 0; Pose = 0; Lay = 3; Pos = "C";
@@ -361,7 +361,7 @@
 //●演技：心の声です
 : DrawFaceThumbnail( "Mukuro", 37, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4585" )
-\CN["无黑色"]
+\CN["无黑"]
 （这种感觉，让身体感受到绝对的死亡
 应该收起来了吧）
 
@@ -389,7 +389,7 @@
 
 //●演技：心の声です
 : PlayVoice( "Voices/vo00_muk4586" )
-\CN["无黑色"]
+\CN["无黑"]
 （这就是死亡的瞬间吗？）
 
 姐姐的样子看起来特别缓慢。
@@ -402,7 +402,7 @@
 
 //●演技：心の声です
 : PlayVoice( "Voices/vo00_muk4587" )
-\CN["无黑色"]
+\CN["无黑"]
 （没有特别想做的事情，也没有特别想做的目标。
 只是，我只是活着而已。）
 
@@ -434,7 +434,7 @@
 : PlayBgm("BGM/01_CM001")
 : DrawChara( "Mukuro", 34, 0, 2)
 : PlayVoice( "Voices/vo00_muk4588" )
-\CN["无黑色"]
+\CN["无黑"]
 “达到了……？”
 
 轻轻地看了看手掌
@@ -442,7 +442,7 @@
 
 : DrawChara( "Mukuro", 38, 0)
 : PlayVoice( "Voices/vo00_muk4589" )
-\CN["无黑色"]
+\CN["无黑"]
 “虽然不太清楚，但是变成了{黑夜叉，暗黑妖精}
 是吗？确实涌现出了强大的力量……”
 
@@ -527,7 +527,7 @@
 
 : DrawChara( "Mukuro", 38, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk4590" )
-\CN["无黑色"]
+\CN["无黑"]
 “……姐姐”
 
 {黑夜叉，暗黑精灵}的力量总之消耗很大。
@@ -558,7 +558,7 @@
 
 : DrawChara( "Mukuro", 2, 0, 0)
 : PlayVoice( "Voices/vo00_muk4591" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么可能杀……”
 
 //●演出：暗転
@@ -599,7 +599,7 @@
 *battle02_select_s2
 : DrawChara( "Mukuro", 40, 1)
 : PlayVoice( "Voices/vo00_muk4592" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐，再见……”
 
 //＠殺害,1
@@ -618,14 +618,14 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 37, 1, 2, 0.5, 0.0, 3, "C" )
 	: PlayVoice( "Voices/vo00_muk4593" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “……不要比想象中来得多。”
 
 杀人不是第一次。
 
 	: DrawChara( "Mukuro", 33, 1)
 	: PlayVoice( "Voices/vo00_muk4594" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “对不起……姐姐……真的很抱歉……”
 
 之后和姐姐的回忆又复活了
@@ -642,7 +642,7 @@
 : else
 	: DrawChara( "Mukuro", 26, 1, 2, 0.5, 0.0, 3, "C" )
 	: PlayVoice( "Voices/vo00_muk4595" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “意外地什么都没想呢……。
 我还以为会有更多的感受”
 
@@ -652,7 +652,7 @@
 
 	: DrawChara( "Mukuro", 25, 0)
 	: PlayVoice( "Voices/vo00_muk4596" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “去吗……”
 
 //●分岐終了

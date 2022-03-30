@@ -34,7 +34,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk2842" )
-\CN["无黑色"]
+\CN["无黑"]
 “不，没关系。只是姐姐在这种地方
 叫我出来真稀奇啊”
 
@@ -50,7 +50,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk2843" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯，那就用盐拌毛豆和烤鸡的拼盘。
 还有，请喝茶”
 
@@ -64,7 +64,7 @@
 
 : DrawChara( "Mukuro", 12, 0)
 : PlayVoice( "Voices/vo00_muk2844" )
-\CN["无黑色"]
+\CN["无黑"]
 “我不擅长喝酒，因为必须要影响到明天……。
 那样的姐姐呢？我好像没喝酒”
 
@@ -101,7 +101,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk2845" )
-\CN["无黑色"]
+\CN["无黑"]
 “……嗯”
 
 掩饰掩饰也没有意义。
@@ -116,7 +116,7 @@
 
 : DrawChara( "Mukuro", 36, 0)
 : PlayVoice( "Voices/vo00_muk2846" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐以前没有这样的事吗？”
 
 : DrawChara( "Mei", 4, 0)
@@ -127,7 +127,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk2847" )
-\CN["无黑色"]
+\CN["无黑"]
 “……是吗？姐姐也是这样。”
 
 只是听了这句话，总觉得心里很轻松。
@@ -141,7 +141,7 @@
 : if( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 23, 0)
 	: PlayVoice( "Voices/vo00_muk2848" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “为什么？”？
 ……是为了保护谁吗……？”
 
@@ -155,7 +155,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 39, 0)
 	: PlayVoice( "Voices/vo00_muk2849" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （光是被命令的事情淡泊地处理着，是不行的
 没有吗？）
 
@@ -166,7 +166,7 @@
 : else
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk2850" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “为了什么，为了完成工作，为了保护自己
 一定”
 
@@ -197,7 +197,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk2851" )
-\CN["无黑色"]
+\CN["无黑"]
 “从头开始……！？”
 
 直接向干部也不是什么的我下达命令？
@@ -205,7 +205,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk2852" )
-\CN["无黑色"]
+\CN["无黑"]
 “而且，精灵之乡……？
 虽然是没听说过的地方，但是姐姐，那里在哪里……？”
 
@@ -230,7 +230,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk2853" )
-\CN["无黑色"]
+\CN["无黑"]
 “总之先去吧……”
 
 如果那是命令的话只能服从。
@@ -321,7 +321,7 @@
 : DrawChara( "Mukuro", 0, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2854" )
 : ShowWnd()
-\CN["无黑色"]
+\CN["无黑"]
 “这里是精灵之乡……以前只有精灵居住的村庄
 据说有……”
 
@@ -330,7 +330,7 @@
 
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk2855" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么想都不是因为没有人而毁灭的。
 感觉是被兵器或者魔术之类的东西吹跑了”
 
@@ -348,7 +348,7 @@
 	//●読み：主（あるじ）
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk2856" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “……和森林里出现的恶灵是无法比拟的对手。
 这里的主人是什么？”
 //●分岐終了地点へ
@@ -360,7 +360,7 @@
 
 	: DrawChara( "Mukuro", 39, 1, 4)
 	: PlayVoice( "Voices/vo00_muk2857" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “怎么，怎么都行吧，没什么……。
 因为喜欢而且是裸体……”
 
@@ -381,7 +381,7 @@
 //●演技：心の声です
 	: DrawChara( "Mukuro", 24, 0, 0)
 	: PlayVoice( "Voices/vo00_muk2858" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （不太清楚，会不会毁灭？）
 
 我拿的刀虽然不懂道理，但是就算是恶灵也能斩断。
@@ -462,7 +462,7 @@
 //●演技：戦闘後、疲労しています
 : DrawChara( "Mukuro", 36, 1, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2859" )
-\CN["无黑色"]
+\CN["无黑"]
 “……达到的素质？是什么意思？”
 
 \CN["精灵之灵"]
@@ -470,7 +470,7 @@
 
 : DrawChara( "Mukuro", 0, 1, 0)
 : PlayVoice( "Voices/vo00_muk2860" )
-\CN["无黑色"]
+\CN["无黑"]
 “我知道，但是应该会出现在故事里吧？”
 
 \CN["精灵之灵"]
@@ -483,7 +483,7 @@
 
 : DrawChara( "Mukuro", 1, 1)
 : PlayVoice( "Voices/vo00_muk2861" )
-\CN["无黑色"]
+\CN["无黑"]
 “就算毁灭了，{黑夜叉，暗黑精灵}也不是虚构的存在
 没有吗！？”
 
@@ -499,7 +499,7 @@
 //●演技：言葉が出ないという感じです
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk2862" )
-\CN["无黑色"]
+\CN["无黑"]
 「…………」
 
 //●備考：何者か＝達磨です
@@ -527,7 +527,7 @@
 	//●演技：自分に眠る力に怖さを覚えています
 	: DrawChara( "Mukuro", 39, 0)
 	: PlayVoice( "Voices/vo00_muk2863" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “是吗，是吗……我有那样的力量……”
 
 我能成为{黑夜叉，暗黑妖精}吗……。
@@ -545,7 +545,7 @@
 	//●演技：自分に眠る強大な力に嬉しさを覚えています
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk2864" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “是吗？我有那么大的力量……”
 
 我能成为{黑夜叉，暗黑妖精}吗……。
@@ -557,7 +557,7 @@
 : endif
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk2865" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么做才能{黑夜叉，暗黑妖精}呢？”
 
 \CN["精灵之灵"]
@@ -569,7 +569,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk2866" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗……”
 
 突然醒来之类的感觉吧。
@@ -577,7 +577,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk2867" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，今后也只能锻炼自己的技能了。”
 
 举起刀来重新振作精神。
@@ -592,7 +592,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk2868" )
-\CN["无黑色"]
+\CN["无黑"]
 「怎么说呢，仓库里的东西来得正好，所以一直
 只是在用吗？”
 
@@ -606,7 +606,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk2869" )
-\CN["无黑色"]
+\CN["无黑"]
 “这是那么厉害的刀啊……。
 怪不得灵也会被斩断的”
 
@@ -630,7 +630,7 @@
 //●演出：天叢雲に光が集まっていく
 : DrawChara( "Mukuro", 1, 0 , 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk2870" )
-\CN["无黑色"]
+\CN["无黑"]
 “光聚集在刀上……？”
 
 \CN["精灵之灵"]
@@ -660,7 +660,7 @@
 
 : DrawChara( "Mukuro", 23, 0 , 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk2871" )
-\CN["无黑色"]
+\CN["无黑"]
 “剩下的就看我了……”
 
 总之，先回去一次吧。

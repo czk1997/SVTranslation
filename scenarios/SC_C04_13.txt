@@ -50,7 +50,7 @@
 : PlaySe("SE/Se_Foot01")
 : lay = 2; type = "WL"; Call( "Scenarios/Common*FgEff");
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “你一个人吗？我被你小看了。”
 
 : DrawChara( "Leo", 20, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
@@ -62,7 +62,7 @@
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo01_mom1078" )
-\CN["桃子"]
+\CN["桃"]
 “但是，对方只有一个人。
 如果大家一起合作的话……”
 
@@ -87,7 +87,7 @@
 : EraseChara( "Daruma", 0.0 )
 : DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1079" )
-\CN["桃子"]
+\CN["桃"]
 “好的。雷欧，小银，让路！”
 
 根据桃子的指示，雷欧和银让路。
@@ -102,7 +102,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom3122" )
-\CN["桃子"]
+\CN["桃"]
 “雷啊！”
 
 : HideWnd()
@@ -125,7 +125,7 @@
 : DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo01_mom1080" )
-\CN["桃子"]
+\CN["桃"]
 “呃，骗人……我的魔术完全无效……？”
 
 : DrawChara( "Daruma", 1, 0)
@@ -136,7 +136,7 @@
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “你这么游手好闲，我真讨厌！”
 
 : DrawChara( "Gin", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
@@ -164,7 +164,7 @@
 : evfile = "evx_a013_1_0_0100000_0000000_0_"
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “大岚————！”
 
 //: DrawChara( "Leo", 23, 0)
@@ -223,7 +223,7 @@
 
 //: DrawChara( "Gin", 12, 0)
 : DrawFaceThumbnail( "Gin", 0, 0, 0 )
-\CN["银子"]
+\CN["银"]
 “小姐……请逃……快，快……”
 
 : DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
@@ -237,7 +237,7 @@
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 : PlayVoice( "Voices/vo01_mom1081" )
-\CN["桃子"]
+\CN["桃"]
 “……！？”
 
 达磨一瞬间移动到了桃子附近。

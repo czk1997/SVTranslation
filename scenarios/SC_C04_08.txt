@@ -199,12 +199,12 @@
 : PlayBgm("BGM/01_CM001")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2620" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，接下来怎么办呢？”
 
 : DrawChara( "Mukuro", 29, 0)
 : PlayVoice( "Voices/vo00_muk2621" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐想帮其他干部的工作
 我说过……”
 
@@ -217,7 +217,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 0, 0, 3)
 : PlayVoice( "Voices/vo00_muk2622" )
-\CN["无黑色"]
+\CN["无黑"]
 （现在只做被要求做的事情……）
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )

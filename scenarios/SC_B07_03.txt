@@ -58,22 +58,22 @@
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1065" )
-\CN["桃子"]
+\CN["桃"]
 “对了对了。和小银战斗的日野家的保镖
 伊藤是人吗？怎么样了？”
 
 : DrawChara( "Gin", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “我不知道。我已经不见了。
 我觉得不久就会出现在我面前……”
 
 : DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom1066" )
-\CN["桃子"]
+\CN["桃"]
 “小银，不要再乱来了。我们约好了。”
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “……我明白了。”
 
 //●演出：場面転換トランジション
@@ -89,7 +89,7 @@
 
 : DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2383" )
-\CN["无黑色"]
+\CN["无黑"]
 “……局长”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -102,7 +102,7 @@
 
 //●演技：涙を堪えています
 : PlayVoice( "Voices/vo01_mom1067" )
-\CN["桃子"]
+\CN["桃"]
 「…………」
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -112,7 +112,7 @@
 \CN["雷欧"]
 “龙先生……谢谢你锻炼了我。”
 
-\CN["银子"]
+\CN["银"]
 “……谢谢……”
 
 挖个深坑埋葬骨灰罐。
@@ -138,7 +138,7 @@
 “小矮子……你真是个优秀的武士啊。”
 
 : PlayVoice( "Voices/vo00_muk2384" )
-\CN["无黑色"]
+\CN["无黑"]
 “……又是小矮子……被红美……骂了吧？
 不是矮个子而是红美……”
 
@@ -147,10 +147,10 @@
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Momo", 15, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom1068" )
-\CN["桃子"]
+\CN["桃"]
 “是啊……。因为变成这样是理所当然的……”
 
-\CN["银子"]
+\CN["银"]
 「…………」
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -174,7 +174,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 39, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2385" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊……是啊……没错……”
 
 眼前浮现出理所当然地展开的景象。
@@ -189,7 +189,7 @@
 我们去那里的话，再开心一点吧”
 
 : PlayVoice( "Voices/vo00_muk2386" )
-\CN["无黑色"]
+\CN["无黑"]
 “理所当然的{日常、事物}，其实不是理所当然的……。
 正因为如此，才是珍贵而无可替代的东西吧”
 

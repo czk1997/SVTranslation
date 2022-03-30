@@ -21,25 +21,25 @@
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0095" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哦！大家都到齐了。正好。”
 
 //●演技：ハロゲンダック＝ハーゲンダッツのパロ
 : DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom0103" )
-\CN["桃子"]
+\CN["桃"]
 “啊！局长拿在手里的那个
 说不定，是卤鸭！？”
 
 : DrawChara( "Azami", 5, 0)
 : PlayVoice( "Voices/vo05_aza0096" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “呼。不愧是公主椿，真是太好了。”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo00_muk0479" )
-\CN["无黑色"]
+\CN["无黑"]
 “卤鸭……？”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
@@ -50,7 +50,7 @@
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk0480" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊。那个每天都在排队的店吗？”
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
@@ -60,7 +60,7 @@
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
-\CN["银子"]
+\CN["银"]
 “啊？那就买来吃吧。”
 
 : DrawChara( "Leo", 6, 0)
@@ -69,7 +69,7 @@
 那种地方，因为害羞而不排队”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “……真的吗？”
 
 : DrawChara( "Leo", 4, 0)
@@ -78,7 +78,7 @@
 只排那个女人的队吗？”
 
 : DrawChara( "Gin", 3, 0)
-\CN["银子"]
+\CN["银"]
 “不，不是那边。
 你居然有羞耻心，真让我吃惊啊」
 
@@ -96,7 +96,7 @@
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0097" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “喂，雷欧和银，别吵了。”
 
 //: DrawChara( "Leo", 23, 0)
@@ -106,7 +106,7 @@
 //: EraseChara( "Azami", 0.5 )
 //: DrawChara( "Momo", 13, 0, 0, 0.5, 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0104" )
-\CN["桃子"]
+\CN["桃"]
 “呜哇！雷欧，小银！
 冰融化了的话，怎么办？”
 
@@ -115,17 +115,17 @@
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0105" )
-\CN["桃子"]
+\CN["桃"]
 “还有，顺便说一下，小银排在女孩子的队伍里
 排队什么的，简直是小菜一碟”
 
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
-\CN["银子"]
+\CN["银"]
 “工资日和女儿经常排队。
 已经什么都不想了……”
 
 : DrawChara( "Gin", 16, 0)
-\CN["银子"]
+\CN["银"]
 “……据说他是在寒冷的冬天从维克托尔来的
 在排队买限定薄饼的时候，已经……”
 
@@ -138,19 +138,19 @@
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0106" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵♪那是当然的啦！从朝一到小银去高浜
 因为排队了”
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0107" )
-\CN["桃子"]
+\CN["桃"]
 “维克托尔王室御用的薄煎饼是指
 不是摆样子的吧”
 
 : DrawChara( "Momo", 6, 0)
 : PlayVoice( "Voices/vo01_mom0108" )
-\CN["桃子"]
+\CN["桃"]
 “那个甜，那个软绵绵的感觉。简直就是天使的甜品。”
 说也不过分”
 
@@ -162,7 +162,7 @@
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0109" )
-\CN["桃子"]
+\CN["桃"]
 “下次出售的话，也要好好买黄菜子的份
 我来给你！当然，也包括大家的份”
 
@@ -174,7 +174,7 @@
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : PlayVoice( "Voices/vo05_aza0098" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那么，在冰淇淋融化之前给我吧。”
 
 : HideWnd()
@@ -191,18 +191,18 @@
 
 //: DrawChara( "Mukuro", 4, 1, 0, 0.5, 0.0, 5, "C" )
 : PlayVoice( "Voices/vo00_muk0481" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……嗯，嗯……很好吃……”
 
 //: DrawChara( "Momo", 6, 1, 0, 0.5, 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0110" )
-\CN["桃子"]
+\CN["桃"]
 “嗯————！果然是卤鸭啊。
 入口即化的感觉最棒了！”
 
 //: DrawChara( "Azami", 24, 1, 0, 0.5, 0.0, 3, "L" )
 : PlayVoice( "Voices/vo05_aza0099" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊。这也难怪街上的女孩子们想排队。”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -242,7 +242,7 @@
 //: EraseChara( "Bebi", 0.5 )
 //: DrawChara( "Leo", 14, 0, 0, 0.5, 0.0, 7, "C" )
 //: DrawChara( "Gin", 18, 0, 0, 0.5, 0.0, 8, "R" )
-\CN["银子"]
+\CN["银"]
 “喂，喂！你是认真的吗……？”
 
 //: DrawChara( "Ryu", 12, 0, 0, 0.5, 0.0, 2, "L" )
@@ -256,13 +256,13 @@
 //: EraseChara( "Gin", 0.5 )
 //: DrawChara( "Mukuro", 27, 0, 0, 0.5, 0.0, 5, "R" )
 : PlayVoice( "Voices/vo00_muk0482" )
-\CN["无黑色"]
+\CN["无黑"]
 “肯定会吃惊吧。冰淇淋加酱油什么的……”
 
 //: EraseChara( "Ryu", 0.5 )
 //: DrawChara( "Momo", 14, 0, 0, 0.5, 0.0, 4, "L" )
 : PlayVoice( "Voices/vo01_mom0111" )
-\CN["桃子"]
+\CN["桃"]
 “嗯……Leo君，我觉得这到底是不可能的吧？”
 
 //: DrawChara( "Leo", 2, 0)
@@ -272,7 +272,7 @@
 
 //: EraseChara( "Mukuro", 0.5 )
 //: DrawChara( "Gin", 16, 0, 0, 0.5, 0.0, 8, "R" )
-\CN["银子"]
+\CN["银"]
 “……真的吗？”
 
 //: DrawChara( "Leo", 13, 0)
@@ -283,7 +283,7 @@
 //: EraseChara( "Momo", 0.5 )
 //: DrawChara( "Azami", 2, 0, 0, 0.5, 0.0, 3, "L" )
 : PlayVoice( "Voices/vo05_aza0100" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “这样的话，冰淇淋用冰淇淋，团子用团子分开吃比较好
 不是挺好的吗？”
 
@@ -295,7 +295,7 @@
 //: EraseChara( "Gin", 0.5 )
 //: DrawChara( "Mukuro", 21, 0, 0, 0.5, 0.0, 5, "R" )
 : PlayVoice( "Voices/vo00_muk0483" )
-\CN["无黑色"]
+\CN["无黑"]
 “能享受两种味道，我觉得不是这样的……”
 
 //: DrawChara( "Leo", 0, 0)
@@ -305,7 +305,7 @@
 
 //: DrawChara( "Mukuro", 28, 0)
 : PlayVoice( "Voices/vo00_muk0484" )
-\CN["无黑色"]
+\CN["无黑"]
 “你总是这样。
 嘛，要是喜欢吃冰淇淋就好了……”
 
@@ -321,7 +321,7 @@
 //: EraseChara( "Azami", 0.5 )
 //: DrawChara( "Momo", 11, 0, 0, 0.5, 0.0, 4, "L" )
 : PlayVoice( "Voices/vo01_mom0112" )
-\CN["桃子"]
+\CN["桃"]
 “喂，Leo君，真的很好吃吗？那个？”
 
 //: DrawChara( "Leo", 11, 0)
@@ -331,19 +331,19 @@
 
 //: EraseChara( "Mukuro", 0.5 )
 //: DrawChara( "Gin", 18, 0, 0, 0.5, 0.0, 8, "R" )
-\CN["银子"]
+\CN["银"]
 “……小姐，你在想什么？”
 
 //: DrawChara( "Momo", 6, 0)
 : PlayVoice( "Voices/vo01_mom0113" )
-\CN["桃子"]
+\CN["桃"]
 “不……既然那么好吃，那就稍微做一下吧
 嗯——”
 
 //: EraseChara( "Gin", 0.5 )
 //: DrawChara( "Mukuro", 12, 0, 0, 0.5, 0.0, 5, "R" )
 : PlayVoice( "Voices/vo00_muk0485" )
-\CN["无黑色"]
+\CN["无黑"]
 “……嗯，我还是这样……。
 非常好吃”
 
@@ -395,12 +395,12 @@
 //: EraseChara( "Bebi", 0.5 )
 //: DrawChara( "Azami", 4, 0, 0, 0.5, 0.0, 3, "R" )
 : PlayVoice( "Voices/vo05_aza0101" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哪一个，我也试试看。嗯……”
 
 //: DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0102" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “……嗯……确实，还不错……”
 
 //: EraseChara( "Kinako", 0.5 )
@@ -420,7 +420,7 @@
 //: EraseChara( "Ryu", 0.5 )
 //: DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 4, "L" )
 : PlayVoice( "Voices/vo01_mom0114" )
-\CN["桃子"]
+\CN["桃"]
 “确实和御手洗团子很接近……。
 但是，那样的话，就想吃普通的团子吧。
 好不容易来一只卤鸭……”
@@ -428,7 +428,7 @@
 //: EraseChara( "Azami", 0.5 )
 //: DrawChara( "Mukuro", 9, 0, 0, 0.5, 0.0, 5, "R" )
 : PlayVoice( "Voices/vo00_muk0486" )
-\CN["无黑色"]
+\CN["无黑"]
 “咕嘟咕嘟……嗯，偶尔也不错，我呢。”
 
 //: EraseChara( "Leo", 0.5 )
@@ -442,7 +442,7 @@
 
 //: EraseChara( "Momo", 0.5 )
 //: DrawChara( "Gin", 1, 0, 0, 0.5, 0.0, 8, "L" )
-\CN["银子"]
+\CN["银"]
 “……难以用笔墨形容。”
 
 //: EraseChara( "Kinako", 0.5 )
@@ -456,7 +456,7 @@
 “啊，像你这样的孩子舌头是不知道的味道啊。”
 
 //: DrawChara( "Gin", 14, 0)
-\CN["银子"]
+\CN["银"]
 “啊？只是你的味觉被乌贼咬了吧！”
 
 嗯，雷欧提倡的吃法毁誉参半……。

@@ -14,7 +14,7 @@
 : if ( Flag ( "EroCosWorksMomo" ) == true ) Return endif
 : DrawChara( "Momo", 0, 1, 1, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom2835" )
-\CN["桃子"]
+\CN["桃"]
 “这就是这里的制服。
 ”
 
@@ -26,7 +26,7 @@
 
 : DrawChara( "Momo", 1, 1, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom2836" )
-\CN["桃子"]
+\CN["桃"]
 “那么，先做什么好呢？”
 
 \CN["母版"]
@@ -35,7 +35,7 @@
 
 : DrawChara( "Momo", 5, 1)
 : PlayVoice( "Voices/vo01_mom2837" )
-\CN["桃子"]
+\CN["桃"]
 “嗯。嘛，总之先试试看吧。”
 
 //＠立ち絵消去
@@ -75,7 +75,7 @@
 : if ( CharaCostume( "Momo" ) == 3 )
 	: DrawChara( "Momo", 1, 1, 0, 0.5, 0.0, 3, "RC" )
 	: PlayVoice( "Voices/vo01_mom2838" )
-	\CN["桃子"]
+	\CN["桃"]
 “啊，果然还是想脱下衣服赤身裸体地接待客人啊
 不行吗？”
 
@@ -84,7 +84,7 @@
 
 	: DrawChara( "Momo", 5, 1)
 	: PlayVoice( "Voices/vo01_mom2839" )
-	\CN["桃子"]
+	\CN["桃"]
 “那就恭敬不如从命，把这些都脱了吧。”
 
 虽然这么说，但是几乎没有要脱的东西……。
@@ -102,7 +102,7 @@
 : else
 	: DrawChara( "Momo", 4, 1, 0, 0.5, 0.0, 3, "RC" )
 	: PlayVoice( "Voices/vo01_mom2840" )
-	\CN["桃子"]
+	\CN["桃"]
 “果然还是服装好啊。”
 
 	\CN["母版"]

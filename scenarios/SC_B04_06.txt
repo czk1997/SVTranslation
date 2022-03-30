@@ -35,7 +35,7 @@
 
 : DrawChara( "Momo", 4, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0321" )
-\CN["桃子"]
+\CN["桃"]
 “……好像不是平时的样子。”
 
 我不是银瞒着我赶走的家伙。
@@ -45,7 +45,7 @@
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0322" )
-\CN["桃子"]
+\CN["桃"]
 「我告诉你，我已经离家出走了。
 完全没有回去的打算”
 
@@ -57,7 +57,7 @@
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom0323" )
-\CN["桃子"]
+\CN["桃"]
 “是爸爸或者妈妈浪费了吗？”
 
 \CN["山茶女家的佣人"]
@@ -65,7 +65,7 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0324" )
-\CN["桃子"]
+\CN["桃"]
 “那样子，好像不是一般的事。好吧，我去问问。”
 
 \CN["山茶女家的佣人"]
@@ -78,7 +78,7 @@
 //●読み：大それた（だいそれた）
 : DrawChara( "Momo", 11, 0)
 : PlayVoice( "Voices/vo01_mom0325" )
-\CN["桃子"]
+\CN["桃"]
 （父亲没有胆子这么大。
 这样的话，很有可能是被谁戴上了……？）
 
@@ -89,7 +89,7 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0326" )
-\CN["桃子"]
+\CN["桃"]
 “刚才也说过了，我已经离开了椿之家。
 没有我能做的事”
 
@@ -111,7 +111,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0327" )
-\CN["桃子"]
+\CN["桃"]
 （真的很任性呢……）
 
 ——那是我吗。
@@ -122,7 +122,7 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0328" )
-\CN["桃子"]
+\CN["桃"]
 “让我想想。”
 
 \CN["山茶女家的佣人"]
@@ -145,7 +145,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0292" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “可以放任不管吗？”
 
 在院子里发呆的时候局长来了。
@@ -155,17 +155,17 @@
 : DrawChara( "Azami", 2, 0, 0, 0.0, 0.0, 4, "LC" )
 : DrawChara( "Momo", 12, 0, 0, 0.0, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0329" )
-\CN["桃子"]
+\CN["桃"]
 「…………」
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0293" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “嗯，也就是说差不多该不小心了。”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0330" )
-\CN["桃子"]
+\CN["桃"]
 “我已经扔掉了……”
 
 //●背景：空・夜
@@ -214,32 +214,32 @@
 : DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 4, "RC" )
 : DrawChara( "Gin", 5, 0, 0, 0.5, 0.0, 3, "LC" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “小姐，我陪您去。”
 
 : DrawChara( "Momo", 6, 0)
 : PlayVoice( "Voices/vo01_mom0331" )
-\CN["桃子"]
+\CN["桃"]
 “嗯？我只是去散散步。”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “即使那样我也会陪你的。
 不管是在帝都散步还是去公主椿家看情况……”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom0332" )
-\CN["桃子"]
+\CN["桃"]
 “小银，为什么？
 难道，昨晚……”
 
 : DrawChara( "Gin", 6, 0)
-\CN["银子"]
+\CN["银"]
 “我的任务是不管到哪里都要跟着小姐。”
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0333" )
-\CN["桃子"]
+\CN["桃"]
 “是的……小银……”
 
 小银的一句话深深地打动了我的心——
@@ -250,16 +250,16 @@
 : Call( "Scenarios/Common*FgPosChange" )
 : PlaySe( "SE/Se_Cloth01" )
 : DrawChara( "Gin", 0, 0)
-\CN["银子"]
+\CN["银"]
 「？」
 
 : DrawChara( "Momo", 0, 2)
 : PlayVoice( "Voices/vo01_mom0334" )
-\CN["桃子"]
+\CN["桃"]
 “……谢谢”
 
 : DrawChara( "Gin", 18, 0)
-\CN["银子"]
+\CN["银"]
 “小姐……？”
 
 //●背景：空・昼
@@ -274,11 +274,11 @@
 
 : DrawFaceThumbnail( "Momo", 12, 2, 0 )
 : PlayVoice( "Voices/vo01_mom0335" )
-\CN["桃子"]
+\CN["桃"]
 “就这样一点点……”
 
 : DrawFaceThumbnail( "Gin", 7, 0, 0 )
-\CN["银子"]
+\CN["银"]
 「…………」
 
 小银轻轻地抚摸着我的头。
@@ -323,7 +323,7 @@
 哎呀，太好了……”
 
 : DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 3, "LC" )
-\CN["银子"]
+\CN["银"]
 「…………」
 
 \CN["山茶女家的佣人"]
@@ -345,12 +345,12 @@
 : Sleep(0.5)
 : DrawChara( "Gin", 6, 0, 0, 0.5, 0.0, 3, "LC" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “怎么办？”
 
 : DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
 : PlayVoice( "Voices/vo01_mom0336" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。好不容易来了
 正如局长说的那样，我已经做好了”
 
@@ -360,7 +360,7 @@
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0337" )
-\CN["桃子"]
+\CN["桃"]
 “那小银，我走了。”
 
 //●演出：桃が屋敷に入って行って場面転換
@@ -408,7 +408,7 @@
 //●演技：心の声です
 : DrawFaceThumbnail( "Momo", 11, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0338" )
-\CN["桃子"]
+\CN["桃"]
 （财阀家，而且年纪轻轻就当上了家长的男人还特地跑来跑去
 与这样的没落贵族为对手，用常识来考虑是不可能的
 但是……）
@@ -419,13 +419,13 @@
 //●演技：心の声です
 : DrawFaceThumbnail( "Momo", 4, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0339" )
-\CN["桃子"]
+\CN["桃"]
 （即使和我结婚，也完全没有好处。）
 
 //●演技：心の声です
 : DrawFaceThumbnail( "Momo", 4, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0340" )
-\CN["桃子"]
+\CN["桃"]
 （不仅如此，父亲还怀疑他有反幕嫌疑
 应该只有坏处…）
 
@@ -439,7 +439,7 @@
 : DrawChara( "Momo", 12, 0, 0, 0.0, 0.0, 3, "RC" )
 : DrawChara( "Fumimaro", 5, 0, 0, 0.0, 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0341" )
-\CN["桃子"]
+\CN["桃"]
 “啊……不，对不起。
 在财阀面前有点紧张……”
 
@@ -470,7 +470,7 @@
 : Wait()
 : DrawChara( "Momo", 10, 0)
 : PlayVoice( "Voices/vo01_mom0342" )
-\CN["桃子"]
+\CN["桃"]
 “等一下……嗯！”
 
 被父亲压住了头，被迫低下了头。
@@ -492,7 +492,7 @@
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0343" )
-\CN["桃子"]
+\CN["桃"]
 「哇，我还什么都——」
 
 : DrawChara( "Fumimaro", 6, 0)
@@ -513,7 +513,7 @@
 : DrawChara( "Momo", 7, 0)
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0344" )
-\CN["桃子"]
+\CN["桃"]
 “嗯……那，那是……”
 
 看最近将军的做法，这个人说的是
@@ -527,7 +527,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0345" )
-\CN["桃子"]
+\CN["桃"]
 （不管怎么说，大家都是为了我的家
 不能卷进去……）
 
@@ -544,7 +544,7 @@
 
 : DrawChara( "Momo", 10, 0)
 : PlayVoice( "Voices/vo01_mom0346" )
-\CN["桃子"]
+\CN["桃"]
 “哇，我是——”
 
 //●演出：フラッシュバック。鬼灯のメンバー（銀を除く）
@@ -582,7 +582,7 @@
 : DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0347" )
-\CN["桃子"]
+\CN["桃"]
 （小银不管发生什么事，都会在我身边
 告诉我了……）
 
@@ -596,7 +596,7 @@
 //●演技：心の声です
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0348" )
-\CN["桃子"]
+\CN["桃"]
 （但是，再任性下去就不行了……）
 
 必须完成作为贵族女儿出生的责任和义务。
@@ -619,63 +619,63 @@
 : DrawChara( "Momo", 12, 0, 0, 0.5, 0.0, 3, "RC" )
 : DrawChara( "Gin", 6, 0, 0, 0.5, 0.0, 4, "LC" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “小姐，你说得怎么样？”
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0349" )
-\CN["桃子"]
+\CN["桃"]
 “嗯……怎么说呢，我要结婚了……”
 
 : DrawChara( "Gin", 7, 0)
-\CN["银子"]
+\CN["银"]
 “是吗……”
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0350" )
-\CN["桃子"]
+\CN["桃"]
 “小银不讨厌吗？
 如果结婚了，我就不会再像以前那样了」
 
 : DrawChara( "Gin", 22, 0)
-\CN["银子"]
+\CN["银"]
 「…………」
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom0351" )
-\CN["桃子"]
+\CN["桃"]
 “小银？”
 
 : DrawChara( "Gin", 6, 0)
-\CN["银子"]
+\CN["银"]
 “结婚对象是日野家的户主吧？
 女儿的未婚妻”
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0352" )
-\CN["桃子"]
+\CN["桃"]
 “嗯，是啊。嘛，好像还没有废除婚约。”
 
 : DrawChara( "Gin", 7, 0)
-\CN["银子"]
+\CN["银"]
 “是吗……。
 正因为如此，对小姐才是认真的吧？”
 
 : DrawChara( "Gin", 6, 0)
-\CN["银子"]
+\CN["银"]
 “我不太清楚贵族的世界
 财阀的户主，比大小姐的家还要高得多，这才是真正的
 财阀家有亲事也不奇怪吧？”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0353" )
-\CN["桃子"]
+\CN["桃"]
 “在那里呢。把家做大是作为贵族出生的人的
 虽然是责任……”
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0354" )
-\CN["桃子"]
+\CN["桃"]
 “即使和像我们这样濒临没落的家庭结了婚
 应该没有什么好处吧”
 
@@ -683,11 +683,11 @@
 即使我们是财阀家也应该避开。
 
 : DrawChara( "Gin", 0, 0)
-\CN["银子"]
+\CN["银"]
 “你不是说你是认真对待小姐吗？”
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “日野家的家长，我在派对上也见过好几次
 看起来很温柔的人，而且财阀家，一定是个大小姐
 我想会让你幸福的”
@@ -701,18 +701,18 @@
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0355" )
-\CN["桃子"]
+\CN["桃"]
 “小银那样就可以了吗！？”
 
 : DrawChara( "Gin", 22, 0)
-\CN["银子"]
+\CN["银"]
 “……我说的话怎么样都无所谓。”
 
 //●演技：怒り気味です
 : JumpLayer( 3, 0, -50, 1, 0.25)
 : DrawChara( "Momo", 8, 2)
 : PlayVoice( "Voices/vo01_mom0356" )
-\CN["桃子"]
+\CN["桃"]
 “好的，回答我！”
 
 我为什么这么烦躁呢？
@@ -720,44 +720,44 @@
 为什么对小银这么发脾气呢。
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “是啊……”
 
 小银大喘气，背对着我——
 
 : DrawChara( "Gin", 22, 0)
-\CN["银子"]
+\CN["银"]
 “为了女儿，结婚不是更好吗？”
 
 : DrawChara( "Momo", 7, 2)
 : PlayVoice( "Voices/vo01_mom0357" )
-\CN["桃子"]
+\CN["桃"]
 “为什么？为了我，为什么？”
 小银是这么想的吗？”
 
 : DrawChara( "Gin", 22, 0)
-\CN["银子"]
+\CN["银"]
 “……这样下去的话，小姐总有一天会受重伤的。
 白夜也出现了很多干部”
 
 : DrawChara( "Momo", 8, 2)
 : PlayVoice( "Voices/vo01_mom0358" )
-\CN["桃子"]
+\CN["桃"]
 “我知道那种事！
 自从老师教我魔术后，我就下定了决心”
 
 : DrawChara( "Gin", 22, 0)
-\CN["银子"]
+\CN["银"]
 “适可而止，请注意……”
 
 : DrawChara( "Gin", 22, 0)
-\CN["银子"]
+\CN["银"]
 “今后，一边守护女儿一边生存下去
 不行啊”
 
 : DrawChara( "Momo", 8, 2)
 : PlayVoice( "Voices/vo01_mom0359" )
-\CN["桃子"]
+\CN["桃"]
 「哈？护身符？那我就好像是累赘一样
 好像变成这样了！”
 
@@ -767,7 +767,7 @@
 于是，小银慢慢地转向这边——
 
 : DrawChara( "Gin", 21, 0)
-\CN["银子"]
+\CN["银"]
 “啊~……所以才这样。
 有你在就是那个。就是说很难做啊」
 
@@ -777,20 +777,20 @@
 
 : DrawChara( "Momo", 7, 2)
 : PlayVoice( "Voices/vo01_mom0360" )
-\CN["桃子"]
+\CN["桃"]
 “等一下——什么，这种说法！？”
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “我说得对，不要让我说几次。”
 
 : DrawChara( "Momo", 8, 2)
 : PlayVoice( "Voices/vo01_mom0361" )
-\CN["桃子"]
+\CN["桃"]
 “啊？那是什么？小银，请认真回答！”
 
 : DrawChara( "Gin", 13, 1)
-\CN["银子"]
+\CN["银"]
 “所以说，照顾你已经很麻烦了！
 一个一个地，好厉害啊！”
 
@@ -799,7 +799,7 @@
 //●演技：泣いています
 : DrawChara( "Momo", 12, 2)
 : PlayVoice( "Voices/vo01_mom0362" )
-\CN["桃子"]
+\CN["桃"]
 「…………」
 
 //●演出：桃　ダッシュで家の中へ
@@ -820,20 +820,20 @@
 : RpgCharaTurn( "Gin", "U" )
 : DrawChara( "Gin", 22, 0, 0, 0.5, 0.0, 3, "RC" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “……应该是为了女儿才这样的……”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “如果是那个男人的话——日野文麻吕站在女儿的旁边。
 立场、权威、财力，什么都没有……”
 
-\CN["银子"]
+\CN["银"]
 “性格温和，一定要珍惜女儿
 一定会帮我做的……”
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “小姐，祝你幸福……”
 
 : HideWnd()

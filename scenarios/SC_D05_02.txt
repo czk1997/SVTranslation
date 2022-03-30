@@ -14,7 +14,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4357" )
-\CN["无黑色"]
+\CN["无黑"]
 “你知道是什么样的魔物吗？”
 
 \CN["眼镜店"]
@@ -26,7 +26,7 @@
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk4358" )
-\CN["无黑色"]
+\CN["无黑"]
 “触手系的魔物啊。
 如果对方是这样的话，那倒是挺有道理的……”
 
@@ -117,7 +117,7 @@
 : lay = 3; type = "DL"; Call( "Scenarios/Common*FgEff");
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4359" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，那是……！？”
 
 在触手系的魔物中也是大型的，据说非常危险
@@ -129,7 +129,7 @@
 
 : DrawChara( "Mukuro", 6, 0, 3)
 : PlayVoice( "Voices/vo00_muk4360" )
-\CN["无黑色"]
+\CN["无黑"]
 “等一下！马上来救你——”
 
 : PlaySe("SE/Se_Foot01")
@@ -154,7 +154,7 @@
 //●演出：無黒　刀を抜く
 : DrawChara( "Mukuro", 27, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk4361" )
-\CN["无黑色"]
+\CN["无黑"]
 “这家伙就是那个魔物吗？据说吃死了好几个人……。
 看来入口店的预想是对的啊”
 
@@ -164,7 +164,7 @@
 //●読み：細切れ（こまぎれ）
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk4362" )
-\CN["无黑色"]
+\CN["无黑"]
 “给你切成细条！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -220,7 +220,7 @@
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk4363" )
-\CN["无黑色"]
+\CN["无黑"]
 “咚——”
 
 //: DrawChara( "Mukuro", 24, 0)
@@ -228,7 +228,7 @@
 
 //: DrawChara( "Mukuro", 46, 0)
 : PlayVoice( "Voices/vo00_muk4364" )
-\CN["无黑色"]
+\CN["无黑"]
 “——八重樱流・{天冲，天冲}！！”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -255,7 +255,7 @@
 
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk4365" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，把讨伐证明部位割下来
 带到入口店吗？”
 
@@ -282,7 +282,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4366" )
-\CN["无黑色"]
+\CN["无黑"]
 “和你预想的一样。对方是触手系的怪物
 那也是非常危险的家伙”
 
@@ -295,7 +295,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4367" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗？感觉像是混在什么地方来的。”
 没有吗？”
 

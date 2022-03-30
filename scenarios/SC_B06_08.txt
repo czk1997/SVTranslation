@@ -75,11 +75,11 @@
 : lay = 2; type = "WL";
 : Call( "Scenarios/Common*FgEff")
 : PlayVoice( "Voices/vo01_mom1036" )
-\CN["桃子"]
+\CN["桃"]
 “好的，那就停止暴力吧。”
 
 : DrawChara( "Gin", 0, 0)
-\CN["银子"]
+\CN["银"]
 「…………」
 
 \CN["地滚石1"]
@@ -94,7 +94,7 @@
 : ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Momo", 7, 0, 0)
 : PlayVoice( "Voices/vo01_mom1037" )
-\CN["桃子"]
+\CN["桃"]
 “喂，谁是残暴无道的魔术师啊！？
 真是失礼了吧？”
 
@@ -109,14 +109,14 @@
 
 //: EraseChara( "Momo", 0.5 )
 : DrawChara( "Gin", 5, 0, 0)
-\CN["银子"]
+\CN["银"]
 “好久没有像这样刻板的人了。
 怎么办？”
 
 : JumpLayer( 3, 0, -50, 1, 0.25)
 : DrawChara( "Momo", 4, 0, 0)
 : PlayVoice( "Voices/vo01_mom1038" )
-\CN["桃子"]
+\CN["桃"]
 “肯定不会放过你的。
 因为他对我说了很多想说的话”
 
@@ -126,7 +126,7 @@
 : chara = "Momo"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo01_mom1039" )
-\CN["桃子"]
+\CN["桃"]
 “小银，命令啊——
 把那两个人抓住吧」
 
@@ -134,7 +134,7 @@
 //: DrawChara( "Gin", 4, 0, 0, 0.5, 0.0, 2, "C" )
 : fadein_cha = "Gin"; fadeout_cha = "Momo"; face = 4; hoho = 0; pose = 0;
 : Call( "Scenarios/Common*FgFocus" )
-\CN["银子"]
+\CN["银"]
 “我明白了。”
 
 : PlaySe("SE/Se_Foot01")
@@ -364,7 +364,7 @@
 : DrawChara( "Mukuro", 4, 0, 0, 0.5, 0.0, 2, "LC" )
 : DrawChara( "Elisa", 6, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2245" )
-\CN["无黑色"]
+\CN["无黑"]
 “伊拉伊萨先生，请随时再来。”
 
 : DrawChara( "Elisa", 0, 0)
@@ -401,11 +401,11 @@
 : ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1040" )
-\CN["桃子"]
+\CN["桃"]
 “诶？无黑，是吗……？每晚都这样啊……”
 
 : DrawChara( "Gin", 16, 1, 0, 0.5, 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 「…………」
 
 : HideWnd()
@@ -418,7 +418,7 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2246" )
-\CN["无黑色"]
+\CN["无黑"]
 “レ、レオ……！不要在别人面前说这种话
 你总是在说吧！这个笨蛋！”
 
@@ -496,13 +496,13 @@
 //: DrawChara( "Momo", 5, 1, 0, 0.5, 0.0, 3, "RC" )
 : DrawFaceThumbnail( "Momo", 5, 1, 0 )
 : PlayVoice( "Voices/vo01_mom1041" )
-\CN["桃子"]
+\CN["桃"]
 “黄菜子，太好了……。
 看，既然到了这里，就快点下一个吧！”
 
 //: DrawChara( "Gin", 4, 0, 0, 0.5, 0.0, 2, "LC" )
 : DrawFaceThumbnail( "Gin", 4, 0, 0 )
-\CN["银子"]
+\CN["银"]
 “小姐，这样安静地参观是礼仪。”
 
 //: EraseChara( "Gin", 0.5 )
@@ -515,7 +515,7 @@
 //: DrawChara( "Mukuro", 37, 0, 0, 0.5, 0.0, 3, "RC" )
 : DrawFaceThumbnail( "Mukuro", 37, 0, 0 )
 : PlayVoice( "Voices/vo00_muk2247" )
-\CN["无黑色"]
+\CN["无黑"]
 “真是的，你们……不放着不管吗？”
 
 互相喜欢的人必须要远离
@@ -552,7 +552,7 @@
 //: DrawChara( "Momo", 6, 0, 0, 0.5, 0.0, 3, "RC" )
 : DrawFaceThumbnail( "Momo", 6, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1042" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。我觉得这样的气势很重要。
 热情地去做就好了！”
 
@@ -704,7 +704,7 @@ Zno，太慎重了吧”
 : DrawChara( "Momo", 2, 2, 0, 0.5, 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1043" )
-\CN["桃子"]
+\CN["桃"]
 “哇！黄菜子，真大胆……”
 
 : DrawChara( "Elisa", 4, 0, 0, 0.5, 0.0, 4, "LC" )
@@ -775,7 +775,7 @@ Zno，太慎重了吧”
 : EraseChara( "Leo", 0.5 )
 : DrawChara( "Mukuro", 8, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk2248" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，是啊……”
 
 激战之后，身体好了之后是什么呢
@@ -794,19 +794,19 @@ Zno，太慎重了吧”
 : DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1044" )
-\CN["桃子"]
+\CN["桃"]
 “无黑，偶尔不休息是不行的！”
 
 : DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk2249" )
-\CN["无黑色"]
+\CN["无黑"]
 “不，但是现在太懒了，不是休息的时候吗？”
 
 //: EraseChara( "Momo", 0.5 )
 : DrawChara( "Momo", 0, 0, 1)
 : PlayVoice( "Voices/vo01_mom1045" )
-\CN["桃子"]
+\CN["桃"]
 “没关系！你不休息别人就不能休息。
 所以，你去和雷欧约会吧！”
 
@@ -841,7 +841,7 @@ Zno，太慎重了吧”
 
 : DrawChara( "Mukuro", 3, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2250" )
-\CN["无黑色"]
+\CN["无黑"]
 “不要变成无用的争斗不是挺好的吗……”
 
 : DrawChara( "Leo", 16, 0)
@@ -852,7 +852,7 @@ Zno，太慎重了吧”
 //: EraseChara( "Mukuro", 0.5 )
 : DrawChara( "Mukuro", 6, 1, 3)
 : PlayVoice( "Voices/vo00_muk2251" )
-\CN["无黑色"]
+\CN["无黑"]
 “所谓的甜蜜约会，你又会这样……”
 
 和雷奥手牵着手在街上游行。
@@ -861,7 +861,7 @@ Zno，太慎重了吧”
 //: EraseChara( "Leo", 0.5 )
 : DrawChara( "Mukuro", 35, 0, 0)
 : PlayVoice( "Voices/vo00_muk2252" )
-\CN["无黑色"]
+\CN["无黑"]
 “完全恢复原状好像很难啊……”
 
 虽说治安恢复了
@@ -869,7 +869,7 @@ Zno，太慎重了吧”
 
 : DrawChara( "Mukuro", 21, 0)
 : PlayVoice( "Voices/vo00_muk2253" )
-\CN["无黑色"]
+\CN["无黑"]
 “要像{以前}那样
 要花多少时间呢？”
 
@@ -887,12 +887,12 @@ Zno，太慎重了吧”
 : DrawChara( "Mukuro", 37, 0, 0)
 : DrawChara( "Leo", 0, 0, 0)
 : PlayVoice( "Voices/vo00_muk2254" )
-\CN["无黑色"]
+\CN["无黑"]
 “真是非常自信啊。但是，很像你。”
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk2255" )
-\CN["无黑色"]
+\CN["无黑"]
 “果然，我就是这样的你……”
 
 : DrawChara( "Leo", 3, 0)
@@ -903,7 +903,7 @@ Zno，太慎重了吧”
 
 : DrawChara( "Mukuro", 4, 2)
 : PlayVoice( "Voices/vo00_muk2256" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊。啊，我重新迷上你了。”
 
 : DrawChara( "Leo", 2, 0)
@@ -921,7 +921,7 @@ Zno，太慎重了吧”
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2257" )
-\CN["无黑色"]
+\CN["无黑"]
 “……嗯”
 
 伸开腿，我轻轻地吻了一下雷欧的脸颊。
@@ -942,7 +942,7 @@ Zno，太慎重了吧”
 : DrawChara( "Leo", 15, 1, 0, 0.5, 0.0, 2, "LC" )
 : DrawChara( "Mukuro", 4, 1, 3, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2258" )
-\CN["无黑色"]
+\CN["无黑"]
 “你看，我走了，雷欧。
 今天不是工作而是约会吧？”
 

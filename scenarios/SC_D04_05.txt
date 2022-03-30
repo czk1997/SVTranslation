@@ -28,7 +28,7 @@
 : Wait()
 : DrawChara( "Mukuro", 3, 0, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk3646" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……睡得真好啊~……”
 
 比起帝都，一直往西走的地方的城市『{西都，请}』
@@ -54,7 +54,7 @@
 
 : DrawChara( "Mukuro", 27, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk3647" )
-\CN["无黑色"]
+\CN["无黑"]
 “真是个不甘心的家伙……”
 
 剥下白眼倒下的男人
@@ -64,7 +64,7 @@
 : if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) >= 2 )
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk3648" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “如果昨天做的工作不是枕头工作的话
 我按照你的愿望给你弄了……”
 
@@ -115,7 +115,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3649" )
-\CN["无黑色"]
+\CN["无黑"]
 “我觉得这样的破旅馆不可能睡得好……”
 
 \CN["客栈"]
@@ -129,7 +129,7 @@
 
 : DrawChara( "Mukuro", 12, 0)
 : PlayVoice( "Voices/vo00_muk3650" )
-\CN["无黑色"]
+\CN["无黑"]
 “对了对了，昨天出现了一只大虫子，所以就杀了它。
 对不起，请善后处理”
 
@@ -149,7 +149,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3651" )
-\CN["无黑色"]
+\CN["无黑"]
 “和平时一样，只是从入口店拿到工作而已。”
 
 \CN["客栈"]

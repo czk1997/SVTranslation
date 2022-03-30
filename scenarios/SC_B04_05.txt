@@ -10,12 +10,12 @@
 : if ( MissionProgress( "SC_B04_03_1", "Failed" ) == true )
 	: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 3, "LC" )
 	: PlayVoice( "Voices/vo05_aza0280" )
-	\CN["嘲讽"]
+	\CN["爱彩弥"]
 “无黑，身体已经没事了吗？”
 
 	: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo00_muk1144" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “是的……让您担心了，非常抱歉。”
 
 前几天，我在日东街道的驿站町和一名白夜干部战斗了
@@ -31,30 +31,30 @@
 : endif
 //●読み：恵蘇（えそ）＝地名。イントネーションは紫蘇と同じ
 : PlayVoice( "Voices/vo05_aza0281" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “无黑，希望你现在开始朝着{惠苏，えそ}走。”
 
 : DrawChara( "Mukuro", 1, 0 )
 : PlayVoice( "Voices/vo00_muk1145" )
-\CN["无黑色"]
+\CN["无黑"]
 “也就是说，是在北方的城市。
 但是，为什么突然……？”
 
 : DrawChara( "Azami", 3, 0)
 : PlayVoice( "Voices/vo05_aza0282" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我想是观光什么的
 维克托尔的大臣现在正在前往那里”
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk1146" )
-\CN["无黑色"]
+\CN["无黑"]
 “最近没看到骑士团的各位
 原来是这样啊”
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0283" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “然后，反幕派们抓住了这个情报。
 他似乎在气喘吁吁要暗杀他”
 
@@ -67,41 +67,41 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk1147" )
-\CN["无黑色"]
+\CN["无黑"]
 “莫非雷欧也一起？”
 
 : DrawChara( "Azami", 4, 0)
 : PlayVoice( "Voices/vo05_aza0284" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哦，你在意雷欧吗？”
 
 : DrawChara( "Mukuro", 22, 1, 3 )
 : PlayVoice( "Voices/vo00_muk1148" )
-\CN["无黑色"]
+\CN["无黑"]
 “呃，没什么……。
 只是，我觉得这几天都没看到她……”
 
 : DrawChara( "Azami", 0, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0285" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “那家伙的乡下很像惠苏啊。
 也兼做向导跟着去”
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0286" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “前几天关于驿站町的一件事也是这样
 ”
 
 : DrawChara( "Azami", 0, 0)
 : PlayVoice( "Voices/vo05_aza0287" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “不管是怎样的雷欧，只有一个人的话是不能原谅的。
 无黑，拜托你了。去给我加油吧”
 
 : DrawChara( "Mukuro", 17, 0, 0 )
 : PlayVoice( "Voices/vo00_muk1149" )
-\CN["无黑色"]
+\CN["无黑"]
 “好的！我马上就去！”
 
 惠苏可以通过北国街道。
@@ -127,18 +127,18 @@
 : DrawChara( "Azami", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0288" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “哎呀哎呀，那家伙也变了好多啊……”
 
 : DrawChara( "Azami", 17, 0)
 : PlayVoice( "Voices/vo05_aza0289" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “……在大家都能幸福生活的世界里。
 为了那样做，我什么都做”
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0290" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “在那一天到来之前，还有一点点……。
 已经不能再悠闲了”
 
@@ -180,7 +180,7 @@
 : DrawChara( "Mukuro", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1150" )
-\CN["无黑色"]
+\CN["无黑"]
 “我想让你通过那里？”
 
 被装扮成魔术师的人们阻挡了道路。
@@ -193,7 +193,7 @@
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk1151" )
-\CN["无黑色"]
+\CN["无黑"]
 “我在赶时间，让我通过这里！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -242,7 +242,7 @@
 : DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1152" )
-\CN["无黑色"]
+\CN["无黑"]
 “这些家伙说是白夜的魔术师。
 果然还是白夜……”
 
@@ -274,7 +274,7 @@
 //●読み：恵蘇（えそ）＝地名。イントネーションは紫蘇と同じ
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1153" )
-\CN["无黑色"]
+\CN["无黑"]
 （这里是惠苏……。是雷欧的故乡吗……）
 
 也许是因为下雪了，相当冷。
@@ -282,7 +282,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk1154" )
-\CN["无黑色"]
+\CN["无黑"]
 （总之，得先找一下雷欧他们。）
 
 : HideWnd()
@@ -312,7 +312,7 @@
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Nina", 2, 0, 0 )
 : PlayVoice( "Voices/vo00_muk1155" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的。我在找雷欧——戈尔斯坦君……。
 您知道吗？”
 
@@ -337,7 +337,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk1156" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，我被命令来这里任务。”
 
 : DrawChara( "Leo", 13, 0)
@@ -359,7 +359,7 @@
 	: DrawChara( "Mukuro", 22, 2)
 	: ShowWnd()
 	: PlayVoice( "Voices/vo00_muk1157" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “什么，有什么姻缘……而且还介绍给妈妈……。
 哇，我们不是那种关系……”
 
@@ -370,7 +370,7 @@
 
 	: DrawChara( "Mukuro", 21, 1)
 	: PlayVoice( "Voices/vo00_muk1158" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “啊……介绍的话，是那边吗……那样的话，啊，嗯。
 是啊。不好好打招呼的话……”
 
@@ -383,7 +383,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 20, 2)
 	: PlayVoice( "Voices/vo00_muk1159" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （啊啊，我在想什么？
 最近怎么了……。我太在意这家伙了
 说起来……）
@@ -394,7 +394,7 @@
 
 	: DrawChara( "Mukuro", 19, 2)
 	: PlayVoice( "Voices/vo00_muk1160" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “什么，没什么！”
 
 	: EraseChara( "Leo", 0.5 )
@@ -409,7 +409,7 @@
 : endif
 : DrawChara( "Mukuro", 34, 1)
 : PlayVoice( "Voices/vo00_muk1161" )
-\CN["无黑色"]
+\CN["无黑"]
 “诶！？这位是雷欧的妈妈……！？”
 
 : DrawChara( "Nina", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -448,12 +448,12 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 36, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1162" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，对不起，我介绍得晚了……”
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk1163" )
-\CN["无黑色"]
+\CN["无黑"]
 “我是神八代无黑——嗯，和雷欧一样，是鬼灯的队员
 正在做”
 
@@ -471,7 +471,7 @@
 
 : DrawChara( "Mukuro", 22, 1)
 : PlayVoice( "Voices/vo00_muk1164" )
-\CN["无黑色"]
+\CN["无黑"]
 “哟，老婆！？雷欧，在妈妈面前也这么说
 不要说！”
 
@@ -484,7 +484,7 @@
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk1165" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊……不，那个……”
 
 : DrawChara( "Nina", 2, 0)
@@ -509,7 +509,7 @@
 : EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1166" )
-\CN["无黑色"]
+\CN["无黑"]
 “呵呵。Leo和妮娜，父子关系真好啊。”
 
 突然想起了自己的家人。
@@ -533,7 +533,7 @@
 
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1167" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的，发生了很多事。
 咦？费尔克在哪里？”
 
@@ -546,7 +546,7 @@
 //●読み：北霊山（ほくれいざん）
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1168" )
-\CN["无黑色"]
+\CN["无黑"]
 “住在北灵山的刀匠……？雷欧，听说过吗？”
 
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
@@ -595,7 +595,7 @@
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk1169" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯，特别是名字……。
 只是在仓库里睡觉而已”
 
@@ -632,7 +632,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk1170" )
-\CN["无黑色"]
+\CN["无黑"]
 “那我就试试看。
 有费尔克先生和大臣
 我觉得去比较好”
@@ -702,7 +702,7 @@
 : JumpLayer( 4, 0, -50, 1, 0.25)
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1171" )
-\CN["无黑色"]
+\CN["无黑"]
 “很抱歉这么晚才问候您。
 我是鬼灯队士神八代无黑”
 
@@ -746,7 +746,7 @@
 
 : DrawChara( "Mukuro", 7, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1172" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，那个……”
 
 : DrawChara( "Falke", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
@@ -763,7 +763,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1173" )
-\CN["无黑色"]
+\CN["无黑"]
 “可以吗？”
 
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
@@ -789,7 +789,7 @@
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1174" )
-\CN["无黑色"]
+\CN["无黑"]
 “偶然发现了屯所仓库里的东西……”
 
 成为队员不久的事情吧。
@@ -800,7 +800,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk1175" )
-\CN["无黑色"]
+\CN["无黑"]
 （想起来，是从那以后的交往吧……）
 
 与其说是巧妙地适应了手，不如说是很合适
@@ -816,7 +816,7 @@
 
 : DrawChara( "Mukuro", 18, 0)
 : PlayVoice( "Voices/vo00_muk1176" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，神刀是……？
 我至今为止都用着那样的名刀……”
 
@@ -857,7 +857,7 @@
 
 : DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1177" )
-\CN["无黑色"]
+\CN["无黑"]
 “这是我的……谢谢！”
 
 \CN["刀匠"]
@@ -866,7 +866,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1178" )
-\CN["无黑色"]
+\CN["无黑"]
 “真正的力量……？”
 
 \CN["刀匠"]
@@ -904,7 +904,7 @@
 : EraseChara( "Dominik", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 0, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1179" )
-\CN["无黑色"]
+\CN["无黑"]
 “是从心底里重要的人吗……”
 
 //●分岐：淫乱度Ｄの場合
@@ -925,7 +925,7 @@
 	: Wait()
 	: ShowWnd()
 	: PlayVoice( "Voices/vo00_muk1180" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （不，不，雷欧是……！重要的伙伴是
 没错……为什么，那家伙的脸最先……）
 
@@ -936,7 +936,7 @@
 
 	: DrawChara( "Mukuro", 20, 2, 0, 0.5, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo00_muk1181" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “……！为什么……！？
 啊，不，那个，我倒是……”
 
@@ -957,7 +957,7 @@
 : PlayBgm("BGM/27_FM005")
 : DrawFaceThumbnail( "Azami", 2, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0291" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “惠苏好像出现了白夜的人在胡闹。
 无黑，火速回到街上！”
 
@@ -967,7 +967,7 @@
 
 : DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1182" )
-\CN["无黑色"]
+\CN["无黑"]
 “实际上惠苏的街道好像被袭击了……。
 对不起，我得马上赶到……！”
 
@@ -979,7 +979,7 @@
 
 : DrawChara( "Mukuro", 35, 0)
 : PlayVoice( "Voices/vo00_muk1183" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊？但是，不能让大臣遭遇危险……”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -994,7 +994,7 @@
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1184" )
-\CN["无黑色"]
+\CN["无黑"]
 “同期……你是指妮娜吧？”
 
 : DrawChara( "Dominik", 0, 0)
@@ -1003,7 +1003,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk1185" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的，来这里之前。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -1079,7 +1079,7 @@
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 17, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo00_muk1186" )
-\CN["无黑色"]
+\CN["无黑"]
 （这，这是被称为世界最强的男人的强大的一部分……）
 
 刚才费尔克先生也说过
@@ -1181,7 +1181,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1187" )
-\CN["无黑色"]
+\CN["无黑"]
 “这里就交给我吧！”
 
 //●演出：無黒　斬撃エフェクト
@@ -1206,7 +1206,7 @@
 : chara = "Mukuro"; lay = 4 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo00_muk1188" )
-\CN["无黑色"]
+\CN["无黑"]
 “太慢了！”
 
 //●演出：無黒　斬撃エフェクト
@@ -1257,7 +1257,7 @@
 
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk1189" )
-\CN["无黑色"]
+\CN["无黑"]
 “是！”
 
 //--------------------------------------------------------
@@ -1564,7 +1564,7 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1190" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，暂且先在这里乱闹的家伙们
 全部都老实了吧”
 
@@ -1951,7 +1951,7 @@
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1191" )
-\CN["无黑色"]
+\CN["无黑"]
 “九星四绿的望月绿——逃不掉！”
 
 : DrawChara( "Leo", 21, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )

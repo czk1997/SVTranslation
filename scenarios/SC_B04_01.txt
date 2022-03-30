@@ -31,7 +31,7 @@
 : DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0309" )
 : ShowWnd()
-\CN["桃子"]
+\CN["桃"]
 “我还以为反幕派一定会来揍我呢
 和维克托尔的会谈进行得很顺利真是太好了”
 
@@ -44,7 +44,7 @@
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1025" )
-\CN["无黑色"]
+\CN["无黑"]
 “我觉得成功和失败是次要的。
 只要有歹徒袭击的事实
 这样就可以了”
@@ -56,7 +56,7 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo01_mom0310" )
-\CN["桃子"]
+\CN["桃"]
 “这么说来，局长和龙先生呢？”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -75,7 +75,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0311" )
-\CN["桃子"]
+\CN["桃"]
 “当然啦。像大和这样的小岛国，维克托尔什么的。”
 要是被大国盯上，变成战争的话，可就受不了了
 没有啊」
@@ -86,18 +86,18 @@
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
-\CN["银子"]
+\CN["银"]
 “虽然我真的很想尝试一下。”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0312" )
-\CN["桃子"]
+\CN["桃"]
 “真是的！小银！别说大话了。”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 7, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo00_muk1026" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊。即使不是这样，最近国内总是慌慌张张的。”
 有啊。如果以现在的状态被他国进攻的话，就不堪一击了”
 
@@ -150,30 +150,30 @@
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0313" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵。雷欧将来一定会被无黑的屁股铺上的。”
 我是这么想的”
 
 : DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
-\CN["银子"]
+\CN["银"]
 “是啊。”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo00_muk1027" )
-\CN["无黑色"]
+\CN["无黑"]
 “哈？呃，我怎么会在屁股上垫呢……”
 
 : DrawChara( "Momo", 5, 1)
 : PlayVoice( "Voices/vo01_mom0314" )
-\CN["桃子"]
+\CN["桃"]
 “嗯。也就是说，决定要粘在一起了吧？”
 
 : layer = 4; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
 : Wait()
 : DrawChara( "Mukuro", 20, 1)
 : PlayVoice( "Voices/vo00_muk1028" )
-\CN["无黑色"]
+\CN["无黑"]
 “……呜哇……不对！
 我不是这么说的！”
 
@@ -220,7 +220,7 @@
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom0315" )
-\CN["桃子"]
+\CN["桃"]
 “那个……说不定，狮子的徽章——
 维克托尔骑士团的……？”
 
@@ -255,13 +255,13 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 6, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
-\CN["桃子"]
+\CN["桃"]
 “喂喂，难道不是那个孩子吗？”？
 传说中黄菜子的初恋对象……”
 
 : DrawChara( "Mukuro", 4, 1)
 : PlayVoice( "Voices/vo00_muk1029" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，没错吧。”
 
 大家都说{恋爱方面，这样的事情}很迟钝、迟钝
@@ -351,7 +351,7 @@
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0317" )
-\CN["桃子"]
+\CN["桃"]
 “真厉害啊，维克托尔的男孩子……。
 那个年纪还能像那样保护女孩子”
 
@@ -363,7 +363,7 @@
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo01_mom0318" )
-\CN["桃子"]
+\CN["桃"]
 “外国的男孩子都是那种感觉吗？”
 
 : DrawChara( "Elisa", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
@@ -417,7 +417,7 @@
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 0, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1030" )
-\CN["无黑色"]
+\CN["无黑"]
 “现在，柏油……？
 也就是说，那个人被称为世界最强……？”
 
@@ -502,13 +502,13 @@
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0319" )
-\CN["桃子"]
+\CN["桃"]
 “泽诺君也对黄菜子很着迷
 黄菜子也完全暴露出恋爱中的少女……”
 
 : DrawChara( "Momo", 5, 1)
 : PlayVoice( "Voices/vo01_mom0320" )
-\CN["桃子"]
+\CN["桃"]
 “无黑，雷欧，你在发呆的话
 会被那两个人抢先的吧？”
 
@@ -521,7 +521,7 @@
 
 : DrawChara( "Mukuro", 5, 2)
 : PlayVoice( "Voices/vo00_muk1031" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子，这样啊，对我来说还太早了！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )

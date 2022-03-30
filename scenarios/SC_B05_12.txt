@@ -28,7 +28,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1659" )
-\CN["无黑色"]
+\CN["无黑"]
 “我可没有为战斗而心动的事啊！雷欧！”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -75,7 +75,7 @@
 : chara = "Mukuro"; lay = 3 ; type = "DL";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo00_muk1660" )
-\CN["无黑色"]
+\CN["无黑"]
 “因为我们还没有成为那样的朋友！”
 
 : HideWnd()
@@ -177,12 +177,12 @@
 //Yoshi：右に桃
 : DrawChara( "Momo", 2, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0870" )
-\CN["桃子"]
+\CN["桃"]
 “我觉得只今天见不到，不过还是先告诉你吧。”
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom0871" )
-\CN["桃子"]
+\CN["桃"]
 “我的名字是姬椿桃——从今以后成为大和一的魔术师的女人
 等你记住了再下地狱吧！”
 
@@ -216,7 +216,7 @@
 : CharaPartsOn( "Momo", 0 )
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0872" )
-\CN["桃子"]
+\CN["桃"]
 “我拒绝！我已经有个下定决心的人了！”
 
 : DrawChara( "Mikage", 7, 0)
@@ -237,7 +237,7 @@
 //: DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "C" )
 //●演技：心の声です
 : PlayVoice( "Voices/vo01_mom0873" )
-\CN["桃子"]
+\CN["桃"]
 （但是，已经不是绝对敌不过的对手了！）
 
 //: DrawChara( "Momo", 4, 0)
@@ -617,7 +617,7 @@
 : PlayBgm("BGM/11_CM011")
 //Yoshi：左に銀、右にレオ
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “……什么？空气变了。”
 
 \CN["雷欧"]
@@ -678,7 +678,7 @@
 : ShowWnd()
 //●読み：頭（あたま）
 : PlayVoice( "Voices/vo00_muk1661" )
-\CN["无黑色"]
+\CN["无黑"]
 “不会吧，那家伙居然出来了……”
 
 \CN["雷欧"]
@@ -689,7 +689,7 @@
 : DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 4, "R" )
 : DrawChara( "Momo", 3, 0, 0, 0.5, 0.0, 5, "C" )
 : PlayVoice( "Voices/vo01_mom0874" )
-\CN["桃子"]
+\CN["桃"]
 “嗯？敌方的大将是……？
 难道那个人就是传说中的达摩人？”
 
@@ -699,17 +699,17 @@
 是把收到的刀给折断的混蛋”
 
 : DrawChara( "Gin", 4, 0)
-\CN["银子"]
+\CN["银"]
 「啊，那个假面小子啊。
 变得相当有趣了呢”
 
 : DrawChara( "Leo",20, 0)
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0875" )
-\CN["桃子"]
+\CN["桃"]
 “小银，这里是——”
 
-\CN["银子"]
+\CN["银"]
 “我完全知道只能退了。”
 
 : EraseChara( "Momo", 0.5 )
@@ -717,7 +717,7 @@
 //Yoshi：右に無黒（刀）
 : DrawChara( "Mukuro",17, 0, 2, 0.5, 0.0, 4, "R" )
 : PlayVoice( "Voices/vo00_muk1662" )
-\CN["无黑色"]
+\CN["无黑"]
 “……很遗憾，正如桃和银说的那样。”
 
 以我们现在的力量，打倒加了达磨的3个人
@@ -757,7 +757,7 @@
 : chara = "Mukuro"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo00_muk1663" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜————！”
 
 //●演出：黄菜子　登場する
@@ -800,7 +800,7 @@
 : DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 4, "C" )
 : DrawChara( "Kinako",14, 0, 0, 0.5, 0.0, 5, "R" )
 : PlayVoice( "Voices/vo01_mom0876" )
-\CN["桃子"]
+\CN["桃"]
 “这种程度，不是受了重伤吗？”！
 等一下，马上治疗——”
 
@@ -812,7 +812,7 @@
 //Yoshi：左に無黒（刀）
 : DrawChara( "Mukuro",39, 0, 2, 0.5, 0.0, 3, "L" )
 : PlayVoice( "Voices/vo00_muk1664" )
-\CN["无黑色"]
+\CN["无黑"]
 “般若是白夜之人吗……。
 为什么，白夜把小夜……！”
 
@@ -829,7 +829,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk1665" )
-\CN["无黑色"]
+\CN["无黑"]
 “为了杀人？你和局长的目的是一样的吗……？”
 
 : DrawChara( "Kinako", 3, 0)
@@ -839,7 +839,7 @@
 
 : DrawChara( "Mukuro",15, 0)
 : PlayVoice( "Voices/vo00_muk1666" )
-\CN["无黑色"]
+\CN["无黑"]
 “诶……！？”
 
 对黄菜子的一句话失去了语言。
@@ -861,7 +861,7 @@
 : DrawChara( "Azami", 5, 0, 0, 0.5, 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo05_aza0389" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “不愧是黄菜子，果然注意到了吗……”
 
 : PlayBgm("BGM/31_CM016")
@@ -869,7 +869,7 @@
 //Yoshi：センターに無黒（刀）
 : DrawChara( "Mukuro",15, 0, 2, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1667" )
-\CN["无黑色"]
+\CN["无黑"]
 “……局长是般若……？为什么……？
 为什么要模仿……！”
 
@@ -882,7 +882,7 @@
 : DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 4, "R" )
 : DrawChara( "Bebi", 1, 0, 0, 0.5, 0.0, 5, "C" )
 : PlayVoice( "Voices/vo01_mom0877" )
-\CN["桃子"]
+\CN["桃"]
 “局长居然是白夜的一员……”
 
 : PlayVoice( "Voices/vo07_beb0121" )
@@ -926,7 +926,7 @@
 : EraseChara( "Daruma", 0.5 )
 //Yoshi：センターに銀
 : DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “局长，你以前骗过我们吗？”
 
 : HideWnd()
@@ -940,7 +940,7 @@
 //Yoshi：右に般若（あざみ）
 : DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo05_aza0390" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “生气是理所当然的，我想说我愿意接受
 但是，我们也有不得了的情况啊」
 
@@ -960,7 +960,7 @@
 : EraseChara( "Azami", 0.5 )
 //Yoshi：センターに銀
 : DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 3, "C" )
-\CN["银子"]
+\CN["银"]
 “切……！现在你没什么事！”
 
 //●演出：銀　アクションシーン
@@ -981,7 +981,7 @@
 达磨爽快地接住了银拳。
 
 : DrawChara( "Gin",12, 0)
-\CN["银子"]
+\CN["银"]
 “T、你……！”
 
 \CN["达磨"]
@@ -1002,11 +1002,11 @@
 : ShowWnd()
 ——奇奇！吓一跳！咕嘟咕嘟！
 
-\CN["银子"]
+\CN["银"]
 “呼呼……呃………”
 
 : DrawChara( "Gin",13, 0)
-\CN["银子"]
+\CN["银"]
 “哇啊啊啊啊啊啊啊啊！！”
 
 //●演出：銀　空振り
@@ -1040,7 +1040,7 @@
 : DrawChara( "Daruma", 2, 0, 0, 0.5, 0.0, 3, "L")
 : DrawChara( "Gin",11, 0, 0, 0.5, 0.0, 4, "R")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “啊。死不要紧。要好好遵守顺序……”
 
 //●ＳＥ：仮面が割れる音
@@ -1061,7 +1061,7 @@
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
 //: DrawChara( "Gin",13, 0)
-\CN["银子"]
+\CN["银"]
 “啊啊啊啊啊啊啊啊啊啊！！”
 
 银想把拳头敲进去——
@@ -1078,7 +1078,7 @@
 : Call("Scenarios/Common*EvDelete")
 : DrawChara( "Gin",12, 0, 0, 0.5, 0.0, 3, "C")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “………！”
 
 //Yoshi：センターに桃
@@ -1091,7 +1091,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0878" )
-\CN["桃子"]
+\CN["桃"]
 “小银！”
 
 //: EraseChara( "Momo", 0.5 )
@@ -1101,12 +1101,12 @@
 //Yoshi：左に銀、右に桃
 : DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 4, "LC" )
 : DrawChara( "Momo", 7, 0, 0, 0.5, 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “没关系……。我突然用手臂保护了他……”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0879" )
-\CN["桃子"]
+\CN["桃"]
 “胳膊断了。等一下，我马上治疗。”
 
 : HideWnd()
@@ -1125,7 +1125,7 @@
 “隔了几年才被相对的人看到真实面貌呢？”
 
 : PlayVoice( "Voices/vo05_aza0391" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “这是龙的教育成果。”
 
 : DrawChara( "Daruma",10, 0)
@@ -1142,7 +1142,7 @@
 //: DrawChara( "Sayo", 6, 0, 1, 0.5, 0.0, 5, "RC" )
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0392" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，我会的。”
 
 //: EraseChara( "Sayo", 0.5 )
@@ -1188,7 +1188,7 @@
 : EraseChara( "Leo", 0.5 )
 : DrawChara( "Mukuro", 46, 0, 2, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1668" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜啊——————！”
 
 : EraseChara( "Mukuro", 0.5 )
@@ -1229,13 +1229,13 @@
 //Yoshi：センターに桃
 : DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0880" )
-\CN["桃子"]
+\CN["桃"]
 “所以说，我有个下定决心的人
 刚才不是说了吗？”
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0881" )
-\CN["桃子"]
+\CN["桃"]
 “比起这个，还我小夜！”
 
 : EraseChara( "Momo", 0.5 )
@@ -1266,7 +1266,7 @@
 : DrawChara( "Mukuro", 17, 0, 2, 0.5, 0.0, 3, "C" )
 //●演技：心の声です
 : PlayVoice( "Voices/vo00_muk1669" )
-\CN["无黑色"]
+\CN["无黑"]
 （不要着急……首先要考虑从这里活下去。）
 
 怎么办才好？
@@ -1291,7 +1291,7 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Mukuro", 15, 0, 2 )
 : PlayVoice( "Voices/vo00_muk1670" )
-\CN["无黑色"]
+\CN["无黑"]
 「……！」
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -1347,7 +1347,7 @@
 //: DrawChara( "Mukuro",34, 0, 2, 0.5, 0.0, 3, "C" )
 : DrawFaceThumbnail( "Mukuro", 34, 0, 2 )
 : PlayVoice( "Voices/vo00_muk1671" )
-\CN["无黑色"]
+\CN["无黑"]
 “费尔克先生！？”
 
 //: EraseChara( "Mukuro", 0.5 )
@@ -1437,7 +1437,7 @@
 //Yoshi：左に銀、センターにレオ
 : DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 5, "C" )
-\CN["银子"]
+\CN["银"]
 「…………」
 
 : DrawChara( "Falke",16, 0)
@@ -1455,18 +1455,18 @@
 //Yoshi：センターに無黒（背面・刀）
 : DrawChara( "Mukuro",17, 0, 5, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1672" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子、黄菜子，大家都退了！”
 
 : EraseChara( "Mukuro", 0.5 )
 //Yoshi：左に銀、右に桃
 : DrawChara( "Gin", 6, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 4, "R" )
-\CN["银子"]
+\CN["银"]
 “小姐，我去。”
 
 : PlayVoice( "Voices/vo01_mom0882" )
-\CN["桃子"]
+\CN["桃"]
 “……嗯，嗯。”
 
 : EraseChara( "Momo", 0.5 )
@@ -1818,7 +1818,7 @@
 : DrawChara( "Kinako", 0, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Momo", 0, 0, 0, 0.5, 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0883" )
-\CN["桃子"]
+\CN["桃"]
 “这样就没关系了。伤口完全连在一起了。
 不留下伤痕的话，还是被砍了比较好”
 
@@ -1865,7 +1865,7 @@
 : DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 4, "RC" )
 : DrawChara( "Mukuro", 1, 0, 0, 0.5, 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo00_muk1673" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧，你在这种地方吗？”？
 因为很冷，所以最好进去”
 
@@ -1883,7 +1883,7 @@
 
 : DrawChara( "Mukuro",38, 0)
 : PlayVoice( "Voices/vo00_muk1674" )
-\CN["无黑色"]
+\CN["无黑"]
 “不要勉强……”
 
 \CN["雷欧"]
@@ -1892,7 +1892,7 @@
 
 : DrawChara( "Mukuro",35, 0)
 : PlayVoice( "Voices/vo00_muk1675" )
-\CN["无黑色"]
+\CN["无黑"]
 “……Leo”
 
 : DrawChara( "Leo", 2, 0)
@@ -1912,7 +1912,7 @@
 
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk1676" )
-\CN["无黑色"]
+\CN["无黑"]
 “你一直很勉强吧？”
 
 : DrawChara( "Leo",10, 0)
@@ -1927,7 +1927,7 @@
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk1677" )
-\CN["无黑色"]
+\CN["无黑"]
 “你总是这样一个人承担……”
 
 : DrawChara( "Leo", 6, 0)
@@ -1936,7 +1936,7 @@
 
 : DrawChara( "Mukuro",36, 0)
 : PlayVoice( "Voices/vo00_muk1678" )
-\CN["无黑色"]
+\CN["无黑"]
 “偶尔也希望你能依赖我。”
 
 : DrawChara( "Leo",1, 0)
@@ -1958,7 +1958,7 @@
 
 : DrawChara( "Mukuro",34, 0)
 : PlayVoice( "Voices/vo00_muk1679" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯？怎么了？”
 
 : DrawChara( "Leo",11, 0)
@@ -1971,14 +1971,14 @@
 : Wait()
 : DrawChara( "Mukuro",46, 1)
 : PlayVoice( "Voices/vo00_muk1680" )
-\CN["无黑色"]
+\CN["无黑"]
 “笨蛋！为什么你总是……”
 
 被那样说了之后，慌慌张张地离开了身体。
 
 : DrawChara( "Mukuro", 6, 2)
 : PlayVoice( "Voices/vo00_muk1681" )
-\CN["无黑色"]
+\CN["无黑"]
 “唔……”
 
 : DrawChara( "Leo", 2, 0)
@@ -1993,7 +1993,7 @@
 : chara = "Mukuro"; lay = 3 ; type = "F";
 : Call( "Scenarios/Common*FgLarge" )
 : PlayVoice( "Voices/vo00_muk1682" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……”
 
 怎么说呢，闭上了眼睛——
@@ -2015,11 +2015,11 @@
 : DrawFaceThumbnail( "Mukuro", 22, 2, 0 )
 //Yoshi：センターに無黒
 : PlayVoice( "Voices/vo00_muk1683" )
-\CN["无黑色"]
+\CN["无黑"]
 「！！？」
 
 //Yoshi：左に銀
-\CN["银子"]
+\CN["银"]
 “……啊”
 
 突然，银出现了，吓得我吓得腰都软了。
@@ -2034,7 +2034,7 @@
 “你在好地方……！”
 
 : DrawChara( "Gin",18, 0)
-\CN["银子"]
+\CN["银"]
 “……不好意思”
 
 : ImpactLayer( 4, 0.1, 0.1, 1, 0.25)
@@ -2044,7 +2044,7 @@
 你不可能向我道歉吧”
 
 : DrawChara( "Gin",22, 0)
-\CN["银子"]
+\CN["银"]
 「…………」
 
 : DrawChara( "Leo", 8, 0)
@@ -2052,7 +2052,7 @@
 “喂，你打算去哪里？”
 
 : DrawChara( "Gin", 0, 0)
-\CN["银子"]
+\CN["银"]
 “我想和龙先生说话。”
 
 \CN["雷欧"]
@@ -2060,7 +2060,7 @@
 肯定只是被杀了吧！”
 
 : DrawChara( "Gin",10, 0)
-\CN["银子"]
+\CN["银"]
 “不说一下就不知道了吧。”
 
 //●ＳＥ：ドン　身体を押す音
@@ -2078,11 +2078,11 @@
 
 : DrawChara( "Leo", 7, 0, 0, 0.5, 0.0, 3, "LC")
 : DrawChara( "Gin", 9, 0, 0, 0.5, 0.0, 4, "RC")
-\CN["银子"]
+\CN["银"]
 “但是，这样下去的话会一贫如洗。
 既然有了白夜，至少需要一点伙伴”
 
-\CN["银子"]
+\CN["银"]
 “如果龙先生能跟着我的话
 胆子很大。不是吗？”
 
@@ -2091,7 +2091,7 @@
 “虽然是这样……。
 但是，如果不能协商的话怎么办？”
 
-\CN["银子"]
+\CN["银"]
 “那时候就是那个时候。我只是杀了她回来。”
 
 : DrawChara( "Leo",20, 0)
@@ -2099,7 +2099,7 @@
 「…………」
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “什么？”
 
 : DrawChara( "Leo", 19, 0)
@@ -2107,7 +2107,7 @@
 “那样的话我去。”
 
 : DrawChara( "Gin",10, 0)
-\CN["银子"]
+\CN["银"]
 “啊？你为什么说要去？”
 
 : DrawChara( "Leo", 17, 0)
@@ -2116,7 +2116,7 @@
 你受伤了吧？不是折了吗？”
 
 : DrawChara( "Gin",23, 0)
-\CN["银子"]
+\CN["银"]
 “是心理作用吧。看，这条街，什么都没有。”
 
 银举起右臂。
@@ -2134,7 +2134,7 @@
 我替你去，你睡吧！”
 
 //: DrawChara( "Gin",13, 0)
-\CN["银子"]
+\CN["银"]
 “你是笨蛋吗？”
 
 雷欧和银变得很险恶，双方的争论越来越激烈。
@@ -2145,7 +2145,7 @@
 你不是说我去吗？”
 
 //: DrawChara( "Gin",14, 0)
-\CN["银子"]
+\CN["银"]
 “啊？不是你出场的时候。”
 
 //Yoshi：センターに無黒
@@ -2156,7 +2156,7 @@
 : Call( "Scenarios/Common*FgLarge" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1684" )
-\CN["无黑色"]
+\CN["无黑"]
 “两个人都放弃吧！
 在这种地方争论有什么用！”
 
@@ -2176,7 +2176,7 @@
 : DrawChara( "Momo", 8, 0, 0, 0.5, 0.0, 3, "C" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0884" )
-\CN["桃子"]
+\CN["桃"]
 “小银，小雷欧！别吵架了！”
 
 //Yoshi：左に紅美、右に黄菜子
@@ -2207,7 +2207,7 @@
 「怎么也不这样啊。
 这副眼镜只是毫无办法而已”
 
-\CN["银子"]
+\CN["银"]
 “哈？
 也许是因为你说了些麻烦话”
 
@@ -2220,11 +2220,11 @@
 : Call("Scenarios/Common*EvFadeOut")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0885" )
-\CN["桃子"]
+\CN["桃"]
 “找茬？”
 
 : PlayVoice( "Voices/vo00_muk1685" )
-\CN["无黑色"]
+\CN["无黑"]
 “雷欧说银的右臂受伤了……”
 
 : EraseChara( "Mukuro", 0.5 )
@@ -2232,7 +2232,7 @@
 //Yoshi：左に銀、右にレオ
 : DrawChara( "Gin",12, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Leo",17, 0, 0, 0.5, 0.0, 4, "R" )
-\CN["银子"]
+\CN["银"]
 “所以说，没有受伤！”
 
 : DrawChara( "Leo", 23, 0, 0 )
@@ -2244,14 +2244,14 @@
 //Yoshi：センターに桃
 : DrawChara( "Momo",12, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0886" )
-\CN["桃子"]
+\CN["桃"]
 “咦？但是，那样的话，我马上就用魔术……”
 
 : EraseChara( "Momo", 0.5 )
 //Yoshi：左に銀、右にレオ
 : DrawChara( "Gin", 9, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Leo", 21, 0, 0, 0.5, 0.0, 4, "R" )
-\CN["银子"]
+\CN["银"]
 “没错，小姐用魔术治好了我。
 所以说是你的错觉”
 
@@ -2291,7 +2291,7 @@
 雷欧抓住了银的胸口。
 
 : DrawChara( "Gin",20, 0)
-\CN["银子"]
+\CN["银"]
 “你这样做是不行的，还是个处男啊！”
 
 银也抓住了雷欧的胸口。
@@ -2311,42 +2311,42 @@
 //: DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 4, "R" )
 //●演出：銀　１人でどこかに行こうとする
 : PlayVoice( "Voices/vo01_mom0887" )
-\CN["桃子"]
+\CN["桃"]
 “小银，等一下！你打算去哪里？”
 
 : DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Gin",13, 0, 0, 0.5, 0.0, 4, "R" )
-\CN["银子"]
+\CN["银"]
 “你不是说龙先生在这儿吗！”
 
 银对桃乱说。
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0888" )
-\CN["桃子"]
+\CN["桃"]
 “小银，你不是说不要等了吗！”
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 「…………」
 
 : PlayVoice( "Voices/vo01_mom0889" )
-\CN["桃子"]
+\CN["桃"]
 “那我也跟着去吧！”
 
 桃子想追上银的话。
 
 : DrawChara( "Gin", 9,0)
-\CN["银子"]
+\CN["银"]
 “小姐，这是命令——”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom0890" )
-\CN["桃子"]
+\CN["桃"]
 “……诶？”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “请在这里等。我一定回来。”
 
 //: EraseChara( "Gin", 0.5 )
@@ -2361,7 +2361,7 @@
 : DrawChara( "Momo", 4, 0, 0, 0.5, 0.0, 3, "C")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0891" )
-\CN["桃子"]
+\CN["桃"]
 “小银，等一下！小银……！”
 
 : HideWnd()
@@ -2378,7 +2378,7 @@
 //: CharaPartsOff( "Momo", 0 )
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0892" )
-\CN["桃子"]
+\CN["桃"]
 “Leo君，放开我！小银……小银啊！”
 
 : DrawChara( "Leo", 24, 0, 0 )
@@ -2387,11 +2387,11 @@
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0893" )
-\CN["桃子"]
+\CN["桃"]
 “……小银……说好了……！”
 
 : PlayVoice( "Voices/vo01_mom0894" )
-\CN["桃子"]
+\CN["桃"]
 “一定要活在这里……回到我这里来！
 知道了！？”
 
@@ -2682,7 +2682,7 @@
 : lay = 4; type = "WL";
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “你在这里吗？没必要特意去帝都。”
 
 : PlayBgm("BGM/05_CM005")
@@ -2698,7 +2698,7 @@
 \CN["白夜队士4"]
 “啊，那家伙是风神的银……？”
 
-\CN["银子"]
+\CN["银"]
 “是和白夜的垃圾一起组合的吗？鬼灯也掉到地上了。”
 
 //: DrawChara( "Ryu", 9, 0)
@@ -2706,7 +2706,7 @@
 “有什么事吗？”
 
 //: DrawChara( "Gin", 9, 0)
-\CN["银子"]
+\CN["银"]
 “不说的话不知道吗？
 我是来和你商量的”
 
@@ -2723,7 +2723,7 @@
 “不，等一下。也许还有人藏在里面。”
 
 //: DrawChara( "Gin",10, 0)
-\CN["银子"]
+\CN["银"]
 “不要害怕。只有我一个人在这里。”
 
 //: DrawChara( "Ryu", 2, 0)
@@ -2732,7 +2732,7 @@
 你没想到吗？”
 
 //: DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “让我问一个问题。
 你真的认为局长是正确的吗？”
 
@@ -2747,7 +2747,7 @@
 
 //: DrawChara( "Ryu", 0, 0)
 //: DrawChara( "Gin",13, 0)
-\CN["银子"]
+\CN["银"]
 “果然，你也和那家伙一样啊。”
 
 //: DrawChara( "Ryu", 2, 0)
@@ -2756,7 +2756,7 @@
 哪个都正确。自古以来战争就是这样的”
 
 //: DrawChara( "Gin",11, 0)
-\CN["银子"]
+\CN["银"]
 “原来如此。没错。”
 
 //: DrawChara( "Ryu", 0, 0)
@@ -2767,7 +2767,7 @@
 “这么多人一个人来，真是个大笨蛋啊。”
 
 //: DrawChara( "Gin",23, 0)
-\CN["银子"]
+\CN["银"]
 “是啊。要是跟哪个笨蛋说的话——”
 
 //: DrawChara( "Gin",10, 0)
@@ -2776,7 +2776,7 @@
 : evfile = "evx_a069_1_1_0200000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “你们这些家伙，我一个人就够了。”
 
 : HideWnd()
@@ -2790,19 +2790,19 @@
 一个人停下脚步让我笑”
 
 : DrawChara( "Gin", 7, 0, 0, 0.5, 0.0, 3, "C")
-\CN["银子"]
+\CN["银"]
 （果然是这样啊……）
 
 而且，我觉得不交给那个笨蛋真是太好了。
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 （那家伙能成为{黑夜叉，暗黑妖精}。
 对我们来说是王牌啊）
 
 ——我不喜欢。
 
-\CN["银子"]
+\CN["银"]
 （真的，我一个人来是正确的答案）
 
 明明只是下了决心而已。
@@ -2859,7 +2859,7 @@
 向挑衅性地说的龙的脸打右拳。
 
 //: DrawChara( "Gin",11, 0)
-\CN["银子"]
+\CN["银"]
 “啊？没有折吗？”
 
 : HideWnd()
@@ -2882,7 +2882,7 @@
 
 : DrawChara( "Ryu", 4, 0, 0, 0.5, 0.0, 3, "L")
 : DrawChara( "Gin", 4, 0, 0, 0.5, 0.0, 4, "R")
-\CN["银子"]
+\CN["银"]
 “大叔，你是说排练的时候偷懒了吗？”
 
 : DrawChara( "Ryu",40, 0)
@@ -2942,14 +2942,14 @@
 : DrawChara( "Ryu", 0, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Gin", 8, 0, 0, 0.5, 0.0, 4, "R" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “难道是黑夜叉，暗黑妖精吗？”
 
 : DrawChara( "Ryu", 1, 0)
 \CN["龙"]
 “你知道{黑夜叉，暗黑妖精}的存在吗？”
 
-\CN["银子"]
+\CN["银"]
 “因为是前几天刚看到的。”
 
 我只是一瞬间看到那家伙的样子而已。
@@ -2960,7 +2960,7 @@
 这样的我比那个人还要强”
 
 : DrawChara( "Gin", 9, 0)
-\CN["银子"]
+\CN["银"]
 “哈？那个人？”
 
 : DrawChara( "Ryu", 9, 0)
@@ -2968,7 +2968,7 @@
 “——呼，我走了。”
 
 : DrawChara( "Gin",10, 0)
-\CN["银子"]
+\CN["银"]
 「……！」
 
 : HideWnd()
@@ -2987,7 +2987,7 @@
 //Yoshi：センターに銀
 : DrawChara( "Gin",12, 0, 0, 0.5, 0.0, 3, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “酷……！”
 
 反射性地阻止攻击。
@@ -2999,7 +2999,7 @@
 \CN["龙"]
 “你用刚体术阻止了我的攻击吗？感觉很好。”
 
-\CN["银子"]
+\CN["银"]
 “呃……”
 
 //●演出：打撃エフェクト演出
@@ -3045,7 +3045,7 @@
 : evfile = "evx_a070_1_1_0100000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “在这里，我不能输！”
 
 想办法一边弹龙的攻击，一边不断放出拳头。
@@ -3059,7 +3059,7 @@
 : evfile = "evx_a011_1_3_0100000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “啊啊啊啊————！！”
 
 身体的机能非常好。
@@ -3067,7 +3067,7 @@
 明明在挑战附近绝对的死亡
 丝毫不感到恐怖。
 
-\CN["银子"]
+\CN["银"]
 “哈！”
 
 //: EraseChara( "Gin", 0.5 )
@@ -3097,7 +3097,7 @@
 //Yoshi：右に銀
 : DrawChara( "Gin",19, 0, 0, 0.5, 0.0, 3, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “哇！哇！真是的！像铁一样，肚子饿了。”
 
 \CN["白夜队士1"]
@@ -3124,7 +3124,7 @@
 //Yoshi：右に銀
 : DrawChara( "Ryu", 1, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Gin",10, 0, 0, 0.5, 0.0, 4, "R" )
-\CN["银子"]
+\CN["银"]
 “哈，哈，哈……”
 
 但是，太糟糕了。腰腿蹒跚。
@@ -3135,7 +3135,7 @@
 “怎么了？已经结束了吗？”
 
 : DrawChara( "Gin", 4, 0)
-\CN["银子"]
+\CN["银"]
 “哼，是现在开始吧？”
 
 //●演出：銀　アクション演出・必殺技連発
@@ -3152,7 +3152,7 @@
 : PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
 : Wait()
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “疾风！”
 
 : HideWnd()
@@ -3165,7 +3165,7 @@
 : PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
 : Wait()
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “狂风！”
 
 : HideWnd()
@@ -3178,7 +3178,7 @@
 : PlayAnim( "Animations/AnimeL_Attack03", false, 0, 0, 5, 5 )
 : Wait()
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “大岚！！”
 
 : HideWnd()
@@ -3211,7 +3211,7 @@
 //Yoshi：左に銀
 : DrawChara( "Gin",19, 0, 0, 0.5, 0.0, 3, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “唔……！”
 
 //●演出：銀　倒れる
@@ -3231,11 +3231,11 @@
 
 : DrawChara( "Ryu", 8, 0, 0, 0.5, 0.0, 3, "R" )
 : DrawChara( "Gin",0, 0, 0, 0.5, 0.0, 4, "L" )
-\CN["银子"]
+\CN["银"]
 “哈哈，什么啊，在被反击之前先把他杀了就好了
 是吧？”
 
-\CN["银子"]
+\CN["银"]
 “害怕计数器，不敢吵架。”
 
 : DrawChara( "Ryu",32, 0)
@@ -3273,7 +3273,7 @@
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
 //Yoshi：右に銀、左に龍（黒夜叉）
-\CN["银子"]
+\CN["银"]
 “如果是你的话，我知道是这样的！”
 
 用一张纸躲开龙的计数器。
@@ -3293,7 +3293,7 @@
 “呼，终于学习了吗……”
 
 //: DrawChara( "Gin",10, 0)
-\CN["银子"]
+\CN["银"]
 “你给我做了好几次啊。”
 
 反击未发而结束的龙。
@@ -3306,7 +3306,7 @@
 : evfile = "evx_a070_1_2_0200000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “高岭腐蚀39082；！！”
 
 : HideWnd()
@@ -3329,7 +3329,7 @@
 : evfile = "evx_a070_1_2_0100000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “哼……”
 
 //: DrawChara( "Ryu", 6, 0)
@@ -3345,7 +3345,7 @@
 : evfile = "evx_a071_1_1_0000000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “好嘞——”
 
 右臂——在残酷的贫民窟中生存下来，经过艰苦的修行
@@ -3354,7 +3354,7 @@
 在一起战斗的拳头里注入所有的力量————
 
 //: DrawChara( "Gin",13, 0)
-\CN["银子"]
+\CN["银"]
 “神风————————————！”
 
 \CN["龙"]
@@ -3384,7 +3384,7 @@
 “哈哈……！”
 
 //: DrawChara( "Gin",10, 0)
-\CN["银子"]
+\CN["银"]
 “哈，哈，哈……”
 
 //: DrawChara( "Ryu", 0, 0)
@@ -3403,7 +3403,7 @@
 : evfile = "evx_a011_1_6_0400000_00000000_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 「…………」
 
 \CN["龙"]

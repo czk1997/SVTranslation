@@ -63,7 +63,7 @@
 //Yoshi：センターに無黒
 : DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1496" )
-\CN["无黑色"]
+\CN["无黑"]
 “嗯……。爷爷怎么会高兴呢……”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -71,11 +71,11 @@
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom0727" )
-\CN["桃子"]
+\CN["桃"]
 “年纪大的绅士看起来很开心呢……。
 小银，你知道什么吗？”
 
-\CN["银子"]
+\CN["银"]
 “是啊……嗯，好难啊。”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -99,7 +99,7 @@
 “别小矮子了，来吧！红美来了！”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “买礼物本来就是
 你有多少钱？”
 
@@ -115,7 +115,7 @@
 
 : DrawChara( "Momo",11, 0)
 : PlayVoice( "Voices/vo01_mom0728" )
-\CN["桃子"]
+\CN["桃"]
 “公主，有收到零花钱吗？”
 
 : DrawChara( "Sayo", 3, 0)
@@ -133,7 +133,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1497" )
-\CN["无黑色"]
+\CN["无黑"]
 “原来如此。这么说来，买什么礼物是
 不行吗……”
 
@@ -155,7 +155,7 @@
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0729" )
-\CN["桃子"]
+\CN["桃"]
 “说到招牌菜，果然还是料理吧？
 顺便问一下，公主，您的料理是？”
 
@@ -179,7 +179,7 @@
 : DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Mukuro", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo00_muk1498" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果我是简单的东西的话，会怎么想呢……。
 说实话，我不太擅长”
 
@@ -201,14 +201,14 @@
 : DrawChara( "Gin",23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0730" )
-\CN["桃子"]
+\CN["桃"]
 “我？做不到啊。”
 
 桃子回答说“当然”。
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0731" )
-\CN["桃子"]
+\CN["桃"]
 “顺便说一下，小银很会做饭的。”
 
 : HideWnd()
@@ -226,14 +226,14 @@
 //Yoshi：左に銀、右に桃
 : DrawChara( "Gin", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
-\CN["银子"]
+\CN["银"]
 “……姑且，也算是马马虎虎吧。
 话虽如此，能做的都是小姐喜欢的东西”
 
 : JumpLayer( 4, 0, -50, 1, 0.25)
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0732" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵！小银做的奶油蛋糕非常好吃哦。”
 
 : DrawChara( "Gin", 1, 0)
@@ -245,12 +245,12 @@
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0733" )
-\CN["桃子"]
+\CN["桃"]
 “所谓的Kisshu，就是加入芝士、培根之类的
 嗯……小银，再说明一下”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “使用派做的料理的一种。把鸡蛋和牛奶混合在一起
 只需要把奶酪、培根放进去在烤箱里烤一下就可以了”
 
@@ -278,7 +278,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1499" )
-\CN["无黑色"]
+\CN["无黑"]
 “这么说来，刚进鬼灯的时候，在山里生活的时候
 真是厉害的手法啊”
 
@@ -311,7 +311,7 @@
 //Yoshi：センターに桃
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0734" )
-\CN["桃子"]
+\CN["桃"]
 “是啊。果然还是公主亲手做的比较好。”
 不是很高兴吗？”
 
@@ -338,7 +338,7 @@
 //Yoshi：左に無黒
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : PlayVoice( "Voices/vo00_muk1500" )
-\CN["无黑色"]
+\CN["无黑"]
 “我记得曾经帮我把大量的行李放到仓库里。”
 
 : DrawChara( "Kinako", 4, 0)
@@ -370,7 +370,7 @@
 呐，你能做到吗？”
 
 : DrawChara( "Gin",18, 0)
-\CN["银子"]
+\CN["银"]
 “我没做过，所以不知道。”
 
 会做菜的银也不能织。
@@ -381,7 +381,7 @@
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0735" )
-\CN["桃子"]
+\CN["桃"]
 “顺便说一下，我连编织物都不会。”
 
 : PlayVoice( "Voices/vo02_kin0260" )
@@ -394,7 +394,7 @@
 //Yoshi：センターに無黒
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1501" )
-\CN["无黑色"]
+\CN["无黑"]
 “围巾可以的话，就可以织了。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -407,7 +407,7 @@
 : DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo00_muk1502" )
-\CN["无黑色"]
+\CN["无黑"]
 “……什么？我要是会编织的话会很奇怪吗？”
 
 : DrawChara( "Leo", 6, 0)
@@ -420,7 +420,7 @@
 : DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom0736" )
-\CN["桃子"]
+\CN["桃"]
 “对不起，我也有点吃惊。”
 
 : PlayVoice( "Voices/vo07_beb0078" )
@@ -435,7 +435,7 @@
 //●演技：あ……→姉と言いかけて止める
 //●演技：姉の冥が敵に回っているのであえて家族という言い方です
 : PlayVoice( "Voices/vo00_muk1503" )
-\CN["无黑色"]
+\CN["无黑"]
 “姐姐……家里有喜欢编织物的人。
 受此影响，我也请教了编织物”
 
@@ -457,7 +457,7 @@
 
 : DrawChara( "Mukuro", 9, 0)
 : PlayVoice( "Voices/vo00_muk1504" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜，不用那么拘谨。
 与其织围巾，我多少都会教你的”
 
@@ -479,7 +479,7 @@
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0737" )
-\CN["桃子"]
+\CN["桃"]
 “是编织物吗？喂，无黑，也告诉我吧。”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -493,21 +493,21 @@
 //Yoshi：センターに桃
 : DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo01_mom0738" )
-\CN["桃子"]
+\CN["桃"]
 “从这里开始禁止男生。男生，要进厨房了。”
 
 : DrawChara( "Gin", 5, 0)
-\CN["银子"]
+\CN["银"]
 “……小姐，这里不是厨房。”
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0739" )
-\CN["桃子"]
+\CN["桃"]
 “细小的事情就好。
 你看，小银和小雷都出去吧」
 
 : DrawChara( "Gin", 1, 0)
-\CN["银子"]
+\CN["银"]
 “我明白了。”
 
 : DrawChara( "Leo", 5, 0)
@@ -540,11 +540,11 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk1505" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜，不用着急，慢慢地编就行了。”
 
 : PlayVoice( "Voices/vo00_muk1506" )
-\CN["无黑色"]
+\CN["无黑"]
 “是的是的。通过那里，嗯，感觉很好。”
 
 : DrawChara( "Sayo", 1, 0)
@@ -558,7 +558,7 @@
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0740" )
-\CN["桃子"]
+\CN["桃"]
 “无黑意外的很会教人呢。”
 
 : DrawChara( "Kinako", 1, 0)
@@ -575,29 +575,29 @@
 : Wait()
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk1507" )
-\CN["无黑色"]
+\CN["无黑"]
 “哦，妈妈……哇，我还没，没什么……”
 
 : DrawChara( "Momo", 6, 0)
 : PlayVoice( "Voices/vo01_mom0741" )
-\CN["桃子"]
+\CN["桃"]
 “啊？说不定是和谁结为夫妇的地方
 你想象了吗？”
 
 : ImpactLayer( 5, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Mukuro",34, 1)
 : PlayVoice( "Voices/vo00_muk1508" )
-\CN["无黑色"]
+\CN["无黑"]
 “什么啊！？不是……是！是谁和雷欧……！”
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0742" )
-\CN["桃子"]
+\CN["桃"]
 “嗯？谁叫你雷欧？”
 
 : DrawChara( "Mukuro", 6, 2)
 : PlayVoice( "Voices/vo00_muk1509" )
-\CN["无黑色"]
+\CN["无黑"]
 “呜哇……！也是，桃子！别开玩笑了。”
 
 : DrawChara( "Momo", 0, 0)
@@ -615,12 +615,12 @@
 : DrawChara( "Momo"12, 0, 0, 0.5, 0.0, 3, "L" )
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : PlayVoice( "Voices/vo01_mom0743" )
-\CN["桃子"]
+\CN["桃"]
 “尽管如此，这是非常需要毅力的工作。
 要是能做到这样就好了」
 
 : PlayVoice( "Voices/vo00_muk1510" )
-\CN["无黑色"]
+\CN["无黑"]
 “一边想着对方一边织围巾
 一编、一编、细致地编”
 
@@ -660,11 +660,11 @@
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : DrawChara( "Sayo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo01_mom0744" )
-\CN["桃子"]
+\CN["桃"]
 “啊……！差不多到了巡视的时间了。”
 
 : PlayVoice( "Voices/vo00_muk1511" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，就这样放在自己的房间里就可以了。
 不用一口气编上去”
 
@@ -681,7 +681,7 @@
 
 : DrawChara( "Mukuro", 4, 0)
 : PlayVoice( "Voices/vo00_muk1512" )
-\CN["无黑色"]
+\CN["无黑"]
 “是啊，小夜。但是，我觉得最重要的是心情。”
 
 : DrawChara( "Sayo", 1, 0)
@@ -766,7 +766,7 @@
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk1513" )
-\CN["无黑色"]
+\CN["无黑"]
 “生日快乐”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -783,7 +783,7 @@
 : DrawChara( "Bebi", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : DrawChara( "Azami", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo05_aza0316" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “这是鬼灯的大家送的礼物。
 希望你能接受”
 
@@ -861,7 +861,7 @@
 “虞津……太好了，公主。”
 
 : PlayVoice( "Voices/vo00_muk1514" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜，非常努力地编着呢。
 我想看爷爷开心的脸”
 

@@ -20,7 +20,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk2482" )
-\CN["无黑色"]
+\CN["无黑"]
 “天才发明家希拉加啊……。
 只听说过名字”
 
@@ -86,7 +86,7 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 : PlayVoice( "Voices/vo00_muk2483" )
-\CN["无黑色"]
+\CN["无黑"]
 “我被要求帮忙研究……”
 
 : DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -121,7 +121,7 @@
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk2484" )
-\CN["无黑色"]
+\CN["无黑"]
 “马可罗恩的花？是我没听说过的草药。
 可以告诉我有什么特征吗？”
 
@@ -191,7 +191,7 @@
 //●状況：マコロエンの花を調べる
 : DrawChara( "Mukuro", 0, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk2485" )
-\CN["无黑色"]
+\CN["无黑"]
 “紫色的花，还有非常甜的味道……。
 这是马可罗恩的花没错吧……”
 
@@ -200,7 +200,7 @@
 
 : DrawChara( "Mukuro", 28, 0)
 : PlayVoice( "Voices/vo00_muk2486" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果弄错了，那就到那个时候了。
 以后再来取就好了”
 
@@ -208,7 +208,7 @@
 : if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) <= 1 )
 	: DrawChara( "Mukuro", 39, 1)
 	: PlayVoice( "Voices/vo00_muk2487" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “即便如此……这种香味，总觉得身体会发热。”
 
 身体变热了，变得不均匀了。
@@ -216,7 +216,7 @@
 	//●演技：深呼吸をしています
 	: DrawChara( "Mukuro", 21, 1)
 	: PlayVoice( "Voices/vo00_muk2488" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “呜～……哈～…呜～……”
 
 大口吸气呼气，让心平静下来。
@@ -266,7 +266,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk2489" )
-\CN["无黑色"]
+\CN["无黑"]
 “大致按照您说的取了东西。
 这样没错吗？”
 
@@ -283,7 +283,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk2490" )
-\CN["无黑色"]
+\CN["无黑"]
 “顺便说一下，新的药是什么样的
 可以问吗？”
 

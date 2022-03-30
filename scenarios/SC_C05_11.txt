@@ -32,7 +32,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk3057" )
-\CN["无黑色"]
+\CN["无黑"]
 “对，是的……那个，你呢？”
 
 兽耳和丰富的尾巴，绝对是兽人。
@@ -50,7 +50,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 34, 0)
 	: PlayVoice( "Voices/vo00_muk3058" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “啊，你就是那个玉藻大人……！？
 对不起，太失礼了……！”
 
@@ -65,7 +65,7 @@
 : else
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk3059" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “你是玉藻大人……确实是桃师傅。”
 
 虽然气氛有不寻常的东西
@@ -98,7 +98,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3060" )
-\CN["无黑色"]
+\CN["无黑"]
 “小夜？小夜的话不是一般都在城里吗？”
 
 //●読み：帝都城（ていとじょう）
@@ -110,7 +110,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk3061" )
-\CN["无黑色"]
+\CN["无黑"]
 “怎么回事？”
 
 : DrawChara( "Tamamo", 0, 0, 1)
@@ -122,7 +122,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3062" )
-\CN["无黑色"]
+\CN["无黑"]
 “放任不管的话，小夜的生命就危险了，这样可以吗？”
 
 : DrawChara( "Tamamo", 0, 0)
@@ -133,7 +133,7 @@
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3063" )
-\CN["无黑色"]
+\CN["无黑"]
 “玉藻大人，你知道吗？”
 
 : DrawChara( "Tamamo", 2, 0)
@@ -230,7 +230,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 12, 1)
 	: PlayVoice( "Voices/vo00_muk3064" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （竟然自己露出来了，真是说不出口啊……）
 
 而且，连Leo担心的事情都
@@ -239,7 +239,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 21, 1, 1)
 	: PlayVoice( "Voices/vo00_muk3065" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （又不像话，衣服也要好好穿啊……）
 
 	//●服装：無黒・着衣
@@ -254,7 +254,7 @@
 
 	: DrawChara( "Mukuro", 21, 0, 0)
 	: PlayVoice( "Voices/vo00_muk3066" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我的裸体，我完全知道你在看癌症……”
 
 	//●分岐：悪堕ちＬＶが０～２の場合
@@ -267,7 +267,7 @@
 		//●演技：心の声です
 		: DrawChara( "Mukuro", 7, 0)
 		: PlayVoice( "Voices/vo00_muk3067" )
-		\CN["无黑色"]
+		\CN["无黑"]
 （如果是以前的雷欧，不管怎么说，看着我的裸体
 应该是睁大了眼睛吧）
 
@@ -288,7 +288,7 @@
 
 		: DrawChara( "Mukuro", 2, 0)
 		: PlayVoice( "Voices/vo00_muk3068" )
-		\CN["无黑色"]
+		\CN["无黑"]
 “这样啊……。怎么会被警戒呢……”
 
 		: DrawChara( "Leo", 6, 0)
@@ -298,7 +298,7 @@
 
 		: DrawChara( "Mukuro", 26, 0)
 		: PlayVoice( "Voices/vo00_muk3069" )
-		\CN["无黑色"]
+		\CN["无黑"]
 “没什么特别的意思。就是这种兴趣。”
 
 		: DrawChara( "Leo", 5, 0)
@@ -315,7 +315,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk3070" )
-\CN["无黑色"]
+\CN["无黑"]
 “工作上有一点。我想看看对面建着的小屋。”
 
 : DrawChara( "Leo", 6, 0)
@@ -335,7 +335,7 @@
 : if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) < 2 )
 	: DrawChara( "Mukuro", 23, 0)
 	: PlayVoice( "Voices/vo00_muk3071" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “在那之后，小夜在吗？”
 
 	: DrawChara( "Leo", 10, 0)
@@ -344,7 +344,7 @@
 
 	: DrawChara( "Mukuro", 12, 0)
 	: PlayVoice( "Voices/vo00_muk3072" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “不擅长说谎好像还是老样子啊。”
 
 	: DrawChara( "Leo", 0, 0)
@@ -358,7 +358,7 @@
 	//●読み：厚海（あつうみ）＝熱海のパロです
 	: DrawChara( "Mukuro", 26, 1)
 	: PlayVoice( "Voices/vo00_muk3073" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “其实最近完全没做呢。
 不能等到厚海。在里面的小屋里……？”
 
@@ -372,7 +372,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 21, 1)
 	: PlayVoice( "Voices/vo00_muk3074" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （本来打算开玩笑的，但是被这样的反应吓了一跳
 做了……）
 
@@ -399,7 +399,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk3075" )
-\CN["无黑色"]
+\CN["无黑"]
 “你知道我是热心工作的女人吗？”
 
 : DrawChara( "Leo", 24, 0)
@@ -410,7 +410,7 @@
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 39, 0)
 	: PlayVoice( "Voices/vo00_muk3076" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “我也不想和以前的伙伴厮杀。
 但是，我也不能让步”
 
@@ -438,7 +438,7 @@
 : else
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk3077" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “这是过去朋友的情谊，我再忠告他一次。
 雷欧，从那里让开！”
 
@@ -450,7 +450,7 @@
 	: PlaySe( "SE/Se_Katana01" )
 	: DrawChara( "Mukuro", 23, 0, 5)
 	: PlayVoice( "Voices/vo00_muk3078" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “杀了你，我先走了。就这样。”
 
 	//●演出：レオ　刀を抜く
@@ -542,7 +542,7 @@
 
 	: DrawChara( "Mukuro", 8, 0)
 	: PlayVoice( "Voices/vo00_muk3079" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “刚才也说过了
 你真是不擅长说谎啊……”
 
@@ -552,13 +552,13 @@
 
 	: DrawChara( "Mukuro", 23, 0)
 	: PlayVoice( "Voices/vo00_muk3080" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “如果你打算杀我的话
 可能是我输了”
 
 	: DrawChara( "Mukuro", 1, 0, 2)
 	: PlayVoice( "Voices/vo00_muk3081" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “为什么要偷懒？”
 
 	: DrawChara( "Leo", 0, 0)
@@ -587,13 +587,13 @@
 
 	: DrawChara( "Mukuro", 39, 0)
 	: PlayVoice( "Voices/vo00_muk3082" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “{黑夜叉，暗黑妖精}的力量必须要使用
 没想到会被逼入绝境……”
 
 	: DrawChara( "Mukuro", 7, 0, 2)
 	: PlayVoice( "Voices/vo00_muk3083" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “如果，还没有变成{黑夜叉，暗黑妖精}的话
 输的一定是我……”
 
@@ -610,7 +610,7 @@
 : endif
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3084" )
-\CN["无黑色"]
+\CN["无黑"]
 “对你来说，说不定雷欧也会变成{黑夜叉，暗黑妖精}
 能成为吗？”
 
@@ -676,7 +676,7 @@
 
 	: DrawChara( "Mukuro", 8, 0)
 	: PlayVoice( "Voices/vo00_muk3085" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “对不起，小夜……”
 
 抚摸小夜的头。
@@ -704,7 +704,7 @@
 
 	: DrawChara( "Mukuro", 7, 0)
 	: PlayVoice( "Voices/vo00_muk3086" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “曾经为了生存而拼命过——
 话是这么说的，但是，可能确实是这样”
 
@@ -715,7 +715,7 @@
 : endif
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk3087" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，雷欧，你说什么？发生什么事了吗？”
 
 : DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -797,7 +797,7 @@
 
 : DrawChara( "Mukuro", 39, 0)
 : PlayVoice( "Voices/vo00_muk3088" )
-\CN["无黑色"]
+\CN["无黑"]
 “那是……”
 
 我知道他们喜欢见回组，但是
@@ -808,7 +808,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk3089" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子和黄菜子他们怎么样了？”
 
 : ChaOut = "Ji"; ChaIn = "Leo"; Face = 3; Hoho = 0; Pose = 0; Lay = 2; Pos = "LC";
@@ -828,7 +828,7 @@
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk3090" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，虽然是这样，但就像是从玉藻大人那里带小夜过来一样
 说吧。在被见回组或者其他反幕派逮捕之前
 保护我！”
@@ -860,7 +860,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 39, 0)
 : PlayVoice( "Voices/vo00_muk3091" )
-\CN["无黑色"]
+\CN["无黑"]
 （如果只是被杀的话，还算好。
 有的人说死了更好）
 
@@ -875,7 +875,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk3092" )
-\CN["无黑色"]
+\CN["无黑"]
 “啊，没关系。”
 
 //: DrawChara( "Sayo", 3, 0)
@@ -904,7 +904,7 @@
 : ChaOut = "Ji"; ChaIn = "Mukuro"; Face = 4; Hoho = 0; Pose = 3; Lay = 2; Pos = "LC";
 : Call( "Scenarios/Common*FgChange" )
 : PlayVoice( "Voices/vo00_muk3093" )
-\CN["无黑色"]
+\CN["无黑"]
 “那我带你去玉藻大人那里。跟我来。”
 
 //●演出：暗転

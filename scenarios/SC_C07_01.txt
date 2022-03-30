@@ -169,7 +169,7 @@
 \CN["恐怖分子5"]
 “……嗯？风？”
 
-\CN["银子"]
+\CN["银"]
 “虽然人数很弱，但不要到处乱滚……”
 
 : CharaCostume( "Leo", 0 )
@@ -180,7 +180,7 @@
 明天和无黑约好了约会哦”
 
 : DrawChara( "Gin", 17, 0)
-\CN["银子"]
+\CN["银"]
 “不是约定，而是妄想吧……。
 真是的，这样的话处男就好了”
 
@@ -194,7 +194,7 @@
 
 	: DrawChara( "Momo", 13, 1, 0, 0.5, 0.0, 4, "C" )
 	: PlayVoice( "Voices/vo01_mom1142" )
-	\CN["桃子"]
+	\CN["桃"]
 “Leo君，你不在这种地方说这种话吗？”！
 请想得细致些！会被无黑讨厌的吧？”
 
@@ -203,12 +203,12 @@
 “嗯……”
 
 	: PlayVoice( "Voices/vo01_mom1143" )
-	\CN["桃子"]
+	\CN["桃"]
 “还有，小银也来了！不去挑衅了！”
 
 
 	: DrawChara( "Gin", 23, 0)
-	\CN["银子"]
+	\CN["银"]
 “……那么”
 
 //●分岐終了地点へ
@@ -222,7 +222,7 @@
 只是最近好久不见！”
 
 	: DrawChara( "Gin", 17, 0)
-	\CN["银子"]
+	\CN["银"]
 “不是最近，而是出生以来一直的
 不是弄错了吗？”
 
@@ -232,7 +232,7 @@
 话说回来，你怎么样？你和桃子熟了吗？”
 
 	: DrawChara( "Gin", 2, 0)
-	\CN["银子"]
+	\CN["银"]
 “来吧……呵呵——”
 
 	: DrawChara( "Leo", 4, 0)
@@ -242,24 +242,24 @@
 
 	: DrawChara( "Momo", 13, 1, 0, 0.5, 0.0, 4, "C" )
 	: PlayVoice( "Voices/vo01_mom1144" )
-	\CN["桃子"]
+	\CN["桃"]
 “小银！小雷欧！
 不要在这种地方说傻话！”
 
 	: DrawChara( "Gin", 23,0)
-	\CN["银子"]
+	\CN["银"]
 “……我没什么……”
 
 //●分岐終了
 : endif
 : DrawChara( "Momo", 9, 0, 0)
 : PlayVoice( "Voices/vo01_mom1145" )
-\CN["桃子"]
+\CN["桃"]
 “小银，命令啊——
 那个集团的人，全部都给我滚过来！”
 
 : DrawChara( "Gin", 3, 0)
-\CN["银子"]
+\CN["银"]
 “我明白了！”
 
 : DrawChara( "Leo", 4, 0)
@@ -278,7 +278,7 @@
 : DrawChara( "Momo", 2, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1146" )
 : ShowWnd()
-\CN["桃子"]
+\CN["桃"]
 “那你要打一拳给景物吗？”
 
 //●演出：上級炎魔術演出
@@ -314,7 +314,7 @@
 : evfile = "evx_a011_1_2_0200000_0000000_0_"
 : Call("Scenarios/Common*EvFadeIn")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “{疾风，嘘}！！”
 
 //: EraseChara( "Gin", 0.5 )
@@ -337,7 +337,7 @@
 : PlaySe( "SE/Se_dash01" )
 恐怖分子们一起逃走。
 
-\CN["银子"]
+\CN["银"]
 “什么啊。已经结束了吗？”
 
 \CN["雷欧"]
@@ -389,11 +389,11 @@
 : DrawChara( "Gin", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo01_mom1147" )
-\CN["桃子"]
+\CN["桃"]
 “那、那样的……是骗人的吧……？”
 
 : DrawChara( "Gin", 8, 0)
-\CN["银子"]
+\CN["银"]
 “我不喜欢。居然是白夜的间谍……”
 
 有一天，淤青把自己的真面目，把队员们
@@ -425,7 +425,7 @@
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
-\CN["银子"]
+\CN["银"]
 “龙先生，你也知道你吗？”
 
 : DrawChara( "Ryu", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
@@ -445,18 +445,18 @@
 
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom1148" )
-\CN["桃子"]
+\CN["桃"]
 “雷欧君！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 27, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo05_aza0763" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “没关系的……正如Leo所说。”
 
 : DrawChara( "Azami", 26, 0)
 : PlayVoice( "Voices/vo05_aza0764" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “我原本就置身于白夜之中……。
 然后，接到命令潜入鬼灯是事实”
 
@@ -470,7 +470,7 @@
 : DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : DrawChara( "Leo", 21, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo05_aza0765" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 「…………」
 
 : DrawChara( "Leo", 23, 0)
@@ -479,7 +479,7 @@
 
 : DrawChara( "Azami", 2, 0)
 : PlayVoice( "Voices/vo05_aza0766" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “……我不打算辩解。”
 
 : DrawChara( "Leo", 7, 0)
@@ -508,7 +508,7 @@
 
 : DrawChara( "Gin", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : DrawChara( "Ranmaru", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “……误会了吗？
 这个女人背叛我们是事实吗？”
 
@@ -566,7 +566,7 @@
 
 : DrawChara( "Azami", 24, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo05_aza0767" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，后面的事情就交给你了。”
 
 虽说是为了打倒腐败的幕府
@@ -576,7 +576,7 @@
 
 : DrawChara( "Azami", 3, 0)
 : PlayVoice( "Voices/vo05_aza0768" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “别摆出那种表情。我会好好回到这里的。”
 
 : DrawChara( "Ryu", 5, 0)
@@ -585,7 +585,7 @@
 
 : DrawChara( "Azami", 26, 1)
 : PlayVoice( "Voices/vo05_aza0769" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “啊，龙，就是这个啊——”
 
 : DrawChara( "Ryu", 3, 0)
@@ -599,8 +599,8 @@
 //●演技：キスです
 : DrawFaceThumbnail( "Azami", 0, 1, 0 )
 : PlayVoice( "Voices/vo05_aza0770" )
-\CN["嘲讽"]
-「嗯，59a0]♥</color>」
+\CN["爱彩弥"]
+「嗯，59a0]<color=#f59aa0>♥</color>」
 
 : DrawFaceThumbnail( "Ryu", 22, 0, 0 )
 \CN["龙"]
@@ -610,7 +610,7 @@
 
 : DrawChara( "Azami", 4, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo05_aza0771" )
-\CN["嘲讽"]
+\CN["爱彩弥"]
 “再见！鬼灯的事就拜托你了。”
 
 //●演出：あざみ　退場する
@@ -910,7 +910,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo12_shi0299" )
 \CN["紫苑"]
-“呜、哈、い、严酱……啊、啊、啊啊啊啊啊啊啊啊啊啊啊♥</color>」
+“呜、哈、い、严酱……啊、啊、啊啊啊啊啊啊啊啊啊啊啊<color=#f59aa0>♥</color>」
 
 \CN["严严"]
 “妈妈啊，好舒服啊……哈哈……”
@@ -931,7 +931,7 @@
 : PlayVoice( "Voices/vo12_shi0300" )
 \CN["紫苑"]
 「呼……嗯♥</色>主人的小弟弟也……嗯啊……
-我的阴道内，推开♥</color>」
+我的阴道内，推开<color=#f59aa0>♥</color>」
 
 钱不放心的话，紫苑就在花街柳巷赚钱。
 然后，白夜发生什么事的时候会接受招集。
@@ -1269,7 +1269,7 @@
 : ShowWnd()
 //: DrawChara( "Mukuro", 46, 0, 2, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk3418" )
-\CN["无黑色"]
+\CN["无黑"]
 “八重樱流——{千鸟岚月，七彩月}！！”
 
 //●演出：斬撃エフェクト
@@ -1288,7 +1288,7 @@
 
 : DrawChara( "Mukuro", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk3419" )
-\CN["无黑色"]
+\CN["无黑"]
 “这是通缉书上的魔物，没错吧。”
 
 现在承包的工作是击退魔物
@@ -1299,7 +1299,7 @@
 
 : DrawChara( "Mukuro", 36, 0)
 : PlayVoice( "Voices/vo00_muk3420" )
-\CN["无黑色"]
+\CN["无黑"]
 “从白夜中退出的好处不多。”
 
 如果别扭地拔掉的话
@@ -1310,7 +1310,7 @@
 
 : DrawChara( "Mukuro", 21, 0)
 : PlayVoice( "Voices/vo00_muk3421" )
-\CN["无黑色"]
+\CN["无黑"]
 “发生什么事的时候，必须要响应招集，那就是。”
 
 总之，活着不愁一点钱是很大的。
@@ -1319,7 +1319,7 @@
 : if ( Flag ( "Love_Mei" ) == true )
 	: DrawChara( "Mukuro", 8, 0)
 	: PlayVoice( "Voices/vo00_muk3422" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “感觉对那个男人没兴趣的姐姐怎么可能……。
 人生真是不知道啊」
 
@@ -1329,7 +1329,7 @@
 
 	: DrawChara( "Mukuro", 28, 0)
 	: PlayVoice( "Voices/vo00_muk3423" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “也许只是我不知道而已。”
 
 这样的姐姐和兰丸一起生活着
@@ -1337,7 +1337,7 @@
 
 	: DrawChara( "Mukuro", 3, 0)
 	: PlayVoice( "Voices/vo00_muk3424" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “但是，希望姐姐能幸福。”
 
 至今为止给姐姐添了很多麻烦，也很辛苦。
@@ -1345,7 +1345,7 @@
 
 	: DrawChara( "Mukuro", 4, 0)
 	: PlayVoice( "Voices/vo00_muk3425" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “兰丸先生对姐姐很专一。
 可以放心地交给我”
 
@@ -1360,7 +1360,7 @@
 : else
 	: DrawChara( "Mukuro", 42, 0)
 	: PlayVoice( "Voices/vo00_muk3426" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “姐姐也很突然啊。
 突然说要出国，就那样……”
 
@@ -1371,7 +1371,7 @@
 
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk3427" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “没有消息就不能说是好消息。”
 
 姐姐的话一定没问题吧。
@@ -1379,7 +1379,7 @@
 
 	: DrawChara( "Mukuro", 21, 0)
 	: PlayVoice( "Voices/vo00_muk3428" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “兰丸先生看起来很寂寞呢……”
 
 雷欧鼓励了我很多。
@@ -1395,7 +1395,7 @@
 
 : DrawChara( "Mukuro", 11, 0, 0)
 : PlayVoice( "Voices/vo00_muk3429" )
-\CN["无黑色"]
+\CN["无黑"]
 “那家伙真是……哈～……。
 因为总是很突然”
 
@@ -1403,7 +1403,7 @@
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk3430" )
-\CN["无黑色"]
+\CN["无黑"]
 “如果你请客的话……”
 
 发送完成。
@@ -1413,7 +1413,7 @@
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk3431" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，把魔物拆开带回去
 还有，也想先洗澡啊”
 

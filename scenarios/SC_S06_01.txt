@@ -19,7 +19,7 @@
 //●服装：無黒・エロコス
 : DrawChara( "Mukuro", 9, 1, 3, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk6745" )
-\CN["无黑色"]
+\CN["无黑"]
 “……这就是这里的服务员服吗……。
 几乎都是圆的啊”
 
@@ -32,7 +32,7 @@
 
 : DrawChara( "Mukuro", 8, 1, 0, 0.5, 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk6746" )
-\CN["无黑色"]
+\CN["无黑"]
 “那么，我应该做什么？”
 
 \CN["母版"]
@@ -40,7 +40,7 @@
 
 : DrawChara( "Mukuro", 3, 1)
 : PlayVoice( "Voices/vo00_muk6747" )
-\CN["无黑色"]
+\CN["无黑"]
 “是吗？我会努力的。”
 
 //＠立ち絵消去
@@ -80,7 +80,7 @@
 : if ( CharaCostume( "Mukuro" ) == 4 )
 	: DrawChara( "Mukuro", 9, 1, 0, 0.5, 0.0, 3, "RC" )
 	: PlayVoice( "Voices/vo00_muk6748" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “虽然是接待客人，但还是裸体比较好
 这个可以脱掉吗？”
 
@@ -89,7 +89,7 @@
 
 	: DrawChara( "Mukuro", 2, 1)
 	: PlayVoice( "Voices/vo00_muk6749" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “知道了。那我就把这件衣服脱了。”
 
 	//●服装：無黒・全裸
@@ -105,7 +105,7 @@
 	//●全裸の場合
 	: DrawChara( "Mukuro", 9, 1, 0, 0.5, 0.0, 3, "RC" )
 	: PlayVoice( "Voices/vo00_muk6750" )
-	\CN["无黑色"]
+	\CN["无黑"]
 “果然还是穿点什么比较好。”
 
 	\CN["母版"]

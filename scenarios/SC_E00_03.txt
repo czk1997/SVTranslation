@@ -22,7 +22,7 @@
 
 : DrawChara( "Momo", 1, 0, 0, 0.5, 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo01_mom1721" )
-\CN["桃子"]
+\CN["桃"]
 “欢迎回来，黄菜子。发生什么事了吗？”
 
 : DrawChara( "Kinako", 4, 0)
@@ -38,7 +38,7 @@
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1722" )
-\CN["桃子"]
+\CN["桃"]
 “黄菜子，你回来的时候不好意思
 港口那边好像发生了什么事，能不能快点去？”
 
@@ -55,28 +55,28 @@
 : DrawChara( "Momo", 2, 0)
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom1723" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵……进展很顺利呢。”
 
 : DrawChara( "Gin", 17, 0, 0, 0.5, 0.0, 3, "RC" )
-\CN["银子"]
+\CN["银"]
 “小姐，真是坏脸啊。”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1724" )
-\CN["桃子"]
+\CN["桃"]
 “坏脸色……。
 小银，对恋人不是没有那个吗？”
 
 : DrawChara( "Gin", 2, 0)
-\CN["银子"]
+\CN["银"]
 “小姐无论长什么样的脸都很漂亮。”
 
 : layer = 2; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
 : Wait()
 : DrawChara( "Momo", 12, 2)
 : PlayVoice( "Voices/vo01_mom1725" )
-\CN["桃子"]
+\CN["桃"]
 “……对，没那么突然……。
 啊呜……脸好烫……”
 
@@ -1651,7 +1651,7 @@
 //●演技：キスです
 : PlayVoice( "Voices/vo02_kin1067" )
 \CN["黄菜子"]
-「嗯……是吧♥</color>」
+「嗯……是吧<color=#f59aa0>♥</color>」
 
 握着手，把脸贴在一起。
 

@@ -25,7 +25,7 @@
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 6, "RC" )
 	: PlayVoice( "Voices/vo00_muk4683" )
-	\CN["无黑色"]
+	\CN["无黑"]
 （明明是裸体，却完全没有反应，稍微不要受伤。）
 
 : else
@@ -40,7 +40,7 @@
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk4684" )
-\CN["无黑色"]
+\CN["无黑"]
 “……啊，从刚才开始就觉得手脚紧贴着。”
 
 是达人散发的灵气吗。
@@ -53,7 +53,7 @@
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk4685" )
-\CN["无黑色"]
+\CN["无黑"]
 “首先，我会好好泡澡的。”
 
 达磨和我们保持距离，静静地拔刀。
@@ -65,7 +65,7 @@
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo01_mom1586" )
-\CN["桃子"]
+\CN["桃"]
 “爷爷，你血气方刚吗？
 我并不是想和你战斗”
 
@@ -80,7 +80,7 @@
 //●演技：心の声です
 : DrawChara( "Mukuro", 28, 0)
 : PlayVoice( "Voices/vo00_muk4686" )
-\CN["无黑色"]
+\CN["无黑"]
 （那样的东西，太多了）
 
 \CN["达磨"]
@@ -162,7 +162,7 @@
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 24, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "RC" )
 : PlayVoice( "Voices/vo00_muk4687" )
-\CN["无黑色"]
+\CN["无黑"]
 “有什么想留下的吗？”
 
 把刀插在倒下的达磨上。
@@ -190,12 +190,12 @@
 : ShowWnd()
 : DrawFaceThumbnail( "Mukuro", 25, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4688" )
-\CN["无黑色"]
+\CN["无黑"]
 “桃子，把达磨的遗体烧掉吧。这是武士的同情。”
 
 : DrawFaceThumbnail( "Momo", 0, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1587" )
-\CN["桃子"]
+\CN["桃"]
 “了解”
 
 //●演出：炎魔術エフェクト
@@ -220,19 +220,19 @@
 
 : DrawFaceThumbnail( "Mukuro", 25, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4689" )
-\CN["无黑色"]
+\CN["无黑"]
 “好像不仅仅是双手双脚。”
 
 手脚和义眼即使是桃花的魔术也没有燃烧留下。
 
 : DrawFaceThumbnail( "Momo", 11, 0, 0 )
 : PlayVoice( "Voices/vo01_mom1588" )
-\CN["桃子"]
+\CN["桃"]
 “这个怎么办？”
 
 : DrawFaceThumbnail( "Mukuro", 23, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4690" )
-\CN["无黑色"]
+\CN["无黑"]
 “先埋在这里吧。”
 
 然后挖了个深洞，把达磨的残骸——义手和义足
@@ -242,7 +242,7 @@
 
 : DrawFaceThumbnail( "Mukuro", 1, 0, 3 )
 : PlayVoice( "Voices/vo00_muk4691" )
-\CN["无黑色"]
+\CN["无黑"]
 “……去吗？”
 
 //●演出：無黒・桃・黄菜子　退場する
