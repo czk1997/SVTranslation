@@ -29,16 +29,16 @@
 
 \CN["睡眠组1"]
 “哈哈哈哈哈哈哈！说不定哦！
-这家伙真的会叼小鸡！”
+　这家伙真的会叼小鸡！”
 
 \CN["睡眠组2"]
 “要全部吞下哦。
-就算是一滴也好，洒了的话我就让你重新来过”
+　就算是一滴也好，洒了的话我就让你重新来过”
 
 : DrawChara( "Hiraga", 2, 0)
 \CN["平底片"]
 （nonke的男人们，强迫她们口淫。
-目的是羞辱吧……）
+　目的是羞辱吧……）
 
 只有一部分人知道将军死了
 将军正下方的见回组不可能不知道那个事实。
@@ -51,7 +51,7 @@
 : DrawChara( "Hiraga", 4, 0)
 \CN["平底片"]
 “话虽如此，亚久里先生和这一带的垃圾一起被做了什么呢
-虽然是无法想象的事情……”
+　虽然是无法想象的事情……”
 
 这一天心里乱哄哄的。
 
@@ -138,7 +138,7 @@
 : DrawChara( "Hiraga", 7, 0)
 \CN["平底片"]
 “伤口无法愈合……？
-不仅如此，还会不断扩大……”
+　不仅如此，还会不断扩大……”
 
 : DrawChara( "Hiraga", 4, 0)
 \CN["平底片"]
@@ -147,20 +147,20 @@
 //: DrawChara( "Mimawari", 0, 0)
 \CN["睡眠组1"]
 “这，这家伙是妖怪吗！？
-伤口愈合了”
+　伤口愈合了”
 
 //: EraseChara( "Mimawari", 0.5 )
 : EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["竹叶"]
 「冷静下来。如果我的妖刀{红绶蛇，山药}的话
-确实能夺去这个人的生命吧”
+　确实能夺去这个人的生命吧”
 
 : EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Hiraga", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 \CN["平底片"]
 “………是{赤绶蛇，山药}吗……？
-是吗……”
+　是吗……”
 
 妖刀{赤咫蛇，山药}——
 
@@ -174,8 +174,8 @@
 
 \CN["竹叶"]
 “至今为止杀了好几个人
-杀人就是杀人
-竟然觉得是这么舒服的事情……呵呵”
+　杀人就是杀人
+　竟然觉得是这么舒服的事情……呵呵”
 
 \CN["竹叶"]
 “那么，你也由我来杀吧。”
@@ -189,7 +189,7 @@
 
 \CN["平底片"]
 （妖刀{赤楸蛇，山药}附身。
-胆小的人用妖刀的话必然会变成这样）
+　胆小的人用妖刀的话必然会变成这样）
 
 但是，这是无所谓的。
 
@@ -206,8 +206,8 @@
 
 \CN["睡眠组3"]
 “莫非是那个恶心的雌的男人？
-那么，笹木马上就把我{杀，玫瑰}杀了
-我会追随你的”
+　那么，笹木马上就把我{杀，玫瑰}杀了
+　我会追随你的”
 
 //: DrawChara( "Hiraga", 7, 0)
 \CN["平底片"]
@@ -280,7 +280,7 @@
 : ShowWnd()
 \CN["平底片"]
 “——我不仅仅是所见回组的人，而是把在场的所有人
-一头就用这只手杀了他”
+　一头就用这只手杀了他”
 
 在河岸附近的帝都下町的人全部杀光了
 希拉里淡淡地讲述着事实。
@@ -289,12 +289,12 @@
 : PlayVoice( "Voices/vo05_aza0487" )
 \CN["爱彩弥"]
 “在下町发生的见回组全部被杀的大量杀戮事件
-没想到你一个人干……”
+　没想到你一个人干……”
 
 : DrawChara( "Hiraga", 2, 0)
 \CN["平底片"]
 “结果就是这样
-”
+　”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
@@ -309,22 +309,22 @@
 : DrawChara( "Hiraga", 5, 0)
 \CN["平底片"]
 “在亚久里不在的世界里生存下去
-无法忍受……”
+　无法忍受……”
 
 : DrawChara( "Hiraga", 4, 0)
 \CN["平底片"]
 “老实说，现在这样做的话，憎恨就会溢出来
-”
+　”
 
 : DrawChara( "Hiraga", 3, 0)
 \CN["平底片"]
 “因为你们……不，我也是……”……
-因为和夺走亚久里的存在是同一种物种”
+　因为和夺走亚久里的存在是同一种物种”
 
 : DrawChara( "Hiraga", 4, 0)
 \CN["平底片"]
 “我啊，现在连自己都恨得不得了。
-简直让人恶心”
+　简直让人恶心”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
@@ -349,7 +349,7 @@
 : DrawChara( "Leo", 19, 0)
 \CN["雷欧"]
 “那家伙的心情，说实话我很理解，也很有共鸣。
-但是，不能被冲走！”
+　但是，不能被冲走！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
@@ -386,14 +386,14 @@
 : DrawChara( "Hiraga", 3, 0)
 \CN["平底片"]
 “阿波罗的箭的力量是我的
-让这个世界归于泡影——这就是我的目的”
+　让这个世界归于泡影——这就是我的目的”
 
 : EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo05_aza0488" )
 \CN["爱彩弥"]
 “阿波罗的箭的力量……？
-你从一开始就以此为目标……！”
+　你从一开始就以此为目标……！”
 
 //●演出：風が吹き荒れて、無黒たち飛ばされる
 : HideWnd()
@@ -412,7 +412,7 @@
 : DrawChara( "Xeno", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 \CN["奇诺"]
 “什么魔力……！？
-不能贸然靠近”
+　不能贸然靠近”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 16, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -441,7 +441,7 @@
 : ShowWnd()
 \CN["平底片"]
 “把阿波罗的箭寄宿在她身上的少女啊，快醒来吧。
-把那个力量交给我”
+　把那个力量交给我”
 
 比拉加用手轻轻碰上魔导器的水晶部分。
 
@@ -494,7 +494,7 @@
 //: DrawChara( "Hiraga", 7, 0)
 \CN["平底片"]
 “哦哦哦！力量会流入的！”！
-这就是阿波罗的箭的力量……！”
+　这就是阿波罗的箭的力量……！”
 
 //: DrawChara( "Sayo", 11, 0)
 : HideWnd()
@@ -505,7 +505,7 @@
 : PlayVoice( "Voices/vo24_say0193" )
 \CN["小夜"]
 “哈……哈……嗯……呃……啊……啊……哈哈……
-啊……呃，呜……”
+　啊……呃，呜……”
 
 //: DrawChara( "Sayo", 6, 0)
 : PlayVoice( "Voices/vo24_say0194" )
@@ -531,7 +531,7 @@
 : ShowWnd()
 \CN["平底片"]
 “啊啊啊……心情真好。
-总觉得会成为一体……”
+　总觉得会成为一体……”
 
 //: EraseChara( "Sayo", 0.5 )
 : DrawChara( "Hiraga", 5, 0, 0 )
@@ -542,16 +542,16 @@
 
 \CN["平底片"]
 “火给予{生者，生者}{知，ち}
-水给予{生者，生者}{体，体}
-风给予{生者，生者}脚，脚}”
+　水给予{生者，生者}{体，体}
+　风给予{生者，生者}脚，脚}”
 
 \CN["平底片"]
 “天现在希望创造
-地现在正期盼着破坏”
+　地现在正期盼着破坏”
 
 \CN["平底片"]
 “天地创造，万物流转，献给奉献自身之人
-给予支配修罗世界的神之力——”
+　给予支配修罗世界的神之力——”
 
 : HideWnd()
 : PlaySe( "SE/Se_AnimeL_Dark01" )
@@ -562,7 +562,7 @@
 : PlayVoice( "Voices/vo24_say0195" )
 \CN["小夜"]
 “呃……啊啊…啊…啊…啊……啊……啊…啊……啊
-啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
+　啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
 
 小夜喊了一声
 像突然被拔出电池的玩具一样完全不能动。
@@ -704,7 +704,7 @@
 : DrawChara( "Ranmaru", 2, 0)
 \CN["兰丸"]
 “嗯？冥酱在这里，果然是我死了？
-冥酱变成天使来接我了吗？”
+　冥酱变成天使来接我了吗？”
 
 //●ＳＥ：叩く音
 : PlaySe( "SE/Se_Binta01" )
@@ -724,7 +724,7 @@
 : PlayVoice( "Voices/vo09_mei0134" )
 \CN["冥"]
 “啊，现在不是做这种蠢事的时候。
-兰丸，看看天空吧”
+　兰丸，看看天空吧”
 
 : DrawChara( "Ranmaru", 1, 0)
 \CN["兰丸"]
@@ -749,7 +749,7 @@
 : DrawFaceThumbnail( "Ranmaru", 5, 0, 0, 0 )
 \CN["兰丸"]
 “是啊。嗯，这样睡不着啊
-有那样的人啊……”
+　有那样的人啊……”
 
 : DrawFaceThumbnail( "Mei", 3, 0, 0, 0 )
 : PlayVoice( "Voices/vo09_mei0136" )
@@ -777,11 +777,11 @@
 : DrawChara( "Ryu", 12, 0)
 \CN["龙"]
 “但是，不能一直呆着。
-看那个！”
+　看那个！”
 
 \CN["鬼灯队士・男B"]
 “咦？嗯，好像长了翅膀的人在空中飞一样
-看得见……？”
+　看得见……？”
 
 : DrawChara( "Ryu", 10, 0)
 \CN["龙"]
@@ -797,12 +797,12 @@
 : DrawChara( "Ryu", 10, 0)
 \CN["龙"]
 “从现在开始，残酷的战斗在等待着我们。
-你们只会成为绊脚石”
+　你们只会成为绊脚石”
 
 : DrawChara( "Ryu", 3, 0)
 \CN["龙"]
 “今后也许会有大灾难发生。
-那时希望大家齐心协力，请求民众避难”
+　那时希望大家齐心协力，请求民众避难”
 
 \CN["鬼灯队士・男B"]
 “……我知道了……”
@@ -835,7 +835,7 @@
 : PlayVoice( "Voices/vo05_aza0490" )
 \CN["爱彩弥"]
 “那个样子，以前在幕府的一本书上看到过。
-拥有六个手臂的鬼神{阿修罗，阿修罗}，就是它本身」
+　拥有六个手臂的鬼神{阿修罗，阿修罗}，就是它本身」
 
 //●読み：阿修羅（あしゅら）
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
@@ -852,13 +852,13 @@
 : ShowWnd()
 \CN["阿修罗"]
 “通过吸收阿波罗的箭的力量成为阿修罗吗……。
-但是，怎么都行”
+　但是，怎么都行”
 
 : DrawImage( 9, 0, "MiscImage/CutinFg08_08",0.0 )
 \CN["平底片"]
 “——拥有千只手的战神的从属啊。
-紫闪的电光、{震霆，心悸}的{战栗，恐怖}、愤怒的{电霆，电霆
-把鸣神的矛打起来！”
+　紫闪的电光、{震霆，心悸}的{战栗，恐怖}、愤怒的{电霆，电霆
+　把鸣神的矛打起来！”
 
 //●演出：雷系の魔術
 : HideWnd()
@@ -880,7 +880,7 @@
 : PlayVoice( "Voices/vo05_aza0492" )
 \CN["爱彩弥"]
 “哈、哈、哈……真是荒唐的招数啊……。
-完全看不见”
+　完全看不见”
 
 局长跪着站不起来了。
 
@@ -888,12 +888,12 @@
 : DrawImage( 9, 0, "MiscImage/CutinFg08_02",0.5 )
 \CN["阿修罗"]
 “我本来打算从这边消失的。
-不愧是{黑夜叉，暗黑妖精}……？」
+　不愧是{黑夜叉，暗黑妖精}……？」
 
 \CN["阿修罗"]
 “不，好像这边的力量还没有完全固定下来呢。
-要引出本来的力量还需要一些时间
-是吗？”
+　要引出本来的力量还需要一些时间
+　是吗？”
 
 : EraseAllImage( 9, 0.5 )
 : DrawChara( "Momo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
@@ -924,7 +924,7 @@
 : PlayVoice( "Voices/vo02_kin0520" )
 \CN["黄菜子"]
 “——我去！
-有栖川流终之刃，银河！”
+　有栖川流终之刃，银河！”
 
 //●演出：斬撃エフェクト
 : HideWnd()
@@ -947,7 +947,7 @@
 : DrawImage( 9, 0, "MiscImage/CutinFg08_12",0.5 )
 \CN["阿修罗"]
 “嗯。据说如果接受了黑夜叉、黑精灵的招数就会受伤。”
-难怪啊。记住吧”
+　难怪啊。记住吧”
 
 //●演出：回復魔術エフェクト
 : HideWnd()
@@ -965,14 +965,14 @@
 : PlayVoice( "Voices/vo05_aza0493" )
 \CN["爱彩弥"]
 “喂喂，黄菜子的刀，扬羽是妖刀吧？
-尽管如此，要恢复过来，也太荒唐了吧……”
+　尽管如此，要恢复过来，也太荒唐了吧……”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawImage( 9, 0, "MiscImage/CutinFg08_03",0.5 )
 \CN["阿修罗"]
 “现在我的身体既是神也是邪神。
-这和毒蛇不会因为自己的毒而死亡是一样的道理”
+　这和毒蛇不会因为自己的毒而死亡是一样的道理”
 
 //: DrawChara( "Leo", 19, 0, 1, 0.5, 0.0, 3, "C" )
 : DrawFaceThumbnail( "Leo", 3, 0, 1 )
@@ -982,32 +982,32 @@
 : DrawImage( 9, 0, "MiscImage/CutinFg08_09",0.0 )
 \CN["阿修罗"]
 “没用，你没听见吗？既是神也是邪神
-有的话。不管是神刀还是妖刀，对我来说都是
-只不过是一瓶”
+　有的话。不管是神刀还是妖刀，对我来说都是
+　只不过是一瓶”
 
 即使受到魔术也满不在乎。
 用刀斩也能立即再生。
 
 \CN["阿修罗"]
 “看来，要完全掌握阿波罗的箭的力量的话
-时间好像还不够”
+　时间好像还不够”
 
 //: EraseChara( "Leo", 0.5 )
 //: DrawChara( "Gin", 12, 0, 0, 0.5, 0.0, 3, "RC" )
 : DrawFaceThumbnail( "Gin", 12, 0, 0 )
 \CN["银"]
 “这样的话，说不完全，到底是有多廉价啊……。
-无论怎么说都太盛了吧……”
+　无论怎么说都太盛了吧……”
 
 \CN["阿修罗"]
 “这里既吵闹又安静，无法集中精力。
-要换个地方吗？”
+　要换个地方吗？”
 
 : DrawImage( 9, 0, "MiscImage/CutinFg08_08",0.0 )
 \CN["阿修罗"]
 “在很久以前，有生命的人触犯了神的愤怒。
-神区别了。给予反映资格者。
-智者有水有粮，愚者有权。」
+　神区别了。给予反映资格者。
+　智者有水有粮，愚者有权。」
 
 : EraseAllImage( 9, 0.5 )
 : DrawChara( "Azami", 22, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
@@ -1077,8 +1077,8 @@
 : ShowWnd()
 \CN["阿修罗"]
 “岁月轮回。几年的星霜将贤者变成了愚者。
-圣者不能成为正者。
-所以害怕过失，经常寻求庇护”
+　圣者不能成为正者。
+　所以害怕过失，经常寻求庇护”
 
 黄菜子高速的剑技也好，银的浑身直拳也好
 保持冷静的表情继续歌唱。
@@ -1105,7 +1105,7 @@
 : PlayVoice( "Voices/vo05_aza0495" )
 \CN["爱彩弥"]
 “天真一刀流——
-{八岐大蛇，山下的大蛇}！！！」
+　{八岐大蛇，山下的大蛇}！！！」
 
 //●演出：斬撃エフェクト
 //: DrawChara( "Leo", 23, 0, 1, 0.5, 0.0, 4, "RC" )
@@ -1221,7 +1221,7 @@
 : PlayVoice( "Voices/vo05_aza0497" )
 \CN["爱彩弥"]
 “没错。那是阿修罗……。
-嘛，最里面的是平底片”
+　嘛，最里面的是平底片”
 
 : DrawChara( "Ranmaru", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 \CN["兰丸"]
@@ -1236,18 +1236,18 @@
 : DrawChara( "Ranmaru", 1, 0)
 \CN["兰丸"]
 “总觉得，前几天在河岸敷的村子里发生的大虐杀
-我觉得那是一个原因吧”
+　我觉得那是一个原因吧”
 
 : DrawChara( "Ranmaru", 4, 0)
 \CN["兰丸"]
 “那里是亚久里喜欢的地方
-经常有比拉加和亚久里酱露面哦”
+　经常有比拉加和亚久里酱露面哦”
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0498" )
 \CN["爱彩弥"]
 “是吗……。那家伙说话好像是亚久里死了一样
-所以，因为那个事件……”
+　所以，因为那个事件……”
 
 : EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Daruma", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
@@ -1258,14 +1258,14 @@
 : PlayVoice( "Voices/vo05_aza0499" )
 \CN["爱彩弥"]
 “突然觉得空间里有个大洞
-消失在那里了”
+　消失在那里了”
 
 : EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Tamamo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo22_tam0185" )
 \CN["玉藻"]
 “空间？恐怕是使用了{次元渡行，交叉分区}的
-不是吗？”
+　不是吗？”
 
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "L" )
@@ -1283,7 +1283,7 @@
 : PlayVoice( "Voices/vo00_muk2170" )
 \CN["无黑"]
 “玉藻大人，小夜在哪里……？
-怎么去小夜的地方呢？”
+　怎么去小夜的地方呢？”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
@@ -1300,7 +1300,7 @@
 : PlayVoice( "Voices/vo01_mom1007" )
 \CN["桃"]
 “老师，你说来得及吗？
-难道是小夜被带去的地方……？”
+　难道是小夜被带去的地方……？”
 
 : DrawChara( "Leo", 5, 0)
 \CN["雷欧"]
@@ -1336,15 +1336,15 @@
 : PlayVoice( "Voices/vo22_tam0189" )
 \CN["玉藻"]
 “在很久以前，有生命的人触犯了神的愤怒。
-神区别了。给予繁荣资格的人。
-智者有水有粮，愚者有权。」
+　神区别了。给予繁荣资格的人。
+　智者有水有粮，愚者有权。」
 
 //: DrawChara( "Tamamo", 4, 0)
 : PlayVoice( "Voices/vo22_tam0190" )
 \CN["玉藻"]
 “岁月轮回。几年的星霜将贤者变成了愚者。
-圣者不能成为正者。
-所以害怕过失，经常寻求庇护”
+　圣者不能成为正者。
+　所以害怕过失，经常寻求庇护”
 
 //: DrawChara( "Tamamo", 1, 0)
 : HideWnd()
@@ -1373,7 +1373,7 @@
 : PlayVoice( "Voices/vo22_tam0192" )
 \CN["玉藻"]
 「等着的话，你们。
-我不知道接下来会有什么在等着我”
+　我不知道接下来会有什么在等着我”
 
 : DrawChara( "Tamamo", 2, 0)
 : PlayVoice( "Voices/vo22_tam0193" )

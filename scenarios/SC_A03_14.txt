@@ -35,7 +35,7 @@
 : PlayVoice( "Voices/vo01_mom0222" )
 \CN["桃"]
 “会袭击神社吗……也有受罚的人呢。
-小银，你不这么认为吗？”
+　小银，你不这么认为吗？”
 
 局长交给我的任务是‘春日神社，渣渣人’
 这是一家举行与幕府有关的祭神仪式的神社的护卫。
@@ -46,7 +46,7 @@
 : DrawChara( "Gin", 5, 0)
 \CN["银"]
 “啊？我不太清楚。
-对没有神和佛的东西不知道感谢什么的意义”
+　对没有神和佛的东西不知道感谢什么的意义”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0223" )
@@ -56,7 +56,7 @@
 : DrawChara( "Gin", 1, 0)
 \CN["银"]
 “就是这样吗？说到浪漫的话
-你女儿不是也不相信吗？”
+　你女儿不是也不相信吗？”
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0224" )
@@ -73,12 +73,12 @@
 : PlayVoice( "Voices/vo01_mom0225" )
 \CN["桃"]
 “嘛，如果说被袭击的可能性很高的话
-去保护。那是我们的职责”
+　去保护。那是我们的职责”
 
 : DrawChara( "Gin", 2, 0)
 \CN["银"]
 “是啊……那就出发吧。
-春日神社从“大和东街道”去就可以了”
+　春日神社从“大和东街道”去就可以了”
 
 //＠マップ解放：桃、大和東街道
 //●シーンエンド
@@ -146,7 +146,7 @@
 : PlayVoice( "Voices/vo01_mom0227" )
 \CN["桃"]
 “小银！本来就很可怕的表情，却很厉害！”
-普通人会吓一跳的”
+　普通人会吓一跳的”
 
 : DrawChara( "Gin", 18, 0)
 \CN["银"]
@@ -156,13 +156,13 @@
 : PlayVoice( "Voices/vo01_mom0228" )
 \CN["桃"]
 「啊，好啊。
-即使坐得不好也很麻烦”
+　即使坐得不好也很麻烦”
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0229" )
 \CN["桃"]
 “小银，命令啊——
-全体人员，踢散了哟！”
+　全体人员，踢散了哟！”
 
 : DrawChara( "Gin", 10, 0)
 \CN["银"]
@@ -201,7 +201,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc002_win" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle" )
 : else
@@ -266,7 +266,7 @@
 : ShowWnd()
 \CN["巫女之女"]
 “哼……真是的，要建立一个麻烦的结界……！
-明明是跟随幕府的垃圾……！”
+　明明是跟随幕府的垃圾……！”
 
 //●演出：桃と銀がかけつける
 : HideWnd()
@@ -291,17 +291,17 @@
 : PlayVoice( "Voices/vo01_mom0233" )
 \CN["桃"]
 “名答！
-是你们袭击神社的犯人啊」
+　是你们袭击神社的犯人啊」
 
 \CN["巫女之女"]
 “对了，这是一个笼罩着不洁幕府气息的神社
-因为不可以存在”
+　因为不可以存在”
 
 : DrawChara( "Momo", 4, 1)
 : PlayVoice( "Voices/vo01_mom0234" )
 \CN["桃"]
 “{秽，伤}很难去除……。
-嘛，虽然不能一概否定……”
+　嘛，虽然不能一概否定……”
 
 : DrawChara( "Gin", 6, 0)
 \CN["银"]
@@ -314,7 +314,7 @@
 
 \CN["巫女之女"]
 “幕府养的狗能胜过我们吗？
-真希望你能开个玩笑好好休息啊”
+　真希望你能开个玩笑好好休息啊”
 
 : DrawChara( "Momo", 8, 1)
 : PlayVoice( "Voices/vo01_mom0236" )
@@ -327,7 +327,7 @@
 
 \CN["巫女之女"]
 “白夜九星、六白、织笠御影是腹心，{柳泽京子，柳柳柳柳さこ}——
-我来陪你！”
+　我来陪你！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -360,7 +360,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc004" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle2" )
 : else
@@ -416,7 +416,7 @@
 : DrawFaceThumbnail( "Gin", 9, 0, 0 )
 \CN["银"]
 “希望你不要找我。
-至少要好好地教育一下部下”
+　至少要好好地教育一下部下”
 
 : DrawChara( "Mikage", 2, 0)
 : PlayVoice( "Voices/vo11_mik0020" )
@@ -425,14 +425,14 @@
 
 \CN["京子"]
 “御影……大人……像这样失态……。
-真的非常抱歉……”
+　真的非常抱歉……”
 
 //●読み：京子（きょうこ）
 : DrawChara( "Mikage", 5, 0)
 : PlayVoice( "Voices/vo11_mik0021" )
 \CN["御影"]
 “呵呵，好啊，京子。
-你在那里好好休息吧」
+　你在那里好好休息吧」
 
 : DrawChara( "Mikage", 6, 0)
 : PlayVoice( "Voices/vo11_mik0022" )
@@ -449,32 +449,32 @@
 : PlayVoice( "Voices/vo01_mom0239" )
 \CN["桃"]
 “我知道。不全力以赴的话真的很糟糕。
-即使是同一个干部，也比之前战斗过的卍强得多”
+　即使是同一个干部，也比之前战斗过的卍强得多”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : PlayVoice( "Voices/vo11_mik0023" )
 \CN["御影"]
 “看穿对方的{实力，力量}也是才能哦。
-我觉得摇着尾巴逃走更明智……”
+　我觉得摇着尾巴逃走更明智……”
 
 : DrawChara( "Mikage", 5, 0)
 : PlayVoice( "Voices/vo11_mik0024" )
 \CN["御影"]
 “而且，穿着那里漂亮和服的小姐。
-因为是我的喜好，所以不想伤害别人”
+　因为是我的喜好，所以不想伤害别人”
 
 : DrawChara( "Momo", 9, 1)
 : PlayVoice( "Voices/vo01_mom0240" )
 \CN["桃"]
 “对不起，我没有那个兴趣。
-虽然没有否定的打算”
+　虽然没有否定的打算”
 
 : DrawChara( "Mikage", 2, 0)
 : PlayVoice( "Voices/vo11_mik0025" )
 \CN["御影"]
 “呵呵，如果是这样的话
-两位都只能在这里处理了”
+　两位都只能在这里处理了”
 
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -505,7 +505,7 @@
 	: SwapImage( 1, 0, "BGImage/Bg_Jinja02_03", 0.0 )
 	: FadeIn( 1.0 )
 	: Wait()
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle03" )
 : else
@@ -570,7 +570,7 @@
 : PlayVoice( "Voices/vo01_mom0243" )
 \CN["桃"]
 （魔术的手臂和魔力的量，那边好几张都一直很擅长……。
-虽然很不甘心，但是现在的我完全没法反驳……）
+　虽然很不甘心，但是现在的我完全没法反驳……）
 
 \CN["银"]
 “哇——”
@@ -599,7 +599,7 @@
 : PlayVoice( "Voices/vo01_mom0244" )
 \CN["桃"]
 （……现在的是高级魔术……。
-竟然很简单地控制了那个……）
+　竟然很简单地控制了那个……）
 
 在老师那里修行，即使这样也可以发动一次
 无法进行的上级魔术。
@@ -641,7 +641,7 @@
 : PlayVoice( "Voices/vo11_mik0029" )
 \CN["御影"]
 “嘛，看你救了京子
-请特别放过他吧”
+　请特别放过他吧”
 
 : DrawChara( "Mikage", 0, 0)
 : PlayVoice( "Voices/vo11_mik0030" )

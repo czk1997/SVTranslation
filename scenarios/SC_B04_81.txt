@@ -37,7 +37,7 @@
 : DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["雷欧"]
 「哎呀。真糟糕，再见。
-今后打算让龙先生来练习”
+　今后打算让龙先生来练习”
 
 : JumpLayer( 4, 0, -50, 1, 0.25)
 : DrawChara( "Sayo", 3, 0)
@@ -81,11 +81,11 @@
 : DrawChara( "Leo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["镇上的姑娘"]
 “喂，雷欧。
-稍微偷懒一下也没关系”
+　稍微偷懒一下也没关系”
 
 \CN["镇上的姑娘"]
 “听说茶馆里出了新菜单。
-我请客，一起去吃吧～”
+　我请客，一起去吃吧～”
 
 //●演技：心の声です
 : HideWnd()
@@ -148,7 +148,7 @@
 : ShowWnd()
 \CN["雷欧"]
 “心情很好，虽然很开心，但是……”
-现在工作了，所以不好……”
+　现在工作了，所以不好……”
 
 \CN["镇上的姑娘"]
 “喂，不要说那种话，和我交往一下吧。”
@@ -178,7 +178,7 @@
 : DrawChara( "Leo", 15, 0)
 \CN["雷欧"]
 “那么，帮我巡逻吧！
-一个人太痛苦了……”
+　一个人太痛苦了……”
 
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk1483" )
@@ -188,13 +188,13 @@
 : DrawChara( "Leo", 16, 0)
 \CN["雷欧"]
 “啊，不要说那种话。
-之后我会请你吃你喜欢的豆沙水果凉粉”
+　之后我会请你吃你喜欢的豆沙水果凉粉”
 
 : DrawChara( "Mukuro", 11, 0)
 : PlayVoice( "Voices/vo00_muk1484" )
 \CN["无黑"]
 “……不，没关系。而且你是刚才那个孩子的对手。”
-做不是更好吗？”
+　做不是更好吗？”
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk1485" )
@@ -204,13 +204,13 @@
 : DrawChara( "Leo", 10, 0)
 \CN["雷欧"]
 “刚才……啊，那个啊。
-那是因为，如果被强加于人的话，如果是男人的话谁都……”
+　那是因为，如果被强加于人的话，如果是男人的话谁都……”
 
 : ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Leo", 4, 0)
 \CN["雷欧"]
 “不，不，所以说那个不对！”！
-我也是个不太清楚的孩子，说真的”
+　我也是个不太清楚的孩子，说真的”
 
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk1486" )
@@ -233,7 +233,7 @@
 : DrawChara( "Leo", 19, 0)
 \CN["雷欧"]
 “你不是一直在说嘛！我是一心一意的你！”！
-只看到你！”
+　只看到你！”
 
 : layer = 4; time = 0.5; strength = 10; vibrato = 25;
 : Call( "Scenarios/Common*CgShake" )
@@ -242,12 +242,12 @@
 : PlayVoice( "Voices/vo00_muk1487" )
 \CN["无黑"]
 “所以，请不要大声说那种话！
-因为大家都能听到……”
+　因为大家都能听到……”
 
 : DrawChara( "Leo", 3, 0)
 \CN["雷欧"]
 “但是，我希望你能好好理解我的心情。
-我是认真的”
+　我是认真的”
 
 : JumpLayer( 4, 0, -50, 1, 0.25)
 : DrawChara( "Mukuro", 36, 2)
@@ -275,7 +275,7 @@
 : DrawChara( "Leo", 6, 0)
 \CN["雷欧"]
 “稍微偷懒一下也……。
-看，原来是这么和平啊」
+　看，原来是这么和平啊」
 
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk1491" )

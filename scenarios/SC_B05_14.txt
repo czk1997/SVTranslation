@@ -36,13 +36,13 @@
 : PlayVoice( "Voices/vo19_era0112" )
 \CN["伊拉伊萨"]
 “啊~……。虽然国家不同，但是男人为什么都这么说呢？”
-这么愚蠢吧”
+　这么愚蠢吧”
 
 : DrawChara( "Elisa", 0, 0)
 : PlayVoice( "Voices/vo19_era0113" )
 \CN["伊拉伊萨"]
 “嘛，我也不是不能理解雷欧的心情。
-正因为如此，对那家伙来说银才是最重要的吧”
+　正因为如此，对那家伙来说银才是最重要的吧”
 
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Elisa", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
@@ -50,7 +50,7 @@
 : PlayVoice( "Voices/vo00_muk1695" )
 \CN["无黑"]
 “伊拉伊萨先生……。
-虽然总是吵架”
+　虽然总是吵架”
 
 : DrawChara( "Elisa", 4, 0)
 : PlayVoice( "Voices/vo19_era0114" )
@@ -91,7 +91,7 @@
 : ShowWnd()
 \CN["雷欧"]
 “……太好了……Zno那家伙，狠狠地揍了他……。
-明明很小却很无聊……”
+　明明很小却很无聊……”
 
 我知道那个把笨蛋装扮成那样的人。
 或者说，只有那个人。
@@ -126,17 +126,17 @@
 : DrawChara( "Leo", 2, 0)
 \CN["雷欧"]
 “那么达磨怎么样了？
-就算被砍掉了好使的手臂，如果是费尔克先生的话一定”
+　就算被砍掉了好使的手臂，如果是费尔克先生的话一定”
 
 : DrawChara( "Falke", 2, 0)
 \CN["沥青"]
 “啊，那个啊……。
-不好意思，我跑了”
+　不好意思，我跑了”
 
 : DrawChara( "Leo", 6, 0)
 \CN["雷欧"]
 “被……跑了……是吗……。
-不愧是费尔克先生”
+　不愧是费尔克先生”
 
 我自己也目睹了达磨的力量。
 
@@ -177,12 +177,12 @@
 //: DrawChara( "Falke", 1, 0, 0, 0.5, 0.0, 2, "C" )
 \CN["沥青"]
 “下一个是你将这『神刀布都御魂，新宿八魂』”
-该继承了”
+　该继承了”
 
 //: DrawChara( "Falke", 12, 0)
 \CN["沥青"]
 “嘛，世界最强的宝座暂时是不会让给你的。
-想要的话，就用实力来夺取吧」
+　想要的话，就用实力来夺取吧」
 
 //: EraseChara( "Falke", 0.5 )
 //: DrawChara( "Leo", 1, 0, 0, 0.5, 0.0, 3, "C" )
@@ -209,12 +209,12 @@
 //: DrawChara( "Leo", 3, 0, 0, 0.5, 0.0, 3, "RC" )
 \CN["雷欧"]
 “好厉害，好重啊……怎么说呢，我说不好
-感受到了各种各样的想法”
+　感受到了各种各样的想法”
 
 //: DrawChara( "Falke", 11, 0)
 \CN["沥青"]
 “啊，那家伙到现在为止一直和我一起战斗
-因为是伙伴嘛”
+　因为是伙伴嘛”
 
 : HideWnd()
 : Call("Scenarios/Common*EvFadeOut")
@@ -282,7 +282,7 @@
 : PlayVoice( "Voices/vo02_kin0386" )
 \CN["黄菜子"]
 “这样啊……那么，在鬼灯的屯所……。
-应该是和龙先生去战斗了吧”
+　应该是和龙先生去战斗了吧”
 
 黄菜子一看，把银变成那样的状态是
 好像知道是龙先生。
@@ -291,33 +291,33 @@
 : DrawChara( "Xeno", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["奇诺"]
 “我不能理解。
-他为什么故意那么无情
-说了吗？”
+　他为什么故意那么无情
+　说了吗？”
 
 : DrawChara( "Mukuro", 12, 0)
 : PlayVoice( "Voices/vo00_muk1698" )
 \CN["无黑"]
 “哈哈……那该怎么说呢……。
-真是笨拙啊」
+　真是笨拙啊」
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk1699" )
 \CN["无黑"]
 “信任的伙伴被打败了，不能原谅
-因为脸上乱七八糟的”
+　因为脸上乱七八糟的”
 
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Bebi", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo07_beb0129" )
 \CN["红美"]
 “……那家伙真是个笨蛋……大笨蛋。
-竟然一个人去……”
+　竟然一个人去……”
 
 : DrawChara( "Mukuro", 7, 0)
 : PlayVoice( "Voices/vo00_muk1700" )
 \CN["无黑"]
 “因为是那样的家伙，那个笨蛋。
-你不想让我们受伤吧”
+　你不想让我们受伤吧”
 
 但是，今天必须说清楚。
 
@@ -349,13 +349,13 @@
 : PlayVoice( "Voices/vo07_beb0131" )
 \CN["红美"]
 “奇奈子，不行不行不行不行！
-伤刚好是吧？”
+　伤刚好是吧？”
 
 : DrawChara( "Kinako", 1, 0)
 : PlayVoice( "Voices/vo02_kin0388" )
 \CN["黄菜子"]
 “没关系，红美。
-多亏了桃子，伤口完全愈合了”
+　多亏了桃子，伤口完全愈合了”
 
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
@@ -368,7 +368,7 @@
 : PlayVoice( "Voices/vo07_beb0132" )
 \CN["红美"]
 “在下也要去！
-用自己引以为豪的牙和爪子重新打好自己的根就可以了！”
+　用自己引以为豪的牙和爪子重新打好自己的根就可以了！”
 
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -466,7 +466,7 @@
 
 \CN["地滚石"]
 “听说雷神那小子，传闻中鬼灯停了
-你回来了吗？”
+　你回来了吗？”
 
 \CN["浪人"]
 “总觉得，比平时更有迫力啊……”
@@ -516,7 +516,7 @@
 
 \CN["鬼灯队士・男B"]
 “我知道了那家伙的袖子。
-现在是应该杀死的敌人”
+　现在是应该杀死的敌人”
 
 \CN["鬼灯队士・女C"]
 “如果是伙伴的话很可靠，但是如果变成敌人的话就很可怕了。”
@@ -540,7 +540,7 @@
 //: DrawChara( "Ryu", 23, 0)
 \CN["龙"]
 “刀是新调的吧？不是很好的刀吗？”。
-一看就知道”
+　一看就知道”
 
 //: DrawChara( "Leo", 18, 0)
 \CN["雷欧"]
@@ -570,7 +570,7 @@
 
 \CN["白夜队士1"]
 “哇哈哈哈！伙伴们的可爱真好笑。
-什么，你那么想死？”
+　什么，你那么想死？”
 
 //: DrawChara( "Leo", 18, 0)
 \CN["雷欧"]
@@ -578,15 +578,15 @@
 
 \CN["白夜队士2"]
 “刚才的眼镜也好，鬼灯的叛徒是
-这家伙总是些笨蛋啊」
+　这家伙总是些笨蛋啊」
 
 \CN["白夜队士3"]
 “刚才新渡户那家伙都拿走了
-下次我们来拿吧」
+　下次我们来拿吧」
 
 \CN["白夜队士4"]
 “全员一起一口气战斗吧！
-就一个人来这里，真是个笨蛋啊」
+　就一个人来这里，真是个笨蛋啊」
 
 //: EraseChara( "Leo", 0.5 )
 //: DrawChara( "Leo", 19, 0, 1, 0.5, 0.0, 3, "C" )
@@ -653,7 +653,7 @@
 
 \CN["鬼灯队士・女A"]
 “不能在这里退出吗？”
-既然敌对，我就全力去杀你”
+　既然敌对，我就全力去杀你”
 
 : HideWnd()
 : DrawImage( 9, 0, "BGImage/BG_Black", 0.0 )
@@ -701,7 +701,7 @@
 
 \CN["白夜队士4"]
 “嘿嘿。飞那么远没关系吗？”？
-和这个人交往吧”
+　和这个人交往吧”
 
 \CN["鬼灯队士・女C"]
 “雷欧，我也有哦。”
@@ -776,7 +776,7 @@
 : PlayVoice( "Voices/vo00_muk1702" )
 \CN["无黑"]
 “话说完再说吧。你是和龙先生一起做的吧？”？
-其他人交给我们吧」
+　其他人交给我们吧」
 
 //●演出：黄菜子　揚羽解放詠唱
 : HideWnd()
@@ -804,7 +804,7 @@
 : DrawChara( "Leo", 17, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["雷欧"]
 “小矮子，从来没有吐过火焰吧！
-你给我逃！”
+　你给我逃！”
 
 : ImpactLayer( 2, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
@@ -815,13 +815,13 @@
 : DrawChara( "Leo", 19, 0)
 \CN["雷欧"]
 “所以说要从危险中逃出来！”！
-不是玩的！”
+　不是玩的！”
 
 : DrawChara( "Bebi", 1, 0)
 : PlayVoice( "Voices/vo07_beb0135" )
 \CN["红美"]
 “在下也是武士！
-为了重要的人而战斗，我是武士！”
+　为了重要的人而战斗，我是武士！”
 
 红美怒吼。
 
@@ -843,13 +843,13 @@
 : ShowWnd()
 \CN["鬼灯队士・女F"]
 “……呃，无黑，和之前完全不同。
-有什么特别训练吗？”
+　有什么特别训练吗？”
 
 //: DrawChara( "Mukuro", 17, 0, 2, 0.5, 0.0, 4, "C" )
 : PlayVoice( "Voices/vo00_muk1703" )
 \CN["无黑"]
 “我什么都没做。
-只不过是为了保护重要的东西而拼命而已”
+　只不过是为了保护重要的东西而拼命而已”
 
 //: EraseChara( "Mukuro", 0.5 )
 //●演出：黄菜子　アクションシーン
@@ -889,7 +889,7 @@
 : PlayVoice( "Voices/vo02_kin0391" )
 \CN["黄菜子"]
 “但是，现在不同了。
-我会为重要的伙伴挥刀”
+　我会为重要的伙伴挥刀”
 
 : DrawChara( "Kinako", 2, 0)
 : PlayVoice( "Voices/vo02_kin0392" )
@@ -1029,7 +1029,7 @@
 : PlayVoice( "Voices/vo07_beb0143" )
 \CN["红美"]
 “ZOOO……！谢谢……！
-绝乃是我的救命恩人！这份恩情总有一天会实现的”
+　绝乃是我的救命恩人！这份恩情总有一天会实现的”
 
 被救出来的红美感动得流泪。
 
@@ -1052,17 +1052,17 @@
 : DrawChara( "Xeno", 0, 0 )
 \CN["奇诺"]
 “还有，我听说了，雷欧。
-什么都要和幕府和将军吵架”
+　什么都要和幕府和将军吵架”
 
 : DrawChara( "Xeno", 8, 0)
 \CN["奇诺"]
 “而且现在也和国家权力鬼灯一起
-就这样战斗着……”
+　就这样战斗着……”
 
 : DrawChara( "Leo", 0, 0)
 \CN["雷欧"]
 “不管对方是谁都没关系。
-本来国家就虐待弱者，所以只有战斗了吧”
+　本来国家就虐待弱者，所以只有战斗了吧”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
@@ -1078,18 +1078,18 @@
 : DrawChara( "Leo", 13, 0)
 \CN["雷欧"]
 “但是，这是吸血鬼吗……总觉得很酷。
-我很喜欢！”
+　我很喜欢！”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Xeno", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["奇诺"]
 “嘛，总之就是那个。刚才什么都没问就揍了你，真是抱歉。”
-所以，今晚我也会认真的去做的”
+　所以，今晚我也会认真的去做的”
 
 : DrawChara( "Leo", 3, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["雷欧"]
 “嗯。其实想让黄菜子看起来帅气
-只是这样吧？”
+　只是这样吧？”
 
 : ImpactLayer( 2, 0.2, 0.2, 1, 0.1 )
 : DrawChara( "Xeno", 12, 0)
@@ -1164,14 +1164,14 @@
 : ShowWnd()
 \CN["龙"]
 “——有个男人爱着大海
-——有一只乌龟被一个男人拯救了
-——某个公主遇到了一个海之男”
+　——有一只乌龟被一个男人拯救了
+　——某个公主遇到了一个海之男”
 
 //: DrawChara( "Ryu", 38, 0)
 \CN["龙"]
 “——海之姬爱上了男人
-——海之男渴望回到陆地
-——最后男人打开了箱子”
+　——海之男渴望回到陆地
+　——最后男人打开了箱子”
 
 : HideWnd()
 : PlaySe( "SE/Se_Effect00" )
@@ -1192,19 +1192,19 @@
 : DrawChara( "Leo", 4, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["雷欧"]
 「难道不能自由自在地{黑夜叉，暗黑妖精}吗。
-你一直藏着吗？”
+　你一直藏着吗？”
 
 //ここから龍DE想定で表情指定しています
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Ryu", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 \CN["龙"]
 “并不是隐瞒了。
-只是没有必要而已”
+　只是没有必要而已”
 
 : DrawChara( "Ryu", 1, 0)
 \CN["龙"]
 “光今天就有两次{黑夜叉，暗黑精灵}……。
-把你们当敌人，我就知道你们很辛苦了”
+　把你们当敌人，我就知道你们很辛苦了”
 
 杀气腾腾。
 我感觉那个会刺进身体。
@@ -1262,7 +1262,7 @@
 : ShowWnd()
 \CN["龙"]
 （本以为他有才能，没想到竟然能做到这种地步。
-比局长和我都要高得多吧……）
+　比局长和我都要高得多吧……）
 
 //ここからレオDE想定で表情指定しています
 //: DrawChara( "Leo", 0, 0, 1, 0.5, 0.1, 3, "RC" )
@@ -1384,7 +1384,7 @@
 : ShowWnd()
 \CN["雷欧"]
 “啊，好开心啊。要和认真的你厮杀吗？”
-我觉得不可思议和快乐。为什么这么想呢？”
+　我觉得不可思议和快乐。为什么这么想呢？”
 
 //: EraseChara( "Leo", 0.5 )
 //: EraseChara( "Ryu", 0.5 )
@@ -1463,7 +1463,7 @@
 //: DrawChara( "Gin", 5, 0)
 \CN["银"]
 “沿着那条路一直走，就能走到安全的地方。
-快去！”
+　快去！”
 
 我们在高滨的骚动的贫民窟地区相遇了。
 
@@ -1475,7 +1475,7 @@
 : PlayVoice( "Voices/vo01_mom0057" )
 \CN["桃"]
 “你的命令啊——”
-{我，我}当护卫吧』
+　{我，我}当护卫吧』
 
 那时感觉到的直觉应该没有错。
 
@@ -1497,7 +1497,7 @@
 : PlayVoice( "Voices/vo01_mom0023" )
 \CN["桃"]
 “现在是帝都最受欢迎的海外品牌。
-因为很受年轻女孩的欢迎！”
+　因为很受年轻女孩的欢迎！”
 
 //: EraseChara( "Momo", 0.5 )
 : DrawChara( "Gin", 1, 0 )
@@ -1508,13 +1508,13 @@
 : PlayVoice( "Voices/vo01_mom0024" )
 \CN["桃"]
 “不，不是那样的……。
-享受时尚的东西”
+　享受时尚的东西”
 
 : DrawChara( "Momo", 6, 0)
 : PlayVoice( "Voices/vo01_mom0025" )
 \CN["桃"]
 “呵呵，要哪个呢……？
-啊！那个耳环非常可爱！”
+　啊！那个耳环非常可爱！”
 
 从救命恩人到随从者。
 
@@ -1568,7 +1568,7 @@
 : PlayVoice( "Voices/vo01_mom0914" )
 \CN["桃"]
 “小银，回来吧……。
-说是在你身边……不是说好要一直在你身边吗……”
+　说是在你身边……不是说好要一直在你身边吗……”
 
 //●演出：場面転換トランジション
 //●場所：鬼灯屯所・夜
@@ -1617,7 +1617,7 @@
 : DrawChara( "Ryu", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 \CN["龙"]
 “还是老样子，别用武力强行拿走。
-教给你更高效的方法吧”
+　教给你更高效的方法吧”
 
 : DrawChara( "Ryu", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Leo", 1, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.1, 3, "RC" )
@@ -1656,8 +1656,8 @@
 : ShowWnd()
 \CN["雷欧"]
 （这位大叔，看起来是这样的
-战斗方式本身就没有浪费。
-就是说找不到间隙吗？）
+　战斗方式本身就没有浪费。
+　就是说找不到间隙吗？）
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Ryu", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
@@ -1851,7 +1851,7 @@
 : DrawChara( "Ryu", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 \CN["龙"]
 “是事实。刚才我也说过了，你的力量和速度比我快。”
-比我更高”
+　比我更高”
 
 : DrawChara( "Ryu", 0, 0)
 \CN["龙"]
@@ -1953,7 +1953,7 @@
 : DrawChara( "Leo", 3, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.1, 3, "C" )
 \CN["雷欧"]
 （龙大叔的动作有点迟钝。
-这个一定是——）
+　这个一定是——）
 
 龙其实消耗很大。
 
@@ -1980,7 +1980,7 @@
 //: DrawChara( "Ryu", 1, 0)
 \CN["龙"]
 “这里是作为真正的剑技的八咫乌——
-吃了的话，确实会把你的身体撕成八瓣”
+　吃了的话，确实会把你的身体撕成八瓣”
 
 让银受重伤的最强体术技“八重樱流奥义·八咫乌”
 那个剑术版——
@@ -1989,7 +1989,7 @@
 : DrawFaceThumbnail( "Leo", 3, 1, 1 )
 \CN["雷欧"]
 （如果能防御这个招数的话，我就赢了。
-如果彻底防守的话不是不可能的。）
+　如果彻底防守的话不是不可能的。）
 
 但是，这是一个很大的赌注。
 
@@ -2013,7 +2013,7 @@
 : ShowWnd()
 \CN["雷欧"]
 （不用想了，已经决定好了。
-打败大叔最强的招数，刺海龟）
+　打败大叔最强的招数，刺海龟）
 
 //: DrawChara( "Leo", 1, 1)
 \CN["雷欧"]
@@ -2120,7 +2120,7 @@
 //: DrawChara( "Leo", 19, 0, 1, 0.5, 0.1, 3, "C" )
 \CN["雷欧"]
 “别开玩笑了，大叔！刚才我没当真。
-不可能输给你这样的罗德”
+　不可能输给你这样的罗德”
 
 //: DrawChara( "Leo", 21, 1)
 \CN["雷欧"]
@@ -2130,13 +2130,13 @@
 //: DrawChara( "Ryu", 22, 0, 0, 0.5, 0.0, 2, "LC" )
 \CN["龙"]
 “即使被打倒，也不会失去斗争心。
-Leo Gold Stein，你会变得更强”
+　Leo Gold Stein，你会变得更强”
 
 //: DrawChara( "Leo", 7, 0, 1, 0.5, 0.1, 3, "RC" )
 \CN["雷欧"]
 “啊？你在胡说八道什么理所当然的事？
-你不是说我是世界最强的男人吗！
-大叔，你没听见吗？”
+　你不是说我是世界最强的男人吗！
+　大叔，你没听见吗？”
 
 //: DrawChara( "Ryu", 24, 0)
 \CN["龙"]
@@ -2532,14 +2532,14 @@ Leo Gold Stein，你会变得更强”
 : DrawChara( "Leo", 2, 0)
 \CN["雷欧"]
 “玉藻的姐姐，怎么样！
-那家伙得救了吧！”
+　那家伙得救了吧！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Tamamo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo22_tam0137" )
 \CN["玉藻"]
 “雷欧，你不是在装腔作势吗？”。
-你那么担心小僧吗？”
+　你那么担心小僧吗？”
 
 : layer = 2; time = 0.5; strength = 10; vibrato = 25;
 : Call( "Scenarios/Common*CgShake" )
@@ -2552,7 +2552,7 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo22_tam0138" )
 \CN["玉藻"]
 「放心吧。好像总算越过了山。
-现在就两个人静静地让他睡吧」
+　现在就两个人静静地让他睡吧」
 
 玉藻大人温柔地微笑着。
 
@@ -2597,7 +2597,7 @@ Leo Gold Stein，你会变得更强”
 : ShowWnd()
 \CN["奇诺"]
 “……诶？イ、イイイイザ就是这么回事！？
-那，在常识上是不可能的……啊啊…”
+　那，在常识上是不可能的……啊啊…”
 
 : DrawChara( "Elisa", 16, 0)
 : PlayVoice( "Voices/vo19_era0117" )
@@ -2621,7 +2621,7 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo19_era0118" )
 \CN["伊拉伊萨"]
 “这么说来，你也到了年纪了啊。
-碰上我的胸部会很开心吧？什么？”
+　碰上我的胸部会很开心吧？什么？”
 
 : DrawChara( "Elisa", 0, 0)
 : PlayVoice( "Voices/vo19_era0119" )
@@ -2671,27 +2671,27 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo22_tam0140" )
 \CN["玉藻"]
 “斑们想杀小夜的理由是封印阿波罗之箭
-为了这个，大家都知道吗？”
+　为了这个，大家都知道吗？”
 
 : DrawChara( "Tamamo", 5, 0)
 : PlayVoice( "Voices/vo22_tam0141" )
 \CN["玉藻"]
 “如果只是普通的杀人的话，就无法封住阿波罗的箭。
-不如说，只是因为宿主的死而暴走而已”
+　不如说，只是因为宿主的死而暴走而已”
 
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1714" )
 \CN["无黑"]
 “也就是说，到那天为止小夜的身体安全是有保证的
-”
+　”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Tamamo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
 : PlayVoice( "Voices/vo22_tam0142" )
 \CN["玉藻"]
 “是的。痣和达磨会配合全力保护的
-根据想法不同，这也是最强的保护”
+　根据想法不同，这也是最强的保护”
 
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 7, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
@@ -2706,7 +2706,7 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo00_muk1715" )
 \CN["无黑"]
 “话说玉藻大人，现在更是如此，你为什么对我们
-能提供信息吗？”
+　能提供信息吗？”
 
 以前在精灵之乡听到过。
 
@@ -2721,13 +2721,13 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo22_tam0143" )
 \CN["玉藻"]
 “嘛，主人会产生疑问也是理所当然的吧。
-你的主不是从精灵里的人那里听来的吗？」
+　你的主不是从精灵里的人那里听来的吗？」
 
 : DrawChara( "Tamamo", 1, 0)
 : PlayVoice( "Voices/vo22_tam0144" )
 \CN["玉藻"]
 “这样下去的话，赤月之日大和就会灭亡。
-{阿修罗，阿谀奉承}这是被称为阿修罗的人的手」
+　{阿修罗，阿谀奉承}这是被称为阿修罗的人的手」
 
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
@@ -2739,13 +2739,13 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo22_tam0145" )
 \CN["玉藻"]
 “我完全没有头绪。
-有着白色翅膀和黑色翅膀的异形存在”
+　有着白色翅膀和黑色翅膀的异形存在”
 
 : DrawChara( "Tamamo", 0, 0)
 : PlayVoice( "Voices/vo22_tam0146" )
 \CN["玉藻"]
 “那个异形者在赤月之日从小夜那里夺取了阿波罗的箭
-毁灭大和。这就是我看到的大和的{结局，未来}啊」
+　毁灭大和。这就是我看到的大和的{结局，未来}啊」
 
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -2756,7 +2756,7 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo22_tam0147" )
 \CN["玉藻"]
 “说到他们，不是指那些嘲讽。
-当然，全部都传达了。那我就不听你的话了」
+　当然，全部都传达了。那我就不听你的话了」
 
 : DrawChara( "Leo", 6, 0)
 \CN["雷欧"]
@@ -2770,20 +2770,20 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo22_tam0148" )
 \CN["玉藻"]
 “即使你们帮助小夜，也无法保证未来会改变。
-但是，我已经想和你们赌一赌了」
+　但是，我已经想和你们赌一赌了」
 
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Elisa", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo19_era0120" )
 \CN["伊拉伊萨"]
 “啊，顺便说一下，但是啊，想赌这些家伙的理由是什么？”
-有什么事吗？”
+　有什么事吗？”
 
 : DrawChara( "Tamamo", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo22_tam0149" )
 \CN["玉藻"]
 “是吗……。
-这群家伙是真正的“武士”吗？”
+　这群家伙是真正的“武士”吗？”
 
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Tamamo", Call("Scenarios/Common*FgFadeTime") )
@@ -2791,7 +2791,7 @@ Leo Gold Stein，你会变得更强”
 : PlayVoice( "Voices/vo22_tam0150" )
 \CN["玉藻"]
 “这些家伙一直有着想要拯救重要的人的强烈意志
-因为他们不是不为应付困难而犹豫的人”
+　因为他们不是不为应付困难而犹豫的人”
 
 明确了玉藻大人不是敌人的理由。
 

@@ -38,20 +38,20 @@
 : ShowWnd()
 \CN["兰丸"]
 “也就是说，幕府已经停止运作了
-不过分”
+　不过分”
 
 //: DrawChara( "Mikage", 9, 0)
 : PlayVoice( "Voices/vo11_mik0206" )
 \CN["御影"]
 “现在是机会！
-我想哪怕一天也要从这个世界上消失”
+　我想哪怕一天也要从这个世界上消失”
 
 对幕府怀有极大怨恨的织笠御影
 好像是想攻入帝都城也没有办法的样子。
 
 \CN["卍"]
 “老实说，幕府什么的怎样都无所谓……。
-现在能随心所欲地做才是最开心的”
+　现在能随心所欲地做才是最开心的”
 
 \CN["严严"]
 「Ｚｚｚ」
@@ -67,19 +67,19 @@
 : PlayVoice( "Voices/vo12_shi0199" )
 \CN["紫苑"]
 “如果能和严酱一起过上安稳的生活
-除此之外，没有必要了”
+　除此之外，没有必要了”
 
 //: DrawChara( "Midori", 18, 0, 0, 0.5, 0.0, 4, "L" )
 : PlayVoice( "Voices/vo10_mid0289" )
 \CN["绿色"]
 “我自己会说的。在街上闹腾到那种破破烂烂为止。”
-说是没有必要……”
+　说是没有必要……”
 
 //: DrawChara( "Shion", 4, 0)
 : PlayVoice( "Voices/vo12_shi0200" )
 \CN["紫苑"]
 “我只是在做严酱想做的事情。
-不要抱怨了”
+　不要抱怨了”
 
 //: EraseChara( "Midori", 0.25 )
 //: EraseChara( "Shion", 0.25 )
@@ -92,7 +92,7 @@
 //: DrawChara( "Hiraga", 5, 0)
 \CN["平底片"]
 “鬼灯隐藏着自己的影子，轮回组变成了肆无忌惮的暴徒
-有呢”
+　有呢”
 
 那是前几天和亚久里一起去下町时发生的事
 我想起来了。
@@ -106,12 +106,12 @@
 : PlayVoice( "Voices/vo09_mei0413" )
 \CN["冥"]
 “那么，头，今天到底是什么理由呢？”
-收集到了吗？”
+　收集到了吗？”
 
 //: DrawChara( "Daruma", 1, 0)
 \CN["达磨"]
 “终于要开始做了。
-在那之前，有人想介绍给你们”
+　在那之前，有人想介绍给你们”
 
 //: EraseChara( "Daruma", 0.25 )
 //: EraseChara( "Mei", 0.25 )
@@ -132,7 +132,7 @@
 : PlayVoice( "Voices/vo12_shi0201" )
 \CN["紫苑"]
 “咦？一白的般若竟然在这里露面
-诚，真是少见啊。这是什么风？”
+　诚，真是少见啊。这是什么风？”
 
 对于般若的登场，大家都惊讶不已
 和般若相识的紫苑毫不客气地开口了。
@@ -149,7 +149,7 @@
 : PlayVoice( "Voices/vo10_mid0290" )
 \CN["绿色"]
 “喂喂，般若的真面目是……诶！？真的吗？
-等一下……那是什么……”
+　等一下……那是什么……”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mikage", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C")
@@ -162,7 +162,7 @@
 : PlayVoice( "Voices/vo09_mei0414" )
 \CN["冥"]
 “鬼灯的局长，高千穗嘲讽……。
-没想到你是白夜的一员”
+　没想到你是白夜的一员”
 
 : EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 27, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C")
@@ -174,13 +174,13 @@
 : DrawChara( "Daruma", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 \CN["达磨"]
 “般若——不，不，高千穗原本就不是鬼灯
-我是属于白夜的”
+　我是属于白夜的”
 
 : DrawChara( "Azami", 5, 0)
 : PlayVoice( "Voices/vo05_aza0641" )
 \CN["爱彩弥"]
 “有点理由。
-进入鬼灯之后，得到了幕府的情报”
+　进入鬼灯之后，得到了幕府的情报”
 
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
@@ -197,19 +197,19 @@
 : PlayVoice( "Voices/vo10_mid0292" )
 \CN["绿色"]
 “头，这是我们公司的工作吗？
-我们家，姑且算是元一吧？从什么时候开始？”
+　我们家，姑且算是元一吧？从什么时候开始？”
 
 : DrawChara( "Azami", 0, 0)
 : PlayVoice( "Voices/vo05_aza0643" )
 \CN["爱彩弥"]
 “是啊。是从什么时候开始的呢……。
-你进入白夜之前的事是确实的”
+　你进入白夜之前的事是确实的”
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0293" )
 \CN["绿色"]
 “啊，我还没做过野一的时候，听说过。
-请注意鬼灯的局长及其腹心”
+　请注意鬼灯的局长及其腹心”
 
 : DrawChara( "Midori", 16, 0)
 : PlayVoice( "Voices/vo10_mid0294" )
@@ -246,7 +246,7 @@
 : PlayVoice( "Voices/vo05_aza0645" )
 \CN["爱彩弥"]
 “好久不见，严。
-身体变大了啊」
+　身体变大了啊」
 
 : DrawChara( "Iwao", 1, 0)
 : layer = 2; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
@@ -263,7 +263,7 @@
 : PlayVoice( "Voices/vo05_aza0646" )
 \CN["爱彩弥"]
 “喂喂，我从你还是小孩子的时候开始
-明明知道，被那样害怕的话会受伤的”
+　明明知道，被那样害怕的话会受伤的”
 
 : DrawChara( "Shion", 0, 0)
 : PlayVoice( "Voices/vo12_shi0202" )
@@ -288,7 +288,7 @@
 : DrawChara( "Midori", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["卍"]
 “严只会让人如此害怕，这家伙果然是个糟糕的家伙
-”
+　”
 
 : DrawChara( "Midori", 19, 0)
 : PlayVoice( "Voices/vo10_mid0295" )
@@ -307,7 +307,7 @@
 : PlayVoice( "Voices/vo10_mid0297" )
 \CN["绿色"]
 “也就是说，局长……不是，是高千穗先生吗……。
-之后要不要和我一起玩？”
+　之后要不要和我一起玩？”
 
 //: DrawChara( "Azami", 4, 0)
 : DrawFaceThumbnail( "Azami", 4, 0, 0 )
@@ -317,7 +317,7 @@
 
 \CN["卍"]
 “被拒绝了。
-而且加‘さん’什么的……”
+　而且加‘さん’什么的……”
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0298" )
@@ -328,7 +328,7 @@
 : PlayVoice( "Voices/vo10_mid0299" )
 \CN["绿色"]
 “还有，卍，自己不是叫我‘你’了吗？
-好好听了吗？啊？”
+　好好听了吗？啊？”
 
 \CN["卍"]
 “……切……我瘦了，望月先生。”
@@ -392,7 +392,7 @@
 : PlayVoice( "Voices/vo10_mid0300" )
 \CN["绿色"]
 “头，必须要这样！
-嘿嘿，能让幕府下台什么的，真是太期待了♪”
+　嘿嘿，能让幕府下台什么的，真是太期待了♪”
 
 \CN["达磨"]
 “然后，织笠！以上，只有5个人进攻帝都城！”
@@ -402,7 +402,7 @@
 : PlayVoice( "Voices/vo11_mik0208" )
 \CN["御影"]
 “啊啊啊……我竟然能担任这样的角色……。
-尽我所有的魔术之力，让可恶的幕府成为尘土吧”
+　尽我所有的魔术之力，让可恶的幕府成为尘土吧”
 
 \CN["达磨"]
 “其他人在这里待命。为了以防万一，可以吗？”
@@ -418,7 +418,7 @@
 : PlayVoice( "Voices/vo12_shi0203" )
 \CN["紫苑"]
 “我没什么特别在意的。
-让我像往常一样放松”
+　让我像往常一样放松”
 
 \CN["卍"]
 “我也无所谓。”
@@ -439,7 +439,7 @@
 : DrawChara( "Ranmaru", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 \CN["兰丸"]
 “还有一个。大家，这件事是只属于我们的秘密。
-因为不知道情报会从哪里泄漏出来”
+　因为不知道情报会从哪里泄漏出来”
 
 兰丸叮嘱。
 
@@ -492,14 +492,14 @@
 : PlayVoice( "Voices/vo10_mid0302" )
 \CN["绿色"]
 “高千穗先生，你说我们要进攻的情报
-是放在幕府那里放跑的吗？”
+　是放在幕府那里放跑的吗？”
 
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Azami", 26, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : PlayVoice( "Voices/vo05_aza0649" )
 \CN["爱彩弥"]
 “如果我站在将军的立场上，然后出城的话
-幕府啊，早就崩溃了”
+　幕府啊，早就崩溃了”
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0303" )
@@ -537,12 +537,12 @@
 : PlayVoice( "Voices/vo10_mid0304" )
 \CN["绿色"]
 “啊，那是不可能的……。
-幕府掉了，明明鼓足干劲来的，真是不可能啊”
+　幕府掉了，明明鼓足干劲来的，真是不可能啊”
 
 : PlayVoice( "Voices/vo05_aza0651" )
 \CN["爱彩弥"]
 “好像被谁暗杀了。真是被杀了啊……。
-从遗体的情况来看，是昨天晚上被杀了吗？”
+　从遗体的情况来看，是昨天晚上被杀了吗？”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mei", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
@@ -559,27 +559,27 @@
 : PlayVoice( "Voices/vo05_aza0652" )
 \CN["爱彩弥"]
 “因为你们想做什么就做什么
-离开幕府的家伙，真是太多了”
+　离开幕府的家伙，真是太多了”
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0653" )
 \CN["爱彩弥"]
 “说起来城里基本上没什么人。
-也被警卫人员抛弃了吧”
+　也被警卫人员抛弃了吧”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mikage", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo11_mik0210" )
 \CN["御影"]
 “在这么大的地方，只有一个人，连保镖都没放就被暗杀了。
-感觉不错……说了欲望，我更希望看到地狱
-但是……”
+　感觉不错……说了欲望，我更希望看到地狱
+　但是……”
 
 : DrawChara( "Midori", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : PlayVoice( "Voices/vo10_mid0305" )
 \CN["绿色"]
 “将军死了，接下来怎么办？
-虽然有各种各样的东西都是背水印的”
+　虽然有各种各样的东西都是背水印的”
 
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -607,7 +607,7 @@
 : PlayVoice( "Voices/vo09_mei0419" )
 \CN["冥"]
 “我想多看看。
-也许有什么吧”
+　也许有什么吧”
 
 //●演出：冥　部屋から出て行く
 : HideWnd()
@@ -631,7 +631,7 @@
 : PlayVoice( "Voices/vo10_mid0306" )
 \CN["绿色"]
 「せや。啊，但是，真的是消化不良啊。
-回去后卍但是如果真是笨蛋的话可不行啊」
+　回去后卍但是如果真是笨蛋的话可不行啊」
 
 : HideWnd()
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
@@ -653,24 +653,24 @@
 : ShowWnd()
 \CN["达磨"]
 “关于狗所说的公主的事，城内似乎没有这种迹象
-没有感觉到”
+　没有感觉到”
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0654" )
 \CN["爱彩弥"]
 “很有可能是亲信的爷爷藏起来了。
-总之要尽快找到”
+　总之要尽快找到”
 
 : DrawChara( "Daruma", 1, 0)
 \CN["达磨"]
 “将军被暗杀的现在，已经被什么人杀害了
-可能性是？”
+　可能性是？”
 
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0655" )
 \CN["爱彩弥"]
 「没有。如果公主死了的话
-大和应该已经灭亡了”
+　大和应该已经灭亡了”
 
 : DrawChara( "Daruma", 0, 0)
 \CN["达磨"]
@@ -680,14 +680,14 @@
 : PlayVoice( "Voices/vo05_aza0656" )
 \CN["爱彩弥"]
 “玉藻在这里吧？
-借用他的力量的话，公主在哪里都可以简单地
-应该知道”
+　借用他的力量的话，公主在哪里都可以简单地
+　应该知道”
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0657" )
 \CN["爱彩弥"]
 “不久红色的月亮就要来了。
-已经不能再悠闲了。手已经打好了”
+　已经不能再悠闲了。手已经打好了”
 
 //●演出：達磨・あざみ　部屋から出て行く
 //●演出：暗転

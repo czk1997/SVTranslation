@@ -39,8 +39,8 @@
 //●囚人を経験している場合
 : if ( Flag ( "PrisonBreak" ) == true )
 	: DrawChara( "Mukuro", 2, 0)
-虽然手臂很迟钝，但在来到西都的途中或是继续工作着
-我已经完全恢复了直觉。
+	虽然手臂很迟钝，但在来到西都的途中或是继续工作着
+	我已经完全恢复了直觉。
 
 //●分岐終了
 : endif
@@ -65,8 +65,8 @@
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk3648" )
 	\CN["无黑"]
-“如果昨天做的工作不是枕头工作的话
-我按照你的愿望给你弄了……”
+	“如果昨天做的工作不是枕头工作的话
+	　我按照你的愿望给你弄了……”
 
 //●分岐終了
 : endif
@@ -131,11 +131,11 @@
 : PlayVoice( "Voices/vo00_muk3650" )
 \CN["无黑"]
 “对了对了，昨天出现了一只大虫子，所以就杀了它。
-对不起，请善后处理”
+　对不起，请善后处理”
 
 \CN["客栈"]
 「嘿嘿。{尸体，roku}的处理。
-我经常去你的房间。因为天气变暖了”
+　我经常去你的房间。因为天气变暖了”
 
 旅店的主人也习惯了收拾尸体。
 
@@ -157,62 +157,62 @@
 
 : if ( MissionProgress( "SC_A01_50", "Opened" ) == true )
 	: SetMission( "SC_A01_50", "Hidden" )
-活动“由著名的色情涂鸦技师制作的dild”
-消失了。
+	活动“由著名的色情涂鸦技师制作的dild”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A01_51", "Opened" ) == true )
 	: SetMission( "SC_A01_51", "Hidden" )
-活动“亲手撕破处女膜”开始了
-消失了。
+	活动“亲手撕破处女膜”开始了
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A01_52", "Opened" ) == true )
 	: SetMission( "SC_A01_52", "Hidden" )
-活动“给贵族男人处女”开始了
-消失了。
+	活动“给贵族男人处女”开始了
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_51_1", "Opened" ) == true )
 	: SetMission( "SC_A02_51_1", "Hidden" )
-活动“向加津佐的镇长发送物品”
-消失了。
+	活动“向加津佐的镇长发送物品”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_51_2", "InProgress" ) == true )
 	: SetMission( "SC_A02_51_2", "Hidden" )
-活动“向加津佐的镇长发送物品”
-消失了。
+	活动“向加津佐的镇长发送物品”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_50_1", "Opened" ) == true )
 	: SetMission( "SC_A02_50_1", "Hidden" )
-活动“来取史莱姆的粘液”
-消失了。
+	活动“来取史莱姆的粘液”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_50_2", "InProgress" ) == true )
 	: SetMission( "SC_A02_50_2", "Hidden" )
-活动“来取史莱姆的粘液”
-消失了。
+	活动“来取史莱姆的粘液”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_53", "Opened" ) == true )
 	: SetMission( "SC_A02_53", "Hidden" )
-活动“贵族的性接待请求”
-消失了。
+	活动“贵族的性接待请求”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A03_51_1", "Opened" ) == true )
 	: SetMission( "SC_A03_51_1", "Hidden" )
-活动“希望得到恋爱小说”
-消失了。
+	活动“希望得到恋爱小说”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A03_51_2", "InProgress" ) == true )
 	: SetMission( "SC_A03_51_1", "Hidden" )
-活动“希望得到恋爱小说”
-消失了。
+	活动“希望得到恋爱小说”
+	消失了。
 
 : endif
 //●演出：無黒　外に出る
@@ -239,7 +239,7 @@
 : ShowWnd()
 \CN["眼镜店"]
 “哦！无黑，你来了个好地方。
-想交给你的工作有几个？”
+　想交给你的工作有几个？”
 
 这个外表十分可疑的男人
 被称为“眼镜入口店”的入口店。

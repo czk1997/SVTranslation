@@ -40,41 +40,41 @@
 
 \CN["平底片"]
 “说话快真是帮了我大忙。
-总觉得吉野原好像被白夜夺走了”
+　总觉得吉野原好像被白夜夺走了”
 
 //●読み：吉野原（よしのはら）
 : DrawChara( "Mukuro", 6, 0)
 : PlayVoice( "Voices/vo00_muk4598" )
 \CN["无黑"]
 “吉野原是色町吧？
-你打算占领那种地方干什么？”
+　你打算占领那种地方干什么？”
 
 : DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : DrawChara( "Mukuro", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo01_mom1516" )
 \CN["桃"]
 “啊，没有黑的话就不知道了。
-那样色情的街道是相当重要的地方”
+　那样色情的街道是相当重要的地方”
 
 旁边黄菜子也静静地点着头。
 
 \CN["平底片"]
 “我想我是切身体会并理解的，世上只有漂亮的事
-不是。倒不如说肮脏的事情更多”
+　不是。倒不如说肮脏的事情更多”
 
 \CN["平底片"]
 “色町是各种各样欲望交织的城市——
-如果被抓住了这一点，作为幕府来说是相当痛苦的”
+　如果被抓住了这一点，作为幕府来说是相当痛苦的”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4599" )
 \CN["无黑"]
 “我知道了。那么，那个占据着的家伙是谁？”？
-从口气上看应该是白夜的干部级别……”
+　从口气上看应该是白夜的干部级别……”
 
 \CN["平底片"]
 「是的。和九星{七红，七咳嗽}的镝木紫苑先生
-同样是九星{九紫，黄瓜}的镝木严的母子呢」
+　同样是九星{九紫，黄瓜}的镝木严的母子呢」
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1517" )
@@ -87,36 +87,36 @@
 : PlayVoice( "Voices/vo02_kin0811" )
 \CN["黄菜子"]
 “我不太记得那两个人
-镝木紫苑先生应该是强力魔术的使用者”
+　镝木紫苑先生应该是强力魔术的使用者”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1518" )
 \CN["桃"]
 「啊，魔术的。
-和之前战斗过的织笠御影哪个更厉害呢？”
+　和之前战斗过的织笠御影哪个更厉害呢？”
 
 : DrawChara( "Momo", 11, 0)
 : PlayVoice( "Voices/vo01_mom1519" )
 \CN["桃"]
 “按顺序来说，织笠御影好像更高……。
-确实是第六个或者是什么吧？”
+　确实是第六个或者是什么吧？”
 
 : DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
 \CN["平底片"]
 “九星的座次不一定是实力顺序。
-贡献度上织笠更高，但其实力恐怕
-紫苑更高吧”
+　贡献度上织笠更高，但其实力恐怕
+　紫苑更高吧”
 
 : DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
 \CN["平底片"]
 “而且，儿子严先生是屈指可数的力量战士。
-据说是破坏的产物，请注意”
+　据说是破坏的产物，请注意”
 
 : DrawChara( "Mukuro", 0, 0)
 : PlayVoice( "Voices/vo00_muk4600" )
 \CN["无黑"]
 “明白了。总之先去吉野原看看吧。
-确实是要经过帝都东街道吧？”
+　确实是要经过帝都东街道吧？”
 
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
@@ -166,7 +166,7 @@
 
 // 強制的に帝都に戻す
 : if ( $choice == 1 )
-要不要回到帝都重新振作一下。
+	要不要回到帝都重新振作一下。
 
 	: LoadMap( "Map_Town01_01_Teito" )
 : endif
@@ -196,7 +196,7 @@
 : PlayVoice( "Voices/vo12_shi0302" )
 \CN["紫苑"]
 “幕府的狗们怎么看待严酱呢？”
-早有一亿年”
+　早有一亿年”
 
 \CN["严严"]
 “嘿嘿……”
@@ -217,13 +217,13 @@
 : PlayVoice( "Voices/vo02_kin0812" )
 \CN["黄菜子"]
 “是的。恐怕是镝木紫苑和镝木严的母子吧。”
-我觉得”
+　我觉得”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1520" )
 \CN["桃"]
 “那真的是父子吗？
-就算不像也要有个限度不是吗？”
+　就算不像也要有个限度不是吗？”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -246,8 +246,8 @@
 	: DrawChara( "Shion", 3, 0)
 	: PlayVoice( "Voices/vo12_shi0303" )
 	\CN["紫苑"]
-“在吉野原裸奔的{女子，おなご}真是让人吃惊啊。
-不关心低价出售自己”
+	“在吉野原裸奔的{女子，おなご}真是让人吃惊啊。
+	　不关心低价出售自己”
 
 //●分岐終了地点へ
 //●分岐：それ以外の場合
@@ -256,8 +256,8 @@
 	: DrawChara( "Shion", 10, 0)
 	: PlayVoice( "Voices/vo12_shi0304" )
 	\CN["紫苑"]
-“严酱很兴奋啊。
-呵呵，真是美女云集啊”
+	“严酱很兴奋啊。
+	　呵呵，真是美女云集啊”
 
 //●分岐終了
 : endif
@@ -266,8 +266,8 @@
 	: DrawChara( "Shion", 2, 0)
 	: PlayVoice( "Voices/vo12_shi0305" )
 	\CN["紫苑"]
-“咦？带着长刀的女儿，黄兰的女儿吗？
-在看不见的时候，好像已经很糟糕了”
+	“咦？带着长刀的女儿，黄兰的女儿吗？
+	　在看不见的时候，好像已经很糟糕了”
 
 	: EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
 	: EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
@@ -275,21 +275,21 @@
 	//●読み：黄蘭（おうらん）
 	: PlayVoice( "Voices/vo01_mom1522" )
 	\CN["桃"]
-“……黄兰？”
+	“……黄兰？”
 
 	: DrawChara( "Kinako", 10, 0, 0, 0.5, 0.0, 4, "LC" )
 	: PlayVoice( "Voices/vo02_kin0813" )
 	\CN["黄菜子"]
-“是我妈妈。”
+	“是我妈妈。”
 
-感觉好像问了桃子不能问的事情
-装出一副很坏的样子。
+	感觉好像问了桃子不能问的事情
+	装出一副很坏的样子。
 
 	: DrawChara( "Kinako", 2, 0)
 	: PlayVoice( "Voices/vo02_kin0814" )
 	\CN["黄菜子"]
-“已经是很久以前的事了。
-比起那个，现在是那两个人”
+	“已经是很久以前的事了。
+	　比起那个，现在是那两个人”
 
 	: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 	: EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -299,7 +299,7 @@
 : PlayVoice( "Voices/vo12_shi0306" )
 \CN["紫苑"]
 “兰丸所说的要注意的3人组是指主人们
-不是吗。那么，我们也必须认真挑战……”
+　不是吗。那么，我们也必须认真挑战……”
 
 //●演出：紫苑　ダークエルフ化
 : HideWnd()
@@ -336,7 +336,7 @@
 : PlayVoice( "Voices/vo00_muk4602" )
 \CN["无黑"]
 “一开始就飞走。
-因为不是偷工减料就能生存的对手”
+　因为不是偷工减料就能生存的对手”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -365,7 +365,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc003" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle01" )
 
@@ -376,7 +376,7 @@
 	: FadeIn( 0.0 )
 	\CI["再战"]
 	\CI["重做"]
-失败了……。
+	失败了……。
 
 	: if ($choice == 0)
 		: Jump( "*battle01" )
@@ -456,12 +456,12 @@
 : PlayVoice( "Voices/vo12_shi0307" )
 \CN["紫苑"]
 “啊啊啊……不，严酱……不，不喜欢……
-严酱……严酱……呜啊啊啊！”
+　严酱……严酱……呜啊啊啊！”
 
 : PlayVoice( "Voices/vo12_shi0308" )
 \CN["紫苑"]
 “谁、谁……谁都可以……我的事情不管发生什么
-没关系的……”
+　没关系的……”
 
 : PlayVoice( "Voices/vo12_shi0309" )
 \CN["紫苑"]

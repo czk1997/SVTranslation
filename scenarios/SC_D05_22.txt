@@ -102,7 +102,7 @@
 : PlayVoice( "Voices/vo10_mid0550" )
 \CN["绿色"]
 “不愧是我们公司的预料啊。
-居然能简单防止我们的突然袭击啊”
+　居然能简单防止我们的突然袭击啊”
 
 : DrawChara( "Kinako", 21, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo02_kin0792" )
@@ -115,7 +115,7 @@
 : PlayVoice( "Voices/vo10_mid0551" )
 \CN["绿色"]
 “不要告诉我，活下去了就活下去。
-报、联、相，很重要吗？”
+　报、联、相，很重要吗？”
 
 //●演技：無言でみどりを斬りにかかります
 : DrawChara( "Kinako", 30, 0)
@@ -134,7 +134,7 @@
 : PlayVoice( "Voices/vo10_mid0552" )
 \CN["绿色"]
 “等一下，突然砍过来，很奇怪吧？
-自己不是叫精神病的家伙吗？”
+　自己不是叫精神病的家伙吗？”
 
 : DrawChara( "Kinako", 29, 0)
 : PlayVoice( "Voices/vo02_kin0794" )
@@ -155,7 +155,7 @@
 : PlayVoice( "Voices/vo10_mid0554" )
 \CN["绿色"]
 “你不是别的。认真的和、{杀，玫瑰}不做的是。”
-像我这样的人”
+　像我这样的人”
 
 //●演出：みどり　ダークエルフ化
 //みどりcos6へ変更
@@ -181,13 +181,13 @@
 : PlayVoice( "Voices/vo10_mid0555" )
 \CN["绿色"]
 “这么吃惊的小中，竟然知道这是什么
-是吗。不愧是元鬼灯的一流谍报啊」
+　是吗。不愧是元鬼灯的一流谍报啊」
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0556" )
 \CN["绿色"]
 “嘛，就算知道了，你也只是被我{杀，玫瑰}杀了而已
-不过……！”
+　不过……！”
 
 //●演出：みどりの瞬間移動。斬撃エフェクト
 //●ＳＥ：斬る音
@@ -209,7 +209,7 @@
 : PlayVoice( "Voices/vo10_mid0557" )
 \CN["绿色"]
 “太棒了！{黑夜叉，暗黑精灵}化后我们家被瞄准了要害
-躲开了，自己还是第一次！哈哈，自豪一下吧”
+　躲开了，自己还是第一次！哈哈，自豪一下吧”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 33, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
@@ -225,7 +225,7 @@
 : PlayVoice( "Voices/vo02_kin0798" )
 \CN["黄菜子"]
 （而且，对方的利物是妖刀的一种。
-如果继续受到攻击的话，只能慢慢地死去……）
+　如果继续受到攻击的话，只能慢慢地死去……）
 
 刚才受的伤口烫伤了
 带来了剧痛。
@@ -253,7 +253,7 @@
 : PlayVoice( "Voices/vo10_mid0558" )
 \CN["绿色"]
 “什么呀，发呆。已经放弃了吗？
-不管怎么说，都太快了吧！”
+　不管怎么说，都太快了吧！”
 
 望月绿向满是间隙的我发起了攻击。
 
@@ -286,13 +286,13 @@
 : PlayVoice( "Voices/vo10_mid0559" )
 \CN["绿色"]
 「哇！？自己，那个{黑夜叉，暗黑妖精}化了吧！？
-这果然出乎我的意料”
+　这果然出乎我的意料”
 
 //: DrawChara( "Kinako", 5, 0)
 : PlayVoice( "Voices/vo02_kin0801" )
 \CN["黄菜子"]
 “这样啊。现在我变成了黑夜叉，黑精灵。”
-嗯……呵呵”
+　嗯……呵呵”
 
 就算没有意识到也会笑出来。
 
@@ -308,13 +308,13 @@
 : PlayVoice( "Voices/vo02_kin0802" )
 \CN["黄菜子"]
 “在笑吗？是吗……。
-我以为这样就可以杀了你……”
+　我以为这样就可以杀了你……”
 
 : DrawChara( "Midori", 1, 0)
 : PlayVoice( "Voices/vo10_mid0561" )
 \CN["绿色"]
 “我被{杀，玫瑰}弄得很自大啊。
-但是，这样终于有嚼劲的家伙，{杀，玫瑰}快要让他吃了！」
+　但是，这样终于有嚼劲的家伙，{杀，玫瑰}快要让他吃了！」
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
@@ -343,7 +343,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc003" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle01" )
 
@@ -354,7 +354,7 @@
 	: FadeIn( 0.0 )
 	\CI["再战"]
 	\CI["重做"]
-失败了……。
+	失败了……。
 
 	: if ($choice == 0)
 		: Jump( "*battle01" )
@@ -373,7 +373,7 @@
 : PlayVoice( "Voices/vo10_mid0562" )
 \CN["绿色"]
 “那、那样的笨蛋啊……我们家……不来的小鬼……
-{黑夜叉，暗黑精灵}的家伙……」
+　{黑夜叉，暗黑精灵}的家伙……」
 
 //みどりcos0へ戻し
 //●ＳＥ：倒れる音
@@ -390,7 +390,7 @@
 : PlayVoice( "Voices/vo02_kin0803" )
 \CN["黄菜子"]
 “哈……哈、哈、哈……{黑夜叉，暗黑精灵}
-消耗很厉害……摇摇晃晃地做……”
+　消耗很厉害……摇摇晃晃地做……”
 
 是强大力量的反动吧。
 全身的肌肉都在叫苦不迭。
@@ -513,7 +513,7 @@
 : PlayVoice( "Voices/vo10_mid0566" )
 \CN["绿色"]
 “这是为什么呢……身体要动的话，就去抵抗吧
-我会决定的……”
+　我会决定的……”
 
 : DrawChara( "Kinako", 0, 0)
 : PlayVoice( "Voices/vo02_kin0809" )
@@ -575,7 +575,7 @@
 : if( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 1 )
 	\CI["因缘~公主椿桃篇~开始"]
 	\CI["因缘～有栖川黄菜子篇～开始"]
-开始哪个故事？
+	开始哪个故事？
 
 	: if ($choice == 0)
 		: Jump( "Scenarios/SC_D05_21" )
@@ -586,7 +586,7 @@
 : elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 2 )
 	\CI["因缘~神八代无黑篇开始~"]
 	\CI["因缘～有栖川黄菜子篇～开始"]
-你做什么工作？
+	你做什么工作？
 
 	: if ($choice == 0)
 		: Jump( "Scenarios/SC_D05_20" )
@@ -597,7 +597,7 @@
 : elif( Call( "Scenarios/CommonSys*Chapter_Judge05c_1" ) == 3 )
 	\CI["因缘~神八代无黑篇开始~"]
 	\CI["因缘~公主椿桃篇~开始"]
-你做什么工作？
+	你做什么工作？
 
 	: if ($choice == 0)
 		: Jump( "Scenarios/SC_D05_20" )

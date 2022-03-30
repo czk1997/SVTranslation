@@ -19,14 +19,14 @@
 : if ( CharaCostume( Playchara ) == 1 )
 	: DrawChara( "Daruma", 11, 0, 0, 0.5, 0.0, 2, "LC" )
 	\CN["达磨"]
-“竟然光着身子来我这里。你真是被人小看了。”
+	“竟然光着身子来我这里。你真是被人小看了。”
 
 	: EraseChara( "Daruma", 0.5 )
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 6, "RC" )
 	: PlayVoice( "Voices/vo00_muk4683" )
 	\CN["无黑"]
-（明明是裸体，却完全没有反应，稍微不要受伤。）
+	（明明是裸体，却完全没有反应，稍微不要受伤。）
 
 : else
 	: EraseChara( "Daruma", 0.5 )
@@ -36,7 +36,7 @@
 : PlayVoice( "Voices/vo02_kin0857" )
 \CN["黄菜子"]
 “这个人是白夜的{头，头}，达磨。
-大家请小心”
+　大家请小心”
 
 : DrawChara( "Mukuro", 23, 0)
 : PlayVoice( "Voices/vo00_muk4684" )
@@ -49,7 +49,7 @@
 : DrawChara( "Daruma", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["达磨"]
 “唔，好像杀了很多人啊。
-血的味道漂到这里来”
+　血的味道漂到这里来”
 
 : DrawChara( "Mukuro", 26, 0)
 : PlayVoice( "Voices/vo00_muk4685" )
@@ -67,7 +67,7 @@
 : PlayVoice( "Voices/vo01_mom1586" )
 \CN["桃"]
 “爷爷，你血气方刚吗？
-我并不是想和你战斗”
+　我并不是想和你战斗”
 
 : DrawChara( "Daruma", 14, 0)
 \CN["达磨"]
@@ -85,14 +85,14 @@
 
 \CN["达磨"]
 “杀了滑头和比拉加，帮助我的人
-雪恨”
+　雪恨”
 
 //●分岐：［服装］ダークエルフの場合
 : if ( CharaCostume( Playchara ) == 2 )
 	: DrawChara( "Daruma", 13, 0, 0, 0.5, 0.0, 2, "LC" )
 	\CN["达磨"]
-“对方{黑夜叉，暗黑妖精}也是一样的。
-因为我曾经杀了{黑夜叉，暗黑妖精}啊」
+	“对方{黑夜叉，暗黑妖精}也是一样的。
+	　因为我曾经杀了{黑夜叉，暗黑妖精}啊」
 
 //●分岐終了
 : endif
@@ -133,7 +133,7 @@
 	: FadeIn( 0.0 )
 	\CI["再战"]
 	\CI["重做"]
-失败了……。
+	失败了……。
 
 	: if ($choice == 0)
 		: Jump( "*battle01" )

@@ -162,13 +162,13 @@
 : PlayVoice( "Voices/vo09_mei0004" )
 \CN["冥"]
 “只要抓到敌人的头目
-他们也一定会撤退的”
+　他们也一定会撤退的”
 
 : AutoFaceThumbnail( true )
 : PlayVoice( "Voices/vo09_mei0005" )
 \CN["冥"]
 “你只要躲在那个小屋的地下室就可以了。
-我马上收拾敌人，去接你……”
+　我马上收拾敌人，去接你……”
 
 : AutoFaceThumbnail( false )
 : PlayVoice( "Voices/vo00_muk0022" )
@@ -243,13 +243,13 @@
 : PlayVoice( "Voices/vo10_mid0159" )
 \CN["绿色"]
 “你知道自己和我们之间力量的差距吗？
-但是，我有点喜欢她想要逃跑”
+　但是，我有点喜欢她想要逃跑”
 
 : DrawChara( "Mei", 13, 0)
 : PlayVoice( "Voices/vo09_mei0086" )
 \CN["冥"]
 “因为村里重要的人被杀了……。
-害怕什么的是不行的”
+　害怕什么的是不行的”
 
 因为愤怒超过了死亡的恐怖。
 
@@ -266,20 +266,20 @@
 : PlayVoice( "Voices/vo10_mid0160" )
 \CN["绿色"]
 「呼。{黑夜叉，暗黑精灵}化后的我，{刀，ソレ}
-面对面啊，自己啊，真是没有胆量啊”
+　面对面啊，自己啊，真是没有胆量啊”
 
 : DrawChara( "Midori", 7, 0)
 : PlayVoice( "Voices/vo10_mid0161" )
 \CN["绿色"]
 “我很喜欢这样的人。
-不能一下子就把脑袋弄碎或是太可惜了”
+　不能一下子就把脑袋弄碎或是太可惜了”
 
 : DrawChara( "Midori", 4, 0)
 : PlayVoice( "Voices/vo10_mid0162" )
 \CN["绿色"]
 “慢慢地，慢慢地，慢慢地，慢慢地玩
-然后，然后，花了慢慢的时间{杀，玫瑰}
-要做吗？”
+　然后，然后，花了慢慢的时间{杀，玫瑰}
+　要做吗？”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Mei", Call("Scenarios/Common*FgFadeTime") )
@@ -300,7 +300,7 @@
 : PlayVoice( "Voices/vo09_mei0088" )
 \CN["冥"]
 （即使不能杀人，至少也要让他受伤……。
-为了尽可能地提高无黑和其他人生存的概率）
+　为了尽可能地提高无黑和其他人生存的概率）
 
 这个时候还不知道父母是否还活着。
 
@@ -330,7 +330,7 @@
 : DrawChara( "Ranmaru", 2, 0)
 \CN["兰丸"]
 “……真厉害啊，那个孩子。在黑夜叉，黑精灵面前
-一步也不退让什么的”
+　一步也不退让什么的”
 
 : DrawChara( "Daruma", 1, 0)
 \CN["达磨"]
@@ -360,7 +360,7 @@
 : PlayVoice( "Voices/vo10_mid0163" )
 \CN["绿色"]
 “刚才还在喀哒喀哒喀哒地抖着呢，不做了。
-不然就没意思了”
+　不然就没意思了”
 
 //: DrawChara( "Mei", 3, 0)
 : HideWnd()
@@ -383,7 +383,7 @@
 : PlayVoice( "Voices/vo10_mid0164" )
 \CN["绿色"]
 “我真有一手好手艺。
-使用的也是相当不错的刀。铭是什么？”
+　使用的也是相当不错的刀。铭是什么？”
 
 //: DrawChara( "Mei", 14, 0)
 : PlayVoice( "Voices/vo09_mei0090" )
@@ -437,13 +437,13 @@
 : DrawFaceThumbnail( "Ranmaru", 3, 0, 0, 0 )
 \CN["兰丸"]
 《太厉害了……。与{黑夜叉，暗黑精灵}化的望月先生为对手
-经常到这里……”
+　经常到这里……”
 
 : DrawFaceThumbnail( "Daruma", 0, 0, 0, 2)
 \CN["达磨"]
 “果然，那个{女子，おなご}，我觉得能够做到的可能性很高。
-与黑夜叉、黑精灵敌对的现在，应该马上就要到了。
-我的直觉就是这样告诉你的”
+　与黑夜叉、黑精灵敌对的现在，应该马上就要到了。
+　我的直觉就是这样告诉你的”
 
 : DrawChara( "Midori", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo10_mid0167" )
@@ -454,7 +454,7 @@
 : PlayVoice( "Voices/vo10_mid0168" )
 \CN["绿色"]
 “嘛，我会慢慢攻击的。
-我不能调整这个样子，杀了你可不行啊”
+　我不能调整这个样子，杀了你可不行啊”
 
 //●演出：みどり　アクションシーン
 : HideWnd()
@@ -518,7 +518,7 @@
 : PlayVoice( "Voices/vo10_mid0169" )
 \CN["绿色"]
 “等、自己、{黑夜叉，暗黑妖精}化不了的话
-从一开始就做那个！我把土豆放进去了”
+　从一开始就做那个！我把土豆放进去了”
 
 : DrawChara( "Midori", 5, 0)
 : PlayVoice( "Voices/vo10_mid0170" )
@@ -589,7 +589,7 @@
 : PlayVoice( "Voices/vo10_mid0173" )
 \CN["绿色"]
 「哈？头，你说什么？
-现在不干也不可能吧”
+　现在不干也不可能吧”
 
 : DrawChara( "Daruma", 1, 0)
 \CN["达磨"]
@@ -633,7 +633,7 @@
 : DrawChara( "Daruma", 5, 0)
 \CN["达磨"]
 「神八代，到我这里来。
-为了今后的大和，请使用我们的力量”
+　为了今后的大和，请使用我们的力量”
 
 : DrawChara( "Mei", 13, 0)
 : PlayVoice( "Voices/vo09_mei0100" )
@@ -692,7 +692,7 @@
 : PlayVoice( "Voices/vo09_mei0102" )
 \CN["冥"]
 （绝不能让夺走我重要之物的蠢货横行霸道
-不行……）
+　不行……）
 
 所以，建立那个组织的理由，与制作相关的人物
 我仔细调查了那个。
@@ -705,7 +705,7 @@
 : PlayVoice( "Voices/vo09_mei0103" )
 \CN["冥"]
 （那家伙已经杀了。
-但是，还不能断定结束）
+　但是，还不能断定结束）
 
 我还继续调查。
 
@@ -737,7 +737,7 @@
 : DrawChara( "Ranmaru", 1, 0)
 \CN["兰丸"]
 “别误会了。复仇什么都不会发生。”
-我不是想说那样的话……”
+　我不是想说那样的话……”
 
 : DrawChara( "Mei", 14, 0)
 : PlayVoice( "Voices/vo09_mei0098" )
@@ -762,7 +762,7 @@
 : PlayVoice( "Voices/vo09_mei0106" )
 \CN["冥"]
 “啊，我也来了。好像九星全员集合。
-必须回到据点”
+　必须回到据点”
 
 //●演出：冥・蘭丸　退場した跡、暗転させる
 : HideWnd()
@@ -782,11 +782,11 @@
 : DrawFaceThumbnail( "Ranmaru", 1, 0, 0 )
 \CN["兰丸"]
 （这么说来，大和的头脑是否会焕然一新
-我说过啊）
+　我说过啊）
 
 \CN["兰丸"]
 （般若先生回到这里来，有什么好事吗
-但是……嗯，有种很讨厌的预感啊）
+　但是……嗯，有种很讨厌的预感啊）
 
 ……………………………………………………。
 

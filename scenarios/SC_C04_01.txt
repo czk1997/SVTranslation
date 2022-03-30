@@ -30,7 +30,7 @@
 
 \CN["白夜队士・女A"]
 「冥先生，这是怎么回事？
-为什么鬼灯的家伙和冥先生在一起？”
+　为什么鬼灯的家伙和冥先生在一起？”
 
 //●演技：心の声です
 : DrawChara( "Mukuro", 1, 0, 0)
@@ -45,7 +45,7 @@
 : DrawChara( "Manji", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["卍"]
 “喂喂，神八代啊
-为什么要带鬼灯的家伙来？”
+　为什么要带鬼灯的家伙来？”
 
 \CN["冥"]
 「…………」
@@ -67,7 +67,7 @@
 : PlayVoice( "Voices/vo10_mid0208" )
 \CN["绿色"]
 “嗯？你有意见的话，干脆说出来吧？”？
-绿先生听多少就听多少”
+　绿先生听多少就听多少”
 
 : DrawChara( "Manji", 0, 0)
 \CN["卍"]
@@ -84,7 +84,7 @@
 : PlayVoice( "Voices/vo11_mik0079" )
 \CN["御影"]
 “你是鬼灯的……确实是神八代无黑。
-冥小姐的妹妹”
+　冥小姐的妹妹”
 
 身穿巫女服的女人。
 语调和语言虽然很有礼貌，但却不受欢迎
@@ -114,12 +114,12 @@
 : Call( "Scenarios/Common*FgEff")
 \CN["兰丸"]
 「啊，那孩子是冥的妹妹啊。
-气氛很像呢”
+　气氛很像呢”
 
 : DrawChara( "Daruma", 2, 0, 0)
 \CN["达磨"]
 “神八代啊，虽说是妹妹，但还是把鬼灯的队员带到了这里
-能告诉我理由吗？”
+　能告诉我理由吗？”
 
 : DrawChara( "Mei", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo09_mei0194" )
@@ -161,7 +161,7 @@
 : PlayVoice( "Voices/vo00_muk2443" )
 \CN["无黑"]
 “是的，姐姐说的是实话。
-我已经不是鬼灯的人了”
+　我已经不是鬼灯的人了”
 
 //: EraseChara( "Mei", 0.25 )
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
@@ -171,24 +171,24 @@
 : PlayVoice( "Voices/vo10_mid0210" )
 \CN["绿色"]
 「就算放弃了也真的是太好了。可能是随便一点吧。
-呐，卍，你觉得怎么样？”
+　呐，卍，你觉得怎么样？”
 
 : DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 \CN["卍"]
 “啊？我对你的头撒谎说害怕的话，那就这样吧
-这是带来的神八代的责任啊。我都会犯的”
+　这是带来的神八代的责任啊。我都会犯的”
 
 : DrawChara( "Midori", 2, 0)
 : PlayVoice( "Voices/vo10_mid0211" )
 \CN["绿色"]
 “嘛，凭你的力量，就算和冥相互残杀
-虽然只干了1分钟”
+　虽然只干了1分钟”
 
 : DrawChara( "Midori", 17, 0)
 : PlayVoice( "Voices/vo10_mid0212" )
 \CN["绿色"]
 “如果撒谎的话，我会严刑拷打的。
-无黑其实很早之前就开始关注了”
+　无黑其实很早之前就开始关注了”
 
 : EraseChara( "Midori", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Manji", Call("Scenarios/Common*FgFadeTime") )
@@ -196,7 +196,7 @@
 : PlayVoice( "Voices/vo11_mik0080" )
 \CN["御影"]
 “绿先生，卍先生，在您的头前。
-请谨言慎行”
+　请谨言慎行”
 
 : DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
@@ -206,7 +206,7 @@
 : DrawChara( "Daruma", 1, 0)
 \CN["达磨"]
 「神八代冥啊，流奈打算怎么做妹妹？
-我来告诉你。”
+　我来告诉你。”
 
 //●読み：私の下（わたしのもと）
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
@@ -214,7 +214,7 @@
 : PlayVoice( "Voices/vo09_mei0195" )
 \CN["冥"]
 “啊！如果能被原谅的话，今后作为白夜的队员
-我想让你在我手下工作”
+　我想让你在我手下工作”
 
 : DrawChara( "Daruma", 0, 0)
 \CN["达磨"]
@@ -251,7 +251,7 @@
 : PlayVoice( "Voices/vo11_mik0081" )
 \CN["御影"]
 “不知道……那个小姑娘，朝着头
-多么无礼的事啊……！”
+　多么无礼的事啊……！”
 
 : EraseChara( "Ranmaru", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
@@ -274,7 +274,7 @@
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "L" )
 \CN["达磨"]
 “好的。如果说有觉悟的话
-”
+　”
 
 : DrawChara( "Ranmaru", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 \CN["兰丸"]
@@ -287,25 +287,25 @@
 : PlayVoice( "Voices/vo11_mik0082" )
 \CN["御影"]
 “居然全部都预料到了……。
-不愧是头脑和才干不同”
+　不愧是头脑和才干不同”
 
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Manji", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 \CN["卍"]
 “因为讨厌那样可爱的孩子被杀啊。
-如果要杀的话，就杀了他，不是杀了他一发吗？”
+　如果要杀的话，就杀了他，不是杀了他一发吗？”
 
 : DrawChara( "Midori", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
 : PlayVoice( "Voices/vo10_mid0214" )
 \CN["绿色"]
 “嗯，这个这样就变得有趣了，可以吗？”。
-头在前面那个胆量吗……是啊”
+　头在前面那个胆量吗……是啊”
 
 : DrawChara( "Midori", 17, 0)
 : PlayVoice( "Voices/vo10_mid0215" )
 \CN["绿色"]
 “卍、自己稀里糊涂的话，就把干部的宝座给那家伙
-被剥夺”
+　被剥夺”
 
 : DrawChara( "Manji", 0, 0)
 \CN["卍"]
@@ -315,7 +315,7 @@
 : PlayVoice( "Voices/vo10_mid0216" )
 \CN["绿色"]
 “这是我们好不容易忠告过的
-你的态度是什么？你在小看我吗？”
+　你的态度是什么？你在小看我吗？”
 
 : DrawChara( "Manji", 0, 0)
 \CN["卍"]
@@ -326,24 +326,24 @@
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["达磨"]
 “神八代无黑啊，为什么会跟着姐姐神八代冥呢。
-能告诉我理由吗？”
+　能告诉我理由吗？”
 
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
 : PlayVoice( "Voices/vo00_muk2445" )
 \CN["无黑"]
 “我对幕府有想法，我想知道哪个才是正确的
-因为我想用自己的眼睛看清”
+　因为我想用自己的眼睛看清”
 
 : DrawChara( "Daruma", 0, 0)
 \CN["达磨"]
 “嗯。哪个正确呢……？”。
-还很蓝呢。但是，这样想也不坏”
+　还很蓝呢。但是，这样想也不坏”
 
 : DrawChara( "Daruma", 1, 0)
 \CN["达磨"]
 “好吧，我承认我们是白夜队士。
-神八代冥，就让它附在希望之路的冥之下吧」
+　神八代冥，就让它附在希望之路的冥之下吧」
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
@@ -380,62 +380,62 @@
 
 : if ( MissionProgress( "SC_A01_50", "Opened" ) == true )
 	: SetMission( "SC_A01_50", "Hidden" )
-活动“由著名的色情涂鸦技师制作的dild”
-消失了。
+	活动“由著名的色情涂鸦技师制作的dild”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A01_51", "Opened" ) == true )
 	: SetMission( "SC_A01_51", "Hidden" )
-活动“亲手撕破处女膜”开始了
-消失了。
+	活动“亲手撕破处女膜”开始了
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A01_52", "Opened" ) == true )
 	: SetMission( "SC_A01_52", "Hidden" )
-活动“给贵族男人处女”开始了
-消失了。
+	活动“给贵族男人处女”开始了
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_51_1", "Opened" ) == true )
 	: SetMission( "SC_A02_51_1", "Hidden" )
-活动“向加津佐的镇长发送物品”
-消失了。
+	活动“向加津佐的镇长发送物品”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_51_2", "InProgress" ) == true )
 	: SetMission( "SC_A02_51_2", "Hidden" )
-活动“向加津佐的镇长发送物品”
-消失了。
+	活动“向加津佐的镇长发送物品”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_50_1", "Opened" ) == true )
 	: SetMission( "SC_A02_50_1", "Hidden" )
-活动“来取史莱姆的粘液”
-消失了。
+	活动“来取史莱姆的粘液”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_50_2", "InProgress" ) == true )
 	: SetMission( "SC_A02_50_2", "Hidden" )
-活动“来取史莱姆的粘液”
-消失了。
+	活动“来取史莱姆的粘液”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_53", "Opened" ) == true )
 	: SetMission( "SC_A02_53", "Hidden" )
-活动“贵族的性接待请求”
-消失了。
+	活动“贵族的性接待请求”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A03_51_1", "Opened" ) == true )
 	: SetMission( "SC_A03_51_1", "Hidden" )
-活动“希望得到恋爱小说”
-消失了。
+	活动“希望得到恋爱小说”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A03_51_2", "InProgress" ) == true )
 	: SetMission( "SC_A03_51_2", "Hidden" )
-活动“希望得到恋爱小说”
-消失了。
+	活动“希望得到恋爱小说”
+	消失了。
 
 : endif
 
@@ -467,7 +467,7 @@
 : PlayVoice( "Voices/vo09_mei0200" )
 \CN["冥"]
 “就算不说我也知道
-不允许失败。要铭记在心”
+　不允许失败。要铭记在心”
 
 失败有时会直接导致死亡。
 那个在鬼灯里的时候也没变。
@@ -526,7 +526,7 @@
 	\CI["试胆"]
 	\CI["花街柳巷"]
 	\CI["研究人员的帮助"]
-你做什么工作？
+	你做什么工作？
 
 	: if ($choice == 0)
 		: Jump( "Scenarios/SC_C04_02" )
@@ -538,7 +538,7 @@
 : elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 1 )
 	\CI["花街柳巷"]
 	\CI["研究人员的帮助"]
-你做什么工作？
+	你做什么工作？
 
 	: if ($choice == 0)
 		: Jump( "Scenarios/SC_C04_03" )
@@ -548,7 +548,7 @@
 : elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 2 )
 	\CI["试胆"]
 	\CI["研究人员的帮助"]
-你做什么工作？
+	你做什么工作？
 
 	: if ($choice == 0)
 		: Jump( "Scenarios/SC_C04_02" )
@@ -558,7 +558,7 @@
 : elif( Call( "Scenarios/CommonSys*Chapter_Judge04b_1" ) == 3 )
 	\CI["试胆"]
 	\CI["花街柳巷"]
-你做什么工作？
+	你做什么工作？
 
 	: if ($choice == 0)
 		: Jump( "Scenarios/SC_C04_02" )

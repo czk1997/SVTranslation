@@ -34,7 +34,7 @@
 
 \CN["御影的部下B"]
 “我知道你们会来这里。
-下次一定要干完”
+　下次一定要干完”
 
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
@@ -46,7 +46,7 @@
 : PlayVoice( "Voices/vo02_kin0781" )
 \CN["黄菜子"]
 “确实，所有人都应该是魔术师。
-无黑先生，桃先生，小心点！”
+　无黑先生，桃先生，小心点！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -77,7 +77,7 @@
 	: Jump( "*sc001_win" )	//勝利した場合
 : elif ( $battleEscape == true )
 	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle01" )
 
@@ -88,7 +88,7 @@
 	: FadeIn( 0.0 )
 	\CI["再战"]
 	\CI["重做"]
-失败了……。
+	失败了……。
 
 	: if ($choice == 0)
 		: Jump( "*battle01" )
@@ -195,26 +195,26 @@
 : PlayVoice( "Voices/vo11_mik0271" )
 \CN["御影"]
 “还有，那位小姐一定是暗杀失败而死的
-我以为……”
+　我以为……”
 
 : DrawChara( "Mikage", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom1486" )
 \CN["桃"]
 “织笠御影，作为一个魔术师，你是
-我想差不多该解决了吧”
+　我想差不多该解决了吧”
 
 : DrawChara( "Mikage", 5, 0)
 : PlayVoice( "Voices/vo11_mik0272" )
 \CN["御影"]
 “我会好好记住你的，公主椿。
-其实很喜欢呢”
+　其实很喜欢呢”
 
 : DrawChara( "Mikage", 2, 0)
 : PlayVoice( "Voices/vo11_mik0273" )
 \CN["御影"]
 “美丽鲜艳的头发，细腻光滑的皮肤——
-因为我想好好享受一次直到消气为止”
+　因为我想好好享受一次直到消气为止”
 
 织笠御影一边舔着嘴唇，一边露出艳丽的微笑。
 
@@ -222,7 +222,7 @@
 : PlayVoice( "Voices/vo01_mom1487" )
 \CN["桃"]
 “我对那边的世界也有兴趣
-我不想理你啊。看起来很危险……”
+　我不想理你啊。看起来很危险……”
 
 桃子露出蓝色的脸，做出自己抱住自己身体的动作。
 
@@ -235,7 +235,7 @@
 : PlayVoice( "Voices/vo11_mik0275" )
 \CN["御影"]
 “但是，如果我是女生的话，也有说不合理
-我不讨厌”
+　我不讨厌”
 
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -266,7 +266,7 @@
 	: Jump( "*sc002_win" )	//勝利した場合
 : elif ( $battleEscape == true )
 	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle02" )
 
@@ -277,7 +277,7 @@
 	: FadeIn( 0.0 )
 	\CI["再战"]
 	\CI["重做"]
-失败了……。
+	失败了……。
 
 	: if ($choice == 0)
 		: Jump( "*battle02" )
@@ -298,7 +298,7 @@
 : PlayVoice( "Voices/vo11_mik0276" )
 \CN["御影"]
 “哈，哈，和鬼灯的时候没法比
-看来你增强了力量啊”
+　看来你增强了力量啊”
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk4560" )
@@ -374,12 +374,12 @@
 : PlayVoice( "Voices/vo11_mik0282" )
 \CN["御影"]
 “不可能……不可能……竟然输给这种人
-绝对不可能的……！”
+　绝对不可能的……！”
 
 : PlayVoice( "Voices/vo11_mik0283" )
 \CN["御影"]
 “啊，哈哈，你给我适可而止吧……马上就败露了
-这个，有垃圾啊啊啊啊啊啊啊！！”
+　这个，有垃圾啊啊啊啊啊啊啊！！”
 
 织笠御影变成了黑蜘蛛，想要抵抗桃子。
 
@@ -398,7 +398,7 @@
 : PlayVoice( "Voices/vo01_mom1493" )
 \CN["桃"]
 “连女人都会着迷的女人真的是很强的女人——
-只有死的时候才能优雅美丽地散落的淑女”
+　只有死的时候才能优雅美丽地散落的淑女”
 
 : PlayVoice( "Voices/vo11_mik0284" )
 \CN["御影"]
@@ -451,7 +451,7 @@
 : PlayVoice( "Voices/vo00_muk4563" )
 \CN["无黑"]
 “我说过尽可能地让比拉加活下去
-没有必要杀了吧”
+　没有必要杀了吧”
 
 总之，部下们一起用绳子绑好。
 
@@ -477,18 +477,18 @@
 : DrawChara( "Mukuro", 23, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "R" )
 \CN["平底片"]
 “你没有杀死我，而是抓住了我。
-非常感谢”
+　非常感谢”
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk4564" )
 \CN["无黑"]
 “你打算怎么对待她？
-啊，不，对不起。不问才是礼仪啊”
+　啊，不，对不起。不问才是礼仪啊”
 
 : DrawChara( "Mukuro", 7, 0)
 \CN["平底片"]
 “是啊。因为是机密事项，如果可以的话。”
-非常感谢”
+　非常感谢”
 
 \CN["平底片"]
 “那么，亚久里先生，把织笠先生搬过去吧。”
@@ -513,7 +513,7 @@
 : PlayVoice( "Voices/vo01_mom1495" )
 \CN["桃"]
 「那我们也回去吧。
-喂，顺便去崎珠吃点好吃的再回去吧”
+　喂，顺便去崎珠吃点好吃的再回去吧”
 
 : DrawChara( "Kinako", 4, 0)
 : PlayVoice( "Voices/vo02_kin0785" )
@@ -562,7 +562,7 @@
 : PlayVoice( "Voices/vo00_muk4566" )
 \CN["无黑"]
 “为什么希拉加想让织笠御影活下来呢？”
-虽然不知道，但是我觉得危险人物应该在这里杀了”
+　虽然不知道，但是我觉得危险人物应该在这里杀了”
 
 //●演出：斬殺エフェクト
 //●ＳＥ：刺す音
@@ -581,7 +581,7 @@
 : PlayVoice( "Voices/vo11_mik0285" )
 \CN["御影"]
 “我才是……对不起……请……。
-我没能保护你们……”
+　我没能保护你们……”
 
 白夜的干部，有能力的魔术师织笠御影。
 

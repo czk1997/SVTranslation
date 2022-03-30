@@ -19,7 +19,7 @@
 : DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["平底片"]
 “是的，我想想万一的事。
-亚久里先生也在等着我”
+　亚久里先生也在等着我”
 
 : DrawFaceThumbnail( "Aguri", 0, 0, 0 )
 : PlayVoice( "Voices/vo16_agu0284" )
@@ -29,13 +29,13 @@
 : DrawChara( "Tadakatsu", 9, 0)
 \CN["将军"]
 “说到亚久里，就是你的这个吧。
-这样黑暗的女人……你也变了。
-这么说来，8代前的将军也有这样的兴趣——”
+　这样黑暗的女人……你也变了。
+　这么说来，8代前的将军也有这样的兴趣——”
 
 : DrawChara( "Hiraga", 4, 0)
 \CN["平底片"]
 “将军大人，和我一起笑着逃不掉的事情
-有一两个哦？”
+　有一两个哦？”
 
 //将軍cos1へ変更
 : CharaCostume( "Tadakatsu", 1 )
@@ -48,16 +48,16 @@
 : DrawChara( "Tadakatsu", 0, 0)
 \CN["将军"]
 （我的直觉告诉你，让比拉加生气是我的毁灭
-直接联系的话。以后应该注意。）
+　直接联系的话。以后应该注意。）
 
 : DrawChara( "Hiraga", 2, 0)
 \CN["平底片"]
 （他基本上是个胆小鬼。
-嘛，这对我来说是非常方便的……）
+　嘛，这对我来说是非常方便的……）
 
 \CN["平底片"]
 （因为胆小，所以有时会选择疯狂的选择。
-必须要小心啊）
+　必须要小心啊）
 
 希拉加和将军互相试探对方的心思。
 
@@ -67,12 +67,12 @@
 : DrawChara( "Hiraga", 0, 0)
 \CN["平底片"]
 “将军大人，最后确认一下，真的要接受魔导手术吗？”
-是吧？也就是说要舍弃别人的身体”
+　是吧？也就是说要舍弃别人的身体”
 
 : DrawChara( "Tadakatsu", 15, 0)
 \CN["将军"]
 “不拘泥于人。
-如果能得到比谁都强大的力量的话，我就心甘情愿了”
+　如果能得到比谁都强大的力量的话，我就心甘情愿了”
 
 压制着反幕派势力。
 
@@ -89,12 +89,12 @@
 : DrawChara( "Tadakatsu", 11, 0)
 \CN["将军"]
 “你因为我的死而遭受损失。
-正因为如此，才值得信任”
+　正因为如此，才值得信任”
 
 : DrawChara( "Hiraga", 6, 0)
 \CN["平底片"]
 “呵呵。嘛，正如您说的那样。
-我所期望的只有我和亚久里的平稳”
+　我所期望的只有我和亚久里的平稳”
 
 将军知道是短暂的交往。
 
@@ -106,12 +106,12 @@
 : DrawChara( "Hiraga", 0, 0)
 \CN["平底片"]
 “那么，开始吧。虽然是手术，但是要用手术刀
-我不会切的”
+　我不会切的”
 
 \CN["平底片"]
 “通过将提取出的密度很高的魔力注入细胞中，使细胞
-通过变异，变成拥有更强肉体的存在
-可以重生”
+　通过变异，变成拥有更强肉体的存在
+　可以重生”
 
 : DrawChara( "Tadakatsu", 9, 0)
 \CN["将军"]
@@ -119,7 +119,7 @@
 
 \CN["平底片"]
 “睡觉的时候就结束了。
-下次醒来的时候，应该会变成别的存在”
+　下次醒来的时候，应该会变成别的存在”
 
 : DrawChara( "Tadakatsu", 16, 0)
 \CN["将军"]
@@ -171,7 +171,7 @@
 : PlayVoice( "Voices/vo01_mom1548" )
 \CN["桃"]
 “呐，虽然现在已经很厉害了，但是西都和帝都是食物的味道
-之类的，很不一样吧”
+　之类的，很不一样吧”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4637" )
@@ -208,7 +208,7 @@
 : PlayVoice( "Voices/vo01_mom1550" )
 \CN["桃"]
 “对不起，你们和我们
-因为好像没有足够的知性可以聊天……”
+　因为好像没有足够的知性可以聊天……”
 
 桃子突然挑衅。
 
@@ -265,7 +265,7 @@
 : PlayVoice( "Voices/vo01_mom1552" )
 \CN["桃"]
 「啊，我也来了。
-总之，先来研究所看看平时的内容”
+　总之，先来研究所看看平时的内容”
 
 : DrawChara( "Kinako", 0, 0)
 : PlayVoice( "Voices/vo02_kin0840" )
@@ -276,7 +276,7 @@
 : PlayVoice( "Voices/vo00_muk4640" )
 \CN["无黑"]
 “是啊。不工作的人不应该吃。
-因为对希拉里有很多照顾”
+　因为对希拉里有很多照顾”
 
 : HideWnd()
 : StopBgm( 0.5 )
@@ -302,7 +302,7 @@
 
 \CN["平底片"]
 “对了对了，多亏了大家的帮助
-反幕派也变得相当老实了”
+　反幕派也变得相当老实了”
 
 : EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
@@ -336,8 +336,8 @@
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
 “实际上我想在不死之山进行大规模的魔导器实验。
-因此，如果你们发生什么事的话
-我想拜托保镖”
+　因此，如果你们发生什么事的话
+　我想拜托保镖”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1554" )
@@ -360,7 +360,7 @@
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
 “不愧是。
-前几天，对将军实施了魔导手术”
+　前几天，对将军实施了魔导手术”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1555" )
@@ -370,21 +370,21 @@
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
 “这是用魔导器做的手术。
-目的是为了强化肉体吧”
+　目的是为了强化肉体吧”
 
 //●分岐：子宮改造手術を受けている場合
 : if ( Flag ( "Birth" ) == true )
 	: DrawChara( "Mukuro", 10, 0)
-轻轻地触摸腹部。
+	轻轻地触摸腹部。
 
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 23, 0)
 	: PlayVoice( "Voices/vo00_muk4643" )
 	\CN["无黑"]
-（我也曾请{以前}用魔导手术对子宫进行了改造……）
+	（我也曾请{以前}用魔导手术对子宫进行了改造……）
 
-确实是使用魔导器的
-应该是重塑细胞之类的东西。
+	确实是使用魔导器的
+	应该是重塑细胞之类的东西。
 
 //●分岐終了
 : endif
@@ -396,14 +396,14 @@
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
 “让细胞本身发生变化。
-简单来说就不是人了”
+　简单来说就不是人了”
 
 //●読み：止めて（とめて）
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4644" )
 \CN["无黑"]
 “……魔导手术失败导致将军暴走
-如果有的话，就算杀了也想要阻止，是这样吗？”
+　如果有的话，就算杀了也想要阻止，是这样吗？”
 
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
@@ -415,7 +415,7 @@
 : PlayVoice( "Voices/vo01_mom1556" )
 \CN["桃"]
 “特意拜托我们的话，可能会失败
-是不是很贵？”
+　是不是很贵？”
 
 : DrawFaceThumbnail( "Hiraga", 5, 0, 0 )
 \CN["平底片"]
@@ -425,12 +425,12 @@
 : PlayVoice( "Voices/vo00_muk4645" )
 \CN["无黑"]
 “虽然不是人类，但是会变成什么样的存在呢？
-我想问一下”
+　我想问一下”
 
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
 “虽然没有特别的名字，但是我是{人造魔族，伊维尔罗伊德}
-命名了”
+　命名了”
 
 : DrawChara( "Kinako", 2, 0)
 : PlayVoice( "Voices/vo02_kin0843" )
@@ -445,7 +445,7 @@
 : PlayVoice( "Voices/vo01_mom1557" )
 \CN["桃"]
 “也就是说，如果变成怪物的话，就想要杀人。
-为什么特意去做那种危险的事情呢……”
+　为什么特意去做那种危险的事情呢……”
 
 : DrawChara( "Momo", 6, 0)
 : PlayVoice( "Voices/vo01_mom1558" )
@@ -460,7 +460,7 @@
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
 “如果能去不死之山的山顶就好了。
-我们做好准备后也会追上的”
+　我们做好准备后也会追上的”
 
 //: DrawChara( "Kinako", 0, 0)
 //: PlayVoice( "Voices/vo02_kin0844" )
@@ -540,7 +540,7 @@
 
 \CN["平底片"]
 “现在，在这里面等着一桥将军醒来的时候。
-难道是羽化前的蝴蝶吗？”
+　难道是羽化前的蝴蝶吗？”
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom1560" )
@@ -549,7 +549,7 @@
 
 \CN["平底片"]
 “马上就要到了。
-各位，先做好准备吧——”
+　各位，先做好准备吧——”
 
 //●演出：無黒たち　戦闘準備する
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -575,7 +575,7 @@
 : PlayVoice( "Voices/vo01_mom1561" )
 \CN["桃"]
 “吹这样温热的风的时候
-会发生不吉利的事情吧……”
+　会发生不吉利的事情吧……”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 \CN["平底片"]
@@ -598,7 +598,7 @@
 : PlayVoice( "Voices/vo01_mom1562" )
 \CN["桃"]
 “真的是那个一桥将军吗？
-虽然感觉到了不可思议的魔力”
+　虽然感觉到了不可思议的魔力”
 
 作为魔术师的桃子很快地
 注意到一桥将军惊人的魔力量。
@@ -666,7 +666,7 @@
 : DrawChara( "Hiraga", 6, 0)
 \CN["平底片"]
 “这是亚久里先生的战斗态势。
-怎么样？很棒吧？”
+　怎么样？很棒吧？”
 
 : EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -681,7 +681,7 @@
 : DrawChara( "Hiraga", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 \CN["平底片"]
 “这是完全被力量吞噬者的下场。
-好像不适应魔导手术”
+　好像不适应魔导手术”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
@@ -691,7 +691,7 @@
 
 \CN["平底片"]
 “不，不是失败。
-我只是不适应他”
+　我只是不适应他”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
@@ -728,7 +728,7 @@
 : PlayVoice( "Voices/vo01_mom1565" )
 \CN["桃"]
 “那就是大斑鱼啊……。
-好大啊”
+　好大啊”
 
 : DrawFaceThumbnail( "Mukuro", 41, 0, 5 )
 : PlayVoice( "Voices/vo00_muk4652" )
@@ -743,7 +743,7 @@
 : DrawFaceThumbnail(  "Hiraga", 5, 0, 0 )
 \CN["平底片"]
 “……是的，不能就这样放任不管。
-很遗憾”
+　很遗憾”
 
 想必比拉加也能预想到会变成这样吧。
 
@@ -798,7 +798,7 @@
 	: Jump( "*sc004" )	//勝利した場合
 : elif ( $battleEscape == true )
 	: DrawImage( 0, 0, "BGImage/BG_Summit01_05", 0.0 )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle01" )
 
@@ -845,11 +845,11 @@
 : DrawFaceThumbnail( "Tadakatsu", 13, 0, 0 )
 \CN["将军"]
 “哈……哈……啊……啊，身体……燃烧着……
-痛苦……好像全身的骨头都碎了……”
+　痛苦……好像全身的骨头都碎了……”
 
 \CN["将军"]
 “好痛……好痛苦……哈哈，救救我……我不想死……”……
-讨厌……还没……还没开始……我要永远把大和……”
+　讨厌……还没……还没开始……我要永远把大和……”
 
 : DrawChara( "Hiraga", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["平底片"]
@@ -893,13 +893,13 @@
 : PlayVoice( "Voices/vo00_muk4656" )
 \CN["无黑"]
 （即便是有如此影响力的人，也会暗中死去。
-然后，死了之后一切都结束了……）
+　然后，死了之后一切都结束了……）
 
 //●演技：心の声です
 : PlayVoice( "Voices/vo00_muk4657" )
 \CN["无黑"]
 （人迎来真正死亡的时候，即使是被谁遗忘的时候
-我听说过……）
+　我听说过……）
 
 但是，我不这么认为。
 死了就完了。
@@ -911,7 +911,7 @@
 : PlayVoice( "Voices/vo01_mom1566" )
 \CN["桃"]
 “老实说，虽然不是很喜欢的人
-这样的话，总觉得有点郁闷呢……”
+　这样的话，总觉得有点郁闷呢……”
 
 因为获得了巨大的权力而变得孤独
 我同情一个谁都不相信就这样结束了一生的男人。
@@ -1002,7 +1002,7 @@
 : PlayVoice( "Voices/vo01_mom1567" )
 \CN["桃"]
 “魔力已经空了呢。
-这样的话，我就只能是一个柔弱的女孩子了……”
+　这样的话，我就只能是一个柔弱的女孩子了……”
 
 桃子微微一笑，一个人发牢骚。
 

@@ -33,21 +33,21 @@
 : ShowWnd()
 \CN["桃"]
 “我还以为反幕派一定会来揍我呢
-和维克托尔的会谈进行得很顺利真是太好了”
+　和维克托尔的会谈进行得很顺利真是太好了”
 
 : DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 \CN["雷欧"]
 “那是因为，那个费尔克先生在做护卫呢？
-明明有世界最强的男人，却有笨蛋攻击
-是吧”
+　明明有世界最强的男人，却有笨蛋攻击
+　是吧”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1025" )
 \CN["无黑"]
 “我觉得成功和失败是次要的。
-只要有歹徒袭击的事实
-这样就可以了”
+　只要有歹徒袭击的事实
+　这样就可以了”
 
 : DrawChara( "Leo", 15, 0)
 \CN["雷欧"]
@@ -64,21 +64,21 @@
 : PlayVoice( "Voices/vo02_kin0204" )
 \CN["黄菜子"]
 “两位是多米尼克大臣视察大和
-我去做护卫了”
+　我去做护卫了”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 \CN["雷欧"]
 “啊，是维克托尔骑士团和鬼灯的前两名护卫啊。
-真是非常豪华的面子啊”
+　真是非常豪华的面子啊”
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0311" )
 \CN["桃"]
 “当然啦。像大和这样的小岛国，维克托尔什么的。”
-要是被大国盯上，变成战争的话，可就受不了了
-没有啊」
+　要是被大国盯上，变成战争的话，可就受不了了
+　没有啊」
 
 : DrawChara( "Leo", 5, 0)
 \CN["雷欧"]
@@ -99,7 +99,7 @@
 : PlayVoice( "Voices/vo00_muk1026" )
 \CN["无黑"]
 “是啊。即使不是这样，最近国内总是慌慌张张的。”
-有啊。如果以现在的状态被他国进攻的话，就不堪一击了”
+　有啊。如果以现在的状态被他国进攻的话，就不堪一击了”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -122,7 +122,7 @@
 : PlayVoice( "Voices/vo07_beb0065" )
 \CN["红美"]
 “哼！在下认真起来的话，雷欧什么的完全是焦黑的
-我请客。这样也可以吗？”
+　我请客。这样也可以吗？”
 
 : DrawChara( "Leo", 9, 0)
 \CN["雷欧"]
@@ -134,7 +134,7 @@
 : PlayVoice( "Voices/vo02_kin0206" )
 \CN["黄菜子"]
 “太好了！红美，不能吵架哦。
-还有，雷欧也不能欺负红美”
+　还有，雷欧也不能欺负红美”
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
@@ -152,7 +152,7 @@
 : PlayVoice( "Voices/vo01_mom0313" )
 \CN["桃"]
 “呵呵。雷欧将来一定会被无黑的屁股铺上的。”
-我是这么想的”
+　我是这么想的”
 
 : DrawChara( "Gin", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["银"]
@@ -175,7 +175,7 @@
 : PlayVoice( "Voices/vo00_muk1028" )
 \CN["无黑"]
 “……呜哇……不对！
-我不是这么说的！”
+　我不是这么说的！”
 
 : HideWnd()
 : StopBgm( 1.0 )
@@ -203,13 +203,13 @@
 : PlayVoice( "Voices/vo19_era0018" )
 \CN["伊拉伊萨"]
 “诶～！这就是鬼灯的藏身地啊。
-啊，果然和骑士团的那个完全不一样啊”
+　啊，果然和骑士团的那个完全不一样啊”
 
 : DrawChara( "Xeno", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Elisa", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["奇诺"]
 “副队长，拜托了，请老实点。
-还有，我觉得先打招呼吧……”
+　还有，我觉得先打招呼吧……”
 
 : DrawChara( "Elisa", 5, 0)
 : PlayVoice( "Voices/vo19_era0019" )
@@ -222,19 +222,19 @@
 : PlayVoice( "Voices/vo01_mom0315" )
 \CN["桃"]
 “那个……说不定，狮子的徽章——
-维克托尔骑士团的……？”
+　维克托尔骑士团的……？”
 
 : DrawChara( "Elisa", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo19_era0020" )
 \CN["伊拉伊萨"]
 “喂！我是维克托尔骑士团的伊拉萨。
-请多关照”
+　请多关照”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Xeno", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["奇诺"]
 “对不起，我迟到了，我是泽诺・肖伯。
-我担任维克托尔骑士团的参谋”
+　我担任维克托尔骑士团的参谋”
 
 : HideWnd()
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
@@ -257,7 +257,7 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["桃"]
 “喂喂，难道不是那个孩子吗？”？
-传说中黄菜子的初恋对象……”
+　传说中黄菜子的初恋对象……”
 
 : DrawChara( "Mukuro", 4, 1)
 : PlayVoice( "Voices/vo00_muk1029" )
@@ -273,7 +273,7 @@
 : PlayVoice( "Voices/vo19_era0021" )
 \CN["伊拉伊萨"]
 “啊！Zno，你不是在干吗！”！
-那个孩子——呃……kinako……是吧？”
+　那个孩子——呃……kinako……是吧？”
 
 : DrawChara( "Kinako", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : Wait()
@@ -286,26 +286,26 @@
 : PlayVoice( "Voices/vo19_era0022" )
 \CN["伊拉伊萨"]
 “你，那个，是精灵之森吗？
-是在那里和你在一起的孩子吧？”
+　是在那里和你在一起的孩子吧？”
 
 : DrawChara( "Kinako", 5, 1)
 : PlayVoice( "Voices/vo02_kin0209" )
 \CN["黄菜子"]
 “哈，是！在那里第一次见到了zeno君
-得到了强盗们的帮助……那个…”
+　得到了强盗们的帮助……那个…”
 
 : DrawChara( "Elisa", 0, 0)
 : PlayVoice( "Voices/vo19_era0023" )
 \CN["伊拉伊萨"]
 “特别是这么可爱的孩子啊……。
-明明总是说讨厌累
-那是因为，我会鼓起干劲瞬间杀了你啊」
+　明明总是说讨厌累
+　那是因为，我会鼓起干劲瞬间杀了你啊」
 
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Xeno", 10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
 \CN["奇诺"]
 “啊，伊拉伊萨……！我并没有这个打算
-女孩子被袭击的话，帮助她是理所当然的”
+　女孩子被袭击的话，帮助她是理所当然的”
 
 : HideWnd()
 : DrawChara( "Kinako", 3, 2)
@@ -316,7 +316,7 @@
 : PlayVoice( "Voices/vo02_kin0210" )
 \CN["黄菜子"]
 “啊……！不好意思……客人来了。
-我马上给您准备茶……”
+　我马上给您准备茶……”
 
 : HideWnd()
 //: EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
@@ -353,7 +353,7 @@
 : PlayVoice( "Voices/vo01_mom0317" )
 \CN["桃"]
 “真厉害啊，维克托尔的男孩子……。
-那个年纪还能像那样保护女孩子”
+　那个年纪还能像那样保护女孩子”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Xeno", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
@@ -370,19 +370,19 @@
 : PlayVoice( "Voices/vo19_era0024" )
 \CN["伊拉伊萨"]
 “并不是大家。
-奇诺的那个，只是因为他是天然的……”
+　奇诺的那个，只是因为他是天然的……”
 
 : DrawChara( "Elisa", 3, 0)
 : PlayVoice( "Voices/vo19_era0025" )
 \CN["伊拉伊萨"]
 “我所认识的男人，完全不坦率
-经常吵架吧？”
+　经常吵架吧？”
 
 : DrawChara( "Elisa", 4, 0)
 : PlayVoice( "Voices/vo19_era0026" )
 \CN["伊拉伊萨"]
 “嘛，在别人看来，那只是单纯的玩笑而已
-但是啊”
+　但是啊”
 
 : HideWnd()
 : StopBgm( 1.0 )
@@ -405,13 +405,13 @@
 : PlayVoice( "Voices/vo19_era0027" )
 \CN["伊拉伊萨"]
 “啊？那肯定是你吧。
-话说，为什么没马上进来呢？”
+　话说，为什么没马上进来呢？”
 
 : DrawChara( "Falke", 11, 0)
 \CN["沥青"]
 “这种建筑在维克托尔没有。
-也想给史黛拉和克里西亚看
-拍了照片”
+　也想给史黛拉和克里西亚看
+　拍了照片”
 
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
@@ -419,7 +419,7 @@
 : PlayVoice( "Voices/vo00_muk1030" )
 \CN["无黑"]
 “现在，柏油……？
-也就是说，那个人被称为世界最强……？”
+　也就是说，那个人被称为世界最强……？”
 
 : DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["雷欧"]
@@ -430,7 +430,7 @@
 : DrawChara( "Leo", 11, 0)
 \CN["雷欧"]
 “那个费尔克先生！哦，我叫雷欧！”！
-我非常尊敬费尔克先生……”
+　我非常尊敬费尔克先生……”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Falke", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
@@ -444,12 +444,12 @@
 : DrawChara( "Leo", 16, 1)
 \CN["雷欧"]
 “这、这是世界最强的……光是握手就知道……。
-很厉害的宾格传来了……”
+　很厉害的宾格传来了……”
 
 : DrawChara( "Falke", 4, 0)
 \CN["沥青"]
 “你好像也在锻炼呢。
-有时间的话，可以帮我安排一下吗？”
+　有时间的话，可以帮我安排一下吗？”
 
 : DrawChara( "Leo", 14, 1)
 \CN["雷欧"]
@@ -461,7 +461,7 @@
 : PlayVoice( "Voices/vo19_era0028" )
 \CN["伊拉伊萨"]
 “啊！骗人的假币！
-那么，我也要找人……是啊…”
+　那么，我也要找人……是啊…”
 
 : DrawChara( "Elisa", 4, 0)
 : PlayVoice( "Voices/vo19_era0029" )
@@ -485,18 +485,18 @@
 : DrawChara( "Elisa", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["奇诺"]
 “副队长，你经常这么说吧？
-请不要做那种下流的事！”
+　请不要做那种下流的事！”
 
 : DrawChara( "Elisa", 0, 0)
 : PlayVoice( "Voices/vo19_era0030" )
 \CN["伊拉伊萨"]
 「不是挺好的吗。
-因为这里不是那么坚固的地方”
+　因为这里不是那么坚固的地方”
 
 : DrawChara( "Xeno", 12, 1)
 \CN["奇诺"]
 “不是那个问题！
-而且，这样对黄菜子很失礼……”
+　而且，这样对黄菜子很失礼……”
 
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
@@ -504,20 +504,20 @@
 : PlayVoice( "Voices/vo01_mom0319" )
 \CN["桃"]
 “泽诺君也对黄菜子很着迷
-黄菜子也完全暴露出恋爱中的少女……”
+　黄菜子也完全暴露出恋爱中的少女……”
 
 : DrawChara( "Momo", 5, 1)
 : PlayVoice( "Voices/vo01_mom0320" )
 \CN["桃"]
 “无黑，雷欧，你在发呆的话
-会被那两个人抢先的吧？”
+　会被那两个人抢先的吧？”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 16, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["雷欧"]
 “真的……！？无黑，不能发呆！
-我们也快点变成情侣……！”
+　我们也快点变成情侣……！”
 
 : DrawChara( "Mukuro", 5, 2)
 : PlayVoice( "Voices/vo00_muk1031" )

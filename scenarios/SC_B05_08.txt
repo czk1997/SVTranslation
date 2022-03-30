@@ -37,7 +37,7 @@
 : PlayVoice( "Voices/vo05_aza0357" )
 \CN["爱彩弥"]
 “来自贫民窟的人的联络。无黑和公主是相亲组。”
-因为发生了纠纷而被抓住了”
+　因为发生了纠纷而被抓住了”
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0358" )
@@ -56,19 +56,19 @@
 : PlayVoice( "Voices/vo07_beb0104" )
 \CN["红美"]
 “他们不是武士而是武士！
-只是无所事事而已！”
+　只是无所事事而已！”
 
 : DrawChara( "Leo", 21, 0)
 \CN["雷欧"]
 “比起这个，无黑和sayo被带到哪里去了？
-幕府？幕府啊？我马上就去！”
+　幕府？幕府啊？我马上就去！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "C" )
 : PlayVoice( "Voices/vo02_kin0326" )
 \CN["黄菜子"]
 “现在情报部队的大家正在收集情报
-好像不是被幕府带走的”
+　好像不是被幕府带走的”
 
 //●ＳＥ：デバイスの音
 : trackIndex = PlaySe( "SE/Se_Device01", true );
@@ -86,7 +86,7 @@
 : PlayVoice( "Voices/vo05_aza0360" )
 \CN["爱彩弥"]
 “现在，有人从谍报部队那里看到了巡查组的地方，接到了联络
-进去了。好像是从大和东街道向西都方向经过的”
+　进去了。好像是从大和东街道向西都方向经过的”
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Ryu", 12, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
@@ -141,7 +141,7 @@
 : PlayVoice( "Voices/vo05_aza0361" )
 \CN["爱彩弥"]
 「可靠不是很好吗。
-正因为如此，伙伴才更重要吧”
+　正因为如此，伙伴才更重要吧”
 
 : DrawChara( "Ryu", 24, 0)
 \CN["龙"]
@@ -224,15 +224,15 @@
 : PlayVoice( "Voices/vo02_kin0329" )
 \CN["黄菜子"]
 “有人问店员有什么可疑的人没通过这里吗？”
-我问了一下，好像巡礼组去了西都
-好像没有”
+　我问了一下，好像巡礼组去了西都
+　好像没有”
 
 //●読み：不死の山（ふしのやま）
 : DrawChara( "Kinako", 2, 0)
 : PlayVoice( "Voices/vo02_kin0330" )
 \CN["黄菜子"]
 “见回组是那边的方向——恐怕是‘不死之山’吧
-”
+　”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Bebi", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "R" )
@@ -244,19 +244,19 @@
 : PlayVoice( "Voices/vo02_kin0331" )
 \CN["黄菜子"]
 “因为很久以前有个伟人把长生不老药埋在了山的某个地方，所以
-是被命名为“不死之山”的地方”
+　是被命名为“不死之山”的地方”
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0821" )
 \CN["桃"]
 “嘛，只是单纯的童话而已。
-为了做什么特意去不死之山呢？”
+　为了做什么特意去不死之山呢？”
 
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 \CN["银"]
 “嗯，是去山里埋的吗？
-……不，那样的话，帝都等地应该也有很多山”
+　……不，那样的话，帝都等地应该也有很多山”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0822" )
@@ -308,8 +308,8 @@
 : PlayVoice( "Voices/vo02_kin0333" )
 \CN["黄菜子"]
 “这是马车车轮的痕迹。
-无黑和公主乘坐的马车在登山
-好像没错”
+　无黑和公主乘坐的马车在登山
+　好像没错”
 
 : DrawChara( "Gin", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["银"]
@@ -321,14 +321,14 @@
 : PlayVoice( "Voices/vo07_beb0107" )
 \CN["红美"]
 “完了……我觉得没有。
-因为微微残留着MUKURO和SAYO的味道”
+　因为微微残留着MUKURO和SAYO的味道”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom0823" )
 \CN["桃"]
 “呵呵，不愧是红美啊！很可靠啊。
-那么，就这样爬山吧”
+　那么，就这样爬山吧”
 
 //●シーンエンド
 : FadeOut( 1.0 )
@@ -381,7 +381,7 @@
 : DrawChara( "Leo", 4, 0)
 \CN["雷欧"]
 “哈，不好意思……。
-这样也全速赶来了」
+　这样也全速赶来了」
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
@@ -407,12 +407,12 @@
 : PlayVoice( "Voices/vo01_mom0824" )
 \CN["桃"]
 “但是，粗心大意是大敌啊，小银。
-因为关系到无黑和公主自身的安全，所以不允许失败”
+　因为关系到无黑和公主自身的安全，所以不允许失败”
 
 : DrawChara( "Gin", 9, 0)
 \CN["银"]
 “应该不会大意的。
-不管对手是谁，我都会全力击溃的”
+　不管对手是谁，我都会全力击溃的”
 
 银酱眼睛像饿了的野兽一样闪闪发光。
 
@@ -455,7 +455,7 @@
 : PlayVoice( "Voices/vo02_kin0335" )
 \CN["黄菜子"]
 “是见回组组长笹木幸三郎先生吧。
-我在那之后有事，请让我过去”
+　我在那之后有事，请让我过去”
 
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
@@ -478,7 +478,7 @@
 : PlayVoice( "Voices/vo01_mom0827" )
 \CN["桃"]
 （这么说来，我、黄菜子就是这样和人交往的
-第一次看到拔刀的地方吧）
+　第一次看到拔刀的地方吧）
 
 以前老师和局长黄菜子很厉害的样子
 我说过，是这件事吗。
@@ -489,7 +489,7 @@
 
 \CN["雷欧"]
 “黄菜子，真的吗……。
-你把那种力量藏在哪里了？”
+　你把那种力量藏在哪里了？”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 7, "RC" )
@@ -534,7 +534,7 @@
 
 \CN["睡眠组2"]
 “因为看不见了，我以为他一定死了
-不会是成为幕府的狗吧。笑”
+　不会是成为幕府的狗吧。笑”
 
 : DrawChara( "Gin", 9, 0)
 \CN["银"]
@@ -542,7 +542,7 @@
 
 \CN["睡眠组2"]
 “对了，我们现在是相亲组。
-完全忘记了”
+　完全忘记了”
 
 : EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
@@ -553,13 +553,13 @@
 : DrawChara( "Gin", 6, 0)
 \CN["银"]
 “在地下驰名的家伙随处可见。
-恐怕是从那个地方带钱来的吧”
+　恐怕是从那个地方带钱来的吧”
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom0829" )
 \CN["桃"]
 “嗯。没有将军直接组织。
-堕落得很厉害啊」
+　堕落得很厉害啊」
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -574,7 +574,7 @@
 : DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC")
 \CN["银"]
 “小姐，怎么办？
-这群家伙虽然是垃圾，但是只有手臂有很多”
+　这群家伙虽然是垃圾，但是只有手臂有很多”
 
 : PlayVoice( "Voices/vo01_mom0830" )
 \CN["桃"]
@@ -619,7 +619,7 @@
 : DrawChara( "Gin", 10, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["银"]
 “你说快去无黑公主那里！”！
-不要发呆”
+　不要发呆”
 
 //●演出：黄菜子　揚羽解放
 : HideWnd()
@@ -727,12 +727,12 @@
 : PlayVoice( "Voices/vo24_say0146" )
 \CN["小夜"]
 “半夜和谁说话
-我好好地听说了！”
+　我好好地听说了！”
 
 : DrawChara( "Tadakatsu", 10, 0)
 \CN["将军"]
 “这样啊。嘛，被问到的话也没办法。
-你今天就死在这里”
+　你今天就死在这里”
 
 : DrawFaceThumbnail( "Mukuro", 16, 0, 0, 0 )
 : PlayVoice( "Voices/vo00_muk1590" )
@@ -742,7 +742,7 @@
 : DrawChara( "Tadakatsu", 16, 0)
 \CN["将军"]
 “为什么？你不要提无聊的问题。
-我想杀你，所以一定要杀了你”
+　我想杀你，所以一定要杀了你”
 
 ！
 
@@ -755,13 +755,13 @@
 : PlayVoice( "Voices/vo00_muk1591" )
 \CN["无黑"]
 “如果想杀人的话，为什么特意带我到这么远的地方呢？”
-有必要吗？”
+　有必要吗？”
 
 : DrawChara( "Tadakatsu", 15, 0)
 \CN["将军"]
 “这个理由我更想听。
-但是，根据这本书记载，小夜必须在不死之山上杀人
-好像不行啊」
+　但是，根据这本书记载，小夜必须在不死之山上杀人
+　好像不行啊」
 
 越来越不明白意思。
 毫无条理。
@@ -774,7 +774,7 @@
 : DrawChara( "Tadakatsu", 10, 0)
 \CN["将军"]
 “我什么都没做。但是，那家伙今后可能会成为危险因素。”
-因为。必须趁现在杀了他”
+　因为。必须趁现在杀了他”
 
 //●演出：回想に入る演出
 //●視点：第三者視点
@@ -796,36 +796,36 @@
 : DrawChara( "Tadakatsu", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["将军"]
 “你知道这本书上写的内容吗？
-好像是上一代从维克托尔买来的东西”
+　好像是上一代从维克托尔买来的东西”
 
 \CN["学者"]
 “好像写着阿波罗的箭。
-以使用者的生命为代价，放飞的话就能将大陆本身
-似乎是威力可以归为无的古代魔术”
+　以使用者的生命为代价，放飞的话就能将大陆本身
+　似乎是威力可以归为无的古代魔术”
 
 : DrawChara( "Tadakatsu", 10, 0)
 \CN["将军"]
 “啊，这样的东西……。
-那么，能使用那个魔术的人在大和吗？”
+　那么，能使用那个魔术的人在大和吗？”
 
 \CN["学者"]
 “阿波罗的箭是由阿波罗的弓给予的。
-那个人，使用力量的时候，会让红色的花纹寄宿在自己身上”
+　那个人，使用力量的时候，会让红色的花纹寄宿在自己身上”
 
 : DrawChara( "Tadakatsu", 1, 0)
 \CN["将军"]
 “嗯……？红色的花纹……？
-确实，小夜的女服务员在小夜的胸前有红色奇怪的痣
-好像在说……”
+　确实，小夜的女服务员在小夜的胸前有红色奇怪的痣
+　好像在说……”
 
 : DrawChara( "Tadakatsu", 0, 0)
 \CN["将军"]
 “我不太清楚，小夜将来会毁灭大和
-是说有可能会使用魔术吗？”
+　是说有可能会使用魔术吗？”
 
 \CN["学者"]
 “如果这本书上写的是真的，那就是小夜公主的
-如果胸前有红色花纹的话，可能性不是0吗？”
+　如果胸前有红色花纹的话，可能性不是0吗？”
 
 : DrawChara( "Tadakatsu", 1, 0)
 \CN["将军"]
@@ -837,11 +837,11 @@
 : DrawChara( "Tadakatsu", 0, 0)
 \CN["将军"]
 “假设。假设小夜有阿波罗之箭
-现在死了会怎么样？”
+　现在死了会怎么样？”
 
 \CN["学者"]
 “……呃……阿波罗的箭在使用者死后会自动发动
-”
+　”
 
 : DrawChara( "Tadakatsu", 15, 0)
 \CN["将军"]
@@ -856,8 +856,8 @@
 
 \CN["学者"]
 “有点模糊，看不清楚
-在灵验的地方断命，成为新的使用者
-我会过去吧——”
+　在灵验的地方断命，成为新的使用者
+　我会过去吧——”
 
 : DrawChara( "Tadakatsu", 0, 0)
 \CN["将军"]
@@ -865,13 +865,13 @@
 
 \CN["学者"]
 “是啊……不死之山就是这样的地方
-我听说过”
+　我听说过”
 
 : DrawChara( "Tadakatsu", 2, 0)
 \CN["将军"]
 “不死之山啊……嗯，在那里的确是不可能的事。”
-没有啊。据说埋葬着长生不老药的故事
-就剩下了吧”
+　没有啊。据说埋葬着长生不老药的故事
+　就剩下了吧”
 
 : DrawChara( "Tadakatsu", 5, 0)
 \CN["将军"]
@@ -886,7 +886,7 @@
 : DrawChara( "Tadakatsu", 18, 0)
 \CN["将军"]
 “那个丫头，让我费心了……！
-寻找！无论如何都要找小夜！”
+　寻找！无论如何都要找小夜！”
 
 //●演出：回想から戻る演出
 //●場所：不死の山
@@ -907,7 +907,7 @@
 
 \CN["竹叶"]
 “将军得到了能对抗所有威胁的力量
-您说了”
+　您说了”
 
 : EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
@@ -918,7 +918,7 @@
 : DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 \CN["银"]
 “是啊。
-因为我不知道那个笨蛋一个人会做出什么”
+　因为我不知道那个笨蛋一个人会做出什么”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
@@ -945,7 +945,7 @@
 : PlayVoice( "Voices/vo01_mom0833" )
 \CN["桃"]
 “会说一些诸如乳大、侵犯他人等粗俗的话。
-看回组的头和那里的地滚石没什么区别吗？”
+　看回组的头和那里的地滚石没什么区别吗？”
 
 //: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 5, "LC" )
 : PlayVoice( "Voices/vo02_kin0340" )
@@ -958,7 +958,7 @@
 : PlayVoice( "Voices/vo01_mom0834" )
 \CN["桃"]
 “小银，命令啊——
-他们全部都会把你揍飞的」
+　他们全部都会把你揍飞的」
 
 : DrawChara( "Gin", 10, 0)
 \CN["银"]
@@ -997,7 +997,7 @@
 	: Jump( "*sc004_win" )	//勝利した場合
 : elif ( $battleEscape == true )
 	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle" )
 : else

@@ -51,13 +51,13 @@
 : PlayVoice( "Voices/vo24_say0052" )
 \CN["小夜"]
 “那个，其实马上就是爷爷的生日了。
-然后，想着要送什么礼物……”
+　然后，想着要送什么礼物……”
 
 : DrawChara( "Sayo", 3, 0)
 : PlayVoice( "Voices/vo24_say0053" )
 \CN["小夜"]
 “给你什么好呢？
-反正还是喜欢的好”
+　反正还是喜欢的好”
 
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 //Yoshi：センターに無黒
@@ -73,7 +73,7 @@
 : PlayVoice( "Voices/vo01_mom0727" )
 \CN["桃"]
 “年纪大的绅士看起来很开心呢……。
-小银，你知道什么吗？”
+　小银，你知道什么吗？”
 
 \CN["银"]
 “是啊……嗯，好难啊。”
@@ -85,7 +85,7 @@
 : PlayVoice( "Voices/vo07_beb0075" )
 \CN["红美"]
 “肉很好很好吃！
-只要有男人的肉就满足了”
+　只要有男人的肉就满足了”
 
 //Yoshi：左にレオ、右に銀
 : DrawChara( "Leo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
@@ -101,7 +101,7 @@
 : DrawChara( "Gin", 5, 0)
 \CN["银"]
 “买礼物本来就是
-你有多少钱？”
+　你有多少钱？”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
@@ -135,7 +135,7 @@
 : PlayVoice( "Voices/vo00_muk1497" )
 \CN["无黑"]
 “原来如此。这么说来，买什么礼物是
-不行吗……”
+　不行吗……”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -151,13 +151,13 @@
 : PlayVoice( "Voices/vo24_say0056" )
 \CN["小夜"]
 “啊！那样的话！
-但是，手工制作是什么……？”
+　但是，手工制作是什么……？”
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0729" )
 \CN["桃"]
 “说到招牌菜，果然还是料理吧？
-顺便问一下，公主，您的料理是？”
+　顺便问一下，公主，您的料理是？”
 
 : DrawChara( "Sayo", 4, 0)
 : PlayVoice( "Voices/vo24_say0057" )
@@ -181,13 +181,13 @@
 : PlayVoice( "Voices/vo00_muk1498" )
 \CN["无黑"]
 “如果我是简单的东西的话，会怎么想呢……。
-说实话，我不太擅长”
+　说实话，我不太擅长”
 
 : DrawChara( "Kinako", 4, 0)
 : PlayVoice( "Voices/vo02_kin0256" )
 \CN["黄菜子"]
 “我也觉得那道菜不怎么好吃……。
-我觉得能做到才好……”
+　我觉得能做到才好……”
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -228,7 +228,7 @@
 : DrawChara( "Momo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 \CN["银"]
 “……姑且，也算是马马虎虎吧。
-话虽如此，能做的都是小姐喜欢的东西”
+　话虽如此，能做的都是小姐喜欢的东西”
 
 : JumpLayer( 4, 0, -50, 1, 0.25)
 : DrawChara( "Momo", 2, 0)
@@ -247,12 +247,12 @@
 : PlayVoice( "Voices/vo01_mom0733" )
 \CN["桃"]
 “所谓的Kisshu，就是加入芝士、培根之类的
-嗯……小银，再说明一下”
+　嗯……小银，再说明一下”
 
 : DrawChara( "Gin", 5, 0)
 \CN["银"]
 “使用派做的料理的一种。把鸡蛋和牛奶混合在一起
-只需要把奶酪、培根放进去在烤箱里烤一下就可以了”
+　只需要把奶酪、培根放进去在烤箱里烤一下就可以了”
 
 直截了当地说明。
 
@@ -274,19 +274,19 @@
 
 \CN["雷欧"]
 “能做的事，最多就是盐和胡椒
-就烤一下吧”
+　就烤一下吧”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1499" )
 \CN["无黑"]
 “这么说来，刚进鬼灯的时候，在山里生活的时候
-真是厉害的手法啊”
+　真是厉害的手法啊”
 
 : JumpLayer( 3, 0, -50, 1, 0.25)
 : DrawChara( "Leo",14, 1)
 \CN["雷欧"]
 “噢噢！你还记得吗！不愧是无黑。
-将来我不会让你挨饿的”
+　将来我不会让你挨饿的”
 
 : JumpLayer( 5, 0, -50, 1, 0.25)
 : DrawChara( "Sayo", 9, 1)
@@ -303,7 +303,7 @@
 : DrawChara( "Leo", 6, 0)
 \CN["雷欧"]
 “我知道了。sayo，没关系。话说得差不多了。
-这是关于sayon这个老头的生日礼物吧”
+　这是关于sayon这个老头的生日礼物吧”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -313,7 +313,7 @@
 : PlayVoice( "Voices/vo01_mom0734" )
 \CN["桃"]
 “是啊。果然还是公主亲手做的比较好。”
-不是很高兴吗？”
+　不是很高兴吗？”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 //Yoshi：左に紅美、右に黄菜子
@@ -322,7 +322,7 @@
 : PlayVoice( "Voices/vo02_kin0257" )
 \CN["黄菜子"]
 “亲手做的……啊！这样的话，编织物怎么样？
-手套啦围巾啦”
+　手套啦围巾啦”
 
 : DrawChara( "Kinako",17, 0)
 : PlayVoice( "Voices/vo02_kin0258" )
@@ -332,7 +332,7 @@
 : PlayVoice( "Voices/vo07_beb0077" )
 \CN["红美"]
 “这么说来，好像是弄错了点餐的数量，很吵啊。
-大量的毛线送到了屯所”
+　大量的毛线送到了屯所”
 
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
 //Yoshi：左に無黒
@@ -345,14 +345,14 @@
 : PlayVoice( "Voices/vo02_kin0259" )
 \CN["黄菜子"]
 “事实上，情报部队预定使用的东西订货数弄错了
-好像……。因为剩下了，所以用也没关系”
+　好像……。因为剩下了，所以用也没关系”
 
 //Yoshi：センターに小夜
 : DrawChara( "Sayo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo24_say0061" )
 \CN["小夜"]
 “是的。那围巾就好了。
-我想把围巾作为礼物送给爷爷”
+　我想把围巾作为礼物送给爷爷”
 
 : DrawChara( "Sayo", 3, 0)
 : PlayVoice( "Voices/vo24_say0062" )
@@ -367,7 +367,7 @@
 : DrawChara( "Leo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 \CN["雷欧"]
 “嗯，能编织的东西是……。
-呐，你能做到吗？”
+　呐，你能做到吗？”
 
 : DrawChara( "Gin",18, 0)
 \CN["银"]
@@ -387,7 +387,7 @@
 : PlayVoice( "Voices/vo02_kin0260" )
 \CN["黄菜子"]
 “对不起，我也不知道怎么做。
-但是，谍报部队应该有几个人会编东西”
+　但是，谍报部队应该有几个人会编东西”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
@@ -426,7 +426,7 @@
 : PlayVoice( "Voices/vo07_beb0078" )
 \CN["红美"]
 “在下也要请客。
-因为穆克罗并没有这样的印象……”
+　因为穆克罗并没有这样的印象……”
 
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -437,7 +437,7 @@
 : PlayVoice( "Voices/vo00_muk1503" )
 \CN["无黑"]
 “姐姐……家里有喜欢编织物的人。
-受此影响，我也请教了编织物”
+　受此影响，我也请教了编织物”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 //Yoshi：センターに小夜
@@ -459,7 +459,7 @@
 : PlayVoice( "Voices/vo00_muk1504" )
 \CN["无黑"]
 “小夜，不用那么拘谨。
-与其织围巾，我多少都会教你的”
+　与其织围巾，我多少都会教你的”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
@@ -504,7 +504,7 @@
 : PlayVoice( "Voices/vo01_mom0739" )
 \CN["桃"]
 “细小的事情就好。
-你看，小银和小雷都出去吧」
+　你看，小银和小雷都出去吧」
 
 : DrawChara( "Gin", 1, 0)
 \CN["银"]
@@ -536,7 +536,7 @@
 : PlayVoice( "Voices/vo24_say0064" )
 \CN["小夜"]
 “嗯……啊啊……又解开了。
-相当难啊”
+　相当难啊”
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk1505" )
@@ -582,7 +582,7 @@
 : PlayVoice( "Voices/vo01_mom0741" )
 \CN["桃"]
 “啊？说不定是和谁结为夫妇的地方
-你想象了吗？”
+　你想象了吗？”
 
 : ImpactLayer( 5, 0.1, 0.1, 1, 0.25)
 : DrawChara( "Mukuro",34, 1)
@@ -617,12 +617,12 @@
 : PlayVoice( "Voices/vo01_mom0743" )
 \CN["桃"]
 “尽管如此，这是非常需要毅力的工作。
-要是能做到这样就好了」
+　要是能做到这样就好了」
 
 : PlayVoice( "Voices/vo00_muk1510" )
 \CN["无黑"]
 “一边想着对方一边织围巾
-一编、一编、细致地编”
+　一编、一编、细致地编”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -631,8 +631,8 @@
 : PlayVoice( "Voices/vo02_kin0263" )
 \CN["黄菜子"]
 “嗯，嗯，嗯……一编，一编，仔细地……。
-一边想着给你的人……呜呜…总觉得，脸
-变热了……”
+　一边想着给你的人……呜呜…总觉得，脸
+　变热了……”
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 //Yoshi：左に黄菜子、右に小夜
@@ -646,7 +646,7 @@
 : PlayVoice( "Voices/vo02_kin0264" )
 \CN["黄菜子"]
 “诶！？啊，那个……我、我、嗯
-是秘密！只有这一点公主也不能教！”
+　是秘密！只有这一点公主也不能教！”
 
 黄菜子的脸涨得通红很可爱。
 
@@ -666,7 +666,7 @@
 : PlayVoice( "Voices/vo00_muk1511" )
 \CN["无黑"]
 “那么，就这样放在自己的房间里就可以了。
-不用一口气编上去”
+　不用一口气编上去”
 
 : PlayVoice( "Voices/vo24_say0068" )
 \CN["小夜"]
@@ -677,7 +677,7 @@
 : PlayVoice( "Voices/vo24_say0069" )
 \CN["小夜"]
 “嗯。离爷爷生日还有点时间
-反正我给你织得很漂亮的”
+　反正我给你织得很漂亮的”
 
 : DrawChara( "Mukuro", 4, 0)
 : PlayVoice( "Voices/vo00_muk1512" )
@@ -688,7 +688,7 @@
 : PlayVoice( "Voices/vo24_say0070" )
 \CN["小夜"]
 “嗯！无黑，我会努力的！
-谢谢你告诉我！”
+　谢谢你告诉我！”
 
 //●背景：空・昼
 //Yoshi：背景
@@ -746,7 +746,7 @@
 : DrawChara( "Ji", 5, 0)
 \CN["老头儿"]
 “是今天吗？
-咦？有什么事吗？”
+　咦？有什么事吗？”
 
 : DrawChara( "Sayo", 1, 1)
 : PlayVoice( "Voices/vo24_say0072" )
@@ -785,7 +785,7 @@
 : PlayVoice( "Voices/vo05_aza0316" )
 \CN["爱彩弥"]
 “这是鬼灯的大家送的礼物。
-希望你能接受”
+　希望你能接受”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Bebi", Call("Scenarios/Common*FgFadeTime") )
@@ -795,8 +795,8 @@
 : DrawChara( "Ji",10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["老头儿"]
 “啊，谢谢！
-到了这个年纪，得到了这么多人的祝福
-我是幸福的人”
+　到了这个年纪，得到了这么多人的祝福
+　我是幸福的人”
 
 含泪的老头儿。
 
@@ -809,7 +809,7 @@
 : PlayVoice( "Voices/vo24_say0073" )
 \CN["小夜"]
 “那个，爷爷，我也有礼物。
-是这个，可以收下吗？”
+　是这个，可以收下吗？”
 
 包装请桃子帮忙
 我觉得做得非常棒。
@@ -817,7 +817,7 @@
 : DrawChara( "Ji", 3, 1)
 \CN["老头儿"]
 “嗯……公主，谢谢您。
-可以马上打开看看吗？”
+　可以马上打开看看吗？”
 
 眼泪把眼睛弄得通红的老头子这样说道。
 
@@ -839,7 +839,7 @@
 : PlayVoice( "Voices/vo24_say0075" )
 \CN["小夜"]
 “是啊。对不起，有点太长了。
-嘿嘿……”
+　嘿嘿……”
 
 编的时候不知道在哪里分开比较好
 糟了，长得一塌糊涂。
@@ -847,7 +847,7 @@
 : DrawChara( "Ji",11, 1)
 \CN["老头儿"]
 “不，不，啊，谢谢。
-呜呜……我……我是大和一的幸福者……”
+　呜呜……我……我是大和一的幸福者……”
 
 : EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
@@ -863,7 +863,7 @@
 : PlayVoice( "Voices/vo00_muk1514" )
 \CN["无黑"]
 “小夜，非常努力地编着呢。
-我想看爷爷开心的脸”
+　我想看爷爷开心的脸”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
@@ -894,7 +894,7 @@
 : DrawChara( "Ji", 3, 2)
 \CN["老头儿"]
 “不，是公主。非常温暖。
-谢谢……真的非常感谢”
+　谢谢……真的非常感谢”
 
 : EraseChara( "Ji", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
@@ -903,7 +903,7 @@
 : DrawChara( "Leo",14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 \CN["雷欧"]
 “太好了，sayo。老头子，不是很高兴吗。
-那条围巾里装满了你的很多回忆”
+　那条围巾里装满了你的很多回忆”
 
 : JumpLayer( 3, 0, -50, 1, 0.25)
 : DrawChara( "Sayo", 1, 2)
@@ -922,7 +922,7 @@
 : DrawChara( "Sayo", 0, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 \CN["老头儿"]
 “公主，这条围巾将成为我一生的珍宝。
-我绝对不会放弃这个身体”
+　我绝对不会放弃这个身体”
 
 : DrawChara( "Sayo", 8, 1)
 : PlayVoice( "Voices/vo24_say0079" )
@@ -932,7 +932,7 @@
 : DrawChara( "Ji", 3, 1)
 \CN["老头儿"]
 “是的。至少我想看看公主出嫁的地方。”
-我回来了……”
+　我回来了……”
 
 戴着围巾，含着眼泪爽朗地笑着的爷爷。
 

@@ -30,8 +30,8 @@
 	: DrawChara( "Mukuro", 25, 0)
 	: PlayVoice( "Voices/vo00_muk4234" )
 	\CN["无黑"]
-（这个人，不管我穿衣服还是裸体
-态度完全没变啊）
+	（这个人，不管我穿衣服还是裸体
+	　态度完全没变啊）
 
 //●分岐終了
 : endif
@@ -40,7 +40,7 @@
 : PlayVoice( "Voices/vo00_muk4235" )
 \CN["无黑"]
 （不管怎么说都是一个劲地H
-顺便说一下，要好好检查一下吗？）
+　顺便说一下，要好好检查一下吗？）
 
 告诉他希望看病。
 
@@ -95,7 +95,7 @@
 : DrawChara( "Hiraga", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 \CN["平底片"]
 “嗯，没有什么异常。
-也没有得过性病”
+　也没有得过性病”
 
 : DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 : PlayVoice( "Voices/vo00_muk4236" )
@@ -108,7 +108,7 @@
 //: DrawChara( "Hiraga", 0, 0, 0, 0.5, 0.0, 4, "LC" )
 \CN["平底片"]
 “对了对了，神八代，你对子宫的强化没兴趣吗？
-虽然用魔导器做手术很简单”
+　虽然用魔导器做手术很简单”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4237" )
@@ -118,19 +118,19 @@
 : DrawChara( "Hiraga", 5, 0)
 \CN["平底片"]
 “是的。特别是像你这样和魔物战斗的人
-有时会被魔物袭击——我想应该是这样的”
+　有时会被魔物袭击——我想应该是这样的”
 
 //●分岐：異種姦経験がある場合
 : if ( CharaHParam( "Mukuro", "Interbreed" ) >= 1 )
 	: DrawChara( "Mukuro", 12, 0)
 	: PlayVoice( "Voices/vo00_muk4238" )
 	\CN["无黑"]
-“嘛……确实有啊……”
+	“嘛……确实有啊……”
 
 	: DrawChara( "Hiraga", 0, 0)
 	\CN["平底片"]
-“和人外的性行为会给子宫带来很大的伤害
-有很多。如果是一些伤口的话，可以用魔术来治疗……”
+	“和人外的性行为会给子宫带来很大的伤害
+	　有很多。如果是一些伤口的话，可以用魔术来治疗……”
 
 //●分岐終了
 : endif
@@ -142,7 +142,7 @@
 : PlayVoice( "Voices/vo00_muk4239" )
 \CN["无黑"]
 “为了不让任何魔物侵犯都没关系，要强化子宫
-是吗？”
+　是吗？”
 
 : DrawChara( "Hiraga", 5, 0)
 \CN["平底片"]
@@ -152,12 +152,12 @@
 : PlayVoice( "Voices/vo00_muk4240" )
 \CN["无黑"]
 “嘛，这样的话就这样吧。
-如果能接受的话，我想试试看”
+　如果能接受的话，我想试试看”
 
 : DrawChara( "Hiraga", 0, 0)
 \CN["平底片"]
 “很遗憾，我们不能免费提供
-还有，也有不能忽视的巨大影响”
+　还有，也有不能忽视的巨大影响”
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4241" )
@@ -167,13 +167,13 @@
 : DrawChara( "Hiraga", 0, 0)
 \CN["平底片"]
 “是的，手术是重新制作子宫细胞的。
-只是，由此孕育出了“魔物之子”
-也有可能”
+　只是，由此孕育出了“魔物之子”
+　也有可能”
 
 \CN["平底片"]
 “一般来说，人类和精灵在怀孕大约10个月后就会生孩子
-但是，做这个手术不到一天就可以生孩子了
-”
+　但是，做这个手术不到一天就可以生孩子了
+　”
 
 : DrawChara( "Mukuro", 27, 0)
 : PlayVoice( "Voices/vo00_muk4242" )
@@ -184,12 +184,12 @@
 
 \CN["平底片"]
 “嘛，如果生了孩子的话，就由我们来收养吧
-我们会好好照顾您直到长大成人
-请放心”
+　我们会好好照顾您直到长大成人
+　请放心”
 
 \CN["平底片"]
 “只是，费用相当高。
-要5万两，怎么办呢？”
+　要5万两，怎么办呢？”
 
 //●分岐：所持金が５万両以上ある場合
 : if( $money < 50000 ) Jump( "*sc001_2" ) endif
@@ -215,7 +215,7 @@
 : DrawChara( "Hiraga", 5, 0)
 \CN["平底片"]
 “那倒是。
-如果想接受手术的话，随时都可以”
+　如果想接受手术的话，随时都可以”
 
 //: EraseChara( "Mukuro", 0.5 )
 //: EraseChara( "Hiraga", 0.5 )
@@ -229,8 +229,8 @@
 *select01_s2
 \CN["平底片"]
 “知道了。
-毕竟不能在这里做
-我打算去特别的设施”
+　毕竟不能在这里做
+　我打算去特别的设施”
 
 : DrawChara( "Aguri", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 : PlayVoice( "Voices/vo16_agu0265" )
@@ -321,7 +321,7 @@
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC")
 \CN["平底片"]
 “像我秘密的研究所一样。
-那么，亚久里先生，请做好准备。”
+　那么，亚久里先生，请做好准备。”
 
 : EraseChara( "Hiraga", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Aguri", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
@@ -351,7 +351,7 @@
 
 \CN["平底片"]
 “谢谢，亚久里。
-那么，神八代先生，这边请」
+　那么，神八代先生，这边请」
 
 //●演出：無黒　ヒラガについていく
 //●演出：暗転
@@ -375,24 +375,24 @@
 
 	: DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 	\CN["平底片"]
-“穿着衣服不能进行手术
-可以帮我把内衣也脱下来吗？”
+	“穿着衣服不能进行手术
+	　可以帮我把内衣也脱下来吗？”
 
 	: DrawFaceThumbnail( "Mukuro", 1, 0, 0 )
 	: PlayVoice( "Voices/vo00_muk4244" )
 	\CN["无黑"]
-“啊，我知道了。”
+	“啊，我知道了。”
 
 	//●演出：着替え演出
 	//●服装：無黒・全裸
 	//無黒cos1へ変更
-正如所说，全部脱光光。
+	正如所说，全部脱光光。
 
 //●分岐終了
 : endif
 \CN["平底片"]
 “那么请坐在这边的椅子上。
-亚久里先生，以后就拜托你了”
+　亚久里先生，以后就拜托你了”
 
 : DrawFaceThumbnail( "Aguri", 1, 0, 0 )
 : PlayVoice( "Voices/vo16_agu0268" )
@@ -402,7 +402,7 @@
 : PlayVoice( "Voices/vo16_agu0269" )
 \CN["亚久里"]
 “如果被胡闹的话，就无法挽回了
-敬请谅解”
+　敬请谅解”
 
 : DrawFaceThumbnail( "Mukuro", 34, 0, 0 )
 : PlayVoice( "Voices/vo00_muk4245" )
@@ -434,11 +434,11 @@
 
 \CN["平底片"]
 “虽说是魔导手术，但不是用手术刀剖腹之类的
-没有，请放心”
+　没有，请放心”
 
 \CN["平底片"]
 “是啊。和从女性器皿里插入的内窥镜一样的东西
-如果您能考虑一下的话”
+　如果您能考虑一下的话”
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -448,7 +448,7 @@
 : PlayVoice( "Voices/vo00_muk4247" )
 \CN["无黑"]
 “因为是女性器皿……那就和普通手淫
-对你来说是不会变的感觉吗？”
+　对你来说是不会变的感觉吗？”
 
 \CN["平底片"]
 “是啊。大概呢，这样的印象可以吗……”
@@ -474,7 +474,7 @@
 
 \CN["平底片"]
 “我觉得是适合插入女性器皿的形状。
-尤其是像你这样类型的人”
+　尤其是像你这样类型的人”
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -505,7 +505,7 @@
 : PlayVoice( "Voices/vo00_muk4250" )
 \CN["无黑"]
 “嗯……哈……啊，啊，呜……嗯
-啊……啊…啊……嗯，很粗<color=#f59aa0>♥</color>」
+　啊……啊…啊……嗯，很粗<color=#f59aa0>♥</color>」
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -515,7 +515,7 @@
 : PlayVoice( "Voices/vo00_muk4251" )
 \CN["无黑"]
 “啊，哈哈，进来了哦。”♥</啊啊啊啊啊啊♥</又硬又硬
-粗啊，女阴肉啊<color=#f59aa0>♥</color>」
+　粗啊，女阴肉啊<color=#f59aa0>♥</color>」
 
 : HideWnd()
 : PlayHSe( "SE/Hse_Sounyu02" )
@@ -532,11 +532,11 @@
 : PlayVoice( "Voices/vo00_muk4252" )
 \CN["无黑"]
 “哈……呃……哈……接下来该怎么办呢……。
-手术开始了吗？”
+　手术开始了吗？”
 
 \CN["平底片"]
 “不。首先需要现阶段的子宫及其周边的数据
-我查一下”
+　我查一下”
 
 \CN["平底片"]
 “稍微有点刺激，请谅解。”
@@ -557,12 +557,12 @@
 : PlayVoice( "Voices/vo00_muk4253" )
 \CN["无黑"]
 “嗯，啊，啊……啊啊啊啊啊啊啊啊啊啊♥</啊，啊
-哈，啊，嗯，嗯♥</嗯，哈，啊啊啊啊啊啊<color=#f59aa0>♥</color>」
+　哈，啊，嗯，嗯♥</嗯，哈，啊啊啊啊啊啊<color=#f59aa0>♥</color>」
 
 : PlayVoice( "Voices/vo00_muk4254" )
 \CN["无黑"]
 「中、擦えて……伊博沃在女阴中摩擦着<color=#f59aa0>♥</color>
-哦哦，哦，女阴，被搅乱了<color=#f59aa0>♥</color>」
+　哦哦，哦，女阴，被搅乱了<color=#f59aa0>♥</color>」
 
 : PlayBackVoice( "Voices/BGV00_muk_aegi02" )
 这个非常舒服。
@@ -587,7 +587,7 @@
 : PlayVoice( "Voices/vo00_muk4255" )
 \CN["无黑"]
 「啊啊啊啊！啊，感觉到了♥</感觉一个劲地<color=#f59aa0>♥</color>
-这、这样的话马上……嗯、不、好像很开心……”
+　这、这样的话马上……嗯、不、好像很开心……”
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -599,7 +599,7 @@
 : PlayVoice( "Voices/vo00_muk4256" )
 \CN["无黑"]
 “啊……啊啊……啊啊啊♥</啊，哈，哈
-嗯，呜，呜……啊，啊…呜呜呜<color=#f59aa0>♥</color>」
+　嗯，呜，呜……啊，啊…呜呜呜<color=#f59aa0>♥</color>」
 
 只是存取稍微早了一点，就被轻轻地嘲弄了。
 
@@ -614,7 +614,7 @@
 : PlayVoice( "Voices/vo00_muk4257" )
 \CN["无黑"]
 “对，对了……用机器分析的话，真是乱七八糟
-好害羞啊」
+　好害羞啊」
 
 \CN["平底片"]
 “讨厌吗？”
@@ -640,7 +640,7 @@
 : PlayVoice( "Voices/vo00_muk4259" )
 \CN["无黑"]
 「啊，啊啊啊啊啊啊啊啊啊」♥</啊，哈，啊，啊……好饿啊<color=#f59aa0>♥</color>
-啊啊啊啊啊♥</嗯，嗯，啊啊啊<color=#f59aa0>♥</color>」
+　啊啊啊啊啊♥</嗯，嗯，啊啊啊<color=#f59aa0>♥</color>」
 
 \CN["平底片"]
 “好像阴道内大部分都松了。”
@@ -648,7 +648,7 @@
 : PlayVoice( "Voices/vo00_muk4260" )
 \CN["无黑"]
 “哈、哈、哈……心情太好了……嗯
-女阴，可能变成了托管<color=#f59aa0>♥</color>」
+　女阴，可能变成了托管<color=#f59aa0>♥</color>」
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -658,7 +658,7 @@
 : PlayVoice( "Voices/vo00_muk4261" )
 \CN["无黑"]
 「嗯，哈，啊啊啊啊啊啊♥</那、那里、软弱的地方……
-啊，嗯，嗯！”
+　啊，嗯，嗯！”
 
 从刚才开始身体就一直因快感而颤抖。
 
@@ -667,7 +667,7 @@
 
 \CN["平底片"]
 “不必忍耐风尚。
-嘛，我好像没有忍耐”
+　嘛，我好像没有忍耐”
 
 : PlayVoice( "Voices/vo00_muk4262" )
 \CN["无黑"]
@@ -681,7 +681,7 @@
 : PlayVoice( "Voices/vo00_muk4263" )
 \CN["无黑"]
 “啊啊啊，嗯……嗯，嗯……嗯…恩
-那么，再见了<color=#f59aa0>♥</color>」
+　那么，再见了<color=#f59aa0>♥</color>」
 
 : HideWnd()
 : layer = 8; time = 1.0; strength = 30; vibrato = 50;
@@ -693,7 +693,7 @@
 : PlayVoice( "Voices/vo00_muk4264" )
 \CN["无黑"]
 「嗯！啊，头，软绵绵的呢。」<color=#f59aa0>♥</color>
-啊……嗯，嗯，啊啊啊啊啊啊<color=#f59aa0>♥</color>」
+　啊……嗯，嗯，啊啊啊啊啊啊<color=#f59aa0>♥</color>」
 
 快感早已渗透全身。
 
@@ -705,7 +705,7 @@
 : PlayVoice( "Voices/vo00_muk4265" )
 \CN["无黑"]
 “哇，哇，好烫，好烫啊……再搅拌一下
-魔导器的……用机器小矮人一塌糊涂地犯了个大错误<color=#f59aa0>♥</color>」
+　魔导器的……用机器小矮人一塌糊涂地犯了个大错误<color=#f59aa0>♥</color>」
 
 不能自己尽情地活动腰
 非常着急。
@@ -716,7 +716,7 @@
 
 \CN["平底片"]
 “因为反复了好几次轻的风尚
-子宫下来了呢”
+　子宫下来了呢”
 
 \CN["平底片"]
 “亚久里先生，我们进入下一步吧。”
@@ -738,7 +738,7 @@
 : PlayVoice( "Voices/vo00_muk4268" )
 \CN["无黑"]
 “啊哈哈……然后，撞到子宫的入口……啊，啊啊啊啊
-呃……恩，呃，来了……啊，啊…啊…啊…啊……”
+　呃……恩，呃，来了……啊，啊…啊…啊…啊……”
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -786,12 +786,12 @@
 : PlayVoice( "Voices/vo00_muk4270" )
 \CN["无黑"]
 「啊啊啊……然后，被海水吹起了♥</一边吹着海风……嗯
-机器小鸡鸡……哈哈哈，进入肚子里……”
+　机器小鸡鸡……哈哈哈，进入肚子里……”
 
 : PlayVoice( "Voices/vo00_muk4271" )
 \CN["无黑"]
 「呼、呼、嗯……肚子饿扁了<color=#f59aa0>♥</color>
-机械小鸡鸡，完全进入子宫了<color=#f59aa0>♥</color>」
+　机械小鸡鸡，完全进入子宫了<color=#f59aa0>♥</color>」
 
 : HideWnd()
 : PlayHSe( "SE/Hse_Piston02" )
@@ -809,7 +809,7 @@
 : PlayVoice( "Voices/vo00_muk4272" )
 \CN["无黑"]
 “啊啊啊……子宫的入口，突然打开了♥</嗯，嗯
-从肚子里出来的精灵，身体，像是要溶化了<color=#f59aa0>♥</color>」
+　从肚子里出来的精灵，身体，像是要溶化了<color=#f59aa0>♥</color>」
 
 机器小鸡鸡张开子宫口
 在子宫内不断地攻击。
@@ -825,7 +825,7 @@
 : PlayVoice( "Voices/vo00_muk4273" )
 \CN["无黑"]
 “啊啊啊，嗯，啊啊啊啊啊啊啊啊”♥</这个、这个、守护……
-子宫，一直被责备<color=#f59aa0>♥</color>」
+　子宫，一直被责备<color=#f59aa0>♥</color>」
 
 : PlayVoice( "Voices/vo16_agu0274" )
 \CN["亚久里"]
@@ -841,7 +841,7 @@
 : PlayVoice( "Voices/vo00_muk4274" )
 \CN["无黑"]
 “啊……药剂……嗯……啊，啊啊啊……
-温暖的、直接进入子宫……！？”
+　温暖的、直接进入子宫……！？”
 
 //●ＣＧ差分：挿入・薬剤
 : HideWnd()
@@ -858,13 +858,13 @@
 : PlayVoice( "Voices/vo00_muk4275" )
 \CN["无黑"]
 “嗯~好棒！然后，出来了……子宫里满满的
-被拿出来……在里面被拿出来了……好厉害，什么东西一下子
-啊啊啊啊啊啊啊啊啊<color=#f59aa0>♥</color>」
+　被拿出来……在里面被拿出来了……好厉害，什么东西一下子
+　啊啊啊啊啊啊啊啊啊<color=#f59aa0>♥</color>」
 
 : PlayVoice( "Voices/vo00_muk4276" )
 \CN["无黑"]
 “哦哦，嗯，嗯，嗯，嗯，嗯……”<color=#f59aa0>♥</color>
-啊，阿嚏……阿嚏，好烫啊<color=#f59aa0>♥</color><color=#f59aa0><color=#f59aa0>♥</color>」
+　啊，阿嚏……阿嚏，好烫啊<color=#f59aa0>♥</color><color=#f59aa0><color=#f59aa0>♥</color>」
 
 : PlayVoice( "Voices/vo16_agu0276" )
 \CN["亚久里"]
@@ -885,7 +885,7 @@
 : PlayVoice( "Voices/vo00_muk4277" )
 \CN["无黑"]
 「哇啊啊啊啊啊啊啊啊啊！」♥</更加、更加满足<color=#f59aa0>♥</color>
-子宫很舒服，所以要多吃点<color=#f59aa0>♥</color>」
+　子宫很舒服，所以要多吃点<color=#f59aa0>♥</color>」
 
 发出令人吃惊的粗俗声音
 贪婪地持续追求快感。
@@ -896,7 +896,7 @@
 : PlayVoice( "Voices/vo00_muk4278" )
 \CN["无黑"]
 「嗯，不好意思。」♥</啊啊……嗯……女阴，好烫啊<color=#f59aa0>♥</color>
-哈、哈、哈……肚子太热了，吃得很饱<color=#f59aa0>♥</color>」
+　哈、哈、哈……肚子太热了，吃得很饱<color=#f59aa0>♥</color>」
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -906,7 +906,7 @@
 : PlayVoice( "Voices/vo00_muk4279" )
 \CN["无黑"]
 “好可怕……哈，哈，阿嚏，阿嚏，阿嚏，阿嚏，阿嚏，阿嚏！”<color=#f59aa0>♥</color>
-嗨……下次再聊吧，来个AQUE吧<color=#f59aa0>♥</color>」
+　嗨……下次再聊吧，来个AQUE吧<color=#f59aa0>♥</color>」
 
 : HideWnd()
 : if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
@@ -928,12 +928,12 @@
 : PlayVoice( "Voices/vo00_muk4280" )
 \CN["无黑"]
 「嗯……啊…啊…啊啊…啊啊啊啊啊啊♥</话说回来<color=#f59aa0>♥</color>
-嗯，是的，真的……好的<color=#f59aa0>♥</color>」
+　嗯，是的，真的……好的<color=#f59aa0>♥</color>」
 
 : PlayVoice( "Voices/vo00_muk4281" )
 \CN["无黑"]
 “啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊”♥</彩色笔♥</哦哦哦哦哦<color=#f59aa0>♥</color>
-伊格……伊格…嗯……嗯<color=#f59aa0>♥</color>」
+　伊格……伊格…嗯……嗯<color=#f59aa0>♥</color>」
 
 : HideWnd()
 : if ( $inExtra == false ) CharaAddHParam( "Mukuro", "Orgasm", 1) endif
@@ -947,7 +947,7 @@
 : PlayVoice( "Voices/vo00_muk4282" )
 \CN["无黑"]
 “一……呃，好……好……嗯……嗯………”<color=#f59aa0>♥</color>
-嗯……嗯……嗯<color=#f59aa0>♥</color>」
+　嗯……嗯……嗯<color=#f59aa0>♥</color>」
 
 //●ＣＧ差分：挿入・潮
 
@@ -969,11 +969,11 @@
 : PlayVoice( "Voices/vo00_muk4283" )
 \CN["无黑"]
 “啊啊啊啊啊啊啊啊……啊啊啊……
-嗯，嗯，嗯，哈，哈哈哈……啊<color=#f59aa0>♥</color>」
+　嗯，嗯，嗯，哈，哈哈哈……啊<color=#f59aa0>♥</color>」
 
 \CN["平底片"]
 “手术顺利结束了呢。
-亚久里，请从她的阴道里拔出魔导器”
+　亚久里，请从她的阴道里拔出魔导器”
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -1035,7 +1035,7 @@
 : PlayVoice( "Voices/vo00_muk4287" )
 \CN["无黑"]
 “嗯……也漏出来了……哈，哈，真是粗心大意……
-尿……漏出来了……嗯……停不下来了<color=#f59aa0>♥</color>」
+　尿……漏出来了……嗯……停不下来了<color=#f59aa0>♥</color>」
 
 心情好得尿死了
 连阻止的心情都没有。
@@ -1115,68 +1115,68 @@
 : PlayVoice( "Voices/vo00_muk4289" )
 \CN["无黑"]
 “完全没有实感
-子宫的重建顺利结束了吗？”
+　子宫的重建顺利结束了吗？”
 
 //●分岐：過去の行為で妊娠していなかった場合
 : if ( CharaHasChild( "Mukuro" ) == false )
 	\CN["平底片"]
-“是的，不会停滞不前。我觉得没有实感……”
+	“是的，不会停滞不前。我觉得没有实感……”
 
 	: DrawChara( "Mukuro", 0, 0)
 	: PlayVoice( "Voices/vo00_muk4290" )
 	\CN["无黑"]
-“是吗……。嘛，那也是……”
+	“是吗……。嘛，那也是……”
 
 	\CN["平底片"]
-“有疼痛或者不舒服吗？”
+	“有疼痛或者不舒服吗？”
 
 	: DrawChara( "Mukuro", 1, 0)
 	: PlayVoice( "Voices/vo00_muk4291" )
 	\CN["无黑"]
-“不，没什么特别的。”
+	“不，没什么特别的。”
 
 	: DrawChara( "Mukuro", 0, 0)
-硬要说的话，刚才感觉到的暴力快感会慢慢消失
-只不过是感觉留下了而已。
+	硬要说的话，刚才感觉到的暴力快感会慢慢消失
+	只不过是感觉留下了而已。
 
 	\CN["平底片"]
-“那就太好了。”
+	“那就太好了。”
 
 //●分岐終了地点へ
 //●分岐：それ以外の場合
 //●過去の行為で妊娠していた場合
 : else
 	\CN["平底片"]
-“是的，不会停的。
-只是，有一个问题……”
+	“是的，不会停的。
+	　只是，有一个问题……”
 
 	: DrawChara( "Mukuro", 10, 0)
 	: PlayVoice( "Voices/vo00_muk4292" )
 	\CN["无黑"]
-“问题？难道发生了什么事？”
+	“问题？难道发生了什么事？”
 
 	\CN["平底片"]
-“是的。神八代，好像怀孕了。”
+	“是的。神八代，好像怀孕了。”
 
 	: DrawChara( "Mukuro", 18, 0)
 	: PlayVoice( "Voices/vo00_muk4293" )
 	\CN["无黑"]
-“诶！？怀孕了……？”
+	“诶！？怀孕了……？”
 
-嘛，说到想到的地方还是有的……。
+	嘛，说到想到的地方还是有的……。
 
 	\CN["平底片"]
-“我想不久会受到子宫改造的影响。
-马上就到临月了吧”
+	“我想不久会受到子宫改造的影响。
+	　马上就到临月了吧”
 
 	: DrawChara( "Mukuro", 30, 0)
 	: PlayVoice( "Voices/vo00_muk4294" )
 	\CN["无黑"]
-“嗯，听说要迎来临月了……。
-怎么说呢，这么一说的话，就像肚子胀了一样”
+	“嗯，听说要迎来临月了……。
+	　怎么说呢，这么一说的话，就像肚子胀了一样”
 
-据说希拉加开始准备生育
-留下助手走出房间。
+	据说希拉加开始准备生育
+	留下助手走出房间。
 
 	//●演出：時間経過トランジション
 	//●服装：無黒・妊娠
@@ -1191,28 +1191,28 @@
 	: FadeIn( 0.5, 0, 0, 0, "BGImage/Transition05", 1.0 )
 	: Wait()
 	: ShowWnd()
-然后，过了一会儿突然肚子开始大膨胀。
+	然后，过了一会儿突然肚子开始大膨胀。
 
 	: DrawChara( "Mukuro", 40, 1, 0, 0.0, 0.0, 3, "C" )
 	: PlayVoice( "Voices/vo00_muk4295" )
 	\CN["无黑"]
-“呃……我知道肚子里有什么……”
+	“呃……我知道肚子里有什么……”
 
-用手抚摸大鼓起的肚子。
+	用手抚摸大鼓起的肚子。
 
 	: DrawChara( "Mukuro", 38, 1)
 	: PlayVoice( "Voices/vo00_muk4296" )
 	\CN["无黑"]
-“哈……哈……好重啊，这个……嗯…嗯，嗯！”
+	“哈……哈……好重啊，这个……嗯…嗯，嗯！”
 
-汁液从阴道溢出。
-好像破了水。
+	汁液从阴道溢出。
+	好像破了水。
 
 	: DrawChara( "Mukuro", 38, 1, 0, 0.0, 0.0, 3, "RC" )
 	: DrawChara( "Aguri", 0, 0, 0, 0.5, 0.0, 3, "LC" )
 	: PlayVoice( "Voices/vo16_agu0279" )
 	\CN["亚久里"]
-“准备好了。神八代，这边请。”
+	“准备好了。神八代，这边请。”
 
 	//●演出：暗転
 	: HideWnd()
@@ -1224,10 +1224,10 @@
 	: Wait()
 	: ResetLayer(9)
 	: ShowWnd()
-在助手的陪同下，在生孩子的地方
-被带去了。
+	在助手的陪同下，在生孩子的地方
+	被带去了。
 
-……………………………………………………。
+	……………………………………………………。
 
 	//●出産シーンへ
 	: Call( "Scenarios/CommonSys*Birth" )
@@ -1250,7 +1250,7 @@
 : DrawFaceThumbnail( "Hiraga", 0, 0, 0 )
 \CN["平底片"]
 “如果迎来了临月，马上就要去刚才的研究所了
-将功能放入设备中”
+　将功能放入设备中”
 
 希拉里轻轻地说
 仔细一想，我觉得你做了一件很荒唐的事。

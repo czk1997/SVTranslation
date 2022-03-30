@@ -57,14 +57,14 @@
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 \CN["雷欧"]
 「小心。这家伙真厉害。
-”
+　”
 
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 : lay = 4; type = "WR"; Call( "Scenarios/Common*FgEff");
 : PlayVoice( "Voices/vo01_mom1078" )
 \CN["桃"]
 “但是，对方只有一个人。
-如果大家一起合作的话……”
+　如果大家一起合作的话……”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -114,12 +114,12 @@
 : ShowWnd()
 \CN["达磨"]
 “恩，我钻研得很好。
-好像受惠于好老师啊」
+　好像受惠于好老师啊」
 
 : DrawChara( "Daruma", 3, 0)
 \CN["达磨"]
 「但是，真可惜。尚不知道自己的可能性。
-期待更加精进”
+　期待更加精进”
 
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Daruma", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -131,7 +131,7 @@
 : DrawChara( "Daruma", 1, 0)
 \CN["达磨"]
 “效果不错。不过，这种程度，对我来说还差得远呢。”
-就是说不够温”
+　就是说不够温”
 
 : EraseChara( "Daruma", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -143,13 +143,13 @@
 : DrawChara( "Leo", 19, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["雷欧"]
 “从一开始就不是高潮。
-我来看看我的必杀技吧”
+　我来看看我的必杀技吧”
 
 //: DrawChara( "Daruma", 0, 0)
 : DrawFaceThumbnail( "Daruma", 0, 0, 0 )
 \CN["达磨"]
 「糠等人听到传闻，鬼灯的风神和雷神吗。
-很有气势。真舒服”
+　很有气势。真舒服”
 
 年轻人必须这样。
 达磨在假面后面微笑着。
@@ -268,12 +268,12 @@
 
 \CN["鬼灯队士・男G"]
 “黄菜子和红美现在正在跑去叫局长呢。
-我会忍耐的”
+　我会忍耐的”
 
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 \CN["达磨"]
 “看到我的力量就害怕是理所当然的。
-但是，不抛弃同伴是抬头仰望的气魄”
+　但是，不抛弃同伴是抬头仰望的气魄”
 
 \CN["鬼灯队士・男H"]
 “哇哦哦哦哦哦哦！！”
@@ -325,7 +325,7 @@
 : DrawChara( "Daruma", 3, 0)
 \CN["达磨"]
 “悔恨才是让自己成长的食粮。
-我们不能割断你们的可能性”
+　我们不能割断你们的可能性”
 
 队员们全都露出遗憾的表情
 我放弃了意识。
@@ -343,12 +343,12 @@
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["达磨"]
 “狗是鬼灯最强的男人——鬼灯副长新渡户龙吗？”。
-原来如此。好像是传说中的武人”
+　原来如此。好像是传说中的武人”
 
 : DrawChara( "Ryu", 5, 0)
 \CN["龙"]
 “曾经被称为地上最强的你所说的是
-非常光荣”
+　非常光荣”
 
 达磨深吐一口气，准备和龙一战。
 
@@ -402,7 +402,7 @@
 
 \CN["达磨"]
 （如果不是这个身体的话，可能会很危险。
-我是白夜想要的男人）
+　我是白夜想要的男人）
 
 //●演出：斬撃エフェクト　斬り合い
 //: DrawChara( "Ryu", 38, 0)
@@ -420,7 +420,7 @@
 //: DrawChara( "Daruma", 2, 0)
 \CN["龙"]
 「那么，就这样。
-——八重樱流·村云一闪！”
+　——八重樱流·村云一闪！”
 
 : HideWnd()
 : effecttype = "6"; se = "Se_KatanaHit02"; keep = false; evkeep = false;
@@ -431,7 +431,7 @@
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C")
 \CN["达磨"]
 「糠之剑，没有迷惑，非常精炼。
-每天锻炼都没有怠慢的证据”
+　每天锻炼都没有怠慢的证据”
 
 : DrawChara( "Daruma", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L")
 : DrawChara( "Ryu", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R")
@@ -441,7 +441,7 @@
 : DrawChara( "Daruma", 3, 0)
 \CN["达磨"]
 “你是剑术白痴吗。
-嗯，但是还不及我啊」
+　嗯，但是还不及我啊」
 
 龙终于歪着嘴跑了出去。
 

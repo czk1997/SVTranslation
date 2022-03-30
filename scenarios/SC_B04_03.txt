@@ -59,7 +59,7 @@
 : DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["严严"]
 “哈，哈……一个劲儿地杀人，太兴奋了
-小鸡鸡好痛苦啊”
+　小鸡鸡好痛苦啊”
 
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
@@ -67,7 +67,7 @@
 : PlayVoice( "Voices/vo12_shi0044" )
 \CN["紫苑"]
 “呵呵，严酱的小弟弟，真是太棒了。
-我会立刻让你轻松的”
+　我会立刻让你轻松的”
 
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
@@ -81,12 +81,12 @@
 : PlayVoice( "Voices/vo12_shi0045" )
 \CN["紫苑"]
 “啊——嗯……嗯…嗯…嗯…嗯…珠理奈……嗯……嗯……”……
-嗯……嗯…嗯……嗯…嗯……嗯……嗯，嗯，嗯，嗯，我知道了”
+　嗯……嗯…嗯……嗯…嗯……嗯……嗯，嗯，嗯，嗯，我知道了”
 
 : PlayVoice( "Voices/vo12_shi0046" )
 \CN["紫苑"]
 “严酱这么坚强……嗯，我很成熟
-嗯，嗯，嗯，嗯，中，珠理奈<color=#f59aa0>♥</color>」
+　嗯，嗯，嗯，嗯，中，珠理奈<color=#f59aa0>♥</color>」
 
 \CN["严严"]
 “啊啊啊……妈妈，好舒服啊……”
@@ -122,7 +122,7 @@
 
 \CN["鬼灯队士・男B"]
 “都杀了吗……真残忍。
-白夜也终于认真起来了吗……”
+　白夜也终于认真起来了吗……”
 
 \CN["鬼灯队士・女A"]
 “那么，幕府就是说要杀了他们啊。”
@@ -131,14 +131,14 @@
 : PlayVoice( "Voices/vo05_aza0271" )
 \CN["爱彩弥"]
 “嘛，这里的驿站町对幕府来说是重要的据点之一。
-就算居民都被杀了也不能轻易放弃
-”
+　就算居民都被杀了也不能轻易放弃
+　”
 
 : DrawChara( "Azami", 8, 0)
 : PlayVoice( "Voices/vo05_aza0272" )
 \CN["爱彩弥"]
 “也就是说，对方是九星中的两个人。
-虽然会是很辛苦的战斗，但还是拜托你了”
+　虽然会是很辛苦的战斗，但还是拜托你了”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -154,12 +154,12 @@
 : PlayVoice( "Voices/vo05_aza0273" )
 \CN["爱彩弥"]
 “嗯，有各种各样的事。请体谅我……。
-因为对方是白夜干部。是我们出场的时候”
+　因为对方是白夜干部。是我们出场的时候”
 
 \CN["鬼灯队士・女A"]
 “是这样吗……我明白了，局长。
-虽然有各种各样的想法，但是竟然放任危险的家伙不管
-在樱花图案上是不可能做到的”
+　虽然有各种各样的想法，但是竟然放任危险的家伙不管
+　在樱花图案上是不可能做到的”
 
 //＠マップ解放：無黒、日東街道
 //●シーンエンド
@@ -180,32 +180,32 @@
 
 : if ( MissionProgress( "SC_A01_50", "Opened" ) == true )
 	: SetMission( "SC_A01_50", "Hidden" )
-活动“由著名的色情涂鸦技师制作的dild”
-消失了。
+	活动“由著名的色情涂鸦技师制作的dild”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A01_51", "Opened" ) == true )
 	: SetMission( "SC_A01_51", "Hidden" )
-活动“亲手撕破处女膜”开始了
-消失了。
+	活动“亲手撕破处女膜”开始了
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A01_52", "Opened" ) == true )
 	: SetMission( "SC_A01_52", "Hidden" )
-活动“给贵族男人处女”开始了
-消失了。
+	活动“给贵族男人处女”开始了
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_51_1", "Opened" ) == true )
 	: SetMission( "SC_A02_51_1", "Hidden" )
-活动“向加津佐的镇长发送物品”
-消失了。
+	活动“向加津佐的镇长发送物品”
+	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_51_2", "InProgress" ) == true )
 	: SetMission( "SC_A02_51_2", "Hidden" )
-活动“向加津佐的镇长发送物品”
-消失了。
+	活动“向加津佐的镇长发送物品”
+	消失了。
 
 : endif
 //鬼灯の前に移動
@@ -232,7 +232,7 @@
 : PlayVoice( "Voices/vo00_muk1033" )
 \CN["无黑"]
 “多么残忍的事啊……。
-真的是别人做的吗……？”
+　真的是别人做的吗……？”
 
 周围全是血的味道。
 那里的尸体像垃圾一样被扔掉。
@@ -262,7 +262,7 @@
 : PlayVoice( "Voices/vo12_shi0047" )
 \CN["紫苑"]
 “不是活下来，而是想去死吧。
-樱花的花纹——鬼灯的各位，欢迎光临”
+　樱花的花纹——鬼灯的各位，欢迎光临”
 
 : DrawChara( "Iwao", 0, 0)
 \CN["严严"]
@@ -272,15 +272,15 @@
 : PlayVoice( "Voices/vo12_shi0048" )
 \CN["紫苑"]
 “严酱喜欢就好。
-不管是杀还是犯，严酱都喜欢……”
+　不管是杀还是犯，严酱都喜欢……”
 
 \CN["鬼灯队士・男B"]
 “小心点……真的很糟糕……。
-这群家伙就是镝木紫苑和严、白夜九星两个人”
+　这群家伙就是镝木紫苑和严、白夜九星两个人”
 
 \CN["鬼灯队士・女A"]
 “啊啊，无黑……绝对不能大意啊……。
-稍微放松一下就会被杀……”
+　稍微放松一下就会被杀……”
 
 //●読み：他所様（よそさま）
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
@@ -328,7 +328,7 @@
 : DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 \CN["严严"]
 “你……像那个可怕的女人……。
-但是，我觉得你好像能赢”
+　但是，我觉得你好像能赢”
 
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
@@ -343,7 +343,7 @@
 : PlayVoice( "Voices/vo00_muk1035" )
 \CN["无黑"]
 “我有件事要为我做！
-不能在这种地方退缩！”
+　不能在这种地方退缩！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 *battle01
@@ -371,7 +371,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc003a" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle01" )
 : else
@@ -393,7 +393,7 @@
 : ShowWnd()
 \CN["严严"]
 “呼！呼！
-yu、不原谅……这个女人，杀了她……”
+　yu、不原谅……这个女人，杀了她……”
 
 : DrawChara( "Iwao", 0, 0)
 \CN["严严"]
@@ -452,7 +452,7 @@ yu、不原谅……这个女人，杀了她……”
 : PlayVoice( "Voices/vo12_shi0052" )
 \CN["紫苑"]
 “和神八代的气氛一样啊……。
-把严酱逼到这种地步真是了不起啊”
+　把严酱逼到这种地步真是了不起啊”
 
 : DrawChara( "Shion", 0, 0)
 : PlayVoice( "Voices/vo12_shi0053" )

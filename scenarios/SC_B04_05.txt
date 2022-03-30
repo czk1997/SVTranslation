@@ -11,17 +11,17 @@
 	: DrawChara( "Azami", 1, 0, 0, 0.5, 0.0, 3, "LC" )
 	: PlayVoice( "Voices/vo05_aza0280" )
 	\CN["爱彩弥"]
-“无黑，身体已经没事了吗？”
+	“无黑，身体已经没事了吗？”
 
 	: DrawChara( "Mukuro", 7, 0, 0, 0.5, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo00_muk1144" )
 	\CN["无黑"]
-“是的……让您担心了，非常抱歉。”
+	“是的……让您担心了，非常抱歉。”
 
-前几天，我在日东街道的驿站町和一名白夜干部战斗了
-失败了被强奸了。
+	前几天，我在日东街道的驿站町和一名白夜干部战斗了
+	失败了被强奸了。
 
-从那个损坏中，终于恢复了。
+	从那个损坏中，终于恢复了。
 
 	: DrawChara( "Azami", 0, 0 )
 //●分岐終了
@@ -38,25 +38,25 @@
 : PlayVoice( "Voices/vo00_muk1145" )
 \CN["无黑"]
 “也就是说，是在北方的城市。
-但是，为什么突然……？”
+　但是，为什么突然……？”
 
 : DrawChara( "Azami", 3, 0)
 : PlayVoice( "Voices/vo05_aza0282" )
 \CN["爱彩弥"]
 “我想是观光什么的
-维克托尔的大臣现在正在前往那里”
+　维克托尔的大臣现在正在前往那里”
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk1146" )
 \CN["无黑"]
 “最近没看到骑士团的各位
-原来是这样啊”
+　原来是这样啊”
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0283" )
 \CN["爱彩弥"]
 “然后，反幕派们抓住了这个情报。
-他似乎在气喘吁吁要暗杀他”
+　他似乎在气喘吁吁要暗杀他”
 
 如果维克托尔骑士团在护卫的话
 我觉得首先安全。
@@ -79,25 +79,25 @@
 : PlayVoice( "Voices/vo00_muk1148" )
 \CN["无黑"]
 “呃，没什么……。
-只是，我觉得这几天都没看到她……”
+　只是，我觉得这几天都没看到她……”
 
 : DrawChara( "Azami", 0, 0, 0 )
 : PlayVoice( "Voices/vo05_aza0285" )
 \CN["爱彩弥"]
 “那家伙的乡下很像惠苏啊。
-也兼做向导跟着去”
+　也兼做向导跟着去”
 
 : DrawChara( "Azami", 6, 0)
 : PlayVoice( "Voices/vo05_aza0286" )
 \CN["爱彩弥"]
 “前几天关于驿站町的一件事也是这样
-”
+　”
 
 : DrawChara( "Azami", 0, 0)
 : PlayVoice( "Voices/vo05_aza0287" )
 \CN["爱彩弥"]
 “不管是怎样的雷欧，只有一个人的话是不能原谅的。
-无黑，拜托你了。去给我加油吧”
+　无黑，拜托你了。去给我加油吧”
 
 : DrawChara( "Mukuro", 17, 0, 0 )
 : PlayVoice( "Voices/vo00_muk1149" )
@@ -134,13 +134,13 @@
 : PlayVoice( "Voices/vo05_aza0289" )
 \CN["爱彩弥"]
 “……在大家都能幸福生活的世界里。
-为了那样做，我什么都做”
+　为了那样做，我什么都做”
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0290" )
 \CN["爱彩弥"]
 “在那一天到来之前，还有一点点……。
-已经不能再悠闲了”
+　已经不能再悠闲了”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 事件信息更新了。
@@ -224,7 +224,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc002_1" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle01" )
 : else
@@ -244,7 +244,7 @@
 : PlayVoice( "Voices/vo00_muk1152" )
 \CN["无黑"]
 “这些家伙说是白夜的魔术师。
-果然还是白夜……”
+　果然还是白夜……”
 
 这样的话，就必须快点了。
 
@@ -314,7 +314,7 @@
 : PlayVoice( "Voices/vo00_muk1155" )
 \CN["无黑"]
 “是的。我在找雷欧——戈尔斯坦君……。
-您知道吗？”
+　您知道吗？”
 
 : DrawChara( "Nina", 14, 0)
 : PlayVoice( "Voices/vo27_nii0034" )
@@ -343,12 +343,12 @@
 : DrawChara( "Leo", 13, 0)
 \CN["雷欧"]
 “局长也说要那样就好了。
-嗯，可以吗。没想到能在这里见到你”
+　嗯，可以吗。没想到能在这里见到你”
 
 : DrawChara( "Leo", 16, 0)
 \CN["雷欧"]
 “这里是我出生的故乡。
-这也是某种缘分。我必须把你介绍给我妈妈”
+　这也是某种缘分。我必须把你介绍给我妈妈”
 
 //●分岐：淫乱度Ｄの場合
 : if ( Call( "Scenarios/CommonSys*CharaHRank_Mukuro_Immoral" ) == 0 )
@@ -360,48 +360,48 @@
 	: ShowWnd()
 	: PlayVoice( "Voices/vo00_muk1157" )
 	\CN["无黑"]
-“什么，有什么姻缘……而且还介绍给妈妈……。
-哇，我们不是那种关系……”
+	“什么，有什么姻缘……而且还介绍给妈妈……。
+	　哇，我们不是那种关系……”
 
 	: DrawChara( "Leo", 2, 0)
 	\CN["雷欧"]
-“啊？但是，我们是一起拼上性命的伙伴
-我想好好介绍一下”
+	“啊？但是，我们是一起拼上性命的伙伴
+	　我想好好介绍一下”
 
 	: DrawChara( "Mukuro", 21, 1)
 	: PlayVoice( "Voices/vo00_muk1158" )
 	\CN["无黑"]
-“啊……介绍的话，是那边吗……那样的话，啊，嗯。
-是啊。不好好打招呼的话……”
+	“啊……介绍的话，是那边吗……那样的话，啊，嗯。
+	　是啊。不好好打招呼的话……”
 
 	: DrawChara( "Leo", 5, 0)
 	\CN["雷欧"]
-「……？」
+	「……？」
 
-我啊，一定是——。
+	我啊，一定是——。
 
 	//●演技：心の声です
 	: DrawChara( "Mukuro", 20, 2)
 	: PlayVoice( "Voices/vo00_muk1159" )
 	\CN["无黑"]
-（啊啊，我在想什么？
-最近怎么了……。我太在意这家伙了
-说起来……）
+	（啊啊，我在想什么？
+	　最近怎么了……。我太在意这家伙了
+	　说起来……）
 
 	: DrawChara( "Leo", 1, 0)
 	\CN["雷欧"]
-“怎么了……？”
+	“怎么了……？”
 
 	: DrawChara( "Mukuro", 19, 2)
 	: PlayVoice( "Voices/vo00_muk1160" )
 	\CN["无黑"]
-“什么，没什么！”
+	“什么，没什么！”
 
 	: EraseChara( "Leo", 0.5 )
 	: DrawChara( "Nina", 17, 0, 0,Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 	: PlayVoice( "Voices/vo27_nii0035" )
 	\CN["精灵女性"]
-“雷欧，你没有完全忘记我妈妈在吗？”
+	“雷欧，你没有完全忘记我妈妈在吗？”
 
 //●分岐終了
 : else
@@ -455,32 +455,32 @@
 : PlayVoice( "Voices/vo00_muk1163" )
 \CN["无黑"]
 “我是神八代无黑——嗯，和雷欧一样，是鬼灯的队员
-正在做”
+　正在做”
 
 : DrawChara( "Nina", 16, 0)
 : PlayVoice( "Voices/vo27_nii0040" )
 \CN["尼娜"]
 “呃……这就是武士啊。
-女武士——真好啊，厉害”
+　女武士——真好啊，厉害”
 
 : EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["雷欧"]
 “是吧？这家伙是大和一，不，是世界上最好的女人。
-我将来想嫁给我大人”
+　我将来想嫁给我大人”
 
 : DrawChara( "Mukuro", 22, 1)
 : PlayVoice( "Voices/vo00_muk1164" )
 \CN["无黑"]
 “哟，老婆！？雷欧，在妈妈面前也这么说
-不要说！”
+　不要说！”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Nina", 30, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo27_nii0041" )
 \CN["尼娜"]
 “……呃，无黑酱？
-我的笨儿子真的很抱歉。那个孩子，真的是个笨蛋”
+　我的笨儿子真的很抱歉。那个孩子，真的是个笨蛋”
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk1165" )
@@ -491,14 +491,14 @@
 : PlayVoice( "Voices/vo27_nii0042" )
 \CN["尼娜"]
 “如果雷欧给你添麻烦的话，你随时都可以来找我
-说吧。我会重拍的”
+　说吧。我会重拍的”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
 \CN["雷欧"]
 「喂，婆婆，你在说什么！
-我会很有用的！因为是王牌！
-什、无黑”
+　我会很有用的！因为是王牌！
+　什、无黑”
 
 : DrawChara( "Nina", 41, 0)
 : PlayVoice( "Voices/vo27_nii0043" )
@@ -535,13 +535,13 @@
 : PlayVoice( "Voices/vo00_muk1167" )
 \CN["无黑"]
 “是的，发生了很多事。
-咦？费尔克在哪里？”
+　咦？费尔克在哪里？”
 
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Xeno", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 \CN["奇诺"]
 “团长和大臣一起去了{北灵山，挖山}。
-去见住在那里的刀匠之类的……”
+　去见住在那里的刀匠之类的……”
 
 //●読み：北霊山（ほくれいざん）
 : DrawChara( "Mukuro", 1, 0)
@@ -568,18 +568,18 @@
 : PlayVoice( "Voices/vo27_nii0045" )
 \CN["尼娜"]
 “咦？我没说吗？”？
-和维克托尔的大臣是骑士团学校时代的同期生”
+　和维克托尔的大臣是骑士团学校时代的同期生”
 
 : DrawChara( "Leo", 4, 0)
 \CN["雷欧"]
 “诶诶？诶！？妈妈，真的吗……？
-也就是说，你是原骑士吗！？”
+　也就是说，你是原骑士吗！？”
 
 : DrawChara( "Nina", 18, 0)
 : PlayVoice( "Voices/vo27_nii0046" )
 \CN["尼娜"]
 “我不是骑士。
-因为我没能毕业……”
+　因为我没能毕业……”
 
 尼娜一边这样说着一边仰望着天空。
 
@@ -597,7 +597,7 @@
 : PlayVoice( "Voices/vo00_muk1169" )
 \CN["无黑"]
 “嗯，特别是名字……。
-只是在仓库里睡觉而已”
+　只是在仓库里睡觉而已”
 
 这么说来，我没在意过。
 
@@ -606,7 +606,7 @@
 : PlayVoice( "Voices/vo27_nii0048" )
 \CN["尼娜"]
 “那就去北灵山看看吧？
-我觉得让刀匠看看那把刀就好了”
+　我觉得让刀匠看看那把刀就好了”
 
 : DrawChara( "Nina", 20, 0)
 : PlayVoice( "Voices/vo27_nii0049" )
@@ -618,13 +618,13 @@
 : PlayVoice( "Voices/vo19_era0032" )
 \CN["伊拉伊萨"]
 “啊，你的刀，怎么这么刺眼啊。”
-有啊。绝对不是普通的刀”
+　有啊。绝对不是普通的刀”
 
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 \CN["雷欧"]
 “我会留在这里，你就像你母亲所说的那样，是北灵山
-我觉得去比较好”
+　我觉得去比较好”
 
 : DrawChara( "Leo", 0, 0)
 \CN["雷欧"]
@@ -634,8 +634,8 @@
 : PlayVoice( "Voices/vo00_muk1170" )
 \CN["无黑"]
 “那我就试试看。
-有费尔克先生和大臣
-我觉得去比较好”
+　有费尔克先生和大臣
+　我觉得去比较好”
 
 北灵山从北国街道的另一条路可以去。
 马上去看看吧。
@@ -692,8 +692,8 @@
 : DrawChara( "Dominik", 4, 0)
 \CN["大臣"]
 “骑士团长，这位女性是？
-穿着樱纹的外褂是和高千穗先生
-看上去和我是同一个鬼灯的人……”
+　穿着樱纹的外褂是和高千穗先生
+　看上去和我是同一个鬼灯的人……”
 
 : HideWnd()
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
@@ -704,12 +704,12 @@
 : PlayVoice( "Voices/vo00_muk1171" )
 \CN["无黑"]
 “很抱歉这么晚才问候您。
-我是鬼灯队士神八代无黑”
+　我是鬼灯队士神八代无黑”
 
 : DrawChara( "Dominik", 5, 0)
 \CN["多米尼克"]
 “这个请小心。
-维克托尔大臣，多米尼克・艾梅尔特”
+　维克托尔大臣，多米尼克・艾梅尔特”
 
 大臣什么的，一定是个摆架子的人吧
 虽然有着任性的印象。
@@ -730,7 +730,7 @@
 : ShowWnd()
 \CN["刀匠"]
 “这么年轻又可爱的女孩子居然会来……。
-好开心啊”
+　好开心啊”
 
 \CN["刀匠"]
 “哪个，能让我看一下你的手吗？”
@@ -739,7 +739,7 @@
 
 \CN["刀匠"]
 “中途改变了流派，终于开始熟悉了。”
-就是这样吗……”
+　就是这样吗……”
 
 \CN["刀匠"]
 “嗯嗯……好好地锻炼了一下，是个好办法。”
@@ -755,11 +755,11 @@
 
 \CN["刀匠"]
 “呵呵，有这种手的女生几乎没有。
-变得很开心”
+　变得很开心”
 
 \CN["刀匠"]
 “能借我小姐的刀吗？
-我来收拾一下吧”
+　我来收拾一下吧”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1173" )
@@ -774,7 +774,7 @@
 : DrawChara( "Dominik", 5, 0)
 \CN["多米尼克"]
 “这位天皇的技术相当高超。
-维克托尔也没有这么好的铁匠铺”
+　维克托尔也没有这么好的铁匠铺”
 
 \CN["刀匠"]
 “呵呵，被大臣夸奖的话会害羞的。”
@@ -785,7 +785,7 @@
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 \CN["刀匠"]
 “……这、这是！
-这把刀到底是在哪里弄到手的！？”
+　这把刀到底是在哪里弄到手的！？”
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1174" )
@@ -811,24 +811,24 @@
 
 \CN["刀匠"]
 “这把刀恐怕是‘天丛云，糖云’”
-骑士团长使用的『神刀布都御魂，新佛陀』和
-同样是神创造的刀”
+　骑士团长使用的『神刀布都御魂，新佛陀』和
+　同样是神创造的刀”
 
 : DrawChara( "Mukuro", 18, 0)
 : PlayVoice( "Voices/vo00_muk1176" )
 \CN["无黑"]
 “那么，神刀是……？
-我至今为止都用着那样的名刀……”
+　我至今为止都用着那样的名刀……”
 
 \CN["刀匠"]
 “神刀不是任何人都能使用的。
-刀会选择使用者”
+　刀会选择使用者”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Falke", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["沥青"]
 “好像是啊。我的是谢普先生——之前的骑士团长
-我是接受的”
+　我是接受的”
 
 : DrawChara( "Dominik", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["多米尼克"]
@@ -836,8 +836,8 @@
 
 \CN["刀匠"]
 “喂，我会好好地帮你保养的。
-布都御魂，一天能看到两把神刀
-今天真是荒唐的一天啊」
+　布都御魂，一天能看到两把神刀
+　今天真是荒唐的一天啊」
 
 然后刀匠的爷爷
 我的刀——天丛云被精心修整了。
@@ -853,7 +853,7 @@
 : ShowWnd()
 \CN["刀匠"]
 「好！完成了！怎么样？
-那是会被迷恋的光辉吧？”
+　那是会被迷恋的光辉吧？”
 
 : DrawChara( "Mukuro", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk1177" )
@@ -862,7 +862,7 @@
 
 \CN["刀匠"]
 “我明白了小姑娘有多么珍惜刀。
-能够挖掘出天丛云真正力量的那一天，似乎不是那么遥远的一天”
+　能够挖掘出天丛云真正力量的那一天，似乎不是那么遥远的一天”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk1178" )
@@ -871,7 +871,7 @@
 
 \CN["刀匠"]
 「啊。神刀啊，平时是自己封住本来的力量的。
-只有在真正认可了使用者的时候，才会展现出真正的姿态”
+　只有在真正认可了使用者的时候，才会展现出真正的姿态”
 
 \CN["刀匠"]
 “详细情况可以问骑士团长。”
@@ -884,7 +884,7 @@
 : DrawChara( "Falke", 3, 0)
 \CN["沥青"]
 “怎么样呢？
-怎么说呢，这样，总觉得明白了……”
+　怎么说呢，这样，总觉得明白了……”
 
 : DrawChara( "Dominik", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["多米尼克"]
@@ -893,12 +893,12 @@
 : DrawChara( "Falke", 4, 0)
 \CN["沥青"]
 “是吗？嘛，的确Zip桑身上有很多
-虽然有人跟我说让我记住……”
+　虽然有人跟我说让我记住……”
 
 : DrawChara( "Falke", 11, 0)
 \CN["沥青"]
 “怎么说呢，从心底里有个重要的家伙，然后，就是那个家伙
-如果想要守护的话，就会给我力量”
+　如果想要守护的话，就会给我力量”
 
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Dominik", Call("Scenarios/Common*FgFadeTime") )
@@ -926,24 +926,24 @@
 	: ShowWnd()
 	: PlayVoice( "Voices/vo00_muk1180" )
 	\CN["无黑"]
-（不，不，雷欧是……！重要的伙伴是
-没错……为什么，那家伙的脸最先……）
+	（不，不，雷欧是……！重要的伙伴是
+	　没错……为什么，那家伙的脸最先……）
 
 	: DrawChara( "Falke", 5, 0, 0, 0.5, 0.0, 3, "LC" )
 	\CN["沥青"]
-“无黑，脸是通红的？
-难道你在想雷欧吗？”
+	“无黑，脸是通红的？
+	　难道你在想雷欧吗？”
 
 	: DrawChara( "Mukuro", 20, 2, 0, 0.5, 0.0, 4, "RC" )
 	: PlayVoice( "Voices/vo00_muk1181" )
 	\CN["无黑"]
-“……！为什么……！？
-啊，不，那个，我倒是……”
+	“……！为什么……！？
+	　啊，不，那个，我倒是……”
 
 	//●演技：心の声です
 	: DrawChara( "Falke", 12, 0)
 	\CN["沥青"]
-（无论是男朋友还是女朋友，都会被发现的吧……）
+	（无论是男朋友还是女朋友，都会被发现的吧……）
 
 	//●分岐終了
 	: EraseChara( "Falke", 0.5 )
@@ -959,7 +959,7 @@
 : PlayVoice( "Voices/vo05_aza0291" )
 \CN["爱彩弥"]
 “惠苏好像出现了白夜的人在胡闹。
-无黑，火速回到街上！”
+　无黑，火速回到街上！”
 
 : DrawChara( "Falke", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 \CN["沥青"]
@@ -969,13 +969,13 @@
 : PlayVoice( "Voices/vo00_muk1182" )
 \CN["无黑"]
 “实际上惠苏的街道好像被袭击了……。
-对不起，我得马上赶到……！”
+　对不起，我得马上赶到……！”
 
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Dominik", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["多米尼克"]
 “是吗？那就不能发呆了。
-赶紧跑吧」
+　赶紧跑吧」
 
 : DrawChara( "Mukuro", 35, 0)
 : PlayVoice( "Voices/vo00_muk1183" )
@@ -1010,7 +1010,7 @@
 : DrawChara( "Falke", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["沥青"]
 “如果有这种情况的话就没办法了。
-多米尼克先生，请一定不要受伤哦”
+　多米尼克先生，请一定不要受伤哦”
 
 : DrawChara( "Dominik", 5, 0)
 \CN["多米尼克"]
@@ -1020,7 +1020,7 @@
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
 \CN["刀匠"]
 “年轻人很有精神真好啊。
-正因为如此”
+　正因为如此”
 
 //●演出：暗転
 //※＠システム：無黒の武器変更『無名の刀』→『天叢雲』
@@ -1049,8 +1049,8 @@
 : ShowWnd()
 \CN["沥青"]
 “果然排练和实战的话动作完全不一样啊。
-不管是雷欧还是银，都让我和骑士团的伙伴一起练习一下
-好像……”
+　不管是雷欧还是银，都让我和骑士团的伙伴一起练习一下
+　好像……”
 
 \CN["白夜队士1"]
 “那个奇怪的打扮，是维克托尔的家伙吧？”
@@ -1067,7 +1067,7 @@
 
 \CN["沥青"]
 “不是那种奇怪的打扮！
-因为克雷西亚帮我修饰了一下”
+　因为克雷西亚帮我修饰了一下”
 
 : DrawChara( "Dominik", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Falke", 14, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -1104,7 +1104,7 @@
 
 \CN["白夜队士5"]
 “燃烧一切的火焰精灵啊——
-遵从我的命令，烧尽邪恶之人吧」
+　遵从我的命令，烧尽邪恶之人吧」
 
 //演出：炎魔術エフェクト
 : HideWnd()
@@ -1116,7 +1116,7 @@
 
 \CN["白夜队士5"]
 “哈哈哈，包含了我的魔力
-《炼狱魔术，Burst》——这样他们就焦黑了”
+　《炼狱魔术，Burst》——这样他们就焦黑了”
 
 //●演出：ニーナ　魔法演出（ファランクス）
 //●演技：詠唱です
@@ -1126,7 +1126,7 @@
 : PlayVoice( "Voices/vo27_nii0050" )
 \CN["尼娜"]
 “寄宿在母亲大地上的伟大精灵啊——
-成为坚固的盾守护我们吧」
+　成为坚固的盾守护我们吧」
 
 : DrawChara( "Nina", 40, 0)
 : PlayVoice( "Voices/vo27_nii0051" )
@@ -1140,7 +1140,7 @@
 
 \CN["白夜队士5"]
 “笨蛋啊……！？
-我那个明明是兰丸大人表扬我的威力……”
+　我那个明明是兰丸大人表扬我的威力……”
 
 : HideWnd()
 : EraseChara( "Nina", Call("Scenarios/Common*FgFadeTime") )
@@ -1156,13 +1156,13 @@
 : PlayVoice( "Voices/vo27_nii0052" )
 \CN["尼娜"]
 “呵呵。谢谢你，多米尼克。
-你也还是老样子啊」
+　你也还是老样子啊」
 
 : DrawChara( "Nina", 18, 0)
 : PlayVoice( "Voices/vo27_nii0053" )
 \CN["尼娜"]
 “听说因为风传要当大臣，所以肯定都是好东西
-我想象着吃了之后会变成咕嘟咕嘟……”
+　我想象着吃了之后会变成咕嘟咕嘟……”
 
 \CN["多米尼克"]
 “因为妻子亲手做的菜很好地管理着健康。”
@@ -1225,7 +1225,7 @@
 : ShowWnd()
 \CN["白夜队士5"]
 “切……对于魔力用尽的我来说，已经……。
-但是——”
+　但是——”
 
 魔力用尽的男人，即使如此也要战斗
 没想放弃——
@@ -1253,7 +1253,7 @@
 : DrawChara( "Mukuro", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 \CN["沥青"]
 “那么，多米尼克先生请尼娜先生听电话。
-那么，我和无黑分头去阻止那些胡闹的家伙吧”
+　那么，我和无黑分头去阻止那些胡闹的家伙吧”
 
 : DrawChara( "Mukuro", 17, 0)
 : PlayVoice( "Voices/vo00_muk1189" )
@@ -1344,7 +1344,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc005_win01" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*sc005_Enemy01" )
 : else
@@ -1377,7 +1377,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc005_win02" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*sc005_Enemy02" )
 : else
@@ -1410,7 +1410,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc005_win03" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*sc005_Enemy03" )
 : else
@@ -1443,7 +1443,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc005_win04" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*sc005_Enemy04" )
 : else
@@ -1476,7 +1476,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc005_win05" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*sc005_Enemy05" )
 : else
@@ -1546,7 +1546,7 @@
 : else
 	\CI["推进活动（不会失败）"]
 	\CI["再次挑战"]
-怎么办？
+	怎么办？
 
 	: if ($choice == 0) Jump( "*sc006" ) endif
 	: Return
@@ -1566,7 +1566,7 @@
 : PlayVoice( "Voices/vo00_muk1190" )
 \CN["无黑"]
 “那么，暂且先在这里乱闹的家伙们
-全部都老实了吧”
+　全部都老实了吧”
 
 必须要和在对面战斗的雷欧他们会合。
 
@@ -1618,19 +1618,19 @@
 : PlayVoice( "Voices/vo10_mid0067" )
 \CN["绿色"]
 “因为有维克托尔骑士团的骑士之类的奇怪的名字
-我还以为会不会有什么问题呢，但还是很能干啊，我自己”
+　我还以为会不会有什么问题呢，但还是很能干啊，我自己”
 
 : DrawChara( "Midori", 18, 0)
 : PlayVoice( "Voices/vo10_mid0068" )
 \CN["绿色"]
 “竟然能和我这样互相残杀的家伙
-一只手就够了”
+　一只手就够了”
 
 : DrawChara( "Elisa", 17, 0)
 : PlayVoice( "Voices/vo19_era0034" )
 \CN["伊拉伊萨"]
 “诶~那只是你在家里呆着而已。”
-不是吗？啊？”
+　不是吗？啊？”
 
 : DrawChara( "Elisa", 11, 0)
 : PlayVoice( "Voices/vo19_era0035" )
@@ -1664,7 +1664,7 @@
 : PlayVoice( "Voices/vo10_mid0069" )
 \CN["绿色"]
 “你太快了。
-居然能全部躲开我的头盖”
+　居然能全部躲开我的头盖”
 
 : DrawChara( "Elisa", 7, 0, 0, 0.0, 0.0, 3, "RC" )
 : PlaySe("SE/Se_Foot01")
@@ -1678,7 +1678,7 @@
 : PlayVoice( "Voices/vo10_mid0070" )
 \CN["绿色"]
 “我啊，哈哈，基本上是和男人吵架的时候吧
-{拷问，啊そ}大概是在玩的时候吧」
+　{拷问，啊そ}大概是在玩的时候吧」
 
 //: EraseChara( "Elisa", 0.5 )
 //: DrawChara( "Midori", 22, 0, 0, 0.5, 0.0, 2, "C" )
@@ -1704,7 +1704,7 @@
 : PlayVoice( "Voices/vo19_era0037" )
 \CN["伊拉伊萨"]
 “呼~！好危险啊……。
-差点掉进坑里”
+　差点掉进坑里”
 
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Midori", 13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
@@ -1793,7 +1793,7 @@
 : DrawChara( "Xeno", 4, 0)
 \CN["奇诺"]
 “看起来，只有伊拉伊萨的对手很危险……。
-看来还是参加应援比较好”
+　看来还是参加应援比较好”
 
 //●演出：ゼノ駆け出した後、場面転換
 : HideWnd()
@@ -1838,7 +1838,7 @@
 : PlayVoice( "Voices/vo10_mid0073" )
 \CN["绿色"]
 “大和有个讨厌的家伙。
-但是，你没有在维克托尔吗？坚强的家伙”
+　但是，你没有在维克托尔吗？坚强的家伙”
 
 : HideWnd()
 : DrawChara( "Elisa", 10, 0, 0, 0.0, 0.0, 3, "RC" )
@@ -1848,13 +1848,13 @@
 : PlayVoice( "Voices/vo19_era0039" )
 \CN["伊拉伊萨"]
 “被称为世界最强的人只有一个。
-差不多该到这里了吧？”
+　差不多该到这里了吧？”
 
 : DrawChara( "Midori", 29, 0)
 : PlayVoice( "Voices/vo10_mid0074" )
 \CN["绿色"]
 “那么，我们也稍微拿出点真本事，号称世界最强吧
-我必须要杀了他啊”
+　我必须要杀了他啊”
 
 //●演出：みどり＆イライザ　アクション演出
 : HideWnd()
@@ -1886,7 +1886,7 @@
 : PlayVoice( "Voices/vo19_era0040" )
 \CN["伊拉伊萨"]
 （啧！这家伙还很快啊。
-如果只是速度的话，大概比我快吧……）
+　如果只是速度的话，大概比我快吧……）
 
 //: DrawChara( "Elisa", 19, 0)
 : PlayVoice( "Voices/vo19_era0041" )
@@ -1920,7 +1920,7 @@
 : PlayVoice( "Voices/vo19_era0042" )
 \CN["伊拉伊萨"]
 “不要打扰我，我要去吃沥青。
-和这家伙厮杀真是太开心了！”
+　和这家伙厮杀真是太开心了！”
 
 : DrawChara( "Elisa", 11, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : DrawChara( "Xeno", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
@@ -1931,7 +1931,7 @@
 : PlayVoice( "Voices/vo19_era0043" )
 \CN["伊拉伊萨"]
 “你还是那么死心眼啊。
-嘛，谋划的话必须是这样啊……”
+　嘛，谋划的话必须是这样啊……”
 
 在和绿的战斗中完全头部出血的伊莉莎
 用一句话恢复了平静。
@@ -1965,7 +1965,7 @@
 : PlayVoice( "Voices/vo10_mid0077" )
 \CN["绿色"]
 “啊，这里是我的故乡啊。
-可恶。我不知道”
+　可恶。我不知道”
 
 //＠備考：↓ゼップがキレた時に言ったのと同じセリフ
 : DrawChara( "Leo", 23, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -1987,20 +1987,20 @@
 : PlayVoice( "Voices/vo10_mid0078" )
 \CN["绿色"]
 “哇，好恐怖……。
-自己要是做不到那种表情的话，就先说吧……”
+　自己要是做不到那种表情的话，就先说吧……”
 
 : DrawChara( "Midori", 16, 0)
 : PlayVoice( "Voices/vo10_mid0079" )
 \CN["绿色"]
 “像刺一样的杀气，我最喜欢那个了。
-只是被转向了，就好像爱上了啊」
+　只是被转向了，就好像爱上了啊」
 
 : DrawChara( "Midori", 0, 0)
 : PlayVoice( "Voices/vo10_mid0080" )
 \CN["绿色"]
 “虽然很想和对方交往，但是不管怎么说都是寡不敌众。
-而且还有世界最强的存在，照现在的样子果然很辛苦。
-看来只能撤退了”
+　而且还有世界最强的存在，照现在的样子果然很辛苦。
+　看来只能撤退了”
 
 : HideWnd()
 : PlaySe("SE/Se_Foot01")
@@ -2018,7 +2018,7 @@
 : Call( "Scenarios/Common*FgEff")
 \CN["奇诺"]
 “请冷静下来。那个女人退了，剩下的党就会来这里。”
-”
+　”
 
 : StopBgm( 1.0 )
 : EraseChara( "Xeno", Call("Scenarios/Common*FgFadeTime") )
@@ -2035,7 +2035,7 @@
 : PlayVoice( "Voices/vo19_era0044" )
 \CN["伊拉伊萨"]
 “啊，因为我有种不好的预感。
-你知道我的这种直觉是对的吗？”
+　你知道我的这种直觉是对的吗？”
 
 : DrawChara( "Falke", 4, 0)
 \CN["沥青"]
@@ -2047,13 +2047,13 @@
 : DrawChara( "Falke", 2, 0)
 \CN["沥青"]
 “总之先回城里吧。
-受伤的人是妮娜在治疗的”
+　受伤的人是妮娜在治疗的”
 
 : EraseChara( "Elisa", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 16, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["雷欧"]
 “是啊……。费尔克先生，伊拉伊萨先生，顺便
-谢谢你守护我的故乡！”
+　谢谢你守护我的故乡！”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Falke", Call("Scenarios/Common*FgFadeTime") )
@@ -2071,7 +2071,7 @@
 : DrawChara( "Falke", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["沥青"]
 “本来被盯上的就是我们啊。
-对不起给你添麻烦了”
+　对不起给你添麻烦了”
 
 //●演出：暗転
 : HideWnd()

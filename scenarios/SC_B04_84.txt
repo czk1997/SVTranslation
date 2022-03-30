@@ -82,7 +82,7 @@
 : DrawChara( "Leo", 22, 0)
 \CN["雷欧"]
 “这是我的珍藏品。
-我会认真去做的——”
+　我会认真去做的——”
 
 //●演出：レオ　必殺技
 : HideWnd()
@@ -126,8 +126,8 @@
 : PlayVoice( "Voices/vo19_era0075" )
 \CN["伊拉伊萨"]
 “嘛，雷欧的那个我看像是这把魔法剑的一种
-因为啊。不适用于假币。
-毕竟这是那家伙老婆的拿手好戏啊」
+　因为啊。不适用于假币。
+　毕竟这是那家伙老婆的拿手好戏啊」
 
 //: EraseChara( "Mukuro", 0.5 )
 : DrawChara( "Kinako", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "C" )
@@ -139,14 +139,14 @@
 : PlayVoice( "Voices/vo19_era0076" )
 \CN["伊拉伊萨"]
 “啊，现在还在做公主什么的
-那是因为有了孩子才退役的”
+　那是因为有了孩子才退役的”
 
 : DrawChara( "Elisa", 17, 1)
 : PlayVoice( "Voices/vo19_era0077" )
 \CN["伊拉伊萨"]
 “以前非常厉害……。
-我也被打败了好几次，和那家伙的训练沸腾起来了
-没办法啊」
+　我也被打败了好几次，和那家伙的训练沸腾起来了
+　没办法啊」
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 //: DrawChara( "Falke", 0, 0, 0, 0.5, 0.0, 3, "LC" )
@@ -193,7 +193,7 @@
 : PlayVoice( "Voices/vo19_era0078" )
 \CN["伊拉伊萨"]
 （……那家伙，果然。不，但是……。
-但是，只能这样……）
+　但是，只能这样……）
 
 //●演出：レオとファルケ　刀を合わせる
 : EraseChara( "Elisa", 0.0 )
@@ -253,14 +253,14 @@
 : PlayVoice( "Voices/vo19_era0079" )
 \CN["伊拉伊萨"]
 “啊，那个柏油的家伙，看起来很开心。
-雷欧也很了不起啊。脸上露出那样的表情
-什么嘛”
+　雷欧也很了不起啊。脸上露出那样的表情
+　什么嘛”
 
 : DrawChara( "Elisa", 10, 1)
 : PlayVoice( "Voices/vo19_era0080" )
 \CN["伊拉伊萨"]
 「啊，我也滚滚而来。
-啊，谁来陪我啊”
+　啊，谁来陪我啊”
 
 伊洛伊萨的眼神变得锐利。
 
@@ -273,7 +273,7 @@
 : PlayVoice( "Voices/vo19_era0081" )
 \CN["伊拉伊萨"]
 “黄菜子，怎么样？
-你也来试试实战训练吧？”
+　你也来试试实战训练吧？”
 
 : DrawChara( "Kinako", 3, 0)
 : PlayVoice( "Voices/vo02_kin0253" )
@@ -285,7 +285,7 @@
 : PlayVoice( "Voices/vo19_era0082" )
 \CN["伊拉伊萨"]
 （我想确认一下之前的感觉……。
-强迫他做也没意义吗？）
+　强迫他做也没意义吗？）
 
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
@@ -297,13 +297,13 @@
 : PlayVoice( "Voices/vo19_era0083" )
 \CN["伊拉伊萨"]
 “啊！无黑，能和我交往吗？
-我想和你认真地做一次啊」
+　我想和你认真地做一次啊」
 
 : DrawChara( "Mukuro", 2, 0)
 : PlayVoice( "Voices/vo00_muk1494" )
 \CN["无黑"]
 “我也是，伊拉伊萨。
-我想跟得上你的速度”
+　我想跟得上你的速度”
 
 无黑曾经是白夜九星之一，望月绿的速度
 吃过苦头。
@@ -320,7 +320,7 @@
 : PlayVoice( "Voices/vo19_era0084" )
 \CN["伊拉伊萨"]
 「真好啊，那份假发。
-如果让我看到那样的话，我会滚滚而来的”
+　如果让我看到那样的话，我会滚滚而来的”
 
 : DrawChara( "Elisa", 12, 0)
 : PlayVoice( "Voices/vo19_era0085" )
@@ -343,22 +343,22 @@
 : DrawChara( "Xeno", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["鬼灯队士・男A"]
 “怎么样？要不要和我一起训练一下？”？
-作为黄菜子的大哥”
+　作为黄菜子的大哥”
 
 \CN["鬼灯队士・男B"]
 “不，我先来。你适合黄菜子的对手吗？”
-要好好看看啊。作为黄菜子的哥哥”
+　要好好看看啊。作为黄菜子的哥哥”
 
 \CN["鬼灯队士・男C"]
 “我也想要混合。
-作为黄菜子的哥哥，我想先看看他的实力”
+　作为黄菜子的哥哥，我想先看看他的实力”
 
 : DrawChara( "Xeno", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : DrawChara( "Bebi", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo07_beb0073" )
 \CN["红美"]
 “在下是对手！
-让在下的火焰烧得焦黑吧」
+　让在下的火焰烧得焦黑吧」
 
 : DrawChara( "Xeno", 1, 0)
 \CN["奇诺"]
@@ -409,7 +409,7 @@
 
 \CN["鬼灯队士・男B"]
 “啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊。
-在那么小的身体里，哪里有那样的力量”
+　在那么小的身体里，哪里有那样的力量”
 
 与维克托尔骑士团的联合训练气氛高涨
 今后逗留期间也要定期做。

@@ -17,7 +17,7 @@
 : PlayVoice( "Voices/vo01_mom1421" )
 \CN["桃"]
 “不是一般的居酒屋，而是特意叫到这种地方
-这是什么样的工作呢？”
+　这是什么样的工作呢？”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4497" )
@@ -79,7 +79,7 @@
 : PlayVoice( "Voices/vo01_mom1424" )
 \CN["桃"]
 “……因为还很暖和，所以死后才花那么多时间
-可能还没过”
+　可能还没过”
 
 : DrawChara( "Mukuro", 24, 0)
 : PlayVoice( "Voices/vo00_muk4500" )
@@ -108,13 +108,13 @@
 : PlayVoice( "Voices/vo00_muk4502" )
 \CN["无黑"]
 “这样的话，杀了入口店的家伙是相当高明的
-或者……”
+　或者……”
 
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom1427" )
 \CN["桃"]
 「嘛，不管怎么说，我们也得小心啊。
-总之先回西都吧”
+　总之先回西都吧”
 
 //●演出：無黒・桃　退場する
 //●背景：空・昼
@@ -143,7 +143,7 @@
 : PlayVoice( "Voices/vo00_muk4503" )
 \CN["无黑"]
 “啊。来到西都后，得到了很多照顾。
-我有各种各样的想法”
+　我有各种各样的想法”
 
 //●場所：西都・居酒屋
 //●演出：無黒・桃　居酒屋に戻る
@@ -166,11 +166,11 @@
 : ShowWnd()
 \CN["店长"]
 “哦，无黑酱和桃子酱正好到了。
-我曾经被眼镜店拜托过”
+　我曾经被眼镜店拜托过”
 
 \CN["店长"]
 “昨天晚上很晚哦，如果两个人来过这里的话
-”
+　”
 
 从居酒屋的店长那里收到信。
 
@@ -178,7 +178,7 @@
 : PlayVoice( "Voices/vo01_mom1429" )
 \CN["桃"]
 “口入屋先生，留个口信什么的，说不定是自己
-你知道会被杀吗？”
+　你知道会被杀吗？”
 
 : DrawChara( "Mukuro", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo00_muk4504" )
@@ -188,8 +188,8 @@
 确认信的内容是桃子。
 
 “无黑和桃子读这封信的时候
-我已经不在这个世界上了吧。试着说了一次
-好厉害啊，这句台词”
+　我已经不在这个世界上了吧。试着说了一次
+　好厉害啊，这句台词”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom1430" )
@@ -197,15 +197,15 @@
 “很有口入屋风格的写法呢……”
 
 “稍微有点笨拙啊。站在被狙击生命的立场上。”
-凉粉。把无黑他们叫到远处也是因为对方的目光
-因为到了所以才这样”
+　凉粉。把无黑他们叫到远处也是因为对方的目光
+　因为到了所以才这样”
 
 “无法直接从我口中传达的可能性也很高
-我把这封信委托给了可靠的居酒屋的店长”
+　我把这封信委托给了可靠的居酒屋的店长”
 
 “以我为目标的杀手大概是和我有缘的人。
-杀了我之后，大概会经过{丹⇔岭，丹顶，蒲公英}回帝都。
-希望你能找到那家伙，夺取我的敌人”
+　杀了我之后，大概会经过{丹⇔岭，丹顶，蒲公英}回帝都。
+　希望你能找到那家伙，夺取我的敌人”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4505" )
@@ -216,8 +216,8 @@
 : PlayVoice( "Voices/vo01_mom1431" )
 \CN["桃"]
 “我都无所谓。
-只是，总觉得接受比较好。
-女人的直觉啊”
+　只是，总觉得接受比较好。
+　女人的直觉啊”
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk4506" )
@@ -330,7 +330,7 @@
 : PlayVoice( "Voices/vo01_mom1433" )
 \CN["桃"]
 “我知道。如果不以杀人的心情挑战的话，我们会
-会被杀的吧”
+　会被杀的吧”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Kinako", 21, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -346,7 +346,7 @@
 : PlayVoice( "Voices/vo01_mom1434" )
 \CN["桃"]
 “把刀对着人的黄菜子，竟然到这里……。
-杀气得简直要瘫软了」
+　杀气得简直要瘫软了」
 
 : DrawChara( "Mukuro", 30, 0)
 : PlayVoice( "Voices/vo00_muk4510" )
@@ -387,7 +387,7 @@
 : if ( $battleWin == true )
 	: Jump( "*sc003" )	//勝利した場合
 : elif ( $battleEscape == true )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle01" )
 
@@ -398,7 +398,7 @@
 	: FadeIn( 0.0 )
 	\CI["再战"]
 	\CI["重做"]
-失败了……。
+	失败了……。
 
 	: if ($choice == 0)
 		: Jump( "*battle01" )
@@ -439,7 +439,7 @@
 : PlayVoice( "Voices/vo00_muk4511" )
 \CN["无黑"]
 （事到如今，我的刀，其实相当厉害的
-不是名刀吗？）
+　不是名刀吗？）
 
 因为能接住黄菜子的妖刀扬羽
 不是在那附近卖的量产型的东西。
@@ -535,19 +535,19 @@
 : PlayVoice( "Voices/vo01_mom1437" )
 \CN["桃"]
 “不行元尝试了{睡眠魔术，睡眠}……。
-好像好好地起了作用真是太好了”
+　好像好好地起了作用真是太好了”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1438" )
 \CN["桃"]
 “黄菜子，总觉得精神上很虚弱
-因为……”
+　因为……”
 
 : DrawChara( "Mukuro", 3, 0)
 : PlayVoice( "Voices/vo00_muk4514" )
 \CN["无黑"]
 「这样啊……桃子，得救了。
-说实话，这是相当危险的地方”
+　说实话，这是相当危险的地方”
 
 : DrawChara( "Mukuro", 7, 0)
 如果是1比1的战斗的话就会被杀的吧。
@@ -562,17 +562,17 @@
 : PlayVoice( "Voices/vo01_mom1439" )
 \CN["桃"]
 “那么，让他睡了也可以，但是怎么办呢？
-睁开眼睛的话，就会袭击过来的吧……”
+　睁开眼睛的话，就会袭击过来的吧……”
 
 //●分岐：悪堕ちＬＶが０～２の場合
 : if ( $evilLevel < 3 )
 	: DrawChara( "Mukuro", 8, 0)
 	: PlayVoice( "Voices/vo00_muk4516" )
 	\CN["无黑"]
-“是啊……嗯……。
-如果不知道黄菜子变成这样的理由的话……”
+	“是啊……嗯……。
+	　如果不知道黄菜子变成这样的理由的话……”
 
-那是最大的问题。
+	那是最大的问题。
 
 //●分岐終了地点へ
 //●分岐：それ以外の場合
@@ -581,25 +581,25 @@
 	: DrawChara( "Mukuro", 26, 0)
 	: PlayVoice( "Voices/vo00_muk4517" )
 	\CN["无黑"]
-“杀了吗？那是最确定的。”
+	“杀了吗？那是最确定的。”
 
 	: ImpactLayer( 3, 0.1, 0.1, 1, 0.25)
 	: DrawChara( "Momo", 8, 0)
 	: PlayVoice( "Voices/vo01_mom1440" )
 	\CN["桃"]
-“嗯，无黑！？”
+	“嗯，无黑！？”
 
-桃子用吃惊的眼光看过来。
+	桃子用吃惊的眼光看过来。
 
 	: DrawChara( "Mukuro", 27, 0)
 	: PlayVoice( "Voices/vo00_muk4518" )
 	\CN["无黑"]
-“开玩笑，别当真。”
+	“开玩笑，别当真。”
 
 	: DrawChara( "Momo", 13, 0)
 	: PlayVoice( "Voices/vo01_mom1441" )
 	\CN["桃"]
-“刚才你说的话，我一点也听不出是开玩笑……”
+	“刚才你说的话，我一点也听不出是开玩笑……”
 
 //●分岐終了
 : endif
@@ -614,13 +614,13 @@
 : PlayVoice( "Voices/vo01_mom1443" )
 \CN["桃"]
 “即使带他去，在到达老师那里之前
-黄菜子，你会醒的吧”
+　黄菜子，你会醒的吧”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4519" )
 \CN["无黑"]
 “确实你的老师是指玉藻大人吧？
-那我就在救你的时候见过你」
+　那我就在救你的时候见过你」
 
 : layer = 3; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
 : Wait()
@@ -633,7 +633,7 @@
 : PlayVoice( "Voices/vo00_muk4520" )
 \CN["无黑"]
 “那么，您在哪里呢
-我也不知道”
+　我也不知道”
 
 //●演出：玉藻　登場する
 : StopBgm( 1.0 )
@@ -662,7 +662,7 @@
 : PlayVoice( "Voices/vo22_tam0328" )
 \CN["玉藻"]
 “好久不见了，桃子。看样子，好像……”
-好像可以拿回去了啊”
+　好像可以拿回去了啊”
 
 : DrawChara( "Mukuro", 1, 0)
 : PlayVoice( "Voices/vo00_muk4521" )
@@ -673,30 +673,30 @@
 : PlayVoice( "Voices/vo22_tam0329" )
 \CN["玉藻"]
 “我在追睡在你身边的{女子，おなご}。
-真的是多亏了你们的帮助”
+　真的是多亏了你们的帮助”
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom1446" )
 \CN["桃"]
 “老师的话可以治好黄菜子吧？
-我想大概是被人用了什么傀儡术吧”
+　我想大概是被人用了什么傀儡术吧”
 
 : PlayVoice( "Voices/vo22_tam0330" )
 \CN["玉藻"]
 “站在我的立场上，被施了傀儡之术
-我觉得不是这样的”
+　我觉得不是这样的”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1447" )
 \CN["桃"]
 “啊？但是，黄菜子竟然要杀我们
-绝对不可能……”
+　绝对不可能……”
 
 : DrawChara( "Mukuro", 10, 0)
 : PlayVoice( "Voices/vo00_muk4522" )
 \CN["无黑"]
 “啊，而且，黄菜子的眼睛总觉得有些空虚。
-和以前的桃子状态一样……”
+　和以前的桃子状态一样……”
 
 //●演技：心の声です
 //●読み：黄蘭（おうらん）
@@ -709,8 +709,8 @@
 : PlayVoice( "Voices/vo22_tam0332" )
 \CN["玉藻"]
 （和笨弟子们交手时的样子——
-那是黄兰……用自己的手杀了母亲，和小杀人犯
-不是被称呼时的东西）
+　那是黄兰……用自己的手杀了母亲，和小杀人犯
+　不是被称呼时的东西）
 
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom1448" )
@@ -721,7 +721,7 @@
 : PlayVoice( "Voices/vo22_tam0333" )
 \CN["玉藻"]
 “这要看本人。恐怕那孩子是在被淤青捡回来的时候
-处于和精神状态相近的状态”
+　处于和精神状态相近的状态”
 
 : DrawChara( "Momo", 3, 0)
 : PlayVoice( "Voices/vo01_mom1449" )
@@ -736,13 +736,13 @@
 : PlayVoice( "Voices/vo00_muk4523" )
 \CN["无黑"]
 “也就是说，现在的黄菜子回到了相遇时的黄菜子
-真是糟糕啊……。但是，为什么会这样呢？”
+　真是糟糕啊……。但是，为什么会这样呢？”
 
 : DrawChara( "Tamamo", 5, 0)
 : PlayVoice( "Voices/vo22_tam0335" )
 \CN["玉藻"]
 “真是厉害的眼睛……{精神，心}都坏掉了
-应该有过悲伤的事情吧”
+　应该有过悲伤的事情吧”
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom1450" )
@@ -753,8 +753,8 @@
 : PlayVoice( "Voices/vo22_tam0336" )
 \CN["玉藻"]
 “悲观也没办法。
-总之，先给你煎一种安定心灵的药
-如果让他喝了，多少会有点什么呢”
+　总之，先给你煎一种安定心灵的药
+　如果让他喝了，多少会有点什么呢”
 
 : PlayVoice( "Voices/vo22_tam0337" )
 \CN["玉藻"]

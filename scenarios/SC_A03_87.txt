@@ -37,7 +37,7 @@
 : PlayVoice( "Voices/vo01_mom0303" )
 \CN["桃"]
 “嗯……话虽如此，今天总觉得很悠闲呢。
-也没有什么特别的事件”
+　也没有什么特别的事件”
 
 桃子一边长得很大，一边懒洋洋地说。
 
@@ -163,7 +163,7 @@
 : PlayVoice( "Voices/vo01_mom0305" )
 \CN["桃"]
 “知道也没什么，一桥将军的女儿啊！
-也就是说，公主啊，公主！”
+　也就是说，公主啊，公主！”
 
 : layer = 4; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
 : Wait()
@@ -179,7 +179,7 @@
 : PlayVoice( "Voices/vo24_say0033" )
 \CN["小夜"]
 “不用低头。
-你们贵姓？”
+　你们贵姓？”
 
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 //Yoshi：左に黄菜子、右に無黒
@@ -225,7 +225,7 @@
 : DrawChara( "Sayo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "R" )
 \CN["雷欧"]
 「那么，sayo为什么会在屯所？
-话说，脱离幕府没问题吗？”
+　话说，脱离幕府没问题吗？”
 
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
@@ -236,7 +236,7 @@
 : PlayVoice( "Voices/vo05_aza0268" )
 \CN["爱彩弥"]
 “那没问题。
-因为他让我来照顾你”
+　因为他让我来照顾你”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : Wait()
@@ -247,7 +247,7 @@
 : PlayVoice( "Voices/vo24_say0036" )
 \CN["小夜"]
 “在幕府里也很无聊
-我还想再见到你”
+　我还想再见到你”
 
 : DrawChara( "Sayo", 1, 0)
 : PlayVoice( "Voices/vo24_say0037" )
@@ -258,7 +258,7 @@
 : PlayVoice( "Voices/vo05_aza0269" )
 \CN["爱彩弥"]
 “对不起，公主。那我做不到。
-因为幕府的人说不要从屯所出去”
+　因为幕府的人说不要从屯所出去”
 
 : DrawChara( "Sayo", 9, 0)
 //●読み：爺（じい）
@@ -315,7 +315,7 @@
 : PlayVoice( "Voices/vo24_say0041" )
 \CN["小夜"]
 “我说了！？黄菜子，这孩子现在说话了！”！
-好厉害啊”
+　好厉害啊”
 
 : PlayVoice( "Voices/vo02_kin0202" )
 \CN["黄菜子"]
@@ -338,7 +338,7 @@
 : PlayVoice( "Voices/vo07_beb0062" )
 \CN["红美"]
 “呜哇……这、这个摸法、啊、那、那是……
-在下，那里……啊……呵呵……啊啊啊啊♪”
+　在下，那里……啊……呵呵……啊啊啊啊♪”
 
 : DrawChara( "Kinako", 1, 0)
 : PlayVoice( "Voices/vo02_kin0203" )
@@ -386,7 +386,7 @@
 : PlayVoice( "Voices/vo24_say0046" )
 \CN["小夜"]
 「我最喜欢你了！你呢？
-难道和雷欧在交往吗？”
+　难道和雷欧在交往吗？”
 
 : DrawChara( "Mukuro", 8, 0)
 : PlayVoice( "Voices/vo00_muk1022" )
@@ -397,13 +397,13 @@
 : PlayVoice( "Voices/vo24_say0047" )
 \CN["小夜"]
 「这样啊。那Leo单方面地说喜欢你
-只是呢”
+　只是呢”
 
 : DrawChara( "Sayo", 9, 0)
 : PlayVoice( "Voices/vo24_say0048" )
 \CN["小夜"]
 “无黑，我一定会让你回头看的！”！
-绝对不会输的！”
+　绝对不会输的！”
 
 公主突然的宣战布告。
 
@@ -416,7 +416,7 @@
 : PlayVoice( "Voices/vo00_muk1023" )
 \CN["无黑"]
 （会喜欢上谁吗……嗯……对我来说
-因为不需要……）
+　因为不需要……）
 
 我对雷欧是怎么想的呢？
 

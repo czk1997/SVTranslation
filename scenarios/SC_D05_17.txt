@@ -21,12 +21,12 @@
 : ShowWnd()
 \CN["卍"]
 “那孩子，去工作之后就没回来过的明信片
-不是吗。我以为他一定死了」
+　不是吗。我以为他一定死了」
 
 : if ( CharaCostume( "Kinako" ) == 1 )
 	\CN["卍"]
-“而且，光着身子……喂喂，你醒了吗？
-嘛，我同情你。1毫米左右”
+	“而且，光着身子……喂喂，你醒了吗？
+	　嘛，我同情你。1毫米左右”
 
 : endif
 黄菜子在那卍中无言地拔刀——、
@@ -54,7 +54,7 @@
 : PlayVoice( "Voices/vo01_mom1481" )
 \CN["桃"]
 「是啊。我们去消灭后面涌出了稻草的虫子
-要吗？”
+　要吗？”
 
 //●演出：無黒・桃　後ろを向くと白夜のモブが入ってくる
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -68,7 +68,7 @@
 : DrawChara( "Manji", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 \CN["卍"]
 “啊，那些家伙就交给你们了
-犯是在我之后”
+　犯是在我之后”
 
 \CN["卍"]
 “这个小鬼{杀，玫瑰}之后，我也会加入的。”
@@ -104,7 +104,7 @@
 	: Jump( "*sc002a" )	//勝利した場合
 : elif ( $battleEscape == true )
 	: DrawImage( 0, 0, "BGImage/BG_Black", 0.0 )
-这场战斗，不能逃走！
+	这场战斗，不能逃走！
 
 	: Jump( "*battle01" )
 
@@ -115,7 +115,7 @@
 	: FadeIn( 0.0 )
 	\CI["再战"]
 	\CI["重做"]
-失败了……。
+	失败了……。
 
 	: if ($choice == 0)
 		: Jump( "*battle01" )
@@ -223,7 +223,7 @@
 
 \CN["卍的部下5"]
 「卍君被{杀，玫瑰}的家伙，我可不能和他们做对手。
-只能逃走了！”
+　只能逃走了！”
 
 : HideWnd()
 : PlaySe( "SE/Se_dash01" )

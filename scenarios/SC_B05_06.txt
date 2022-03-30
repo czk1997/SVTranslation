@@ -14,7 +14,7 @@
 : ShowWnd()
 \CN["雷欧"]
 「好的好的！？sayo失踪了！？
-爷爷，这是真的吗！？”
+　爷爷，这是真的吗！？”
 
 : PlayBgm("BGM/41_Sad")
 那天，一大早就有小夜陪伴的爷爷
@@ -24,7 +24,7 @@
 : DrawChara( "Leo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["老头儿"]
 “是的。今天早上像往常一样去叫他起床的话。”
-已经不在了……”
+　已经不在了……”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 38, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -55,7 +55,7 @@
 : PlayVoice( "Voices/vo05_aza0354" )
 \CN["爱彩弥"]
 “现在的帝都反幕派的人越来越多了。
-小夜公主很有可能遭遇危险”
+　小夜公主很有可能遭遇危险”
 
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
@@ -115,7 +115,7 @@
 : PlayVoice( "Voices/vo00_muk1567" )
 \CN["无黑"]
 （如果，小夜独自一人离开幕府的话
-应该有相当大的理由）
+　应该有相当大的理由）
 
 : DrawChara( "Azami", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : PlayVoice( "Voices/vo05_aza0355" )
@@ -147,7 +147,7 @@
 
 \CN["老头儿"]
 “原本将军和公主就一直在这里见面
-应该没有”
+　应该没有”
 
 : DrawChara( "Ji", 1, 0)
 \CN["老头儿"]
@@ -182,7 +182,7 @@
 : PlayVoice( "Voices/vo05_aza0356" )
 \CN["爱彩弥"]
 “啊，小夜公主来这里的话会马上通知你的。
-拜托你了」
+　拜托你了」
 
 如果误入帝都的贫民街的话是很危险的。
 首先，去贫民街找找看吧。
@@ -237,11 +237,11 @@
 : PlayBgm("BGM/16_TM001")
 \CN["地滚石A"]
 “真是太可怕了。
-只不过是把看起来有点贵的衣服剥下来而已”
+　只不过是把看起来有点贵的衣服剥下来而已”
 
 \CN["地滚石B"]
 “我个人属于防守范围内
-当然会让我开心的”
+　当然会让我开心的”
 
 //●演出：無黒　駆けつけてゴロツキたちをたたき伏せる
 : HideWnd()
@@ -258,7 +258,7 @@
 
 \CN["地滚石B"]
 “呀，糟了……虽然有说鬼灯弱的笨蛋
-我知道他们很危险。因为我做了很多”
+　我知道他们很危险。因为我做了很多”
 
 //●演出：ゴロツキ×２　逃げ出していく
 : StopBgm( 1.0 )
@@ -285,13 +285,13 @@
 : PlayVoice( "Voices/vo00_muk1574" )
 \CN["无黑"]
 “发生什么事了吗？你竟然故意一个人溜走
-差不多吧？”
+　差不多吧？”
 
 : DrawChara( "Sayo", 10, 0, 1 )
 : PlayVoice( "Voices/vo24_say0131" )
 \CN["小夜"]
 “……呃……那个……我……这样下去的话
-会被父亲杀死吗……”
+　会被父亲杀死吗……”
 
 : DrawChara( "Mukuro", 38, 0)
 : PlayVoice( "Voices/vo00_muk1575" )
@@ -306,7 +306,7 @@
 : PlayVoice( "Voices/vo00_muk1576" )
 \CN["无黑"]
 “小夜，请再详细一点告诉我。
-是啊，一次鬼灯……”
+　是啊，一次鬼灯……”
 
 : DrawChara( "Sayo", 3, 0)
 : PlayVoice( "Voices/vo24_say0132" )
@@ -317,7 +317,7 @@
 : PlayVoice( "Voices/vo00_muk1577" )
 \CN["无黑"]
 「困惑啊，没什么。
-小夜对我们来说不只是幕府的公主”
+　小夜对我们来说不只是幕府的公主”
 
 : DrawChara( "Sayo", 8, 0, 0 )
 : PlayVoice( "Voices/vo24_say0133" )
@@ -361,18 +361,18 @@
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
 “什么，我是来找你的。
-将军很担心。请马上回幕府”
+　将军很担心。请马上回幕府”
 
 : DrawChara( "Sayo", 9, 0)
 : PlayVoice( "Voices/vo24_say0135" )
 \CN["小夜"]
 “担心……？骗人的！爸爸要杀了我！”！
-我是很清楚的”
+　我是很清楚的”
 
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
 “杀了你？开什么玩笑。
-将军不可能那样做”
+　将军不可能那样做”
 
 : DrawChara( "Sayo", 3, 0)
 : PlayVoice( "Voices/vo24_say0136" )
@@ -383,7 +383,7 @@
 : PlayVoice( "Voices/vo24_say0137" )
 \CN["小夜"]
 “昨天半夜，爸爸跟谁说要杀我吗？”
-我知道！”
+　我知道！”
 
 小夜竭尽全力，奋力高呼。
 
@@ -396,7 +396,7 @@
 : PlayVoice( "Voices/vo00_muk1579" )
 \CN["无黑"]
 “总之，请先去那边领取。
-因为有小夜的生命危险”
+　因为有小夜的生命危险”
 
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
@@ -405,14 +405,14 @@
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
 “原本公主就不在了，应该是有封口令的。
-到底是谁向鬼灯泄露的呢？”
+　到底是谁向鬼灯泄露的呢？”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 \CN["竹叶"]
 “那么，鬼灯的女队员先生，请把小夜先生交给我。
-寻找小夜大人的命令是我们所接受的”
+　寻找小夜大人的命令是我们所接受的”
 
 //●演出：無黒　刀を抜いて笹木に向ける
 : EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
@@ -427,35 +427,35 @@
 : DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["竹叶"]
 “呵呵。你那么想要功劳吗？
-我知道鬼灯先生被逼得走投无路很着急”
+　我知道鬼灯先生被逼得走投无路很着急”
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk1581" )
 \CN["无黑"]
 “我知道小夜不是说谎的女孩。
-我不能交给你”
+　我不能交给你”
 
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
 “嗯。刚才开始就很在意小夜大人的名字
-”
+　”
 
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
 “这种行为是不敬罪，足以让人怀疑是反幕行为
-值。鬼灯队士的你怎么可能不知道呢」
+　值。鬼灯队士的你怎么可能不知道呢」
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Sayo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo24_say0138" )
 \CN["小夜"]
 “不是的，笹木。
-我请求无黑不要叫我」
+　我请求无黑不要叫我」
 
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
 “但是，应该允许粗暴对待一个国家的公主
-”
+　”
 
 : PlaySe( "SE/Se_Katana01" )
 被称为笹木的男子拔刀。
@@ -483,7 +483,7 @@
 : PlayVoice( "Voices/vo00_muk1584" )
 \CN["无黑"]
 “但是，对我来说不只是这些。
-是很重要的朋友”
+　是很重要的朋友”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
@@ -493,7 +493,7 @@
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
 “见回组组长笹木幸三郎——
-我会以妨碍执行公务的方式来整肃你”
+　我会以妨碍执行公务的方式来整肃你”
 
 *battle01
 //――――――――――――――――――――――――――――
@@ -538,8 +538,8 @@
 : ShowWnd()
 \CN["竹叶"]
 “……不愧是鬼灯的队员。
-虽然很不甘心，但是和{参观组，里面}的人不同
-都是强者呢”
+　虽然很不甘心，但是和{参观组，里面}的人不同
+　都是强者呢”
 
 不愧是见回组领导的男人。
 稍微一疏忽就被打败了。
@@ -586,13 +586,13 @@
 : DrawChara( "Sasaki", 0, 0 )
 \CN["竹叶"]
 “这是你预想到所有事情都没有行动的失误。
-请不要用卑鄙的一句话来概括你们的准备不足”
+　请不要用卑鄙的一句话来概括你们的准备不足”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 \CN["睡眠组"]
 “不愧是笹木先生！说得很好！
-我不太明白你的意思”
+　我不太明白你的意思”
 
 : DrawChara( "Sasaki", 0, 0 )
 \CN["竹叶"]
@@ -604,7 +604,7 @@
 : PlayVoice( "Voices/vo24_say0141" )
 \CN["小夜"]
 「无黑！我没事！
-不要对那些家伙唯命是从！”
+　不要对那些家伙唯命是从！”
 
 : EraseChara( "Sayo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Sayo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
@@ -626,7 +626,7 @@
 : PlayVoice( "Voices/vo00_muk1586" )
 \CN["无黑"]
 “……我知道了。
-我会照你说的去做的，请不要伤害小夜”
+　我会照你说的去做的，请不要伤害小夜”
 
 //●演出：無黒　刀をしまう
 : PlaySe( "SE/Se_Katana01" )
@@ -639,14 +639,14 @@
 : DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 \CN["睡眠组"]
 「笹木先生，怎么了，这个鬼灯的女人是？
-如果要杀的话，在那之前——”
+　如果要杀的话，在那之前——”
 
 : EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["竹叶"]
 “不行，请小心处理。
-杀人或犯罪都是在一切结束之后”
+　杀人或犯罪都是在一切结束之后”
 
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
@@ -657,8 +657,8 @@
 “如果和鬼灯战斗的话——”
 
 \CN["竹叶"]
-高千穗先生和新渡户先生处于一种完全无法比拟的境地
-因为是你们啊。她可以作为人质来使用”
+　高千穗先生和新渡户先生处于一种完全无法比拟的境地
+　因为是你们啊。她可以作为人质来使用”
 
 : DrawChara( "Mimawari", 0, 0)
 \CN["睡眠组"]
@@ -730,20 +730,20 @@
 : DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 \CN["竹叶"]
 “真不愧是鬼灯啊。不仅局长和副局长，连普通的队员也
-没想到力量已经到了这个地步”
+　没想到力量已经到了这个地步”
 
 : EraseChara( "Sasaki", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
 \CN["睡眠组"]
 「笹木先生，怎么了，这个鬼灯的女人是？
-如果要杀的话，在那之前”
+　如果要杀的话，在那之前”
 
 : EraseChara( "Mimawari", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Sasaki", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : DrawChara( "Mimawari", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["竹叶"]
 “不行，请小心处理。
-杀人或犯罪都是在一切结束之后”
+　杀人或犯罪都是在一切结束之后”
 
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
@@ -752,7 +752,7 @@
 : DrawChara( "Sasaki", 0, 0)
 \CN["竹叶"]
 “高千穗先生和新渡户先生处于完全无法比拟的境地
-御方们。所以，她可以作为人质来使用”
+　御方们。所以，她可以作为人质来使用”
 
 : DrawChara( "Mimawari", 0, 0)
 \CN["睡眠组"]
