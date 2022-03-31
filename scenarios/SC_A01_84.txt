@@ -57,13 +57,13 @@
 : EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "LC" )
 : PlayVoice( "Voices/vo01_mom0031" )
-\CN["桃子"]
+\CN["桃"]
 “这么说来，是啊。
 总是，只是一直发出指示而已……”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
-\CN["银子"]
+\CN["银"]
 “……但是，我不想是作为互相残杀的对手。”
 
 : DrawChara( "Leo", 6, 0)
@@ -94,7 +94,7 @@
 
 : EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
-\CN["银子"]
+\CN["银"]
 “嘛，你不用交刀也会被瞬杀的。”
 
 : DrawChara( "Leo", 9, 0)
@@ -102,13 +102,13 @@
 “啊？那是你吧？”
 
 : DrawChara( "Gin", 3, 0)
-\CN["银子"]
+\CN["银"]
 “呼，是啊。我确实不会交锋。”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "RC" )
 : PlayVoice( "Voices/vo01_mom0032" )
-\CN["桃子"]
+\CN["桃"]
 “小银不用刀。”
 
 //＠演出：あざみが道場にやってくる
@@ -151,7 +151,7 @@
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo01_mom0033" )
-\CN["桃子"]
+\CN["桃"]
 “呐，无黑……以前就在想，龙啊
 绝对是这样吧？关于局长……”
 
@@ -163,12 +163,12 @@
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0034" )
-\CN["桃子"]
+\CN["桃"]
 “绝对是这样！
 喂，小银和小雷都是这么想的吧？”
 
 : DrawChara( "Gin", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "L" )
-\CN["银子"]
+\CN["银"]
 “对吧？没兴趣。”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -190,7 +190,7 @@
 
 : DrawChara( "Momo", 14, 0)
 : PlayVoice( "Voices/vo01_mom0035" )
-\CN["桃子"]
+\CN["桃"]
 “啊……我有点在街上有点事。
  因为小银会代替我做……”
 
@@ -204,7 +204,7 @@
 : Wait()
 : DrawChara( "Gin", 20, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “等一下——小姐！为什么是我！？”
 
 : DrawChara( "Ryu", 42, 1)

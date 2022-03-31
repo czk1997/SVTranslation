@@ -425,11 +425,11 @@ BOSS战的时候可以选择“自动胜利”的选项。
 : EraseChara( "Azami", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Momo", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo01_mom0003" )
-\CN["桃子"]
+\CN["桃"]
 “嗯嗯！交给我吧。”
 
 : DrawChara( "Gin", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 6, "LC" )
-\CN["银子"]
+\CN["银"]
 “啊。谁都不会无事通过这里的。”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -643,7 +643,7 @@ BOSS战的时候可以选择“自动胜利”的选项。
 : lay = 3; type = "WL"; Call( "Scenarios/Common*FgEff");
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "RC" )
 : lay = 2; type = "WR"; Call( "Scenarios/Common*FgEff");
-\CN["银子"]
+\CN["银"]
 “喂，幕府的狗是什么时候的事啊？”
 
 \CN["流氓G"]
@@ -665,7 +665,7 @@ BOSS战的时候可以选择“自动胜利”的选项。
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0004" )
-\CN["桃子"]
+\CN["桃"]
 “呵呵，很遗憾，你们不是我的类型。”
 
 : HideWnd()
@@ -674,7 +674,7 @@ BOSS战的时候可以选择“自动胜利”的选项。
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0005" )
-\CN["桃子"]
+\CN["桃"]
 “在地狱里学习才智、品质和常识就好了！”
 
 //●演出：炎魔法
@@ -694,7 +694,7 @@ BOSS战的时候可以选择“自动胜利”的选项。
 
 //●演技：相手を馬鹿にする、見下すような感じです
 : PlayVoice( "Voices/vo01_mom0006" )
-\CN["桃子"]
+\CN["桃"]
 “诶~……也有完全知道魔术的聪明人
 	有的呢。感到惊讶的人”
 
@@ -710,7 +710,7 @@ BOSS战的时候可以选择“自动胜利”的选项。
 \NULL[]
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0007" )
-\CN["桃子"]
+\CN["桃"]
 “小银的命令啊——
 那家伙们全都去打趴下吧」
 
@@ -750,7 +750,7 @@ BOSS战的时候可以选择“自动胜利”的选项。
 : evfile = "evx_a011_1_2_0300000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “哈！”
 
 //●演出：打撃アニメ
@@ -768,7 +768,7 @@ BOSS战的时候可以选择“自动胜利”的选项。
 : evfile = "evx_a011_1_2_0200000_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “嘘！”
 
 //●演出：打撃アニメ
@@ -792,7 +792,7 @@ BOSS战的时候可以选择“自动胜利”的选项。
 : SetLayerRelPos( 9, -50, 0, 0.5, 0)
 : Wait()
 : ShowWnd()
-\CN["银子"]
+\CN["银"]
 “什么呀，已经结束了吗？”
 
 //●演出：場面転換トランジション
