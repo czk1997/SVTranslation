@@ -14,7 +14,7 @@
 \CN["无黑"]
 “嗯……嗯……嗯……嗯……”
 
-被药困住的无黑不知在哪里的仓库里被监禁着。
+被吃了药谁在哪里的无黑不知在哪里的仓库里被监禁着。
 
 为了防备万一，将被绳索绑住身体的无黑
 白夜九星，五黄卍的部下们在监视着。
@@ -24,10 +24,10 @@
 　我觉得稍微恶作剧一下也可以……”
 
 \CN["卍的部下B"]
-“还是算了吧。被卍君发现的话会被杀的。”
+“还是算了吧。被卍发现的话会被杀的。”
 
 \CN["卍的部下A"]
-“但是啊，稍微揉了一下乳就不会暴露的
+“但是啊，稍微揉了一下胸是不会暴露的
 　我是这么想的”
 
 \CN["卍的部下C"]
@@ -35,10 +35,10 @@
 　一定会被发现的！”
 
 \CN["卍的部下B"]
-“啊，如果能拿到卍君的零头就好了。”
+“啊，如果能拿到卍君的剩下的就好了。”
 
 \CN["卍的部下A"]
-“哈~……这样啊……”
+“哈~……是啊……”
 
 //: EraseChara( "Mukuro", 0.5 )
 //●演出：場面転換トランジション
@@ -78,15 +78,15 @@
 : DrawChara( "Momo", 7, 0)
 : PlayVoice( "Voices/vo01_mom0178" )
 \CN["桃"]
-“无黑……拜托你了所以没事……”
+“无黑……希望你没事……”
 
-我和小银倒下的时候被救出了。
+我和小银在倒下的时候被救了出去。
 
-但是，那个场合并没有无黑，而是被白夜拐走
-没错。
+但是，那个时候并没有无黑，
+而是被白夜拐走了。
 
-白夜九星的五黄——卍这个男人是无黑的
-好像非常中意……。
+白夜九星的五黄——卍这个男人
+好像对无黑非常中意……。
 
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0179" )
@@ -113,7 +113,7 @@
 “天一亮就出发……。
 　在那之前不稍微睡一下的话”
 
-——老师在{那须野山，茄子山}。
+——老师在那须野山。
 早上一把小银叫醒……。
 
 : DrawChara( "Momo", 11, 0)
@@ -157,12 +157,12 @@
 
 : DrawChara( "Gin", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["银"]
-“受伤了？没受伤。”
+“受伤？没受伤。”
 
 : DrawChara( "Gin", 0, 0)
 \CN["银"]
-“还有，因为是女儿，所以说是为了救无黑
-　我想一定要去女狐那里……”
+“还有，大小姐的话，如果说是为了救无黑
+　我想一定会去女狐那里……”
 
 银酱直言不讳。
 
@@ -174,13 +174,13 @@
 \CN["桃"]
 “真的呢，小银，你这个人……”
 
-用指尖把侧腹刺上去。
+用指尖刺到侧腹上去。
 
 : DrawChara( "Gin", 1, 0)
 \CN["银"]
 “……你在干什么？”
 
-毫无表情地说……看起来很像。
+看起来像是，毫无表情地说着。
 
 伤，果然还没好啊。
 
@@ -191,11 +191,11 @@
 主要要对小银说的是一件事。
 我只能呆在这里。
 
-明明伤还没好，就不能一起爬那座危险的山
-不去。
+明明伤还没好，
+就不能一起爬那座危险的山。
 
 我知道那个。我知道必须那样做。
-我知道
+虽然我知道着样——
 
 : DrawChara( "Momo", 2, 0)
 : PlayVoice( "Voices/vo01_mom0185" )
@@ -277,7 +277,7 @@
 : PlayVoice( "Voices/vo01_mom0187" )
 \CN["桃"]
 “好久不见，是啊……。
-　从这里出来以后就没见过了，这么说来”
+　这么说来，从这里出来以后就没见过了”
 
 : DrawChara( "Gin", 0, 0)
 \CN["银"]
@@ -314,7 +314,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo22_tam0006" )
 \CN["玉藻"]
-“呵呵，桃子，魔术方面的锻炼好像是不可或缺的。”
+“呵呵，桃，魔术方面的锻炼好像还是不可或缺的。”
 
 : DrawChara( "Momo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom0189" )
@@ -324,8 +324,8 @@
 : DrawChara( "Tamamo", 2, 0, 0)
 : PlayVoice( "Voices/vo22_tam0007" )
 \CN["玉藻"]
-“和那些眼神不好的黑肤眼镜不同，要留心。
-　佩服”
+“和那些眼神不好的黑肤眼镜不同，很有上进心。
+　佩服佩服”
 
 : DrawChara( "Gin", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "R" )
 \CN["银"]
@@ -334,9 +334,9 @@
 : DrawChara( "Tamamo", 0, 0)
 : PlayVoice( "Voices/vo22_tam0008" )
 \CN["玉藻"]
-「呀，现在不是和小僧玩的时候吧。
-　我知道桃子和小僧两个人来这里
-　的，”
+「呀，现在不是和小鬼玩的时候吧。
+　我知道桃子和小鬼
+　会两个人来这里的。”
 
 : DrawChara( "Gin", 0, 0)
 \CN["银"]
@@ -346,23 +346,23 @@
 : DrawChara( "Tamamo", 5, 0)
 : PlayVoice( "Voices/vo22_tam0009" )
 \CN["玉藻"]
-“……很遗憾，我并没有带什么东西。
+“……很遗憾，并不是所有都看穿了。
 　因为我完全不知道你们想要什么”
 
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "RC" )
 : PlayVoice( "Voices/vo01_mom0190" )
 \CN["桃"]
 “拜托了，老师！请赐予我力量……！”……！
-　我希望你能占卜被囚禁的同伴的住处！”
+　我希望你能占卜被囚禁的同伴的位置！”
 
 : DrawChara( "Tamamo", 0, 0)
 : PlayVoice( "Voices/vo22_tam0010" )
 \CN["玉藻"]
-“呼。是指被囚禁的同伴……？哼哼。”
+“呼。被囚禁的同伴……？哼哼。”
 
 : DrawChara( "Gin", 1 0)
 \CN["银"]
-“拜托了……请帮我问问小姐的请求。”
+“拜托了……请帮我回答小姐的请求。”
 
 就在我旁边，小银深深地低着头。
 
@@ -374,14 +374,14 @@
 : DrawChara( "Tamamo", 4, 0)
 : PlayVoice( "Voices/vo22_tam0011" )
 \CN["玉藻"]
-「好的。两个人都要抬起头来吗。
-　特别是小僧，如果被主人低头的话，会起鸡皮疙瘩的”
+「好的。两个人都把头抬起来把。
+　特别是小鬼，如果低头的话，会起鸡皮疙瘩的。”
 
 : DrawChara( "Tamamo", 2, 0)
 : PlayVoice( "Voices/vo22_tam0012" )
 \CN["玉藻"]
-“因为被小僧低头的愉悦感而颤抖
-　这不是恶心的两个意思吗”
+“不想被小孩子的鞠躬的喜悦
+  而感到浑身不自在。”
 
 : DrawChara( "Gin", 16, 0)
 \CN["银"]
@@ -402,15 +402,15 @@
 \CN["桃"]
 “好的。要准备什么呢？”
 
-当然，就算是我也不能让你免费做
-完全没有考虑。
+当然，就算是我也没有
+免费得到情报的打算？
 
-老师要求的是什么？这样想着的话。
+老师要求的是什么？我这样想着。
 
 : DrawChara( "Tamamo", 2, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC" )
 : PlayVoice( "Voices/vo22_tam0014" )
 \CN["玉藻"]
-“不是啊……嘛，这样就可以了吧。”
+“是的啊……嘛，这样就可以了吧。”
 
 //●演出：玉藻が桃の胸を揉む
 : HideWnd()
@@ -430,7 +430,7 @@
 : Call( "Scenarios/Common*CgShake" )
 : Wait()
 : ShowWnd()
-——麦穗、麦穗、麦穗。
+—呣啾、呣啾、呣啾。
 
 //●演技：胸を揉まれています
 : DrawChara( "Momo", 14, 2)
@@ -454,7 +454,7 @@
 : DrawChara( "Tamamo", 0, 1)
 : PlayVoice( "Voices/vo22_tam0016" )
 \CN["玉藻"]
-“呼。你在意小僧的视线吗？”
+“呼。你在意小鬼的视线吗？”
 
 : DrawChara( "Momo", 10, 2)
 : PlayVoice( "Voices/vo01_mom0196" )
@@ -468,13 +468,13 @@
 「桃子，比在这里的时候还要大一圈……不，变得更大了
 　好像是。喏，这里不错吧？”
 
-是的。在这里修行的时候，老师经常会
-我的胸部一直在揉。
+是的。在这里修行的时候，
+老师经常会揉我的胸部。
 
 : DrawChara( "Tamamo", 0, 1)
 : PlayVoice( "Voices/vo22_tam0018" )
 \CN["玉藻"]
-“放心吧。小僧已经闭上眼睛堵住了耳朵。”
+“放心吧。小鬼已经闭上眼睛堵住了耳朵。”
 
 : DrawChara( "Momo", 12, 2)
 : PlayVoice( "Voices/vo01_mom0197" )
@@ -493,7 +493,7 @@
 : PlayVoice( "Voices/vo22_tam0019" )
 \CN["玉藻"]
 “呵呵，嘛，今天就到这里吧。
-　因为我实在不忍心在喜欢的男人面前让他见异思迁”
+　因为我实在不忍心在喜欢的男人面前见异思迁”
 
 : DrawChara( "Momo", 4, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "LC")
 : PlayVoice( "Voices/vo01_mom0198" )
@@ -510,8 +510,8 @@
 : DrawChara( "Tamamo", 3, 0)
 : PlayVoice( "Voices/vo22_tam0021" )
 \CN["玉藻"]
-“{古，古，古}我要守护这片土地，成为母亲的天空啊
-　赐予我看透万物的{天眼，天眼}吧——」
+“守护这片土地的成为天空之母啊，
+　赐予我看透万物的天眼吧——」
 
 老师念咒的话水晶就会发光。
 
@@ -526,19 +526,19 @@
 : PlayVoice( "Voices/vo22_tam0022" )
 \CN["玉藻"]
 “嗯……我是你要找的伙伴，在某个仓库里
-　好像……是制作红色砖块的仓库”
+　好像……是红色砖块制作的仓库里”
 
 : DrawChara( "Tamamo", 0, 0, 1)
 : PlayVoice( "Voices/vo22_tam0023" )
 \CN["玉藻"]
-“……海的附近……船停了。目前在某个港口和
+“……海的附近……有船的停靠。目前在某个港口和
 　也就是说……”
 
 : DrawFaceThumbnail( "Gin", 0, 0, 0)
 \CN["银"]
 “在港口的砖头仓库……”
 
-只有一个能让我想起这些的地方。
+这些只能让我想起一个地方。
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0200" )
@@ -547,14 +547,14 @@
 　谢谢老师！”
 
 一定是在高滨港的砖库！
-这也是前几天无黑和Leo君重办的地方。
+这也是前几天无黑和雷欧君搜查的地方。
 
 //●演技：心の声です
 : DrawChara( "Momo", 4, 0)
 : PlayVoice( "Voices/vo01_mom0201" )
 \CN["桃"]
 （彻底调查了一次，幕府认为应该没问题
-　反握的话，就是这种感觉吧）
+　反向思考的话，就是这种情况吧）
 
 : DrawChara( "Momo", 9, 0)
 : PlayVoice( "Voices/vo01_mom0202" )
@@ -575,7 +575,7 @@
 
 : DrawChara( "Gin", 1, 0)
 \CN["银"]
-“敌人是白夜，总比没有那个笨蛋好……”
+“敌人是白夜，有那个笨蛋总比没有好吧……”
 
 : DrawChara( "Momo", 5, 0)
 : PlayVoice( "Voices/vo01_mom0204" )
@@ -589,7 +589,7 @@
 : DrawChara( "Momo", 6, 1)
 : PlayVoice( "Voices/vo01_mom0205" )
 \CN["桃"]
-“不，没什么。我说你是个男孩子。”
+“不，没什么。男孩子呢。”
 
 : DrawChara( "Gin", 1, 0)
 \CN["银"]
@@ -626,7 +626,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0206" )
 \CN["桃"]
-“这里没有黑……小银，准备好了吗？”
+“无黑在这里……小银，准备好了吗？”
 
 : DrawChara( "Gin", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 \CN["银"]
@@ -656,7 +656,7 @@
 : DrawChara( "Momo", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo01_mom0207" )
 \CN["桃"]
-“Leo君，好慢！”
+“雷欧，好慢！”
 
 //: EraseChara( "Leo", 0.5 )
 : DrawChara( "Gin", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
@@ -667,12 +667,12 @@
 : DrawChara( "Leo", 8, 0, 0 )
 \CN["雷欧"]
 “喂喂喂！等一下！
-　明明是无黑相助的，如果没有主角的我就没办法了
-　不是吧！”
+  明明是要救助无黑的，
+　主角要是不是我的的是不可能的！”
 
 : DrawChara( "Gin", 9, 0)
 \CN["银"]
-“不要说配角。”
+“配角不要说话。”
 
 : DrawChara( "Gin", 20, 0)
 : DrawChara( "Leo", 7, 0)
@@ -684,7 +684,7 @@
 : DrawChara( "Momo", 8, 0, 0 )
 : PlayVoice( "Voices/vo01_mom0208" )
 \CN["桃"]
-“不是和两个人一起玩的时候吧！”
+“现在不是和两个人玩的时候吧！”
 
 //: EraseChara( "Momo", 0.5 )
 : DrawChara( "Gin", 21, 0 )
@@ -736,12 +736,12 @@
 \CN["雷欧"]
 「…………」
 
-然后，Leo君也——
+然后，雷欧君也——
 
 : DrawChara( "Leo", 17, 0)
 \CN["雷欧"]
 “这里我一个人就足够了！
-　你们帮我无黑的忙吧」
+　你们去救助无黑吧！」
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 9, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -767,12 +767,12 @@
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0211" )
 \CN["桃"]
-“看，雷欧，快点！”
+“快，雷欧，快点！”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 \CN["雷欧"]
-“马上帮我无黑，我回来！”
+“救助无黑后，我马上就回来！”
 
 //●演出：レオ　倉庫に入って行く
 : HideWnd()
@@ -780,7 +780,7 @@
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : Wait()
 : ShowWnd()
-雷欧把后面托付给桃子们跑出去。
+雷欧把后面托付给桃们跑了出去。
 
 //: EraseChara( "Momo", 0.5 )
 : Wait()
@@ -806,7 +806,7 @@
 
 //: DrawChara( "Ranmaru", 16, 0)
 \CN["神秘的男人"]
-“是拯救被囚禁的公主的王子吗……嗯，很好呢。
+“拯救被囚禁的公主的王子吗……嗯，很好呢。
 　偶尔也写一下这种东西吧”
 
 //: EraseChara( "Ranmaru", 0.5 )
@@ -829,22 +829,22 @@
 : DrawChara( "Ranmaru", 17, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
 男子到底在想什么，脱去了身上缠着的长袍
-把真相暴露给我们。
+把真身暴露给了我们。
 
 \CN["兰丸"]
-“一不小心就会被打败的。”
+“不小心会被输掉的哦。”
 
 \CN["兰丸"]
-“还有，不要买那样的。
-　因为我是只有形状的九星”
+“还有，不要太这样啊，
+　我只是一个九星而已。”
 
 //: EraseChara( "Ranmaru", 0.5 )
 : DrawFaceThumbnail( "Momo", 2, 1,0 )
 : PlayVoice( "Voices/vo01_mom0214" )
 \CN["桃"]
 “诶。你是白夜的干部吗？”？
-　嗯，因为要来这种地方，我以为是个白夜人
-　不过呢”
+　不过，既然要来这种地方，
+　我以为是个白夜普通人”
 
 //: EraseChara( "Momo", 0.5 )
 : DrawChara( "Ranmaru", 3, 0)
@@ -920,19 +920,19 @@
 //●演技：心の声です
 : PlayVoice( "Voices/vo01_mom0215" )
 \CN["桃"]
-（……有点不好意思。这个人，不知道在想什么。）
+（……有点糟糕啊。这个人，不知道在想什么。）
 
-虽然不是打算杀我们……。
+虽然不是打算杀掉我们……。
 
 //●演技：心の声です
 : DrawChara( "Momo", 12, 0)
 : PlayVoice( "Voices/vo01_mom0216" )
 \CN["桃"]
-（那么，为什么要这样做？有意义吗？）
+（那么，为什么要这样做？有什么意义吗？）
 
 看不见这个人的底。
 
-那么，怎么打开这个状况呢？
+那么，怎么打破这个状况呢？
 
 //●演技：心の声です
 : DrawChara( "Momo", 7, 0)
@@ -975,7 +975,7 @@
 是的，目的是为了争取时间把无黑救出。
 
 如果雷欧回来的话，剩下的就逃走吧。
-我觉得这个人不会追上来的。总觉得。
+总觉得，这个人不会追上来的。
 
 //●ＳＥ：デバイスの音
 : HideWnd()
@@ -1002,8 +1002,8 @@
 
 但是，这是一个求之不得的机会。
 
-不管怎么说，对方是自己争取我们的时间
-因为他会帮我。
+不管怎么说，是对方自己
+帮助我们争取时间的。
 
 //●合流地点へ
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -1062,8 +1062,8 @@
 \CN["卍的部下B"]
 “这家伙……好厉害……”
 
-虽然不知道是什么东西，但我会一个一个地去妨碍我的目的地
-劈头砍去。
+虽然不知道是什么东西，但我朝着
+一个个妨碍我前往的目的地的人劈头砍去。
 
 像虫子一样哇啦哇啦地冒出来，好烦人啊，真的。
 
@@ -1074,7 +1074,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 \CN["雷欧"]
-“你是说走开吧！！”
+“我说过滚开了吧！！”
 
 //●※演出：斬撃エフェクト
 : HideWnd()
@@ -1092,7 +1092,7 @@
 “谁来阻止他！”
 
 \CN["卍的部下E"]
-“哈……哈……别让我去那个女人那里！”
+“哈……哈……别让他去那个女人那里！”
 
 : HideWnd()
 : DrawImage( 1, 0, "BGImage/BG_Renga", 0.0 )
@@ -1139,13 +1139,13 @@
 这些家伙将无黑？
 
 再生气就不好了。
-愤怒会成为起爆剂，但一旦迷失了自己，就和猛跑的野兽一样
-成为。
+愤怒会成为起爆剂，但一旦迷失了自己，
+就成了暴走的野兽。
 
 ——这样的话只会简单地被杀了就结束了。
 
-经师傅再三苦口教育，直至骨髓
-是渗入进去了。
+经师傅再三苦口教育，直至骨髓，
+算是渗入进去了。
 
 一边抑制着快要暴走的愤怒
 一步一步慢慢地向无黑的身边靠近。
@@ -1155,7 +1155,7 @@
 
 //: DrawChara( "Leo", 21, 0)
 \CN["雷欧"]
-“你没听见吗？你说我多管闲事！”
+“你没听见吗？我说别多管闲事！”
 
 //※●演出：斬撃
 : HideWnd()
@@ -1229,7 +1229,7 @@
 “呃，奇怪的事……啊……雷欧的笨蛋……”
 
 因为害羞而低着头的无黑很可爱
-因为你平安无事的安心感一下子就要泄气了。
+因为平安无事的安心感一下子就要泄了气。
 
 : HideWnd()
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -1239,7 +1239,7 @@
 : DrawChara( "Mukuro", 1, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
 \CN["雷欧"]
-“无黑，站起来吗？”
+“无黑，站的起来吗？”
 
 : DrawChara( "Mukuro", 38, 1)
 : PlayVoice( "Voices/vo00_muk0679" )
@@ -1279,7 +1279,7 @@
 
 : DrawChara( "Leo", 5, 0)
 \CN["雷欧"]
-“之后就交给我休息吧——是吗？那家伙呢？”
+“之后就交给我吧——是吗？那家伙呢？”
 
 : EraseChara( "Leo", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 19, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
@@ -1304,7 +1304,7 @@
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Leo", 0, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "L" )
 \CN["雷欧"]
-“总之，这样就解决了可以吗？”
+“总之，这样就解决了是吗？”
 
 : DrawChara( "Momo", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo01_mom0221" )
@@ -1322,7 +1322,7 @@
 //: EraseChara( "Mukuro", 0.5 )
 : Wait()
 : ShowWnd()
-就这样，无黑安全地被桃子们的手救出了。
+就这样，无黑安全地被桃们救出了。
 
 : HideWnd()
 : StopBgm( 1.0 )
