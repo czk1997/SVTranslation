@@ -34,14 +34,14 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0222" )
 \CN["桃"]
-“会袭击神社吗……也有受罚的人呢。
+“要袭击神社是吗……那些人会受到报应的吧。
 　小银，你不这么认为吗？”
 
-局长交给我的任务是‘春日神社，渣渣人’
-这是一家举行与幕府有关的祭神仪式的神社的护卫。
+局长交给我的任务是春日神社的护卫。
+这是一家举行与幕府有关的祭神仪式的神社。
 
 有消息说反幕派会袭击那里
-我要去做护卫。
+要我去做护卫。
 
 : DrawChara( "Gin", 5, 0)
 \CN["银"]
@@ -51,34 +51,34 @@
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0223" )
 \CN["桃"]
-“真是的！小银的话，真没浪漫啊。”
+“真是的！小银的话，真不浪漫啊。”
 
 : DrawChara( "Gin", 1, 0)
 \CN["银"]
-“就是这样吗？说到浪漫的话
-　你女儿不是也不相信吗？”
+“是这样吗？说到浪漫的话
+　小姐你也是不相信的吧？”
 
 : DrawChara( "Momo", 0, 0)
 : PlayVoice( "Voices/vo01_mom0224" )
 \CN["桃"]
-“嗯？来，怎么样？”
+“嗯？谁知道呢？”
 
-幸运的是我还没有神啊佛啊什么的
-我没有陷入过必须依靠的状况。
+幸运的是我还没陷入过
+必须依靠有神啊佛啊什么的的状况。
 
 比起依赖神明，更应该依赖可靠的伙伴
-我也知道可以。
+我是这么认为的。
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0225" )
 \CN["桃"]
 “嘛，如果说被袭击的可能性很高的话
-　去保护。那是我们的职责”
+　去保护那里当然是我的职责”
 
 : DrawChara( "Gin", 2, 0)
 \CN["银"]
 “是啊……那就出发吧。
-　春日神社从“大和东街道”去就可以了”
+　春日神社从“大和东街道”前往就可以了”
 
 //＠マップ解放：桃、大和東街道
 //●シーンエンド
@@ -95,8 +95,8 @@
 //○春日神社攻防戦２
 //========================================================
 *sc002
-\CI["一切准备！小银，我走了！"]
-\CI["好好确认一下比较好哦"]
+\CI["准备就绪！小银，走吧了！"]
+\CI["好好确认一下比较好"]
 我觉得前面有什么。
 
 : if ($choice == 1)
@@ -121,19 +121,19 @@
 “小姐……！”
 
 : PlayBgm("BGM/28_ID01")
-我和小银走到了那里
+我和小银走到那里时，
 神社已经受到了什么人的袭击。
 
 \CN["神主"]
-“没关系！喂，帮帮我……”
+“喂！喂，帮帮我……”
 
 : DrawChara( "Momo", 1, 0)
 : PlayVoice( "Voices/vo01_mom0226" )
 \CN["桃"]
-“已经没关系了。快从这里逃走。”
+“已经没事了。快从这里逃走。”
 
 \CN["神主"]
-“那么，但是，你的神社啊……”
+“那么，但是，我的神社啊……”
 
 : DrawChara( "Gin", 11, 0)
 \CN["银"]
@@ -145,7 +145,7 @@
 : DrawChara( "Momo", 13, 0)
 : PlayVoice( "Voices/vo01_mom0227" )
 \CN["桃"]
-“小银！本来就很可怕的表情，却很厉害！”
+“小银！很可怕的表情，却很厉害！”
 　普通人会吓一跳的”
 
 : DrawChara( "Gin", 18, 0)
@@ -156,13 +156,13 @@
 : PlayVoice( "Voices/vo01_mom0228" )
 \CN["桃"]
 「啊，好啊。
-　即使坐得不好也很麻烦”
+　如果弄不好也很麻烦”
 
 : DrawChara( "Momo", 8, 0)
 : PlayVoice( "Voices/vo01_mom0229" )
 \CN["桃"]
-“小银，命令啊——
-　全体人员，踢散了哟！”
+“小银，命令你——
+　让全体人员，退散A！”
 
 : DrawChara( "Gin", 10, 0)
 \CN["银"]
@@ -214,12 +214,12 @@
 : FadeIn( 0.5 )
 : Wait()
 \CN["银"]
-“小姐，这不是这样的吗……”
+“小姐，这里这也是这样啊……”
 
 : DrawChara( "Momo", 1, 1)
 : PlayVoice( "Voices/vo01_mom0230" )
 \CN["桃"]
-“真想这样啊。这样总算有办法了吗？”
+“是啊。能想办法做点什么吗？”
 
 //●ＳＥ：ドゴーン　爆発する音
 //●演出：爆音と同時に画面を揺らす
@@ -264,9 +264,9 @@
 : FadeIn( 1.0, 0, 0, 0, "BGImage/Transition05", 1.0 )
 : Wait()
 : ShowWnd()
-\CN["巫女之女"]
+\CN["巫女的女子"]
 “哼……真是的，要建立一个麻烦的结界……！
-　明明是跟随幕府的垃圾……！”
+　明明只是幕府的垃圾……！”
 
 //●演出：桃と銀がかけつける
 : HideWnd()
@@ -282,39 +282,39 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo01_mom0232" )
 \CN["桃"]
-“好的，跟踪！到此为止。”
+“好的，Stop！到此为止了。”
 
-\CN["巫女之女"]
+\CN["巫女的女子"]
 “嗯？你们，鬼灯的……！”
 
 : DrawChara( "Momo", 1, 1)
 : PlayVoice( "Voices/vo01_mom0233" )
 \CN["桃"]
-“名答！
-　是你们袭击神社的犯人啊」
+“答对了！
+　你们就是袭击神社的犯人啊」
 
-\CN["巫女之女"]
-“对了，这是一个笼罩着不洁幕府气息的神社
-　因为不可以存在”
+\CN["巫女的女子"]
+“对，这是一个笼罩着不洁幕府气息的神社
+　因为不应该存在”
 
 : DrawChara( "Momo", 4, 1)
 : PlayVoice( "Voices/vo01_mom0234" )
 \CN["桃"]
-“{秽，伤}很难去除……。
+“污秽很难拔除……。
 　嘛，虽然不能一概否定……”
 
 : DrawChara( "Gin", 6, 0)
 \CN["银"]
-“小姐，怎么办？这家伙，好像不会退的。”
+“小姐，怎么办？这家伙，好像不会退却的。。”
 
 : DrawChara( "Momo", 1, 1)
 : PlayVoice( "Voices/vo01_mom0235" )
 \CN["桃"]
-“是啊。虽然有点强势，但只能请他老实点。”
+“是啊。虽然有点强势，但只能请她老实点了。”
 
-\CN["巫女之女"]
+\CN["巫女的女子"]
 “幕府养的狗能胜过我们吗？
-　真希望你能开个玩笑好好休息啊”
+　真希望你这是个玩笑可以好好休息啊”
 
 : DrawChara( "Momo", 8, 1)
 : PlayVoice( "Voices/vo01_mom0236" )
@@ -325,9 +325,9 @@
 \CN["银"]
 “知道了！”
 
-\CN["巫女之女"]
-“白夜九星、六白、织笠御影是腹心，{柳泽京子，柳柳柳柳さこ}——
-　我来陪你！”
+\CN["巫女的女子"]
+“白夜九星、六白、织笠御影的腹心，柳泽京子——
+　我来对付你！”
 
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
@@ -415,7 +415,7 @@
 : PlayBgm("BGM/30_CM015")
 : DrawFaceThumbnail( "Gin", 9, 0, 0 )
 \CN["银"]
-“希望你不要找我。
+“讲点道理啊。
 　至少要好好地教育一下部下”
 
 : DrawChara( "Mikage", 2, 0)
@@ -431,13 +431,13 @@
 : DrawChara( "Mikage", 5, 0)
 : PlayVoice( "Voices/vo11_mik0021" )
 \CN["御影"]
-“呵呵，好啊，京子。
+“呼呼呼，没事的，京子。
 　你在那里好好休息吧」
 
 : DrawChara( "Mikage", 6, 0)
 : PlayVoice( "Voices/vo11_mik0022" )
 \CN["御影"]
-“我来陪这些人。”
+“我来对付这些人。”
 
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Gin", 8, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
@@ -449,20 +449,20 @@
 : PlayVoice( "Voices/vo01_mom0239" )
 \CN["桃"]
 “我知道。不全力以赴的话真的很糟糕。
-　即使是同一个干部，也比之前战斗过的卍强得多”
+　即使同样是干部，也比之前战斗过的卍强得多”
 
 : EraseChara( "Gin", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mikage", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC")
 : PlayVoice( "Voices/vo11_mik0023" )
 \CN["御影"]
-“看穿对方的{实力，力量}也是才能哦。
+“看穿对方的实力也是才能哦。
 　我觉得摇着尾巴逃走更明智……”
 
 : DrawChara( "Mikage", 5, 0)
 : PlayVoice( "Voices/vo11_mik0024" )
 \CN["御影"]
 “而且，穿着那里漂亮和服的小姐。
-　因为是我的喜好，所以不想伤害别人”
+　是我喜好的类型，所以不要受伤啊。”
 
 : DrawChara( "Momo", 9, 1)
 : PlayVoice( "Voices/vo01_mom0240" )
@@ -474,7 +474,7 @@
 : PlayVoice( "Voices/vo11_mik0025" )
 \CN["御影"]
 “呵呵，如果是这样的话
-　两位都只能在这里处理了”
+　就只能在这里解决掉了了”
 
 : EraseChara( "Mikage", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Momo", Call("Scenarios/Common*FgFadeTime") )
@@ -528,7 +528,7 @@
 : PlayAnim( "Animations/AnimeL_Fire02", false, 0, 0, 4, 4 )
 : Wait()
 : ShowWnd()
-就算打进火焰的魔术也能轻易躲开。
+就算是火焰的魔术也能轻易躲开。
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -565,11 +565,11 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo11_mik0027" )
 \CN["御影"]
-“战斗的时候，别人的意见不好吧？”
+“战斗的时候，看着别的地方可不好哦？”
 
 : PlayVoice( "Voices/vo01_mom0243" )
 \CN["桃"]
-（魔术的手臂和魔力的量，那边好几张都一直很擅长……。
+（魔术的技术和魔力的量，那边要明显强很多倍……。
 　虽然很不甘心，但是现在的我完全没法反驳……）
 
 \CN["银"]
@@ -601,8 +601,8 @@
 （……现在的是高级魔术……。
 　竟然很简单地控制了那个……）
 
-在老师那里修行，即使这样也可以发动一次
-无法进行的上级魔术。
+在老师那里修行，
+一次也没有发动过的上级魔术。
 
 这个人很容易地就掌握了那个。
 
@@ -626,7 +626,7 @@
 
 : DrawFaceThumbnail( "Gin", 12, 0 )
 \CN["银"]
-“小姐，对不起。我不能死在这里。”
+“小姐，对不起。我们不能死在这里。”
 
 : DrawFaceThumbnail( "Momo", 12, 1 )
 : PlayVoice( "Voices/vo01_mom0246" )
@@ -640,8 +640,8 @@
 : DrawChara( "Mikage", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo11_mik0029" )
 \CN["御影"]
-“嘛，看你救了京子
-　请特别放过他吧”
+“嘛，看再你救了京子
+　就特别放过他吧”
 
 : DrawChara( "Mikage", 0, 0)
 : PlayVoice( "Voices/vo11_mik0030" )
@@ -658,8 +658,8 @@
 : Wait()
 : ResetLayer(9)
 : ShowWnd()
-那天，历史悠久的神社“春日神社”是白夜九星之一
-被织笠御影燃烧了。
+那天，历史悠久的神社“春日神社”被白夜九星之一的
+织笠御影烧掉了。
 
 据说第二天早上火熄灭了，之后什么也没留下。
 

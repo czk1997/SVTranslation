@@ -35,8 +35,8 @@
 : DrawChara( "Azami", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "LC" )
 : ShowWnd()
 \CN["龙"]
-“在建在大和东街道尽头的机关宅邸里制造杀戮兵器
-　听说在做……”
+“听说在做在建在大和东街道尽头的
+　机关宅邸里在制造杀戮兵器……”
 
 : DrawChara( "Azami", 2, 0)
 : PlayVoice( "Voices/vo05_aza0175" )
@@ -46,11 +46,11 @@
 
 : DrawChara( "Azami", 1, 0)
 \CN["鬼灯队士・女E"]
-“我向周围的人打听了一下，知道详情的人是
-　”
+“我向周围的人打听了一下，
+　但是没有人知道细节”
 
 \CN["鬼灯队士・女B"]
-“我也试着去了一下驿站町，但是完全没有。
+“我也试着去了一下驿站町，但是什么情报也没获得。
 　大家都说害怕得不敢靠近……”
 
 : DrawChara( "Azami", 6, 0)
@@ -61,13 +61,13 @@
 
 : DrawChara( "Ryu",22, 0)
 \CN["龙"]
-“怎么说呢，是因为住吉家咬着一个财阀家……”
+“怎么说呢，是因为住吉家是一个财阀家……”
 
 : DrawChara( "Azami", 1, 0)
 : PlayVoice( "Voices/vo05_aza0177" )
 \CN["爱彩弥"]
-“这样的话，就不是我们家潜入能力最好的黄菜子了
-　好难受啊。黄菜子，可以拜托你吗？”
+“这样的话，不是我们这潜入能力最好的黄菜子的话
+　很难做到。黄菜子，可以拜托你吗？”
 
 //Yoshi：右に黄菜子
 : EraseChara( "Ryu", Call("Scenarios/Common*FgFadeTime") )
@@ -80,7 +80,7 @@
 : DrawChara( "Bebi", 6, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : PlayVoice( "Voices/vo07_beb0047" )
 \CN["红美"]
-“奇奈子，不在家的话就交给在下吧！”
+“黄菜子，留守的话就交给在下吧！”
 
 : DrawChara( "Kinako", 1, 0)
 : PlayVoice( "Voices/vo02_kin0133" )
@@ -90,7 +90,7 @@
 : DrawChara( "Azami", 7, 0)
 : PlayVoice( "Voices/vo05_aza0178" )
 \CN["爱彩弥"]
-“好！那么，黄菜子潜入其他地方做备份！
+“好！那么，黄菜子潜入后，其他人做替补！
 　大家，拜托了！总觉得有种讨厌的预感”
 
 //●演出：リフレッシュ
@@ -110,7 +110,7 @@
 *sc002
 : if ( Flag ( "KarakuriEvent0" ) == true )
 	: RpgCharaTurn( "Player", "U" )
-	从后门上车吧。
+	从后门进入吧。
 
 	: LoadMap( "Map_Dungeon16_05_Sumiyoshi")
 : endif
@@ -146,7 +146,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo02_kin0136" )
 \CN["黄菜子"]
-“……没有人的迹象。好像没有人。”
+“……没有人的迹象。好像谁也不在。”
 
 周围好像没什么特别的……。
 
@@ -183,7 +183,7 @@
 : Wait()
 : DrawChara( "Kinako", 7, 0, 1, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : ShowWnd()
-\CN["克里克士兵"]
+\CN["人偶士兵"]
 “发现并排除侵入者”
 
 : DrawChara( "Kinako", 9, 0)
@@ -192,7 +192,7 @@
 “这个看起来不容易通过呢……”
 
 那么，只有一件事要做。
-只能把那个计谋弄坏了。
+只能把那个人偶弄坏了。
 
 //※黄菜子　アクション演出入れる
 : HideWnd()
@@ -204,10 +204,10 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo02_kin0140" )
 \CN["黄菜子"]
-“这样危险的东西进城的话
+“这样危险的东西进入城镇的话
 　会很糟糕的……”
 
-完全是黑色。
+完全是黑色的。
 也许就这样报告也可以……。
 
 : DrawChara( "Kinako",10, 0)
@@ -238,7 +238,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo02_kin0142" )
 \CN["黄菜子"]
-“不好意思，我想让你通过那里。”
+“不好意思，我想要通过你那里。”
 
 \CN["穿着黑色长袍的人"]
 “……唔唔……这个……呃……嘿嘿…”
@@ -256,7 +256,7 @@
 : Wait()
 : ShowWnd()
 \CN["来历不明的东西"]
-“老太婆！！”
+“啊啊啊啊啊啊啊！！”
 
 : DrawChara( "Kinako",10, 0, 0, 0.0, 0.0, 3, "RC" )
 : PlaySe("SE/Se_Foot01")
@@ -266,7 +266,7 @@
 \CN["黄菜子"]
 “……”
 
-现在的是魔术？
+刚才的是魔术？
 但是，看不出是在咏唱。
 
 //●演技：心の声です
@@ -323,7 +323,8 @@
 //●演出：奥の扉が開いて黒ローブがぞろぞろ出てきて囲まれる
 : RpgCharaOn("Enemy2")
 : RpgCharaOn("Enemy3")
-: RpgCharaOn("Enemy4")
+: RpgCha6
+raOn("Enemy4")
 : RpgCharaOn("Enemy5")
 : RpgCharaOn("Enemy6")
 : FadeIn( 1.0 )
@@ -333,7 +334,7 @@
 \CN["黄菜子"]
 「……！」
 
-完全被包围了。
+被完全包围了。
 
 //●演技：心の声です
 : DrawChara( "Kinako", 9, 0)
@@ -343,8 +344,8 @@
 
 完全被切断了退路。
 
-即使只有1只也能在非常接近的地方倒下
-这就是……。
+只是达到一只都这么困难
+那这么……。
 
 : DrawChara( "Kinako", 2, 0)
 : PlayVoice( "Voices/vo02_kin0148" )
@@ -365,9 +366,9 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo02_kin2388" )
 \CN["黄菜子"]
-“——早上的羽毛是担心自己{苍，葵}的颜色
-　——暮之羽是将自身烧焦的{朱，あか}的颜色
-　——晚上的羽毛是隐藏身体的‘黑暗、黑暗’的颜色”
+“——朝之羽是担心身体的蓝色，
+　——暮之羽是燃烧身体的红色
+　——夜之羽是隐藏身体的黑色”
 
 //●演出：入口側にいる黒ローブが突然倒れて消える
 //Yoshi：右にファルケ、左にゼノ
@@ -381,10 +382,10 @@
 : PlayBgm("BGM/50_IDO04")
 : ShowWnd()
 \CN["骑士之男"]
-“真的吗，这个……。{人造魔族，伊维尔罗伊德}
+“真的吗，这个……。人造魔族
 　人来人往”
 
-\CN["奇诺"]
+\CN["西诺"]
 “果然情报是正确的，费尔克先生”
 
 //●演出：ファルケとゼノが登場
@@ -394,66 +395,66 @@
 : DrawChara( "Kinako", 7, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo02_kin0149" )
 \CN["黄菜子"]
-“啊……！？Zno君……！”
+“啊……！？西诺君……！”
 
-入口是前几天在森林里救了我的男孩子和
-站着一个非常可靠的男人。
+在入口那里的，是前几天在森林里救了我的男孩子
+和一个看着非常可靠的男人。
 
 //Yoshi：右にファルケ、左にゼノ
 : EraseChara( "Kinako", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Falke",13, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : DrawChara( "Xeno", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
-\CN["沥青"]
+\CN["费尔克"]
 “那么，再见。”
 
 : DrawChara( "Xeno", 6, 0)
-\CN["奇诺"]
+\CN["西诺"]
 “费尔克先生，请让我来做这个！”
 
 : DrawChara( "Falke", 9, 0)
-\CN["沥青"]
+\CN["费尔克"]
 “啊！真少见啊，你自己主动……”
 
 : DrawChara( "Xeno", 4, 0)
-\CN["奇诺"]
+\CN["西诺"]
 “偶尔……”
 
-\CN["沥青"]
-“是吗，那孩子，你认识吗？”？
-　我叫了你的名字”
+\CN["费尔克"]
+“是吗，那孩子，你认识吗？
+　她叫了你的名字”
 
 : DrawChara( "Xeno", 2, 0)
-\CN["奇诺"]
-“是的。以前在精灵森林里偶然……”
+\CN["西诺"]
+“是的。以前在精灵的森林里偶然……”
 
 : DrawChara( "Falke",12, 0)
-\CN["沥青"]
-“诶，那个孩子就是那个……。
-　伊莉莎一边笑着说“春天来了”
-　说了，黄菜子是孩子吗？”
+\CN["费尔克"]
+“诶，那孩子就是那个……。
+　伊莉莎一边嬉笑着一边说说西诺的“春天来了”
+　是叫黄菜子来着？”
 
 : DrawChara( "Xeno",11, 2)
-\CN["奇诺"]
-“之前也说过了，不对！
-　你看，我当上参谋后，运动不足
+\CN["西诺"]
+“之前也说过了，不是这样的！
+　你看，我看当上参谋后，运动不足
 　所以我想先运动一下身体……”
 
 : DrawChara( "Falke", 5, 0)
-\CN["沥青"]
-“呵呵。每天都进行那么严格的训练，运动不足。”
+\CN["费尔克"]
+“呵呵。每天都进行那么严格的训练还运动不足”
 
 : DrawChara( "Xeno", 5, 0)
-\CN["奇诺"]
-“……费尔克先生，脸上长得很难看……。
+\CN["西诺"]
+“……费尔克先生，你的脸看起来很下流哦……。
 　我会告诉史黛拉的哦？”
 
 : DrawChara( "Falke", 8, 0)
-\CN["沥青"]
+\CN["费尔克"]
 “好，对不起！只有那个……！”
 
 : DrawChara( "Xeno", 4, 0)
-\CN["奇诺"]
-“那么，要做吗？”
+\CN["西诺"]
+“那么，动手吧”
 
 //●演出：ゼノ　動く。アクションシーン
 : HideWnd()
@@ -474,7 +475,7 @@
 : evfile = "evx_a027_1_1_0100000_0000000_0_"
 : Call("Scenarios/Common*EvZoomIn")
 : ShowWnd()
-\CN["奇诺"]
+\CN["西诺"]
 “哈！”
 
 //※●演出：斬撃エフェクト
@@ -492,11 +493,11 @@
 //: DrawChara( "Kinako", 7, 0, 0, 0.5, 0.0, 3, "C" )
 : PlayVoice( "Voices/vo02_kin0150" )
 \CN["黄菜子"]
-（之前也想过，但是速度和力量……）
+（之前也想过，但是这个速度和力量……）
 
 怎样锻炼才能达到这个地步呢？
 
-说起来，感觉和根本的东西不一样。
+说起来，从一开始感觉就错了。
 
 //: EraseChara( "Kinako", 0.5 )
 //Yoshi：右にファルケ、左にゼノ
@@ -514,15 +515,15 @@
 : lay = 4; type = "DL";
 : Call( "Scenarios/Common*FgEff")
 : ShowWnd()
-\CN["奇诺"]
-“哎呀！”
+\CN["西诺"]
+“哦！”
 
 : DrawChara( "Falke", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
-\CN["沥青"]
+\CN["费尔克"]
 “不，我来帮你吧？”
 
 : DrawChara( "Xeno", 5, 0)
-\CN["奇诺"]
+\CN["西诺"]
 “一个人没问题！”
 
 //: DrawChara( "Xeno", 7, 0)
@@ -533,7 +534,7 @@
 : EraseChara( "Xeno", 0.0 )
 : EraseChara( "Falke", 0.0 )
 : ShowWnd()
-\CN["奇诺"]
+\CN["西诺"]
 “啊啊啊啊！”
 
 //※●演出：斬撃エフェクト
@@ -546,7 +547,7 @@
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
 //: DrawChara( "Falke",12, 0)
-\CN["沥青"]
+\CN["费尔克"]
 “喂，我很有干劲。”
 
 //: EraseChara( "Falke", 0.5 )
@@ -554,7 +555,7 @@
 //: DrawChara( "Kinako", 2, 0, 0, 0.5, 0.0, 3, "R" )
 : PlayVoice( "Voices/vo02_kin0151" )
 \CN["黄菜子"]
-“哇，我也一起……！”
+“我，我也一起……！”
 
 //Yoshi：左にファルケ
 : HideWnd()
@@ -564,13 +565,13 @@
 : DrawChara( "Kinako", 2, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "R" )
 : DrawChara( "Falke", 3, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "L" )
 : ShowWnd()
-\CN["沥青"]
-“等一下。”
+\CN["费尔克"]
+“稍微等一下。”
 
 //●演出：ファルケ　黄菜子の近くへ
 : DrawChara( "Falke", 4, 0)
-\CN["沥青"]
-“这里能让他一个人做吗？”
+\CN["费尔克"]
+“这里能让他一个人来吗？”
 
 : DrawChara( "Kinako",12, 0)
 : PlayVoice( "Voices/vo02_kin0152" )
@@ -578,23 +579,23 @@
 “但是……”
 
 : DrawChara( "Falke",12, 0)
-\CN["沥青"]
-“别担心。这帮黑色的家伙，{人造魔族，伊维尔罗伊德}。”
-　我是这么说的。那样的数量，Zno的话一个人想办法
-　应该能做到的”
+\CN["费尔克"]
+“别担心。这帮黑色的家伙，这群被称作
+　人造魔族的家伙。那样的数量，
+　西诺的话一个人能想办法能做到的”
 
 : DrawChara( "Kinako", 3, 0)
 : PlayVoice( "Voices/vo02_kin0153" )
 \CN["黄菜子"]
-“哈，是的……”
+“哈，好的……”
 
-虽然Zno君也是这样，但是这个男人的存在感很强。
+虽然西诺也是这样，但是这个男人的存在感很强。
 
-只是站着，好像压倒了周围的一切
-我觉得。
+只是站着，
+我觉得就好像压倒了周围的一切。
 
 : DrawChara( "Xeno", 4, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
-\CN["奇诺"]
+\CN["西诺"]
 “费尔克，请不要对黄菜子说多余的话。”
 
 //●演出：ゼノ　再び戦いの場所へ
@@ -608,19 +609,19 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo02_kin0154" )
 \CN["黄菜子"]
-“明明动了那么多，却连一点气都没有……”
+“明明动了那么多，却连一口气都没有喘……”
 
 //●演技：心の声です
 //: DrawChara( "Falke", 2, 0)
-\CN["沥青"]
-（诶。这孩子能清楚地看到Zno的动作。
-　嘛，虽然不是在意的地方……）
+\CN["费尔克"]
+（诶。这孩子能清楚地看到西诺的动作。
+　嘛，虽然没什么号在意的……）
 
 //: EraseChara( "Kinako", 0.5 )
 //: EraseChara( "Falke", 0.5 )
 //Yoshi：センターにゼノ
 //: DrawChara( "Xeno", 7, 0, 0, 0.5, 0.0, 5, "C" )
-\CN["奇诺"]
+\CN["西诺"]
 “啊啊啊啊啊啊啊！”
 
 //※演出：斬撃エフェクト
@@ -637,8 +638,8 @@
 : evfile = "evx_a027_1_1_0100000_0000000_1_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-然后Zno君一个接一个地说{人造魔族，伊维尔罗伊德}
-把别人说的话打倒——
+然后西诺君一个接一个的
+将这些被称作人造魔族的家伙打倒了。
 
 : HideWnd()
 : StopBgm( 1.0 )
@@ -655,7 +656,7 @@
 : PlayBgm("BGM/03_CM003")
 : DrawChara( "Xeno", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 5, "C" )
 : ShowWnd()
-\CN["奇诺"]
+\CN["西诺"]
 “……呼。结束了。”
 
 //●演出：ゼノがイービルロイド全員を滅ぼしている
@@ -664,30 +665,30 @@
 : DrawChara( "Falke", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 4, "L" )
 : PlayVoice( "Voices/vo02_kin0155" )
 \CN["黄菜子"]
-“哇，好厉害……Zno君……”
+“哇，好厉害……西诺君……”
 
-\CN["奇诺"]
-“这点事没什么。因为是很普通的事……”
+\CN["西诺"]
+“这点事、没什么。因为是很普通的事……”
 
 : DrawChara( "Falke", 5, 0)
-\CN["沥青"]
-“嗯。因为总是那么讨厌出汗之类的。”
-　明明说过啊」
+\CN["费尔克"]
+“嗯。明明之前总是说什么
+  讨厌出汗什么的」
 
 : layer = 5; time = 0.5; strength = 10; vibrato = 25; Call( "Scenarios/Common*CgShake" );
 : Wait()
 : DrawChara( "Xeno", 6, 1)
-\CN["奇诺"]
+\CN["西诺"]
 “法……，费尔克先生！”
 
 : DrawChara( "Falke",12, 0)
-\CN["沥青"]
-「就算这样，Zno也要做啊。
-　你也不能放在角落里啊。这个……”
+\CN["费尔克"]
+「就算这样，西诺，干的好。
+　你也不能把她放在在一边啊。这个……”
 
 : JumpLayer( 5, 0, -50, 1, 0.25)
 : DrawChara( "Xeno", 4, 1)
-\CN["奇诺"]
+\CN["西诺"]
 “所以，所以……那个，我没什么……。
 　这种说法对黄菜子很失礼”
 
@@ -696,18 +697,18 @@
 : DrawChara( "Kinako", 6, 1)
 : PlayVoice( "Voices/vo02_kin0156" )
 \CN["黄菜子"]
-“呃……Zno君，我没什么……”
+“呃……西诺君，我没什么……”
 
 : DrawChara( "Falke",11, 0)
-\CN["沥青"]
+\CN["费尔克"]
 “嗯。不，年轻啊。真青春啊。”
 
 : DrawChara( "Kinako", 0, 0)
 : DrawChara( "Falke", 0, 0)
-\CN["沥青"]
-“那我就把这里全部看完
-　那孩子——嗯，是黄菜子吗？
-　发给我。是鬼灯队的队员吧？”
+\CN["费尔克"]
+“那我就在这里在看看。
+　那孩子——嗯，黄菜子是吗？
+　可以回去了。是鬼灯队的队员吧？”
 
 : DrawChara( "Kinako", 2, 0)
 : PlayVoice( "Voices/vo02_kin0157" )
@@ -715,9 +716,9 @@
 “哈，是！但是，我也在这里调查……”
 
 : DrawChara( "Xeno", 2, 0)
-\CN["奇诺"]
-“黄菜子，这里的调查决定由维克托尔全部进行
-　是啊。鬼灯局长高千穗先生也得到了许可”
+\CN["西诺"]
+“黄菜子，这里的调查决定全部由维克托尔进行
+　。鬼灯局长高千穗君也得到了许可”
 
 : DrawChara( "Kinako", 7, 0)
 : PlayVoice( "Voices/vo02_kin0158" )
@@ -726,11 +727,11 @@
 
 确认了设备后，局长发来了信息。
 
-“维克托尔骑士团朝这边走了
+“维克托尔骑士前往那里了，
 　合流后要服从指示”。
 
 : DrawChara( "Xeno", 3, 0)
-\CN["奇诺"]
+\CN["西诺"]
 “黄菜子，我送你去帝都。”
 
 : DrawChara( "Kinako", 0, 1)
@@ -748,7 +749,7 @@
 : Wait()
 : ResetLayer(9)
 : ShowWnd()
-结果，在这里的机关公馆里发现了{人造魔族，伊维尔罗伊德}
+结果，在这里的机关公馆里发现了人造魔族，
 我只知道是做的。
 
 这件事归维克托尔管辖
