@@ -9,21 +9,21 @@
 : Wait()
 : PlayBgm("BGM/28_ID01")
 : ShowWnd()
-——位于日东街道的驿站町。
+——位于日东街道的宿场町（村落群）。
 
-那里现在是白夜九星、七红的镝木紫苑和九紫的镝木严
-镝木父子的手受到了毁灭性的打击。
+目前在那里的是白夜九星中七赤的镝木紫苑和九紫的镝木严
+镝木母子的手受到了毁灭性的打击。
 
 : DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["严严"]
-“哇啊啊啊啊啊！！”
+\CN["严"]
+“哇啊啊啊啊啊！！！”
 
 //●演出：巌　周りの人間を次々とぶっ飛ばしていく
 : HideWnd()
 : Call( "Scenarios/Effect*Renda01" )
 : ShowWnd()
 \CN["警察A"]
-“唔……嗯！”
+“咕嘟……！”
 
 \CN["警察B"]
 「…………」
@@ -32,12 +32,12 @@
 : DrawChara( "Shion", 5, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo12_shi0043" )
 \CN["紫苑"]
-“两个人都一次处理，严酱，真不愧是。”
+“能同时干掉两个人，严酱，真不愧是你。”
 
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
 //: DrawChara( "Iwao", 0, 0, 0, 0.5, 0.0, 3, "C" )
-\CN["严严"]
-“呼！呼！”
+\CN["严"]
+“呼ーーー！　呼ーーー！”
 
 \CN["宿场町的男子A"]
 「…………」
@@ -46,19 +46,19 @@
 「…………」
 
 \CN["宿场町的女人A"]
-“啊……啊…啊……啊……”
+“啊……啊……啊啊……啊…………”
 
 \CN["宿场町的女人B"]
 「…………」
 
-在驿站镇上的男人一个不剩全部被屏住了呼吸。
+在宿场町的男人一个不剩地全部被杀了。
 
-可爱的女人被镝木严侵犯，奄奄一息，除此之外的女人
-全体凄惨地断气了。
+可爱的女人被镝木严侵犯得奄奄一息，除此之外的女人
+全都凄惨地断气了。
 
 : DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
-\CN["严严"]
-“哈，哈……一个劲儿地杀人，太兴奋了
+\CN["严"]
+“哈，哈……可以杀个不停，这可真是太令人兴奋了
 　小鸡鸡好痛苦啊”
 
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
@@ -66,8 +66,8 @@
 : DrawChara( "Shion", 10, 1, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "R" )
 : PlayVoice( "Voices/vo12_shi0044" )
 \CN["紫苑"]
-“呵呵，严酱的小弟弟，真是太棒了。
-　我会立刻让你轻松的”
+“呵呵呵，严酱的小弟弟，真壮观啊。
+　我会立刻让你舒服起来的”
 
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
@@ -80,19 +80,19 @@
 //●演技：フェラチオ。男性器を咥え込んでいます
 : PlayVoice( "Voices/vo12_shi0045" )
 \CN["紫苑"]
-“啊——嗯……嗯…嗯…嗯…嗯…珠理奈……嗯……嗯……”……
-　嗯……嗯…嗯……嗯…嗯……嗯……嗯，嗯，嗯，嗯，我知道了”
+“啊ー呒……嗯……嗯咕……啾噜噜……啾呼……
+ 　嗯……嗯唔……啾……嗦咯、啾呼、啾噜噜噜”
 
 : PlayVoice( "Voices/vo12_shi0046" )
 \CN["紫苑"]
-“严酱这么坚强……嗯，我很成熟
-　嗯，嗯，嗯，嗯，中，珠理奈<color=#f59aa0>♥</color>」
+“严酱真是坚挺啊……嗯嗯，啾呼唔唔，
+　嗦咯嗦咯嗦咯，嗯，嗯咕，嗯呼，啾，啾噜噜<color=#f59aa0>♥</color>」
 
-\CN["严严"]
+\CN["严"]
 “啊啊啊……妈妈，好舒服啊……”
 
-在驿站町的所有人的遗体前
-镝木父子像往常一样进行着异常失真的行为。
+在宿场町所有人的遗体前，
+镝木母子像往常一样进行着异常而扭曲的行为。
 
 //●演出：場面転換トランジション
 //●場所：鬼灯屯所・あざみの部屋
@@ -116,23 +116,23 @@
 //「諜報から入った情報によると、日東街道の宿場町は
 //　白夜九星のうち２人が出張ってきて、いまや壊滅状態に
 //　あるとのことだ……」
-从谍报得到情报
-日东街道的驿站町，白夜九星中有两个人出来
-现在已经处于毁灭状态。
+从谍报得到信息
+有两个白夜九星的人出来了，目前在日东街道的宿场町，
+那里现在已经处于毁灭状态。
 
 \CN["鬼灯队士・男B"]
 “都杀了吗……真残忍。
 　白夜也终于认真起来了吗……”
 
 \CN["鬼灯队士・女A"]
-“那么，幕府就是说要杀了他们啊。”
+“所以，幕府才说出了要杀掉他们这样的话呢”
 
 : DrawChara( "Azami", 0, 0)
 : PlayVoice( "Voices/vo05_aza0271" )
 \CN["爱彩弥"]
-“嘛，这里的驿站町对幕府来说是重要的据点之一。
-　就算居民都被杀了也不能轻易放弃
-　”
+“嘛，这里的宿场町对幕府来说是重要的据点之一。
+　即使居民全部被杀，也不能轻易放弃
+　就是这样”
 
 : DrawChara( "Azami", 8, 0)
 : PlayVoice( "Voices/vo05_aza0272" )
@@ -144,7 +144,7 @@
 : DrawChara( "Mukuro", 16, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1032" )
 \CN["无黑"]
-“是的！这样的外路，我不能原谅！”
+“好的！这样的邪魔外道，我绝不能原谅！”
 
 \CN["鬼灯队士・男B"]
 “将军引以为豪的见回组不参加这次任务吗？”
@@ -153,13 +153,13 @@
 : DrawChara( "Azami", 25, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : PlayVoice( "Voices/vo05_aza0273" )
 \CN["爱彩弥"]
-“嗯，有各种各样的事。请体谅我……。
-　因为对方是白夜干部。是我们出场的时候”
+“嘛，他们还有很多其他事情。体谅一下吧……。
+　然后因为对手是白夜干部。所以也该轮到我们出场了哟”
 
 \CN["鬼灯队士・女A"]
 “是这样吗……我明白了，局长。
-　虽然有各种各样的想法，但是竟然放任危险的家伙不管
-　在樱花图案上是不可能做到的”
+　虽然我也有各种各样的想法，但是怎么能放任这么危险的家伙不管
+　就算赌上这樱花图案我也要阻止他们”
 
 //＠マップ解放：無黒、日東街道
 //●シーンエンド
@@ -180,31 +180,31 @@
 
 : if ( MissionProgress( "SC_A01_50", "Opened" ) == true )
 	: SetMission( "SC_A01_50", "Hidden" )
-	活动“由著名的色情涂鸦技师制作的dild”
+	事件『由著名的色情涂鸦技师制作的阳具』
 	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A01_51", "Opened" ) == true )
 	: SetMission( "SC_A01_51", "Hidden" )
-	活动“亲手撕破处女膜”开始了
+	事件『亲手撕破处女膜』
 	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A01_52", "Opened" ) == true )
 	: SetMission( "SC_A01_52", "Hidden" )
-	活动“给贵族男人处女”开始了
+	事件『给贵族男人的处女』
 	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_51_1", "Opened" ) == true )
 	: SetMission( "SC_A02_51_1", "Hidden" )
-	活动“向加津佐的镇长发送物品”
+	事件『向加津佐的镇长递交物品』
 	消失了。
 
 : endif
 : if ( MissionProgress( "SC_A02_51_2", "InProgress" ) == true )
 	: SetMission( "SC_A02_51_2", "Hidden" )
-	活动“向加津佐的镇长发送物品”
+	事件『向加津佐的镇长递交物品』
 	消失了。
 
 : endif
@@ -223,22 +223,22 @@
 : PlayBgm("BGM/41_Sad")
 : ShowWnd()
 \CN["鬼灯队士・女A"]
-“呃……这是什么……”
+“唔……这是什么……”
 
 \CN["鬼灯队士・男B"]
-“做这种事，只能认为是被乌贼咬了……”
+“做这种事，只能认为是被激怒了……”
 
 : DrawChara( "Mukuro", 15, 0, 3, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : PlayVoice( "Voices/vo00_muk1033" )
 \CN["无黑"]
 “多么残忍的事啊……。
-　真的是别人做的吗……？”
+　真的是人做出来的吗……？”
 
 周围全是血的味道。
-那里的尸体像垃圾一样被扔掉。
+尸体像垃圾一样被堆在那里。
 
-他们全部都在被挖开或者切开生殖器
-那个被累积起来了。
+他们全部都被挖开或者切开了生殖器
+然后堆了起来。
 
 //●演出：紫苑と巌　登場する
 : HideWnd()
@@ -255,32 +255,32 @@
 : DrawChara( "Iwao", 1, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "LC" )
 : DrawChara( "Shion", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "RC" )
 : ShowWnd()
-\CN["严严"]
-“还……幸存下来……是存在的吧……？”
+\CN["严"]
+“还有……活下来……的人吧……？”
 
 : DrawChara( "Shion", 1, 0)
 : PlayVoice( "Voices/vo12_shi0047" )
 \CN["紫苑"]
 “不是活下来，而是想去死吧。
-　樱花的花纹——鬼灯的各位，欢迎光临”
+　樱花的图案――鬼灯的各位，欢迎光临”
 
 : DrawChara( "Iwao", 0, 0)
-\CN["严严"]
-“鬼灯……？喂，妈妈，可以杀了吗？”
+\CN["严"]
+“鬼灯……？呐，妈妈，可以杀了吗？”
 
 : DrawChara( "Shion", 5, 0)
 : PlayVoice( "Voices/vo12_shi0048" )
 \CN["紫苑"]
 “严酱喜欢就好。
-　不管是杀还是犯，严酱都喜欢……”
+　杀掉也好，侵犯也好，只要是严酱喜欢的……”
 
 \CN["鬼灯队士・男B"]
 “小心点……真的很糟糕……。
-　这群家伙就是镝木紫苑和严、白夜九星两个人”
+　他们就是镝木紫苑和严，白夜九星的俩人”
 
 \CN["鬼灯队士・女A"]
 “啊啊，无黑……绝对不能大意啊……。
-　稍微放松一下就会被杀……”
+　稍微松懈一下就会被杀的……”
 
 //●読み：他所様（よそさま）
 : EraseChara( "Shion", Call("Scenarios/Common*FgFadeTime") )
@@ -293,7 +293,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo12_shi0049" )
 \CN["紫苑"]
-“主人，我不佩服别人直呼其名……”
+「我可不喜欢对其他人直呼其名啊……」
 
 //※●演出：紫苑　魔術を使う
 : HideWnd()
@@ -301,7 +301,7 @@
 : Call( "Scenarios/Effect*Shion_Action01" )
 : ShowWnd()
 \CN["鬼灯队士・女A"]
-“呀，やば……什么，这个魔力……！？”
+“呀，呀啊……什么，这个魔力……！？”
 
 //: EraseChara( "Shion", 0.5 )
 : HideWnd()
@@ -309,7 +309,7 @@
 : DrawChara( "Iwao", 1, 0, 0, 0.0, 0.0, 2, "C" )
 : Call("Scenarios/Common*EvFadeOut")
 : ShowWnd()
-\CN["严严"]
+\CN["严"]
 “哦哦哦哦哦哦哦哦哦！”
 
 //●※演出：巌　攻撃してくる
@@ -323,26 +323,26 @@
 \CN["鬼灯队士・女A"]
 “哇啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！”
 
-两个前辈在大个子面前毫无办法地倒下了。
+在大汉面前，两位前辈无计可施地倒下了。
 
 : DrawChara( "Iwao", 0, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 2, "C" )
-\CN["严严"]
-“你……像那个可怕的女人……。
+\CN["严"]
+“你……很像那个可怕的女人……。
 　但是，我觉得你好像能赢”
 
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 31, 0, 0, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1034" )
 \CN["无黑"]
-“……呜！”
+“……咕！”
 
-这家伙，出奇的强大——
+这家伙，出奇的强大――
 但是，不能逃走。
 
 : DrawChara( "Mukuro", 16, 0)
 : PlayVoice( "Voices/vo00_muk1035" )
 \CN["无黑"]
-“我有件事要为我做！
+“我还有自己的事情要做！
 　不能在这种地方退缩！”
 
 : EraseChara( "Mukuro", Call("Scenarios/Common*FgFadeTime") )
@@ -391,19 +391,19 @@
 : Wait()
 : StopBgm( 0.0 )
 : ShowWnd()
-\CN["严严"]
-“呼！呼！
-　yu、不原谅……这个女人，杀了她……”
+\CN["严"]
+「呼ーー！　呼ーー！
+　不、不能原谅……这个女人，杀了她……”
 
 : DrawChara( "Iwao", 0, 0)
-\CN["严严"]
-“认真起来……光是杀掉是不行的……”
+\CN["严"]
+“认真起来了……光是杀掉还不行……”
 
 : EraseChara( "Iwao", Call("Scenarios/Common*FgFadeTime") )
 : DrawChara( "Mukuro", 40, 0, 2, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1036" )
 \CN["无黑"]
-“什么，什么……这种气氛……？”
+“什，什么……这种气氛……？”
 
 : PlayBgm("BGM/11_CM011")
 身体发冷。手脚瑟瑟发抖。
@@ -421,7 +421,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo12_shi0050" )
 \CN["紫苑"]
-“沉入黑夜的咒缚之锁，用你的力量封印住威胁之力——”
+“沉入黑夜的咒缚之锁，用你的力量封印住威胁之力――”
 
 //※●演出：紫苑　魔術演出
 : HideWnd()
@@ -432,8 +432,8 @@
 : evfile = "evh_a001_1_1_0300001_0000000_0_"
 : Call("Scenarios/Common*EvChange")
 : ShowWnd()
-\CN["严严"]
-“……呜……呜……妈妈……为什么？”
+\CN["严"]
+“…………咕……呜呜呜…………妈妈……为什么？”
 
 : HideWnd()
 : evbg = true; evcos = false;
@@ -442,7 +442,7 @@
 : ShowWnd()
 : PlayVoice( "Voices/vo12_shi0051" )
 \CN["紫苑"]
-“严酱，这是脑子里禁止的吧。”
+“严酱，这是脑袋里被禁止的吧”
 
 : HideWnd()
 : DrawChara( "Iwao", 0, 0, 0, 0.0, 0.0, 2, "LC" )
@@ -460,7 +460,7 @@
 “我觉得好像又能在什么地方见到你……”
 
 : DrawChara( "Iwao", 0, 0)
-\CN["严严"]
+\CN["严"]
 「…………」
 
 //●演出：紫苑と巌　退場する
@@ -469,12 +469,12 @@
 : chara = "Shion"; lay = 3; type = "WL"; Call( "Scenarios/Common*FgEffOut");
 : chara = "Iwao"; lay = 2; type = "WL"; Call( "Scenarios/Common*FgEffOut");
 : ShowWnd()
-母亲牵着儿子离开了驿站。
+母亲牵着儿子的手离开了宿场町。
 
 : DrawChara( "Mukuro", 40, 0, 5, Call("Scenarios/Common*FgFadeTime"), 0.0, 3, "C" )
 : PlayVoice( "Voices/vo00_muk1037" )
 \CN["无黑"]
-“……呃”
+“…………呃”
 
 以我现在的实力是不可能生存下来的。
 如果对方退了的话，就不会再追了。
